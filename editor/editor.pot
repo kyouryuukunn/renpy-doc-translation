@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2016, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-30 12:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/editor.rst:8
+msgid "Text Editor Integration"
+msgstr ""
+
+#: ../../source/editor.rst:10
+msgid "Ren'Py uses a text editor to allow the user to edit game scripts from the launcher, and to report errors to the user. By default, Ren'Py uses jEdit as the text editor when launched from the launcher and the system default editor otherwise. This can be customized by the user as necessary."
+msgstr ""
+
+#: ../../source/editor.rst:15
+msgid "The editor is customized by creating an Editor class in a .edit.py file. This class contains methods that are called to manage text editing."
+msgstr ""
+
+#: ../../source/editor.rst:18
+msgid "When run directly, Ren'Py first looks at the RENPY_EDIT_PY environment variable to find an .edit.py file to use. If it can find one, it uses the Editor class defined in that file. If not, it uses a built-in editor class that launches the editor in a system-specific manner."
+msgstr ""
+
+#: ../../source/editor.rst:23
+msgid "When the Ren'Py Launcher is run, it scans subdirectories of the projects directory and Ren'Py directory to find files of the form `name`.edit.py. (For example, it would find launcher/jEdit.edit.py and myeditor/MyEditor.edit.py.) The latest editor with a given `name` is presented to the creator as part of the launcher options. The launcher also sets RENPY_EDIT_PY to the selected file, so that games launched from the launcher will use the selected editor."
+msgstr ""
+
+#: ../../source/editor.rst:32
+msgid "Writing an .edit.py File"
+msgstr ""
+
+#: ../../source/editor.rst:34
+msgid "An edit.py file is a Python (not Ren'Py) file that must define a single class, named Editor. Ren'Py will call methods on this class to cause editing to occur."
+msgstr ""
+
+#: ../../source/editor.rst:38
+msgid "Use of the editor is done as part of an editor transaction, which groups related operations together. For example, if an editor transaction asks for a new window, all of the files in that transaction should be opened in the same new window. An editor transaction starts with a call to the begin method, may contain one or more calls to operation methods, and ends with a call to the end method."
+msgstr ""
+
+#: ../../source/editor.rst:45
+msgid "The edit.py file should import renpy.editor, and the Editor class should inherit from renpy.editor.Editor. As additional keyword arguments may be added to methods, each method you define should ignore unknown keyword arguments. Since you're expected to define your own Editor subclass, we present the methods with the `self` parameter."
+msgstr ""
+
+#: ../../source/editor.rst:55
+msgid "Starts an editor transaction."
+msgstr ""
+
+#: ../../source/editor.rst:57
+msgid "If `new_window` is true, the editor should attempt to open a new window. Otherwise, it should attempt to perform the transaction in an existing editor window."
+msgstr ""
+
+#: ../../source/editor.rst:63
+msgid "Ends a transaction."
+msgstr ""
+
+#: ../../source/editor.rst:67
+msgid "Opens a `filename` in the editor."
+msgstr ""
+
+#: ../../source/editor.rst:69
+msgid "If `line` is not None, attempts to position the editing cursor at `line`."
+msgstr ""
+

@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2016, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-30 12:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/label.rst:5
+msgid "Labels & Control Flow"
+msgstr ""
+
+#: ../../source/label.rst:8
+msgid "Label Statement"
+msgstr ""
+
+#: ../../source/label.rst:10
+msgid "Label statements allow the given name to be assigned to a program point. They exist solely to be called or jumped to, whether by script code or the Ren'Py config. ::"
+msgstr ""
+
+#: ../../source/label.rst:21
+msgid "A label statement may have a block associated with it. In that case, control enters the block whenever the label statement is reached, and proceeds with the statement after the label statement whenever the end of the block is reached."
+msgstr ""
+
+#: ../../source/label.rst:25
+msgid "There are two kinds of labels: *global* and *local* labels. Global labels live in one global scope shared across all project files and thus should have unique names per game. Local labels logically reside inside scope of the global label they are declared in. To declare a local label, prefix its name with `.`. For example: ::"
+msgstr ""
+
+#: ../../source/label.rst:37
+msgid "Local labels can be referenced directly inside the same global label they are declared in or by their full name, consisting of global and local name parts: ::"
+msgstr ""
+
+#: ../../source/label.rst:44
+msgid "The label statement may take an optional list of parameters. These parameters are processed as described in PEP 3102, with two exceptions:"
+msgstr ""
+
+#: ../../source/label.rst:47
+msgid "The values of default parameters are evaluated at call time."
+msgstr ""
+
+#: ../../source/label.rst:48
+msgid "The variables are dynamically, rather than lexically, scoped."
+msgstr ""
+
+#: ../../source/label.rst:53
+msgid "Jump Statement"
+msgstr ""
+
+#: ../../source/label.rst:55
+msgid "The jump statement is used to transfer control to the given label."
+msgstr ""
+
+#: ../../source/label.rst:57
+msgid "If the ``expression`` keyword is present, the expression following it is evaluated, and the string so computed is used as the label name of the statement to jump to. If the ``expression`` keyword is not present, the label name of the statement to jump to must be explicitly given."
+msgstr ""
+
+#: ../../source/label.rst:62
+msgid "Unlike call, jump does not push the next statement onto a stack. As a result, there's no way to return to where you've jumped from. ::"
+msgstr ""
+
+#: ../../source/label.rst:74
+msgid "Call Statement"
+msgstr ""
+
+#: ../../source/label.rst:76
+msgid "The call statement is used to transfer control to the given label. It also pushes the next statement onto the call stack, allowing the return statement to return control to the statement following the call."
+msgstr ""
+
+#: ../../source/label.rst:80
+msgid "If the ``expression`` keyword is present, the expression following it is evaluated, and the string so computed is used as the name of the label to call. If the ``expression`` keyword is not present, the name of the statement to call must be explicitly given."
+msgstr ""
+
+#: ../../source/label.rst:85
+msgid "If the optional from clause is present, it has the effect of including a label statement with the given name as the statement immediately following the call statement. An explicit label helps to ensure that saved games with return stacks can return to the proper place when loaded on a changed script. ::"
+msgstr ""
+
+#: ../../source/label.rst:107
+msgid "The call statement may take arguments, which are processed as described in PEP 3102."
+msgstr ""
+
+#: ../../source/label.rst:110
+msgid "When using a call expression with an arguments list, the ``pass`` keyword must be inserted between the expression and the arguments list. Otherwise, the arguments list will be parsed as part of the expression, not as part of the call."
+msgstr ""
+
+#: ../../source/label.rst:118
+msgid "Return Statement"
+msgstr ""
+
+#: ../../source/label.rst:120
+msgid "The return statement pops the top statement off of the call stack, and transfers control to it. If the call stack is empty, the return statement restarts Ren'Py, returning control to the main menu."
+msgstr ""
+
+#: ../../source/label.rst:124
+msgid "If the optional expression is given to return, it is evaluated, and it's result is stored in the _return variable. This variable is dynamically scoped to each context."
+msgstr ""
+
+#: ../../source/label.rst:129
+msgid "Special Labels"
+msgstr ""
+
+#: ../../source/label.rst:131
+msgid "The following labels are used by Ren'Py:"
+msgstr ""
+
+#: ../../source/label.rst:134
+msgid "``start``"
+msgstr ""
+
+#: ../../source/label.rst:134
+msgid "By default, Ren'Py jumps to this label when the game starts."
+msgstr ""
+
+#: ../../source/label.rst:138
+msgid "``quit``"
+msgstr ""
+
+#: ../../source/label.rst:137
+msgid "If it exists, this label is called in a new context when the user quits the game."
+msgstr ""
+
+#: ../../source/label.rst:142
+msgid "``after_load``"
+msgstr ""
+
+#: ../../source/label.rst:141
+msgid "If it exists, this label is called when a game is loaded. It can be use to fix data when the game is updated."
+msgstr ""
+
+#: ../../source/label.rst:146
+msgid "``splashscreen``"
+msgstr ""
+
+#: ../../source/label.rst:145
+msgid "If it exists, this label is called when the game is first run, before showing the main menu."
+msgstr ""
+
+#: ../../source/label.rst:151
+msgid "``before_main_menu``"
+msgstr ""
+
+#: ../../source/label.rst:149
+msgid "If it exists, this label is called before the main menu. It is used in rare cases to set up the main menu, for example by starting a movie playing in the background."
+msgstr ""
+
+#: ../../source/label.rst:160
+msgid "``main_menu``"
+msgstr ""
+
+#: ../../source/label.rst:154
+msgid "If it exists, this label is called instead of the main menu. If it returns, Ren'Py will start the game at the ``start`` label. For example, the following code will immediately start the game without displaying the main menu. ::"
+msgstr ""
+
+#: ../../source/label.rst:164
+msgid "``after_warp``"
+msgstr ""
+
+#: ../../source/label.rst:163
+msgid "If it is existed, this label is called after a warp but before the warped-to statement executes. please see :ref:`Warping to a line <warping_to_a_line>`"
+msgstr ""
+
+#: ../../source/label.rst:167
+msgid "Labels & Control Flow Functions"
+msgstr ""
+
+#: ../../source/inc/label:5
+msgid "This code creates a new context, and starts executing code from that label in the new context. Rollback is disabled in the new context. (Actually, it will just bring you back to the real context.)"
+msgstr ""
+
+#: ../../source/inc/label:10
+#: ../../source/inc/label:52
+msgid "Use this to begin a second interaction with the user while inside an interaction."
+msgstr ""
+
+#: ../../source/inc/label:15
+msgid "Returns the set of all labels defined in the program, including labels defined for internal use in the libraries."
+msgstr ""
+
+#: ../../source/inc/label:20
+msgid "Returns a list giving the current return stack. The return stack is a list of statement names."
+msgstr ""
+
+#: ../../source/inc/label:23
+msgid "The statement names will be strings (for labels), or opaque tuples (for non-label statements)."
+msgstr ""
+
+#: ../../source/inc/label:28
+msgid "Returns true if `name` is a valid label the program, or false otherwise."
+msgstr ""
+
+#: ../../source/inc/label:31
+msgid "`name`"
+msgstr ""
+
+#: ../../source/inc/label:31
+msgid "Should be a string to check for the existence of a label. It can also be an opaque tuple giving the name of a non-label statement."
+msgstr ""
+
+#: ../../source/inc/label:36
+msgid "This pushes the current context, and invokes the given python function in a new context. When that function returns or raises an exception, it removes the new context, and restores the current context."
+msgstr ""
+
+#: ../../source/inc/label:41
+msgid "Additional arguments and keyword arguments are passed to the callable."
+msgstr ""
+
+#: ../../source/inc/label:44
+msgid "Please note that the context so created cannot execute renpy code. So exceptions that change the flow of renpy code (like the one created by renpy.jump) cause this context to terminate, and are handled by the next higher context."
+msgstr ""
+
+#: ../../source/inc/label:49
+msgid "If you want to execute renpy code from the function, you can call it with renpy.call_in_new_context."
+msgstr ""
+
+#: ../../source/inc/label:57
+msgid "Causes control to leave the current context, and then to be transferred in the parent context to the given label."
+msgstr ""
+
+#: ../../source/inc/label:62
+msgid "Returns true if the named label has executed at least once on the current user's system, and false otherwise. This can be used to unlock scene galleries, for example."
+msgstr ""
+
+#: ../../source/inc/label:68
+msgid "Sets the current return stack. The return stack is a list of statement names."
+msgstr ""
+
+#: ../../source/inc/label:71
+msgid "Statement names may be strings (for labels) or opaque tuples (for non-label statements)."
+msgstr ""
+

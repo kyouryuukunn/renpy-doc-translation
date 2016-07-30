@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2016, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-30 12:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/updater.rst:5
+msgid "Web Updater"
+msgstr ""
+
+#: ../../source/updater.rst:7
+msgid "Ren'Py includes an updater that can automatically download and install updates to a Ren'Py game hosted at a website. This can be useful in keeping a large game up to date."
+msgstr ""
+
+#: ../../source/updater.rst:11
+msgid "The Ren'Py updater works by automatically performing the following steps:"
+msgstr ""
+
+#: ../../source/updater.rst:14
+msgid "Downloading an index file that controls what is updated."
+msgstr ""
+
+#: ../../source/updater.rst:15
+msgid "Asking the user if he or she wants to proceed with the update."
+msgstr ""
+
+#: ../../source/updater.rst:16
+msgid "Producing an archive file from the files on disk."
+msgstr ""
+
+#: ../../source/updater.rst:17
+msgid "Downloading a zsync control file from the server."
+msgstr ""
+
+#: ../../source/updater.rst:18
+msgid "Using the zsync tool to update the archive file to the version on the server. Zsync automatically computes the differences between the two files, and attempts to only download the portions that have changed."
+msgstr ""
+
+#: ../../source/updater.rst:22
+msgid "Unpacking the archive, replacing the files on disk."
+msgstr ""
+
+#: ../../source/updater.rst:23
+msgid "Deleting files that have been removed between the old and new versions."
+msgstr ""
+
+#: ../../source/updater.rst:25
+msgid "Restarting the game."
+msgstr ""
+
+#: ../../source/updater.rst:27
+msgid "The Ren'Py updater shows an updater screen during this process, prompting the user to proceed and allowing the user to cancel when appropriate."
+msgstr ""
+
+#: ../../source/updater.rst:32
+msgid "Server Requirements"
+msgstr ""
+
+#: ../../source/updater.rst:34
+msgid "The updater requires that you provide your own hosting. You should be able to download the update files by going to the appropriate URL directly, and your server must support HTTP range queries."
+msgstr ""
+
+#: ../../source/updater.rst:38
+msgid "(This means paying for web hosting, as \"sharing\" sites tend not to support the required features.)"
+msgstr ""
+
+#: ../../source/updater.rst:43
+msgid "Building an Update"
+msgstr ""
+
+#: ../../source/updater.rst:45
+msgid "Updates are built automatically when distributions are built. To build an update, set build.include_update to True in options.rpy. This will unlock the \"Build Updates\" option in the \"Build Distributions\" section of the launcher. Check this option, and Ren'Py will create the update files."
+msgstr ""
+
+#: ../../source/updater.rst:51
+msgid "The update files consist of:"
+msgstr ""
+
+#: ../../source/updater.rst:54
+msgid "updates.json"
+msgstr ""
+
+#: ../../source/updater.rst:54
+msgid "An index of available updates and their versions."
+msgstr ""
+
+#: ../../source/updater.rst:57
+msgid "*package*.sums"
+msgstr ""
+
+#: ../../source/updater.rst:57
+msgid "Contains checksums for each block in the package."
+msgstr ""
+
+#: ../../source/updater.rst:60
+msgid "*package*.update.gz"
+msgstr ""
+
+#: ../../source/updater.rst:60
+msgid "Contains the update data for the given package."
+msgstr ""
+
+#: ../../source/updater.rst:64
+msgid "*package*.update.json"
+msgstr ""
+
+#: ../../source/updater.rst:63
+msgid "Contains a list of the files in each package, which the updater uses when downloading DLC."
+msgstr ""
+
+#: ../../source/updater.rst:67
+msgid "*package*.zsync"
+msgstr ""
+
+#: ../../source/updater.rst:67
+msgid "This is a control file that's used by zsync to manage the download."
+msgstr ""
+
+#: ../../source/updater.rst:69
+msgid "You must upload all these files to a single directory on your web server."
+msgstr ""
+
+#: ../../source/updater.rst:74
+msgid "Functions"
+msgstr ""
+
+#: ../../source/updater.rst:76
+msgid "To cause an update to occur, invoke either updater.update or the updater.Update action."
+msgstr ""
+
+#: ../../source/inc/updater:5
+msgid "An action that calls :func:`updater.update`. All arguments are stored and passed to that function."
+msgstr ""
+
+#: ../../source/inc/updater:10
+msgid "This function contacts the server at `url`, and determines if there is a newer version of software available at that url. If there is, this function returns the new version. Otherwise, it returns None."
+msgstr ""
+
+#: ../../source/inc/updater:14
+msgid "Since contacting the server can take some time, this function launches a thread in the background, and immediately returns the version from the last time the server was contacted, or None if the server has never been contacted. The background thread will restart the current interaction once the server has been contacted, which will cause screens that call this function to update."
+msgstr ""
+
+#: ../../source/inc/updater:21
+msgid "Each url will be contacted at most once per Ren'Py session, and not more than once every `check_interval` seconds. When the server is not contacted, cached data will be returned."
+msgstr ""
+
+#: ../../source/inc/updater:25
+msgid "Additional keyword arguments (including `simulate`) are passed to the update mechanism as if they were given to :func:`updater.update`."
+msgstr ""
+
+#: ../../source/inc/updater:30
+msgid "Returns true if it's possible that an update can succeed. Returns false if updating is totally impossible. (For example, if the update directory was deleted.)"
+msgstr ""
+
+#: ../../source/inc/updater:35
+msgid "Note that this does not determine if an update is actually available. To do that, use :func:`updater.UpdateVersion`."
+msgstr ""
+
+#: ../../source/inc/updater:40
+msgid "Returns a list of installed DLC package names."
+msgstr ""
+
+#: ../../source/inc/updater:43
+#: ../../source/inc/updater:55
+msgid "`base`"
+msgstr ""
+
+#: ../../source/inc/updater:43
+msgid "The base directory to update. Defaults to the current project's base directory."
+msgstr ""
+
+#: ../../source/inc/updater:48
+msgid "Updates this Ren'Py game to the latest version."
+msgstr ""
+
+#: ../../source/inc/updater:51
+msgid "`url`"
+msgstr ""
+
+#: ../../source/inc/updater:51
+msgid "The URL to the updates.json file."
+msgstr ""
+
+#: ../../source/inc/updater:54
+msgid "The base directory that will be updated. Defaults to the base of the current game. (This can usually be ignored.)"
+msgstr ""
+
+#: ../../source/inc/updater:59
+msgid "`force`"
+msgstr ""
+
+#: ../../source/inc/updater:58
+msgid "Force the update to occur even if the version numbers are the same. (Used for testing.)"
+msgstr ""
+
+#: ../../source/inc/updater:63
+msgid "`public_key`"
+msgstr ""
+
+#: ../../source/inc/updater:62
+msgid "The path to a PEM file containing a public key that the update signature is checked against. (This can usually be ignored.)"
+msgstr ""
+
+#: ../../source/inc/updater:72
+msgid "`simulate`"
+msgstr ""
+
+#: ../../source/inc/updater:66
+msgid "This is used to test update guis without actually performing an update. This can be:"
+msgstr ""
+
+#: ../../source/inc/updater:69
+msgid "None to perform an update."
+msgstr ""
+
+#: ../../source/inc/updater:70
+msgid "\"available\" to test the case where an update is available."
+msgstr ""
+
+#: ../../source/inc/updater:71
+msgid "\"not_available\" to test the case where no update is available."
+msgstr ""
+
+#: ../../source/inc/updater:72
+msgid "\"error\" to test an update error."
+msgstr ""
+
+#: ../../source/inc/updater:76
+msgid "`add`"
+msgstr ""
+
+#: ../../source/inc/updater:75
+msgid "A list of packages to add during this update. This is only necessary for dlc."
+msgstr ""
+
+#: ../../source/inc/updater:78
+msgid "`restart`"
+msgstr ""
+
+#: ../../source/inc/updater:79
+msgid "Restart the game after the update."
+msgstr ""
+
+#: ../../source/updater.rst:82
+msgid "Screen"
+msgstr ""
+
+#: ../../source/updater.rst:84
+msgid "To customize the look of the updater, you may override the ``updater`` screen. The default screen is defined in common/00updater.rpy."
+msgstr ""
+

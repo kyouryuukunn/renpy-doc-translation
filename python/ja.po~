@@ -1,0 +1,404 @@
+# Japanese translation for renpy-doc
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the renpy-doc package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: renpy-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-11 11:37+0900\n"
+"PO-Revision-Date: 2016-03-11 12:33+0900\n"
+"Last-Translator: \n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-03-29 05:43+0000\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ..\..\source\python.rst:7
+msgid "Python Statements"
+msgstr "Python ステートメント"
+
+#: ..\..\source\python.rst:9
+msgid ""
+"Ren'Py is written in the Python programming language, and includes support "
+"for including python code inside Ren'Py scripts. Python support can be used "
+"for many things, from setting a flag to creating new displayables. This "
+"chapter covers ways in which Ren'Py scripts can directly invoke Python code, "
+"through the various python statements."
+msgstr ""
+"Ren'Py は、Python プログラミング言語で書かれており、Ren'Py スクリプトの中に "
+"Python のコードを埋め込められます。Python への対応は、フラグの設定から "
+"displayable の新規作成まで、様々な場面で利用できます。この章では、Ren'Py のス"
+"クリプトから Python コードのステートメントを直接呼び出す方法を説明します。"
+
+#: ..\..\source\python.rst:19
+msgid "Python"
+msgstr "Python"
+
+#: ..\..\source\python.rst:21
+msgid ""
+"The python statement takes a block of python code, and runs that code when "
+"control reaches the statement. A basic python statement can be very simple::"
+msgstr ""
+"python ステートメントは python コードのブロックを取り、制御がそのステートメン"
+"トまで到達するとそのコードを実行します。基本的な python ステートメントはとて"
+"も単純です。 ::"
+
+#: ..\..\source\python.rst:28
+msgid "Python statements can get more complex, when necessary::"
+msgstr "python ステートメントは必要ならさらに複雑になります。"
+
+#: ..\..\source\python.rst:35
+msgid ""
+"There are two modifiers to the python statement that change its behavior:"
+msgstr "python ステートメントにはその動作を変更するものが二つあります。 :"
+
+#: ..\..\source\python.rst:38
+msgid "``hide``"
+msgstr "``hide``"
+
+#: ..\..\source\python.rst:40
+msgid ""
+"If given the hide modifier, the python statement will run the code in an "
+"anonymous scope. The scope will be lost when the python block terminates."
+msgstr ""
+"hide が与えられると python ステートメントは無名のスコープでコードを実行しま"
+"す。そのスコープは python ブロックが終了すると消失します。"
+
+#: ..\..\source\python.rst:44
+msgid ""
+"This allows python code to use temporary variables that can't be saved - but "
+"it means that the store needs to be accessed as fields on the store object, "
+"rather than directly."
+msgstr ""
+"これで python コードに保存されない一時的な変数を使用可能になります。しかしそ"
+"れはつまり store オブジェクトに直接ではなくフィールドとしてアクセスする必要が"
+"あるということです。"
+
+#: ..\..\source\python.rst:48
+msgid "``in``"
+msgstr "``in``"
+
+#: ..\..\source\python.rst:50
+msgid ""
+"The ``in`` modifier takes a name. Instead of executing in the default store, "
+"the python code will execute in the store that name."
+msgstr ""
+"``in`` は名前を取ります。デフォルトの store で実行する代わりに python コード"
+"はその名前の store で実行されます。"
+
+#: ..\..\source\python.rst:56
+msgid "One-line Python Statement"
+msgstr "一行 python"
+
+#: ..\..\source\python.rst:58
+msgid ""
+"A common case is to have a single line of python that runs in the default "
+"store. For example, a python one-liner can be used to initialize or update a "
+"flag. To make writing python one-liners more convenient, there is the one-"
+"line python statement."
+msgstr ""
+"デフォルトの store で python を一行だけ実行させたいというのはよくあることで"
+"す。例えばフラグの初期化や更新には一行だけの python が使用されます。 一行だけ"
+"の python をより便利に記述するために、一行 python のステートメントがありま"
+"す。"
+
+#: ..\..\source\python.rst:63
+msgid ""
+"The one-line python statement begins with the dollar-sign ($) character, and "
+"contains all of the code on that line. Here are some example of python one-"
+"liners::"
+msgstr ""
+"一行 python ステートメントはドル記号 ($) で始まり、その行にコードのすべてを含"
+"みます。ここでは 一行 python の例をいくつか示します。 ::"
+
+#: ..\..\source\python.rst:79
+msgid "Python one-liners always run in the default store."
+msgstr "一行 python は常にデフォルトの store で実行されます。"
+
+#: ..\..\source\python.rst:85
+msgid "Init Python Statement"
+msgstr "init python ステートメント"
+
+#: ..\..\source\python.rst:87
+msgid ""
+"The ``init python`` statement runs python code at initialization time, "
+"before the game loads. Among other things, this code can be used to define "
+"classes and functions, or to initialize styles, config variables, or "
+"persistent data. ::"
+msgstr ""
+"``init python`` ステートメントはゲームロード前の初期化時に python コードを実"
+"行します。特にこのコードはクラス、関数の定義やスタイル、設定変数、永続データ"
+"の初期化に使用されます。 ::"
+
+#: ..\..\source\python.rst:107
+msgid ""
+"A priority number can be placed between ``init`` and ``python``. When a "
+"priority is not given, 0 is used. Init  statements are run in priority "
+"order, from lowest to highest. Init statements of the same priority are run "
+"in unicode order by filename, and then from top to bottom within a file."
+msgstr ""
+"優先度の値は ``init`` と ``python`` の間に配置出来ます。優先度が指定されない"
+"と、 0 が使用されます。 init ステートメントは優先度の小さいものから大きいもの"
+"の順に実行されます。 優先度の同じ init ステートメントはファイル名のユニコード"
+"順に、各ファイルの開始から終端まで実行されます。"
+
+#: ..\..\source\python.rst:112
+msgid ""
+"To avoid conflict with Ren'Py, creators should use priorities in the range "
+"-999 to 999. Priorities of less than 0 are generally used for libraries and "
+"to set up themes. Normal init code should have a priority of 0 or higher."
+msgstr ""
+"Ren'Py 本体との衝突を防ぐため、開発者は -999 から 999 の範囲の優先度を使用す"
+"るべきです。 0 以下の優先度は通常ライブラリーやテーマの設定に使用されます。通"
+"常の init コードには優先度 0 かそれ以上を使用するべきです。"
+
+#: ..\..\source\python.rst:117
+msgid "Init python statements also take the ``hide`` or ``in`` clauses."
+msgstr "init python ステートメントは ``hide`` や ``in`` 節も取ります。"
+
+#: ..\..\source\python.rst:119
+msgid ""
+"Variables that have their value set in an init python block are not saved, "
+"loaded, and do not participate in rollback, unless the object the variable "
+"refers to is changed."
+msgstr ""
+"init python ブロックで値が設定された変数はその変数が参照するオブジェクトが変"
+"更されない限りセーブ、ロードされず、ロールバックにも参加しません。"
+
+#: ..\..\source\python.rst:126
+msgid "Define Statement"
+msgstr "define ステートメント"
+
+#: ..\..\source\python.rst:128
+msgid ""
+"The define statement sets a single variable to a value at init time. For "
+"example::"
+msgstr "define ステートメントは初期化時、変数に値を設定します。例えば ::"
+
+#: ..\..\source\python.rst:133
+msgid "is equivalent to::"
+msgstr "これは以下と等価です。 ::"
+
+#: ..\..\source\python.rst:138 ..\..\source\python.rst:170
+msgid ""
+"The define statement can take an optional named store (see below), by "
+"prepending it to the variable name with a dot. For example::"
+msgstr ""
+"define ステートメントは、ドットと変数名に続けて任意の名前付き store (以下参"
+"照) を取れます。例 ::"
+
+#: ..\..\source\python.rst:143
+msgid ""
+"One advantage of using the define statement is that it records the filename "
+"and line number at which the assignment occurred, and makes that available "
+"to the navigation feature of the launcher."
+msgstr ""
+"define ステートメントを使用する利点の 1 つは代入が行なわれたファイル名と行番"
+"号を記録し、ランチャーのナビゲーション機能が利用可能になることです。"
+
+#: ..\..\source\python.rst:151
+msgid "Default Statement"
+msgstr "default ステートメント"
+
+#: ..\..\source\python.rst:153
+msgid ""
+"The default statement sets a single variable to a value if that variable is "
+"not defined when the game starts, or after a new game is loaded. For "
+"example::"
+msgstr ""
+"default ステートメントは、ゲーム開始時かロード後に変数が定義されていなければ"
+"その変数の値を設定します。例えば ::"
+
+#: ..\..\source\python.rst:159
+msgid ""
+"When the variable ``points`` is not defined at game start, this statement is "
+"equivalent to::"
+msgstr ""
+"変数 ``points`` がゲーム開始時に定義されていなければ、このステートメントは次"
+"と等しいです。 ::"
+
+#: ..\..\source\python.rst:165
+msgid ""
+"When the variable ``points`` is not defined at game load, it's equivalent "
+"to::"
+msgstr ""
+"変数 ``points`` がゲームロード時に定義されていなければ、次と等しいです。 ::"
+
+#: ..\..\source\python.rst:179
+msgid "Init Offset Statement"
+msgstr "init offset ステートメント"
+
+#: ..\..\source\python.rst:181
+msgid ""
+"The init offset statement sets a priority offset for all statements that run "
+"at init time. (init, init python, define, default, screen, transform, style, "
+"and more.) The offset applies to all following statements in the current "
+"block and chold blocks, up to the next init priority statement. The "
+"statement::"
+msgstr ""
+"init offset ステートメントは初期化時に実行するすべてのステートメント ( init, "
+"init python, define, default, screen, transform, style, など ) に対して優先度"
+"のオフセットを設定します。オフセットは現在のブロックとコードブロック内の続く"
+"ステートメントに次の優先度ステートメントが来るまで適応されます。例 :: "
+
+#: ..\..\source\python.rst:189
+msgid "sets the priority offset to 42. In the code::"
+msgstr "このコードでは優先度のオフセットを 42 に設定しています。 ::"
+
+#: ..\..\source\python.rst:199
+msgid ""
+"The first define statement is run at priority 2, which means it runs after "
+"the second define statement, and hence ``foo`` winds up with a value of 2."
+msgstr ""
+"最初の deffine ステートメントは優先度 2 で実行されるので 二つ目の define ス"
+"テートメントの後に実行されます。 ``foo`` は 2 の値になります。"
+
+#: ..\..\source\python.rst:204
+msgid "Names in the Store"
+msgstr "Store の名前"
+
+#: ..\..\source\python.rst:206
+msgid ""
+"The default place that Ren'Py stores Python variables is called the store. "
+"It's important to make sure that the names you use in the store do not "
+"conflict."
+msgstr ""
+"Ren'Py が Python 変数を格納するデフォルトの場所は store と呼ばれます。 store "
+"で使用する名前が衝突しないかを確認することは重要です。"
+
+#: ..\..\source\python.rst:210
+msgid ""
+"The define statement assigns a value to a variable, even when it's used to "
+"define a character. This means that it's not possible to use the same name "
+"for a character and a flag."
+msgstr ""
+"define ステートメントは値を、それがキャラクターの定義に使用されていても変数に"
+"代入します。これはつまりキャラクターとフラグに同じ名前を使用出来ないというこ"
+"とです。"
+
+#: ..\..\source\python.rst:214
+msgid "The following faulty code::"
+msgstr "以下のコードには欠陥があります。 ::"
+
+#: ..\..\source\python.rst:227
+msgid ""
+"will not work, because the variable `e` is being used as both a character "
+"and a flag. Other things that are usually placed into the store are "
+"transitions and transforms."
+msgstr ""
+"これは変数 `e` がキャラクターとフラグの両方に使用されているため動作しません。"
+"通常 store に格納されるその他の物にはトランジションと変換があります。。"
+
+#: ..\..\source\python.rst:231
+msgid ""
+"Names beginning with underscore (\\_) are reserved for Ren'Py's internal "
+"use. In addition, there is an :ref:`Index of Reserved Names <reserved-"
+"names>`."
+msgstr ""
+"アンダースコア (\\_) で初まる名前は Ren'Py 内部で使用するものとして扱われま"
+"す。詳しくは以下を参照してください。 :ref:`Index of Reserved Names <reserved-"
+"names>`"
+
+#: ..\..\source\python.rst:236
+msgid "Other Named Stores"
+msgstr "その他の名前付き store"
+
+#: ..\..\source\python.rst:238
+msgid ""
+"Named stores provide a way of organizing python code into modules. By "
+"placing code in modules, you can minimize the chance of name conflicts."
+msgstr ""
+"名前付きの store はpython コードをモジュールに分ける方法を提供します。モ"
+"ジュールにコードを置くことで、名前が衝突する機会を減らせます。"
+
+#: ..\..\source\python.rst:242
+msgid ""
+"Named stores can be accessed by supplying the ``in`` clause to ``python`` or "
+"``init python``, code can run accessed in a named store. Each store "
+"corresponds to a python module. The default store is ``store``, while a "
+"named store is accessed as ``store``.`name`. These python modules can be "
+"imported using the python import statement, while names in the modules can "
+"be imported using the python from statement."
+msgstr ""
+"名前付きの store は ``in`` 節を ``python`` や ``init python`` に与えることで"
+"アクセス可能で、コードは名前付き store で実行されます。各 store は python モ"
+"ジュールに対応します。デフォルトのstore は ``store`` で、名前付きの store は "
+"``store``.`name` でアクセスされます。これらの python モジュールは python の "
+"import ステートメントを使用してインポート出来、一方モジュール内の名前は "
+"python の from ステートメントを使用してインポート出来ます。"
+
+#: ..\..\source\python.rst:250
+msgid "For example::"
+msgstr "例 ::"
+
+#: ..\..\source\python.rst:269
+msgid ""
+"Named stores participate in save, load, and rollback in the same way that "
+"the default store does. The defined statement can be used to define names in "
+"a named store."
+msgstr ""
+"名前付きの store はデフォルトの store 同様にセーブロード、ロールバックに参加"
+"します。 define ステートメントを使用して名前付き store に変数名を定義出来ま"
+"す。"
+
+#: ..\..\source\python.rst:277
+msgid "First and Third Party Python Modules and Packages"
+msgstr "本体、サードパーティーの Python モジュールとパッケージ"
+
+#: ..\..\source\python.rst:279
+msgid ""
+"Ren'Py can import pure-python modules and packages. First-party modules and "
+"packages - ones with code written for the game - can be placed directly into "
+"the game directory. Third party packages can be placed into the game/python-"
+"packages directory."
+msgstr ""
+"Ren'Py は純粋な python モジュールとパッケージをインポートできます。ゲームのた"
+"めに書かれた本体のモジュールとパッケージは game ディレクトリーに配置されま"
+"す。サードパーティーのパッケージは game/python-packages ディレクトリーに配置"
+"できます。"
+
+#: ..\..\source\python.rst:284
+msgid ""
+"For example, to install the requests package, one can change into the game's "
+"base directory, and run the command::"
+msgstr ""
+"例えば必要なパッケージをインストールするために、ゲームのベースディレクトリー"
+"に変更してコマンドを実行します。 ::"
+
+#: ..\..\source\python.rst:289
+msgid ""
+"In either case, the module or package can be imported from an init python "
+"block::"
+msgstr ""
+"モジュールとパッケージどちらでも init python ブロックからインポート出来ま"
+"す。 ::"
+
+#: ..\..\source\python.rst:297
+msgid ""
+"Python code defined in .rpy files is transformed to allow rollback to work. "
+"Python code imported from .py files is not. As a result, objects created in "
+"python code will not work with rollback, and probably should not be changed "
+"after creation."
+msgstr ""
+".rpy ファイルで定義された Python コードは、ロールバックで動作するために変換さ"
+"れます。 .py ファイルからインポートされた Python コードは変換されません。その"
+"ため、 python コードで作成されたオブジェクトはロールバックで動作しないので、"
+"作成後は変更するべきではありません。"
+
+#~ msgid ""
+#~ "Ren'Py is written in the Python programmming language, and includes "
+#~ "support for including python code inside Ren'Py scripts. Python support "
+#~ "can be used for many things, from setting a flag to creating new "
+#~ "displayables. This chapter covers ways in which Ren'Py scripts can "
+#~ "directly invoke Python code, through the various python statements."
+#~ msgstr ""
+#~ "Ren'Py は、Python プログラミング言語で書かれており、Ren'Py スクリプトの中"
+#~ "に Python のコードを埋め込むことに対応しています。Python への対応は、フラ"
+#~ "グの設定から displayable の新規作成まで、様々な場面で利用できます。この章"
+#~ "では、Ren'Py のスクリプトから Python コードのステートメントを直接呼び出す"
+#~ "方法を説明します。"

@@ -1,0 +1,1764 @@
+# Japanese translation for renpy-doc
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the renpy-doc package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: renpy-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-28 12:19+0900\n"
+"PO-Revision-Date: 2016-07-09 22:52+0900\n"
+"Last-Translator: \n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ../../source/style.rst:8
+msgid "Styles"
+msgstr "スタイル"
+
+#: ../../source/style.rst:10
+msgid ""
+"Styles allow the look of displayables to be customized. This is done by "
+"changing the value of style properties for displayables. For example, "
+"changing the :propref:`background` property allows the background of a "
+"window or button to be customized."
+msgstr ""
+"スタイルによって displayable の見た目をカスタマイズできます。これは、"
+"displayable の style プロパティーの値を変更することによって実現できます。例え"
+"ば、 :propref:`background` プロパティーを変更すると、ウィンドウやボタンの背景"
+"をカスタマイズできます。"
+
+#: ../../source/style.rst:15
+msgid ""
+"Style properties consist of two parts, a prefix that specifies when the "
+"property is used, and the property itself. For example, a button's "
+"``hover_background`` property is used when a button is focused, while its "
+"``idle_background`` property is used when the button is unfocused. (Setting "
+"the ``background`` property sets the ``idle_background`` and "
+"``hover_background``, among others.)"
+msgstr ""
+"スタイルプロパティーはいつそのプロパティーが使用されるかを記す接頭辞と、その"
+"プロパティー自身の 2 つの要素で構成されます。例えば ``hover_background`` プロ"
+"パティーはボタンにフォーカスがあると使用され、 ``idle_background`` プロパ"
+"ティーはボタンがフォーカスを失うと使用されます。 ( ``background`` プロパ"
+"ティーは ``idle_background`` と ``hover_background`` の両方を設定します。 )"
+
+#: ../../source/style.rst:22
+msgid ""
+"While Ren'Py has over 100 style properties, only a few properties are used "
+"in this section. Along with ``background``, we use ``color``, ``font``, "
+"``outlines`` and ``size`` as style properties. For a full list of style "
+"properties, please read the :ref:`style properties <style-properties>` "
+"documentation."
+msgstr ""
+"Ren'Py には100 以上のスタイルプロパティーがありますが、この章では少数のプロパ"
+"ティーを使用するに留めます。 ``background`` に対するスタイルプロパティーとし"
+"て ``color``, ``font``, ``outlines`` , ``size`` を使用します。スタイルプロパ"
+"ティーの完全なリストは :ref:`style properties <style-properties>` を参照して"
+"ください。"
+
+#: ../../source/style.rst:30
+msgid "Using Styles and Style Inheritance"
+msgstr "スタイルとスタイルの継承"
+
+#: ../../source/style.rst:32
+msgid ""
+"Each displayable has a style built-into it. When the displayable is created, "
+"either directly or using the screen system, style properties can be supplied "
+"to it, and these styles are used to update the look of the displayable. In "
+"the following example::"
+msgstr ""
+"それぞれの displayable にはスタイルが組み込まれています。displayable が作成さ"
+"れると、直接に、またはスクリーンシステムを利用して style プロパティーが与えら"
+"れ、そのスタイルが displayable の見た目の更新に使用されます。以下の例で::"
+
+#: ../../source/style.rst:39
+msgid ""
+"the :propref:`size` property is supplied to a Text displayable, allowing us "
+"to change its text size. This will customize the look of the text "
+"displayable by displaying the text 40 pixels high."
+msgstr ""
+"テキスト displayable に :propref:`size` プロパティーが与えられており、テキス"
+"トのサイズが変更されます。このカスタマイズでは、テキスト displayable の見た目"
+"として高さが40ピクセルのテキストを表示するようにしています。"
+
+#: ../../source/style.rst:43
+msgid ""
+"Similarly, when using Screen Language, each user interface statement takes "
+"relevant style properties::"
+msgstr ""
+"スクリーン言語と同様に、各ユーザーインターフェース用のステートメントは適切な"
+"スタイルプロパティーを受け取ります。 ::"
+
+#: ../../source/style.rst:49
+msgid ""
+"Ren'Py supports style inheritance, with each style having a single parent. "
+"If a style property is not defined in a style, the value of the property is "
+"inherited from the closest parent, grandparent, or other ancestor."
+msgstr ""
+"Ren'Py はスタイルの継承をサポートし、各スタイルは親を 1 つ持っています。スタ"
+"イルでスタイルプロパティーが定義されていないと、そのプロパティーの値は直近の"
+"親から継承します。"
+
+#: ../../source/style.rst:54
+msgid ""
+"Each displayable takes a property named ``style``, which gives the parent of "
+"the displayable's style::"
+msgstr ""
+"各 displayable はその displayable のスタイルの親を指定する \"style\" というプ"
+"ロパティーを受け取ります。 ::"
+
+#: ../../source/style.rst:62
+#, fuzzy
+msgid ""
+"When no ``style`` property is given, a parent is chosen based on the kind of "
+"displayable be that has been supplied. The parent chosen can be influenced "
+"by the :ref:`style_prefix <style-prefix>` property of user interface "
+"statements in the screen language."
+msgstr ""
+"``style`` プロパティーが指定されないと、提供された displayable の種類に基づい"
+"て親が選ばれます。選ばれた親はスクリーン言語のユーザーインターフェースステー"
+"トメントにある ref:`style_group <style-group>` から影響を受けます。"
+
+#: ../../source/style.rst:67
+msgid ""
+"When a style is defined without a parent being specified, a default parent "
+"is chosen for the style. If the style contains an underscore (_) in its "
+"name, the parent is named by removing everything up to and including the "
+"first underscore. For example, a style named ``my_button`` will inherit from "
+"``button``. This inheritance can be changed using the style statement or by "
+"calling a method on a style object.  When a style that does not exist is "
+"used, and the style has an underscore in its name, Ren'Py will create it "
+"using the default parent."
+msgstr ""
+"スタイルが親を定義せずに定義されるとデフォルトの親がそのスタイルに選ばれま"
+"す。そのスタイル名にアンダースコア (_) があるなら親は最初のアンダースコアまで"
+"を取り除いて名付けられます。例えば ``my_button`` というスタイルは ``button`` "
+"というスタイルを継承します。この継承は style ステートメントやスタイルオブジェ"
+"クトのメソッド呼び出しで変更可能です。存在しないスタイルが使用され、またその"
+"スタイル名にアンダースコアがあるなら Ren'Py はデフォルトの親を使用してそれを"
+"作成します。"
+
+#: ../../source/style.rst:76
+msgid "Style names beginning with an underscore are reserved for Ren'Py use."
+msgstr ""
+"アンダースコアで始まる名前のスタイルは Ren'Py 内部での使用のために予約されて"
+"います。"
+
+#: ../../source/style.rst:78
+msgid ""
+"As Ren'Py builds styles on startup, named styles should not be changed "
+"outside of init code."
+msgstr ""
+"Ren'Py は起動時にスタイルをビルドするので、名前を持つスタイルは init コードの"
+"外で変更するべきではありません。"
+
+#: ../../source/style.rst:83
+msgid "Style Inspector"
+msgstr "スタイルインスペクター"
+
+#: ../../source/style.rst:85
+msgid ""
+"When :var:`config.developer` is true, the style inspector can be used to see "
+"which styles are being used by a displayable."
+msgstr ""
+":var:`config.developer` が true なら、ある displayable に使用されているスタイ"
+"ルを確認出来るスタイルインスペクターが使用可能です。"
+
+#: ../../source/style.rst:88
+msgid ""
+"To activate the style inspector, place the mouse over a displayable, and "
+"press shift+I. Ren'Py will display a list of displayables that include the "
+"mouse position, in the order they are drawn to the screen. (That is, the "
+"last displayable is the one on top of the others.)"
+msgstr ""
+"スタイルインスペクターを使用するにはマウスをある displayable 上に移動して "
+"shift+l を押すと、 Ren'Py がマウス位置を含む displayable のリストをスクリーン"
+"に描画された順に表示します。 ( つまり最後の displayable はそれ以外の上にある"
+"ということです。 )"
+
+#: ../../source/style.rst:93
+msgid ""
+"Click the name of a style to display the styles the displayable inherits "
+"from, and the properties each style contributes the to the final displayable."
+msgstr ""
+"スタイル名をクリックするとその displayable が継承するスタイルと、各 "
+"displayable が最終的な displayable に寄与するプロパティーが表示されます。"
+
+#: ../../source/style.rst:98
+msgid "Defining Styles: Style Statement"
+msgstr "スタイルの定義: スタイルステートメント"
+
+#: ../../source/style.rst:100
+msgid "The preferred way to define styles is through the style statement::"
+msgstr "スタイル は style statement を使用して定義されます。 ::"
+
+#: ../../source/style.rst:106
+msgid ""
+"If a style does not exist, the style statement creates it. Otherwise, the "
+"existing style is modified by the style statement."
+msgstr ""
+"あるスタイルが存在しなければ style ステートメントはそのスタイルを作成し、そう"
+"でなければ既存のスタイルは style ステートメントによって修正されます。"
+
+#: ../../source/style.rst:109
+msgid ""
+"A style statement begins with the keyword ``style`` and the name of the "
+"style to define. This is followed on the first line by zero or more clauses, "
+"and an optional colon."
+msgstr ""
+"style ステートメントはキーワード ``style`` と定義するスタイル名で始まります。"
+"最初の行にはこれに 0 以上の節や、任意のコロンが続きます。"
+
+#: ../../source/style.rst:113
+msgid ""
+"If the colon is present, a block must follow. Each line of the block should "
+"contain one ore more clauses. Otherwise, the statement is complete."
+msgstr ""
+"コロンが存在すると、次にブロックが続かなければなりません。ブロックの各行は 1 "
+"つ以上の節を含み、そうでなければステートメントが終了します。"
+
+#: ../../source/style.rst:116
+msgid "The style statement accepts the following clauses:"
+msgstr "style ステートメントは以下の節を受け取ります。"
+
+#: ../../source/style.rst:120
+msgid "`style-property` `simple-expression`"
+msgstr "`スタイルプロパティー` `単純式`"
+
+#: ../../source/style.rst:119
+msgid "Assigns the value of the simple expression to the given style property."
+msgstr "単純式の値を指定されたスタイルプロパティーに代入します。"
+
+#: ../../source/style.rst:124
+msgid "``is`` `parent`"
+msgstr "``is`` `親`"
+
+#: ../../source/style.rst:123
+msgid ""
+"Sets the parent of this style. The parent must be a word giving the name of "
+"a style."
+msgstr "このスタイルの親を設定します。親はスタイル名でなければなりません。"
+
+#: ../../source/style.rst:129
+msgid "``clear``"
+msgstr "``clear``"
+
+#: ../../source/style.rst:127
+msgid ""
+"Removes all properties of this style that were assigned before this style "
+"statement was run. This does not prevent the style from inheriting property "
+"values from its parents."
+msgstr ""
+"この style ステートメントが実行されるより前に代入されたこのスタイルの全てのプ"
+"ロパティーを除去します。これはスタイルが親からプロパティーの値を継承すること"
+"を防ぎません。"
+
+#: ../../source/style.rst:134
+msgid "``take`` `style-name`"
+msgstr "``take`` `スタイル名`"
+
+#: ../../source/style.rst:132
+msgid ""
+"Removes all properties of this style that were assigned before this style "
+"statement was run, and replaces them with the properties of the named style. "
+"This does not change the parent of this style."
+msgstr ""
+"この style ステートメントが実行されるより前に代入されたこのスタイルの全てのプ"
+"ロパティーを除去し、その名前のスタイルのプロパティーで置き換えます。これはス"
+"タイルの親を変更しません。"
+
+#: ../../source/style.rst:140
+msgid "``variant`` `simple-expression`"
+msgstr "``variant`` `単純式`"
+
+#: ../../source/style.rst:137
+msgid ""
+"Evaluates the simple expression, to yield a string or list of strings, which "
+"are interpreted as :ref:`screen variants <screen-variants>`. If at least one "
+"of the variants given is active, the style statement is run, otherwise it is "
+"ignored."
+msgstr ""
+"単純式を評価し、 :ref:`screen variants <screen-variants>` として解釈される文"
+"字列か文字列のリストを生成します。少なくとも 1 つ指定されたバージョンがアク"
+"ティブなら style ステートメントが実行され、そうでなければ無視されます。"
+
+#: ../../source/style.rst:145
+msgid "``properties`` `simple-expression`"
+msgstr "``properties`` `simple-expression`"
+
+#: ../../source/style.rst:143
+msgid ""
+"Evaluates the simple expression to get a dictionary. The dictionary is "
+"expected to map style properties to values, and the values are assigned as "
+"if they were provided to the style statement."
+msgstr ""
+"単純式を評価して辞書を得ます。辞書はスタイルとその値が期待され、値は style ス"
+"テートメントに与えられたように代入されます。"
+
+#: ../../source/style.rst:147
+msgid "Examples of style statements are::"
+msgstr "スタイルステートメントの例は::"
+
+#: ../../source/style.rst:163
+msgid ""
+"Style statements are always run at init-time. If a style statement is not in "
+"an init block, it is automatically placed init an init 0 block."
+msgstr ""
+"style ステートメントは常に初期化時に実行されます。 style ステートメントが "
+"init ブロックにない場合は自動的に init 0 ブロックに配置されます。"
+
+#: ../../source/style.rst:168
+msgid "Defining Styles: Python"
+msgstr "スタイルの定義: Python"
+
+#: ../../source/style.rst:170
+msgid ""
+"Named styles exists as fields on the global ``style`` object. To create a "
+"new style, create an instance of the Style class, and assign it to a field "
+"on the ``style`` object.::"
+msgstr ""
+"名前付きスタイルは、グローバルな ``style`` オブジェクト上のフィールドに存在し"
+"ます。新しいスタイルを作成するには、Style クラスのインスタンスを作成し、 "
+"``style`` オブジェクト上のフィールドに割り当てます。::"
+
+#: ../../source/style.rst:177
+msgid ""
+"Style properties can be set by assigning to field-like properties of the "
+"Styles. ::"
+msgstr ""
+"スタイルプロパティーは、style のフィールドプロパティーへの割り当てによって設"
+"定できます。::"
+
+#: ../../source/style.rst:186
+msgid ""
+"Creates a new style object. Style properties can be assigned to the fields "
+"of this object."
+msgstr ""
+"新しいスタイルオブジェクトを作成します。スタイルプロパティーはこのオブジェク"
+"トのフィールドに割り当てられます。"
+
+#: ../../source/style.rst:191
+msgid "`parent`"
+msgstr "`parent`"
+
+#: ../../source/style.rst:190
+msgid "The styles parent. This can be another style object, or a string."
+msgstr ""
+"親となるスタイル。これは他のスタイルオブジェクトまたは文字列にできます。"
+
+#: ../../source/style.rst:195
+msgid ""
+"This removes all style properties from this object. Values will be inherited "
+"from this object's parent."
+msgstr ""
+"これは、すべてのスタイルプロパティーをこのオブジェクトから削除します。値はオ"
+"ブジェクトの親から継承されます。"
+
+#: ../../source/style.rst:200
+msgid "Sets the parent of this style object to `parent`."
+msgstr "このスタイルオブジェクトの親を `parent` に設定します。"
+
+#: ../../source/style.rst:204
+msgid ""
+"This takes all style properties from `other`. `other` must be a style object."
+msgstr ""
+"これはスタイルプロパティーを `other` から持ってきます。 `other` はスタイルオ"
+"ブジェクトにする必要があります。"
+
+#: ../../source/style.rst:210
+msgid "Indexed Styles"
+msgstr "インデックスされたスタイル"
+
+#: ../../source/style.rst:212
+msgid ""
+"Indexed styles are lightweight styles that can be used to customize the look "
+"of a displayable based on the data supplied to that displayable. An index "
+"style is created by indexing a style object with a string or integer. If an "
+"indexed style does not exist, indexing creates it.::"
+msgstr ""
+"インデックスされたスタイルは、displayable に与えられたデータによって "
+"displayable の外観を変えるときに使えるシンプルなスタイルです。インデックスス"
+"タイルは、文字列や整数によってスタイルオブジェクトにインデックスを作ることで"
+"作成できます。インデックススタイルが存在しないときは、インデックスを作成する"
+"とこれが作成されます。 ::"
+
+#: ../../source/style.rst:221
+msgid ""
+"An index style is used by supplying the indexed style to a displayable.::"
+msgstr ""
+"インデックススタイルは、displayable にインデックスされたスタイルを与えること"
+"で使用できます。::"
+
+#: ../../source/style.rst:232
+msgid "Style Preferences"
+msgstr "スタイル設定"
+
+#: ../../source/style.rst:234
+msgid ""
+"It's often desirable to allow the user to customize aspects of the user "
+"interface that are best expressed as styles. For example, a creator may want "
+"to give players of his game the ability to adjust the look, color, and size "
+"of the text. Style preferences allow for this customization."
+msgstr ""
+"しばしばユーザーがユーザーインターフェースの一部をカスタマイズ出来るようにす"
+"ることが望まれます。例えば製作者は彼のゲームのプレイヤーがその外見や色、テキ"
+"ストのサイズを調整出来るようにしたいと望むかもしれません。 Style preferences "
+"はこのようなカスタマイズを可能にします。"
+
+#: ../../source/style.rst:239
+msgid ""
+"A style preference is a preference that controls one or more style "
+"properties. A style preference has a name and one or more alternatives. At "
+"any given time, one of the alternatives is the selected alternative for the "
+"style preference. The selected alternative is saved in the persistent data, "
+"and defaults to the first alternative registered for a style property."
+msgstr ""
+"スタイル設定は一つ以上のスタイルプロパティーを制御する設定です。スタイル設定"
+"は名前と一つ以上の代替スタイルを持ちます。いつでも代替スタイルはスタイル設定"
+"に対応する代替物として選択されます。選択された代替スタイルは永続データに保存"
+"され、また初期値はスタイルプロパティーに登録された最初の代替スタイルとなりま"
+"す。"
+
+#: ../../source/style.rst:245
+msgid ""
+"An alternative has one or more associations of style, property, and value "
+"associated with it, and represents a promise that when the alternative "
+"becomes the selected alternative for the style preference, the property on "
+"the style will be assigned the given value. This occurs when Ren'Py first "
+"initializes, and then whenever a new alternative is selected."
+msgstr ""
+"代替スタイルは一つ以上の関連づけられたスタイル、プロパティーとそれに関連づけ"
+"られた値を持ち、また代替スタイルがスタイル設定に対応する選択された代替スタイ"
+"ルになると、そのスタイルのプロパティーは与えられた値を代入されることを表しま"
+"す。これは Ren'Py が最初に初期化される時と、新しい代替スタイルが選択される時"
+"はいつでも実行されます。"
+
+#: ../../source/style.rst:251
+msgid ""
+"One should ensure that every alternative for a given style preference "
+"updates the same set of styles and properties. Otherwise, some styles may "
+"not be assigned values, and the result will not be deterministic."
+msgstr ""
+"与えられたスタイル設定に対応するすべての代替スタイルが一連のスタイルとプロパ"
+"ティーを更新することを保証するべきです。さもなければいくつかのスタイルは値が"
+"代入されず、結果は未定義です。"
+
+#: ../../source/style.rst:255
+msgid "The style preference functions are:"
+msgstr "スタイル設定の関数の一覧です。 :"
+
+#: ../../source/inc/style_preferences:5
+msgid ""
+"An action that causes `alternative` to become the selected alternative for "
+"the given style preference."
+msgstr ""
+"`alternative` を与えられたスタイル設定に対応する選択された代替スタイルにする"
+"アクションです。"
+
+#: ../../source/inc/style_preferences:8 ../../source/inc/style_preferences:17
+#: ../../source/inc/style_preferences:25 ../../source/inc/style_preferences:44
+msgid "`preference`"
+msgstr "`preference`"
+
+#: ../../source/inc/style_preferences:8 ../../source/inc/style_preferences:18
+#: ../../source/inc/style_preferences:44
+msgid "A string giving the name of the style preference."
+msgstr "スタイル設定の名前の文字列。"
+
+#: ../../source/inc/style_preferences:10 ../../source/inc/style_preferences:28
+#: ../../source/inc/style_preferences:46
+msgid "`alternative`"
+msgstr "`alternative`"
+
+#: ../../source/inc/style_preferences:11 ../../source/inc/style_preferences:47
+msgid "A string giving the name of the alternative."
+msgstr "代替スタイルの名前の文字列。"
+
+#: ../../source/inc/style_preferences:15
+msgid ""
+"Returns a string giving the name of the selected alternative for the named "
+"style preference."
+msgstr ""
+"名前付きスタイルに対し、選択された代替スタイルの名前を文字列として返します。"
+
+#: ../../source/inc/style_preferences:22
+msgid "Registers information about an alternative for a style preference."
+msgstr "スタイル設定に対し、代替スタイルの情報を登録します。"
+
+#: ../../source/inc/style_preferences:25
+msgid "A string, the name of the style preference."
+msgstr "スタイル設定名の文字列です。"
+
+#: ../../source/inc/style_preferences:28
+msgid "A string, the name of the alternative."
+msgstr "代替スタイルの名前の文字列。"
+
+#: ../../source/inc/style_preferences:31
+msgid "`style`"
+msgstr "`style`"
+
+#: ../../source/inc/style_preferences:31
+msgid ""
+"The style that will be updated. This may be a style object or a string "
+"giving the style name."
+msgstr ""
+"更新されるスタイル。これはスタイルオブジェクトにするか、スタイル名の文字列に"
+"します。"
+
+#: ../../source/inc/style_preferences:34
+msgid "`property`"
+msgstr "`property`"
+
+#: ../../source/inc/style_preferences:34
+msgid "A string giving the name of the style property that will be update."
+msgstr "更新されるスタイルプロパティーの名前の文字列。"
+
+#: ../../source/inc/style_preferences:36
+msgid "`value`"
+msgstr "`value`"
+
+#: ../../source/inc/style_preferences:37
+msgid "The value that will be assigned to the style property."
+msgstr "スタイルプロパティーに割り当てる値。"
+
+#: ../../source/inc/style_preferences:41
+msgid "Sets the selected alternative for the style preference."
+msgstr "スタイル設定に対し、選択された代替スタイルを設定します。"
+
+#: ../../source/style.rst:259
+msgid ""
+"Here's an example of registering a style property that allows the user to "
+"choose between large, simple text and smaller outlined text."
+msgstr ""
+"スタイルプロパティーを登録し、通常の大きい文字と、外枠付きの小さい文字のどち"
+"らかをユーザーが選択できるようにする例を示します。"
+
+#: ../../source/style.rst:271
+msgid ""
+"The following code will allow the user to select these alternatives using "
+"buttons::"
+msgstr ""
+"以下のコードにより、ユーザーが代替スタイルをボタンを使って選択できるようにな"
+"ります。"
+
+#: ../../source/style.rst:278
+msgid "Other Style Functions"
+msgstr "その他のスタイル関数"
+
+#: ../../source/style.rst:282
+msgid ""
+"This causes named styles to be rebuilt, allowing styles to be changed "
+"outside of init code."
+msgstr ""
+"名前付きスタイルを再構築し、初期化コードの外側でスタイルを変更できるようにし"
+"ます。"
+
+#: ../../source/style.rst:287
+msgid ""
+"Named styles are not saved as part of the per-game data. This means that "
+"changes to them will not be persisted through a save and load cycle."
+msgstr ""
+"名前付けされたスタイルは、ゲームごとのデータの一部として保存されません。つま"
+"り、保存と読み込みのサイクルにおいて、スタイルの変更は持続しません。"
+
+#~ msgid "Styles and Style Properties"
+#~ msgstr "スタイルとスタイルのプロパティー"
+
+#~ msgid ""
+#~ "As Ren'Py caches styles, named styles should not be changed outside of "
+#~ "init blocks."
+#~ msgstr ""
+#~ "Ren'Py ではスタイルをキャッシュするため、名前付けされたスタイルは init ブ"
+#~ "ロックの外側で変更すべきではありません。"
+
+#~ msgid ""
+#~ "A named style exists as a field on the global ``style`` object. Style "
+#~ "properties exist as fields on styles. So to set the size property of the "
+#~ "default style, one can use a python block::"
+#~ msgstr ""
+#~ "名前付けされたスタイルは、 グローバルな ``style`` オブジェクトとして存在し"
+#~ "ます。スタイルプロパティーはそれぞれのスタイル上にフィールドとして存在しま"
+#~ "す。このため、default スタイルの size プロパティーを設定するには、python "
+#~ "ブロックを使って次のようにします::"
+
+#~ msgid "Style Property Prefixes"
+#~ msgstr "スタイルプロパティーの接頭辞"
+
+#~ msgid ""
+#~ "Ren'Py also supports style inheritance. Each displayable takes a `style` "
+#~ "property, that gives the name of the style to use. If a property is not "
+#~ "defined for a style, Ren'Py will look it up in the named style, that "
+#~ "style's parent, and so on. This allows us to customize a named style in a "
+#~ "central place."
+#~ msgstr ""
+#~ "Ren'Py ではスタイルの継承もサポートしています。それぞれの displayable に "
+#~ "`style` プロパティーがあり、使用するスタイルの名前が与えられています。プロ"
+#~ "パティーがあるスタイルに対して定義されていない場合は、Ren'Py は親などの名"
+#~ "前付けされたスタイルの中を検索します。これによって、中心的な場所から名前付"
+#~ "けされたスタイルをカスタマイズできるようになります。"
+
+#~ msgid ""
+#~ "Applying a prefix to a style property indicates allows a displayable to "
+#~ "change it's look in response to its focus or selection status. For "
+#~ "example, a button can change its color when the mouse hovers above it, or "
+#~ "to indicate when the choice represented by the button is the currently "
+#~ "selected one."
+#~ msgstr ""
+#~ "スタイルプロパティーに接頭辞を使うことで、フォーカスや選択肢の状態に応じ"
+#~ "た displayable の見た目の変更を示すことができます。例えば、ボタンの上にマ"
+#~ "ウスが置かれた時に色を変更したり、ボタンによって現在選択されているものを表"
+#~ "すことができます。"
+
+#~ msgid "There are five states a displayable can be it."
+#~ msgstr "displayable がなりうる状態は5つあります。"
+
+#~ msgid "Used when the user cannot interact with the displayable."
+#~ msgstr "ユーザーが displayable を操作できない時に使用されます。"
+
+#~ msgid "Used when the displayable is neither focused nor selected."
+#~ msgstr "displayable がフォーカスも選択もされていない時に使用されます。"
+
+#~ msgid "Used when the displayable is focused, but not selected."
+#~ msgstr "displayable がフォーカスされて選択されていない時に使用されます。"
+
+#~ msgid "Used when the displayable is not focused, and is selected."
+#~ msgstr "displayable がフォーカスされずに選択されている時に使用されます。"
+
+#~ msgid "insensitive"
+#~ msgstr "insensitive"
+
+#~ msgid "``idle_``"
+#~ msgstr "``idle_``"
+
+#~ msgid ""
+#~ "Style property prefixes allow one to set style properties for the "
+#~ "different states. There is a system of implications set up, so that a "
+#~ "prefix can imply setting the property for more than one state."
+#~ msgstr ""
+#~ "スタイルプロパティーの接頭辞により、異なる状態に対してそれぞれのスタイルプ"
+#~ "ロパティーを設定できます。包含セットアップのシステムがあるため、接頭辞に"
+#~ "よって1つ以上の状態に対してプロパティーをまとめて設定できます。"
+
+#~ msgid "The implications are:"
+#~ msgstr "包含関係は:"
+
+#~ msgid ""
+#~ "Button and Bar displayables (and their variants) update their state, and "
+#~ "the state of their children, in response to events. For example, when the "
+#~ "user puts his mouse over an unselected button, it and all its children "
+#~ "will be put into the hover state."
+#~ msgstr ""
+#~ "ボタンとバーの displayable (及びその類のもの) は、自身の状態と子要素の状態"
+#~ "をイベントに応じて更新します。例えば、ユーザーが選択されていないボタンの上"
+#~ "でマウスを通過させた時、ボタンとその子要素は hover 状態になります。"
+
+#~ msgid "(no prefix)"
+#~ msgstr "(接頭辞なし)"
+
+#~ msgid "insensitive, idle, hover, selected_idle, selected_hover"
+#~ msgstr "insensitive, idle, hover, selected_idle, selected_hover"
+
+#~ msgid "prefix"
+#~ msgstr "接頭辞"
+
+#~ msgid "states implied by prefix"
+#~ msgstr "接頭辞に含まれる状態"
+
+#~ msgid "``insensitive_``"
+#~ msgstr "``insensitive_``"
+
+#~ msgid "selected_idle"
+#~ msgstr "selected_idle"
+
+#~ msgid "``selected_idle_``"
+#~ msgstr "``selected_idle_``"
+
+#~ msgid "selected_hover"
+#~ msgstr "selected_hover"
+
+#~ msgid "``selected_hover_``"
+#~ msgstr "``selected_hover_``"
+
+#~ msgid "idle, selected_idle"
+#~ msgstr "idle, selected_idle"
+
+#~ msgid "selected_idle, selected_hover"
+#~ msgstr "selected_idle, selected_hover"
+
+#~ msgid "``selected_``"
+#~ msgstr "``selected_``"
+
+#~ msgid "Style Property Values"
+#~ msgstr "スタイルプロパティーの値"
+
+#~ msgid ""
+#~ "A renpy.absolute number is intepreted as the number of pixels from the "
+#~ "left or top side of the screen, when using subpixel-precise rendering."
+#~ msgstr ""
+#~ "renpy.absolute は、スクリーンの左端または上端からのピクセル数として解釈さ"
+#~ "れ、サブピクセルのレンダリングに使用します。"
+
+#~ msgid ""
+#~ "Each style property expects a specific kind of data. Many of these are "
+#~ "standard python types, but a few are novel. Here are descriptions of the "
+#~ "novel kinds of value a style property can expect."
+#~ msgstr ""
+#~ "それぞれのスタイルプロパティーには特定の種類のデータを設定する必要がありま"
+#~ "す。これらの多くは Python の標準的な型ですが、一部は独自のものです。スタイ"
+#~ "ルプロパティーに設定できる独自の値について説明します。"
+
+#~ msgid ""
+#~ "Positions are used to specify locations relative to the upper-left corner "
+#~ "of the containing area. (For positions, the containing area is given by "
+#~ "the layout the displayable is in, if one is given, or the screen "
+#~ "otherwise. For anchors, the containing area is the size of the "
+#~ "displayable itself.)"
+#~ msgstr ""
+#~ "位置は、ある領域の左上角からの相対的な場所を指定するために使用されます。"
+#~ "(位置における領域は displayable が含まれているレイアウトによって与えられる"
+#~ "か、レイアウトがない場合はスクリーンとなります。アンカーにおける領域は "
+#~ "displayable そのものの大きさとなります。)"
+
+#~ msgid ""
+#~ "The way a position value is interpreted depends on the type of the value:"
+#~ msgstr "位置の値は、値の型によって解釈のされ方が異なります:"
+
+#~ msgid ""
+#~ "An integer is intepreted as the number of pixels from the left or top "
+#~ "side of the containing area."
+#~ msgstr "整数は、領域の左端または上端からのピクセル数として解釈されます。"
+
+#~ msgid ""
+#~ "A floating-point number is intepreted as a fraction of the containing "
+#~ "area. For example, 0.5 is a point halfway between the sides of the "
+#~ "containing area, while 1.0 is on the right or bottom side."
+#~ msgstr ""
+#~ "浮動小数点数は、領域に対する割合として解釈されます。例えば 0.5 は領域の両"
+#~ "端に対する半分の点となり、また 1.0 は右端または下端となります。"
+
+#~ msgid ""
+#~ "``\"#0f08\"`` and ``#00ff0080\"`` represent a semi-transparent green "
+#~ "color."
+#~ msgstr "``\"#0f08\"`` と ``#00ff0080\"`` は半透明の緑色を意味します。"
+
+#~ msgid "``(0, 0, 255, 255)`` represents an opaque blue color."
+#~ msgstr "``(0, 0, 255, 255)`` は不透明の青色を意味します。"
+
+#~ msgid ""
+#~ "Colors can also be represented as a 4-component tuple, with the 4 "
+#~ "components being integers between 0 and 255. The components correspond to "
+#~ "red, green, blue, and alpha, in that order."
+#~ msgstr ""
+#~ "色は4つの要素のタプルとして表すこともでき、4つの要素は0から255までの整数と"
+#~ "なります。それぞれの要素は、赤、緑、青、アルファの順です。"
+
+#~ msgid ""
+#~ "Colors in Ren'Py can be expressed as strings beginning with the hash mark "
+#~ "(#), followed by a hex triple or hex quadruple, with each of the three or "
+#~ "four elements consisting of a one or two hexidecimal character color code."
+#~ msgstr ""
+#~ "Ren'Pyにおける色は、先頭のハッシュマーク(#)と、それに続く3つか4つの16進数"
+#~ "の文字列によって表現され、3つか4つの要素のそれぞれは、1桁か2桁の16進数の色"
+#~ "コードとなっています。"
+
+#~ msgid "Any displayable."
+#~ msgstr "任意の displayable。"
+
+#~ msgid "The color triples are the same as used in HTML."
+#~ msgstr "3つの16進数で表される色は、HTMLで使われているものと同じです。"
+
+#~ msgid "``\"#f00\"`` and ``\"#ff0000\"`` represent an opaque red color."
+#~ msgstr "``\"#f00\"`` と ``\"#ff0000\"`` は不透明の赤色を意味します。"
+
+#~ msgid "Position Style Properties"
+#~ msgstr "位置のスタイルプロパティー"
+
+#~ msgid "List of All Style Properties"
+#~ msgstr "すべてのスタイルプロパティーの一覧"
+
+#~ msgid ""
+#~ "The style properties control the look of the various displayables. Not "
+#~ "all style properties apply to all displayables, so we've divided them up "
+#~ "into groups."
+#~ msgstr ""
+#~ "スタイルプロパティーによって様々な displayable の外観を制御できます。すべ"
+#~ "てのスタイルプロパティーがすべての displayable に適用できるわけではないた"
+#~ "め、これらを分類しました。"
+
+#~ msgid ""
+#~ "These are used to control the position of a displayable inside the area "
+#~ "allocated to it by a layout, or on the screen when not inside a layout."
+#~ msgstr ""
+#~ "これらは displayable の位置の制御で使用します。位置は displayable を含むレ"
+#~ "イアウト(またはレイアウトの中でない場合はスクリーン)によって確保された領域"
+#~ "におけるものです。"
+
+#~ msgid "Used when the displayable is focused and selected."
+#~ msgstr "displayable がフォーカスかつ選択されている時に使用されます。"
+
+#~ msgid ""
+#~ "Equivalent to setting xalign to the first component of the tuple, and "
+#~ "yalign to the second."
+#~ msgstr ""
+#~ "タプルの第1要素に xalign を設定し、タプルの第2要素に yalign を設定すること"
+#~ "と等価。"
+
+#~ msgid ""
+#~ "Equivalent to setting ypos and yanchor to the same value. This has the "
+#~ "effect of placing the displayable at a relative location on the screen, "
+#~ "with 0.0 being the top, 0.5 the center, and 1.0 the bottom."
+#~ msgstr ""
+#~ "ypos と yanchor に同じ値を設定することと等価。これはスクリーン上の相対的な"
+#~ "位置に displayable を設置するときに効果があり、0.0 で上端、0.5 で中央、"
+#~ "1.0 で下端となります。"
+
+#~ msgid ""
+#~ "Equivalent to setting xpos and xanchor to the same value. This has the "
+#~ "effect of placing the displayable at a relative location on the screen, "
+#~ "with 0.0 being the left side, 0.5 the center, and 1.0 being the right "
+#~ "side."
+#~ msgstr ""
+#~ "xpos と xanchor に同じ値を設定することと等価。これはスクリーン上の相対的な"
+#~ "位置に displayable を設置するときに効果があり、0.0 で左端、0.5 で中央、"
+#~ "1.0 で右端となります。"
+
+#~ msgid ""
+#~ "Equivalent to setting xpos to the value of this property, and xanchor to "
+#~ "0.5."
+#~ msgstr ""
+#~ "xpos にこのプロパティーの値を設定し、xanchor に 0.5 を設定することと等価。"
+
+#~ msgid ""
+#~ "The position of the anchor relative to the top side of the displayable."
+#~ msgstr "アンカーの、displayable の右端からの相対的な位置。"
+
+#~ msgid ""
+#~ "Equivalent to setting xanchor to the first component of the tuple, and "
+#~ "yanchor to the second component of the tuple."
+#~ msgstr ""
+#~ "タプルの第1要素に xanchor を設定し、タプルの第2要素に yanchor を設定するこ"
+#~ "とと等価。"
+
+#~ msgid ""
+#~ "Equivalent to setting xpos to the first component of the tuple, and ypos "
+#~ "to the second component of the tuple."
+#~ msgstr ""
+#~ "タプルの第1要素に xpos を設定し、タプルの第2要素に ypos を設定することと等"
+#~ "価。"
+
+#~ msgid ""
+#~ "The position of the anchor relative to the left side of the displayable."
+#~ msgstr "アンカーの、displayable の左端からの相対的な位置。"
+
+#~ msgid ""
+#~ "The position of the displayable relative to the left side of the "
+#~ "containing area."
+#~ msgstr "displayable の、含まれている領域の左端からの相対的な位置。"
+
+#~ msgid ""
+#~ "The position of the displayable relative to the right side of the "
+#~ "containing area."
+#~ msgstr "displayable の、含まれている領域の右端からの相対的な位置。"
+
+#~ msgid ""
+#~ "Equivalent to setting ypos to the value of tihis property, and yanchor to "
+#~ "0.5."
+#~ msgstr ""
+#~ "ypos にこのプロパティーの値を設定し、yanchor に 0.5 を設定することと等価。"
+
+#~ msgid "Specifies the maximum vertical size of the displayable in pixels."
+#~ msgstr "displayable の垂直方向の大きさの最大値をピクセル数で指定します。"
+
+#~ msgid "Specifies the maximum horizontal size of the displayable, in pixels."
+#~ msgstr "displayable の水平方向の大きさの最大値をピクセル数で指定します。"
+
+#~ msgid ""
+#~ "Equivalent to setting xmaximum to the first component of the tuple, and "
+#~ "ymaximum to the second."
+#~ msgstr ""
+#~ "タプルの第1要素に xmaximum を設定し、第2要素に ymaximum を設定することと等"
+#~ "価。"
+
+#~ msgid ""
+#~ "Sets the minimum width of the displayable, in pixels. Only works with "
+#~ "displayables that can vary their size."
+#~ msgstr ""
+#~ "displayable の幅の最小値をピクセル数で設定します。displayable の大きさが変"
+#~ "更可能なときのみ動作します。"
+
+#~ msgid ""
+#~ "Sets the minimum height of the displayables, in pixels. Only works with "
+#~ "displayables that can vary their size."
+#~ msgstr ""
+#~ "displayable の高さの最小値をピクセル数で設定します。displayable の大きさが"
+#~ "変更可能なときのみ動作します。"
+
+#~ msgid "This will not work with all displayables and all layouts."
+#~ msgstr "これはすべての displayable や layout で動作するわけではありません。"
+
+#~ msgid "This only works for displayables that can change size."
+#~ msgstr "displayable の大きさが変更可能なときのみ動作します。"
+
+#~ msgid ""
+#~ "The tuple is interpreted as (`xpos`, `ypos`, `width`, `height`). Attempts "
+#~ "to position the displayable such that it's upper-left corner is at `xpos` "
+#~ "and `ypos`, and its size is `width` and `height`."
+#~ msgstr ""
+#~ "タプルは (`xpos`, `ypos`, `width`, `height`) と解釈されます。displayable "
+#~ "の左上角の位置が `xpos` と `ypos` に、大きさが `width` と `height` になる"
+#~ "ように設定を試みます。"
+
+#~ msgid ""
+#~ "It does this by setting the xpos, ypos, xanchor, yanchor, xmaximum, "
+#~ "ymaximum, xminimum, yminimum, xfill, and yfill properties to appropriate "
+#~ "values."
+#~ msgstr ""
+#~ "これを行うには、xpos、ypos、xanchor、yanchor、xmaximum、ymaximum、"
+#~ "xminimum、yminimum、xfill、yfill プロパティーを適切な値に設定する必要があ"
+#~ "ります。"
+
+#~ msgid ""
+#~ "Equivalent to setting xminimum to the first component of the tuple, and "
+#~ "yminimum to the second."
+#~ msgstr ""
+#~ "タプルの第1要素に xminimum を設定し、第2要素に yminimum を設定することと等"
+#~ "価。"
+
+#~ msgid ""
+#~ "If true, the displayable will expand to fill all available horizontal "
+#~ "space. If not true, it will only be large enough to contain its children."
+#~ msgstr ""
+#~ "True のとき、displayable が水平方向の空きスペースに展張されます。True でな"
+#~ "い場合は、含まれている子要素と同程度の大きさになります。"
+
+#~ msgid "Text Style Properties"
+#~ msgstr "テキストスタイルのプロパティー"
+
+#~ msgid ""
+#~ "For a truetype font file, this is usually the name of the file containing "
+#~ "the font (like ``\"DejaVuSans.ttf\"``). To select a second font in a "
+#~ "collection, this can be prefixed with a number and at sign (like ``"
+#~ "\"0@font.ttc\"`` or ``\"1@font.ttc\"``). For an image-based font, this "
+#~ "should be the name used to register the font."
+#~ msgstr ""
+#~ "TrueType フォントでは、これは通常フォントが含まれたファイルの名前となりま"
+#~ "す (例: ``\"DejaVuSans.ttf\"``)。フォント集合の2つ目以降を選択するには、数"
+#~ "字と記号を頭に付けます (例: ``\"0@font.ttc\"`` もしくは ``\"1@font.ttc"
+#~ "\"``)。画像ベースのフォントでは、フォント登録時に使用された名前にする必要"
+#~ "があります。"
+
+#~ msgid ""
+#~ "The amount that the first line of text in a paragraph is indented by, in "
+#~ "pixels."
+#~ msgstr "段落のテキストの1行目のインデント量を、ピクセル数で指定します。"
+
+#~ msgid ""
+#~ "The size of the font on the screen. While this is nominally in pixels, "
+#~ "font files may have creative interpretations of this value."
+#~ msgstr ""
+#~ "スクリーン上のフォントの大きさ。ピクセル数として指定しますが、フォントファ"
+#~ "イルではこの値について別の解釈をするかもしれません。"
+
+#~ msgid ""
+#~ "Gives a number of pixels that are added to the horizontal position "
+#~ "computed using xpos and xalign."
+#~ msgstr ""
+#~ "xpos と xalign から計算される水平方向の位置に追加されるピクセル数を返しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "Gives a number of pixels that are added to the vertical position computed "
+#~ "using ypos and yalign."
+#~ msgstr ""
+#~ "ypos と yalign から計算される垂直方向の位置に追加されるピクセル数を返しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "If true, additional whitespace is inserted between words so that the left "
+#~ "and right margins of each line are even. This is not performed on the "
+#~ "last line of a paragraph."
+#~ msgstr ""
+#~ "True のとき、単語間に空白が追加的に挿入され、各行の左右の余白が等しくなり"
+#~ "ます。これは段落の最終行には適用されません。"
+
+#~ msgid ""
+#~ "A kerning adjustment, the number of pixels of space that's added between "
+#~ "each pair of characters. (This can be negative to remove space between "
+#~ "characters.)"
+#~ msgstr ""
+#~ "カーニングの調整で、各文字の間に追加されるスペースのピクセル数です。(これ"
+#~ "を負の値にしてスペースを削除することもできます。)"
+
+#~ msgid ""
+#~ "Uses the unicode linebreaking algorithm, which is suitable for most "
+#~ "languages."
+#~ msgstr "Unicode の改行アルゴリズムを用い、ほとんどの言語に適しています。"
+
+#~ msgid ""
+#~ "Controls the language family used to break text into lines. Legal values "
+#~ "are:"
+#~ msgstr ""
+#~ "複数の行への改行に使用する言語ファミリーを制御します。設定可能な値は:"
+
+#~ msgid ""
+#~ "Formats Japanese text in a \"strict\" manner. It forbids breaks before "
+#~ "small kana and prolonged sound marks."
+#~ msgstr ""
+#~ "日本語テキストの「厳密な」書き方です。小さい仮名文字と長音符の前では改行を"
+#~ "しません。"
+
+#~ msgid ""
+#~ "The three Japanese breaking modes are taken from the `CSS3 text module "
+#~ "<http://www.w3.org/TR/css3-text/#line-break>`_."
+#~ msgstr ""
+#~ "3つの日本語の改行モードは `CSS3 text module <http://www.w3.org/TR/css3-"
+#~ "text/#line-break>`_ から引用しました。"
+
+#~ msgid ""
+#~ "Used for Korean text delimited by whitespace. This prevents linebreaking "
+#~ "between adjacent Korean characters."
+#~ msgstr ""
+#~ "空白で区切られたハングル文字に使用します。隣接するハングルで改行されること"
+#~ "を防ぎます。"
+
+#~ msgid "Allows breaking only at whitespace. Suitable for most languages."
+#~ msgstr "空白以外の場所では改行をしません。ほとんどの言語に適しています。"
+
+#~ msgid ""
+#~ "Formats Japanese text in a \"normal\" manner. It allows breaks before "
+#~ "small kana, prolonged sound marks, and certain hyphens."
+#~ msgstr ""
+#~ "日本語テキストの「一般的な」書き方です。小さい仮名文字、長音符、いくつかの"
+#~ "ハイフンの前での改行を許可します。"
+
+#~ msgid ""
+#~ "Formats Japanese text in a \"loose\" manner. It allows breaks before "
+#~ "small kana , prolonged sound marks, iteration marks, inseparable "
+#~ "characters, centered punctuation marks, and postfixes; and allows breaks "
+#~ "before prefixes."
+#~ msgstr ""
+#~ "日本語テキストの「ゆるい」書き方です。小さい仮名文字、長音符、反復記号、"
+#~ "リーダー、句読点、接頭文字、接尾文字の前での改行を許可します。"
+
+#~ msgid ""
+#~ "Uses the Knuth-Plass linebreaking algorithm, but attempts to even out the "
+#~ "lengths of all lines."
+#~ msgstr ""
+#~ "Knuth-Plass の改行アルゴリズムを使用しますが、すべての行の長さを揃えるよう"
+#~ "にします。"
+
+#~ msgid "Controls how words are allocated to lines. Legal values are:"
+#~ msgstr "単語が行にどのように割り当てられるかを制御します。設定可能な値は:"
+
+#~ msgid ""
+#~ "Uses the Knuth-Plass linebreaking algorithm, which attempts to minimize "
+#~ "the difference in line lengths of all but the last line."
+#~ msgstr ""
+#~ "Knuth-Plass の改行アルゴリズムを使用し、最後の行以外のすべての行の長さの違"
+#~ "いを最小限に抑えるようにします。"
+
+#~ msgid "A word is placed on the first line that has room for it."
+#~ msgstr "単語が入るスペースが無いときだけ改行されます。"
+
+#~ msgid "Do not line-break."
+#~ msgstr "改行されません。"
+
+#~ msgid "The number of pixels of spacing to include above each line."
+#~ msgstr "各行の上に含められるスペースのピクセル数。"
+
+#~ msgid ""
+#~ "If true, the :propref:`first_indent` indentation is used after each "
+#~ "newline in a string. Otherwise, the :propref:`rest_indent` indentation is "
+#~ "used."
+#~ msgstr ""
+#~ "True のとき、文字列の最初の行が :propref:`first_indent` で設定された分だけ"
+#~ "インデントされます。それ以外の場合は :propref:`rest_indent` が使用されま"
+#~ "す。"
+
+#~ msgid ""
+#~ "This is a list of outlines that are drawn behind the text. Each tuple "
+#~ "specifies an outline, and outlines are drawn from back to front."
+#~ msgstr ""
+#~ "これはテキストの後ろに描画される輪郭のリストです。それぞれのタプルで輪郭を"
+#~ "指定すると、輪郭が後ろから前にかけて描画されます。"
+
+#~ msgid ""
+#~ "Sets the minimum width of each line of that. If a line is shorter than "
+#~ "this, it is padded to this length, with text_align used to specify where "
+#~ "such padding is placed."
+#~ msgstr ""
+#~ "各行の最小幅を設定します。行がこの値よりも短い場合は、text_align によって"
+#~ "指定された位置に余白を作り、この長さに調整されます。"
+
+#~ msgid "The number of pixels of spacing to include below each line."
+#~ msgstr "各行の下に含められるスペースのピクセル数。"
+
+#~ msgid ""
+#~ "If true, the displayable will expand to fill all available vertical "
+#~ "space. If not true, it will only be large enough to contain its children."
+#~ msgstr ""
+#~ "True のとき、displayable が垂直方向の空きスペースに展張されます。True でな"
+#~ "い場合は、含まれている子要素と同程度の大きさになります。"
+
+#~ msgid ""
+#~ "The speed of the text is multiplied by this number. This can be used to "
+#~ "have a character that speeks at a faster-than-normal rate of speed."
+#~ msgstr ""
+#~ "テキスト速度にこの数値が掛けられます。通常よりも速い速度で話すキャラクター"
+#~ "がいるときに使用できます。"
+
+#~ msgid "If True, a line is drawn through the text."
+#~ msgstr "True のとき、テキストの中央に線が描画されます。"
+
+#~ msgid ""
+#~ "If a number, shows text at the rate of that many characters per second. "
+#~ "If True, shows text at the speed taken from the \"Text Speed\" preference."
+#~ msgstr ""
+#~ "数値の場合、ここで指定された文字数を1秒間に表示します。True のときは、「テ"
+#~ "キスト速度」設定の速度でテキストを表示します。"
+
+#~ msgid "Outlines only work with truetype fonts."
+#~ msgstr "外枠機能は TrueType フォントのみで動作します。"
+
+#~ msgid ""
+#~ "Specifies the number of pixels the second and later lines in a paragraph "
+#~ "are indented by."
+#~ msgstr "段落の2行目以降のインデント量をピクセル数で指定します。"
+
+#~ msgid ""
+#~ "The third item is the hyperlink focus function. This function is called "
+#~ "with the argument of the hyperlink when the hyperlink gains focus, and "
+#~ "with None when it loses focus. If it returns a value other than None, the "
+#~ "interaction returns that value"
+#~ msgstr ""
+#~ "3つ目のアイテムはハイパーリンクのフォーカスの関数です。これはハイパーリン"
+#~ "クにフォーカスが当てらてた時にハイパーリンクの引数とともに呼び出され、"
+#~ "フォーカスを失った時は None を引数にして呼び出されます。これが None 以外の"
+#~ "値を返した場合、処理全体がその値を返します。"
+
+#~ msgid ""
+#~ "The first item is the hyperlink style function. When called with a single "
+#~ "argument, the argument of the hyperlink, it must return a style object to "
+#~ "use for the hyperlink, such as ``style.hyperlink_text``. Note that a "
+#~ "style object is not a string."
+#~ msgstr ""
+#~ "1つ目のアイテムはハイパーリンクのスタイルの関数です。単一のハイパーリンク"
+#~ "の引数で呼び出されたとき、例えば ``style.hyperlink_text`` のようなハイパー"
+#~ "リンクで使用するスタイルを返す必要があります。スタイルオブジェクトは文字列"
+#~ "でないことに注意して下さい。"
+
+#~ msgid "This is a tuple of three functions relating to hyperlinks in text."
+#~ msgstr "これは、テキスト中のハイパーリンクに関連する3つの関数のタプルです。"
+
+#~ msgid "If true, an underline will be added to the text."
+#~ msgstr "True のとき、テキストに下線が追加されます。"
+
+#~ msgid ""
+#~ "The second item is the hyperlink clicked function. This function is "
+#~ "called when a hyperlink is chosen by the user. If it returns a value "
+#~ "other than None, the interaction returns that value."
+#~ msgstr ""
+#~ "2つ目の引数はハイパーリンクがクリックされた時の関数です。この関数はハイ"
+#~ "パーリンクがユーザーにクリックされた時に呼び出されます。これが None 以外の"
+#~ "値を返した場合、処理全体がその値を返します。"
+
+#~ msgid ""
+#~ "This is used when a line is shorter than the width of the text "
+#~ "displayable. It determines how much of the extra space is placed on the "
+#~ "left side of the text. (And hence, the text alignment.)"
+#~ msgstr ""
+#~ "これは行がテキスト displayable の幅よりも短い場合に使用します。これによっ"
+#~ "てテキストの左側に追加のスペースをどの程度入れるかを指定します。(つまりテ"
+#~ "キストの位置合わせです。)"
+
+#~ msgid ""
+#~ "0.0 will yield left-aligned text, 0.5 centered text, and 1.0 right-"
+#~ "aligned text."
+#~ msgstr ""
+#~ "0.0 で左寄せのテキスト、0.5 で中央揃えのテキスト、1.0 で右寄せのテキストと"
+#~ "なります。"
+
+#~ msgid ""
+#~ "If None, no background is drawn, but other properties function as if the "
+#~ "background was present."
+#~ msgstr ""
+#~ "None のときは背景が描画されませんが、他のプロパティーの機能によって背景が"
+#~ "あるように見せることもできます。"
+
+#~ msgid ""
+#~ "A displayable that is used as the background of the window. This is often "
+#~ "a :func:`Frame`, allowing the size of the background to scale with the "
+#~ "size of the window."
+#~ msgstr ""
+#~ "ウィンドウの背景に使用される displayable。ここに :func:`Frame` を指定し"
+#~ "て、ウィンドウのサイズに合わせてサイズを変更できるようにすることが多いで"
+#~ "す。"
+
+#~ msgid ""
+#~ "Window properties are used to specify the look of windows, frames, and "
+#~ "buttons."
+#~ msgstr ""
+#~ "ウィンドウプロパティーは、ウィンドウ、フレーム、ボタンの外観を指定するとき"
+#~ "に使用します。"
+
+#~ msgid "Window Style Properties"
+#~ msgstr "ウィンドウスタイルのプロパティー"
+
+#~ msgid ""
+#~ "If not None, this displayable is drawn above the contents of the window."
+#~ msgstr ""
+#~ "None でない場合、ウィンドウの内容に重ねてこの displayable が描画されます。"
+
+#~ msgid ""
+#~ "Equivalent to setting left_margin and right_margin to the same value."
+#~ msgstr "left_margin と right_margin に同じ値を設定することと等価です。"
+
+#~ msgid ""
+#~ "The amount of space between the background and the right side of the "
+#~ "window content, in pixels."
+#~ msgstr ""
+#~ "背景と、ウィンドウの内容の右端の間のスペースの量を、ピクセル数で指定しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "Equivalent to setting left_padding and right_padding to the same value."
+#~ msgstr "left_padding と right_padding に同じ値を設定することと等価です。"
+
+#~ msgid "The amount of transparent space above the background, in pixels."
+#~ msgstr "背景の上にある透明なスペースの量を、ピクセル数で指定します。"
+
+#~ msgid "The amount of transparent space below the background, in pixels."
+#~ msgstr "背景の下にある透明なスペースの量を、ピクセル数で指定します。"
+
+#~ msgid ""
+#~ "Equivalent to setting top_margin and bottom_margin to the same value."
+#~ msgstr "top_margin と bottom_margin に同じ値を設定することと等価です。"
+
+#~ msgid ""
+#~ "The amount of space between the background and the left side of the "
+#~ "window content, in pixels."
+#~ msgstr ""
+#~ "背景と、ウィンドウの内容の左端の間のスペースの量を、ピクセル数で指定しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "The amount of transparent space to the left of the background, in pixels."
+#~ msgstr "背景の左にある透明なスペースの量を、ピクセル数で指定します。"
+
+#~ msgid ""
+#~ "The amount of transparent space to the right of the background, in pixels."
+#~ msgstr "背景の右にある透明なスペースの量を、ピクセル数で指定します。"
+
+#~ msgid "Button Style Properties"
+#~ msgstr "ボタンスタイルのプロパティー"
+
+#~ msgid ""
+#~ "The amount of space between the background and the bottom side of the "
+#~ "window content, in pixels."
+#~ msgstr ""
+#~ "背景と、ウィンドウの内容の下端の間のスペースの量を、ピクセル数で指定しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "The amount of space between the background and the top side of the window "
+#~ "content, in pixels."
+#~ msgstr ""
+#~ "背景と、ウィンドウの内容の上端の間のスペースの量を、ピクセル数で指定しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "Equivalent to setting top_padding and bottom_padding to the same value."
+#~ msgstr "top_padding と bottom_padding に同じ値を設定することと等価です。"
+
+#~ msgid ""
+#~ "A mask that's used to control what portions of the button can be focused, "
+#~ "and hence clicked on. If it's a displayable, then areas of the "
+#~ "displayable that are not transparent can be focused. If it's True, then "
+#~ "the button itself is used as the displayable (so non-transparent areas of "
+#~ "the button can be focused.) Otherwise, the entire button can be focused."
+#~ msgstr ""
+#~ "ボタンのどの部分をフォーカスでき、更にクリックできるかの制御に使用するマス"
+#~ "クです。これが displayable の場合は、 displayable の透明でない領域をフォー"
+#~ "カスできます。これが True の場合は、displayable にボタン自身が使用されま"
+#~ "す (つまり、ボタンの透明でない部分をフォーカスできます。) それ以外の場合は"
+#~ "ボタン全体をフォーカスできます。"
+
+#~ msgid ""
+#~ "The mouse style that is used when the button is focused. This should be "
+#~ "one of the styles in :var:`config.mouse`."
+#~ msgstr ""
+#~ "ボタンがフォーカスされた時に使われるマウスのスタイル。これは :var:`config."
+#~ "mouse` の1スタイルでなければなりません。"
+
+#~ msgid "A sound that is played when the button is clicked."
+#~ msgstr "ボタンがクリックされた時に再生されるサウンド。"
+
+#~ msgid "A sound that is played when the button gains focus."
+#~ msgstr "ボタンがフォーカスされた時に再生されるサウンド。"
+
+#~ msgid "Bar Style Properties"
+#~ msgstr "バースタイルのプロパティー"
+
+#~ msgid ""
+#~ "The thumb is an area in the center of the bar that can be dragged by the "
+#~ "user."
+#~ msgstr ""
+#~ "つまみ (thumb) はバーの中央部分の領域で、ユーザーはここをドラッグすること"
+#~ "ができます。"
+
+#~ msgid ""
+#~ "When a bar is drawn, the thumb's shadow is drawn first. Then the left/"
+#~ "bottom and right/top sides of the bar, followed by the thumb itself."
+#~ msgstr ""
+#~ "バーが描画される時、つまみの影が最初に描画されます。次にバーの左/下と右/上"
+#~ "の端が描画され、最後にバーそのものが描画されます。"
+
+#~ msgid ""
+#~ "If true, the bar has a vertical orientation. If false, it has a "
+#~ "horizontal orientation."
+#~ msgstr ""
+#~ "True のとき、バーは縦方向になります。False のときは、横方向になります。"
+
+#~ msgid ""
+#~ "Prevents the bar from rendering at all. Space will be allocated for the "
+#~ "bar, but nothing will be drawn in that space."
+#~ msgstr ""
+#~ "バーが全てレンダリングされることを防ぎます。スペースはバーのために確保され"
+#~ "ますが、そのスペースの箇所には何も描画されません。"
+
+#~ msgid "Box Style Properties"
+#~ msgstr "ボックススタイルのプロパティー"
+
+#~ msgid "These are used for the horizontal and vertical box layouts."
+#~ msgstr ""
+#~ "これらは、水平または垂直にボックスをレイアウトするときに使用します。"
+
+#~ msgid "The spacing between members of this box, in pixels."
+#~ msgstr "ボックス内の要素間のスペースをピクセル数で指定します。"
+
+#~ msgid ""
+#~ "If true, the placement of the items in the box will be reversed. When "
+#~ "this is true, a hbox will be filled right-to-left, and a vbox will be "
+#~ "filled bottom-to-top. This defaults to false."
+#~ msgstr ""
+#~ "True のとき、ボックス内のアイテムの配置が逆転します。これが True のとき、"
+#~ "hbox は右から左に埋められ、vbox は下から上に埋められます。既定値は False "
+#~ "です。"
+
+#~ msgid "The displayable used for the left side of the bar."
+#~ msgstr "バーの左端に使用される displayable。"
+
+#~ msgid "The displayable used for the right side of the bar."
+#~ msgstr "バーの右端に使用される displayable。"
+
+#~ msgid "The displayable used for the top side of the bar."
+#~ msgstr "バーの上端に使用される displayable。"
+
+#~ msgid "The displayable uses for the bottom side of the bar."
+#~ msgstr "バーの下端に使用される displayable。"
+
+#~ msgid "Creating New Named Styles"
+#~ msgstr "名前付きスタイルの新規作成"
+
+#~ msgid ""
+#~ "Once created, a named style can be applied to displayables by supplying "
+#~ "it's name, or the style object.::"
+#~ msgstr ""
+#~ "一度作成されたら、displayable にその名前もしくはスタイルオブジェクトを与え"
+#~ "ることで、名前付きスタイルを適用できます。"
+
+#~ msgid "``style.button``"
+#~ msgstr "``style.button``"
+
+#~ msgid "``style.default``"
+#~ msgstr "``style.default``"
+
+#~ msgid "``style.mm_button``"
+#~ msgstr "``style.mm_button``"
+
+#~ msgid "Style Inheritance"
+#~ msgstr "スタイルの継承"
+
+#~ msgid "``style.button[\"Start Game\"]``"
+#~ msgstr "``style.button[\"Start Game\"]``"
+
+#~ msgid "``style.mm_button[\"Start Game\"]``"
+#~ msgstr "``style.mm_button[\"Start Game\"]``"
+
+#~ msgid "``style.default[\"Start Game\"]``"
+#~ msgstr "``style.default[\"Start Game\"]``"
+
+#~ msgid "The size of the gutter on the bottom side of the bar, in pixels."
+#~ msgstr "バーの下端の溝の大きさを、ピクセル数で指定します。"
+
+#~ msgid "The size of the gutter on the top side of the bar, in pixels."
+#~ msgstr "バーの上端の溝の大きさを、ピクセル数で指定します。"
+
+#~ msgid ""
+#~ "When in slow text mode, and two lines overlap, this many pixels of the "
+#~ "overlap are allocated to the top line. Increase this if the bottoms of "
+#~ "characters on the top line are clipped."
+#~ msgstr ""
+#~ "スローテキストモードで2行にオーバーラップするとき、オーバーラップ用の数多"
+#~ "いピクセルは一行目に割り当てられます。一行目の文字の下が欠ける場合に増やし"
+#~ "てください。"
+
+#~ msgid "The size of the gutter on the left side of the bar, in pixels."
+#~ msgstr "バーの左端の溝の大きさを、ピクセル数で指定します。"
+
+#~ msgid "The size of the gutter on the right side of the bar, in pixels."
+#~ msgstr "バーの右端の溝の大きさを、ピクセル数で指定します。"
+
+#~ msgid ""
+#~ "If true, the value of the bar is represented on the right/top side of the "
+#~ "bar, rather than the left/bottom side."
+#~ msgstr ""
+#~ "True のとき、バーの値は右/上端が基準となり、それ以外のときは左/下端が基準"
+#~ "となります。"
+
+#~ msgid ""
+#~ "Note that the valid sides of a bar depend on the value of the "
+#~ "bar_vertical property. If it's True, the top and bottom sides are "
+#~ "relevant. Otherwise, the left and right sides are used."
+#~ msgstr ""
+#~ "上で述べたバーの端は bar_vertical プロパティーによって変化することに注意し"
+#~ "て下さい。これが True のときは上下の端に対応し、それ以外のときは左右の端と"
+#~ "なります。"
+
+#~ msgid ""
+#~ "The outline functionality can also be used to give drop-shadows to fonts, "
+#~ "by specifiying a size of 0 and non-zero offsets."
+#~ msgstr ""
+#~ "外枠は機能的にはフォントに影を落とすためにも使用できます。これを行うには、"
+#~ "サイズを0にしてオフセットを0以外にします。"
+
+#~ msgid ""
+#~ "With the property value taken from the lowest numbered style with the "
+#~ "property defined."
+#~ msgstr ""
+#~ "上の場合、プロパティーの値は数字の小さいスタイルから順に、定義されているプ"
+#~ "ロパティーが使われていきます。"
+
+#~ msgid ""
+#~ "If true, then boxes will wrap when they reach the end of a line or "
+#~ "column. If false (the default), they will extend past the end of the line."
+#~ msgstr ""
+#~ "True のとき、ボックスは行や列の終端に達すると折り返されます。False (既定) "
+#~ "のときは、行の終端を超えてボックスが配置されます。"
+
+#~ msgid ""
+#~ "Controls what happens if the bar is unscrollable (if the range is set to "
+#~ "0, as is the case with a viewport containing a displayable smaller than "
+#~ "itself). There are three possible values:"
+#~ msgstr ""
+#~ "バーがスクロール不能な時の挙動を制御します(範囲が0に設定されていて、ビュー"
+#~ "ポートが自身よりも小さい displayable を含んでいる場合に限る)。設定可能な値"
+#~ "は3つあります:"
+
+#~ msgid ""
+#~ "For example, when ``style.mm_button`` inherits from ``style.button``, "
+#~ "which in turn inherits from ``style.default``, then the properties of "
+#~ "``style.mm_button[\"Start Game\"]`` are taken from:"
+#~ msgstr ""
+#~ "例えば、 ``style.mm_button`` が  ``style.button`` を継承していて、さらにそ"
+#~ "れが ``style.default`` を継承している場合、 ``style.mm_button[\"Start Game"
+#~ "\"]`` のプロパティーは以下から取得されます:"
+
+#~ msgid ""
+#~ "Bars are drawn with gutters on the left and right, that when clicked can "
+#~ "cause the bar to move by a small amount. The remaining space is the "
+#~ "portion of the bar that can change, with the amount on each side "
+#~ "proportional to the bar's value as a fraction of the range."
+#~ msgstr ""
+#~ "バーは左右の溝とともに描画され、溝をクリックすることによってバーを少し移動"
+#~ "することが出来ます。残りのスペースはバーの値を変更できる部分で、左右の量の"
+#~ "比はバーの値に比例し、その値は可変範囲の分数となります。"
+
+#~ msgid ""
+#~ "If false, the default, the items in the box will be draw first-to-last, "
+#~ "with the first item in the box being below the second, and so on. If "
+#~ "true, this order will be reversed, and the first item in the box will be "
+#~ "above all other items in the box."
+#~ msgstr ""
+#~ "デフォルトでは False で、ボックスの要素は最初の要素が二番目の下に来るよう"
+#~ "に、一つ目から最後まで描写されます。 True ならこの順番は逆になり、ボックス"
+#~ "の最初の要素はボックスの他のすべての要素の上に来ます。"
+
+#~ msgid ""
+#~ "The amount that by which the thumb overlaps the bars, in pixels. To have "
+#~ "the left and right bars continue unbroken, set this to half the width of "
+#~ "the thumb in pixels."
+#~ msgstr ""
+#~ "ピクセル数でのつまみがバーをはみ出す量です。バーの左右が崩れないために、こ"
+#~ "れをピクセル数でつまみの半分に設定しましょう。"
+
+#~ msgid ""
+#~ "It's often desireable to allow the user to customize aspects of the user "
+#~ "interface that are best expressed as styles. For example, a creator may "
+#~ "want to give players of his game the ability to adjust the look, color, "
+#~ "and size of the text. Style preferences allow for this customization."
+#~ msgstr ""
+#~ "スタイルでベストに表現されたユーザーインターフェイスの外見を、ユーザーがカ"
+#~ "スタマイズできるようにしたいということがしばしば望まれます。例えば、制作者"
+#~ "は彼のゲームのプレイヤーにテキストの外見、色、サイズを調節する機能を与えた"
+#~ "いとします。スタイル設定はこのカスタマイズを可能とします。"
+
+#~ msgid "These are used with the fixed layout."
+#~ msgstr "これらは fixed のレイアウトで使用されます。"
+
+#~ msgid "Fixed Style Properties"
+#~ msgstr "Fixed のスタイルプロパティー"
+
+#~ msgid ""
+#~ "If true, then the size of the fixed layout is shrunk to be equal with the "
+#~ "size of the first item in the layout."
+#~ msgstr "True なら fixed のサイズはその最初の要素のサイズと等しくなります。"
+
+#~ msgid ""
+#~ "If not None, this is a displayable that is drawn over the break between "
+#~ "the sides of the bar."
+#~ msgstr ""
+#~ "None を設定するか、バーの両端の境目に描かれる displayable を設定します。"
+
+#~ msgid ""
+#~ "If not None, this should be a displayable. The input widget will use this "
+#~ "as the caret at the end of the text. If None, a 1 pixel wide line is used "
+#~ "as the caret."
+#~ msgstr ""
+#~ "None を設定するか、displayable を設定します。これは入力ウィジェットでテキ"
+#~ "スト末尾のカーソルとして使用されます。None の場合は1ピクセルの幅の線がカー"
+#~ "ソルとして使用されます。"
+
+#~ msgid ""
+#~ "If not None, this should be a style object. The style that's used for "
+#~ "ruby text."
+#~ msgstr ""
+#~ "None を設定するか、スタイルオブジェクトを設定します。これはルビテキストに"
+#~ "使用されるスタイルです。"
+
+#~ msgid ""
+#~ "If not None, the spacing between the first and second members of this "
+#~ "box, in pixels. This overrides the spacing property."
+#~ msgstr ""
+#~ "None を設定するか、ボックス内の1つ目の要素と2つ目の要素の間のスペースを、"
+#~ "ピクセル数で設定します。これは、spacing プロパティーを上書きします。"
+
+#~ msgid ""
+#~ "Using a text button, we can show this in action. Text buttons use two "
+#~ "styles by default: ``button`` for the button itself, and ``button_text`` "
+#~ "for the text inside the button. The :propref:`background` style property "
+#~ "sets the background of a button, while the :propref:`color` property sets "
+#~ "the color of text.::"
+#~ msgstr ""
+#~ "テキストボタンを使ってこれを実演します。テキストボタンには2つのスタイルが"
+#~ "あり、 ``button`` はボタン本体に対して、 ``button_text`` はボタン中のテキ"
+#~ "ストに対してあります。 :propref:`background` スタイルプロパティーによって"
+#~ "ボタンの背景を設定するとともに、 :propref:`color` プロパティーによってテキ"
+#~ "ストの色を設定します。::"
+
+#~ msgid ""
+#~ "If True, the default, truetype font text will be rendered anti-aliased."
+#~ msgstr ""
+#~ "True のとき(既定値)、TrueType フォントのテキストがアンチエイリアスされてレ"
+#~ "ンダリングされます。"
+
+#~ msgid ""
+#~ "When rendering an image-based font, black will be mapped to this color. "
+#~ "This has no effect for truetype fonts."
+#~ msgstr ""
+#~ "画像ベースのフォントをレンダリングする際、黒色がこの色にマッピングされま"
+#~ "す。TrueType フォントには影響しません。"
+
+#~ msgid ""
+#~ "If True, render the font in a bold style. For a truetype font, this "
+#~ "usually involves synthetically increasing the font weight. It can also "
+#~ "cause the font to be remapped, using :var:`config.font_replacement_map`."
+#~ msgstr ""
+#~ "True のとき、フォントを太字でレンダリングします。TrueType フォントでは、通"
+#~ "常はフォントの太さが全体的に増えるようになります。このプロパティーと :var:"
+#~ "`config.font_replacement_map` を使ってフォントを再マップすることもできま"
+#~ "す。"
+
+#~ msgid ""
+#~ "The color the text is rendered in. When using a truetype font, the font "
+#~ "is rendered in this color. When using an image-based font, white is "
+#~ "mapped to this color."
+#~ msgstr ""
+#~ "テキストをレンダリングするときの色です。TrueType フォントを使用するとき"
+#~ "は、フォントはこの色で描画されます。画像ベースのフォントを使用するときは、"
+#~ "白色がこの色にマッピングされます。"
+
+#~ msgid "A string giving the name of the font used to render text."
+#~ msgstr "テキストのレンダリングに使用されるフォントの名前の文字列です。"
+
+#~ msgid ""
+#~ "If true, the text will be rendered in italics. For a truetype font, this "
+#~ "usually involves synthetically increasing the font slant. It can also "
+#~ "cause the font to be remapped, using :var:`config.font_replacement_map`."
+#~ msgstr ""
+#~ "True のとき、フォントを太字でレンダリングします。TrueType フォントでは、通"
+#~ "常はフォントが全体的の傾くようになります。このプロパティーと :var:`config."
+#~ "font_replacement_map` を使ってフォントを再マップすることもできます。"
+
+#~ msgid ""
+#~ "The list contains (`size`, `color`, `xoffset`, `yoffset`) tuples. `Size` "
+#~ "is the amount the font is expanded by, in pixels. `Color` is the color of "
+#~ "the outline. `xoffset` and `yoffset` are the amount the outline is "
+#~ "shifted by, in pixels."
+#~ msgstr ""
+#~ "リストには (`size`, `color`, `xoffset`, `yoffset`) というタプルを含めま"
+#~ "す。 `size` にはフォントを広げる量をピクセル数で、 `color` には輪郭の色"
+#~ "を、 `xoffset` と `yoffset` には輪郭をずらす量をピクセル数で指定します。"
+
+#~ msgid "If true, the text will be rendered vertically."
+#~ msgstr "True のとき、テキストが縦書きでレンダリングされます。"
+
+#~ msgid ""
+#~ "If not None, this should be a string. Ren'Py will render all windows with "
+#~ "the same size_group value at the same size."
+#~ msgstr ""
+#~ "None を設定するか、文字列を設定します。Ren'Py は、すべての同じ size_group "
+#~ "のウィンドウを同じ大きさでレンダリングします。"
+
+#~ msgid ""
+#~ "If not None, this gives a displayable that replaces the child of the "
+#~ "button. For example, this (as insensitive_child) can be used to replace "
+#~ "the contents of an insensitive button with an image that indicates the "
+#~ "button is locked."
+#~ msgstr ""
+#~ "None を設定するか、ボタンの子要素を置き換える displayable を設定します。例"
+#~ "えば、insensitive_child を使うと無効なボタンの内容を画像によって置き換える"
+#~ "ことができ、ボタンがロックされていることを示すことができます。"
+
+#~ msgid ""
+#~ "If true, we resize the sides of the bar. If false, we render the sides of "
+#~ "the bar at full size, and then crop them."
+#~ msgstr ""
+#~ "True のとき、バーの端をリサイズします。False のときは、バーの端をフルサイ"
+#~ "ズでレンダリングし、それを切り抜きます。"
+
+#~ msgid "Renders the bar normally."
+#~ msgstr "バーを通常通りレンダリングします。"
+
+#~ msgid ""
+#~ "Renders the bar in the insensitive state. This allows the bar to change "
+#~ "its style to reflect its lack of usefulness."
+#~ msgstr ""
+#~ "バーを無効な状態でレンダリングします。これにより、使用できないことを意味す"
+#~ "るためにバーのスタイルを変更できます。"
+
+#~ msgid ""
+#~ "When a property is not defined by a style, it is inherited from the "
+#~ "style's parent. When indexing is involved, properties are inherited first "
+#~ "from the unindexed form of the style, then from the indexed form of the "
+#~ "parent, then the unindexed form of the parent, and so on."
+#~ msgstr ""
+#~ "プロパティーがスタイルによって定義されていない場合、スタイルの親から継承し"
+#~ "ます。インデックス化が関係する場合は、プロパティーはまずインデックスされて"
+#~ "いないスタイルを継承し、次に親のインデックススタイルを参照し、次に親のイン"
+#~ "デックスされていないスタイルを継承していきます。"
+
+#~ msgid ":dfn:`insensitive`"
+#~ msgstr ":dfn:`insensitive`"
+
+#~ msgid ":dfn:`idle`"
+#~ msgstr ":dfn:`idle`"
+
+#~ msgid ":dfn:`hover`"
+#~ msgstr ":dfn:`hover`"
+
+#~ msgid ":dfn:`selected_idle`"
+#~ msgstr ":dfn:`selected_idle`"
+
+#~ msgid ":dfn:`selected_hover`"
+#~ msgstr ":dfn:`selected_hover`"
+
+#~ msgid "`position`"
+#~ msgstr "`位置`"
+
+#~ msgid "int (like 0, 1, 37, or 42)"
+#~ msgstr "int (例 0, 1, 37, 42)"
+
+#~ msgid "float (like 0.0, 0.5, or 1.0)"
+#~ msgstr "float (例 0.0, 0.5, 1.0)"
+
+#~ msgid "renpy.absolute (like renpy.absolute(100.25))"
+#~ msgstr "renpy.absolute (例 renpy.absolute(100.25))"
+
+#~ msgid "`displayable`"
+#~ msgstr "`displayable`"
+
+#~ msgid "`color`"
+#~ msgstr "`色`"
+
+#~ msgid "``\"unicode\"`` (default)"
+#~ msgstr "``\"unicode\"`` (既定値)"
+
+#~ msgid "``\"japanese-strict\"``"
+#~ msgstr "``\"japanese-strict\"``"
+
+#~ msgid "``\"japanese-normal\"``"
+#~ msgstr "``\"japanese-normal\"``"
+
+#~ msgid "``\"japanese-loose\"``"
+#~ msgstr "``\"japanese-loose\"``"
+
+#~ msgid "``\"korean-with-spaces\"``"
+#~ msgstr "``\"korean-with-spaces\"``"
+
+#~ msgid "``\"western\"``"
+#~ msgstr "``\"western\"``"
+
+#~ msgid "``\"tex\"`` (default)"
+#~ msgstr "``\"tex\"`` (既定値)"
+
+#~ msgid "``\"subtitle\"``"
+#~ msgstr "``\"subtitle\"``"
+
+#~ msgid "``\"greedy\"``"
+#~ msgstr "``\"greedy\"``"
+
+#~ msgid "``\"nowrap\"``"
+#~ msgstr "``\"nowrap\"``"
+
+#~ msgid "``None``"
+#~ msgstr "``None``"
+
+#~ msgid "``\"insensitive\"``"
+#~ msgstr "``\"insensitive\"``"
+
+#~ msgid "``\"hide\"``"
+#~ msgstr "``\"hide\"``"
+
+#~ msgid ""
+#~ "When a style is defined without a parent being specified, a default "
+#~ "parent is chosen for the style. If the style contains an underscore (_) "
+#~ "in its name, the parent is named by removing everything up to and "
+#~ "including the first underscore. For example, a style named ``my_button`` "
+#~ "will inherity from ``button``. This inheritance can be changed using the "
+#~ "style statement or by calling a method on a style object.  When a style "
+#~ "that does not exist is used, and the style has an underscore in its name, "
+#~ "Ren'Py will create it using the default parent."
+#~ msgstr ""
+#~ "スタイルが親を定義せずに定義されるとデフォルトの親がそのスタイルに選ばれま"
+#~ "す。そのスタイル名にアンダースコア (_) があるなら親は最初のアンダースコア"
+#~ "までを取り除いて名付けられます。例えば ``my_button`` というスタイルは "
+#~ "``button`` というスタイルを継承します。この継承は style ステートメントやス"
+#~ "タイルオブジェクトのメソッド呼び出しで変更可能です。存在しないスタイルが使"
+#~ "用され、またそのスタイル名にアンダースコアがあるなら Ren'Py はデフォルトの"
+#~ "親を使用してそれを作成します。"
+
+#~ msgid ""
+#~ "In a triple, the components represent red, green, and blue. In a "
+#~ "quadruple, the components represent red, green, blue, and alpha. For "
+#~ "example:"
+#~ msgstr ""
+#~ "16進数が3つの場合、それぞれの成分は赤、緑、青を意味します。16進数が4つの場"
+#~ "合、それぞれの成分は赤、緑、青、アルファを意味します。例 :"

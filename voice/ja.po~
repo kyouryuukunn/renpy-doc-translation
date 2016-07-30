@@ -1,0 +1,294 @@
+# Japanese translation for renpy-doc
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the renpy-doc package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: renpy-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-23 20:06+0900\n"
+"PO-Revision-Date: 2015-12-23 22:10+0900\n"
+"Last-Translator: \n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-03-29 05:43+0000\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ..\..\source\voice.rst:6
+msgid "Voice"
+msgstr "ボイス"
+
+#: ..\..\source\voice.rst:8
+msgid ""
+"Ren'Py includes support for playing back voice in conjunction with dialogue. "
+"This is done through the voice statement, which gives the voice filename to "
+"play::"
+msgstr ""
+"Ren'Py では台詞と同時にボイスを再生出来ます。このためには voice ステートメン"
+"トで再生するボイスファイルの名前を指定します::"
+
+#: ..\..\source\voice.rst:15
+msgid ""
+"Normally, a playing voice is stopped at the start of the next interaction. "
+"The voice sustain statement can sustain voice playback through an "
+"interaction. ::"
+msgstr ""
+"通常再生中のボイスは次の動作が始まると停止されます。voice sustain ステートメ"
+"ントを使うと次の動作にもまたがってボイスの再生を続けます。::"
+
+#: ..\..\source\voice.rst:25
+msgid ""
+"The :var:`config.voice_filename_format` variable allows you to customize the "
+"voice filename, making it possible to omit directories and extensions."
+msgstr ""
+":var:`config.voice_filename_format` 変数を使うとボイスファイルの名前をカスタ"
+"マイズでき、ディレクトリーと拡張子を省略できるようになります。"
+
+#: ..\..\source\voice.rst:29
+msgid "Voice Tags"
+msgstr "ボイスタグ"
+
+#: ..\..\source\voice.rst:31
+msgid ""
+"Ren'Py includes a voice tag system that makes it possible to selectively "
+"mute or unmute a character's voice. To take advantage of this system, supply "
+"a voice_tag argument to each :func:`Character`, and use the :func:"
+"`SetVoiceMute` or :func:`ToggleVoiceMute` actions to allow the player to "
+"toggle the voice."
+msgstr ""
+"Ren'Py にはボイスタグ機能が含まれており、特定キャラクターのボイスをミュートす"
+"るかどうか選択できます。このシステムを利用するにはそれぞれの :func:"
+"`Character` に voice_tag 引数を与え、 :func:`SetVoiceMute` または :func:"
+"`ToggleVoiceMute` アクションを使ってプレイヤーがボイスの切り替えをできるよう"
+"にします。"
+
+#: ..\..\source\voice.rst:37
+msgid "For example::"
+msgstr "例 ::"
+
+#: ..\..\source\voice.rst:62
+msgid "Automatic Voice"
+msgstr "自動ボイス"
+
+#: ..\..\source\voice.rst:64
+msgid ""
+"Ren'Py includes support for automatically determining the voice file to "
+"play, making it possible to play back voice without having to put voice "
+"statements before each line of dialogue."
+msgstr ""
+"Ren'Py は再生するボイスファイルの自動的な決定をサポートし、台詞毎に voice ス"
+"テートメントを書かなくてもボイスを再生出来るようにします。"
+
+#: ..\..\source\voice.rst:68
+msgid ""
+"This is done by creating voice files that match the identifier for each line "
+"of dialogue. To determine the identifiers to use , first export the dialogue "
+"to a spreadsheet by choosing from the launcher \"Extract Dialogue\", \"Tab-"
+"delimited Spreadsheet (dialogue.tab)\", and \"Continue\". This will produce "
+"a file, dialogue.tab, that can be loaded in a spreadsheet program."
+msgstr ""
+"これは各行の台詞に対応する識別子と一致するボイスファイルを作成して行われま"
+"す。使用する識別子の決定には先ずランチャーから「 Extract Dialogue 」、「 Tab-"
+"delimited Spreadsheet (dialogue.tab) 」、「 Continue 」を選択してスプレッド"
+"シートを作成します。これはスプレッドシートプログラムでロード可能な dialogue."
+"tab ファイルを作成します。"
+
+#: ..\..\source\voice.rst:74
+msgid ""
+"The first column of the spreadsheet is the identifier to use, with other "
+"columns giving more information about the dialogue."
+msgstr ""
+"スプレッドシートの最初の行は使用する識別子で、他の行には台詞のより詳しい情報"
+"が載ります。"
+
+#: ..\..\source\voice.rst:77
+msgid ""
+"To make Ren'Py automatically play voices, set :var:`config.auto_voice` to a "
+"string containing `{id}`. When dialogue occurs, `{id}` is replaced with the "
+"dialogue identifier, forming a filename. If the filename exists, it is "
+"played."
+msgstr ""
+"Ren'Py でボイスを自動的に再生させるには、:var:`config.auto_voice` に `{id}` "
+"を含む文字列を設定してください。台詞が表示されると、`{id}` が台詞の識別子に置"
+"き換えられ、ファイル名となります。そのファイル名が見つかれば、再生されます。"
+
+#: ..\..\source\voice.rst:82
+msgid "For example, if we have::"
+msgstr "例えば以下のようなスクリプトがあり、 ::"
+
+#: ..\..\source\voice.rst:86
+msgid ""
+"And the dialogue identifier is ``demo_minigame_03fc91ef``, then when the "
+"corresponding line is shown, Ren'Py will look for the file ``voice/"
+"demo_minigame_03fc91ef.ogg``. If the file exists, Ren'Py will play it."
+msgstr ""
+"台詞の識別子が ``demo_minigame_03fc91ef`` なら、対応する行が表示されると"
+"Ren'Py は ``voice/demo_minigame_03fc91ef.ogg`` ファイルを探し、ファイルが存在"
+"すれば再生します。"
+
+#: ..\..\source\voice.rst:93
+msgid "Voice Functions"
+msgstr "ボイスの関数"
+
+#: ..\..\source\inc\voice:5
+msgid ""
+"Returns information about the voice being played by the current say "
+"statement. This function may only be called while a say statement is "
+"executing."
+msgstr ""
+"現在の say ステートメントで再生されているボイスの情報を返します。この関数 "
+"say ステートメントの実行中のみ呼び出されます。"
+
+#: ..\..\source\inc\voice:9
+msgid "The object returned has the following fields:"
+msgstr "返されたオブジェクトは以下のフィールドを持ちます。"
+
+#: ..\..\source\inc\voice:13
+msgid ""
+"The filename of the voice to be played, or None if no files should be played."
+msgstr ""
+"再生されたボイスのファイル名か、ファイルが再生されていないなら None です。"
+
+#: ..\..\source\inc\voice:18
+msgid ""
+"The filename that Ren'Py looked in for automatic-voicing purposes, or None "
+"if one could not be found."
+msgstr ""
+"Ren'Py が自動ボイスのために探したファイル名で、見つからなければ None です。"
+
+#: ..\..\source\inc\voice:23
+msgid "The voice_tag parameter supplied to the speaking Character."
+msgstr "話しているキャラクターに与えられた voice_tag 引数です。"
+
+#: ..\..\source\inc\voice:27
+msgid ""
+"Plays `filename` on the voice channel. The equivalent of the voice statement."
+msgstr ""
+"`filename` をボイスチャンネルで再生します。 voice ステートメントと等価です。"
+
+#: ..\..\source\inc\voice:33
+msgid "`filename`"
+msgstr "`filename`"
+
+#: ..\..\source\inc\voice:31
+msgid ""
+"The filename to play. This is used with :var:`config.voice_filename_format` "
+"to produce the filename that will be played."
+msgstr ""
+"再生するファイルの名前です。この値は :var:`config.voice_filename_format` とと"
+"もに使用されることで、再生されるファイルの名前となります。"
+
+#: ..\..\source\inc\voice:42
+msgid "`tag`"
+msgstr "`tag`"
+
+#: ..\..\source\inc\voice:36
+msgid ""
+"If this is not None, it should be a string giving a voice tag to be played. "
+"If None, this takes its default value from the voice_tag of the Character "
+"that causes the next interaction."
+msgstr ""
+"この値は None にするか、または再生するボイスタグの文字列にします。None の場合"
+"は、既定値として次の動作におけるキャラクターの voice_tag となります。"
+
+#: ..\..\source\inc\voice:41
+msgid ""
+"The voice tag is used to specify which character is speaking, to allow a "
+"user to mute or unmute the voices of particular characters."
+msgstr ""
+"ボイスタグは、どのキャラクターが話しているかを指定するために使われ、各々の"
+"キャラクターのボイスをミュートにするかどうかをユーザーが切り替えられるように"
+"します。"
+
+#: ..\..\source\inc\voice:47
+msgid "Returns true if it's possible to replay the current voice."
+msgstr "現在のボイスをもう一度再生できる場合に true を返します。"
+
+#: ..\..\source\inc\voice:51
+msgid "Replays the current voice, if possible."
+msgstr "可能であれば現在のボイスを再度再生します。"
+
+#: ..\..\source\inc\voice:55
+msgid "The equivalent of the voice sustain statement."
+msgstr "voice sustain ステートメントと等価です。"
+
+#: ..\..\source\voice.rst:98
+msgid "Voice Actions"
+msgstr "ボイスのアクション"
+
+#: ..\..\source\inc\voice_action:5
+msgid ""
+"This plays `sample` on the voice channel, as if said by a character with "
+"`voice_tag`."
+msgstr ""
+"voice チャンネルで `voice_tag` のキャラクターが話すように `sample` を再生しま"
+"す。"
+
+#: ..\..\source\inc\voice_action:9
+msgid "`sample`"
+msgstr "`sample`"
+
+#: ..\..\source\inc\voice_action:9
+msgid ""
+"The full path to a sound file. No voice-related handling of this file is "
+"done."
+msgstr "音声ファイルのフルパスです。"
+
+#: ..\..\source\inc\voice_action:14
+msgid ""
+"This allows the volume of each characters to be adjusted. If `volume` is "
+"None, this returns the value of volume of `voice_tag`. Otherwise, this set "
+"it to `volume`."
+msgstr ""
+"各キャラクターのボリュームを調整出来るようにします。 `volume` が None なら、"
+"`voice_tag` のボリュームの値を変更する value を返します。そうでなければそれ"
+"を `volume` に設定します。"
+
+#: ..\..\source\inc\voice_action:18
+msgid ""
+"`volume` is a number between 0.0 and 1.0, and is interpreted as a fraction "
+"of the mixer volume for `voice` channel."
+msgstr ""
+"`volume` は 0.0 から 1.0 までの数字で、 `voice` チャンネルに対するミキサーボ"
+"リュームの割り合いとして解釈されます。"
+
+#: ..\..\source\inc\voice_action:23
+msgid ""
+"If `mute` is true, mutes voices that are played with the given `voice_tag`. "
+"If `mute` is false, unmutes voices that are played with `voice_tag`."
+msgstr ""
+"`mute` が true の場合は、与えられた `voice_tag` で再生されるボイスをミュート"
+"にします。 `mute` が false の場合は、 `voice_tag` で再生されるボイスのミュー"
+"トを解除します。"
+
+#: ..\..\source\inc\voice_action:29
+msgid ""
+"Toggles the muting of `voice_tag`. This is selected if the given voice tag "
+"is muted, unless `invert` is true, in which case it's selected if the voice "
+"is unmuted."
+msgstr ""
+"`voice_tag` のミュート状態を切り替えます。基本的に与えられたタグがミュートの"
+"ときに選択状態になりますが、 `invert` が true の場合はミュートでない時に選択"
+"状態になります。"
+
+#: ..\..\source\inc\voice_action:35
+msgid "Replays the most recently played voice."
+msgstr "最も最近に再生されたボイスを再度再生します。"
+
+#~ msgid ""
+#~ "This is done by creating voice files that match the identifier for each "
+#~ "line of dialogue. To determine the identifiers to use , first export the "
+#~ "dialogue to a spreadsheet by choosing from the launcher \"Extract Dialogue"
+#~ "\", \"Tab-delimited Spreadsheet (dialogue.tab)\", and \"Continue\". This "
+#~ "will produce a file, dialogue.tab, that can be loaded in a spreasheet "
+#~ "program."
+#~ msgstr ""
+#~ "これは各行の台詞に対応する識別子と一致するボイスファイルを作成することで行"
+#~ "われます。使用する識別子の決定には先ずランチャーから「 Extract "
+#~ "Dialogue 」、「 Tab-delimited Spreadsheet (dialogue.tab) 」、"
+#~ "「 Continue 」を選択してスプレッドシートを作成します。これはスプレッドシー"
+#~ "トプログラムでロード可能な dialogue.tab ファイルを作成します。"

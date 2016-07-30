@@ -1,0 +1,293 @@
+# Japanese translation for renpy-doc
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the renpy-doc package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: renpy-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-09 22:14+0900\n"
+"PO-Revision-Date: 2015-04-05 11:01+0000\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
+"X-Generator: Launchpad (build 17413)\n"
+
+#: ../../source/cds.rst:5
+msgid "Creator-Defined Statements"
+msgstr "ユーザー定義ステートメント"
+
+#: ../../source/cds.rst:7
+msgid ""
+"Creator-defined statements allow you to add your own statements to Ren'Py. "
+"This makes it possible to add things that are not supported by the current "
+"syntax of Ren'Py."
+msgstr ""
+"ユーザー定義ステートメントは独自のステートメントを Ren'Py に追加出来るように"
+"します。これにより現在の Ren'Py の文法ではサポートされない機能が追加出来ま"
+"す。"
+
+#: ../../source/cds.rst:11
+msgid ""
+"Creator-defined statements must be defined in a python early block. What's "
+"more, the filename containing the user-defined statement must be be loaded "
+"earlier than any file that uses it. Since Ren'Py loads files in unicode sort "
+"order, it generally makes sense to prefix the name of any file containing a "
+"user-defined statement with 01, or some other small number."
+msgstr ""
+"ユーザー定義ステートメントは python early ブロックで定義される必要があり、さ"
+"らにそれを定義するファイルはそれを使用するどのファイルよりも先にロードされる"
+"必要があります。 Ren'Py はユニコード順にファイルをロードするので一般的には"
+"ユーザー定義ステートメントを含めるファイル名は 01 か、それより小さい数字が接"
+"頭辞に付きます。"
+
+#: ../../source/cds.rst:17
+msgid ""
+"A user-defined statement cannot be used in the file in which it is defined."
+msgstr ""
+"ユーザー定義ステートメントはそれが定義されたファイル内では使用不能です。"
+
+#: ../../source/cds.rst:19
+msgid ""
+"Creator-defined statement are registered using the renpy.register_statement "
+"function."
+msgstr ""
+"ユーザー定義ステートメントは :func:`renpy.register_statement` 関数を使用して"
+"登録されます。"
+
+#: ../../source/inc/statement_register:5
+msgid "This registers a user-defined statement."
+msgstr "これはユーザー定義ステートメントを登録します。"
+
+#: ../../source/inc/statement_register:10
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/statement_register:8
+msgid ""
+"This is either a space-separated list of names that begin the statement, or "
+"the empty string to define a new default statement (the default statement "
+"will replace the say statement)."
+msgstr ""
+"これはステートメントを開始する名前のスペース区切りのリストか、または空の文字"
+"列にして新しいデフォルトステートメントを定義します。 ( デフォルトステートメン"
+"トは say ステートメントを置き換えるでしょう )"
+
+#: ../../source/inc/statement_register:15
+msgid "`parse`"
+msgstr "`parse`"
+
+#: ../../source/inc/statement_register:13
+msgid ""
+"This is a function that takes a Lexer object. This function should parse the "
+"statement, and return an object. This object is passed as an argument to all "
+"the other functions. The lexer argument has the following methods:"
+msgstr ""
+"これは Lexer オブジェクトを引数に取る関数です。この関数はステートメントを解析"
+"し、任意のオブジェクトを返すべきです。このオブジェクトは他のすべての関数に引"
+"数として渡されます。"
+
+#: ../../source/inc/statement_register:19
+msgid "`lint`"
+msgstr "`lint`"
+
+#: ../../source/inc/statement_register:18
+msgid ""
+"This is called to check the statement. It is passed a single object, the "
+"argument returned from parse. It should call renpy.error to report errors."
+msgstr ""
+"これはステートメントをチェックするために呼び出され、 parse から返された 1 つ"
+"のオブジェクトを引数として渡されます。 :func:`renpy.error` を呼び出してエラー"
+"を報告するとよいでしょう。"
+
+#: ../../source/inc/statement_register:23
+msgid "`execute`"
+msgstr "`execute`"
+
+#: ../../source/inc/statement_register:22
+msgid ""
+"This is a function that is called when the statement executes. It is passed "
+"a single object, the argument returned from parse."
+msgstr ""
+"これはステートメントが実行されると呼び出される関数で、 parse から返された 1 "
+"つのオブジェクトを引数として渡されます。"
+
+#: ../../source/inc/statement_register:28
+msgid "`predict`"
+msgstr "`predict`"
+
+#: ../../source/inc/statement_register:26
+msgid ""
+"This is a function that is called to predict the images used by the "
+"statement. It is passed a single object, the argument returned from parse. "
+"It should return a list of displayables used by the statement."
+msgstr ""
+"これはステートメントに使用される画像を予測するために呼び出される関数で、 "
+"parse から返された 1 つのオブジェクトを引数として渡されます。 ステートメント"
+"に使用される displayable のリストを返すべきです。"
+
+#: ../../source/inc/statement_register:33
+msgid "`next`"
+msgstr "`next`"
+
+#: ../../source/inc/statement_register:31
+msgid ""
+"This is called to determine the next statement. It is passed a single "
+"object, the argument returned from parse. It should either return a label, "
+"or return None if execution should continue to the next statement."
+msgstr ""
+"これを呼び出して次のステートメントを決定します。これには parse から返されたオ"
+"ブジェクトが引数として渡されます。ラベルか、次のステートメントに処理を移すな"
+"ら None を返すべきです。"
+
+#: ../../source/inc/statement_register:36
+msgid "`scry`"
+msgstr "`scry`"
+
+#: ../../source/inc/statement_register:36
+msgid "Used internally by Ren'Py."
+msgstr "Ren'Py 内部で使用されます。"
+
+#: ../../source/inc/statement_register:39
+msgid "`block`"
+msgstr "`block`"
+
+#: ../../source/inc/statement_register:39
+msgid "True if this takes a block, false otherwise."
+msgstr "これがブロックを取るなら True 、そうでなければ False です。"
+
+#: ../../source/inc/statement_register:43
+msgid "`init`"
+msgstr "`init`"
+
+#: ../../source/inc/statement_register:42
+msgid ""
+"True if this statement should be run at init-time. (If the statement is not "
+"already inside an init block, it's automatically placed inside an init 0 "
+"block.)"
+msgstr ""
+"このステートメントが初期化時にのみ実行されるべきなら True です。 ( ステートメ"
+"ントが init ブロック内でなければ自動的に init 0 ブロックに配置されます。)"
+
+#: ../../source/cds.rst:24
+msgid "The parse method takes a Lexer object:"
+msgstr "parse メソッドは Lexer オブジェクトを受け取ります。"
+
+#: ../../source/cds.rst:30
+msgid "True if the lexer is at the end of the line."
+msgstr "lexerが行の末端に達していれば True を返します。"
+
+#: ../../source/cds.rst:34
+msgid "Matches an arbitrary regexp string."
+msgstr "任意の正規表現文字列にマッチします。"
+
+#: ../../source/cds.rst:36
+msgid ""
+"All of the statements in the lexer that match things are implemented in "
+"terms of this function. They first skip whitespace, then attempt to match "
+"against the line. If the match succeeds, the matched text is returned. "
+"Otherwise, None is returned."
+msgstr ""
+"何かをマッチさせるすべての lexer のステートメントは、この関数と同様な方法で実"
+"装されています。最初に空白をスキップし、その行に対してマッチするかを試みま"
+"す。マッチが成功すればマッチしたテキストが返され、そうでなければ None が返さ"
+"れます。"
+
+#: ../../source/cds.rst:43
+msgid "Matches `s` as a keyword."
+msgstr "キーワードとして `s` にマッチします。"
+
+#: ../../source/cds.rst:47
+msgid "Matches a name. This does not match built-in keywords."
+msgstr "名前にマッチしますが組み込みのキーワードにはマッチしません。"
+
+#: ../../source/cds.rst:51
+msgid ""
+"Matches any word, including keywords. Returns the text of the matched word."
+msgstr ""
+"キーワードを含むどのような単語にもマッチします。マッチした単語を返します。"
+
+#: ../../source/cds.rst:56
+msgid "Matches a Ren'Py string."
+msgstr "文字列にマッチします。"
+
+#: ../../source/cds.rst:60
+msgid "Matches an integer, returns a string containing the integer."
+msgstr "整数にマッチし、整数の文字列を返します。"
+
+#: ../../source/cds.rst:64
+msgid ""
+"Matches a floating point number, returns a string containing the floating "
+"point number."
+msgstr "浮動小数点にマッチし、浮動小数点の文字列を返します。"
+
+#: ../../source/cds.rst:69
+msgid "Matches a simple python expression, returns it as a string."
+msgstr "単純式にマッチし、文字列としてそれを返します。"
+
+#: ../../source/cds.rst:73
+msgid "Skips whitespace, the returns the rest of the line."
+msgstr "空白をスキップし、行の残りを返します。"
+
+#: ../../source/cds.rst:77
+msgid "Returns an opaque object representing the current state of the lexer."
+msgstr "現在の lexer の状態を表現するオブジェクトを返します。"
+
+#: ../../source/cds.rst:81
+msgid ""
+"When `o` is the object returned from checkpoint(), reverts the state of the "
+"lexer to what it was when checkpoint() was called. (This is used for "
+"backtracking.)"
+msgstr ""
+"`o` が checkpoint() から返されたオブジェクトなら、 lexer の状態を "
+"checkpoint() が呼び出されたときにまで戻します。 ( これはロールバックのために"
+"使用されます。 )"
+
+#: ../../source/cds.rst:87
+msgid "Return a Lexer for the block associated with the current line."
+msgstr "現在のブロックと関連付けられたブロックに対する Lexer を返します。"
+
+#: ../../source/cds.rst:91
+msgid ""
+"In a subblock lexer, advances to the next line. This must be called before "
+"the first line, so the first line can be parsed."
+msgstr ""
+"サブブロック lexer で、次の行に解析を進めます。一行目を解析できるようにするた"
+"めに、一行目よりも前で呼び出される必要があります。"
+
+#: ../../source/cds.rst:96
+msgid "Lint Utility Functions"
+msgstr "Lint 用ユーティリティー関数"
+
+#: ../../source/cds.rst:98
+msgid "These functions are useful in writing lint functions."
+msgstr "これらの関数は lint 関数を記述するのに便利です。"
+
+#: ../../source/inc/lint:5
+msgid ""
+"Checks the text tags in s for correctness. Returns an error string if there "
+"is an error, or None if there is no error."
+msgstr ""
+"s 内部のテキストタグが正しいかチェックします。エラーがあればエラー文字列を、"
+"なければ None を返します。"
+
+#: ../../source/cds.rst:103
+msgid "Example"
+msgstr "例"
+
+#: ../../source/cds.rst:105
+msgid ""
+"This creates a new statement \"line\" that allows lines of text to be "
+"specified without quotes. ::"
+msgstr ""
+"これは新しいステートメント「line」を作成し、クォーテーションを付けずにテキス"
+"トを指定できるようにします。::"
+
+#: ../../source/cds.rst:132
+msgid "This can be used by writing::"
+msgstr "これは以下のように記述して使用出来ます。 ::"

@@ -1,0 +1,1429 @@
+# Japanese translation for renpy-doc
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the renpy-doc package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: renpy-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-18 13:23+0900\n"
+"PO-Revision-Date: 2016-06-24 15:39+0900\n"
+"Last-Translator: \n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-04-08 05:43+0000\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ..\..\source\screen_python.rst:6
+msgid "Screens and Python"
+msgstr "スクリーンと Python"
+
+#: ..\..\source\screen_python.rst:8
+msgid ""
+"Ren'Py supports defining screens in Python, as well as in the Ren'Py screen "
+"language. A Python screen is created by supplying a screen function to the :"
+"func:`renpy.define_screen` function. It can then be used like it was any "
+"other screen."
+msgstr ""
+"スクリーン言語同様に、 Ren'Py は python でのスクリーンの定義をサポートしま"
+"す。 python でのスクリーンはスクリーン関数を :func:`renpy.define_screen` に与"
+"えることで作成され、どんなスクリーンにも使用できます。"
+
+#: ..\..\source\screen_python.rst:13
+msgid ""
+"The screen function should have parameters corresponding to the scope "
+"variables it expects, and it should ignore extra keyword arguments. (That "
+"is, it should have `**kwargs` at the end of its parameter list.) It is then "
+"expected to call the UI functions to add displayables to the screen.The "
+"screen function is called whenever an interaction starts or restarts."
+msgstr ""
+"スクリーン関数は期待するスコープ変数に対する引数を受け取り、それ以外のキー"
+"ワード引数は無視するべきです。( それ故その引数の末尾には `**kwargs` を持つべ"
+"きです。 ) スクリーンに displayable を追加するためには UI 関数を呼び出しま"
+"す。スクリーン関数はインタラクションが開始するか再開すると呼び出されます。"
+
+#: ..\..\source\screen_python.rst:20
+msgid ""
+"To ensure that this restarting is seamless to the user (and not causing "
+"things to reset), it's important that every call to a UI function supply the "
+"`id` argument. As a screen is re-created, Ren'Py will update each "
+"displayable with the contents of the old displayable with the same id. Ids "
+"are generated automatically by the screen language, but when doing things by "
+"hand, they must be manually specified."
+msgstr ""
+"この再開がユーザーにとってシームレスであることを保証するために、 UI 関数への"
+"すべての呼び出しが `id` 引数をサポートすることが重要です。スクリーンは再生成"
+"されるため、 Ren'Py は同じ id を持つ以前の displayable の内容で各 "
+"displayable を更新します。 id はスクリーン言語によって自動的に生成されます"
+"が、直接 ui 関数を使用するときは手動で指定する必要があります。"
+
+#: ..\..\source\screen_python.rst:28
+msgid "Warning: UI Functions are deprecated and not recommended."
+msgstr "注意: UI 関数は非推奨です。"
+
+#: ..\..\source\screen_python.rst:30
+msgid "Here's an example python screen::"
+msgstr "python スクリーンの例を示します ::"
+
+#: ..\..\source\screen_python.rst:47
+msgid "Screen Functions"
+msgstr "スクリーン関数"
+
+#: ..\..\source\screen_python.rst:49
+msgid ""
+"The following functions support the definition, display, and hiding of "
+"screens."
+msgstr "以下の関数はスクリーンの定義、表示、非表示をサポートします。"
+
+#: ..\..\source\inc\screens:5
+msgid "The programmatic equivalent of the call screen statement."
+msgstr "プログラム的には call screen ステートメントと等価です。"
+
+#: ..\..\source\inc\screens:7
+msgid ""
+"This shows `_screen_name` as a screen, then causes an interaction to occur. "
+"The screen is hidden at the end of the interaction, and the result of the "
+"interaction is returned."
+msgstr ""
+"これはスクリーンとして `_screen_name` を表示し、インタラクションを実行しま"
+"す。スクリーンはインタラクションが終わると非表示になり、インタラクションの結"
+"果が返されます。"
+
+#: ..\..\source\inc\screens:11
+msgid ""
+"Keyword arguments not beginning with _ are passed to the scope of the screen."
+msgstr "_ で始まらないキーワード引数はスクリーンのスコープに渡されます。"
+
+#: ..\..\source\inc\screens:14
+msgid ""
+"If the keyword argument `_with_none` is false, \"with None\" is not run at "
+"the end of end of the interaction."
+msgstr ""
+"キーワード引数 `_with_none` が False なら「 with None 」はインタラクションの"
+"終わりに実行されません。"
+
+#: ..\..\source\inc\screens:19
+msgid "Defines a screen with `name`, which should be a string."
+msgstr "`name` は文字列で、これを名前に持つスクリーンを定義します。"
+
+#: ..\..\source\inc\screens:27
+msgid "`function`"
+msgstr "`function`"
+
+#: ..\..\source\inc\screens:22
+msgid ""
+"The function that is called to display the screen. The function is called "
+"with the screen scope as keyword arguments. It should ignore additional "
+"keyword arguments."
+msgstr ""
+"スクリーンを表示するために呼び出される関数です。関数はそのスクリーンのスコー"
+"プをキーワード引数として呼び出されます。追加のキーワード引数は無視するべきで"
+"す。"
+
+#: ..\..\source\inc\screens:26
+msgid "The function should call the ui functions to add things to the screen."
+msgstr "スクリーンに追加するためには、関数は UI 関数を呼び出すべきです。"
+
+#: ..\..\source\inc\screens:32
+msgid "`modal`"
+msgstr "`modal`"
+
+#: ..\..\source\inc\screens:30
+msgid ""
+"A string that, when evaluated, determines of the created screen should be "
+"modal. A modal screen prevents screens underneath it from receiving input "
+"events."
+msgstr ""
+"作成されるスクリーンがモーダルであるかどうかを決定するために評価される文字列"
+"です。モーダルなスクリーンは その下にあるスクリーンが入力イベントを受け取るこ"
+"とを防ぎます。"
+
+#: ..\..\source\inc\screens:38
+msgid "`zorder`"
+msgstr "`zorder`"
+
+#: ..\..\source\inc\screens:35
+msgid ""
+"A string that, when evaluated, should be an integer. The integer controls "
+"the order in which screens are displayed. A screen with a greater zorder "
+"number is displayed above screens with a lesser zorder number."
+msgstr ""
+"評価すると整数になる文字列です。整数はスクリーンが表示される順番を制御しま"
+"す。 大きな zorder を持つスクリーンほど小さな zorder を持つスクリーンの上に表"
+"示されます。"
+
+#: ..\..\source\inc\screens:43
+msgid "`tag`"
+msgstr "`tag`"
+
+#: ..\..\source\inc\screens:41
+msgid ""
+"The tag associated with this screen. When the screen is shown, it replaces "
+"any other screen with the same tag. The tag defaults to the name of the "
+"screen."
+msgstr ""
+"このスクリーンに関連づけられるタグです。スクリーンが表示されると、同じタグを"
+"持つ他のすべてのスクリーンを置き換えます。タグはデフォルトではスクリーンの名"
+"前です。"
+
+#: ..\..\source\inc\screens:47
+msgid "`predict`"
+msgstr "`predict`"
+
+#: ..\..\source\inc\screens:46
+msgid ""
+"If true, this screen can be loaded for image prediction. If false, it can't. "
+"Defaults to true."
+msgstr ""
+"True ならこのスクリーンは画像を予測のためにロード出来ます。。 False なら出来"
+"ません。デフォルトでは True です。"
+
+#: ..\..\source\inc\screens:49
+msgid "`variant`"
+msgstr "`variant`"
+
+#: ..\..\source\inc\screens:50
+msgid "String. Gives the variant of the screen to use."
+msgstr "使用するスクリーンの変数の文字列です。"
+
+#: ..\..\source\inc\screens:54
+msgid ""
+"Returns the ScreenDisplayable with the given `name` on layer. `name` is "
+"first interpreted as a tag name, and then a screen name. If the screen is "
+"not showing, returns None."
+msgstr ""
+"与えられた `name` を持つレイヤー上の ScreenDisplayable を返します。`name` は"
+"画像タグと解釈され、なければスクリーンの名前と解釈されます。そのスクリーンが"
+"表示されていなければ None が返されます。"
+
+#: ..\..\source\inc\screens:58
+msgid ""
+"This can also take a list of names, in which case the first screen that is "
+"showing is returned."
+msgstr ""
+"`name` は name のリストでもかまいません、その場合表示されている最初のスクリー"
+"ンが返されます。"
+
+#: ..\..\source\inc\screens:61
+msgid ""
+"This function can be used to check if a screen is showing, using code like::"
+msgstr "この関数を使用してスクリーンが表示されているかチェック出来ます。例 ::"
+
+#: ..\..\source\inc\screens:71
+msgid ""
+"From the `screen` on `layer`, returns the widget with `id`. Returns None if "
+"the screen doesn't exist, or there is no widget with that id on the screen."
+msgstr ""
+"`layer` 上の `screen` から id を持つ ウィジェットを返します。スクリーンが存在"
+"しないか、そのスクリーン上にその id を持つウィジェットが存在しなければ None "
+"を返します。"
+
+#: ..\..\source\inc\screens:77
+msgid ""
+"Returns the properties for the widget with `id` in the `screen` on `layer`. "
+"If `screen` is None, returns the properties for the current screen."
+msgstr ""
+"`layer` 上の `screen` にある `id` のウィジェットのプロパティーを返します。"
+"`screen` が None なら、現在のスクリーンに対するプロパティーを返します。"
+
+#: ..\..\source\inc\screens:81
+msgid "This can be used inside screen code."
+msgstr "これはスクリーンのコード内部で使用されます。"
+
+#: ..\..\source\inc\screens:83
+msgid ""
+"Note that this returns a dictionary containing the widget properties, and so "
+"to get an individual property"
+msgstr ""
+"これはそのウィジェットのプロパティーを持つ辞書を返すので、そこから各プロパ"
+"ティーを所得出来ることに注意してください。"
+
+#: ..\..\source\inc\screens:88
+msgid "The programmatic equivalent of the hide screen statement."
+msgstr "プログラム的に hide screen ステートメントと等価です。"
+
+#: ..\..\source\inc\screens:90
+msgid "Hides the screen with `tag` on `layer`."
+msgstr "`layer` 上の `tag` を持つスクリーンを非表示にします。"
+
+#: ..\..\source\inc\screens:94
+msgid "Returns true if Ren'Py is currently predicting the screen."
+msgstr "Ren'Py が現在スクリーンを予測していれば True を返します。"
+
+#: ..\..\source\inc\screens:98
+msgid "The programmatic equivalent of the show screen statement."
+msgstr "プログラム的には show screen ステートメントと等価です。"
+
+#: ..\..\source\inc\screens:100
+msgid "Shows the named screen. This takes the following keyword arguments:"
+msgstr ""
+"その名前のスクリーンを表示します。これは以下のキーワード引数を取ります。 :"
+
+#: ..\..\source\inc\screens:102
+msgid "`_screen_name`"
+msgstr "`_screen_name`"
+
+#: ..\..\source\inc\screens:103
+msgid "The name of the  screen to show."
+msgstr "表示するスクリーンの名前です。"
+
+#: ..\..\source\inc\screens:104
+msgid "`_layer`"
+msgstr "`_layer`"
+
+#: ..\..\source\inc\screens:105
+msgid "The layer to show the screen on."
+msgstr "スクリーンを表示するためのレイヤーです。"
+
+#: ..\..\source\inc\screens:108
+msgid "`_tag`"
+msgstr "`_tag`"
+
+#: ..\..\source\inc\screens:107
+msgid ""
+"The tag to show the screen with. If not specified, defaults to the tag "
+"associated with the screen. It that's not specified, defaults to the name of "
+"the screen.,"
+msgstr ""
+"表示するスクリーンのタグです。指定されなければデフォルトでそのスクリーンに関"
+"連づけられたタグです。それもなければデフォルトでそのスクリーンの名前になりま"
+"す。"
+
+#: ..\..\source\inc\screens:112
+msgid "`_widget_properties`"
+msgstr "`_widget_properties`"
+
+#: ..\..\source\inc\screens:111
+msgid ""
+"A map from the id of a widget to a property name -> property value map. When "
+"a widget with that id is shown by the screen, the specified properties are "
+"added to it."
+msgstr ""
+"ウィジェットの id からプロパティーの名前を得る辞書、つまりプロパティーを値に"
+"持つ辞書です。その id のウィジェットがスクリーンに表示されると、指定したプロ"
+"パティーがそこに追加されます。"
+
+#: ..\..\source\inc\screens:116
+msgid "`_transient`"
+msgstr "`_transient`"
+
+#: ..\..\source\inc\screens:115
+msgid ""
+"If true, the screen will be automatically hidden at the end of the current "
+"interaction."
+msgstr ""
+"True ならスクリーンは現在のインタラクションが終わると自動的に非表示になりま"
+"す。"
+
+#: ..\..\source\inc\screens:118
+msgid ""
+"Keyword arguments not beginning with underscore (_) are used to initialize "
+"the screen's scope."
+msgstr ""
+"アンダースコア (_) で始まらないキーワード引数はスクリーンのスコープを初期化す"
+"るために使用されます。"
+
+#: ..\..\source\inc\screens:123
+msgid ""
+"Causes Ren'Py to start predicting the screen named `_screen_name` will be "
+"shown with the given arguments. This replaces  any previous prediction of "
+"`_screen_name`. To stop predicting a screen, call :func:`renpy."
+"stop_predict_screen`."
+msgstr ""
+"指定された引数で表示される `_screen_name` という名のスクリーンの予測を "
+"Ren'Py に開始させます。これは `_screen_name` の以前の予測を置き換えます。スク"
+"リーンの予測を停止するためには :func:`renpy.stop_predict_screen` を呼び出して"
+"ください。"
+
+#: ..\..\source\inc\screens:129
+msgid "Causes Ren'Py to stop predicting the screen named `name` will be shown."
+msgstr "`name` という名のスクリーンの予測を停止させます。"
+
+#: ..\..\source\inc\screens:133
+msgid ""
+"Returns true if a `name` is a screen variant that can be chosen by Ren'Py. "
+"See :ref:`screen-variants` for more details. This function can be used as "
+"the condition in a python if statement to set up the appropriate styles for "
+"the selected screen variant."
+msgstr ""
+"`name` が Ren'Py に選択され得るスクリーンバージョンなら True を返します。詳細"
+"は :ref:`screen-variants` を参考にしてください。この関数は python if ステート"
+"メントで条件に使用して、選択したスクリーンバージョンに対して適切なスタイルを"
+"設定出来ます。"
+
+#: ..\..\source\inc\screens:138
+msgid ""
+"`name` can also be a list of variants, in which case this function returns "
+"True if any of the variants is selected."
+msgstr ""
+"`name` はスクリーンバージョンのリストでもかまいません、その場合この関数はどの"
+"スクリーンバージョンが選択されても True を返します。"
+
+#: ..\..\source\screen_python.rst:55
+msgid "UI Functions"
+msgstr "UI 関数"
+
+#: ..\..\source\screen_python.rst:57
+msgid ""
+"With the advent of SL2, UI Functions are deprecated and not recommended."
+msgstr "SL2 の利点により、 UI 関数は非推奨です。"
+
+#: ..\..\source\screen_python.rst:59
+msgid ""
+"The UI functions are python equivalents of the screen language statements. "
+"For each screen language statement, there is a ui function with the same "
+"name. For example, ui.text corresponds to the text statement, and ui.add "
+"corresponds to the add statement."
+msgstr ""
+"UI 関数はスクリーン言語と等価な python です。各スクリーン言語のステートメント"
+"に対して、同じ名前の UI 関数があります。例えば ui.text は text ステートメント"
+"に対応し、 ui.add は add ステートメントに対応します。"
+
+#: ..\..\source\screen_python.rst:64
+msgid ""
+"There is a simple mapping between screen language parameters and arguments "
+"and python arguments. Screen language parameters become positional "
+"arguments, while properties become keyword arguments. For example, the "
+"screen language statement: ::"
+msgstr ""
+"スクリーン言語のパラメーターや引数と python の引数には簡単な対応関係がありま"
+"す。スクリーン言語のパラメーターは位置引数に、プロパティーはキーワード引数に"
+"なります。例えば、スクリーン言語のステートメントでは ::"
+
+#: ..\..\source\screen_python.rst:71
+msgid "becomes: ::"
+msgstr "こうなります。 ::"
+
+#: ..\..\source\screen_python.rst:75
+msgid "(It really should have an `id` parameter added.)"
+msgstr "( 実際には `id` 引数が追加されるべきです。 )"
+
+#: ..\..\source\screen_python.rst:77
+msgid ""
+"There are three groups of UI functions, corresponding to the number of "
+"children they take."
+msgstr "UI 関数にはそれらが取る子の数に対応した三つのグループがあります。"
+
+#: ..\..\source\screen_python.rst:83
+msgid "The following UI functions do not take any children."
+msgstr "以下の UI 関数は子を受け取りません。"
+
+#: ..\..\source\screen_python.rst:85
+msgid "ui.add"
+msgstr "ui.add"
+
+#: ..\..\source\screen_python.rst:86
+msgid "ui.bar"
+msgstr "ui.bar"
+
+#: ..\..\source\screen_python.rst:87
+msgid "ui.imagebutton"
+msgstr "ui.imagebutton"
+
+#: ..\..\source\screen_python.rst:88
+msgid "ui.input"
+msgstr "ui.input"
+
+#: ..\..\source\screen_python.rst:89
+msgid "ui.key"
+msgstr "ui.key"
+
+#: ..\..\source\screen_python.rst:90
+msgid "ui.label"
+msgstr "ui.label"
+
+#: ..\..\source\screen_python.rst:91
+msgid "ui.null"
+msgstr "ui.null"
+
+#: ..\..\source\screen_python.rst:92
+msgid "ui.text"
+msgstr "ui.text"
+
+#: ..\..\source\screen_python.rst:93
+msgid "ui.textbutton"
+msgstr "ui.textbutton"
+
+#: ..\..\source\screen_python.rst:94
+msgid "ui.timer"
+msgstr "ui.timer"
+
+#: ..\..\source\screen_python.rst:95
+msgid "ui.vbar"
+msgstr "ui.vbar"
+
+#: ..\..\source\screen_python.rst:96
+msgid "ui.hotspot"
+msgstr "ui.hotspot"
+
+#: ..\..\source\screen_python.rst:97
+msgid "ui.hotbar"
+msgstr "ui.hotbar"
+
+#: ..\..\source\screen_python.rst:98
+msgid "ui.spritemanager"
+msgstr "ui.spritemanager"
+
+#: ..\..\source\screen_python.rst:100
+msgid ""
+"The following UI functions take a single child. They must be given that "
+"child - use ui.null() if the child is missing."
+msgstr ""
+"以下の UI 関数は一つの子を取ります。これらはその子を与えられる必要があり、子"
+"がないと、 ui.null() を使用します。"
+
+#: ..\..\source\screen_python.rst:103
+msgid "ui.button"
+msgstr "ui.button"
+
+#: ..\..\source\screen_python.rst:104
+msgid "ui.frame"
+msgstr "ui.frame"
+
+#: ..\..\source\screen_python.rst:105
+msgid "ui.transform"
+msgstr "ui.transform"
+
+#: ..\..\source\screen_python.rst:106
+msgid "ui.window"
+msgstr "ui.window"
+
+#: ..\..\source\screen_python.rst:107
+msgid "ui.drag"
+msgstr "ui.drag"
+
+#: ..\..\source\screen_python.rst:109
+msgid ""
+"The following UI functions take multiple children. They continue taking "
+"children until :func:`ui.close` is called."
+msgstr ""
+"以下の UI 関数は複数の子を受け取ります。これらは :func:`ui.close` が呼び出さ"
+"れるまでは子を受け付けます。"
+
+#: ..\..\source\screen_python.rst:112
+msgid "ui.fixed"
+msgstr "ui.fixed"
+
+#: ..\..\source\screen_python.rst:113
+msgid "ui.grid"
+msgstr "ui.grid"
+
+#: ..\..\source\screen_python.rst:114
+msgid "ui.hbox"
+msgstr "ui.hbox"
+
+#: ..\..\source\screen_python.rst:115
+msgid "ui.side"
+msgstr "ui.side"
+
+#: ..\..\source\screen_python.rst:116
+msgid "ui.vbox"
+msgstr "ui.vbox"
+
+#: ..\..\source\screen_python.rst:117
+msgid "ui.imagemap"
+msgstr "ui.imagemap"
+
+#: ..\..\source\screen_python.rst:118
+msgid "ui.draggroup"
+msgstr "ui.draggroup"
+
+#: ..\..\source\screen_python.rst:120
+msgid ""
+"There are a few UI functions that do not correspond to screen language "
+"statements, as they correspond to concepts that are not present in the "
+"screen language."
+msgstr ""
+"スクリーン言語には存在しない考え方に対応するため、僅かにスクリーン言語のス"
+"テートメントに対応しない UI 関数もあります。"
+
+#: ..\..\source\inc\ui:5
+msgid ""
+"Adjustment objects represent a value that can be adjusted by a bar or "
+"viewport. They contain information about the value, the range of the value, "
+"and how to adjust the value in small steps and large pages."
+msgstr ""
+"adjustment オブジェクトは bar や viewport によって調整されるvalueを表します。"
+"これは値や値の範囲、 step と page での値の調整法についての情報を含みます。"
+
+#: ..\..\source\inc\ui:10
+msgid ""
+"The following parameters correspond to fields or properties on the "
+"adjustment object:"
+msgstr ""
+"以下のパラメーターは adjustment オブジェクトのフィールドやプロパティーに対応"
+"します。 :"
+
+#: ..\..\source\inc\ui:14
+msgid "`range`"
+msgstr "`range`"
+
+#: ..\..\source\inc\ui:14
+msgid "The range of the adjustment, a number."
+msgstr "adjustment の範囲で,数字です。"
+
+#: ..\..\source\inc\ui:17
+msgid "`value`"
+msgstr "`value`"
+
+#: ..\..\source\inc\ui:17
+msgid "The value of the adjustment, a number."
+msgstr "adjustment の値で、数字です。"
+
+#: ..\..\source\inc\ui:24
+msgid "`step`"
+msgstr "`step`"
+
+#: ..\..\source\inc\ui:20
+msgid ""
+"The step size of the adjustment, a number. If None, then defaults to 1/10th "
+"of a page, if set. Otherwise, defaults to the 1/20th of the range."
+msgstr ""
+"adjustment の一つの step のサイズで、数字です。 None ならデフォルトでは page "
+"が設定されていればその10分の1で、そうでなければ range の10分の1です。"
+
+#: ..\..\source\inc\ui:24
+msgid "This is used when scrolling a viewport with the mouse wheel."
+msgstr "これはマウスホイールで viewport をスクロールするときに使用されます。"
+
+#: ..\..\source\inc\ui:31
+msgid "`page`"
+msgstr "`page`"
+
+#: ..\..\source\inc\ui:27
+msgid ""
+"The page size of the adjustment. If None, this is set automatically by a "
+"viewport. If never set, defaults to 1/10th of the range."
+msgstr ""
+"adjustment の page あたりのサイズです。 None ならこれは viewport により自動的"
+"に設定されます。もし設定されなければ、デフォルトで range の10分の1です。"
+
+#: ..\..\source\inc\ui:31
+msgid "It's can be used when clicking on a scrollbar."
+msgstr "スクロールバーをクリックすると使用されます。"
+
+#: ..\..\source\inc\ui:33
+msgid "The following parameters control the behavior of the adjustment."
+msgstr "以下のパラメーターは adjustment の動作を制御するします。"
+
+#: ..\..\source\inc\ui:41
+msgid "`adjustable`"
+msgstr "`adjustable`"
+
+#: ..\..\source\inc\ui:36
+msgid "If True, this adjustment can be changed by a bar. If False, it can't."
+msgstr ""
+"True ならこの adjustment はbar から変更できます。 False なら出来ません。"
+
+#: ..\..\source\inc\ui:39
+msgid ""
+"It defaults to being adjustable if a `changed` function is given or if the "
+"adjustment is associated with a viewport, and not adjustable otherwise."
+msgstr ""
+"デフォルトでは `changed` 関数が与えられているか adjustment が viewport に関連"
+"づけられていれば変更可能で、さもなければ出来ません。"
+
+#: ..\..\source\inc\ui:45
+msgid "`changed`"
+msgstr "`changed`"
+
+#: ..\..\source\inc\ui:44
+msgid ""
+"This function is called with the new value when the value of the adjustment "
+"changes."
+msgstr ""
+"この関数は adjustment の値が変更されるとその新しい値を引数に呼び出されます。"
+
+#: ..\..\source\inc\ui:49
+msgid "`ranged`"
+msgstr "`ranged`"
+
+#: ..\..\source\inc\ui:48
+msgid ""
+"This function is called with the adjustment object when the range of the "
+"adjustment is set by a viewport."
+msgstr ""
+"この関数は adjustment の range が viewport によって設定されると adjustment オ"
+"ブジェクトはを引数に呼び出されます。"
+
+#: ..\..\source\inc\ui:53
+msgid ""
+"Changes the value of the adjustment to `value`, updating any bars and "
+"viewports that use the adjustment."
+msgstr ""
+"adjustment の値を `value` に変更し、その adjustment を使用しているすべての "
+"bar や viewport が更新されます。"
+
+#: ..\..\source\inc\ui:59
+msgid ""
+"Specifies a transform that is applied to the next displayable to be created. "
+"This is largely obsolete, as all UI functions now take an `at` argument."
+msgstr ""
+"次に作成される displayable に適用される変換を指定します。すべての UI 関数が今"
+"は `at` 引数を受け取るため、これはもはや過去の遺物です。"
+
+#: ..\..\source\inc\ui:65
+msgid ""
+"Closes a displayable created with by a UI function. When a displayable is "
+"closed, we add new displayables to its parent, or to the layer if no "
+"displayable is open."
+msgstr ""
+"UI 関数で作成した displayable を 閉じます。 displayable を閉じるとき、 "
+"displayable が何も開かれていなけらば新しい displayable をその親か、レイヤーに"
+"追加します。"
+
+#: ..\..\source\inc\ui:71
+msgid ""
+"Do not add the next displayable to any later or container. Use this if you "
+"want to assign the result of a ui function to a variable."
+msgstr ""
+"次の displayable をその先の displayable やコンテナに追加しません。これは ui "
+"関数の結果を変数に代入したいなら使用してください。"
+
+#: ..\..\source\inc\ui:76
+msgid ""
+"Causes an interaction with the user, and returns the result of that "
+"interaction. This causes Ren'Py to redraw the screen and begin processing "
+"input events. When a displayable returns a value in response to an event, "
+"that value is returned from ui.interact, and the interaction ends."
+msgstr ""
+"ユーザーとのインタラクションを起し、その結果を返します。これは Ren'Py にスク"
+"リーンを再描画させ入力イベントの処理を開始します。 displayable がイベントに対"
+"して値を返すと、その値は ui.interact から返され、インタラクションは終了しま"
+"す。"
+
+#: ..\..\source\inc\ui:81
+msgid ""
+"This function is rarely called directly. It is usually called by other parts "
+"of Ren'Py, including the say statement, menu statement, with statement, "
+"pause statement, call screen, :func:`renpy.input`, among many other "
+"functions. However, it can be called directly if necessary."
+msgstr ""
+"この関数は滅多に直接呼び出されません。 say ステートメントや menu, with "
+"pause, call screen ステートメント含む Ren'Py の一部、 :func:`renpy.input` な"
+"どの多くの関数から通常呼び出されます。しかし必要なら直接呼び出せます。"
+
+#: ..\..\source\inc\ui:86
+msgid ""
+"When an interaction ends, the transient layer and all screens shown with "
+"transient=True are cleared from the scene lists."
+msgstr ""
+"インタラクション終了時、 transient レイヤーと transient=True で表示されたすべ"
+"てのスクリーンはそのシーンリストから除去されます。"
+
+#: ..\..\source\inc\ui:89
+msgid ""
+"The following arguments are documented. As other, undocumented arguments "
+"exist for Ren'Py's internal use, please pass all arguments as keyword "
+"arguments."
+msgstr ""
+"以下の引数はドキュメントに記載されています。ドキュメントに記載されていない引"
+"数は Ren'Py 内部で使用するために存在するのですべての引数はキーワード引数とし"
+"て渡してください。"
+
+#: ..\..\source\inc\ui:97
+msgid "`roll_forward`"
+msgstr "`roll_forward`"
+
+#: ..\..\source\inc\ui:94
+msgid ""
+"The information that will be returned by this function when a roll forward "
+"occurs. (If None, the roll forward is ignored.) This should usually be "
+"passed the result of the :func:`renpy.roll_forward_info` function."
+msgstr ""
+"ロールバック時にこの関数から返される情報です。( None ならロールフォワードは無"
+"視されます。) これには通常 :func:`renpy.roll_forward_info` 関数の結果が渡され"
+"るはずです。"
+
+#: ..\..\source\inc\ui:99
+msgid "`mouse`"
+msgstr "`mouse`"
+
+#: ..\..\source\inc\ui:100
+msgid "The style of mouse cursor to use during this function."
+msgstr "この関数を実行中のマウスカーソルのスタイルです。"
+
+#: ..\..\source\inc\ui:104
+msgid ""
+"Adds displayables to the layer named `name`. The later must be closed with :"
+"func:`ui.close`."
+msgstr ""
+"`name` と名付けられたレイヤーに displayable を追加します。そのレイヤーは :"
+"func:`ui.close` で閉じられなければなりません。"
+
+#: ..\..\source\inc\ui:109
+msgid ""
+"Assigns the displayable `d` the screen widget id `id_`, as if it had been "
+"created by a screen statement with that id."
+msgstr ""
+"その id で screen ステートメントに作成されたかのように displayable `d` をスク"
+"リーンウィジェットid `id_` に代入します。"
+
+#: ..\..\source\screen_python.rst:127
+msgid "Actions"
+msgstr "アクション"
+
+#: ..\..\source\screen_python.rst:129
+msgid ""
+"Many of the displayables created in the screen language take actions as "
+"arguments. An action is one of three things:"
+msgstr ""
+"スクリーン言語で作成された displayable の多くは引数としてアクションを取りま"
+"す。アクションは以下の三つのうちいずれかです。 :"
+
+#: ..\..\source\screen_python.rst:132
+msgid ""
+"A callable python object (like a function or bound method) that takes no "
+"arguments."
+msgstr ""
+"引数を取らない呼び出し可能な ( 関数や bound method のような ) python オブジェ"
+"クト"
+
+#: ..\..\source\screen_python.rst:134
+msgid "An object of a class that inherits from the Action class."
+msgstr "Action クラスを継承するクラスのオブジェクト"
+
+#: ..\..\source\screen_python.rst:135
+msgid "A list of other Actions."
+msgstr "他のアクションのリスト"
+
+#: ..\..\source\screen_python.rst:137
+msgid ""
+"The advantage to inheriting from the Action class is that it allows you to "
+"override the methods that determine when a button should be sensitive, and "
+"when it is selected."
+msgstr ""
+"Action クラスを継承する利点はボタンが有効か、選択されているかを設定するメソッ"
+"ドを上書き可能なことです。"
+
+#: ..\..\source\screen_python.rst:143
+msgid ""
+"To define a new action, inherit from this class. Override the methods in "
+"this class to change the behavior of the action."
+msgstr ""
+"新しいアクションを定義するためにはこのクラスを継承してください。アクションの"
+"動作を変更するためにはこのクラスのメソッドを上書きしてください。"
+
+#: ..\..\source\screen_python.rst:148
+msgid ""
+"This is the method that is called when the action is activated. In many "
+"cases, returning a non-None value from the action will cause the current "
+"interaction to end."
+msgstr ""
+"これはアクションが実行されると呼び出されるメソッドです。多くの場合 None でな"
+"い値を返すと、現在のインタラクションが終了します。"
+
+#: ..\..\source\screen_python.rst:152 ..\..\source\screen_python.rst:219
+msgid ""
+"This method must be overridden, as the default method will raise "
+"NotImplemented (and hence cause Ren'Py to report an error)."
+msgstr ""
+"このメソッドはデフォルトでは NotImplemented の例外を出す ( Ren'Py にエラーを"
+"報告させる ) ため、上書きする必要があります。"
+
+#: ..\..\source\screen_python.rst:158
+msgid ""
+"This is called to determine if the button with this action should be "
+"sensitive. It should return true if the button is sensitive."
+msgstr ""
+"これはこのアクションに関連づけられたボタンが有効かどうかを決定するために呼び"
+"出されます。ボタンが有効なら True を返すべきです。"
+
+#: ..\..\source\screen_python.rst:162
+msgid "Note that __call__ can be called, even if this returns False."
+msgstr "これが False を返しても __call__ は実行されることに注意してください。"
+
+#: ..\..\source\screen_python.rst:164
+msgid "The default implementation returns True."
+msgstr "デフォルトでは True を返します。"
+
+#: ..\..\source\screen_python.rst:168
+msgid ""
+"This should return true if the button should be rendered as a selected "
+"button, and false otherwise."
+msgstr ""
+"これはボタンが選択された状態でレンダリングされるべきなら True を返し、そうで"
+"ないなら False を返すべきです。"
+
+#: ..\..\source\screen_python.rst:171
+msgid "The default implemention returns False."
+msgstr "デフォルトでは False を返します。"
+
+#: ..\..\source\screen_python.rst:175
+msgid ""
+"This method is called once at the start of each interaction, and then is "
+"called periodically thereafter. If it returns a number, it will be called "
+"before that many seconds elapse, but it might be called sooner."
+msgstr ""
+"このメソッドは各インタラクションが開始されると一旦呼び出され、その後も継続的"
+"に呼び出されます。数字を返すとその秒数が経過すると、そうでないならすぐに呼び"
+"出されます。"
+
+#: ..\..\source\screen_python.rst:180
+msgid ""
+"The main use of this is to call :func:`renpy.restart_interaction` if the "
+"value of get_selected or get_sensitive should change."
+msgstr ""
+"これの主な使用法は get_selected や get_sensitive の値が変更されたら :func:"
+"`renpy.restart_interaction`  を呼び出すことです。"
+
+#: ..\..\source\screen_python.rst:184
+msgid "It takes one argument:"
+msgstr "引数を一つ取ります。"
+
+#: ..\..\source\screen_python.rst:187
+msgid "`st`"
+msgstr "`st`"
+
+#: ..\..\source\screen_python.rst:187
+msgid ""
+"The number of seconds since the screen or displayable this action is "
+"associated with was first shown."
+msgstr ""
+"このアクションに関連づけられたスクリーンか displayable が最初に表示されてから"
+"の秒数です。"
+
+#: ..\..\source\screen_python.rst:192
+msgid ""
+"When the action is used as the `hovered` parameter to a button (or similar "
+"object), this method is called when the object loses focus."
+msgstr ""
+"アクションがボタン ( または同様なオブジェクト ) への `hovered` パラメーターと"
+"して使用されると、このメソッドはそのオブジェクトがフォーカスを失うと呼び出さ"
+"れます。"
+
+#: ..\..\source\screen_python.rst:195
+msgid "To run an action from python, use renpy.run."
+msgstr "pythonからアクションを実行するにはrenpy.run を使用してください。"
+
+#: ..\..\source\inc\run:5 ..\..\source\inc\run:21
+msgid "Returns true if `action` indicates it is selected, or false otherwise."
+msgstr "`action` が選択状態なら True を返し、そうでないなら False を返します。"
+
+#: ..\..\source\inc\run:9 ..\..\source\inc\run:25
+msgid "Returns true if `action` indicates it is sensitive, or False otherwise."
+msgstr "`action` が有効状態なら True を返し、そうでないなら False を返します。"
+
+#: ..\..\source\inc\run:13
+msgid ""
+"Run an action or list of actions. A single action is called with no "
+"arguments, a list of actions is run in order using this function, and None "
+"is ignored."
+msgstr ""
+"アクションまたはアクションのリストを実行します。単体のアクションは引数なしで"
+"呼び出され、アクションのリストはこの関数で順番に実行されます。 None は無視さ"
+"れます。"
+
+#: ..\..\source\inc\run:17
+msgid "Returns the result of the first action to return a value."
+msgstr "最初のアクションの結果が値を返します。"
+
+#: ..\..\source\screen_python.rst:200
+msgid "BarValues"
+msgstr "BarValue"
+
+#: ..\..\source\screen_python.rst:202
+msgid ""
+"When creating a bar, vbar, or hotbar, a BarValue object can be supplied as "
+"the `value` property. Methods on the BarValue object are called to get the "
+"adjustment and styles."
+msgstr ""
+"bar, vbar または hotbar 作成時に、 BarValue オブジェクトは `value` 引数として"
+"提供されます。 BarValue オブジェクトのメソッドは adjustment やスタイルを得る"
+"ために呼び出されます。"
+
+#: ..\..\source\screen_python.rst:209
+msgid ""
+"To define a new BarValue, inherit from this class and override some of the "
+"methods."
+msgstr ""
+"新しい BarValue を定義するためには、このクラスを継承してそのメソッドを上書き"
+"してください。"
+
+#: ..\..\source\screen_python.rst:214
+msgid ""
+"This method is called to get an adjustment object for the bar. It should "
+"create the adjustment with :func:`ui.adjustment`, and then return the object "
+"created this way."
+msgstr ""
+"このメソッドは bar の adjustment オブジェクトを得るために呼び出されます。 :"
+"func:`ui.adjustment` で adjustment を作成し、作成されたオブジェクトを返しま"
+"す。"
+
+#: ..\..\source\screen_python.rst:225
+msgid ""
+"This is used to determine the style of bars that use this value. It should "
+"return a tuple of two style names or style objects. The first is used for a "
+"bar, and the second for vbar."
+msgstr ""
+"これはこの値を使用する bar  のスタイルを決定するために使用されます。二つのス"
+"タイル名か、 style オブジェクトのタプルを返すべきです。第 一要素は bar に、第"
+"二要素は vbar に使用されます。 :"
+
+#: ..\..\source\screen_python.rst:230
+msgid "This defaults to (\"bar\", \"vbar\")."
+msgstr "これはデフォルトで (\"bar\", \"vbar\") です。"
+
+#: ..\..\source\screen_python.rst:234
+msgid ""
+"This is called when a BarValue replaces another BarValue, such as when a "
+"screen is updated. It can be used to update this BarValue from the other. It "
+"is called before get_adjustment."
+msgstr ""
+"これはスクリーンが更新される時のように、 BarValue が他の BarValue を置き換え"
+"るときに呼び出され、 other からこの BarValue に更新するために使用されます。 "
+"get_adjustment より前に、呼び出されます。"
+
+#: ..\..\source\screen_python.rst:238
+msgid "Note that `other` is not necessarily the same type as `self`."
+msgstr "`other` は `self` と同じ型である必要はありません。"
+
+#: ..\..\source\screen_python.rst:242
+msgid ""
+"This method is called once at the start of each interaction. If it returns a "
+"number of seconds, it will be called before that many seconds elapse, but it "
+"might be called sooner. It is called after get_adjustment."
+msgstr ""
+"このメソッドは各インタラクションの開始時に一度呼び出され、秒数の数字を返すと"
+"その時間が経過した後に、そうでなければすぐに再び呼び出されます。 これは "
+"get_adjustment の後に呼び出されます。"
+
+#: ..\..\source\screen_python.rst:247
+msgid ""
+"It can be used to update the value of the bar over time, like :func:"
+"`AnimatedValue` does. To do this, get_adjustment should store the "
+"adjustment, and periodic should call the adjustment's changed method."
+msgstr ""
+":func:`AnimatedValue` のように時間につれて bar の値を更新するために使用されま"
+"す。このためには、 get_adjustment で adjustment を保持し、 periodic で "
+"adjustment の changed メソッドを呼び出すべきです。"
+
+#: ..\..\source\screen_python.rst:253
+msgid "InputValue"
+msgstr "InputValue"
+
+#: ..\..\source\screen_python.rst:255
+msgid ""
+"When creating an input, an InputValue object can be supplied as the `value` "
+"property. Methods on the InputValue object are called to get and set the "
+"text, determine if the input is editable, and handle the enter key being "
+"pressed."
+msgstr ""
+"input 作成時に、 InputValue オブジェクトは `value` プロパティーとして提供され"
+"ます。 InputValue オブジェクトのメソッドは テキストの設定と所得、編集可能かど"
+"うか、エンターキーが押されたときの処理を決定するために呼び出されます。"
+
+#: ..\..\source\screen_python.rst:262
+msgid ""
+"To define a new InputValue, inherit from this class, override some or all of "
+"the methods, and set the value of the default field."
+msgstr ""
+"新しい InputValue を定義するためには、このクラスを継承してそのメソッドを上書"
+"きしてください。"
+
+#: ..\..\source\screen_python.rst:277
+msgid "Returns the default text of the input. This must be implemented."
+msgstr "入力されたテキストを返します。これは実装されなければいけません。"
+
+#: ..\..\source\screen_python.rst:281
+msgid ""
+"Called when the text of the input is changed, with the new text. This must "
+"be implemented."
+msgstr ""
+"入力されたテキストが変更されると、新しいテキストで呼び出されます。これは実装"
+"されなければいけません。"
+
+#: ..\..\source\screen_python.rst:286
+msgid ""
+"Called when the user presses enter. If this returns a non-None value, that "
+"value is returned from the interacton. This may also raise renpy.IgnoreEvent"
+"() to ignore the press. Otherwise, the enter-press is propagated to other "
+"displayables."
+msgstr ""
+"ユーザーがエンターを押すと呼び出されます。これが None 以外を返すと、その値が"
+"インタラクションから返されます。これは renpy.IgnoreEvent() でイベントを投げて"
+"押下を無視します。そうでなければ、他の displayable にエンターキーの押下が伝達"
+"されます。"
+
+#: ..\..\source\screen_python.rst:291
+msgid "The following actions are available as methods on InputValue:"
+msgstr "以下のアクションは InputValue で利用可能なメソッドです。 :"
+
+#: ..\..\source\screen_python.rst:295
+msgid "Returns an action that enables text editing on the input."
+msgstr "テキストを編集可能にするアクションを返します。"
+
+#: ..\..\source\screen_python.rst:299
+msgid "Returns an action that disables text editing on the input."
+msgstr "テキストを編集不能にするアクションを返します。"
+
+#: ..\..\source\screen_python.rst:303
+msgid "Returns an action that toggles text editing on the input."
+msgstr "テキストが編集可能かをトグルするアクションを返します。"
+
+#: ..\..\source\screen_python.rst:309
+msgid "Creator-Defined Screen Language Statements"
+msgstr "ユーザー定義スクリーン言語ステートメント"
+
+#: ..\..\source\screen_python.rst:311
+msgid ""
+"Ren'Py supports defining custom screen language statements. Creator-defined "
+"screen language statements are wrappers for the screen language :ref:`use "
+"statement <sl-use>`. Positional arguments remain positional arguments, "
+"properties become keyword arguments, and if the statement takes a block, so "
+"does the use statement. For example, the custom screen language statement::"
+msgstr ""
+"Ren'Py はユーザー定義スクリーン言語ステートメントをサポートしています。ユー"
+"ザー定義スクリーン言語ステートメントはスクリーン言語の :ref:`use ステートメン"
+"ト <sl-use>` に対するラッパーです。位置引数はそのまま位置引数になり、プロパ"
+"ティーはキーワード引数になり、ステートメントがブロックを受け取ると、use ス"
+"テートメント同様に処理します。例えば次のユーザー定義スクリーン言語ステートメ"
+"ントは ::"
+
+#: ..\..\source\screen_python.rst:322
+msgid "becomes::"
+msgstr "こうなります。 ::"
+
+#: ..\..\source\screen_python.rst:327
+msgid ""
+"Creator-defined screen language statements must be registered in a python "
+"early block. What's more, the filename containing the creator-defined "
+"statement must be be loaded earlier than any file that uses it. Since Ren'Py "
+"loads files in unicode sort order, it generally makes sense to prefix the "
+"name of any file registering a user-defined statement with 01, or some other "
+"small number."
+msgstr ""
+"ユーザー定義スクリーン言語ステートメントは python early ブロックで登録されな"
+"ければなりません。また、そのユーザー定義ステートメントがあるファイル名はそれ"
+"を使用するどのファイルよりも先に読み込まれなけれなければなりません。Ren'Py は"
+"ファイルをユニコード順に読み込むので、ユーザー定義ステートメントを登録する"
+"ファイル名の先頭に 01 やさらに小さい数を付けるとよいです。"
+
+#: ..\..\source\screen_python.rst:333
+msgid ""
+"Creator-defined screen language statements are registered with the renpy."
+"register_sl_statement function:"
+msgstr ""
+"ユーザー定義スクリーン言語ステートメント renpy.register_sl_statement 関数で登"
+"録されます。 :"
+
+#: ..\..\source\inc\custom_sl:5
+msgid "Registers a screen language statement that creates a displayable."
+msgstr ""
+"displayable を作成するユーザー定義のスクリーン言語ステートメントを登録しま"
+"す。"
+
+#: ..\..\source\inc\custom_sl:9 ..\..\source\inc\custom_sl:97
+msgid "`name`"
+msgstr "`name`"
+
+#: ..\..\source\inc\custom_sl:8
+msgid ""
+"The name of the screen language statement, a string containing a Ren'Py "
+"keyword. This keyword is used to introduce the new statement."
+msgstr ""
+"スクリーン言語ステートメントの名前でと Ren'Py のキーワードを含む文字列です。"
+"このキーワードは新しいステートメントを導入するために使用されます。"
+
+#: ..\..\source\inc\custom_sl:20
+msgid "`displayable`"
+msgstr "`displayable`"
+
+#: ..\..\source\inc\custom_sl:12
+msgid ""
+"This is a function that, when called, returns a displayable object. All "
+"position arguments, properties, and style properties are passed as arguments "
+"to this function. Other keyword arguments are also given to this function, a "
+"described below."
+msgstr ""
+"これは関数で、呼び出されると displayable オブジェクトを返します。すべての位置"
+"引数、プロパティーとスタイルプロパティーはこの関数へ引数として渡されます。そ"
+"の他のキーワード引数も以下のようにこの関数へ渡されます。"
+
+#: ..\..\source\inc\custom_sl:17
+msgid ""
+"This must return a Displayable. If it returns multiple displayables, the "
+"_main attribute of the outermost displayable should be set to the \"main\" "
+"displayable - the one that children should be added to."
+msgstr ""
+"これは displayable を返すべきです。 複数の displayable を返すと最も外側の "
+"displayable の _main 属性が \"main\" displayable に設定され、子はこれに追加さ"
+"れます。"
+
+#: ..\..\source\inc\custom_sl:26
+msgid "`style`"
+msgstr "`style`"
+
+#: ..\..\source\inc\custom_sl:23
+msgid ""
+"The base name of the style of this displayable. If the style property is not "
+"given, this will have the style prefix added to it. The computed style is "
+"passed to the `displayable` function as the ``style`` keyword argument."
+msgstr ""
+"この displayable のスタイルのベース名です。 スタイルプロパティーが指定されな"
+"いと、これにスタイル接頭辞を追加します。結果のスタイルが `displayable` 関数"
+"に ``style`` キーワード引数として渡されます。"
+
+#: ..\..\source\inc\custom_sl:38
+msgid "`nchildren`"
+msgstr "`nchildren`"
+
+#: ..\..\source\inc\custom_sl:29
+msgid "The number of children of this displayable. One of:"
+msgstr "この displayable の子の数で、次のうちのひとつです。 :"
+
+#: ..\..\source\inc\custom_sl:31
+msgid "0"
+msgstr "0"
+
+#: ..\..\source\inc\custom_sl:32
+msgid "The displayable takes no children."
+msgstr "displayable は子を取りません。"
+
+#: ..\..\source\inc\custom_sl:34
+msgid "1"
+msgstr "1"
+
+#: ..\..\source\inc\custom_sl:34
+msgid ""
+"The displayable takes 1 child. If more than one child is given, the children "
+"are placed in a Fixed."
+msgstr ""
+"displayable はひとつ子を取ります。ひとつ以上の子が与えられると、子は Fixed に"
+"配置されます。"
+
+#: ..\..\source\inc\custom_sl:38
+msgid "\"many\""
+msgstr "\"many\""
+
+#: ..\..\source\inc\custom_sl:37
+msgid "The displayable takes more than one child."
+msgstr "displayable ひとつ以上の子を取ります。"
+
+#: ..\..\source\inc\custom_sl:40
+msgid "The following arguments should be passed in using keyword arguments:"
+msgstr "以下の引数はキーワード引数を使って渡されるべきです。"
+
+#: ..\..\source\inc\custom_sl:44
+msgid "`replaces`"
+msgstr "`replaces`"
+
+#: ..\..\source\inc\custom_sl:43
+msgid ""
+"If true, and the displayable replaces a prior displayable, that displayable "
+"is passed as a parameter to the new displayable."
+msgstr ""
+"True で、 displayable が以前の displayable を置き換えるなら、新しい "
+"displayable に対する引数としてその displayable は渡されます。"
+
+#: ..\..\source\inc\custom_sl:47
+msgid "`default_keywords`"
+msgstr "`default_keywords`"
+
+#: ..\..\source\inc\custom_sl:47
+msgid "The default set of keyword arguments to supply to the displayable."
+msgstr "その displayable に与えられるキーワード引数のデフォルトの設定です。"
+
+#: ..\..\source\inc\custom_sl:49
+msgid ""
+"Returns an object that can have positional arguments and properties added to "
+"it by calling the following methods. Each of these methods returns the "
+"object it is called on, allowing methods to be chained together."
+msgstr ""
+"以下のメソッドを呼び出して、追加する位置引数とプロパティーを指定出来るオブ"
+"ジェクトを返します。それらの各メソッドは同様に呼び出せるオブジェクトを返し、"
+"メソッドをひとつなぎに出来ます。"
+
+#: ..\..\source\inc\custom_sl:56
+msgid "Adds a positional argument with `name`"
+msgstr "`name` の位置引数を追加します。"
+
+#: ..\..\source\inc\custom_sl:60
+msgid ""
+"Adds a property with `name`. Properties are passed as keyword arguments."
+msgstr ""
+"`name` のプロパティーを追加します。プロパティーはキーワード引数として渡されま"
+"す。"
+
+#: ..\..\source\inc\custom_sl:65
+msgid ""
+"Adds a family of properties, ending with `name` and prefixed with the "
+"various style property prefixes. For example, if called with (\"size\"), "
+"this will define size, idle_size, hover_size, etc."
+msgstr ""
+"`name` で終り、さまざまなスタイルプロパティー接頭辞を接頭辞にするプロパティー"
+"の一群を追加します。例えば (\"size\") で呼び出されると、size, idle_size, "
+"hover_size などを定義します。"
+
+#: ..\..\source\inc\custom_sl:71
+msgid ""
+"Adds a family of properties with names consisting of `prefix`, a style "
+"property prefix, and `name`. For example, if called with a prefix of `text_` "
+"and a name of `size`, this will create text_size, text_idle_size, "
+"text_hover_size, etc."
+msgstr ""
+"`prefix` とスタイルプロパティーの接頭辞、 `name` で構成された名前を持つプロパ"
+"ティーの一群を追加します。例えば prefix が `text_` name  が `size` で呼び出さ"
+"れると、これは text_size, text_idle_size, text_hover_size などを作成します。"
+
+#: ..\..\source\inc\custom_sl:78
+msgid ""
+"Adds a group of properties, prefixed with `prefix`. `Group` may be one of "
+"the strings:"
+msgstr ""
+"`prefix` を接頭辞に持つプロパティーのグループを追加します。 `Group` は次の文"
+"字列のうちの一つです。 :"
+
+#: ..\..\source\inc\custom_sl:81
+msgid "\"bar\""
+msgstr "\"bar\""
+
+#: ..\..\source\inc\custom_sl:82
+msgid "\"box\""
+msgstr "\"box\""
+
+#: ..\..\source\inc\custom_sl:83
+msgid "\"button\""
+msgstr "\"button\""
+
+#: ..\..\source\inc\custom_sl:84
+msgid "\"position\""
+msgstr "\"position\""
+
+#: ..\..\source\inc\custom_sl:85
+msgid "\"text\""
+msgstr "\"text\""
+
+#: ..\..\source\inc\custom_sl:86
+msgid "\"window\""
+msgstr "\"window\""
+
+#: ..\..\source\inc\custom_sl:88
+msgid ""
+"These correspond to groups of :ref:`style-properties`. Group can also be \"ui"
+"\", in which case it adds the :ref:`common ui properties <common-"
+"properties>`."
+msgstr ""
+"これらは :ref:`style-properties` のグループに対応します。グループは \"ui\" に"
+"も出来、その場合 :ref:`ユーザーインターフェイス共通のプロパティー <common-"
+"properties>` を追加します。"
+
+#: ..\..\source\inc\custom_sl:93
+msgid "Registers a custom screen language statement with Ren'Py."
+msgstr "Ren'Py にユーザー定義のスクリーン言語ステートメントを登録します。"
+
+#: ..\..\source\inc\custom_sl:96
+msgid ""
+"This must be a word. It's the name of the custom screen language statement."
+msgstr ""
+"これは単語でなくてはいけません。そのユーザー定義スクリーン言語ステートメント"
+"の名前になります。"
+
+#: ..\..\source\inc\custom_sl:100
+msgid "`positional`"
+msgstr "`positional`"
+
+#: ..\..\source\inc\custom_sl:100
+msgid "The number of positional parameters this statement takes."
+msgstr "このステートメントが受け取る位置引数の数です。"
+
+#: ..\..\source\inc\custom_sl:104
+msgid "`children`"
+msgstr "`children`"
+
+#: ..\..\source\inc\custom_sl:103
+msgid ""
+"The number of children this custom statement takes. This should be 0, 1, or "
+"\"many\", which means zero or more."
+msgstr ""
+"このユーザー定義ステートメントが受け取る子の数です。これは 0, 1 または 0 以上"
+"を表す \"many\" であるべきです。"
+
+#: ..\..\source\inc\custom_sl:107
+msgid "`screen`"
+msgstr "`screen`"
+
+#: ..\..\source\inc\custom_sl:107
+msgid "The screen to use. If not given, defaults to `name`."
+msgstr "使用するスクリーンです。未指定では `name` になります。"
+
+#: ..\..\source\inc\custom_sl:109
+msgid ""
+"Returns an object that can have positional arguments and properties added to "
+"it. This object has the same .add_ methods as the objects returned by :class:"
+"`renpy.register_sl_displayable`."
+msgstr ""
+"追加する位置引数とプロパティーを指定出来るオブジェクトを返します。このオブ"
+"ジェクトは  :class:`renpy.register_sl_displayable` が返すオブジェクト同様に "
+"add_ メソッドを持ちます。"
+
+#: ..\..\source\screen_python.rst:338
+msgid ""
+"As an example of a creator-defined screen language statement, here's an "
+"implementation of the ``titledwindow`` statement given above. First, the "
+"statement must be registered in a python early block in a file that is "
+"loaded early - a name like 01custom.rpy will often load soon enough. The "
+"registration call looks like::"
+msgstr ""
+"ユーザー定義スクリーン言語ステートメントの例として、上記で指定した "
+"``titlewindow`` ステートメントの実装を示します。先ず、 01custom.rpy のような"
+"初期に読み込まれるファイルの python early ブロックでステートメントは登録され"
+"なければなりません。以下のように登録します。 ::"
+
+#: ..\..\source\screen_python.rst:348
+msgid ""
+"Then, we define a screen that implements the custom statement. This screen "
+"can be defined in any file. One such screen is::"
+msgstr ""
+"次にユーザー定義ステートメントを実装するスクリーンを定義します。このスクリー"
+"ンはどのファイルでも定義出来ます。そのようなスクリーンの 1 例です。 ::"
+
+#~ msgid ""
+#~ "This returns an object that can have properties added to it. Properties "
+#~ "are added using the method:"
+#~ msgstr ""
+#~ "これが返すオブジェクトにはプロパティーが追加出来ます。プロパティーは次のメ"
+#~ "ソッドを使用して追加出来ます。"
+
+#~ msgid ""
+#~ "Registers a property with the creator-defined screen language statement. "
+#~ "This returns the object it is called on, so calls can be chained."
+#~ msgstr ""
+#~ "ユーザー定義スクリーン言語ステートメントにプロパティーを登録します。これは"
+#~ "自身を返すので連続して呼び出せます。"
+
+#~ msgid ""
+#~ "This method must be overriden, as the default method will raise "
+#~ "NotImplemented (and hence cause Ren'Py to report an error)."
+#~ msgstr ""
+#~ "このメソッドはデフォルトでは NotImplemented の例外を出す ( Ren'Py にエラー"
+#~ "を報告させる ) ため、上書きする必要があります。"
+
+#~ msgid ""
+#~ "It can be used to update the value of the bar over time, like :func:"
+#~ "`AnimatedValue` does. To do this, get_adjustment should store the "
+#~ "adjustment, and periodic should calle the adjustment's changed method."
+#~ msgstr ""
+#~ ":func:`AnimatedValue` のように時間につれて bar の値を更新するために使用さ"
+#~ "れます。このためには、 get_adjustment で adjustment を保持し、 periodic "
+#~ "で adjustment の changed メソッドを呼び出すべきです。"
+
+#~ msgid ""
+#~ "There are a few UI functions that do not correspond to screen language "
+#~ "statments, as they correspond to concepts that are not present in the "
+#~ "screen language."
+#~ msgstr ""
+#~ "スクリーン言語には存在しない考え方に対応するため、僅かにスクリーン言語のス"
+#~ "テートメントに対応しない UI 関数もあります。"
+
+#~ msgid ""
+#~ "Specifieds a transform that is applied to the next displayable to be "
+#~ "created. This is largely obsolete, as all UI functions now take an `at` "
+#~ "argument."
+#~ msgstr ""
+#~ "次に作成される displayable に適用される変換を指定します。すべての UI 関数"
+#~ "が今は `at` 引数を受け取るため、これはもはや過去の遺物です。"

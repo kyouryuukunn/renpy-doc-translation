@@ -1,0 +1,450 @@
+# Japanese translation for renpy-doc
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the renpy-doc package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: renpy-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-09 22:14+0900\n"
+"PO-Revision-Date: 2015-04-15 15:04+0900\n"
+"Last-Translator: \n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-06-21 06:26+0000\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ../../source/drag_drop.rst:7
+msgid "Drag and Drop"
+msgstr "ドラッグドロップ"
+
+#: ../../source/drag_drop.rst:9
+msgid ""
+"Ren'Py includes drag and drop displayables that allow things to be moved "
+"around the screen with the mouse. Some of the uses of dragging are:"
+msgstr ""
+"Ren'Py にはマウスで画面上を移動できるドラッグドロップ displayable がありま"
+"す。ドラッグの使用法としては :"
+
+#: ../../source/drag_drop.rst:13
+msgid ""
+"Allowing windows to be repositioned by the user, storing the window "
+"positions."
+msgstr "ウィンドウの位置合わせ、ウィンドウ位置を記憶できるようにする。"
+
+#: ../../source/drag_drop.rst:15
+msgid ""
+"Card games that require cards to be dragged around the screen. (For example, "
+"solitaire.)"
+msgstr ""
+"カードを画面上でドラッグする必要のあるカードゲーム ( 例えばソリティア )。"
+
+#: ../../source/drag_drop.rst:17
+msgid "Inventory systems."
+msgstr "アイテムシステム。"
+
+#: ../../source/drag_drop.rst:18
+msgid "Drag-to-reorder systems."
+msgstr "ドラッグで並び順を変えるシステム。"
+
+#: ../../source/drag_drop.rst:20
+msgid ""
+"The drag and drop displayables make it possible to implement these and other "
+"uses of drag and drop. There are two classes involved here. The Drag class "
+"represents either something that can be dragged around the screen, something "
+"that can have a draggable dropped onto it, or something that can do both. "
+"The DragGroup class represents a group of Drags - for a drag and drop to "
+"occur, both Drags must be part of the same drag group."
+msgstr ""
+"ドラッグドロップ displayable は、上記やその他の場面においてドラッグドロップを"
+"実装できるようにします。ここで関係する2つのクラスがあります。 Drag クラスは、"
+"スクリーン上をドラッグできるもの、またはその上にドロップされたドラッグ可能な"
+"ものを受け取れるもの、その両方が出来るもののいずれかを表します。 DragGroup ク"
+"ラスは Drag のグループを表します。ドラッグドロップを実行するためには、両方の "
+"Drag が同じドラッググループに属していなければなりません。"
+
+#: ../../source/drag_drop.rst:28
+msgid ""
+"The drag and drop system can be used either through the :ref:`Screen "
+"Language <screens>` or directly as displayables. It makes sense to use the "
+"screen language when you don't need to refer to the Drags that you create "
+"after they've been created. This might be the case if the draggable "
+"represents a window that the user places on the screen. If you need to refer "
+"to the drags after they've been created, then it's often better to create "
+"Drags directly, and add them to a DragGroup."
+msgstr ""
+"ドラッグドロップシステムは :ref:`スクリーン言語 <screens>` を通してか、または"
+"直接 displayable として使用できます。作成後に作成した Drag を参照する必要がな"
+"いときは、スクリーン言語を使用すると良いでしょう。これはドラッグ可能オブジェ"
+"クトが、ユーザーがスクリーン上に配置したウィンドウである場合などです。作成後"
+"も作成した Drag を参照する必要がある場合は、直接 Drag を作成し、それらを "
+"DragGroup に追加すると良いでしょう。"
+
+#: ../../source/drag_drop.rst:37
+msgid "Displayables"
+msgstr "Displayable"
+
+#: ../../source/inc/drag_drop:5
+msgid ""
+"A displayable that represents an object that can be dragged around its "
+"enclosing area. A Drag can also represent an area that other Drags can be "
+"dropped on."
+msgstr ""
+"それを囲んでいる領域上でドラッグ可能なオブジェクトを表わす displayable で"
+"す。 Drag は他の Drag がドロップ可能な領域も表現できます。"
+
+#: ../../source/inc/drag_drop:9
+msgid ""
+"A Drag can be moved around inside is parent. Generally, its parent should be "
+"either a :func:`Fixed` or :class:`DragGroup`."
+msgstr ""
+"Drag がその内側で移動可能なものを親と呼びます。一般的には親は :func:`Fixed` "
+"か :class:`DragGroup` であるはずです。"
+
+#: ../../source/inc/drag_drop:12
+msgid ""
+"A Drag has one child. The child's state reflects the status of the drag and "
+"drop operation:"
+msgstr ""
+"Dorag は子を一つ持ちます。子の状態はドラッグドロップ処理の状態を反映しま"
+"す。 :"
+
+#: ../../source/inc/drag_drop:15
+msgid "``selected_hover`` - when it is being dragged."
+msgstr "``selected_hover`` ドラッグされている時。"
+
+#: ../../source/inc/drag_drop:16
+msgid "``selected_idle`` - when it can be dropped on."
+msgstr "``selected_idle`` その上にドロップ可能な時。"
+
+#: ../../source/inc/drag_drop:17
+msgid ""
+"``hover`` - when the draggable will be dragged when the mouse is clicked."
+msgstr ""
+"``hover`` - マウスがクリックされるとドラッグ可能オブジェクトがドラッグされる"
+"時。"
+
+#: ../../source/inc/drag_drop:19
+msgid "``idle`` - otherwise."
+msgstr "``idle`` それ以外。"
+
+#: ../../source/inc/drag_drop:21
+msgid ""
+"The drag handle is a rectangle inside the child. The mouse must be over a "
+"non-transparent pixel inside the drag handle for dragging or clicking to "
+"occur."
+msgstr ""
+"ドラッグで持てるのはその子の内側の長方形です。ドラッグやクリックを実行するた"
+"めにマウスは Drag の不透明なピクセル上になければなりません。"
+
+#: ../../source/inc/drag_drop:25
+msgid ""
+"A newly-created draggable is added to the default DragGroup. A draggable can "
+"only be in a single DragGroup - if it's added to a second group, it's "
+"removed from the first."
+msgstr ""
+"新しく作成されたドラッグ可能なオブジェクトはデフォルトの DragGroup に追加され"
+"ます。 ドラッグ可能オブジェクトは 一つの DragGroup にのみ所属できます。二つ目"
+"のグループに追加すると、最初のものからは削除されます。"
+
+#: ../../source/inc/drag_drop:29
+msgid ""
+"When a Drag is first rendered, if it's position cannot be determined from "
+"the DragGroup it is in, the position of its upper-left corner is computed "
+"using the standard layout algorithm. Once that position"
+msgstr ""
+"Drag が最初にレンダリングされる時に、それが所属する DragGroup からその座標を"
+"決定できない場合その左上の座標が基本的なレイアウトアルゴリズムを使用して算出"
+"されます。"
+
+#: ../../source/inc/drag_drop:36
+msgid "`d`"
+msgstr "`d`"
+
+#: ../../source/inc/drag_drop:35
+msgid ""
+"If present, the child of this Drag. Drags use the child style in preference "
+"to this, if it's not None."
+msgstr ""
+"与えられると、この Drag の子になります。 None でなければ Drag はこれに優先し"
+"て child スタイルを使用します。"
+
+#: ../../source/inc/drag_drop:42
+msgid "`drag_name`"
+msgstr "`drag_name`"
+
+#: ../../source/inc/drag_drop:39
+msgid ""
+"If not None, the name of this draggable. This is available as the `name` "
+"property of draggable objects. If a Drag with the same name is or was in the "
+"DragGroup, the starting position of this Drag is taken from that Draggable."
+msgstr ""
+"None を指定するかこのドラッグ可能オブジェクトの名前を指定します。これはドラッ"
+"グ可能オブジェクトの `name` プロパティーとして利用できます。もし同じ名前の "
+"Drag がその DragGroup に所属しているまたはしていたならこの Drag の最初の座標"
+"はそのドラッグ可能オブジェクトから受け取ります。"
+
+#: ../../source/inc/drag_drop:46
+msgid "`draggable`"
+msgstr "`draggable`"
+
+#: ../../source/inc/drag_drop:45
+msgid "If true, the Drag can be dragged around the screen with the mouse."
+msgstr "True の場合、Drag はスクリーン上をマウスでドラッグできます。"
+
+#: ../../source/inc/drag_drop:49
+msgid "`droppable`"
+msgstr "`droppable`"
+
+#: ../../source/inc/drag_drop:49
+msgid "If true, other Drags can be dropped on this Drag."
+msgstr "True なら他の Drag がこの Drag 上にドロップ可能です。"
+
+#: ../../source/inc/drag_drop:53
+msgid "`drag_raise`"
+msgstr "`drag_raise`"
+
+#: ../../source/inc/drag_drop:52
+msgid ""
+"If true, this Drag is raised to the top when it is dragged. If it is joined "
+"to other Drags, all joined drags are raised."
+msgstr ""
+"True ならこの Drag がドラッグされたときにトップまで持ち上げられます。他の "
+"Drag と接続されていたら、すべての接続された Drag も持ち上げられます。"
+
+#: ../../source/inc/drag_drop:61
+msgid "`dragged`"
+msgstr "`dragged`"
+
+#: ../../source/inc/drag_drop:56
+msgid ""
+"A callback (or list of callbacks) that is called when the Drag has been "
+"dragged. It is called with two arguments. The first is a list of Drags that "
+"are being dragged. The second is either a Drag that is being dropped onto, "
+"or None of a drop did not occur. If the callback returns a value other than "
+"None, that value is returned as the result of the interaction."
+msgstr ""
+"Drag がドラッグされた時に呼び出されるコールバック ( またはコールバックのリス"
+"ト ) です。それは二つの引数で呼び出されます。一つ目はドラッグされている Drag "
+"のリストです。二つ目はその上にドロップされている Drag か、ドロップが起きてい"
+"ないなら None です。コールバックが None ではなく値を返すとその値はインタラク"
+"ションの結果として返されます。"
+
+#: ../../source/inc/drag_drop:72
+msgid "`dropped`"
+msgstr "`dropped`"
+
+#: ../../source/inc/drag_drop:64
+msgid ""
+"A callback (or list of callbacks) that is called when this Drag is dropped "
+"onto. It is called with two arguments. The first is the Drag being dropped "
+"onto. The second is a list of Drags that are being dragged.  If the callback "
+"returns a value other than None, that value is returned as the result of the "
+"interaction."
+msgstr ""
+"Drag がドロップされた時に呼び出されるコールバック ( またはコールバックのリス"
+"ト ) です。それは二つの引数で呼び出されます。一つ目はその上にドロップされてい"
+"る Drag 二つ目はドラッグされている Drag のリストです。コールバックが None 以"
+"外の値を返すと、その値はインタラクションの結果として返されます。"
+
+#: ../../source/inc/drag_drop:70
+msgid ""
+"When a dragged and dropped callback are triggered for the same event, the "
+"dropped callback is only called if dragged returns None."
+msgstr ""
+"dragged と dropped のコールバックが同じイベントで起こされると、 dropped コー"
+"ルバックは dragged が None を返したときのみ呼び出されます。"
+
+#: ../../source/inc/drag_drop:78
+msgid "`clicked`"
+msgstr "`clicked`"
+
+#: ../../source/inc/drag_drop:75
+msgid ""
+"A callback this is called, with no arguments, when the Drag is clicked "
+"without being moved. A droppable can also be focused and clicked.  If the "
+"callback returns a value other than None, that value is returned as the "
+"result of the interaction."
+msgstr ""
+"Drag が移動せずにクリックされると、引数なしで呼び出されるコールバックです。ド"
+"ロップ可能オブジェクトはフォーカスを持ち、クリックすることも可能です。 コール"
+"バックが None ではなく値を返したら、その値はインタラクションの結果として返さ"
+"れます。"
+
+#: ../../source/inc/drag_drop:84
+msgid "`drag_handle`"
+msgstr "`drag_handle`"
+
+#: ../../source/inc/drag_drop:81
+msgid ""
+"A (x, y, width, height) tuple, giving the position of the drag handle within "
+"the child. In this tuple, integers are considered to be a literal number of "
+"pixels, while floats are relative to the size of the child."
+msgstr ""
+"子内部のドラッグ有効範囲の位置を与える (x, y, width, height) のタプルです。こ"
+"のタプルでは、整数はピクセルの定数になるように配慮され、一方少数は子のサイズ"
+"に対する割合です。"
+
+#: ../../source/inc/drag_drop:91
+msgid "`drag_joined`"
+msgstr "`drag_joined`"
+
+#: ../../source/inc/drag_drop:87
+msgid ""
+"This is called with the current Drag as an argument. It's expected to return "
+"a list of [ (drag, x, y) ] tuples, giving the draggables to drag as a unit. "
+"`x` and `y` are the offsets of the drags relative to each other, they are "
+"not relative to the corner of this drag."
+msgstr ""
+"これは現在の Drag を引数として呼び出されます。ひとかたまりでドラッグしている"
+"ドラッグ可能オブジェクトのタプル [ (drag, x, y) ] を返すことが期待されます。 "
+"`x`, `y` は Drag の互いに対するオフセットで、この drag に対するものではありま"
+"せん。"
+
+#: ../../source/inc/drag_drop:97
+msgid "`drag_offscreen`"
+msgstr "`drag_offscreen`"
+
+#: ../../source/inc/drag_drop:94
+msgid ""
+"If true, this draggable can be moved offscreen. This can be dangerous to use "
+"with drag_joined or drags that can change size, as the drags can leave the "
+"screen entirely, with no way to get them back on the screen."
+msgstr ""
+"True なら ドラッグ可能オブジェクトは画面外へ動かせます。これは drag_joined や"
+"サイズを変更出来る Drag に使用すると、Drag が完全に画面外に出て画面に戻す方法"
+"がなくなるため危険でしょう。"
+
+#: ../../source/inc/drag_drop:99
+msgid ""
+"Except for `d`, all of the parameters are available as fields (with the same "
+"name) on the Drag object. In addition, after the drag has been rendered, the "
+"following fields become available:"
+msgstr ""
+"`d` を除いて引数のすべてはその Drag オブジェクトでフィールドとして ( 同じ名前"
+"で ) 利用可能です。さらに Drag がレンダリングされた後は次のフィールドが利用可"
+"能になります。"
+
+#: ../../source/inc/drag_drop:104
+msgid "`x`, `y`"
+msgstr "`x`, `y`"
+
+#: ../../source/inc/drag_drop:104
+msgid "The position of the Drag relative to its parent, in pixels."
+msgstr "ピクセルでのその親に対する Drag の位置"
+
+#: ../../source/inc/drag_drop:108
+msgid "`w`, `h`"
+msgstr "`w`, `h`"
+
+#: ../../source/inc/drag_drop:107
+msgid "The width and height of the Drag's child, in pixels."
+msgstr "Drag の子のピクセルでの幅と高さです。"
+
+#: ../../source/inc/drag_drop:112
+msgid "Changes the child of this drag to `d`."
+msgstr "この Drag の子を `d` に変更します。"
+
+#: ../../source/inc/drag_drop:116
+msgid ""
+"Changes the position of the drag. If the drag is not showing, then the "
+"position change is instantaneous. Otherwise, the position change takes "
+"`delay` seconds, and is animated as a linear move."
+msgstr ""
+"Drag の位置を変更します。 Drag が表示されていないと位置の変更は瞬間です。そう"
+"でなければ、位置の変更は `delay` 秒かかり、等速で移動するアニメーションが表示"
+"されます。"
+
+#: ../../source/inc/drag_drop:123
+msgid "Raises this displayable to the top of its drag_group."
+msgstr "この displayable をその DragGroup のトップに持ち上げます。"
+
+#: ../../source/inc/drag_drop:127
+msgid ""
+"Represents a group of Drags. A Drag is limited to the boundary of its "
+"DragGroup. Dropping only works between Drags that are in the same DragGroup. "
+"Drags may only be raised when they are inside a DragGroup."
+msgstr ""
+"Drag のグループを表します。ドラッグはその DragGroup 内部に制限されます。ド"
+"ロップは同じ DragGroup に所得する Drag 間でのみ働きます。 Drag はそれが "
+"DragGroup の内側にあるときのみ持ち上げられます。"
+
+#: ../../source/inc/drag_drop:132
+msgid "A DragGroup is laid out like a :func:`Fixed`."
+msgstr ":func:`Fixed` と同様に DragGroup はレイアウトされます。"
+
+#: ../../source/inc/drag_drop:134
+msgid ""
+"All positional parameters to the DragGroup constructor should be Drags, that "
+"are added to the DragGroup."
+msgstr ""
+"DragGroup のコンストラクターに渡されるすべての位置引数はその DragGroup に追加"
+"される Drag であるべきです。"
+
+#: ../../source/inc/drag_drop:139
+msgid "Adds `child`, which must be a Drag, to this DragGroup."
+msgstr ""
+"`child` をこの DragGroup に追加します。 `child` は Drag でなければいけませ"
+"ん。"
+
+#: ../../source/inc/drag_drop:143
+msgid "Returns the first child of this DragGroup that has a drag_name of name."
+msgstr "drag_name の名前を持つこの DragGroup の最初の子を返します。"
+
+#: ../../source/inc/drag_drop:148
+msgid "Removes `child` from this DragGroup."
+msgstr "DragGroup から `child` を除去します。"
+
+#: ../../source/drag_drop.rst:42
+msgid "Examples"
+msgstr "例"
+
+#: ../../source/drag_drop.rst:44
+msgid ""
+"An example of a say screen that allows the user to choose the location of "
+"the window by dragging it around the screen.::"
+msgstr ""
+"以下の say スクリーンの例では、スクリーン上をドラッグしてユーザーがウィンドウ"
+"の位置を選べます。 ::"
+
+#: ../../source/drag_drop.rst:67
+msgid ""
+"Here's a more complicated example, one that shows how dragging can be used "
+"to influence gameplay. It shows how dragging can be used to send a character "
+"to a location::"
+msgstr ""
+"こちらはより複雑な例で、ゲームプレイに影響を与えるためにどのようにドラッグを"
+"使用できるかを表示します。これはどのようにキャラクターをある場所に送るために"
+"ドラッグが使用できるかを表示します。"
+
+#: ../../source/drag_drop.rst:125
+msgid ""
+"More complicated systems take significant programming skill to get right. "
+"The `Ren'Py cardgame framework <http://www.renpy.org/wiki/renpy/"
+"Frameworks#Cardgame>`_ is both an example of how to use drag and drop in a "
+"complex system, and useful for making card games in its own right."
+msgstr ""
+"さらに複雑なシステムを作るには、高度なプログラミングスキルが必要です。 "
+"`Ren'Py cardgame framework <http://www.renpy.org/wiki/renpy/"
+"Frameworks#Cardgame>`_ は、複雑なゲームにおけるドラッグドロップの例を示すとと"
+"もに、カードゲームの作成を容易にします。"
+
+#~ msgid ""
+#~ "The drag and drop system can be used either through the :ref:`Screen "
+#~ "Language <screens>` or directly as displayables. It makes sense to use "
+#~ "the screen language when you don't need to refer to the Drags that you "
+#~ "create after they've been created. This might be the case if the "
+#~ "draggable represents a window that the user places on the scren. If you "
+#~ "need to refer to the drags after they've been created, then it's often "
+#~ "better to create Drags directly, and add them to a DragGroup."
+#~ msgstr ""
+#~ "ドラッグドロップシステムは :ref:`スクリーン言語 <screens>` を通してか、ま"
+#~ "たは直接 displayable として使用できます。作成後に作成した Drag を参照する"
+#~ "必要がないときは、スクリーン言語を使用すると良いでしょう。これはドラッグ可"
+#~ "能オブジェクトが、ユーザーがスクリーン上に配置したウィンドウである場合など"
+#~ "です。作成後も作成した Drag を参照する必要がある場合は、直接 Drag を作成"
+#~ "し、それらを DragGroup に追加すると良いでしょう。"

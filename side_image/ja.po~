@@ -1,0 +1,260 @@
+# Japanese translation for renpy-doc
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the renpy-doc package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: renpy-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-23 20:06+0900\n"
+"PO-Revision-Date: 2015-12-28 00:29+0900\n"
+"Last-Translator: \n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ..\..\source\side_image.rst:7
+msgid "Side Images"
+msgstr "サイドイメージ"
+
+#: ..\..\source\side_image.rst:9
+msgid ""
+"Many visual novels include a picture of the character that is speaking as "
+"part of their interface. Ren'Py calls this image a side image, and has "
+"support for automatically selecting and displaying a side image as part of "
+"the dialogue."
+msgstr ""
+"多くのヴィジュアルノベルはインターフェースの一部に会話しているキャラクターの"
+"画像を含みます。 Ren'Py はこの画像をサイドイメージと呼び、台詞と同時の自動的"
+"なサイドイメージの選択と表示をサポートしています。"
+
+#: ..\..\source\side_image.rst:14
+msgid ""
+"The side image support assumes that a :func:`Character` is declared with a "
+"linked image tag::"
+msgstr ""
+"サイドイメージのサポートは :func:`Character` が関連付けされる画像タグ付きで宣"
+"言されていることを前提としています。 ::"
+
+#: ..\..\source\side_image.rst:19
+msgid ""
+"When a character with a linked image tag speaks, Ren'Py creates a pool of "
+"image attributes. The linked image tag is added to this pool, as are the "
+"current image attributes that are associated with that tag."
+msgstr ""
+"関連付けした画像タグを持つキャラクターが話すとき、 Ren'Py は画像属性のプール"
+"を生成します。関連づけられた画像タグは、そのタグに関連づけされた現在の画像属"
+"性と共にこのプールに加えられます。"
+
+#: ..\..\source\side_image.rst:23
+msgid ""
+"To determine the side image associated with a tag, Ren'Py tries to find an "
+"image with the tag \"side\", and the largest number of attributes from the "
+"pool. If no image can be found, or more than one image has the same number "
+"of attributes, an :class:`Null` is shown instead."
+msgstr ""
+"あるタグに関連付けられたサイドイメージを決定するために、 Ren'Py は「 side 」"
+"タグとプール内のより多くの属性を持つ画像を見つけようとします。画像が見つけら"
+"れないか、ひとつ以上の画像が同数の属性を持つなら :class:`Null` が代わりに表示"
+"されます。"
+
+#: ..\..\source\side_image.rst:28
+msgid "For example, say we have the following script::"
+msgstr "例えば以下のスクリプトとについて述べます ::"
+
+#: ..\..\source\side_image.rst:46
+msgid ""
+"At point A, the character ``e`` is speaking, which is linked to the image "
+"tag \"eileen\". The \"eileen happy\" image is showing, so the pool of "
+"attributes is \"eileen\" and \"happy\". We look for an image with the \"side"
+"\" tag, and as many of those attributes as possible - and we match \"side "
+"eileen happy\", which is the side image Ren'Py will display."
+msgstr ""
+"ポイント A では画像タグ「 eileen 」に関連付けられたキャラクター ``e`` が話し"
+"ています。画像「 eileen happy 」が表示されているので、属性のプールは"
+"「 eileen 」と「 happy 」です。「 side 」タグと、可能な限り多くのそれらの属性"
+"を持つ画像を探すと「 side eileen happy 」がマッチし、それが Ren'Py に表示され"
+"るサイドイメージになります。"
+
+#: ..\..\source\side_image.rst:52
+msgid ""
+"At point B, the \"eileen concerned\" image is showing. The pool of "
+"attributes is now \"eileen\" and \"concerned\". The only matching image is "
+"\"side eileen\", so that's what Ren'Py selects. If there was a \"side "
+"concerned\" image, there would be ambiguity, and Ren'Py wouldn't display an "
+"image."
+msgstr ""
+"ポイント B では「 eileen concerned 」が表示されています。属性のプールは今"
+"「 eileen 」と「 concerned 」です。唯一マッチする位画像は「 side eileen 」な"
+"ので、 Ren'Py はそれを選択します。 画像「 side concerned 」があると、曖昧にな"
+"るので、 Ren'Py は画像を表示できません。"
+
+#: ..\..\source\side_image.rst:59
+msgid "Invisible Characters"
+msgstr "透明なキャラクター"
+
+#: ..\..\source\side_image.rst:61
+msgid ""
+"Another use of the side image is to show an image of the player character, "
+"when that character has dialogue. The way to do this is to link an image to "
+"the character, and then use the say with attributes construct to select the "
+"side image to show."
+msgstr ""
+"サイドイメージのもう一つの使用法は、あるキャラクターに台詞があるときにその"
+"キャラクターの画像を表示することです。この方法は画像とキャラクターを関連付け"
+"し、表示するサイドイメージを選択するための属性を持つ say ステートメントを使用"
+"することです。"
+
+#: ..\..\source\side_image.rst:66
+msgid "For example::"
+msgstr "例 ::"
+
+#: ..\..\source\side_image.rst:82
+msgid "Variations"
+msgstr "バリエーション"
+
+#: ..\..\source\side_image.rst:84
+msgid ""
+"There are a number of attributes of side images that can be controlled using "
+"config variables."
+msgstr ""
+"設定変数を使って制御可能なサイドイメージ単独か立ち絵と同時かから 2 種類のサイ"
+"ドイメージサポートを選べます。 :"
+
+#: ..\..\source\side_image.rst:89
+msgid ""
+"If this is given, then the side image will track the given image tag, rather "
+"than the image associated with currently speaking character. For example,"
+msgstr ""
+"これが与えられるとサイドイメージは現在話しているキャラクターに関連付けられた"
+"画像ではなく、指定されたタグに従います。例えば"
+
+#: ..\..\source\side_image.rst:99
+msgid ""
+"Will make the side image track the \"eileen\" image tag, which is associated "
+"with the ``e`` character."
+msgstr ""
+"サイドイメージに ``e`` キャラクターに関連付けられた \"eileen\" 画像タグを取ら"
+"せます。"
+
+#: ..\..\source\side_image.rst:104
+msgid ""
+"When set to true, the side image will only show if an image with that tag is "
+"not already being shown on the screen."
+msgstr ""
+"True の時、サイドイメージはそのタグの画像がスクリーンにすでに表示されていない"
+"時だけ表示されます。"
+
+#: ..\..\source\side_image.rst:109
+msgid "The prefix that is used when searching for a side image."
+msgstr "サイドイメージを検索するときに使用される接頭辞です。"
+
+#: ..\..\source\side_image.rst:113
+msgid ""
+"The Null displayable to use when not displaying a side image. This be "
+"changed, but only to other Null objects. One reason for doing so would be to "
+"set the side of the Null (eg. Null(width=200, height=150)) to prevent "
+"dissolves from being cut off."
+msgstr ""
+"Null displayable はサイドイメージを表示しません。これは他の Null オブジェクト"
+"にのみ変更されます。これは、Null (eg. Null(width=200, height=150)) のサイドイ"
+"メージを配置して、ディゾルブが遮られるのを防ぐためです。"
+
+#: ..\..\source\side_image.rst:120
+msgid ""
+"If not None, a transform that is used when the new side image shares the "
+"same image tag as the previous side image."
+msgstr ""
+"None または新しいサイドイメージが以前のサイドイメージと同じ画像タグの時に使用"
+"される変換です。"
+
+#: ..\..\source\side_image.rst:125
+msgid ""
+"If not None, a transform that is used when the new side image does not share "
+"the name image tag (or one of the new or old side images does not exist)."
+msgstr ""
+"None または新しいサイドイメージが以前のサイドイメージとは別の画像タグの時 (ま"
+"たは新しいサイドイメージや以前のサイドイメージがないとき) に使用される変換で"
+"す。"
+
+#: ..\..\source\side_image.rst:131
+msgid "Transforms and Transitions"
+msgstr "変換とトランジション"
+
+#: ..\..\source\side_image.rst:133
+msgid ""
+"The :var:`config.side_image_same_transform` and :var:`config."
+"side_image_change_transform` transforms are called with two arguments - old "
+"and new side image displayables - each time the side image is displayed. "
+"These can be used to move around side images, or use a transition to go "
+"between side images."
+msgstr ""
+":var:`config.side_image_same_transform` と :var:`config."
+"side_image_change_transform` 変換はサイドイメージが表示される度に 2 つの引"
+"数、新旧のサイドイメージ displayable で呼び出されます。これらを使用してサイド"
+"イメージを動かしたりトランジション出来ます。"
+
+#: ..\..\source\side_image.rst:139
+msgid ""
+"This code causes the side image to slide in and out when the character "
+"associated with that image changes::"
+msgstr ""
+"画像に関連付けられたキャラクターが変更するとき、このコードはサイドイメージを"
+"スライドイン、アウトします。"
+
+#: ..\..\source\side_image.rst:156
+msgid ""
+"This code is used to dissolve between old and new side images when the "
+"character remains the same. (For example, when the character changes "
+"emotion.) For the Dissolve to work correctly, both side images must be the "
+"same size. ::"
+msgstr ""
+"キャラクターが同じとき ( 例えば表情が変わるとき ) 、このコードを使用して新旧"
+"のサイドイメージをディゾルブします。ディゾルブが正確に動作するためには両方の"
+"サイドイメージが同じ大きさでなくてはいけません。 ::"
+
+#: ..\..\source\side_image.rst:169
+msgid "Leaving Room / Customization"
+msgstr "Leaving Room / Customization"
+
+#: ..\..\source\side_image.rst:171
+msgid ""
+"By default, the entire width of the screen is taken up by the text. If one "
+"tries to display a side image, it will be displayed on top of the text. To "
+"fix this, one should include margin or padding on the appropriate side of "
+"the text window, using code like::"
+msgstr ""
+"デフォルトではスクリーンのすべての幅はテキストに専有されます。サイドイメージ"
+"を表示しようとすると、テキストの上部に表示されるでしょう。これを修正するため"
+"には、以下の様なコードを使って、 margin, padding をテキストウィンドウの適切に"
+"含めるべきです。 ::"
+
+#: ..\..\source\side_image.rst:179
+msgid ""
+"The position of the side image can be changed by customizing the ``say`` or "
+"``nvl`` screens. Both include the line::"
+msgstr ""
+"サイドイメージの場所は ``say`` または ``nvl`` スクリーンをカスタマイズして変"
+"更できます。ともに次の行を含んでいます。"
+
+#: ..\..\source\side_image.rst:184
+msgid ""
+"By changing the xalign and yalign properties, you can control the "
+"positioning of the side image on the screen."
+msgstr ""
+"xalign と yalign プロパティーを変更すれば、スクリーン上のサイドイメージのある"
+"位置を制御できます。"
+
+#: ..\..\source\side_image.rst:187
+msgid ""
+"Finally, the :func:`SideImage` function returns, as a displayable, the "
+"current side image. This can be used as part of more advanced screen "
+"customization."
+msgstr ""
+"最終的には :func:`SideImage` 関数は displayable として現在のサイドイメージを"
+"返します。このことはより高度なカスタマイズの一部で使用されます。"

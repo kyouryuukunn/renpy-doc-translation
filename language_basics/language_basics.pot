@@ -1,0 +1,427 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2016, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-30 12:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/language_basics.rst:6
+msgid "Language Basics"
+msgstr ""
+
+#: ../../source/language_basics.rst:8
+msgid "Before we can describe the Ren'Py language, we must first describe the structure of a Ren'Py script. This includes how a files are broken into blocks made up of lines, and how those lines are broken into the elements that make up statements."
+msgstr ""
+
+#: ../../source/language_basics.rst:14
+msgid "Files"
+msgstr ""
+
+#: ../../source/language_basics.rst:16
+msgid "The script of a Ren'Py game is made up of all the files found under the game directory ending with the .rpy extension. Ren'Py will consider each of these files (in unicode order), and will use the contents of the files as the script."
+msgstr ""
+
+#: ../../source/language_basics.rst:21
+msgid "Generally, there's no difference between a script broken into multiple files, and a script that consists of one big file. Control can be transferred between files by jumping to or calling a label in another file.  This makes the division of a script up into files a matter of personal style - some game-makers prefer to have small files (like one per event, or one per day), while others prefer to have one big script."
+msgstr ""
+
+#: ../../source/language_basics.rst:29
+msgid "To speed up loading time, Ren'Py will compile the ``.rpy`` files into .rpyc files when it starts up. When a ``.rpy`` file is changed, the ``.rpyc`` file will be updated when Ren'Py starts up. However, if a .rpyc file exists without a corresponding ``.rpy`` file, the ``.rpyc`` file will be used. This can lead to problems if a ``.rpy`` file is deleted without deleting the .rpyc file."
+msgstr ""
+
+#: ../../source/language_basics.rst:37
+msgid "Base Directory"
+msgstr ""
+
+#: ../../source/language_basics.rst:39
+msgid "The base directory is the directory that contains all files that are distributed with the game. (It may also contain some files that are not distributed with the game.) Things like README files should be placed in the base directory, from where they will be distributed."
+msgstr ""
+
+#: ../../source/language_basics.rst:44
+msgid "The base directory is created underneath the Ren'Py directory, and has the name of your game. For example, if your Ren'Py directory is named renpy-6.11.2, and your game is named \"HelloWorld\", your base directory will be renpy-6.11.2/HelloWorld."
+msgstr ""
+
+#: ../../source/language_basics.rst:50
+msgid "Game Directory"
+msgstr ""
+
+#: ../../source/language_basics.rst:52
+msgid "The game directory is almost always a directory named \"game\" underneath the base directory. For example, if your base directory is renpy-6.11.2/HelloWorld, your game directory will be renpy-6.11.2/HelloWorld/game."
+msgstr ""
+
+#: ../../source/language_basics.rst:56
+msgid "However, Ren'Py searches directories in the following order:"
+msgstr ""
+
+#: ../../source/language_basics.rst:58
+msgid "The name of the executable, without the suffix. For example, if the executable is named moonlight.exe, it will look for a directory named moonlight under the base directory."
+msgstr ""
+
+#: ../../source/language_basics.rst:61
+msgid "The name of the executable, without the suffix, and with a prefix ending with _ removed. For example, if the executable is moonlight_en.exe, Ren'Py will look for a directory named en."
+msgstr ""
+
+#: ../../source/language_basics.rst:64
+msgid "The directories \"game\", \"data\", and \"launcher\", in that order."
+msgstr ""
+
+#: ../../source/language_basics.rst:66
+msgid "The launcher will only properly recognize the \"game\" and \"data\" directories, however."
+msgstr ""
+
+#: ../../source/language_basics.rst:69
+msgid "The game directory contains all the files used by the game. It, including all subdirectories, is scanned for .rpy and .rpyc files, and those are combined to form the game script. It is scanned for .rpa archive files, and those are automatically used by the game. Finally, when the game gives a path to a file to load, it is loaded relative to the game directory. (But note that config.searchpath can change this.)"
+msgstr ""
+
+#: ../../source/language_basics.rst:77
+msgid "Comments"
+msgstr ""
+
+#: ../../source/language_basics.rst:79
+msgid "A Ren'Py script file may contain comments. A comment begins with a hash mark ('#'), and ends at the end of the line containing the comment. As an exception, a comment may not be part of a string."
+msgstr ""
+
+#: ../../source/language_basics.rst:90
+msgid "Ren'Py ignores comments, so the script is treated like the comment wasn't there."
+msgstr ""
+
+#: ../../source/language_basics.rst:95
+msgid "Logical Lines"
+msgstr ""
+
+#: ../../source/language_basics.rst:97
+msgid "A script file is broken up into :dfn:`logical lines`. A logical line always begins at the start of a line in the file. A logical line ends at the end of a line, unless:"
+msgstr ""
+
+#: ../../source/language_basics.rst:101
+msgid "The last character on the line is a backslash ('\\\\')."
+msgstr ""
+
+#: ../../source/language_basics.rst:103
+msgid "The line contains an open parenthesis character ('(', '{', or '['), that hasn't been matched by the cooresponding close parenthesis character (')', '}', or ']', respectively)."
+msgstr ""
+
+#: ../../source/language_basics.rst:107
+msgid "The end of the line occurs during a string."
+msgstr ""
+
+#: ../../source/language_basics.rst:109
+msgid "Once a logical line ends, the next logical line begins at the start of the next line."
+msgstr ""
+
+#: ../../source/language_basics.rst:112
+msgid "Most statements in the Ren'Py language consist of a single logical line, while some statements consist of multiple lines."
+msgstr ""
+
+#: ../../source/language_basics.rst:125
+msgid "Empty logical lines are ignored."
+msgstr ""
+
+#: ../../source/language_basics.rst:129
+msgid "Indentation and Blocks"
+msgstr ""
+
+#: ../../source/language_basics.rst:131
+msgid ":dfn:`Indentation` is the name we give to the space at the start of each logical line that's used to line up Ren'Py statements. In Ren'Py, indentation must consist only of spaces."
+msgstr ""
+
+#: ../../source/language_basics.rst:135
+msgid "Indentation is used to group statements into :dfn:`blocks`. A block is a group of lines, and often a group of statements. The rules for dividing a file into blocks are:"
+msgstr ""
+
+#: ../../source/language_basics.rst:139
+msgid "A block is open at the start of a file."
+msgstr ""
+
+#: ../../source/language_basics.rst:141
+msgid "A new block is started whenever a logical line is indented past the previous logical line."
+msgstr ""
+
+#: ../../source/language_basics.rst:144
+msgid "All logical lines inside a block must have the same indentation."
+msgstr ""
+
+#: ../../source/language_basics.rst:146
+msgid "A block ends when a logical line is encountered with less indentation than the lines in the block."
+msgstr ""
+
+#: ../../source/language_basics.rst:149
+msgid "Indentation is very important to Ren'Py, and cause syntax or logical errors when it's incorrect. At the same time, the use of indentation to convey block structure provides us a way of indicating that structure without overwhelming the script text."
+msgstr ""
+
+#: ../../source/language_basics.rst:168
+msgid "Elements of Statements"
+msgstr ""
+
+#: ../../source/language_basics.rst:170
+msgid "Ren'Py statements are made of a few basic parts."
+msgstr ""
+
+#: ../../source/language_basics.rst:179
+msgid ":dfn:`Keyword`"
+msgstr ""
+
+#: ../../source/language_basics.rst:173
+msgid "A keyword is a word that must literally appear in the source code. They're used to introduce statements and properties."
+msgstr ""
+
+#: ../../source/language_basics.rst:176
+msgid "Names beginning with a single underscore (_) are reserved for Ren'Py internal use, unless otherwise documented. When a name begins with __ but doesn't end with __, it is changed to a file-specific version of that name."
+msgstr ""
+
+#: ../../source/language_basics.rst:185
+msgid ":dfn:`Name`"
+msgstr ""
+
+#: ../../source/language_basics.rst:182
+msgid "A name begins with a letter or underscore, which is followed by zero or more letters, numbers, and underscores. For our purpose, unicode characters between U+00a0 and U+fffd are considered to be letters."
+msgstr ""
+
+#: ../../source/language_basics.rst:196
+msgid ":dfn:`Image Name`"
+msgstr ""
+
+#: ../../source/language_basics.rst:188
+msgid "An :dfn:`image name` consists of one or more components, separated by spaces. The first component of the image name is called the :dfn:`image tag`. The second and later components of the name are the :dfn:`image attributes`. An image component consists of a string of letters, numbers, and underscores."
+msgstr ""
+
+#: ../../source/language_basics.rst:194
+msgid "For example, take the image name ``mary beach night happy``. The image tag is ``mary``, while the image attributes are, ``beach``, ``night``, and ``happy``."
+msgstr ""
+
+#: ../../source/language_basics.rst:212
+#: ../../source/language_basics.rst:291
+msgid ":dfn:`String`"
+msgstr ""
+
+#: ../../source/language_basics.rst:199
+msgid "A string begins with a quote character (one of \", ', or \\`), contains some sequence of characters, and ends with the same quote character."
+msgstr ""
+
+#: ../../source/language_basics.rst:203
+msgid "The backslash character (\\\\) is used to escape quotes, special characters such as % (written as \\\\%), [ (written as \\\\[), and { (written as \\\\{). It's also used to include newlines, using the \\\\n sequence."
+msgstr ""
+
+#: ../../source/language_basics.rst:208
+msgid "Inside a Ren'Py string, consecutive whitespace is compressed into a single whitespace character, unless a space is preceded by a backslash. ::"
+msgstr ""
+
+#: ../../source/language_basics.rst:231
+msgid ":dfn:`Simple Expression`"
+msgstr ""
+
+#: ../../source/language_basics.rst:215
+msgid "A simple expression is a Python expression, used to include Python in some parts of the Ren'Py script. A simple expression begins with:"
+msgstr ""
+
+#: ../../source/language_basics.rst:219
+msgid "A name."
+msgstr ""
+
+#: ../../source/language_basics.rst:220
+msgid "A string."
+msgstr ""
+
+#: ../../source/language_basics.rst:221
+msgid "A number."
+msgstr ""
+
+#: ../../source/language_basics.rst:222
+msgid "Any python expression, in parenthesis."
+msgstr ""
+
+#: ../../source/language_basics.rst:224
+msgid "This can be followed by any number of:"
+msgstr ""
+
+#: ../../source/language_basics.rst:226
+msgid "A dot followed by a name."
+msgstr ""
+
+#: ../../source/language_basics.rst:227
+msgid "A parenthesised python expression."
+msgstr ""
+
+#: ../../source/language_basics.rst:229
+msgid "As an example, ``3``, ``(3 + 4)``, ``foo.bar``, and ``foo(42)`` are all simple expressions. But ``3 + 4`` is not, as the expression ends at the end of a string."
+msgstr ""
+
+#: ../../source/language_basics.rst:234
+msgid ":dfn:`At List`"
+msgstr ""
+
+#: ../../source/language_basics.rst:234
+msgid "An at list is a list of simple expressions, separated by commas."
+msgstr ""
+
+#: ../../source/language_basics.rst:240
+msgid ":dfn:`Python Expression`"
+msgstr ""
+
+#: ../../source/language_basics.rst:237
+msgid "A python expression is an arbitrary python expression, that may not include a colon. These are used to express the conditions in the if and while statements."
+msgstr ""
+
+#: ../../source/language_basics.rst:243
+msgid "Common Statement Syntax"
+msgstr ""
+
+#: ../../source/language_basics.rst:245
+msgid "Most Ren'Py statements share a common syntax. With the exception of the say statement, they begin with a keyword that introduces the statement. This keyword is followed by a parameter, if the statement takes one."
+msgstr ""
+
+#: ../../source/language_basics.rst:250
+msgid "The parameter is then followed by one or more properties. Properties may be supplied in any order, provided each property is only supplied once. A property starts off with a keyword. For most properties, the property name is followed by one of the syntax elements given above."
+msgstr ""
+
+#: ../../source/language_basics.rst:255
+msgid "If the statement takes a block, the line ends with a colon (:). Otherwise, the line just ends."
+msgstr ""
+
+#: ../../source/language_basics.rst:262
+msgid "Python Expression Syntax"
+msgstr ""
+
+#: ../../source/language_basics.rst:266
+msgid "It may not be necessary to read this section thoroughly right now. Instead, skip ahead, and if you find yourself unable to figure out an example, or want to figure out how things actually work, you can go back and review this."
+msgstr ""
+
+#: ../../source/language_basics.rst:272
+msgid "Many portions of Ren'Py take python expressions. For example, defining a new Character involves a call to the Character function. While Python expressions are very powerful, only a fraction of that power is necessary to write a basic Ren'Py game."
+msgstr ""
+
+#: ../../source/language_basics.rst:277
+msgid "Here's a synopsis of python expressions."
+msgstr ""
+
+#: ../../source/language_basics.rst:281
+msgid ":dfn:`Integer`"
+msgstr ""
+
+#: ../../source/language_basics.rst:280
+msgid "An integer is a number without a decimal point. ``3`` and ``42`` are integers."
+msgstr ""
+
+#: ../../source/language_basics.rst:285
+msgid ":dfn:`Float`"
+msgstr ""
+
+#: ../../source/language_basics.rst:284
+msgid "A float (short for floating-point number) is a number with a decimal point. ``.5``, ``7.``, and ``9.0`` are all floats."
+msgstr ""
+
+#: ../../source/language_basics.rst:288
+msgid "Python strings begin with \" or ', and end with the same character. \\\\ is used to escape the end character, and to introduce special characters like newlines (\\\\n). Unlike Ren'Py strings, python strings can't span lines."
+msgstr ""
+
+#: ../../source/language_basics.rst:295
+msgid ":dfn:`True, False, None`"
+msgstr ""
+
+#: ../../source/language_basics.rst:294
+msgid "There are three special values. ``True`` is a true value, ``False`` is a false value. ``None`` represents the absence of a value."
+msgstr ""
+
+#: ../../source/language_basics.rst:311
+msgid ":dfn:`Tuple`"
+msgstr ""
+
+#: ../../source/language_basics.rst:298
+msgid "Tuples are used to represent containers where the number of items is important. For example, one might use a 2-tuple (also called a pair) to represent width and height, or a 4-tuple (x, y, width, height) to represent a rectangle."
+msgstr ""
+
+#: ../../source/language_basics.rst:303
+msgid "Tuples begin with a left-parenthesis ``(``, consist of zero or more comma-separated python expressions, and end with a right-parenthesis ``)``. As a special case, the one-item tuple must have a comma following the item. For example::"
+msgstr ""
+
+#: ../../source/language_basics.rst:321
+msgid ":dfn:`List`"
+msgstr ""
+
+#: ../../source/language_basics.rst:314
+msgid "Lists are used to represent containers where the number of items may vary. A list begins with a ``[``, contains a comma-separated list of expressions, and ends with ``]``. For example::"
+msgstr ""
+
+#: ../../source/language_basics.rst:334
+msgid ":dfn:`Variable`"
+msgstr ""
+
+#: ../../source/language_basics.rst:324
+msgid "Python expressions can use variables, that store values defined using the define statement or python statements. A variable begins with a letter or underscore, and then has zero or more letters, numbers, or underscores. For example::"
+msgstr ""
+
+#: ../../source/language_basics.rst:333
+msgid "Variables beginning with _ are reserved for Ren'Py's use, and shouldn't be used by user code."
+msgstr ""
+
+#: ../../source/language_basics.rst:344
+msgid ":dfn:`Field Access`"
+msgstr ""
+
+#: ../../source/language_basics.rst:337
+msgid "Python modules and objects have fields, which can be accessed with by following an expression (usually a variable) with a dot and the field name. For example::"
+msgstr ""
+
+#: ../../source/language_basics.rst:343
+msgid "Consists of a variable (config) followed by a field access (screen_width)."
+msgstr ""
+
+#: ../../source/language_basics.rst:363
+msgid ":dfn:`Call`"
+msgstr ""
+
+#: ../../source/language_basics.rst:347
+msgid "Python expressions can call a function which returns a value. They begin with an expression (usually a variable), followed by a left-parenthesis, a comma-separated list of arguments, and a right-parenthesis. The argument list begins with the position arguments, which are python expressions. These are followed by keyword arguments, which consist of the argument name, and equals sign, and an expression. In the example example::"
+msgstr ""
+
+#: ../../source/language_basics.rst:357
+msgid "we call the Character function. It's given one positional argument, the string \"Eileen\". It's given two keyword argument: ``type`` with the value of the ``adv`` variable, and ``color`` with a string value of \"#0f0\"."
+msgstr ""
+
+#: ../../source/language_basics.rst:362
+msgid "Constructors are a type of function which returns a new object, and are called the same way."
+msgstr ""
+
+#: ../../source/language_basics.rst:365
+msgid "When reading this documentation, you might see a function signature like:"
+msgstr ""
+
+#: ../../source/language_basics.rst:370
+msgid "A sample function that doesn't actually exist in Ren'Py, but is used only in documentation."
+msgstr ""
+
+#: ../../source/language_basics.rst:373
+msgid "This function:"
+msgstr ""
+
+#: ../../source/language_basics.rst:375
+msgid "Has the name \"Sample\""
+msgstr ""
+
+#: ../../source/language_basics.rst:376
+msgid "Has two positional parameters, a name and a delay. In a real function, the types of these parameters would be made clear from the documentation."
+msgstr ""
+
+#: ../../source/language_basics.rst:379
+msgid "Has one keyword argument, position, which has a default value of (0, 0)."
+msgstr ""
+
+#: ../../source/language_basics.rst:382
+msgid "Since the functions ends with \\*\\*properties, it means that it can take :ref:`style properties <style-properties>` as additional keyword arguments. Other special entries are \\*args, which means that it takes an arbitrary number of positional parameters, and \\*\\*kwargs, which means that the keyword arguments are described in the documentation."
+msgstr ""
+
+#: ../../source/language_basics.rst:388
+msgid "Python is a lot more powerful than we have space for in this manual. To learn Python in more detail, we recommend starting with the Python tutorial, which is available from `python.org <http://docs.python.org/release/2.7/tutorial/index.html>`_. While we don't think a deep knowledge of Python is necessary to work with Ren'Py, the basics of python statements and expressions is often helpful."
+msgstr ""
+
