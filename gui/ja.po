@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-30 12:21+0900\n"
+"POT-Creation-Date: 2016-08-30 15:11+0900\n"
 "PO-Revision-Date: 2016-06-24 19:29+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1559,22 +1559,64 @@ msgid "An example gui/nvl.png image."
 msgstr "gui/overlay/main_menu.png"
 
 #: ../../source/gui.rst:1215
+msgid "Translation and GUI Variables"
+msgstr ""
+
+#: ../../source/gui.rst:1217
+msgid ""
+"The gui namespace is special, in that it is saved after the init phase, but "
+"before any translate python blocks are run. This makes it possible to change "
+"any gui variable in a translate python block to accomodate a second "
+"language. For example, the following code change the default text font and "
+"size."
+msgstr ""
+
+#: ../../source/gui.rst:1225
+msgid "translate japanese python:"
+msgstr ""
+
+#: ../../source/gui.rst:1224
+msgid "gui.default_font = \"MTLc3m.ttf\" gui.text_size = 24"
+msgstr ""
+
+#: ../../source/gui.rst:1227
+msgid ""
+"There is one issue that translators need to be aware of, and that is that in "
+"some places in gui.rpy, one variable is assigned the value of another. For "
+"example, the default gui.rpy has::"
+msgstr ""
+
+#: ../../source/gui.rst:1233
+msgid "and later on::"
+msgstr ""
+
+#: ../../source/gui.rst:1237
+msgid ""
+"Since both of these statements run before any translate block runs, both "
+"variables need to be changed. ::"
+msgstr ""
+
+#: ../../source/gui.rst:1245
+msgid "If the second statement was missing, DejaVuSans would still be used."
+msgstr ""
+
+#: ../../source/gui.rst:1249
 #, fuzzy
 msgid "Advanced Customization"
 msgstr "中級 GUI カスタマイズ"
 
-#: ../../source/gui.rst:1217
+#: ../../source/gui.rst:1251
 msgid ""
-"Far more advanced customization are customizable, up to and including "
-"deleting gui.rpy entirely and replacing it with your own code. Here are a "
-"few places to get started."
+"More advanced customization is possible by customizing screens.rpy, up to "
+"and including deleting it entirely and replacing it with your own code. Here "
+"are a few places to get started."
 msgstr ""
 
-#: ../../source/gui.rst:1222
+#: ../../source/gui.rst:1256
 msgid "Styles"
 msgstr ""
 
-#: ../../source/gui.rst:1224
+#: ../../source/gui.rst:1258
 msgid ""
 ":ref:`Styles <styles>` and :ref:`style properties <style-properties>` "
 "control how displayables are displayed. To find out what style a displayable "
@@ -1583,31 +1625,31 @@ msgid ""
 "statement can be used to customize it."
 msgstr ""
 
-#: ../../source/gui.rst:1230
+#: ../../source/gui.rst:1264
 msgid ""
 "For example, say we've lost our minds writing gui documentation, and want to "
 "add a bright red outline to the dialogue text. We can hover the text and "
 "press shift+I to find out the style used is named say_dialogue. We can then "
-"add (to the end of gui.rpy, or somewhere in options.rpy) the style "
+"add (to the end of screens.rpy, or somewhere in options.rpy) the style "
 "statement::"
 msgstr ""
 
-#: ../../source/gui.rst:1238
+#: ../../source/gui.rst:1272
 msgid "A huge number of customizations are possible using style statements."
 msgstr ""
 
-#: ../../source/gui.rst:1242
+#: ../../source/gui.rst:1276
 msgid "Screens - Navigation"
 msgstr ""
 
-#: ../../source/gui.rst:1244
+#: ../../source/gui.rst:1278
 msgid ""
 "The next level of customization is to modify the screens. The most important "
 "documentation about screens is located in the :ref:`screens` and  :ref:"
 "`screen-actions` sections."
 msgstr ""
 
-#: ../../source/gui.rst:1249
+#: ../../source/gui.rst:1283
 msgid ""
 "One of the most important screens is the navigation screen, which serves "
 "both as the main menu, and to provide navigation for the game menu. This "
@@ -1615,70 +1657,71 @@ msgid ""
 "example, by changing the navigation screen to::"
 msgstr ""
 
-#: ../../source/gui.rst:1300
+#: ../../source/gui.rst:1334
 msgid ""
 "We add access to a prologue screen from the main menu, a codex screen from "
 "the game menu, and an extras screen from both menus."
 msgstr ""
 
-#: ../../source/gui.rst:1304
+#: ../../source/gui.rst:1338
 msgid "Screens - Game Menu"
 msgstr ""
 
-#: ../../source/gui.rst:1306
+#: ../../source/gui.rst:1340
 msgid ""
 "Custom game menu screens can also be created. These screens can use the "
 "game_menu screen to provide a title and scrollable viewport. An minimal "
 "custom game menu screen is::"
 msgstr ""
 
-#: ../../source/gui.rst:1325
+#: ../../source/gui.rst:1359
 msgid "Clearly, a functional codex would need to be more elaborate than this."
 msgstr ""
 
-#: ../../source/gui.rst:1327
+#: ../../source/gui.rst:1361
 msgid ""
 "Note the \"tag menu\" line. This line is important, as it hides other menu "
 "screens when the codex is shown. Without it, it would be hard to switch to "
 "and from the other menu screens."
 msgstr ""
 
-#: ../../source/gui.rst:1333
+#: ../../source/gui.rst:1367
 msgid "Screens - Click to Continue"
 msgstr ""
 
-#: ../../source/gui.rst:1335
+#: ../../source/gui.rst:1369
 msgid ""
 "A screen we expect to be commonly added is the click to continue screen. "
 "This is a screen that is shown when text finishes displaying. Here's a "
 "simple example::"
 msgstr ""
 
-#: ../../source/gui.rst:1354
+#: ../../source/gui.rst:1388
 msgid ""
 "This particular ctc screen uses a transform to show the frame after 5 "
 "seconds. It's a good idea to delay CTC animations for several seconds, to "
 "give Ren'Py time to predict and load images."
 msgstr ""
 
-#: ../../source/gui.rst:1360
+#: ../../source/gui.rst:1394
 msgid "Total GUI Replacement"
 msgstr ""
 
-#: ../../source/gui.rst:1362
+#: ../../source/gui.rst:1396
 msgid ""
-"Advanced creators can replace some or all of gui.rpy in its entirely. It's "
+"Advanced creators can replace some or all of screens.rpy in its entirely. "
+"When doing so, some or all of the code in gui.rpy may become redundant. It's "
 "probably a good idea to call :func:`gui.init` to reset styles - but after "
 "that, a creator can do whatever they want. It usually makes sense to include "
 "some or all of the :ref:`special screens <screen-special>`, to make sure "
 "players can have access to all the functionality Ren'Py provides."
 msgstr ""
 
-#: ../../source/gui.rst:1369
+#: ../../source/gui.rst:1404
 msgid "Python Functions"
 msgstr ""
 
-#: ../../source/gui.rst:1371
+#: ../../source/gui.rst:1406
 msgid "There are some Python functions that support gui code."
 msgstr ""
 

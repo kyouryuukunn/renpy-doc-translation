@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-09 22:14+0900\n"
-"PO-Revision-Date: 2016-07-10 13:57+0900\n"
+"POT-Creation-Date: 2016-09-19 15:35+0900\n"
+"PO-Revision-Date: 2016-09-19 17:43+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -142,6 +142,30 @@ msgstr ""
 "`filename` は適切な拡張子の JPEG または PNG ファイルでなくてはなりません。"
 
 #: ../../source/displayables.rst:66
+msgid "There are three image file formats we recommend you use:"
+msgstr "三つの画像ファイルフォーマットの使用を推奨します。 :"
+
+#: ../../source/displayables.rst:68
+msgid "Webp"
+msgstr "Webp"
+
+#: ../../source/displayables.rst:69
+msgid "Png"
+msgstr "Png"
+
+#: ../../source/displayables.rst:70
+msgid "Jpg"
+msgstr "Jpg"
+
+#: ../../source/displayables.rst:72
+msgid ""
+"Non-animated Gif and Bmp files are also supported, but should not be used in "
+"modern games."
+msgstr ""
+"ノンアニメーション Gif, Bmp ファイルもサポートされますが、近代的なゲームでは"
+"使用しないべきです。"
+
+#: ../../source/displayables.rst:75
 msgid ""
 "Loading an Image from from a file on disk and decoding it so it can be drawn "
 "to the screen takes a long amount of time. While measured in the tenths or "
@@ -152,7 +176,7 @@ msgstr ""
 "するのには時間がかかります。10 から 100 分の数秒ほどになるので、ロード処理の"
 "所要時間は許容できるフレームレートに収まらず、ユーザーをいらいらさせます。"
 
-#: ../../source/displayables.rst:72
+#: ../../source/displayables.rst:81
 msgid ""
 "Since an Image is of a fixed size, and doesn't change in response to input, "
 "game state, or the size of the area available to it, an Image can be loaded "
@@ -165,7 +189,7 @@ msgstr ""
 "呼ばれるメモリ空間に配置できます。画像をキャッシュにデコードしておけば、画面"
 "に素早く描画できます。"
 
-#: ../../source/displayables.rst:78
+#: ../../source/displayables.rst:87
 msgid ""
 "Ren'Py attempts to predict the images that will be used in the future, and "
 "loads them into the image cache before they are used. When space in the "
@@ -176,7 +200,7 @@ msgstr ""
 "キャッシュの空間を他の画像に使う必要ができたとき、Ren'Py は使われなくなった画"
 "像を消去します。"
 
-#: ../../source/displayables.rst:83
+#: ../../source/displayables.rst:92
 msgid ""
 "By default, Ren'Py will predictively cache up to 8 screens worth of image "
 "data. (If your screen is 800x600, then a screen's worth of data is one "
@@ -188,7 +212,7 @@ msgstr ""
 "枚、などのデータに相当します。) これは :var:`config.image_cache_size`  設定変"
 "数で変更できます。"
 
-#: ../../source/displayables.rst:89
+#: ../../source/displayables.rst:98
 msgid ""
 "Although the precise amount is dependent on implementation details and there "
 "is significant overhead, as a rule of thumb, each pixel in the image cache "
@@ -198,11 +222,11 @@ msgstr ""
 "バイトを消費します。ただし、正確な量は実装によって、または無視できないオー"
 "バーヘッドがあるかどうかによって異なります。"
 
-#: ../../source/displayables.rst:95
+#: ../../source/displayables.rst:104
 msgid "Image-Like Displayables"
 msgstr "イメージライク displayable"
 
-#: ../../source/displayables.rst:97
+#: ../../source/displayables.rst:106
 msgid ""
 "We call these displayables image-like because they take up a rectangular "
 "area of the screen, and do not react to input.  These differ from normal "
@@ -215,7 +239,7 @@ msgstr ""
 "り (Frame, LiveTile, および Solid)、ユーザーが大きさを指定できたり "
 "(LiveComposite, LiveCrop, Null) します。画像ではこのような操作はできません。"
 
-#: ../../source/displayables.rst:103
+#: ../../source/displayables.rst:112
 msgid "Image-like displayables take :ref:`position-style-properties`."
 msgstr ""
 "イメージライク displayable は :ref:`position-style-properties` を取ります。"
@@ -446,19 +470,19 @@ msgstr ""
 msgid "A displayable that fills the area its assigned with `color`."
 msgstr "割り当てられた領域を `color` で満たす displayable です。"
 
-#: ../../source/displayables.rst:108
+#: ../../source/displayables.rst:117
 msgid "Text Displayables"
 msgstr "Text Displayables"
 
-#: ../../source/displayables.rst:110
+#: ../../source/displayables.rst:119
 msgid "See :ref:`text-displayables`."
 msgstr ":ref:`text-displayables` 参照。"
 
-#: ../../source/displayables.rst:114
+#: ../../source/displayables.rst:123
 msgid "Dynamic Displayables"
 msgstr "動的 displayable"
 
-#: ../../source/displayables.rst:116
+#: ../../source/displayables.rst:125
 msgid ""
 "Dynamic displayables display a child displayable based on the state of the "
 "game. They do not take any properties, as layout is controlled by the "
@@ -575,11 +599,11 @@ msgstr ""
 "ShowingSwitch の使い方の一つは、キャラクターの現在の表情に応じてサイドイメー"
 "ジを変えることです。例 ::"
 
-#: ../../source/displayables.rst:124
+#: ../../source/displayables.rst:133
 msgid "Applying Transforms to Displayables"
 msgstr "displayable への変換の適用"
 
-#: ../../source/displayables.rst:126
+#: ../../source/displayables.rst:135
 msgid ""
 "The At function produces a displayable from a displayable and one or more :"
 "ref:`transforms <transforms>`."
@@ -596,11 +620,11 @@ msgstr ""
 "与えられた displayable `d` に `args` のそれぞれの変換を適用します。変換は左か"
 "ら右へ順に適用され、最後になされる変換は最も右側の引数です。 ::"
 
-#: ../../source/displayables.rst:133
+#: ../../source/displayables.rst:142
 msgid "Layout Boxes and Grids"
 msgstr "レイアウトボックスとグリッド"
 
-#: ../../source/displayables.rst:135
+#: ../../source/displayables.rst:144
 msgid ""
 "Layout boxes are displayables that lay out their children on the screen. "
 "They can lay out the children in a horizontal or vertical manner, or can lay "
@@ -610,7 +634,7 @@ msgstr ""
 "です。子 displayable を、水平や垂直に並べたり、一定の配置法でレイアウトしたり"
 "できます。"
 
-#: ../../source/displayables.rst:139
+#: ../../source/displayables.rst:148
 msgid ""
 "The box displayables take any number of positional and keyword arguments. "
 "Positional arguments should be displayables that are added to the box as "
@@ -620,7 +644,7 @@ msgstr ""
 "ボックスに子として加えられる displayable となります。キーワード引数はボックス"
 "に適用されるスタイルプロパティーです。"
 
-#: ../../source/displayables.rst:144
+#: ../../source/displayables.rst:153
 msgid ""
 "Boxes take :ref:`position-style-properties` and :ref:`box-style-properties`."
 msgstr ""
@@ -643,7 +667,7 @@ msgstr "ボックスで、このメンバは左から右へ並べられます。
 msgid "A layout that lays out its members from top to bottom."
 msgstr "ボックスで、このメンバは上から下へ並べられます。"
 
-#: ../../source/displayables.rst:164
+#: ../../source/displayables.rst:173
 msgid ""
 "The Grid layout displays its children in a grid on the screen. It takes :ref:"
 "`position-style-properties` and the :propref:`spacing` style property."
@@ -662,11 +686,11 @@ msgstr ""
 "の列の数です。この後にはグリッドを満す `columns * rows` 個の displayable の位"
 "置引数が続かなければなりません。"
 
-#: ../../source/displayables.rst:171
+#: ../../source/displayables.rst:180
 msgid "Effects"
 msgstr "効果"
 
-#: ../../source/displayables.rst:173
+#: ../../source/displayables.rst:182
 msgid "These displayables are used to create certain visual effects."
 msgstr "これらの displayable は、特定の視覚効果を作成するのに使われます。"
 
@@ -694,11 +718,11 @@ msgstr ""
 "True であれば、画像は背後のものと合成されます。デフォルトの False であれば、"
 "画像は不透明で背後のものを上書きします。"
 
-#: ../../source/displayables.rst:178
+#: ../../source/displayables.rst:187
 msgid "Image Manipulators"
 msgstr "画像マニピュレータ"
 
-#: ../../source/displayables.rst:180
+#: ../../source/displayables.rst:189
 msgid ""
 "An image manipulator is a displayable that takes an image or image "
 "manipulator, performs an operation to it, and stores the result of that "
@@ -711,7 +735,7 @@ msgstr ""
 "同じように予測できるので、表示時間のオーバーヘッドなしに高価な演算を実行でき"
 "ます。"
 
-#: ../../source/displayables.rst:186
+#: ../../source/displayables.rst:195
 msgid ""
 "Image manipulators are limited to storing image data to the cache. This "
 "means that their result is of a fixed size, known in advance, and they can't "
@@ -723,7 +747,7 @@ msgstr ""
 "しません。一般に、画像マニピュレータは画像や別の画像マニピュレータしか取れま"
 "せん。"
 
-#: ../../source/displayables.rst:192
+#: ../../source/displayables.rst:201
 msgid ""
 "An image manipulator can be used any place a displayable can, but not vice-"
 "versa. An :func:`Image` is a kind of image manipulator, so an Image can be "
@@ -733,7 +757,7 @@ msgstr ""
 "できません。Image() は画像マニピュレータの一種なので、Image は画像マニピュ"
 "レータが要求されたときはいつでも使えます。"
 
-#: ../../source/displayables.rst:196
+#: ../../source/displayables.rst:205
 msgid ""
 "Many image manipulators provide the same functionality as other "
 "displayables. Most of these exist so they can be provided as input to other "
@@ -875,11 +899,11 @@ msgstr ""
 "フォルトで (:var:`config.screen_width`, :var:`config.screen_height`) になりま"
 "す。"
 
-#: ../../source/displayables.rst:206
+#: ../../source/displayables.rst:215
 msgid "im.MatrixColor"
 msgstr "im.MatrixColor"
 
-#: ../../source/displayables.rst:208
+#: ../../source/displayables.rst:217
 msgid ""
 "The im.MatrixColor image manipulator is an image manipulator that uses a "
 "matrix to control how the colors of an image are transformed. The matrix "
@@ -894,7 +918,7 @@ msgstr ""
 "によって返されます。im.matrix オブジェクトを掛け合わせて、両方の演算を行う一"
 "つのオブジェクトを得られます。例えば、このコードは ::"
 
-#: ../../source/displayables.rst:220
+#: ../../source/displayables.rst:229
 msgid ""
 "first desaturates the image, and then tints it blue. When the intermediate "
 "image is not needed, multiplying matrices is far more efficient, in both "
@@ -1081,11 +1105,11 @@ msgstr ""
 "画像に置かれる割合を制御します。(例えば、 `r` が .5 で、赤チャンネルの値が "
 "100 なら、変換された後の色の赤値は 50 になります。)"
 
-#: ../../source/displayables.rst:228
+#: ../../source/displayables.rst:237
 msgid "Placeholders"
 msgstr "プレースホルダ"
 
-#: ../../source/displayables.rst:230
+#: ../../source/displayables.rst:239
 msgid ""
 "The Placeholder displayable is used to display background or character "
 "images as appropriate. Placeholders are used automatically when an undefined "
