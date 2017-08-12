@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2016, Tom Rothamel
+# Copyright (C) 2012-2017, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.12\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 15:35+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -257,46 +257,30 @@ msgid "The name of the screen that is used to display the dialogue."
 msgstr ""
 
 #: ../../source/inc/character:124
-msgid "Keyword arguments beginning with ``show_`` have the prefix stripped off, and are passed to the screen as arguments. For example, the value of ``show_side_image`` will become the value of the ``side_image`` variable in the screen."
+msgid "Keyword arguments beginning with ``show_`` have the prefix stripped off, and are passed to the screen as arguments. For example, the value of ``show_myflag`` will become the value of the ``myflag`` variable in the screen. (The myflag variable isn't used by default, but can be used by a custom say screen.)"
 msgstr ""
 
-#: ../../source/inc/character:129
-msgid "Some useful ``show_`` variables implemented by the default screens are:"
+#: ../../source/inc/character:130
+msgid "One show variable is, for historical reasons, handled by Ren'Py itself:"
 msgstr ""
 
-#: ../../source/inc/character:136
-msgid "`show_side_image`"
-msgstr ""
-
-#: ../../source/inc/character:132
-msgid "When given a Displayable, shows that displayable when the dialogue is shown. The position of that displayable is controlled by its position properties. This is often used to show an image of the speaking character to the side of the dialogue."
-msgstr ""
-
-#: ../../source/inc/character:141
-msgid "`show_two_window`"
-msgstr ""
-
-#: ../../source/inc/character:139
-msgid "If true, restructures the layout so that the name of the character is placed in one window, and the dialogue text in a second window."
-msgstr ""
-
-#: ../../source/inc/character:145
+#: ../../source/inc/character:134
 msgid "`show_layer`"
 msgstr ""
 
-#: ../../source/inc/character:144
+#: ../../source/inc/character:133
 msgid "If given, this should be a string giving the name of the layer to show the \"say\" screen on."
 msgstr ""
 
-#: ../../source/inc/character:147
+#: ../../source/inc/character:136
 msgid "**Styling Text and Windows.** Keyword arguments beginning with ``who_``, ``what_``, and `window_`` have their prefix stripped, and are used to :ref:`style <styles>` the character name, the spoken text, and the window containing both, respectively."
 msgstr ""
 
-#: ../../source/inc/character:153
+#: ../../source/inc/character:142
 msgid "For example, if a character is given the keyword argument ``who_color=\"#c8ffc8\"``, the color of the character's name is changed, in this case to green. ``window_background=\"frame.png\"`` sets the background of the window containing this character's dialogue."
 msgstr ""
 
-#: ../../source/inc/character:159
+#: ../../source/inc/character:148
 msgid "The style applied to the character name, spoken text, and window can also be set this way, using the `who_style`, `what_style`, and `window_style` arguments, respectively."
 msgstr ""
 
@@ -313,11 +297,13 @@ msgid "In this form, if an image with the given tag is showing, Ren'Py will issu
 msgstr ""
 
 #: ../../source/dialogue.rst:111
-msgid "For example, the code::"
+#: ../../source/dialogue.rst:193
+#: ../../source/dialogue.rst:249
+msgid "For example::"
 msgstr ""
 
 #: ../../source/dialogue.rst:122
-#: ../../source/dialogue.rst:286
+#: ../../source/dialogue.rst:287
 msgid "is equivalent to::"
 msgstr ""
 
@@ -401,11 +387,6 @@ msgstr ""
 msgid "Extend is aware of NVL-mode, and treats it correctly."
 msgstr ""
 
-#: ../../source/dialogue.rst:193
-#: ../../source/dialogue.rst:248
-msgid "For example::"
-msgstr ""
-
 #: ../../source/dialogue.rst:215
 msgid "Dialogue Window Management"
 msgstr ""
@@ -435,34 +416,59 @@ msgid "``window auto``"
 msgstr ""
 
 #: ../../source/dialogue.rst:238
-msgid "This enables automatic management of the window. The window is shown before statements listed in :var:`config.window_auto_show` - by default, say statements. The window is hidden before statements listed in :var:`config.window_auto_hide` - by default, ``scene`` and ``call screen`` statements."
+msgid "This enables automatic management of the window. The window is shown before statements listed in :var:`config.window_auto_show` - by default, say statements. The window is hidden before statements listed in :var:`config.window_auto_hide` - by default, ``scene`` and ``call screen`` statements. (Only statements are considered, not statement equivalent functions.)"
 msgstr ""
 
-#: ../../source/dialogue.rst:244
+#: ../../source/dialogue.rst:245
 msgid "The ``window auto`` statement uses :var:`config.window_show_transition` and :var:`config.window_hide_transition` to show and hide the window, respectively. ``window auto`` is cancelled by ``window show`` or ``window hide``."
 msgstr ""
 
-#: ../../source/dialogue.rst:269
+#: ../../source/dialogue.rst:270
 msgid "Dialogue window management is subject to the \"show empty window\" :func:`Preference`. If the preference is disabled, the statements above have no effect."
 msgstr ""
 
-#: ../../source/dialogue.rst:274
+#: ../../source/dialogue.rst:275
 msgid "Python Equivalents"
 msgstr ""
 
-#: ../../source/dialogue.rst:278
+#: ../../source/dialogue.rst:279
 msgid "This may only make sense if you've read the :ref:`python` section."
 msgstr ""
 
-#: ../../source/dialogue.rst:280
+#: ../../source/dialogue.rst:281
 msgid "When the first parameter to a say statement is present and an expression, the say statement is equivalent to calling that expressing with the dialogue and an `interact` argument of True. For example::"
 msgstr ""
 
-#: ../../source/dialogue.rst:290
+#: ../../source/dialogue.rst:291
 msgid "The say statement will search the ``character`` named store before the default store. If you want to have a character with the same name as a variable in the default store, it can be defined using::"
 msgstr ""
 
-#: ../../source/dialogue.rst:296
+#: ../../source/dialogue.rst:297
 msgid "This character can then be used alongside a variable in the default store::"
+msgstr ""
+
+#: ../../source/dialogue.rst:306
+msgid "Window management is performed by setting the :var:`_window` and :var:`_window_auto` variables, and by using the following two functions:"
+msgstr ""
+
+#: ../../source/inc/window:5
+msgid "The python equivalent of the \"window hide\" statement."
+msgstr ""
+
+#: ../../source/inc/window:9
+#: ../../source/inc/window:18
+msgid "`trans`"
+msgstr ""
+
+#: ../../source/inc/window:8
+msgid "If False, the default window hide transition is used. If None, no transition is used. Otherwise, the specified transition is used."
+msgstr ""
+
+#: ../../source/inc/window:14
+msgid "The python equivalent of the \"window show\" statement."
+msgstr ""
+
+#: ../../source/inc/window:17
+msgid "If False, the default window show transition is used. If None, no transition is used. Otherwise, the specified transition is used."
 msgstr ""
 

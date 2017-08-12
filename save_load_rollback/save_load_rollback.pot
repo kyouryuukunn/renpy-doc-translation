@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2016, Tom Rothamel
+# Copyright (C) 2012-2017, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.12\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 15:35+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgid "control flow path"
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:82
-msgid "Ren'Py only saves the current statement, and the statement it needs to return to. It doesn't remember how it got there. Importantly, if code (like variable assignments) is added to the game, it won't run."
+msgid "Ren'Py only saves the current statement, and the statement it needs to return to. It doesn't remember how it got there. Importantly, statements (including variable assignments) that are added to the game won't run."
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:89
@@ -125,74 +125,74 @@ msgid "What's important here is to note that saving occurs at the **start** of a
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:108
-msgid "This can be a problem in python-defined statements. In code like::"
+msgid "This can be a problem in python-defined statements. In::"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:116
-msgid "if the user saves and loads in the middle, the loop will begin anew. Using similar code in Ren'Py - rather than Python - avoids this problem.::"
-msgstr ""
-
-#: ../../source/save_load_rollback.rst:126
-msgid "What Ren'Py can Save"
-msgstr ""
-
-#: ../../source/save_load_rollback.rst:128
-msgid "Ren'Py uses the python pickle system to save game state. This module can save:"
-msgstr ""
-
-#: ../../source/save_load_rollback.rst:131
-msgid "Basic types, such as True, False, None, int, str, float, complex, str, and unicode objects."
-msgstr ""
-
-#: ../../source/save_load_rollback.rst:132
-msgid "Compound types, like lists, tuples, sets, and dicts."
+#: ../../source/save_load_rollback.rst:120
+msgid "if the user saves and loads in the middle, the loop will begin anew. Using Ren'Py script - rather than Python - to loop avoids this problem.::"
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:133
-msgid "Creator-defined objects, classes, functions, methods, and bound methods. For pickling these functions to succeed, they must remain available under their original names."
+msgid "What Ren'Py can Save"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:136
-msgid "Character, Displayable, Transform, and Transition objects."
+#: ../../source/save_load_rollback.rst:135
+msgid "Ren'Py uses the Python pickle system to save game state. This module can save:"
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:138
-msgid "There are certain types that cannot be pickled:"
+msgid "Basic types, such as True, False, None, int, str, float, complex, str, and unicode objects."
+msgstr ""
+
+#: ../../source/save_load_rollback.rst:139
+msgid "Compound types, like lists, tuples, sets, and dicts."
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:140
-msgid "Render objects."
-msgstr ""
-
-#: ../../source/save_load_rollback.rst:141
-msgid "Iterator objects."
-msgstr ""
-
-#: ../../source/save_load_rollback.rst:142
-msgid "File-like objects."
+msgid "Creator-defined objects, classes, functions, methods, and bound methods. For pickling these functions to succeed, they must remain available under their original names."
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:143
-msgid "Inner functions and lambdas."
+msgid "Character, Displayable, Transform, and Transition objects."
 msgstr ""
 
 #: ../../source/save_load_rollback.rst:145
+msgid "There are certain types that cannot be pickled:"
+msgstr ""
+
+#: ../../source/save_load_rollback.rst:147
+msgid "Render objects."
+msgstr ""
+
+#: ../../source/save_load_rollback.rst:148
+msgid "Iterator objects."
+msgstr ""
+
+#: ../../source/save_load_rollback.rst:149
+msgid "File-like objects."
+msgstr ""
+
+#: ../../source/save_load_rollback.rst:150
+msgid "Inner functions and lambdas."
+msgstr ""
+
+#: ../../source/save_load_rollback.rst:152
 msgid "By default, Ren'Py uses the cPickle module to save the game. Setting :var:`config.use_cpickle` will make Ren'Py use the pickle module instead. This makes the game slower, but is better at reporting save errors."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:151
+#: ../../source/save_load_rollback.rst:158
 msgid "Save Functions and Variables"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:153
+#: ../../source/save_load_rollback.rst:160
 msgid "There is one variable that is used by the high-level save system:"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:157
+#: ../../source/save_load_rollback.rst:164
 msgid "This is a string that is stored with each save. It can be used to give a name to the save, to help users tell them apart."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:160
+#: ../../source/save_load_rollback.rst:167
 msgid "There are a number of high-level save actions and functions defined in the :ref:`screen actions <screen-actions>`. In addition, there are the following low-level save and load actions."
 msgstr ""
 
@@ -304,24 +304,24 @@ msgstr ""
 msgid "Deletes the save slot with the given name."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:168
+#: ../../source/save_load_rollback.rst:175
 msgid "Retaining Data After Load"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:170
+#: ../../source/save_load_rollback.rst:177
 msgid "When a game is loaded, the state of the game is reset (using the rollback system described below) to the state of the game when the current statement began executing."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:174
+#: ../../source/save_load_rollback.rst:181
 msgid "In some cases, this may not be desirable. For example, when a screen allows editing of a value, we may want to retain that value when the game is loaded. When renpy.retain_after_load is called, data will not be reverted when a game is saved and loaded before the end of the next checkpointed interaction."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:180
+#: ../../source/save_load_rollback.rst:187
 msgid "Note that while data is not changed, control is reset to the start of the current statement. That statement will execute again, with the new data in place at the start of the statement."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:184
-#: ../../source/save_load_rollback.rst:401
+#: ../../source/save_load_rollback.rst:191
+#: ../../source/save_load_rollback.rst:408
 msgid "For example::"
 msgstr ""
 
@@ -329,23 +329,23 @@ msgstr ""
 msgid "Causes data modified between the current statement and the statement containing the next checkpoint to be retained when a load occurs."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:202
+#: ../../source/save_load_rollback.rst:209
 msgid "Rollback"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:204
+#: ../../source/save_load_rollback.rst:211
 msgid "Rollback allows the user to revert the game to an earlier state in much the same way as undo/redo systems that are available in most modern applications. While the system takes care of maintaining the visuals and game variables during rollback events, there are several things that should be considered while creating a game."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:211
+#: ../../source/save_load_rollback.rst:218
 msgid "Supporting Rollback and Roll Forward"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:213
+#: ../../source/save_load_rollback.rst:220
 msgid "Most Ren'Py statements automatically support rollback and roll forward. If you call :func:`ui.interact` directly, you'll need to add support for rollback and roll-forward yourself. This can be done using the following structure::"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:230
+#: ../../source/save_load_rollback.rst:237
 msgid "It's important that your game does not interact with the user after renpy.checkpoint has been called. (If you do, the user may not be able to rollback.)"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgid "`defer`"
 msgstr ""
 
 #: ../../source/inc/rollback:47
-msgid "If true, the call will be deferred until code from the main context is executed."
+msgid "If true, the call will be deferred until control returns to the main context."
 msgstr ""
 
 #: ../../source/inc/rollback:52
@@ -413,7 +413,7 @@ msgstr ""
 msgid "If true, rollback will finish just after the previous checkpoint. If false, rollback finish just before the current checkpoint."
 msgstr ""
 
-#: ../../source/inc/rollback:54
+#: ../../source/inc/rollback:55
 #: ../../source/inc/blockrollback:29
 #: ../../source/inc/blockrollback:63
 msgid "`label`"
@@ -424,91 +424,99 @@ msgid "If not None, a label that is called when rollback completes."
 msgstr ""
 
 #: ../../source/inc/rollback:59
+msgid "`abnormal`"
+msgstr ""
+
+#: ../../source/inc/rollback:58
+msgid "If true, the default, script executed after the transition is run in an abnormal mode that skips transitions that would have otherwise occured. Abnormal mode ends when an interaction begins."
+msgstr ""
+
+#: ../../source/inc/rollback:64
 msgid "Rollback will skip sections of the game where rollback has been suspended."
 msgstr ""
 
-#: ../../source/inc/rollback:63
+#: ../../source/inc/rollback:68
 msgid "`flag`:"
 msgstr ""
 
-#: ../../source/inc/rollback:63
+#: ../../source/inc/rollback:68
 msgid "When `flag` is true, rollback is suspended. When false, rollback is resumed."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:236
+#: ../../source/save_load_rollback.rst:243
 msgid "Blocking Rollback"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:240
+#: ../../source/save_load_rollback.rst:247
 msgid "Blocking rollback is a user-unfriendly thing to do. If a user mistakenly clicks on an unintended choice, he or she will be unable to correct their mistake. Since rollback is equivalent to saving and loading, your users will be forced to save more often, breaking game engagement."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:245
+#: ../../source/save_load_rollback.rst:252
 msgid "It is possible to disable rollback in part or in full. If rollback is not wanted at all, it can simply be turned off through the :var:`config.rollback_enabled` option."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:249
+#: ../../source/save_load_rollback.rst:256
 msgid "More common is a partial block of rollback. This can be achieved by the :func:`renpy.block_rollback` function. When called, it will instruct Ren'Py not to roll back before that point. For example::"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:270
+#: ../../source/save_load_rollback.rst:277
 msgid "When the label no_return is reached, Ren'Py won't allow a rollback back to the menu."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:275
+#: ../../source/save_load_rollback.rst:282
 msgid "Fixing Rollback"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:277
+#: ../../source/save_load_rollback.rst:284
 msgid "Fixing rollback provides for an intermediate choice between unconstrained rollback and blocking rollback entirely. Rollback is allowed, but the user is not allowed to make changes to their decisions. Fixing rollback is done with the :func:`renpy.fix_rollback` function, as shown in the following example::"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:299
+#: ../../source/save_load_rollback.rst:306
 msgid "Now, after the fix_rollback function is called, it will still be possible for the user to roll back to the menu. However, it will not be possible to make a different choice."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:303
-msgid "There are some caveats to consider when designing a game for fix_rollback. Ren'Py will automatically take care of locking any data that is given to :func:`checkpoint`. However, due to the generic nature of Ren'Py, it is possible to write Python code that bypasses this and changes things in ways that may have unpredictable results. It is up to the game designer to block rollback at problematic locations or write additional code to deal with it."
+#: ../../source/save_load_rollback.rst:310
+msgid "There are some caveats to consider when designing a game for fix_rollback. Ren'Py will automatically take care of locking any data that is given to :func:`checkpoint`. However, due to the generic nature of Ren'Py, it is possible to write Python that bypasses this and changes things in ways that may have unpredictable results. It is up to the game designer to block rollback at problematic locations or write additional Python to deal with it."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:311
+#: ../../source/save_load_rollback.rst:318
 msgid "The internal user interaction options for menus, :func:`renpy.input` and :func:`renpy.imagemap` are designed to fully work with fix_rollback."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:315
+#: ../../source/save_load_rollback.rst:322
 msgid "Styling Fixed Rollback"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:317
+#: ../../source/save_load_rollback.rst:324
 msgid "Because fix_rollback changes the functionality of menus and imagemaps, it is advisable to reflect this in the appearance. To do this, it is important to understand how the widget states of the menu buttons are changed. There are two modes that can be selected through the :var:`config.fix_rollback_without_choice` option."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:323
+#: ../../source/save_load_rollback.rst:330
 msgid "The default option will set the chosen option to \"selected\", thereby activating the style properties with the \"selected\\_\" prefix. All other buttons will be made insensitive and show using the properties with the \"insensitive\\_\" prefix. Effectively this leaves the menu with a single selectable choice."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:329
+#: ../../source/save_load_rollback.rst:336
 msgid "When the :var:`config.fix_rollback_without_choice` option is set to False, all buttons are made insensitive. This means that the chosen option will use the \"selected_insensitive\\_\" prefix for the style properties while the other buttons use properties with the \"insensitive\\_\" prefix."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:336
+#: ../../source/save_load_rollback.rst:343
 msgid "Fixed Rollback and Custom Screens"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:338
+#: ../../source/save_load_rollback.rst:345
 msgid "When writing custom Python routines that must play nice with the fix_rollback system there are a few simple things to know. First of all the :func:`renpy.in_fixed_rollback` function can be used to determine whether the game is currently in fixed rollback state. Second, when in fixed rollback state, :func:`ui.interact` will always return the supplied roll_forward data regardless of what action was performed. This effectively means that when the :func:`ui.interact`/:func:`renpy.checkpoint` functions are used, most of the work is done."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:347
+#: ../../source/save_load_rollback.rst:354
 msgid "To simplify the creation of custom screens, two actions are provided to help with the most common uses. The :func:`ui.ChoiceReturn` action returns the value when the button it is attached to is clicked. The :func:`ui.ChoiceJump` action can be used to jump to a script label. However, this action only works properly when the screen is called trough a ``call screen`` statement."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:354
-#: ../../source/save_load_rollback.rst:368
+#: ../../source/save_load_rollback.rst:361
+#: ../../source/save_load_rollback.rst:375
 msgid "Example::"
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:392
+#: ../../source/save_load_rollback.rst:399
 msgid "Rollback-blocking and -fixing Functions"
 msgstr ""
 
@@ -582,7 +590,7 @@ msgstr ""
 msgid "The value this is returned when the choice is chosen."
 msgstr ""
 
-#: ../../source/save_load_rollback.rst:397
+#: ../../source/save_load_rollback.rst:404
 msgid "NoRollback"
 msgstr ""
 

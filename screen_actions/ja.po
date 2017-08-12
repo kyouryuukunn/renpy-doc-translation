@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-30 15:11+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -105,19 +105,25 @@ msgstr ""
 
 #: ../../source/inc/control_action:25
 msgid ""
-"Causes the current interaction to return the supplied value. This is often "
-"used with menus and imagemaps, to select what the return value of the "
-"interaction is."
+"Causes the current interaction to return the supplied value, which must not "
+"be None. This is often used with menus and imagemaps, to select what the "
+"return value of the interaction is. If the screen was called using the "
+"``call screen`` statement, the return value is placed in the `_return` "
+"variable."
 msgstr ""
-"現在のインタラクションが与えられた value を返すようにします。これはインタラク"
-"ションから返される値を選択するために、しばしば menu や imagemap で使用されま"
-"す。"
+"None でなければ、現在のインタラクションが与えられた value を返すようにしま"
+"す。これはインタラクションから返される値を選択するために、しばしば menu や "
+"imagemap で使用されます。スクリーンが ``call screen`` ステートメントで呼び出"
+"されると、返り値は `_return` 変数に配置されます。"
 
-#: ../../source/inc/control_action:29
-msgid "When in a menu, this returns from the menu."
-msgstr "menu ではこれで menu から戻ります。"
+#: ../../source/inc/control_action:31
+msgid ""
+"When in a menu, this returns from the menu. (The value should be None in "
+"this case.)"
+msgstr ""
+"menu ではこれで menu から戻ります。(この場合値は None であるべきです。)"
 
-#: ../../source/inc/control_action:33
+#: ../../source/inc/control_action:36
 msgid ""
 "This causes another screen to be shown. `screen` is a string giving the name "
 "of the screen. The keyword arguments are passed to the screen being shown."
@@ -125,12 +131,12 @@ msgstr ""
 "これは他のスクリーンを表示します。 `screen` はスクリーンの名前の文字列です。"
 "キーワード引数は表示されるスクリーンに渡されます。"
 
-#: ../../source/inc/control_action:37
+#: ../../source/inc/control_action:40
 msgid "If not None, `transition` is use to show the new screen."
 msgstr ""
 "None でなければ `transition` が新しいスクリーンを表示するために使用されます。"
 
-#: ../../source/inc/control_action:41
+#: ../../source/inc/control_action:44
 msgid ""
 "Shows a transient screen. A transient screen will be hidden when the current "
 "interaction completes."
@@ -165,7 +171,7 @@ msgstr ""
 
 #: ../../source/inc/data_action:10 ../../source/inc/data_action:19
 #: ../../source/inc/data_action:81 ../../source/inc/audio_action:46
-#: ../../source/inc/value:9 ../../source/inc/value:122
+#: ../../source/inc/value:9 ../../source/inc/value:120
 msgid "`value`"
 msgstr "`value`"
 
@@ -294,7 +300,7 @@ msgstr "Ren'Py をメインメニューに戻らせます。"
 #: ../../source/inc/menu_action:9 ../../source/inc/menu_action:18
 #: ../../source/inc/file_action:23 ../../source/inc/file_action:35
 #: ../../source/inc/file_action:87 ../../source/inc/file_action:111
-#: ../../source/inc/other_action:146
+#: ../../source/inc/other_action:160
 msgid "`confirm`"
 msgstr "`confirm`"
 
@@ -416,7 +422,7 @@ msgstr ""
 
 #: ../../source/screen_actions.rst:64 ../../source/inc/file_action:15
 #: ../../source/inc/file_action:39 ../../source/inc/file_action:94
-#: ../../source/inc/file_action_function:99
+#: ../../source/inc/input_value:44 ../../source/inc/file_action_function:99
 msgid "`page`"
 msgstr "`page`"
 
@@ -803,35 +809,44 @@ msgid ""
 msgstr "アクションの有効選択状態は `yes` アクションのそれらに合致します。"
 
 #: ../../source/inc/other_action:22
+msgid ""
+"Disables all active InputValue. This will re-focus the default InputValue, "
+"if there is one. Otherwise, no InputValue will be focused."
+msgstr ""
+"すべての有効な InputValue を無効化します。これでデフォルトの InputValue があ"
+"れば、フォーカスが戻ります。そうでなければ、 InputValue にはフォーカスされま"
+"せん。"
+
+#: ../../source/inc/other_action:28
 msgid "This Action calls `callable` with `args` and `kwargs`."
 msgstr ""
 "このアクションは `callable` を `args` と `kwargs` を引数に呼び出します。"
 
-#: ../../source/inc/other_action:24
+#: ../../source/inc/other_action:30
 msgid "`callable`"
 msgstr "`callable`"
 
-#: ../../source/inc/other_action:25
+#: ../../source/inc/other_action:31
 msgid "Callable object."
 msgstr "呼び出し可能オブジェクト"
 
-#: ../../source/inc/other_action:26
+#: ../../source/inc/other_action:32
 msgid "`args`"
 msgstr "`args`"
 
-#: ../../source/inc/other_action:27
+#: ../../source/inc/other_action:33
 msgid "position arguments to be passed to `callable`."
 msgstr "位置引数は `callable` に渡されます。"
 
-#: ../../source/inc/other_action:29
+#: ../../source/inc/other_action:35
 msgid "`kwargs`"
 msgstr "`kwargs`"
 
-#: ../../source/inc/other_action:29
+#: ../../source/inc/other_action:35
 msgid "keyword arguments to be passed to `callable`."
 msgstr "キーワード引数は `callable` に渡されます。"
 
-#: ../../source/inc/other_action:31
+#: ../../source/inc/other_action:37
 msgid ""
 "This Action takes an optional _update_screens keyword argument, which "
 "defaults to true. When it is true, the interaction restarts and the screens "
@@ -841,11 +856,21 @@ msgstr ""
 "では True になります。 True ならインテラクションは再開し、スクリーンは関数か"
 "ら処理が返された後更新されます。"
 
-#: ../../source/inc/other_action:37
+#: ../../source/inc/other_action:41
+msgid ""
+"If the function returns a non-None value, the interaction stops and returns "
+"that value. (When called using the call screen statement, the result is "
+"placed in the `_return` variable.)"
+msgstr ""
+"関数が None 以外を返すと、インタラクションは停止し、その値を返します。( call "
+"screen ステートメントで呼び出されると、その結果は `_return` 変数に配置されま"
+"す)"
+
+#: ../../source/inc/other_action:47
 msgid "Displays help."
 msgstr "ヘルプを表示します。"
 
-#: ../../source/inc/other_action:39
+#: ../../source/inc/other_action:49
 msgid ""
 "If a screen named ``help`` is defined, that screen is displayed using :func:"
 "`ShowMenu` and `help` is ignored."
@@ -853,36 +878,36 @@ msgstr ""
 "``help`` という名のスクリーンが定義されていれば、そのスクリーンは :func:"
 "`ShowMenu` を使用して表示され `help` は無視されます。"
 
-#: ../../source/inc/other_action:51
+#: ../../source/inc/other_action:61
 msgid "`help`"
 msgstr "`help`"
 
-#: ../../source/inc/other_action:43
+#: ../../source/inc/other_action:53
 msgid "A string that is used to find help. This is used in the following way:"
 msgstr "help を探すための文字列です。これは以下の方法で使用します。 :"
 
-#: ../../source/inc/other_action:46
+#: ../../source/inc/other_action:56
 msgid "If a label with this name exists, the label is called in a new context."
 msgstr ""
 "この名前のラベルが存在したら、そのラベルは新しコンテキストで呼び出されます。"
 
-#: ../../source/inc/other_action:48
+#: ../../source/inc/other_action:58
 msgid ""
 "Otherwise, this is interpreted as giving the name of a file that should be "
 "opened in a web browser."
 msgstr ""
 "そうでなければ、これはブラウザーで開くべきファイル名として解釈されます。"
 
-#: ../../source/inc/other_action:51
+#: ../../source/inc/other_action:61
 msgid "If `help` is None, :var:`config.help` is used as the default value."
 msgstr ""
 "`help` が None なら、 :var:`config.help` がデフォルトの値として使用されます。"
 
-#: ../../source/inc/other_action:57
+#: ../../source/inc/other_action:67
 msgid "Causes the interface to be hidden until the user clicks."
 msgstr "インターフェースをユーザーがクリックするまで非表示にします。"
 
-#: ../../source/inc/other_action:61
+#: ../../source/inc/other_action:71
 msgid ""
 "This returns `true` if `expression` is true, and `false` otherwise. Use this "
 "to select an action based on an expression. Note that the default, None, can "
@@ -893,7 +918,7 @@ msgstr ""
 "トでは None はボタンを無効化するアクションとして使用可能なことに気をつけてく"
 "ださい。"
 
-#: ../../source/inc/other_action:68
+#: ../../source/inc/other_action:78
 msgid ""
 "This inverts the selection state of the provided action, while proxying over "
 "all of the other methods."
@@ -901,7 +926,7 @@ msgstr ""
 "与えられたアクションの選択状態を反転し、それ以外のメソッドはそのままにしま"
 "す。"
 
-#: ../../source/inc/other_action:73
+#: ../../source/inc/other_action:83
 msgid ""
 "Move the mouse pointer to `x`, `y`. If the device does not have a mouse "
 "pointer or _preferences.mouse_move is False, this does nothing."
@@ -909,25 +934,30 @@ msgstr ""
 "マウスポインターを `x`, `y` に移動します。デバイスがマウスポインターをサポー"
 "トしないか _preferences.mouse_move が False ならこれは何もしません。"
 
-#: ../../source/inc/other_action:77
+#: ../../source/inc/other_action:87
 msgid "`duration`"
 msgstr "`duration`"
 
-#: ../../source/inc/other_action:77
+#: ../../source/inc/other_action:87
 msgid ""
 "The time it will take to perform the move, in seconds. During this time, the "
 "mouse may be unresponsive."
 msgstr "移動処理にかける秒数です。この時間の間はマウスが反応しません。"
 
-#: ../../source/inc/other_action:82
+#: ../../source/inc/other_action:92
 msgid "Displays `message` using :func:`renpy.notify`."
 msgstr ":func:`renpy.notify` を使用して  `message` を表示します。"
 
-#: ../../source/inc/other_action:86
+#: ../../source/inc/other_action:96
 msgid "Causes `url` to be opened in a web browser."
 msgstr "`url` をウェブブラウザーで開きます。"
 
-#: ../../source/inc/other_action:90
+#: ../../source/inc/other_action:100
+msgid "Queues the given event using :func:`renpy.queue_event`."
+msgstr ""
+"指定されたイベントを :func:`renpy.queue_event` を使用してキューします。"
+
+#: ../../source/inc/other_action:104
 msgid ""
 "This action causes Ren'Py to rollback to before the current statement, and "
 "then re-run the current statement. This may be used when changing a "
@@ -937,7 +967,7 @@ msgstr ""
 "テートメントをやりなおします。永続データの変更がそのステートメントによる表示"
 "に影響を与えるときこれは使われるでしょう。"
 
-#: ../../source/inc/other_action:95
+#: ../../source/inc/other_action:109
 msgid ""
 "If run in a menu context, this waits until the player exits to a top-level "
 "context before performing the rollback."
@@ -945,7 +975,7 @@ msgstr ""
 "メニューコンテキストで実行されると、プレイヤーがトップレベルコンテキストに戻"
 "るまでロールバックを待ちます。"
 
-#: ../../source/inc/other_action:100
+#: ../../source/inc/other_action:114
 msgid ""
 "This action causes a rollforward to occur, if a roll forward is possible. "
 "Otherwise, it is insensitive."
@@ -953,7 +983,7 @@ msgstr ""
 "ロールフォワードが可能な場合、ロールフォワードを実行します。そうでなければ無"
 "効です。"
 
-#: ../../source/inc/other_action:105
+#: ../../source/inc/other_action:119
 msgid ""
 "This action causes a rollback to occur, when a rollback is possible. "
 "Otherwise, nothing happens."
@@ -961,7 +991,7 @@ msgstr ""
 "ロールバックが可能な場合、ロールバックを実行します。そうでなけれ何も起こりま"
 "せん。"
 
-#: ../../source/inc/other_action:110
+#: ../../source/inc/other_action:124
 msgid ""
 "This causes a rollback to an identifier to occur. Rollback identifiers are "
 "returned as part of HistoryEntry objects."
@@ -969,11 +999,11 @@ msgstr ""
 "identifier へのロールバックを実行します。ロールバック identifier は "
 "HistoryEntry オブジェクトの一部として返されます。"
 
-#: ../../source/inc/other_action:115
+#: ../../source/inc/other_action:129
 msgid "Takes a screenshot."
 msgstr "スクリーンショットを撮ります。"
 
-#: ../../source/inc/other_action:119
+#: ../../source/inc/other_action:133
 msgid ""
 "This allows an expression to control if a button should be marked as "
 "selected. It should be used as part of a list with one or more actions. For "
@@ -982,7 +1012,7 @@ msgstr ""
 "これは expreesion をボタンが選択されているかどうかを制御するために利用できる"
 "ようにします。一つ以上のアクションのリストの一部として使用されるはずです。"
 
-#: ../../source/inc/other_action:129
+#: ../../source/inc/other_action:143
 msgid ""
 "This allows an expression to control if a button should be marked as "
 "sensitive. It should be used as part of a list with one or more actions. For "
@@ -991,7 +1021,7 @@ msgstr ""
 "これは expreesion でボタンが選択可能か制御できるようにします。一つ以上のアク"
 "ションのリストの一部として使用されるはずです。"
 
-#: ../../source/inc/other_action:139
+#: ../../source/inc/other_action:153
 msgid ""
 "Causes the game to begin skipping. If the game is in a menu context, then "
 "this returns to the game. Otherwise, it just enables skipping."
@@ -999,19 +1029,19 @@ msgstr ""
 "ゲームのスキップを開始します。 menu コンテキストの内部にいる場合はゲームに"
 "戻ってから開始し、それ以外の場合は単にスキップを開始します。"
 
-#: ../../source/inc/other_action:144
+#: ../../source/inc/other_action:158
 msgid "`fast`"
 msgstr "`fast`"
 
-#: ../../source/inc/other_action:144
+#: ../../source/inc/other_action:158
 msgid "If true, skips directly to the next menu choice."
 msgstr "True なら次の選択肢まで直接スキップします。"
 
-#: ../../source/inc/other_action:147
+#: ../../source/inc/other_action:161
 msgid "If true, asks for confirmation before beginning skipping."
 msgstr "True ならスキップを開始する前に確認します。"
 
-#: ../../source/inc/other_action:151
+#: ../../source/inc/other_action:165
 msgid "Causes `transition` to occur."
 msgstr "`transition` を実行します。"
 
@@ -1037,13 +1067,13 @@ msgstr ""
 "これはアニメーション用の value で、 `delay` 秒かけて `old_value` から "
 "`value` に変化します。"
 
-#: ../../source/inc/value:9 ../../source/inc/value:122
+#: ../../source/inc/value:9 ../../source/inc/value:120
 msgid "The value itself, a number."
 msgstr "値の数字です。"
 
 #: ../../source/inc/value:12 ../../source/inc/value:40
-#: ../../source/inc/value:65 ../../source/inc/value:99
-#: ../../source/inc/value:124 ../../source/inc/value:134
+#: ../../source/inc/value:65 ../../source/inc/value:97
+#: ../../source/inc/value:122 ../../source/inc/value:132
 msgid "`range`"
 msgstr "`range`"
 
@@ -1106,12 +1136,12 @@ msgid "The key."
 msgstr "キー"
 
 #: ../../source/inc/value:41 ../../source/inc/value:66
-#: ../../source/inc/value:100 ../../source/inc/value:135
+#: ../../source/inc/value:98 ../../source/inc/value:133
 msgid "The range to adjust over."
 msgstr "調整の範囲"
 
 #: ../../source/inc/value:46 ../../source/inc/value:72
-#: ../../source/inc/value:106 ../../source/inc/value:141
+#: ../../source/inc/value:104 ../../source/inc/value:139
 msgid "`max_is_zero`"
 msgstr "`max_is_zero`"
 
@@ -1126,32 +1156,32 @@ msgstr ""
 "両方の方法で動作します。"
 
 #: ../../source/inc/value:48 ../../source/inc/value:74
-#: ../../source/inc/value:108 ../../source/inc/value:143
+#: ../../source/inc/value:106 ../../source/inc/value:141
 msgid "`style`"
 msgstr "`style`"
 
 #: ../../source/inc/value:49 ../../source/inc/value:75
-#: ../../source/inc/value:109 ../../source/inc/value:144
+#: ../../source/inc/value:107 ../../source/inc/value:142
 msgid "The styles of the bar created."
 msgstr "作成されるバーのスタイル"
 
 #: ../../source/inc/value:50 ../../source/inc/value:76
-#: ../../source/inc/value:110 ../../source/inc/value:145
+#: ../../source/inc/value:108 ../../source/inc/value:143
 msgid "`offset`"
 msgstr "`offset`"
 
 #: ../../source/inc/value:51 ../../source/inc/value:77
-#: ../../source/inc/value:111 ../../source/inc/value:146
+#: ../../source/inc/value:109 ../../source/inc/value:144
 msgid "An offset to add to the value."
 msgstr "値に加えられるオフセット"
 
 #: ../../source/inc/value:53 ../../source/inc/value:79
-#: ../../source/inc/value:113 ../../source/inc/value:148
+#: ../../source/inc/value:111 ../../source/inc/value:146
 msgid "`step`"
 msgstr "`step`"
 
 #: ../../source/inc/value:53 ../../source/inc/value:79
-#: ../../source/inc/value:113 ../../source/inc/value:148
+#: ../../source/inc/value:111 ../../source/inc/value:146
 msgid ""
 "The amount to change the bar by. If None, defaults to 1/10th of the bar."
 msgstr "バーが変更する量。 None の場合、デフォルトでバーの10分の1です。"
@@ -1162,25 +1192,24 @@ msgid ""
 msgstr ""
 "ユーザーがオブジェクトのフィールドの値を調整できるようにする bar value です。"
 
-#: ../../source/inc/value:61 ../../source/inc/value:95
+#: ../../source/inc/value:61
 msgid "`object`"
 msgstr "`object`"
 
-#: ../../source/inc/value:62 ../../source/inc/value:96
+#: ../../source/inc/value:62
 msgid "The object."
 msgstr "オブジェクト"
 
-#: ../../source/inc/value:63 ../../source/inc/value:97
-#: ../../source/inc/input_value:19
+#: ../../source/inc/value:63 ../../source/inc/input_value:19
 msgid "`field`"
 msgstr "`field`"
 
-#: ../../source/inc/value:64 ../../source/inc/value:98
+#: ../../source/inc/value:64
 msgid "The field, a string."
 msgstr "フィールドの文字列"
 
-#: ../../source/inc/value:68 ../../source/inc/value:102
-#: ../../source/inc/value:137
+#: ../../source/inc/value:68 ../../source/inc/value:100
+#: ../../source/inc/value:135
 msgid ""
 "If True, then when the field is zero, the value of the bar will be range, "
 "and all other values will be shifted down by 1. This works both ways - when "
@@ -1190,8 +1219,8 @@ msgstr ""
 "に上がっていきます。これはバーが最大に設定されるか、フィールドが 0 に設定され"
 "るかの両方の方法で動作します。"
 
-#: ../../source/inc/value:73 ../../source/inc/value:107
-#: ../../source/inc/value:142
+#: ../../source/inc/value:73 ../../source/inc/value:105
+#: ../../source/inc/value:140
 msgid "This is used internally, for some preferences."
 msgstr "これはいくつかの preferences の内部で使用されています。"
 
@@ -1202,7 +1231,7 @@ msgstr "オーディオミキサーの value です。"
 #: ../../source/inc/value:87
 msgid ""
 "The name of the mixer to adjust. This is usually one of \"music\", \"sfx\", "
-"or \"voice\", but user code can create new mixers."
+"or \"voice\", but creators can create new mixers."
 msgstr ""
 "調整するミキサーの名前です。これは通常 「music」か「sfx」、「voice」ですが、"
 "ユーザーは新しいミキサーを作成できます。"
@@ -1211,31 +1240,31 @@ msgstr ""
 msgid "A bar value that adjusts the value of a variable in a screen."
 msgstr "スクリーン変数の値を調整する bar valueです。"
 
-#: ../../source/inc/value:119
+#: ../../source/inc/value:95 ../../source/inc/value:130
+#: ../../source/inc/input_value:54 ../../source/inc/input_value:68
+msgid "`variable`"
+msgstr "`variable`"
+
+#: ../../source/inc/value:96 ../../source/inc/value:131
+msgid "A string giving the name of the variable to adjust."
+msgstr "調整する変数の名前の文字列"
+
+#: ../../source/inc/value:117
 msgid "This allows a value to be specified statically."
 msgstr "指定した値に固定します。"
 
-#: ../../source/inc/value:125
+#: ../../source/inc/value:123
 msgid "The range of the value."
 msgstr "値の範囲"
 
-#: ../../source/inc/value:129
+#: ../../source/inc/value:127
 msgid ""
 "A bar value that allows the user to adjust the value of a variable in the "
 "default store."
 msgstr ""
 "ユーザーがデフォルト store の変数の値を調整出来るようにする bar value です。"
 
-#: ../../source/inc/value:132 ../../source/inc/input_value:35
-#: ../../source/inc/input_value:49
-msgid "`variable`"
-msgstr "`variable`"
-
-#: ../../source/inc/value:133
-msgid "A string giving the name of the variable to adjust."
-msgstr "調整する変数の名前の文字列"
-
-#: ../../source/inc/value:153
+#: ../../source/inc/value:151
 msgid ""
 "The value of an adjustment that horizontally scrolls the viewport with the "
 "given id, on the current screen. The viewport must be defined before a bar "
@@ -1245,7 +1274,7 @@ msgstr ""
 "given id, on the current screen. The viewport must be defined before a bar "
 "with this value is."
 
-#: ../../source/inc/value:159
+#: ../../source/inc/value:157
 msgid ""
 "The value of an adjustment that vertically scrolls the viewport with the "
 "given id, on the current screen. The viewport must be defined before a bar "
@@ -1275,33 +1304,37 @@ msgstr ""
 msgid ""
 "Ren'Py-defined input values inherit from InputValue, which means that all "
 "values also include Enable(), Disable(), and Toggle() methods that return "
-"actions that enable, disable, and toggle editing, respectively."
+"actions that enable, disable, and toggle editing, respectively. See also "
+"the :func:`DisableAllInputValues` action."
 msgstr ""
 "Ren'Py 定義の input value は InputValue を継承していて、すべての value は編集"
 "を有効、無効、トグルするアクションを返す Enable(), Disable(), Toggle() メソッ"
-"ドを含んでいます。"
+"ドを含んでいます。 :func:`DisableAllInputValues`  アクションも参照してくださ"
+"い。"
 
 #: ../../source/inc/input_value:5
 msgid "An input value that updates `key` in `dict`."
 msgstr "`dict` の `key` を更新する input value です。"
 
 #: ../../source/inc/input_value:8 ../../source/inc/input_value:22
-#: ../../source/inc/input_value:38 ../../source/inc/input_value:52
+#: ../../source/inc/input_value:46 ../../source/inc/input_value:57
+#: ../../source/inc/input_value:71
 msgid "`default`"
 msgstr "`default`"
 
 #: ../../source/inc/input_value:8 ../../source/inc/input_value:22
-#: ../../source/inc/input_value:38 ../../source/inc/input_value:52
+#: ../../source/inc/input_value:47 ../../source/inc/input_value:57
+#: ../../source/inc/input_value:71
 msgid "If true, this input can be editable by default."
 msgstr "True ならこの input はデフォルトで変更可能です。"
 
 #: ../../source/inc/input_value:11 ../../source/inc/input_value:25
-#: ../../source/inc/input_value:41 ../../source/inc/input_value:55
+#: ../../source/inc/input_value:60 ../../source/inc/input_value:74
 msgid "`returnable`"
 msgstr "`returnable`"
 
 #: ../../source/inc/input_value:11 ../../source/inc/input_value:25
-#: ../../source/inc/input_value:41 ../../source/inc/input_value:55
+#: ../../source/inc/input_value:60 ../../source/inc/input_value:74
 msgid ""
 "If true, the value of this input will be returned when the user presses "
 "enter."
@@ -1315,31 +1348,70 @@ msgstr "`object` の `field` を更新する input value です。"
 msgid "A string giving the name of the field."
 msgstr "フィールドの名前の文字列"
 
-#: ../../source/inc/input_value:32
+#: ../../source/inc/input_value:30
+msgid "An input value that updates the name of a file page."
+msgstr "ファイルページの名前を更新する input value です。"
+
+#: ../../source/inc/input_value:34
+msgid "`pattern`"
+msgstr "`pattern`"
+
+#: ../../source/inc/input_value:33
+msgid ""
+"This is used for the default name of a page. Python-style substition is "
+"performed, such that {} is replaced with the number of the page."
+msgstr ""
+"ページのデフォルト名に使用されます。 Python スタイル補完が、 {} がページ番号"
+"で置き換えられるように処理されます。"
+
+#: ../../source/inc/input_value:37 ../../source/inc/file_action_function:76
+msgid "`auto`"
+msgstr "`auto`"
+
+#: ../../source/inc/input_value:37
+msgid "The name of the autosave page."
+msgstr "オートセーブページの名前です"
+
+#: ../../source/inc/input_value:40 ../../source/inc/file_action_function:79
+msgid "`quick`"
+msgstr "`quick`"
+
+#: ../../source/inc/input_value:40
+msgid "The name of the quicksave page."
+msgstr "クイックセーブページの名前です"
+
+#: ../../source/inc/input_value:43
+msgid ""
+"If given, the number of the page to display. This should usually be left as "
+"None, to give the current page."
+msgstr ""
+"表示するページの数字です。現在のページを指定するなら None のままにします。"
+
+#: ../../source/inc/input_value:51
 msgid "An input value that updates variable."
 msgstr "変数を更新する input value です。"
 
-#: ../../source/inc/input_value:35 ../../source/inc/input_value:49
+#: ../../source/inc/input_value:54 ../../source/inc/input_value:68
 msgid "A string giving the name of the variable to update."
 msgstr "更新する変数の名前の文字列"
 
-#: ../../source/inc/input_value:46
+#: ../../source/inc/input_value:65
 msgid "An input value that updates `variable`."
 msgstr "`variable` を更新する input value です。"
 
-#: ../../source/screen_actions.rst:111
+#: ../../source/screen_actions.rst:112
 msgid "Functions and Classes"
 msgstr "関数とクラス"
 
-#: ../../source/screen_actions.rst:113
+#: ../../source/screen_actions.rst:114
 msgid "These functions and classes are useful in association with screens."
 msgstr "これらの関数やクラスはスクリーンと連携させると便利です。"
 
-#: ../../source/screen_actions.rst:116
+#: ../../source/screen_actions.rst:117
 msgid "Preferences"
 msgstr "Preferences"
 
-#: ../../source/screen_actions.rst:118
+#: ../../source/screen_actions.rst:119
 msgid ""
 "While all preferences can be defined based on the Actions and Values given "
 "above, it requires some knowledge of Ren'Py to figure out the correct one to "
@@ -1844,11 +1916,23 @@ msgstr "Preference(\"voice volume\")"
 msgid "Preference(\"mixer <mixer> volume\")"
 msgstr "Preference(\"mixer <mixer> volume\")"
 
-#: ../../source/screen_actions.rst:127
+#: ../../source/inc/preference_action:123
+msgid ""
+"The `range` parameter can be given to give the range of certain bars. For "
+"\"text speed\", it defaults to 200 cps. For \"auto-forward time\", it "
+"defaults to 30.0 seconds per chunk of text. (These are maximums, not "
+"defaults.)"
+msgstr ""
+"`range` 引数は特定のバーの範囲を指定するために使われます。 \"text speed\" に"
+"対しては、デフォルトで 200 cps です。 \"auto-forward time\" に対してはデフォ"
+"ルトでテキストの一塊毎に 30.0 秒です。 (これらは最大値になり、デフォルト値に"
+"はなりません)"
+
+#: ../../source/screen_actions.rst:128
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: ../../source/screen_actions.rst:129
+#: ../../source/screen_actions.rst:130
 msgid "These functions and actions work with the gamepad."
 msgstr "これらの関数とアクションはゲームパッドで動作します。"
 
@@ -1871,11 +1955,11 @@ msgid ""
 "true."
 msgstr ":var:`config.developer` が True である間常に True を返します。"
 
-#: ../../source/screen_actions.rst:134
+#: ../../source/screen_actions.rst:135
 msgid "File Functions"
 msgstr "ファイル関数"
 
-#: ../../source/screen_actions.rst:136
+#: ../../source/screen_actions.rst:137
 msgid ""
 "These functions return useful information about files. They use the same "
 "default page as the file actions."
@@ -2022,16 +2106,8 @@ msgid "The number of slots per page."
 msgstr "ページごとのスロット数"
 
 #: ../../source/inc/file_action_function:76
-msgid "`auto`"
-msgstr "`auto`"
-
-#: ../../source/inc/file_action_function:76
 msgid "A prefix to use for the auto page."
 msgstr "オートページ用の接頭辞"
-
-#: ../../source/inc/file_action_function:79
-msgid "`quick`"
-msgstr "`quick`"
 
 #: ../../source/inc/file_action_function:79
 msgid "A prefix to use for the quick page."
@@ -2082,11 +2158,11 @@ msgstr ""
 "True の場合、数字の大きなファイルスロットから最初にリストアップされます。そう"
 "でなけらば小さな数字のスロットから最初にリストアップされます。"
 
-#: ../../source/screen_actions.rst:142
+#: ../../source/screen_actions.rst:143
 msgid "Side Image Functions"
 msgstr "サイドイメージ関数"
 
-#: ../../source/screen_actions.rst:144
+#: ../../source/screen_actions.rst:145
 msgid "This function returns the side image to use."
 msgstr "この関数は使用するサイドイメージを返します。"
 
@@ -2098,11 +2174,11 @@ msgstr ""
 "現在話しているキャラクターに関連づけられたサイドイメージか、そのようなサイド"
 "イメージが存在しない場合は Null displayable を返します。"
 
-#: ../../source/screen_actions.rst:150
+#: ../../source/screen_actions.rst:151
 msgid "Tooltips"
 msgstr "Tooltip"
 
-#: ../../source/screen_actions.rst:152
+#: ../../source/screen_actions.rst:153
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 "Tooltip クラスはあるボタンの上にマウスが入ると、スクリーンを変更します。"
@@ -2139,7 +2215,7 @@ msgstr ""
 "す。ボタンがフォーカスを失うとこの Tooltip の value フィールドはデフォルトに"
 "戻ります。"
 
-#: ../../source/screen_actions.rst:156
+#: ../../source/screen_actions.rst:157
 msgid ""
 "When using a tooltip with a screen, the usual behavior is to create a "
 "tooltip object in a default statement. The value of the tooltip and the "
@@ -2152,7 +2228,7 @@ msgstr ""
 "に使用されます。スクリーンでの使用順は問題にはなりません - Action の前に値を"
 "利用することも可能です。"
 
-#: ../../source/screen_actions.rst:162
+#: ../../source/screen_actions.rst:163
 msgid ""
 "Tooltips can take on any value. While in the example below we use the text "
 "statement to display a string on the screen, it's also possible to use the "

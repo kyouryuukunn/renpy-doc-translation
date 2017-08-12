@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2016, Tom Rothamel
+# Copyright (C) 2012-2017, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.12\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 15:35+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgid "Some special screens take parameters. These parameters can be accessed as
 msgstr ""
 
 #: ../../source/screen_special.rst:27
-msgid "Some of the screens also have special ids associated with them. A special id should be assigned to a displayable of a given type. It can cause properties to be assigned to that displayable, and can make that displayable accessible to calling code."
+msgid "Some of the screens also have special ids associated with them. A special id should be assigned to a displayable of a given type. It can cause properties to be assigned to that displayable, and can make that displayable accessible to the part of Ren'Py that displays the screen."
 msgstr ""
 
 #: ../../source/screen_special.rst:33
@@ -210,7 +210,7 @@ msgid "The ``notify`` screen is used by :func:`renpy.notify` to display notifica
 msgstr ""
 
 #: ../../source/screen_special.rst:271
-#: ../../source/screen_special.rst:680
+#: ../../source/screen_special.rst:685
 msgid "`message`"
 msgstr ""
 
@@ -239,142 +239,150 @@ msgid "CTC (Click-To-Continue)"
 msgstr ""
 
 #: ../../source/screen_special.rst:317
-msgid "If present, the ``ctc`` screen is displayed when dialogue has finished showing, to prompt the player to click to display more text."
+msgid "If present, the ``ctc`` screen is displayed when dialogue has finished showing, to prompt the player to click to display more text. It may be given a single parameter."
 msgstr ""
 
-#: ../../source/screen_special.rst:320
+#: ../../source/screen_special.rst:323
+msgid "`arg`"
+msgstr ""
+
+#: ../../source/screen_special.rst:322
+msgid "If the :func:`Character` object is given a `ctc` argument, it is passed as the first positional argument to this screen."
+msgstr ""
+
+#: ../../source/screen_special.rst:325
 msgid "Here's a very simple ctc screen::"
 msgstr ""
 
-#: ../../source/screen_special.rst:334
+#: ../../source/screen_special.rst:339
 msgid "Out-Of-Game Menu Screens"
 msgstr ""
 
-#: ../../source/screen_special.rst:336
+#: ../../source/screen_special.rst:341
 msgid "These are the menu screens. The ``main_menu`` and ``yesno_prompt`` are invoked implicitly.  When the user invokes the game menu, the screen named in :data:`_game_menu_screen` will be displayed. (This defaults to ``save``.)"
 msgstr ""
 
-#: ../../source/screen_special.rst:341
+#: ../../source/screen_special.rst:346
 msgid "Remember, menu screens can be combined and modified fairly freely."
 msgstr ""
 
-#: ../../source/screen_special.rst:346
+#: ../../source/screen_special.rst:351
 msgid "Main Menu"
 msgstr ""
 
-#: ../../source/screen_special.rst:348
+#: ../../source/screen_special.rst:353
 msgid "The ``main_menu`` screen is the first screen shown when the game begins."
 msgstr ""
 
-#: ../../source/screen_special.rst:384
+#: ../../source/screen_special.rst:389
 msgid "Navigation"
 msgstr ""
 
-#: ../../source/screen_special.rst:386
+#: ../../source/screen_special.rst:391
 msgid "The ``navigation`` screen isn't special to Ren'Py. But by convention, we place the game menu navigation in a screen named ``navigation``, and then use that screen from the save, load and preferences screens."
 msgstr ""
 
-#: ../../source/screen_special.rst:420
+#: ../../source/screen_special.rst:425
 msgid "Save"
 msgstr ""
 
-#: ../../source/screen_special.rst:422
+#: ../../source/screen_special.rst:427
 msgid "The ``save`` screen is used to select a file in which to save the game."
 msgstr ""
 
-#: ../../source/screen_special.rst:475
+#: ../../source/screen_special.rst:480
 msgid "Load"
 msgstr ""
 
-#: ../../source/screen_special.rst:477
+#: ../../source/screen_special.rst:482
 msgid "The ``load`` screen is used to select a file from which to load the game."
 msgstr ""
 
-#: ../../source/screen_special.rst:530
+#: ../../source/screen_special.rst:535
 msgid "Preferences"
 msgstr ""
 
-#: ../../source/screen_special.rst:532
+#: ../../source/screen_special.rst:537
 msgid "The ``preferences`` screen is used to select options that control the display of the game."
 msgstr ""
 
-#: ../../source/screen_special.rst:535
+#: ../../source/screen_special.rst:540
 msgid "In general, the preferences are either actions or bar values returned from :func:`Preference`."
 msgstr ""
 
-#: ../../source/screen_special.rst:659
+#: ../../source/screen_special.rst:664
 msgid "Confirm"
 msgstr ""
 
-#: ../../source/screen_special.rst:661
+#: ../../source/screen_special.rst:666
 msgid "The ``confirm`` screen is used to ask yes/no choices of the user. It takes the following parameters:"
 msgstr ""
 
-#: ../../source/screen_special.rst:665
+#: ../../source/screen_special.rst:670
 msgid "The message to display to the user. This is one of:"
 msgstr ""
 
-#: ../../source/screen_special.rst:667
+#: ../../source/screen_special.rst:672
 msgid "gui.ARE_YOU_SURE - \"Are you sure?\" This should be the default if the message is unknown."
 msgstr ""
 
-#: ../../source/screen_special.rst:668
+#: ../../source/screen_special.rst:673
 msgid "gui.DELETE_SAVE - \"Are you sure you want to delete this save?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:669
+#: ../../source/screen_special.rst:674
 msgid "gui.OVERWRITE_SAVE - \"Are you sure you want to overwrite your save?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:670
+#: ../../source/screen_special.rst:675
 msgid "gui.LOADING - \"Loading will lose unsaved progress.\\nAre you sure you want to do this?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:671
+#: ../../source/screen_special.rst:676
 msgid "gui.QUIT - \"Are you sure you want to quit?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:672
+#: ../../source/screen_special.rst:677
 msgid "gui.MAIN_MENU - \"Are you sure you want to return to the main\\nmenu? This will lose unsaved progress.\""
 msgstr ""
 
-#: ../../source/screen_special.rst:673
+#: ../../source/screen_special.rst:678
 msgid "gui.END_REPLAY - \"Are you sure you want to end the replay?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:674
+#: ../../source/screen_special.rst:679
 msgid "gui.SLOW_SKIP = \"Are you sure you want to begin skipping?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:675
+#: ../../source/screen_special.rst:680
 msgid "gui.FAST_SKIP_SEEN = \"Are you sure you want to skip to the next choice?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:676
+#: ../../source/screen_special.rst:681
 msgid "gui.FAST_SKIP_UNSEEN = \"Are you sure you want to skip unseen dialogue to the next choice?\""
 msgstr ""
 
-#: ../../source/screen_special.rst:679
+#: ../../source/screen_special.rst:684
 msgid "The values of the variables are strings, which means they can be displayed using a text displayable."
 msgstr ""
 
-#: ../../source/screen_special.rst:683
+#: ../../source/screen_special.rst:688
 msgid "`yes_action`"
 msgstr ""
 
-#: ../../source/screen_special.rst:683
+#: ../../source/screen_special.rst:688
 msgid "The action to run when the user picks \"Yes\"."
 msgstr ""
 
-#: ../../source/screen_special.rst:686
+#: ../../source/screen_special.rst:691
 msgid "`no_action`"
 msgstr ""
 
-#: ../../source/screen_special.rst:686
+#: ../../source/screen_special.rst:691
 msgid "The action to run when the user picks \"No\"."
 msgstr ""
 
-#: ../../source/screen_special.rst:688
+#: ../../source/screen_special.rst:693
 msgid "Until Ren'Py 6.99.10, this screen was known as the ``yesno_prompt`` screen. If no ``confirm`` screen is present, ``yesno_prompt`` is used instead."
 msgstr ""
 

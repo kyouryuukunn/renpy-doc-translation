@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2016, Tom Rothamel
+# Copyright (C) 2012-2017, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.12\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 15:35+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,7 +133,7 @@ msgid "Images defined using the image statement take precedence over those defin
 msgstr ""
 
 #: ../../source/displaying_images.rst:106
-msgid "Image Directory"
+msgid "Images Directory"
 msgstr ""
 
 #: ../../source/displaying_images.rst:108
@@ -153,7 +153,7 @@ msgid "An image statement is used to define an image. An image statement consist
 msgstr ""
 
 #: ../../source/displaying_images.rst:140
-msgid "The image statement must be run at init-time, before game code runs. When not contained inside an init block, image statements are run at init-time, as if they were placed inside an init block of priority 500."
+msgid "The image statement is run at init-time, before the menus are shown or the start label runs. When not contained inside an init block, image statements are run as if they were placed inside an init block of priority 500."
 msgstr ""
 
 #: ../../source/displaying_images.rst:145
@@ -242,7 +242,7 @@ msgid "``zorder``"
 msgstr ""
 
 #: ../../source/displaying_images.rst:206
-msgid "Takes an integer. The integer specifies the relative ordering of images within a layer, with larger numbers being closer to the user. This isn't generally used in Ren'Py code, but can be useful when porting code from other engines."
+msgid "Takes an integer. The integer specifies the relative ordering of images within a layer, with larger numbers being closer to the user. This isn't generally used by Ren'Py games, but can be useful when porting visual novels from other engines."
 msgstr ""
 
 #: ../../source/displaying_images.rst:211
@@ -371,7 +371,7 @@ msgid "The with statement changes behavior when given the special value ``None``
 msgstr ""
 
 #: ../../source/displaying_images.rst:390
-msgid "For example, in the code::"
+msgid "For example, in::"
 msgstr ""
 
 #: ../../source/displaying_images.rst:399
@@ -427,149 +427,169 @@ msgid "The image tag to get attributes from. If not given, defaults to the first
 msgstr ""
 
 #: ../../source/inc/image_func:15
-#: ../../source/inc/image_func:60
-#: ../../source/inc/image_func:116
+#: ../../source/inc/image_func:59
+#: ../../source/inc/image_func:129
 msgid "`layer`"
 msgstr ""
 
 #: ../../source/inc/image_func:16
-#: ../../source/inc/image_func:117
+#: ../../source/inc/image_func:130
 msgid "The layer to check. If None, uses the default layer for `tag`."
 msgstr ""
 
 #: ../../source/inc/image_func:20
+msgid "Checks to see if there is a unique image with the given tag and attributes. If there is, returns the tag and attributes in order. Otherwise, returns None."
+msgstr ""
+
+#: ../../source/inc/image_func:26
 msgid "Copies images beginning with one prefix to images beginning with another. For example::"
 msgstr ""
 
-#: ../../source/inc/image_func:25
+#: ../../source/inc/image_func:31
 msgid "will create an image beginning with \"eileen2\" for every image beginning with \"eileen\". If \"eileen happy\" exists, \"eileen2 happy\" will be created."
 msgstr ""
 
-#: ../../source/inc/image_func:31
+#: ../../source/inc/image_func:37
 msgid "`old`"
 msgstr ""
 
-#: ../../source/inc/image_func:30
+#: ../../source/inc/image_func:36
 msgid "A space-separated string giving the components of the old image name."
 msgstr ""
 
-#: ../../source/inc/image_func:34
+#: ../../source/inc/image_func:40
 msgid "`new`"
 msgstr ""
 
-#: ../../source/inc/image_func:34
+#: ../../source/inc/image_func:40
 msgid "A space-separated string giving the components of the new image name."
 msgstr ""
 
-#: ../../source/inc/image_func:39
-msgid "Returns a list of tuples, with each tuple representing a possible combination of image attributes that can be associated with `tag`. If `attributes` is given, only images that contain all the attributes in that iterable are returned."
-msgstr ""
-
-#: ../../source/inc/image_func:46
+#: ../../source/inc/image_func:45
 msgid "Returns a list of image tags that have been defined."
 msgstr ""
 
-#: ../../source/inc/image_func:50
+#: ../../source/inc/image_func:49
 msgid "If an image with `tag` exists on `layer`, returns the bounding box of that image. Returns None if the image is not found."
 msgstr ""
 
-#: ../../source/inc/image_func:53
+#: ../../source/inc/image_func:52
 msgid "The bounding box is an (x, y, width, height) tuple. The components of the tuples are expressed in pixels, and may be floating point numbers."
 msgstr ""
 
-#: ../../source/inc/image_func:58
+#: ../../source/inc/image_func:57
 msgid "`width`, `height`"
 msgstr ""
 
-#: ../../source/inc/image_func:57
+#: ../../source/inc/image_func:56
 msgid "The width and height of the area that contains the image. If None, defaults the width and height of the screen, respectively."
 msgstr ""
 
-#: ../../source/inc/image_func:61
+#: ../../source/inc/image_func:60
 msgid "If None, uses the default layer for `tag`."
 msgstr ""
 
-#: ../../source/inc/image_func:65
-msgid "This gets the placement of displayable d. There's very little warranty on this information, as it might change when the displayable is rendered, and might not exist until the displayable is first rendered."
+#: ../../source/inc/image_func:64
+msgid "Returns a list of image tags, ordered in a way that makes sense to present to the user."
 msgstr ""
 
-#: ../../source/inc/image_func:69
-msgid "This returns an object with the following fields, each corresponding to a style property:"
+#: ../../source/inc/image_func:70
+msgid "`attributes`"
 msgstr ""
 
-#: ../../source/inc/image_func:72
-msgid "xpos"
+#: ../../source/inc/image_func:68
+msgid "If present, only attributes that are compatible with the given attributes are considered. (Compatible means that the attributes can be in a single image at the same time.)"
 msgstr ""
 
 #: ../../source/inc/image_func:73
-msgid "xanchor"
+msgid "`sort`"
 msgstr ""
 
-#: ../../source/inc/image_func:74
-msgid "xoffset"
-msgstr ""
-
-#: ../../source/inc/image_func:75
-msgid "ypos"
-msgstr ""
-
-#: ../../source/inc/image_func:76
-msgid "yanchor"
-msgstr ""
-
-#: ../../source/inc/image_func:77
-msgid "yoffset"
+#: ../../source/inc/image_func:73
+msgid "If not None, the returned list of attributes is sorted. This is a function that should be used as a tiebreaker."
 msgstr ""
 
 #: ../../source/inc/image_func:78
-msgid "subpixel"
+msgid "This gets the placement of displayable d. There's very little warranty on this information, as it might change when the displayable is rendered, and might not exist until the displayable is first rendered."
 msgstr ""
 
 #: ../../source/inc/image_func:82
-msgid "Returns the set of image tags that are currently being shown on `layer`"
+msgid "This returns an object with the following fields, each corresponding to a style property:"
+msgstr ""
+
+#: ../../source/inc/image_func:85
+msgid "xpos"
 msgstr ""
 
 #: ../../source/inc/image_func:86
-msgid "Return true if an image with `name` exists, and false if no such image exists."
+msgid "xanchor"
 msgstr ""
 
-#: ../../source/inc/image_func:91
-msgid "`name`"
+#: ../../source/inc/image_func:87
+msgid "xoffset"
+msgstr ""
+
+#: ../../source/inc/image_func:88
+msgid "ypos"
+msgstr ""
+
+#: ../../source/inc/image_func:89
+msgid "yanchor"
 msgstr ""
 
 #: ../../source/inc/image_func:90
-msgid "Either a string giving an image name, or a tuple of strings giving the name components."
+msgid "yoffset"
 msgstr ""
 
-#: ../../source/inc/image_func:94
-msgid "`exact`"
+#: ../../source/inc/image_func:91
+msgid "subpixel"
 msgstr ""
 
-#: ../../source/inc/image_func:94
-msgid "Returns true if and only if an image with the exact name exists - parameterized matches are not included."
+#: ../../source/inc/image_func:95
+msgid "Returns the set of image tags that are currently being shown on `layer`"
 msgstr ""
 
 #: ../../source/inc/image_func:99
-msgid "Returns True if the named image has been seen at least once on the user's system. An image has been seen if it's been displayed using the show statement, scene statement, or :func:`renpy.show` function. (Note that there are cases where the user won't actually see the image, like a show immediately followed by a hide.)"
+msgid "Return true if an image with `name` exists, and false if no such image exists."
+msgstr ""
+
+#: ../../source/inc/image_func:104
+msgid "`name`"
+msgstr ""
+
+#: ../../source/inc/image_func:103
+msgid "Either a string giving an image name, or a tuple of strings giving the name components."
 msgstr ""
 
 #: ../../source/inc/image_func:107
+msgid "`exact`"
+msgstr ""
+
+#: ../../source/inc/image_func:107
+msgid "Returns true if and only if an image with the exact name exists - parameterized matches are not included."
+msgstr ""
+
+#: ../../source/inc/image_func:112
+msgid "Returns True if the named image has been seen at least once on the user's system. An image has been seen if it's been displayed using the show statement, scene statement, or :func:`renpy.show` function. (Note that there are cases where the user won't actually see the image, like a show immediately followed by a hide.)"
+msgstr ""
+
+#: ../../source/inc/image_func:120
 msgid "Returns true if an image with the same tag as `name` is showing on `layer`"
 msgstr ""
 
-#: ../../source/inc/image_func:114
+#: ../../source/inc/image_func:127
 msgid "`image`"
 msgstr ""
 
-#: ../../source/inc/image_func:111
+#: ../../source/inc/image_func:124
 msgid "May be a string giving the image name or a tuple giving each component of the image name. It may also be a string giving only the image tag."
 msgstr ""
 
-#: ../../source/inc/image_func:121
+#: ../../source/inc/image_func:134
 msgid "This function takes one or more displayables as arguments. It causes Ren'Py to predict those displayables during every interaction until the displayables are removed by :func:`renpy.stop_predict`."
 msgstr ""
 
-#: ../../source/inc/image_func:127
+#: ../../source/inc/image_func:140
 msgid "This function takes one or more displayables as arguments. It causes Ren'Py to stop predicting those displayables during every interaction."
 msgstr ""
 

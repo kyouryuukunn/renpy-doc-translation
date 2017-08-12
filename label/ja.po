@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-09 22:14+0900\n"
-"PO-Revision-Date: 2016-06-11 17:53+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
+"PO-Revision-Date: 2017-08-07 18:45+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -29,12 +29,12 @@ msgstr "label ステートメント"
 #: ../../source/label.rst:10
 msgid ""
 "Label statements allow the given name to be assigned to a program point. "
-"They exist solely to be called or jumped to, whether by script code or the "
-"Ren'Py config. ::"
+"They exist solely to be called or jumped to, either from Ren'Py script, "
+"Python functions, or from screens. ::"
 msgstr ""
 "label ステートメントは指定された名前にプログラム的な位置を代入します。それら"
-"は単にスクリプトコードや Ren'Py の設定から呼び出されたり、ジャンプされたりす"
-"るために存在します。"
+"は単に Ren'Py スクリプトや python 関数、スクリーンから呼び出されたり、ジャン"
+"プされたりするために存在します。 ::"
 
 #: ../../source/label.rst:21
 msgid ""
@@ -267,12 +267,12 @@ msgstr "``main_menu``"
 msgid ""
 "If it exists, this label is called instead of the main menu. If it returns, "
 "Ren'Py will start the game at the ``start`` label. For example, the "
-"following code will immediately start the game without displaying the main "
+"following will immediately start the game without displaying the main "
 "menu. ::"
 msgstr ""
 "もし存在すればこのラベルはメインメニューの代わりに呼び出されます。制御を返す"
 "と Ren'Py は ``start`` ラベルからゲームを開始します。例えば以下のコードではメ"
-"インメニューを表示せずに即座にゲームを開始します。"
+"インメニューを表示せずに即座にゲームを開始します。 ::"
 
 #: ../../source/label.rst:164
 msgid "``after_warp``"
@@ -293,22 +293,22 @@ msgstr "ラベルと制御フロー関数"
 
 #: ../../source/inc/label:5
 msgid ""
-"This code creates a new context, and starts executing code from that label "
-"in the new context. Rollback is disabled in the new context. (Actually, it "
-"will just bring you back to the real context.)"
+"This creates a new context, and then starts executing Ren'Py script from the "
+"given label in that context. Rollback is disabled in the new context, and "
+"saving/loading will occur in the top level context."
 msgstr ""
 "このコードは新しいコンテキストを作成し、新しいコンテキストでそのラベルから"
-"コードを実行します。ロールバックは新しいコンテキストでは無効化されます。 (実"
-"際は、元のコンテキストに戻されるだけです。)"
+"コードを実行します。ロールバックは新しいコンテキストでは無効化され、セーブ/"
+"ロードは一番上のコンテキストで行われます。"
 
-#: ../../source/inc/label:10 ../../source/inc/label:52
+#: ../../source/inc/label:10
 msgid ""
-"Use this to begin a second interaction with the user while inside an "
-"interaction."
+"This is used to begin a second interaction with the player Use this to begin "
+"a second interaction with the user while inside an interaction."
 msgstr ""
 "これを使用してインタラクション中に 2 つ目のインタラクションを開始します。"
 
-#: ../../source/inc/label:15
+#: ../../source/inc/label:16
 msgid ""
 "Returns the set of all labels defined in the program, including labels "
 "defined for internal use in the libraries."
@@ -316,7 +316,7 @@ msgstr ""
 "ライブラリー内部で使用するために定義されたラベルを含め、プログラムで定義され"
 "たすべてのラベルを返します。"
 
-#: ../../source/inc/label:20
+#: ../../source/inc/label:21
 msgid ""
 "Returns a list giving the current return stack. The return stack is a list "
 "of statement names."
@@ -324,7 +324,7 @@ msgstr ""
 "現在のリターンスタックのリストを返します。リターンスタックはステートメント名"
 "のリストです。"
 
-#: ../../source/inc/label:23
+#: ../../source/inc/label:24
 msgid ""
 "The statement names will be strings (for labels), or opaque tuples (for non-"
 "label statements)."
@@ -332,18 +332,18 @@ msgstr ""
 "ステートメント名は文字列 (ラベル) か不明瞭なタプル ( ラベルのないステートメン"
 "ト ) です。"
 
-#: ../../source/inc/label:28
+#: ../../source/inc/label:29
 msgid ""
 "Returns true if `name` is a valid label the program, or false otherwise."
 msgstr ""
 "`name` がそのプログラム内での正しいラベルなら True を、そうでなければ False "
 "を返します。"
 
-#: ../../source/inc/label:31
+#: ../../source/inc/label:32
 msgid "`name`"
 msgstr "`name`"
 
-#: ../../source/inc/label:31
+#: ../../source/inc/label:32
 msgid ""
 "Should be a string to check for the existence of a label. It can also be an "
 "opaque tuple giving the name of a non-label statement."
@@ -351,40 +351,45 @@ msgstr ""
 "ラベルの存在をチェックするためには文字列であるべきです。ラベルのないステート"
 "メントの名前は指定する不明瞭なタプルも可能です。"
 
-#: ../../source/inc/label:36
+#: ../../source/inc/label:37
 msgid ""
-"This pushes the current context, and invokes the given python function in a "
-"new context. When that function returns or raises an exception, it removes "
-"the new context, and restores the current context."
+"This function creates a new context, and invokes the given Python callable "
+"(function) in that context. When the function returns or raises an "
+"exception, control returns to the the original context. It's generally used "
+"to call a Python function that needs to display information to the player "
+"(like a confirmation prompt) from inside an event handler."
 msgstr ""
 "現在のコンテキストをプッシュし、指定された python 関数を新しいコンテキストで"
 "実行します。その関数から戻るか例外を出力すると、新しいコンテキストを削除して"
-"現在のコンテキストに戻ります。"
-
-#: ../../source/inc/label:41
-msgid "Additional arguments and keyword arguments are passed to the callable."
-msgstr "追加の引数とキーワード引数はその呼び出し可能オブジェクトに渡されます。"
+"現在のコンテキストに戻ります。一般的に、イベントハンドラー内部から、プレイ"
+"ヤーに情報を表示する必要のある python 関数を呼び出すために使用されます。"
 
 #: ../../source/inc/label:44
 msgid ""
-"Please note that the context so created cannot execute renpy code. So "
-"exceptions that change the flow of renpy code (like the one created by renpy."
-"jump) cause this context to terminate, and are handled by the next higher "
-"context."
+"A context maintains the state of the display (including what screens and "
+"images are being shown) and the audio system. Both are restored when the "
+"context returns."
 msgstr ""
-"作成されたコンテキストは Ren'Py コードを実行出来ないことに注意してください。 "
-"( renpy.jump で生成されるような ) Ren'Py コードの制御フローを変更する例外はこ"
-"のコンテキストを停止し、さらに上位のコンテキストによって処理されます。"
+"コンテキストは(どのスクリーンと画像が表示されるているかを含む)その表示状態と"
+"音声システムを維持します。コンテキストから返ると両方が戻ります。"
 
-#: ../../source/inc/label:49
+#: ../../source/inc/label:48
+msgid "Additional arguments and keyword arguments are passed to the callable."
+msgstr "追加の引数とキーワード引数はその呼び出し可能オブジェクトに渡されます。"
+
+#: ../../source/inc/label:51
 msgid ""
-"If you want to execute renpy code from the function, you can call it with "
-"renpy.call_in_new_context."
+"A context created with this function cannot execute Ren'Py script. Functions "
+"that would change the flow of Ren'Py script, like :func:`renpy.jump`, are "
+"handled by the outer context. If you want to call Ren'Py script rather than "
+"a Python function, use :func:`renpy.call_in_new_context` instead."
 msgstr ""
-"関数から Ren'Py コードを実行したいなら renpy.call_in_new_contex で呼び出して"
-"ください。"
+"この関数で作成されたコンテキストは Ren'Py スクリプトを実行できません。 :func:"
+"`renpy.jump` のような Ren'Py スクリプトの流れを変える変更をする関数はコンテキ"
+"スト外で扱われます。 Python 関数ではなく Ren'Py スクリプトを呼び出したいな"
+"ら、 :func:`renpy.call_in_new_context` を代わりに使ってください。"
 
-#: ../../source/inc/label:57
+#: ../../source/inc/label:59
 msgid ""
 "Causes control to leave the current context, and then to be transferred in "
 "the parent context to the given label."
@@ -392,7 +397,7 @@ msgstr ""
 "現在のコンテキストを終了し、親のコンテキストで指定されたラベルに制御を移動し"
 "ます。"
 
-#: ../../source/inc/label:62
+#: ../../source/inc/label:64
 msgid ""
 "Returns true if the named label has executed at least once on the current "
 "user's system, and false otherwise. This can be used to unlock scene "
@@ -402,17 +407,35 @@ msgstr ""
 "ければ False が返されます。これは例えばシーンギャラリーをアンロックするために"
 "使用出来ます。"
 
-#: ../../source/inc/label:68
+#: ../../source/inc/label:70
 msgid ""
 "Sets the current return stack. The return stack is a list of statement names."
 msgstr ""
 "現在のリターンスタックを設定します。リターンスタックはステートメント名のリス"
 "トです。"
 
-#: ../../source/inc/label:71
+#: ../../source/inc/label:73
 msgid ""
 "Statement names may be strings (for labels) or opaque tuples (for non-label "
 "statements)."
 msgstr ""
 "ステートメント名は文字列 (ラベル) か不明瞭なタプル ( ラベルのないステートメン"
 "ト ) です。"
+
+#~ msgid ""
+#~ "Please note that the context so created cannot execute renpy code. So "
+#~ "exceptions that change the flow of renpy code (like the one created by "
+#~ "renpy.jump) cause this context to terminate, and are handled by the next "
+#~ "higher context."
+#~ msgstr ""
+#~ "作成されたコンテキストは Ren'Py コードを実行出来ないことに注意してくださ"
+#~ "い。 ( renpy.jump で生成されるような ) Ren'Py コードの制御フローを変更する"
+#~ "例外はこのコンテキストを停止し、さらに上位のコンテキストによって処理されま"
+#~ "す。"
+
+#~ msgid ""
+#~ "If you want to execute renpy code from the function, you can call it with "
+#~ "renpy.call_in_new_context."
+#~ msgstr ""
+#~ "関数から Ren'Py コードを実行したいなら renpy.call_in_new_contex で呼び出し"
+#~ "てください。"

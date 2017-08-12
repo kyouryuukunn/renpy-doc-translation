@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2016, Tom Rothamel
+# Copyright (C) 2012-2017, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.12\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 15:35+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgid "Label Statement"
 msgstr ""
 
 #: ../../source/label.rst:10
-msgid "Label statements allow the given name to be assigned to a program point. They exist solely to be called or jumped to, whether by script code or the Ren'Py config. ::"
+msgid "Label statements allow the given name to be assigned to a program point. They exist solely to be called or jumped to, either from Ren'Py script, Python functions, or from screens. ::"
 msgstr ""
 
 #: ../../source/label.rst:21
@@ -157,7 +157,7 @@ msgid "``main_menu``"
 msgstr ""
 
 #: ../../source/label.rst:154
-msgid "If it exists, this label is called instead of the main menu. If it returns, Ren'Py will start the game at the ``start`` label. For example, the following code will immediately start the game without displaying the main menu. ::"
+msgid "If it exists, this label is called instead of the main menu. If it returns, Ren'Py will start the game at the ``start`` label. For example, the following will immediately start the game without displaying the main menu. ::"
 msgstr ""
 
 #: ../../source/label.rst:164
@@ -173,67 +173,66 @@ msgid "Labels & Control Flow Functions"
 msgstr ""
 
 #: ../../source/inc/label:5
-msgid "This code creates a new context, and starts executing code from that label in the new context. Rollback is disabled in the new context. (Actually, it will just bring you back to the real context.)"
+msgid "This creates a new context, and then starts executing Ren'Py script from the given label in that context. Rollback is disabled in the new context, and saving/loading will occur in the top level context."
 msgstr ""
 
 #: ../../source/inc/label:10
-#: ../../source/inc/label:52
-msgid "Use this to begin a second interaction with the user while inside an interaction."
+msgid "This is used to begin a second interaction with the player Use this to begin a second interaction with the user while inside an interaction."
 msgstr ""
 
-#: ../../source/inc/label:15
+#: ../../source/inc/label:16
 msgid "Returns the set of all labels defined in the program, including labels defined for internal use in the libraries."
 msgstr ""
 
-#: ../../source/inc/label:20
+#: ../../source/inc/label:21
 msgid "Returns a list giving the current return stack. The return stack is a list of statement names."
 msgstr ""
 
-#: ../../source/inc/label:23
+#: ../../source/inc/label:24
 msgid "The statement names will be strings (for labels), or opaque tuples (for non-label statements)."
 msgstr ""
 
-#: ../../source/inc/label:28
+#: ../../source/inc/label:29
 msgid "Returns true if `name` is a valid label the program, or false otherwise."
 msgstr ""
 
-#: ../../source/inc/label:31
+#: ../../source/inc/label:32
 msgid "`name`"
 msgstr ""
 
-#: ../../source/inc/label:31
+#: ../../source/inc/label:32
 msgid "Should be a string to check for the existence of a label. It can also be an opaque tuple giving the name of a non-label statement."
 msgstr ""
 
-#: ../../source/inc/label:36
-msgid "This pushes the current context, and invokes the given python function in a new context. When that function returns or raises an exception, it removes the new context, and restores the current context."
-msgstr ""
-
-#: ../../source/inc/label:41
-msgid "Additional arguments and keyword arguments are passed to the callable."
+#: ../../source/inc/label:37
+msgid "This function creates a new context, and invokes the given Python callable (function) in that context. When the function returns or raises an exception, control returns to the the original context. It's generally used to call a Python function that needs to display information to the player (like a confirmation prompt) from inside an event handler."
 msgstr ""
 
 #: ../../source/inc/label:44
-msgid "Please note that the context so created cannot execute renpy code. So exceptions that change the flow of renpy code (like the one created by renpy.jump) cause this context to terminate, and are handled by the next higher context."
+msgid "A context maintains the state of the display (including what screens and images are being shown) and the audio system. Both are restored when the context returns."
 msgstr ""
 
-#: ../../source/inc/label:49
-msgid "If you want to execute renpy code from the function, you can call it with renpy.call_in_new_context."
+#: ../../source/inc/label:48
+msgid "Additional arguments and keyword arguments are passed to the callable."
 msgstr ""
 
-#: ../../source/inc/label:57
+#: ../../source/inc/label:51
+msgid "A context created with this function cannot execute Ren'Py script. Functions that would change the flow of Ren'Py script, like :func:`renpy.jump`, are handled by the outer context. If you want to call Ren'Py script rather than a Python function, use :func:`renpy.call_in_new_context` instead."
+msgstr ""
+
+#: ../../source/inc/label:59
 msgid "Causes control to leave the current context, and then to be transferred in the parent context to the given label."
 msgstr ""
 
-#: ../../source/inc/label:62
+#: ../../source/inc/label:64
 msgid "Returns true if the named label has executed at least once on the current user's system, and false otherwise. This can be used to unlock scene galleries, for example."
 msgstr ""
 
-#: ../../source/inc/label:68
+#: ../../source/inc/label:70
 msgid "Sets the current return stack. The return stack is a list of statement names."
 msgstr ""
 
-#: ../../source/inc/label:71
+#: ../../source/inc/label:73
 msgid "Statement names may be strings (for labels) or opaque tuples (for non-label statements)."
 msgstr ""
 

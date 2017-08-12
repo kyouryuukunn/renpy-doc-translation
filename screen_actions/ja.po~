@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-09 22:14+0900\n"
+"POT-Creation-Date: 2016-12-22 04:37+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -294,7 +294,7 @@ msgstr "Ren'Py をメインメニューに戻らせます。"
 #: ../../source/inc/menu_action:9 ../../source/inc/menu_action:18
 #: ../../source/inc/file_action:23 ../../source/inc/file_action:35
 #: ../../source/inc/file_action:87 ../../source/inc/file_action:111
-#: ../../source/inc/other_action:141
+#: ../../source/inc/other_action:152
 msgid "`confirm`"
 msgstr "`confirm`"
 
@@ -416,7 +416,7 @@ msgstr ""
 
 #: ../../source/screen_actions.rst:64 ../../source/inc/file_action:15
 #: ../../source/inc/file_action:39 ../../source/inc/file_action:94
-#: ../../source/inc/file_action_function:99
+#: ../../source/inc/input_value:44 ../../source/inc/file_action_function:99
 msgid "`page`"
 msgstr "`page`"
 
@@ -803,35 +803,44 @@ msgid ""
 msgstr "アクションの有効選択状態は `yes` アクションのそれらに合致します。"
 
 #: ../../source/inc/other_action:22
+msgid ""
+"Disables all active InputValue. This will re-focus the default InputValue, "
+"if there is one. Otherwise, no InputValue will be focused."
+msgstr ""
+"すべての有効な InputValue を無効化します。これでデフォルトの InputValue があ"
+"れば、フォーカスが戻ります。そうでなければ、 InputValue にはフォーカスされま"
+"せん。"
+
+#: ../../source/inc/other_action:28
 msgid "This Action calls `callable` with `args` and `kwargs`."
 msgstr ""
 "このアクションは `callable` を `args` と `kwargs` を引数に呼び出します。"
 
-#: ../../source/inc/other_action:24
+#: ../../source/inc/other_action:30
 msgid "`callable`"
 msgstr "`callable`"
 
-#: ../../source/inc/other_action:25
+#: ../../source/inc/other_action:31
 msgid "Callable object."
 msgstr "呼び出し可能オブジェクト"
 
-#: ../../source/inc/other_action:26
+#: ../../source/inc/other_action:32
 msgid "`args`"
 msgstr "`args`"
 
-#: ../../source/inc/other_action:27
+#: ../../source/inc/other_action:33
 msgid "position arguments to be passed to `callable`."
 msgstr "位置引数は `callable` に渡されます。"
 
-#: ../../source/inc/other_action:29
+#: ../../source/inc/other_action:35
 msgid "`kwargs`"
 msgstr "`kwargs`"
 
-#: ../../source/inc/other_action:29
+#: ../../source/inc/other_action:35
 msgid "keyword arguments to be passed to `callable`."
 msgstr "キーワード引数は `callable` に渡されます。"
 
-#: ../../source/inc/other_action:31
+#: ../../source/inc/other_action:37
 msgid ""
 "This Action takes an optional _update_screens keyword argument, which "
 "defaults to true. When it is true, the interaction restarts and the screens "
@@ -841,11 +850,11 @@ msgstr ""
 "では True になります。 True ならインテラクションは再開し、スクリーンは関数か"
 "ら処理が返された後更新されます。"
 
-#: ../../source/inc/other_action:37
+#: ../../source/inc/other_action:43
 msgid "Displays help."
 msgstr "ヘルプを表示します。"
 
-#: ../../source/inc/other_action:39
+#: ../../source/inc/other_action:45
 msgid ""
 "If a screen named ``help`` is defined, that screen is displayed using :func:"
 "`ShowMenu` and `help` is ignored."
@@ -853,36 +862,36 @@ msgstr ""
 "``help`` という名のスクリーンが定義されていれば、そのスクリーンは :func:"
 "`ShowMenu` を使用して表示され `help` は無視されます。"
 
-#: ../../source/inc/other_action:51
+#: ../../source/inc/other_action:57
 msgid "`help`"
 msgstr "`help`"
 
-#: ../../source/inc/other_action:43
+#: ../../source/inc/other_action:49
 msgid "A string that is used to find help. This is used in the following way:"
 msgstr "help を探すための文字列です。これは以下の方法で使用します。 :"
 
-#: ../../source/inc/other_action:46
+#: ../../source/inc/other_action:52
 msgid "If a label with this name exists, the label is called in a new context."
 msgstr ""
 "この名前のラベルが存在したら、そのラベルは新しコンテキストで呼び出されます。"
 
-#: ../../source/inc/other_action:48
+#: ../../source/inc/other_action:54
 msgid ""
 "Otherwise, this is interpreted as giving the name of a file that should be "
 "opened in a web browser."
 msgstr ""
 "そうでなければ、これはブラウザーで開くべきファイル名として解釈されます。"
 
-#: ../../source/inc/other_action:51
+#: ../../source/inc/other_action:57
 msgid "If `help` is None, :var:`config.help` is used as the default value."
 msgstr ""
 "`help` が None なら、 :var:`config.help` がデフォルトの値として使用されます。"
 
-#: ../../source/inc/other_action:57
+#: ../../source/inc/other_action:63
 msgid "Causes the interface to be hidden until the user clicks."
 msgstr "インターフェースをユーザーがクリックするまで非表示にします。"
 
-#: ../../source/inc/other_action:61
+#: ../../source/inc/other_action:67
 msgid ""
 "This returns `true` if `expression` is true, and `false` otherwise. Use this "
 "to select an action based on an expression. Note that the default, None, can "
@@ -893,7 +902,7 @@ msgstr ""
 "トでは None はボタンを無効化するアクションとして使用可能なことに気をつけてく"
 "ださい。"
 
-#: ../../source/inc/other_action:68
+#: ../../source/inc/other_action:74
 msgid ""
 "This inverts the selection state of the provided action, while proxying over "
 "all of the other methods."
@@ -901,7 +910,7 @@ msgstr ""
 "与えられたアクションの選択状態を反転し、それ以外のメソッドはそのままにしま"
 "す。"
 
-#: ../../source/inc/other_action:73
+#: ../../source/inc/other_action:79
 msgid ""
 "Move the mouse pointer to `x`, `y`. If the device does not have a mouse "
 "pointer or _preferences.mouse_move is False, this does nothing."
@@ -909,25 +918,25 @@ msgstr ""
 "マウスポインターを `x`, `y` に移動します。デバイスがマウスポインターをサポー"
 "トしないか _preferences.mouse_move が False ならこれは何もしません。"
 
-#: ../../source/inc/other_action:77
+#: ../../source/inc/other_action:83
 msgid "`duration`"
 msgstr "`duration`"
 
-#: ../../source/inc/other_action:77
+#: ../../source/inc/other_action:83
 msgid ""
 "The time it will take to perform the move, in seconds. During this time, the "
 "mouse may be unresponsive."
 msgstr "移動処理にかける秒数です。この時間の間はマウスが反応しません。"
 
-#: ../../source/inc/other_action:82
+#: ../../source/inc/other_action:88
 msgid "Displays `message` using :func:`renpy.notify`."
 msgstr ":func:`renpy.notify` を使用して  `message` を表示します。"
 
-#: ../../source/inc/other_action:86
+#: ../../source/inc/other_action:92
 msgid "Causes `url` to be opened in a web browser."
 msgstr "`url` をウェブブラウザーで開きます。"
 
-#: ../../source/inc/other_action:90
+#: ../../source/inc/other_action:96
 msgid ""
 "This action causes Ren'Py to rollback to before the current statement, and "
 "then re-run the current statement. This may be used when changing a "
@@ -937,7 +946,7 @@ msgstr ""
 "テートメントをやりなおします。永続データの変更がそのステートメントによる表示"
 "に影響を与えるときこれは使われるでしょう。"
 
-#: ../../source/inc/other_action:95
+#: ../../source/inc/other_action:101
 msgid ""
 "If run in a menu context, this waits until the player exits to a top-level "
 "context before performing the rollback."
@@ -945,7 +954,7 @@ msgstr ""
 "メニューコンテキストで実行されると、プレイヤーがトップレベルコンテキストに戻"
 "るまでロールバックを待ちます。"
 
-#: ../../source/inc/other_action:100
+#: ../../source/inc/other_action:106
 msgid ""
 "This action causes a rollforward to occur, if a roll forward is possible. "
 "Otherwise, it is insensitive."
@@ -953,7 +962,7 @@ msgstr ""
 "ロールフォワードが可能な場合、ロールフォワードを実行します。そうでなければ無"
 "効です。"
 
-#: ../../source/inc/other_action:105
+#: ../../source/inc/other_action:111
 msgid ""
 "This action causes a rollback to occur, when a rollback is possible. "
 "Otherwise, nothing happens."
@@ -961,11 +970,19 @@ msgstr ""
 "ロールバックが可能な場合、ロールバックを実行します。そうでなけれ何も起こりま"
 "せん。"
 
-#: ../../source/inc/other_action:110
+#: ../../source/inc/other_action:116
+msgid ""
+"This causes a rollback to an identifier to occur. Rollback identifiers are "
+"returned as part of HistoryEntry objects."
+msgstr ""
+"identifier へのロールバックを実行します。ロールバック identifier は "
+"HistoryEntry オブジェクトの一部として返されます。"
+
+#: ../../source/inc/other_action:121
 msgid "Takes a screenshot."
 msgstr "スクリーンショットを撮ります。"
 
-#: ../../source/inc/other_action:114
+#: ../../source/inc/other_action:125
 msgid ""
 "This allows an expression to control if a button should be marked as "
 "selected. It should be used as part of a list with one or more actions. For "
@@ -974,7 +991,7 @@ msgstr ""
 "これは expreesion をボタンが選択されているかどうかを制御するために利用できる"
 "ようにします。一つ以上のアクションのリストの一部として使用されるはずです。"
 
-#: ../../source/inc/other_action:124
+#: ../../source/inc/other_action:135
 msgid ""
 "This allows an expression to control if a button should be marked as "
 "sensitive. It should be used as part of a list with one or more actions. For "
@@ -983,7 +1000,7 @@ msgstr ""
 "これは expreesion でボタンが選択可能か制御できるようにします。一つ以上のアク"
 "ションのリストの一部として使用されるはずです。"
 
-#: ../../source/inc/other_action:134
+#: ../../source/inc/other_action:145
 msgid ""
 "Causes the game to begin skipping. If the game is in a menu context, then "
 "this returns to the game. Otherwise, it just enables skipping."
@@ -991,19 +1008,19 @@ msgstr ""
 "ゲームのスキップを開始します。 menu コンテキストの内部にいる場合はゲームに"
 "戻ってから開始し、それ以外の場合は単にスキップを開始します。"
 
-#: ../../source/inc/other_action:139
+#: ../../source/inc/other_action:150
 msgid "`fast`"
 msgstr "`fast`"
 
-#: ../../source/inc/other_action:139
+#: ../../source/inc/other_action:150
 msgid "If true, skips directly to the next menu choice."
 msgstr "True なら次の選択肢まで直接スキップします。"
 
-#: ../../source/inc/other_action:142
+#: ../../source/inc/other_action:153
 msgid "If true, asks for confirmation before beginning skipping."
 msgstr "True ならスキップを開始する前に確認します。"
 
-#: ../../source/inc/other_action:146
+#: ../../source/inc/other_action:157
 msgid "Causes `transition` to occur."
 msgstr "`transition` を実行します。"
 
@@ -1218,8 +1235,8 @@ msgid ""
 msgstr ""
 "ユーザーがデフォルト store の変数の値を調整出来るようにする bar value です。"
 
-#: ../../source/inc/value:132 ../../source/inc/input_value:35
-#: ../../source/inc/input_value:49
+#: ../../source/inc/value:132 ../../source/inc/input_value:54
+#: ../../source/inc/input_value:68
 msgid "`variable`"
 msgstr "`variable`"
 
@@ -1267,33 +1284,37 @@ msgstr ""
 msgid ""
 "Ren'Py-defined input values inherit from InputValue, which means that all "
 "values also include Enable(), Disable(), and Toggle() methods that return "
-"actions that enable, disable, and toggle editing, respectively."
+"actions that enable, disable, and toggle editing, respectively. See also "
+"the :func:`DisableAllInputValues` action."
 msgstr ""
 "Ren'Py 定義の input value は InputValue を継承していて、すべての value は編集"
 "を有効、無効、トグルするアクションを返す Enable(), Disable(), Toggle() メソッ"
-"ドを含んでいます。"
+"ドを含んでいます。 :func:`DisableAllInputValues`  アクションも参照してくださ"
+"い。"
 
 #: ../../source/inc/input_value:5
 msgid "An input value that updates `key` in `dict`."
 msgstr "`dict` の `key` を更新する input value です。"
 
 #: ../../source/inc/input_value:8 ../../source/inc/input_value:22
-#: ../../source/inc/input_value:38 ../../source/inc/input_value:52
+#: ../../source/inc/input_value:46 ../../source/inc/input_value:57
+#: ../../source/inc/input_value:71
 msgid "`default`"
 msgstr "`default`"
 
 #: ../../source/inc/input_value:8 ../../source/inc/input_value:22
-#: ../../source/inc/input_value:38 ../../source/inc/input_value:52
+#: ../../source/inc/input_value:47 ../../source/inc/input_value:57
+#: ../../source/inc/input_value:71
 msgid "If true, this input can be editable by default."
 msgstr "True ならこの input はデフォルトで変更可能です。"
 
 #: ../../source/inc/input_value:11 ../../source/inc/input_value:25
-#: ../../source/inc/input_value:41 ../../source/inc/input_value:55
+#: ../../source/inc/input_value:60 ../../source/inc/input_value:74
 msgid "`returnable`"
 msgstr "`returnable`"
 
 #: ../../source/inc/input_value:11 ../../source/inc/input_value:25
-#: ../../source/inc/input_value:41 ../../source/inc/input_value:55
+#: ../../source/inc/input_value:60 ../../source/inc/input_value:74
 msgid ""
 "If true, the value of this input will be returned when the user presses "
 "enter."
@@ -1307,31 +1328,70 @@ msgstr "`object` の `field` を更新する input value です。"
 msgid "A string giving the name of the field."
 msgstr "フィールドの名前の文字列"
 
-#: ../../source/inc/input_value:32
+#: ../../source/inc/input_value:30
+msgid "An input value that updates the name of a file page."
+msgstr "ファイルページの名前を更新する input value です。"
+
+#: ../../source/inc/input_value:34
+msgid "`pattern`"
+msgstr "`pattern`"
+
+#: ../../source/inc/input_value:33
+msgid ""
+"This is used for the default name of a page. Python-style substition is "
+"performed, such that {} is replaced with the number of the page."
+msgstr ""
+"ページのデフォルト名に使用されます。 Python スタイル補完が、 {} がページ番号"
+"で置き換えられるように処理されます。"
+
+#: ../../source/inc/input_value:37 ../../source/inc/file_action_function:76
+msgid "`auto`"
+msgstr "`auto`"
+
+#: ../../source/inc/input_value:37
+msgid "The name of the autosave page."
+msgstr "オートセーブページの名前です"
+
+#: ../../source/inc/input_value:40 ../../source/inc/file_action_function:79
+msgid "`quick`"
+msgstr "`quick`"
+
+#: ../../source/inc/input_value:40
+msgid "The name of the quicksave page."
+msgstr "クイックセーブページの名前です"
+
+#: ../../source/inc/input_value:43
+msgid ""
+"If given, the number of the page to display. This should usually be left as "
+"None, to give the current page."
+msgstr ""
+"表示するページの数字です。現在のページを指定するなら None のままにします。"
+
+#: ../../source/inc/input_value:51
 msgid "An input value that updates variable."
 msgstr "変数を更新する input value です。"
 
-#: ../../source/inc/input_value:35 ../../source/inc/input_value:49
+#: ../../source/inc/input_value:54 ../../source/inc/input_value:68
 msgid "A string giving the name of the variable to update."
 msgstr "更新する変数の名前の文字列"
 
-#: ../../source/inc/input_value:46
+#: ../../source/inc/input_value:65
 msgid "An input value that updates `variable`."
 msgstr "`variable` を更新する input value です。"
 
-#: ../../source/screen_actions.rst:111
+#: ../../source/screen_actions.rst:112
 msgid "Functions and Classes"
 msgstr "関数とクラス"
 
-#: ../../source/screen_actions.rst:113
+#: ../../source/screen_actions.rst:114
 msgid "These functions and classes are useful in association with screens."
 msgstr "これらの関数やクラスはスクリーンと連携させると便利です。"
 
-#: ../../source/screen_actions.rst:116
+#: ../../source/screen_actions.rst:117
 msgid "Preferences"
 msgstr "Preferences"
 
-#: ../../source/screen_actions.rst:118
+#: ../../source/screen_actions.rst:119
 msgid ""
 "While all preferences can be defined based on the Actions and Values given "
 "above, it requires some knowledge of Ren'Py to figure out the correct one to "
@@ -1406,6 +1466,25 @@ msgstr ""
 "Preference(\"transitions\", \"toggle\") - トランジションの表示をトグルする。"
 
 #: ../../source/inc/preference_action:23
+msgid "Preference(\"video sprites\", \"show\") - show all video sprites."
+msgstr ""
+"Preference(\"video sprites\", \"show\") - すべてのビデオスプライトを表示する"
+
+#: ../../source/inc/preference_action:24
+msgid ""
+"Preference(\"video sprites\", \"hide\") - fall back to images where possible."
+msgstr ""
+"Preference(\"video sprites\", \"hide\") - 可能ならビデオスプライトを画像で代"
+"用します。"
+
+#: ../../source/inc/preference_action:25
+msgid ""
+"Preference(\"video sprites\", \"toggle\") - toggle image fallback behavior."
+msgstr ""
+"Preference(\"video sprites\", \"toggle\") - ビデオスプライトの表示をトグルし"
+"ます。"
+
+#: ../../source/inc/preference_action:27
 msgid ""
 "Preference(\"show empty window\", \"show\") - Allow the \"window show\" and "
 "\"window auto\" statement to show an empty window outside of the say "
@@ -1415,20 +1494,20 @@ msgstr ""
 "\" ステートメントを許可し、say ステートメント以外の場所で空のウィンドウを表示"
 "できるようにします。"
 
-#: ../../source/inc/preference_action:24
+#: ../../source/inc/preference_action:28
 msgid "Preference(\"show empty window\", \"hide\") - Prevent the above."
 msgstr "Preference(\"show empty window\", \"hide\") - 上の処理を無効化します。"
 
-#: ../../source/inc/preference_action:25
+#: ../../source/inc/preference_action:29
 msgid "Preference(\"show empty window\", \"toggle\") - Toggle the above."
 msgstr ""
 "Preference(\"show empty window\", \"toggle\") - 上の処理を切り替えます。"
 
-#: ../../source/inc/preference_action:27
+#: ../../source/inc/preference_action:31
 msgid "Preference(\"text speed\", 0) - make text appear instantaneously."
 msgstr "Preference(\"text speed\", 0) - テキストを瞬間表示にする"
 
-#: ../../source/inc/preference_action:28
+#: ../../source/inc/preference_action:32
 msgid ""
 "Preference(\"text speed\", 142) - set text speed to 142 characters per "
 "second."
@@ -1436,51 +1515,51 @@ msgstr ""
 "Preference(\"text speed\", 142) - テキストの表示スピードを1秒で142文字にす"
 "る。"
 
-#: ../../source/inc/preference_action:30
+#: ../../source/inc/preference_action:34
 msgid "Preference(\"joystick\") - Show the joystick preferences."
 msgstr "Preference(\"joystick\") - ジョイスティックの設定を表示する。"
 
-#: ../../source/inc/preference_action:32
+#: ../../source/inc/preference_action:36
 msgid "Preference(\"skip\", \"seen\") - Only skip seen messages."
 msgstr "Preference(\"skip\", \"seen\") - 既読のメッセージのみスキップする。"
 
-#: ../../source/inc/preference_action:33
+#: ../../source/inc/preference_action:37
 msgid "Preference(\"skip\", \"all\") - Skip unseen messages."
 msgstr "Preference(\"skip\", \"all\") - 未読のメッセージもスキップする。"
 
-#: ../../source/inc/preference_action:34
+#: ../../source/inc/preference_action:38
 msgid ""
 "Preference(\"skip\", \"toggle\") - Toggle between skip seen and skip all."
 msgstr ""
 "Preference(\"skip\", \"toggle\") - 既読スキップと未読スキップをトグルする。"
 
-#: ../../source/inc/preference_action:36
+#: ../../source/inc/preference_action:40
 msgid "Preference(\"begin skipping\") - Starts skipping."
 msgstr "Preference(\"begin skipping\") - スキップを開始する。"
 
-#: ../../source/inc/preference_action:38
+#: ../../source/inc/preference_action:42
 msgid "Preference(\"after choices\", \"skip\") - Skip after choices."
 msgstr "Preference(\"after choices\", \"skip\") - 選択肢後もスキップを続ける。"
 
-#: ../../source/inc/preference_action:39
+#: ../../source/inc/preference_action:43
 msgid "Preference(\"after choices\", \"stop\") - Stop skipping after choices."
 msgstr ""
 "Preference(\"after choices\", \"stop\") - 選択肢後はスキップを停止する。"
 
-#: ../../source/inc/preference_action:40
+#: ../../source/inc/preference_action:44
 msgid ""
 "Preference(\"after choices\", \"toggle\") - Toggle skipping after choices."
 msgstr ""
 "Preference(\"after choices\", \"toggle\") - 選択肢後のスキップ継続をトグルす"
 "る。"
 
-#: ../../source/inc/preference_action:42
+#: ../../source/inc/preference_action:46
 msgid ""
 "Preference(\"auto-forward time\", 0) - Set the auto-forward time to infinite."
 msgstr ""
 "Preference(\"auto-forward time\", 0) - 自動進行の待ち時間を無限大にします。"
 
-#: ../../source/inc/preference_action:43
+#: ../../source/inc/preference_action:47
 msgid ""
 "Preference(\"auto-forward time\", 10) - Set the auto-forward time (unit is "
 "seconds per 250 characters)."
@@ -1488,19 +1567,19 @@ msgstr ""
 "Preference(\"auto-forward time\", 10) - 自動進行の ( 250 文字ごとの ) 待ち時"
 "間です。"
 
-#: ../../source/inc/preference_action:45
+#: ../../source/inc/preference_action:49
 msgid "Preference(\"auto-forward\", \"enable\") - Enable auto-forward mode."
 msgstr "Preference(\"auto-forward\", \"enable\") - 自動進行を有効化する。"
 
-#: ../../source/inc/preference_action:46
+#: ../../source/inc/preference_action:50
 msgid "Preference(\"auto-forward\", \"disable\") - Disable auto-forward mode."
 msgstr "Preference(\"auto-forward\", \"disable\") - 自動進行を無効化する。"
 
-#: ../../source/inc/preference_action:47
+#: ../../source/inc/preference_action:51
 msgid "Preference(\"auto-forward\", \"toggle\") - Toggle auto-forward mode."
 msgstr "Preference(\"auto-forward\", \"toggle\") - 自動進行をトグルする。"
 
-#: ../../source/inc/preference_action:49
+#: ../../source/inc/preference_action:53
 msgid ""
 "Preference(\"auto-forward after click\", \"enable\") - Remain in auto-"
 "forward mode after a click."
@@ -1508,7 +1587,7 @@ msgstr ""
 "Preference(\"auto-forward after click\", \"enable\") - クリック後も自動進行"
 "モードを維持します。"
 
-#: ../../source/inc/preference_action:50
+#: ../../source/inc/preference_action:54
 msgid ""
 "Preference(\"auto-forward after click\", \"disable\") - Disable auto-forward "
 "mode after a click."
@@ -1516,7 +1595,7 @@ msgstr ""
 "Preference(\"auto-forward after click\", \"disable\") - クリック後に自動進行"
 "モードを無効化します。"
 
-#: ../../source/inc/preference_action:51
+#: ../../source/inc/preference_action:55
 msgid ""
 "Preference(\"auto-forward after click\", \"toggle\") - Toggle auto-forward "
 "after click."
@@ -1524,25 +1603,25 @@ msgstr ""
 "Preference(\"auto-forward after click\", \"toggle\") - クリック後に自動進行を"
 "切り替えます。"
 
-#: ../../source/inc/preference_action:53
+#: ../../source/inc/preference_action:57
 msgid ""
 "Preference(\"automatic move\", \"enable\") - Enable automatic mouse mode."
 msgstr ""
 "Preference(\"automatic move\", \"enable\") - マウス自動移動を有効化します。"
 
-#: ../../source/inc/preference_action:54
+#: ../../source/inc/preference_action:58
 msgid ""
 "Preference(\"automatic move\", \"disable\") - Disable automatic mouse mode."
 msgstr ""
 "Preference(\"automatic move\", \"disable\") - マウス自動移動を無効化します。"
 
-#: ../../source/inc/preference_action:55
+#: ../../source/inc/preference_action:59
 msgid ""
 "Preference(\"automatic move\", \"toggle\") - Toggle automatic mouse mode."
 msgstr ""
 "Preference(\"automatic move\", \"toggle\") - マウス自動移動をトグルします。"
 
-#: ../../source/inc/preference_action:57
+#: ../../source/inc/preference_action:61
 msgid ""
 "Preference(\"wait for voice\", \"enable\")  - Wait for the currently playing "
 "voice to complete before auto-forwarding."
@@ -1550,7 +1629,7 @@ msgstr ""
 "Preference(\"wait for voice\", \"enable\") - 現在再生中のボイスが完了するまで"
 "自動進行を待機します。"
 
-#: ../../source/inc/preference_action:58
+#: ../../source/inc/preference_action:62
 msgid ""
 "Preference(\"wait for voice\", \"disable\") - Do not wait for the currently "
 "playing voice to complete before auto-forwarding."
@@ -1558,12 +1637,12 @@ msgstr ""
 "reference(\"wait for voice\", \"disable\") - 現在再生中のボイスの完了を待たず"
 "に自動進行を開始します。"
 
-#: ../../source/inc/preference_action:59
+#: ../../source/inc/preference_action:63
 msgid "Preference(\"wait for voice\", \"toggle\")  - Toggle wait voice."
 msgstr ""
 "reference(\"wait for voice\", \"toggle\") - ボイス待ち状態をトグルします。"
 
-#: ../../source/inc/preference_action:61
+#: ../../source/inc/preference_action:65
 msgid ""
 "Preference(\"voice sustain\", \"enable\")  - Sustain voice past the current "
 "interaction."
@@ -1571,7 +1650,7 @@ msgstr ""
 "Preference(\"voice sustain\", \"enable\") - 現在のインタラクション終了後もボ"
 "イス再生を継続する。"
 
-#: ../../source/inc/preference_action:62
+#: ../../source/inc/preference_action:66
 msgid ""
 "Preference(\"voice sustain\", \"disable\") - Don't sustain voice past the "
 "current interaction."
@@ -1579,77 +1658,77 @@ msgstr ""
 "Preference(\"voice sustain\", \"enable\") - 現在のインタラクションの終了後も"
 "ボイスを停止しません。"
 
-#: ../../source/inc/preference_action:63
+#: ../../source/inc/preference_action:67
 msgid "Preference(\"voice sustain\", \"toggle\")  - Toggle voice sustain."
 msgstr ""
 "Preference(\"voice sustain\", \"enable\") - インタラクションのボイス停止をト"
 "グルします。"
 
-#: ../../source/inc/preference_action:65
+#: ../../source/inc/preference_action:69
 msgid "Preference(\"music mute\", \"enable\") - Mute the music mixer."
 msgstr ""
 "Preference(\"music mute\", \"enable\") - ミュージックミキサーをミュートにす"
 "る。"
 
-#: ../../source/inc/preference_action:66
+#: ../../source/inc/preference_action:70
 msgid "Preference(\"music mute\", \"disable\") - Un-mute the music mixer."
 msgstr ""
 "Preference(\"music mute\", \"disable\") - ミュージックミキサーのミュートを解"
 "除する。"
 
-#: ../../source/inc/preference_action:67
+#: ../../source/inc/preference_action:71
 msgid "Preference(\"music mute\", \"toggle\") - Toggle music mute."
 msgstr ""
 "Preference(\"music mute\", \"toggle\") - ミュージックのミュートをトグルする。"
 
-#: ../../source/inc/preference_action:69
+#: ../../source/inc/preference_action:73
 msgid "Preference(\"sound mute\", \"enable\") - Mute the sound mixer."
 msgstr ""
 "Preference(\"sound mute\", \"enable\") - 効果音ミキサーをミュートにする。"
 
-#: ../../source/inc/preference_action:70
+#: ../../source/inc/preference_action:74
 msgid "Preference(\"sound mute\", \"disable\") - Un-mute the sound mixer."
 msgstr ""
 "Preference(\"sound mute\", \"disable\") - 効果音ミキサーのミュートを解除す"
 "る。"
 
-#: ../../source/inc/preference_action:71
+#: ../../source/inc/preference_action:75
 msgid "Preference(\"sound mute\", \"toggle\") - Toggle sound mute."
 msgstr ""
 "Preference(\"sound mute\", \"toggle\") - 効果音のミュートをトグルする。"
 
-#: ../../source/inc/preference_action:73
+#: ../../source/inc/preference_action:77
 msgid "Preference(\"voice mute\", \"enable\") - Mute the voice mixer."
 msgstr ""
 "Preference(\"voice mute\", \"enable\") - ボイスミキサーをミュートにする。"
 
-#: ../../source/inc/preference_action:74
+#: ../../source/inc/preference_action:78
 msgid "Preference(\"voice mute\", \"disable\") - Un-mute the voice mixer."
 msgstr ""
 "Preference(\"voice mute\", \"disable\") - ボイスミキサーのミュートを解除す"
 "る。"
 
-#: ../../source/inc/preference_action:75
+#: ../../source/inc/preference_action:79
 msgid "Preference(\"voice mute\", \"toggle\") - Toggle voice mute."
 msgstr ""
 "Preference(\"voice mute\", \"toggle\") - ボイスミキサーのミュートをトグルす"
 "る。"
 
-#: ../../source/inc/preference_action:77
+#: ../../source/inc/preference_action:81
 msgid ""
 "Preference(\"mixer <mixer> mute\", \"enable\") - Mute the specified mixer."
 msgstr ""
 "Preference(\"mixer <mixer> mute\", \"enable\") - 指定のミキサーをミュートにす"
 "る。."
 
-#: ../../source/inc/preference_action:78
+#: ../../source/inc/preference_action:82
 msgid ""
 "Preference(\"mixer <mixer> mute\", \"disable\") - Unmute the specified mixer."
 msgstr ""
 "Preference(\"mixer <mixer> mute\", \"disable\") - 指定のミキサーのミュートを"
 "解除します。"
 
-#: ../../source/inc/preference_action:79
+#: ../../source/inc/preference_action:83
 msgid ""
 "Preference(\"mixer <mixer> mute\", \"toggle\") - Toggle mute of specified "
 "mixer."
@@ -1657,43 +1736,43 @@ msgstr ""
 "Preference(\"mixer <mixer> mute\", \"toggle\") - 特定のミキサーのミュートをト"
 "グルする。"
 
-#: ../../source/inc/preference_action:81
+#: ../../source/inc/preference_action:85
 msgid "Preference(\"all mute\", \"enable\") - Mute all mixers."
 msgstr ""
 "Preference(\"all mute\", \"enable\") - すべてのミキサーをミュートにする。"
 
-#: ../../source/inc/preference_action:82
+#: ../../source/inc/preference_action:86
 msgid "Preference(\"all mute\", \"disable\") - Unmute all mixers."
 msgstr ""
 "Preference(\"all mute\", \"disable\") - すべてのミキサーのミュートを解除す"
 "る。"
 
-#: ../../source/inc/preference_action:83
+#: ../../source/inc/preference_action:87
 msgid "Preference(\"all mute\", \"toggle\") - Toggle mute of all mixers."
 msgstr ""
 "Preference(\"all mute\", \"toggle\") - すべてのミキサーのミュートをトグルす"
 "る。"
 
-#: ../../source/inc/preference_action:85
+#: ../../source/inc/preference_action:89
 msgid "Preference(\"music volume\", 0.5) - Set the music volume."
 msgstr "Preference(\"music volume\", 0.5) - 曲のボリュームを設定する。"
 
-#: ../../source/inc/preference_action:86
+#: ../../source/inc/preference_action:90
 msgid "Preference(\"sound volume\", 0.5) - Set the sound volume."
 msgstr "Preference(\"sound volume\", 0.5) - 効果音のボリュームを設定する。"
 
-#: ../../source/inc/preference_action:87
+#: ../../source/inc/preference_action:91
 msgid "Preference(\"voice volume\", 0.5) - Set the voice volume."
 msgstr "Preference(\"voice volume\", 0.5) - ボイス音量を設定します。"
 
-#: ../../source/inc/preference_action:88
+#: ../../source/inc/preference_action:92
 msgid ""
 "Preference(\"mixer <mixer> volume\", 0.5) - Set the specified mixer volume."
 msgstr ""
 "Preference(\"mixer <mixer> volume\", 0.5) - 特定のミキサーのボリュームを設定"
 "する。"
 
-#: ../../source/inc/preference_action:90
+#: ../../source/inc/preference_action:94
 msgid ""
 "Preference(\"emphasize audio\", \"enable\") - Emphasize the audio channels "
 "found in :var:`config.emphasize_audio_channels`."
@@ -1701,7 +1780,7 @@ msgstr ""
 "Preference(\"emphasize audio\", \"enable\") - :var:`config."
 "emphasize_audio_channels` にあるオーディオチャンネルを強調します。"
 
-#: ../../source/inc/preference_action:91
+#: ../../source/inc/preference_action:95
 msgid ""
 "Preference(\"emphasize audio\", \"disable\") - Do not emphasize audio "
 "channels."
@@ -1709,63 +1788,63 @@ msgstr ""
 "Preference(\"emphasize audio\", \"disable\") - オーディオチャンネルを強調しま"
 "せん。"
 
-#: ../../source/inc/preference_action:92
+#: ../../source/inc/preference_action:96
 msgid "Preference(\"emphasize audio\", \"toggle\") - Toggle emphasize audio."
 msgstr ""
 "Preference(\"emphasize audio\", \"toggle\") - オーディオチャンネルの強調をト"
 "グルします。"
 
-#: ../../source/inc/preference_action:94
+#: ../../source/inc/preference_action:98
 msgid "Preference(\"self voicing\", \"enable\") - Enables self-voicing."
 msgstr "Preference(\"self voicing\", \"enable\") - 自己発話を有効化します。"
 
-#: ../../source/inc/preference_action:95
+#: ../../source/inc/preference_action:99
 msgid "Preference(\"self voicing\", \"disable\") - Disable self-voicing."
 msgstr "Preference(\"self voicing\", \"disable\") - 自己発話を無効化します。"
 
-#: ../../source/inc/preference_action:96
+#: ../../source/inc/preference_action:100
 msgid "Preference(\"self voicing\", \"toggle\") - Toggles self-voicing."
 msgstr "Preference(\"self /voicing\", \"toggle\") - 自己発話をトグルします。"
 
-#: ../../source/inc/preference_action:98
+#: ../../source/inc/preference_action:102
 msgid ""
 "Preference(\"clipboard voicing\", \"enable\") - Enables clipboard-voicing."
 msgstr "Preference(\"auto-forward\", \"enable\") - 自動進行を有効化する。"
 
-#: ../../source/inc/preference_action:99
+#: ../../source/inc/preference_action:103
 msgid ""
 "Preference(\"clipboard voicing\", \"disable\") - Disable clipboard-voicing."
 msgstr ""
 "Preference(\"clipboard voicing\", \"disable\") - クリップボードボイシングを無"
 "効化する。"
 
-#: ../../source/inc/preference_action:100
+#: ../../source/inc/preference_action:104
 msgid ""
 "Preference(\"clipboard voicing\", \"toggle\") - Toggles clipboard-voicing."
 msgstr ""
 "Preference(\"clipboard voicing\", \"toggle\") - クリップボードボイシングをト"
 "グルする。"
 
-#: ../../source/inc/preference_action:102
+#: ../../source/inc/preference_action:106
 msgid "Preference(\"debug voicing\", \"enable\") - Enables self.-voicing debug"
 msgstr ""
 "Preference(\"debug voicing\", \"enable\") - 自己発話のデバッグを有効化しま"
 "す。"
 
-#: ../../source/inc/preference_action:103
+#: ../../source/inc/preference_action:107
 msgid ""
 "Preference(\"debug voicing\", \"disable\") - Disable self-voicing debug."
 msgstr ""
 "Preference(\"debug voicing\", \"disable\") - 自己発話のデバッグを無効化しま"
 "す。"
 
-#: ../../source/inc/preference_action:104
+#: ../../source/inc/preference_action:108
 msgid "Preference(\"debug voicing\", \"toggle\") - Toggles self-voicing debug."
 msgstr ""
 "Preference(\"debug voicing\", \"toggle\") - 自己発話のデバッグの有効無効をト"
 "グルします。"
 
-#: ../../source/inc/preference_action:106
+#: ../../source/inc/preference_action:110
 msgid ""
 "Preference(\"rollback side\", \"left\") - Touching the left side of the "
 "screen causes rollback."
@@ -1773,7 +1852,7 @@ msgstr ""
 "Preference(\"rollback side\", \"left\") - スクリーンの左側へのタッチでロール"
 "バックします。"
 
-#: ../../source/inc/preference_action:107
+#: ../../source/inc/preference_action:111
 msgid ""
 "Preference(\"rollback side\", \"right\") - Touching the right side of the "
 "screen causes rollback."
@@ -1781,7 +1860,7 @@ msgstr ""
 "Preference(\"rollback side\", \"right\")  スクリーンの右側へのタッチでロール"
 "バックします。"
 
-#: ../../source/inc/preference_action:108
+#: ../../source/inc/preference_action:112
 msgid ""
 "Preference(\"rollback side\", \"disable\") - Touching the screen will not "
 "cause rollback."
@@ -1789,39 +1868,39 @@ msgstr ""
 "Preference(\"rollback side\", \"disable\") - スクリーンへのタッチでロールバッ"
 "クしません。"
 
-#: ../../source/inc/preference_action:110
+#: ../../source/inc/preference_action:114
 msgid "Values that can be used with bars are:"
 msgstr "バーで使用される value  :"
 
-#: ../../source/inc/preference_action:112
+#: ../../source/inc/preference_action:116
 msgid "Preference(\"text speed\")"
 msgstr "Preference(\"text speed\")"
 
-#: ../../source/inc/preference_action:113
+#: ../../source/inc/preference_action:117
 msgid "Preference(\"auto-forward time\")"
 msgstr "Preference(\"auto-forward time\")"
 
-#: ../../source/inc/preference_action:114
+#: ../../source/inc/preference_action:118
 msgid "Preference(\"music volume\")"
 msgstr "Preference(\"music volume\")"
 
-#: ../../source/inc/preference_action:115
+#: ../../source/inc/preference_action:119
 msgid "Preference(\"sound volume\")"
 msgstr "Preference(\"sound volume\")"
 
-#: ../../source/inc/preference_action:116
+#: ../../source/inc/preference_action:120
 msgid "Preference(\"voice volume\")"
 msgstr "Preference(\"voice volume\")"
 
-#: ../../source/inc/preference_action:117
+#: ../../source/inc/preference_action:121
 msgid "Preference(\"mixer <mixer> volume\")"
 msgstr "Preference(\"mixer <mixer> volume\")"
 
-#: ../../source/screen_actions.rst:127
+#: ../../source/screen_actions.rst:128
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: ../../source/screen_actions.rst:129
+#: ../../source/screen_actions.rst:130
 msgid "These functions and actions work with the gamepad."
 msgstr "これらの関数とアクションはゲームパッドで動作します。"
 
@@ -1844,11 +1923,11 @@ msgid ""
 "true."
 msgstr ":var:`config.developer` が True である間常に True を返します。"
 
-#: ../../source/screen_actions.rst:134
+#: ../../source/screen_actions.rst:135
 msgid "File Functions"
 msgstr "ファイル関数"
 
-#: ../../source/screen_actions.rst:136
+#: ../../source/screen_actions.rst:137
 msgid ""
 "These functions return useful information about files. They use the same "
 "default page as the file actions."
@@ -1995,16 +2074,8 @@ msgid "The number of slots per page."
 msgstr "ページごとのスロット数"
 
 #: ../../source/inc/file_action_function:76
-msgid "`auto`"
-msgstr "`auto`"
-
-#: ../../source/inc/file_action_function:76
 msgid "A prefix to use for the auto page."
 msgstr "オートページ用の接頭辞"
-
-#: ../../source/inc/file_action_function:79
-msgid "`quick`"
-msgstr "`quick`"
 
 #: ../../source/inc/file_action_function:79
 msgid "A prefix to use for the quick page."
@@ -2055,11 +2126,11 @@ msgstr ""
 "True の場合、数字の大きなファイルスロットから最初にリストアップされます。そう"
 "でなけらば小さな数字のスロットから最初にリストアップされます。"
 
-#: ../../source/screen_actions.rst:142
+#: ../../source/screen_actions.rst:143
 msgid "Side Image Functions"
 msgstr "サイドイメージ関数"
 
-#: ../../source/screen_actions.rst:144
+#: ../../source/screen_actions.rst:145
 msgid "This function returns the side image to use."
 msgstr "この関数は使用するサイドイメージを返します。"
 
@@ -2071,11 +2142,11 @@ msgstr ""
 "現在話しているキャラクターに関連づけられたサイドイメージか、そのようなサイド"
 "イメージが存在しない場合は Null displayable を返します。"
 
-#: ../../source/screen_actions.rst:150
+#: ../../source/screen_actions.rst:151
 msgid "Tooltips"
 msgstr "Tooltip"
 
-#: ../../source/screen_actions.rst:152
+#: ../../source/screen_actions.rst:153
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 "Tooltip クラスはあるボタンの上にマウスが入ると、スクリーンを変更します。"
@@ -2112,7 +2183,7 @@ msgstr ""
 "す。ボタンがフォーカスを失うとこの Tooltip の value フィールドはデフォルトに"
 "戻ります。"
 
-#: ../../source/screen_actions.rst:156
+#: ../../source/screen_actions.rst:157
 msgid ""
 "When using a tooltip with a screen, the usual behavior is to create a "
 "tooltip object in a default statement. The value of the tooltip and the "
@@ -2125,7 +2196,7 @@ msgstr ""
 "に使用されます。スクリーンでの使用順は問題にはなりません - Action の前に値を"
 "利用することも可能です。"
 
-#: ../../source/screen_actions.rst:162
+#: ../../source/screen_actions.rst:163
 msgid ""
 "Tooltips can take on any value. While in the example below we use the text "
 "statement to display a string on the screen, it's also possible to use the "

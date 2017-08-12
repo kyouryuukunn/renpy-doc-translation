@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-09 22:14+0900\n"
-"PO-Revision-Date: 2016-06-20 15:24+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
+"PO-Revision-Date: 2017-08-07 19:11+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -149,8 +149,8 @@ msgstr ""
 #: ../../source/translation.rst:62
 msgid ""
 "There will be one translation file created per game script file. The common."
-"rpy file will also be created to contain translations of strings found in "
-"the common code."
+"rpy file will also be created to contain translations of strings that are "
+"common to all games made using Ren'Py."
 msgstr ""
 "ゲームのスクリプトファイル1つに対して翻訳ファイルが1つ作成されます。共通の"
 "コードで見つかった文字列の翻訳を含めるために、common.rpy ファイルも作成されま"
@@ -190,9 +190,9 @@ msgstr ""
 msgid ""
 "This is broken up into multiple translation units. Each unit has an "
 "identifier assigned to it, with the identifier being generated from the "
-"label preceding the unit, and the code inside the unit. (If multiple units "
-"would be assigned the same translation number, a serial number to the second "
-"and later units to distinguish them.)"
+"label preceding the unit, and the statements inside the unit. (If multiple "
+"units would be assigned the same translation number, a serial number to the "
+"second and later units to distinguish them.)"
 msgstr ""
 "これは複数の翻訳ユニットに分割されます。それぞれのユニットには割り当てられた"
 "識別子があり、識別子はユニットに先行するラベルと、ユニット内のコードから生成"
@@ -232,19 +232,19 @@ msgstr "Translate ステートメント"
 msgid ""
 "When you generate translations for a language, Ren'Py will generate a "
 "translate statement corresponding to each translation unit. When translating "
-"the code above, Ren'Py will generate::"
+"the script above, Ren'Py will generate::"
 msgstr ""
 "ある言語の翻訳を生成するとき、Ren'Py はそれぞれの翻訳ユニットに対応した "
 "translate ステートメントを生成します。上記のコードを翻訳するとき、Ren'Py は次"
-"のコードを生成します::"
+"のコードを生成します ::"
 
 #: ../../source/translation.rst:137
 msgid ""
-"This can be translated by editing the generated code. A finished translation "
-"might look like::"
+"This can be translated by editing the generated files. A finished "
+"translation might look like::"
 msgstr ""
 "生成されたコードを編集することで翻訳できます。翻訳が完了すると次のようになり"
-"ます::"
+"ます ::"
 
 #: ../../source/translation.rst:158
 msgid ""
@@ -278,10 +278,10 @@ msgstr "または、pass ステートメントに置き換えることで削除�
 #: ../../source/translation.rst:184
 msgid ""
 "It's also possible to run non-dialogue statements, such as conditionals or "
-"python code. For example, we can translate::"
+"Python. For example, we can translate::"
 msgstr ""
 "条件文や Python のコードなどの、台詞以外のステートメントを実行することもでき"
-"ます。例えば次のコード::"
+"ます。例えば次のコード ::"
 
 #: ../../source/translation.rst:189
 msgid "into::"
@@ -305,14 +305,15 @@ msgstr ""
 #: ../../source/translation.rst:210
 msgid ""
 "Adding labels can also confuse the translation process. To prevent this, "
-"labels that are given the hide clause are ignored by the translation code.::"
+"labels that are given the hide clause are ignored when generating "
+"translations.::"
 msgstr ""
 "ラベルの追加によっても翻訳の過程で混乱が発生します。これを防ぐには、ラベルに "
-"hide 項を与えて翻訳コードから無視されるようにします。::"
+"hide 節を与えて翻訳コードから無視されるようにします。::"
 
 #: ../../source/translation.rst:217
 msgid ""
-"While translation blocks may include python code, this code should not have "
+"While translation blocks may include Python, this Python should not have "
 "side effects visible outside of the block. That's because changing languages "
 "will restart the translation block, causing the side effects to occur "
 "multiple times."
@@ -321,11 +322,11 @@ msgstr ""
 "すべきではありません。何故ならば、言語を変更するときに翻訳ブロックは再度開始"
 "されますが、これによって副作用が何度も発生してしまうからです。"
 
-#: ../../source/translation.rst:223
+#: ../../source/translation.rst:225
 msgid "Menu and String Translations"
 msgstr "メニューと文字列の翻訳"
 
-#: ../../source/translation.rst:225
+#: ../../source/translation.rst:227
 msgid ""
 "In addition to dialogue, Ren'Py is able to translate text found in menus and "
 "other strings. Interface translations are a 1-to-1 substitution. Wherever a "
@@ -335,7 +336,7 @@ msgstr ""
 "す。インターフェイスの翻訳は1対1で対応しています。文字列が見つかると、それは"
 "単一の文字列で置換されます。"
 
-#: ../../source/translation.rst:230
+#: ../../source/translation.rst:232
 msgid ""
 "When generating translations, Ren'Py will scan the script files for menus, "
 "and for strings enclosed inside the _() function. It will then place the "
@@ -346,15 +347,15 @@ msgstr ""
 "た文字列をスキャンします。すると、translate strings ブロック内にスキャンされ"
 "た文字列が設置されます。例えば、以下のコードがあったとします::"
 
-#: ../../source/translation.rst:247
-msgid "Ren'Py will generate the following code::"
-msgstr "Ren'Py は次のコードを生成します::"
+#: ../../source/translation.rst:249
+msgid "Ren'Py will generate::"
+msgstr "Ren'Py は次のコードを生成します ::"
 
-#: ../../source/translation.rst:260
+#: ../../source/translation.rst:262
 msgid "Which can then be translated::"
 msgstr "これは以下のように翻訳できます::"
 
-#: ../../source/translation.rst:273
+#: ../../source/translation.rst:275
 msgid ""
 "String translations are also applied to dialogue strings that are not "
 "translated as dialogue."
@@ -362,18 +363,18 @@ msgstr ""
 "文字列の翻訳結果は、台詞としては翻訳されない台詞の文字列にも使うことができま"
 "す。"
 
-#: ../../source/translation.rst:276
+#: ../../source/translation.rst:278
 msgid ""
-"When the same string is used in multiple places in the code, the string can "
-"be distinguished using the {#...} text tag. Even though they display the "
-"same, Ren'Py considers all of these distinct strings for the purpose of "
+"When the same string is used in multiple places, the string can be "
+"distinguished using the {#...} text tag. Even though they display the same, "
+"Ren'Py considers all of these distinct strings for the purpose of "
 "translation::"
 msgstr ""
 "コード中で同一の文字列が複数の場所に存在する場合、文字列は {#...} テキストタ"
 "グを使って見分けられます。次のようにした場合、それぞれの文字列は同じように表"
-"示されますが、Ren'Py は翻訳のための異なる文字列として認識します::"
+"示されますが、Ren'Py は翻訳のための異なる文字列として認識します ::"
 
-#: ../../source/translation.rst:286
+#: ../../source/translation.rst:288
 msgid ""
 "The translate strings statement can also be used to translate the None "
 "language. This can be used to when the game is written in a non-English "
@@ -383,24 +384,24 @@ msgstr ""
 "英語以外の言語で制作されたゲームに対し、Ren'Py ユーザーインターフェイスを翻訳"
 "する場合に利用できます。::"
 
-#: ../../source/translation.rst:295
+#: ../../source/translation.rst:297
 msgid "Translating substitutions"
 msgstr "置換テキストの翻訳"
 
-#: ../../source/translation.rst:297
+#: ../../source/translation.rst:299
 msgid ""
 "String substitutions can be translated using the !t conversion flag. So the "
-"following code will be translatable using the dialogue and code translation "
-"systems::"
+"following will be translatable using a combination of the dialogue and "
+"string translation systems::"
 msgstr ""
 "文字列を翻訳文字列で置き換えるには、!t 変換フラグを使います。次のコードは台詞"
-"とコードの翻訳システムを使って翻訳することができます::"
+"とコードの翻訳システムを使って翻訳することができます ::"
 
-#: ../../source/translation.rst:311
+#: ../../source/translation.rst:313
 msgid "Extracting and merging string translations"
 msgstr "翻訳文字列の抽出統合"
 
-#: ../../source/translation.rst:313
+#: ../../source/translation.rst:315
 msgid ""
 "String translations can be extracted from one project, and moved to another. "
 "This is a multiple-step process:"
@@ -408,17 +409,17 @@ msgstr ""
 "翻訳文字列はあるプロジェクトから抽出して、他に移せます。これは複数の手順を経"
 "ます :"
 
-#: ../../source/translation.rst:316
+#: ../../source/translation.rst:318
 msgid "Select the source project, and choose \"Generate Translations\"."
 msgstr "元のプロジェクトを選び、 \"Generate Translations\" を選択します。"
 
-#: ../../source/translation.rst:317
+#: ../../source/translation.rst:319
 msgid ""
 "Enter the language to extract, and click \"Extract String Translations\"."
 msgstr ""
 "抽出する言語を選び、  \"Extract String Translations\" をクリックします。"
 
-#: ../../source/translation.rst:318
+#: ../../source/translation.rst:320
 msgid ""
 "Return to the main menu, select the target project, and choose \"Generate "
 "Translations\"."
@@ -426,21 +427,21 @@ msgstr ""
 "メインメニューに戻り、対象のプロジェクトを選択 \"Generate Translations\" を選"
 "択します。"
 
-#: ../../source/translation.rst:319
+#: ../../source/translation.rst:321
 msgid ""
 "Enter the language to merge to (often the same language), and choose \"Merge "
 "String Translations\"."
 msgstr "統合する言語を入力し、 \"Merge String Translations\" を選択します。"
 
-#: ../../source/translation.rst:321
+#: ../../source/translation.rst:323
 msgid "There are a couple of options that control merging:"
 msgstr "統合の管理をするいくつかの設定があります。"
 
-#: ../../source/translation.rst:327
+#: ../../source/translation.rst:329
 msgid "Replace existing translations"
 msgstr "既存の翻訳を置き換える"
 
-#: ../../source/translation.rst:324
+#: ../../source/translation.rst:326
 msgid ""
 "When checked, this will cause non-trivial existing translations (those that "
 "are not empty or the source string) to be replaced. By default, merging will "
@@ -449,11 +450,11 @@ msgstr ""
 "チェックすると、 (空でないか、元の文字列の)既存の翻訳は置き換えられます。デ"
 "フォルトでは統合は既存の翻訳を破棄し、上書きします。"
 
-#: ../../source/translation.rst:332
+#: ../../source/translation.rst:334
 msgid "Reverse languages"
 msgstr "言語の逆行"
 
-#: ../../source/translation.rst:330
+#: ../../source/translation.rst:332
 msgid ""
 "Reverses the strings before merging. This can be used, for example, to use a "
 "set of english -> russian translations to create a russian -> english "
@@ -462,11 +463,11 @@ msgstr ""
 "統合前の文字列に戻します。例えば、英語からロシア語のセットを使って、ロシア語"
 "から英語の翻訳が出来ます。"
 
-#: ../../source/translation.rst:335
+#: ../../source/translation.rst:337
 msgid "Image and File Translations"
 msgstr "画像とファイルの翻訳"
 
-#: ../../source/translation.rst:337
+#: ../../source/translation.rst:339
 msgid ""
 "When translating a game, it may be necessary to replace a file with a "
 "translate version. For example, if an image contains text, it might make "
@@ -477,7 +478,7 @@ msgstr ""
 "例えば画像にテキストが含まれている場合、意味が分かるようにテキスト部分が別の"
 "言語で書かれた画像に置き換えるでしょう。"
 
-#: ../../source/translation.rst:342
+#: ../../source/translation.rst:344
 msgid ""
 "Ren'Py handles this by looking in the translation directory for the image. "
 "For example, if the \"piglatin\" language is in use, and \"library.png\" is "
@@ -488,27 +489,27 @@ msgstr ""
 "「piglatin」言語において「library.png」を読み込むとき、Ren'Py は「game/tl/"
 "piglatin/library.png」を「game/library.png」よりも優先して使います。"
 
-#: ../../source/translation.rst:349
+#: ../../source/translation.rst:351
 msgid "Style Translations"
 msgstr "スタイルの翻訳"
 
-#: ../../source/translation.rst:351
+#: ../../source/translation.rst:353
 msgid ""
 "It may be necessary to change styles - especially font-related styles - when "
 "translating a game. Ren'Py handles this with translate style blocks and "
-"translate python blocks. These blocks can contain code to change language-"
-"related variables and styles. For example::"
+"translate python blocks. These blocks can change language-related variables "
+"and styles. For example::"
 msgstr ""
 "ゲームの翻訳時に、スタイルの変更 (特にフォント関係のスタイル) が必要になるで"
 "しょう。Ren'Py ではこれに対し translate style ブロックと translate python ブ"
 "ロックで対応しています。これらのブロックには、言語関係の変数やスタイルを変更"
-"するためのコードを含めることができます。例えば::"
+"するためのコードを含めることができます。例えば ::"
 
-#: ../../source/translation.rst:359
+#: ../../source/translation.rst:361
 msgid "or equivalently::"
 msgstr "または等価なもので::"
 
-#: ../../source/translation.rst:364
+#: ../../source/translation.rst:366
 msgid ""
 "When a language is activated - either at the start of the game, or after a "
 "language change - Ren'Py resets the styles to their contents at the end of "
@@ -520,33 +521,33 @@ msgstr ""
 "言語が利用可能になった時 (ゲームの開始時、もしくは言語が変更された後)、"
 "Ren'Py は init フェーズの後でスタイルをこの内容にリセットします。"
 
-#: ../../source/translation.rst:371
+#: ../../source/translation.rst:373
 msgid "Style translations may be added to any .rpy file."
 msgstr "スタイルの翻訳はどのような .rpy ファイルにも追加できます。"
 
-#: ../../source/translation.rst:375
+#: ../../source/translation.rst:377
 msgid "Default Language"
 msgstr "既定の言語"
 
-#: ../../source/translation.rst:377
+#: ../../source/translation.rst:379
 msgid "The default language is chosen using the following method:"
 msgstr "既定の言語は以下の方法によって選択します:"
 
-#: ../../source/translation.rst:379
+#: ../../source/translation.rst:381
 msgid ""
 "If the RENPY_LANGUAGE environment variable is set, that language is used."
 msgstr "RENPY_LANGUAGE 環境変数が設定されていれば、その言語が使用されます。"
 
-#: ../../source/translation.rst:381
+#: ../../source/translation.rst:383
 msgid "If :var:`config.language` is set, that language is used."
 msgstr ":var:`config.language` が設定されていれば、その言語が使用されます。"
 
-#: ../../source/translation.rst:382
+#: ../../source/translation.rst:384
 msgid ""
 "If the game has ever chosen a language in the past, that language is used."
 msgstr "過去にゲームで言語を選択したことがあれば、その言語が使用されます。"
 
-#: ../../source/translation.rst:384
+#: ../../source/translation.rst:386
 msgid ""
 "If this is the first time the game has been run, :var:`config."
 "default_language` is used. (This defaults to the None language.)"
@@ -554,15 +555,15 @@ msgstr ""
 "ゲームが最初に開始された時は、 :var:`config.default_language` が使用されま"
 "す。 ( このデフォルト値は None 言語です。 )"
 
-#: ../../source/translation.rst:387
+#: ../../source/translation.rst:389
 msgid "Otherwise, the None language is used."
 msgstr "これら以外の場合は、None 言語が使用されます。"
 
-#: ../../source/translation.rst:390
+#: ../../source/translation.rst:392
 msgid "Translation Actions, Functions, and Variables"
 msgstr "翻訳に関連したアクション、関数、変数"
 
-#: ../../source/translation.rst:392
+#: ../../source/translation.rst:394
 msgid "The main way to switch languages is with the Language action."
 msgstr "言語を切り替える主な方法は、Language アクションを使うことです。"
 
@@ -582,15 +583,15 @@ msgstr ""
 "翻訳先の言語の文字列、または None のときはゲームスクリプトの既定の言語を使い"
 "ます。"
 
-#: ../../source/translation.rst:396
+#: ../../source/translation.rst:398
 msgid ""
 "The Language action can be used to add a language preference to the "
-"preferences screen, using code like::"
+"preferences screen::"
 msgstr ""
 "Language アクションを使うと、以下のようなコードを使って設定画面に言語設定を追"
-"加できます::"
+"加できます ::"
 
-#: ../../source/translation.rst:407
+#: ../../source/translation.rst:409
 msgid "There are two translation-related functions:"
 msgstr "翻訳関連の関数は2つあります:"
 
@@ -608,12 +609,12 @@ msgid ""
 "language, None."
 msgstr "既知の言語のセットを返します。これには既定の言語 None は含まれません。"
 
-#: ../../source/translation.rst:411
+#: ../../source/translation.rst:413
 msgid ""
 "In addition, there are two functions that are related to string translation:"
 msgstr "さらに、文字列の翻訳に関連した2つの関数があります:"
 
-#: ../../source/translation.rst:416
+#: ../../source/translation.rst:418
 msgid ""
 "(Single underscore) Returns `s` unchanged. Ren'Py will scan for strings "
 "enclosed in this function, and add them to the list of translatable strings. "
@@ -623,7 +624,7 @@ msgstr ""
 "文字列をスキャンし、翻訳可能な文字列のリストにそれを追加します。文字列は表示"
 "されるまで翻訳されません。"
 
-#: ../../source/translation.rst:423
+#: ../../source/translation.rst:425
 msgid ""
 "(Double underscore) Returns `s` immediately translated into the current "
 "language. Strings enclosed in this function will be added to the list of "
@@ -635,7 +636,7 @@ msgstr ""
 "れる時に、文字列翻訳にマッチすると文字列が2重に翻訳されてしまうことに注意して"
 "ください。"
 
-#: ../../source/translation.rst:429
+#: ../../source/translation.rst:431
 msgid ""
 "There are two language-related variables. One is :var:`config.language`, "
 "which is used to change the default language of the game."
@@ -643,7 +644,7 @@ msgstr ""
 "言語関連の変数は2つあります。1つは :var:`config.language` で、これはゲームの"
 "既定の言語を変更するために使用されます。"
 
-#: ../../source/translation.rst:435
+#: ../../source/translation.rst:437
 msgid ""
 "The name of the current language, or None if the default language is being "
 "used. This should be treated as a read-only variable. To change the "
@@ -653,11 +654,11 @@ msgstr ""
 "用の変数として扱わなければなりません。言語を変更するには :func:`renpy."
 "change_language` を使用して下さい。"
 
-#: ../../source/translation.rst:443
+#: ../../source/translation.rst:445
 msgid "Unsanctioned Translations"
 msgstr "正式な認可を受けていない場合の翻訳"
 
-#: ../../source/translation.rst:447
+#: ../../source/translation.rst:449
 msgid ""
 "It's best to ask a game's creators for permission before creating an "
 "unsanctioned translation."
@@ -665,7 +666,7 @@ msgstr ""
 "正式に認可されていない翻訳を作成する前に、ゲーム制作者の許諾を得ることが最善"
 "です。"
 
-#: ../../source/translation.rst:450
+#: ../../source/translation.rst:452
 msgid ""
 "Ren'Py includes a small amount of support for creating translations without "
 "the active assistance of the game's creators. This support consists of the "
@@ -678,25 +679,25 @@ msgstr ""
 "作成する機能です。未翻訳の台詞に対して文字列翻訳を行うことで、この方法による"
 "ゲームの翻訳が可能となります。"
 
-#: ../../source/translation.rst:457
+#: ../../source/translation.rst:459
 msgid "To create a string translation file, perform the following steps:"
 msgstr "文字列翻訳ファイルを作成は、以下の手順で行います:"
 
-#: ../../source/translation.rst:459
+#: ../../source/translation.rst:461
 msgid ""
 "Set the RENPY_LANGUAGE environment variable to the language you want to "
 "translate to."
 msgstr "RENPY_LANGUAGE 環境変数を翻訳先にしたい言語に設定します。"
 
-#: ../../source/translation.rst:461
+#: ../../source/translation.rst:463
 msgid "Set the RENPY_UPDATE_STRINGS environment variable to a non-empty value."
 msgstr "RENPY_UPDATE_STRINGS 環境変数を空でない値に設定します。"
 
-#: ../../source/translation.rst:463
+#: ../../source/translation.rst:465
 msgid "Play through the game until all text is seen."
 msgstr "すべてのテキストが表示されるまでゲームを動かします。"
 
-#: ../../source/translation.rst:465
+#: ../../source/translation.rst:467
 msgid ""
 "This will update the \"game/tl/language/strings.rpy\" file with a "
 "translation template that contains all of the strings in it."
@@ -704,7 +705,7 @@ msgstr ""
 "これにより \"game/tl/language/strings.rpy\" ファイルが更新され、すべてのテキ"
 "ストが含まれた翻訳の雛形となります。"
 
-#: ../../source/translation.rst:468
+#: ../../source/translation.rst:470
 msgid ""
 "If a game doesn't include support for changing the language, it may be "
 "appropriate to use an init python block to set :var:`config.language` to the "
@@ -713,7 +714,7 @@ msgstr ""
 "ゲームに言語切り替え機能が含まれていない場合は、init python ブロックで :var:"
 "`config.language` に翻訳先の言語を設定するのが適切でしょう。"
 
-#: ../../source/translation.rst:472
+#: ../../source/translation.rst:474
 msgid ""
 "Along with the use of string translations for dialogue, unsanctioned "
 "translators may be interested in using the techniques described above to "

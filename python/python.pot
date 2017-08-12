@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2016, Tom Rothamel
+# Copyright (C) 2012-2017, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.12\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 15:35+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgid "Python Statements"
 msgstr ""
 
 #: ../../source/python.rst:9
-msgid "Ren'Py is written in the Python programming language, and includes support for including python code inside Ren'Py scripts. Python support can be used for many things, from setting a flag to creating new displayables. This chapter covers ways in which Ren'Py scripts can directly invoke Python code, through the various python statements."
+msgid "Ren'Py is written in the Python programming language, and includes support for including Python inside Ren'Py scripts. Python support can be used for many things, from setting a flag to creating new displayables. This chapter covers ways in which Ren'Py scripts can directly invoke Python, through the various python statements."
 msgstr ""
 
 #: ../../source/python.rst:19
@@ -29,7 +29,7 @@ msgid "Python"
 msgstr ""
 
 #: ../../source/python.rst:21
-msgid "The python statement takes a block of python code, and runs that code when control reaches the statement. A basic python statement can be very simple::"
+msgid "The python statement takes a block of Python, and runs the block when control reaches the statement. A basic python statement can be very simple::"
 msgstr ""
 
 #: ../../source/python.rst:28
@@ -45,11 +45,11 @@ msgid "``hide``"
 msgstr ""
 
 #: ../../source/python.rst:40
-msgid "If given the hide modifier, the python statement will run the code in an anonymous scope. The scope will be lost when the python block terminates."
+msgid "If given the hide modifier, the python statement will run the block of Python in an anonymous scope. The scope will be lost when the python block terminates."
 msgstr ""
 
 #: ../../source/python.rst:44
-msgid "This allows python code to use temporary variables that can't be saved - but it means that the store needs to be accessed as fields on the store object, rather than directly."
+msgid "This allows Python to use temporary variables that can't be saved - but it means that the store needs to be accessed as fields on the store object, rather than directly."
 msgstr ""
 
 #: ../../source/python.rst:48
@@ -57,7 +57,7 @@ msgid "``in``"
 msgstr ""
 
 #: ../../source/python.rst:50
-msgid "The ``in`` modifier takes a name. Instead of executing in the default store, the python code will execute in the store that name."
+msgid "The ``in`` modifier takes a name. Instead of executing in the default store, the Python will execute in the store with that name."
 msgstr ""
 
 #: ../../source/python.rst:56
@@ -65,11 +65,11 @@ msgid "One-line Python Statement"
 msgstr ""
 
 #: ../../source/python.rst:58
-msgid "A common case is to have a single line of python that runs in the default store. For example, a python one-liner can be used to initialize or update a flag. To make writing python one-liners more convenient, there is the one-line python statement."
+msgid "A common case is to have a single line of Oython that runs in the default store. For example, a Python one-liner can be used to initialize or update a flag. To make writing Python one-liners more convenient, there is the one-line python statement."
 msgstr ""
 
 #: ../../source/python.rst:63
-msgid "The one-line python statement begins with the dollar-sign ($) character, and contains all of the code on that line. Here are some example of python one-liners::"
+msgid "The one-line python statement begins with the dollar-sign ($) character, and contains everything else on that line. Here are some example of python one-liners::"
 msgstr ""
 
 #: ../../source/python.rst:79
@@ -81,7 +81,7 @@ msgid "Init Python Statement"
 msgstr ""
 
 #: ../../source/python.rst:87
-msgid "The ``init python`` statement runs python code at initialization time, before the game loads. Among other things, this code can be used to define classes and functions, or to initialize styles, config variables, or persistent data. ::"
+msgid "The ``init python`` statement runs Python at initialization time, before the game loads. Among other things, this can be used to define classes and functions, or to initialize styles, config variables, or persistent data. ::"
 msgstr ""
 
 #: ../../source/python.rst:107
@@ -89,7 +89,7 @@ msgid "A priority number can be placed between ``init`` and ``python``. When a p
 msgstr ""
 
 #: ../../source/python.rst:112
-msgid "To avoid conflict with Ren'Py, creators should use priorities in the range -999 to 999. Priorities of less than 0 are generally used for libraries and to set up themes. Normal init code should have a priority of 0 or higher."
+msgid "To avoid conflict with Ren'Py, creators should use priorities in the range -999 to 999. Priorities of less than 0 are generally used for libraries and to set up themes. Normal init statements should have a priority of 0 or higher."
 msgstr ""
 
 #: ../../source/python.rst:117
@@ -146,7 +146,7 @@ msgid "The init offset statement sets a priority offset for all statements that 
 msgstr ""
 
 #: ../../source/python.rst:189
-msgid "sets the priority offset to 42. In the code::"
+msgid "sets the priority offset to 42. In::"
 msgstr ""
 
 #: ../../source/python.rst:199
@@ -166,7 +166,7 @@ msgid "The define statement assigns a value to a variable, even when it's used t
 msgstr ""
 
 #: ../../source/python.rst:214
-msgid "The following faulty code::"
+msgid "The following faulty script::"
 msgstr ""
 
 #: ../../source/python.rst:227
@@ -182,11 +182,11 @@ msgid "Other Named Stores"
 msgstr ""
 
 #: ../../source/python.rst:238
-msgid "Named stores provide a way of organizing python code into modules. By placing code in modules, you can minimize the chance of name conflicts."
+msgid "Named stores provide a way of organizing Python functions and variables into modules. By placing Python in modules, you can minimize the chance of name conflicts."
 msgstr ""
 
 #: ../../source/python.rst:242
-msgid "Named stores can be accessed by supplying the ``in`` clause to ``python`` or ``init python``, code can run accessed in a named store. Each store corresponds to a python module. The default store is ``store``, while a named store is accessed as ``store``.`name`. These python modules can be imported using the python import statement, while names in the modules can be imported using the python from statement."
+msgid "Named stores can be accessed by supplying the ``in`` clause to ``python`` or ``init python``, all of which run Python in a named store. Each store corresponds to a Python module. The default store is ``store``, while a named store is accessed as ``store``.`name`. These python modules can be imported using the Python import statement, while names in the modules can be imported using the Python from statement."
 msgstr ""
 
 #: ../../source/python.rst:250
@@ -202,7 +202,7 @@ msgid "First and Third Party Python Modules and Packages"
 msgstr ""
 
 #: ../../source/python.rst:279
-msgid "Ren'Py can import pure-python modules and packages. First-party modules and packages - ones with code written for the game - can be placed directly into the game directory. Third party packages can be placed into the game/python-packages directory."
+msgid "Ren'Py can import pure-python modules and packages. First-party modules and packages - ones  written for the game - can be placed directly into the game directory. Third party packages can be placed into the game/python-packages directory."
 msgstr ""
 
 #: ../../source/python.rst:284
@@ -214,6 +214,6 @@ msgid "In either case, the module or package can be imported from an init python
 msgstr ""
 
 #: ../../source/python.rst:297
-msgid "Python code defined in .rpy files is transformed to allow rollback to work. Python code imported from .py files is not. As a result, objects created in python code will not work with rollback, and probably should not be changed after creation."
+msgid "Python defined in .rpy files is transformed to allow rollback to work. Python imported from .py files is not. As a result, objects created in Python will not work with rollback, and probably should not be changed after creation."
 msgstr ""
 
