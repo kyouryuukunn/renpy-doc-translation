@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 18:15+0900\n"
-"PO-Revision-Date: 2017-08-07 19:11+0900\n"
+"POT-Creation-Date: 2017-09-25 21:42+0900\n"
+"PO-Revision-Date: 2017-11-19 17:46+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -611,8 +611,9 @@ msgstr "既知の言語のセットを返します。これには既定の言語
 
 #: ../../source/translation.rst:413
 msgid ""
-"In addition, there are two functions that are related to string translation:"
-msgstr "さらに、文字列の翻訳に関連した2つの関数があります:"
+"In addition, there are three functions that are related to string "
+"translation:"
+msgstr "さらに、文字列の翻訳に関連した 3 つの関数があります:"
 
 #: ../../source/translation.rst:418
 msgid ""
@@ -636,7 +637,26 @@ msgstr ""
 "れる時に、文字列翻訳にマッチすると文字列が2重に翻訳されてしまうことに注意して"
 "ください。"
 
-#: ../../source/translation.rst:431
+#: ../../source/inc/underscore_p:5
+msgid ""
+"Reformats a string and flags it as translatable. The string will be "
+"translated when displayed by the text displayable. This is intended to "
+"define multi-line for use in strings, of the form::"
+msgstr ""
+
+#: ../../source/inc/underscore_p:16
+msgid ""
+"The reformatting is done by breaking the text up into lines, removing "
+"whitespace from the start and end of each line. Blank lines are removed at "
+"the end. When there is a blank line, a blank line is inserted to separate "
+"paragraphs. The {p} tag breaks a line, but doesn't add a blank one."
+msgstr ""
+
+#: ../../source/inc/underscore_p:22
+msgid "This can be used in a string translation, using the construct::"
+msgstr ""
+
+#: ../../source/translation.rst:433
 msgid ""
 "There are two language-related variables. One is :var:`config.language`, "
 "which is used to change the default language of the game."
@@ -644,7 +664,7 @@ msgstr ""
 "言語関連の変数は2つあります。1つは :var:`config.language` で、これはゲームの"
 "既定の言語を変更するために使用されます。"
 
-#: ../../source/translation.rst:437
+#: ../../source/translation.rst:439
 msgid ""
 "The name of the current language, or None if the default language is being "
 "used. This should be treated as a read-only variable. To change the "
@@ -654,11 +674,11 @@ msgstr ""
 "用の変数として扱わなければなりません。言語を変更するには :func:`renpy."
 "change_language` を使用して下さい。"
 
-#: ../../source/translation.rst:445
+#: ../../source/translation.rst:447
 msgid "Unsanctioned Translations"
 msgstr "正式な認可を受けていない場合の翻訳"
 
-#: ../../source/translation.rst:449
+#: ../../source/translation.rst:451
 msgid ""
 "It's best to ask a game's creators for permission before creating an "
 "unsanctioned translation."
@@ -666,7 +686,7 @@ msgstr ""
 "正式に認可されていない翻訳を作成する前に、ゲーム制作者の許諾を得ることが最善"
 "です。"
 
-#: ../../source/translation.rst:452
+#: ../../source/translation.rst:454
 msgid ""
 "Ren'Py includes a small amount of support for creating translations without "
 "the active assistance of the game's creators. This support consists of the "
@@ -679,25 +699,25 @@ msgstr ""
 "作成する機能です。未翻訳の台詞に対して文字列翻訳を行うことで、この方法による"
 "ゲームの翻訳が可能となります。"
 
-#: ../../source/translation.rst:459
+#: ../../source/translation.rst:461
 msgid "To create a string translation file, perform the following steps:"
 msgstr "文字列翻訳ファイルを作成は、以下の手順で行います:"
 
-#: ../../source/translation.rst:461
+#: ../../source/translation.rst:463
 msgid ""
 "Set the RENPY_LANGUAGE environment variable to the language you want to "
 "translate to."
 msgstr "RENPY_LANGUAGE 環境変数を翻訳先にしたい言語に設定します。"
 
-#: ../../source/translation.rst:463
+#: ../../source/translation.rst:465
 msgid "Set the RENPY_UPDATE_STRINGS environment variable to a non-empty value."
 msgstr "RENPY_UPDATE_STRINGS 環境変数を空でない値に設定します。"
 
-#: ../../source/translation.rst:465
+#: ../../source/translation.rst:467
 msgid "Play through the game until all text is seen."
 msgstr "すべてのテキストが表示されるまでゲームを動かします。"
 
-#: ../../source/translation.rst:467
+#: ../../source/translation.rst:469
 msgid ""
 "This will update the \"game/tl/language/strings.rpy\" file with a "
 "translation template that contains all of the strings in it."
@@ -705,7 +725,7 @@ msgstr ""
 "これにより \"game/tl/language/strings.rpy\" ファイルが更新され、すべてのテキ"
 "ストが含まれた翻訳の雛形となります。"
 
-#: ../../source/translation.rst:470
+#: ../../source/translation.rst:472
 msgid ""
 "If a game doesn't include support for changing the language, it may be "
 "appropriate to use an init python block to set :var:`config.language` to the "
@@ -714,7 +734,7 @@ msgstr ""
 "ゲームに言語切り替え機能が含まれていない場合は、init python ブロックで :var:"
 "`config.language` に翻訳先の言語を設定するのが適切でしょう。"
 
-#: ../../source/translation.rst:474
+#: ../../source/translation.rst:476
 msgid ""
 "Along with the use of string translations for dialogue, unsanctioned "
 "translators may be interested in using the techniques described above to "

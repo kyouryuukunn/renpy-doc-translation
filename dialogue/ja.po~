@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-22 04:37+0900\n"
-"PO-Revision-Date: 2016-12-23 18:39+0900\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
+"PO-Revision-Date: 2017-08-07 18:25+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -441,56 +441,32 @@ msgstr "台詞を表示するのに使われるスクリーンの名前です。
 msgid ""
 "Keyword arguments beginning with ``show_`` have the prefix stripped off, and "
 "are passed to the screen as arguments. For example, the value of "
-"``show_side_image`` will become the value of the ``side_image`` variable in "
-"the screen."
+"``show_myflag`` will become the value of the ``myflag`` variable in the "
+"screen. (The myflag variable isn't used by default, but can be used by a "
+"custom say screen.)"
 msgstr ""
 "``show_`` で始まるキーワード引数は、接頭辞を取り除かれ、スクリーンに引数とし"
-"て渡されます。例えば、 ``show_side_image`` の値はスクリーンの ``side_image`` "
-"変数の値になります。"
+"て渡されます。例えば、 ``show_myflag`` の値はスクリーンの ``myflag`` 変数の値"
+"になります。 (myflag 変数はでファるとでは使われませんが、カスタマイズされた "
+"say スクリーンで使用可能です。)"
 
-#: ../../source/inc/character:129
-msgid "Some useful ``show_`` variables implemented by the default screens are:"
-msgstr "便利な ``show_`` 変数がデフォルトのスクリーンによって定義されています:"
-
-#: ../../source/inc/character:136
-msgid "`show_side_image`"
-msgstr "`show_side_image`"
-
-#: ../../source/inc/character:132
-msgid ""
-"When given a Displayable, shows that displayable when the dialogue is shown. "
-"The position of that displayable is controlled by its position properties. "
-"This is often used to show an image of the speaking character to the side of "
-"the dialogue."
+#: ../../source/inc/character:130
+msgid "One show variable is, for historical reasons, handled by Ren'Py itself:"
 msgstr ""
-"Displayable が与えられると、台詞が表示されるときにその displayable が表示され"
-"ます。displayable の位置は、位置プロパティーで制御されます。これは主に、しゃ"
-"べっているキャラクターを台詞の横に表示するのに使われます。"
+"一つの show 変数が、歴史的な理由のため、 Ren'Py 自身によって扱われます。 :"
 
-#: ../../source/inc/character:141
-msgid "`show_two_window`"
-msgstr "`show_two_window`"
-
-#: ../../source/inc/character:139
-msgid ""
-"If true, restructures the layout so that the name of the character is placed "
-"in one window, and the dialogue text in a second window."
-msgstr ""
-"True なら、レイアウトの構成を変更し、キャラクター名が一つのウィンドウに、台詞"
-"がもう一つのウィンドウに表示されるようにします。"
-
-#: ../../source/inc/character:145
+#: ../../source/inc/character:134
 msgid "`show_layer`"
 msgstr "`show_layer`"
 
-#: ../../source/inc/character:144
+#: ../../source/inc/character:133
 msgid ""
 "If given, this should be a string giving the name of the layer to show the "
 "\"say\" screen on."
 msgstr ""
 "必要に応じて、「say」スクリーンを表示するレイヤーの名前の文字列を指定します。"
 
-#: ../../source/inc/character:147
+#: ../../source/inc/character:136
 msgid ""
 "**Styling Text and Windows.** Keyword arguments beginning with ``who_``, "
 "``what_``, and `window_`` have their prefix stripped, and are used to :ref:"
@@ -501,7 +477,7 @@ msgstr ""
 "始まるキーワード引数は、接頭辞を剥ぎ取られ、それぞれキャラクター名、会話テキ"
 "スト、その両方を含むウィンドウの :ref:`スタイル <styles>` になります。"
 
-#: ../../source/inc/character:153
+#: ../../source/inc/character:142
 msgid ""
 "For example, if a character is given the keyword argument ``who_color="
 "\"#c8ffc8\"``, the color of the character's name is changed, in this case to "
@@ -512,7 +488,7 @@ msgstr ""
 "と、キャラクター名の色が変わり、この場合は緑になります。 ``window_background="
 "\"frame.png\"`` で、キャラクターの台詞を含むウィンドウの背景を設定します。"
 
-#: ../../source/inc/character:159
+#: ../../source/inc/character:148
 msgid ""
 "The style applied to the character name, spoken text, and window can also be "
 "set this way, using the `who_style`, `what_style`, and `window_style` "
@@ -546,9 +522,10 @@ msgstr ""
 "ば、Ren'Py はその属性をサイドイメージで使うためにプールしますが、画像の表示は"
 "しません。"
 
-#: ../../source/dialogue.rst:111
-msgid "For example, the code::"
-msgstr "例えば、このコード::"
+#: ../../source/dialogue.rst:111 ../../source/dialogue.rst:193
+#: ../../source/dialogue.rst:249
+msgid "For example::"
+msgstr "例 ::"
 
 #: ../../source/dialogue.rst:122 ../../source/dialogue.rst:287
 msgid "is equivalent to::"
@@ -672,10 +649,6 @@ msgstr ""
 #: ../../source/dialogue.rst:191
 msgid "Extend is aware of NVL-mode, and treats it correctly."
 msgstr "extend は NVL モードを検知し、正常に動作します。"
-
-#: ../../source/dialogue.rst:193 ../../source/dialogue.rst:249
-msgid "For example::"
-msgstr "例 ::"
 
 #: ../../source/dialogue.rst:215
 msgid "Dialogue Window Management"
@@ -832,6 +805,37 @@ msgstr ""
 "False なら、デフォルトのウィンドウ表示のトランジションが使用されます。 None "
 "ならトランジションは使用されません。 それ以外なら指定したトランジションが使用"
 "されます。"
+
+#~ msgid ""
+#~ "Some useful ``show_`` variables implemented by the default screens are:"
+#~ msgstr ""
+#~ "便利な ``show_`` 変数がデフォルトのスクリーンによって定義されています:"
+
+#~ msgid "`show_side_image`"
+#~ msgstr "`show_side_image`"
+
+#~ msgid ""
+#~ "When given a Displayable, shows that displayable when the dialogue is "
+#~ "shown. The position of that displayable is controlled by its position "
+#~ "properties. This is often used to show an image of the speaking character "
+#~ "to the side of the dialogue."
+#~ msgstr ""
+#~ "Displayable が与えられると、台詞が表示されるときにその displayable が表示"
+#~ "されます。displayable の位置は、位置プロパティーで制御されます。これは主"
+#~ "に、しゃべっているキャラクターを台詞の横に表示するのに使われます。"
+
+#~ msgid "`show_two_window`"
+#~ msgstr "`show_two_window`"
+
+#~ msgid ""
+#~ "If true, restructures the layout so that the name of the character is "
+#~ "placed in one window, and the dialogue text in a second window."
+#~ msgstr ""
+#~ "True なら、レイアウトの構成を変更し、キャラクター名が一つのウィンドウに、"
+#~ "台詞がもう一つのウィンドウに表示されるようにします。"
+
+#~ msgid "For example, the code::"
+#~ msgstr "例えば、このコード::"
 
 #~ msgid ""
 #~ "A String that enables the voice file assosiated with the Character to be "

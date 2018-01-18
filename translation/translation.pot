@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2017, Tom Rothamel
+# Copyright (C) 2012-2018, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-04 18:15+0900\n"
+"POT-Creation-Date: 2018-01-18 22:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -361,7 +361,7 @@ msgid "Returns the set of known languages. This does not include the default lan
 msgstr ""
 
 #: ../../source/translation.rst:413
-msgid "In addition, there are two functions that are related to string translation:"
+msgid "In addition, there are three functions that are related to string translation:"
 msgstr ""
 
 #: ../../source/translation.rst:418
@@ -372,51 +372,63 @@ msgstr ""
 msgid "(Double underscore) Returns `s` immediately translated into the current language. Strings enclosed in this function will be added to the list of translatable strings. Note that the string may be double-translated, if it matches a string translation when it is displayed."
 msgstr ""
 
-#: ../../source/translation.rst:431
+#: ../../source/inc/underscore_p:5
+msgid "Reformats a string and flags it as translatable. The string will be translated when displayed by the text displayable. This is intended to define multi-line for use in strings, of the form::"
+msgstr ""
+
+#: ../../source/inc/underscore_p:16
+msgid "The reformatting is done by breaking the text up into lines, removing whitespace from the start and end of each line. Blank lines are removed at the end. When there is a blank line, a blank line is inserted to separate paragraphs. The {p} tag breaks a line, but doesn't add a blank one."
+msgstr ""
+
+#: ../../source/inc/underscore_p:22
+msgid "This can be used in a string translation, using the construct::"
+msgstr ""
+
+#: ../../source/translation.rst:433
 msgid "There are two language-related variables. One is :var:`config.language`, which is used to change the default language of the game."
 msgstr ""
 
-#: ../../source/translation.rst:437
+#: ../../source/translation.rst:439
 msgid "The name of the current language, or None if the default language is being used. This should be treated as a read-only variable. To change the language, call :func:`renpy.change_language`."
 msgstr ""
 
-#: ../../source/translation.rst:445
+#: ../../source/translation.rst:447
 msgid "Unsanctioned Translations"
 msgstr ""
 
-#: ../../source/translation.rst:449
+#: ../../source/translation.rst:451
 msgid "It's best to ask a game's creators for permission before creating an unsanctioned translation."
 msgstr ""
 
-#: ../../source/translation.rst:452
+#: ../../source/translation.rst:454
 msgid "Ren'Py includes a small amount of support for creating translations without the active assistance of the game's creators. This support consists of the ability to automatically create a string translation file from all of the strings in the game. Since string translations are used for untranslated dialogue, this technique makes it possible to translate a game."
 msgstr ""
 
-#: ../../source/translation.rst:459
+#: ../../source/translation.rst:461
 msgid "To create a string translation file, perform the following steps:"
 msgstr ""
 
-#: ../../source/translation.rst:461
+#: ../../source/translation.rst:463
 msgid "Set the RENPY_LANGUAGE environment variable to the language you want to translate to."
 msgstr ""
 
-#: ../../source/translation.rst:463
+#: ../../source/translation.rst:465
 msgid "Set the RENPY_UPDATE_STRINGS environment variable to a non-empty value."
 msgstr ""
 
-#: ../../source/translation.rst:465
+#: ../../source/translation.rst:467
 msgid "Play through the game until all text is seen."
 msgstr ""
 
-#: ../../source/translation.rst:467
+#: ../../source/translation.rst:469
 msgid "This will update the \"game/tl/language/strings.rpy\" file with a translation template that contains all of the strings in it."
 msgstr ""
 
-#: ../../source/translation.rst:470
+#: ../../source/translation.rst:472
 msgid "If a game doesn't include support for changing the language, it may be appropriate to use an init python block to set :var:`config.language` to the target language."
 msgstr ""
 
-#: ../../source/translation.rst:474
+#: ../../source/translation.rst:476
 msgid "Along with the use of string translations for dialogue, unsanctioned translators may be interested in using the techniques described above to translate images and styles."
 msgstr ""
 
