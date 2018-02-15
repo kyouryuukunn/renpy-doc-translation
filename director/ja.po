@@ -8,10 +8,9 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-25 21:42+0900\n"
-"PO-Revision-Date: 2017-08-09 19:28+0900\n"
+"PO-Revision-Date: 2018-02-13 21:51+0900\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +64,6 @@ msgstr ""
 "す。初回起動時はゲームを再起動し、編集に必要なデータを用意します。"
 
 #: ../../source/director.rst:28
-#, fuzzy
 msgid ""
 "The first director screen you'll see shows a list of lines that ran before "
 "the current line. Click outside the lines window to advance the script, or "
@@ -73,11 +71,11 @@ msgid ""
 "or the ✎ before a line to edit that line."
 msgstr ""
 "最初に表示される Director スクリーンは現在行以前に実行された行のリストを表示"
-"します。行リストウィンドウ外をクリックするとスクリプトを進めるか 行間の + を"
-"クリックすると行か、 ? を追加します。"
+"します。行リスト外をクリックしてスクリプトを進めるか、行リスト外でロールバッ"
+"クを押してロールバックしてください。行間の + のクリックで行を追加するか、 ✎ "
+"をクリックしてその行を編集してください。"
 
 #: ../../source/director.rst:33
-#, fuzzy
 msgid ""
 "When editing a line, the statement type can be selected, along with "
 "appropriate parameters. Choose \"Add\" to add the new line, \"Change\" to "
@@ -115,18 +113,22 @@ msgid ""
 "A blacklist of tags that will not be shown for the show, scene, or hide "
 "statements."
 msgstr ""
+"show, scene, hide ステートメントで表示されないタグのブラックリストです。"
 
 #: ../../source/director.rst:58
 msgid ""
 "The set of tags that will be presented for the scene statement, and hidden "
 "from the show statement."
 msgstr ""
+"scene ステートメントに渡され、 show ステートメントでは非表示になるタグのset型"
+"です。"
 
 #: ../../source/director.rst:63
 msgid ""
 "If not empty, only the tags present in this set will be presented for the "
 "show statement."
 msgstr ""
+"空でなければ、このsetにあるタグのみが show ステートメントに渡されます。"
 
 #: ../../source/director.rst:68
 msgid ""
@@ -135,6 +137,9 @@ msgid ""
 "outside of Ren'Py itself will be added to the list of transforms, which is "
 "then sorted."
 msgstr ""
+"editorで表示される変換のリストです。これらに加え、 transform ステートメントに"
+"より定義された Ren'Py のデフォルトにない変換が変換のリストに加わり、整列され"
+"ます。"
 
 #: ../../source/director.rst:74
 msgid "With"
@@ -145,6 +150,8 @@ msgid ""
 "A list of transitions that are available to the with statement. Since "
 "transitions can't be auto-detected, these must be added manually."
 msgstr ""
+"with ステートメントに利用可能なトランジションのリストです。トランジションは自"
+"動検出できないため、手動で追加するべきです。"
 
 #: ../../source/director.rst:82
 msgid "Play, Queue, Stop, and Voice"
@@ -155,16 +162,19 @@ msgid ""
 "The name of the audio channels that can be used with the play, show and stop "
 "statements."
 msgstr ""
+"play, show, stop ステートメントで使用されるオーディオチャンネルの名前です。"
 
 #: ../../source/director.rst:91
 msgid "The name of the audio channel used by voice."
-msgstr ""
+msgstr "ボイスに使用されるオーディオチャンネルの名前です。"
 
 #: ../../source/director.rst:95
 msgid ""
 "The default list of audio patterns that are used to match the files "
 "available in an audio channel."
 msgstr ""
+"オーディオチャンネルで利用可能なファイルの検索に使用されるオーディオパターン"
+"のデフォルトリストです。"
 
 #: ../../source/director.rst:100
 msgid ""
@@ -173,6 +183,10 @@ msgid ""
 "*.opus' ], 'music' : [ 'music/*.opus' ] }`` the music and sound channels get "
 "their own lists of patterns."
 msgstr ""
+"チャンネル名をキー、そのチャンネルで利用可能なファイルの検索に使用されるオー"
+"ディオパターンを値とするmap型です。例えば、これが ``{ 'sound' : [ 'sound/*."
+"opus' ], 'music' : [ 'music/*.opus' ] }`` に設定されると、music と sound チャ"
+"ンネルは自身のパターンを所得します。"
 
 #: ../../source/director.rst:106
 msgid "Access"
@@ -184,6 +198,9 @@ msgid ""
 "window. If False, the game can provide it's own access, by making available "
 "the director.Start action."
 msgstr ""
+"True なら、 director director ウィンドウにアクセスするボタンつきのスクリーン"
+"を表示します。 False なら、 director.Start アクションを利用可能にして、ゲーム"
+"は自身からアクセス可能にします。"
 
 #: ../../source/director.rst:115
 msgid "Line Spacing"
@@ -195,14 +212,17 @@ msgid ""
 "voice) line and a non-director line, or vice versa. These spacings should be "
 "0 or 1 lines, a higher spacing may not work."
 msgstr ""
+"director の (scene, show, hide, with, play, queue, voice) 行や、director 以外"
+"の行などの行間を空けます。これらのスペースは 0 または 1 であるべきで、それ以"
+"上のスペースは動作しないでしょう。"
 
 #: ../../source/director.rst:125
 msgid "The spacing between two consecutive director lines."
-msgstr ""
+msgstr "連続する director 行の行間です。"
 
 #: ../../source/director.rst:129
 msgid "The spacing between two consecutive non-director lines."
-msgstr ""
+msgstr "連続する director 以外の行の行間です。"
 
 #: ../../source/director.rst:132
 msgid "Viewport"
@@ -210,27 +230,25 @@ msgstr "Viewport"
 
 #: ../../source/director.rst:136
 msgid "The maximum height of scrolling viewports used by the director."
-msgstr ""
+msgstr "director に使用されるスクローロ可能な viewport の最大高さです。"
 
 #: ../../source/director.rst:139
 msgid "Audio Filename Functions"
 msgstr "Audio Filename Functions"
 
 #: ../../source/director.rst:141
-#, fuzzy
 msgid ""
 "There are a number of audio filename functions that can be used to convert "
 "filenames on disk to filenames in Python source code. This can be used to "
 "match Ren'Py functionality that maps filenames. For example, if one has::"
 msgstr ""
 "ディスク上のファイル名を Python ソースコード上でのファイル名に変換する多くの"
-"オーディオ関数があります。これはファイル名を Ren'Py関数 例えば、次の文があれ"
-"ば :"
+"オーディオファイルネーム関数があります。例えば、以下のステートメントは ::"
 
 #: ../../source/director.rst:147
 msgid "one can define the functions::"
-msgstr "関数を定義できます。 ::"
+msgstr "次の関数を定義して同じことができます。 ::"
 
 #: ../../source/director.rst:184
 msgid "to match it."
-msgstr ""
+msgstr " "

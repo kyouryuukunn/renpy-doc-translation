@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-25 21:42+0900\n"
-"PO-Revision-Date: 2017-08-07 18:36+0900\n"
+"POT-Creation-Date: 2018-02-12 18:16+0900\n"
+"PO-Revision-Date: 2018-02-12 23:43+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -267,6 +267,15 @@ msgstr ""
 
 #: ../../source/displaying_images.rst:140
 msgid ""
+"When an image is not directly in the game directory, you'll need to give the "
+"directories underneath it. For example, if the image is in game/eileen/happy."
+"png, then you can write::"
+msgstr ""
+"画像が直接 game ディレクトリーにないとき、ディレクトリーを指定する必要があり"
+"ます。例えば、画像が game/eileen/happy.png なら、以下のように書けます。 ::"
+
+#: ../../source/displaying_images.rst:146
+msgid ""
 "The image statement is run at init-time, before the menus are shown or the "
 "start label runs. When not contained inside an init block, image statements "
 "are run as if they were placed inside an init block of priority 500."
@@ -276,18 +285,18 @@ msgstr ""
 "ブロックに含まれていないとき、優先度 500の init ブロックの中に含まれているか"
 "のように、初期化時に実行されます。"
 
-#: ../../source/displaying_images.rst:145
+#: ../../source/displaying_images.rst:151
 msgid ""
 "See also the :ref:`ATL variant of the image statement. <atl-image-statement>`"
 msgstr ""
 ":ref:`image ステートメントの ATL ブロック <atl-image-statement>` もご覧くださ"
 "い。"
 
-#: ../../source/displaying_images.rst:151
+#: ../../source/displaying_images.rst:157
 msgid "Show Statement"
 msgstr "show ステートメント"
 
-#: ../../source/displaying_images.rst:153
+#: ../../source/displaying_images.rst:159
 msgid ""
 "The show statement is used to display an image on a layer. A show statement "
 "consists of a single logical line beginning with the keyword ``show``, "
@@ -297,7 +306,7 @@ msgstr ""
 "トメントは ``show`` で始まり、画像名、ゼロ個以上のプロパティーが続く論理行で"
 "できています。"
 
-#: ../../source/displaying_images.rst:158
+#: ../../source/displaying_images.rst:164
 msgid ""
 "If the show statement is given the exact name of an existing image, that "
 "image is the one that is shown. Otherwise, Ren'Py will attempt to find a "
@@ -306,15 +315,15 @@ msgstr ""
 "show ステートメントに与えられたものが既存の画像の正確な名前なら、その画像が表"
 "示されます。そうでなければ、Ren'Py は以下のような画像を一つ探します:"
 
-#: ../../source/displaying_images.rst:162
+#: ../../source/displaying_images.rst:168
 msgid "Has the same tag as the one specified in the show statement."
 msgstr "show ステートメントで指定されたものと同じタグを持つ 画像"
 
-#: ../../source/displaying_images.rst:163
+#: ../../source/displaying_images.rst:169
 msgid "Has all of the attributes given in the show statement."
 msgstr "show ステートメントで与えられた全ての属性を持つ画像"
 
-#: ../../source/displaying_images.rst:164
+#: ../../source/displaying_images.rst:170
 msgid ""
 "If an image with the same tag is already showing, shares the largest number "
 "of attributes with that image."
@@ -322,11 +331,11 @@ msgstr ""
 "同じタグの画像がすでに表示されているなら、その画像と共通の属性を最も多く持つ"
 "画像"
 
-#: ../../source/displaying_images.rst:167
+#: ../../source/displaying_images.rst:173
 msgid "If a unique image cannot be found, an exception occurs."
 msgstr "そのような画像が一つに決まらなければ、例外が発生します。"
 
-#: ../../source/displaying_images.rst:169
+#: ../../source/displaying_images.rst:175
 msgid ""
 "If an image with the same image tag is already showing on the layer, the new "
 "image replaces it. Otherwise, the image is placed above all other images in "
@@ -338,7 +347,7 @@ msgstr ""
 "ユーザーに最も近いところです。) この順序は、zorder および behind プロパティー"
 "で変更できます。"
 
-#: ../../source/displaying_images.rst:174
+#: ../../source/displaying_images.rst:180
 msgid ""
 "The show statement does not cause an interaction to occur. For the image to "
 "actually be displayed to the user, a statement that causes an interaction "
@@ -348,15 +357,15 @@ msgstr ""
 "ザーに表示するためには、インタラクションを起こすステートメント(say, menu, "
 "pause, および with ステートメントなど) を実行しなければなりません。"
 
-#: ../../source/displaying_images.rst:179
+#: ../../source/displaying_images.rst:185
 msgid "The show statement takes the following properties:"
 msgstr "show ステートメントは、以下のプロパティーを取ります:"
 
-#: ../../source/displaying_images.rst:184
+#: ../../source/displaying_images.rst:190
 msgid "``as``"
 msgstr "``as``"
 
-#: ../../source/displaying_images.rst:182
+#: ../../source/displaying_images.rst:188
 msgid ""
 "The as property takes a name. This name is used in place of the image tag "
 "when the image is shown. This allows the same image to be on the screen "
@@ -365,11 +374,11 @@ msgstr ""
 "as プロパティーは名前を取ります。画像が表示されるとき、画像タグの代わりにこの"
 "名前が使われます。これで、同じ画像をスクリーンの2箇所に表示できます。"
 
-#: ../../source/displaying_images.rst:195
+#: ../../source/displaying_images.rst:201
 msgid "``at``"
 msgstr "``at``"
 
-#: ../../source/displaying_images.rst:187
+#: ../../source/displaying_images.rst:193
 msgid ""
 "The at property takes one or more comma-separated simple expressions. Each "
 "expression must evaluate to a transform. The transforms are applied to the "
@@ -379,7 +388,7 @@ msgstr ""
 "の評価結果は変換でなければなりません。この画像に、その変換が左から順に適用さ"
 "れます。"
 
-#: ../../source/displaying_images.rst:192
+#: ../../source/displaying_images.rst:198
 msgid ""
 "If no at clause is given, Ren'Py will retain any existing transform that has "
 "been applied to the image. If no transform exists, the image will be "
@@ -388,11 +397,11 @@ msgstr ""
 "at 節が与えられなければ、Ren'Py は画像に適用されている変換を全て保持します。"
 "変換が存在しなければ、画像は  :var:`default` 変換を使って表示されます。"
 
-#: ../../source/displaying_images.rst:200
+#: ../../source/displaying_images.rst:206
 msgid "``behind``"
 msgstr "``behind``"
 
-#: ../../source/displaying_images.rst:198
+#: ../../source/displaying_images.rst:204
 msgid ""
 "Takes a comma-separated list of one or more names. Each name is taken as an "
 "image tag. The image is shown behind all images with the given tags that are "
@@ -402,20 +411,20 @@ msgstr ""
 "られます。画像は、現在表示されている画像の中で、与えられたタグを持つもの全て"
 "の後に表示されます。"
 
-#: ../../source/displaying_images.rst:203
-#: ../../source/displaying_images.rst:310
+#: ../../source/displaying_images.rst:209
+#: ../../source/displaying_images.rst:316
 msgid "``onlayer``"
 msgstr "``onlayer``"
 
-#: ../../source/displaying_images.rst:203
+#: ../../source/displaying_images.rst:209
 msgid "Takes a name. Shows the image on the named layer."
 msgstr "名前を取ります。指名されたレイヤーに画像を表示します。"
 
-#: ../../source/displaying_images.rst:209
+#: ../../source/displaying_images.rst:215
 msgid "``zorder``"
 msgstr "``zorder``"
 
-#: ../../source/displaying_images.rst:206
+#: ../../source/displaying_images.rst:212
 msgid ""
 "Takes an integer. The integer specifies the relative ordering of images "
 "within a layer, with larger numbers being closer to the user. This isn't "
@@ -426,15 +435,15 @@ msgstr ""
 "す。この数字が大きいほど、ユーザーに近くなります。これは通常 Ren'Py コードで"
 "は使いませんが、他のエンジンからコードを移植するときに便利です。"
 
-#: ../../source/displaying_images.rst:211
+#: ../../source/displaying_images.rst:217
 msgid "Assuming we have the following images defined::"
 msgstr "以下の画像を定義したとします::"
 
-#: ../../source/displaying_images.rst:217
+#: ../../source/displaying_images.rst:223
 msgid "Some example show statements are::"
 msgstr "show ステートメントの例です。 ::"
 
-#: ../../source/displaying_images.rst:239
+#: ../../source/displaying_images.rst:245
 msgid ""
 "**Show Expression.** A variant of the show statement replaces the image name "
 "with the keyword ``expression``, followed by a simple expression. The "
@@ -448,12 +457,12 @@ msgstr ""
 "この displayable を hide するためには、このステートメントでタグを与えておかな"
 "ければなりません。"
 
-#: ../../source/displaying_images.rst:246
-#: ../../source/displaying_images.rst:312
+#: ../../source/displaying_images.rst:252
+#: ../../source/displaying_images.rst:318
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/displaying_images.rst:250
+#: ../../source/displaying_images.rst:256
 msgid ""
 "**Show Layer.** The show layer statement allows one to apply a transform or "
 "ATL transform to an entire layer (such as \"master\"), using syntax like::"
@@ -461,19 +470,19 @@ msgstr ""
 "**show layer** show layer ステートメントでは、変換やATL変換を次のような構文に"
 "よってレイヤー全体 (例えば master) に適用できます::"
 
-#: ../../source/displaying_images.rst:256
+#: ../../source/displaying_images.rst:262
 msgid "or::"
 msgstr "または::"
 
-#: ../../source/displaying_images.rst:261
+#: ../../source/displaying_images.rst:267
 msgid "To stop applying transforms to the layer, use::"
 msgstr "変換の適用をやめるには、次のようにします::"
 
-#: ../../source/displaying_images.rst:269
+#: ../../source/displaying_images.rst:275
 msgid "Scene Statement"
 msgstr "scene ステートメント"
 
-#: ../../source/displaying_images.rst:271
+#: ../../source/displaying_images.rst:277
 msgid ""
 "The scene statement removes all displayables from a layer, and then shows an "
 "image on that layer. It consists of the keyword ``scene``, followed by an "
@@ -487,14 +496,14 @@ msgstr ""
 "うに表示されます。また、scene ステートメントは show ステートメントと同じプロ"
 "パティーを取ります。"
 
-#: ../../source/displaying_images.rst:277
+#: ../../source/displaying_images.rst:283
 msgid ""
 "The scene statement is often used to show an image on the background layer. "
 "For example::"
 msgstr ""
 "scene ステートメントは、主に背景レイヤーに画像を表示するのに使います。例 :"
 
-#: ../../source/displaying_images.rst:282
+#: ../../source/displaying_images.rst:288
 msgid ""
 "**Scene Expression.** Like the show statement, the scene statement can take "
 "expressions instead of image names."
@@ -502,7 +511,7 @@ msgstr ""
 "scene expression show ステートメントと同様、scene ステートメントも画像名の代"
 "わりに式を取れます。"
 
-#: ../../source/displaying_images.rst:286
+#: ../../source/displaying_images.rst:292
 msgid ""
 "**Clearing a layer.** When the image name is omitted entirely, the scene "
 "statement clears all displayables from a layer without showing another "
@@ -511,11 +520,11 @@ msgstr ""
 "**レイヤーの消去** 画像名が全く与えられないとき、scene ステートメントはレイ"
 "ヤーから全ての displayable を消去し、代わりの画像は表示しません。"
 
-#: ../../source/displaying_images.rst:294
+#: ../../source/displaying_images.rst:300
 msgid "Hide Statement"
 msgstr "hide ステートメント"
 
-#: ../../source/displaying_images.rst:296
+#: ../../source/displaying_images.rst:302
 msgid ""
 "The hide statement removes an image from a layer. It consists of the keyword "
 "``hide``, followed by an image name, followed by an optional property. The "
@@ -527,7 +536,7 @@ msgstr ""
 "テートメントは画像名から画像タグを取り、そのタグを持つ画像がレイヤーにあれ"
 "ば、その画像を隠します。"
 
-#: ../../source/displaying_images.rst:301
+#: ../../source/displaying_images.rst:307
 msgid ""
 "Hide statements are rarely necessary. If a sprite represents a character, "
 "then a hide statement is only necessary when the character leaves the scene. "
@@ -541,27 +550,27 @@ msgstr ""
 "トメントを使うのが望ましいです。show ステートメントは、同じタグの画像を自動的"
 "に置き換えてくれます。"
 
-#: ../../source/displaying_images.rst:307
+#: ../../source/displaying_images.rst:313
 msgid "The hide statement takes the following property:"
 msgstr "hide ステートメントは、以下のプロパティーを取ります:"
 
-#: ../../source/displaying_images.rst:310
+#: ../../source/displaying_images.rst:316
 msgid "Takes a name. Hides the image from the named layer."
 msgstr "名前を取ります。指名されたレイヤーから画像を隠します。"
 
-#: ../../source/displaying_images.rst:318
+#: ../../source/displaying_images.rst:324
 msgid "You should never write::"
 msgstr "こうは書かずに::"
 
-#: ../../source/displaying_images.rst:323
+#: ../../source/displaying_images.rst:329
 msgid "Instead, just write::"
 msgstr "こう書いてください::"
 
-#: ../../source/displaying_images.rst:331
+#: ../../source/displaying_images.rst:337
 msgid "With Statement"
 msgstr "with ステートメント"
 
-#: ../../source/displaying_images.rst:333
+#: ../../source/displaying_images.rst:339
 msgid ""
 "The with statement is used to apply a transition effect when the scene is "
 "changed, making showing and hiding images less abrupt. The with statement "
@@ -573,7 +582,7 @@ msgstr ""
 "``with`` と、それに続く評価がトランジションか特殊値 ``None`` である単純式でで"
 "きています。"
 
-#: ../../source/displaying_images.rst:339
+#: ../../source/displaying_images.rst:345
 msgid ""
 "The transition effect is applied between the contents of the screen at the "
 "end of the previous interaction (with transient screens and displayables "
@@ -584,7 +593,7 @@ msgstr ""
 "終わった時点の画面の内容と、scene、show、hide ステートメントが実行された後の"
 "内容の間で適用されます。"
 
-#: ../../source/displaying_images.rst:344
+#: ../../source/displaying_images.rst:350
 msgid ""
 "The with statement causes an interaction to occur. The duration of this "
 "interaction is controlled by the user, and the user can cause it to "
@@ -593,7 +602,7 @@ msgstr ""
 "with ステートメントは、インタラクションを起こします。インタラクションの時間幅"
 "はユーザーが制御できますし、ユーザーが早く終わらせることもできます。"
 
-#: ../../source/displaying_images.rst:348
+#: ../../source/displaying_images.rst:354
 msgid ""
 "For a full list of transitions that can be used, see the chapter on :ref:"
 "`transitions <transitions>`."
@@ -601,11 +610,11 @@ msgstr ""
 "利用できるトランジションの一覧は、  :ref:`トランジション <transitions>` の章"
 "をご覧ください。"
 
-#: ../../source/displaying_images.rst:351
+#: ../../source/displaying_images.rst:357
 msgid "An example of the with statement is::"
 msgstr "with ステートメントの例です。 ::"
 
-#: ../../source/displaying_images.rst:360
+#: ../../source/displaying_images.rst:366
 msgid ""
 "This causes two transitions to occur. The first with statement uses the "
 "``dissolve`` transition to change the screen from what was previously shown "
@@ -617,7 +626,7 @@ msgstr ""
 "(``dissolve`` トランジションは、デフォルトで、0.5 秒のディゾルブと定義されて"
 "います。)"
 
-#: ../../source/displaying_images.rst:365
+#: ../../source/displaying_images.rst:371
 msgid ""
 "The second transition occurs after the Eileen and Lucy images are shown. It "
 "causes a dissolve from the scene consisting solely of the background to the "
@@ -628,11 +637,11 @@ msgstr ""
 "ります。これにより、背景のみの場面から、3 つ全ての画像がある場面にディゾルブ"
 "します。結果として、2 つの新しい画像がディゾルブして現れます。"
 
-#: ../../source/displaying_images.rst:373
+#: ../../source/displaying_images.rst:379
 msgid "With None"
 msgstr "with None"
 
-#: ../../source/displaying_images.rst:375
+#: ../../source/displaying_images.rst:381
 msgid ""
 "In the above example, there are two dissolves. But what if we wanted the "
 "background to appear instantly, followed by a dissolve of the two "
@@ -645,7 +654,7 @@ msgstr ""
 "トを単純になくしてしまうと、3 つの画像すべてがディゾルブして現れてしまいま"
 "す。背景が即座に現れるようにしたいです。"
 
-#: ../../source/displaying_images.rst:381
+#: ../../source/displaying_images.rst:387
 msgid ""
 "The with statement changes behavior when given the special value ``None``. "
 "The ``with None`` statement causes an abbreviated interaction to occur, "
@@ -658,11 +667,11 @@ msgstr ""
 "インタラクションを起こします。次のトランジションは、この省略されたインタラク"
 "ションが終わった時点で表示されている場面から始まります。"
 
-#: ../../source/displaying_images.rst:387
+#: ../../source/displaying_images.rst:393
 msgid "For example, in::"
 msgstr "例 ::"
 
-#: ../../source/displaying_images.rst:396
+#: ../../source/displaying_images.rst:402
 msgid ""
 "Only a single transition occurs, from the washington background to the scene "
 "consisting of all three images."
@@ -670,11 +679,11 @@ msgstr ""
 "washington 背景から、3 つの画像が表示されている場面に、一度だけトランジション"
 "が起こります。"
 
-#: ../../source/displaying_images.rst:400
+#: ../../source/displaying_images.rst:406
 msgid "With Clause of Scene, Show, and Hide Statements"
 msgstr "scene、show、hide ステートメントの with 節"
 
-#: ../../source/displaying_images.rst:402
+#: ../../source/displaying_images.rst:408
 msgid ""
 "The show, scene, and hide statements can take an optional with clause, which "
 "allows a transition to be combined with showing or hiding an image. This "
@@ -684,7 +693,7 @@ msgstr ""
 "show、scene、hide ステートメントは、必要なら ``with`` 節を取れます。これは、"
 "画像の表示や非表示に、トランジションを組み合せます。"
 
-#: ../../source/displaying_images.rst:408
+#: ../../source/displaying_images.rst:414
 msgid ""
 "The with clause is equivalent to preceding the line with a ``with None`` "
 "statement, and following it by a :ref:`with statement <with-statement>` "
@@ -693,15 +702,15 @@ msgstr ""
 "with 節をつけることは、 ``with None`` ステートメントを前に、:ref:`with ステー"
 "トメント <with-statement>` を後に置くことと同等です::"
 
-#: ../../source/displaying_images.rst:415
+#: ../../source/displaying_images.rst:421
 msgid "is equivalent to::"
 msgstr "これは次と等価です::"
 
-#: ../../source/displaying_images.rst:426
+#: ../../source/displaying_images.rst:432
 msgid "Hide and Show Window"
 msgstr "ウィンドウの表示・非表示"
 
-#: ../../source/displaying_images.rst:428
+#: ../../source/displaying_images.rst:434
 msgid ""
 "The window statement is used to control if a window is shown when a "
 "character is not speaking. (For example, during transitions and pauses.) The "
@@ -713,7 +722,7 @@ msgstr ""
 "ステートメントはウィンドウを表示させ、window hide ステートメントはウィンドウ"
 "を非表示にします。"
 
-#: ../../source/displaying_images.rst:433
+#: ../../source/displaying_images.rst:439
 msgid ""
 "If the optional transition is given, it's used to show and hide the window. "
 "If not given, it defaults to :var:`config.window_show_transition` and :var:"
@@ -725,7 +734,7 @@ msgstr ""
 "var:`config.window_hide_transition` になります。 トランジションとして None を"
 "指定するとその実行を防ぎます。"
 
-#: ../../source/displaying_images.rst:438
+#: ../../source/displaying_images.rst:444
 msgid ""
 "The window itself is displayed by calling :var:`config.empty_window`. It "
 "defaults to having the narrator say an empty string.::"
@@ -733,277 +742,237 @@ msgstr ""
 "ウィンドウ自身は :var:`config.empty_window` を呼び出して表示されます。デフォ"
 "ルトではナレーターに空の文字列を話させます。 ::"
 
-#: ../../source/displaying_images.rst:458
+#: ../../source/displaying_images.rst:464
 msgid "Image Functions"
 msgstr "画像関数"
 
-#: ../../source/inc/image_func:5
-msgid ""
-"Determines if `name` can be used to show an image. This interprets `name` as "
-"a tag and attributes. This is combined with the attributes of the currently-"
-"showing image with `tag` on `layer` to try to determine a unique image to "
-"show. If a unique image can be show, returns the name of that image as a "
-"tuple. Otherwise, returns None."
-msgstr ""
-"`name` で画像を表示出来るか決定します。これは `name` をタグと属性として解釈し"
-"ます。これは `layer` 上の `tag` を持つ現在表示されている画像の属性と組み合わ"
-"され、表示する 1 つの画像の決定を試みます。 1 つの画像が表示可能なら、その画"
-"像名はタプルで返し、そうでなければ None を返します。"
+#~ msgid ""
+#~ "Determines if `name` can be used to show an image. This interprets `name` "
+#~ "as a tag and attributes. This is combined with the attributes of the "
+#~ "currently-showing image with `tag` on `layer` to try to determine a "
+#~ "unique image to show. If a unique image can be show, returns the name of "
+#~ "that image as a tuple. Otherwise, returns None."
+#~ msgstr ""
+#~ "`name` で画像を表示出来るか決定します。これは `name` をタグと属性として解"
+#~ "釈します。これは `layer` 上の `tag` を持つ現在表示されている画像の属性と組"
+#~ "み合わされ、表示する 1 つの画像の決定を試みます。 1 つの画像が表示可能な"
+#~ "ら、その画像名はタプルで返し、そうでなければ None を返します。"
 
-#: ../../source/inc/image_func:13
-msgid "`tag`"
-msgstr "`tag`"
+#~ msgid "`tag`"
+#~ msgstr "`tag`"
 
-#: ../../source/inc/image_func:12
-msgid ""
-"The image tag to get attributes from. If not given, defaults to the first "
-"component of `name`."
-msgstr ""
-"画像属性を所得する画像タグです。未指定さら `name` の最初の要素になります。"
+#~ msgid ""
+#~ "The image tag to get attributes from. If not given, defaults to the first "
+#~ "component of `name`."
+#~ msgstr ""
+#~ "画像属性を所得する画像タグです。未指定さら `name` の最初の要素になります。"
 
-#: ../../source/inc/image_func:15 ../../source/inc/image_func:59
-#: ../../source/inc/image_func:129
-msgid "`layer`"
-msgstr "`layer`"
+#~ msgid "`layer`"
+#~ msgstr "`layer`"
 
-#: ../../source/inc/image_func:16 ../../source/inc/image_func:130
-msgid "The layer to check. If None, uses the default layer for `tag`."
-msgstr ""
-"チェックするレイヤーです。 None なら `tag` のデフォルトレイヤーを使用します。"
+#~ msgid "The layer to check. If None, uses the default layer for `tag`."
+#~ msgstr ""
+#~ "チェックするレイヤーです。 None なら `tag` のデフォルトレイヤーを使用しま"
+#~ "す。"
 
-#: ../../source/inc/image_func:20
-msgid ""
-"Checks to see if there is a unique image with the given tag and attributes. "
-"If there is, returns the tag and attributes in order. Otherwise, returns "
-"None."
-msgstr ""
-"指定したタグと属性を持つ唯一の画像があるかチェックします。あれば、そのタグと"
-"属性を順番に返します。そうでなければ None を返します。"
+#~ msgid ""
+#~ "Checks to see if there is a unique image with the given tag and "
+#~ "attributes. If there is, returns the tag and attributes in order. "
+#~ "Otherwise, returns None."
+#~ msgstr ""
+#~ "指定したタグと属性を持つ唯一の画像があるかチェックします。あれば、そのタグ"
+#~ "と属性を順番に返します。そうでなければ None を返します。"
 
-#: ../../source/inc/image_func:26
-msgid ""
-"Copies images beginning with one prefix to images beginning with another. "
-"For example::"
-msgstr "ある接頭辞で始まる画像を他の接頭辞で始まるものにコピーします。例 :"
+#~ msgid ""
+#~ "Copies images beginning with one prefix to images beginning with another. "
+#~ "For example::"
+#~ msgstr "ある接頭辞で始まる画像を他の接頭辞で始まるものにコピーします。例 :"
 
-#: ../../source/inc/image_func:31
-msgid ""
-"will create an image beginning with \"eileen2\" for every image beginning "
-"with \"eileen\". If \"eileen happy\" exists, \"eileen2 happy\" will be "
-"created."
-msgstr ""
-"「 eileen 」で始まるすべての画像に対して「 eileen2 」で始まる画像を作成しま"
-"す。例えば「 eileen happy 」が存在するなら、「 eileen2 happy 」が作成されま"
-"す。"
+#~ msgid ""
+#~ "will create an image beginning with \"eileen2\" for every image beginning "
+#~ "with \"eileen\". If \"eileen happy\" exists, \"eileen2 happy\" will be "
+#~ "created."
+#~ msgstr ""
+#~ "「 eileen 」で始まるすべての画像に対して「 eileen2 」で始まる画像を作成し"
+#~ "ます。例えば「 eileen happy 」が存在するなら、「 eileen2 happy 」が作成さ"
+#~ "れます。"
 
-#: ../../source/inc/image_func:37
-msgid "`old`"
-msgstr "`old`"
+#~ msgid "`old`"
+#~ msgstr "`old`"
 
-#: ../../source/inc/image_func:36
-msgid "A space-separated string giving the components of the old image name."
-msgstr "スペース区切りのコピー対象画像名の要素の文字列です。"
+#~ msgid ""
+#~ "A space-separated string giving the components of the old image name."
+#~ msgstr "スペース区切りのコピー対象画像名の要素の文字列です。"
 
-#: ../../source/inc/image_func:40
-msgid "`new`"
-msgstr "`new`"
+#~ msgid "`new`"
+#~ msgstr "`new`"
 
-#: ../../source/inc/image_func:40
-msgid "A space-separated string giving the components of the new image name."
-msgstr "スペース区切りの新しい画像名の要素の文字列です。"
+#~ msgid ""
+#~ "A space-separated string giving the components of the new image name."
+#~ msgstr "スペース区切りの新しい画像名の要素の文字列です。"
 
-#: ../../source/inc/image_func:45
-msgid "Returns a list of image tags that have been defined."
-msgstr "定義されている画像タグのリストが返されます。"
+#~ msgid "Returns a list of image tags that have been defined."
+#~ msgstr "定義されている画像タグのリストが返されます。"
 
-#: ../../source/inc/image_func:49
-msgid ""
-"If an image with `tag` exists on `layer`, returns the bounding box of that "
-"image. Returns None if the image is not found."
-msgstr ""
-"`tag` を持つ画像が `layer` に存在すれば、その画像のバウンディングボックスを返"
-"します。画像が見つからなければ None を返します。"
+#~ msgid ""
+#~ "If an image with `tag` exists on `layer`, returns the bounding box of "
+#~ "that image. Returns None if the image is not found."
+#~ msgstr ""
+#~ "`tag` を持つ画像が `layer` に存在すれば、その画像のバウンディングボックス"
+#~ "を返します。画像が見つからなければ None を返します。"
 
-#: ../../source/inc/image_func:52
-msgid ""
-"The bounding box is an (x, y, width, height) tuple. The components of the "
-"tuples are expressed in pixels, and may be floating point numbers."
-msgstr ""
-"バウンディングボックスは (x, y, width, height) のタプルです。タプルの要素はピ"
-"クセル数で表され、小数にも出来ます。"
+#~ msgid ""
+#~ "The bounding box is an (x, y, width, height) tuple. The components of the "
+#~ "tuples are expressed in pixels, and may be floating point numbers."
+#~ msgstr ""
+#~ "バウンディングボックスは (x, y, width, height) のタプルです。タプルの要素"
+#~ "はピクセル数で表され、小数にも出来ます。"
 
-#: ../../source/inc/image_func:57
-msgid "`width`, `height`"
-msgstr "`width`, `height`"
+#~ msgid "`width`, `height`"
+#~ msgstr "`width`, `height`"
 
-#: ../../source/inc/image_func:56
-msgid ""
-"The width and height of the area that contains the image. If None, defaults "
-"the width and height of the screen, respectively."
-msgstr ""
-"画像を格納する領域の幅と高さです。 None ならデフォルトでそれぞれスクリーンの"
-"幅と高さになります。"
+#~ msgid ""
+#~ "The width and height of the area that contains the image. If None, "
+#~ "defaults the width and height of the screen, respectively."
+#~ msgstr ""
+#~ "画像を格納する領域の幅と高さです。 None ならデフォルトでそれぞれスクリーン"
+#~ "の幅と高さになります。"
 
-#: ../../source/inc/image_func:60
-msgid "If None, uses the default layer for `tag`."
-msgstr "None なら `tag` のデフォルトレイヤーを使用します。"
+#~ msgid "If None, uses the default layer for `tag`."
+#~ msgstr "None なら `tag` のデフォルトレイヤーを使用します。"
 
-#: ../../source/inc/image_func:64
-msgid ""
-"Returns a list of image tags, ordered in a way that makes sense to present "
-"to the user."
-msgstr "ユーザーに提供される順に、画像タグのリストが返されます。"
+#~ msgid ""
+#~ "Returns a list of image tags, ordered in a way that makes sense to "
+#~ "present to the user."
+#~ msgstr "ユーザーに提供される順に、画像タグのリストが返されます。"
 
-#: ../../source/inc/image_func:70
-msgid "`attributes`"
-msgstr "`attributes`"
+#~ msgid "`attributes`"
+#~ msgstr "`attributes`"
 
-#: ../../source/inc/image_func:68
-msgid ""
-"If present, only attributes that are compatible with the given attributes "
-"are considered. (Compatible means that the attributes can be in a single "
-"image at the same time.)"
-msgstr ""
-"存在すれば、指定された属性と互換性のある属性のみが考慮されます。(互換性とはそ"
-"の属性が同時に一つの画像にあることです。)"
+#~ msgid ""
+#~ "If present, only attributes that are compatible with the given attributes "
+#~ "are considered. (Compatible means that the attributes can be in a single "
+#~ "image at the same time.)"
+#~ msgstr ""
+#~ "存在すれば、指定された属性と互換性のある属性のみが考慮されます。(互換性と"
+#~ "はその属性が同時に一つの画像にあることです。)"
 
-#: ../../source/inc/image_func:73
-msgid "`sort`"
-msgstr "`sort`"
+#~ msgid "`sort`"
+#~ msgstr "`sort`"
 
-#: ../../source/inc/image_func:73
-msgid ""
-"If not None, the returned list of attributes is sorted. This is a function "
-"that should be used as a tiebreaker."
-msgstr "None でないなら、返される属性のリストはソートされます。"
+#~ msgid ""
+#~ "If not None, the returned list of attributes is sorted. This is a "
+#~ "function that should be used as a tiebreaker."
+#~ msgstr "None でないなら、返される属性のリストはソートされます。"
 
-#: ../../source/inc/image_func:78
-msgid ""
-"This gets the placement of displayable d. There's very little warranty on "
-"this information, as it might change when the displayable is rendered, and "
-"might not exist until the displayable is first rendered."
-msgstr ""
-"これは displayable d の位置を所得します。displayable はレンダリングされると位"
-"置が変わる可能性があり、最初にレンダリングされるまでは存在しない可能性もある"
-"のでこの情報にはあまり信頼がありません。"
+#~ msgid ""
+#~ "This gets the placement of displayable d. There's very little warranty on "
+#~ "this information, as it might change when the displayable is rendered, "
+#~ "and might not exist until the displayable is first rendered."
+#~ msgstr ""
+#~ "これは displayable d の位置を所得します。displayable はレンダリングされる"
+#~ "と位置が変わる可能性があり、最初にレンダリングされるまでは存在しない可能性"
+#~ "もあるのでこの情報にはあまり信頼がありません。"
 
-#: ../../source/inc/image_func:82
-msgid ""
-"This returns an object with the following fields, each corresponding to a "
-"style property:"
-msgstr ""
-"これは以下の属性を持つオブジェクトを返し、それぞれがスタイルプロパティーに対"
-"応しています。"
+#~ msgid ""
+#~ "This returns an object with the following fields, each corresponding to a "
+#~ "style property:"
+#~ msgstr ""
+#~ "これは以下の属性を持つオブジェクトを返し、それぞれがスタイルプロパティーに"
+#~ "対応しています。"
 
-#: ../../source/inc/image_func:85
-msgid "xpos"
-msgstr "xpos"
+#~ msgid "xpos"
+#~ msgstr "xpos"
 
-#: ../../source/inc/image_func:86
-msgid "xanchor"
-msgstr "xanchor"
+#~ msgid "xanchor"
+#~ msgstr "xanchor"
 
-#: ../../source/inc/image_func:87
-msgid "xoffset"
-msgstr "xoffset"
+#~ msgid "xoffset"
+#~ msgstr "xoffset"
 
-#: ../../source/inc/image_func:88
-msgid "ypos"
-msgstr "ypos"
+#~ msgid "ypos"
+#~ msgstr "ypos"
 
-#: ../../source/inc/image_func:89
-msgid "yanchor"
-msgstr "yanchor"
+#~ msgid "yanchor"
+#~ msgstr "yanchor"
 
-#: ../../source/inc/image_func:90
-msgid "yoffset"
-msgstr "yoffset"
+#~ msgid "yoffset"
+#~ msgstr "yoffset"
 
-#: ../../source/inc/image_func:91
-msgid "subpixel"
-msgstr "subpixel"
+#~ msgid "subpixel"
+#~ msgstr "subpixel"
 
-#: ../../source/inc/image_func:95
-msgid "Returns the set of image tags that are currently being shown on `layer`"
-msgstr "現在 `layer` 上に表示されている画像タグのセットが返されます。"
+#~ msgid ""
+#~ "Returns the set of image tags that are currently being shown on `layer`"
+#~ msgstr "現在 `layer` 上に表示されている画像タグのセットが返されます。"
 
-#: ../../source/inc/image_func:99
-msgid ""
-"Return true if an image with `name` exists, and false if no such image "
-"exists."
-msgstr ""
-"`name` 画像存在すれば Ture を、そのような画像がなければ False を返します。"
+#~ msgid ""
+#~ "Return true if an image with `name` exists, and false if no such image "
+#~ "exists."
+#~ msgstr ""
+#~ "`name` 画像存在すれば Ture を、そのような画像がなければ False を返します。"
 
-#: ../../source/inc/image_func:104
-msgid "`name`"
-msgstr "`name`"
+#~ msgid "`name`"
+#~ msgstr "`name`"
 
-#: ../../source/inc/image_func:103
-msgid ""
-"Either a string giving an image name, or a tuple of strings giving the name "
-"components."
-msgstr "画像名の文字列か、画像名を要素とする文字列のタプルです。"
+#~ msgid ""
+#~ "Either a string giving an image name, or a tuple of strings giving the "
+#~ "name components."
+#~ msgstr "画像名の文字列か、画像名を要素とする文字列のタプルです。"
 
-#: ../../source/inc/image_func:107
-msgid "`exact`"
-msgstr "`exact`"
+#~ msgid "`exact`"
+#~ msgstr "`exact`"
 
-#: ../../source/inc/image_func:107
-msgid ""
-"Returns true if and only if an image with the exact name exists - "
-"parameterized matches are not included."
-msgstr ""
-"その正確な名前で画像が存在する場合のみ True を返します。正規表現はマッチしま"
-"せん。"
+#~ msgid ""
+#~ "Returns true if and only if an image with the exact name exists - "
+#~ "parameterized matches are not included."
+#~ msgstr ""
+#~ "その正確な名前で画像が存在する場合のみ True を返します。正規表現はマッチし"
+#~ "ません。"
 
-#: ../../source/inc/image_func:112
-msgid ""
-"Returns True if the named image has been seen at least once on the user's "
-"system. An image has been seen if it's been displayed using the show "
-"statement, scene statement, or :func:`renpy.show` function. (Note that there "
-"are cases where the user won't actually see the image, like a show "
-"immediately followed by a hide.)"
-msgstr ""
-"その名前の画像がユーザーに一度でも閲覧されていれば True を返します。画像は "
-"show 、 scene ステートメントか  :func:`renpy.show` 関数を使用して表示されると"
-"閲覧されたことになります。 ( 表示直後に hide されるなど、実際にはユーザーが画"
-"像を見ていない場合もあることに注意してください。 )"
+#~ msgid ""
+#~ "Returns True if the named image has been seen at least once on the user's "
+#~ "system. An image has been seen if it's been displayed using the show "
+#~ "statement, scene statement, or :func:`renpy.show` function. (Note that "
+#~ "there are cases where the user won't actually see the image, like a show "
+#~ "immediately followed by a hide.)"
+#~ msgstr ""
+#~ "その名前の画像がユーザーに一度でも閲覧されていれば True を返します。画像"
+#~ "は show 、 scene ステートメントか  :func:`renpy.show` 関数を使用して表示さ"
+#~ "れると閲覧されたことになります。 ( 表示直後に hide されるなど、実際には"
+#~ "ユーザーが画像を見ていない場合もあることに注意してください。 )"
 
-#: ../../source/inc/image_func:120
-msgid ""
-"Returns true if an image with the same tag as `name` is showing on `layer`"
-msgstr ""
-"`name` と同じタグを持つ画像が `layer` 上に表示されていると True を返します。"
+#~ msgid ""
+#~ "Returns true if an image with the same tag as `name` is showing on `layer`"
+#~ msgstr ""
+#~ "`name` と同じタグを持つ画像が `layer` 上に表示されていると True を返しま"
+#~ "す。"
 
-#: ../../source/inc/image_func:127
-msgid "`image`"
-msgstr "`image`"
+#~ msgid "`image`"
+#~ msgstr "`image`"
 
-#: ../../source/inc/image_func:124
-msgid ""
-"May be a string giving the image name or a tuple giving each component of "
-"the image name. It may also be a string giving only the image tag."
-msgstr ""
-"画像名の文字列や、画像名の各要素のタプルです。画像タグだけの文字列でもかまい"
-"ません。"
+#~ msgid ""
+#~ "May be a string giving the image name or a tuple giving each component of "
+#~ "the image name. It may also be a string giving only the image tag."
+#~ msgstr ""
+#~ "画像名の文字列や、画像名の各要素のタプルです。画像タグだけの文字列でもかま"
+#~ "いません。"
 
-#: ../../source/inc/image_func:134
-msgid ""
-"This function takes one or more displayables as arguments. It causes Ren'Py "
-"to predict those displayables during every interaction until the "
-"displayables are removed by :func:`renpy.stop_predict`."
-msgstr ""
-"この関数は 1 つ以上の displayable を引数として受け取ります。 :func:`renpy."
-"stop_predict` によって除外されるまで、 それらの displayable をインタラクショ"
-"ン毎に予測させます。"
+#~ msgid ""
+#~ "This function takes one or more displayables as arguments. It causes "
+#~ "Ren'Py to predict those displayables during every interaction until the "
+#~ "displayables are removed by :func:`renpy.stop_predict`."
+#~ msgstr ""
+#~ "この関数は 1 つ以上の displayable を引数として受け取ります。 :func:`renpy."
+#~ "stop_predict` によって除外されるまで、 それらの displayable をインタラク"
+#~ "ション毎に予測させます。"
 
-#: ../../source/inc/image_func:140
-msgid ""
-"This function takes one or more displayables as arguments. It causes Ren'Py "
-"to stop predicting those displayables during every interaction."
-msgstr ""
-"この関数は 1 つ以上の displayable を引数として受け取ります。それらの "
-"displayable のインタラクション毎の予測を停止させます。"
+#~ msgid ""
+#~ "This function takes one or more displayables as arguments. It causes "
+#~ "Ren'Py to stop predicting those displayables during every interaction."
+#~ msgstr ""
+#~ "この関数は 1 つ以上の displayable を引数として受け取ります。それらの "
+#~ "displayable のインタラクション毎の予測を停止させます。"
 
 #~ msgid ""
 #~ "Transforms used with show should not may any assumptions about their "

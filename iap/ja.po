@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-25 21:42+0900\n"
+"POT-Creation-Date: 2018-02-12 18:16+0900\n"
 "PO-Revision-Date: 2017-08-05 14:38+0900\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,180 +121,154 @@ msgstr ""
 msgid "IAP Functions"
 msgstr "IAP 関数"
 
-#: ../../source/inc/iap:5
-msgid ""
-"Returns a string giving the price of the `product` in the user's local "
-"currency. Returns None if the price of the product is unknown - which "
-"indicates the product cannot be purchased."
-msgstr ""
-"`product` の価格を指定する文字列を返します。 product の価格が不明、つまり "
-"product が購入不能なら None を返します。"
-
-#: ../../source/inc/iap:11
-msgid ""
-"Returns the name of the enabled store for in-app purchase. This currently "
-"returns one of \"amazon\", \"play\" (for Google Play), \"ios\" or None if no "
-"store is available."
-msgstr ""
-"アプリ内課金で使用可能なストアの名前を返します。これは現在 \"amazon\", \"play"
-"\" (google play), \"ios\" のうち 1 つを返し、利用可能なストアがなければ None "
-"を返します。"
-
-#: ../../source/inc/iap:17
-msgid ""
-"Returns True if the user has purchased `product` in the past, and False "
-"otherwise."
-msgstr ""
-"ユーザーが以前 `product` を購入していれば True を、そうでなければ False を返"
-"します。"
-
-#: ../../source/inc/iap:22
-msgid ""
-"Returns True if the user has asked to purchase `product`, but that request "
-"has to be approved by a third party, such as a parent or guardian."
-msgstr ""
-"ユーザーが `product` の購入を要求しても、親や保護者のような第三者による承認が"
-"必要ならば True を返します。"
-
-#: ../../source/inc/iap:28
-msgid "This function requests the purchase of `product`."
-msgstr "この関数は `product` の購入をリクエストします。"
-
-#: ../../source/inc/iap:30
-msgid ""
-"It returns true if the purchase succeeds, or false if the purchase fails. If "
-"the product has been registered as consumable, the purchase is consumed "
-"before this call returns."
-msgstr ""
-"購入が成功したら True を、そうでなければ False を返します。製品が consumable "
-"として登録されると、購入はこの呼び出しが返る前に消費されます。"
-
-#: ../../source/inc/iap:36
-msgid "Registers a product with the in-app purchase system."
-msgstr "アプリ内課金システムに製品を登録します。"
-
-#: ../../source/inc/iap:41
-msgid "`product`"
-msgstr "`product`"
-
-#: ../../source/inc/iap:39
-msgid ""
-"A string giving the high-level name of the product. This is the string that "
-"will be passed to :func:`iap.purchase`, :func:`iap.Purchase`, and :func:`iap."
-"has_purchased` to represent this product."
-msgstr ""
-"その製品名を指定する名前の高級な文字列です。これは :func:`iap.purchase` や :"
-"func:`iap.Purchase`, :func:`iap.has_purchased` に渡される文字列で、この製品を"
-"表わします。"
-
-#: ../../source/inc/iap:48
-msgid "`identifier`"
-msgstr "`identifier`"
-
-#: ../../source/inc/iap:44
-msgid ""
-"A string that's used to identify the product internally. Once used to "
-"represent a product, this must never change. These strings are generally of "
-"the form \"com.domain.game.product\"."
-msgstr ""
-"製品を内部で識別するために使用する文字列です。一旦製品を表すために使用した"
-"ら、これは消して変更してはいけません。これの文字列は一般的に \"com.domain."
-"game.product\" という形式になります。"
-
-#: ../../source/inc/iap:48
-msgid "If None, defaults to `product`."
-msgstr "None ならデフォルトで `product` を使用します。"
-
-#: ../../source/inc/iap:52
-msgid "`amazon`"
-msgstr "`amazon`"
-
-#: ../../source/inc/iap:51
-msgid ""
-"A string that identifies the product in the Amazon app store. If not given, "
-"defaults to `identifier`."
-msgstr ""
-"Amazon app ストアで製品を識別するための文字列です。指定されないとデフォルト"
-"で `identifier` になります。"
-
-#: ../../source/inc/iap:56
-msgid "`google`"
-msgstr "`google`"
-
-#: ../../source/inc/iap:55
-msgid ""
-"A string that identifies the product in the Google Play store. If not given, "
-"defaults to `identifier`."
-msgstr ""
-"Google ストアで製品を識別するための文字列です。指定されないとデフォルトで "
-"`identifier` になります。"
-
-#: ../../source/inc/iap:60
-msgid "`ios`"
-msgstr "`ios`"
-
-#: ../../source/inc/iap:59
-msgid ""
-"A string that identifies the product in the Apple App store for iOS. If not "
-"given, defaults to `identifier`."
-msgstr ""
-"Apple app ストアで製品を識別するための文字列です。指定されないとデフォルトで "
-"`identifier` になります。"
-
-#: ../../source/inc/iap:63
-msgid "`consumable`"
-msgstr "`consumable`"
-
-#: ../../source/inc/iap:63
-msgid ""
-"True if this is a consumable purchase. Right now, consumable purchases are "
-"only supported on iOS."
-msgstr ""
-"consumable purchaseなら True です。現在 consumable purchase は iOS でのみサ"
-"ポートされています。"
-
-#: ../../source/inc/iap:68
-msgid "Contacts the app store and restores any missing purchases."
-msgstr "appストアに  アクセスして購入ミスを取り消します。"
-
-#: ../../source/inc/iap:71
-msgid "`interact`"
-msgstr "`interact`"
-
-#: ../../source/inc/iap:71
-msgid ""
-"If True, renpy.pause will be called while waiting for the app store to "
-"respond."
-msgstr "Trueなら app ストアからの応答を待つ間に renpy.pause が呼び出されます。"
-
 #: ../../source/iap.rst:48
 msgid "IAP Actions"
 msgstr "IAP アクション"
 
-#: ../../source/inc/iap_actions:5
-msgid ""
-"An action that attempts the purchase of `product`. This action is sensitive "
-"if and only if the product is purchasable (a store is enabled, and the "
-"product has not already been purchased.)"
-msgstr ""
-"`product` の購入を試みるアクションです。このアクションは製品が購入可能 ( スト"
-"アが利用可能で、製品がまだ購入されていない )場合のみ選択可能です。"
+#~ msgid ""
+#~ "Returns a string giving the price of the `product` in the user's local "
+#~ "currency. Returns None if the price of the product is unknown - which "
+#~ "indicates the product cannot be purchased."
+#~ msgstr ""
+#~ "`product` の価格を指定する文字列を返します。 product の価格が不明、つまり "
+#~ "product が購入不能なら None を返します。"
 
-#: ../../source/inc/iap_actions:10
-msgid "`success`"
-msgstr "`success`"
+#~ msgid ""
+#~ "Returns the name of the enabled store for in-app purchase. This currently "
+#~ "returns one of \"amazon\", \"play\" (for Google Play), \"ios\" or None if "
+#~ "no store is available."
+#~ msgstr ""
+#~ "アプリ内課金で使用可能なストアの名前を返します。これは現在 \"amazon\", "
+#~ "\"play\" (google play), \"ios\" のうち 1 つを返し、利用可能なストアがなけ"
+#~ "れば None を返します。"
 
-#: ../../source/inc/iap_actions:10
-msgid ""
-"If not None, this is an action or list of actions that are run when the "
-"purchase succeeds."
-msgstr ""
-"None または購入成功時に呼び出されるアクションかアクションのリストです。"
+#~ msgid ""
+#~ "Returns True if the user has purchased `product` in the past, and False "
+#~ "otherwise."
+#~ msgstr ""
+#~ "ユーザーが以前 `product` を購入していれば True を、そうでなければ False を"
+#~ "返します。"
 
-#: ../../source/inc/iap_actions:15
-msgid ""
-"An Action that contacts the app store and restores any missing purchases."
-msgstr "appストアに  アクセスして購入ミスを取り消すアクションです。"
+#~ msgid ""
+#~ "Returns True if the user has asked to purchase `product`, but that "
+#~ "request has to be approved by a third party, such as a parent or guardian."
+#~ msgstr ""
+#~ "ユーザーが `product` の購入を要求しても、親や保護者のような第三者による承"
+#~ "認が必要ならば True を返します。"
+
+#~ msgid "This function requests the purchase of `product`."
+#~ msgstr "この関数は `product` の購入をリクエストします。"
+
+#~ msgid ""
+#~ "It returns true if the purchase succeeds, or false if the purchase fails. "
+#~ "If the product has been registered as consumable, the purchase is "
+#~ "consumed before this call returns."
+#~ msgstr ""
+#~ "購入が成功したら True を、そうでなければ False を返します。製品が "
+#~ "consumable として登録されると、購入はこの呼び出しが返る前に消費されます。"
+
+#~ msgid "Registers a product with the in-app purchase system."
+#~ msgstr "アプリ内課金システムに製品を登録します。"
+
+#~ msgid "`product`"
+#~ msgstr "`product`"
+
+#~ msgid ""
+#~ "A string giving the high-level name of the product. This is the string "
+#~ "that will be passed to :func:`iap.purchase`, :func:`iap.Purchase`, and :"
+#~ "func:`iap.has_purchased` to represent this product."
+#~ msgstr ""
+#~ "その製品名を指定する名前の高級な文字列です。これは :func:`iap.purchase` "
+#~ "や :func:`iap.Purchase`, :func:`iap.has_purchased` に渡される文字列で、こ"
+#~ "の製品を表わします。"
+
+#~ msgid "`identifier`"
+#~ msgstr "`identifier`"
+
+#~ msgid ""
+#~ "A string that's used to identify the product internally. Once used to "
+#~ "represent a product, this must never change. These strings are generally "
+#~ "of the form \"com.domain.game.product\"."
+#~ msgstr ""
+#~ "製品を内部で識別するために使用する文字列です。一旦製品を表すために使用した"
+#~ "ら、これは消して変更してはいけません。これの文字列は一般的に \"com.domain."
+#~ "game.product\" という形式になります。"
+
+#~ msgid "If None, defaults to `product`."
+#~ msgstr "None ならデフォルトで `product` を使用します。"
+
+#~ msgid "`amazon`"
+#~ msgstr "`amazon`"
+
+#~ msgid ""
+#~ "A string that identifies the product in the Amazon app store. If not "
+#~ "given, defaults to `identifier`."
+#~ msgstr ""
+#~ "Amazon app ストアで製品を識別するための文字列です。指定されないとデフォル"
+#~ "トで `identifier` になります。"
+
+#~ msgid "`google`"
+#~ msgstr "`google`"
+
+#~ msgid ""
+#~ "A string that identifies the product in the Google Play store. If not "
+#~ "given, defaults to `identifier`."
+#~ msgstr ""
+#~ "Google ストアで製品を識別するための文字列です。指定されないとデフォルトで "
+#~ "`identifier` になります。"
+
+#~ msgid "`ios`"
+#~ msgstr "`ios`"
+
+#~ msgid ""
+#~ "A string that identifies the product in the Apple App store for iOS. If "
+#~ "not given, defaults to `identifier`."
+#~ msgstr ""
+#~ "Apple app ストアで製品を識別するための文字列です。指定されないとデフォルト"
+#~ "で `identifier` になります。"
+
+#~ msgid "`consumable`"
+#~ msgstr "`consumable`"
+
+#~ msgid ""
+#~ "True if this is a consumable purchase. Right now, consumable purchases "
+#~ "are only supported on iOS."
+#~ msgstr ""
+#~ "consumable purchaseなら True です。現在 consumable purchase は iOS でのみ"
+#~ "サポートされています。"
+
+#~ msgid "Contacts the app store and restores any missing purchases."
+#~ msgstr "appストアに  アクセスして購入ミスを取り消します。"
+
+#~ msgid "`interact`"
+#~ msgstr "`interact`"
+
+#~ msgid ""
+#~ "If True, renpy.pause will be called while waiting for the app store to "
+#~ "respond."
+#~ msgstr ""
+#~ "Trueなら app ストアからの応答を待つ間に renpy.pause が呼び出されます。"
+
+#~ msgid ""
+#~ "An action that attempts the purchase of `product`. This action is "
+#~ "sensitive if and only if the product is purchasable (a store is enabled, "
+#~ "and the product has not already been purchased.)"
+#~ msgstr ""
+#~ "`product` の購入を試みるアクションです。このアクションは製品が購入可能 "
+#~ "( ストアが利用可能で、製品がまだ購入されていない )場合のみ選択可能です。"
+
+#~ msgid "`success`"
+#~ msgstr "`success`"
+
+#~ msgid ""
+#~ "If not None, this is an action or list of actions that are run when the "
+#~ "purchase succeeds."
+#~ msgstr ""
+#~ "None または購入成功時に呼び出されるアクションかアクションのリストです。"
+
+#~ msgid ""
+#~ "An Action that contacts the app store and restores any missing purchases."
+#~ msgstr "appストアに  アクセスして購入ミスを取り消すアクションです。"
 
 #~ msgid ""
 #~ "It returns true if the purchase succeded, now or at any time in the past, "

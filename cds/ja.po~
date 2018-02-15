@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-09 22:14+0900\n"
-"PO-Revision-Date: 2015-04-05 11:01+0000\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2017-08-04 18:15+0900\n"
+"PO-Revision-Date: 2017-08-07 17:56+0900\n"
+"Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
-"X-Generator: Launchpad (build 17413)\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../../source/cds.rst:5
 msgid "Creator-Defined Statements"
@@ -78,11 +78,26 @@ msgstr ""
 "列にして新しいデフォルトステートメントを定義します。 ( デフォルトステートメン"
 "トは say ステートメントを置き換えるでしょう )"
 
-#: ../../source/inc/statement_register:15
+#: ../../source/inc/statement_register:16
+msgid "`block`"
+msgstr "`block`"
+
+#: ../../source/inc/statement_register:13
+msgid ""
+"When this is False, the statement does not expect a block. When True, it "
+"expects a block, but leaves it up to the lexer to parse that block. If the "
+"string \"script\", the block is interpreted as containing one or more Ren'Py "
+"script language statements."
+msgstr ""
+"False なら、ステートメントはブロックを予測しません。 True ならブロックを予測"
+"し、 そのブロックの解釈は lexer に任せます。文字列 \"script\" なら、ブロック"
+"は一つ以上の Ren'Py スクリプト言語を含むものとして解釈されれます。"
+
+#: ../../source/inc/statement_register:21
 msgid "`parse`"
 msgstr "`parse`"
 
-#: ../../source/inc/statement_register:13
+#: ../../source/inc/statement_register:19
 msgid ""
 "This is a function that takes a Lexer object. This function should parse the "
 "statement, and return an object. This object is passed as an argument to all "
@@ -92,87 +107,103 @@ msgstr ""
 "し、任意のオブジェクトを返すべきです。このオブジェクトは他のすべての関数に引"
 "数として渡されます。"
 
-#: ../../source/inc/statement_register:19
+#: ../../source/inc/statement_register:25
 msgid "`lint`"
 msgstr "`lint`"
 
-#: ../../source/inc/statement_register:18
+#: ../../source/inc/statement_register:24
 msgid ""
-"This is called to check the statement. It is passed a single object, the "
-"argument returned from parse. It should call renpy.error to report errors."
+"This is called to check the statement. It is passed a single argument, the "
+"object returned from parse. It should call renpy.error to report errors."
 msgstr ""
 "これはステートメントをチェックするために呼び出され、 parse から返された 1 つ"
 "のオブジェクトを引数として渡されます。 :func:`renpy.error` を呼び出してエラー"
 "を報告するとよいでしょう。"
 
-#: ../../source/inc/statement_register:23
+#: ../../source/inc/statement_register:29
 msgid "`execute`"
 msgstr "`execute`"
 
-#: ../../source/inc/statement_register:22
+#: ../../source/inc/statement_register:28
 msgid ""
 "This is a function that is called when the statement executes. It is passed "
-"a single object, the argument returned from parse."
+"a single argument, the object returned from parse."
 msgstr ""
 "これはステートメントが実行されると呼び出される関数で、 parse から返された 1 "
 "つのオブジェクトを引数として渡されます。"
 
-#: ../../source/inc/statement_register:28
+#: ../../source/inc/statement_register:32
+msgid "`execute_init`"
+msgstr "`execute_init`"
+
+#: ../../source/inc/statement_register:32
+msgid "This is a function that is called at init time, at priority 0."
+msgstr "これは優先度 0 で初期化時に呼び出される関数です。"
+
+#: ../../source/inc/statement_register:37
 msgid "`predict`"
 msgstr "`predict`"
 
-#: ../../source/inc/statement_register:26
+#: ../../source/inc/statement_register:35
 msgid ""
 "This is a function that is called to predict the images used by the "
-"statement. It is passed a single object, the argument returned from parse. "
+"statement. It is passed a single argument, the object returned from parse. "
 "It should return a list of displayables used by the statement."
 msgstr ""
 "これはステートメントに使用される画像を予測するために呼び出される関数で、 "
 "parse から返された 1 つのオブジェクトを引数として渡されます。 ステートメント"
 "に使用される displayable のリストを返すべきです。"
 
-#: ../../source/inc/statement_register:33
+#: ../../source/inc/statement_register:48
 msgid "`next`"
 msgstr "`next`"
 
-#: ../../source/inc/statement_register:31
-msgid ""
-"This is called to determine the next statement. It is passed a single "
-"object, the argument returned from parse. It should either return a label, "
-"or return None if execution should continue to the next statement."
-msgstr ""
-"これを呼び出して次のステートメントを決定します。これには parse から返されたオ"
-"ブジェクトが引数として渡されます。ラベルか、次のステートメントに処理を移すな"
-"ら None を返すべきです。"
-
-#: ../../source/inc/statement_register:36
-msgid "`scry`"
-msgstr "`scry`"
-
-#: ../../source/inc/statement_register:36
-msgid "Used internally by Ren'Py."
-msgstr "Ren'Py 内部で使用されます。"
-
-#: ../../source/inc/statement_register:39
-msgid "`block`"
-msgstr "`block`"
-
-#: ../../source/inc/statement_register:39
-msgid "True if this takes a block, false otherwise."
-msgstr "これがブロックを取るなら True 、そうでなければ False です。"
-
-#: ../../source/inc/statement_register:43
-msgid "`init`"
-msgstr "`init`"
+#: ../../source/inc/statement_register:40
+msgid "This is a function that is called to determine the next statement."
+msgstr "これは次のステートメントを決定するために呼び出される関数です。"
 
 #: ../../source/inc/statement_register:42
 msgid ""
+"If `block` is not \"script\", this is passed a single argument, the object "
+"returned from the parse function. If `block` is \"script\", an additional "
+"argument is passed, an object that names the first statement in the block."
+msgstr ""
+"`block` が \"script\" でないなら、これには一つの引数が渡され、パース関数から"
+"返されたオブジェクトです。 `block` が \"script\" なら、追加の引数が渡され、そ"
+"のブロックの最初のステートメントを名付けるオブジェクトです。"
+
+#: ../../source/inc/statement_register:46
+msgid ""
+"The function should return either a string giving a label to jump to, the "
+"second argument to transfer control into the block, or None to continue to "
+"the statement after this one."
+msgstr ""
+"ジャンプ先のラベルを指定する文字列、ブロックへ制御を移すための第二引数また"
+"は、この後のステートメントに制御を継続するなら None を返す関数であるべきで"
+"す。"
+
+#: ../../source/inc/statement_register:51
+msgid "`scry`"
+msgstr "`scry`"
+
+#: ../../source/inc/statement_register:51
+msgid "Used internally by Ren'Py."
+msgstr "Ren'Py 内部で使用されます。"
+
+#: ../../source/inc/statement_register:56
+msgid "`init`"
+msgstr "`init`"
+
+#: ../../source/inc/statement_register:54
+msgid ""
 "True if this statement should be run at init-time. (If the statement is not "
 "already inside an init block, it's automatically placed inside an init 0 "
-"block.)"
+"block.) This calls the execute function, in addition to the execute_init "
+"function."
 msgstr ""
 "このステートメントが初期化時にのみ実行されるべきなら True です。 ( ステートメ"
-"ントが init ブロック内でなければ自動的に init 0 ブロックに配置されます。)"
+"ントが init ブロック内でなければ自動的に init 0 ブロックに配置されます。)　こ"
+"れは execute_init  関数に加えては実行関数を呼び出します。"
 
 #: ../../source/cds.rst:24
 msgid "The parse method takes a Lexer object:"
@@ -244,9 +275,9 @@ msgid ""
 "lexer to what it was when checkpoint() was called. (This is used for "
 "backtracking.)"
 msgstr ""
-"`o` が checkpoint() から返されたオブジェクトなら、 lexer の状態を "
-"checkpoint() が呼び出されたときにまで戻します。 ( これはロールバックのために"
-"使用されます。 )"
+"`o` が checkpoint() から返されたオブジェクトなら、 lexer の状態を checkpoint"
+"() が呼び出されたときにまで戻します。 ( これはロールバックのために使用されま"
+"す。 )"
 
 #: ../../source/cds.rst:87
 msgid "Return a Lexer for the block associated with the current line."
@@ -291,3 +322,15 @@ msgstr ""
 #: ../../source/cds.rst:132
 msgid "This can be used by writing::"
 msgstr "これは以下のように記述して使用出来ます。 ::"
+
+#~ msgid ""
+#~ "This is called to determine the next statement. It is passed a single "
+#~ "object, the argument returned from parse. It should either return a "
+#~ "label, or return None if execution should continue to the next statement."
+#~ msgstr ""
+#~ "これを呼び出して次のステートメントを決定します。これには parse から返され"
+#~ "たオブジェクトが引数として渡されます。ラベルか、次のステートメントに処理を"
+#~ "移すなら None を返すべきです。"
+
+#~ msgid "True if this takes a block, false otherwise."
+#~ msgstr "これがブロックを取るなら True 、そうでなければ False です。"
