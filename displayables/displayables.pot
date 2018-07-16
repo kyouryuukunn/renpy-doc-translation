@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 6.99.14\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:16+0900\n"
+"POT-Creation-Date: 2018-07-17 01:57+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,174 +49,202 @@ msgid "An object of type Displayable, created by calling one of the functions gi
 msgstr ""
 
 #: ../../source/displayables.rst:22
-msgid "A string with a dot (.) in it. Such a string is interpreted as a filename by :func:`Image`."
+msgid "A string with a colon (:) in it. These are rare, but see the section on :ref:`displayable prefixes <displayable-prefix>` below."
 msgstr ""
 
 #: ../../source/displayables.rst:24
+msgid "A string with a dot (.) in it. Such a string is interpreted as a filename by :func:`Image`."
+msgstr ""
+
+#: ../../source/displayables.rst:26
 msgid "A color. A color may either be given as a hexadecimal color string in \"#rgb\", \"#rgba\", \"#rrggbb\", or \"#rrggbbaa\" form, a :class:`Color`, or an (r, g, b, a) tuple, where each component is an integer between 0 and 255. Colors are passed to :func:`Solid`."
 msgstr ""
 
-#: ../../source/displayables.rst:28
+#: ../../source/displayables.rst:30
 msgid "An image name. Any other string is interpreted as a reference to an image defined with the image statement."
 msgstr ""
 
-#: ../../source/displayables.rst:30
+#: ../../source/displayables.rst:32
 msgid "A list. If a list is provided, each item is expanded as described below, and checked to see if it matches a filename or image name. If so, expansion stops and the matched thing is then processed as described above."
 msgstr ""
 
-#: ../../source/displayables.rst:35
+#: ../../source/displayables.rst:37
 msgid "Strings may have one or more square-bracket substitutions in them, such as \"eileen [mood]\" or \"eileen_[outfit]_[mood].png\". When such a string is given, a dynamic image is created. A dynamic image has :ref:`text interpolation <text-interpolation>` performed at the start of each interaction (such as say statements and menus). The resulting string is processed according to the rules above."
 msgstr ""
 
-#: ../../source/displayables.rst:45
+#: ../../source/displayables.rst:47
 msgid "Images"
 msgstr ""
 
-#: ../../source/displayables.rst:47
+#: ../../source/displayables.rst:49
 msgid "The most commonly used displayable is Image, which loads a file from disk and displays it. Since Image is so commonly used, when a string giving a filename is used in a context that expects a displayable, an Image is automatically created. The only time it's necessary to use Image directly is when you want to create an image with style properties."
 msgstr ""
 
-#: ../../source/displayables.rst:66
+#: ../../source/displayables.rst:68
 msgid "There are three image file formats we recommend you use:"
 msgstr ""
 
-#: ../../source/displayables.rst:68
+#: ../../source/displayables.rst:70
 msgid "Webp"
 msgstr ""
 
-#: ../../source/displayables.rst:69
+#: ../../source/displayables.rst:71
 msgid "Png"
 msgstr ""
 
-#: ../../source/displayables.rst:70
+#: ../../source/displayables.rst:72
 msgid "Jpg"
 msgstr ""
 
-#: ../../source/displayables.rst:72
+#: ../../source/displayables.rst:74
 msgid "Non-animated Gif and Bmp files are also supported, but should not be used in modern games."
 msgstr ""
 
-#: ../../source/displayables.rst:75
+#: ../../source/displayables.rst:77
 msgid "Loading an Image from from a file on disk and decoding it so it can be drawn to the screen takes a long amount of time. While measured in the tenths or hundreds of seconds, the duration of the loading process is long enough that it can prevent an acceptable framerate, and become annoying to the user."
 msgstr ""
 
-#: ../../source/displayables.rst:81
+#: ../../source/displayables.rst:83
 msgid "Since an Image is of a fixed size, and doesn't change in response to input, game state, or the size of the area available to it, an Image can be loaded before it is needed, and placed into an area of memory known as the image cache. Once an Image is decoded and in the cache, it can be quickly drawn to the screen."
 msgstr ""
 
-#: ../../source/displayables.rst:87
+#: ../../source/displayables.rst:89
 msgid "Ren'Py attempts to predict the images that will be used in the future, and loads them into the image cache before they are used. When space in the cache is needed for other images, Ren'Py will remove images that are no longer being used."
 msgstr ""
 
-#: ../../source/displayables.rst:92
+#: ../../source/displayables.rst:94
 msgid "By default, Ren'Py will predictively cache up to 8 screens worth of image data. (If your screen is 800x600, then a screen's worth of data is one 800x600 image, two 400x600 images, and so on.) This can be changed with the :var:config.image_cache_size configuration variable."
 msgstr ""
 
-#: ../../source/displayables.rst:98
+#: ../../source/displayables.rst:100
 msgid "Although the precise amount is dependent on implementation details and there is significant overhead, as a rule of thumb, each pixel in the image cache consumes 4 bytes of main memory and 4 bytes of video memory."
 msgstr ""
 
-#: ../../source/displayables.rst:104
+#: ../../source/displayables.rst:106
 msgid "Image-Like Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:106
+#: ../../source/displayables.rst:108
 msgid "We call these displayables image-like because they take up a rectangular area of the screen, and do not react to input.  These differ from normal images by varying their size to fill an area (Frame, LiveTile, and Solid), or by allowing the user to specify their size (LiveComposite, LiveCrop, Null). They are not image manipulators."
 msgstr ""
 
-#: ../../source/displayables.rst:112
+#: ../../source/displayables.rst:114
 msgid "Image-like displayables take :ref:`position-style-properties`."
 msgstr ""
 
-#: ../../source/displayables.rst:117
+#: ../../source/displayables.rst:119
 msgid "Text Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:119
+#: ../../source/displayables.rst:121
 msgid "See :ref:`text-displayables`."
 msgstr ""
 
-#: ../../source/displayables.rst:123
+#: ../../source/displayables.rst:125
 msgid "Dynamic Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:125
+#: ../../source/displayables.rst:127
 msgid "Dynamic displayables display a child displayable based on the state of the game. They do not take any properties, as layout is controlled by the properties of the child displayable they return."
 msgstr ""
 
-#: ../../source/displayables.rst:133
+#: ../../source/displayables.rst:131
+msgid "Note that these dynamic displayables always display their current state. Because of this, a dynamic displayable will not participate in a transition. (Or more precisely, it will display the same thing in both the old and new states of the transition.)"
+msgstr ""
+
+#: ../../source/displayables.rst:136
+msgid "By design, dynamic displayables are intended to be used for things that change rarely and when an image define this way is off screen (Such as a character customization system), and not for things that change frequently, such as character emotions."
+msgstr ""
+
+#: ../../source/displayables.rst:145
 msgid "Applying Transforms to Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:135
+#: ../../source/displayables.rst:147
 msgid "The At function produces a displayable from a displayable and one or more :ref:`transforms <transforms>`."
 msgstr ""
 
-#: ../../source/displayables.rst:142
+#: ../../source/displayables.rst:154
 msgid "Layout Boxes and Grids"
 msgstr ""
 
-#: ../../source/displayables.rst:144
+#: ../../source/displayables.rst:156
 msgid "Layout boxes are displayables that lay out their children on the screen. They can lay out the children in a horizontal or vertical manner, or can lay them out using the standard positioning algorithm."
 msgstr ""
 
-#: ../../source/displayables.rst:148
+#: ../../source/displayables.rst:160
 msgid "The box displayables take any number of positional and keyword arguments. Positional arguments should be displayables that are added to the box as children. Keyword arguments are style properties that are applied to the box."
 msgstr ""
 
-#: ../../source/displayables.rst:153
+#: ../../source/displayables.rst:165
 msgid "Boxes take :ref:`position-style-properties` and :ref:`box-style-properties`."
 msgstr ""
 
-#: ../../source/displayables.rst:173
+#: ../../source/displayables.rst:185
 msgid "The Grid layout displays its children in a grid on the screen. It takes :ref:`position-style-properties` and the :propref:`spacing` style property."
 msgstr ""
 
-#: ../../source/displayables.rst:180
+#: ../../source/displayables.rst:192
 msgid "Effects"
 msgstr ""
 
-#: ../../source/displayables.rst:182
+#: ../../source/displayables.rst:194
 msgid "These displayables are used to create certain visual effects."
 msgstr ""
 
-#: ../../source/displayables.rst:187
+#: ../../source/displayables.rst:199
 msgid "Image Manipulators"
 msgstr ""
 
-#: ../../source/displayables.rst:189
-msgid "An image manipulator is a displayable that takes an image or image manipulator, performs an operation to it, and stores the result of that operation in the image cache. Since image manipulators can be predicted like images, they can perform expensive operations without incuring a display-time overhead."
-msgstr ""
-
-#: ../../source/displayables.rst:195
-msgid "Image manipulators are limited to storing image data to the cache. This means that their result is of a fixed size, known in advance, and they can't change in response to game state or input. Generally, image manipulators can only take images or other image manipulators as input."
-msgstr ""
-
 #: ../../source/displayables.rst:201
+msgid "An image manipulator is a displayable that takes an image or image manipulator, and either loads it or performs an operation on it. Image manipulators can only take images or other image manipulators as input."
+msgstr ""
+
+#: ../../source/displayables.rst:206
 msgid "An image manipulator can be used any place a displayable can, but not vice-versa. An :func:`Image` is a kind of image manipulator, so an Image can be used whenever an image manipulator is required."
 msgstr ""
 
-#: ../../source/displayables.rst:205
-msgid "Many image manipulators provide the same functionality as other displayables. Most of these exist so they can be provided as input to other image manipulators, and so the game-maker can choose between cache memory usage and work done at render-time. There's also an element of historical accident here - many of these image manipulators predate their equivalents."
+#: ../../source/displayables.rst:210
+msgid "With the few exceptions listed below, the use of image manipulators is historic. A number of image manipulators that had been documented in the past should no longer be used, as they suffer from inherent problems. In many cases, the :func:`Transform` displayable provides similar functionality in a more general manner, while fixing the problems."
 msgstr ""
 
-#: ../../source/displayables.rst:215
+#: ../../source/displayables.rst:219
 msgid "im.MatrixColor"
 msgstr ""
 
-#: ../../source/displayables.rst:217
+#: ../../source/displayables.rst:221
 msgid "The im.MatrixColor image manipulator is an image manipulator that uses a matrix to control how the colors of an image are transformed. The matrix used can be an im.matrix object, which encodes a 5x5 matrix in an object that supports matrix multiplication, and is returned by a series of functions. im.matrix objects may be multiplied together to yield a second object that performs both operations. For example::"
 msgstr ""
 
-#: ../../source/displayables.rst:228
+#: ../../source/displayables.rst:232
 msgid "first desaturates the image, and then tints it blue. When the intermediate image is not needed, multiplying matrices is far more efficient, in both time and image cache space, than using two im.MatrixColors."
 msgstr ""
 
-#: ../../source/displayables.rst:236
+#: ../../source/displayables.rst:240
 msgid "Placeholders"
 msgstr ""
 
-#: ../../source/displayables.rst:238
+#: ../../source/displayables.rst:242
 msgid "The Placeholder displayable is used to display background or character images as appropriate. Placeholders are used automatically when an undefined image is used in developer mode. Placeholder displayables can also be used manually when the defaults are inappropriate. ::"
+msgstr ""
+
+#: ../../source/displayables.rst:259
+msgid "Displayable Prefixes"
+msgstr ""
+
+#: ../../source/displayables.rst:261
+msgid "Displayable prefixes make it possible for a creator to define their own displayables, and refer to them anywhere a displayable can be used in Ren'Py. A prefixed displayable is a string with a colon in it. The prefix is to the left of the colon, and the argument is anything to the right of it. The :var:`config.displayable_prefix` variable maps a prefix to a function. The function takes the argument, and either returns a displayable or None."
+msgstr ""
+
+#: ../../source/displayables.rst:268
+msgid "For example, this makes the big prefix return an image that is twice as big as the original. ::"
+msgstr ""
+
+#: ../../source/displayables.rst:277
+msgid "The init -10 makes sure the prefix is defined before any images that use it. The prefix can then be used to define images::"
+msgstr ""
+
+#: ../../source/displayables.rst:282
+msgid "or in any other place where a displayable is required."
 msgstr ""
 

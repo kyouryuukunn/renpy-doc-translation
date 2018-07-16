@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:16+0900\n"
+"POT-Creation-Date: 2018-05-23 20:10+0900\n"
 "PO-Revision-Date: 2016-06-24 15:28+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -257,6 +257,66 @@ msgid ""
 "transitions."
 msgstr ""
 "トランジション族は、大量の関連するトランジション族を定義する関数群です。"
+
+#: ../../source/transitions.rst:175
+#, fuzzy
+msgid "Dict Transitions"
+msgstr "トランジション"
+
+#: ../../source/transitions.rst:177
+msgid ""
+"In many places where Ren'Py takes a transition, it's possible to instead "
+"specify a dictionary that maps layer names to this transition. When this is "
+"the case, Ren'Py applies each transition to the appropriate layer."
+msgstr ""
+
+#: ../../source/transitions.rst:181
+msgid ""
+"When a dict is used, the pause that usually occurs when a transition takes "
+"place does not occur. Instead, the statement taking the dictionary returns "
+"immediately, and the transitions are scheduled to occur at the start of the "
+"next interaction."
+msgstr ""
+
+#: ../../source/transitions.rst:186
+msgid ""
+"This can be used with the master layer to cause transitions to occur while "
+"dialogue is being shown on the screen. For example, if we wrote::"
+msgstr ""
+
+#: ../../source/transitions.rst:191
+msgid "and::"
+msgstr ""
+
+#: ../../source/transitions.rst:198
+msgid "The dissolve will take place while the text is displayed on the screen."
+msgstr ""
+
+#: ../../source/transitions.rst:200
+msgid ""
+"Dict layer transitions can't be used every place a transition can be used, "
+"only places where applying transitions to a layer is possible. It can be "
+"used with the ``with`` statement and ``with`` cause of the scene, show, and "
+"hide statements. It can also be used with :func:`renpy.with_statement` and :"
+"func:`renpy.transition`, the :func:`Show` and :func:`Hide` actions, and "
+"various config variables that take transitions. Dict layer transitions *will "
+"not* work inside things that don't work with layers, such as ATL, :func:"
+"`ComposeTransition` and :func:`MultipleTransition`."
+msgstr ""
+
+#: ../../source/transitions.rst:209
+msgid ""
+"This can interact poorly with statements that cause a transition to occur "
+"themselves, like the transitions caused by ``window auto``. That can often "
+"be solved with a second dict transition that applies to a different layer. "
+"For example, if you are seeing weird blinking when the dialogue window shows "
+"and hides, consider changing options.rpy to have::"
+msgstr ""
+
+#: ../../source/transitions.rst:218
+msgid ""
+"This works because the dialogue window exists entirely on the screens layer."
+msgstr ""
 
 #~ msgid ""
 #~ "Returns a transition that uses a control displayable (almost always some "

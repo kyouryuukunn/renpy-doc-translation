@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2018, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-17 01:57+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/multiple.rst:7
+msgid "Multiple Character Dialogue"
+msgstr ""
+
+#: ../../source/multiple.rst:9
+msgid "Ren'Py supports displaying dialogue from multiple characters simultaneously. Multiple dialogue is invoked by giving the lines of dialogue the multiple argument. For example::"
+msgstr ""
+
+#: ../../source/multiple.rst:16
+msgid "Multiple dialogue is invoked by passing a line of dialogue the `multiple` argument with the number of lines of dialogue to combine together. (So if we had multiple=3, three blocks of dialogue would be combined.)"
+msgstr ""
+
+#: ../../source/multiple.rst:20
+msgid "Multiple dialogue works by showing the say screen more than once, with different styles. Each say screen is responsible for showing dialogue from a single character."
+msgstr ""
+
+#: ../../source/multiple.rst:24
+msgid "There are a few restrictions on multiple dialogue:"
+msgstr ""
+
+#: ../../source/multiple.rst:26
+msgid "When displaying multiple dialogue, text tags that cause the text to pause, like {p} and {w}, will not function properly. This is because each screen is only displayed once, and those tags require screens to be displayed multiple times to function."
+msgstr ""
+
+#: ../../source/multiple.rst:31
+msgid "Auto-forward mode only works on the last block of text. While this should be fine in most cases, it can lead to problems if the last block of text is shorter than the rest, as auto-forward may engage early."
+msgstr ""
+
+#: ../../source/multiple.rst:35
+msgid "Extend will not work. (It will only apply to the last block of text.)"
+msgstr ""
+
+#: ../../source/multiple.rst:38
+msgid "Styles"
+msgstr ""
+
+#: ../../source/multiple.rst:40
+msgid "Generally, the way multiple dialogue works is to display the say screen multiple times, with the styles of various displayables systematically renamed to reflect the block number and the number of blocks in total."
+msgstr ""
+
+#: ../../source/multiple.rst:44
+msgid "Specifically, multiple dialogue uses styles with names of the form block`n`_multiple`m`_\\`style`, where `n` is the one-based number of the block, and `m` is the number of blocks of dialogue being displayed at once."
+msgstr ""
+
+#: ../../source/multiple.rst:49
+msgid "In our example above, the window corresponding to each block of dialogue are given the names:"
+msgstr ""
+
+#: ../../source/multiple.rst:52
+#: ../../source/multiple.rst:69
+msgid "block1_multiple2_say_window"
+msgstr ""
+
+#: ../../source/multiple.rst:53
+#: ../../source/multiple.rst:73
+msgid "block2_multiple2_say_window"
+msgstr ""
+
+#: ../../source/multiple.rst:55
+msgid "This naming scheme is used for the dialogue, name, and namebox, as well as the window. It's designed so style inheritance is useful here. For the window styles we'll have:"
+msgstr ""
+
+#: ../../source/multiple.rst:61
+msgid "say_window"
+msgstr ""
+
+#: ../../source/multiple.rst:60
+msgid "Used for the normal case of a single dialogue window, this can serve as a base for all dialogue windows."
+msgstr ""
+
+#: ../../source/multiple.rst:65
+msgid "multiple2_say_window"
+msgstr ""
+
+#: ../../source/multiple.rst:64
+msgid "This can be used for properties common to the two dialogue windows, like changing the background and reducing the margin and padding."
+msgstr ""
+
+#: ../../source/multiple.rst:68
+msgid "This could be used to position the first of the two dialogue windows, such as using xalign 0.0 to put it on the left side."
+msgstr ""
+
+#: ../../source/multiple.rst:72
+msgid "Similarly, this can be used to position the second window, with xalign 1.0 putting it on the right side."
+msgstr ""
+
+#: ../../source/multiple.rst:76
+msgid "The Multiple Say Screen"
+msgstr ""
+
+#: ../../source/multiple.rst:78
+msgid "For more control, there is the multiple\\_say screen. When it exists, the multiple\\_say screen is used in place of the normal say screen. It takes a third argument, `multiple`, which is a tuple. The first component of the tuple is the block number, and the second is the total number of screens."
+msgstr ""
+
+#: ../../source/multiple.rst:86
+msgid "NVL-Mode"
+msgstr ""
+
+#: ../../source/multiple.rst:88
+msgid "By default, NVL-Mode displays multiple text blocks one on top of another. This can be customized by changing the :ref:`nvl screen <nvl-screen>`, which is passed a list of objects with the multiple argument that can be reorganized and presented."
+msgstr ""
+

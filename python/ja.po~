@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-25 21:42+0900\n"
-"PO-Revision-Date: 2017-08-06 18:47+0900\n"
+"POT-Creation-Date: 2018-02-12 18:16+0900\n"
+"PO-Revision-Date: 2018-02-12 23:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -98,15 +98,15 @@ msgstr "一行 python"
 
 #: ../../source/python.rst:58
 msgid ""
-"A common case is to have a single line of Oython that runs in the default "
+"A common case is to have a single line of Python that runs in the default "
 "store. For example, a Python one-liner can be used to initialize or update a "
 "flag. To make writing Python one-liners more convenient, there is the one-"
 "line python statement."
 msgstr ""
-"デフォルトの store で python を一行だけ実行させたいというのはよくあることで"
-"す。例えばフラグの初期化や更新には一行だけの python が使用されます。 一行だけ"
-"の python をより便利に記述するために、一行 python のステートメントがありま"
-"す。"
+"デフォルトの store で実行される一行だけの python が欲しいというのはよくあるこ"
+"とです。例えばフラグの初期化や更新には一行だけの python が使用されます。 一行"
+"だけの python をより便利に記述するために、一行 python のステートメントがあり"
+"ます。"
 
 #: ../../source/python.rst:63
 msgid ""
@@ -163,14 +163,14 @@ msgid "Init python statements also take the ``hide`` or ``in`` clauses."
 msgstr "init python ステートメントは ``hide`` や ``in`` 節も取ります。"
 
 #: ../../source/python.rst:119
-#, fuzzy
 msgid ""
 "Variables that have their value set in an init python block are not saved, "
 "loaded, and do not participate in rollback. Therefore, these variables "
 "should not be changed after init is over."
 msgstr ""
 "init python ブロックで値が設定された変数はその変数が参照するオブジェクトが変"
-"更されない限りセーブ、ロードされず、ロールバックにも参加しません。"
+"更されない限りセーブ、ロードされず、ロールバックにも参加しません。それゆえ、"
+"これらの変数は初期化後は変更されるべきですはありません。"
 
 #: ../../source/python.rst:126
 msgid "Define Statement"
@@ -210,6 +210,9 @@ msgid ""
 "not enforce this, but will produce undefined behavior when this is not the "
 "case.)"
 msgstr ""
+"define ステートメントを使用して定義された変数は定数として扱われ、セーブロード"
+"されないため、変更しないべきです。(Ren'Py はこれを強制しませんが、守らない場"
+"合、未定義の動作をします)"
 
 #: ../../source/python.rst:155
 msgid "Default Statement"
@@ -240,13 +243,12 @@ msgstr ""
 "変数 ``points`` がゲームロード時に定義されていなければ、次と等しいです。 ::"
 
 #: ../../source/python.rst:174
-#, fuzzy
 msgid ""
 "The default statement can take an optional named store (see below), by "
 "prepending it to the variable name with a dot. For example::"
 msgstr ""
-"define ステートメントは、ドットと変数名に続けて任意の名前付き store (以下参"
-"照) を取れます。例 ::"
+"default ステートメントは任意で名前付き store をとれ(以下参照)、その後にドット"
+"と変数名を続けます。 例 ::"
 
 #: ../../source/python.rst:183
 msgid "Init Offset Statement"
