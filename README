@@ -86,10 +86,54 @@ msgstr "gui/overlay/main_menu.png"
 *** 翻訳方法 ***
 git 上で翻訳を進めます。
 1. https://github.com/kyouryuukunn/renpy-doc-translation から fork を作成
-2. ja.po ファイルを翻訳、Stateの内容を変更したらpull requestを送ってください。
+2. ja.po ファイルを翻訳、Stateファイルの内容を変更したらpull requestを送ってください。
 
 gitの使用方法が分からない場合は、上記のサイトから"clone or download"->"Download ZIP"からZIPでデータをダウンロードし、翻訳後のファイルをメールで送ってください。
 
 まとめて送ると二重翻訳の危険があるため作業毎の送信を推奨します。
 
 また、翻訳作業には PoEdit を推奨します。
+
+
+
+**最新のrenpyからpoファイルを生成したい場合**
+必要なもの:
+gettext
+python2
+python2のsphinxライブラリ
+msys(windowsの場合)
+update-po-from-pot(このレポジトリに含まれています)
+
+1:任意のフォルダに開発中のrenpyをクローン
+cd ~/
+git clone https://github.com/renpy/renpy
+
+2:update-po-from-potを~/renpyに配置
+
+3:poファイルを作成
+cd ~/renpy/sphinx
+make gettext
+cd ..
+./update-po-from-pot
+
+これで~/renpy/sphinx/localeにpotファイルが生成されます。これらを適当な名前に変更してください。日本語ならja.po
+ja.poには翻訳前の文章が書かれているので、テキストエディタまたはpoeditという編集ソフトで翻訳後保存してください。
+
+
+**poファイルからhtmlファイルを生成したい場合**
+必要なもの:
+gettext
+python2
+python2のsphinxライブラリ
+msys(windowsの場合)
+
+1:任意のフォルダに開発中のrenpyをクローン
+cd ~/
+git clone https://github.com/renpy/renpy
+
+2:飜訳後のpoファイルを~/renpy/sphinx/localeの各フォルダに移動
+cd ~/renpy/sphinx
+make compile-po
+LANGUAGE=ja make html
+
+これで~/renpy/sphinx/buildにhtmlファイルが生成されます。
