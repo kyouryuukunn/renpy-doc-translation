@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-23 20:10+0900\n"
+"POT-Creation-Date: 2018-09-11 07:24+0900\n"
 "PO-Revision-Date: 2017-08-05 14:57+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -141,9 +141,10 @@ msgstr ""
 "するまでムービーを表示します。 ::"
 
 #: ../../source/movie.rst:53
+#, fuzzy
 msgid ""
 "On mobile platforms, such as Android and iOS, hardware video decoding is "
-"used when :var:`config.hw_video` is true, the default. This is generally "
+"used when :var:`config.hw_video` is True, the default. This is generally "
 "much faster, but the list of supported movie formats depends on the platform."
 msgstr ""
 "Android や iOS のようなモバイルでは、 :var:`config.hw_video` が True ならハー"
@@ -184,7 +185,7 @@ msgstr "Movie displayable で再生されるムービーは自動的にループ
 msgid "A Movie takes two parameters:"
 msgstr ""
 
-#: ../../source/movie.rst:77
+#: ../../source/movie.rst:77 ../../source/inc/movie:27
 msgid "`play`"
 msgstr "`play`"
 
@@ -196,7 +197,7 @@ msgstr "再生するムービーファイルの文字列です。"
 msgid "This should always be provided."
 msgstr "これは常に与えなければいけません。"
 
-#: ../../source/movie.rst:82
+#: ../../source/movie.rst:82 ../../source/inc/movie:33
 msgid "`mask`"
 msgstr "`mask`"
 
@@ -246,6 +247,198 @@ msgstr ""
 msgid "Python Functions"
 msgstr "Python Functions"
 
+#: ../../source/inc/movie_cutscene:5
+msgid ""
+"This displays an MPEG-1 cutscene for the specified number of seconds. The "
+"user can click to interrupt the cutscene. Overlays and Underlays are "
+"disabled for the duration of the cutscene."
+msgstr ""
+"これは MPEG-1 のカットシーンを指定された秒数表示します。ユーザーはクリックで"
+"カットシーンを停止出来ます。オーバーレイ、アンダーレイはカットシーン中無効化"
+"されます。"
+
+#: ../../source/inc/movie_cutscene:10
+msgid "`filename`"
+msgstr "`filename`"
+
+#: ../../source/inc/movie_cutscene:10
+msgid "The name of a file containing an MPEG-1 movie."
+msgstr "MPEG-1 のムービーを含むファイル名"
+
+#: ../../source/inc/movie_cutscene:16
+msgid "`delay`"
+msgstr "`delay`"
+
+#: ../../source/inc/movie_cutscene:13
+msgid ""
+"The number of seconds to wait before ending the cutscene. Normally the "
+"length of the movie, in seconds. If None, then the delay is computed from "
+"the number of loops (that is, loops + 1) * the length of the movie. If -1, "
+"we wait until the user clicks."
+msgstr ""
+"カットシーンが終了するまでの秒数で、通常はムービーの長さです。 None なら時間"
+"は ( loops + 1) x ( ムービーの流さ ) で算出されます。 -1 ならユーザーがクリッ"
+"クするまで待ちます。"
+
+#: ../../source/inc/movie_cutscene:19
+msgid "`loops`"
+msgstr "`loops`"
+
+#: ../../source/inc/movie_cutscene:19
+msgid "The number of extra loops to show, -1 to loop forever."
+msgstr "ループする回数です。 -1 なら永遠にループします。"
+
+#: ../../source/inc/movie_cutscene:21
+msgid ""
+"Returns True if the movie was terminated by the user, or False if the given "
+"delay elapsed uninterrupted."
+msgstr ""
+"ムービーがユーザーにより停止されたら True 、停止せずに指定した時間が経過した"
+"ら False を返します。"
+
+#: ../../source/inc/movie:5
+msgid "This is a displayable that shows the current movie."
+msgstr "これは現在の ムービーを表示する displayable です。"
+
+#: ../../source/inc/movie:10
+msgid "`fps`"
+msgstr "`fps`"
+
+#: ../../source/inc/movie:8
+msgid ""
+"The framerate that the movie should be shown at. (This is currently ignored, "
+"but the parameter is kept for backwards compatibility. The framerate is auto-"
+"detected.)"
+msgstr ""
+"ムービーが表示されるフレームレートです。 ( これは現在は無視されますが、引数は"
+"互換性のために残されています。フレームレートは自動的に決定されます。 )"
+
+#: ../../source/inc/movie:16
+msgid "`size`"
+msgstr "`size`"
+
+#: ../../source/inc/movie:13
+msgid ""
+"This should be specified as either a tuple giving the width and height of "
+"the movie, or None to automatically adjust to the size of the playing movie. "
+"(If None, the displayable will be (0, 0) when the movie is not playing.)"
+msgstr ""
+"これにはムービーの幅と高さのタプルか、自動的に再生するムービーのサイズに調整"
+"するなら None を指定します。 (None なら displayable はムービーが再生されてい"
+"ないとき (0, 0) になります。 )\v )"
+
+#: ../../source/inc/movie:22
+msgid "`channel`"
+msgstr "`channel`"
+
+#: ../../source/inc/movie:19
+msgid ""
+"The audio channel associated with this movie. When a movie file is played on "
+"that channel, it will be displayed in this Movie displayable. If this is not "
+"given, and the `play` is provided, a channel name is automatically selected."
+msgstr ""
+"このムービーに関連づけられたオーディオチャンネルです。ムービーファイルがその"
+"チャンネルで再生されると、この Movie displayable で表示されます。これが指定さ"
+"れないと、 `play` が渡され、チャンネル名が自動で選ばれます。"
+
+#: ../../source/inc/movie:25
+msgid ""
+"If given, this should be the path to a movie file. The movie file will be "
+"automatically played on `channel` when the Movie is shown, and automatically "
+"stopped when the movie is hidden."
+msgstr ""
+"ムービーファイルのパスです。ムービーファイルはムービーが表示されると自動的に "
+"`channel` チャンネルで再生され、非表示になると停止します。"
+
+#: ../../source/inc/movie:30
+msgid ""
+"If given, this should be the path to a movie file that is used as the alpha "
+"channel of this displayable. The movie file will be automatically played on "
+"`movie_channel` when the Movie is shown, and automatically stopped when the "
+"movie is hidden."
+msgstr ""
+"この displayable のアルファチャンネルとして使用されるムービーファイルのパスで"
+"す。ムービーファイルはムービーが表示されると自動的に `movie_channel` チャンネ"
+"ルで再生され、非表示になると停止します。"
+
+#: ../../source/inc/movie:38
+msgid "`mask_channel`"
+msgstr "`mask_channel`"
+
+#: ../../source/inc/movie:36
+#, fuzzy
+msgid ""
+"The channel the alpha mask video is played on. If not given, defaults to "
+"`channel`\\ _mask. (For example, if `channel` is \"sprite\", `mask_channel` "
+"defaults to \"sprite_mask\".)"
+msgstr ""
+"アルファマスクムービーが再生されるチャンネルです。指定されないと、 デフォルト"
+"で `channel`_mask が使用されます。 (例えば、`channel` が \"sprite\" なら、 "
+"`mask_channel` はデフォルトで \"sprite_mask\" になります。)"
+
+#: ../../source/inc/movie:45
+msgid "`image`"
+msgstr "`image`"
+
+#: ../../source/inc/movie:41
+msgid ""
+"An image that is displayed when `play` has been given, but the file it "
+"refers to does not exist. (For example, this can be used to create a slimmed-"
+"down mobile version that does not use movie sprites.) Users can also choose "
+"to fall back to this image as a preference if video is too taxing for their "
+"system."
+msgstr ""
+"`play` が指定されたが、参照するファイルがないとき表示する画像です。 (例えば、"
+"これを使用して movie sprites を使用しないモバイル用のバージョンを作成出来ま"
+"す。) ビデオがシステムに対して重すぎる場合、ユーザーが設定からこの画像を選択"
+"することも可能です。"
+
+#: ../../source/inc/movie:72
+msgid "``play_callback``"
+msgstr ""
+
+#: ../../source/inc/movie:48
+msgid ""
+"If not None, a function that's used to start the movies playing. (This may "
+"do things like queue a transition between sprites, if desired.) It's called "
+"with the following arguments:"
+msgstr ""
+
+#: ../../source/inc/movie:52
+msgid "`old`"
+msgstr ""
+
+#: ../../source/inc/movie:53
+#, fuzzy
+msgid "The old Movie object, or None if the movie is not playing."
+msgstr "ムービーが再生さてないとき、この displayable は透明になります。"
+
+#: ../../source/inc/movie:55
+msgid "`new`"
+msgstr ""
+
+#: ../../source/inc/movie:55
+msgid "The new Movie object."
+msgstr ""
+
+#: ../../source/inc/movie:57
+msgid ""
+"A movie object has the `play` parameter available as ``_play``, while the "
+"``channel``, ``mask``, and ``mask_channel`` fields correspond to the given "
+"parameters."
+msgstr ""
+
+#: ../../source/inc/movie:61
+msgid ""
+"Generally, this will want to use :func:`renpy.music.play` to start the movie "
+"playing on the given channel, with synchro_start=True. A minimal "
+"implementation is::"
+msgstr ""
+
+#: ../../source/inc/movie:74
+msgid "This displayable will be transparent when the movie is not playing."
+msgstr "ムービーが再生さてないとき、この displayable は透明になります。"
+
 #~ msgid "OPUS"
 #~ msgstr "OPUS"
 
@@ -258,9 +451,6 @@ msgstr "Python Functions"
 #~ msgstr ""
 #~ "ムービーを表示する3つの重要なパラメーターがあり、2つは常に与えなければいけ"
 #~ "ません。"
-
-#~ msgid "`channel`"
-#~ msgstr "`channel`"
 
 #~ msgid ""
 #~ "A string giving the name of the channel that the movie will be played on."
@@ -281,132 +471,6 @@ msgstr "Python Functions"
 
 #~ msgid "A string giving the name of a movie file to use as an alpha mask."
 #~ msgstr "アルファマスクとして使用するムービーファイルの文字列です。"
-
-#~ msgid ""
-#~ "This displays an MPEG-1 cutscene for the specified number of seconds. The "
-#~ "user can click to interrupt the cutscene. Overlays and Underlays are "
-#~ "disabled for the duration of the cutscene."
-#~ msgstr ""
-#~ "これは MPEG-1 のカットシーンを指定された秒数表示します。ユーザーはクリック"
-#~ "でカットシーンを停止出来ます。オーバーレイ、アンダーレイはカットシーン中無"
-#~ "効化されます。"
-
-#~ msgid "`filename`"
-#~ msgstr "`filename`"
-
-#~ msgid "The name of a file containing an MPEG-1 movie."
-#~ msgstr "MPEG-1 のムービーを含むファイル名"
-
-#~ msgid "`delay`"
-#~ msgstr "`delay`"
-
-#~ msgid ""
-#~ "The number of seconds to wait before ending the cutscene. Normally the "
-#~ "length of the movie, in seconds. If None, then the delay is computed from "
-#~ "the number of loops (that is, loops + 1) * the length of the movie. If "
-#~ "-1, we wait until the user clicks."
-#~ msgstr ""
-#~ "カットシーンが終了するまでの秒数で、通常はムービーの長さです。 None なら時"
-#~ "間は ( loops + 1) x ( ムービーの流さ ) で算出されます。 -1 ならユーザーが"
-#~ "クリックするまで待ちます。"
-
-#~ msgid "`loops`"
-#~ msgstr "`loops`"
-
-#~ msgid "The number of extra loops to show, -1 to loop forever."
-#~ msgstr "ループする回数です。 -1 なら永遠にループします。"
-
-#~ msgid ""
-#~ "Returns True if the movie was terminated by the user, or False if the "
-#~ "given delay elapsed uninterrupted."
-#~ msgstr ""
-#~ "ムービーがユーザーにより停止されたら True 、停止せずに指定した時間が経過し"
-#~ "たら False を返します。"
-
-#~ msgid "This is a displayable that shows the current movie."
-#~ msgstr "これは現在の ムービーを表示する displayable です。"
-
-#~ msgid "`fps`"
-#~ msgstr "`fps`"
-
-#~ msgid ""
-#~ "The framerate that the movie should be shown at. (This is currently "
-#~ "ignored, but the parameter is kept for backwards compatibility. The "
-#~ "framerate is auto-detected.)"
-#~ msgstr ""
-#~ "ムービーが表示されるフレームレートです。 ( これは現在は無視されますが、引"
-#~ "数は互換性のために残されています。フレームレートは自動的に決定されます。 )"
-
-#~ msgid "`size`"
-#~ msgstr "`size`"
-
-#~ msgid ""
-#~ "This should be specified as either a tuple giving the width and height of "
-#~ "the movie, or None to automatically adjust to the size of the playing "
-#~ "movie. (If None, the displayable will be (0, 0) when the movie is not "
-#~ "playing.)"
-#~ msgstr ""
-#~ "これにはムービーの幅と高さのタプルか、自動的に再生するムービーのサイズに調"
-#~ "整するなら None を指定します。 (None なら displayable はムービーが再生され"
-#~ "ていないとき (0, 0) になります。 )\v )"
-
-#~ msgid ""
-#~ "The audio channel associated with this movie. When a movie file is played "
-#~ "on that channel, it will be displayed in this Movie displayable. If this "
-#~ "is not given, and the `play` is provided, a channel name is automatically "
-#~ "selected."
-#~ msgstr ""
-#~ "このムービーに関連づけられたオーディオチャンネルです。ムービーファイルがそ"
-#~ "のチャンネルで再生されると、この Movie displayable で表示されます。これが"
-#~ "指定されないと、 `play` が渡され、チャンネル名が自動で選ばれます。"
-
-#~ msgid ""
-#~ "If given, this should be the path to a movie file. The movie file will be "
-#~ "automatically played on `channel` when the Movie is shown, and "
-#~ "automatically stopped when the movie is hidden."
-#~ msgstr ""
-#~ "ムービーファイルのパスです。ムービーファイルはムービーが表示されると自動的"
-#~ "に `channel` チャンネルで再生され、非表示になると停止します。"
-
-#~ msgid ""
-#~ "If given, this should be the path to a movie file that is used as the "
-#~ "alpha channel of this displayable. The movie file will be automatically "
-#~ "played on `movie_channel` when the Movie is shown, and automatically "
-#~ "stopped when the movie is hidden."
-#~ msgstr ""
-#~ "この displayable のアルファチャンネルとして使用されるムービーファイルのパ"
-#~ "スです。ムービーファイルはムービーが表示されると自動的に `movie_channel` "
-#~ "チャンネルで再生され、非表示になると停止します。"
-
-#~ msgid "`mask_channel`"
-#~ msgstr "`mask_channel`"
-
-#~ msgid ""
-#~ "The channel the alpha mask video is played on. If not given, defaults to "
-#~ "`channel`_mask. (For example, if `channel` is \"sprite\", `mask_channel` "
-#~ "defaults to \"sprite_mask\".)"
-#~ msgstr ""
-#~ "アルファマスクムービーが再生されるチャンネルです。指定されないと、 デフォ"
-#~ "ルトで `channel`_mask が使用されます。 (例えば、`channel` が \"sprite\" な"
-#~ "ら、 `mask_channel` はデフォルトで \"sprite_mask\" になります。)"
-
-#~ msgid "`image`"
-#~ msgstr "`image`"
-
-#~ msgid ""
-#~ "An image that is displayed when `play` has been given, but the file it "
-#~ "refers to does not exist. (For example, this can be used to create a "
-#~ "slimmed-down mobile version that does not use movie sprites.) Users can "
-#~ "also choose to fall back to this image as a preference if video is too "
-#~ "taxing for their system."
-#~ msgstr ""
-#~ "`play` が指定されたが、参照するファイルがないとき表示する画像です。 (例え"
-#~ "ば、これを使用して movie sprites を使用しないモバイル用のバージョンを作成"
-#~ "出来ます。) ビデオがシステムに対して重すぎる場合、ユーザーが設定からこの画"
-#~ "像を選択することも可能です。"
-
-#~ msgid "This displayable will be transparent when the movie is not playing."
-#~ msgstr "ムービーが再生さてないとき、この displayable は透明になります。"
 
 #~ msgid ""
 #~ "Ren'Py expects that every movie will have an audio track associated with "

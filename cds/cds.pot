@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 01:57+0900\n"
+"POT-Creation-Date: 2018-09-11 07:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgid "Creator-defined statements allow you to add your own statements to Ren'Py
 msgstr ""
 
 #: ../../source/cds.rst:11
-msgid "Creator-defined statements must be defined in a python early block. What's more, the filename containing the user-defined statement must be be loaded earlier than any file that uses it. Since Ren'Py loads files in unicode sort order, it generally makes sense to prefix the name of any file containing a user-defined statement with 01, or some other small number."
+msgid "Creator-defined statements must be defined in a ``python early`` block. What's more, the filename containing the user-defined statement must be be loaded earlier than any file that uses it. Since Ren'Py loads files in Unicode sort order, it generally makes sense to prefix the name of any file containing a user-defined statement with 01, or some other small number."
 msgstr ""
 
 #: ../../source/cds.rst:17
@@ -33,7 +33,115 @@ msgid "A user-defined statement cannot be used in the file in which it is define
 msgstr ""
 
 #: ../../source/cds.rst:19
-msgid "Creator-defined statement are registered using the renpy.register_statement function."
+msgid "Creator-defined statement are registered using the :func:`renpy.register_statement` function."
+msgstr ""
+
+#: ../../source/inc/statement_register:5
+msgid "This registers a user-defined statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:10
+msgid "`name`"
+msgstr ""
+
+#: ../../source/inc/statement_register:8
+msgid "This is either a space-separated list of names that begin the statement, or the empty string to define a new default statement (the default statement will replace the say statement)."
+msgstr ""
+
+#: ../../source/inc/statement_register:16
+msgid "`block`"
+msgstr ""
+
+#: ../../source/inc/statement_register:13
+msgid "When this is False, the statement does not expect a block. When True, it expects a block, but leaves it up to the lexer to parse that block. If the string \"script\", the block is interpreted as containing one or more Ren'Py script language statements."
+msgstr ""
+
+#: ../../source/inc/statement_register:21
+msgid "`parse`"
+msgstr ""
+
+#: ../../source/inc/statement_register:19
+msgid "This is a function that takes a Lexer object. This function should parse the statement, and return an object. This object is passed as an argument to all the other functions. The lexer argument has the following methods:"
+msgstr ""
+
+#: ../../source/inc/statement_register:25
+msgid "`lint`"
+msgstr ""
+
+#: ../../source/inc/statement_register:24
+msgid "This is called to check the statement. It is passed a single argument, the object returned from parse. It should call renpy.error to report errors."
+msgstr ""
+
+#: ../../source/inc/statement_register:29
+msgid "`execute`"
+msgstr ""
+
+#: ../../source/inc/statement_register:28
+msgid "This is a function that is called when the statement executes. It is passed a single argument, the object returned from parse."
+msgstr ""
+
+#: ../../source/inc/statement_register:32
+msgid "`execute_init`"
+msgstr ""
+
+#: ../../source/inc/statement_register:32
+msgid "This is a function that is called at init time, at priority 0."
+msgstr ""
+
+#: ../../source/inc/statement_register:37
+msgid "`predict`"
+msgstr ""
+
+#: ../../source/inc/statement_register:35
+msgid "This is a function that is called to predict the images used by the statement. It is passed a single argument, the object returned from parse. It should return a list of displayables used by the statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:48
+msgid "`next`"
+msgstr ""
+
+#: ../../source/inc/statement_register:40
+msgid "This is a function that is called to determine the next statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:42
+msgid "If `block` is not \"script\", this is passed a single argument, the object returned from the parse function. If `block` is \"script\", an additional argument is passed, an object that names the first statement in the block."
+msgstr ""
+
+#: ../../source/inc/statement_register:46
+msgid "The function should return either a string giving a label to jump to, the second argument to transfer control into the block, or None to continue to the statement after this one."
+msgstr ""
+
+#: ../../source/inc/statement_register:53
+msgid "`label`"
+msgstr ""
+
+#: ../../source/inc/statement_register:51
+msgid "This is a function that is called to determine the label of this statement. If it returns a string, that string is used as the statement label, which can be called and jumped to like any other label."
+msgstr ""
+
+#: ../../source/inc/statement_register:59
+msgid "`warp`"
+msgstr ""
+
+#: ../../source/inc/statement_register:56
+msgid "This is a function that is called to determine if this statement should execute during warping. If the function exists and returns true, it's run during warp, otherwise the statement is not run during warp."
+msgstr ""
+
+#: ../../source/inc/statement_register:62
+msgid "`scry`"
+msgstr ""
+
+#: ../../source/inc/statement_register:62
+msgid "Used internally by Ren'Py."
+msgstr ""
+
+#: ../../source/inc/statement_register:67
+msgid "`init`"
+msgstr ""
+
+#: ../../source/inc/statement_register:65
+msgid "True if this statement should be run at init-time. (If the statement is not already inside an init block, it's automatically placed inside an init 0 block.) This calls the execute function, in addition to the execute_init function."
 msgstr ""
 
 #: ../../source/cds.rst:24
@@ -77,11 +185,11 @@ msgid "Matches a floating point number, returns a string containing the floating
 msgstr ""
 
 #: ../../source/cds.rst:69
-msgid "Matches a simple python expression, returns it as a string."
+msgid "Matches a simple Python expression, returns it as a string."
 msgstr ""
 
 #: ../../source/cds.rst:73
-msgid "Skips whitespace, the returns the rest of the line."
+msgid "Skips whitespace, then returns the rest of the line."
 msgstr ""
 
 #: ../../source/cds.rst:77
@@ -108,12 +216,16 @@ msgstr ""
 msgid "These functions are useful in writing lint functions."
 msgstr ""
 
+#: ../../source/inc/lint:5
+msgid "Checks the text tags in s for correctness. Returns an error string if there is an error, or None if there is no error."
+msgstr ""
+
 #: ../../source/cds.rst:103
 msgid "Example"
 msgstr ""
 
 #: ../../source/cds.rst:105
-msgid "This creates a new statement \"line\" that allows lines of text to be specified without quotes. ::"
+msgid "This creates a new statement ``line`` that allows lines of text to be specified without quotes. ::"
 msgstr ""
 
 #: ../../source/cds.rst:132

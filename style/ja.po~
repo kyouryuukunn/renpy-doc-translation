@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:16+0900\n"
+"POT-Creation-Date: 2018-09-02 00:41+0900\n"
 "PO-Revision-Date: 2018-02-12 19:59+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/style.rst:8
+#: ../../source/style.rst:5
 msgid "Styles"
 msgstr "スタイル"
 
-#: ../../source/style.rst:10
+#: ../../source/style.rst:7
 msgid ""
 "Styles allow the look of displayables to be customized. This is done by "
 "changing the value of style properties for displayables. For example, "
@@ -34,7 +34,7 @@ msgstr ""
 "ば、 :propref:`background` プロパティーを変更すると、ウィンドウやボタンの背景"
 "をカスタマイズできます。"
 
-#: ../../source/style.rst:15
+#: ../../source/style.rst:12
 msgid ""
 "Style properties consist of two parts, a prefix that specifies when the "
 "property is used, and the property itself. For example, a button's "
@@ -49,7 +49,7 @@ msgstr ""
 "ティーはボタンがフォーカスを失うと使用されます。 ( ``background`` プロパ"
 "ティーは ``idle_background`` と ``hover_background`` の両方を設定します。 )"
 
-#: ../../source/style.rst:22
+#: ../../source/style.rst:19
 msgid ""
 "While Ren'Py has over 100 style properties, only a few properties are used "
 "in this section. Along with ``background``, we use ``color``, ``font``, "
@@ -63,11 +63,11 @@ msgstr ""
 "ティーの完全なリストは :ref:`style properties <style-properties>` を参照して"
 "ください。"
 
-#: ../../source/style.rst:30
+#: ../../source/style.rst:27
 msgid "Using Styles and Style Inheritance"
 msgstr "スタイルとスタイルの継承"
 
-#: ../../source/style.rst:32
+#: ../../source/style.rst:29
 msgid ""
 "Each displayable has a style built-into it. When the displayable is created, "
 "either directly or using the screen system, style properties can be supplied "
@@ -78,7 +78,7 @@ msgstr ""
 "れると、直接に、またはスクリーンシステムを利用して style プロパティーが与えら"
 "れ、そのスタイルが displayable の見た目の更新に使用されます。以下の例で::"
 
-#: ../../source/style.rst:39
+#: ../../source/style.rst:36
 msgid ""
 "the :propref:`size` property is supplied to a Text displayable, allowing us "
 "to change its text size. This will customize the look of the text "
@@ -88,7 +88,7 @@ msgstr ""
 "トのサイズが変更されます。このカスタマイズでは、テキスト displayable の見た目"
 "として高さが40ピクセルのテキストを表示するようにしています。"
 
-#: ../../source/style.rst:43
+#: ../../source/style.rst:40
 msgid ""
 "Similarly, when using Screen Language, each user interface statement takes "
 "relevant style properties::"
@@ -96,7 +96,7 @@ msgstr ""
 "スクリーン言語と同様に、各ユーザーインターフェース用のステートメントは適切な"
 "スタイルプロパティーを受け取ります。 ::"
 
-#: ../../source/style.rst:49
+#: ../../source/style.rst:46
 msgid ""
 "Ren'Py supports style inheritance, with each style having a single parent. "
 "If a style property is not defined in a style, the value of the property is "
@@ -106,7 +106,7 @@ msgstr ""
 "イルでスタイルプロパティーが定義されていないと、そのプロパティーの値は直近の"
 "親から継承します。"
 
-#: ../../source/style.rst:54
+#: ../../source/style.rst:51
 msgid ""
 "Each displayable takes a property named ``style``, which gives the parent of "
 "the displayable's style::"
@@ -114,7 +114,7 @@ msgstr ""
 "各 displayable はその displayable のスタイルの親を指定する \"style\" というプ"
 "ロパティーを受け取ります。 ::"
 
-#: ../../source/style.rst:62
+#: ../../source/style.rst:59
 msgid ""
 "When no ``style`` property is given, a parent is chosen based on the kind of "
 "displayable be that has been supplied. The parent chosen can be influenced "
@@ -125,7 +125,7 @@ msgstr ""
 "て親が選ばれます。選ばれた親はスクリーン言語のユーザーインターフェースステー"
 "トメントにある ref:`style_group <style-group>` から影響を受けます。"
 
-#: ../../source/style.rst:67
+#: ../../source/style.rst:64
 msgid ""
 "When a style is defined without a parent being specified, a default parent "
 "is chosen for the style. If the style contains an underscore (_) in its "
@@ -144,25 +144,26 @@ msgstr ""
 "スタイル名にアンダースコアがあるなら Ren'Py はデフォルトの親を使用してそれを"
 "作成します。"
 
-#: ../../source/style.rst:76
+#: ../../source/style.rst:73
 msgid "Style names beginning with an underscore are reserved for Ren'Py use."
 msgstr ""
 "アンダースコアで始まる名前のスタイルは Ren'Py 内部での使用のために予約されて"
 "います。"
 
-#: ../../source/style.rst:78
+#: ../../source/style.rst:75
+#, fuzzy
 msgid ""
 "As Ren'Py builds styles on startup, named styles should not be changed "
-"outside of a style statement or init block."
+"outside of a style statement or ``init`` block."
 msgstr ""
 "Ren'Py は起動時にスタイルをビルドするので、名前を持つスタイルは style ステー"
 "トメントや init コードの外で変更するべきではありません。"
 
-#: ../../source/style.rst:83
+#: ../../source/style.rst:80
 msgid "Style Inspector"
 msgstr "スタイルインスペクター"
 
-#: ../../source/style.rst:85
+#: ../../source/style.rst:82
 msgid ""
 "When :var:`config.developer` is true, the style inspector can be used to see "
 "which styles are being used by a displayable."
@@ -170,10 +171,11 @@ msgstr ""
 ":var:`config.developer` が true なら、ある displayable に使用されているスタイ"
 "ルを確認出来るスタイルインスペクターが使用可能です。"
 
-#: ../../source/style.rst:88
+#: ../../source/style.rst:85
+#, fuzzy
 msgid ""
 "To activate the style inspector, place the mouse over a displayable, and "
-"press shift+I. Ren'Py will display a list of displayables that include the "
+"press Shift+I. Ren'Py will display a list of displayables that include the "
 "mouse position, in the order they are drawn to the screen. (That is, the "
 "last displayable is the one on top of the others.)"
 msgstr ""
@@ -182,7 +184,7 @@ msgstr ""
 "に描画された順に表示します。 ( つまり最後の displayable はそれ以外の上にある"
 "ということです。 )"
 
-#: ../../source/style.rst:93
+#: ../../source/style.rst:90
 msgid ""
 "Click the name of a style to display the styles the displayable inherits "
 "from, and the properties each style contributes the to the final displayable."
@@ -190,15 +192,15 @@ msgstr ""
 "スタイル名をクリックするとその displayable が継承するスタイルと、各 "
 "displayable が最終的な displayable に寄与するプロパティーが表示されます。"
 
-#: ../../source/style.rst:98
+#: ../../source/style.rst:95
 msgid "Defining Styles: Style Statement"
 msgstr "スタイルの定義: スタイルステートメント"
 
-#: ../../source/style.rst:100
+#: ../../source/style.rst:97
 msgid "The preferred way to define styles is through the style statement::"
 msgstr "スタイル は style statement を使用して定義されます。 ::"
 
-#: ../../source/style.rst:106
+#: ../../source/style.rst:103
 msgid ""
 "If a style does not exist, the style statement creates it. Otherwise, the "
 "existing style is modified by the style statement."
@@ -206,7 +208,7 @@ msgstr ""
 "あるスタイルが存在しなければ style ステートメントはそのスタイルを作成し、そう"
 "でなければ既存のスタイルは style ステートメントによって修正されます。"
 
-#: ../../source/style.rst:109
+#: ../../source/style.rst:106
 msgid ""
 "A style statement begins with the keyword ``style`` and the name of the "
 "style to define. This is followed on the first line by zero or more clauses, "
@@ -215,7 +217,7 @@ msgstr ""
 "style ステートメントはキーワード ``style`` と定義するスタイル名で始まります。"
 "最初の行にはこれに 0 以上の節や、任意のコロンが続きます。"
 
-#: ../../source/style.rst:113
+#: ../../source/style.rst:110
 msgid ""
 "If the colon is present, a block must follow. Each line of the block should "
 "contain one ore more clauses. Otherwise, the statement is complete."
@@ -223,33 +225,33 @@ msgstr ""
 "コロンが存在すると、次にブロックが続かなければなりません。ブロックの各行は 1 "
 "つ以上の節を含み、そうでなければステートメントが終了します。"
 
-#: ../../source/style.rst:116
+#: ../../source/style.rst:113
 msgid "The style statement accepts the following clauses:"
 msgstr "style ステートメントは以下の節を受け取ります。"
 
-#: ../../source/style.rst:120
+#: ../../source/style.rst:117
 msgid "`style-property` `simple-expression`"
 msgstr "`スタイルプロパティー` `単純式`"
 
-#: ../../source/style.rst:119
+#: ../../source/style.rst:116
 msgid "Assigns the value of the simple expression to the given style property."
 msgstr "単純式の値を指定されたスタイルプロパティーに代入します。"
 
-#: ../../source/style.rst:124
+#: ../../source/style.rst:121
 msgid "``is`` `parent`"
 msgstr "``is`` `親`"
 
-#: ../../source/style.rst:123
+#: ../../source/style.rst:120
 msgid ""
 "Sets the parent of this style. The parent must be a word giving the name of "
 "a style."
 msgstr "このスタイルの親を設定します。親はスタイル名でなければなりません。"
 
-#: ../../source/style.rst:129
+#: ../../source/style.rst:126
 msgid "``clear``"
 msgstr "``clear``"
 
-#: ../../source/style.rst:127
+#: ../../source/style.rst:124
 msgid ""
 "Removes all properties of this style that were assigned before this style "
 "statement was run. This does not prevent the style from inheriting property "
@@ -259,11 +261,11 @@ msgstr ""
 "ロパティーを除去します。これはスタイルが親からプロパティーの値を継承すること"
 "を防ぎません。"
 
-#: ../../source/style.rst:134
+#: ../../source/style.rst:131
 msgid "``take`` `style-name`"
 msgstr "``take`` `スタイル名`"
 
-#: ../../source/style.rst:132
+#: ../../source/style.rst:129
 msgid ""
 "Removes all properties of this style that were assigned before this style "
 "statement was run, and replaces them with the properties of the named style. "
@@ -273,11 +275,11 @@ msgstr ""
 "ロパティーを除去し、その名前のスタイルのプロパティーで置き換えます。これはス"
 "タイルの親を変更しません。"
 
-#: ../../source/style.rst:140
+#: ../../source/style.rst:137
 msgid "``variant`` `simple-expression`"
 msgstr "``variant`` `単純式`"
 
-#: ../../source/style.rst:137
+#: ../../source/style.rst:134
 msgid ""
 "Evaluates the simple expression, to yield a string or list of strings, which "
 "are interpreted as :ref:`screen variants <screen-variants>`. If at least one "
@@ -288,11 +290,11 @@ msgstr ""
 "字列か文字列のリストを生成します。少なくとも 1 つ指定されたバージョンがアク"
 "ティブなら style ステートメントが実行され、そうでなければ無視されます。"
 
-#: ../../source/style.rst:145
+#: ../../source/style.rst:142
 msgid "``properties`` `simple-expression`"
 msgstr "``properties`` `simple-expression`"
 
-#: ../../source/style.rst:143
+#: ../../source/style.rst:140
 msgid ""
 "Evaluates the simple expression to get a dictionary. The dictionary is "
 "expected to map style properties to values, and the values are assigned as "
@@ -301,23 +303,24 @@ msgstr ""
 "単純式を評価して辞書を得ます。辞書はスタイルとその値が期待され、値は style ス"
 "テートメントに与えられたように代入されます。"
 
-#: ../../source/style.rst:147
+#: ../../source/style.rst:144
 msgid "Examples of style statements are::"
 msgstr "スタイルステートメントの例は::"
 
-#: ../../source/style.rst:163
+#: ../../source/style.rst:160
+#, fuzzy
 msgid ""
-"Style statements are always run at init-time. If a style statement is not in "
-"an init block, it is automatically placed init an init 0 block."
+"Style statements are always run at init time. If a style statement is not in "
+"an ``init`` block, it is automatically placed into an ``init 0`` block."
 msgstr ""
 "style ステートメントは常に初期化時に実行されます。 style ステートメントが "
 "init ブロックにない場合は自動的に init 0 ブロックに配置されます。"
 
-#: ../../source/style.rst:168
+#: ../../source/style.rst:165
 msgid "Defining Styles: Python"
 msgstr "スタイルの定義: Python"
 
-#: ../../source/style.rst:170
+#: ../../source/style.rst:167
 msgid ""
 "Named styles exists as fields on the global ``style`` object. To create a "
 "new style, create an instance of the Style class, and assign it to a field "
@@ -327,7 +330,7 @@ msgstr ""
 "ます。新しいスタイルを作成するには、Style クラスのインスタンスを作成し、 "
 "``style`` オブジェクト上のフィールドに割り当てます。::"
 
-#: ../../source/style.rst:177
+#: ../../source/style.rst:174
 msgid ""
 "Style properties can be set by assigning to field-like properties of the "
 "Styles. ::"
@@ -335,7 +338,7 @@ msgstr ""
 "スタイルプロパティーは、style のフィールドプロパティーへの割り当てによって設"
 "定できます。::"
 
-#: ../../source/style.rst:186
+#: ../../source/style.rst:183
 msgid ""
 "Creates a new style object. Style properties can be assigned to the fields "
 "of this object."
@@ -343,16 +346,16 @@ msgstr ""
 "新しいスタイルオブジェクトを作成します。スタイルプロパティーはこのオブジェク"
 "トのフィールドに割り当てられます。"
 
-#: ../../source/style.rst:191
+#: ../../source/style.rst:188
 msgid "`parent`"
 msgstr "`parent`"
 
-#: ../../source/style.rst:190
+#: ../../source/style.rst:187
 msgid "The styles parent. This can be another style object, or a string."
 msgstr ""
 "親となるスタイル。これは他のスタイルオブジェクトまたは文字列にできます。"
 
-#: ../../source/style.rst:195
+#: ../../source/style.rst:192
 msgid ""
 "This removes all style properties from this object. Values will be inherited "
 "from this object's parent."
@@ -360,27 +363,28 @@ msgstr ""
 "これは、すべてのスタイルプロパティーをこのオブジェクトから削除します。値はオ"
 "ブジェクトの親から継承されます。"
 
-#: ../../source/style.rst:200
+#: ../../source/style.rst:197
 msgid "Sets the parent of this style object to `parent`."
 msgstr "このスタイルオブジェクトの親を `parent` に設定します。"
 
-#: ../../source/style.rst:204
+#: ../../source/style.rst:201
 msgid ""
 "This takes all style properties from `other`. `other` must be a style object."
 msgstr ""
 "これはスタイルプロパティーを `other` から持ってきます。 `other` はスタイルオ"
 "ブジェクトにする必要があります。"
 
-#: ../../source/style.rst:210
+#: ../../source/style.rst:208
 msgid "Indexed Styles"
 msgstr "インデックスされたスタイル"
 
-#: ../../source/style.rst:212
+#: ../../source/style.rst:210
+#, fuzzy
 msgid ""
 "Indexed styles are lightweight styles that can be used to customize the look "
 "of a displayable based on the data supplied to that displayable. An index "
 "style is created by indexing a style object with a string or integer. If an "
-"indexed style does not exist, indexing creates it.::"
+"indexed style does not exist, indexing creates it. ::"
 msgstr ""
 "インデックスされたスタイルは、displayable に与えられたデータによって "
 "displayable の外観を変えるときに使えるシンプルなスタイルです。インデックスス"
@@ -388,18 +392,18 @@ msgstr ""
 "作成できます。インデックススタイルが存在しないときは、インデックスを作成する"
 "とこれが作成されます。 ::"
 
-#: ../../source/style.rst:221
+#: ../../source/style.rst:219
 msgid ""
 "An index style is used by supplying the indexed style to a displayable.::"
 msgstr ""
 "インデックススタイルは、displayable にインデックスされたスタイルを与えること"
 "で使用できます。::"
 
-#: ../../source/style.rst:232
+#: ../../source/style.rst:230
 msgid "Style Preferences"
 msgstr "スタイル設定"
 
-#: ../../source/style.rst:236
+#: ../../source/style.rst:234
 msgid ""
 ":ref:`gui-preferences` may often provide a better way of accomplishing the "
 "same thing, as a gui preference can change a variable used in multiple "
@@ -408,7 +412,7 @@ msgstr ""
 ":ref:`gui-preferences` は同様なことのよりよい達成方法となるでしょう。gui "
 "preference では複数のスタイルで使用される変数を変更できます。"
 
-#: ../../source/style.rst:240
+#: ../../source/style.rst:238
 msgid ""
 "It's often desirable to allow the user to customize aspects of the user "
 "interface that are best expressed as styles. For example, a creator may want "
@@ -420,7 +424,7 @@ msgstr ""
 "ストのサイズを調整出来るようにしたいと望むかもしれません。 Style preferences "
 "はこのようなカスタマイズを可能にします。"
 
-#: ../../source/style.rst:245
+#: ../../source/style.rst:243
 msgid ""
 "A style preference is a preference that controls one or more style "
 "properties. A style preference has a name and one or more alternatives. At "
@@ -434,7 +438,7 @@ msgstr ""
 "され、また初期値はスタイルプロパティーに登録された最初の代替スタイルとなりま"
 "す。"
 
-#: ../../source/style.rst:251
+#: ../../source/style.rst:249
 msgid ""
 "An alternative has one or more associations of style, property, and value "
 "associated with it, and represents a promise that when the alternative "
@@ -448,7 +452,7 @@ msgstr ""
 "す。これは Ren'Py が最初に初期化される時と、新しい代替スタイルが選択される時"
 "はいつでも実行されます。"
 
-#: ../../source/style.rst:257
+#: ../../source/style.rst:255
 msgid ""
 "One should ensure that every alternative for a given style preference "
 "updates the same set of styles and properties. Otherwise, some styles may "
@@ -458,11 +462,89 @@ msgstr ""
 "ティーを更新することを保証するべきです。さもなければいくつかのスタイルは値が"
 "代入されず、結果は未定義です。"
 
-#: ../../source/style.rst:261
+#: ../../source/style.rst:259
 msgid "The style preference functions are:"
 msgstr "スタイル設定の関数の一覧です。 :"
 
-#: ../../source/style.rst:265
+#: ../../source/inc/style_preferences:5
+msgid ""
+"An action that causes `alternative` to become the selected alternative for "
+"the given style preference."
+msgstr ""
+"`alternative` を与えられたスタイル設定に対応する選択された代替スタイルにする"
+"アクションです。"
+
+#: ../../source/inc/style_preferences:8 ../../source/inc/style_preferences:17
+#: ../../source/inc/style_preferences:25 ../../source/inc/style_preferences:44
+msgid "`preference`"
+msgstr "`preference`"
+
+#: ../../source/inc/style_preferences:8 ../../source/inc/style_preferences:18
+#: ../../source/inc/style_preferences:44
+msgid "A string giving the name of the style preference."
+msgstr "スタイル設定の名前の文字列。"
+
+#: ../../source/inc/style_preferences:10 ../../source/inc/style_preferences:28
+#: ../../source/inc/style_preferences:46
+msgid "`alternative`"
+msgstr "`alternative`"
+
+#: ../../source/inc/style_preferences:11 ../../source/inc/style_preferences:47
+msgid "A string giving the name of the alternative."
+msgstr "代替スタイルの名前の文字列。"
+
+#: ../../source/inc/style_preferences:15
+msgid ""
+"Returns a string giving the name of the selected alternative for the named "
+"style preference."
+msgstr ""
+"名前付きスタイルに対し、選択された代替スタイルの名前を文字列として返します。"
+
+#: ../../source/inc/style_preferences:22
+msgid "Registers information about an alternative for a style preference."
+msgstr "スタイル設定に対し、代替スタイルの情報を登録します。"
+
+#: ../../source/inc/style_preferences:25
+msgid "A string, the name of the style preference."
+msgstr "スタイル設定名の文字列です。"
+
+#: ../../source/inc/style_preferences:28
+msgid "A string, the name of the alternative."
+msgstr "代替スタイルの名前の文字列。"
+
+#: ../../source/inc/style_preferences:31
+msgid "`style`"
+msgstr "`style`"
+
+#: ../../source/inc/style_preferences:31
+msgid ""
+"The style that will be updated. This may be a style object or a string "
+"giving the style name."
+msgstr ""
+"更新されるスタイル。これはスタイルオブジェクトにするか、スタイル名の文字列に"
+"します。"
+
+#: ../../source/inc/style_preferences:34
+msgid "`property`"
+msgstr "`property`"
+
+#: ../../source/inc/style_preferences:34
+msgid "A string giving the name of the style property that will be update."
+msgstr "更新されるスタイルプロパティーの名前の文字列。"
+
+#: ../../source/inc/style_preferences:36
+msgid "`value`"
+msgstr "`value`"
+
+#: ../../source/inc/style_preferences:37
+msgid "The value that will be assigned to the style property."
+msgstr "スタイルプロパティーに割り当てる値。"
+
+#: ../../source/inc/style_preferences:41
+msgid "Sets the selected alternative for the style preference."
+msgstr "スタイル設定に対し、選択された代替スタイルを設定します。"
+
+#: ../../source/style.rst:263
 msgid ""
 "Here's an example of registering a style property that allows the user to "
 "choose between large, simple text and smaller outlined text."
@@ -470,7 +552,7 @@ msgstr ""
 "スタイルプロパティーを登録し、通常の大きい文字と、外枠付きの小さい文字のどち"
 "らかをユーザーが選択できるようにする例を示します。"
 
-#: ../../source/style.rst:277
+#: ../../source/style.rst:275
 msgid ""
 "The following will allow the user to select these alternatives using "
 "buttons::"
@@ -478,11 +560,11 @@ msgstr ""
 "以下のコードにより、ユーザーが代替スタイルをボタンを使って選択できるようにな"
 "ります。 ::"
 
-#: ../../source/style.rst:284
+#: ../../source/style.rst:282
 msgid "Other Style Functions"
 msgstr "その他のスタイル関数"
 
-#: ../../source/style.rst:288
+#: ../../source/style.rst:286
 msgid ""
 "This causes named styles to be rebuilt, allowing styles to be changed after "
 "the init phase has finished."
@@ -490,73 +572,13 @@ msgstr ""
 "名前付きスタイルを再構築し、初期化コードの外側でスタイルを変更できるようにし"
 "ます。"
 
-#: ../../source/style.rst:293
+#: ../../source/style.rst:291
 msgid ""
 "Named styles are not saved as part of the per-game data. This means that "
 "changes to them will not be persisted through a save and load cycle."
 msgstr ""
 "名前付けされたスタイルは、ゲームごとのデータの一部として保存されません。つま"
 "り、保存と読み込みのサイクルにおいて、スタイルの変更は持続しません。"
-
-#~ msgid ""
-#~ "An action that causes `alternative` to become the selected alternative "
-#~ "for the given style preference."
-#~ msgstr ""
-#~ "`alternative` を与えられたスタイル設定に対応する選択された代替スタイルにす"
-#~ "るアクションです。"
-
-#~ msgid "`preference`"
-#~ msgstr "`preference`"
-
-#~ msgid "A string giving the name of the style preference."
-#~ msgstr "スタイル設定の名前の文字列。"
-
-#~ msgid "`alternative`"
-#~ msgstr "`alternative`"
-
-#~ msgid "A string giving the name of the alternative."
-#~ msgstr "代替スタイルの名前の文字列。"
-
-#~ msgid ""
-#~ "Returns a string giving the name of the selected alternative for the "
-#~ "named style preference."
-#~ msgstr ""
-#~ "名前付きスタイルに対し、選択された代替スタイルの名前を文字列として返しま"
-#~ "す。"
-
-#~ msgid "Registers information about an alternative for a style preference."
-#~ msgstr "スタイル設定に対し、代替スタイルの情報を登録します。"
-
-#~ msgid "A string, the name of the style preference."
-#~ msgstr "スタイル設定名の文字列です。"
-
-#~ msgid "A string, the name of the alternative."
-#~ msgstr "代替スタイルの名前の文字列。"
-
-#~ msgid "`style`"
-#~ msgstr "`style`"
-
-#~ msgid ""
-#~ "The style that will be updated. This may be a style object or a string "
-#~ "giving the style name."
-#~ msgstr ""
-#~ "更新されるスタイル。これはスタイルオブジェクトにするか、スタイル名の文字列"
-#~ "にします。"
-
-#~ msgid "`property`"
-#~ msgstr "`property`"
-
-#~ msgid "A string giving the name of the style property that will be update."
-#~ msgstr "更新されるスタイルプロパティーの名前の文字列。"
-
-#~ msgid "`value`"
-#~ msgstr "`value`"
-
-#~ msgid "The value that will be assigned to the style property."
-#~ msgstr "スタイルプロパティーに割り当てる値。"
-
-#~ msgid "Sets the selected alternative for the style preference."
-#~ msgstr "スタイル設定に対し、選択された代替スタイルを設定します。"
 
 #~ msgid "Styles and Style Properties"
 #~ msgstr "スタイルとスタイルのプロパティー"

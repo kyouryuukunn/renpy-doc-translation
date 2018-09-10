@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 01:57+0900\n"
+"POT-Creation-Date: 2018-09-11 07:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,11 +41,11 @@ msgid "Transform Statement"
 msgstr ""
 
 #: ../../source/atl.rst:28
-msgid "The transform statement creates a transform that can be supplied as part of an at clause. The syntax of the transform statement is:"
+msgid "The ``transform`` statement creates a transform that can be supplied as part of an at clause. The syntax of the transform statement is:"
 msgstr ""
 
 #: ../../source/atl.rst:35
-msgid "The transform statement  must be run at init time. If it is found outside an init block, then it is automatically placed inside an init block with a priority of 0. The transform may have a list of parameters, which must be supplied when it is called."
+msgid "The transform statement  must be run at init time. If it is found outside an ``init`` block, then it is automatically placed inside an ``init`` block with a priority of 0. The transform may have a list of parameters, which must be supplied when it is called."
 msgstr ""
 
 #: ../../source/atl.rst:40
@@ -57,7 +57,7 @@ msgid "Image Statement With ATL Block"
 msgstr ""
 
 #: ../../source/atl.rst:53
-msgid "The second way to use ATL is as part of an image statement with ATL block. This binds an image name to the given transform. As there's no way to supply parameters to this transform, it's only useful if the transform defines an animation. The syntax for an image statement with ATL block is:"
+msgid "The second way to use ATL is as part of an ``image`` statement with ATL block. This binds an image name to the given transform. As there's no way to supply parameters to this transform, it's only useful if the transform defines an animation. The syntax for an image statement with ATL block is:"
 msgstr ""
 
 #: ../../source/atl.rst:73
@@ -65,7 +65,7 @@ msgid "Scene and Show Statements with ATL Block"
 msgstr ""
 
 #: ../../source/atl.rst:75
-msgid "The final way to use ATL is as part of a scene or show statement. This wraps the image being shown inside an ATL transformation."
+msgid "The final way to use ATL is as part of a ``scene`` or ``show`` statement. This wraps the image being shown inside an ATL transformation."
 msgstr ""
 
 #: ../../source/atl.rst:95
@@ -89,7 +89,7 @@ msgid "Execution of a block terminates when all statements in the block have ter
 msgstr ""
 
 #: ../../source/atl.rst:115
-msgid "If an ATL statement requires evaluation of an expression, such evaluation occurs when the transform is first added to the scene list. (Such as when using a show statement or ui function.)"
+msgid "If an ATL statement requires evaluation of an expression, such evaluation occurs when the transform is first added to the scene list. (Such as when using a ``show`` statement or ``ui`` function.)"
 msgstr ""
 
 #: ../../source/atl.rst:120
@@ -157,11 +157,11 @@ msgid "Time Statement"
 msgstr ""
 
 #: ../../source/atl.rst:208
-msgid "The time statement is a simple control statement. It contains a single ``simple_expression``, which is evaluated to give a time, expressed as seconds from the start of execution of the containing block."
+msgid "The ``time`` statement is a simple control statement. It contains a single `simple_expression`, which is evaluated to give a time, expressed as seconds from the start of execution of the containing block."
 msgstr ""
 
 #: ../../source/atl.rst:215
-msgid "When the time given in the statement is reached, the following statement begins to execute.This transfer of control occurs even if a previous statement is still executing, and causes any prior statement to immediately terminate."
+msgid "When the time given in the statement is reached, the following statement begins to execute. This transfer of control occurs even if a previous statement is still executing, and causes any prior statement to immediately terminate."
 msgstr ""
 
 #: ../../source/atl.rst:220
@@ -201,7 +201,7 @@ msgid "Pass Statement"
 msgstr ""
 
 #: ../../source/atl.rst:282
-msgid "The pass statement is a simple statement that causes nothing to happen. This can be used when there's a desire to separate statements, like when there are two sets of choice statements that would otherwise be back-to-back."
+msgid "The ``pass`` statement is a simple statement that causes nothing to happen. This can be used when there's a desire to separate statements, like when there are two sets of choice statements that would otherwise be back-to-back."
 msgstr ""
 
 #: ../../source/atl.rst:287
@@ -209,7 +209,7 @@ msgid "Repeat Statement"
 msgstr ""
 
 #: ../../source/atl.rst:290
-msgid "The repeat statement is a simple statement that causes the block containing it to resume execution from the beginning. If the expression is present, then it is evaluated to give an integer number of times the block will execute. (So a block ending with ``repeat 2`` will execute at most twice.)"
+msgid "The ``repeat`` statement is a simple statement that causes the block containing it to resume execution from the beginning. If the expression is present, then it is evaluated to give an integer number of times the block will execute. (So a block ending with ``repeat 2`` will execute at most twice.)"
 msgstr ""
 
 #: ../../source/atl.rst:298
@@ -221,7 +221,7 @@ msgid "Block Statement"
 msgstr ""
 
 #: ../../source/atl.rst:310
-msgid "The block statement is a complex statement that contains a block of ATL statements. This can be used to group statements that will repeat."
+msgid "The ``block`` statement is a complex statement that contains a block of ATL statements. This can be used to group statements that will repeat."
 msgstr ""
 
 #: ../../source/atl.rst:329
@@ -229,11 +229,11 @@ msgid "Choice Statement"
 msgstr ""
 
 #: ../../source/atl.rst:331
-msgid "The choice statement is a complex statement that defines one of a set of potential choices. Ren'Py will pick one of the choices in the set, and execute the ATL block associated with it, and then continue execution after the last choice in the choice set."
+msgid "The ``choice`` statement is a complex statement that defines one of a set of potential choices. Ren'Py will pick one of the choices in the set, and execute the ATL block associated with it, and then continue execution after the last choice in the choice set."
 msgstr ""
 
 #: ../../source/atl.rst:340
-msgid "Choice statements are greedily grouped into a choice set when more than one choice statement appears consecutively in a block. If the ``simple_expression`` is supplied, it is a floating-point weight given to that block, otherwise 1.0 is assumed."
+msgid "Choice statements are greedily grouped into a choice set when more than one choice statement appears consecutively in a block. If the `simple_expression` is supplied, it is a floating-point weight given to that block, otherwise 1.0 is assumed."
 msgstr ""
 
 #: ../../source/atl.rst:359
@@ -241,7 +241,7 @@ msgid "Parallel Statement"
 msgstr ""
 
 #: ../../source/atl.rst:361
-msgid "The parallel statement is used to define a set of ATL blocks to execute in parallel."
+msgid "The ``parallel`` statement is used to define a set of ATL blocks to execute in parallel."
 msgstr ""
 
 #: ../../source/atl.rst:368
@@ -257,7 +257,7 @@ msgid "Event Statement"
 msgstr ""
 
 #: ../../source/atl.rst:394
-msgid "The event statement is a simple statement that causes an event with the given name to be produced."
+msgid "The ``event`` statement is a simple statement that causes an event with the given name to be produced."
 msgstr ""
 
 #: ../../source/atl.rst:400
@@ -269,7 +269,7 @@ msgid "On Statement"
 msgstr ""
 
 #: ../../source/atl.rst:408
-msgid "The On statement is a complex statement that defines an event handler. On statements are greedily grouped into a single statement. On statement can handle a single event name, or a comma-separated list of event names."
+msgid "The ``on`` statement is a complex statement that defines an event handler. On statements are greedily grouped into a single statement. On statement can handle a single event name, or a comma-separated list of event names."
 msgstr ""
 
 #: ../../source/atl.rst:416
@@ -285,7 +285,7 @@ msgid "Contains Statement"
 msgstr ""
 
 #: ../../source/atl.rst:441
-msgid "The contains statement sets the displayable contained by this ATL transform. (The child of the transform.) There are two variants of the contains statement."
+msgid "The ``contains`` statement sets the displayable contained by this ATL transform (the child of the transform). There are two variants of the contains statement."
 msgstr ""
 
 #: ../../source/atl.rst:445
@@ -305,7 +305,7 @@ msgid "Function Statement"
 msgstr ""
 
 #: ../../source/atl.rst:502
-msgid "The function statement allows ATL to use Python functions to control the ATL properties."
+msgid "The ``function`` statement allows ATL to use Python functions to control the ATL properties."
 msgstr ""
 
 #: ../../source/atl.rst:508
@@ -328,147 +328,371 @@ msgstr ""
 msgid "If the function returns a number, it will be called again after that number of seconds has elapsed. (0 seconds means to call the function as soon as possible.) If the function returns None, control will pass to the next ATL statement."
 msgstr ""
 
-#: ../../source/atl.rst:544
+#: ../../source/atl.rst:545
 msgid "Warpers"
 msgstr ""
 
-#: ../../source/atl.rst:546
+#: ../../source/atl.rst:547
 msgid "A warper is a function that can change the amount of time an interpolation statement considers to have elapsed. The following warpers are defined by default. They are defined as functions from t to t', where t and t' are floating point numbers, with t ranging from 0.0 to 1.0 over the given amount of time. (If the statement has 0 duration, then t is 1.0 when it runs.) t' should start at 0.0 and end at 1.0, but can be greater or less."
 msgstr ""
 
-#: ../../source/atl.rst:555
+#: ../../source/atl.rst:556
 msgid "``pause``"
 msgstr ""
 
-#: ../../source/atl.rst:554
+#: ../../source/atl.rst:555
 msgid "Pause, then jump to the new value. If t == 1.0, t = 1.0. Otherwise, t' = 0.0."
 msgstr ""
 
-#: ../../source/atl.rst:558
+#: ../../source/atl.rst:559
 msgid "``linear``"
 msgstr ""
 
-#: ../../source/atl.rst:558
+#: ../../source/atl.rst:559
 msgid "Linear interpolation. t' = t"
 msgstr ""
 
-#: ../../source/atl.rst:562
+#: ../../source/atl.rst:563
 msgid "``ease``"
 msgstr ""
 
-#: ../../source/atl.rst:561
+#: ../../source/atl.rst:562
 msgid "Start slow, speed up, then slow down. t' = .5 - math.cos(math.pi * t) / 2.0"
 msgstr ""
 
-#: ../../source/atl.rst:565
+#: ../../source/atl.rst:566
 msgid "``easein``"
 msgstr ""
 
-#: ../../source/atl.rst:565
+#: ../../source/atl.rst:566
 msgid "Start fast, then slow down. t' = math.cos((1.0 - t) * math.pi / 2.0"
 msgstr ""
 
-#: ../../source/atl.rst:568
+#: ../../source/atl.rst:569
 msgid "``easeout``"
 msgstr ""
 
-#: ../../source/atl.rst:568
+#: ../../source/atl.rst:569
 msgid "Start slow, then speed up. t' = 1.0 - math.cos(t * math.pi / 2.0)"
 msgstr ""
 
-#: ../../source/atl.rst:570
+#: ../../source/atl.rst:571
 msgid "In addition, most of Robert Penner's easing functions are supported. To make the names match those above, the functions have been renamed somewhat. Graphs of these standard functions can be found at http://www.easings.net/."
 msgstr ""
 
-#: ../../source/atl.rst:577
-msgid "New warpers can be defined using the renpy.atl_warper decorator, in a ``python early`` block. It should be placed in a file that is parsed before any file that uses the warper. This looks like::"
+#: ../../source/inc/easings:1
+msgid "Ren'Py Name"
 msgstr ""
 
-#: ../../source/atl.rst:590
+#: ../../source/inc/easings:1
+msgid "easings.net Name"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_back"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_back"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_bounce"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_bounce"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_circ"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_circ"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_cubic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_cubic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_elastic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_elastic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_expo"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_expo"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_quad"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_quad"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_quart"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_quart"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "ease_quint"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeInOut_quint"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_back"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_back"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_bounce"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_bounce"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_circ"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_circ"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_cubic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_cubic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_elastic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_elastic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_expo"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_expo"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_quad"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_quad"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_quart"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_quart"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easein_quint"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeOut_quint"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_back"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_back"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_bounce"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_bounce"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_circ"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_circ"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_cubic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_cubic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_elastic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_elastic"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_expo"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_expo"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_quad"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_quad"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_quart"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_quart"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeout_quint"
+msgstr ""
+
+#: ../../source/inc/easings:1
+msgid "easeIn_quint"
+msgstr ""
+
+#: ../../source/atl.rst:578
+msgid "New warpers can be defined using the ``renpy.atl_warper`` decorator, in a ``python early`` block. It should be placed in a file that is parsed before any file that uses the warper. This looks like::"
+msgstr ""
+
+#: ../../source/atl.rst:591
 msgid "List of Transform Properties"
 msgstr ""
 
-#: ../../source/atl.rst:592
+#: ../../source/atl.rst:593
 msgid "The following transform properties exist."
 msgstr ""
 
-#: ../../source/atl.rst:594
+#: ../../source/atl.rst:595
 msgid "When the type is given as position, it may be an int, ``renpy.absolute``, or float. If it's a float, it's interpreted as a fraction of the size of the containing area (for :propref:`pos`) or displayable (for :propref:`anchor`)."
 msgstr ""
 
-#: ../../source/atl.rst:598
+#: ../../source/atl.rst:599
 msgid "Note that not all properties are independent. For example, :propref:`xalign` and :propref:`xpos` both update some of the same underlying data. In a parallel statement, only one block should adjust horizontal position, and one should adjust vertical positions. (These may be the same block.) The angle and radius properties set both horizontal and vertical positions."
-msgstr ""
-
-#: ../../source/atl.rst:606
-#: ../../source/atl.rst:629
-#: ../../source/atl.rst:813
-msgid "(position, position)"
 msgstr ""
 
 #: ../../source/atl.rst:607
 #: ../../source/atl.rst:630
+#: ../../source/atl.rst:813
+msgid "(position, position)"
+msgstr ""
+
+#: ../../source/atl.rst:608
+#: ../../source/atl.rst:631
 msgid "(0, 0)"
 msgstr ""
 
-#: ../../source/atl.rst:609
+#: ../../source/atl.rst:610
 msgid "The position, relative to the top-left corner of the containing area."
-msgstr ""
-
-#: ../../source/atl.rst:614
-#: ../../source/atl.rst:622
-#: ../../source/atl.rst:637
-#: ../../source/atl.rst:645
-#: ../../source/atl.rst:838
-msgid "position"
 msgstr ""
 
 #: ../../source/atl.rst:615
 #: ../../source/atl.rst:623
 #: ../../source/atl.rst:638
 #: ../../source/atl.rst:646
+#: ../../source/atl.rst:838
+msgid "position"
+msgstr ""
+
+#: ../../source/atl.rst:616
+#: ../../source/atl.rst:624
+#: ../../source/atl.rst:639
+#: ../../source/atl.rst:647
 msgid "0"
 msgstr ""
 
-#: ../../source/atl.rst:617
+#: ../../source/atl.rst:618
 msgid "The horizontal position, relative to the left side of the containing area."
 msgstr ""
 
-#: ../../source/atl.rst:625
+#: ../../source/atl.rst:626
 msgid "The vertical position, relative to the top of the containing area."
 msgstr ""
 
-#: ../../source/atl.rst:632
+#: ../../source/atl.rst:633
 msgid "The anchor position, relative to the top-left corner of the displayable."
 msgstr ""
 
-#: ../../source/atl.rst:640
+#: ../../source/atl.rst:641
 msgid "The horizontal anchor position, relative to the left side of the displayable."
 msgstr ""
 
-#: ../../source/atl.rst:648
+#: ../../source/atl.rst:649
 msgid "The vertical anchor position, relative to the top of the displayable."
 msgstr ""
 
-#: ../../source/atl.rst:653
+#: ../../source/atl.rst:654
 #: ../../source/atl.rst:822
 msgid "(float, float)"
 msgstr ""
 
-#: ../../source/atl.rst:654
+#: ../../source/atl.rst:655
 #: ../../source/atl.rst:814
 #: ../../source/atl.rst:823
 msgid "(0.0, 0.0)"
 msgstr ""
 
-#: ../../source/atl.rst:656
+#: ../../source/atl.rst:657
 msgid "Equivalent to setting pos and anchor to the same value."
 msgstr ""
 
-#: ../../source/atl.rst:660
-#: ../../source/atl.rst:667
-#: ../../source/atl.rst:674
-#: ../../source/atl.rst:682
+#: ../../source/atl.rst:661
+#: ../../source/atl.rst:668
+#: ../../source/atl.rst:675
+#: ../../source/atl.rst:683
 #: ../../source/atl.rst:692
 #: ../../source/atl.rst:700
 #: ../../source/atl.rst:740
@@ -481,10 +705,10 @@ msgstr ""
 msgid "float"
 msgstr ""
 
-#: ../../source/atl.rst:661
-#: ../../source/atl.rst:668
-#: ../../source/atl.rst:675
-#: ../../source/atl.rst:683
+#: ../../source/atl.rst:662
+#: ../../source/atl.rst:669
+#: ../../source/atl.rst:676
+#: ../../source/atl.rst:684
 #: ../../source/atl.rst:693
 #: ../../source/atl.rst:701
 #: ../../source/atl.rst:788
@@ -492,19 +716,19 @@ msgstr ""
 msgid "0.0"
 msgstr ""
 
-#: ../../source/atl.rst:663
+#: ../../source/atl.rst:664
 msgid "Equivalent to setting xpos and xanchor to this value."
 msgstr ""
 
-#: ../../source/atl.rst:670
+#: ../../source/atl.rst:671
 msgid "Equivalent to setting ypos and yanchor to this value."
 msgstr ""
 
-#: ../../source/atl.rst:677
+#: ../../source/atl.rst:678
 msgid "The number of pixels the displayable is offset by in the horizontal direction. Positive values offset toward the right."
 msgstr ""
 
-#: ../../source/atl.rst:685
+#: ../../source/atl.rst:686
 msgid "The number of pixels the displayable is offset by in the vertical direction. Positive values offset toward the bottom."
 msgstr ""
 
@@ -636,7 +860,7 @@ msgid "None or (int, int, int, int) or (float, float, float, float)"
 msgstr ""
 
 #: ../../source/atl.rst:848
-msgid "If not None, causes the displayable to be cropped to the given box. The box is specified as a tuple of (x, y, width, height). If floats are given and crop_relative is true, the components are taken as a fraction of the width and hight of the source image. Otherwise, the components are considered to be an absolute number of pixels."
+msgid "If not None, causes the displayable to be cropped to the given box. The box is specified as a tuple of (x, y, width, height). If floats are given and ``crop_relative`` is true, the components are taken as a fraction of the width and hight of the source image. Otherwise, the components are considered to be an absolute number of pixels."
 msgstr ""
 
 #: ../../source/atl.rst:860
@@ -766,7 +990,7 @@ msgid "``start``"
 msgstr ""
 
 #: ../../source/atl.rst:991
-msgid "A pseudo-event, triggered on entering an on statement, if no event of higher priority has happened."
+msgid "A pseudo-event, triggered on entering an ``on`` statement, if no event of higher priority has happened."
 msgstr ""
 
 #: ../../source/atl.rst:996
@@ -782,7 +1006,7 @@ msgid "``replace``"
 msgstr ""
 
 #: ../../source/atl.rst:999
-msgid "Triggered when transform is shown using the show statement, replacing an image with the given tag."
+msgid "Triggered when transform is shown using the ``show`` statement, replacing an image with the given tag."
 msgstr ""
 
 #: ../../source/atl.rst:1008
@@ -790,7 +1014,7 @@ msgid "``hide``"
 msgstr ""
 
 #: ../../source/atl.rst:1003
-msgid "Triggered when the transform is hidden using the hide statement or its Python equivalent."
+msgid "Triggered when the transform is hidden using the ``hide`` statement or its Python equivalent."
 msgstr ""
 
 #: ../../source/atl.rst:1006

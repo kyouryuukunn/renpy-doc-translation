@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 01:57+0900\n"
+"POT-Creation-Date: 2018-09-11 07:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,63 @@ msgstr ""
 msgid "These are actions that manage screens, interaction results, and control flow."
 msgstr ""
 
+#: ../../source/inc/control_action:5
+msgid "Ends the current statement, and calls `label`. Arguments and keyword arguments are passed to :func:`renpy.call`."
+msgstr ""
+
+#: ../../source/inc/control_action:10
+msgid "This causes the screen named `screen` to be hidden, if it is shown."
+msgstr ""
+
+#: ../../source/inc/control_action:12
+msgid "`transition`"
+msgstr ""
+
+#: ../../source/inc/control_action:13
+msgid "If not None, a transition that occurs when hiding the screen."
+msgstr ""
+
+#: ../../source/inc/control_action:17
+msgid "Causes control to transfer to `label`."
+msgstr ""
+
+#: ../../source/inc/control_action:21
+msgid "Does nothing."
+msgstr ""
+
+#: ../../source/inc/control_action:23
+msgid "This can be used to make a button responsive to hover/unhover events, without actually doing anything."
+msgstr ""
+
+#: ../../source/inc/control_action:28
+msgid "Causes the current interaction to return the supplied value, which must not be None. This is often used with menus and imagemaps, to select what the return value of the interaction is. If the screen was called using the ``call screen`` statement, the return value is placed in the `_return` variable."
+msgstr ""
+
+#: ../../source/inc/control_action:34
+msgid "When in a menu, this returns from the menu. (The value should be None in this case.)"
+msgstr ""
+
+#: ../../source/inc/control_action:39
+msgid "This causes another screen to be shown. `screen` is a string giving the name of the screen. The arguments are passed to the screen being shown."
+msgstr ""
+
+#: ../../source/inc/control_action:43
+#: ../../source/inc/control_action:51
+msgid "If not None, `transition` is use to show the new screen."
+msgstr ""
+
+#: ../../source/inc/control_action:47
+msgid "Shows a transient screen. A transient screen will be hidden when the current interaction completes. The arguments are passed to the screen being shown."
+msgstr ""
+
+#: ../../source/inc/control_action:55
+msgid "This toggles the visibility of `screen`. If it is not currently shown, the screen is shown with the provided arguments. Otherwise, the screen is hidden."
+msgstr ""
+
+#: ../../source/inc/control_action:59
+msgid "If not None, `transition` is use to show and hide the screen."
+msgstr ""
+
 #: ../../source/screen_actions.rst:37
 msgid "Data Actions"
 msgstr ""
@@ -56,12 +113,195 @@ msgstr ""
 msgid "These set or toggle data."
 msgstr ""
 
+#: ../../source/inc/data_action:5
+msgid "Adds `value` to `set`."
+msgstr ""
+
+#: ../../source/inc/data_action:8
+#: ../../source/inc/data_action:17
+#: ../../source/inc/data_action:79
+msgid "`set`"
+msgstr ""
+
+#: ../../source/inc/data_action:8
+msgid "The set to add to. This may be a Python set or list, in which case the value is appended to the list."
+msgstr ""
+
+#: ../../source/inc/data_action:10
+#: ../../source/inc/data_action:19
+#: ../../source/inc/data_action:81
+#: ../../source/inc/audio_action:46
+#: ../../source/inc/value:9
+#: ../../source/inc/value:120
+msgid "`value`"
+msgstr ""
+
+#: ../../source/inc/data_action:11
+#: ../../source/inc/data_action:20
+#: ../../source/inc/data_action:82
+msgid "The value to add or append."
+msgstr ""
+
+#: ../../source/inc/data_action:15
+msgid "Removes `value` from `set`."
+msgstr ""
+
+#: ../../source/inc/data_action:18
+msgid "The set to remove from. This may be a set or list."
+msgstr ""
+
+#: ../../source/inc/data_action:24
+msgid "Causes the value of `key` in `dict` to be set to `value`."
+msgstr ""
+
+#: ../../source/inc/data_action:28
+msgid "Causes the a field on an object to be set to a given value. `object` is the object, `field` is a string giving the name of the field to set, and `value` is the value to set it to."
+msgstr ""
+
+#: ../../source/inc/data_action:34
+msgid "Causes the variable `name` associated with the current screen to be set to `value`."
+msgstr ""
+
+#: ../../source/inc/data_action:39
+msgid "Causes the variable with `name` to be set to `value`."
+msgstr ""
+
+#: ../../source/inc/data_action:43
+msgid "Toggles the value of `key` in `dict`. Toggling means to invert the value when the action is performed."
+msgstr ""
+
+#: ../../source/inc/data_action:46
+#: ../../source/inc/data_action:56
+#: ../../source/inc/data_action:65
+#: ../../source/inc/data_action:88
+msgid "`true_value`"
+msgstr ""
+
+#: ../../source/inc/data_action:47
+#: ../../source/inc/data_action:57
+#: ../../source/inc/data_action:66
+#: ../../source/inc/data_action:89
+msgid "If not None, then this is the true value we use."
+msgstr ""
+
+#: ../../source/inc/data_action:48
+#: ../../source/inc/data_action:58
+#: ../../source/inc/data_action:67
+#: ../../source/inc/data_action:90
+msgid "`false_value`"
+msgstr ""
+
+#: ../../source/inc/data_action:49
+#: ../../source/inc/data_action:59
+#: ../../source/inc/data_action:68
+#: ../../source/inc/data_action:91
+msgid "If not None, then this is the false value we use."
+msgstr ""
+
+#: ../../source/inc/data_action:53
+msgid "Toggles `field` on `object`. Toggling means to invert the boolean value of that field when the action is performed."
+msgstr ""
+
+#: ../../source/inc/data_action:63
+msgid "Toggles the value of the variable `name` in the current screen."
+msgstr ""
+
+#: ../../source/inc/data_action:72
+msgid "Toggles the membership of `value` in `set`. If the value is not in the set, it's added. Otherwise, it is removed."
+msgstr ""
+
+#: ../../source/inc/data_action:75
+msgid "Buttons with this action are marked as selected if and only if the value is in the set."
+msgstr ""
+
+#: ../../source/inc/data_action:79
+msgid "The set to add to or remove from. This may be a set or list. In the case of a list, new items are appended."
+msgstr ""
+
+#: ../../source/inc/data_action:86
+msgid "Toggles `variable`."
+msgstr ""
+
 #: ../../source/screen_actions.rst:44
 msgid "Menu Actions"
 msgstr ""
 
 #: ../../source/screen_actions.rst:46
 msgid "These actions invoke menus, or are primarily useful while in the main or game menus."
+msgstr ""
+
+#: ../../source/inc/menu_action:5
+msgid "Causes Ren'Py to return to the main menu."
+msgstr ""
+
+#: ../../source/inc/menu_action:9
+#: ../../source/inc/menu_action:18
+#: ../../source/inc/file_action:27
+#: ../../source/inc/file_action:45
+#: ../../source/inc/file_action:100
+#: ../../source/inc/file_action:127
+#: ../../source/inc/other_action:179
+msgid "`confirm`"
+msgstr ""
+
+#: ../../source/inc/menu_action:8
+msgid "If true, causes Ren'Py to ask the user if he wishes to return to the main menu, rather than returning directly."
+msgstr ""
+
+#: ../../source/inc/menu_action:14
+msgid "Quits the game."
+msgstr ""
+
+#: ../../source/inc/menu_action:17
+msgid "If true, prompts the user if he wants to quit, rather than quitting directly. If None, asks if and only if the user is not at the main menu."
+msgstr ""
+
+#: ../../source/inc/menu_action:23
+msgid "Causes us to enter the game menu, if we're not there already. If we are in the game menu, then this shows a screen or jumps to a label."
+msgstr ""
+
+#: ../../source/inc/menu_action:26
+msgid "`screen` is usually the name of a screen, which is shown using the screen mechanism. If the screen doesn't exist, then \"_screen\" is appended to it, and that label is jumped to."
+msgstr ""
+
+#: ../../source/inc/menu_action:30
+msgid "ShowMenu(\"load\")"
+msgstr ""
+
+#: ../../source/inc/menu_action:31
+msgid "ShowMenu(\"save\")"
+msgstr ""
+
+#: ../../source/inc/menu_action:32
+msgid "ShowMenu(\"preferences\")"
+msgstr ""
+
+#: ../../source/inc/menu_action:34
+msgid "This can also be used to show user-defined menu screens. For example, if one has a \"stats\" screen defined, one can show it as part of the game menu using:"
+msgstr ""
+
+#: ../../source/inc/menu_action:38
+msgid "ShowMenu(\"stats\")"
+msgstr ""
+
+#: ../../source/inc/menu_action:40
+msgid "ShowMenu without an argument will enter the game menu at the default screen, taken from _game_menu_screen."
+msgstr ""
+
+#: ../../source/inc/menu_action:43
+msgid "Extra arguments and keyword arguments are passed on to the screen"
+msgstr ""
+
+#: ../../source/inc/menu_action:47
+msgid "Causes Ren'Py to jump out of the menu context to the named label. The main use of this is to start a new game from the main menu. Common uses are:"
+msgstr ""
+
+#: ../../source/inc/menu_action:51
+msgid "Start() - Start at the start label."
+msgstr ""
+
+#: ../../source/inc/menu_action:52
+msgid "Start(\"foo\") - Start at the \"foo\" label."
 msgstr ""
 
 #: ../../source/screen_actions.rst:52
@@ -73,6 +313,10 @@ msgid "These actions handle saving, loading, and deleting of files. Many of thes
 msgstr ""
 
 #: ../../source/screen_actions.rst:59
+#: ../../source/inc/file_action:11
+#: ../../source/inc/file_action:24
+#: ../../source/inc/file_action:42
+#: ../../source/inc/file_action:97
 msgid "`name`"
 msgstr ""
 
@@ -81,6 +325,12 @@ msgid "The name of the file to save to. This can be a string or an integer. It's
 msgstr ""
 
 #: ../../source/screen_actions.rst:64
+#: ../../source/inc/file_action:15
+#: ../../source/inc/file_action:31
+#: ../../source/inc/file_action:49
+#: ../../source/inc/file_action:107
+#: ../../source/inc/input_value:44
+#: ../../source/inc/file_action_function:99
 msgid "`page`"
 msgstr ""
 
@@ -88,8 +338,275 @@ msgstr ""
 msgid "The page that this action acts on. This is one of \"auto\", \"quick\", or a positive integer. If None, the page is determined automatically, based on a persistent page number."
 msgstr ""
 
+#: ../../source/inc/file_action:5
+msgid "\"Does the right thing\" with the file. This means loading it if the load screen is showing (current screen is named \"load\"), and saving otherwise."
+msgstr ""
+
+#: ../../source/inc/file_action:10
+msgid "The name of the slot to save to or load from. If None, an unused slot (a large number based on the current time) will be used."
+msgstr ""
+
+#: ../../source/inc/file_action:14
+msgid "The page that the file will be saved to or loaded from. If None, the current page is used."
+msgstr ""
+
+#: ../../source/inc/file_action:17
+msgid "Other keyword arguments are passed to FileLoad or FileSave."
+msgstr ""
+
+#: ../../source/inc/file_action:21
+msgid "Deletes the file."
+msgstr ""
+
+#: ../../source/inc/file_action:24
+msgid "The name of the slot to delete."
+msgstr ""
+
+#: ../../source/inc/file_action:27
+#: ../../source/inc/file_action:45
+#: ../../source/inc/file_action:128
+msgid "If true and not at the main menu, prompt for confirmation before loading the file."
+msgstr ""
+
+#: ../../source/inc/file_action:30
+#: ../../source/inc/file_action:48
+msgid "The page that the file will be loaded from. If None, the current page is used."
+msgstr ""
+
+#: ../../source/inc/file_action:33
+#: ../../source/inc/file_action:57
+#: ../../source/inc/file_action:114
+#: ../../source/inc/file_action_function:70
+msgid "`slot`"
+msgstr ""
+
+#: ../../source/inc/file_action:34
+#: ../../source/inc/file_action:58
+#: ../../source/inc/file_action:115
+msgid "If True, `name` is taken to be a slot name, and `page` is ignored."
+msgstr ""
+
+#: ../../source/inc/file_action:38
+msgid "Loads the file."
+msgstr ""
+
+#: ../../source/inc/file_action:41
+msgid "The name of the slot to load from. If None, an unused slot will be used, and hence the file will not be loadable."
+msgstr ""
+
+#: ../../source/inc/file_action:52
+#: ../../source/inc/file_action:103
+#: ../../source/inc/file_action:137
+msgid "`newest`"
+msgstr ""
+
+#: ../../source/inc/file_action:52
+msgid "If true, the button is selected if this is the newest file."
+msgstr ""
+
+#: ../../source/inc/file_action:55
+#: ../../source/inc/file_action:112
+msgid "`cycle`"
+msgstr ""
+
+#: ../../source/inc/file_action:55
+#: ../../source/inc/file_action:103
+msgid "Ignored."
+msgstr ""
+
+#: ../../source/inc/file_action:62
+msgid "Sets the file page to `page`, which should be one of \"auto\", \"quick\", or an integer."
+msgstr ""
+
+#: ../../source/inc/file_action:67
+msgid "Goes to the next file page."
+msgstr ""
+
+#: ../../source/inc/file_action:71
+#: ../../source/inc/file_action:83
+msgid "`max`"
+msgstr ""
+
+#: ../../source/inc/file_action:70
+msgid "If set, this should be an integer that gives the number of the maximum file page we can go to."
+msgstr ""
+
+#: ../../source/inc/file_action:73
+#: ../../source/inc/file_action:85
+msgid "`wrap`"
+msgstr ""
+
+#: ../../source/inc/file_action:74
+msgid "If true, we can go to the first page when on the last file page if max is set."
+msgstr ""
+
+#: ../../source/inc/file_action:78
+msgid "Goes to the previous file page, if possible."
+msgstr ""
+
+#: ../../source/inc/file_action:81
+msgid "If set, this should be an integer that gives the number of the maximum file page we can go to. This is required to enable wrap."
+msgstr ""
+
+#: ../../source/inc/file_action:86
+msgid "If true, we can go to the last page when on the first file page if max is set."
+msgstr ""
+
+#: ../../source/inc/file_action:90
+msgid "Saves the file."
+msgstr ""
+
+#: ../../source/inc/file_action:92
+msgid "The button with this slot is selected if it's marked as the newest save file."
+msgstr ""
+
+#: ../../source/inc/file_action:96
+msgid "The name of the slot to save to. If None, an unused slot (a large number based on the current time) will be used."
+msgstr ""
+
+#: ../../source/inc/file_action:100
+msgid "If true, then we will prompt before overwriting a file."
+msgstr ""
+
+#: ../../source/inc/file_action:106
+msgid "The name of the page that the slot is on. If None, the current page is used."
+msgstr ""
+
+#: ../../source/inc/file_action:110
+msgid "If true, then saves on the supplied page will be cycled before being shown to the user. :var:`config.quicksave_slots` slots are used in the cycle."
+msgstr ""
+
+#: ../../source/inc/file_action:119
+msgid "Take a screenshot to be used when the game is saved. This can be used to ensure that the screenshot is accurate, by taking a picture of the screen before a file save screen is shown."
+msgstr ""
+
+#: ../../source/inc/file_action:125
+msgid "Performs a quick load."
+msgstr ""
+
+#: ../../source/inc/file_action:132
+msgid "Performs a quick save."
+msgstr ""
+
+#: ../../source/inc/file_action:135
+msgid "`message`"
+msgstr ""
+
+#: ../../source/inc/file_action:135
+msgid "A message to display to the user when the quick save finishes."
+msgstr ""
+
+#: ../../source/inc/file_action:138
+msgid "Set to true to mark the quicksave as the newest save."
+msgstr ""
+
 #: ../../source/screen_actions.rst:69
 msgid "Audio Actions"
+msgstr ""
+
+#: ../../source/inc/audio_action:5
+msgid "Sets the pause flag for `channel`."
+msgstr ""
+
+#: ../../source/inc/audio_action:7
+msgid "If `value` is True, the channel is paused. If False, the channel is unpaused. If \"toggle\", the pause flag will be toggled."
+msgstr ""
+
+#: ../../source/inc/audio_action:12
+msgid "Causes an audio file to be played on a given channel."
+msgstr ""
+
+#: ../../source/inc/audio_action:14
+#: ../../source/inc/audio_action:31
+#: ../../source/inc/audio_action:67
+msgid "`channel`"
+msgstr ""
+
+#: ../../source/inc/audio_action:15
+#: ../../source/inc/audio_action:32
+msgid "The channel to play the sound on."
+msgstr ""
+
+#: ../../source/inc/audio_action:16
+#: ../../source/inc/audio_action:34
+msgid "`file`"
+msgstr ""
+
+#: ../../source/inc/audio_action:17
+#: ../../source/inc/audio_action:34
+msgid "The file to play."
+msgstr ""
+
+#: ../../source/inc/audio_action:23
+msgid "`selected`"
+msgstr ""
+
+#: ../../source/inc/audio_action:19
+msgid "If True, buttons using this action will be marked as selected if the file is playing on the channel. If False, this action will not cause the button to start playing. If None, the button is marked selected if the channel is a music channel, and not otherwise."
+msgstr ""
+
+#: ../../source/inc/audio_action:25
+msgid "Any other keyword arguments are passed to :func:`renpy.music.play`."
+msgstr ""
+
+#: ../../source/inc/audio_action:29
+msgid "Causes an audio file to be queued on a given channel."
+msgstr ""
+
+#: ../../source/inc/audio_action:36
+msgid "Any keyword arguments are passed to :func:`renpy.music.queue`"
+msgstr ""
+
+#: ../../source/inc/audio_action:40
+msgid "Sets the volume of `mixer` to `value`."
+msgstr ""
+
+#: ../../source/inc/audio_action:43
+#: ../../source/inc/audio_action:57
+#: ../../source/inc/audio_action:77
+#: ../../source/inc/value:88
+msgid "`mixer`"
+msgstr ""
+
+#: ../../source/inc/audio_action:43
+msgid "The mixer to set the volume of. A string, usually one of \"music\", \"sfx\", or \"voice\"."
+msgstr ""
+
+#: ../../source/inc/audio_action:46
+msgid "The value to set the volume to. A number between 0.0 and 1.0, inclusive."
+msgstr ""
+
+#: ../../source/inc/audio_action:51
+msgid "Sets the mute status of one or more mixers. When a mixer is muted, audio channels associated with that mixer will stop playing audio."
+msgstr ""
+
+#: ../../source/inc/audio_action:55
+#: ../../source/inc/audio_action:76
+msgid "Either a single string giving a mixer name, or a list of strings giving a list of mixers. The strings should be mixer names, usually \"music\", \"sfx\", or \"voice\"."
+msgstr ""
+
+#: ../../source/inc/audio_action:59
+msgid "`mute`"
+msgstr ""
+
+#: ../../source/inc/audio_action:60
+msgid "True to mute the mixer, False to ummute it."
+msgstr ""
+
+#: ../../source/inc/audio_action:64
+msgid "Causes an audio channel to be stopped."
+msgstr ""
+
+#: ../../source/inc/audio_action:67
+msgid "The channel to stop the sound on."
+msgstr ""
+
+#: ../../source/inc/audio_action:69
+msgid "Any keyword arguments are passed to :func:`renpy.music.stop`"
+msgstr ""
+
+#: ../../source/inc/audio_action:73
+msgid "Toggles the mute status of one or more mixers."
 msgstr ""
 
 #: ../../source/screen_actions.rst:74
@@ -100,12 +617,431 @@ msgstr ""
 msgid "These are other actions, not found anywhere else."
 msgstr ""
 
+#: ../../source/inc/other_action:5
+msgid "Prompts the user for confirmation of an action. If the user clicks yes, the yes action is performed. Otherwise, the `no` action is performed."
+msgstr ""
+
+#: ../../source/inc/other_action:10
+msgid "`prompt`"
+msgstr ""
+
+#: ../../source/inc/other_action:10
+msgid "The prompt to display to the user."
+msgstr ""
+
+#: ../../source/inc/other_action:15
+msgid "`confirm_selected`"
+msgstr ""
+
+#: ../../source/inc/other_action:13
+msgid "If true, the prompt will be displayed even if the `yes` action is already selected. If false (the default), the prompt will not be displayed if the `yes` action is selected."
+msgstr ""
+
+#: ../../source/inc/other_action:17
+msgid "The sensitivity and selectedness of this action match those of the `yes` action."
+msgstr ""
+
+#: ../../source/inc/other_action:22
+msgid "Disables all active InputValue. This will re-focus the default InputValue, if there is one. Otherwise, no InputValue will be focused."
+msgstr ""
+
+#: ../../source/inc/other_action:28
+msgid "This Action calls `callable` with `args` and `kwargs`."
+msgstr ""
+
+#: ../../source/inc/other_action:30
+msgid "`callable`"
+msgstr ""
+
+#: ../../source/inc/other_action:31
+msgid "Callable object."
+msgstr ""
+
+#: ../../source/inc/other_action:32
+msgid "`args`"
+msgstr ""
+
+#: ../../source/inc/other_action:33
+msgid "position arguments to be passed to `callable`."
+msgstr ""
+
+#: ../../source/inc/other_action:35
+msgid "`kwargs`"
+msgstr ""
+
+#: ../../source/inc/other_action:35
+msgid "keyword arguments to be passed to `callable`."
+msgstr ""
+
+#: ../../source/inc/other_action:37
+msgid "This Action takes an optional _update_screens keyword argument, which defaults to true. When it is true, the interaction restarts and the screens are updated after the function returns."
+msgstr ""
+
+#: ../../source/inc/other_action:41
+msgid "If the function returns a non-None value, the interaction stops and returns that value. (When called using the call screen statement, the result is placed in the `_return` variable.)"
+msgstr ""
+
+#: ../../source/inc/other_action:47
+msgid "Displays help."
+msgstr ""
+
+#: ../../source/inc/other_action:49
+msgid "If a screen named ``help`` is defined, that screen is displayed using :func:`ShowMenu` and `help` is ignored."
+msgstr ""
+
+#: ../../source/inc/other_action:61
+msgid "`help`"
+msgstr ""
+
+#: ../../source/inc/other_action:53
+msgid "A string that is used to find help. This is used in the following way:"
+msgstr ""
+
+#: ../../source/inc/other_action:56
+msgid "If a label with this name exists, the label is called in a new context."
+msgstr ""
+
+#: ../../source/inc/other_action:58
+msgid "Otherwise, this is interpreted as giving the name of a file that should be opened in a web browser."
+msgstr ""
+
+#: ../../source/inc/other_action:61
+msgid "If `help` is None, :var:`config.help` is used as the default value."
+msgstr ""
+
+#: ../../source/inc/other_action:67
+msgid "Causes the interface to be hidden until the user clicks."
+msgstr ""
+
+#: ../../source/inc/other_action:71
+msgid "This returns `true` if `expression` is true, and `false` otherwise. Use this to select an action based on an expression. Note that the default, None, can be used as an action that causes a button to be disabled."
+msgstr ""
+
+#: ../../source/inc/other_action:78
+msgid "This inverts the selection state of the provided action, while proxying over all of the other methods."
+msgstr ""
+
+#: ../../source/inc/other_action:83
+msgid "Move the mouse pointer to `x`, `y`. If the device does not have a mouse pointer or _preferences.mouse_move is False, this does nothing."
+msgstr ""
+
+#: ../../source/inc/other_action:87
+msgid "`duration`"
+msgstr ""
+
+#: ../../source/inc/other_action:87
+msgid "The time it will take to perform the move, in seconds. During this time, the mouse may be unresponsive."
+msgstr ""
+
+#: ../../source/inc/other_action:92
+msgid "Displays `message` using :func:`renpy.notify`."
+msgstr ""
+
+#: ../../source/inc/other_action:96
+msgid "Causes `url` to be opened in a web browser."
+msgstr ""
+
+#: ../../source/inc/other_action:100
+msgid "Queues the given event using :func:`renpy.queue_event`."
+msgstr ""
+
+#: ../../source/inc/other_action:104
+msgid "This action causes Ren'Py to rollback to before the current statement, and then re-run the current statement. This may be used when changing a persistent variable that affects how the statement is displayed."
+msgstr ""
+
+#: ../../source/inc/other_action:109
+msgid "If run in a menu context, this waits until the player exits to a top-level context before performing the rollback."
+msgstr ""
+
+#: ../../source/inc/other_action:114
+msgid "This action causes a rollforward to occur, if a roll forward is possible. Otherwise, it is insensitive."
+msgstr ""
+
+#: ../../source/inc/other_action:119
+msgid "This action causes a rollback to occur, when a rollback is possible. Otherwise, nothing happens."
+msgstr ""
+
+#: ../../source/inc/other_action:122
+msgid "The arguments are given to :func:`renpy.rollback`, except that the `force` argument defaults to \"menu\"."
+msgstr ""
+
+#: ../../source/inc/other_action:127
+msgid "This causes a rollback to an identifier to occur. Rollback identifiers are returned as part of HistoryEntry objects."
+msgstr ""
+
+#: ../../source/inc/other_action:132
+msgid "Takes a screenshot."
+msgstr ""
+
+#: ../../source/inc/other_action:136
+msgid "Causes a Bar, Viewport, or Vpgrid to scroll."
+msgstr ""
+
+#: ../../source/inc/other_action:139
+msgid "`id`"
+msgstr ""
+
+#: ../../source/inc/other_action:139
+msgid "The id of a bar, viewport, or vpgrid in the current screen."
+msgstr ""
+
+#: ../../source/inc/other_action:144
+msgid "`direction`"
+msgstr ""
+
+#: ../../source/inc/other_action:142
+msgid "For a vbar, one of \"increase\" or \"decrease\". For a viewport or vpgrid, one of \"horizontal increase\", \"vertical increase\", \"horizontal decrease\", or \"vertical decrease\"."
+msgstr ""
+
+#: ../../source/inc/other_action:147
+msgid "`amount`"
+msgstr ""
+
+#: ../../source/inc/other_action:147
+msgid "The amount to scroll by. This can be a number of pixels, or else \"step\" or \"page\"."
+msgstr ""
+
+#: ../../source/inc/other_action:152
+msgid "This allows an expression to control if a button should be marked as selected. It should be used as part of a list with one or more actions. For example::"
+msgstr ""
+
+#: ../../source/inc/other_action:162
+msgid "This allows an expression to control if a button should be marked as sensitive. It should be used as part of a list with one or more actions. For example::"
+msgstr ""
+
+#: ../../source/inc/other_action:172
+msgid "Causes the game to begin skipping. If the game is in a menu context, then this returns to the game. Otherwise, it just enables skipping."
+msgstr ""
+
+#: ../../source/inc/other_action:177
+msgid "`fast`"
+msgstr ""
+
+#: ../../source/inc/other_action:177
+msgid "If true, skips directly to the next menu choice."
+msgstr ""
+
+#: ../../source/inc/other_action:180
+msgid "If true, asks for confirmation before beginning skipping."
+msgstr ""
+
+#: ../../source/inc/other_action:184
+msgid "Causes `transition` to occur."
+msgstr ""
+
 #: ../../source/screen_actions.rst:84
 msgid "Bar Values"
 msgstr ""
 
 #: ../../source/screen_actions.rst:86
 msgid "Bar values are used with bars, to set the bar value, and to allow the bar to adjust an underlying property. To create a new bar value, subclass the :class:`BarValue` class."
+msgstr ""
+
+#: ../../source/inc/value:5
+msgid "This animates a value, taking `delay` seconds to vary the value from `old_value` to `value`."
+msgstr ""
+
+#: ../../source/inc/value:9
+#: ../../source/inc/value:120
+msgid "The value itself, a number."
+msgstr ""
+
+#: ../../source/inc/value:12
+#: ../../source/inc/value:40
+#: ../../source/inc/value:65
+#: ../../source/inc/value:97
+#: ../../source/inc/value:122
+#: ../../source/inc/value:132
+msgid "`range`"
+msgstr ""
+
+#: ../../source/inc/value:12
+msgid "The range of the value, a number."
+msgstr ""
+
+#: ../../source/inc/value:16
+msgid "`delay`"
+msgstr ""
+
+#: ../../source/inc/value:15
+msgid "The time it takes to animate the value, in seconds. Defaults to 1.0."
+msgstr ""
+
+#: ../../source/inc/value:20
+msgid "`old_value`"
+msgstr ""
+
+#: ../../source/inc/value:19
+msgid "The old value. If this is None, then the value is taken from the AnimatedValue we replaced, if any. Otherwise, it is initialized to `value`."
+msgstr ""
+
+#: ../../source/inc/value:25
+msgid "A value that shows the playback position of the audio file playing in `channel`."
+msgstr ""
+
+#: ../../source/inc/value:28
+msgid "`update_interval`"
+msgstr ""
+
+#: ../../source/inc/value:29
+msgid "How often the value updates, in seconds."
+msgstr ""
+
+#: ../../source/inc/value:33
+msgid "A value that allows the user to adjust the value of a key in a dict."
+msgstr ""
+
+#: ../../source/inc/value:36
+msgid "`dict`"
+msgstr ""
+
+#: ../../source/inc/value:37
+msgid "The dict."
+msgstr ""
+
+#: ../../source/inc/value:38
+msgid "`key`"
+msgstr ""
+
+#: ../../source/inc/value:39
+msgid "The key."
+msgstr ""
+
+#: ../../source/inc/value:41
+#: ../../source/inc/value:66
+#: ../../source/inc/value:98
+#: ../../source/inc/value:133
+msgid "The range to adjust over."
+msgstr ""
+
+#: ../../source/inc/value:46
+#: ../../source/inc/value:72
+#: ../../source/inc/value:104
+#: ../../source/inc/value:139
+msgid "`max_is_zero`"
+msgstr ""
+
+#: ../../source/inc/value:43
+msgid "If True, then when the value of a key is zero, the value of the bar will be range, and all other values will be shifted down by 1. This works both ways - when the bar is set to the maximum, the value of a key is set to 0."
+msgstr ""
+
+#: ../../source/inc/value:48
+#: ../../source/inc/value:74
+#: ../../source/inc/value:106
+#: ../../source/inc/value:141
+msgid "`style`"
+msgstr ""
+
+#: ../../source/inc/value:49
+#: ../../source/inc/value:75
+#: ../../source/inc/value:107
+#: ../../source/inc/value:142
+msgid "The styles of the bar created."
+msgstr ""
+
+#: ../../source/inc/value:50
+#: ../../source/inc/value:76
+#: ../../source/inc/value:108
+#: ../../source/inc/value:143
+msgid "`offset`"
+msgstr ""
+
+#: ../../source/inc/value:51
+#: ../../source/inc/value:77
+#: ../../source/inc/value:109
+#: ../../source/inc/value:144
+msgid "An offset to add to the value."
+msgstr ""
+
+#: ../../source/inc/value:53
+#: ../../source/inc/value:79
+#: ../../source/inc/value:111
+#: ../../source/inc/value:146
+msgid "`step`"
+msgstr ""
+
+#: ../../source/inc/value:53
+#: ../../source/inc/value:79
+#: ../../source/inc/value:111
+#: ../../source/inc/value:146
+msgid "The amount to change the bar by. If None, defaults to 1/10th of the bar."
+msgstr ""
+
+#: ../../source/inc/value:58
+msgid "A bar value that allows the user to adjust the value of a field on an object."
+msgstr ""
+
+#: ../../source/inc/value:61
+msgid "`object`"
+msgstr ""
+
+#: ../../source/inc/value:62
+msgid "The object."
+msgstr ""
+
+#: ../../source/inc/value:63
+#: ../../source/inc/input_value:19
+msgid "`field`"
+msgstr ""
+
+#: ../../source/inc/value:64
+msgid "The field, a string."
+msgstr ""
+
+#: ../../source/inc/value:68
+#: ../../source/inc/value:100
+#: ../../source/inc/value:135
+msgid "If True, then when the field is zero, the value of the bar will be range, and all other values will be shifted down by 1. This works both ways - when the bar is set to the maximum, the field is set to 0."
+msgstr ""
+
+#: ../../source/inc/value:73
+#: ../../source/inc/value:105
+#: ../../source/inc/value:140
+msgid "This is used internally, for some preferences."
+msgstr ""
+
+#: ../../source/inc/value:84
+msgid "The value of an audio mixer."
+msgstr ""
+
+#: ../../source/inc/value:87
+msgid "The name of the mixer to adjust. This is usually one of \"music\", \"sfx\", or \"voice\", but creators can create new mixers."
+msgstr ""
+
+#: ../../source/inc/value:93
+msgid "A bar value that adjusts the value of a variable in a screen."
+msgstr ""
+
+#: ../../source/inc/value:95
+#: ../../source/inc/value:130
+#: ../../source/inc/input_value:54
+#: ../../source/inc/input_value:68
+msgid "`variable`"
+msgstr ""
+
+#: ../../source/inc/value:96
+#: ../../source/inc/value:131
+msgid "A string giving the name of the variable to adjust."
+msgstr ""
+
+#: ../../source/inc/value:117
+msgid "This allows a value to be specified statically."
+msgstr ""
+
+#: ../../source/inc/value:123
+msgid "The range of the value."
+msgstr ""
+
+#: ../../source/inc/value:127
+msgid "A bar value that allows the user to adjust the value of a variable in the default store."
+msgstr ""
+
+#: ../../source/inc/value:151
+msgid "The value of an adjustment that horizontally scrolls the viewport with the given id, on the current screen. The viewport must be defined before a bar with this value is."
+msgstr ""
+
+#: ../../source/inc/value:157
+msgid "The value of an adjustment that vertically scrolls the viewport with the given id, on the current screen. The viewport must be defined before a bar with this value is."
 msgstr ""
 
 #: ../../source/screen_actions.rst:96
@@ -118,6 +1054,95 @@ msgstr ""
 
 #: ../../source/screen_actions.rst:103
 msgid "Ren'Py-defined input values inherit from InputValue, which means that all values also include Enable(), Disable(), and Toggle() methods that return actions that enable, disable, and toggle editing, respectively. See also the :func:`DisableAllInputValues` action."
+msgstr ""
+
+#: ../../source/inc/input_value:5
+msgid "An input value that updates `key` in `dict`."
+msgstr ""
+
+#: ../../source/inc/input_value:8
+#: ../../source/inc/input_value:22
+#: ../../source/inc/input_value:46
+#: ../../source/inc/input_value:57
+#: ../../source/inc/input_value:71
+msgid "`default`"
+msgstr ""
+
+#: ../../source/inc/input_value:8
+#: ../../source/inc/input_value:22
+#: ../../source/inc/input_value:47
+#: ../../source/inc/input_value:57
+#: ../../source/inc/input_value:71
+msgid "If true, this input can be editable by default."
+msgstr ""
+
+#: ../../source/inc/input_value:11
+#: ../../source/inc/input_value:25
+#: ../../source/inc/input_value:60
+#: ../../source/inc/input_value:74
+msgid "`returnable`"
+msgstr ""
+
+#: ../../source/inc/input_value:11
+#: ../../source/inc/input_value:25
+#: ../../source/inc/input_value:60
+#: ../../source/inc/input_value:74
+msgid "If true, the value of this input will be returned when the user presses enter."
+msgstr ""
+
+#: ../../source/inc/input_value:16
+msgid "An input value that updates `field` on `object`."
+msgstr ""
+
+#: ../../source/inc/input_value:19
+msgid "A string giving the name of the field."
+msgstr ""
+
+#: ../../source/inc/input_value:30
+msgid "An input value that updates the name of a file page."
+msgstr ""
+
+#: ../../source/inc/input_value:34
+msgid "`pattern`"
+msgstr ""
+
+#: ../../source/inc/input_value:33
+msgid "This is used for the default name of a page. Python-style substition is performed, such that {} is replaced with the number of the page."
+msgstr ""
+
+#: ../../source/inc/input_value:37
+#: ../../source/inc/file_action_function:76
+msgid "`auto`"
+msgstr ""
+
+#: ../../source/inc/input_value:37
+msgid "The name of the autosave page."
+msgstr ""
+
+#: ../../source/inc/input_value:40
+#: ../../source/inc/file_action_function:79
+msgid "`quick`"
+msgstr ""
+
+#: ../../source/inc/input_value:40
+msgid "The name of the quicksave page."
+msgstr ""
+
+#: ../../source/inc/input_value:43
+msgid "If given, the number of the page to display. This should usually be left as None, to give the current page."
+msgstr ""
+
+#: ../../source/inc/input_value:51
+msgid "An input value that updates variable."
+msgstr ""
+
+#: ../../source/inc/input_value:54
+#: ../../source/inc/input_value:68
+msgid "A string giving the name of the variable to update."
+msgstr ""
+
+#: ../../source/inc/input_value:65
+msgid "An input value that updates `variable`."
 msgstr ""
 
 #: ../../source/screen_actions.rst:112
@@ -136,12 +1161,396 @@ msgstr ""
 msgid "While all preferences can be defined based on the Actions and Values given above, it requires some knowledge of Ren'Py to figure out the correct one to use. The preferences constructor makes this easy, by creation an action or value, as appropriate, based on the names used in the default preferences screen."
 msgstr ""
 
+#: ../../source/inc/preference_action:5
+msgid "This constructs the appropriate action or value from a preference. The preference name should be the name given in the standard menus, while the value should be either the name of a choice, \"toggle\" to cycle through choices, a specific value, or left off in the case of buttons."
+msgstr ""
+
+#: ../../source/inc/preference_action:11
+msgid "Actions that can be used with buttons and hotspots are:"
+msgstr ""
+
+#: ../../source/inc/preference_action:13
+msgid "Preference(\"display\", \"fullscreen\") - displays in fullscreen mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:14
+msgid "Preference(\"display\", \"window\") - displays in windowed mode at 1x normal size."
+msgstr ""
+
+#: ../../source/inc/preference_action:15
+msgid "Preference(\"display\", 2.0) - displays in windowed mode at 2.0x normal size."
+msgstr ""
+
+#: ../../source/inc/preference_action:16
+msgid "Preference(\"display\", \"any window\") - displays in windowed mode at the previous size."
+msgstr ""
+
+#: ../../source/inc/preference_action:17
+msgid "Preference(\"display\", \"toggle\") - toggle display mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:19
+msgid "Preference(\"transitions\", \"all\") - show all transitions."
+msgstr ""
+
+#: ../../source/inc/preference_action:20
+msgid "Preference(\"transitions\", \"none\") - do not show transitions."
+msgstr ""
+
+#: ../../source/inc/preference_action:21
+msgid "Preference(\"transitions\", \"toggle\") - toggle transitions."
+msgstr ""
+
+#: ../../source/inc/preference_action:23
+msgid "Preference(\"video sprites\", \"show\") - show all video sprites."
+msgstr ""
+
+#: ../../source/inc/preference_action:24
+msgid "Preference(\"video sprites\", \"hide\") - fall back to images where possible."
+msgstr ""
+
+#: ../../source/inc/preference_action:25
+msgid "Preference(\"video sprites\", \"toggle\") - toggle image fallback behavior."
+msgstr ""
+
+#: ../../source/inc/preference_action:27
+msgid "Preference(\"show empty window\", \"show\") - Allow the \"window show\" and \"window auto\" statement to show an empty window outside of the say statement."
+msgstr ""
+
+#: ../../source/inc/preference_action:28
+msgid "Preference(\"show empty window\", \"hide\") - Prevent the above."
+msgstr ""
+
+#: ../../source/inc/preference_action:29
+msgid "Preference(\"show empty window\", \"toggle\") - Toggle the above."
+msgstr ""
+
+#: ../../source/inc/preference_action:31
+msgid "Preference(\"text speed\", 0) - make text appear instantaneously."
+msgstr ""
+
+#: ../../source/inc/preference_action:32
+msgid "Preference(\"text speed\", 142) - set text speed to 142 characters per second."
+msgstr ""
+
+#: ../../source/inc/preference_action:34
+msgid "Preference(\"joystick\") - Show the joystick preferences."
+msgstr ""
+
+#: ../../source/inc/preference_action:36
+msgid "Preference(\"skip\", \"seen\") - Only skip seen messages."
+msgstr ""
+
+#: ../../source/inc/preference_action:37
+msgid "Preference(\"skip\", \"all\") - Skip unseen messages."
+msgstr ""
+
+#: ../../source/inc/preference_action:38
+msgid "Preference(\"skip\", \"toggle\") - Toggle between skip seen and skip all."
+msgstr ""
+
+#: ../../source/inc/preference_action:40
+msgid "Preference(\"begin skipping\") - Starts skipping."
+msgstr ""
+
+#: ../../source/inc/preference_action:42
+msgid "Preference(\"after choices\", \"skip\") - Skip after choices."
+msgstr ""
+
+#: ../../source/inc/preference_action:43
+msgid "Preference(\"after choices\", \"stop\") - Stop skipping after choices."
+msgstr ""
+
+#: ../../source/inc/preference_action:44
+msgid "Preference(\"after choices\", \"toggle\") - Toggle skipping after choices."
+msgstr ""
+
+#: ../../source/inc/preference_action:46
+msgid "Preference(\"auto-forward time\", 0) - Set the auto-forward time to infinite."
+msgstr ""
+
+#: ../../source/inc/preference_action:47
+msgid "Preference(\"auto-forward time\", 10) - Set the auto-forward time (unit is seconds per 250 characters)."
+msgstr ""
+
+#: ../../source/inc/preference_action:49
+msgid "Preference(\"auto-forward\", \"enable\") - Enable auto-forward mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:50
+msgid "Preference(\"auto-forward\", \"disable\") - Disable auto-forward mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:51
+msgid "Preference(\"auto-forward\", \"toggle\") - Toggle auto-forward mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:53
+msgid "Preference(\"auto-forward after click\", \"enable\") - Remain in auto-forward mode after a click."
+msgstr ""
+
+#: ../../source/inc/preference_action:54
+msgid "Preference(\"auto-forward after click\", \"disable\") - Disable auto-forward mode after a click."
+msgstr ""
+
+#: ../../source/inc/preference_action:55
+msgid "Preference(\"auto-forward after click\", \"toggle\") - Toggle auto-forward after click."
+msgstr ""
+
+#: ../../source/inc/preference_action:57
+msgid "Preference(\"automatic move\", \"enable\") - Enable automatic mouse mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:58
+msgid "Preference(\"automatic move\", \"disable\") - Disable automatic mouse mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:59
+msgid "Preference(\"automatic move\", \"toggle\") - Toggle automatic mouse mode."
+msgstr ""
+
+#: ../../source/inc/preference_action:61
+msgid "Preference(\"wait for voice\", \"enable\")  - Wait for the currently playing voice to complete before auto-forwarding."
+msgstr ""
+
+#: ../../source/inc/preference_action:62
+msgid "Preference(\"wait for voice\", \"disable\") - Do not wait for the currently playing voice to complete before auto-forwarding."
+msgstr ""
+
+#: ../../source/inc/preference_action:63
+msgid "Preference(\"wait for voice\", \"toggle\")  - Toggle wait voice."
+msgstr ""
+
+#: ../../source/inc/preference_action:65
+msgid "Preference(\"voice sustain\", \"enable\")  - Sustain voice past the current interaction."
+msgstr ""
+
+#: ../../source/inc/preference_action:66
+msgid "Preference(\"voice sustain\", \"disable\") - Don't sustain voice past the current interaction."
+msgstr ""
+
+#: ../../source/inc/preference_action:67
+msgid "Preference(\"voice sustain\", \"toggle\")  - Toggle voice sustain."
+msgstr ""
+
+#: ../../source/inc/preference_action:69
+msgid "Preference(\"music mute\", \"enable\") - Mute the music mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:70
+msgid "Preference(\"music mute\", \"disable\") - Un-mute the music mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:71
+msgid "Preference(\"music mute\", \"toggle\") - Toggle music mute."
+msgstr ""
+
+#: ../../source/inc/preference_action:73
+msgid "Preference(\"sound mute\", \"enable\") - Mute the sound mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:74
+msgid "Preference(\"sound mute\", \"disable\") - Un-mute the sound mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:75
+msgid "Preference(\"sound mute\", \"toggle\") - Toggle sound mute."
+msgstr ""
+
+#: ../../source/inc/preference_action:77
+msgid "Preference(\"voice mute\", \"enable\") - Mute the voice mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:78
+msgid "Preference(\"voice mute\", \"disable\") - Un-mute the voice mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:79
+msgid "Preference(\"voice mute\", \"toggle\") - Toggle voice mute."
+msgstr ""
+
+#: ../../source/inc/preference_action:81
+msgid "Preference(\"mixer <mixer> mute\", \"enable\") - Mute the specified mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:82
+msgid "Preference(\"mixer <mixer> mute\", \"disable\") - Unmute the specified mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:83
+msgid "Preference(\"mixer <mixer> mute\", \"toggle\") - Toggle mute of specified mixer."
+msgstr ""
+
+#: ../../source/inc/preference_action:85
+msgid "Preference(\"all mute\", \"enable\") - Mute all mixers."
+msgstr ""
+
+#: ../../source/inc/preference_action:86
+msgid "Preference(\"all mute\", \"disable\") - Unmute all mixers."
+msgstr ""
+
+#: ../../source/inc/preference_action:87
+msgid "Preference(\"all mute\", \"toggle\") - Toggle mute of all mixers."
+msgstr ""
+
+#: ../../source/inc/preference_action:89
+msgid "Preference(\"music volume\", 0.5) - Set the music volume."
+msgstr ""
+
+#: ../../source/inc/preference_action:90
+msgid "Preference(\"sound volume\", 0.5) - Set the sound volume."
+msgstr ""
+
+#: ../../source/inc/preference_action:91
+msgid "Preference(\"voice volume\", 0.5) - Set the voice volume."
+msgstr ""
+
+#: ../../source/inc/preference_action:92
+msgid "Preference(\"mixer <mixer> volume\", 0.5) - Set the specified mixer volume."
+msgstr ""
+
+#: ../../source/inc/preference_action:94
+msgid "Preference(\"emphasize audio\", \"enable\") - Emphasize the audio channels found in :var:`config.emphasize_audio_channels`."
+msgstr ""
+
+#: ../../source/inc/preference_action:95
+msgid "Preference(\"emphasize audio\", \"disable\") - Do not emphasize audio channels."
+msgstr ""
+
+#: ../../source/inc/preference_action:96
+msgid "Preference(\"emphasize audio\", \"toggle\") - Toggle emphasize audio."
+msgstr ""
+
+#: ../../source/inc/preference_action:98
+msgid "Preference(\"self voicing\", \"enable\") - Enables self-voicing."
+msgstr ""
+
+#: ../../source/inc/preference_action:99
+msgid "Preference(\"self voicing\", \"disable\") - Disable self-voicing."
+msgstr ""
+
+#: ../../source/inc/preference_action:100
+msgid "Preference(\"self voicing\", \"toggle\") - Toggles self-voicing."
+msgstr ""
+
+#: ../../source/inc/preference_action:102
+msgid "Preference(\"clipboard voicing\", \"enable\") - Enables clipboard-voicing."
+msgstr ""
+
+#: ../../source/inc/preference_action:103
+msgid "Preference(\"clipboard voicing\", \"disable\") - Disable clipboard-voicing."
+msgstr ""
+
+#: ../../source/inc/preference_action:104
+msgid "Preference(\"clipboard voicing\", \"toggle\") - Toggles clipboard-voicing."
+msgstr ""
+
+#: ../../source/inc/preference_action:106
+msgid "Preference(\"debug voicing\", \"enable\") - Enables self.-voicing debug"
+msgstr ""
+
+#: ../../source/inc/preference_action:107
+msgid "Preference(\"debug voicing\", \"disable\") - Disable self-voicing debug."
+msgstr ""
+
+#: ../../source/inc/preference_action:108
+msgid "Preference(\"debug voicing\", \"toggle\") - Toggles self-voicing debug."
+msgstr ""
+
+#: ../../source/inc/preference_action:110
+msgid "Preference(\"rollback side\", \"left\") - Touching the left side of the screen causes rollback."
+msgstr ""
+
+#: ../../source/inc/preference_action:111
+msgid "Preference(\"rollback side\", \"right\") - Touching the right side of the screen causes rollback."
+msgstr ""
+
+#: ../../source/inc/preference_action:112
+msgid "Preference(\"rollback side\", \"disable\") - Touching the screen will not cause rollback."
+msgstr ""
+
+#: ../../source/inc/preference_action:114
+msgid "Preference(\"gl powersave\", True) - Drop framerate to allow for power savings."
+msgstr ""
+
+#: ../../source/inc/preference_action:115
+msgid "Preference(\"gl powersave\", False) - Do not drop framerate to allow for power savings."
+msgstr ""
+
+#: ../../source/inc/preference_action:116
+msgid "Preference(\"gl powersave\", \"auto\") - Enable powersave when running on battery."
+msgstr ""
+
+#: ../../source/inc/preference_action:118
+msgid "Preference(\"gl framerate\", None) - Runs at the display framerate."
+msgstr ""
+
+#: ../../source/inc/preference_action:119
+msgid "Preference(\"gl framerate\", 60) - Runs at the given framerate."
+msgstr ""
+
+#: ../../source/inc/preference_action:121
+msgid "Preference(\"gl tearing\", True) - Tears rather than skipping frames."
+msgstr ""
+
+#: ../../source/inc/preference_action:122
+msgid "Preference(\"gl tearing\", False) - Skips frames rather than tearing."
+msgstr ""
+
+#: ../../source/inc/preference_action:124
+msgid "Values that can be used with bars are:"
+msgstr ""
+
+#: ../../source/inc/preference_action:126
+msgid "Preference(\"text speed\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:127
+msgid "Preference(\"auto-forward time\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:128
+msgid "Preference(\"music volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:129
+msgid "Preference(\"sound volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:130
+msgid "Preference(\"voice volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:131
+msgid "Preference(\"mixer <mixer> volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:133
+msgid "The `range` parameter can be given to give the range of certain bars. For \"text speed\", it defaults to 200 cps. For \"auto-forward time\", it defaults to 30.0 seconds per chunk of text. (These are maximums, not defaults.)"
+msgstr ""
+
 #: ../../source/screen_actions.rst:128
 msgid "Gamepad"
 msgstr ""
 
 #: ../../source/screen_actions.rst:130
 msgid "These functions and actions work with the gamepad."
+msgstr ""
+
+#: ../../source/inc/gamepad:5
+msgid "An action that invokes the gamepad calibration routine."
+msgstr ""
+
+#: ../../source/inc/gamepad:9
+msgid "A function that returns true if a gamepad is present, and false otherwise."
+msgstr ""
+
+#: ../../source/inc/gamepad:12
+msgid "`developer`"
+msgstr ""
+
+#: ../../source/inc/gamepad:12
+msgid "Forces this function to always return true while :var:`config.developer` is true."
 msgstr ""
 
 #: ../../source/screen_actions.rst:135
@@ -152,12 +1561,140 @@ msgstr ""
 msgid "These functions return useful information about files. They use the same default page as the file actions."
 msgstr ""
 
+#: ../../source/inc/file_action_function:5
+msgid "Returns the current file page as a string."
+msgstr ""
+
+#: ../../source/inc/file_action_function:9
+msgid "A displayable that shows the screenshot that will be saved with the current file, if a screenshot has been taken when entering a menu or with :func:`FileTakeScreenshot`."
+msgstr ""
+
+#: ../../source/inc/file_action_function:13
+msgid "If there is no current screenshot, `empty` is shown in its place. (If `empty` is None, it defaults to :func:`Null`.)"
+msgstr ""
+
+#: ../../source/inc/file_action_function:18
+msgid "Accesses the Json information associated with `name`."
+msgstr ""
+
+#: ../../source/inc/file_action_function:20
+msgid "If `key` is None, returns the entire Json other object, or `empty` if the slot is empty."
+msgstr ""
+
+#: ../../source/inc/file_action_function:23
+msgid "Otherwise, this returns json[key] if `key` is defined on the json object of the save, `missing` if there is a save with the given name, but it does not contain `key`, or `empty` if the save slot is empty."
+msgstr ""
+
+#: ../../source/inc/file_action_function:27
+msgid "Json is added to a save slot by callbacks registered using :var:`config.save_json_callbacks`."
+msgstr ""
+
+#: ../../source/inc/file_action_function:31
+msgid "This is a function that returns true if the file is loadable, and false otherwise."
+msgstr ""
+
+#: ../../source/inc/file_action_function:36
+msgid "Returns True if this is the newest file slot, or False otherwise."
+msgstr ""
+
+#: ../../source/inc/file_action_function:40
+msgid "Returns the name of the current file page, as a string. If a normal page, this returns the page number. Otherwise, it returns `auto` or `quick`."
+msgstr ""
+
+#: ../../source/inc/file_action_function:46
+msgid "Return the save_name that was in effect when the file was saved, or `empty` if the file does not exist."
+msgstr ""
+
+#: ../../source/inc/file_action_function:51
+msgid "Returns the screenshot associated with the given file. If the file is not loadable, then `empty` is returned, unless it's None, in which case, a Null displayable is created."
+msgstr ""
+
+#: ../../source/inc/file_action_function:55
+msgid "The return value is a displayable."
+msgstr ""
+
+#: ../../source/inc/file_action_function:59
+msgid "Returns the name of the numbered slot. This assumes that slots on normal pages are numbered in a linear order starting with 1, and that page numbers start with 1. When slot is 2, and slots_per_page is 10, and the other variables are the defaults:"
+msgstr ""
+
+#: ../../source/inc/file_action_function:64
+msgid "When the first page is showing, this returns \"2\"."
+msgstr ""
+
+#: ../../source/inc/file_action_function:65
+msgid "When the second page is showing, this returns \"12\"."
+msgstr ""
+
+#: ../../source/inc/file_action_function:66
+msgid "When the auto page is showing, this returns \"a2\"."
+msgstr ""
+
+#: ../../source/inc/file_action_function:67
+msgid "When the quicksave page is showing, this returns \"q2\"."
+msgstr ""
+
+#: ../../source/inc/file_action_function:70
+msgid "The number of the slot to access."
+msgstr ""
+
+#: ../../source/inc/file_action_function:73
+msgid "`slots_per_page`"
+msgstr ""
+
+#: ../../source/inc/file_action_function:73
+msgid "The number of slots per page."
+msgstr ""
+
+#: ../../source/inc/file_action_function:76
+msgid "A prefix to use for the auto page."
+msgstr ""
+
+#: ../../source/inc/file_action_function:79
+msgid "A prefix to use for the quick page."
+msgstr ""
+
+#: ../../source/inc/file_action_function:82
+msgid "`format`"
+msgstr ""
+
+#: ../../source/inc/file_action_function:82
+msgid "The formatting code to use. This is given two arguments: A string giving the page prefix, and an integer giving the slot number."
+msgstr ""
+
+#: ../../source/inc/file_action_function:87
+msgid "Returns the time the file was saved, formatted according to the supplied `format`. If the file is not found, `empty` is returned."
+msgstr ""
+
+#: ../../source/inc/file_action_function:91
+msgid "The return value is a string."
+msgstr ""
+
+#: ../../source/inc/file_action_function:95
+msgid "Returns a list of used numeric file slots on the page."
+msgstr ""
+
+#: ../../source/inc/file_action_function:98
+msgid "The name of the page that will be scanned. If None, the current page is used."
+msgstr ""
+
+#: ../../source/inc/file_action_function:102
+msgid "`highest_first`"
+msgstr ""
+
+#: ../../source/inc/file_action_function:102
+msgid "If true, the highest-numbered file slot is listed first. Otherwise, the lowest-numbered slot is listed first."
+msgstr ""
+
 #: ../../source/screen_actions.rst:143
 msgid "Side Image Functions"
 msgstr ""
 
 #: ../../source/screen_actions.rst:145
 msgid "This function returns the side image to use."
+msgstr ""
+
+#: ../../source/inc/side_image_function:5
+msgid "Returns the side image associated with the currently speaking character, or a Null displayable if no such side image exists."
 msgstr ""
 
 #: ../../source/screen_actions.rst:152
@@ -172,6 +1709,18 @@ msgstr ""
 msgid "Here's an example::"
 msgstr ""
 
+#: ../../source/inc/get_tooltip:5
+msgid "Returns the tooltip of the currently focused displayable, or None if no displatable is focused."
+msgstr ""
+
+#: ../../source/inc/get_tooltip:10
+msgid "`screen`"
+msgstr ""
+
+#: ../../source/inc/get_tooltip:9
+msgid "If not None, this should be the name or tag of a screen. If given, this function only returns the tooltip if the focused displayable is part of the screen."
+msgstr ""
+
 #: ../../source/screen_actions.rst:187
 msgid "Legacy"
 msgstr ""
@@ -184,8 +1733,20 @@ msgstr ""
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 
+#: ../../source/inc/tooltips:5
+msgid "A tooltip object can be used to define a portion of a screen that is updated when the mouse hovers an area."
+msgstr ""
+
+#: ../../source/inc/tooltips:8
+msgid "A tooltip object has a ``value`` field, which is set to the `default` value passed to the constructor when the tooltip is created. When a button using an action created by the tooltip is hovered, the value field changes to the value associated with the action."
+msgstr ""
+
+#: ../../source/inc/tooltips:15
+msgid "Returns an action that is generally used as the hovered property of a button. When the button is hovered, the value field of this tooltip is set to `value`. When the button loses focus, the value field of this tooltip reverts to the default."
+msgstr ""
+
 #: ../../source/screen_actions.rst:195
-msgid "When using a tooltip with a screen, the usual behavior is to create a tooltip object in a default statement. The value of the tooltip and the action method can then be used within the screen. The order of use within a screen doesn't matter - it's possible to use the value before an action is used."
+msgid "When using a tooltip with a screen, the usual behavior is to create a tooltip object in a default statement. The value of the tooltip and the action method can then be used within the screen. The order of use within a screen doesn't matter – it's possible to use the value before an action is used."
 msgstr ""
 
 #: ../../source/screen_actions.rst:201

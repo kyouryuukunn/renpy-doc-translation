@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-23 20:10+0900\n"
+"POT-Creation-Date: 2018-09-11 07:24+0900\n"
 "PO-Revision-Date: 2017-08-06 19:47+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -139,143 +139,169 @@ msgstr ""
 msgid "Voice Functions"
 msgstr "ボイスの関数"
 
+#: ../../source/inc/voice:5
+msgid ""
+"Returns information about the voice being played by the current say "
+"statement. This function may only be called while a say statement is "
+"executing."
+msgstr ""
+"現在の say ステートメントで再生されているボイスの情報を返します。この関数 "
+"say ステートメントの実行中のみ呼び出されます。"
+
+#: ../../source/inc/voice:9
+msgid "The object returned has the following fields:"
+msgstr "返されたオブジェクトは以下のフィールドを持ちます。"
+
+#: ../../source/inc/voice:13
+msgid ""
+"The filename of the voice to be played, or None if no files should be played."
+msgstr ""
+"再生されたボイスのファイル名か、ファイルが再生されていないなら None です。"
+
+#: ../../source/inc/voice:18
+msgid ""
+"The filename that Ren'Py looked in for automatic-voicing purposes, or None "
+"if one could not be found."
+msgstr ""
+"Ren'Py が自動ボイスのために探したファイル名で、見つからなければ None です。"
+
+#: ../../source/inc/voice:23
+msgid "The voice_tag parameter supplied to the speaking Character."
+msgstr "話しているキャラクターに与えられた voice_tag 引数です。"
+
+#: ../../source/inc/voice:27
+msgid ""
+"False if the file was played as part of this interaction. True if it was "
+"sustained from a previous interaction."
+msgstr ""
+
+#: ../../source/inc/voice:32
+msgid ""
+"Plays `filename` on the voice channel. The equivalent of the voice statement."
+msgstr ""
+"`filename` をボイスチャンネルで再生します。 voice ステートメントと等価です。"
+
+#: ../../source/inc/voice:38
+msgid "`filename`"
+msgstr "`filename`"
+
+#: ../../source/inc/voice:36
+msgid ""
+"The filename to play. This is used with :var:`config.voice_filename_format` "
+"to produce the filename that will be played."
+msgstr ""
+"再生するファイルの名前です。この値は :var:`config.voice_filename_format` とと"
+"もに使用されることで、再生されるファイルの名前となります。"
+
+#: ../../source/inc/voice:47
+msgid "`tag`"
+msgstr "`tag`"
+
+#: ../../source/inc/voice:41
+msgid ""
+"If this is not None, it should be a string giving a voice tag to be played. "
+"If None, this takes its default value from the voice_tag of the Character "
+"that causes the next interaction."
+msgstr ""
+"この値は None にするか、または再生するボイスタグの文字列にします。None の場合"
+"は、既定値として次の動作におけるキャラクターの voice_tag となります。"
+
+#: ../../source/inc/voice:46
+msgid ""
+"The voice tag is used to specify which character is speaking, to allow a "
+"user to mute or unmute the voices of particular characters."
+msgstr ""
+"ボイスタグは、どのキャラクターが話しているかを指定するために使われ、各々の"
+"キャラクターのボイスをミュートにするかどうかをユーザーが切り替えられるように"
+"します。"
+
+#: ../../source/inc/voice:52
+msgid "Returns true if it's possible to replay the current voice."
+msgstr "現在のボイスをもう一度再生できる場合に true を返します。"
+
+#: ../../source/inc/voice:56
+msgid "Replays the current voice, if possible."
+msgstr "可能であれば現在のボイスを再度再生します。"
+
+#: ../../source/inc/voice:60
+msgid "The equivalent of the voice sustain statement."
+msgstr "voice sustain ステートメントと等価です。"
+
 #: ../../source/voice.rst:98
 msgid "Voice Actions"
 msgstr "ボイスのアクション"
 
-#~ msgid ""
-#~ "Returns information about the voice being played by the current say "
-#~ "statement. This function may only be called while a say statement is "
-#~ "executing."
-#~ msgstr ""
-#~ "現在の say ステートメントで再生されているボイスの情報を返します。この関数 "
-#~ "say ステートメントの実行中のみ呼び出されます。"
+#: ../../source/inc/voice_action:5
+msgid ""
+"This plays `sample` on the voice channel, as if said by a character with "
+"`voice_tag`."
+msgstr ""
+"voice チャンネルで `voice_tag` のキャラクターが話すように `sample` を再生しま"
+"す。"
 
-#~ msgid "The object returned has the following fields:"
-#~ msgstr "返されたオブジェクトは以下のフィールドを持ちます。"
+#: ../../source/inc/voice_action:10
+msgid "`sample`"
+msgstr "`sample`"
 
-#~ msgid ""
-#~ "The filename of the voice to be played, or None if no files should be "
-#~ "played."
-#~ msgstr ""
-#~ "再生されたボイスのファイル名か、ファイルが再生されていないなら None です。"
+#: ../../source/inc/voice_action:9
+msgid ""
+"The full path to a sound file. No voice-related handling of this file is "
+"done."
+msgstr "音声ファイルのフルパスです。"
 
-#~ msgid ""
-#~ "The filename that Ren'Py looked in for automatic-voicing purposes, or "
-#~ "None if one could not be found."
-#~ msgstr ""
-#~ "Ren'Py が自動ボイスのために探したファイル名で、見つからなければ None で"
-#~ "す。"
+#: ../../source/inc/voice_action:13
+#, fuzzy
+msgid "`selected`"
+msgstr "selected`"
 
-#~ msgid "The voice_tag parameter supplied to the speaking Character."
-#~ msgstr "話しているキャラクターに与えられた voice_tag 引数です。"
+#: ../../source/inc/voice_action:13
+msgid ""
+"If True, buttons using this action will be marked as selected while the "
+"sample is playing."
+msgstr ""
+"True このアクションを使用するボタンは sample が再生中は selected としてマーク"
+"されます。"
 
-#~ msgid ""
-#~ "Plays `filename` on the voice channel. The equivalent of the voice "
-#~ "statement."
-#~ msgstr ""
-#~ "`filename` をボイスチャンネルで再生します。 voice ステートメントと等価で"
-#~ "す。"
+#: ../../source/inc/voice_action:18
+msgid ""
+"This allows the volume of each characters to be adjusted. If `volume` is "
+"None, this returns the value of volume of `voice_tag`. Otherwise, this set "
+"it to `volume`."
+msgstr ""
+"各キャラクターのボリュームを調整出来るようにします。 `volume` が None なら、"
+"`voice_tag` のボリュームの値を変更する value を返します。そうでなければそれ"
+"を `volume` に設定します。"
 
-#~ msgid "`filename`"
-#~ msgstr "`filename`"
+#: ../../source/inc/voice_action:22
+msgid ""
+"`volume` is a number between 0.0 and 1.0, and is interpreted as a fraction "
+"of the mixer volume for `voice` channel."
+msgstr ""
+"`volume` は 0.0 から 1.0 までの数字で、 `voice` チャンネルに対するミキサーボ"
+"リュームの割り合いとして解釈されます。"
 
-#~ msgid ""
-#~ "The filename to play. This is used with :var:`config."
-#~ "voice_filename_format` to produce the filename that will be played."
-#~ msgstr ""
-#~ "再生するファイルの名前です。この値は :var:`config.voice_filename_format` "
-#~ "とともに使用されることで、再生されるファイルの名前となります。"
+#: ../../source/inc/voice_action:27
+msgid ""
+"If `mute` is true, mutes voices that are played with the given `voice_tag`. "
+"If `mute` is false, unmutes voices that are played with `voice_tag`."
+msgstr ""
+"`mute` が true の場合は、与えられた `voice_tag` で再生されるボイスをミュート"
+"にします。 `mute` が false の場合は、 `voice_tag` で再生されるボイスのミュー"
+"トを解除します。"
 
-#~ msgid "`tag`"
-#~ msgstr "`tag`"
+#: ../../source/inc/voice_action:33
+msgid ""
+"Toggles the muting of `voice_tag`. This is selected if the given voice tag "
+"is muted, unless `invert` is true, in which case it's selected if the voice "
+"is unmuted."
+msgstr ""
+"`voice_tag` のミュート状態を切り替えます。基本的に与えられたタグがミュートの"
+"ときに選択状態になりますが、 `invert` が true の場合はミュートでない時に選択"
+"状態になります。"
 
-#~ msgid ""
-#~ "If this is not None, it should be a string giving a voice tag to be "
-#~ "played. If None, this takes its default value from the voice_tag of the "
-#~ "Character that causes the next interaction."
-#~ msgstr ""
-#~ "この値は None にするか、または再生するボイスタグの文字列にします。None の"
-#~ "場合は、既定値として次の動作におけるキャラクターの voice_tag となります。"
-
-#~ msgid ""
-#~ "The voice tag is used to specify which character is speaking, to allow a "
-#~ "user to mute or unmute the voices of particular characters."
-#~ msgstr ""
-#~ "ボイスタグは、どのキャラクターが話しているかを指定するために使われ、各々の"
-#~ "キャラクターのボイスをミュートにするかどうかをユーザーが切り替えられるよう"
-#~ "にします。"
-
-#~ msgid "Returns true if it's possible to replay the current voice."
-#~ msgstr "現在のボイスをもう一度再生できる場合に true を返します。"
-
-#~ msgid "Replays the current voice, if possible."
-#~ msgstr "可能であれば現在のボイスを再度再生します。"
-
-#~ msgid "The equivalent of the voice sustain statement."
-#~ msgstr "voice sustain ステートメントと等価です。"
-
-#~ msgid ""
-#~ "This plays `sample` on the voice channel, as if said by a character with "
-#~ "`voice_tag`."
-#~ msgstr ""
-#~ "voice チャンネルで `voice_tag` のキャラクターが話すように `sample` を再生"
-#~ "します。"
-
-#~ msgid "`sample`"
-#~ msgstr "`sample`"
-
-#~ msgid ""
-#~ "The full path to a sound file. No voice-related handling of this file is "
-#~ "done."
-#~ msgstr "音声ファイルのフルパスです。"
-
-#~ msgid "selected`"
-#~ msgstr "selected`"
-
-#~ msgid ""
-#~ "If True, buttons using this action will be marked as selected while the "
-#~ "sample is playing."
-#~ msgstr ""
-#~ "True このアクションを使用するボタンは sample が再生中は selected として"
-#~ "マークされます。"
-
-#~ msgid ""
-#~ "This allows the volume of each characters to be adjusted. If `volume` is "
-#~ "None, this returns the value of volume of `voice_tag`. Otherwise, this "
-#~ "set it to `volume`."
-#~ msgstr ""
-#~ "各キャラクターのボリュームを調整出来るようにします。 `volume` が None な"
-#~ "ら、`voice_tag` のボリュームの値を変更する value を返します。そうでなけれ"
-#~ "ばそれを `volume` に設定します。"
-
-#~ msgid ""
-#~ "`volume` is a number between 0.0 and 1.0, and is interpreted as a "
-#~ "fraction of the mixer volume for `voice` channel."
-#~ msgstr ""
-#~ "`volume` は 0.0 から 1.0 までの数字で、 `voice` チャンネルに対するミキサー"
-#~ "ボリュームの割り合いとして解釈されます。"
-
-#~ msgid ""
-#~ "If `mute` is true, mutes voices that are played with the given "
-#~ "`voice_tag`. If `mute` is false, unmutes voices that are played with "
-#~ "`voice_tag`."
-#~ msgstr ""
-#~ "`mute` が true の場合は、与えられた `voice_tag` で再生されるボイスをミュー"
-#~ "トにします。 `mute` が false の場合は、 `voice_tag` で再生されるボイスの"
-#~ "ミュートを解除します。"
-
-#~ msgid ""
-#~ "Toggles the muting of `voice_tag`. This is selected if the given voice "
-#~ "tag is muted, unless `invert` is true, in which case it's selected if the "
-#~ "voice is unmuted."
-#~ msgstr ""
-#~ "`voice_tag` のミュート状態を切り替えます。基本的に与えられたタグがミュート"
-#~ "のときに選択状態になりますが、 `invert` が true の場合はミュートでない時に"
-#~ "選択状態になります。"
-
-#~ msgid "Replays the most recently played voice."
-#~ msgstr "最も最近に再生されたボイスを再度再生します。"
+#: ../../source/inc/voice_action:39
+msgid "Replays the most recently played voice."
+msgstr "最も最近に再生されたボイスを再度再生します。"
 
 #~ msgid ""
 #~ "This is done by creating voice files that match the identifier for each "

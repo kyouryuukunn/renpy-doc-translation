@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 01:57+0900\n"
+"POT-Creation-Date: 2018-09-11 07:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,11 @@ msgid "A displayable is an object that can be shown to the user. Ren'Py displaya
 msgstr ""
 
 #: ../../source/displayables.rst:12
-msgid "Assignment to an image name using the image statement."
+msgid "Assignment to an image name using the ``image`` statement."
 msgstr ""
 
 #: ../../source/displayables.rst:13
-msgid "Added to a screen using the screen language add statement."
+msgid "Added to a screen using the screen language ``add`` statement."
 msgstr ""
 
 #: ../../source/displayables.rst:14
@@ -49,11 +49,11 @@ msgid "An object of type Displayable, created by calling one of the functions gi
 msgstr ""
 
 #: ../../source/displayables.rst:22
-msgid "A string with a colon (:) in it. These are rare, but see the section on :ref:`displayable prefixes <displayable-prefix>` below."
+msgid "A string with a colon ``:`` in it. These are rare, but see the section on :ref:`displayable prefixes <displayable-prefix>` below."
 msgstr ""
 
 #: ../../source/displayables.rst:24
-msgid "A string with a dot (.) in it. Such a string is interpreted as a filename by :func:`Image`."
+msgid "A string with a dot ``.`` in it. Such a string is interpreted as a filename by :func:`Image`."
 msgstr ""
 
 #: ../../source/displayables.rst:26
@@ -80,32 +80,40 @@ msgstr ""
 msgid "The most commonly used displayable is Image, which loads a file from disk and displays it. Since Image is so commonly used, when a string giving a filename is used in a context that expects a displayable, an Image is automatically created. The only time it's necessary to use Image directly is when you want to create an image with style properties."
 msgstr ""
 
+#: ../../source/inc/im_image:5
+msgid "Loads an image from a file. `filename` is a string giving the name of the file."
+msgstr ""
+
+#: ../../source/inc/im_image:8
+msgid "`filename` should be a JPEG or PNG file with an appropriate extension."
+msgstr ""
+
 #: ../../source/displayables.rst:68
 msgid "There are three image file formats we recommend you use:"
 msgstr ""
 
 #: ../../source/displayables.rst:70
-msgid "Webp"
+msgid "WEBP"
 msgstr ""
 
 #: ../../source/displayables.rst:71
-msgid "Png"
+msgid "PNG"
 msgstr ""
 
 #: ../../source/displayables.rst:72
-msgid "Jpg"
+msgid "JPG"
 msgstr ""
 
 #: ../../source/displayables.rst:74
-msgid "Non-animated Gif and Bmp files are also supported, but should not be used in modern games."
+msgid "Non-animated GIF and BMP files are also supported, but should not be used in modern games."
 msgstr ""
 
 #: ../../source/displayables.rst:77
-msgid "Loading an Image from from a file on disk and decoding it so it can be drawn to the screen takes a long amount of time. While measured in the tenths or hundreds of seconds, the duration of the loading process is long enough that it can prevent an acceptable framerate, and become annoying to the user."
+msgid "Loading an Image from a file on disk and decoding it so it can be drawn to the screen takes a long amount of time. While measured in the tenths or hundreds of seconds, the duration of the loading process is long enough that it can prevent an acceptable framerate, and become annoying to the user."
 msgstr ""
 
 #: ../../source/displayables.rst:83
-msgid "Since an Image is of a fixed size, and doesn't change in response to input, game state, or the size of the area available to it, an Image can be loaded before it is needed, and placed into an area of memory known as the image cache. Once an Image is decoded and in the cache, it can be quickly drawn to the screen."
+msgid "Since an Image is of a fixed size, and doesn't change in response to input, game state, or the size of the area available to it, an Image can be loaded before it is needed and placed into an area of memory known as the image cache. Once an Image is decoded and in the cache, it can be quickly drawn to the screen."
 msgstr ""
 
 #: ../../source/displayables.rst:89
@@ -113,7 +121,7 @@ msgid "Ren'Py attempts to predict the images that will be used in the future, an
 msgstr ""
 
 #: ../../source/displayables.rst:94
-msgid "By default, Ren'Py will predictively cache up to 8 screens worth of image data. (If your screen is 800x600, then a screen's worth of data is one 800x600 image, two 400x600 images, and so on.) This can be changed with the :var:config.image_cache_size configuration variable."
+msgid "By default, Ren'Py will predictively cache up to 8 screens worth of image data. (If your screen is 800x600, then a screen's worth of data is one 800x600 image, two 400x600 images, and so on.) This can be changed with the :var:`config.image_cache_size` configuration variable."
 msgstr ""
 
 #: ../../source/displayables.rst:100
@@ -132,6 +140,142 @@ msgstr ""
 msgid "Image-like displayables take :ref:`position-style-properties`."
 msgstr ""
 
+#: ../../source/inc/disp_imagelike:5
+msgid "This displayable takes its colors from `child`, and its alpha channel from the multiplication of the alpha channels of `child` and `mask`. The result is a displayable that has the same colors as `child`, is transparent where either `child` or `mask` is transparent, and is opaque where `child` and `mask` are both opaque."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:11
+msgid "The `child` and `mask` parameters may be arbitrary displayables. The size of the AlphaMask is the size of `child`."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:16
+msgid "This object provides border size and tiling information to a :func:`Frame`. It can also provide padding information that can be supplied to the :propref:`padding` style property of a window or frame."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:22
+msgid "`left`, `top`, `right`, `bottom`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:21
+msgid "These provide the size of the insets used by a frame, and are added to the padding on each side. They should zero or a positive integer."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:27
+msgid "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:25
+msgid "These are added to the padding on each side, and may be positive or negative. (For example, if `left` is 5 and `pad_left` is -3, the final padding is 2.)"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:29
+msgid "The padding information is supplied via a field:"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:33
+msgid "This is a four-element tuple containing the padding on each of the four sides."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:38
+msgid "This creates a new displayable of `size`, by compositing other displayables. `size` is a (width, height) tuple."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:41
+msgid "The remaining positional arguments are used to place images inside the LiveComposite. The remaining positional arguments should come in groups of two, with the first member of each group an (x, y) tuple, and the second member of a group is a displayable that is composited at that position."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:47
+msgid "Displayables are composited from back to front."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:59
+msgid "This creates a displayable by cropping `child` to `rect`, where `rect` is an (x, y, width, height) tuple. ::"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:66
+msgid "A DynamicImage is a displayable that has text interpolation performed on it to yield a string giving a new displayable. Such interpolation is performed at the start of each interaction."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:72
+msgid "This flattens `child`, which may be made up of multiple textures, into a single texture."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:75
+msgid "Certain operations, like the alpha transform property, apply to every texture making up a displayable, which can yield incorrect results when the textures overlap on screen. Flatten creates a single texture from multiple textures, which can prevent this problem."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:80
+msgid "Flatten is a relatively expensive operation, and so should only be used when absolutely required."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:85
+msgid "A displayable that resizes an image to fill the available area, while preserving the width and height of its borders. It is often used as the background of a window or button."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:91
+msgid "Using a frame to resize an image to double its size."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:94
+msgid "`image`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:94
+msgid "An image manipulator that will be resized by this frame."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:99
+msgid "`left`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:97
+msgid "The size of the border on the left side. This can also be an :func:`Borders` object, in which case that object is use in place of the other parameters."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:102
+msgid "`top`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:102
+msgid "The size of the border on the top."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:106
+msgid "`right`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:105
+msgid "The size of the border on the right side. If None, defaults to `left`."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:109
+msgid "`bottom`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:109
+msgid "The side of the border on the bottom. If None, defaults to `top`."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:113
+msgid "`tile`"
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:112
+msgid "If true, tiling is used to resize sections of the image, rather than scaling."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:124
+msgid "A displayable that creates an empty box on the screen. The size of the box is controlled by `width` and `height`. This can be used when a displayable requires a child, but no child is suitable, or as a spacer inside a box."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:135
+msgid "A displayable that fills the area its assigned with `color`."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:143
+msgid "Tiles `child` until it fills the area allocated to this displayable."
+msgstr ""
+
 #: ../../source/displayables.rst:119
 msgid "Text Displayables"
 msgstr ""
@@ -145,7 +289,7 @@ msgid "Dynamic Displayables"
 msgstr ""
 
 #: ../../source/displayables.rst:127
-msgid "Dynamic displayables display a child displayable based on the state of the game. They do not take any properties, as layout is controlled by the properties of the child displayable they return."
+msgid "Dynamic displayables display a child displayable based on the state of the game. They do not take any properties, as their layout is controlled by the properties of the child displayable they return."
 msgstr ""
 
 #: ../../source/displayables.rst:131
@@ -156,6 +300,104 @@ msgstr ""
 msgid "By design, dynamic displayables are intended to be used for things that change rarely and when an image define this way is off screen (Such as a character customization system), and not for things that change frequently, such as character emotions."
 msgstr ""
 
+#: ../../source/inc/disp_dynamic:5
+#: ../../source/inc/disp_dynamic:98
+msgid "This is a displayable that changes what it is showing based on Python conditions. The positional arguments should be given in groups of two, where each group consists of:"
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:9
+#: ../../source/inc/disp_dynamic:102
+msgid "A string containing a Python condition."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:10
+#: ../../source/inc/disp_dynamic:75
+#: ../../source/inc/disp_dynamic:103
+msgid "A displayable to use if the condition is true."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:12
+#: ../../source/inc/disp_dynamic:105
+msgid "The first true condition has its displayable shown, at least one condition should always be true."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:15
+#: ../../source/inc/disp_dynamic:108
+msgid "The conditions uses here should not have externally-visible side-effects."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:21
+#: ../../source/inc/disp_dynamic:83
+#: ../../source/inc/disp_dynamic:114
+msgid "`predict_all`"
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:18
+#: ../../source/inc/disp_dynamic:80
+#: ../../source/inc/disp_dynamic:111
+msgid "If True, all of the possible displayables will be predicted when the displayable is shown. If False, only the current condition is predicted. If None, :var:`config.conditionswitch_predict_all` is used."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:31
+msgid "A displayable that can change its child based on a Python function, over the course of an interaction."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:48
+msgid "`function`"
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:35
+msgid "A function that is called with the arguments:"
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:37
+msgid "The amount of time the displayable has been shown for."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:38
+msgid "The amount of time any displayable with the same tag has been shown for."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:39
+msgid "Any positional or keyword arguments supplied to DynamicDisplayable."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:41
+msgid "and should return a (d, redraw) tuple, where:"
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:43
+msgid "`d` is a displayable to show."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:44
+msgid "`redraw` is the amount of time to wait before calling the function again, or None to not call the function again before the start of the next interaction."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:48
+msgid "`function` is called at the start of every interaction."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:50
+msgid "As a special case, `function` may also be a python string that evaluates to a displayable. In that case, function is run once per interaction."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:70
+msgid "This is a displayable that changes what it is showing based on the images are showing on the screen. The positional argument should be given in groups of two, where each group consists of:"
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:74
+msgid "A string giving an image name, or None to indicate the default."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:77
+msgid "A default image should be specified."
+msgstr ""
+
+#: ../../source/inc/disp_dynamic:85
+msgid "One use of ShowingSwitch is to have side images change depending on the current emotion of a character. For example::"
+msgstr ""
+
 #: ../../source/displayables.rst:145
 msgid "Applying Transforms to Displayables"
 msgstr ""
@@ -164,12 +406,16 @@ msgstr ""
 msgid "The At function produces a displayable from a displayable and one or more :ref:`transforms <transforms>`."
 msgstr ""
 
+#: ../../source/inc/disp_at:5
+msgid "Given a displayable `d`, applies each of the transforms in `args` to it. The transforms are applied in left-to-right order, so that the outermost transform is the rightmost argument. ::"
+msgstr ""
+
 #: ../../source/displayables.rst:154
 msgid "Layout Boxes and Grids"
 msgstr ""
 
 #: ../../source/displayables.rst:156
-msgid "Layout boxes are displayables that lay out their children on the screen. They can lay out the children in a horizontal or vertical manner, or can lay them out using the standard positioning algorithm."
+msgid "Layout boxes are displayables that lay out their children on the screen. They can lay out the children in a horizontal or vertical manner, or lay them out using the standard positioning algorithm."
 msgstr ""
 
 #: ../../source/displayables.rst:160
@@ -180,8 +426,25 @@ msgstr ""
 msgid "Boxes take :ref:`position-style-properties` and :ref:`box-style-properties`."
 msgstr ""
 
+#: ../../source/inc/disp_box:5
+#: ../../source/inc/disp_box:19
+msgid "A box that fills the screen. Its members are laid out from back to front, with their position properties controlling their position."
+msgstr ""
+
+#: ../../source/inc/disp_box:11
+msgid "A box that lays out its members from left to right."
+msgstr ""
+
+#: ../../source/inc/disp_box:15
+msgid "A layout that lays out its members from top to bottom."
+msgstr ""
+
 #: ../../source/displayables.rst:185
 msgid "The Grid layout displays its children in a grid on the screen. It takes :ref:`position-style-properties` and the :propref:`spacing` style property."
+msgstr ""
+
+#: ../../source/inc/disp_grid:5
+msgid "Lays out displayables in a grid. The first two positional arguments are the number of columns and rows in the grid. This must be followed by `columns * rows` positional arguments giving the displayables that fill the grid."
 msgstr ""
 
 #: ../../source/displayables.rst:192
@@ -190,6 +453,18 @@ msgstr ""
 
 #: ../../source/displayables.rst:194
 msgid "These displayables are used to create certain visual effects."
+msgstr ""
+
+#: ../../source/inc/disp_effects:5
+msgid "This transition uses a `control` displayable (almost always some sort of animated transform) to transition from one displayable to another. The transform is evaluated. The `new` displayable is used where the transform is opaque, and the `old` displayable is used when it is transparent."
+msgstr ""
+
+#: ../../source/inc/disp_effects:11
+msgid "`alpha`"
+msgstr ""
+
+#: ../../source/inc/disp_effects:11
+msgid "If true, the image is composited with what's behind it. If false, the default, the image is opaque and overwrites what's behind it."
 msgstr ""
 
 #: ../../source/displayables.rst:199
@@ -208,6 +483,74 @@ msgstr ""
 msgid "With the few exceptions listed below, the use of image manipulators is historic. A number of image manipulators that had been documented in the past should no longer be used, as they suffer from inherent problems. In many cases, the :func:`Transform` displayable provides similar functionality in a more general manner, while fixing the problems."
 msgstr ""
 
+#: ../../source/inc/im_im:5
+msgid "An image manipulator that takes two image manipulators, `base` and `mask`, as arguments. It replaces the alpha channel of `base` with the red channel of `mask`."
+msgstr ""
+
+#: ../../source/inc/im_im:9
+msgid "This is used to provide an image's alpha channel in a second image, like having one jpeg for color data, and a second one for alpha. In some cases, two jpegs can be smaller than a single png file."
+msgstr ""
+
+#: ../../source/inc/im_im:14
+msgid "Note that this takes different arguments from :func:`AlphaMask`, which uses the mask's alpha channel."
+msgstr ""
+
+#: ../../source/inc/im_im:19
+msgid "An image manipulator that crops `rect`, a (x, y, width, height) tuple, out of `im`, an image manipulator."
+msgstr ""
+
+#: ../../source/inc/im_im:28
+msgid "This image manipulator loads an image from binary data."
+msgstr ""
+
+#: ../../source/inc/im_im:32
+msgid "`data`"
+msgstr ""
+
+#: ../../source/inc/im_im:31
+msgid "A string of bytes, giving the compressed image data in a standard file format."
+msgstr ""
+
+#: ../../source/inc/im_im:36
+msgid "`filename`"
+msgstr ""
+
+#: ../../source/inc/im_im:35
+msgid "A \"filename\" associated with the image. This is used to provide a hint to Ren'Py about the format of `data`. (It's not actually loaded from disk.)"
+msgstr ""
+
+#: ../../source/inc/im_im:41
+msgid "An image manipulator that scales `im` (a second image manipulator) to `width` times its original `width`, and `height` times its original height. If `height` is omitted, it defaults to `width`."
+msgstr ""
+
+#: ../../source/inc/im_im:45
+msgid "If `bilinear` is true, then bilinear interpolation is used for the scaling. Otherwise, nearest neighbor interpolation is used."
+msgstr ""
+
+#: ../../source/inc/im_im:54
+msgid "An image manipulator that flips `im` (an image manipulator) vertically or horizontally.  `vertical` and `horizontal` control the directions in which the image is flipped."
+msgstr ""
+
+#: ../../source/inc/im_im:64
+msgid "An image manipulator that creates a desaturated version of the image manipulator `im`."
+msgstr ""
+
+#: ../../source/inc/im_im:69
+msgid "An image manipulator that creates a sepia-toned version of the image manipulator `im`."
+msgstr ""
+
+#: ../../source/inc/im_im:74
+msgid "An image manipulator that tiles the image manipulator `im`, until it is `size`."
+msgstr ""
+
+#: ../../source/inc/im_im:78
+msgid "`size`"
+msgstr ""
+
+#: ../../source/inc/im_im:78
+msgid "If not None, a (width, height) tuple. If None, this defaults to (:var:`config.screen_width`, :var:`config.screen_height`)."
+msgstr ""
+
 #: ../../source/displayables.rst:219
 msgid "im.MatrixColor"
 msgstr ""
@@ -220,12 +563,172 @@ msgstr ""
 msgid "first desaturates the image, and then tints it blue. When the intermediate image is not needed, multiplying matrices is far more efficient, in both time and image cache space, than using two im.MatrixColors."
 msgstr ""
 
+#: ../../source/inc/im_matrixcolor:5
+msgid "An image operator that uses `matrix` to linearly transform the image manipulator `im`."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:8
+msgid "`Matrix` should be a list, tuple, or :func:`im.matrix` that is 20 or 25 elements long. If the object has 25 elements, then elements past the 20th are ignored."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:12
+msgid "When the four components of the source color are R, G, B, and A, which range from 0.0 to 1.0; the four components of the transformed color are R', G', B', and A', with the same range; and the elements of the matrix are named::"
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:22
+msgid "the transformed colors can be computed with the formula::"
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:29
+msgid "The components of the transformed color are clamped to the range [0.0, 1.0]."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:34
+msgid "Constructs an im.matrix object from `matrix`. im.matrix objects support The operations supported are matrix multiplication, scalar multiplication, element-wise addition, and element-wise subtraction. These operations are invoked using the standard mathematical operators (\\*, \\*, +, and -, respectively). If two im.matrix objects are multiplied, matrix multiplication is performed, otherwise scalar multiplication is used."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:42
+msgid "`matrix` is a 20 or 25 element list or tuple. If it is 20 elements long, it is padded with (0, 0, 0, 0, 1) to make a 5x5 matrix, suitable for multiplication."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:48
+msgid "Returns an im.matrix that alters the brightness of an image."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:52
+msgid "`b`"
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:51
+msgid "The amount of change in image brightness. This should be a number between -1 and 1, with -1 the darkest possible image and 1 the brightest."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:57
+msgid "Returns an im.matrix that colorizes a black and white image. `black_color` and `white_color` are Ren'Py style colors, so they may be specified as strings or tuples of (0-255) color values. ::"
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:69
+msgid "Returns an im.matrix that alters the contrast of an image. `c` should be greater than 0.0, with values between 0.0 and 1.0 decreasing contrast, and values greater than 1.0 increasing contrast."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:75
+msgid "Returns an im.matrix that desaturates the image (makes it grayscale). This is equivalent to calling im.matrix.saturation(0)."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:81
+msgid "Returns an im.matrix that rotates the hue by `h` degrees, while preserving luminosity."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:86
+msgid "Returns an identity matrix, one that does not change color or alpha."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:91
+msgid "Returns an im.matrix that inverts the red, green, and blue channels of the image without changing the alpha channel."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:96
+msgid "Returns an im.matrix that alters the opacity of an image. An `o` of 0.0 is fully transparent, while 1.0 is fully opaque."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:101
+msgid "Returns an im.matrix that alters the saturation of an image. The alpha channel is untouched."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:106
+msgid "`level`"
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:105
+msgid "The amount of saturation in the resulting image. 1.0 is the unaltered image, while 0.0 is grayscale."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:114
+msgid "`desat`"
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:109
+msgid "This is a 3-element tuple that controls how much of the red, green, and blue channels will be placed into all three channels of a fully desaturated image. The default is based on the constants used for the luminance channel of an NTSC television signal. Since the human eye is mostly sensitive to green, more of the green channel is kept then the other two channels."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:119
+msgid "Returns an im.matrix that tints an image, without changing the alpha channel. `r`, `g`, and `b` should be numbers between 0 and 1, and control what fraction of the given channel is placed into the final image. (For example, if `r` is .5, and the value of the red channel is 100, the transformed color will have a red value of 50.)"
+msgstr ""
+
 #: ../../source/displayables.rst:240
 msgid "Placeholders"
 msgstr ""
 
 #: ../../source/displayables.rst:242
 msgid "The Placeholder displayable is used to display background or character images as appropriate. Placeholders are used automatically when an undefined image is used in developer mode. Placeholder displayables can also be used manually when the defaults are inappropriate. ::"
+msgstr ""
+
+#: ../../source/inc/placeholder:5
+msgid "This displayable can be used to display a placeholder character or background."
+msgstr ""
+
+#: ../../source/inc/placeholder:34
+msgid "`base`"
+msgstr ""
+
+#: ../../source/inc/placeholder:9
+msgid "The type of image to display. This should be one of:"
+msgstr ""
+
+#: ../../source/inc/placeholder:14
+msgid "'bg'"
+msgstr ""
+
+#: ../../source/inc/placeholder:12
+msgid "To display a background placeholder. This currently fills the screen with a light-gray, and displays the image name at the top of the screen."
+msgstr ""
+
+#: ../../source/inc/placeholder:18
+msgid "'boy'"
+msgstr ""
+
+#: ../../source/inc/placeholder:17
+msgid "Displays a male-identified placeholder with the image name on his chest."
+msgstr ""
+
+#: ../../source/inc/placeholder:22
+msgid "'girl'"
+msgstr ""
+
+#: ../../source/inc/placeholder:21
+msgid "Displays a female-identified placeholder with the image name on her chest."
+msgstr ""
+
+#: ../../source/inc/placeholder:34
+msgid "None"
+msgstr ""
+
+#: ../../source/inc/placeholder:25
+msgid "Attempts to automatically determine the type of image to use. If the image name begins with \"bg\", \"cg\", or \"event\", uses 'bg'."
+msgstr ""
+
+#: ../../source/inc/placeholder:29
+msgid "Otherwise, contacts a web service to guess gender from the character's name, and uses that. (The 'girl' placeholder is used when the service can't guess.)"
+msgstr ""
+
+#: ../../source/inc/placeholder:33
+msgid "The webservice will only be contacted when :var:`config.developer` is True."
+msgstr ""
+
+#: ../../source/inc/placeholder:38
+msgid "`full`"
+msgstr ""
+
+#: ../../source/inc/placeholder:37
+msgid "If true, a full-body sprite is used. Otherwise, a 3/4 sprite is used."
+msgstr ""
+
+#: ../../source/inc/placeholder:40
+msgid "`flip`"
+msgstr ""
+
+#: ../../source/inc/placeholder:41
+msgid "If true, the sprite is flipped horizontally."
 msgstr ""
 
 #: ../../source/displayables.rst:259
@@ -241,7 +744,7 @@ msgid "For example, this makes the big prefix return an image that is twice as b
 msgstr ""
 
 #: ../../source/displayables.rst:277
-msgid "The init -10 makes sure the prefix is defined before any images that use it. The prefix can then be used to define images::"
+msgid "The ``init -10`` makes sure the prefix is defined before any images that use it. The prefix can then be used to define images::"
 msgstr ""
 
 #: ../../source/displayables.rst:282

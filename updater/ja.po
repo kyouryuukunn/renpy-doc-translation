@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:16+0900\n"
+"POT-Creation-Date: 2018-09-11 07:24+0900\n"
 "PO-Revision-Date: 2015-06-04 21:11+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -189,6 +189,190 @@ msgstr ""
 "アップデートを実行するために、updater.update か updater.Update アクションを実"
 "行してください。"
 
+#: ../../source/inc/updater:5
+msgid ""
+"An action that calls :func:`updater.update`. All arguments are stored and "
+"passed to that function."
+msgstr ""
+":func:`updater.update` を呼び出すアクションです。すべての引数は記憶されてその"
+"関数に渡されます。"
+
+#: ../../source/inc/updater:10
+msgid ""
+"This function contacts the server at `url`, and determines if there is a "
+"newer version of software available at that url. If there is, this function "
+"returns the new version. Otherwise, it returns None."
+msgstr ""
+"この関数は `url` のサーバーにアクセスし、その url でソフトウェアの最新版が利"
+"用可能かを判定します。存在すればこれは新しいバージョンを返し、そうでなければ "
+"None を返します。"
+
+#: ../../source/inc/updater:14
+msgid ""
+"Since contacting the server can take some time, this function launches a "
+"thread in the background, and immediately returns the version from the last "
+"time the server was contacted, or None if the server has never been "
+"contacted. The background thread will restart the current interaction once "
+"the server has been contacted, which will cause screens that call this "
+"function to update."
+msgstr ""
+"サーバーへのアクセスには時間が掛るため、この関数はバックグラウンドでスレッド"
+"を起動すると共に最後にサーバーにアクセスしたときのバージョンか、サーバーにア"
+"クセスしていなければ None を返します。バックグラウンドスレッドは一旦サーバー"
+"にアクセス出来たら現在のインタラクションを再開し、この関数を呼び出すスクリー"
+"ンを更新します。"
+
+#: ../../source/inc/updater:21
+msgid ""
+"Each url will be contacted at most once per Ren'Py session, and not more "
+"than once every `check_interval` seconds. When the server is not contacted, "
+"cached data will be returned."
+msgstr ""
+"せいぜい Ren'Py のセッション毎に 1 回、少なくとも `check_interval` 秒毎に 1 "
+"回各 url に接続します。サーバーの応答がない場合はキャッシュされたデータが返さ"
+"れます。"
+
+#: ../../source/inc/updater:25
+msgid ""
+"Additional keyword arguments (including `simulate`) are passed to the update "
+"mechanism as if they were given to :func:`updater.update`."
+msgstr ""
+"追加のキーワード引数 (`simulate` を含む) はそれらが :func:`updater.update` に"
+"渡されたようにアップデート機構に渡されます。"
+
+#: ../../source/inc/updater:30
+msgid ""
+"Returns true if it's possible that an update can succeed. Returns false if "
+"updating is totally impossible. (For example, if the update directory was "
+"deleted.)"
+msgstr ""
+"アップデートが可能なら、 True を返します。アップデートが総合的に不可能 ( 例え"
+"ばアップデーターのディレクトリーが削除された ) なら、 False を返します。"
+
+#: ../../source/inc/updater:35
+msgid ""
+"Note that this does not determine if an update is actually available. To do "
+"that, use :func:`updater.UpdateVersion`."
+msgstr ""
+"これはアップデーターが実際に使用可能かを確定しないことに注意してください。そ"
+"のためには :func:`updater.UpdateVersion` を使用してください。"
+
+#: ../../source/inc/updater:40
+msgid "Returns a list of installed DLC package names."
+msgstr "インストールされた DLC パッケージの名前のリストを返します。"
+
+#: ../../source/inc/updater:43 ../../source/inc/updater:55
+msgid "`base`"
+msgstr "`base`"
+
+#: ../../source/inc/updater:43
+msgid ""
+"The base directory to update. Defaults to the current project's base "
+"directory."
+msgstr ""
+"アップデートのためのベースディレクトリーです。デフォルトでは現在のプロジェク"
+"トのベースディレクトリーです。"
+
+#: ../../source/inc/updater:48
+msgid "Updates this Ren'Py game to the latest version."
+msgstr "この Ren'Py ゲームを最新のバージョンにアップデートします。"
+
+#: ../../source/inc/updater:51
+msgid "`url`"
+msgstr "`url`"
+
+#: ../../source/inc/updater:51
+msgid "The URL to the updates.json file."
+msgstr "updates.json ファイルへの URL です。"
+
+#: ../../source/inc/updater:54
+msgid ""
+"The base directory that will be updated. Defaults to the base of the current "
+"game. (This can usually be ignored.)"
+msgstr ""
+"アップデートされるベースディレクトリーです。デフォルトでは現在のゲームのベー"
+"スディレクトリーです。 ( これは無視される可能性があります。 )"
+
+#: ../../source/inc/updater:59
+msgid "`force`"
+msgstr "`force`"
+
+#: ../../source/inc/updater:58
+msgid ""
+"Force the update to occur even if the version numbers are the same. (Used "
+"for testing.)"
+msgstr ""
+"バージョン番号が同じでも強制アップデートします。 ( テストのために使われます )"
+
+#: ../../source/inc/updater:63
+msgid "`public_key`"
+msgstr "`public_key`"
+
+#: ../../source/inc/updater:62
+msgid ""
+"The path to a PEM file containing a public key that the update signature is "
+"checked against. (This can usually be ignored.)"
+msgstr ""
+"アップデートの署名をチェックするために使用される、公開鍵を含んだ PEM ファイル"
+"へのパスです。 ( これは通常無視できます。 )"
+
+#: ../../source/inc/updater:72
+msgid "`simulate`"
+msgstr "`simulate`"
+
+#: ../../source/inc/updater:66
+msgid ""
+"This is used to test update guis without actually performing an update. This "
+"can be:"
+msgstr ""
+"これは実際にアップデートを実行せずにアップデート GUI をテストするために使われ"
+"ます。これは以下を取ることができます:"
+
+#: ../../source/inc/updater:69
+msgid "None to perform an update."
+msgstr "アップデートを実行する None"
+
+#: ../../source/inc/updater:70
+msgid "\"available\" to test the case where an update is available."
+msgstr "アップデートが実行可能な場合をテストする \"available\""
+
+#: ../../source/inc/updater:71
+msgid "\"not_available\" to test the case where no update is available."
+msgstr "アップデートが実行できない場合をテストする \"not_available\""
+
+#: ../../source/inc/updater:72
+msgid "\"error\" to test an update error."
+msgstr "アップデートエラーをテストする  \"error\""
+
+#: ../../source/inc/updater:76
+msgid "`add`"
+msgstr "`add`"
+
+#: ../../source/inc/updater:75
+msgid ""
+"A list of packages to add during this update. This is only necessary for dlc."
+msgstr ""
+"このアップデートの間に加えられるパッケージのリスト。これは DLC のためにのみ必"
+"要です。"
+
+#: ../../source/inc/updater:79
+msgid "`restart`"
+msgstr "`restart`"
+
+#: ../../source/inc/updater:79
+msgid "Restart the game after the update."
+msgstr "アップデート後にゲームを再起動します。"
+
+#: ../../source/inc/updater:82
+msgid "`confirm`"
+msgstr ""
+
+#: ../../source/inc/updater:82
+msgid ""
+"Should Ren'Py prompt the user to confirm the update? If False, the update "
+"will proceed without confirmation."
+msgstr ""
+
 #: ../../source/updater.rst:82
 msgid "Screen"
 msgstr "スクリーン"
@@ -200,152 +384,3 @@ msgid ""
 msgstr ""
 "アップデーターの見た目を変更するためには、 ``updater`` スクリーンを上書きして"
 "ください。デフォルトのスクリーンは common/00updater.rpy に定義されています。"
-
-#~ msgid ""
-#~ "An action that calls :func:`updater.update`. All arguments are stored and "
-#~ "passed to that function."
-#~ msgstr ""
-#~ ":func:`updater.update` を呼び出すアクションです。すべての引数は記憶されて"
-#~ "その関数に渡されます。"
-
-#~ msgid ""
-#~ "This function contacts the server at `url`, and determines if there is a "
-#~ "newer version of software available at that url. If there is, this "
-#~ "function returns the new version. Otherwise, it returns None."
-#~ msgstr ""
-#~ "この関数は `url` のサーバーにアクセスし、その url でソフトウェアの最新版が"
-#~ "利用可能かを判定します。存在すればこれは新しいバージョンを返し、そうでなけ"
-#~ "れば None を返します。"
-
-#~ msgid ""
-#~ "Since contacting the server can take some time, this function launches a "
-#~ "thread in the background, and immediately returns the version from the "
-#~ "last time the server was contacted, or None if the server has never been "
-#~ "contacted. The background thread will restart the current interaction "
-#~ "once the server has been contacted, which will cause screens that call "
-#~ "this function to update."
-#~ msgstr ""
-#~ "サーバーへのアクセスには時間が掛るため、この関数はバックグラウンドでスレッ"
-#~ "ドを起動すると共に最後にサーバーにアクセスしたときのバージョンか、サーバー"
-#~ "にアクセスしていなければ None を返します。バックグラウンドスレッドは一旦"
-#~ "サーバーにアクセス出来たら現在のインタラクションを再開し、この関数を呼び出"
-#~ "すスクリーンを更新します。"
-
-#~ msgid ""
-#~ "Each url will be contacted at most once per Ren'Py session, and not more "
-#~ "than once every `check_interval` seconds. When the server is not "
-#~ "contacted, cached data will be returned."
-#~ msgstr ""
-#~ "せいぜい Ren'Py のセッション毎に 1 回、少なくとも `check_interval` 秒毎に "
-#~ "1 回各 url に接続します。サーバーの応答がない場合はキャッシュされたデータ"
-#~ "が返されます。"
-
-#~ msgid ""
-#~ "Additional keyword arguments (including `simulate`) are passed to the "
-#~ "update mechanism as if they were given to :func:`updater.update`."
-#~ msgstr ""
-#~ "追加のキーワード引数 (`simulate` を含む) はそれらが :func:`updater."
-#~ "update` に渡されたようにアップデート機構に渡されます。"
-
-#~ msgid ""
-#~ "Returns true if it's possible that an update can succeed. Returns false "
-#~ "if updating is totally impossible. (For example, if the update directory "
-#~ "was deleted.)"
-#~ msgstr ""
-#~ "アップデートが可能なら、 True を返します。アップデートが総合的に不可能 "
-#~ "( 例えばアップデーターのディレクトリーが削除された ) なら、 False を返しま"
-#~ "す。"
-
-#~ msgid ""
-#~ "Note that this does not determine if an update is actually available. To "
-#~ "do that, use :func:`updater.UpdateVersion`."
-#~ msgstr ""
-#~ "これはアップデーターが実際に使用可能かを確定しないことに注意してください。"
-#~ "そのためには :func:`updater.UpdateVersion` を使用してください。"
-
-#~ msgid "Returns a list of installed DLC package names."
-#~ msgstr "インストールされた DLC パッケージの名前のリストを返します。"
-
-#~ msgid "`base`"
-#~ msgstr "`base`"
-
-#~ msgid ""
-#~ "The base directory to update. Defaults to the current project's base "
-#~ "directory."
-#~ msgstr ""
-#~ "アップデートのためのベースディレクトリーです。デフォルトでは現在のプロジェ"
-#~ "クトのベースディレクトリーです。"
-
-#~ msgid "Updates this Ren'Py game to the latest version."
-#~ msgstr "この Ren'Py ゲームを最新のバージョンにアップデートします。"
-
-#~ msgid "`url`"
-#~ msgstr "`url`"
-
-#~ msgid "The URL to the updates.json file."
-#~ msgstr "updates.json ファイルへの URL です。"
-
-#~ msgid ""
-#~ "The base directory that will be updated. Defaults to the base of the "
-#~ "current game. (This can usually be ignored.)"
-#~ msgstr ""
-#~ "アップデートされるベースディレクトリーです。デフォルトでは現在のゲームの"
-#~ "ベースディレクトリーです。 ( これは無視される可能性があります。 )"
-
-#~ msgid "`force`"
-#~ msgstr "`force`"
-
-#~ msgid ""
-#~ "Force the update to occur even if the version numbers are the same. (Used "
-#~ "for testing.)"
-#~ msgstr ""
-#~ "バージョン番号が同じでも強制アップデートします。 ( テストのために使われま"
-#~ "す )"
-
-#~ msgid "`public_key`"
-#~ msgstr "`public_key`"
-
-#~ msgid ""
-#~ "The path to a PEM file containing a public key that the update signature "
-#~ "is checked against. (This can usually be ignored.)"
-#~ msgstr ""
-#~ "アップデートの署名をチェックするために使用される、公開鍵を含んだ PEM ファ"
-#~ "イルへのパスです。 ( これは通常無視できます。 )"
-
-#~ msgid "`simulate`"
-#~ msgstr "`simulate`"
-
-#~ msgid ""
-#~ "This is used to test update guis without actually performing an update. "
-#~ "This can be:"
-#~ msgstr ""
-#~ "これは実際にアップデートを実行せずにアップデート GUI をテストするために使"
-#~ "われます。これは以下を取ることができます:"
-
-#~ msgid "None to perform an update."
-#~ msgstr "アップデートを実行する None"
-
-#~ msgid "\"available\" to test the case where an update is available."
-#~ msgstr "アップデートが実行可能な場合をテストする \"available\""
-
-#~ msgid "\"not_available\" to test the case where no update is available."
-#~ msgstr "アップデートが実行できない場合をテストする \"not_available\""
-
-#~ msgid "\"error\" to test an update error."
-#~ msgstr "アップデートエラーをテストする  \"error\""
-
-#~ msgid "`add`"
-#~ msgstr "`add`"
-
-#~ msgid ""
-#~ "A list of packages to add during this update. This is only necessary for "
-#~ "dlc."
-#~ msgstr ""
-#~ "このアップデートの間に加えられるパッケージのリスト。これは DLC のためにの"
-#~ "み必要です。"
-
-#~ msgid "`restart`"
-#~ msgstr "`restart`"
-
-#~ msgid "Restart the game after the update."
-#~ msgstr "アップデート後にゲームを再起動します。"

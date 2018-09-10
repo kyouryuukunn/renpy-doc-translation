@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-17 01:57+0900\n"
+"POT-Creation-Date: 2018-09-11 07:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgid "The easiest and most efficient way to display a movie fullscreen is to us
 msgstr ""
 
 #: ../../source/movie.rst:53
-msgid "On mobile platforms, such as Android and iOS, hardware video decoding is used when :var:`config.hw_video` is true, the default. This is generally much faster, but the list of supported movie formats depends on the platform."
+msgid "On mobile platforms, such as Android and iOS, hardware video decoding is used when :var:`config.hw_video` is True, the default. This is generally much faster, but the list of supported movie formats depends on the platform."
 msgstr ""
 
 #: ../../source/movie.rst:59
@@ -137,6 +137,7 @@ msgid "A Movie takes two parameters:"
 msgstr ""
 
 #: ../../source/movie.rst:77
+#: ../../source/inc/movie:27
 msgid "`play`"
 msgstr ""
 
@@ -149,6 +150,7 @@ msgid "This should always be provided."
 msgstr ""
 
 #: ../../source/movie.rst:82
+#: ../../source/inc/movie:33
 msgid "`mask`"
 msgstr ""
 
@@ -174,5 +176,125 @@ msgstr ""
 
 #: ../../source/movie.rst:116
 msgid "Python Functions"
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:5
+msgid "This displays an MPEG-1 cutscene for the specified number of seconds. The user can click to interrupt the cutscene. Overlays and Underlays are disabled for the duration of the cutscene."
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:10
+msgid "`filename`"
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:10
+msgid "The name of a file containing an MPEG-1 movie."
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:16
+msgid "`delay`"
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:13
+msgid "The number of seconds to wait before ending the cutscene. Normally the length of the movie, in seconds. If None, then the delay is computed from the number of loops (that is, loops + 1) * the length of the movie. If -1, we wait until the user clicks."
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:19
+msgid "`loops`"
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:19
+msgid "The number of extra loops to show, -1 to loop forever."
+msgstr ""
+
+#: ../../source/inc/movie_cutscene:21
+msgid "Returns True if the movie was terminated by the user, or False if the given delay elapsed uninterrupted."
+msgstr ""
+
+#: ../../source/inc/movie:5
+msgid "This is a displayable that shows the current movie."
+msgstr ""
+
+#: ../../source/inc/movie:10
+msgid "`fps`"
+msgstr ""
+
+#: ../../source/inc/movie:8
+msgid "The framerate that the movie should be shown at. (This is currently ignored, but the parameter is kept for backwards compatibility. The framerate is auto-detected.)"
+msgstr ""
+
+#: ../../source/inc/movie:16
+msgid "`size`"
+msgstr ""
+
+#: ../../source/inc/movie:13
+msgid "This should be specified as either a tuple giving the width and height of the movie, or None to automatically adjust to the size of the playing movie. (If None, the displayable will be (0, 0) when the movie is not playing.)"
+msgstr ""
+
+#: ../../source/inc/movie:22
+msgid "`channel`"
+msgstr ""
+
+#: ../../source/inc/movie:19
+msgid "The audio channel associated with this movie. When a movie file is played on that channel, it will be displayed in this Movie displayable. If this is not given, and the `play` is provided, a channel name is automatically selected."
+msgstr ""
+
+#: ../../source/inc/movie:25
+msgid "If given, this should be the path to a movie file. The movie file will be automatically played on `channel` when the Movie is shown, and automatically stopped when the movie is hidden."
+msgstr ""
+
+#: ../../source/inc/movie:30
+msgid "If given, this should be the path to a movie file that is used as the alpha channel of this displayable. The movie file will be automatically played on `movie_channel` when the Movie is shown, and automatically stopped when the movie is hidden."
+msgstr ""
+
+#: ../../source/inc/movie:38
+msgid "`mask_channel`"
+msgstr ""
+
+#: ../../source/inc/movie:36
+msgid "The channel the alpha mask video is played on. If not given, defaults to `channel`\\ _mask. (For example, if `channel` is \"sprite\", `mask_channel` defaults to \"sprite_mask\".)"
+msgstr ""
+
+#: ../../source/inc/movie:45
+msgid "`image`"
+msgstr ""
+
+#: ../../source/inc/movie:41
+msgid "An image that is displayed when `play` has been given, but the file it refers to does not exist. (For example, this can be used to create a slimmed-down mobile version that does not use movie sprites.) Users can also choose to fall back to this image as a preference if video is too taxing for their system."
+msgstr ""
+
+#: ../../source/inc/movie:72
+msgid "``play_callback``"
+msgstr ""
+
+#: ../../source/inc/movie:48
+msgid "If not None, a function that's used to start the movies playing. (This may do things like queue a transition between sprites, if desired.) It's called with the following arguments:"
+msgstr ""
+
+#: ../../source/inc/movie:52
+msgid "`old`"
+msgstr ""
+
+#: ../../source/inc/movie:53
+msgid "The old Movie object, or None if the movie is not playing."
+msgstr ""
+
+#: ../../source/inc/movie:55
+msgid "`new`"
+msgstr ""
+
+#: ../../source/inc/movie:55
+msgid "The new Movie object."
+msgstr ""
+
+#: ../../source/inc/movie:57
+msgid "A movie object has the `play` parameter available as ``_play``, while the ``channel``, ``mask``, and ``mask_channel`` fields correspond to the given parameters."
+msgstr ""
+
+#: ../../source/inc/movie:61
+msgid "Generally, this will want to use :func:`renpy.music.play` to start the movie playing on the given channel, with synchro_start=True. A minimal implementation is::"
+msgstr ""
+
+#: ../../source/inc/movie:74
+msgid "This displayable will be transparent when the movie is not playing."
 msgstr ""
 

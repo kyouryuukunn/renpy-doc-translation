@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:16+0900\n"
+"POT-Creation-Date: 2018-09-11 07:24+0900\n"
 "PO-Revision-Date: 2017-08-06 19:45+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -127,6 +127,7 @@ msgstr ""
 "なりません。 render オブジェクトは画面に何が表示されるかを決定します。"
 
 #: ../../source/udd.rst:157 ../../source/udd.rst:230
+#: ../../source/inc/udd_utility:45
 msgid "`width`, `height`"
 msgstr "`width`, `height`"
 
@@ -330,7 +331,7 @@ msgstr ""
 "配置する長方形です。 `width` や `height` が None でなければ、それぞれこの "
 "render の幅と高さになります。"
 
-#: ../../source/udd.rst:259
+#: ../../source/udd.rst:259 ../../source/inc/udd_utility:48
 msgid "`st`, `at`"
 msgstr "`st`, `at`"
 
@@ -389,9 +390,10 @@ msgid "A (x, y, width, height) tuple."
 msgstr "(x, y, width, height) のタプル"
 
 #: ../../source/udd.rst:292
+#, fuzzy
 msgid ""
 "Sets the zoom level of the children of this displayable in the horitzontal "
-"and vertical axes. Only the children of the displayable are zoomed - the "
+"and vertical axes. Only the children of the displayable are zoomed – the "
 "width, height, and blit coordinates are not zoomed."
 msgstr ""
 "この displayable の子の水平、垂直方向のズームレベルを設定します。displayable "
@@ -405,94 +407,110 @@ msgstr "ユーティリティー関数"
 msgid "These function manage the rendering process."
 msgstr "これらの関数はレンダリングプロセスを管理します。"
 
+#: ../../source/inc/udd_utility:5
+msgid ""
+"This takes `d`, which may be a displayable object or a string. If it's a "
+"string, it converts that string into a displayable using the usual rules."
+msgstr ""
+"これは displayable オブジェクトか文字列の `d` を取ります。文字列なら通常の"
+"ルールに基づきその文字列を displayable に変換します。"
+
+#: ../../source/inc/udd_utility:11
+msgid ""
+"If `value` is not None, immediately ends the current interaction, causing "
+"the interaction to return `value`. If `value` is None, does nothing."
+msgstr ""
+"`value` が None でなければ、即座に現在のインタラクションが終了し、インタラク"
+"ションは `value` を返します。 `value` が None の場合は何もしません。"
+
+#: ../../source/inc/udd_utility:14
+msgid ""
+"This can be called from inside the render and event methods of a creator-"
+"defined displayable."
+msgstr ""
+"これは Render 内部とユーザー定義 displayable の event メソッドから呼び出され"
+"得ます。"
+
+#: ../../source/inc/udd_utility:19 ../../source/inc/udd_utility:61
+#, fuzzy
+msgid ""
+"Loads the image manipulator `im` using the image cache, and returns a render."
+msgstr ""
+"画像キャッシュを使用して画像マニピュレータ `im` をロードし、テクスチャーを返"
+"します。"
+
+#: ../../source/inc/udd_utility:23 ../../source/inc/udd_utility:65
+msgid ""
+"Loads the image manipulator `im` using the image cache, and returns a pygame "
+"Surface."
+msgstr ""
+"画像キャッシュを使用して画像マニピュレータ `im` をロードし、 pygame Surface "
+"を返します。"
+
+#: ../../source/inc/udd_utility:27
+msgid "Returns true if the pygame event `ev` matches `keysym`"
+msgstr "pygame のイベント `ev` が `keysym` にマッチするなら True を返します。"
+
+#: ../../source/inc/udd_utility:33
+msgid "`keysym`"
+msgstr "`keysym`"
+
+#: ../../source/inc/udd_utility:30
+msgid "One of:"
+msgstr "以下のうちの 1 つです :"
+
+#: ../../source/inc/udd_utility:32
+msgid "The name of a keybinding in :var:`config.keymap`."
+msgstr ":var:`config.keymap` のキーバインディングの名前"
+
+#: ../../source/inc/udd_utility:33
+msgid "A keysym, as documented in the :ref:`keymap` section."
+msgstr ":ref:`keymap` に記載されているキーシンボル"
+
+#: ../../source/inc/udd_utility:34
+msgid "A list containing one or more keysyms."
+msgstr "1 つ以上のキーシンボルのリスト"
+
+#: ../../source/inc/udd_utility:38
+msgid ""
+"Causes a displayable to be rendered, and a renpy.Render object to be "
+"returned."
+msgstr ""
+"displayable がレンダリングされ、 renpy.Render オブジェクトが返されます。"
+
+#: ../../source/inc/udd_utility:42
+msgid "`d`"
+msgstr "`d`"
+
+#: ../../source/inc/udd_utility:42
+msgid "The displayable to render."
+msgstr "レンダリングする displayable"
+
+#: ../../source/inc/udd_utility:45
+msgid "The width and height available for the displayable to render into."
+msgstr "displayable がレンダリング可能な幅と高さです。"
+
+#: ../../source/inc/udd_utility:48
+msgid "The shown and animation timebases."
+msgstr "出現時刻とアニメーション時間軸です。"
+
+#: ../../source/inc/udd_utility:50
+msgid ""
+"Renders returned by this object may be cached, and should not be modified "
+"once they have been retrieved."
+msgstr ""
+"このオブジェクトから返された Render はキャッシュされるので、一度取り出された "
+"Render は修正すべきではありません。"
+
+#: ../../source/inc/udd_utility:55
+msgid ""
+"Causes an event to be generated before `seconds` seconds have elapsed. This "
+"ensures that the event method of a user-defined displayable will be called."
+msgstr ""
+"event が `seconds` 秒が経過後に生成されます。これは ユーザー定義 displayable "
+"の event メソッドが呼び出されることを保証します。"
+
 #: ../../source/udd.rst:307
 msgid ""
 "Causes the displayable `d` to be redrawn after `when` seconds have elapsed."
 msgstr "displayable `d` が `when` 秒経過後に再描画されます。"
-
-#~ msgid ""
-#~ "This takes `d`, which may be a displayable object or a string. If it's a "
-#~ "string, it converts that string into a displayable using the usual rules."
-#~ msgstr ""
-#~ "これは displayable オブジェクトか文字列の `d` を取ります。文字列なら通常の"
-#~ "ルールに基づきその文字列を displayable に変換します。"
-
-#~ msgid ""
-#~ "If `value` is not None, immediately ends the current interaction, causing "
-#~ "the interaction to return `value`. If `value` is None, does nothing."
-#~ msgstr ""
-#~ "`value` が None でなければ、即座に現在のインタラクションが終了し、インタラ"
-#~ "クションは `value` を返します。 `value` が None の場合は何もしません。"
-
-#~ msgid ""
-#~ "This can be called from inside the render and event methods of a creator-"
-#~ "defined displayable."
-#~ msgstr ""
-#~ "これは Render 内部とユーザー定義 displayable の event メソッドから呼び出さ"
-#~ "れ得ます。"
-
-#~ msgid ""
-#~ "Loads the image manipulator `im` using the image cache, and returns a "
-#~ "texture."
-#~ msgstr ""
-#~ "画像キャッシュを使用して画像マニピュレータ `im` をロードし、テクスチャーを"
-#~ "返します。"
-
-#~ msgid ""
-#~ "Loads the image manipulator `im` using the image cache, and returns a "
-#~ "pygame Surface."
-#~ msgstr ""
-#~ "画像キャッシュを使用して画像マニピュレータ `im` をロードし、 pygame "
-#~ "Surface を返します。"
-
-#~ msgid "Returns true if the pygame event `ev` matches `keysym`"
-#~ msgstr ""
-#~ "pygame のイベント `ev` が `keysym` にマッチするなら True を返します。"
-
-#~ msgid "`keysym`"
-#~ msgstr "`keysym`"
-
-#~ msgid "One of:"
-#~ msgstr "以下のうちの 1 つです :"
-
-#~ msgid "The name of a keybinding in :var:`config.keymap`."
-#~ msgstr ":var:`config.keymap` のキーバインディングの名前"
-
-#~ msgid "A keysym, as documented in the :ref:`keymap` section."
-#~ msgstr ":ref:`keymap` に記載されているキーシンボル"
-
-#~ msgid "A list containing one or more keysyms."
-#~ msgstr "1 つ以上のキーシンボルのリスト"
-
-#~ msgid ""
-#~ "Causes a displayable to be rendered, and a renpy.Render object to be "
-#~ "returned."
-#~ msgstr ""
-#~ "displayable がレンダリングされ、 renpy.Render オブジェクトが返されます。"
-
-#~ msgid "`d`"
-#~ msgstr "`d`"
-
-#~ msgid "The displayable to render."
-#~ msgstr "レンダリングする displayable"
-
-#~ msgid "The width and height available for the displayable to render into."
-#~ msgstr "displayable がレンダリング可能な幅と高さです。"
-
-#~ msgid "The shown and animation timebases."
-#~ msgstr "出現時刻とアニメーション時間軸です。"
-
-#~ msgid ""
-#~ "Renders returned by this object may be cached, and should not be modified "
-#~ "once they have been retrieved."
-#~ msgstr ""
-#~ "このオブジェクトから返された Render はキャッシュされるので、一度取り出され"
-#~ "た Render は修正すべきではありません。"
-
-#~ msgid ""
-#~ "Causes an event to be generated before `seconds` seconds have elapsed. "
-#~ "This ensures that the event method of a user-defined displayable will be "
-#~ "called."
-#~ msgstr ""
-#~ "event が `seconds` 秒が経過後に生成されます。これは ユーザー定義 "
-#~ "displayable の event メソッドが呼び出されることを保証します。"

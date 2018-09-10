@@ -7,20 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-23 10:20+0900\n"
+"POT-Creation-Date: 2018-09-02 00:41+0900\n"
 "PO-Revision-Date: 2018-02-23 10:32+0900\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/multiple.rst:7
+#: ../../source/multiple.rst:4
 msgid "Multiple Character Dialogue"
 msgstr "複数キャラクターダイアログ"
 
-#: ../../source/multiple.rst:9
+#: ../../source/multiple.rst:6
 msgid ""
 "Ren'Py supports displaying dialogue from multiple characters simultaneously. "
 "Multiple dialogue is invoked by giving the lines of dialogue the multiple "
@@ -29,17 +30,18 @@ msgstr ""
 "Ren'Py は複数キャラクターの台詞の同時表示をサポートしています。複数ダイアログ"
 "台詞の行に multiple 引数を指定して実行されます。例 ::"
 
-#: ../../source/multiple.rst:16
+#: ../../source/multiple.rst:13
+#, fuzzy
 msgid ""
 "Multiple dialogue is invoked by passing a line of dialogue the `multiple` "
 "argument with the number of lines of dialogue to combine together. (So if we "
-"had multiple=3, three blocks of dialogue would be combined.)"
+"had ``multiple=3``, three blocks of dialogue would be combined.)"
 msgstr ""
 "複数ダイアログは台詞の行に、同時に表示する台詞の行数を指定した `multiple` 引"
 "数を渡して実行されます(multiple=3 なら、3ブロックの台詞が同時に表示されま"
 "す)。"
 
-#: ../../source/multiple.rst:20
+#: ../../source/multiple.rst:17
 msgid ""
 "Multiple dialogue works by showing the say screen more than once, with "
 "different styles. Each say screen is responsible for showing dialogue from a "
@@ -48,11 +50,11 @@ msgstr ""
 "複数ダイアログは異なるスタイルの1つ以上の say スクリーンを表示して動作しま"
 "す。各 say スクリーンが 1つのキャラクターからの台詞を表示します。"
 
-#: ../../source/multiple.rst:24
+#: ../../source/multiple.rst:21
 msgid "There are a few restrictions on multiple dialogue:"
 msgstr "複数ダイアログにはいくつか制限があります :"
 
-#: ../../source/multiple.rst:26
+#: ../../source/multiple.rst:23
 msgid ""
 "When displaying multiple dialogue, text tags that cause the text to pause, "
 "like {p} and {w}, will not function properly. This is because each screen is "
@@ -63,7 +65,7 @@ msgstr ""
 "切に機能しません。これは各スクリーンが一度だけ表示されるのに対し、そのような"
 "タグはスクリーンが複数回表示される必要があるためです。"
 
-#: ../../source/multiple.rst:31
+#: ../../source/multiple.rst:28
 msgid ""
 "Auto-forward mode only works on the last block of text. While this should be "
 "fine in most cases, it can lead to problems if the last block of text is "
@@ -73,17 +75,17 @@ msgstr ""
 "場合では適切ですが、テキストの最後のブロックが他より短い場合、読み進めが早く"
 "開始してしまうので問題になります。"
 
-#: ../../source/multiple.rst:35
+#: ../../source/multiple.rst:32
 msgid "Extend will not work. (It will only apply to the last block of text.)"
 msgstr ""
 "extend は動作しません(extend はテキストの最終ブロックに対してのみ適応されま"
 "す)。"
 
-#: ../../source/multiple.rst:38
+#: ../../source/multiple.rst:35
 msgid "Styles"
 msgstr "Styles"
 
-#: ../../source/multiple.rst:40
+#: ../../source/multiple.rst:37
 msgid ""
 "Generally, the way multiple dialogue works is to display the say screen "
 "multiple times, with the styles of various displayables systematically "
@@ -93,7 +95,7 @@ msgstr ""
 "ステム的に名付けられた様々な displayable のスタイルを持つ say スクリーンを複"
 "数回表示することです。"
 
-#: ../../source/multiple.rst:44
+#: ../../source/multiple.rst:41
 msgid ""
 "Specifically, multiple dialogue uses styles with names of the form "
 "block`n`_multiple`m`_\\`style`, where `n` is the one-based number of the "
@@ -103,22 +105,22 @@ msgstr ""
 "使用します。n はブロック数に基づき、 m は一度に表示される台詞のブロック数で"
 "す。"
 
-#: ../../source/multiple.rst:49
+#: ../../source/multiple.rst:46
 msgid ""
 "In our example above, the window corresponding to each block of dialogue are "
 "given the names:"
 msgstr ""
 "上記の例では、台詞の各ブロックに対応するウィンドウに名前が与えられます。 :"
 
-#: ../../source/multiple.rst:52 ../../source/multiple.rst:69
+#: ../../source/multiple.rst:49 ../../source/multiple.rst:66
 msgid "block1_multiple2_say_window"
 msgstr "block1_multiple2_say_window"
 
-#: ../../source/multiple.rst:53 ../../source/multiple.rst:73
+#: ../../source/multiple.rst:50 ../../source/multiple.rst:70
 msgid "block2_multiple2_say_window"
 msgstr "block2_multiple2_say_window"
 
-#: ../../source/multiple.rst:55
+#: ../../source/multiple.rst:52
 msgid ""
 "This naming scheme is used for the dialogue, name, and namebox, as well as "
 "the window. It's designed so style inheritance is useful here. For the "
@@ -128,11 +130,11 @@ msgstr ""
 "スタイルの継承が便利であるようにデザインされています。以下のウィンドウスタイ"
 "ルがあります。 :"
 
-#: ../../source/multiple.rst:61
+#: ../../source/multiple.rst:58
 msgid "say_window"
 msgstr "say_window"
 
-#: ../../source/multiple.rst:60
+#: ../../source/multiple.rst:57
 msgid ""
 "Used for the normal case of a single dialogue window, this can serve as a "
 "base for all dialogue windows."
@@ -140,11 +142,11 @@ msgstr ""
 "通常の単一の台詞ウィンドウの場合に使用され、すべての台詞ウィンドウの基本とし"
 "て役立ちます。"
 
-#: ../../source/multiple.rst:65
+#: ../../source/multiple.rst:62
 msgid "multiple2_say_window"
 msgstr "multiple2_say_window"
 
-#: ../../source/multiple.rst:64
+#: ../../source/multiple.rst:61
 msgid ""
 "This can be used for properties common to the two dialogue windows, like "
 "changing the background and reducing the margin and padding."
@@ -152,7 +154,7 @@ msgstr ""
 "これは背景の変更や margin, padding の変更のような2つの台詞ウィンドウに共通な"
 "プロパティーに使用できます。"
 
-#: ../../source/multiple.rst:68
+#: ../../source/multiple.rst:65
 msgid ""
 "This could be used to position the first of the two dialogue windows, such "
 "as using xalign 0.0 to put it on the left side."
@@ -160,17 +162,17 @@ msgstr ""
 "これは xalign を 0.0 にして左寄せにするように、 2つの台詞ウィンドウのうち最初"
 "のものの位置を決めるのに使用できます。"
 
-#: ../../source/multiple.rst:72
+#: ../../source/multiple.rst:69
 msgid ""
 "Similarly, this can be used to position the second window, with xalign 1.0 "
 "putting it on the right side."
 msgstr "同様に、2つ目のウォンドウの位置を決めるのに使用できます。"
 
-#: ../../source/multiple.rst:76
+#: ../../source/multiple.rst:73
 msgid "The Multiple Say Screen"
 msgstr "The Multiple Say Screen"
 
-#: ../../source/multiple.rst:78
+#: ../../source/multiple.rst:75
 msgid ""
 "For more control, there is the multiple\\_say screen. When it exists, the "
 "multiple\\_say screen is used in place of the normal say screen. It takes a "
@@ -182,11 +184,11 @@ msgstr ""
 "`multiple` をとります。タプルの最初の要素はブロック数、第2要素はスクリーンの"
 "合計数です。"
 
-#: ../../source/multiple.rst:86
+#: ../../source/multiple.rst:83
 msgid "NVL-Mode"
 msgstr "NVL-Mode"
 
-#: ../../source/multiple.rst:88
+#: ../../source/multiple.rst:85
 msgid ""
 "By default, NVL-Mode displays multiple text blocks one on top of another. "
 "This can be customized by changing the :ref:`nvl screen <nvl-screen>`, which "

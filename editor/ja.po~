@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-10 11:48+0900\n"
+"POT-Creation-Date: 2018-09-02 00:41+0900\n"
 "PO-Revision-Date: 2015-04-05 09:29+0000\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
 "X-Generator: Launchpad (build 17413)\n"
 
-#: ..\..\source\editor.rst:8
+#: ../../source/editor.rst:5
 msgid "Text Editor Integration"
 msgstr "エディターとの統合"
 
-#: ..\..\source\editor.rst:10
+#: ../../source/editor.rst:7
 msgid ""
 "Ren'Py uses a text editor to allow the user to edit game scripts from the "
 "launcher, and to report errors to the user. By default, Ren'Py uses jEdit as "
@@ -34,7 +34,7 @@ msgstr ""
 "ランチャーから起動されたときはJEditを、そうでなければシステムデフォルトのエ"
 "ディターを使用します。これは必要ならカスタマイズできます。"
 
-#: ..\..\source\editor.rst:15
+#: ../../source/editor.rst:12
 msgid ""
 "The editor is customized by creating an Editor class in a .edit.py file. "
 "This class contains methods that are called to manage text editing."
@@ -42,7 +42,7 @@ msgstr ""
 "エディターは .edit.py ファイルに Editor クラスを作成することでカスタマイズで"
 "きます。このクラスはテキスト編集のために呼び出されるメソッドを含みます。"
 
-#: ..\..\source\editor.rst:18
+#: ../../source/editor.rst:15
 msgid ""
 "When run directly, Ren'Py first looks at the RENPY_EDIT_PY environment "
 "variable to find an .edit.py file to use. If it can find one, it uses the "
@@ -54,7 +54,7 @@ msgstr ""
 "からなければシステム固有の方法でエディターを起動する組み込みの Editor クラス"
 "を使用します。"
 
-#: ..\..\source\editor.rst:23
+#: ../../source/editor.rst:20
 msgid ""
 "When the Ren'Py Launcher is run, it scans subdirectories of the projects "
 "directory and Ren'Py directory to find files of the form `name`.edit.py. "
@@ -71,11 +71,11 @@ msgstr ""
 "す。また、ランチャーは RENPY_EDIT_PY を選択したファイルに設定するので、ラン"
 "チャーから起動されたゲームは選択されたエディターを使用します。"
 
-#: ..\..\source\editor.rst:32
+#: ../../source/editor.rst:29
 msgid "Writing an .edit.py File"
 msgstr ".edit.pyファイルの書き方"
 
-#: ..\..\source\editor.rst:34
+#: ../../source/editor.rst:31
 msgid ""
 "An edit.py file is a Python (not Ren'Py) file that must define a single "
 "class, named Editor. Ren'Py will call methods on this class to cause editing "
@@ -85,7 +85,7 @@ msgstr ""
 "ていなければならない Python ファイルです。 Ren'Py はテキスト編集のためにこの"
 "クラスのメソッドを呼び出します。"
 
-#: ..\..\source\editor.rst:38
+#: ../../source/editor.rst:35
 msgid ""
 "Use of the editor is done as part of an editor transaction, which groups "
 "related operations together. For example, if an editor transaction asks for "
@@ -101,7 +101,7 @@ msgstr ""
 "び出しで開始され、一つ以上の操作用のメソッドを経由して、 end メソッドで終了し"
 "ます。"
 
-#: ..\..\source\editor.rst:45
+#: ../../source/editor.rst:42
 msgid ""
 "The edit.py file should import renpy.editor, and the Editor class should "
 "inherit from renpy.editor.Editor. As additional keyword arguments may be "
@@ -114,11 +114,11 @@ msgstr ""
 "に、定義する各メソッドは未知のキーワード引数を無視するべきです。あなた自身の "
 "Editor サブクラスを定義するために、 `self` 引数も表示しています。"
 
-#: ..\..\source\editor.rst:55
+#: ../../source/editor.rst:52
 msgid "Starts an editor transaction."
 msgstr "エディタートランザクションを開始します。"
 
-#: ..\..\source\editor.rst:57
+#: ../../source/editor.rst:54
 msgid ""
 "If `new_window` is true, the editor should attempt to open a new window. "
 "Otherwise, it should attempt to perform the transaction in an existing "
@@ -128,15 +128,15 @@ msgstr ""
 "以外の場合は、既存のエディターのウィンドウでトランザクション処理を試みるべき"
 "です。"
 
-#: ..\..\source\editor.rst:63
+#: ../../source/editor.rst:60
 msgid "Ends a transaction."
 msgstr "トランザクションを終了します。"
 
-#: ..\..\source\editor.rst:67
+#: ../../source/editor.rst:64
 msgid "Opens a `filename` in the editor."
 msgstr "`filename` をエディターで開きます。"
 
-#: ..\..\source\editor.rst:69
+#: ../../source/editor.rst:66
 msgid ""
 "If `line` is not None, attempts to position the editing cursor at `line`."
 msgstr ""
