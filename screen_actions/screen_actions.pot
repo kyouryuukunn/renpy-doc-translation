@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 07:39+0900\n"
+"POT-Creation-Date: 2018-12-30 14:49+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: ../../source/inc/data_action:8
 #: ../../source/inc/data_action:17
-#: ../../source/inc/data_action:79
+#: ../../source/inc/data_action:115
 msgid "`set`"
 msgstr ""
 
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../../source/inc/data_action:10
 #: ../../source/inc/data_action:19
-#: ../../source/inc/data_action:81
+#: ../../source/inc/data_action:117
 #: ../../source/inc/audio_action:46
 #: ../../source/inc/value:9
 #: ../../source/inc/value:120
@@ -138,7 +138,7 @@ msgstr ""
 
 #: ../../source/inc/data_action:11
 #: ../../source/inc/data_action:20
-#: ../../source/inc/data_action:82
+#: ../../source/inc/data_action:118
 msgid "The value to add or append."
 msgstr ""
 
@@ -159,67 +159,106 @@ msgid "Causes the a field on an object to be set to a given value. `object` is t
 msgstr ""
 
 #: ../../source/inc/data_action:34
-msgid "Causes the variable `name` associated with the current screen to be set to `value`."
+msgid "Causes the variable `name` to be set to `value` in the current local context."
 msgstr ""
 
-#: ../../source/inc/data_action:39
-msgid "Causes the variable with `name` to be set to `value`."
+#: ../../source/inc/data_action:37
+msgid "This function is only useful in a screen that has been use by another scene, as it provides a way of setting the value of a variable inside the used screen. In all other cases, :func:`SetScreenVariable` should be preferred, as it allows more of the screen to be cached."
 msgstr ""
 
 #: ../../source/inc/data_action:43
-msgid "Toggles the value of `key` in `dict`. Toggling means to invert the value when the action is performed."
-msgstr ""
-
-#: ../../source/inc/data_action:46
-#: ../../source/inc/data_action:56
-#: ../../source/inc/data_action:65
-#: ../../source/inc/data_action:88
-msgid "`true_value`"
-msgstr ""
-
-#: ../../source/inc/data_action:47
-#: ../../source/inc/data_action:57
-#: ../../source/inc/data_action:66
 #: ../../source/inc/data_action:89
-msgid "If not None, then this is the true value we use."
+msgid "This must be created in the context that the variable is set in - it can't be passed in from somewhere else."
 msgstr ""
 
 #: ../../source/inc/data_action:48
-#: ../../source/inc/data_action:58
-#: ../../source/inc/data_action:67
-#: ../../source/inc/data_action:90
-msgid "`false_value`"
-msgstr ""
-
-#: ../../source/inc/data_action:49
-#: ../../source/inc/data_action:59
-#: ../../source/inc/data_action:68
-#: ../../source/inc/data_action:91
-msgid "If not None, then this is the false value we use."
+msgid "Causes the variable `name` associated with the current screen to be set to `value`."
 msgstr ""
 
 #: ../../source/inc/data_action:53
+msgid "Causes the variable with `name` to be set to `value`."
+msgstr ""
+
+#: ../../source/inc/data_action:55
+msgid "The `name` argument must be a string, and can be a simple name like \"strength\", or one with dots separating the variable from fields, like \"hero.strength\" or \"persistent.show_cutscenes\"."
+msgstr ""
+
+#: ../../source/inc/data_action:61
+msgid "Toggles the value of `key` in `dict`. Toggling means to invert the value when the action is performed."
+msgstr ""
+
+#: ../../source/inc/data_action:64
+#: ../../source/inc/data_action:74
+#: ../../source/inc/data_action:92
+#: ../../source/inc/data_action:101
+#: ../../source/inc/data_action:129
+msgid "`true_value`"
+msgstr ""
+
+#: ../../source/inc/data_action:65
+#: ../../source/inc/data_action:93
+#: ../../source/inc/data_action:102
+#: ../../source/inc/data_action:130
+msgid "If not None, then this is the true value used."
+msgstr ""
+
+#: ../../source/inc/data_action:66
+#: ../../source/inc/data_action:76
+#: ../../source/inc/data_action:94
+#: ../../source/inc/data_action:103
+#: ../../source/inc/data_action:131
+msgid "`false_value`"
+msgstr ""
+
+#: ../../source/inc/data_action:67
+#: ../../source/inc/data_action:95
+#: ../../source/inc/data_action:104
+#: ../../source/inc/data_action:132
+msgid "If not None, then this is the false value used."
+msgstr ""
+
+#: ../../source/inc/data_action:71
 msgid "Toggles `field` on `object`. Toggling means to invert the boolean value of that field when the action is performed."
 msgstr ""
 
-#: ../../source/inc/data_action:63
+#: ../../source/inc/data_action:75
+msgid "If not None, then this is the true value we use."
+msgstr ""
+
+#: ../../source/inc/data_action:77
+msgid "If not None, then this is the false value we use."
+msgstr ""
+
+#: ../../source/inc/data_action:81
+msgid "Toggles the value of `name` in the current local context."
+msgstr ""
+
+#: ../../source/inc/data_action:83
+msgid "This function is only useful in a screen that has been use by another scene, as it provides a way of setting the value of a variable inside the used screen. In all other cases, :func:`ToggleScreenVariable` should be preferred, as it allows more of the screen to be cached."
+msgstr ""
+
+#: ../../source/inc/data_action:99
 msgid "Toggles the value of the variable `name` in the current screen."
 msgstr ""
 
-#: ../../source/inc/data_action:72
+#: ../../source/inc/data_action:108
 msgid "Toggles the membership of `value` in `set`. If the value is not in the set, it's added. Otherwise, it is removed."
 msgstr ""
 
-#: ../../source/inc/data_action:75
+#: ../../source/inc/data_action:111
 msgid "Buttons with this action are marked as selected if and only if the value is in the set."
 msgstr ""
 
-#: ../../source/inc/data_action:79
+#: ../../source/inc/data_action:115
 msgid "The set to add to or remove from. This may be a set or list. In the case of a list, new items are appended."
 msgstr ""
 
-#: ../../source/inc/data_action:86
+#: ../../source/inc/data_action:122
 msgid "Toggles `variable`."
+msgstr ""
+
+#: ../../source/inc/data_action:124
+msgid "The `variable` argument must be a string, and can be a simple name like \"strength\", or one with dots separating the variable from fields, like \"hero.strength\" or \"persistent.show_cutscenes\"."
 msgstr ""
 
 #: ../../source/screen_actions.rst:44
@@ -238,8 +277,8 @@ msgstr ""
 #: ../../source/inc/menu_action:18
 #: ../../source/inc/file_action:27
 #: ../../source/inc/file_action:45
-#: ../../source/inc/file_action:100
-#: ../../source/inc/file_action:127
+#: ../../source/inc/file_action:97
+#: ../../source/inc/file_action:124
 #: ../../source/inc/other_action:179
 msgid "`confirm`"
 msgstr ""
@@ -316,7 +355,7 @@ msgstr ""
 #: ../../source/inc/file_action:11
 #: ../../source/inc/file_action:24
 #: ../../source/inc/file_action:42
-#: ../../source/inc/file_action:97
+#: ../../source/inc/file_action:94
 msgid "`name`"
 msgstr ""
 
@@ -328,7 +367,7 @@ msgstr ""
 #: ../../source/inc/file_action:15
 #: ../../source/inc/file_action:31
 #: ../../source/inc/file_action:49
-#: ../../source/inc/file_action:107
+#: ../../source/inc/file_action:104
 #: ../../source/inc/input_value:44
 #: ../../source/inc/file_action_function:99
 msgid "`page`"
@@ -364,7 +403,7 @@ msgstr ""
 
 #: ../../source/inc/file_action:27
 #: ../../source/inc/file_action:45
-#: ../../source/inc/file_action:128
+#: ../../source/inc/file_action:125
 msgid "If true and not at the main menu, prompt for confirmation before loading the file."
 msgstr ""
 
@@ -375,14 +414,14 @@ msgstr ""
 
 #: ../../source/inc/file_action:33
 #: ../../source/inc/file_action:57
-#: ../../source/inc/file_action:114
+#: ../../source/inc/file_action:111
 #: ../../source/inc/file_action_function:70
 msgid "`slot`"
 msgstr ""
 
 #: ../../source/inc/file_action:34
 #: ../../source/inc/file_action:58
-#: ../../source/inc/file_action:115
+#: ../../source/inc/file_action:112
 msgid "If True, `name` is taken to be a slot name, and `page` is ignored."
 msgstr ""
 
@@ -395,8 +434,8 @@ msgid "The name of the slot to load from. If None, an unused slot will be used, 
 msgstr ""
 
 #: ../../source/inc/file_action:52
-#: ../../source/inc/file_action:103
-#: ../../source/inc/file_action:137
+#: ../../source/inc/file_action:100
+#: ../../source/inc/file_action:134
 msgid "`newest`"
 msgstr ""
 
@@ -405,12 +444,12 @@ msgid "If true, the button is selected if this is the newest file."
 msgstr ""
 
 #: ../../source/inc/file_action:55
-#: ../../source/inc/file_action:112
+#: ../../source/inc/file_action:109
 msgid "`cycle`"
 msgstr ""
 
 #: ../../source/inc/file_action:55
-#: ../../source/inc/file_action:103
+#: ../../source/inc/file_action:100
 msgid "Ignored."
 msgstr ""
 
@@ -423,7 +462,6 @@ msgid "Goes to the next file page."
 msgstr ""
 
 #: ../../source/inc/file_action:71
-#: ../../source/inc/file_action:83
 msgid "`max`"
 msgstr ""
 
@@ -431,72 +469,76 @@ msgstr ""
 msgid "If set, this should be an integer that gives the number of the maximum file page we can go to."
 msgstr ""
 
-#: ../../source/inc/file_action:73
-#: ../../source/inc/file_action:85
+#: ../../source/inc/file_action:75
 msgid "`wrap`"
 msgstr ""
 
 #: ../../source/inc/file_action:74
-msgid "If true, we can go to the first page when on the last file page if max is set."
+msgid "If true, we can go to the first page when on the last file page if `max` is set."
+msgstr ""
+
+#: ../../source/inc/file_action:79
+#: ../../source/inc/input_value:37
+#: ../../source/inc/file_action_function:76
+msgid "`auto`"
 msgstr ""
 
 #: ../../source/inc/file_action:78
-msgid "Goes to the previous file page, if possible."
+#: ../../source/inc/file_action:82
+msgid "If true and wrap is set, this can bring the player to the page of automatic saves."
 msgstr ""
 
-#: ../../source/inc/file_action:81
-msgid "If set, this should be an integer that gives the number of the maximum file page we can go to. This is required to enable wrap."
+#: ../../source/inc/file_action:82
+#: ../../source/inc/input_value:40
+#: ../../source/inc/file_action_function:79
+msgid "`quick`"
 msgstr ""
 
-#: ../../source/inc/file_action:86
-msgid "If true, we can go to the last page when on the first file page if max is set."
-msgstr ""
-
-#: ../../source/inc/file_action:90
+#: ../../source/inc/file_action:87
 msgid "Saves the file."
 msgstr ""
 
-#: ../../source/inc/file_action:92
+#: ../../source/inc/file_action:89
 msgid "The button with this slot is selected if it's marked as the newest save file."
 msgstr ""
 
-#: ../../source/inc/file_action:96
+#: ../../source/inc/file_action:93
 msgid "The name of the slot to save to. If None, an unused slot (a large number based on the current time) will be used."
 msgstr ""
 
-#: ../../source/inc/file_action:100
+#: ../../source/inc/file_action:97
 msgid "If true, then we will prompt before overwriting a file."
 msgstr ""
 
-#: ../../source/inc/file_action:106
+#: ../../source/inc/file_action:103
 msgid "The name of the page that the slot is on. If None, the current page is used."
 msgstr ""
 
-#: ../../source/inc/file_action:110
+#: ../../source/inc/file_action:107
 msgid "If true, then saves on the supplied page will be cycled before being shown to the user. :var:`config.quicksave_slots` slots are used in the cycle."
 msgstr ""
 
-#: ../../source/inc/file_action:119
+#: ../../source/inc/file_action:116
 msgid "Take a screenshot to be used when the game is saved. This can be used to ensure that the screenshot is accurate, by taking a picture of the screen before a file save screen is shown."
 msgstr ""
 
-#: ../../source/inc/file_action:125
+#: ../../source/inc/file_action:122
 msgid "Performs a quick load."
 msgstr ""
 
-#: ../../source/inc/file_action:132
+#: ../../source/inc/file_action:129
 msgid "Performs a quick save."
 msgstr ""
 
-#: ../../source/inc/file_action:135
+#: ../../source/inc/file_action:132
 msgid "`message`"
 msgstr ""
 
-#: ../../source/inc/file_action:135
+#: ../../source/inc/file_action:132
 msgid "A message to display to the user when the quick save finishes."
 msgstr ""
 
-#: ../../source/inc/file_action:138
+#: ../../source/inc/file_action:135
 msgid "Set to true to mark the quicksave as the newest save."
 msgstr ""
 
@@ -1111,17 +1153,7 @@ msgid "This is used for the default name of a page. Python-style substition is p
 msgstr ""
 
 #: ../../source/inc/input_value:37
-#: ../../source/inc/file_action_function:76
-msgid "`auto`"
-msgstr ""
-
-#: ../../source/inc/input_value:37
 msgid "The name of the autosave page."
-msgstr ""
-
-#: ../../source/inc/input_value:40
-#: ../../source/inc/file_action_function:79
-msgid "`quick`"
 msgstr ""
 
 #: ../../source/inc/input_value:40

@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 07:39+0900\n"
+"POT-Creation-Date: 2018-12-30 14:49+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,94 +169,118 @@ msgid "A callback this is called, with no arguments, when the Drag is clicked wi
 msgstr ""
 
 #: ../../source/inc/drag_drop:90
-msgid "`drag_handle`"
+msgid "`alternate`"
 msgstr ""
 
 #: ../../source/inc/drag_drop:87
-msgid "A (x, y, width, height) tuple, giving the position of the drag handle within the child. In this tuple, integers are considered to be a literal number of pixels, while floats are relative to the size of the child."
+msgid "An action that is run when the Drag is right-clicked (on the desktop) or long-pressed without moving (on mobile). It may be necessary to increase :var:`config.longpress_duration` if this triggers to early on mobile platforms."
 msgstr ""
 
-#: ../../source/inc/drag_drop:97
-msgid "`drag_joined`"
+#: ../../source/inc/drag_drop:96
+msgid "`drag_handle`"
 msgstr ""
 
 #: ../../source/inc/drag_drop:93
-msgid "This is called with the current Drag as an argument. It's expected to return a list of [ (drag, x, y) ] tuples, giving the draggables to drag as a unit. `x` and `y` are the offsets of the drags relative to each other, they are not relative to the corner of this drag."
+msgid "A (x, y, width, height) tuple, giving the position of the drag handle within the child. In this tuple, integers are considered to be a literal number of pixels, while floats are relative to the size of the child."
 msgstr ""
 
 #: ../../source/inc/drag_drop:103
+msgid "`drag_joined`"
+msgstr ""
+
+#: ../../source/inc/drag_drop:99
+msgid "This is called with the current Drag as an argument. It's expected to return a list of [ (drag, x, y) ] tuples, giving the draggables to drag as a unit. `x` and `y` are the offsets of the drags relative to each other, they are not relative to the corner of this drag."
+msgstr ""
+
+#: ../../source/inc/drag_drop:109
 msgid "`drag_offscreen`"
 msgstr ""
 
-#: ../../source/inc/drag_drop:100
+#: ../../source/inc/drag_drop:106
 msgid "If true, this draggable can be moved offscreen. This can be dangerous to use with drag_joined or drags that can change size, as the drags can leave the screen entirely, with no way to get them back on the screen."
 msgstr ""
 
-#: ../../source/inc/drag_drop:108
+#: ../../source/inc/drag_drop:114
 msgid "`mouse_drop`"
 msgstr ""
 
-#: ../../source/inc/drag_drop:106
+#: ../../source/inc/drag_drop:112
 msgid "If true, the drag is dropped on the first droppable under the cursor. If false, the default, the drag is dropped onto the droppable with the largest degree of overlap."
 msgstr ""
 
-#: ../../source/inc/drag_drop:110
+#: ../../source/inc/drag_drop:120
+msgid "`drop_allowable`"
+msgstr ""
+
+#: ../../source/inc/drag_drop:117
+msgid "A callback that is called to determine whether this drop allow the current drags dropped onto. It is called with two arguments. The first is the Drag which determines its sensitivity. The second is a list of Drags that are being dragged."
+msgstr ""
+
+#: ../../source/inc/drag_drop:122
 msgid "Except for `d`, all of the parameters are available as fields (with the same name) on the Drag object. In addition, after the drag has been rendered, the following fields become available:"
 msgstr ""
 
-#: ../../source/inc/drag_drop:115
+#: ../../source/inc/drag_drop:127
 msgid "`x`, `y`"
 msgstr ""
 
-#: ../../source/inc/drag_drop:115
+#: ../../source/inc/drag_drop:127
 msgid "The position of the Drag relative to its parent, in pixels."
 msgstr ""
 
-#: ../../source/inc/drag_drop:119
+#: ../../source/inc/drag_drop:130
 msgid "`w`, `h`"
 msgstr ""
 
-#: ../../source/inc/drag_drop:118
+#: ../../source/inc/drag_drop:130
 msgid "The width and height of the Drag's child, in pixels."
 msgstr ""
 
-#: ../../source/inc/drag_drop:123
+#: ../../source/inc/drag_drop:134
 msgid "Lowers this displayable to the bottom of its drag_group."
 msgstr ""
 
-#: ../../source/inc/drag_drop:127
+#: ../../source/inc/drag_drop:138
 msgid "Changes the child of this drag to `d`."
 msgstr ""
 
-#: ../../source/inc/drag_drop:131
+#: ../../source/inc/drag_drop:142
 msgid "Changes the position of the drag. If the drag is not showing, then the position change is instantaneous. Otherwise, the position change takes `delay` seconds, and is animated as a linear move."
 msgstr ""
 
-#: ../../source/inc/drag_drop:138
+#: ../../source/inc/drag_drop:149
 msgid "Raises this displayable to the top of its drag_group."
 msgstr ""
 
-#: ../../source/inc/drag_drop:142
+#: ../../source/inc/drag_drop:153
 msgid "Represents a group of Drags. A Drag is limited to the boundary of its DragGroup. Dropping only works between Drags that are in the same DragGroup. Drags may only be raised when they are inside a DragGroup."
 msgstr ""
 
-#: ../../source/inc/drag_drop:147
+#: ../../source/inc/drag_drop:158
 msgid "A DragGroup is laid out like a :func:`Fixed`."
 msgstr ""
 
-#: ../../source/inc/drag_drop:149
+#: ../../source/inc/drag_drop:160
 msgid "All positional parameters to the DragGroup constructor should be Drags, that are added to the DragGroup."
 msgstr ""
 
-#: ../../source/inc/drag_drop:154
+#: ../../source/inc/drag_drop:166
+msgid "`min_overlap`"
+msgstr ""
+
+#: ../../source/inc/drag_drop:165
+msgid "An integer which means the minimum number of pixels at the overlap so that drop will be allow."
+msgstr ""
+
+#: ../../source/inc/drag_drop:170
 msgid "Adds `child`, which must be a Drag, to this DragGroup."
 msgstr ""
 
-#: ../../source/inc/drag_drop:158
+#: ../../source/inc/drag_drop:174
 msgid "Returns the first child of this DragGroup that has a drag_name of name."
 msgstr ""
 
-#: ../../source/inc/drag_drop:163
+#: ../../source/inc/drag_drop:179
 msgid "Removes `child` from this DragGroup."
 msgstr ""
 

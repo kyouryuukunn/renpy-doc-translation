@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-02 00:41+0900\n"
+"POT-Creation-Date: 2018-09-11 07:24+0900\n"
 "PO-Revision-Date: 2017-08-07 17:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/cds.rst:2
+#: ../../source/cds.rst:5
 msgid "Creator-Defined Statements"
 msgstr "ユーザー定義ステートメント"
 
-#: ../../source/cds.rst:4
+#: ../../source/cds.rst:7
 msgid ""
 "Creator-defined statements allow you to add your own statements to Ren'Py. "
 "This makes it possible to add things that are not supported by the current "
@@ -32,7 +32,7 @@ msgstr ""
 "します。これにより現在の Ren'Py の文法ではサポートされない機能が追加出来ま"
 "す。"
 
-#: ../../source/cds.rst:8
+#: ../../source/cds.rst:11
 #, fuzzy
 msgid ""
 "Creator-defined statements must be defined in a ``python early`` block. "
@@ -47,13 +47,13 @@ msgstr ""
 "ユーザー定義ステートメントを含めるファイル名は 01 か、それより小さい数字が接"
 "頭辞に付きます。"
 
-#: ../../source/cds.rst:14
+#: ../../source/cds.rst:17
 msgid ""
 "A user-defined statement cannot be used in the file in which it is defined."
 msgstr ""
 "ユーザー定義ステートメントはそれが定義されたファイル内では使用不能です。"
 
-#: ../../source/cds.rst:16
+#: ../../source/cds.rst:19
 #, fuzzy
 msgid ""
 "Creator-defined statement are registered using the :func:`renpy."
@@ -184,19 +184,41 @@ msgstr ""
 "は、この後のステートメントに制御を継続するなら None を返す関数であるべきで"
 "す。"
 
+#: ../../source/inc/statement_register:53
+msgid "`label`"
+msgstr ""
+
 #: ../../source/inc/statement_register:51
+msgid ""
+"This is a function that is called to determine the label of this statement. "
+"If it returns a string, that string is used as the statement label, which "
+"can be called and jumped to like any other label."
+msgstr ""
+
+#: ../../source/inc/statement_register:59
+msgid "`warp`"
+msgstr ""
+
+#: ../../source/inc/statement_register:56
+msgid ""
+"This is a function that is called to determine if this statement should "
+"execute during warping. If the function exists and returns true, it's run "
+"during warp, otherwise the statement is not run during warp."
+msgstr ""
+
+#: ../../source/inc/statement_register:62
 msgid "`scry`"
 msgstr "`scry`"
 
-#: ../../source/inc/statement_register:51
+#: ../../source/inc/statement_register:62
 msgid "Used internally by Ren'Py."
 msgstr "Ren'Py 内部で使用されます。"
 
-#: ../../source/inc/statement_register:56
+#: ../../source/inc/statement_register:67
 msgid "`init`"
 msgstr "`init`"
 
-#: ../../source/inc/statement_register:54
+#: ../../source/inc/statement_register:65
 msgid ""
 "True if this statement should be run at init-time. (If the statement is not "
 "already inside an init block, it's automatically placed inside an init 0 "
@@ -207,19 +229,19 @@ msgstr ""
 "ントが init ブロック内でなければ自動的に init 0 ブロックに配置されます。)　こ"
 "れは execute_init  関数に加えては実行関数を呼び出します。"
 
-#: ../../source/cds.rst:21
+#: ../../source/cds.rst:24
 msgid "The parse method takes a Lexer object:"
 msgstr "parse メソッドは Lexer オブジェクトを受け取ります。"
 
-#: ../../source/cds.rst:27
+#: ../../source/cds.rst:30
 msgid "True if the lexer is at the end of the line."
 msgstr "lexerが行の末端に達していれば True を返します。"
 
-#: ../../source/cds.rst:31
+#: ../../source/cds.rst:34
 msgid "Matches an arbitrary regexp string."
 msgstr "任意の正規表現文字列にマッチします。"
 
-#: ../../source/cds.rst:33
+#: ../../source/cds.rst:36
 msgid ""
 "All of the statements in the lexer that match things are implemented in "
 "terms of this function. They first skip whitespace, then attempt to match "
@@ -231,49 +253,49 @@ msgstr ""
 "す。マッチが成功すればマッチしたテキストが返され、そうでなければ None が返さ"
 "れます。"
 
-#: ../../source/cds.rst:40
+#: ../../source/cds.rst:43
 msgid "Matches `s` as a keyword."
 msgstr "キーワードとして `s` にマッチします。"
 
-#: ../../source/cds.rst:44
+#: ../../source/cds.rst:47
 msgid "Matches a name. This does not match built-in keywords."
 msgstr "名前にマッチしますが組み込みのキーワードにはマッチしません。"
 
-#: ../../source/cds.rst:48
+#: ../../source/cds.rst:51
 msgid ""
 "Matches any word, including keywords. Returns the text of the matched word."
 msgstr ""
 "キーワードを含むどのような単語にもマッチします。マッチした単語を返します。"
 
-#: ../../source/cds.rst:53
+#: ../../source/cds.rst:56
 msgid "Matches a Ren'Py string."
 msgstr "文字列にマッチします。"
 
-#: ../../source/cds.rst:57
+#: ../../source/cds.rst:60
 msgid "Matches an integer, returns a string containing the integer."
 msgstr "整数にマッチし、整数の文字列を返します。"
 
-#: ../../source/cds.rst:61
+#: ../../source/cds.rst:64
 msgid ""
 "Matches a floating point number, returns a string containing the floating "
 "point number."
 msgstr "浮動小数点にマッチし、浮動小数点の文字列を返します。"
 
-#: ../../source/cds.rst:66
+#: ../../source/cds.rst:69
 #, fuzzy
 msgid "Matches a simple Python expression, returns it as a string."
 msgstr "単純式にマッチし、文字列としてそれを返します。"
 
-#: ../../source/cds.rst:70
+#: ../../source/cds.rst:73
 #, fuzzy
 msgid "Skips whitespace, then returns the rest of the line."
 msgstr "空白をスキップし、行の残りを返します。"
 
-#: ../../source/cds.rst:74
+#: ../../source/cds.rst:77
 msgid "Returns an opaque object representing the current state of the lexer."
 msgstr "現在の lexer の状態を表現するオブジェクトを返します。"
 
-#: ../../source/cds.rst:78
+#: ../../source/cds.rst:81
 msgid ""
 "When `o` is the object returned from checkpoint(), reverts the state of the "
 "lexer to what it was when checkpoint() was called. (This is used for "
@@ -283,11 +305,11 @@ msgstr ""
 "checkpoint() が呼び出されたときにまで戻します。 ( これはロールバックのために"
 "使用されます。 )"
 
-#: ../../source/cds.rst:84
+#: ../../source/cds.rst:87
 msgid "Return a Lexer for the block associated with the current line."
 msgstr "現在のブロックと関連付けられたブロックに対する Lexer を返します。"
 
-#: ../../source/cds.rst:88
+#: ../../source/cds.rst:91
 msgid ""
 "In a subblock lexer, advances to the next line. This must be called before "
 "the first line, so the first line can be parsed."
@@ -295,11 +317,11 @@ msgstr ""
 "サブブロック lexer で、次の行に解析を進めます。一行目を解析できるようにするた"
 "めに、一行目よりも前で呼び出される必要があります。"
 
-#: ../../source/cds.rst:93
+#: ../../source/cds.rst:96
 msgid "Lint Utility Functions"
 msgstr "Lint 用ユーティリティー関数"
 
-#: ../../source/cds.rst:95
+#: ../../source/cds.rst:98
 msgid "These functions are useful in writing lint functions."
 msgstr "これらの関数は lint 関数を記述するのに便利です。"
 
@@ -311,11 +333,11 @@ msgstr ""
 "s 内部のテキストタグが正しいかチェックします。エラーがあればエラー文字列を、"
 "なければ None を返します。"
 
-#: ../../source/cds.rst:100
+#: ../../source/cds.rst:103
 msgid "Example"
 msgstr "例"
 
-#: ../../source/cds.rst:102
+#: ../../source/cds.rst:105
 #, fuzzy
 msgid ""
 "This creates a new statement ``line`` that allows lines of text to be "
@@ -324,7 +346,7 @@ msgstr ""
 "これは新しいステートメント「line」を作成し、クォーテーションを付けずにテキス"
 "トを指定できるようにします。::"
 
-#: ../../source/cds.rst:129
+#: ../../source/cds.rst:132
 msgid "This can be used by writing::"
 msgstr "これは以下のように記述して使用出来ます。 ::"
 

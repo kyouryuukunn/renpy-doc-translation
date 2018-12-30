@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-02 00:41+0900\n"
+"POT-Creation-Date: 2018-09-11 19:30+0900\n"
 "PO-Revision-Date: 2018-02-16 00:01+0900\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/screen_optimization.rst:5
+#: ../../source/screen_optimization.rst:8
 msgid "Screen Language Optimization"
 msgstr "スクリーン言語の最適化"
 
-#: ../../source/screen_optimization.rst:7
+#: ../../source/screen_optimization.rst:10
 msgid ""
 "Ren'Py uses a number of techniques to optimize screen language speed. When "
 "using Ren'Py to create complex interfaces, such as those used by simulation "
@@ -32,7 +32,7 @@ msgstr ""
 "レーションゲームのような複雑なインターフェースを作成するなら、スクリーン言語"
 "の動作を理解することは最大のパフォーマンスを得る訳にたつでしょう。"
 
-#: ../../source/screen_optimization.rst:12
+#: ../../source/screen_optimization.rst:15
 msgid ""
 "This guide is applicable to the second implementation of screen language, "
 "which was added to Ren'Py 6.18. If your game was created in Ren'Py 6.17 or "
@@ -43,7 +43,7 @@ msgstr ""
 "す。 Ren'Py 6.17 以前で作成されたゲームでは、ランチャーから  \"Force "
 "Recompile\" を選んでスクリーンを最新バージョンに更新する必要があります。"
 
-#: ../../source/screen_optimization.rst:17
+#: ../../source/screen_optimization.rst:20
 msgid ""
 "This guide isn't a substitute for good programming practice. If a screen "
 "uses nested loops to do a lot of unproductive work, it will be slower than a "
@@ -57,11 +57,11 @@ msgstr ""
 "すが、そのような動作を避けることが Ren'Py にあなたの仕事を最適化させるよりも"
 "常に適切です。"
 
-#: ../../source/screen_optimization.rst:24
+#: ../../source/screen_optimization.rst:27
 msgid "Parameter List"
 msgstr "引数リスト"
 
-#: ../../source/screen_optimization.rst:26
+#: ../../source/screen_optimization.rst:29
 msgid ""
 "For best performance, all screens should be defined with a parameter list. "
 "When a screen doesn't take parameters, it should be define with an empty "
@@ -70,11 +70,11 @@ msgstr ""
 "最適な処理のために、すべてのスクリーンには引数リストが定義されるべきです。ス"
 "クリーンが引数を取らないなら空の引数リストで定義すべきです。 ::"
 
-#: ../../source/screen_optimization.rst:35
+#: ../../source/screen_optimization.rst:38
 msgid "is faster than::"
 msgstr "上のスクリーンは下のスクリーンより高速です。 ::"
 
-#: ../../source/screen_optimization.rst:42
+#: ../../source/screen_optimization.rst:45
 msgid ""
 "When a screen is defined without a parameter list, any name used in that "
 "screen can be redefined when the screen is show. This requires Ren'Py to be "
@@ -86,11 +86,11 @@ msgstr ""
 "Ren'Py が分析するときにより保守的であることが要求され、そのパフォーマンス最適"
 "化が制限されるかもしれません。"
 
-#: ../../source/screen_optimization.rst:48
+#: ../../source/screen_optimization.rst:51
 msgid "Prediction"
 msgstr "予測"
 
-#: ../../source/screen_optimization.rst:50
+#: ../../source/screen_optimization.rst:53
 msgid ""
 "Screens perform better when they're predicted in advance. That's because "
 "Ren'Py will execute the screen during prediction time, and load in images "
@@ -100,11 +100,11 @@ msgstr ""
 "予測中にそのスクリーンを実行し、そのスクリーンで使用された画像をロードするた"
 "めです。"
 
-#: ../../source/screen_optimization.rst:54
+#: ../../source/screen_optimization.rst:57
 msgid "There are two ways Ren'Py automatically predicts screens:"
 msgstr "スクリーンを自動的に予測する 2 つの方法が Ren'Py にはあります。 :"
 
-#: ../../source/screen_optimization.rst:56
+#: ../../source/screen_optimization.rst:59
 msgid ""
 "Ren'Py will predict screens shown by the ``show screen`` and ``call screen`` "
 "statements."
@@ -112,7 +112,7 @@ msgstr ""
 "``show screen`` と ``call screen`` ステートメントで表示されるスクリーンを "
 "Ren'Py は予測します。"
 
-#: ../../source/screen_optimization.rst:58
+#: ../../source/screen_optimization.rst:61
 msgid ""
 "Ren'Py will predict screen that will be shown by the :func:`Show` and :func:"
 "`ShowMenu` actions."
@@ -120,7 +120,7 @@ msgstr ""
 ":func:`Show` と :func:`ShowMenu` アクションで表示されるスクリーンを Ren'Py は"
 "予測します。"
 
-#: ../../source/screen_optimization.rst:61
+#: ../../source/screen_optimization.rst:64
 msgid ""
 "If screens are shown from Python, it's a good idea to start predicting the "
 "screen before it is shown. To start predicting a screen, use the :func:"
@@ -132,11 +132,11 @@ msgstr ""
 "start_predict_screen` 関数を使用します。予測を停止するには  :func:`renpy."
 "stop_predict_screen` 関数を使用します。"
 
-#: ../../source/screen_optimization.rst:68
+#: ../../source/screen_optimization.rst:71
 msgid "Displayable Reuse"
 msgstr "Displayable の再利用"
 
-#: ../../source/screen_optimization.rst:70
+#: ../../source/screen_optimization.rst:73
 msgid ""
 "When evaluating a screen language statement that creates a displayable, "
 "Ren'Py will check to see if the positional arguments and properties given to "
@@ -150,7 +150,7 @@ msgstr ""
 "もしそうなら新しい displayable を作成する代わりに既存の displayable を "
 "Ren'Py は使用します。"
 
-#: ../../source/screen_optimization.rst:76
+#: ../../source/screen_optimization.rst:79
 msgid ""
 "Displayable reuse has a number of performance implications. It saves the "
 "cost of creating a new displayable, which may be significant for "
@@ -165,7 +165,7 @@ msgstr ""
 "ンダリングしてユーザーに表示する必要がなくなり、さらなる速度向上に繋がりま"
 "す。"
 
-#: ../../source/screen_optimization.rst:82
+#: ../../source/screen_optimization.rst:85
 #, fuzzy
 msgid ""
 "To compare positional arguments and properties, Ren'Py uses the notion of "
@@ -179,7 +179,7 @@ msgstr ""
 "クションが使用されるか、選択または無効状態かが問題ではないときは等価であると"
 "判断して、この等式の概念をアクションにまで拡張しました。"
 
-#: ../../source/screen_optimization.rst:89
+#: ../../source/screen_optimization.rst:92
 #, fuzzy
 msgid ""
 "All actions provided with Ren'Py conform to this definition. When defining "
@@ -191,7 +191,7 @@ msgstr ""
 "を定義するときは、この等式の概念を用意するとよいです。これは適切な __eq__ メ"
 "ソッドを提供して実現出来ます。例えば ::"
 
-#: ../../source/screen_optimization.rst:108
+#: ../../source/screen_optimization.rst:111
 #, fuzzy
 msgid ""
 "It's important to define the ``__eq__`` function carefully, making sure it "
@@ -201,11 +201,11 @@ msgstr ""
 "__eq__ 関数は注意深く定義して、 (==) と (is) を適切に使用し、すべてのフィール"
 "ドを比較しているか確認してください。"
 
-#: ../../source/screen_optimization.rst:113
+#: ../../source/screen_optimization.rst:116
 msgid "Const Expressions and Pure Functions"
 msgstr "const 式と pure 関数"
 
-#: ../../source/screen_optimization.rst:115
+#: ../../source/screen_optimization.rst:118
 msgid ""
 "Ren'Py can exploit the properties of const variables and pure functions to "
 "improve the speed of screen evaluation, and to entirely avoid the evaluation "
@@ -214,11 +214,11 @@ msgstr ""
 "Ren'Py は const 変数と pure 関数を活用して、スクリーンの評価を高速化し、スク"
 "リーンの一部の評価を完全に省略出来ます。"
 
-#: ../../source/screen_optimization.rst:120
+#: ../../source/screen_optimization.rst:123
 msgid "Definitions"
 msgstr "定義"
 
-#: ../../source/screen_optimization.rst:122
+#: ../../source/screen_optimization.rst:125
 msgid ""
 "An expression is **const** (short for constant) if it always represents the "
 "same value when it is evaluated. For Ren'Py's purposes, an expression is "
@@ -229,7 +229,7 @@ msgstr ""
 "Ren'Py においては、以下の式の評価が常に同じ const 変数になるか、未定義である"
 "ということになります。 :"
 
-#: ../../source/screen_optimization.rst:127
+#: ../../source/screen_optimization.rst:130
 msgid ""
 "Applying any unary, binary, or ternary operator to the expression, provided "
 "the other operands are also const."
@@ -237,15 +237,15 @@ msgstr ""
 "単項、二項、三項演算子のその式への適用。提供される他の演算対象も const であ"
 "る。"
 
-#: ../../source/screen_optimization.rst:129
+#: ../../source/screen_optimization.rst:132
 msgid "Accessing a field on the expression."
 msgstr "その式でアクセスするフィールド"
 
-#: ../../source/screen_optimization.rst:130
+#: ../../source/screen_optimization.rst:133
 msgid "Indexing the expression, either using a number or an object."
 msgstr "数字かオブジェクトを使用したその式の索引"
 
-#: ../../source/screen_optimization.rst:132
+#: ../../source/screen_optimization.rst:135
 msgid ""
 "Python numbers and strings are const, as are list, tuple, set, and dict "
 "literals for which all components are const. Ren'Py marks variables defined "
@@ -261,7 +261,7 @@ msgstr ""
 "に制御出来ます。デフォルトの const 名のリストが後述の :ref:`Const 名 <const-"
 "names>` にあります。"
 
-#: ../../source/screen_optimization.rst:140
+#: ../../source/screen_optimization.rst:143
 msgid ""
 "If you have a variable that will never change, it makes sense to use "
 "``define`` to both define it and declare it const. For example::"
@@ -269,7 +269,7 @@ msgstr ""
 "けして変更されない変数があるなら、 ``define`` を使用してそれを定義するとよい"
 "です。例 ::"
 
-#: ../../source/screen_optimization.rst:146
+#: ../../source/screen_optimization.rst:149
 msgid ""
 "A callable function, class, or action is **pure** if, when all of its "
 "arguments are const values, it always gives the same const value. "
@@ -280,7 +280,7 @@ msgstr ""
 "とき、常に同じ値を返すなら **pure** です。 const 式を引数に pure 関数を使用す"
 "る式も const 式です。"
 
-#: ../../source/screen_optimization.rst:151
+#: ../../source/screen_optimization.rst:154
 msgid ""
 "A large number of default functions, classes, and actions are marked as "
 "pure. These functions are listed in the :ref:`Pure Names <pure-names>` "
@@ -289,7 +289,7 @@ msgstr ""
 "多くのデフォルトの関数やクラス、アクションが pure としてマークされています。"
 "これらの関数は後述する :ref:`Pure 名 <pure-names>` でリストされています。"
 
-#: ../../source/screen_optimization.rst:155
+#: ../../source/screen_optimization.rst:158
 msgid ""
 "Functions are declared pure using the :func:`renpy.pure` function, which can "
 "be used as a decorator for functions declared in the default store."
@@ -297,30 +297,30 @@ msgstr ""
 " :func:`renpy.pure` 関数を使用して、関数は pure と宣言され、それらはデフォル"
 "トの store で宣言された関数のデコレータとして使用出来ます。"
 
-#: ../../source/screen_optimization.rst:158
+#: ../../source/screen_optimization.rst:161
 msgid ""
 "Const expressions and pure functions do not need to retain the same value "
 "across the following events:"
 msgstr ""
 "const 式と pure 関数は以下のイベントでは同じ値を維持する必要はありません。 :"
 
-#: ../../source/screen_optimization.rst:161
+#: ../../source/screen_optimization.rst:164
 msgid "The end of the init phase."
 msgstr "初期化の終了"
 
-#: ../../source/screen_optimization.rst:162
+#: ../../source/screen_optimization.rst:165
 msgid "A change of the language."
 msgstr "言語の変更"
 
-#: ../../source/screen_optimization.rst:163
+#: ../../source/screen_optimization.rst:166
 msgid "A style rebuild."
 msgstr "スタイルの再ビルド"
 
-#: ../../source/screen_optimization.rst:166
+#: ../../source/screen_optimization.rst:169
 msgid "How Const Optimizes Screen Language"
 msgstr "const のスクリーン言語最適化効果"
 
-#: ../../source/screen_optimization.rst:168
+#: ../../source/screen_optimization.rst:171
 msgid ""
 "There are three advantages to ensuring that screen language arguments and "
 "properties are const."
@@ -328,7 +328,7 @@ msgstr ""
 "スクリーン言語の引数とプロパティーが const だと保証することには 3 つの利点が"
 "あります。"
 
-#: ../../source/screen_optimization.rst:171
+#: ../../source/screen_optimization.rst:174
 msgid ""
 "The first is that const arguments and properties are evaluated when screens "
 "are prepared, which is at the end of the init phase, when the language is "
@@ -339,7 +339,7 @@ msgstr ""
 "ド時に const 引数とプロパティーは評価されます。その後はもう const 引数やプロ"
 "パティーを評価するために時間を消費する必要はありません。"
 
-#: ../../source/screen_optimization.rst:176
+#: ../../source/screen_optimization.rst:179
 msgid ""
 "The second is that const works well with displayable reuse. When all of the "
 "arguments and properties of a displayable are const, the displayable can "
@@ -349,7 +349,7 @@ msgstr ""
 "引数とプロパティーが const であると、その displayable は常に再利用され、 "
 "displayable 再利用の利益が得られます。"
 
-#: ../../source/screen_optimization.rst:180
+#: ../../source/screen_optimization.rst:183
 msgid ""
 "Lastly, when Ren'Py encounters a tree of displayables such that all "
 "arguments, properties, and expressions affecting control flow are also "
@@ -361,7 +361,7 @@ msgstr ""
 "displayable の評価も作成もせずにツリーをまるごと再利用します。これは明らかな"
 "パフォーマンス向上に寄与します。"
 
-#: ../../source/screen_optimization.rst:186
+#: ../../source/screen_optimization.rst:189
 msgid ""
 "For example, the following screen does not execute any Python or create any "
 "displayables after the first time it is predicted or shown::"
@@ -369,11 +369,11 @@ msgstr ""
 "例えば、以下のスクリーンは最初に予測や表示をされてからは、どんなコードの評価"
 "も displayable の作成もしません。 ::"
 
-#: ../../source/screen_optimization.rst:199
+#: ../../source/screen_optimization.rst:202
 msgid "Const Text"
 msgstr "const テキスト"
 
-#: ../../source/screen_optimization.rst:201
+#: ../../source/screen_optimization.rst:204
 msgid ""
 "When defining text, please note that strings containing new-style text "
 "substitutions are const::"
@@ -381,16 +381,16 @@ msgstr ""
 "テキストを定義するときは、新スタイルの補完を使用している文字列は const である"
 "ことに注意してください。 ::"
 
-#: ../../source/screen_optimization.rst:207
+#: ../../source/screen_optimization.rst:210
 msgid ""
 "Supplying a variable containing the text directly is generally not const::"
 msgstr "テキストの変数を直接与えると一般的には非 const になります。 ::"
 
-#: ../../source/screen_optimization.rst:212
+#: ../../source/screen_optimization.rst:215
 msgid "Neither is using percent-substitution::"
 msgstr "% による補完でも同様です。 ::"
 
-#: ../../source/screen_optimization.rst:217
+#: ../../source/screen_optimization.rst:220
 msgid ""
 "Lastly, note that the _ text translation function is pure, so if it contains "
 "a string, the entire expression is const::"
@@ -398,7 +398,7 @@ msgstr ""
 "最後に、 _ テキスト関数は pure であるため、文字列を含むと式全体が const にな"
 "ります。 ::"
 
-#: ../../source/screen_optimization.rst:224
+#: ../../source/screen_optimization.rst:227
 msgid "Const Functions"
 msgstr "Const 関数"
 
@@ -462,11 +462,11 @@ msgstr ""
 msgid "Returns `fn`, allowing this function to be used as a decorator."
 msgstr "`fn` を返し、この関数はデコレーターとして使用出来ます。"
 
-#: ../../source/screen_optimization.rst:229
+#: ../../source/screen_optimization.rst:232
 msgid "Profiling"
 msgstr "プロファイリング"
 
-#: ../../source/screen_optimization.rst:231
+#: ../../source/screen_optimization.rst:234
 msgid ""
 "Ren'Py supports profiling screen execution through the ``renpy."
 "profile_screen`` function:"
@@ -598,11 +598,11 @@ msgstr ""
 "すべてのプロファイリング結果はゲームディレクトリーの profile_screen.txt に保"
 "存されます。"
 
-#: ../../source/screen_optimization.rst:240
+#: ../../source/screen_optimization.rst:243
 msgid "Const Names"
 msgstr "const 名"
 
-#: ../../source/screen_optimization.rst:242
+#: ../../source/screen_optimization.rst:245
 msgid "The following names are const by default."
 msgstr "以下の名前はデフォルトで const です。"
 
@@ -626,11 +626,11 @@ msgstr "config"
 msgid "style"
 msgstr "style"
 
-#: ../../source/screen_optimization.rst:250
+#: ../../source/screen_optimization.rst:253
 msgid "Pure Names"
 msgstr "pure 名"
 
-#: ../../source/screen_optimization.rst:252
+#: ../../source/screen_optimization.rst:255
 msgid "The following names are both pure and const by default."
 msgstr "以下の名前はデフォルトで pure かつ const です。"
 
@@ -788,8 +788,8 @@ msgid ":func:`Frame`"
 msgstr ":func:`Frame`"
 
 #: ../../source/inc/pure_vars:39
-msgid "Grid"
-msgstr ""
+msgid ":func:`Grid`"
+msgstr ":func:`Grid`"
 
 #: ../../source/inc/pure_vars:40
 msgid ":func:`HBox`"
@@ -840,15 +840,18 @@ msgid ":func:`Language`"
 msgstr ":func:`Language`"
 
 #: ../../source/inc/pure_vars:52
-msgid ":func:`LiveComposite`"
+#, fuzzy
+msgid "LiveComposite"
 msgstr ":func:`LiveComposite`"
 
 #: ../../source/inc/pure_vars:53
-msgid ":func:`LiveCrop`"
+#, fuzzy
+msgid "LiveCrop"
 msgstr ":func:`LiveCrop`"
 
 #: ../../source/inc/pure_vars:54
-msgid ":func:`LiveTile`"
+#, fuzzy
+msgid "LiveTile"
 msgstr ":func:`LiveTile`"
 
 #: ../../source/inc/pure_vars:55
@@ -944,8 +947,9 @@ msgid ":func:`Pixellate`"
 msgstr ":func:`Pixellate`"
 
 #: ../../source/inc/pure_vars:78
-msgid "Play"
-msgstr "Play"
+#, fuzzy
+msgid ":func:`Play`"
+msgstr ":func:`Replay`"
 
 #: ../../source/inc/pure_vars:79
 msgid ":func:`PlayCharacterVoice`"
@@ -1029,701 +1033,725 @@ msgid ":func:`Screenshot`"
 msgstr ":func:`Screenshot`"
 
 #: ../../source/inc/pure_vars:99
+#, fuzzy
+msgid ":func:`Scroll`"
+msgstr ":func:`Solid`"
+
+#: ../../source/inc/pure_vars:100
 msgid ":func:`SelectedIf`"
 msgstr ":func:`SelectedIf`"
 
-#: ../../source/inc/pure_vars:100
+#: ../../source/inc/pure_vars:101
 msgid ":func:`SensitiveIf`"
 msgstr ":func:`SensitiveIf`"
 
-#: ../../source/inc/pure_vars:101
+#: ../../source/inc/pure_vars:102
 msgid ":func:`SetCharacterVolume`"
 msgstr ":func:`SetCharacterVolume`"
 
-#: ../../source/inc/pure_vars:102
+#: ../../source/inc/pure_vars:103
 msgid ":func:`SetDict`"
 msgstr ":func:`SetDict`"
 
-#: ../../source/inc/pure_vars:103
+#: ../../source/inc/pure_vars:104
 msgid ":func:`SetField`"
 msgstr ":func:`SetField`"
 
-#: ../../source/inc/pure_vars:104
+#: ../../source/inc/pure_vars:105
 msgid ":func:`SetMixer`"
 msgstr ":func:`SetMixer`"
 
-#: ../../source/inc/pure_vars:105
+#: ../../source/inc/pure_vars:106
 msgid ":func:`SetMute`"
 msgstr ":func:`SetMute`"
 
-#: ../../source/inc/pure_vars:106
+#: ../../source/inc/pure_vars:107
 msgid ":func:`SetScreenVariable`"
 msgstr ":func:`SetScreenVariable`"
 
-#: ../../source/inc/pure_vars:107
+#: ../../source/inc/pure_vars:108
 msgid ":func:`SetVariable`"
 msgstr ":func:`SetVariable`"
 
-#: ../../source/inc/pure_vars:108
+#: ../../source/inc/pure_vars:109
 msgid ":func:`SetVoiceMute`"
 msgstr ":func:`SetVoiceMute`"
 
-#: ../../source/inc/pure_vars:109
+#: ../../source/inc/pure_vars:110
 msgid ":func:`Show`"
 msgstr ":func:`Show`"
 
-#: ../../source/inc/pure_vars:110
+#: ../../source/inc/pure_vars:111
 msgid ":func:`ShowMenu`"
 msgstr ":func:`ShowMenu`"
 
-#: ../../source/inc/pure_vars:111
+#: ../../source/inc/pure_vars:112
 msgid ":func:`ShowTransient`"
 msgstr ":func:`ShowTransient`"
 
-#: ../../source/inc/pure_vars:112
+#: ../../source/inc/pure_vars:113
 msgid ":func:`ShowingSwitch`"
 msgstr ":func:`ShowingSwitch`"
 
-#: ../../source/inc/pure_vars:113
+#: ../../source/inc/pure_vars:114
 msgid "SizeZoom"
 msgstr "SizeZoom"
 
-#: ../../source/inc/pure_vars:114
+#: ../../source/inc/pure_vars:115
 msgid ":func:`Skip`"
 msgstr ":func:`Skip`"
 
-#: ../../source/inc/pure_vars:115
+#: ../../source/inc/pure_vars:116
 msgid ":func:`SnowBlossom`"
 msgstr ":func:`SnowBlossom`"
 
-#: ../../source/inc/pure_vars:116
+#: ../../source/inc/pure_vars:117
 msgid ":func:`Solid`"
 msgstr ":func:`Solid`"
 
-#: ../../source/inc/pure_vars:117
+#: ../../source/inc/pure_vars:118
 msgid "Speaker"
 msgstr "Speaker"
 
-#: ../../source/inc/pure_vars:118
+#: ../../source/inc/pure_vars:119
 msgid ":func:`Start`"
 msgstr ":func:`Start`"
 
-#: ../../source/inc/pure_vars:119
+#: ../../source/inc/pure_vars:120
 msgid ":func:`StaticValue`"
 msgstr ":func:`StaticValue`"
 
-#: ../../source/inc/pure_vars:120
-msgid "Stop"
-msgstr "Stop"
-
 #: ../../source/inc/pure_vars:121
+#, fuzzy
+msgid ":func:`Stop`"
+msgstr ":func:`Show`"
+
+#: ../../source/inc/pure_vars:122
 msgid ":func:`StylePreference`"
 msgstr ":func:`StylePreference`"
 
-#: ../../source/inc/pure_vars:122
+#: ../../source/inc/pure_vars:123
 msgid "SubTransition"
 msgstr "SubTransition"
 
-#: ../../source/inc/pure_vars:123
+#: ../../source/inc/pure_vars:124
 msgid ":func:`Text`"
 msgstr ":func:`Text`"
 
-#: ../../source/inc/pure_vars:124
+#: ../../source/inc/pure_vars:125
 msgid ":func:`ToggleDict`"
 msgstr ":func:`ToggleDict`"
 
-#: ../../source/inc/pure_vars:125
+#: ../../source/inc/pure_vars:126
 msgid ":func:`ToggleField`"
 msgstr ":func:`ToggleField`"
 
-#: ../../source/inc/pure_vars:126
+#: ../../source/inc/pure_vars:127
 msgid ":func:`ToggleMute`"
 msgstr ":func:`ToggleMute`"
 
-#: ../../source/inc/pure_vars:127
+#: ../../source/inc/pure_vars:128
 #, fuzzy
 msgid ":func:`ToggleScreen`"
 msgstr ":func:`ToggleScreenVariable`"
 
-#: ../../source/inc/pure_vars:128
+#: ../../source/inc/pure_vars:129
 msgid ":func:`ToggleScreenVariable`"
 msgstr ":func:`ToggleScreenVariable`"
 
-#: ../../source/inc/pure_vars:129
+#: ../../source/inc/pure_vars:130
 msgid ":func:`ToggleSetMembership`"
 msgstr ":func:`ToggleSetMembership`"
 
-#: ../../source/inc/pure_vars:130
+#: ../../source/inc/pure_vars:131
 msgid ":func:`ToggleVariable`"
 msgstr ":func:`ToggleVariable`"
 
-#: ../../source/inc/pure_vars:131
+#: ../../source/inc/pure_vars:132
 msgid ":func:`ToggleVoiceMute`"
 msgstr ":func:`ToggleVoiceMute`"
 
-#: ../../source/inc/pure_vars:132
+#: ../../source/inc/pure_vars:133
 msgid ":class:`Transform`"
 msgstr ":class:`Transform`"
 
-#: ../../source/inc/pure_vars:133
+#: ../../source/inc/pure_vars:134
 msgid "Update"
 msgstr "Update"
 
-#: ../../source/inc/pure_vars:134
+#: ../../source/inc/pure_vars:135
 msgid ":func:`VBox`"
 msgstr ":func:`VBox`"
 
-#: ../../source/inc/pure_vars:135
+#: ../../source/inc/pure_vars:136
 msgid ":func:`VariableInputValue`"
 msgstr ":func:`VariableInputValue`"
 
-#: ../../source/inc/pure_vars:136
+#: ../../source/inc/pure_vars:137
 msgid ":func:`VariableValue`"
 msgstr ":func:`VariableValue`"
 
-#: ../../source/inc/pure_vars:137
+#: ../../source/inc/pure_vars:138
 msgid "Viewport"
 msgstr "Viewport"
 
-#: ../../source/inc/pure_vars:138
+#: ../../source/inc/pure_vars:139
 msgid ":func:`VoiceReplay`"
 msgstr ":func:`VoiceReplay`"
 
-#: ../../source/inc/pure_vars:139
+#: ../../source/inc/pure_vars:140
 msgid "Window"
 msgstr "Window"
 
-#: ../../source/inc/pure_vars:140
+#: ../../source/inc/pure_vars:141
 msgid "Zoom"
 msgstr "Zoom"
 
-#: ../../source/inc/pure_vars:141
+#: ../../source/inc/pure_vars:142
 msgid "ZoomInOut"
 msgstr "ZoomInOut"
 
-#: ../../source/inc/pure_vars:142
+#: ../../source/inc/pure_vars:143
 msgid ":func:`_`"
 msgstr ":func:`_`"
 
-#: ../../source/inc/pure_vars:143
+#: ../../source/inc/pure_vars:144
 #, fuzzy
 msgid "_DisplayReset"
 msgstr "Displayable の再利用"
 
-#: ../../source/inc/pure_vars:144
+#: ../../source/inc/pure_vars:145
 msgid "_InputValueAction"
 msgstr "_InputValueAction"
 
-#: ../../source/inc/pure_vars:145
+#: ../../source/inc/pure_vars:146
 msgid "_m1_00gallery__GalleryAction"
 msgstr "_m1_00gallery__GalleryAction"
 
-#: ../../source/inc/pure_vars:146
+#: ../../source/inc/pure_vars:147
 msgid "_m1_00gallery__GalleryToggleSlideshow"
 msgstr "_m1_00gallery__GalleryToggleSlideshow"
 
-#: ../../source/inc/pure_vars:147
+#: ../../source/inc/pure_vars:148
 msgid "_m1_00musicroom__MusicRoomPlay"
 msgstr "_m1_00musicroom__MusicRoomPlay"
 
-#: ../../source/inc/pure_vars:148
+#: ../../source/inc/pure_vars:149
 msgid "_m1_00musicroom__MusicRoomRandomPlay"
 msgstr "_m1_00musicroom__MusicRoomRandomPlay"
 
-#: ../../source/inc/pure_vars:149
+#: ../../source/inc/pure_vars:150
 msgid "_m1_00musicroom__MusicRoomStop"
 msgstr "_m1_00musicroom__MusicRoomStop"
 
-#: ../../source/inc/pure_vars:150
+#: ../../source/inc/pure_vars:151
 msgid "_m1_00musicroom__MusicRoomTogglePlay"
 msgstr "_m1_00musicroom__MusicRoomTogglePlay"
 
-#: ../../source/inc/pure_vars:151
+#: ../../source/inc/pure_vars:152
 msgid "_m1_00preferences__DisplayAction"
 msgstr "_m1_00preferences__DisplayAction"
 
-#: ../../source/inc/pure_vars:152
+#: ../../source/inc/pure_vars:153
 msgid "_movebottom"
 msgstr "_movebottom"
 
-#: ../../source/inc/pure_vars:153
+#: ../../source/inc/pure_vars:154
 msgid "_moveleft"
 msgstr "_moveleft"
 
-#: ../../source/inc/pure_vars:154
+#: ../../source/inc/pure_vars:155
 msgid "_moveright"
 msgstr "_moveright"
 
-#: ../../source/inc/pure_vars:155
+#: ../../source/inc/pure_vars:156
 msgid "_movetop"
 msgstr "_movetop"
 
-#: ../../source/inc/pure_vars:156
+#: ../../source/inc/pure_vars:157
 msgid "_narrator"
 msgstr "_narrator"
 
-#: ../../source/inc/pure_vars:157
+#: ../../source/inc/pure_vars:158
 msgid "_notify_transform"
 msgstr "_notify_transform"
 
-#: ../../source/inc/pure_vars:158
+#: ../../source/inc/pure_vars:159
 #, fuzzy
 msgid ":func:`_p`"
 msgstr ":func:`_`"
 
-#: ../../source/inc/pure_vars:159
+#: ../../source/inc/pure_vars:160
 msgid "abs"
 msgstr "abs"
 
-#: ../../source/inc/pure_vars:160
+#: ../../source/inc/pure_vars:161
 msgid "all"
 msgstr "all"
 
-#: ../../source/inc/pure_vars:161
+#: ../../source/inc/pure_vars:162
 msgid "any"
 msgstr "any"
 
-#: ../../source/inc/pure_vars:162
+#: ../../source/inc/pure_vars:163
 msgid "apply"
 msgstr "apply"
 
-#: ../../source/inc/pure_vars:163
+#: ../../source/inc/pure_vars:164
 msgid "bin"
 msgstr "bin"
 
-#: ../../source/inc/pure_vars:164
+#: ../../source/inc/pure_vars:165
 msgid ":var:`blinds`"
 msgstr ":var:`blinds`"
 
-#: ../../source/inc/pure_vars:165
+#: ../../source/inc/pure_vars:166
 msgid "bool"
 msgstr "bool"
 
-#: ../../source/inc/pure_vars:166
+#: ../../source/inc/pure_vars:167
 msgid "bytes"
 msgstr "bytes"
 
-#: ../../source/inc/pure_vars:167
+#: ../../source/inc/pure_vars:168
 msgid "callable"
 msgstr "callable"
 
-#: ../../source/inc/pure_vars:168
+#: ../../source/inc/pure_vars:169
 msgid "centered"
 msgstr "centered"
 
-#: ../../source/inc/pure_vars:169
+#: ../../source/inc/pure_vars:170
 msgid "chr"
 msgstr "chr"
 
-#: ../../source/inc/pure_vars:170
+#: ../../source/inc/pure_vars:171
 msgid "cmp"
 msgstr "cmp"
 
-#: ../../source/inc/pure_vars:171
+#: ../../source/inc/pure_vars:172
 msgid "color"
 msgstr "color"
 
-#: ../../source/inc/pure_vars:172
+#: ../../source/inc/pure_vars:173
 msgid "dict"
 msgstr "dict"
 
-#: ../../source/inc/pure_vars:173
+#: ../../source/inc/pure_vars:174
 msgid ":var:`dissolve`"
 msgstr ":var:`dissolve`"
 
-#: ../../source/inc/pure_vars:174
+#: ../../source/inc/pure_vars:175
 msgid "divmod"
 msgstr "divmod"
 
-#: ../../source/inc/pure_vars:175
+#: ../../source/inc/pure_vars:176
 msgid ":var:`fade`"
 msgstr ":var:`fade`"
 
-#: ../../source/inc/pure_vars:176
+#: ../../source/inc/pure_vars:177
 msgid "filter"
 msgstr "filter"
 
-#: ../../source/inc/pure_vars:177
+#: ../../source/inc/pure_vars:178
 msgid "float"
 msgstr "実数値"
 
-#: ../../source/inc/pure_vars:178
+#: ../../source/inc/pure_vars:179
 msgid "frozenset"
 msgstr "frozenset"
 
-#: ../../source/inc/pure_vars:179
+#: ../../source/inc/pure_vars:180
 msgid "getattr"
 msgstr "getattr"
 
-#: ../../source/inc/pure_vars:180
+#: ../../source/inc/pure_vars:181
 msgid "globals"
 msgstr "globals"
 
-#: ../../source/inc/pure_vars:181
+#: ../../source/inc/pure_vars:182
+#, fuzzy
+msgid ":func:`gui.SetPreference`"
+msgstr ":func:`Preference`"
+
+#: ../../source/inc/pure_vars:183
+#, fuzzy
+msgid ":func:`gui.TogglePreference`"
+msgstr ":func:`StylePreference`"
+
+#: ../../source/inc/pure_vars:184
+#, fuzzy
+msgid ":func:`gui.preference`"
+msgstr ":func:`Preference`"
+
+#: ../../source/inc/pure_vars:185
 msgid "hasattr"
 msgstr "hasattr"
 
-#: ../../source/inc/pure_vars:182
+#: ../../source/inc/pure_vars:186
 msgid "hash"
 msgstr "hash"
 
-#: ../../source/inc/pure_vars:183
+#: ../../source/inc/pure_vars:187
 msgid "hex"
 msgstr "hex"
 
-#: ../../source/inc/pure_vars:184
+#: ../../source/inc/pure_vars:188
 msgid ":var:`hpunch`"
 msgstr ":var:`hpunch`"
 
-#: ../../source/inc/pure_vars:185
+#: ../../source/inc/pure_vars:189
 msgid "int"
 msgstr "int"
 
-#: ../../source/inc/pure_vars:186
+#: ../../source/inc/pure_vars:190
 msgid ":var:`irisin`"
 msgstr ":var:`irisin`"
 
-#: ../../source/inc/pure_vars:187
+#: ../../source/inc/pure_vars:191
 msgid "irisout"
 msgstr "irisout"
 
-#: ../../source/inc/pure_vars:188
+#: ../../source/inc/pure_vars:192
 msgid "isinstance"
 msgstr "isinstance"
 
-#: ../../source/inc/pure_vars:189
+#: ../../source/inc/pure_vars:193
 msgid "len"
 msgstr "len"
 
-#: ../../source/inc/pure_vars:190
+#: ../../source/inc/pure_vars:194
 msgid "list"
 msgstr "list"
 
-#: ../../source/inc/pure_vars:191
+#: ../../source/inc/pure_vars:195
 msgid "long"
 msgstr "long"
 
-#: ../../source/inc/pure_vars:192
+#: ../../source/inc/pure_vars:196
 msgid "map"
 msgstr "map"
 
-#: ../../source/inc/pure_vars:193
+#: ../../source/inc/pure_vars:197
 msgid "max"
 msgstr "max"
 
-#: ../../source/inc/pure_vars:194
+#: ../../source/inc/pure_vars:198
 msgid "min"
 msgstr "min"
 
-#: ../../source/inc/pure_vars:195
+#: ../../source/inc/pure_vars:199
 msgid ":var:`name_only`"
 msgstr ":var:`name_only`"
 
-#: ../../source/inc/pure_vars:196
+#: ../../source/inc/pure_vars:200
 msgid ":var:`narrator`"
 msgstr ":var:`narrator`"
 
-#: ../../source/inc/pure_vars:197
+#: ../../source/inc/pure_vars:201
 msgid "oct"
 msgstr "oct"
 
-#: ../../source/inc/pure_vars:198
+#: ../../source/inc/pure_vars:202
 msgid "ord"
 msgstr "ord"
 
-#: ../../source/inc/pure_vars:199
+#: ../../source/inc/pure_vars:203
 msgid ":var:`pixellate`"
 msgstr ":var:`pixellate`"
 
-#: ../../source/inc/pure_vars:200
+#: ../../source/inc/pure_vars:204
 msgid "pow"
 msgstr "pow"
 
-#: ../../source/inc/pure_vars:201
+#: ../../source/inc/pure_vars:205
 msgid "pushdown"
 msgstr "pushdown"
 
-#: ../../source/inc/pure_vars:202
+#: ../../source/inc/pure_vars:206
 msgid "pushleft"
 msgstr "pushleft"
 
-#: ../../source/inc/pure_vars:203
+#: ../../source/inc/pure_vars:207
 msgid ":var:`pushright`"
 msgstr ":var:`pushright`"
 
-#: ../../source/inc/pure_vars:204
+#: ../../source/inc/pure_vars:208
 msgid "pushup"
 msgstr "pushup"
 
-#: ../../source/inc/pure_vars:205
+#: ../../source/inc/pure_vars:209
 msgid "range"
 msgstr "range"
 
-#: ../../source/inc/pure_vars:206
+#: ../../source/inc/pure_vars:210
 msgid "reduce"
 msgstr "reduce"
 
-#: ../../source/inc/pure_vars:207
+#: ../../source/inc/pure_vars:211
 msgid "renpy.Keymap"
 msgstr "renpy.Keymap"
 
-#: ../../source/inc/pure_vars:208
+#: ../../source/inc/pure_vars:212
 msgid ":func:`renpy.ParameterizedText`"
 msgstr ":func:`renpy.ParameterizedText`"
 
-#: ../../source/inc/pure_vars:209
+#: ../../source/inc/pure_vars:213
 msgid ":func:`renpy.check_text_tags`"
 msgstr ":func:`renpy.check_text_tags`"
 
-#: ../../source/inc/pure_vars:210
+#: ../../source/inc/pure_vars:214
 msgid "renpy.curried_call_in_new_context"
 msgstr "renpy.curried_call_in_new_context"
 
-#: ../../source/inc/pure_vars:211
+#: ../../source/inc/pure_vars:215
 msgid "renpy.curried_invoke_in_new_context"
 msgstr "renpy.curried_invoke_in_new_context"
 
-#: ../../source/inc/pure_vars:212
+#: ../../source/inc/pure_vars:216
 msgid "renpy.curry"
 msgstr "renpy.curry"
 
-#: ../../source/inc/pure_vars:213
+#: ../../source/inc/pure_vars:217
 msgid "renpy.easy_displayable"
 msgstr "renpy.easy_displayable"
 
-#: ../../source/inc/pure_vars:214
+#: ../../source/inc/pure_vars:218
 msgid ":func:`renpy.exists`"
 msgstr ":func:`renpy.exists`"
 
-#: ../../source/inc/pure_vars:215
+#: ../../source/inc/pure_vars:219
 msgid ":func:`renpy.filter_text_tags`"
 msgstr ":func:`renpy.filter_text_tags`"
 
-#: ../../source/inc/pure_vars:216
+#: ../../source/inc/pure_vars:220
 msgid ":func:`renpy.fsdecode`"
 msgstr ":func:`renpy.fsdecode`"
 
-#: ../../source/inc/pure_vars:217
+#: ../../source/inc/pure_vars:221
 msgid ":func:`renpy.fsencode`"
 msgstr ":func:`renpy.fsencode`"
 
-#: ../../source/inc/pure_vars:218
+#: ../../source/inc/pure_vars:222
 msgid ":func:`renpy.get_all_labels`"
 msgstr ":func:`renpy.get_all_labels`"
 
-#: ../../source/inc/pure_vars:219
+#: ../../source/inc/pure_vars:223
 msgid ":func:`renpy.has_label`"
 msgstr ":func:`renpy.has_label`"
 
-#: ../../source/inc/pure_vars:220
+#: ../../source/inc/pure_vars:224
 msgid "renpy.has_screen"
 msgstr "renpy.has_screen"
 
-#: ../../source/inc/pure_vars:221
+#: ../../source/inc/pure_vars:225
 msgid "renpy.image_exists"
 msgstr "renpy.image_exists"
 
-#: ../../source/inc/pure_vars:222
+#: ../../source/inc/pure_vars:226
 msgid ":func:`renpy.image_size`"
 msgstr ":func:`renpy.image_size`"
 
-#: ../../source/inc/pure_vars:223
+#: ../../source/inc/pure_vars:227
 msgid ":func:`renpy.known_languages`"
 msgstr ":func:`renpy.known_languages`"
 
-#: ../../source/inc/pure_vars:224
+#: ../../source/inc/pure_vars:228
 msgid ":var:`renpy.license`"
 msgstr ":var:`renpy.license`"
 
-#: ../../source/inc/pure_vars:225
+#: ../../source/inc/pure_vars:229
 msgid ":func:`renpy.list_files`"
 msgstr ":func:`renpy.list_files`"
 
-#: ../../source/inc/pure_vars:226
+#: ../../source/inc/pure_vars:230
 msgid ":func:`renpy.loadable`"
 msgstr ":func:`renpy.loadable`"
 
-#: ../../source/inc/pure_vars:227
+#: ../../source/inc/pure_vars:231
 msgid "renpy.munged_filename"
 msgstr "renpy.munged_filename"
 
-#: ../../source/inc/pure_vars:228
+#: ../../source/inc/pure_vars:232
 msgid "renpy.partial"
 msgstr "renpy.partial"
 
-#: ../../source/inc/pure_vars:229
+#: ../../source/inc/pure_vars:233
 msgid "renpy.unelide_filename"
 msgstr "renpy.unelide_filename"
 
-#: ../../source/inc/pure_vars:230
+#: ../../source/inc/pure_vars:234
 msgid ":func:`renpy.variant`"
 msgstr ":func:`renpy.variant`"
 
-#: ../../source/inc/pure_vars:231
+#: ../../source/inc/pure_vars:235
 msgid ":func:`renpy.version`"
 msgstr ":func:`renpy.version`"
 
-#: ../../source/inc/pure_vars:232
+#: ../../source/inc/pure_vars:236
 msgid ":var:`renpy.version_name`"
 msgstr ":var:`renpy.version_name`"
 
-#: ../../source/inc/pure_vars:233
+#: ../../source/inc/pure_vars:237
 msgid ":var:`renpy.version_only`"
 msgstr ":var:`renpy.version_only`"
 
-#: ../../source/inc/pure_vars:234
+#: ../../source/inc/pure_vars:238
 msgid ":var:`renpy.version_string`"
 msgstr ":var:`renpy.version_string`"
 
-#: ../../source/inc/pure_vars:235
+#: ../../source/inc/pure_vars:239
 msgid ":var:`renpy.version_tuple`"
 msgstr ":var:`renpy.version_tuple`"
 
-#: ../../source/inc/pure_vars:236
+#: ../../source/inc/pure_vars:240
 msgid "repr"
 msgstr "repr"
 
-#: ../../source/inc/pure_vars:237
+#: ../../source/inc/pure_vars:241
 msgid "round"
 msgstr "round"
 
-#: ../../source/inc/pure_vars:238
+#: ../../source/inc/pure_vars:242
 msgid "set"
 msgstr "set"
 
-#: ../../source/inc/pure_vars:239
+#: ../../source/inc/pure_vars:243
 msgid "slideawaydown"
 msgstr "slideawaydown"
 
-#: ../../source/inc/pure_vars:240
+#: ../../source/inc/pure_vars:244
 msgid ":var:`slideawayleft`"
 msgstr ":var:`slideawayleft`"
 
-#: ../../source/inc/pure_vars:241
+#: ../../source/inc/pure_vars:245
 msgid "slideawayright"
 msgstr "slideawayright"
 
-#: ../../source/inc/pure_vars:242
+#: ../../source/inc/pure_vars:246
 msgid "slideawayup"
 msgstr "slideawayup"
 
-#: ../../source/inc/pure_vars:243
+#: ../../source/inc/pure_vars:247
 msgid "slidedown"
 msgstr "slidedown"
 
-#: ../../source/inc/pure_vars:244
+#: ../../source/inc/pure_vars:248
 msgid ":var:`slideleft`"
 msgstr ":var:`slideleft`"
 
-#: ../../source/inc/pure_vars:245
+#: ../../source/inc/pure_vars:249
 msgid "slideright"
 msgstr "slideright"
 
-#: ../../source/inc/pure_vars:246
+#: ../../source/inc/pure_vars:250
 msgid "slideup"
 msgstr "slideup"
 
-#: ../../source/inc/pure_vars:247
+#: ../../source/inc/pure_vars:251
 msgid "sorted"
 msgstr "sorted"
 
-#: ../../source/inc/pure_vars:248
+#: ../../source/inc/pure_vars:252
 msgid ":var:`squares`"
 msgstr ":var:`squares`"
 
-#: ../../source/inc/pure_vars:249
+#: ../../source/inc/pure_vars:253
 msgid "str"
 msgstr "str"
 
-#: ../../source/inc/pure_vars:250
+#: ../../source/inc/pure_vars:254
 msgid "sum"
 msgstr "sum"
 
-#: ../../source/inc/pure_vars:251
+#: ../../source/inc/pure_vars:255
 msgid "tuple"
 msgstr "tuple"
 
-#: ../../source/inc/pure_vars:252
+#: ../../source/inc/pure_vars:256
 msgid "ui.callsinnewcontext"
 msgstr "ui.callsinnewcontext"
 
-#: ../../source/inc/pure_vars:253
+#: ../../source/inc/pure_vars:257
 msgid "ui.gamemenus"
 msgstr "ui.gamemenus"
 
-#: ../../source/inc/pure_vars:254
+#: ../../source/inc/pure_vars:258
 msgid "ui.invokesinnewcontext"
 msgstr "ui.invokesinnewcontext"
 
-#: ../../source/inc/pure_vars:255
+#: ../../source/inc/pure_vars:259
 msgid "ui.jumps"
 msgstr "ui.jumps"
 
-#: ../../source/inc/pure_vars:256
+#: ../../source/inc/pure_vars:260
 msgid "ui.jumpsoutofcontext"
 msgstr "ui.jumpsoutofcontext"
 
-#: ../../source/inc/pure_vars:257
+#: ../../source/inc/pure_vars:261
 msgid "ui.returns"
 msgstr "ui.returns"
 
-#: ../../source/inc/pure_vars:258
+#: ../../source/inc/pure_vars:262
 msgid "unichr"
 msgstr "unichr"
 
-#: ../../source/inc/pure_vars:259
+#: ../../source/inc/pure_vars:263
 msgid "unicode"
 msgstr "unicode"
 
-#: ../../source/inc/pure_vars:260
+#: ../../source/inc/pure_vars:264
 msgid "vars"
 msgstr "vars"
 
-#: ../../source/inc/pure_vars:261
+#: ../../source/inc/pure_vars:265
 msgid "vcentered"
 msgstr "vcentered"
 
-#: ../../source/inc/pure_vars:262
+#: ../../source/inc/pure_vars:266
 msgid ":var:`vpunch`"
 msgstr ":var:`vpunch`"
 
-#: ../../source/inc/pure_vars:263
+#: ../../source/inc/pure_vars:267
 msgid "wipedown"
 msgstr "wipedown"
 
-#: ../../source/inc/pure_vars:264
+#: ../../source/inc/pure_vars:268
 msgid ":var:`wipeleft`"
 msgstr ":var:`wipeleft`"
 
-#: ../../source/inc/pure_vars:265
+#: ../../source/inc/pure_vars:269
 msgid "wiperight"
 msgstr "wiperight"
 
-#: ../../source/inc/pure_vars:266
+#: ../../source/inc/pure_vars:270
 msgid "wipeup"
 msgstr "wipeup"
 
-#: ../../source/inc/pure_vars:267
+#: ../../source/inc/pure_vars:271
 msgid "zip"
 msgstr "zip"
 
-#: ../../source/inc/pure_vars:268
+#: ../../source/inc/pure_vars:272
 msgid ":var:`zoomin`"
 msgstr ":var:`zoomin`"
 
-#: ../../source/inc/pure_vars:269
+#: ../../source/inc/pure_vars:273
 msgid ":var:`zoominout`"
 msgstr ":var:`zoominout`"
 
-#: ../../source/inc/pure_vars:270
+#: ../../source/inc/pure_vars:274
 msgid ":var:`zoomout`"
 msgstr ":var:`zoomout`"
 
-#~ msgid ":func:`Grid`"
-#~ msgstr ":func:`Grid`"
+#~ msgid "Play"
+#~ msgstr "Play"
 
 #~ msgid ":func:`Return`"
 #~ msgstr ":func:`Return`"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
 #, fuzzy
 #~ msgid ":class:`Editor`"

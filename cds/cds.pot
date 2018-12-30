@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 07:39+0900\n"
+"POT-Creation-Date: 2018-12-30 14:49+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,100 +48,116 @@ msgstr ""
 msgid "This is either a space-separated list of names that begin the statement, or the empty string to define a new default statement (the default statement will replace the say statement)."
 msgstr ""
 
-#: ../../source/inc/statement_register:16
+#: ../../source/inc/statement_register:17
 msgid "`block`"
 msgstr ""
 
 #: ../../source/inc/statement_register:13
-msgid "When this is False, the statement does not expect a block. When True, it expects a block, but leaves it up to the lexer to parse that block. If the string \"script\", the block is interpreted as containing one or more Ren'Py script language statements."
+msgid "When this is False, the statement does not expect a block. When True, it expects a block, but leaves it up to the lexer to parse that block. If the string \"script\", the block is interpreted as containing one or more Ren'Py script language statements. If the string \"possible\", the block expect condition is determined by the parse function."
 msgstr ""
 
-#: ../../source/inc/statement_register:21
+#: ../../source/inc/statement_register:22
 msgid "`parse`"
 msgstr ""
 
-#: ../../source/inc/statement_register:19
+#: ../../source/inc/statement_register:20
 msgid "This is a function that takes a Lexer object. This function should parse the statement, and return an object. This object is passed as an argument to all the other functions. The lexer argument has the following methods:"
 msgstr ""
 
-#: ../../source/inc/statement_register:25
+#: ../../source/inc/statement_register:26
 msgid "`lint`"
 msgstr ""
 
-#: ../../source/inc/statement_register:24
+#: ../../source/inc/statement_register:25
 msgid "This is called to check the statement. It is passed a single argument, the object returned from parse. It should call renpy.error to report errors."
 msgstr ""
 
-#: ../../source/inc/statement_register:29
+#: ../../source/inc/statement_register:30
 msgid "`execute`"
 msgstr ""
 
-#: ../../source/inc/statement_register:28
+#: ../../source/inc/statement_register:29
 msgid "This is a function that is called when the statement executes. It is passed a single argument, the object returned from parse."
 msgstr ""
 
-#: ../../source/inc/statement_register:32
+#: ../../source/inc/statement_register:33
 msgid "`execute_init`"
 msgstr ""
 
-#: ../../source/inc/statement_register:32
+#: ../../source/inc/statement_register:33
 msgid "This is a function that is called at init time, at priority 0."
 msgstr ""
 
-#: ../../source/inc/statement_register:37
+#: ../../source/inc/statement_register:38
 msgid "`predict`"
 msgstr ""
 
-#: ../../source/inc/statement_register:35
+#: ../../source/inc/statement_register:36
 msgid "This is a function that is called to predict the images used by the statement. It is passed a single argument, the object returned from parse. It should return a list of displayables used by the statement."
 msgstr ""
 
-#: ../../source/inc/statement_register:48
+#: ../../source/inc/statement_register:49
 msgid "`next`"
 msgstr ""
 
-#: ../../source/inc/statement_register:40
+#: ../../source/inc/statement_register:41
 msgid "This is a function that is called to determine the next statement."
 msgstr ""
 
-#: ../../source/inc/statement_register:42
+#: ../../source/inc/statement_register:43
 msgid "If `block` is not \"script\", this is passed a single argument, the object returned from the parse function. If `block` is \"script\", an additional argument is passed, an object that names the first statement in the block."
 msgstr ""
 
-#: ../../source/inc/statement_register:46
+#: ../../source/inc/statement_register:47
 msgid "The function should return either a string giving a label to jump to, the second argument to transfer control into the block, or None to continue to the statement after this one."
 msgstr ""
 
-#: ../../source/inc/statement_register:53
+#: ../../source/inc/statement_register:54
 msgid "`label`"
 msgstr ""
 
-#: ../../source/inc/statement_register:51
+#: ../../source/inc/statement_register:52
 msgid "This is a function that is called to determine the label of this statement. If it returns a string, that string is used as the statement label, which can be called and jumped to like any other label."
 msgstr ""
 
-#: ../../source/inc/statement_register:59
+#: ../../source/inc/statement_register:60
 msgid "`warp`"
 msgstr ""
 
-#: ../../source/inc/statement_register:56
+#: ../../source/inc/statement_register:57
 msgid "This is a function that is called to determine if this statement should execute during warping. If the function exists and returns true, it's run during warp, otherwise the statement is not run during warp."
 msgstr ""
 
-#: ../../source/inc/statement_register:62
+#: ../../source/inc/statement_register:63
 msgid "`scry`"
 msgstr ""
 
-#: ../../source/inc/statement_register:62
+#: ../../source/inc/statement_register:63
 msgid "Used internally by Ren'Py."
 msgstr ""
 
-#: ../../source/inc/statement_register:67
+#: ../../source/inc/statement_register:69
 msgid "`init`"
 msgstr ""
 
-#: ../../source/inc/statement_register:65
-msgid "True if this statement should be run at init-time. (If the statement is not already inside an init block, it's automatically placed inside an init 0 block.) This calls the execute function, in addition to the execute_init function."
+#: ../../source/inc/statement_register:66
+msgid "True if this statement should be run at init-time. (If the statement is not already inside an init block, it's automatically placed inside an init block.) This calls the execute function, in addition to the execute_init function."
+msgstr ""
+
+#: ../../source/inc/statement_register:73
+msgid "`init_priority`"
+msgstr ""
+
+#: ../../source/inc/statement_register:72
+msgid "An integer that determines the priority of initialization of the init block."
+msgstr ""
+
+#: ../../source/inc/statement_register:77
+msgid "`translation_strings`"
+msgstr ""
+
+#: ../../source/inc/statement_register:76
+msgid "A function that is called with the parsed block. It's expected to return a list of strings, which are then reported as being available to be translated."
 msgstr ""
 
 #: ../../source/cds.rst:24

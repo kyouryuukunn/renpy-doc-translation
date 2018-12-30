@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-02 00:41+0900\n"
+"POT-Creation-Date: 2018-09-11 07:24+0900\n"
 "PO-Revision-Date: 2015-04-15 15:04+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-06-21 06:26+0000\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/drag_drop.rst:4
+#: ../../source/drag_drop.rst:7
 msgid "Drag and Drop"
 msgstr "ドラッグドロップ"
 
-#: ../../source/drag_drop.rst:6
+#: ../../source/drag_drop.rst:9
 msgid ""
 "Ren'Py includes drag and drop displayables that allow things to be moved "
 "around the screen with the mouse. Some of the uses of dragging are:"
@@ -30,28 +30,28 @@ msgstr ""
 "Ren'Py にはマウスで画面上を移動できるドラッグドロップ displayable がありま"
 "す。ドラッグの使用法としては :"
 
-#: ../../source/drag_drop.rst:10
+#: ../../source/drag_drop.rst:13
 msgid ""
 "Allowing windows to be repositioned by the user, storing the window "
 "positions."
 msgstr "ウィンドウの位置合わせ、ウィンドウ位置を記憶できるようにする。"
 
-#: ../../source/drag_drop.rst:12
+#: ../../source/drag_drop.rst:15
 msgid ""
 "Card games that require cards to be dragged around the screen. (For example, "
 "solitaire.)"
 msgstr ""
 "カードを画面上でドラッグする必要のあるカードゲーム ( 例えばソリティア )。"
 
-#: ../../source/drag_drop.rst:14
+#: ../../source/drag_drop.rst:17
 msgid "Inventory systems."
 msgstr "アイテムシステム。"
 
-#: ../../source/drag_drop.rst:15
+#: ../../source/drag_drop.rst:18
 msgid "Drag-to-reorder systems."
 msgstr "ドラッグで並び順を変えるシステム。"
 
-#: ../../source/drag_drop.rst:17
+#: ../../source/drag_drop.rst:20
 #, fuzzy
 msgid ""
 "The drag and drop displayables make it possible to implement these and other "
@@ -68,7 +68,7 @@ msgstr ""
 "ラスは Drag のグループを表します。ドラッグドロップを実行するためには、両方の "
 "Drag が同じドラッググループに属していなければなりません。"
 
-#: ../../source/drag_drop.rst:25
+#: ../../source/drag_drop.rst:28
 msgid ""
 "The drag and drop system can be used either through the :ref:`Screen "
 "Language <screens>` or directly as displayables. It makes sense to use the "
@@ -85,7 +85,7 @@ msgstr ""
 "も作成した Drag を参照する必要がある場合は、直接 Drag を作成し、それらを "
 "DragGroup に追加すると良いでしょう。"
 
-#: ../../source/drag_drop.rst:34
+#: ../../source/drag_drop.rst:37
 msgid "Displayables"
 msgstr "Displayable"
 
@@ -217,11 +217,27 @@ msgstr ""
 "True ならこの Drag がドラッグされたときにトップまで持ち上げられます。他の "
 "Drag と接続されていたら、すべての接続された Drag も持ち上げられます。"
 
-#: ../../source/inc/drag_drop:61
+#: ../../source/inc/drag_drop:59
+msgid "`activated`"
+msgstr ""
+
+#: ../../source/inc/drag_drop:56
+#, fuzzy
+msgid ""
+"A callback (or list of callbacks) that is called when the mouse is pressed "
+"down on the drag. It is called with one argument, a a list of Drags that are "
+"being dragged. The return value of this callback is ignored."
+msgstr ""
+"Drag がドロップされた時に呼び出されるコールバック ( またはコールバックのリス"
+"ト ) です。それは二つの引数で呼び出されます。一つ目はその上にドロップされてい"
+"る Drag 二つ目はドラッグされている Drag のリストです。コールバックが None 以"
+"外の値を返すと、その値はインタラクションの結果として返されます。"
+
+#: ../../source/inc/drag_drop:67
 msgid "`dragged`"
 msgstr "`dragged`"
 
-#: ../../source/inc/drag_drop:56
+#: ../../source/inc/drag_drop:62
 msgid ""
 "A callback (or list of callbacks) that is called when the Drag has been "
 "dragged. It is called with two arguments. The first is a list of Drags that "
@@ -235,11 +251,11 @@ msgstr ""
 "ないなら None です。コールバックが None ではなく値を返すとその値はインタラク"
 "ションの結果として返されます。"
 
-#: ../../source/inc/drag_drop:72
+#: ../../source/inc/drag_drop:78
 msgid "`dropped`"
 msgstr "`dropped`"
 
-#: ../../source/inc/drag_drop:64
+#: ../../source/inc/drag_drop:70
 msgid ""
 "A callback (or list of callbacks) that is called when this Drag is dropped "
 "onto. It is called with two arguments. The first is the Drag being dropped "
@@ -252,7 +268,7 @@ msgstr ""
 "る Drag 二つ目はドラッグされている Drag のリストです。コールバックが None 以"
 "外の値を返すと、その値はインタラクションの結果として返されます。"
 
-#: ../../source/inc/drag_drop:70
+#: ../../source/inc/drag_drop:76
 msgid ""
 "When a dragged and dropped callback are triggered for the same event, the "
 "dropped callback is only called if dragged returns None."
@@ -260,11 +276,11 @@ msgstr ""
 "dragged と dropped のコールバックが同じイベントで起こされると、 dropped コー"
 "ルバックは dragged が None を返したときのみ呼び出されます。"
 
-#: ../../source/inc/drag_drop:78
+#: ../../source/inc/drag_drop:84
 msgid "`clicked`"
 msgstr "`clicked`"
 
-#: ../../source/inc/drag_drop:75
+#: ../../source/inc/drag_drop:81
 msgid ""
 "A callback this is called, with no arguments, when the Drag is clicked "
 "without being moved. A droppable can also be focused and clicked.  If the "
@@ -276,11 +292,11 @@ msgstr ""
 "バックが None ではなく値を返したら、その値はインタラクションの結果として返さ"
 "れます。"
 
-#: ../../source/inc/drag_drop:84
+#: ../../source/inc/drag_drop:90
 msgid "`drag_handle`"
 msgstr "`drag_handle`"
 
-#: ../../source/inc/drag_drop:81
+#: ../../source/inc/drag_drop:87
 msgid ""
 "A (x, y, width, height) tuple, giving the position of the drag handle within "
 "the child. In this tuple, integers are considered to be a literal number of "
@@ -290,11 +306,11 @@ msgstr ""
 "のタプルでは、整数はピクセルの定数になるように配慮され、一方少数は子のサイズ"
 "に対する割合です。"
 
-#: ../../source/inc/drag_drop:91
+#: ../../source/inc/drag_drop:97
 msgid "`drag_joined`"
 msgstr "`drag_joined`"
 
-#: ../../source/inc/drag_drop:87
+#: ../../source/inc/drag_drop:93
 msgid ""
 "This is called with the current Drag as an argument. It's expected to return "
 "a list of [ (drag, x, y) ] tuples, giving the draggables to drag as a unit. "
@@ -306,11 +322,11 @@ msgstr ""
 "`x`, `y` は Drag の互いに対するオフセットで、この drag に対するものではありま"
 "せん。"
 
-#: ../../source/inc/drag_drop:97
+#: ../../source/inc/drag_drop:103
 msgid "`drag_offscreen`"
 msgstr "`drag_offscreen`"
 
-#: ../../source/inc/drag_drop:94
+#: ../../source/inc/drag_drop:100
 msgid ""
 "If true, this draggable can be moved offscreen. This can be dangerous to use "
 "with drag_joined or drags that can change size, as the drags can leave the "
@@ -320,7 +336,18 @@ msgstr ""
 "サイズを変更出来る Drag に使用すると、Drag が完全に画面外に出て画面に戻す方法"
 "がなくなるため危険でしょう。"
 
-#: ../../source/inc/drag_drop:99
+#: ../../source/inc/drag_drop:108
+msgid "`mouse_drop`"
+msgstr ""
+
+#: ../../source/inc/drag_drop:106
+msgid ""
+"If true, the drag is dropped on the first droppable under the cursor. If "
+"false, the default, the drag is dropped onto the droppable with the largest "
+"degree of overlap."
+msgstr ""
+
+#: ../../source/inc/drag_drop:110
 msgid ""
 "Except for `d`, all of the parameters are available as fields (with the same "
 "name) on the Drag object. In addition, after the drag has been rendered, the "
@@ -330,32 +357,32 @@ msgstr ""
 "で ) 利用可能です。さらに Drag がレンダリングされた後は次のフィールドが利用可"
 "能になります。"
 
-#: ../../source/inc/drag_drop:104
+#: ../../source/inc/drag_drop:115
 msgid "`x`, `y`"
 msgstr "`x`, `y`"
 
-#: ../../source/inc/drag_drop:104
+#: ../../source/inc/drag_drop:115
 msgid "The position of the Drag relative to its parent, in pixels."
 msgstr "ピクセルでのその親に対する Drag の位置"
 
-#: ../../source/inc/drag_drop:108
+#: ../../source/inc/drag_drop:119
 msgid "`w`, `h`"
 msgstr "`w`, `h`"
 
-#: ../../source/inc/drag_drop:107
+#: ../../source/inc/drag_drop:118
 msgid "The width and height of the Drag's child, in pixels."
 msgstr "Drag の子のピクセルでの幅と高さです。"
 
-#: ../../source/inc/drag_drop:112
+#: ../../source/inc/drag_drop:123
 #, fuzzy
 msgid "Lowers this displayable to the bottom of its drag_group."
 msgstr "この displayable をその DragGroup のトップに持ち上げます。"
 
-#: ../../source/inc/drag_drop:116
+#: ../../source/inc/drag_drop:127
 msgid "Changes the child of this drag to `d`."
 msgstr "この Drag の子を `d` に変更します。"
 
-#: ../../source/inc/drag_drop:120
+#: ../../source/inc/drag_drop:131
 msgid ""
 "Changes the position of the drag. If the drag is not showing, then the "
 "position change is instantaneous. Otherwise, the position change takes "
@@ -365,11 +392,11 @@ msgstr ""
 "でなければ、位置の変更は `delay` 秒かかり、等速で移動するアニメーションが表示"
 "されます。"
 
-#: ../../source/inc/drag_drop:127
+#: ../../source/inc/drag_drop:138
 msgid "Raises this displayable to the top of its drag_group."
 msgstr "この displayable をその DragGroup のトップに持ち上げます。"
 
-#: ../../source/inc/drag_drop:131
+#: ../../source/inc/drag_drop:142
 msgid ""
 "Represents a group of Drags. A Drag is limited to the boundary of its "
 "DragGroup. Dropping only works between Drags that are in the same DragGroup. "
@@ -379,11 +406,11 @@ msgstr ""
 "ロップは同じ DragGroup に所得する Drag 間でのみ働きます。 Drag はそれが "
 "DragGroup の内側にあるときのみ持ち上げられます。"
 
-#: ../../source/inc/drag_drop:136
+#: ../../source/inc/drag_drop:147
 msgid "A DragGroup is laid out like a :func:`Fixed`."
 msgstr ":func:`Fixed` と同様に DragGroup はレイアウトされます。"
 
-#: ../../source/inc/drag_drop:138
+#: ../../source/inc/drag_drop:149
 msgid ""
 "All positional parameters to the DragGroup constructor should be Drags, that "
 "are added to the DragGroup."
@@ -391,25 +418,25 @@ msgstr ""
 "DragGroup のコンストラクターに渡されるすべての位置引数はその DragGroup に追加"
 "される Drag であるべきです。"
 
-#: ../../source/inc/drag_drop:143
+#: ../../source/inc/drag_drop:154
 msgid "Adds `child`, which must be a Drag, to this DragGroup."
 msgstr ""
 "`child` をこの DragGroup に追加します。 `child` は Drag でなければいけませ"
 "ん。"
 
-#: ../../source/inc/drag_drop:147
+#: ../../source/inc/drag_drop:158
 msgid "Returns the first child of this DragGroup that has a drag_name of name."
 msgstr "drag_name の名前を持つこの DragGroup の最初の子を返します。"
 
-#: ../../source/inc/drag_drop:152
+#: ../../source/inc/drag_drop:163
 msgid "Removes `child` from this DragGroup."
 msgstr "DragGroup から `child` を除去します。"
 
-#: ../../source/drag_drop.rst:39
+#: ../../source/drag_drop.rst:42
 msgid "Examples"
 msgstr "例"
 
-#: ../../source/drag_drop.rst:41
+#: ../../source/drag_drop.rst:44
 msgid ""
 "An example of a say screen that allows the user to choose the location of "
 "the window by dragging it around the screen.::"
@@ -417,7 +444,7 @@ msgstr ""
 "以下の say スクリーンの例では、スクリーン上をドラッグしてユーザーがウィンドウ"
 "の位置を選べます。 ::"
 
-#: ../../source/drag_drop.rst:64
+#: ../../source/drag_drop.rst:67
 msgid ""
 "Here's a more complicated example, one that shows how dragging can be used "
 "to influence gameplay. It shows how dragging can be used to send a character "
@@ -427,7 +454,7 @@ msgstr ""
 "使用できるかを表示します。これはどのようにキャラクターをある場所に送るために"
 "ドラッグが使用できるかを表示します。"
 
-#: ../../source/drag_drop.rst:122
+#: ../../source/drag_drop.rst:125
 msgid ""
 "More complicated systems take significant programming skill to get right. "
 "The `Ren'Py cardgame framework <http://www.renpy.org/wiki/renpy/"

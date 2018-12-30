@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.1.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 07:39+0900\n"
+"POT-Creation-Date: 2018-12-30 14:49+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,55 +244,55 @@ msgstr ""
 msgid "A displayable to use a the click-to-continue indicator when the display of text is paused by the {p=} or {w=} text tags. When None, this takes its default from `ctc_pause`, use ``Null()`` when you want a `ctc_pause` but no `ctc_timedpause`."
 msgstr ""
 
-#: ../../source/inc/character:122
+#: ../../source/inc/character:124
 msgid "`ctc_position`"
 msgstr ""
 
 #: ../../source/inc/character:117
-msgid "Controls the location of the click-to-continue indicator. If ``\"nestled\"``, the indicator is displayed as part of the text being shown, immediately after the last character. If ``\"fixed\"``, the indicator is added to the screen, and its position is controlled by the position style properties."
+msgid "Controls the location of the click-to-continue indicator. If ``\"nestled\"``, the indicator is displayed as part of the text being shown, immediately after the last character. ``\"nestled-close\"`` is similar, except a break is not allowed between the text and the CTC indicator. If ``\"fixed\"``, the indicator is added to the screen, and its position is controlled by the position style properties."
 msgstr ""
 
-#: ../../source/inc/character:124
+#: ../../source/inc/character:126
 msgid "**Screens.** The display of dialogue uses a :ref:`screen <screens>`. These arguments allow you to select that screen, and to provide arguments to it."
 msgstr ""
 
-#: ../../source/inc/character:129
+#: ../../source/inc/character:131
 msgid "`screen`"
 msgstr ""
 
-#: ../../source/inc/character:129
+#: ../../source/inc/character:131
 msgid "The name of the screen that is used to display the dialogue."
 msgstr ""
 
-#: ../../source/inc/character:131
+#: ../../source/inc/character:133
 msgid "Keyword arguments beginning with ``show_`` have the prefix stripped off, and are passed to the screen as arguments. For example, the value of ``show_myflag`` will become the value of the ``myflag`` variable in the screen. (The ``myflag`` variable isn't used by default, but can be used by a custom say screen.)"
 msgstr ""
 
-#: ../../source/inc/character:137
+#: ../../source/inc/character:139
 msgid "One show variable is, for historical reasons, handled by Ren'Py itself:"
 msgstr ""
 
-#: ../../source/inc/character:141
+#: ../../source/inc/character:143
 msgid "`show_layer`"
 msgstr ""
 
-#: ../../source/inc/character:140
+#: ../../source/inc/character:142
 msgid "If given, this should be a string giving the name of the layer to show the say screen on."
 msgstr ""
 
-#: ../../source/inc/character:143
+#: ../../source/inc/character:145
 msgid "**Styling Text and Windows.** Keyword arguments beginning with ``who_``, ``what_``, and ``window_`` have their prefix stripped, and are used to :ref:`style <styles>` the character name, the spoken text, and the window containing both, respectively."
 msgstr ""
 
-#: ../../source/inc/character:149
+#: ../../source/inc/character:151
 msgid "For example, if a character is given the keyword argument ``who_color=\"#c8ffc8\"``, the color of the character's name is changed, in this case to green. ``window_background=\"frame.png\"`` sets the background of the window containing this character's dialogue."
 msgstr ""
 
-#: ../../source/inc/character:155
+#: ../../source/inc/character:157
 msgid "The style applied to the character name, spoken text, and window can also be set this way, using the ``who_style``, ``what_style``, and ``window_style`` arguments, respectively."
 msgstr ""
 
-#: ../../source/inc/character:159
+#: ../../source/inc/character:161
 msgid "Setting :var:`config.character_id_prefixes` makes it possible to style other displayables as well. For example, when the default GUI is used, styles prefixed with ``namebox_`` are used to style the name of the speaking character."
 msgstr ""
 
@@ -310,13 +310,13 @@ msgstr ""
 
 #: ../../source/dialogue.rst:109
 #: ../../source/dialogue.rst:192
-#: ../../source/dialogue.rst:245
+#: ../../source/dialogue.rst:246
 msgid "For example::"
 msgstr ""
 
 #: ../../source/dialogue.rst:120
-#: ../../source/dialogue.rst:338
-#: ../../source/dialogue.rst:361
+#: ../../source/dialogue.rst:339
+#: ../../source/dialogue.rst:362
 msgid "is equivalent to::"
 msgstr ""
 
@@ -424,87 +424,87 @@ msgstr ""
 msgid "The window hide statement causes the window to be hidden. It takes as an argument an optional transition, which is used to hide the window. If the transition is omitted, :var:`config.window_hide_transition` is used."
 msgstr ""
 
-#: ../../source/dialogue.rst:239
+#: ../../source/dialogue.rst:240
 msgid "``window auto``"
 msgstr ""
 
 #: ../../source/dialogue.rst:234
-msgid "This enables automatic management of the window. The window is shown before statements listed in :var:`config.window_auto_show` – by default, say statements. The window is hidden before statements listed in :var:`config.window_auto_hide` – by default, ``scene`` and ``call screen`` statements. (Only statements are considered, not statement equivalent functions.)"
+msgid "This enables automatic management of the window. The window is shown before statements listed in :var:`config.window_auto_show` – by default, say statements. The window is hidden before statements listed in :var:`config.window_auto_hide` – by default, ``scene`` and ``call screen`` statements, and ``menu`` statements without a caption. (Only statements are considered, not statement equivalent functions.)"
 msgstr ""
 
-#: ../../source/dialogue.rst:241
+#: ../../source/dialogue.rst:242
 msgid "The ``window auto`` statement uses :var:`config.window_show_transition` and :var:`config.window_hide_transition` to show and hide the window, respectively. ``window auto`` is cancelled by ``window show`` and ``window hide``."
 msgstr ""
 
-#: ../../source/dialogue.rst:266
+#: ../../source/dialogue.rst:267
 msgid "Dialogue window management is subject to the \"show empty window\" :func:`Preference`. If the preference is disabled, the statements above have no effect."
 msgstr ""
 
-#: ../../source/dialogue.rst:272
+#: ../../source/dialogue.rst:273
 msgid "Say with Arguments"
 msgstr ""
 
-#: ../../source/dialogue.rst:274
+#: ../../source/dialogue.rst:275
 msgid "Additional arguments can be passed to the say statement by including them in parenthesis after the say statement. For example, one can write::"
 msgstr ""
 
-#: ../../source/dialogue.rst:279
+#: ../../source/dialogue.rst:280
 msgid "Arguments to the say statement are first processed by :var:`config.say_arguments_callback`, if it is not None. If any remain, they are then passed to the character, which treats them as if they were present when the character was defined. So, the example above displays the dialogue in green."
 msgstr ""
 
-#: ../../source/dialogue.rst:288
+#: ../../source/dialogue.rst:289
 msgid "Monologue Mode"
 msgstr ""
 
-#: ../../source/dialogue.rst:290
+#: ../../source/dialogue.rst:291
 msgid "Some visual novels have extended narration, or multiple blocks of dialogue from the same character. In these cases, typing the name of the character and the quotes multiple times is somewhat redundant."
 msgstr ""
 
-#: ../../source/dialogue.rst:294
+#: ../../source/dialogue.rst:295
 msgid "To cover these cases, Ren'Py supports monologue mode. When dialogue is inside triple-quoted strings, Ren'Py will break the dialogue up into blocks at blank lines. Each block is then used to create its own say statement. Here's an example, with three blocks of narration followed by three lines of dialogue::"
 msgstr ""
 
-#: ../../source/dialogue.rst:317
+#: ../../source/dialogue.rst:318
 msgid "While additional clauses like arguments or attributes are allowed, they are passed to each line in the monologue, which may be less useful."
 msgstr ""
 
-#: ../../source/dialogue.rst:320
+#: ../../source/dialogue.rst:321
 msgid "If you'd like to omit the spaces between the blocks, write ``rpy monologue single`` at the top level of the file, before the first monologue line."
 msgstr ""
 
-#: ../../source/dialogue.rst:326
+#: ../../source/dialogue.rst:327
 msgid "Python Equivalents"
 msgstr ""
 
-#: ../../source/dialogue.rst:330
+#: ../../source/dialogue.rst:331
 msgid "This may only make sense if you've read the :ref:`python` section."
 msgstr ""
 
-#: ../../source/dialogue.rst:332
+#: ../../source/dialogue.rst:333
 msgid "When the first parameter to a say statement is present and an expression, the say statement is equivalent to calling that expressing with the dialogue and an ``interact`` argument of True. For example::"
 msgstr ""
 
-#: ../../source/dialogue.rst:342
+#: ../../source/dialogue.rst:343
 msgid "The say statement will search the ``character`` named store before the default store. If you want to have a character with the same name as a variable in the default store, it can be defined using::"
 msgstr ""
 
-#: ../../source/dialogue.rst:348
+#: ../../source/dialogue.rst:349
 msgid "This character can then be used alongside a variable in the default store::"
 msgstr ""
 
-#: ../../source/dialogue.rst:357
+#: ../../source/dialogue.rst:358
 msgid "A say with arguments sees the arguments passed to the function. For example::"
 msgstr ""
 
-#: ../../source/dialogue.rst:365
+#: ../../source/dialogue.rst:366
 msgid "When e is a Character, this is further equivalent to::"
 msgstr ""
 
-#: ../../source/dialogue.rst:369
+#: ../../source/dialogue.rst:370
 msgid "But it's possible to use :var:`config.say_arguments_callback` or have ``e`` wrap a character to do things differently."
 msgstr ""
 
-#: ../../source/dialogue.rst:376
+#: ../../source/dialogue.rst:377
 msgid "Window management is performed by setting the :var:`_window` and :var:`_window_auto` variables, and by using the following two functions:"
 msgstr ""
 

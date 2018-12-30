@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 07:24+0900\n"
+"POT-Creation-Date: 2018-12-30 14:49+0900\n"
 "PO-Revision-Date: 2017-08-05 14:57+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -197,7 +197,7 @@ msgstr "再生するムービーファイルの文字列です。"
 msgid "This should always be provided."
 msgstr "これは常に与えなければいけません。"
 
-#: ../../source/movie.rst:82 ../../source/inc/movie:33
+#: ../../source/movie.rst:82 ../../source/inc/movie:43
 msgid "`mask`"
 msgstr "`mask`"
 
@@ -350,7 +350,26 @@ msgstr ""
 "ムービーファイルのパスです。ムービーファイルはムービーが表示されると自動的に "
 "`channel` チャンネルで再生され、非表示になると停止します。"
 
+#: ../../source/inc/movie:37
+#, fuzzy
+msgid "`side_mask`"
+msgstr "`mask`"
+
 #: ../../source/inc/movie:30
+msgid ""
+"If true, this tells Ren'Py to use the side-by-side mask mode for the Movie. "
+"In this case, the movie is divided in half. The left half is used for color "
+"information, while the right half is used for alpha information. The width "
+"of the displayable is half the width of the movie file."
+msgstr ""
+
+#: ../../source/inc/movie:36
+msgid ""
+"Where possible, `side_mask` should be used over `mask` as it has no chance "
+"of frames going out of sync."
+msgstr ""
+
+#: ../../source/inc/movie:40
 msgid ""
 "If given, this should be the path to a movie file that is used as the alpha "
 "channel of this displayable. The movie file will be automatically played on "
@@ -361,11 +380,11 @@ msgstr ""
 "す。ムービーファイルはムービーが表示されると自動的に `movie_channel` チャンネ"
 "ルで再生され、非表示になると停止します。"
 
-#: ../../source/inc/movie:38
+#: ../../source/inc/movie:48
 msgid "`mask_channel`"
 msgstr "`mask_channel`"
 
-#: ../../source/inc/movie:36
+#: ../../source/inc/movie:46
 #, fuzzy
 msgid ""
 "The channel the alpha mask video is played on. If not given, defaults to "
@@ -376,11 +395,11 @@ msgstr ""
 "で `channel`_mask が使用されます。 (例えば、`channel` が \"sprite\" なら、 "
 "`mask_channel` はデフォルトで \"sprite_mask\" になります。)"
 
-#: ../../source/inc/movie:45
+#: ../../source/inc/movie:55
 msgid "`image`"
 msgstr "`image`"
 
-#: ../../source/inc/movie:41
+#: ../../source/inc/movie:51
 msgid ""
 "An image that is displayed when `play` has been given, but the file it "
 "refers to does not exist. (For example, this can be used to create a slimmed-"
@@ -393,49 +412,49 @@ msgstr ""
 "す。) ビデオがシステムに対して重すぎる場合、ユーザーが設定からこの画像を選択"
 "することも可能です。"
 
-#: ../../source/inc/movie:72
+#: ../../source/inc/movie:82
 msgid "``play_callback``"
 msgstr ""
 
-#: ../../source/inc/movie:48
+#: ../../source/inc/movie:58
 msgid ""
 "If not None, a function that's used to start the movies playing. (This may "
 "do things like queue a transition between sprites, if desired.) It's called "
 "with the following arguments:"
 msgstr ""
 
-#: ../../source/inc/movie:52
+#: ../../source/inc/movie:62
 msgid "`old`"
 msgstr ""
 
-#: ../../source/inc/movie:53
+#: ../../source/inc/movie:63
 #, fuzzy
 msgid "The old Movie object, or None if the movie is not playing."
 msgstr "ムービーが再生さてないとき、この displayable は透明になります。"
 
-#: ../../source/inc/movie:55
+#: ../../source/inc/movie:65
 msgid "`new`"
 msgstr ""
 
-#: ../../source/inc/movie:55
+#: ../../source/inc/movie:65
 msgid "The new Movie object."
 msgstr ""
 
-#: ../../source/inc/movie:57
+#: ../../source/inc/movie:67
 msgid ""
 "A movie object has the `play` parameter available as ``_play``, while the "
 "``channel``, ``mask``, and ``mask_channel`` fields correspond to the given "
 "parameters."
 msgstr ""
 
-#: ../../source/inc/movie:61
+#: ../../source/inc/movie:71
 msgid ""
 "Generally, this will want to use :func:`renpy.music.play` to start the movie "
 "playing on the given channel, with synchro_start=True. A minimal "
 "implementation is::"
 msgstr ""
 
-#: ../../source/inc/movie:74
+#: ../../source/inc/movie:84
 msgid "This displayable will be transparent when the movie is not playing."
 msgstr "ムービーが再生さてないとき、この displayable は透明になります。"
 
