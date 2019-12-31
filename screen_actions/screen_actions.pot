@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2018, Tom Rothamel
+# Copyright (C) 2012-2019, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-30 14:49+0900\n"
+"POT-Creation-Date: 2019-10-21 22:56+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,7 +132,7 @@ msgstr ""
 #: ../../source/inc/data_action:117
 #: ../../source/inc/audio_action:46
 #: ../../source/inc/value:9
-#: ../../source/inc/value:120
+#: ../../source/inc/value:126
 msgid "`value`"
 msgstr ""
 
@@ -279,7 +279,7 @@ msgstr ""
 #: ../../source/inc/file_action:45
 #: ../../source/inc/file_action:97
 #: ../../source/inc/file_action:124
-#: ../../source/inc/other_action:179
+#: ../../source/inc/other_action:183
 msgid "`confirm`"
 msgstr ""
 
@@ -606,7 +606,7 @@ msgstr ""
 #: ../../source/inc/audio_action:43
 #: ../../source/inc/audio_action:57
 #: ../../source/inc/audio_action:77
-#: ../../source/inc/value:88
+#: ../../source/inc/value:92
 msgid "`mixer`"
 msgstr ""
 
@@ -844,30 +844,38 @@ msgid "The amount to scroll by. This can be a number of pixels, or else \"step\"
 msgstr ""
 
 #: ../../source/inc/other_action:152
-msgid "This allows an expression to control if a button should be marked as selected. It should be used as part of a list with one or more actions. For example::"
+msgid "This indicates that one action in a list of actions should be used to determine if a button is selected. This only makes sense when the button has a list of actions. For example::"
 msgstr ""
 
-#: ../../source/inc/other_action:162
-msgid "This allows an expression to control if a button should be marked as sensitive. It should be used as part of a list with one or more actions. For example::"
+#: ../../source/inc/other_action:160
+msgid "The action inside SelectedIf is run normally when the button is clicked."
+msgstr ""
+
+#: ../../source/inc/other_action:164
+msgid "This indicates that one action in a list of actions should be used to determine if a button is sensitive. This only makes sense when the button has a list of actions. For example::"
 msgstr ""
 
 #: ../../source/inc/other_action:172
+msgid "The action inside SensitiveIf is run normally when the button is clicked."
+msgstr ""
+
+#: ../../source/inc/other_action:176
 msgid "Causes the game to begin skipping. If the game is in a menu context, then this returns to the game. Otherwise, it just enables skipping."
 msgstr ""
 
-#: ../../source/inc/other_action:177
+#: ../../source/inc/other_action:181
 msgid "`fast`"
 msgstr ""
 
-#: ../../source/inc/other_action:177
+#: ../../source/inc/other_action:181
 msgid "If true, skips directly to the next menu choice."
 msgstr ""
 
-#: ../../source/inc/other_action:180
+#: ../../source/inc/other_action:184
 msgid "If true, asks for confirmation before beginning skipping."
 msgstr ""
 
-#: ../../source/inc/other_action:184
+#: ../../source/inc/other_action:188
 msgid "Causes `transition` to occur."
 msgstr ""
 
@@ -876,7 +884,7 @@ msgid "Bar Values"
 msgstr ""
 
 #: ../../source/screen_actions.rst:86
-msgid "Bar values are used with bars, to set the bar value, and to allow the bar to adjust an underlying property. To create a new bar value, subclass the :class:`BarValue` class."
+msgid "Bar values are used with bars, to set the bar value, and to allow the bar to adjust an underlying property. To create a new bar value, subclass the :class:`BarValue` class. All classes that have the `step` keyword also accept the `force_step` keyword which behavior is described in :func:`ui.adjustment`."
 msgstr ""
 
 #: ../../source/inc/value:5
@@ -884,16 +892,16 @@ msgid "This animates a value, taking `delay` seconds to vary the value from `old
 msgstr ""
 
 #: ../../source/inc/value:9
-#: ../../source/inc/value:120
+#: ../../source/inc/value:126
 msgid "The value itself, a number."
 msgstr ""
 
 #: ../../source/inc/value:12
 #: ../../source/inc/value:40
-#: ../../source/inc/value:65
-#: ../../source/inc/value:97
-#: ../../source/inc/value:122
-#: ../../source/inc/value:132
+#: ../../source/inc/value:67
+#: ../../source/inc/value:101
+#: ../../source/inc/value:128
+#: ../../source/inc/value:138
 msgid "`range`"
 msgstr ""
 
@@ -950,16 +958,16 @@ msgid "The key."
 msgstr ""
 
 #: ../../source/inc/value:41
-#: ../../source/inc/value:66
-#: ../../source/inc/value:98
-#: ../../source/inc/value:133
+#: ../../source/inc/value:68
+#: ../../source/inc/value:102
+#: ../../source/inc/value:139
 msgid "The range to adjust over."
 msgstr ""
 
 #: ../../source/inc/value:46
-#: ../../source/inc/value:72
-#: ../../source/inc/value:104
-#: ../../source/inc/value:139
+#: ../../source/inc/value:74
+#: ../../source/inc/value:108
+#: ../../source/inc/value:145
 msgid "`max_is_zero`"
 msgstr ""
 
@@ -968,133 +976,147 @@ msgid "If True, then when the value of a key is zero, the value of the bar will 
 msgstr ""
 
 #: ../../source/inc/value:48
-#: ../../source/inc/value:74
-#: ../../source/inc/value:106
-#: ../../source/inc/value:141
+#: ../../source/inc/value:76
+#: ../../source/inc/value:110
+#: ../../source/inc/value:147
 msgid "`style`"
 msgstr ""
 
 #: ../../source/inc/value:49
-#: ../../source/inc/value:75
-#: ../../source/inc/value:107
-#: ../../source/inc/value:142
+#: ../../source/inc/value:77
+#: ../../source/inc/value:111
+#: ../../source/inc/value:148
 msgid "The styles of the bar created."
 msgstr ""
 
 #: ../../source/inc/value:50
-#: ../../source/inc/value:76
-#: ../../source/inc/value:108
-#: ../../source/inc/value:143
+#: ../../source/inc/value:78
+#: ../../source/inc/value:112
+#: ../../source/inc/value:149
 msgid "`offset`"
 msgstr ""
 
 #: ../../source/inc/value:51
-#: ../../source/inc/value:77
-#: ../../source/inc/value:109
-#: ../../source/inc/value:144
+#: ../../source/inc/value:79
+#: ../../source/inc/value:113
+#: ../../source/inc/value:150
 msgid "An offset to add to the value."
 msgstr ""
 
 #: ../../source/inc/value:53
-#: ../../source/inc/value:79
-#: ../../source/inc/value:111
-#: ../../source/inc/value:146
+#: ../../source/inc/value:81
+#: ../../source/inc/value:115
+#: ../../source/inc/value:152
 msgid "`step`"
 msgstr ""
 
 #: ../../source/inc/value:53
-#: ../../source/inc/value:79
-#: ../../source/inc/value:111
-#: ../../source/inc/value:146
+#: ../../source/inc/value:81
+#: ../../source/inc/value:115
+#: ../../source/inc/value:152
 msgid "The amount to change the bar by. If None, defaults to 1/10th of the bar."
 msgstr ""
 
-#: ../../source/inc/value:58
+#: ../../source/inc/value:55
+#: ../../source/inc/value:83
+#: ../../source/inc/value:117
+#: ../../source/inc/value:154
+msgid "`action`"
+msgstr ""
+
+#: ../../source/inc/value:56
+#: ../../source/inc/value:84
+#: ../../source/inc/value:118
+#: ../../source/inc/value:155
+msgid "If not None, an action to call when the field has changed."
+msgstr ""
+
+#: ../../source/inc/value:60
 msgid "A bar value that allows the user to adjust the value of a field on an object."
 msgstr ""
 
-#: ../../source/inc/value:61
+#: ../../source/inc/value:63
 msgid "`object`"
 msgstr ""
 
-#: ../../source/inc/value:62
+#: ../../source/inc/value:64
 msgid "The object."
 msgstr ""
 
-#: ../../source/inc/value:63
+#: ../../source/inc/value:65
 #: ../../source/inc/input_value:19
 msgid "`field`"
 msgstr ""
 
-#: ../../source/inc/value:64
+#: ../../source/inc/value:66
 msgid "The field, a string."
 msgstr ""
 
-#: ../../source/inc/value:68
-#: ../../source/inc/value:100
-#: ../../source/inc/value:135
+#: ../../source/inc/value:70
+#: ../../source/inc/value:104
+#: ../../source/inc/value:141
 msgid "If True, then when the field is zero, the value of the bar will be range, and all other values will be shifted down by 1. This works both ways - when the bar is set to the maximum, the field is set to 0."
 msgstr ""
 
-#: ../../source/inc/value:73
-#: ../../source/inc/value:105
-#: ../../source/inc/value:140
+#: ../../source/inc/value:75
+#: ../../source/inc/value:109
+#: ../../source/inc/value:146
 msgid "This is used internally, for some preferences."
 msgstr ""
 
-#: ../../source/inc/value:84
+#: ../../source/inc/value:88
 msgid "The value of an audio mixer."
 msgstr ""
 
-#: ../../source/inc/value:87
+#: ../../source/inc/value:91
 msgid "The name of the mixer to adjust. This is usually one of \"music\", \"sfx\", or \"voice\", but creators can create new mixers."
 msgstr ""
 
-#: ../../source/inc/value:93
+#: ../../source/inc/value:97
 msgid "A bar value that adjusts the value of a variable in a screen."
 msgstr ""
 
-#: ../../source/inc/value:95
-#: ../../source/inc/value:130
+#: ../../source/inc/value:99
+#: ../../source/inc/value:136
 #: ../../source/inc/input_value:54
 #: ../../source/inc/input_value:68
 msgid "`variable`"
 msgstr ""
 
-#: ../../source/inc/value:96
-#: ../../source/inc/value:131
+#: ../../source/inc/value:100
+#: ../../source/inc/value:137
 msgid "A string giving the name of the variable to adjust."
 msgstr ""
 
-#: ../../source/inc/value:117
+#: ../../source/inc/value:123
 msgid "This allows a value to be specified statically."
 msgstr ""
 
-#: ../../source/inc/value:123
+#: ../../source/inc/value:129
 msgid "The range of the value."
 msgstr ""
 
-#: ../../source/inc/value:127
+#: ../../source/inc/value:133
 msgid "A bar value that allows the user to adjust the value of a variable in the default store."
 msgstr ""
 
-#: ../../source/inc/value:151
+#: ../../source/inc/value:159
 msgid "The value of an adjustment that horizontally scrolls the viewport with the given id, on the current screen. The viewport must be defined before a bar with this value is."
 msgstr ""
 
-#: ../../source/inc/value:157
+#: ../../source/inc/value:165
 msgid "The value of an adjustment that vertically scrolls the viewport with the given id, on the current screen. The viewport must be defined before a bar with this value is."
 msgstr ""
 
-#: ../../source/screen_actions.rst:96
+#: ../../source/screen_actions.rst:97
 msgid "Input Values"
 msgstr ""
 
-#: ../../source/screen_actions.rst:98
+#: ../../source/screen_actions.rst:99
 msgid "Input values are used with text inputs, to set the default text, to accept changed text, to respond to the enter key, and to determine if the text is editable by default. To create a new input value, subclass the :class:`InputValue` class."
 msgstr ""
 
-#: ../../source/screen_actions.rst:103
+#: ../../source/screen_actions.rst:104
 msgid "Ren'Py-defined input values inherit from InputValue, which means that all values also include Enable(), Disable(), and Toggle() methods that return actions that enable, disable, and toggle editing, respectively. See also the :func:`DisableAllInputValues` action."
 msgstr ""
 
@@ -1177,19 +1199,19 @@ msgstr ""
 msgid "An input value that updates `variable`."
 msgstr ""
 
-#: ../../source/screen_actions.rst:112
+#: ../../source/screen_actions.rst:113
 msgid "Functions and Classes"
 msgstr ""
 
-#: ../../source/screen_actions.rst:114
+#: ../../source/screen_actions.rst:115
 msgid "These functions and classes are useful in association with screens."
 msgstr ""
 
-#: ../../source/screen_actions.rst:117
+#: ../../source/screen_actions.rst:118
 msgid "Preferences"
 msgstr ""
 
-#: ../../source/screen_actions.rst:119
+#: ../../source/screen_actions.rst:120
 msgid "While all preferences can be defined based on the Actions and Values given above, it requires some knowledge of Ren'Py to figure out the correct one to use. The preferences constructor makes this easy, by creation an action or value, as appropriate, based on the names used in the default preferences screen."
 msgstr ""
 
@@ -1530,42 +1552,70 @@ msgid "Preference(\"gl tearing\", False) - Skips frames rather than tearing."
 msgstr ""
 
 #: ../../source/inc/preference_action:124
-msgid "Values that can be used with bars are:"
+msgid "Preference(\"font transform\", \"opendyslexic\") - Sets the accessibility font transform to opendyslexic."
+msgstr ""
+
+#: ../../source/inc/preference_action:125
+msgid "Preference(\"font transform\", \"dejavusans\") - Sets the accessibility font transform to deja vu sans."
 msgstr ""
 
 #: ../../source/inc/preference_action:126
-msgid "Preference(\"text speed\")"
-msgstr ""
-
-#: ../../source/inc/preference_action:127
-msgid "Preference(\"auto-forward time\")"
+msgid "Preference(\"font transform\", None) - Disables the accessibility font transform."
 msgstr ""
 
 #: ../../source/inc/preference_action:128
-msgid "Preference(\"music volume\")"
+msgid "Preference(\"font size\", 1.0) - Sets the accessibility font size scaling factor."
 msgstr ""
 
 #: ../../source/inc/preference_action:129
-msgid "Preference(\"sound volume\")"
-msgstr ""
-
-#: ../../source/inc/preference_action:130
-msgid "Preference(\"voice volume\")"
+msgid "Preference(\"font line spacing\", 1.0) - Sets the accessibility font vertical spacing scaling factor."
 msgstr ""
 
 #: ../../source/inc/preference_action:131
-msgid "Preference(\"mixer <mixer> volume\")"
+msgid "Values that can be used with bars are:"
 msgstr ""
 
 #: ../../source/inc/preference_action:133
+msgid "Preference(\"text speed\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:134
+msgid "Preference(\"auto-forward time\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:135
+msgid "Preference(\"music volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:136
+msgid "Preference(\"sound volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:137
+msgid "Preference(\"voice volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:138
+msgid "Preference(\"mixer <mixer> volume\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:139
+msgid "Preference(\"font size\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:140
+msgid "Preference(\"font line spacing\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:142
 msgid "The `range` parameter can be given to give the range of certain bars. For \"text speed\", it defaults to 200 cps. For \"auto-forward time\", it defaults to 30.0 seconds per chunk of text. (These are maximums, not defaults.)"
 msgstr ""
 
-#: ../../source/screen_actions.rst:128
+#: ../../source/screen_actions.rst:129
 msgid "Gamepad"
 msgstr ""
 
-#: ../../source/screen_actions.rst:130
+#: ../../source/screen_actions.rst:131
 msgid "These functions and actions work with the gamepad."
 msgstr ""
 
@@ -1585,11 +1635,11 @@ msgstr ""
 msgid "Forces this function to always return true while :var:`config.developer` is true."
 msgstr ""
 
-#: ../../source/screen_actions.rst:135
+#: ../../source/screen_actions.rst:136
 msgid "File Functions"
 msgstr ""
 
-#: ../../source/screen_actions.rst:137
+#: ../../source/screen_actions.rst:138
 msgid "These functions return useful information about files. They use the same default page as the file actions."
 msgstr ""
 
@@ -1717,11 +1767,11 @@ msgstr ""
 msgid "If true, the highest-numbered file slot is listed first. Otherwise, the lowest-numbered slot is listed first."
 msgstr ""
 
-#: ../../source/screen_actions.rst:143
+#: ../../source/screen_actions.rst:144
 msgid "Side Image Functions"
 msgstr ""
 
-#: ../../source/screen_actions.rst:145
+#: ../../source/screen_actions.rst:146
 msgid "This function returns the side image to use."
 msgstr ""
 
@@ -1729,15 +1779,15 @@ msgstr ""
 msgid "Returns the side image associated with the currently speaking character, or a Null displayable if no such side image exists."
 msgstr ""
 
-#: ../../source/screen_actions.rst:152
+#: ../../source/screen_actions.rst:153
 msgid "Tooltips"
 msgstr ""
 
-#: ../../source/screen_actions.rst:154
+#: ../../source/screen_actions.rst:155
 msgid "Tooltips can now be accessed by the tooltip property available on all displayables, and the GetTooltip function. The GetTooltip function returns the value of the tooltip property when the displayable gains focus."
 msgstr ""
 
-#: ../../source/screen_actions.rst:159
+#: ../../source/screen_actions.rst:160
 msgid "Here's an example::"
 msgstr ""
 
@@ -1753,15 +1803,15 @@ msgstr ""
 msgid "If not None, this should be the name or tag of a screen. If given, this function only returns the tooltip if the focused displayable is part of the screen."
 msgstr ""
 
-#: ../../source/screen_actions.rst:187
+#: ../../source/screen_actions.rst:188
 msgid "Legacy"
 msgstr ""
 
-#: ../../source/screen_actions.rst:189
+#: ../../source/screen_actions.rst:190
 msgid "This has been obsoleted by the above, but you might see it in older projects."
 msgstr ""
 
-#: ../../source/screen_actions.rst:191
+#: ../../source/screen_actions.rst:192
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 
@@ -1777,11 +1827,11 @@ msgstr ""
 msgid "Returns an action that is generally used as the hovered property of a button. When the button is hovered, the value field of this tooltip is set to `value`. When the button loses focus, the value field of this tooltip reverts to the default."
 msgstr ""
 
-#: ../../source/screen_actions.rst:195
+#: ../../source/screen_actions.rst:196
 msgid "When using a tooltip with a screen, the usual behavior is to create a tooltip object in a default statement. The value of the tooltip and the action method can then be used within the screen. The order of use within a screen doesn't matter – it's possible to use the value before an action is used."
 msgstr ""
 
-#: ../../source/screen_actions.rst:201
+#: ../../source/screen_actions.rst:202
 msgid "Tooltips can take on any value. While in the example below we use the text statement to display a string on the screen, it's also possible to use the add statement to add a displayable. More complex behavior is also possible."
 msgstr ""
 

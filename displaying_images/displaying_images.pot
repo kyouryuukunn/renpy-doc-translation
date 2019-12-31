@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2018, Tom Rothamel
+# Copyright (C) 2012-2019, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-30 14:49+0900\n"
+"POT-Creation-Date: 2019-10-21 22:56+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,7 +117,7 @@ msgid "The default layer used when a ui function is called from within an overla
 msgstr ""
 
 #: ../../source/displaying_images.rst:86
-msgid "Additional layers can be defined by updating :var:`config.layers`, and the various other layer-related config variables. Using :func:`renpy.layer_at_list`, one or more transforms can be applied to a layer."
+msgid "Additional layers can be defined by updating :var:`config.layers`, and the various other layer-related config variables. Using :func:`renpy.show_layer_at`, one or more transforms can be applied to a layer."
 msgstr ""
 
 #: ../../source/displaying_images.rst:92
@@ -137,7 +137,7 @@ msgid "Images Directory"
 msgstr ""
 
 #: ../../source/displaying_images.rst:108
-msgid "The image directory is named \"images\", and is placed under the game directory. When a file with the .jpg or .png extension is placed underneath this directory, the extension is stripped, the rest of the filename is forced to lower case, and the resulting filename is used as the image name if an image with that name has not been previously defined."
+msgid "The image directory is named \"images\", and is placed under the game directory. When a file with the .jpg or .png extension is placed underneath this directory, the extension is stripped, the rest of the filename is forced to lowercase, and the resulting filename is used as the image name if an image with that name has not been previously defined."
 msgstr ""
 
 #: ../../source/displaying_images.rst:114
@@ -263,7 +263,7 @@ msgstr ""
 
 #: ../../source/displaying_images.rst:252
 #: ../../source/displaying_images.rst:318
-#: ../../source/inc/image_func:175
+#: ../../source/inc/image_func:177
 msgid "For example::"
 msgstr ""
 
@@ -430,13 +430,13 @@ msgstr ""
 #: ../../source/inc/image_func:15
 #: ../../source/inc/image_func:49
 #: ../../source/inc/image_func:73
-#: ../../source/inc/image_func:161
+#: ../../source/inc/image_func:163
 msgid "`layer`"
 msgstr ""
 
 #: ../../source/inc/image_func:16
 #: ../../source/inc/image_func:50
-#: ../../source/inc/image_func:162
+#: ../../source/inc/image_func:164
 msgid "The layer to check. If None, uses the default layer for `tag`."
 msgstr ""
 
@@ -469,7 +469,7 @@ msgid "A space-separated string giving the components of the new image name."
 msgstr ""
 
 #: ../../source/inc/image_func:45
-msgid "Return a tuple giving the image attributes for the image `tag`. If the image tag has not had any attributes associated since the last time it was hidden, returns None."
+msgid "Return a tuple giving the image attributes for the image `tag`. If the image tag has not had any attributes associated since the last time it was hidden, returns `if_hidden`."
 msgstr ""
 
 #: ../../source/inc/image_func:54
@@ -529,106 +529,118 @@ msgid "This returns an object with the following fields, each corresponding to a
 msgstr ""
 
 #: ../../source/inc/image_func:99
-msgid "xpos"
+msgid "pos"
 msgstr ""
 
 #: ../../source/inc/image_func:100
-msgid "xanchor"
+msgid "xpos"
 msgstr ""
 
 #: ../../source/inc/image_func:101
-msgid "xoffset"
-msgstr ""
-
-#: ../../source/inc/image_func:102
 msgid "ypos"
 msgstr ""
 
+#: ../../source/inc/image_func:102
+msgid "anchor"
+msgstr ""
+
 #: ../../source/inc/image_func:103
-msgid "yanchor"
+msgid "xanchor"
 msgstr ""
 
 #: ../../source/inc/image_func:104
-msgid "yoffset"
+msgid "yanchor"
 msgstr ""
 
 #: ../../source/inc/image_func:105
+msgid "offset"
+msgstr ""
+
+#: ../../source/inc/image_func:106
+msgid "xoffset"
+msgstr ""
+
+#: ../../source/inc/image_func:107
+msgid "yoffset"
+msgstr ""
+
+#: ../../source/inc/image_func:108
 msgid "subpixel"
 msgstr ""
 
-#: ../../source/inc/image_func:109
+#: ../../source/inc/image_func:112
 msgid "If an image with the same name has been registered with renpy.register_image, returns it. Otherwise, returns None."
 msgstr ""
 
-#: ../../source/inc/image_func:114
+#: ../../source/inc/image_func:117
 msgid "Returns the tag corresponding to the currently speaking character (the `image` argument given to that character). Returns None if no character is speaking or the current speaking character does not have a corresponding image tag."
 msgstr ""
 
-#: ../../source/inc/image_func:121
+#: ../../source/inc/image_func:124
 msgid "Returns the set of image tags that are currently being shown on `layer`. If sort is true, returns a list of the tags from back to front."
 msgstr ""
 
-#: ../../source/inc/image_func:126
+#: ../../source/inc/image_func:129
 msgid "Return true if an image with `name` exists, and false if no such image exists."
 msgstr ""
 
-#: ../../source/inc/image_func:131
+#: ../../source/inc/image_func:134
 msgid "`name`"
 msgstr ""
 
-#: ../../source/inc/image_func:130
+#: ../../source/inc/image_func:133
 msgid "Either a string giving an image name, or a tuple of strings giving the name components."
 msgstr ""
 
-#: ../../source/inc/image_func:134
+#: ../../source/inc/image_func:137
 msgid "`exact`"
 msgstr ""
 
-#: ../../source/inc/image_func:134
+#: ../../source/inc/image_func:137
 msgid "Returns true if and only if an image with the exact name exists - parameterized matches are not included."
 msgstr ""
 
-#: ../../source/inc/image_func:139
+#: ../../source/inc/image_func:142
 msgid "Returns a list of images that have been added to Ren'Py, as a list of strings with spaces between the name components."
 msgstr ""
 
-#: ../../source/inc/image_func:144
+#: ../../source/inc/image_func:147
 msgid "Returns True if the named image has been seen at least once on the user's system. An image has been seen if it's been displayed using the show statement, scene statement, or :func:`renpy.show` function. (Note that there are cases where the user won't actually see the image, like a show immediately followed by a hide.)"
 msgstr ""
 
-#: ../../source/inc/image_func:152
+#: ../../source/inc/image_func:155
 msgid "Returns true if an image with the same tag as `name` is showing on `layer`."
 msgstr ""
 
-#: ../../source/inc/image_func:159
+#: ../../source/inc/image_func:161
 msgid "`image`"
 msgstr ""
 
-#: ../../source/inc/image_func:156
+#: ../../source/inc/image_func:159
 msgid "May be a string giving the image name or a tuple giving each component of the image name. It may also be a string giving only the image tag."
 msgstr ""
 
-#: ../../source/inc/image_func:166
+#: ../../source/inc/image_func:168
 msgid "This function takes one or more displayables as arguments. It causes Ren'Py to predict those displayables during every interaction until the displayables are removed by :func:`renpy.stop_predict`."
 msgstr ""
 
-#: ../../source/inc/image_func:170
+#: ../../source/inc/image_func:172
 msgid "If a displayable name is a string containing one or more \\* characters, the asterisks are used as a wildcard pattern. If there is at least one . in the string, the pattern is matched against filenames, otherwise it is matched against image names."
 msgstr ""
 
-#: ../../source/inc/image_func:179
+#: ../../source/inc/image_func:181
 msgid "starts predicting all images with the name eileen, while::"
 msgstr ""
 
-#: ../../source/inc/image_func:183
+#: ../../source/inc/image_func:185
 msgid "matches all files starting with concert in the images directory."
 msgstr ""
 
-#: ../../source/inc/image_func:187
+#: ../../source/inc/image_func:189
 msgid "This function takes one or more displayables as arguments. It causes Ren'Py to stop predicting those displayables during every interaction."
 msgstr ""
 
-#: ../../source/inc/image_func:190
+#: ../../source/inc/image_func:192
 msgid "Wildcard patterns can be used as described in :func:`renpy.start_predict`."
 msgstr ""
 

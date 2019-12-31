@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-30 14:49+0900\n"
-"PO-Revision-Date: 2017-08-07 17:56+0900\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2019-10-21 22:56+0900\n"
+"PO-Revision-Date: 2019-10-27 10:12+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -18,22 +18,41 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/cds.rst:5
+#: ../../source/cds.rst:7
 msgid "Creator-Defined Statements"
 msgstr "ユーザー定義ステートメント"
 
-#: ../../source/cds.rst:7
+#: ../../source/cds.rst:9
 msgid ""
-"Creator-defined statements allow you to add your own statements to Ren'Py. "
-"This makes it possible to add things that are not supported by the current "
-"syntax of Ren'Py."
+"Creator-Defined Statements (CDS) allow you to add your own statements to "
+"Ren'Py. This makes it possible to add things that are not supported by the "
+"current syntax of Ren'Py. CDS are more flexible than the direct Python code. "
+"Most often, CDS are used when you have a repeatable construction. For "
+"example, calling a function with one argument. Ren'Py does not know what "
+"this function does and how it should be executed, so Ren'Py does not do "
+"anything with it until execution and has an error if an exception occurs. "
+"Using the CDS allows you to check the correctness of the syntax using parse "
+"(for example, check that the argument is a valid string), to ignore "
+"incorrect data at execution (for non-critical functions, it is better to "
+"skip the execute than to throw an exception), predict displayables (if the "
+"function uses them), and give you addition information during lint (if at "
+"runtime it was ignored you can have a report here). The CDS does not "
+"guarantee that the execution will be successful, but the better you code "
+"your statement, the better Ren'Py can \"understand\" what you expect from it."
 msgstr ""
-"ユーザー定義ステートメントは独自のステートメントを Ren'Py に追加出来るように"
-"します。これにより現在の Ren'Py の文法ではサポートされない機能が追加出来ま"
-"す。"
+"ユーザー定義ステートメント (CDS) は独自のステートメントを Ren'Py に追加出来る"
+"ようにします。これにより現在の Ren'Py の文法ではサポートされない機能が追加出"
+"来ます。CDS はダイレクトな python コードより柔軟です。ほとんどの場合、繰り返"
+"し構造があるときに使用できます。例えば、決まった1つの引数で関数を呼ぶときで"
+"す。 Ren'Py はこの関数が何をして、どのように実行されるべきか分からないため、 "
+"実行してもしあればエラーが出るまで何もしません。CDS伸しようにより、 parse を"
+"使用して文法の妥当性の確認や(引数が妥当な文字列かなど)。実行時に不正なデータ"
+"の無視(致命的でないエラーでは、例外を投げるよりその実行をスキップした方がよい"
+"です)、(使用するなら) displayable の予想、Linkt 時の追加銃砲の掲示(起動時に無"
+"視させてもこちらで情報を得られます)。CDS は実行の成功は保証しませんが、ステー"
+"トメントのコーティングを改善し、Ren'Py に何がしたいかを「理解」させられます。"
 
-#: ../../source/cds.rst:11
-#, fuzzy
+#: ../../source/cds.rst:24
 msgid ""
 "Creator-defined statements must be defined in a ``python early`` block. "
 "What's more, the filename containing the user-defined statement must be be "
@@ -41,20 +60,20 @@ msgid ""
 "Unicode sort order, it generally makes sense to prefix the name of any file "
 "containing a user-defined statement with 01, or some other small number."
 msgstr ""
-"ユーザー定義ステートメントは python early ブロックで定義される必要があり、さ"
-"らにそれを定義するファイルはそれを使用するどのファイルよりも先にロードされる"
-"必要があります。 Ren'Py はユニコード順にファイルをロードするので一般的には"
-"ユーザー定義ステートメントを含めるファイル名は 01 か、それより小さい数字が接"
-"頭辞に付きます。"
+"ユーザー定義ステートメントは `python early` ブロックで定義され、さらにそれを"
+"定義するファイルはそれを使用するどのファイルよりも先にロードされる必要があり"
+"ます。 Ren'Py はユニコード順にファイルをロードするので一般的にはユーザー定義"
+"ステートメントを含めるファイル名は  01  か、それより小さい数字が接頭辞に付き"
+"ます。"
 
-#: ../../source/cds.rst:17
+#: ../../source/cds.rst:30
 msgid ""
-"A user-defined statement cannot be used in the file in which it is defined."
+"A creator-defined statement cannot be used in the file in which it is "
+"defined."
 msgstr ""
 "ユーザー定義ステートメントはそれが定義されたファイル内では使用不能です。"
 
-#: ../../source/cds.rst:19
-#, fuzzy
+#: ../../source/cds.rst:32
 msgid ""
 "Creator-defined statement are registered using the :func:`renpy."
 "register_statement` function."
@@ -85,7 +104,6 @@ msgid "`block`"
 msgstr "`block`"
 
 #: ../../source/inc/statement_register:13
-#, fuzzy
 msgid ""
 "When this is False, the statement does not expect a block. When True, it "
 "expects a block, but leaves it up to the lexer to parse that block. If the "
@@ -95,7 +113,8 @@ msgid ""
 msgstr ""
 "False なら、ステートメントはブロックを予測しません。 True ならブロックを予測"
 "し、 そのブロックの解釈は lexer に任せます。文字列 \"script\" なら、ブロック"
-"は一つ以上の Ren'Py スクリプト言語を含むものとして解釈されれます。"
+"は一つ以上の Ren'Py スクリプト言語を含むものとして解釈されれます。文字列 "
+"\"possible\" なら、パース関数でブロックを予測するか決定します。"
 
 #: ../../source/inc/statement_register:22
 msgid "`parse`"
@@ -105,7 +124,7 @@ msgstr "`parse`"
 msgid ""
 "This is a function that takes a Lexer object. This function should parse the "
 "statement, and return an object. This object is passed as an argument to all "
-"the other functions. The lexer argument has the following methods:"
+"the other functions."
 msgstr ""
 "これは Lexer オブジェクトを引数に取る関数です。この関数はステートメントを解析"
 "し、任意のオブジェクトを返すべきです。このオブジェクトは他のすべての関数に引"
@@ -188,7 +207,7 @@ msgstr ""
 
 #: ../../source/inc/statement_register:54
 msgid "`label`"
-msgstr ""
+msgstr "`label`"
 
 #: ../../source/inc/statement_register:52
 msgid ""
@@ -196,10 +215,12 @@ msgid ""
 "If it returns a string, that string is used as the statement label, which "
 "can be called and jumped to like any other label."
 msgstr ""
+"ステートメントのラベルを決定する関数です。返した文字列がステートメントのラベ"
+"ルとしてしようされ、その他のラベル同様に呼び出しやジャンプが出来ます。"
 
 #: ../../source/inc/statement_register:60
 msgid "`warp`"
-msgstr ""
+msgstr "`warp`"
 
 #: ../../source/inc/statement_register:57
 msgid ""
@@ -207,6 +228,8 @@ msgid ""
 "execute during warping. If the function exists and returns true, it's run "
 "during warp, otherwise the statement is not run during warp."
 msgstr ""
+"ステートメントがワープ中に実行されるかを決定する関数です。関数が存在し、 "
+"True を返せばワープ中に実行され、そうでなければ実行されません。"
 
 #: ../../source/inc/statement_register:63
 msgid "`scry`"
@@ -221,129 +244,385 @@ msgid "`init`"
 msgstr "`init`"
 
 #: ../../source/inc/statement_register:66
-#, fuzzy
 msgid ""
 "True if this statement should be run at init-time. (If the statement is not "
 "already inside an init block, it's automatically placed inside an init "
 "block.) This calls the execute function, in addition to the execute_init "
 "function."
 msgstr ""
-"このステートメントが初期化時にのみ実行されるべきなら True です。 ( ステートメ"
-"ントが init ブロック内でなければ自動的に init 0 ブロックに配置されます。)　こ"
-"れは execute_init  関数に加えては実行関数を呼び出します。"
+"このステートメントの初期化時にのみ実行されるべきなら True です ( ステートメン"
+"トが init ブロック内になければ自動的に init 0 ブロックに配置されます)。　これ"
+"は execute_init  関数に加えては実行関数を呼び出します。"
 
 #: ../../source/inc/statement_register:73
 msgid "`init_priority`"
-msgstr ""
+msgstr "`init_priority`"
 
 #: ../../source/inc/statement_register:72
 msgid ""
 "An integer that determines the priority of initialization of the init block."
-msgstr ""
+msgstr "init ブロックで初期化優先度の整数値です。"
 
-#: ../../source/inc/statement_register:77
+#: ../../source/inc/statement_register:78
 msgid "`translation_strings`"
-msgstr ""
+msgstr "`translation_strings`"
 
 #: ../../source/inc/statement_register:76
 msgid ""
 "A function that is called with the parsed block. It's expected to return a "
 "list of strings, which are then reported as being available to be translated."
 msgstr ""
+"パースされたブロックを引数に呼び出される関数で、邦訳可能として報告される文字"
+"列のリストを返します。"
 
-#: ../../source/cds.rst:24
+#: ../../source/inc/statement_register:82
+msgid "`force_begin_rollback`"
+msgstr "`force_begin_rollback`"
+
+#: ../../source/inc/statement_register:81
+msgid ""
+"This should be set to true on statements that are likely to cause the end of "
+"a fast skip, similar to ``menu`` or ``call screen``."
+msgstr ""
+"これは ``menu`` や ``call screen``  のようなファストスキップを停止するステー"
+"トメントでは  True にするべきです。"
+
+#: ../../source/inc/statement_register:87
+msgid "`post_execute`"
+msgstr "`post_execute`"
+
+#: ../../source/inc/statement_register:85
+msgid ""
+"A function that is executed as part the next statement after this one. "
+"(Adding a post_execute function changes the contents of the RPYC file, "
+"meaning a Force Compile is necessary.)"
+msgstr ""
+"次のステートメントの一部としてじっ蔵される関数です( post_execute 関数の追加に"
+"より RPYC ファイルの内容が変化するため、強制コンパイルが必要になります )。"
+
+#: ../../source/inc/statement_register:93
+msgid "`post_label`"
+msgstr "`post_label`"
+
+#: ../../source/inc/statement_register:90
+msgid ""
+"This is a function that is called to determine the label of this the post "
+"execute statement. If it returns a string, that string is used as the "
+"statement label, which can be called and jumped to like any other label. "
+"This can be used to create a unique return point."
+msgstr ""
+"post_execute ステートメントのラベルを決定する関数です。返した文字列がステート"
+"メントのラベルとしてしようされ、その他のラベル同様に呼び出しやジャンプが出来"
+"ます。これを使用して唯一のリターンポイントを作成できます。"
+
+#: ../../source/inc/statement_register:97
+msgid "`predict_all`"
+msgstr "`predict_all`"
+
+#: ../../source/inc/statement_register:96
+msgid ""
+"If True, then this predicts all sub-parses of this statement and the "
+"statement after this statement."
+msgstr ""
+"True なら、子のステートメントと、次のステートメントのすべての sub-parse を予"
+"測します。"
+
+#: ../../source/inc/statement_register:104
+msgid "`predict_next`"
+msgstr "`predict_next`"
+
+#: ../../source/inc/statement_register:100
+msgid ""
+"This is called with a single argument, the label of the statement that would "
+"run after this statement."
+msgstr ""
+"これはこのステートメントの次のステートメントのラベルを引数とする関数です。"
+
+#: ../../source/inc/statement_register:103
+msgid ""
+"This should be called to predict the statements that can run after this one. "
+"It's expected to return a list of of labels or SubParse objects. This is not "
+"called if `predict_all` is true."
+msgstr ""
+"これは次に実行するステートメントを予測するために呼び出されるべきです。ラベル"
+"か SubParse オブジェクトのリストを返します。 predict_all が True だと呼び出さ"
+"れません。"
+
+#: ../../source/cds.rst:37
 msgid "The parse method takes a Lexer object:"
 msgstr "parse メソッドは Lexer オブジェクトを受け取ります。"
 
-#: ../../source/cds.rst:30
+#: ../../source/cds.rst:43
+msgid ""
+"Adds a `msg` (with the current position) in the list of detected parsing "
+"errors. This interrupts the parsing of the current statement, but does not "
+"prevent further parsing."
+msgstr ""
+"検出されたパースエラーのリストに(現在位置とともに) `msg` を追加します。これは"
+"現在のステートメントのパースを停止しますが、以降のパースは妨げません。"
+
+#: ../../source/cds.rst:49
+msgid "Tries to parse `thing`, and reports an error if it cannot be done."
+msgstr "`thing` のパースを試み、出来なければエラーを返します。"
+
+#: ../../source/cds.rst:51
+msgid ""
+"If `thing` is a string, tries to parse it using :func:`match`. Otherwise, "
+"thing must be a other method on this lexer object, which is called without "
+"arguments. If `name` is not specified, the name of the method will be used "
+"in the message (or `thing` if it's a string), otherwise the `name` will be "
+"used."
+msgstr ""
+"`thing` が文字列なら、 :func:`match` を使用してパースを試みます。それ以外な"
+"ら、 `thing` は引数なしで呼び出されるこの Lexer オブジェクトの他のメソッドで"
+"あるべきです。 `name` が指定されなければ、メソッド名が (文字列であるなら "
+"`thing` が) メッセージに使用され、そうでないければ `name` が使用されます。"
+
+#: ../../source/cds.rst:59
 msgid "True if the lexer is at the end of the line."
 msgstr "lexerが行の末端に達していれば True を返します。"
 
-#: ../../source/cds.rst:34
+#: ../../source/cds.rst:63
+msgid "If we are not at the end of the line, raise an error."
+msgstr "行の末端に達していなければエラーを投げます。"
+
+#: ../../source/cds.rst:67
+msgid ""
+"Called to indicate this statement does not expect a block. If a block is "
+"found, raises an error. `stmt` should be a string, it will be added to the "
+"message with an error."
+msgstr ""
+"このステートメントブロックを予測しないと示すために呼び出されます。ブロックが"
+"発見されると、例外が投げられます。 `stmt` はエラーとともにメッセージに追加さ"
+"れる文字列です。"
+
+#: ../../source/cds.rst:73
+msgid ""
+"Called to indicate that the statement requires that a non-empty block is "
+"present. `stmt` should be a string, it will be added to the message with an "
+"error."
+msgstr ""
+"このステートメントが空でないブロックを予測すると示すために呼び出されます。 "
+"`stmt` はエラーとともにメッセージに追加される文字列です。"
+
+#: ../../source/cds.rst:79
+msgid "True if the current line has a non-empty block."
+msgstr "現在行にから出ないブロックがあれば True です。"
+
+#: ../../source/cds.rst:83
 msgid "Matches an arbitrary regexp string."
 msgstr "任意の正規表現文字列にマッチします。"
 
-#: ../../source/cds.rst:36
+#: ../../source/cds.rst:85
 msgid ""
 "All of the statements in the lexer that match things are implemented in "
 "terms of this function. They first skip whitespace, then attempt to match "
 "against the line. If the match succeeds, the matched text is returned. "
-"Otherwise, None is returned."
+"Otherwise, None is returned, and the state of the lexer is unchanged."
 msgstr ""
-"何かをマッチさせるすべての lexer のステートメントは、この関数と同様な方法で実"
+"何かをマッチさせる lexer のすべてのステートメントは、この関数と同様な方法で実"
 "装されています。最初に空白をスキップし、その行に対してマッチするかを試みま"
 "す。マッチが成功すればマッチしたテキストが返され、そうでなければ None が返さ"
-"れます。"
+"れ、 Lexer は変更されません。"
 
-#: ../../source/cds.rst:43
+#: ../../source/cds.rst:93
 msgid "Matches `s` as a keyword."
 msgstr "キーワードとして `s` にマッチします。"
 
-#: ../../source/cds.rst:47
+#: ../../source/cds.rst:97
 msgid "Matches a name. This does not match built-in keywords."
 msgstr "名前にマッチしますが組み込みのキーワードにはマッチしません。"
 
-#: ../../source/cds.rst:51
+#: ../../source/cds.rst:101
 msgid ""
 "Matches any word, including keywords. Returns the text of the matched word."
 msgstr ""
 "キーワードを含むどのような単語にもマッチします。マッチした単語を返します。"
 
-#: ../../source/cds.rst:56
+#: ../../source/cds.rst:106
+msgid ""
+"Matches an image name component. Unlike a word, a image name component can "
+"begin with a number."
+msgstr "画像名にマッチします。単語と違い画像名は数字で始められます。"
+
+#: ../../source/cds.rst:111
 msgid "Matches a Ren'Py string."
 msgstr "文字列にマッチします。"
 
-#: ../../source/cds.rst:60
+#: ../../source/cds.rst:115
 msgid "Matches an integer, returns a string containing the integer."
 msgstr "整数にマッチし、整数の文字列を返します。"
 
-#: ../../source/cds.rst:64
+#: ../../source/cds.rst:119
 msgid ""
 "Matches a floating point number, returns a string containing the floating "
 "point number."
 msgstr "浮動小数点にマッチし、浮動小数点の文字列を返します。"
 
-#: ../../source/cds.rst:69
-#, fuzzy
-msgid "Matches a simple Python expression, returns it as a string."
-msgstr "単純式にマッチし、文字列としてそれを返します。"
+#: ../../source/cds.rst:124
+msgid ""
+"Matches a label name, either absolute or relative. If `declare` is true, "
+"then the global label name is set. (Note that this does not actually declare "
+"the label - the statement is required to do that by returning it from the "
+"`label` function.)"
+msgstr ""
+"ラベル名または、absolute, relative にマッチします。 `declare` が True なら、"
+"グローバルラベルが設定され( ステートメントはラベル関数からラベルを返すために"
+"そうする必要あるだけで、実際にはラベルを宣言しないコトに注意してください)。"
 
-#: ../../source/cds.rst:73
-#, fuzzy
+#: ../../source/cds.rst:131
+msgid ""
+"Matches a simple Python expression, returns it as a string. This is often "
+"used when you expect a variable name. It is not recommended to change the "
+"result. The correct action is to evaluate the result in the future."
+msgstr ""
+"単純式にマッチし、それを文字列として返します。これはしばしば変数名を期待する"
+"時に使用されます。結果の変更は推奨されません。結果を評価してください。"
+
+#: ../../source/cds.rst:138
+msgid ""
+"Matches a Python expression that ends in a `delim`, for example ':'. This is "
+"often used when you expect a condition until the delimiter. It is not "
+"recommended to change the result. The correct action is to evaluate the "
+"result in the future. This raises an error if end of line is reached before "
+"the delimiter."
+msgstr ""
+"':' のような `delim` で終わる Python 式にマッチします。これはしばしばデリミタ"
+"までを条件として期待する場合に使用されます。結果の変更は推奨されません。結果"
+"を評価してください。デリミタの前に行端に達すればエラーを投げます。"
+
+#: ../../source/cds.rst:146
+msgid ""
+"This must be called before the parentheses with the arguments list, if they "
+"are not specified returns None, otherwise returns an object representing the "
+"arguments to a function call. This object has an ``evaluate`` method on it "
+"that takes an optional `scope` dictionary, and returns a tuple in which the "
+"first component is a tuple of positional arguments, and the second component "
+"is a dictionary of keyword arguments."
+msgstr ""
+"これは引数リストの丸括弧の前に呼び出されなければなりません。引数リストが確認"
+"されなければ None を返し、そうでなければ引数を表すオブジェクトを関数呼び出し"
+"に渡します。このオブジェクトには `scope` 辞書を省略可能な引数にとりる  "
+"``evalute`` メソッドがあり、1番目が一引数のタプル、二番目がキーワード引数の辞"
+"書であるタプルを返します。"
+
+#: ../../source/cds.rst:156
 msgid "Skips whitespace, then returns the rest of the line."
 msgstr "空白をスキップし、行の残りを返します。"
 
-#: ../../source/cds.rst:77
+#: ../../source/cds.rst:160
 msgid "Returns an opaque object representing the current state of the lexer."
 msgstr "現在の lexer の状態を表現するオブジェクトを返します。"
 
-#: ../../source/cds.rst:81
+#: ../../source/cds.rst:164
 msgid ""
 "When `o` is the object returned from checkpoint(), reverts the state of the "
 "lexer to what it was when checkpoint() was called. (This is used for "
 "backtracking.)"
 msgstr ""
-"`o` が checkpoint() から返されたオブジェクトなら、 lexer の状態を "
-"checkpoint() が呼び出されたときにまで戻します。 ( これはロールバックのために"
-"使用されます。 )"
+"`o` が checkpoint() から返されたオブジェクトなら、 lexer の状態を checkpoint"
+"() が呼び出されたときにまで戻します。 ( これはロールバックのために使用されま"
+"す。 )"
 
-#: ../../source/cds.rst:87
+#: ../../source/cds.rst:170
 msgid "Return a Lexer for the block associated with the current line."
 msgstr "現在のブロックと関連付けられたブロックに対する Lexer を返します。"
 
-#: ../../source/cds.rst:91
+#: ../../source/cds.rst:174
 msgid ""
 "In a subblock lexer, advances to the next line. This must be called before "
-"the first line, so the first line can be parsed."
+"the first line, so the first line can be parsed. Returns True if we've "
+"successfully advanced to a line in the block, or False if we have advanced "
+"beyond all lines in the block."
 msgstr ""
 "サブブロック lexer で、次の行に解析を進めます。一行目を解析できるようにするた"
-"めに、一行目よりも前で呼び出される必要があります。"
+"めに、一行目よりも前で呼び出される必要があります。そのブロック内の行に進めれ"
+"ば、 True を返し、末端に達していれば False を返します。"
 
-#: ../../source/cds.rst:96
+#: ../../source/cds.rst:181
+msgid ""
+"When called, this parses the current line as a Ren'Py script statement, "
+"generating an error if this is not possible. This method returns an opaque "
+"object that can be returned from get_next() or passed to :func:`renpy.jump` "
+"or :func:`renpy.call`. This object should not be stored except as part of "
+"the parse result of the statement."
+msgstr ""
+"Ren'Py スクリプトステートメントとして現在行をパースし、不可能ならエラーを生成"
+"します。このメソッドは get_next() から返されたり func:`renpy.jump` 、 :func:"
+"`renpy.call` に渡される不透明なオブジェクトを返します。このオブジェクトはス"
+"テートメントのパース結果としてを除いて保存されるべきですはありません。"
+
+#: ../../source/cds.rst:187
+msgid ""
+"When the statement returned from this completes, control is transfered to "
+"the statement after the creator-defined statement. (Which might be the "
+"statement created using post_execute)."
+msgstr ""
+"ステートメントがこの処理を完了すると、制御はユーザー定義ステートメントの次の"
+"ステートメント( post_execute を使用して作成されたステートメントもありえます)"
+"に渡されます。"
+
+#: ../../source/cds.rst:193
+msgid ""
+"This parses all of the remaining lines in the current block as Ren'Py "
+"script, and returns a SubParse corresponding to the first statement in the "
+"block. The block is chained together such that all statements in the block "
+"are run, and then control is transferred to the statement after this creator-"
+"defined statement."
+msgstr ""
+"これは現在ブロックの残りの行を Ren'Py スクリプトとしてパースし、ブロックの最"
+"初のステートメントに対応する SubParse を返します。そのブロック内で実行される"
+"すべてのステートメントとともにブロックが処理されると、制御はこのユーザー定義"
+"ステートメントの次のステートメントンに渡されます。"
+
+#: ../../source/cds.rst:199
+msgid ""
+"Note that this parses the current block. In the more likely case that you'd "
+"like to parse the subblock of the current statement, the correct way to do "
+"that is::"
+msgstr ""
+"これは現在のブロックをパースすることに注意してください。。現在のステートメン"
+"トのサブブロックをパースしたい場合は、以下のようにしてください。"
+
+#: ../../source/cds.rst:217
+msgid "`empty`"
+msgstr "`empty`"
+
+#: ../../source/cds.rst:215
+msgid ""
+"If True, allows an empty block to be parsed. (An empty block is equivalent "
+"to a block with a single ``pass`` statement.)"
+msgstr ""
+"True なら、空のブロックもパースされます( 空のブロックは ``pass`` ステートメン"
+"トのみのブロックと等価です )。"
+
+#: ../../source/cds.rst:218
+msgid "If False, an empty block triggers an error."
+msgstr "False なら、空のブロックでエラーとなります。"
+
+#: ../../source/cds.rst:223
+msgid ""
+"This is a context decorator, used in conjunction with the with statement, "
+"that catches and reports lexer errors inside its context block, then "
+"continues after the block."
+msgstr ""
+"これは with ステートメントと共に使用され、そのコンテキストブロックないで "
+"Lexer エラーをキャッチしてレポートし、次のブロックに続ける context decorator "
+"です。"
+
+#: ../../source/cds.rst:227
+msgid ""
+"Here's an example of how it can be used to report multiple errors in a "
+"single subblock. ::"
+msgstr ""
+"こちらは1つのサブブロック内での複数のエラーをどのようにレポートするかの例で"
+"す。 ::"
+
+#: ../../source/cds.rst:253
 msgid "Lint Utility Functions"
 msgstr "Lint 用ユーティリティー関数"
 
-#: ../../source/cds.rst:98
+#: ../../source/cds.rst:255
 msgid "These functions are useful in writing lint functions."
 msgstr "これらの関数は lint 関数を記述するのに便利です。"
 
@@ -355,22 +634,84 @@ msgstr ""
 "s 内部のテキストタグが正しいかチェックします。エラーがあればエラー文字列を、"
 "なければ None を返します。"
 
-#: ../../source/cds.rst:103
+#: ../../source/inc/lint:10
+msgid ""
+"Reports `msg`, a string, as as error for the user. This is logged as a parse "
+"or lint error when approprate, and otherwise it is raised as an exception."
+msgstr "ユーザーに対してエラーとして表示文字列 `msg` です。"
+
+#: ../../source/inc/lint:16
+msgid ""
+"Tries to compile an expression, and writes an error to lint.txt if it fails."
+msgstr "式をコンパイルし、エラーがあればそれを lint.txt に書き出します。"
+
+#: ../../source/inc/lint:22 ../../source/inc/lint:39
+msgid "`where`"
+msgstr "`where`"
+
+#: ../../source/inc/lint:20 ../../source/inc/lint:37
+msgid ""
+"A string giving the location the expression is found. Used to generate an "
+"error message of the form \"Could not evaluate `expr` in `where`.\""
+msgstr ""
+"式が見つかる場所を指定する文字列です。 \"where` で  `expr` を評価できませ"
+"ん。 \" のような形式でエラーメッセージを生成するために使用されます。"
+
+#: ../../source/inc/lint:25 ../../source/inc/lint:42
+msgid "`expr`"
+msgstr "`expr`"
+
+#: ../../source/inc/lint:25
+msgid "The expression to try compiling."
+msgstr "コンパイルを試みる式です。"
+
+#: ../../source/inc/lint:28 ../../source/inc/lint:45
+msgid "`additional`"
+msgstr "`additional`"
+
+#: ../../source/inc/lint:28 ../../source/inc/lint:45
+msgid ""
+"If given, an additional line of information that is addded to the error "
+"message."
+msgstr "指定すると、エラーメッセージへの追加情報となる行になります。"
+
+#: ../../source/inc/lint:33
+msgid ""
+"Tries to evaluate an expression, and writes an error to lint.txt if it fails."
+msgstr "式の評価を試み、 失敗すると lint.txt にエラーを書き込みます。"
+
+#: ../../source/inc/lint:42
+msgid "The expression to try evaluating."
+msgstr "評価を試みる式です。"
+
+#: ../../source/cds.rst:260
 msgid "Example"
 msgstr "例"
 
-#: ../../source/cds.rst:105
-#, fuzzy
+#: ../../source/cds.rst:262
 msgid ""
 "This creates a new statement ``line`` that allows lines of text to be "
 "specified without quotes. ::"
 msgstr ""
-"これは新しいステートメント「line」を作成し、クォーテーションを付けずにテキス"
-"トを指定できるようにします。::"
+"これは新しいステートメント ``line`` を作成し、クォーテーションを付けずにテキ"
+"ストを指定できるようにします。::"
 
-#: ../../source/cds.rst:132
+#: ../../source/cds.rst:289
 msgid "This can be used by writing::"
 msgstr "これは以下のように記述して使用出来ます。 ::"
+
+#~ msgid ""
+#~ "Creator-defined statements allow you to add your own statements to "
+#~ "Ren'Py. This makes it possible to add things that are not supported by "
+#~ "the current syntax of Ren'Py."
+#~ msgstr ""
+#~ "ユーザー定義ステートメントは独自のステートメントを Ren'Py に追加出来るよう"
+#~ "にします。これにより現在の Ren'Py の文法ではサポートされない機能が追加出来"
+#~ "ます。"
+
+#, fuzzy
+#~ msgid "Matches a simple Python expression, returns it as a string."
+#~ msgstr "単純式にマッチし、文字列としてそれを返します。"
 
 #~ msgid ""
 #~ "This is called to determine the next statement. It is passed a single "

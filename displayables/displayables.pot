@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2018, Tom Rothamel
+# Copyright (C) 2012-2019, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-30 14:49+0900\n"
+"POT-Creation-Date: 2019-10-21 22:56+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,11 +72,15 @@ msgstr ""
 msgid "Strings may have one or more square-bracket substitutions in them, such as \"eileen [mood]\" or \"eileen_[outfit]_[mood].png\". When such a string is given, a dynamic image is created. A dynamic image has :ref:`text interpolation <text-interpolation>` performed at the start of each interaction (such as say statements and menus). The resulting string is processed according to the rules above."
 msgstr ""
 
-#: ../../source/displayables.rst:47
+#: ../../source/displayables.rst:44
+msgid "When a string has \"[prefix_\"] in it, that iso replaced with each of the style prefixes associated with the current displayable."
+msgstr ""
+
+#: ../../source/displayables.rst:50
 msgid "Images"
 msgstr ""
 
-#: ../../source/displayables.rst:49
+#: ../../source/displayables.rst:52
 msgid "The most commonly used displayable is Image, which loads a file from disk and displays it. Since Image is so commonly used, when a string giving a filename is used in a context that expects a displayable, an Image is automatically created. The only time it's necessary to use Image directly is when you want to create an image with style properties."
 msgstr ""
 
@@ -88,55 +92,55 @@ msgstr ""
 msgid "`filename` should be a JPEG or PNG file with an appropriate extension."
 msgstr ""
 
-#: ../../source/displayables.rst:68
+#: ../../source/displayables.rst:71
 msgid "There are three image file formats we recommend you use:"
 msgstr ""
 
-#: ../../source/displayables.rst:70
+#: ../../source/displayables.rst:73
 msgid "WEBP"
 msgstr ""
 
-#: ../../source/displayables.rst:71
+#: ../../source/displayables.rst:74
 msgid "PNG"
 msgstr ""
 
-#: ../../source/displayables.rst:72
+#: ../../source/displayables.rst:75
 msgid "JPG"
 msgstr ""
 
-#: ../../source/displayables.rst:74
+#: ../../source/displayables.rst:77
 msgid "Non-animated GIF and BMP files are also supported, but should not be used in modern games."
 msgstr ""
 
-#: ../../source/displayables.rst:77
+#: ../../source/displayables.rst:80
 msgid "Loading an Image from a file on disk and decoding it so it can be drawn to the screen takes a long amount of time. While measured in the tenths or hundreds of seconds, the duration of the loading process is long enough that it can prevent an acceptable framerate, and become annoying to the user."
 msgstr ""
 
-#: ../../source/displayables.rst:83
+#: ../../source/displayables.rst:86
 msgid "Since an Image is of a fixed size, and doesn't change in response to input, game state, or the size of the area available to it, an Image can be loaded before it is needed and placed into an area of memory known as the image cache. Once an Image is decoded and in the cache, it can be quickly drawn to the screen."
 msgstr ""
 
-#: ../../source/displayables.rst:89
+#: ../../source/displayables.rst:92
 msgid "Ren'Py attempts to predict the images that will be used in the future, and loads them into the image cache before they are used. When space in the cache is needed for other images, Ren'Py will remove images that are no longer being used."
 msgstr ""
 
-#: ../../source/displayables.rst:94
+#: ../../source/displayables.rst:97
 msgid "By default, Ren'Py will predictively cache up to 8 screens worth of image data. (If your screen is 800x600, then a screen's worth of data is one 800x600 image, two 400x600 images, and so on.) This can be changed with the :var:`config.image_cache_size` configuration variable."
 msgstr ""
 
-#: ../../source/displayables.rst:100
+#: ../../source/displayables.rst:103
 msgid "Although the precise amount is dependent on implementation details and there is significant overhead, as a rule of thumb, each pixel in the image cache consumes 4 bytes of main memory and 4 bytes of video memory."
 msgstr ""
 
-#: ../../source/displayables.rst:106
+#: ../../source/displayables.rst:109
 msgid "Image-Like Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:108
+#: ../../source/displayables.rst:111
 msgid "We call these displayables image-like because they take up a rectangular area of the screen, and do not react to input.  These differ from normal images by varying their size to fill an area (Frame, LiveTile, and Solid), or by allowing the user to specify their size (LiveComposite, LiveCrop, Null). They are not image manipulators."
 msgstr ""
 
-#: ../../source/displayables.rst:114
+#: ../../source/displayables.rst:117
 msgid "Image-like displayables take :ref:`position-style-properties`."
 msgstr ""
 
@@ -229,7 +233,7 @@ msgid "`left`"
 msgstr ""
 
 #: ../../source/inc/disp_imagelike:97
-msgid "The size of the border on the left side. This can also be an :func:`Borders` object, in which case that object is use in place of the other parameters."
+msgid "The size of the border on the left side. This can also be a :func:`Borders` object, in which case that object is used in place of the other parameters."
 msgstr ""
 
 #: ../../source/inc/disp_imagelike:102
@@ -256,47 +260,47 @@ msgstr ""
 msgid "The side of the border on the bottom. If None, defaults to `top`."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:113
+#: ../../source/inc/disp_imagelike:115
 msgid "`tile`"
 msgstr ""
 
 #: ../../source/inc/disp_imagelike:112
-msgid "If true, tiling is used to resize sections of the image, rather than scaling."
+msgid "If set to True, tiling is used to resize sections of the image, rather than scaling. If set to the string \"integer\", the nearest integer number of tiles will be used in each direction. That set of full tiles will then be scaled up or down to fit the required area."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:124
+#: ../../source/inc/disp_imagelike:126
 msgid "A displayable that creates an empty box on the screen. The size of the box is controlled by `width` and `height`. This can be used when a displayable requires a child, but no child is suitable, or as a spacer inside a box."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:135
+#: ../../source/inc/disp_imagelike:137
 msgid "A displayable that fills the area its assigned with `color`."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:143
+#: ../../source/inc/disp_imagelike:145
 msgid "Tiles `child` until it fills the area allocated to this displayable."
 msgstr ""
 
-#: ../../source/displayables.rst:119
+#: ../../source/displayables.rst:122
 msgid "Text Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:121
+#: ../../source/displayables.rst:124
 msgid "See :ref:`text-displayables`."
 msgstr ""
 
-#: ../../source/displayables.rst:125
+#: ../../source/displayables.rst:128
 msgid "Dynamic Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:127
+#: ../../source/displayables.rst:130
 msgid "Dynamic displayables display a child displayable based on the state of the game. They do not take any properties, as their layout is controlled by the properties of the child displayable they return."
 msgstr ""
 
-#: ../../source/displayables.rst:131
+#: ../../source/displayables.rst:134
 msgid "Note that these dynamic displayables always display their current state. Because of this, a dynamic displayable will not participate in a transition. (Or more precisely, it will display the same thing in both the old and new states of the transition.)"
 msgstr ""
 
-#: ../../source/displayables.rst:136
+#: ../../source/displayables.rst:139
 msgid "By design, dynamic displayables are intended to be used for things that change rarely and when an image define this way is off screen (Such as a character customization system), and not for things that change frequently, such as character emotions."
 msgstr ""
 
@@ -391,11 +395,11 @@ msgstr ""
 msgid "One use of ShowingSwitch is to have side images change depending on the current emotion of a character. For example::"
 msgstr ""
 
-#: ../../source/displayables.rst:145
+#: ../../source/displayables.rst:148
 msgid "Applying Transforms to Displayables"
 msgstr ""
 
-#: ../../source/displayables.rst:147
+#: ../../source/displayables.rst:150
 msgid "The At function produces a displayable from a displayable and one or more :ref:`transforms <transforms>`."
 msgstr ""
 
@@ -403,19 +407,19 @@ msgstr ""
 msgid "Given a displayable `d`, applies each of the transforms in `args` to it. The transforms are applied in left-to-right order, so that the outermost transform is the rightmost argument. ::"
 msgstr ""
 
-#: ../../source/displayables.rst:154
+#: ../../source/displayables.rst:157
 msgid "Layout Boxes and Grids"
 msgstr ""
 
-#: ../../source/displayables.rst:156
+#: ../../source/displayables.rst:159
 msgid "Layout boxes are displayables that lay out their children on the screen. They can lay out the children in a horizontal or vertical manner, or lay them out using the standard positioning algorithm."
 msgstr ""
 
-#: ../../source/displayables.rst:160
+#: ../../source/displayables.rst:163
 msgid "The box displayables take any number of positional and keyword arguments. Positional arguments should be displayables that are added to the box as children. Keyword arguments are style properties that are applied to the box."
 msgstr ""
 
-#: ../../source/displayables.rst:165
+#: ../../source/displayables.rst:168
 msgid "Boxes take :ref:`position-style-properties` and :ref:`box-style-properties`."
 msgstr ""
 
@@ -431,7 +435,7 @@ msgstr ""
 msgid "A layout that lays out its members from top to bottom."
 msgstr ""
 
-#: ../../source/displayables.rst:185
+#: ../../source/displayables.rst:188
 msgid "The Grid layout displays its children in a grid on the screen. It takes :ref:`position-style-properties` and the :propref:`spacing` style property."
 msgstr ""
 
@@ -439,11 +443,11 @@ msgstr ""
 msgid "Lays out displayables in a grid. The first two positional arguments are the number of columns and rows in the grid. This must be followed by `columns * rows` positional arguments giving the displayables that fill the grid."
 msgstr ""
 
-#: ../../source/displayables.rst:192
+#: ../../source/displayables.rst:195
 msgid "Effects"
 msgstr ""
 
-#: ../../source/displayables.rst:194
+#: ../../source/displayables.rst:197
 msgid "These displayables are used to create certain visual effects."
 msgstr ""
 
@@ -459,19 +463,19 @@ msgstr ""
 msgid "If true, the image is composited with what's behind it. If false, the default, the image is opaque and overwrites what's behind it."
 msgstr ""
 
-#: ../../source/displayables.rst:199
+#: ../../source/displayables.rst:202
 msgid "Image Manipulators"
 msgstr ""
 
-#: ../../source/displayables.rst:201
+#: ../../source/displayables.rst:204
 msgid "An image manipulator is a displayable that takes an image or image manipulator, and either loads it or performs an operation on it. Image manipulators can only take images or other image manipulators as input."
 msgstr ""
 
-#: ../../source/displayables.rst:206
+#: ../../source/displayables.rst:209
 msgid "An image manipulator can be used any place a displayable can, but not vice-versa. An :func:`Image` is a kind of image manipulator, so an Image can be used whenever an image manipulator is required."
 msgstr ""
 
-#: ../../source/displayables.rst:210
+#: ../../source/displayables.rst:213
 msgid "With the few exceptions listed below, the use of image manipulators is historic. A number of image manipulators that had been documented in the past should no longer be used, as they suffer from inherent problems. In many cases, the :func:`Transform` displayable provides similar functionality in a more general manner, while fixing the problems."
 msgstr ""
 
@@ -488,70 +492,78 @@ msgid "Note that this takes different arguments from :func:`AlphaMask`, which us
 msgstr ""
 
 #: ../../source/inc/im_im:19
-msgid "An image manipulator that crops `rect`, a (x, y, width, height) tuple, out of `im`, an image manipulator."
+msgid "An image manipulator that blurs the image manipulator `im` using an elliptical kernel described by `xrad` and optionally `yrad`."
 msgstr ""
 
-#: ../../source/inc/im_im:28
-msgid "This image manipulator loads an image from binary data."
-msgstr ""
-
-#: ../../source/inc/im_im:32
-msgid "`data`"
+#: ../../source/inc/im_im:22
+msgid "If `yrad` is None, it will take the value of `xrad` resulting in a circular kernel being used."
 msgstr ""
 
 #: ../../source/inc/im_im:31
+msgid "An image manipulator that crops `rect`, a (x, y, width, height) tuple, out of `im`, an image manipulator."
+msgstr ""
+
+#: ../../source/inc/im_im:40
+msgid "This image manipulator loads an image from binary data."
+msgstr ""
+
+#: ../../source/inc/im_im:44
+msgid "`data`"
+msgstr ""
+
+#: ../../source/inc/im_im:43
 msgid "A string of bytes, giving the compressed image data in a standard file format."
 msgstr ""
 
-#: ../../source/inc/im_im:36
+#: ../../source/inc/im_im:48
 msgid "`filename`"
 msgstr ""
 
-#: ../../source/inc/im_im:35
+#: ../../source/inc/im_im:47
 msgid "A \"filename\" associated with the image. This is used to provide a hint to Ren'Py about the format of `data`. (It's not actually loaded from disk.)"
 msgstr ""
 
-#: ../../source/inc/im_im:41
+#: ../../source/inc/im_im:53
 msgid "An image manipulator that scales `im` (a second image manipulator) to `width` times its original `width`, and `height` times its original height. If `height` is omitted, it defaults to `width`."
 msgstr ""
 
-#: ../../source/inc/im_im:45
+#: ../../source/inc/im_im:57
 msgid "If `bilinear` is true, then bilinear interpolation is used for the scaling. Otherwise, nearest neighbor interpolation is used."
 msgstr ""
 
-#: ../../source/inc/im_im:54
+#: ../../source/inc/im_im:66
 msgid "An image manipulator that flips `im` (an image manipulator) vertically or horizontally.  `vertical` and `horizontal` control the directions in which the image is flipped."
 msgstr ""
 
-#: ../../source/inc/im_im:64
+#: ../../source/inc/im_im:76
 msgid "An image manipulator that creates a desaturated version of the image manipulator `im`."
 msgstr ""
 
-#: ../../source/inc/im_im:69
+#: ../../source/inc/im_im:81
 msgid "An image manipulator that creates a sepia-toned version of the image manipulator `im`."
 msgstr ""
 
-#: ../../source/inc/im_im:74
+#: ../../source/inc/im_im:86
 msgid "An image manipulator that tiles the image manipulator `im`, until it is `size`."
 msgstr ""
 
-#: ../../source/inc/im_im:78
+#: ../../source/inc/im_im:90
 msgid "`size`"
 msgstr ""
 
-#: ../../source/inc/im_im:78
+#: ../../source/inc/im_im:90
 msgid "If not None, a (width, height) tuple. If None, this defaults to (:var:`config.screen_width`, :var:`config.screen_height`)."
 msgstr ""
 
-#: ../../source/displayables.rst:219
+#: ../../source/displayables.rst:222
 msgid "im.MatrixColor"
 msgstr ""
 
-#: ../../source/displayables.rst:221
+#: ../../source/displayables.rst:224
 msgid "The im.MatrixColor image manipulator is an image manipulator that uses a matrix to control how the colors of an image are transformed. The matrix used can be an im.matrix object, which encodes a 5x5 matrix in an object that supports matrix multiplication, and is returned by a series of functions. im.matrix objects may be multiplied together to yield a second object that performs both operations. For example::"
 msgstr ""
 
-#: ../../source/displayables.rst:232
+#: ../../source/displayables.rst:235
 msgid "first desaturates the image, and then tints it blue. When the intermediate image is not needed, multiplying matrices is far more efficient, in both time and image cache space, than using two im.MatrixColors."
 msgstr ""
 
@@ -647,11 +659,11 @@ msgstr ""
 msgid "Returns an im.matrix that tints an image, without changing the alpha channel. `r`, `g`, and `b` should be numbers between 0 and 1, and control what fraction of the given channel is placed into the final image. (For example, if `r` is .5, and the value of the red channel is 100, the transformed color will have a red value of 50.)"
 msgstr ""
 
-#: ../../source/displayables.rst:240
+#: ../../source/displayables.rst:243
 msgid "Placeholders"
 msgstr ""
 
-#: ../../source/displayables.rst:242
+#: ../../source/displayables.rst:245
 msgid "The Placeholder displayable is used to display background or character images as appropriate. Placeholders are used automatically when an undefined image is used in developer mode. Placeholder displayables can also be used manually when the defaults are inappropriate. ::"
 msgstr ""
 
@@ -723,23 +735,23 @@ msgstr ""
 msgid "If true, the sprite is flipped horizontally."
 msgstr ""
 
-#: ../../source/displayables.rst:259
+#: ../../source/displayables.rst:262
 msgid "Displayable Prefixes"
 msgstr ""
 
-#: ../../source/displayables.rst:261
+#: ../../source/displayables.rst:264
 msgid "Displayable prefixes make it possible for a creator to define their own displayables, and refer to them anywhere a displayable can be used in Ren'Py. A prefixed displayable is a string with a colon in it. The prefix is to the left of the colon, and the argument is anything to the right of it. The :var:`config.displayable_prefix` variable maps a prefix to a function. The function takes the argument, and either returns a displayable or None."
 msgstr ""
 
-#: ../../source/displayables.rst:268
+#: ../../source/displayables.rst:271
 msgid "For example, this makes the big prefix return an image that is twice as big as the original. ::"
 msgstr ""
 
-#: ../../source/displayables.rst:277
+#: ../../source/displayables.rst:280
 msgid "The ``init -10`` makes sure the prefix is defined before any images that use it. The prefix can then be used to define images::"
 msgstr ""
 
-#: ../../source/displayables.rst:282
+#: ../../source/displayables.rst:285
 msgid "or in any other place where a displayable is required."
 msgstr ""
 

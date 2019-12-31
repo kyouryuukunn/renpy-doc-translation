@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 07:24+0900\n"
+"POT-Creation-Date: 2019-05-08 23:46+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Takuma Inagaki <kyouryuukunn2@yahoo.co.jp>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -174,7 +174,7 @@ msgid "Adds `value` to `set`."
 msgstr "`value` を `set` に追加します。"
 
 #: ../../source/inc/data_action:8 ../../source/inc/data_action:17
-#: ../../source/inc/data_action:79
+#: ../../source/inc/data_action:115
 msgid "`set`"
 msgstr "`set`"
 
@@ -188,13 +188,13 @@ msgstr ""
 "れます。"
 
 #: ../../source/inc/data_action:10 ../../source/inc/data_action:19
-#: ../../source/inc/data_action:81 ../../source/inc/audio_action:46
-#: ../../source/inc/value:9 ../../source/inc/value:120
+#: ../../source/inc/data_action:117 ../../source/inc/audio_action:46
+#: ../../source/inc/value:9 ../../source/inc/value:126
 msgid "`value`"
 msgstr "`value`"
 
 #: ../../source/inc/data_action:11 ../../source/inc/data_action:20
-#: ../../source/inc/data_action:82
+#: ../../source/inc/data_action:118
 msgid "The value to add or append."
 msgstr "追加または削除される値です。"
 
@@ -221,18 +221,45 @@ msgstr ""
 "を入れます。"
 
 #: ../../source/inc/data_action:34
+#, fuzzy
+msgid ""
+"Causes the variable `name` to be set to `value` in the current local context."
+msgstr "`variable` を `value` に設定します。"
+
+#: ../../source/inc/data_action:37
+msgid ""
+"This function is only useful in a screen that has been use by another scene, "
+"as it provides a way of setting the value of a variable inside the used "
+"screen. In all other cases, :func:`SetScreenVariable` should be preferred, "
+"as it allows more of the screen to be cached."
+msgstr ""
+
+#: ../../source/inc/data_action:43 ../../source/inc/data_action:89
+msgid ""
+"This must be created in the context that the variable is set in - it can't "
+"be passed in from somewhere else."
+msgstr ""
+
+#: ../../source/inc/data_action:48
 msgid ""
 "Causes the variable `name` associated with the current screen to be set to "
 "`value`."
 msgstr ""
 "現在のスクリーンに関連づけられた `name` の変数を `value` に設定します。"
 
-#: ../../source/inc/data_action:39
+#: ../../source/inc/data_action:53
 #, fuzzy
 msgid "Causes the variable with `name` to be set to `value`."
 msgstr "`variable` を `value` に設定します。"
 
-#: ../../source/inc/data_action:43
+#: ../../source/inc/data_action:55
+msgid ""
+"The `name` argument must be a string, and can be a simple name like "
+"\"strength\", or one with dots separating the variable from fields, like "
+"\"hero.strength\" or \"persistent.show_cutscenes\"."
+msgstr ""
+
+#: ../../source/inc/data_action:61
 msgid ""
 "Toggles the value of `key` in `dict`. Toggling means to invert the value "
 "when the action is performed."
@@ -240,27 +267,31 @@ msgstr ""
 "`dict` の `key` の値をトグルします。トグルとはアクションが実行されると、値が "
 "True が False に、 False が True になるということです。"
 
-#: ../../source/inc/data_action:46 ../../source/inc/data_action:56
-#: ../../source/inc/data_action:65 ../../source/inc/data_action:88
+#: ../../source/inc/data_action:64 ../../source/inc/data_action:74
+#: ../../source/inc/data_action:92 ../../source/inc/data_action:101
+#: ../../source/inc/data_action:129
 msgid "`true_value`"
 msgstr "`true_value`"
 
-#: ../../source/inc/data_action:47 ../../source/inc/data_action:57
-#: ../../source/inc/data_action:66 ../../source/inc/data_action:89
-msgid "If not None, then this is the true value we use."
+#: ../../source/inc/data_action:65 ../../source/inc/data_action:93
+#: ../../source/inc/data_action:102 ../../source/inc/data_action:130
+#, fuzzy
+msgid "If not None, then this is the true value used."
 msgstr "None を指定するか、 True として使用する値を指定します。"
 
-#: ../../source/inc/data_action:48 ../../source/inc/data_action:58
-#: ../../source/inc/data_action:67 ../../source/inc/data_action:90
+#: ../../source/inc/data_action:66 ../../source/inc/data_action:76
+#: ../../source/inc/data_action:94 ../../source/inc/data_action:103
+#: ../../source/inc/data_action:131
 msgid "`false_value`"
 msgstr "`false_value`"
 
-#: ../../source/inc/data_action:49 ../../source/inc/data_action:59
-#: ../../source/inc/data_action:68 ../../source/inc/data_action:91
-msgid "If not None, then this is the false value we use."
+#: ../../source/inc/data_action:67 ../../source/inc/data_action:95
+#: ../../source/inc/data_action:104 ../../source/inc/data_action:132
+#, fuzzy
+msgid "If not None, then this is the false value used."
 msgstr "None を指定するか False として使用する値を指定します。"
 
-#: ../../source/inc/data_action:53
+#: ../../source/inc/data_action:71
 msgid ""
 "Toggles `field` on `object`. Toggling means to invert the boolean value of "
 "that field when the action is performed."
@@ -268,11 +299,32 @@ msgstr ""
 "`object` の `field` をトグルします。トグルとは、アクション実行時にそのフィー"
 "ルドの真偽値を反転することです。"
 
-#: ../../source/inc/data_action:63
+#: ../../source/inc/data_action:75
+msgid "If not None, then this is the true value we use."
+msgstr "None を指定するか、 True として使用する値を指定します。"
+
+#: ../../source/inc/data_action:77
+msgid "If not None, then this is the false value we use."
+msgstr "None を指定するか False として使用する値を指定します。"
+
+#: ../../source/inc/data_action:81
+#, fuzzy
+msgid "Toggles the value of `name` in the current local context."
+msgstr "現在のスクリーンの `name` と名付けられた変数の値をトグルします。"
+
+#: ../../source/inc/data_action:83
+msgid ""
+"This function is only useful in a screen that has been use by another scene, "
+"as it provides a way of setting the value of a variable inside the used "
+"screen. In all other cases, :func:`ToggleScreenVariable` should be "
+"preferred, as it allows more of the screen to be cached."
+msgstr ""
+
+#: ../../source/inc/data_action:99
 msgid "Toggles the value of the variable `name` in the current screen."
 msgstr "現在のスクリーンの `name` と名付けられた変数の値をトグルします。"
 
-#: ../../source/inc/data_action:72
+#: ../../source/inc/data_action:108
 msgid ""
 "Toggles the membership of `value` in `set`. If the value is not in the set, "
 "it's added. Otherwise, it is removed."
@@ -280,7 +332,7 @@ msgstr ""
 "`set` から `value` をトグルします。値が set になければ追加され、そうでなけれ"
 "ば削除されます。"
 
-#: ../../source/inc/data_action:75
+#: ../../source/inc/data_action:111
 msgid ""
 "Buttons with this action are marked as selected if and only if the value is "
 "in the set."
@@ -288,7 +340,7 @@ msgstr ""
 "このアクションを持つボタンはその set にその値があるときのみ選択状態としてマー"
 "クされます。"
 
-#: ../../source/inc/data_action:79
+#: ../../source/inc/data_action:115
 msgid ""
 "The set to add to or remove from. This may be a set or list. In the case of "
 "a list, new items are appended."
@@ -296,9 +348,16 @@ msgstr ""
 "追加する set です。これは python の set またはリストで、値がそれに付け加えら"
 "れます。"
 
-#: ../../source/inc/data_action:86
+#: ../../source/inc/data_action:122
 msgid "Toggles `variable`."
 msgstr "`variable` をトグルします。"
+
+#: ../../source/inc/data_action:124
+msgid ""
+"The `variable` argument must be a string, and can be a simple name like "
+"\"strength\", or one with dots separating the variable from fields, like "
+"\"hero.strength\" or \"persistent.show_cutscenes\"."
+msgstr ""
 
 #: ../../source/screen_actions.rst:44
 msgid "Menu Actions"
@@ -318,7 +377,7 @@ msgstr "Ren'Py をメインメニューに戻らせます。"
 
 #: ../../source/inc/menu_action:9 ../../source/inc/menu_action:18
 #: ../../source/inc/file_action:27 ../../source/inc/file_action:45
-#: ../../source/inc/file_action:100 ../../source/inc/file_action:127
+#: ../../source/inc/file_action:97 ../../source/inc/file_action:124
 #: ../../source/inc/other_action:179
 msgid "`confirm`"
 msgstr "`confirm`"
@@ -428,7 +487,7 @@ msgstr ""
 
 #: ../../source/screen_actions.rst:59 ../../source/inc/file_action:11
 #: ../../source/inc/file_action:24 ../../source/inc/file_action:42
-#: ../../source/inc/file_action:97
+#: ../../source/inc/file_action:94
 msgid "`name`"
 msgstr "`name`"
 
@@ -442,7 +501,7 @@ msgstr ""
 
 #: ../../source/screen_actions.rst:64 ../../source/inc/file_action:15
 #: ../../source/inc/file_action:31 ../../source/inc/file_action:49
-#: ../../source/inc/file_action:107 ../../source/inc/input_value:44
+#: ../../source/inc/file_action:104 ../../source/inc/input_value:44
 #: ../../source/inc/file_action_function:99
 msgid "`page`"
 msgstr "`page`"
@@ -496,7 +555,7 @@ msgid "The name of the slot to delete."
 msgstr "アクセスするスロットの番号"
 
 #: ../../source/inc/file_action:27 ../../source/inc/file_action:45
-#: ../../source/inc/file_action:128
+#: ../../source/inc/file_action:125
 msgid ""
 "If true and not at the main menu, prompt for confirmation before loading the "
 "file."
@@ -512,12 +571,12 @@ msgstr ""
 "ファイルがロードされるページです。 None の場合、現在のページが使用されます。"
 
 #: ../../source/inc/file_action:33 ../../source/inc/file_action:57
-#: ../../source/inc/file_action:114 ../../source/inc/file_action_function:70
+#: ../../source/inc/file_action:111 ../../source/inc/file_action_function:70
 msgid "`slot`"
 msgstr "`slot`"
 
 #: ../../source/inc/file_action:34 ../../source/inc/file_action:58
-#: ../../source/inc/file_action:115
+#: ../../source/inc/file_action:112
 msgid "If True, `name` is taken to be a slot name, and `page` is ignored."
 msgstr ""
 
@@ -534,8 +593,8 @@ msgstr ""
 "ロードするスロットの名前です。 None の場合、ロードできない未使用のスロットが"
 "使用されます。"
 
-#: ../../source/inc/file_action:52 ../../source/inc/file_action:103
-#: ../../source/inc/file_action:137
+#: ../../source/inc/file_action:52 ../../source/inc/file_action:100
+#: ../../source/inc/file_action:134
 msgid "`newest`"
 msgstr "`newest`"
 
@@ -543,11 +602,11 @@ msgstr "`newest`"
 msgid "If true, the button is selected if this is the newest file."
 msgstr "True で、これが最新のファイルであれば選択状態になります。"
 
-#: ../../source/inc/file_action:55 ../../source/inc/file_action:112
+#: ../../source/inc/file_action:55 ../../source/inc/file_action:109
 msgid "`cycle`"
 msgstr "`cycle`"
 
-#: ../../source/inc/file_action:55 ../../source/inc/file_action:103
+#: ../../source/inc/file_action:55 ../../source/inc/file_action:100
 msgid "Ignored."
 msgstr "無視されます。"
 
@@ -562,7 +621,7 @@ msgstr ""
 msgid "Goes to the next file page."
 msgstr "次のファイルページに移動します。"
 
-#: ../../source/inc/file_action:71 ../../source/inc/file_action:83
+#: ../../source/inc/file_action:71
 msgid "`max`"
 msgstr "`max`"
 
@@ -572,50 +631,50 @@ msgid ""
 "page we can go to."
 msgstr "設定する場合は、移動可能なファイルページの最大数を与える整数にします。"
 
-#: ../../source/inc/file_action:73 ../../source/inc/file_action:85
+#: ../../source/inc/file_action:75
 msgid "`wrap`"
 msgstr "`wrap`"
 
 #: ../../source/inc/file_action:74
+#, fuzzy
 msgid ""
-"If true, we can go to the first page when on the last file page if max is "
+"If true, we can go to the first page when on the last file page if `max` is "
 "set."
 msgstr ""
 "True のとき、max が設定されていれば、最後のファイルページにいるときに最初の"
 "ページに戻ります。"
 
-#: ../../source/inc/file_action:78
-msgid "Goes to the previous file page, if possible."
-msgstr "可能であれば前のファイルページに移動します。"
+#: ../../source/inc/file_action:79 ../../source/inc/input_value:37
+#: ../../source/inc/file_action_function:76
+msgid "`auto`"
+msgstr "`auto`"
 
-#: ../../source/inc/file_action:81
+#: ../../source/inc/file_action:78 ../../source/inc/file_action:82
+#, fuzzy
 msgid ""
-"If set, this should be an integer that gives the number of the maximum file "
-"page we can go to. This is required to enable wrap."
+"If true and wrap is set, this can bring the player to the page of automatic "
+"saves."
 msgstr ""
-"設定する場合は、移動可能なファイルページの最大数を与える整数にします。これは "
-"wrap を有効にするときに必要です。"
+"True のとき、max が設定されていれば、最後のファイルページにいるときに最初の"
+"ページに戻ります。"
 
-#: ../../source/inc/file_action:86
-msgid ""
-"If true, we can go to the last page when on the first file page if max is "
-"set."
-msgstr ""
-"True のとき、max が設定されていれば、最初のファイルページにいるときに最後の"
-"ページに行きます。"
+#: ../../source/inc/file_action:82 ../../source/inc/input_value:40
+#: ../../source/inc/file_action_function:79
+msgid "`quick`"
+msgstr "`quick`"
 
-#: ../../source/inc/file_action:90
+#: ../../source/inc/file_action:87
 msgid "Saves the file."
 msgstr "ファイルにセーブします。"
 
-#: ../../source/inc/file_action:92
+#: ../../source/inc/file_action:89
 msgid ""
 "The button with this slot is selected if it's marked as the newest save file."
 msgstr ""
 "このスロットのボタンが最新のセーブファイルとしてマークされていれば選択状態に"
 "なります。"
 
-#: ../../source/inc/file_action:96
+#: ../../source/inc/file_action:93
 msgid ""
 "The name of the slot to save to. If None, an unused slot (a large number "
 "based on the current time) will be used."
@@ -623,17 +682,17 @@ msgstr ""
 "セーブするスロット名です。 None なら未使用 ( 現在時刻を元にした大きな数字"
 "の ) スロットが使用されます。"
 
-#: ../../source/inc/file_action:100
+#: ../../source/inc/file_action:97
 msgid "If true, then we will prompt before overwriting a file."
 msgstr "True の場合、ファイルを上書きする前に確認します。"
 
-#: ../../source/inc/file_action:106
+#: ../../source/inc/file_action:103
 msgid ""
 "The name of the page that the slot is on. If None, the current page is used."
 msgstr ""
 "スロットのあるページの名前です。 None の場合は現在のページが使用されます。"
 
-#: ../../source/inc/file_action:110
+#: ../../source/inc/file_action:107
 msgid ""
 "If true, then saves on the supplied page will be cycled before being shown "
 "to the user. :var:`config.quicksave_slots` slots are used in the cycle."
@@ -641,7 +700,7 @@ msgstr ""
 "True の場合、提供されたページのセーブはユーザーに表示される前に一回りしま"
 "す。 :var:`config.quicksave_slots` が回すときに使用されます。"
 
-#: ../../source/inc/file_action:119
+#: ../../source/inc/file_action:116
 msgid ""
 "Take a screenshot to be used when the game is saved. This can be used to "
 "ensure that the screenshot is accurate, by taking a picture of the screen "
@@ -651,23 +710,23 @@ msgstr ""
 "示される前のスクリーンを撮り、スクリーンショットが正しいことを保証するために"
 "使用されます。"
 
-#: ../../source/inc/file_action:125
+#: ../../source/inc/file_action:122
 msgid "Performs a quick load."
 msgstr "クイックロードを処理します。"
 
-#: ../../source/inc/file_action:132
+#: ../../source/inc/file_action:129
 msgid "Performs a quick save."
 msgstr "クイックセーブを処理します。"
 
-#: ../../source/inc/file_action:135
+#: ../../source/inc/file_action:132
 msgid "`message`"
 msgstr "`message`"
 
-#: ../../source/inc/file_action:135
+#: ../../source/inc/file_action:132
 msgid "A message to display to the user when the quick save finishes."
 msgstr "クイックセーブが終了するとユーザーに表示されるメッセージです。"
 
-#: ../../source/inc/file_action:138
+#: ../../source/inc/file_action:135
 msgid "Set to true to mark the quicksave as the newest save."
 msgstr "最新のセーブとしてクイックセーブをマークする場合は True に設定します。"
 
@@ -741,7 +800,7 @@ msgid "Sets the volume of `mixer` to `value`."
 msgstr "`mixer` の音量を `value` に設定します。"
 
 #: ../../source/inc/audio_action:43 ../../source/inc/audio_action:57
-#: ../../source/inc/audio_action:77 ../../source/inc/value:88
+#: ../../source/inc/audio_action:77 ../../source/inc/value:92
 msgid "`mixer`"
 msgstr "`mixer`"
 
@@ -1142,13 +1201,13 @@ msgstr ""
 "これはアニメーション用の value で、 `delay` 秒かけて `old_value` から "
 "`value` に変化します。"
 
-#: ../../source/inc/value:9 ../../source/inc/value:120
+#: ../../source/inc/value:9 ../../source/inc/value:126
 msgid "The value itself, a number."
 msgstr "値の数字です。"
 
 #: ../../source/inc/value:12 ../../source/inc/value:40
-#: ../../source/inc/value:65 ../../source/inc/value:97
-#: ../../source/inc/value:122 ../../source/inc/value:132
+#: ../../source/inc/value:67 ../../source/inc/value:101
+#: ../../source/inc/value:128 ../../source/inc/value:138
 msgid "`range`"
 msgstr "`range`"
 
@@ -1210,13 +1269,13 @@ msgstr "`key`"
 msgid "The key."
 msgstr "キー"
 
-#: ../../source/inc/value:41 ../../source/inc/value:66
-#: ../../source/inc/value:98 ../../source/inc/value:133
+#: ../../source/inc/value:41 ../../source/inc/value:68
+#: ../../source/inc/value:102 ../../source/inc/value:139
 msgid "The range to adjust over."
 msgstr "調整の範囲"
 
-#: ../../source/inc/value:46 ../../source/inc/value:72
-#: ../../source/inc/value:104 ../../source/inc/value:139
+#: ../../source/inc/value:46 ../../source/inc/value:74
+#: ../../source/inc/value:108 ../../source/inc/value:145
 msgid "`max_is_zero`"
 msgstr "`max_is_zero`"
 
@@ -1230,61 +1289,74 @@ msgstr ""
 "がっていきます。これはバーが最大に設定されるか、キーの値が 0 に設定されるかの"
 "両方の方法で動作します。"
 
-#: ../../source/inc/value:48 ../../source/inc/value:74
-#: ../../source/inc/value:106 ../../source/inc/value:141
+#: ../../source/inc/value:48 ../../source/inc/value:76
+#: ../../source/inc/value:110 ../../source/inc/value:147
 msgid "`style`"
 msgstr "`style`"
 
-#: ../../source/inc/value:49 ../../source/inc/value:75
-#: ../../source/inc/value:107 ../../source/inc/value:142
+#: ../../source/inc/value:49 ../../source/inc/value:77
+#: ../../source/inc/value:111 ../../source/inc/value:148
 msgid "The styles of the bar created."
 msgstr "作成されるバーのスタイル"
 
-#: ../../source/inc/value:50 ../../source/inc/value:76
-#: ../../source/inc/value:108 ../../source/inc/value:143
+#: ../../source/inc/value:50 ../../source/inc/value:78
+#: ../../source/inc/value:112 ../../source/inc/value:149
 msgid "`offset`"
 msgstr "`offset`"
 
-#: ../../source/inc/value:51 ../../source/inc/value:77
-#: ../../source/inc/value:109 ../../source/inc/value:144
+#: ../../source/inc/value:51 ../../source/inc/value:79
+#: ../../source/inc/value:113 ../../source/inc/value:150
 msgid "An offset to add to the value."
 msgstr "値に加えられるオフセット"
 
-#: ../../source/inc/value:53 ../../source/inc/value:79
-#: ../../source/inc/value:111 ../../source/inc/value:146
+#: ../../source/inc/value:53 ../../source/inc/value:81
+#: ../../source/inc/value:115 ../../source/inc/value:152
 msgid "`step`"
 msgstr "`step`"
 
-#: ../../source/inc/value:53 ../../source/inc/value:79
-#: ../../source/inc/value:111 ../../source/inc/value:146
+#: ../../source/inc/value:53 ../../source/inc/value:81
+#: ../../source/inc/value:115 ../../source/inc/value:152
 msgid ""
 "The amount to change the bar by. If None, defaults to 1/10th of the bar."
 msgstr "バーが変更する量。 None の場合、デフォルトでバーの10分の1です。"
 
-#: ../../source/inc/value:58
+#: ../../source/inc/value:55 ../../source/inc/value:83
+#: ../../source/inc/value:117 ../../source/inc/value:154
+#, fuzzy
+msgid "`action`"
+msgstr "`duration`"
+
+#: ../../source/inc/value:56 ../../source/inc/value:84
+#: ../../source/inc/value:118 ../../source/inc/value:155
+#, fuzzy
+msgid "If not None, an action to call when the field has changed."
+msgstr ""
+"None でなければスクリーンを非表示にするときにトランジションが使用されます。"
+
+#: ../../source/inc/value:60
 msgid ""
 "A bar value that allows the user to adjust the value of a field on an object."
 msgstr ""
 "ユーザーがオブジェクトのフィールドの値を調整できるようにする bar value です。"
 
-#: ../../source/inc/value:61
+#: ../../source/inc/value:63
 msgid "`object`"
 msgstr "`object`"
 
-#: ../../source/inc/value:62
+#: ../../source/inc/value:64
 msgid "The object."
 msgstr "オブジェクト"
 
-#: ../../source/inc/value:63 ../../source/inc/input_value:19
+#: ../../source/inc/value:65 ../../source/inc/input_value:19
 msgid "`field`"
 msgstr "`field`"
 
-#: ../../source/inc/value:64
+#: ../../source/inc/value:66
 msgid "The field, a string."
 msgstr "フィールドの文字列"
 
-#: ../../source/inc/value:68 ../../source/inc/value:100
-#: ../../source/inc/value:135
+#: ../../source/inc/value:70 ../../source/inc/value:104
+#: ../../source/inc/value:141
 msgid ""
 "If True, then when the field is zero, the value of the bar will be range, "
 "and all other values will be shifted down by 1. This works both ways - when "
@@ -1294,16 +1366,16 @@ msgstr ""
 "に上がっていきます。これはバーが最大に設定されるか、フィールドが 0 に設定され"
 "るかの両方の方法で動作します。"
 
-#: ../../source/inc/value:73 ../../source/inc/value:105
-#: ../../source/inc/value:140
+#: ../../source/inc/value:75 ../../source/inc/value:109
+#: ../../source/inc/value:146
 msgid "This is used internally, for some preferences."
 msgstr "これはいくつかの preferences の内部で使用されています。"
 
-#: ../../source/inc/value:84
+#: ../../source/inc/value:88
 msgid "The value of an audio mixer."
 msgstr "オーディオミキサーの value です。"
 
-#: ../../source/inc/value:87
+#: ../../source/inc/value:91
 msgid ""
 "The name of the mixer to adjust. This is usually one of \"music\", \"sfx\", "
 "or \"voice\", but creators can create new mixers."
@@ -1311,35 +1383,35 @@ msgstr ""
 "調整するミキサーの名前です。これは通常 「music」か「sfx」、「voice」ですが、"
 "ユーザーは新しいミキサーを作成できます。"
 
-#: ../../source/inc/value:93
+#: ../../source/inc/value:97
 msgid "A bar value that adjusts the value of a variable in a screen."
 msgstr "スクリーン変数の値を調整する bar valueです。"
 
-#: ../../source/inc/value:95 ../../source/inc/value:130
+#: ../../source/inc/value:99 ../../source/inc/value:136
 #: ../../source/inc/input_value:54 ../../source/inc/input_value:68
 msgid "`variable`"
 msgstr "`variable`"
 
-#: ../../source/inc/value:96 ../../source/inc/value:131
+#: ../../source/inc/value:100 ../../source/inc/value:137
 msgid "A string giving the name of the variable to adjust."
 msgstr "調整する変数の名前の文字列"
 
-#: ../../source/inc/value:117
+#: ../../source/inc/value:123
 msgid "This allows a value to be specified statically."
 msgstr "指定した値に固定します。"
 
-#: ../../source/inc/value:123
+#: ../../source/inc/value:129
 msgid "The range of the value."
 msgstr "値の範囲"
 
-#: ../../source/inc/value:127
+#: ../../source/inc/value:133
 msgid ""
 "A bar value that allows the user to adjust the value of a variable in the "
 "default store."
 msgstr ""
 "ユーザーがデフォルト store の変数の値を調整出来るようにする bar value です。"
 
-#: ../../source/inc/value:151
+#: ../../source/inc/value:159
 msgid ""
 "The value of an adjustment that horizontally scrolls the viewport with the "
 "given id, on the current screen. The viewport must be defined before a bar "
@@ -1349,7 +1421,7 @@ msgstr ""
 "given id, on the current screen. The viewport must be defined before a bar "
 "with this value is."
 
-#: ../../source/inc/value:157
+#: ../../source/inc/value:165
 msgid ""
 "The value of an adjustment that vertically scrolls the viewport with the "
 "given id, on the current screen. The viewport must be defined before a bar "
@@ -1439,17 +1511,9 @@ msgstr ""
 "ページのデフォルト名に使用されます。 Python スタイル補完が、 {} がページ番号"
 "で置き換えられるように処理されます。"
 
-#: ../../source/inc/input_value:37 ../../source/inc/file_action_function:76
-msgid "`auto`"
-msgstr "`auto`"
-
 #: ../../source/inc/input_value:37
 msgid "The name of the autosave page."
 msgstr "オートセーブページの名前です"
-
-#: ../../source/inc/input_value:40 ../../source/inc/file_action_function:79
-msgid "`quick`"
-msgstr "`quick`"
 
 #: ../../source/inc/input_value:40
 msgid "The name of the quicksave page."
@@ -2010,34 +2074,74 @@ msgstr ""
 "す。"
 
 #: ../../source/inc/preference_action:124
+msgid ""
+"Preference(\"font transform\", \"opendyslexic\") - Sets the accessibility "
+"font transform to opendyslexic."
+msgstr ""
+
+#: ../../source/inc/preference_action:125
+msgid ""
+"Preference(\"font transform\", \"dejavusans\") - Sets the accessibility font "
+"trandform to deja vu sans."
+msgstr ""
+
+#: ../../source/inc/preference_action:126
+msgid ""
+"Preference(\"font transform\", None) - Disables the accessibility font "
+"transform."
+msgstr ""
+
+#: ../../source/inc/preference_action:128
+msgid ""
+"Preference(\"font size\", 1.0) - Sets the accessibility font size scaling "
+"factor."
+msgstr ""
+
+#: ../../source/inc/preference_action:129
+msgid ""
+"Preference(\"font vertical spacing\", 1.0) - Sets the accessibility font "
+"vertical spacing scaling factor."
+msgstr ""
+
+#: ../../source/inc/preference_action:131
 msgid "Values that can be used with bars are:"
 msgstr "バーで使用される value  :"
 
-#: ../../source/inc/preference_action:126
+#: ../../source/inc/preference_action:133
 msgid "Preference(\"text speed\")"
 msgstr "Preference(\"text speed\")"
 
-#: ../../source/inc/preference_action:127
+#: ../../source/inc/preference_action:134
 msgid "Preference(\"auto-forward time\")"
 msgstr "Preference(\"auto-forward time\")"
 
-#: ../../source/inc/preference_action:128
+#: ../../source/inc/preference_action:135
 msgid "Preference(\"music volume\")"
 msgstr "Preference(\"music volume\")"
 
-#: ../../source/inc/preference_action:129
+#: ../../source/inc/preference_action:136
 msgid "Preference(\"sound volume\")"
 msgstr "Preference(\"sound volume\")"
 
-#: ../../source/inc/preference_action:130
+#: ../../source/inc/preference_action:137
 msgid "Preference(\"voice volume\")"
 msgstr "Preference(\"voice volume\")"
 
-#: ../../source/inc/preference_action:131
+#: ../../source/inc/preference_action:138
 msgid "Preference(\"mixer <mixer> volume\")"
 msgstr "Preference(\"mixer <mixer> volume\")"
 
-#: ../../source/inc/preference_action:133
+#: ../../source/inc/preference_action:139
+#, fuzzy
+msgid "Preference(\"font size\")"
+msgstr "Preference(\"text speed\")"
+
+#: ../../source/inc/preference_action:140
+#, fuzzy
+msgid "Preference(\"font vertical spacing\")"
+msgstr "Preference(\"text speed\")"
+
+#: ../../source/inc/preference_action:142
 msgid ""
 "The `range` parameter can be given to give the range of certain bars. For "
 "\"text speed\", it defaults to 200 cps. For \"auto-forward time\", it "
@@ -2400,6 +2504,23 @@ msgstr ""
 "Tooltip はどんな値もとれます。以下の例ではスクリーンに文字を表示するため "
 "text ステートメントを使用していますが、 add ステートメントによって "
 "displayable を追加することも可能です。さらに複雑な動作も可能です。"
+
+#~ msgid "Goes to the previous file page, if possible."
+#~ msgstr "可能であれば前のファイルページに移動します。"
+
+#~ msgid ""
+#~ "If set, this should be an integer that gives the number of the maximum "
+#~ "file page we can go to. This is required to enable wrap."
+#~ msgstr ""
+#~ "設定する場合は、移動可能なファイルページの最大数を与える整数にします。これ"
+#~ "は wrap を有効にするときに必要です。"
+
+#~ msgid ""
+#~ "If true, we can go to the last page when on the first file page if max is "
+#~ "set."
+#~ msgstr ""
+#~ "True のとき、max が設定されていれば、最初のファイルページにいるときに最後"
+#~ "のページに行きます。"
 
 #~ msgid "If true, prompts before deleting a file."
 #~ msgstr "True の場合、ファイルを削除する前に尋ねます。"

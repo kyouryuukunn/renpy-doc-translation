@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012-2018, Tom Rothamel
+# Copyright (C) 2012-2019, Tom Rothamel
 # This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.2.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-30 14:49+0900\n"
+"POT-Creation-Date: 2019-10-21 22:56+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,78 +25,90 @@ msgid "Ren'Py has support for defining your own text tags. These text tags can m
 msgstr ""
 
 #: ../../source/custom_text_tags.rst:14
-msgid "Custom text tags are created by assigning a text tag function to an entry in the config.custom_text_tags dictionary."
+msgid "Custom text tags are created by assigning a text tag function to an entry in the config.custom_text_tags dictionary or the config.self_closing_custom_tags dictionary."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:19
-msgid "Maps text tag names to text tag functions."
-msgstr ""
-
-#: ../../source/custom_text_tags.rst:21
-msgid "A text tag function takes three arguments: The tag itself, the argument for the tag, and a list of content tuples. For example, for the text::"
+#: ../../source/custom_text_tags.rst:20
+msgid "Maps text tag names to text tag functions, when the text tag can wrap other text."
 msgstr ""
 
 #: ../../source/custom_text_tags.rst:26
+msgid "Maps text tag names to a self-closing text tag functions, when the text tag does not wrap other text."
+msgstr ""
+
+#: ../../source/custom_text_tags.rst:29
+msgid "A text tag function takes three arguments: The tag itself, the argument for the tag, and a list of content tuples. For example, for the text::"
+msgstr ""
+
+#: ../../source/custom_text_tags.rst:34
 msgid "The tag will be \"big\", the argument will be the string \"2\", and the list of content tuples will be::"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:36
+#: ../../source/custom_text_tags.rst:44
 msgid "The text tag function should return a new list of content tuples, which is used to replace the text tag and its contents."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:39
+#: ../../source/custom_text_tags.rst:47
 msgid "Content tuples consist of two components. The first component is one of the the constants in the following list. The second component varies based on the first component, as described below."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:44
+#: ../../source/custom_text_tags.rst:52
 msgid "renpy.TEXT_TEXT"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:44
+#: ../../source/custom_text_tags.rst:52
 msgid "The second component is text that is intended for display to the user."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:48
+#: ../../source/custom_text_tags.rst:56
 msgid "renpy.TEXT_TAG"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:47
+#: ../../source/custom_text_tags.rst:55
 msgid "The second component is the contents of a text tag, without the enclosing braces."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:51
+#: ../../source/custom_text_tags.rst:59
 msgid "renpy.TEXT_DISPLAYABLE"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:51
+#: ../../source/custom_text_tags.rst:59
 msgid "The second component is a displayable to be embedded into the text."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:55
+#: ../../source/custom_text_tags.rst:63
 msgid "renpy.TEXT_PARAGRAPH"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:54
+#: ../../source/custom_text_tags.rst:62
 msgid "This represents a break between paragraphs, and the second component is undefined (but must be present)."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:58
+#: ../../source/custom_text_tags.rst:65
+msgid "A self-closing text tag function is similar, except that it does not take the third argument."
+msgstr ""
+
+#: ../../source/custom_text_tags.rst:69
 msgid "Caveats"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:60
+#: ../../source/custom_text_tags.rst:71
 msgid "The dialogue text tags {p}, {w}, {nw}, and {fast} are processed before custom text tags, and should either be not included inside a custom text tag, or passed through unchanged."
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:65
+#: ../../source/custom_text_tags.rst:76
 msgid "Examples"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:67
+#: ../../source/custom_text_tags.rst:78
 msgid "The example ``big`` text tag works like the {size} text tag, but applies a multiplier to its argument. ::"
 msgstr ""
 
-#: ../../source/custom_text_tags.rst:87
+#: ../../source/custom_text_tags.rst:98
 msgid "The example ``rot13`` text tag applies the ROT13 transform to text. Note that ROT26 – ROT13 applied twice – is just normal text. ::"
+msgstr ""
+
+#: ../../source/custom_text_tags.rst:119
+msgid "The ``bang`` text tag inserts a specific image into the text, and doesn't require a closing tag. ::"
 msgstr ""
 

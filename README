@@ -97,18 +97,21 @@ gitの使用方法が分からない場合は、上記のサイトから"clone or download"->"Download 
 
 
 **最新のrenpyからpoファイルを生成したい場合**
-必要なもの:
-gettext
-python2
-python2 sphinx, sphinx-bootstrap-theme(ver 0.4.11)
-wsl(windowsの場合)
-update-po-from-pot(このレポジトリに含まれています)
-renpy/READMEで記述されているライブラリ一式
-
 最近のバージョンでドキュメントをコンパイルするのに必要なファイルをrenpy/sphinx/build.shにより自分で
 生成するようになりました。それにともない依存するライブラリが増えため、msysでのコンパイルは諦めた方がいいです。
 Virtual BoxかWSLからLinux使いましょう
 
+wslの場合
+まず必要なファイルを用意
+wslを起動して以下のコマンドを実行
+sudo apt-get update
+sudo apt install make
+sudo apt install gettext
+sudo apt install git
+sudo apt install python-pip
+pip install sphinx-bootstrap-theme\==0.4.11
+pip install sphinx\==1.6.6.0
+pip install future
 
 1:任意のフォルダに開発中のrenpyをクローン
 cd ~/

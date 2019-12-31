@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-11 07:24+0900\n"
-"PO-Revision-Date: 2016-06-24 15:28+0900\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2019-12-30 11:09+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -283,7 +283,7 @@ msgstr "`alpha`"
 #: ../../source/inc/transition:17 ../../source/inc/transition:122
 #: ../../source/inc/transition:170
 msgid "Ignored."
-msgstr ""
+msgstr "無視されます。"
 
 #: ../../source/inc/transition:21 ../../source/inc/transition:167
 msgid "`reverse`"
@@ -310,7 +310,6 @@ msgstr ""
 "ジションに与えられます。"
 
 #: ../../source/inc/transition:39
-#, fuzzy
 msgid ""
 "Returns a transition that works by cropping a scene and positioning it on "
 "the screen. This can be used to implement a variety of effects, all of which "
@@ -530,7 +529,6 @@ msgstr ""
 "シェード暗いピクセルのディゾルブインが進みます。"
 
 #: ../../source/inc/transition:167
-#, fuzzy
 msgid "If True, black pixels will dissolve in before white pixels."
 msgstr ""
 "True なら、黒いピクセルの方が白いビクセルより先にディゾルブインします。"
@@ -768,7 +766,6 @@ msgid "`time_warp`, `in_time_warp`, `out_time_warp`"
 msgstr "`time_warp`, `in_time_warp`, `out_time_warp`"
 
 #: ../../source/inc/transition_family:22
-#, fuzzy
 msgid ""
 "Time warp functions that are given a time from 0.0 to 1.0 representing the "
 "fraction of the move that is complete, and return a value in the same range "
@@ -785,7 +782,6 @@ msgid ""
 msgstr "これは、一定の速度では動かない画像を動かす関数を定義するのに使えます。"
 
 #: ../../source/inc/transition_family:29
-#, fuzzy
 msgid ""
 "The three arguments are used for images remaining on the screen, newly shown "
 "images, and newly hidden images, respectively."
@@ -806,9 +802,8 @@ msgid "The layers the transition will apply to."
 msgstr "トランジションが適用されるレイヤーです。"
 
 #: ../../source/transitions.rst:175
-#, fuzzy
 msgid "Dict Transitions"
-msgstr "トランジション"
+msgstr "辞書トランジション"
 
 #: ../../source/transitions.rst:177
 msgid ""
@@ -816,6 +811,9 @@ msgid ""
 "specify a dictionary that maps layer names to this transition. When this is "
 "the case, Ren'Py applies each transition to the appropriate layer."
 msgstr ""
+"Ren'PY がトランジションを受ける様々な場所で、レイヤー名をキーに、トランジショ"
+"ンを値とする辞書を代わりに指定できます。この場合、 Ren'PY 破対応するレイヤー"
+"にそれぞれのトランジションを適用します。"
 
 #: ../../source/transitions.rst:181
 msgid ""
@@ -824,20 +822,25 @@ msgid ""
 "immediately, and the transitions are scheduled to occur at the start of the "
 "next interaction."
 msgstr ""
+"辞書が使用されると、通常行われるトランジション時のポーズはありません。代わり"
+"に辞書を受け取ったステートメントは即座に制御を返し、次のインタラクションの開"
+"始時時に実行するようスケジュールされます。"
 
 #: ../../source/transitions.rst:186
 msgid ""
 "This can be used with the master layer to cause transitions to occur while "
 "dialogue is being shown on the screen. For example, if we wrote::"
 msgstr ""
+"これを使用して,台詞をスクリーンに表示したまま、マスターレイヤーにトランジショ"
+"ンを実行できます。例えば、以下のように記述し、"
 
 #: ../../source/transitions.rst:191
 msgid "and::"
-msgstr ""
+msgstr "次のようにすると :"
 
 #: ../../source/transitions.rst:198
 msgid "The dissolve will take place while the text is displayed on the screen."
-msgstr ""
+msgstr "ディゾルブ実行中テキストが表示され続けます。"
 
 #: ../../source/transitions.rst:200
 msgid ""
@@ -850,6 +853,14 @@ msgid ""
 "not* work inside things that don't work with layers, such as ATL, :func:"
 "`ComposeTransition` and :func:`MultipleTransition`."
 msgstr ""
+"辞書トランジションはすべてのトランジションをおける場所で使用できるわけではな"
+"く、レイヤーへのトランジションが可能な墓所でのみ使用できます。 ``with`` ス"
+"テートメントや scene, show, hide ステートメントの ``with`` 節でも使用できま"
+"す。  :func:`renpy.with_statement` と :func:`renpy.transition` の関数や  :"
+"func:`Show` , :func:`Hide`  アクション、トランジションを受ける様々な設定変数"
+"でも使用できます。辞書トランジションは ATL や  :func:`ComposeTransition` と :"
+"func:`MultipleTransition` のようなレイヤーに対して動作しないものの内部では動"
+"作しないでしょう。"
 
 #: ../../source/transitions.rst:209
 msgid ""
@@ -859,11 +870,16 @@ msgid ""
 "For example, if you are seeing weird blinking when the dialogue window shows "
 "and hides, consider changing options.rpy to have::"
 msgstr ""
+"これにより ``window auto`` で起きるトランジションのような、自身でトランジショ"
+"ンを起こす with ステートメントに作用できます。それは異なるレイヤーには2つ目の"
+"辞書トランジションを適用して対処できます。例えば、もし台詞ウィンドウの表示非"
+"表示時における唐突な点滅を目にするなら options.rpy を以下のように変更すること"
+"を考えてください。 ::"
 
 #: ../../source/transitions.rst:218
 msgid ""
 "This works because the dialogue window exists entirely on the screens layer."
-msgstr ""
+msgstr "これは台詞ウィンドウがスクリーンレイヤーにあるために動作します。"
 
 #~ msgid ""
 #~ "If true, the image is composited with what's behind it. If false, the "
