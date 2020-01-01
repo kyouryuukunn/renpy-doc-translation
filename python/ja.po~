@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-08 23:46+0900\n"
-"PO-Revision-Date: 2018-02-12 23:31+0900\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2019-10-21 22:56+0900\n"
+"PO-Revision-Date: 2019-12-30 15:24+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,6 @@ msgid "Python Statements"
 msgstr "Python ステートメント"
 
 #: ../../source/python.rst:9
-#, fuzzy
 msgid ""
 "Ren'Py is written in the Python programming language, and includes support "
 "for including Python inside Ren'Py scripts. Python support can be used for "
@@ -41,27 +40,27 @@ msgid ""
 "Ren'Py currently supports Python 2.7, though we strongly recommend you write "
 "Python that runs in Python 2 and Python 3."
 msgstr ""
+"Ren'Py は現在Python 2.7 をサポートしますが、Python2 と 3 両方で動作する用記述"
+"することを強く推奨します。"
 
 #: ../../source/python.rst:21
 msgid "Python"
 msgstr "Python"
 
 #: ../../source/python.rst:23
-#, fuzzy
 msgid ""
 "The ``python`` statement takes a block of Python, and runs the block when "
 "control reaches the statement. A basic Python statement can be very simple::"
 msgstr ""
-"python ステートメントは python コードのブロックを取り、制御がそのステートメン"
-"トまで到達するとそのコードを実行します。基本的な python ステートメントはとて"
-"も単純です。 ::"
+"``python`` ステートメントは python コードのブロックを取り、制御がそのステート"
+"メントまで到達するとそのコードを実行します。基本的な python ステートメントは"
+"とても単純です。 ::"
 
 #: ../../source/python.rst:30
 msgid "Python statements can get more complex, when necessary::"
 msgstr "python ステートメントは必要ならさらに複雑になります。"
 
 #: ../../source/python.rst:37
-#, fuzzy
 msgid ""
 "There are two modifiers to the Python statement that change its behavior:"
 msgstr "python ステートメントにはその動作を変更するものが二つあります。 :"
@@ -71,7 +70,6 @@ msgid "``hide``"
 msgstr "``hide``"
 
 #: ../../source/python.rst:41
-#, fuzzy
 msgid ""
 "If given the hide modifier, the Python statement will run the block of "
 "Python in an anonymous scope. The scope will be lost when the Python block "
@@ -81,7 +79,6 @@ msgstr ""
 "を実行します。そのスコープは python ブロックが終了すると消失します。"
 
 #: ../../source/python.rst:45
-#, fuzzy
 msgid ""
 "This allows Python to use temporary variables that can't be saved – but it "
 "means that the store needs to be accessed as fields on the store object, "
@@ -108,7 +105,6 @@ msgid "One-line Python Statement"
 msgstr "一行 python"
 
 #: ../../source/python.rst:58
-#, fuzzy
 msgid ""
 "A common case is to have a single line of Python that runs in the default "
 "store. For example, a Python one-liner can be used to initialize or update a "
@@ -121,14 +117,13 @@ msgstr ""
 "ます。"
 
 #: ../../source/python.rst:63
-#, fuzzy
 msgid ""
 "The one-line Python statement begins with the dollar-sign ``$`` character, "
 "and contains everything else on that line. Here are some example of Python "
 "one-liners::"
 msgstr ""
-"一行 python ステートメントはドル記号 ($) で始まり、その行にコードのすべてを含"
-"みます。ここでは 一行 python の例をいくつか示します。 ::"
+"一行 python ステートメントはドル記号 ``$`` で始まり、その行にコードのすべてを"
+"含みます。ここでは 一行 python の例をいくつか示します。 ::"
 
 #: ../../source/python.rst:79
 msgid "Python one-liners always run in the default store."
@@ -149,7 +144,6 @@ msgstr ""
 "の初期化に使用されます。 ::"
 
 #: ../../source/python.rst:107
-#, fuzzy
 msgid ""
 "A priority number can be placed between ``init`` and ``python``. When a "
 "priority is not given, 0 is used. Init statements are run in priority order, "
@@ -191,11 +185,10 @@ msgid "Define Statement"
 msgstr "define ステートメント"
 
 #: ../../source/python.rst:128
-#, fuzzy
 msgid ""
 "The ``define`` statement sets a single variable to a value at init time. For "
 "example::"
-msgstr "define ステートメントは初期化時、変数に値を設定します。例えば ::"
+msgstr "``define``  ステートメントは初期化時、変数に値を設定します。例えば ::"
 
 #: ../../source/python.rst:133
 msgid "is equivalent to::"
@@ -234,14 +227,13 @@ msgid "Default Statement"
 msgstr "default ステートメント"
 
 #: ../../source/python.rst:157
-#, fuzzy
 msgid ""
 "The ``default`` statement sets a single variable to a value if that variable "
 "is not defined when the game starts, or after a new game is loaded. For "
 "example::"
 msgstr ""
-"default ステートメントは、ゲーム開始時かロード後に変数が定義されていなければ"
-"その変数の値を設定します。例えば ::"
+"``default`` ステートメントは、ゲーム開始時かロード後に変数が定義されていなけ"
+"ればその変数の値を設定します。例えば ::"
 
 #: ../../source/python.rst:163
 msgid ""
@@ -271,18 +263,18 @@ msgid "Init Offset Statement"
 msgstr "init offset ステートメント"
 
 #: ../../source/python.rst:185
-#, fuzzy
 msgid ""
 "The ``init offset`` statement sets a priority offset for all statements that "
 "run at init time (init, init python, define, default, screen, transform, "
 "style, and more). The offset applies to all following statements in the "
-"current block and chold blocks, up to the next init priority statement. The "
+"current block and child blocks, up to the next init priority statement. The "
 "statement::"
 msgstr ""
-"init offset ステートメントは初期化時に実行するすべてのステートメント ( init, "
-"init python, define, default, screen, transform, style, など ) に対して優先度"
-"のオフセットを設定します。オフセットは現在のブロックとコードブロック内の続く"
-"ステートメントに次の優先度ステートメントが来るまで適応されます。例 :: "
+"``init offset`` ステートメントは初期化時に実行するすべてのステートメント "
+"( init, init python, define, default, screen, transform, style, など ) に対し"
+"て優先度のオフセットを設定します。オフセットは現在のブロックとコードブロック"
+"内のすべての後続のステートメントに次の優先度ステートメントが来るまで適応され"
+"ます。例 :: "
 
 #: ../../source/python.rst:193
 msgid "sets the priority offset to 42. In::"
@@ -324,23 +316,21 @@ msgid "The following faulty script::"
 msgstr "以下のコードには欠陥があります。 ::"
 
 #: ../../source/python.rst:231
-#, fuzzy
 msgid ""
 "will not work, because the variable ``e`` is being used as both a character "
 "and a flag. Other things that are usually placed into the store are "
 "transitions and transforms."
 msgstr ""
-"これは変数 `e` がキャラクターとフラグの両方に使用されているため動作しません。"
-"通常 store に格納されるその他の物にはトランジションと変換があります。。"
+"これは変数 ``e`` がキャラクターとフラグの両方に使用されているため動作しませ"
+"ん。通常 store に格納されるその他の物にはトランジションと変換があります。。"
 
 #: ../../source/python.rst:235
-#, fuzzy
 msgid ""
 "Names beginning with underscore ``_`` are reserved for Ren'Py's internal "
 "use. In addition, there is an :ref:`Index of Reserved Names <reserved-"
 "names>`."
 msgstr ""
-"アンダースコア (\\_) で初まる名前は Ren'Py 内部で使用するものとして扱われま"
+"アンダースコア \"_\" で初まる名前は Ren'Py 内部で使用するものとして扱われま"
 "す。詳しくは以下を参照してください。 :ref:`Index of Reserved Names <reserved-"
 "names>`"
 
@@ -358,27 +348,24 @@ msgstr ""
 "ジュールにコードを置くことで、名前が衝突する機会を減らせます。"
 
 #: ../../source/python.rst:246
-#, fuzzy
 msgid ""
 "Named stores can be accessed by supplying the ``in`` clause to ``python`` or "
 "``init python``, all of which run Python in a named store. Each store "
 "corresponds to a Python module. The default store is ``store``, while a "
-"named store is accessed as ``store.name``. These Python modules can be "
-"imported using the Python ``import`` statement, while names in the modules "
-"can be imported using the Python ``from`` statement."
+"named store is accessed as ``store.name``. Names in the modules can be "
+"imported using the Python ``from`` statement."
 msgstr ""
 "名前付きの store は ``in`` 節を ``python`` や ``init python`` に与えることで"
 "アクセス可能で、コードは名前付き store で実行されます。各 store は python モ"
 "ジュールに対応します。デフォルトのstore は ``store`` で、名前付きの store は "
-"``store``.`name` でアクセスされます。これらの python モジュールは python の "
-"import ステートメントを使用してインポート出来、一方モジュール内の名前は "
-"python の from ステートメントを使用してインポート出来ます。"
+"``store.name` でアクセスされます。これらの python モジュール内の名前には "
+"python の import ステートメントを使用してインポート出来ます。"
 
-#: ../../source/python.rst:254
+#: ../../source/python.rst:252
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/python.rst:273
+#: ../../source/python.rst:268
 msgid ""
 "Named stores participate in save, load, and rollback in the same way that "
 "the default store does. The defined statement can be used to define names in "
@@ -388,13 +375,11 @@ msgstr ""
 "します。 define ステートメントを使用して名前付き store に変数名を定義出来ま"
 "す。"
 
-#: ../../source/python.rst:281
-#, fuzzy
+#: ../../source/python.rst:276
 msgid "First and Third-Party Python Modules and Packages"
 msgstr "本体、サードパーティーの Python モジュールとパッケージ"
 
-#: ../../source/python.rst:283
-#, fuzzy
+#: ../../source/python.rst:278
 msgid ""
 "Ren'Py can import pure-Python modules and packages. First-party modules and "
 "packages – ones written for the game – can be placed directly into the game "
@@ -406,7 +391,7 @@ msgstr ""
 "ます。サードパーティーのパッケージは game/python-packages ディレクトリーに配"
 "置できます。"
 
-#: ../../source/python.rst:288
+#: ../../source/python.rst:283
 msgid ""
 "For example, to install the requests package, one can change into the game's "
 "base directory, and run the command::"
@@ -414,7 +399,7 @@ msgstr ""
 "例えば必要なパッケージをインストールするために、ゲームのベースディレクトリー"
 "に変更してコマンドを実行します。 ::"
 
-#: ../../source/python.rst:293
+#: ../../source/python.rst:288
 msgid ""
 "In either case, the module or package can be imported from an init python "
 "block::"
@@ -422,7 +407,7 @@ msgstr ""
 "モジュールとパッケージどちらでも init python ブロックからインポート出来ま"
 "す。 ::"
 
-#: ../../source/python.rst:301
+#: ../../source/python.rst:296
 msgid ""
 "Python defined in .rpy files is transformed to allow rollback to work. "
 "Python imported from .py files is not. As a result, objects created in "

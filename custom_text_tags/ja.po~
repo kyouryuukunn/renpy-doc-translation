@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-08 23:46+0900\n"
-"PO-Revision-Date: 2019-05-04 14:08+0900\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2019-10-21 22:56+0900\n"
+"PO-Revision-Date: 2019-10-28 23:39+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,16 +32,29 @@ msgstr ""
 #: ../../source/custom_text_tags.rst:14
 msgid ""
 "Custom text tags are created by assigning a text tag function to an entry in "
-"the config.custom_text_tags dictionary."
+"the config.custom_text_tags dictionary or the config."
+"self_closing_custom_tags dictionary."
 msgstr ""
-"カスタムテキストタグはテキストタグ関数を config.custom_text_tags の辞書に加え"
-"れば作成出来ます。"
+"カスタムテキストタグはテキストタグ関数を config.custom_text_tags または "
+"config.self_closing_custom_tags に加えれば作成します。"
 
-#: ../../source/custom_text_tags.rst:19
-msgid "Maps text tag names to text tag functions."
-msgstr "テキストタグの名前からテキストタグ関数への辞書です。"
+#: ../../source/custom_text_tags.rst:20
+msgid ""
+"Maps text tag names to text tag functions, when the text tag can wrap other "
+"text."
+msgstr ""
+"テキストタグの名前をキー、テキストタグ関数を値とする辞書であり、他のテキスト"
+"を囲めるタグです。"
 
-#: ../../source/custom_text_tags.rst:21
+#: ../../source/custom_text_tags.rst:26
+msgid ""
+"Maps text tag names to a self-closing text tag functions, when the text tag "
+"does not wrap other text."
+msgstr ""
+"テキストタグの名前をキー、self-closing テキストタグ関数を値とする辞書であり、"
+"他のテキストを囲めないタグです。"
+
+#: ../../source/custom_text_tags.rst:29
 msgid ""
 "A text tag function takes three arguments: The tag itself, the argument for "
 "the tag, and a list of content tuples. For example, for the text::"
@@ -50,7 +62,7 @@ msgstr ""
 "テキストタグ関数は 3 つの引数を取ります。 : タグ自身とそのタグへの引数、内容"
 "のタプルのリストです。 例えば以下のテキストでは ::"
 
-#: ../../source/custom_text_tags.rst:26
+#: ../../source/custom_text_tags.rst:34
 msgid ""
 "The tag will be \"big\", the argument will be the string \"2\", and the list "
 "of content tuples will be::"
@@ -58,7 +70,7 @@ msgstr ""
 "タグは \"big\" であり、引数は文字列の \"2\" に、内容のタプルは以下になりま"
 "す。 ::"
 
-#: ../../source/custom_text_tags.rst:36
+#: ../../source/custom_text_tags.rst:44
 msgid ""
 "The text tag function should return a new list of content tuples, which is "
 "used to replace the text tag and its contents."
@@ -66,7 +78,7 @@ msgstr ""
 "テキストタグ関数は新しい内容のタプルのリストを返すべきで、それを使用して、テ"
 "キストタグとその内容を置き換えます。"
 
-#: ../../source/custom_text_tags.rst:39
+#: ../../source/custom_text_tags.rst:47
 msgid ""
 "Content tuples consist of two components. The first component is one of the "
 "the constants in the following list. The second component varies based on "
@@ -75,48 +87,54 @@ msgstr ""
 "内容のタプルは 2 つの要素で構成されます。最初の要素は以下のリストにある定数"
 "の 1 つです。 2 つ目の要素は後述するとおり、最初の要素により様々です。"
 
-#: ../../source/custom_text_tags.rst:44
+#: ../../source/custom_text_tags.rst:52
 msgid "renpy.TEXT_TEXT"
 msgstr "renpy.TEXT_TEXT"
 
-#: ../../source/custom_text_tags.rst:44
+#: ../../source/custom_text_tags.rst:52
 msgid "The second component is text that is intended for display to the user."
 msgstr "2 つ目の要素はユーザーに表示されることを意図したテキストです。"
 
-#: ../../source/custom_text_tags.rst:48
+#: ../../source/custom_text_tags.rst:56
 msgid "renpy.TEXT_TAG"
 msgstr "renpy.TEXT_TAG"
 
-#: ../../source/custom_text_tags.rst:47
+#: ../../source/custom_text_tags.rst:55
 msgid ""
 "The second component is the contents of a text tag, without the enclosing "
 "braces."
 msgstr "2 つ目の要素はテキストタグの中身で、閉じ括弧は含みません。"
 
-#: ../../source/custom_text_tags.rst:51
+#: ../../source/custom_text_tags.rst:59
 msgid "renpy.TEXT_DISPLAYABLE"
 msgstr "renpy.TEXT_DISPLAYABLE"
 
-#: ../../source/custom_text_tags.rst:51
+#: ../../source/custom_text_tags.rst:59
 msgid "The second component is a displayable to be embedded into the text."
 msgstr "2 つ目の要素はテキストに埋め込まれる displayable です。"
 
-#: ../../source/custom_text_tags.rst:55
+#: ../../source/custom_text_tags.rst:63
 msgid "renpy.TEXT_PARAGRAPH"
 msgstr "renpy.TEXT_PARAGRAPH"
 
-#: ../../source/custom_text_tags.rst:54
+#: ../../source/custom_text_tags.rst:62
 msgid ""
 "This represents a break between paragraphs, and the second component is "
 "undefined (but must be present)."
 msgstr ""
 "これは段落分けを表し、2 つ目の要素は未定義です(が、なくてはなりません)。"
 
-#: ../../source/custom_text_tags.rst:58
+#: ../../source/custom_text_tags.rst:65
+msgid ""
+"A self-closing text tag function is similar, except that it does not take "
+"the third argument."
+msgstr "self-closing テキストタグも、三番目の引数をとらない以外は同じです。"
+
+#: ../../source/custom_text_tags.rst:69
 msgid "Caveats"
 msgstr "注意"
 
-#: ../../source/custom_text_tags.rst:60
+#: ../../source/custom_text_tags.rst:71
 msgid ""
 "The dialogue text tags {p}, {w}, {nw}, and {fast} are processed before "
 "custom text tags, and should either be not included inside a custom text "
@@ -126,11 +144,11 @@ msgstr ""
 "に処理されます。また、カスタムテキストタグ内には含まないか、変更せずに渡すべ"
 "きです。"
 
-#: ../../source/custom_text_tags.rst:65
+#: ../../source/custom_text_tags.rst:76
 msgid "Examples"
 msgstr "例"
 
-#: ../../source/custom_text_tags.rst:67
+#: ../../source/custom_text_tags.rst:78
 msgid ""
 "The example ``big`` text tag works like the {size} text tag, but applies a "
 "multiplier to its argument. ::"
@@ -138,10 +156,18 @@ msgstr ""
 "例えば ``big`` テキストタグは {size} テキストタグのように動作しますが、その引"
 "数を乗算して適用します。 ::"
 
-#: ../../source/custom_text_tags.rst:87
+#: ../../source/custom_text_tags.rst:98
 msgid ""
 "The example ``rot13`` text tag applies the ROT13 transform to text. Note "
 "that ROT26 – ROT13 applied twice – is just normal text. ::"
 msgstr ""
 "例えば ``rot13`` テキストタグは rot13 変換をテキストに適用します。 rot26 - "
 "rot13 は 2 回適用されると元のテキストに戻ることに注意してください。 ::"
+
+#: ../../source/custom_text_tags.rst:119
+msgid ""
+"The ``bang`` text tag inserts a specific image into the text, and doesn't "
+"require a closing tag. ::"
+msgstr ""
+"``bang`` テキストタグは、特定の画像をテキストに挿入し、閉じタグを必要としませ"
+"ん。 ::"
