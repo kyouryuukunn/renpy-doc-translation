@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-08 23:46+0900\n"
-"PO-Revision-Date: 2020-01-01 09:42+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2020-01-02 19:08+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -81,8 +81,8 @@ msgid ""
 "To introduce the language, here's a layered image that uses the available "
 "features, with things that could be implied instead explicitly given. ::"
 msgstr ""
-"その言語の導入のために、利用可能な機能を使用するレイヤー画像があります。明示"
-"的な指定の代わりに ::"
+"この言語の紹介のため、ここで利用可能な機能を使用するレイヤー画像を示します。"
+"明示的な指定の代わりに ::"
 
 #: ../../source/layeredimage.rst:85
 msgid ""
@@ -111,9 +111,9 @@ msgid ""
 msgstr ""
 "レイヤー画像のブロックには always と group, if ステートメントを含められま"
 "す。 ``group`` ステートメントは attribute を取れます。 ``always`` と ``if`` "
-"ステートメントは displayable に提供されなければならず、 attribute ステートメ"
-"ントは任意で提供されるものです。すべてのステートメントにはプロパティーが提供"
-"されます。"
+"ステートメントにはは displayable が提供されなければならず、 attribute ステー"
+"トメントには任意で提供されるます。すべてのステートメントにはプロパティーが提"
+"供されます。"
 
 #: ../../source/layeredimage.rst:97
 msgid ""
@@ -171,6 +171,12 @@ msgid ""
 "For example, the pos property here creates a transform that moves the top-"
 "left corner of each mouth image."
 msgstr ""
+"プロパティーはプロパティー名と単純式で構成され、各レイヤーに提供されます。ス"
+"テートメントの機能を変更するプロパティーもあります。ひとつ以上の :ref:` 変換"
+"プロパティー <transform-properties>` があたえられると、 :func:`Transform` が"
+"作成されて displayable をラップします。 at プロパティーには displayable を"
+"ラップする変換または変換リストも与えられます。例えば、ここで pos プロパティー"
+"は各口の画像の左上端を移動する変換を作成しています。"
 
 #: ../../source/layeredimage.rst:125
 msgid ""
@@ -180,22 +186,29 @@ msgid ""
 "while the last is in front – in this example, the glasses will be on top of "
 "the other layers."
 msgstr ""
+"最終的な画像は全てのレイヤーの短形領域の最大サイズとなるため、画像からはみ出"
+"すレイヤーがない十分な大きさのレイヤーが1つあるとよいでしょう。最初のレイヤー"
+"は画像の背景に、最後のは前になります。この例では、眼鏡が他のレイヤーの上とな"
+"ります。"
 
 #: ../../source/layeredimage.rst:131
+#, fuzzy
 msgid ""
 "Groups and attributes may appear more than once in a layered image, with all "
 "of the layers with an attribute being displayed."
-msgstr ""
+msgstr "group と attribute は layeredimage に一回以上表れるでしょう。"
 
 #: ../../source/layeredimage.rst:136
 msgid "Using an Layered Image"
-msgstr ""
+msgstr "レイヤー画像の使用"
 
 #: ../../source/layeredimage.rst:138
 msgid ""
 "To use this (but not other) layered images, the evil variable must be given "
 "a value, for example with::"
 msgstr ""
+"この例でのレイヤー画像を使用するには evil 辺陬に値を与えなければ成りません。 "
+"例 ::"
 
 #: ../../source/layeredimage.rst:143
 msgid ""
@@ -203,6 +216,9 @@ msgid ""
 "one of the outfits should be given – while Ren'Py doesn't enforce this, this "
 "image requires one::"
 msgstr ""
+"これでレイヤー画像は他の画像のように表示出来ます。ほぼ確実に outfit のどれか"
+"は与えられるでしょうが、 Ren'Py はこれを強制しないので、この画像はどれかを必"
+"用とします。 ::"
 
 #: ../../source/layeredimage.rst:149
 msgid ""
@@ -211,31 +227,36 @@ msgid ""
 "Ren'Py when an image being shown does not match one that's already defined, "
 "something that is never the case with a layered image.) So, ::"
 msgstr ""
+"スプライトが表示されている間、衝突しなければ追加の属性を既に表示しているスプ"
+"ライトに加えられます(これは表示されている画像が既に定義されている画像に一致し"
+"ないときの場合で、レイヤー画像では起こりません)。そのため、 ::"
 
 #: ../../source/layeredimage.rst:156
 msgid ""
 "Will activate the layers associated with the wink attribute. We could stop "
 "winking with::"
 msgstr ""
+"これは wink 属性と関連付けされたレイヤーをアクティベートします。開いた目は"
+"ウィンクと衝突するので次のようにしてウィンクを止められます。 ::"
 
 #: ../../source/layeredimage.rst:161
 msgid ""
 "As the open eyes conflict with the winking eyes. Or we could simply remove "
 "the wink attribute using::"
-msgstr ""
+msgstr "もしくは単に wink 属性を以下のようにして除去できます。 ::"
 
 #: ../../source/layeredimage.rst:166
 msgid ""
 "Which would display the layer with the open attribute, as it is the default."
-msgstr ""
+msgstr "これはデフォルトの open 属性で画像を表示します。"
 
 #: ../../source/layeredimage.rst:169
 msgid "Layered images can also be used with the scene statement."
-msgstr ""
+msgstr "レイヤー画像は scene ステートメントでも使用できます。"
 
 #: ../../source/layeredimage.rst:174
 msgid "Automatic Attributes"
-msgstr ""
+msgstr "自動属性"
 
 #: ../../source/layeredimage.rst:176
 msgid ""
@@ -245,6 +266,10 @@ msgid ""
 "determine a displayable name from the image name, group name, and attribute "
 "name. This is done by combining the names with underscores."
 msgstr ""
+"最初の例では属性を定義する属性名と displayable で多くの繰り返しがあります。冗"
+"長なタイピングを避けるため、 Ren'Py では画像名、グループ名、属性名から自動的"
+"に displayable の名前を定義できます。これは名前とアンダースコアを組み合わせて"
+"行います。"
 
 #: ../../source/layeredimage.rst:182
 msgid ""
@@ -252,10 +277,12 @@ msgid ""
 "attributes – it's possible to add any properties to the first line and omit "
 "the block entirely."
 msgstr ""
+"これには属性のもう一つの機能、プロパティーを最初の行に追加してブロックを完全"
+"に省略できることを利用できます。"
 
 #: ../../source/layeredimage.rst:186
 msgid "Here's our example of having done that::"
-msgstr ""
+msgstr "ここにこれを実行する例を示します。 ::"
 
 #: ../../source/layeredimage.rst:215
 msgid ""
@@ -264,6 +291,9 @@ msgid ""
 "the outfit group uses \"augustina_outfit_dress\" for the displayable, a "
 "displayable that references the image with  that name."
 msgstr ""
+"(displayable に最初の例と同じ名前を与えているため)この例は最初の例と等価で"
+"す。例えば、 outfit グループの dress 属性はその名前の画像を参照する "
+"displayable に \"augustina_outfit_dress\" を使用します。"
 
 #: ../../source/layeredimage.rst:220
 msgid ""
@@ -272,6 +302,9 @@ msgid ""
 "which causes the group to search for defined images that would match the "
 "pattern, then define the attribute if it does not already exist."
 msgstr ""
+"自動的にグループの属性を定義することで、さらに簡略化が可能です。これはグルー"
+"プに、パターンにマッチする定義した画像を検索させ、衝突しなければその属性を定"
+"義する `auto` キーワードを与えて実行されます。"
 
 #: ../../source/layeredimage.rst:226
 msgid ""
@@ -279,18 +312,22 @@ msgid ""
 "group and the block omitted. The displayable and properties of the always "
 "statement can be put on the first line the same way."
 msgstr ""
+"``attribute`` のように、プロパティーをグループの最初の行に配置してブロックを"
+"省略できます。 always ステートメントの displayable と プロパティーも同様に最"
+"初の行に配置されます。"
 
 #: ../../source/layeredimage.rst:230
 msgid "Here's an example of the final form::"
-msgstr ""
+msgstr "最後の形式の例です。 ::"
 
 #: ../../source/layeredimage.rst:254
+#, fuzzy
 msgid ""
 "This is about as simply as we can define that image, without changing what "
 "we define. The savings with auto-definition increases as we have more "
 "attributes per group. We could also save lines if we didn't need default "
 "attributes. In that case, all of the groups could be written on single lines."
-msgstr ""
+msgstr "これは"
 
 #: ../../source/layeredimage.rst:260
 msgid ""
@@ -299,20 +336,26 @@ msgid ""
 "proper names, it's possible to use this to define thousands or even millions "
 "of combinations of layers."
 msgstr ""
+"``always`` や ``if`` ステートメントでは、 displayable を省略できないため、(も"
+"う少し適切な名前の画像がありますが)これが一番簡略です。これによって数千数万の"
+"レイヤーの組み合わせさえ定義できます。"
 
 #: ../../source/layeredimage.rst:267
 msgid "Statement Reference"
-msgstr ""
+msgstr "Statement"
 
 #: ../../source/layeredimage.rst:269
+#, fuzzy
 msgid ""
 "Note that with the conditions in the ``if`` statement, all expressions are "
 "evaluated at init time, when the layered image is first defined."
 msgstr ""
+"レイヤー画像が定義されるとき、 ``if`` ステートメントの条件 すべての式は初期化"
+"時に評価されます。"
 
 #: ../../source/layeredimage.rst:273
 msgid "Layeredimage"
-msgstr ""
+msgstr "Layeredimage"
 
 #: ../../source/layeredimage.rst:275
 msgid ""
@@ -320,10 +363,13 @@ msgid ""
 "that introduces a layered image. It starts with an image name, and takes a "
 "block that can contain attribute, group, and if statements."
 msgstr ""
+"``layerdimage`` ステートメントはレイヤー画像を導入する Ren'Py スクリプト言語"
+"のステートメントです。これは画像名で始まり、 attribute, group, if ステートメ"
+"ントなどを含むブロックをとります。"
 
 #: ../../source/layeredimage.rst:279
 msgid "Layeredimage takes the following properties:"
-msgstr ""
+msgstr "layerdimage は以下のプロパティーをとります。 :"
 
 #: ../../source/layeredimage.rst:286 ../../source/inc/li:114
 #: ../../source/inc/li_ff:31
@@ -331,6 +377,7 @@ msgid "`image_format`"
 msgstr "`image_format`"
 
 #: ../../source/layeredimage.rst:282 ../../source/inc/li:110
+#, fuzzy
 msgid ""
 "When a given image is a string, and this is supplied, the image name is "
 "interpolated into `image_format` to make an image file. For example, "
@@ -338,6 +385,8 @@ msgid ""
 "sprites. (This is not used by auto groups, which look for images and not "
 "image files.)"
 msgstr ""
+"与えられた画像が文字列なら、画像名は `image_format` と解釈され、画像ファイル"
+"を作成します。"
 
 #: ../../source/layeredimage.rst:290 ../../source/inc/li:118
 msgid "`format_function`"
@@ -348,17 +397,21 @@ msgid ""
 "A function that is used instead of `layeredimage.format_function` to format "
 "the image information into a displayable."
 msgstr ""
+"`layeredimage.format_function` の代わりに使用して画像の情報を displayable 形"
+"式にする関数です。"
 
 #: ../../source/layeredimage.rst:294 ../../source/layeredimage.rst:345
 #: ../../source/layeredimage.rst:431 ../../source/layeredimage.rst:474
 msgid ":ref:`transform properties <transform-properties>`"
-msgstr ""
+msgstr ":ref:` 変換プロパティー <transform-properties>`"
 
 #: ../../source/layeredimage.rst:293
 msgid ""
 "If present, these are used to construct a :func:`Transform` that is applied "
 "to the displayable."
 msgstr ""
+"与えられると、 displayable に適用される :func:`Transform` を構築するのに使わ"
+"れます。"
 
 #: ../../source/layeredimage.rst:297 ../../source/layeredimage.rst:348
 #: ../../source/layeredimage.rst:434 ../../source/layeredimage.rst:477
@@ -369,19 +422,24 @@ msgstr "`at`"
 #: ../../source/layeredimage.rst:297
 msgid ""
 "A transform or list of transforms that are applied to the layered image."
-msgstr ""
+msgstr "レイヤー画像へ適用される変換または変換のリストです。"
 
 #: ../../source/layeredimage.rst:300
 msgid "Attribute"
-msgstr ""
+msgstr "Attribute"
 
 #: ../../source/layeredimage.rst:302
+#, fuzzy
 msgid ""
 "The ``attribute`` statement adds a layer that is displayed when the given "
 "attribute is used to display the image. The same attribute can be used with "
 "multiple layers, with all layers corresponding to the attribute being shown "
 "(the `if_all`, `if_any`, and `if_not` properties can change this)."
 msgstr ""
+"``attribute`` ステートメントは特定の属性を使用して画像を表示するときに表示さ"
+"れるレイヤーを追加します。同じ属性が複数のレイヤーに使用出来、表示される属性"
+"に対応する全てのレイヤー( `if_all`, `if_any`, `if_not` プロパティーでこれを変"
+"更出来ます)。"
 
 #: ../../source/layeredimage.rst:307
 msgid ""
@@ -392,6 +450,11 @@ msgid ""
 "to this attribute, which is useful to have an attribute that is intended "
 "solely for use with `if_all`, `if_any`, or `if_not`."
 msgstr ""
+"attribute は属性名を取り、さらに 2 つのキーワードもとれます。 ``default`` "
+"キーワードはそのグループの属性と衝突しなければデフォルトで与えられる属性を示"
+"します。 ``null`` キーワードは Ren'Py が自動的にこの属性に対応する "
+"displayable を検索しないようにするので、 `if_all` や `if_any`, `if_not` と組"
+"み合わせての使用をのみ意図した属性を持つのに便利です。"
 
 #: ../../source/layeredimage.rst:314
 msgid ""
@@ -403,6 +466,12 @@ msgid ""
 "image's format function is used to do this, defaulting to :func:"
 "`layeredimage.format_function`.)"
 msgstr ""
+"displayable が与えられなければ、そのレイヤーやグループ、グループバリエーショ"
+"ン、属性の名前から、すべてのスペースをアンダースコアで置き換え、さらにアン"
+"ダースコアで全てを結合して推測します。つまり画像名 \"augustina\" , グループ "
+"\"eyes\",  属性 \"closed\" があれば、  \"augustina_eyes_closed\" が使用されま"
+"す( レイヤー画像のフォーマット関数がこれに使用され、デフォルトは :func:"
+"`layeredimage.format_function` です)。"
 
 #: ../../source/layeredimage.rst:321
 msgid ""
@@ -410,10 +479,13 @@ msgid ""
 "name, but that group is not used to compute the displayable name. (So it "
 "would look for \"image_attribute\", not \"image_attribute_attribute\")."
 msgstr ""
+"属性にグループがなければ、同じ名前のグループに配置されますが、そのグループは "
+"displayable 名の推測に使用されません(つまり \"image_attribute_attribute\" で"
+"はなく \"image_attribute\" を探します)。"
 
 #: ../../source/layeredimage.rst:325
 msgid "The attribute statement takes the following properties:"
-msgstr ""
+msgstr "attribute ステートメントは以下のプロパティーをとります :"
 
 #: ../../source/layeredimage.rst:330 ../../source/layeredimage.rst:417
 #: ../../source/layeredimage.rst:459 ../../source/inc/li:34
@@ -427,6 +499,8 @@ msgid ""
 "present, this layer is only displayed if all of the named attributes are "
 "present."
 msgstr ""
+"属性名の文字列または文字列リストです。これがあれば、このレイヤーはすべての属"
+"性名が与えられなければ表示されません。"
 
 #: ../../source/layeredimage.rst:335 ../../source/layeredimage.rst:422
 #: ../../source/layeredimage.rst:464 ../../source/inc/li:38
@@ -440,6 +514,8 @@ msgid ""
 "present, this layer is only displayed if any of the named attributes are "
 "present."
 msgstr ""
+"属性名の文字列または文字列リストです。これがあれば、このレイヤーは属性名のど"
+"れかが与えられなければ表示されません。"
 
 #: ../../source/layeredimage.rst:341 ../../source/layeredimage.rst:427
 #: ../../source/layeredimage.rst:470 ../../source/inc/li:42
@@ -453,22 +529,24 @@ msgid ""
 "present, this layer is only displayed if none of the named attributes are "
 "present."
 msgstr ""
+"属性名の文字列または文字列リストです。これがあれば、このレイヤーは属性名がす"
+"べて与えられなければ表示されます。"
 
 #: ../../source/layeredimage.rst:344 ../../source/layeredimage.rst:430
 #: ../../source/layeredimage.rst:473
 msgid ""
 "If present, these are used to construct a transform that is applied to the "
 "layer."
-msgstr ""
+msgstr "与えられれば、レイヤーに適用される変換を構築するのに使用されます。"
 
 #: ../../source/layeredimage.rst:348 ../../source/layeredimage.rst:434
 #: ../../source/layeredimage.rst:477
 msgid "A transform or list of transforms that are applied to the layer."
-msgstr ""
+msgstr "レイヤーに適用される変換または変換のリストです。"
 
 #: ../../source/layeredimage.rst:351
 msgid "Group"
-msgstr ""
+msgstr "Group"
 
 #: ../../source/layeredimage.rst:353
 msgid ""
@@ -477,12 +555,17 @@ msgid ""
 "attributes in that group. (But it's fine to include the same attribute "
 "twice. The ``multiple`` keyword removes this restriction.)"
 msgstr ""
+"``group`` ステートメントはレイヤーをグループ化します。属性がグループ内にある"
+"ときに、そのグループの他の属性を含むのはエラーになります(同じ属性を 2 回含む"
+"のは良いです。 ``multiple`` キーワードはこの制限をなくします)。"
 
 #: ../../source/layeredimage.rst:358
 msgid ""
 "The ``group`` statement takes a name. The name isn't used for very much, but "
 "is used to generate the default names of attributes inside the group."
 msgstr ""
+"``group`` ステートメントは名前をとります。名前はあまり使用されませんが、グ"
+"ループ内の属性のデフォルト名を生成するのに使われます。"
 
 #: ../../source/layeredimage.rst:361
 msgid ""
@@ -492,6 +575,11 @@ msgid ""
 "are found that do not correspond to declared attributes are then added to "
 "the group as if declared with the attribute statement."
 msgstr ""
+"``auto`` キーワードが名前に続くかもしれません。与えられればそのグループのその"
+"後のどの属性も宣言され、 Ren'Py はその画像のリストをスキャンしてグループパ"
+"ターン(下記参照)にマッチするものを探します。見つかった画像で、宣言された属性"
+"に対応しないものは attribute ステートメントで宣言されたかのようにそのグループ"
+"に追加されます。"
 
 #: ../../source/layeredimage.rst:367
 msgid ""
@@ -500,16 +588,22 @@ msgid ""
 "a group auto-define multiple attributes that are not exclusive. This "
 "conflicts with the default keyword being given to one of the attributes."
 msgstr ""
+"``multiple`` キーワードも続けられます。与えられれば、グループのひとつ以上のメ"
+"ンバーが同時に選択できます。これは排他的ではない複数の属性を自動定義するグ"
+"ループに便利です。これは属性の1つに default キーワードが与えられていると衝突"
+"します。"
 
 #: ../../source/layeredimage.rst:372
 msgid ""
 "Properties can then be declared on the first line of the group, and it can "
 "take a block that contains properties and attributes."
 msgstr ""
+"プロパティーはグループの最初の行で宣言でき、プロパティーや属性を含むブロック"
+"をとられます。"
 
 #: ../../source/layeredimage.rst:375
 msgid "There are two properties that are specific to groups."
-msgstr ""
+msgstr "グループに指定される 2 つのプロパティーがあります。"
 
 #: ../../source/layeredimage.rst:380 ../../source/inc/li_ff:22
 msgid "`variant`"
@@ -521,6 +615,8 @@ msgid ""
 "that becomes part of automatically-generated image names and the pattern "
 "used to search for automatically-defined attributes."
 msgstr ""
+"指定されるならこれは文字列で、バリエーション要素として自動生成の画像名の一部"
+"や自動定義のぞきんうせいの検索パターンになります。"
 
 #: ../../source/layeredimage.rst:386
 msgid "`prefix`"
@@ -533,6 +629,9 @@ msgid ""
 "\", and the attribute name \"hip\" is encountered, the attribute "
 "\"leftarm_hip\" is defined instead."
 msgstr ""
+"指定されるなら、手動または自動定義の属性名をアンダースコアで連結される接頭辞"
+"です。つまり prefix が\"leftarm\" で、属性名が \"hip\" なら、属性 "
+"\"leftarm_hip\" が代わりに定義されます。"
 
 #: ../../source/layeredimage.rst:388
 msgid ""
@@ -540,14 +639,17 @@ msgid ""
 "Properties supplied to the group are passed to the attributes inside the "
 "group, unless overridden by the same property of the attribute itself."
 msgstr ""
+"group ステートメントは ``attribute`` と同じプロパティーをとります。グループに"
+"提供されたプロパティーは、属性の同じプロパティーを上書きしない限りそのグルー"
+"プ内の属性に渡されます。"
 
 #: ../../source/layeredimage.rst:392
 msgid "**Pattern.** The image pattern used consists of:"
-msgstr ""
+msgstr "**Pattern.** 使用される画像パターンは以下で構成されます。 :"
 
 #: ../../source/layeredimage.rst:394
 msgid "The name of the image, with spaces replaced with underscores."
-msgstr ""
+msgstr "画像の名前で、スペースはアンダースコアで置換されます。"
 
 #: ../../source/layeredimage.rst:395
 msgid "The name of the group."
@@ -569,6 +671,10 @@ msgid ""
 "`variant` of `blue`, it would match the pattern augustina_work_eyes_blue\\_"
 "\\ `attribute`."
 msgstr ""
+"すべてはアンダースコアで結合されます。例えば、レイヤー画像 \"augustina work"
+"\" とグループ \"eyes\" があれば、これは augustina_work_eyes\\_\\ `attribute` "
+"にマッチします。 `variant` が `bule` なら、 augustina_work_eyes_blue\\_\\ "
+"`attribute` にマッチします。"
 
 #: ../../source/layeredimage.rst:406
 msgid "Always"
@@ -580,10 +686,13 @@ msgid ""
 "supplied a displayable, and can take properties also. Both can be placed on "
 "the same line or inside a block."
 msgstr ""
+"``always`` ステートメントは常に表示されるレイヤーを宣言します。 displayable "
+"が与えられなければならず、プロパティーモとれます。両方を同じ行にもブロック内"
+"にも配置できます。"
 
 #: ../../source/layeredimage.rst:412
 msgid "The always statement takes the following properties:"
-msgstr ""
+msgstr "always ステートメントは以下のプロパティーをとります。 :"
 
 #: ../../source/layeredimage.rst:437
 msgid "If"
@@ -597,16 +706,21 @@ msgid ""
 "the one that is shown. If no condition is true, the ``else`` layer is shown "
 "if present."
 msgstr ""
+"``if`` ステートメントにはランタイムで評価される 1 つ以上の条件を渡せられま"
+"す。各条件はレイヤーに関連付けられ、最初に True となる条件のものが表示されま"
+"す。 True となる条件がなく、 ``else``レイヤーがあれば、それが表示されます。"
 
 #: ../../source/layeredimage.rst:445
 msgid "A more complete example of an ``if`` statement might look like::"
-msgstr ""
+msgstr "``if`` ステートメントのより完全な例は以下のようになります。 ::"
 
 #: ../../source/layeredimage.rst:454
 msgid ""
 "Each layer must have a displayable given. It can also be given these "
 "properties:"
 msgstr ""
+"各レイヤーには displayable が与えられなければならず、以下のプロパティーも与え"
+"られます。 :"
 
 #: ../../source/layeredimage.rst:457
 msgid ""
@@ -614,6 +728,8 @@ msgid ""
 "present, this condition is only considered if all of the named attributes "
 "are present."
 msgstr ""
+"属性名の文字列または文字列のリストです。これがあれば、この条件はすべての属性"
+"名が与えられなければ考慮されません。"
 
 #: ../../source/layeredimage.rst:462
 msgid ""
@@ -621,6 +737,8 @@ msgid ""
 "present, this condition is only considered if any of the named attributes "
 "are present."
 msgstr ""
+"属性名の文字列または文字列のリストです。これがあれば、この条件は属性名のどれ"
+"かが与えられなければ考慮されません。"
 
 #: ../../source/layeredimage.rst:467
 msgid ""
@@ -628,12 +746,16 @@ msgid ""
 "present, this condition is only considered if none of the named attributes "
 "are present."
 msgstr ""
+"属性名の文字列または文字列のリストです。これがあれば、この条件は属性名がすべ"
+"て与えられなければ考慮されます。"
 
 #: ../../source/layeredimage.rst:479
 msgid ""
 "The ``if`` statement is transformed to a :func:`ConditionSwitch` when the "
 "``layeredimage`` statement runs."
 msgstr ""
+"``if`` ステートメントは ``layerdimage`` ステートメント実行時に :func:"
+"`ConditionSwitch` に変換されます。"
 
 #: ../../source/layeredimage.rst:487
 msgid ""
@@ -642,18 +764,25 @@ msgid ""
 "it would lead to an unpredicted image load. It's intended for use for "
 "character customization options that change rarely."
 msgstr ""
+"``predict_all`` が True でなければ、レイヤー画像が表示されている、またはまさ"
+"に表示されるときは if ステートメントの条件の変更は避け、予測不能な画像の読み"
+"込みを避けるべきです。これはめったに変更されない chracter のカスタマイズオプ"
+"ションでの使用を意図しています。"
 
 #: ../../source/layeredimage.rst:493
 msgid "Poses"
-msgstr ""
+msgstr "Poses"
 
 #: ../../source/layeredimage.rst:495
+#, fuzzy
 msgid ""
 "It's possible to have a character that has sprites in multiple poses, where "
 "everything – or at least everything of interest – is different. For example, "
 "if a character has standing and sitting poses, all the image parts will be "
 "in different places."
 msgstr ""
+"複数のポーズのスプライトがあるキャラクター。例えばキャラクターに立ちポーズと"
+"座りポーズがあれば、全ての画像"
 
 #: ../../source/layeredimage.rst:500
 msgid ""
@@ -671,7 +800,7 @@ msgstr ""
 
 #: ../../source/layeredimage.rst:522
 msgid "Advice"
-msgstr ""
+msgstr "Advice"
 
 #: ../../source/layeredimage.rst:524
 msgid ""
@@ -680,20 +809,31 @@ msgid ""
 "images with spaces between sections, but that could lead to problems later "
 "on."
 msgstr ""
+"** 画像名でのアンダースコアの使用 ** デフォルトでは、 Ren'Py のレイヤー画像は"
+"アンダースコアで画像名をパーツに分割します。パーツ間にスペースがある画像の使"
+"用は魅力的かもしれませんが、後述の問題に発展しかねません。"
 
 #: ../../source/layeredimage.rst:529
+#, fuzzy
 msgid ""
 "Ren'Py has a rule that if you show an image with the exact name as one "
 "that's being shown, it's shown instead. This can bypass the layered image "
 "you defined and show the layer directly, which can lead to weird problems "
 "like a pair of eyes floating in space."
 msgstr ""
+"Ren'Py には表示されているものとして正確な名前の画像を表示すると、代わりに表示"
+"されるするルールがあります。これにより定義したレイヤー画像を越えて、直接レイ"
+"ヤーを表示できます。これはなにもない空間に目が浮かぶような妙な問題に繋がる可"
+"能性があります。"
 
 #: ../../source/layeredimage.rst:534
+#, fuzzy
 msgid ""
 "By having each layer have a different tag from the main image, this is no "
 "longer a problem."
 msgstr ""
+"各レイヤーがメインの画像から異なるタグをもらえば、これは問題ではなくなりま"
+"す。"
 
 #: ../../source/layeredimage.rst:537
 msgid ""
@@ -703,6 +843,10 @@ msgid ""
 "generally won't improve performance or image size much to crop the images "
 "yourself."
 msgstr ""
+"** レイヤーの切り取りは不要です。 ** Ren'Py は画像を RAM に読み込む前に、不透"
+"明なピクセルの短形領域に切り取って画像を最適化します。つまり画像が適切に予測"
+"されれば、自分で画像を切り取ってもパフォーマンスや画像サイズは一般的にあまり"
+"改善しません。"
 
 #: ../../source/layeredimage.rst:545
 msgid "Python"
@@ -714,6 +858,9 @@ msgid ""
 "group statement does not – the group is supplied to ``attribute``, and the "
 "auto functionality can be implemented using :func:`renpy.list_images`."
 msgstr ""
+"もちろん ``layerdimage`` ステートメントには等価な Python がありますが、 "
+"group ステートメントは ``attribute`` に与えられるためありません。自動機能は :"
+"func:`renpy.list_image` を使用してで実装できます。"
 
 #: ../../source/inc/li:5
 msgid ""
@@ -721,6 +868,9 @@ msgid ""
 "an attribute. A single attribute can control multiple layers, in which case "
 "all layers corresponding to that attribute will be displayed."
 msgstr ""
+"これを使用して属性に制御される LayerdImage のレイヤーを表します。1つの属性で"
+"複数のレイヤーを制御でき、この場合、その属性に対応する全てのレイヤーが表示さ"
+"れます。"
 
 #: ../../source/inc/li:13 ../../source/inc/li_ff:18
 msgid "`group`"
@@ -731,6 +881,8 @@ msgid ""
 "A string giving the group the attribute is part of. This may be None, in "
 "which case a group with the same name as the attribute is created."
 msgstr ""
+"属性が加わるグループの文字列です。 None である場合、属性と同じ名前のグループ"
+"が作成されます。"
 
 #: ../../source/inc/li:16 ../../source/inc/li_ff:25
 msgid "`attribute`"
@@ -738,7 +890,7 @@ msgstr "`attribute`"
 
 #: ../../source/inc/li:16
 msgid "A string giving the name of the attribute."
-msgstr ""
+msgstr "属性の名前の文字列です。"
 
 #: ../../source/inc/li:20 ../../source/inc/li:65 ../../source/inc/li_ff:28
 msgid "`image`"
@@ -748,7 +900,7 @@ msgstr "`image`"
 msgid ""
 "If not None, this should be a displayable that is displayed when this "
 "attribute is shown."
-msgstr ""
+msgstr "これは None または、この属性がなければ表示される displayable です。"
 
 #: ../../source/inc/li:24
 msgid "`default`"
@@ -758,32 +910,39 @@ msgstr "`default`"
 msgid ""
 "If True, and no other attribute for the group is selected, this attribute is."
 msgstr ""
+"True かつそのグループの他の属性が選択されていなければ、この属性となります。"
 
 #: ../../source/inc/li:26
 msgid "The following keyword arguments are also known:"
-msgstr ""
+msgstr "以下のキーワード引数もあります。 :"
 
 #: ../../source/inc/li:29 ../../source/inc/li:80
 msgid "A transform or list of transforms that are applied to the image."
-msgstr ""
+msgstr "画像に適用される変換または変換のリストです。"
 
 #: ../../source/inc/li:33
 msgid ""
 "An attribute or list of attributes. The displayable is only shown if all of "
 "these are showing."
 msgstr ""
+"属性または属性のリストです。 displayable はこれらの全てがあるときだけ表示され"
+"ます。"
 
 #: ../../source/inc/li:37
 msgid ""
 "An attribute or list of attributes. if not empty, the displayable is only "
 "shown if any of these are showing."
 msgstr ""
+"属性または属性のリストです。 displayable はこれらのどれかがあるときだけ表示さ"
+"れます。"
 
 #: ../../source/inc/li:41
 msgid ""
 "An attribute or list of attributes. The displayable is only shown if none of "
 "these are showing."
 msgstr ""
+"属性または属性のリストです。 displayable はこれらの全てがないときだけ表示され"
+"ます。"
 
 #: ../../source/inc/li:44 ../../source/inc/li:83
 msgid ""
@@ -792,6 +951,9 @@ msgid ""
 "(100, 200) can be used to offset the image by 100 pixels horizontally and "
 "200 vertically.)"
 msgstr ""
+"他のキーワード引数は変換プロパティーとして解釈されます。与えられると、画像を"
+"ラップする変換が作成されます(例えば、 pos=(100, 200) を使用して、画像を 100 "
+"ピクセル横に、 200 ピクセル縦にオフセットできます)。"
 
 #: ../../source/inc/li:49
 msgid ""
@@ -799,6 +961,8 @@ msgid ""
 "given the `image_format` parameter, the image_format is used to generate an "
 "image filename."
 msgstr ""
+"`image` 引数が省略されるか None であり、LayerdImage に `image_format` 引数が"
+"与えられると、 image_format を使用して画像ファイル名を生成します。"
 
 #: ../../source/inc/li:55
 msgid ""
@@ -806,6 +970,8 @@ msgid ""
 "condition. When the condition is true, the layer is displayed. Otherwise, "
 "nothing is displayed."
 msgstr ""
+"これにより条件で制御される LayerdImage のレイヤーを表します。条件が True なら"
+"レイヤーが表示され、そうでなければ表示されません。"
 
 #: ../../source/inc/li:61
 msgid "`condition`"
@@ -815,31 +981,34 @@ msgstr "`condition`"
 msgid ""
 "This should be a string giving a Python condition that determines if the "
 "layer is displayed."
-msgstr ""
+msgstr "レイヤーが表示されるかどうかを決定する Python  の条件の文字列です。"
 
 #: ../../source/inc/li:64
 msgid ""
 "If not None, this should be a displayable that is displayed when the "
 "condition is true."
-msgstr ""
+msgstr "これは None または条件が True なら表示される displayable です。"
 
 #: ../../source/inc/li:68
 msgid ""
 "An attribute or list of attributes. The condition is only evaluated if all "
 "of these are showing."
 msgstr ""
+"属性または属性のリストです。これらのすべてがあるときのみ条件は評価されます。"
 
 #: ../../source/inc/li:72
 msgid ""
 "An attribute or list of attributes. If not empty, the condition is only "
 "evaluated if any of these are showing."
 msgstr ""
+"属性または属性のリストです。これらのどれかがあるときのみ条件は評価されます。"
 
 #: ../../source/inc/li:76
 msgid ""
 "An attribute or list of attributes. The condition is only evaluated if none "
 "of these are showing."
 msgstr ""
+"属性または属性のリストです。これらのすべてがないときのみ条件は評価されます。"
 
 #: ../../source/inc/li:90
 msgid ""
@@ -847,6 +1016,9 @@ msgid ""
 "attributes, shows a displayable created by compositing together the "
 "displayables associated with those attribute."
 msgstr ""
+"これは画像のようなオブジェクトで、適切な属性の組み合わせで表示されると、それ"
+"らの属性と関連付けられた displayable を合成して作成した displayable を表示し"
+"ます。"
 
 #: ../../source/inc/li:99
 msgid "`attributes`"
@@ -859,12 +1031,17 @@ msgid ""
 "in this list are in back-to-front order, with the first item further from "
 "the viewer and the last closest."
 msgstr ""
+"これは Attribute オブジェクトのリストです。各 Attribute オブジェクトはその画"
+"像の一部として表示され、またはされない displayable を反映します。このリストの"
+"要素は後ろから前の順となり、プレイヤーから見て最初の要素は遠くに、最後のもの"
+"は近くになります。"
 
 #: ../../source/inc/li:102
+#, fuzzy
 msgid ""
 "A transform or list of transforms that are applied to the displayable after "
 "it is parameterized."
-msgstr ""
+msgstr "parameterize 後に displayable に適用される変換または変換のリストです。"
 
 #: ../../source/inc/li:107 ../../source/inc/li_ff:14
 #: ../../source/inc/li_proxy:9
@@ -875,7 +1052,7 @@ msgstr "`name`"
 msgid ""
 "The name of the attribute image. This is used as part of the names of image "
 "components."
-msgstr ""
+msgstr "属性画像の名前で、画像要素の名前の一部として使用されます。"
 
 #: ../../source/inc/li:125
 msgid "`attribute_function`"
@@ -889,14 +1066,20 @@ msgid ""
 "themselves have been chosen. It can be used to express complex dependencies "
 "between attributes or select attributes at random."
 msgstr ""
+"None を指定するか、画像に渡される属性の組で呼び出され、レイヤーの選択に使用さ"
+"れる属性の組を返す関数です。"
 
 #: ../../source/inc/li:127
+#, fuzzy
 msgid ""
 "Additional keyword arguments are passed to a Fixed that is created to hold "
 "the layer. Unless explicitly overridden, xfit and yfit are set to true on "
 "the Fixed, which means it will shrink to the smallest size that fits all of "
 "the layer images it is showing."
 msgstr ""
+"追加のキーワード引数がレイヤーをholdするために作成された Fixed に渡されます。"
+"明示的な上書きがなければ、 xfit と yafit が Fixed で True に設定されると、表"
+"示している全てのレイヤー画像にフィットする最小サイズに縮みます。"
 
 #: ../../source/inc/li:132
 msgid ""
@@ -906,6 +1089,10 @@ msgid ""
 "either be displayed through a scene or show statement, or by an image name "
 "string used as a displayable."
 msgstr ""
+"LayerdImage は displayable ではなく、 displayable が使用可能な全ての場所では"
+"使用出来ません。これは (一般的に画像属性を含む) 画像名 の提供が必用なためで"
+"す。そういうわけで、 LayerdImage は scene や show ステートメントか、 "
+"displayable として使用される画像名の文字列から表示されるべきです。"
 
 #: ../../source/layeredimage.rst:553
 msgid ""
@@ -914,49 +1101,55 @@ msgid ""
 "how it's documented, and the arguments it takes if you want to supply your "
 "own `format_function` to replace it."
 msgstr ""
+":func:`layeredimage.format_function` は属性と displayable を画像ファイルに"
+"フォーマットするための関数です。自身の `format_function` で置き換えたいなら、"
+"これがどう記述されるかやどう引数をとるかを参照しましょう。"
 
 #: ../../source/inc/li_ff:5
 msgid ""
 "This is called to format the information about an attribute or condition "
 "into a displayable. This can be replaced by a creator, but the new function "
 "should ignore unknown kwargs."
-msgstr ""
+msgstr "これは"
 
 #: ../../source/inc/li_ff:11
 msgid "`what`"
 msgstr "`what`"
 
 #: ../../source/inc/li_ff:10
+#, fuzzy
 msgid ""
 "A string giving a description of the thing being formatted, which is used to "
 "create better error messages."
 msgstr ""
+"フォーマットされるものを記述する文字列で、よりよいエラーメッセージを作成する"
+"ために使用されます。"
 
 #: ../../source/inc/li_ff:14
 msgid "The name of the attribute image."
-msgstr ""
+msgstr "属性名の文字列です。"
 
 #: ../../source/inc/li_ff:17
 msgid ""
 "The group of an attribute, None if not supplied or if it's part of a "
 "condition."
-msgstr ""
+msgstr "属性のグループで、 提供されないか条件の一部なら None になります。"
 
 #: ../../source/inc/li_ff:21
 msgid "The variant argument to the group, or None if it is not supplied."
-msgstr ""
+msgstr "グループへのバリエーション引数で、提供されなければ None です。"
 
 #: ../../source/inc/li_ff:25
 msgid "The attribute itself."
-msgstr ""
+msgstr "属性です。"
 
 #: ../../source/inc/li_ff:28
 msgid "Either a displayable or string."
-msgstr ""
+msgstr "displayable または文字列です。"
 
 #: ../../source/inc/li_ff:31
 msgid "The image_format argument of the LayeredImage."
-msgstr ""
+msgstr "LayerdImage の image_format 引数です。"
 
 #: ../../source/inc/li_ff:33
 msgid ""
@@ -964,12 +1157,16 @@ msgid ""
 "None), and `attribute` are combined with underscores to create `image`, "
 "which will then be a string."
 msgstr ""
+"`image` が None なら、 `name` と (あれば) `group`,(あれば)  `variant`, "
+"`attribute` がアンダースコアで結合され、 `image` の文字列になります。"
 
 #: ../../source/inc/li_ff:37
 msgid ""
 "If `images` is a string, and `image_format` is not None, `image` is "
 "formatted into the string to get the final displayable."
 msgstr ""
+"`images` が文字列で、 `image_format` が None でなければ、 `image` は最終的な "
+"displayable を所得する文字列にフォーマットされます。"
 
 #: ../../source/inc/li_ff:40
 msgid ""
@@ -979,10 +1176,15 @@ msgid ""
 "\"images/eileen_expression_happy.png\". But note that it would have found "
 "the same image without the format argument."
 msgstr ""
+"つまり `name` が \"eileen\", `group` が \"expression\", `attribute` が "
+"\"happy\" なら、 `image` は \"eileen_expression_happy\" に設定されます。 "
+"`image_format` が \"images/{image}.png\" なら、Ren'Py が見つける最終的な画像"
+"は \"images/eileen_expression_happy.png\" です。ただしフォーマット引数なしで"
+"も同じ画像を見つけたことに注意してください。"
 
 #: ../../source/layeredimage.rst:561
 msgid "Proxying Layered Images"
-msgstr ""
+msgstr "Proxying Layered Images"
 
 #: ../../source/layeredimage.rst:563
 msgid ""
@@ -990,16 +1192,21 @@ msgid ""
 "image in multiple places. One reason for this would be to have the same "
 "sprite at multiple sizes, while another would be to use it as a side image."
 msgstr ""
+"レイヤー画像を代用して同じレイヤー画像を複数の場所で使用しなければならないと"
+"きがあります。これは例えば、複数のサイズの同じスプライトを作ったり、サイドイ"
+"メージとしてもう一つを使用するためです。"
 
 #: ../../source/layeredimage.rst:568
 msgid ""
 "The :func:`LayeredImageProxy` object does this, taking one layered image and "
 "duplicating it somewhere else."
 msgstr ""
+":func:`LayeredImageProxy` オブジェクトでこれを行います。レイヤー画像を1つとっ"
+"て複製します。"
 
 #: ../../source/layeredimage.rst:571
 msgid "For example::"
-msgstr ""
+msgstr "例 ::"
 
 #: ../../source/layeredimage.rst:575
 msgid ""
@@ -1007,16 +1214,20 @@ msgid ""
 "also takes a transform argument that makes it useful to position a side "
 "image, like this::"
 msgstr ""
+"独立して表示出来る画像の複製を作成します。これはこのように transform を引数に"
+"取り、サイドイメージを配置するのに便利です。 ::"
 
 #: ../../source/inc/li_proxy:5
 msgid ""
 "This is an image-like object that proxies attributes passed to it to another "
 "layered image."
 msgstr ""
+"これは画像のようなオブジェクトで。渡される属性を他のレイヤー画像に中継しま"
+"す。"
 
 #: ../../source/inc/li_proxy:9
 msgid "A string giving the name of the layered image to proxy to."
-msgstr ""
+msgstr "中継するレイヤー画像の名前の文字列です。"
 
 #: ../../source/inc/li_proxy:12
 msgid "`transform`"
@@ -1026,4 +1237,4 @@ msgstr "`transform`"
 msgid ""
 "If given, a transform or list of transforms that are applied to the image "
 "after it has been proxied."
-msgstr ""
+msgstr "与えるなら、中継先の画像に適用される変換または変換のリストです。"
