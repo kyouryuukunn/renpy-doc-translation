@@ -95,55 +95,89 @@ gitの使用方法が分からない場合は、上記のサイトから"clone or download"->"Download 
 また、翻訳作業には PoEdit を推奨します。
 
 
+**最新のrenpyから飜訳用ファイルを生成する/飜訳を生成する**
+飜訳はpoファイルをもちいて管理しています。poファイルとは原文と翻訳文の対のテキストファイルです。
+renpyからpoファイルを生成し、poファイルから飜訳後のhtmlドキュメントを生成できます。
 
-**最新のrenpyからpoファイルを生成したい場合**
-最近のバージョンでドキュメントをコンパイルするのに必要なファイルをrenpy/sphinx/build.shにより自分で
+最近のバージョンでhtmlドキュメントをコンパイルするのに必要なファイルrenpy/sphinx/source/inc/*をrenpy/sphinx/build.shにより自分で
 生成するようになりました。それにともない依存するライブラリが増えため、msysでのコンパイルは諦めた方がいいです。
-Virtual BoxかWSLからLinux使いましょう
+本レポジトリにrenpyから生成したinc下のファイルを含めましたが、最新版を自分で生成したい場合Virtual BoxからLinux使いましょう。
 
-wslの場合
-まず必要なファイルを用意
-wslを起動して以下のコマンドを実行
-sudo apt-get update
-sudo apt install make
-sudo apt install gettext
-sudo apt install git
-sudo apt install python-pip
-pip install sphinx-bootstrap-theme\==0.4.11
-pip install sphinx\==1.6.6.0
-pip install future
+VirtualBoxからUbuntuを使用した場合の例
+**1. 最新のrenpyからrenpy/sphinx/source/inc下のファイルを生成する**
+1. http://www.ubuntulinux.jp/downloadから日本語Remixイメージをダウンロードする
+2. https://www.virtualbox.org/wiki/DownloadsからVirtualBoxをダウンロード、インストールする
+3. VirtualBoxにUbuntuをインストールする。方法は検索すると一杯でてくるのでそちらを参照
+4. メニュー->デバイス->Guest Additions CDイメージの挿入を実行し、Guest Additionsをインストールする
+5. 端末を開き、以下のコマンドで共有フォルダにアクセス出来るようにする。以降ファイルのやり取りは共有フォルダから行なう
+	sudo gpasswd -a (ユーザ名) vboxsf
+6. 必要なものをインストールする
+	sudo apt install git
+	sudo apt install python
+	sudo apt install python-pip
+	pip install sphinx-bootstrap-theme\==0.4.11
+	pip install sphinx\==1.4.4
+	pip install future
+7. 最新版のrenpyをダウンロードする
+	cd ~
+	git clone https://github.com/renpy/renpy
+8. nightly build(https://nightly.renpy.org/)をダウンロードして展開し、Libとrenpy.shを7.のディレクトリにコピー
+9. 次のコマンドでrenpy/sphinx/inc下のファイルを生成する
+	export PATH="/home/(ユーザー名)/.local/bin:$PATH"
+	cd ~/renpy/sphinx
 
-1:任意のフォルダに開発中のrenpyをクローン
-cd ~/
-git clone https://github.com/renpy/renpy
+最新版のRen'PyとNightly Buildでバージョンがズレていると生成に失敗する
+また、そうでなくとも開発中のバージョンは失敗することが多いので最新版のリリース後が狙い目
 
-2:update-po-from-potを~/renpyに配置
+以降の作業はmsysでも可能です。
 
-3:poファイルを作成
-cd ~/renpy/sphinx
-make gettext
-cd ..
-./update-po-from-pot
+
+**2. 最新のrenpyからpoファイルを生成する**
+必要なものをインストール
+	sudo apt install git
+	sudo apt install python
+	sudo apt install python-pip
+	pip install sphinx-bootstrap-theme\==0.4.11
+	pip install sphinx\==1.4.4
+	pip install future
+	sudo apt install make
+	sudo apt install gettext
+このレポジトリと開発中のrenpyをダウンロード
+	cd ~/
+	git clone https://github.com/renpy/renpy
+	git clone https://github.com/kyouryuukunn/renpy-doc-translation
+update-po-from-potを~/renpyに配置
+	cp renpy-doc-translation/update-po-from-pot renpy
+現在の飜訳ファイルをrenpy/sphix/localeにコピー
+	cp renpy-doc-translation/* renpy/sphinx/locale -r
+	cd renpy/sphinx
+	make gettext
+	cd ..
+既存の飜訳ファイルにrenpyの変更分を反映する
+	./update-po-from-pot
 
 これで~/renpy/sphinx/localeにpotファイルが生成されます。これらを適当な名前に変更してください(日本語ならja.po)。
 ja.poには翻訳前の文章が書かれているので、テキストエディタまたはpoeditという編集ソフトで翻訳後保存してください。
 
-
-**poファイルからhtmlファイルを生成したい場合**
-必要なもの:
-gettext
-python2
-python2 sphinx, sphinx-bootstrap-theme(ver 0.4.11)
-wsl or msys(windowsの場合)
-poファイルが既にある場合は、msysでもドキュメントのコンパイルは可能です。
-
-1:任意のフォルダに開発中のrenpyをクローン
-cd ~/
-git clone https://github.com/renpy/renpy
-
-2:飜訳後のpoファイルを~/renpy/sphinx/localeの各フォルダに移動
-cd ~/renpy/sphinx
-make compile-po
-LANGUAGE=ja make html
+**3. poファイルからhtmlファイルを生成する**
+必要なものをインストール
+	sudo apt install git
+	sudo apt install python
+	sudo apt install python-pip
+	pip install sphinx-bootstrap-theme\==0.4.11
+	pip install sphinx\==1.4.4
+	pip install future
+	sudo apt install make
+	sudo apt install gettext
+このレポジトリと開発中のrenpyをダウンロード
+	cd ~/
+	git clone https://github.com/renpy/renpy
+	git clone https://github.com/kyouryuukunn/renpy-doc-translation
+飜訳後のpoファイルを~/renpy/sphinx/localeの各フォルダに移動
+	cp renpy-doc-translation/* renpy/sphinx/locale -r
+HTMLファイル生成
+	cd ~/renpy/sphinx
+	make compile-po
+	LANGUAGE=ja make html
 
 これで~/renpy/sphinx/buildにhtmlファイルが生成されます。
