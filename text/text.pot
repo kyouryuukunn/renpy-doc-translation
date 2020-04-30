@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-04 14:54+0900\n"
+"POT-Creation-Date: 2020-04-25 18:44+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -305,228 +305,236 @@ msgid "Text tags that only apply to dialogue are:"
 msgstr ""
 
 #: ../../source/text.rst:367
+msgid "Text after the done tag is not displayed. Why would you want this? It's to allow text to avoid jumping around when :propref:`adjust_spacing` is True."
+msgstr ""
+
+#: ../../source/text.rst:371
+msgid "When the done tag is present, the line of dialogue is not added to the history buffer. If the nw tag is present, it should be before the done tag.::"
+msgstr ""
+
+#: ../../source/text.rst:381
 msgid "If the fast tag is displayed in a line of text, then all text before it is displayed instantly, even in slow text mode. The fast tag is a self-closing tag. ::"
 msgstr ""
 
-#: ../../source/text.rst:377
+#: ../../source/text.rst:391
 msgid "The no-wait tag is a self-closing tag that causes the current line of dialogue to automatically dismiss itself once the end of line has been displayed. ::"
 msgstr ""
 
-#: ../../source/text.rst:385
+#: ../../source/text.rst:399
 msgid "The no-wait tag will wait for voice and self-voicing to complete before advancing."
 msgstr ""
 
-#: ../../source/text.rst:390
+#: ../../source/text.rst:404
 msgid "The paragraph pause tag is a self-closing tag that terminates the current paragraph, and waits for the user to click to continue. If it is given an argument, the argument is interpreted as a number, and the wait automatically ends after that many seconds have passed. ::"
 msgstr ""
 
-#: ../../source/text.rst:400
+#: ../../source/text.rst:414
 msgid "The wait tag is a self-closing tag that waits for the user to click to continue. If it is given an argument, the argument is interpreted as a number, and the wait automatically ends after that many seconds have passed. ::"
 msgstr ""
 
-#: ../../source/text.rst:410
+#: ../../source/text.rst:424
 msgid "The clear text tag only makes sense on a line by itself in the :ref:`NVL monologue mode <nvl-monologue-mode>`. It does the same thing at the ``nvl clear`` statement without ending the block of text. ::"
 msgstr ""
 
-#: ../../source/text.rst:426
+#: ../../source/text.rst:440
 msgid "It's also possible to define :ref:`custom text tags <custom-text-tags>` using Python."
 msgstr ""
 
-#: ../../source/text.rst:430
+#: ../../source/text.rst:444
 msgid "Style Text Tags"
 msgstr ""
 
-#: ../../source/text.rst:432
+#: ../../source/text.rst:446
 msgid "Ren'Py supports text tags that access styles. These are text tags where the tag name is empty. In this case, the argument is taken to be the name of a style. For example, the {=mystyle} tag will acces the ``mystyle`` style."
 msgstr ""
 
-#: ../../source/text.rst:437
+#: ../../source/text.rst:451
 msgid "The text between the tag and the corresponding closing tag has the following properties set to those defined in the style:"
 msgstr ""
 
-#: ../../source/text.rst:440
+#: ../../source/text.rst:454
 msgid "antialias"
 msgstr ""
 
-#: ../../source/text.rst:441
+#: ../../source/text.rst:455
 msgid "font"
 msgstr ""
 
-#: ../../source/text.rst:442
+#: ../../source/text.rst:456
 msgid "size"
 msgstr ""
 
-#: ../../source/text.rst:443
+#: ../../source/text.rst:457
 msgid "bold"
 msgstr ""
 
-#: ../../source/text.rst:444
+#: ../../source/text.rst:458
 msgid "italic"
 msgstr ""
 
-#: ../../source/text.rst:445
+#: ../../source/text.rst:459
 msgid "underline"
 msgstr ""
 
-#: ../../source/text.rst:446
+#: ../../source/text.rst:460
 msgid "strikethrough"
 msgstr ""
 
-#: ../../source/text.rst:447
+#: ../../source/text.rst:461
 msgid "color"
 msgstr ""
 
-#: ../../source/text.rst:448
+#: ../../source/text.rst:462
 msgid "black_color"
 msgstr ""
 
-#: ../../source/text.rst:449
+#: ../../source/text.rst:463
 msgid "kerning"
 msgstr ""
 
-#: ../../source/text.rst:453
+#: ../../source/text.rst:467
 msgid "Non-English Languages"
 msgstr ""
 
-#: ../../source/text.rst:455
-msgid "The default font for Ren'Py contains characters for English and many other languages. For size reasons, it doesn't contain the characters required to render other languages, including Chinese, Japanese, and Korean. In order to support these language, a project must first change the fonts it uses."
+#: ../../source/text.rst:469
+msgid "The default font for Ren'Py contains characters for English and many other languages. For size reasons, it doesn't contain the characters required to render other languages, including Chinese, Japanese, and Korean. In order to support these languages, a project must first change the fonts it uses."
 msgstr ""
 
-#: ../../source/text.rst:461
+#: ../../source/text.rst:475
 msgid "Ren'Py should then support most world languages without further configuration. However, Korean can be written with or without spacing between words. Ren'Py has a special mode to support Korean with spaces, which can be enabled by setting::"
 msgstr ""
 
-#: ../../source/text.rst:468
+#: ../../source/text.rst:482
 msgid "This can be changed from the default of \"unicode\" in gui.rpy."
 msgstr ""
 
-#: ../../source/text.rst:470
+#: ../../source/text.rst:484
 msgid "Japanese has multiple rules for line breaking. We recommend starting with \"japanese-normal\", and moving to \"japanese-loose\" or \"japanese-strict\" for more or less break opportunities, respectively. ::"
 msgstr ""
 
-#: ../../source/text.rst:476
+#: ../../source/text.rst:490
 msgid "Ideographic languages provide a large number of opportunities for line breaking. To enable a faster but less-accurate line-breaking algorithm, use::"
 msgstr ""
 
-#: ../../source/text.rst:482
+#: ../../source/text.rst:496
 msgid "The faster line-breaking algorithm is not be necessary unless the game is displaying huge amounts of text, such as in NVL-mode."
 msgstr ""
 
-#: ../../source/text.rst:485
+#: ../../source/text.rst:499
 msgid "The line breaking algorithms can be further configured using the :func:`renpy.language_tailor` function."
 msgstr ""
 
-#: ../../source/text.rst:490
+#: ../../source/text.rst:504
 msgid "Vertical Text"
 msgstr ""
 
-#: ../../source/text.rst:492
+#: ../../source/text.rst:506
 msgid "When the :propref:`vertical` style property is set, Ren'Py will produce vertically oriented text. The text is written top-to-bottom, right-to-left."
 msgstr ""
 
-#: ../../source/text.rst:496
+#: ../../source/text.rst:510
 msgid "There are two text tags that interact with vertical text."
 msgstr ""
 
-#: ../../source/text.rst:500
+#: ../../source/text.rst:514
 msgid "Includes horizontally-oriented text inside vertical text."
 msgstr ""
 
-#: ../../source/text.rst:504
+#: ../../source/text.rst:518
 msgid "Includes vertically-oriented text inside horizontal text. (This will not rotate the text to the vertical orientation.)"
 msgstr ""
 
-#: ../../source/text.rst:509
+#: ../../source/text.rst:523
 msgid "If the font does not contain vertical text spacing information, Ren'Py will attempt to synthesize this information from horizontal text information. The spacing may not remain constant between Ren'Py releases."
 msgstr ""
 
-#: ../../source/text.rst:518
+#: ../../source/text.rst:532
 msgid "Ruby Text"
 msgstr ""
 
-#: ../../source/text.rst:520
+#: ../../source/text.rst:534
 msgid "Ruby text (also known as furigana or interlinear annotations) is a way of placing small text above a character or word. There are several steps required for your game to support ruby text."
 msgstr ""
 
-#: ../../source/text.rst:524
+#: ../../source/text.rst:538
 msgid "First, you must set up styles for the ruby text. The following style changes are required:"
 msgstr ""
 
-#: ../../source/text.rst:527
+#: ../../source/text.rst:541
 msgid "The :propref:`line_leading` property must be used to leave enough vertical space for the ruby text."
 msgstr ""
 
-#: ../../source/text.rst:529
+#: ../../source/text.rst:543
 msgid "A new named style must be created. The properties of this style, such as :propref:`size` should be set in a fashion appropriate for ruby text."
 msgstr ""
 
-#: ../../source/text.rst:532
+#: ../../source/text.rst:546
 msgid "The :propref:`yoffset` of the new style should be set, in order to move the ruby text above the baseline."
 msgstr ""
 
-#: ../../source/text.rst:534
+#: ../../source/text.rst:548
 msgid "The :propref:`ruby_style` field of the text's style should be set to the newly-created style."
 msgstr ""
 
-#: ../../source/text.rst:537
-#: ../../source/text.rst:555
-#: ../../source/text.rst:642
+#: ../../source/text.rst:551
+#: ../../source/text.rst:569
+#: ../../source/text.rst:656
 msgid "For example::"
 msgstr ""
 
-#: ../../source/text.rst:547
+#: ../../source/text.rst:561
 msgid "(Use ``style.style_name`` to refer to a style for this purpose.)"
 msgstr ""
 
-#: ../../source/text.rst:549
+#: ../../source/text.rst:563
 msgid "Once Ren'Py has been configured, ruby text can be included using the {rt} and {rb} text tags. The {rt} tag is used to mark one or more characters to be displayed as ruby text. If the ruby text is preceded by text enclosed in the {rb} tag, the ruby text is centered over that text. Otherwise, it is centered over the preceding character."
 msgstr ""
 
-#: ../../source/text.rst:561
+#: ../../source/text.rst:575
 msgid "It's the creator's responsibility to ensure that ruby text does not leave the boundaries of the text. It may be necessary to add leading or spaces to the left and right of the text to prevent these errors from occurring."
 msgstr ""
 
-#: ../../source/text.rst:566
+#: ../../source/text.rst:580
 msgid "Ren'Py also supports alternate ruby text, which is a second kind of ruby top text. This is introduced with the {art} text tag (instead of {rt}), and the :propref:`altruby_style` property (instead of :propref:`ruby_style`)."
 msgstr ""
 
-#: ../../source/text.rst:571
+#: ../../source/text.rst:585
 msgid "Fonts"
 msgstr ""
 
-#: ../../source/text.rst:573
+#: ../../source/text.rst:587
 msgid "Ren'Py supports TrueType/OpenType fonts and collections, and Image-Based fonts."
 msgstr ""
 
-#: ../../source/text.rst:576
+#: ../../source/text.rst:590
 msgid "A TrueType or OpenType font is specified by giving the name of the font file. The file must be present in the game directory or one of the archive files."
 msgstr ""
 
-#: ../../source/text.rst:580
+#: ../../source/text.rst:594
 msgid "Ren'Py also supports TrueType/OpenType collections that define more than one font. When accessing a collection, use the 0-based font index, followed by an at-sign and the file name. For example, \"0\\@font.ttc\" is the first font in a collection, \"1\\@font.ttc\" the second, and so on."
 msgstr ""
 
-#: ../../source/text.rst:587
+#: ../../source/text.rst:601
 msgid "Font Replacement"
 msgstr ""
 
-#: ../../source/text.rst:589
+#: ../../source/text.rst:603
 msgid "The :var:`config.font_replacement_map` variable is used to map fonts. The combination of font filename, boldness, and italics is mapped to a similar combination. This allows a font with proper italics to be used instead of the automatically-generated italics."
 msgstr ""
 
-#: ../../source/text.rst:594
+#: ../../source/text.rst:608
 msgid "Once such mapping would be to replace the italic version of the Deja Vu Sans font with the official oblique version (You'll need to download the oblique font from the web)::"
 msgstr ""
 
-#: ../../source/text.rst:601
+#: ../../source/text.rst:615
 msgid "This mapping can improve the look of italic text."
 msgstr ""
 
-#: ../../source/text.rst:604
+#: ../../source/text.rst:618
 msgid "Image-Based Fonts"
 msgstr ""
 
-#: ../../source/text.rst:606
+#: ../../source/text.rst:620
 msgid "Image based fonts can be registered by calling one of the following registration functions. Registering an image-based font requires the specification of a name, size, boldness, italicness, and underline. When all of these properties match the registered font, the registered font is used."
 msgstr ""
 
@@ -690,19 +698,19 @@ msgstr ""
 msgid "The character set of the font. A string containing characters in the order in which they are found in the image. The default character set for a SFont is::"
 msgstr ""
 
-#: ../../source/text.rst:614
+#: ../../source/text.rst:628
 msgid "As BMFont is the most complete of the three image font formats Ren'Py supports, it's the one recommended for new projects. An example of BMFont use is::"
 msgstr ""
 
-#: ../../source/text.rst:629
+#: ../../source/text.rst:643
 msgid "Font Groups"
 msgstr ""
 
-#: ../../source/text.rst:631
+#: ../../source/text.rst:645
 msgid "When creating a multilingual game, it may not be possible to find a single font that covers every writing system the game use while projecting the the mood the creator intends. To support this, Ren'Py supports font groups that can take characters from two or more fonts and combine them into a single font."
 msgstr ""
 
-#: ../../source/text.rst:637
+#: ../../source/text.rst:651
 msgid "To create a font group, create a :class:`FontGroup` object and call the ``.add`` method on it once or more. A FontGroup can be used wherever a font name can be used. The add method takes the start and end of a range of Unicode character points, and the first range to cover a point is used."
 msgstr ""
 
@@ -738,11 +746,11 @@ msgstr ""
 msgid "This returns the FontGroup, so that multiple calls to .add() can be chained together."
 msgstr ""
 
-#: ../../source/text.rst:653
+#: ../../source/text.rst:667
 msgid "Text Displayables"
 msgstr ""
 
-#: ../../source/text.rst:655
+#: ../../source/text.rst:669
 msgid "Text can also be used as a :ref:`displayable <displayables>`, which allows you to apply transforms to text, displaying it as if it was an image and moving it around the screen."
 msgstr ""
 
@@ -794,7 +802,7 @@ msgstr ""
 msgid "If true, text interpolation occurs. If false, it will not occur. If None, they are controlled by :var:`config.new_substitutions`."
 msgstr ""
 
-#: ../../source/text.rst:663
+#: ../../source/text.rst:677
 msgid "Text Utility Functions"
 msgstr ""
 
@@ -830,47 +838,47 @@ msgstr ""
 msgid "A function that is called with strings corresponding to runs of text, and should return a second string that replaces that run of text."
 msgstr ""
 
-#: ../../source/text.rst:668
+#: ../../source/text.rst:682
 msgid "Slow Text Concerns"
 msgstr ""
 
-#: ../../source/text.rst:670
+#: ../../source/text.rst:684
 msgid "Ren'Py allows the creator or user to indicate that text should be displayed slowly. In this case, Ren'Py will render the text to a texture, and then draw rectangles from the texture to the screen."
 msgstr ""
 
-#: ../../source/text.rst:674
+#: ../../source/text.rst:688
 msgid "Unfortunately, this means that it's possible to get rendering artifacts when characters overlap. To minimize these rendering artifacts, ensure that the :propref:`line_leading` and :propref:`line_spacing` properties are large enough that lines do not overlap. If the bottoms of characters on the first line are clipped, especially if line_spacing is negative, consider increasing :propref:`line_overlap_split`."
 msgstr ""
 
-#: ../../source/text.rst:682
+#: ../../source/text.rst:696
 msgid "Horizontal artifacts are also possible when characters are kerned together, but these artifacts are less severe, as they exist for only a single frame."
 msgstr ""
 
-#: ../../source/text.rst:686
+#: ../../source/text.rst:700
 msgid "Artifacts aren't a problem for static text, like the text in menus and other parts of the user interface."
 msgstr ""
 
-#: ../../source/text.rst:690
+#: ../../source/text.rst:704
 msgid "Text Overflow Logging"
 msgstr ""
 
-#: ../../source/text.rst:692
+#: ../../source/text.rst:706
 msgid "Ren'Py can log cases where text expands outside of the area allocated for it. To enable text overflow logging, the following steps are necessary."
 msgstr ""
 
-#: ../../source/text.rst:696
+#: ../../source/text.rst:710
 msgid "Set the :var:`config.debug_text_overflow` variable to true."
 msgstr ""
 
-#: ../../source/text.rst:697
+#: ../../source/text.rst:711
 msgid "Set the :propref:`xmaximum` and :propref:`ymaximum` style properties on either the Text displayable, or a container enclosing it."
 msgstr ""
 
-#: ../../source/text.rst:699
+#: ../../source/text.rst:713
 msgid "Run the game."
 msgstr ""
 
-#: ../../source/text.rst:701
+#: ../../source/text.rst:715
 msgid "Whenever text is displayed that overflows the available area, Ren'Py will log an error to the text_overflow.txt file."
 msgstr ""
 
