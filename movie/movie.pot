@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-25 18:44+0900\n"
+"POT-Creation-Date: 2020-04-30 21:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,7 +137,6 @@ msgid "A Movie takes two parameters:"
 msgstr ""
 
 #: ../../source/movie.rst:79
-#: ../../source/inc/movie:27
 msgid "`play`"
 msgstr ""
 
@@ -150,7 +149,6 @@ msgid "This should always be provided."
 msgstr ""
 
 #: ../../source/movie.rst:84
-#: ../../source/inc/movie:43
 msgid "`mask`"
 msgstr ""
 
@@ -176,153 +174,5 @@ msgstr ""
 
 #: ../../source/movie.rst:118
 msgid "Python Functions"
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:5
-msgid "This displays a movie cutscene for the specified number of seconds. The user can click to interrupt the cutscene. Overlays and Underlays are disabled for the duration of the cutscene."
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:10
-msgid "`filename`"
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:10
-msgid "The name of a file containing any movie playable by Ren'Py."
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:16
-msgid "`delay`"
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:13
-msgid "The number of seconds to wait before ending the cutscene. Normally the length of the movie, in seconds. If None, then the delay is computed from the number of loops (that is, loops + 1) * the length of the movie. If -1, we wait until the user clicks."
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:19
-msgid "`loops`"
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:19
-msgid "The number of extra loops to show, -1 to loop forever."
-msgstr ""
-
-#: ../../source/inc/movie_cutscene:21
-msgid "Returns True if the movie was terminated by the user, or False if the given delay elapsed uninterrupted."
-msgstr ""
-
-#: ../../source/inc/movie:5
-msgid "This is a displayable that shows the current movie."
-msgstr ""
-
-#: ../../source/inc/movie:10
-msgid "`fps`"
-msgstr ""
-
-#: ../../source/inc/movie:8
-msgid "The framerate that the movie should be shown at. (This is currently ignored, but the parameter is kept for backwards compatibility. The framerate is auto-detected.)"
-msgstr ""
-
-#: ../../source/inc/movie:16
-msgid "`size`"
-msgstr ""
-
-#: ../../source/inc/movie:13
-msgid "This should be specified as either a tuple giving the width and height of the movie, or None to automatically adjust to the size of the playing movie. (If None, the displayable will be (0, 0) when the movie is not playing.)"
-msgstr ""
-
-#: ../../source/inc/movie:22
-msgid "`channel`"
-msgstr ""
-
-#: ../../source/inc/movie:19
-msgid "The audio channel associated with this movie. When a movie file is played on that channel, it will be displayed in this Movie displayable. If this is not given, and the `play` is provided, a channel name is automatically selected."
-msgstr ""
-
-#: ../../source/inc/movie:25
-msgid "If given, this should be the path to a movie file. The movie file will be automatically played on `channel` when the Movie is shown, and automatically stopped when the movie is hidden."
-msgstr ""
-
-#: ../../source/inc/movie:37
-msgid "`side_mask`"
-msgstr ""
-
-#: ../../source/inc/movie:30
-msgid "If true, this tells Ren'Py to use the side-by-side mask mode for the Movie. In this case, the movie is divided in half. The left half is used for color information, while the right half is used for alpha information. The width of the displayable is half the width of the movie file."
-msgstr ""
-
-#: ../../source/inc/movie:36
-msgid "Where possible, `side_mask` should be used over `mask` as it has no chance of frames going out of sync."
-msgstr ""
-
-#: ../../source/inc/movie:40
-msgid "If given, this should be the path to a movie file that is used as the alpha channel of this displayable. The movie file will be automatically played on `movie_channel` when the Movie is shown, and automatically stopped when the movie is hidden."
-msgstr ""
-
-#: ../../source/inc/movie:48
-msgid "`mask_channel`"
-msgstr ""
-
-#: ../../source/inc/movie:46
-msgid "The channel the alpha mask video is played on. If not given, defaults to `channel`\\ _mask. (For example, if `channel` is \"sprite\", `mask_channel` defaults to \"sprite_mask\".)"
-msgstr ""
-
-#: ../../source/inc/movie:52
-msgid "`start_image`"
-msgstr ""
-
-#: ../../source/inc/movie:51
-msgid "An image that is displayed when playback has started, but the first frame has not yet been decoded."
-msgstr ""
-
-#: ../../source/inc/movie:60
-msgid "`image`"
-msgstr ""
-
-#: ../../source/inc/movie:55
-msgid "An image that is displayed when `play` has been given, but the file it refers to does not exist. (For example, this can be used to create a slimmed-down mobile version that does not use movie sprites.) Users can also choose to fall back to this image as a preference if video is too taxing for their system. The image will also be used if the video plays, and then the movie ends."
-msgstr ""
-
-#: ../../source/inc/movie:92
-msgid "``play_callback``"
-msgstr ""
-
-#: ../../source/inc/movie:63
-msgid "If not None, a function that's used to start the movies playing. (This may do things like queue a transition between sprites, if desired.) It's called with the following arguments:"
-msgstr ""
-
-#: ../../source/inc/movie:67
-msgid "`old`"
-msgstr ""
-
-#: ../../source/inc/movie:68
-msgid "The old Movie object, or None if the movie is not playing."
-msgstr ""
-
-#: ../../source/inc/movie:70
-msgid "`new`"
-msgstr ""
-
-#: ../../source/inc/movie:70
-msgid "The new Movie object."
-msgstr ""
-
-#: ../../source/inc/movie:72
-msgid "A movie object has the `play` parameter available as ``_play``, while the ``channel``, ``loop``, ``mask``, and ``mask_channel`` fields correspond to the given parameters."
-msgstr ""
-
-#: ../../source/inc/movie:76
-msgid "Generally, this will want to use :func:`renpy.music.play` to start the movie playing on the given channel, with synchro_start=True. A minimal implementation is::"
-msgstr ""
-
-#: ../../source/inc/movie:92
-msgid "`loop`"
-msgstr ""
-
-#: ../../source/inc/movie:88
-msgid "If False, the movie will not loop. If `image` is defined, the image will be displayed when the movie ends. Otherwise, the movie will become transparent."
-msgstr ""
-
-#: ../../source/inc/movie:94
-msgid "This displayable will be transparent when the movie is not playing."
 msgstr ""
 
