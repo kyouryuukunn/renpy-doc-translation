@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 21:47+0900\n"
+"POT-Creation-Date: 2020-05-18 23:55+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,12 +44,70 @@ msgstr ""
 msgid "A function used in this way should either ignore unknown keyword arguments, or pass them to a character function. Doing this will allow the game to continue working if Ren'Py adds additional keyword arguments to character calls."
 msgstr ""
 
+#: ../../source/inc/se_say:5
+msgid "The equivalent of the say statement."
+msgstr ""
+
+#: ../../source/inc/se_say:10
+msgid "`who`"
+msgstr ""
+
+#: ../../source/inc/se_say:8
+msgid "Either the character that will say something, None for the narrator, or a string giving the character name. In the latter case, the :func:`say` is used to create the speaking character."
+msgstr ""
+
+#: ../../source/inc/se_say:14
+#: ../../source/inc/se_images:73
+msgid "`what`"
+msgstr ""
+
+#: ../../source/inc/se_say:13
+msgid "A string giving the line to say. Percent-substitutions are performed in this string."
+msgstr ""
+
+#: ../../source/inc/se_say:19
+#: ../../source/inc/se_menu:14
+msgid "`interact`"
+msgstr ""
+
+#: ../../source/inc/se_say:17
+msgid "If true, Ren'Py waits for player input when displaying the dialogue. If false, Ren'Py shows the dialogue, but does not perform an interaction. (This is passed in as a keyword argument.)"
+msgstr ""
+
+#: ../../source/inc/se_say:21
+msgid "This function is rarely necessary, as the following three lines are equivalent. ::"
+msgstr ""
+
 #: ../../source/statement_equivalents.rst:67
 msgid "Choice Menus"
 msgstr ""
 
 #: ../../source/statement_equivalents.rst:69
 msgid "The menu statement has an equivalent Python function."
+msgstr ""
+
+#: ../../source/inc/se_menu:5
+msgid "This displays a menu to the user. `items` should be a list of 2-item tuples. In each tuple, the first item is a textual label, and the second item is the value to be returned if that item is selected. If the value is None, the first item is used as a menu caption."
+msgstr ""
+
+#: ../../source/inc/se_menu:10
+msgid "This function takes many arguments, of which only a few are documented. Except for `items`, all arguments should be given as keyword arguments."
+msgstr ""
+
+#: ../../source/inc/se_menu:14
+msgid "If false, the menu is displayed, but no interaction is performed."
+msgstr ""
+
+#: ../../source/inc/se_menu:17
+msgid "`screen`"
+msgstr ""
+
+#: ../../source/inc/se_menu:17
+msgid "The name of the screen used to display the menu."
+msgstr ""
+
+#: ../../source/inc/se_menu:19
+msgid "Note that most Ren'Py games do not use menu captions, but use narration instead. To display a menu using narration, write::"
 msgstr ""
 
 #: ../../source/statement_equivalents.rst:75
@@ -60,12 +118,159 @@ msgstr ""
 msgid "The image, scene, show, and hide statements each have an equivalent Python function."
 msgstr ""
 
+#: ../../source/inc/se_images:5
+msgid "Returns the list of transforms being applied to the image with tag `name` on `layer`. Returns an empty list if no transofrms are being applied, or None if the image is not shown."
+msgstr ""
+
+#: ../../source/inc/se_images:9
+msgid "If `layer` is None, uses the default layer for the given tag."
+msgstr ""
+
+#: ../../source/inc/se_images:13
+msgid "Hides an image from a layer. The Python equivalent of the hide statement."
+msgstr ""
+
+#: ../../source/inc/se_images:17
+#: ../../source/inc/se_images:29
+#: ../../source/inc/se_images:58
+msgid "`name`"
+msgstr ""
+
+#: ../../source/inc/se_images:16
+msgid "The name of the image to hide. Only the image tag is used, and any image with the tag is hidden (the precise name does not matter)."
+msgstr ""
+
+#: ../../source/inc/se_images:20
+#: ../../source/inc/se_images:67
+msgid "`layer`"
+msgstr ""
+
+#: ../../source/inc/se_images:20
+msgid "The layer on which this function operates. If None, uses the default layer associated with the tag."
+msgstr ""
+
+#: ../../source/inc/se_images:25
+msgid "Defines an image. This function is the Python equivalent of the image statement."
+msgstr ""
+
+#: ../../source/inc/se_images:29
+msgid "The name of the image to display, a string."
+msgstr ""
+
+#: ../../source/inc/se_images:32
+msgid "`d`"
+msgstr ""
+
+#: ../../source/inc/se_images:32
+msgid "The displayable to associate with that image name."
+msgstr ""
+
+#: ../../source/inc/se_images:34
+msgid "This function may only be run from inside an init block. It is an error to run this function once the game has started."
+msgstr ""
+
+#: ../../source/inc/se_images:39
+msgid "Removes all displayables from `layer`. This is equivalent to the scene statement, when the scene statement is not given an image to show."
+msgstr ""
+
+#: ../../source/inc/se_images:42
+msgid "A full scene statement is equivalent to a call to renpy.scene followed by a call to :func:`renpy.show`. For example::"
+msgstr ""
+
+#: ../../source/inc/se_images:47
+msgid "is equivalent to::"
+msgstr ""
+
+#: ../../source/inc/se_images:54
+msgid "Shows an image on a layer. This is the programmatic equivalent of the show statement."
+msgstr ""
+
+#: ../../source/inc/se_images:58
+msgid "The name of the image to show, a string."
+msgstr ""
+
+#: ../../source/inc/se_images:62
+msgid "`at_list`"
+msgstr ""
+
+#: ../../source/inc/se_images:61
+msgid "A list of transforms that are applied to the image. The equivalent of the ``at`` property."
+msgstr ""
+
+#: ../../source/inc/se_images:65
+msgid "A string, giving the name of the layer on which the image will be shown. The equivalent of the ``onlayer`` property. If None, uses the default layer associated with the tag."
+msgstr ""
+
+#: ../../source/inc/se_images:70
+msgid "If not None, this is a displayable that will be shown in lieu of looking on the image. (This is the equivalent of the show expression statement.) When a `what` parameter is given, `name` can be used to associate a tag with the image."
+msgstr ""
+
+#: ../../source/inc/se_images:77
+msgid "`zorder`"
+msgstr ""
+
+#: ../../source/inc/se_images:76
+msgid "An integer, the equivalent of the ``zorder`` property. If None, the zorder is preserved if it exists, and is otherwise set to 0."
+msgstr ""
+
+#: ../../source/inc/se_images:81
+msgid "`tag`"
+msgstr ""
+
+#: ../../source/inc/se_images:80
+msgid "A string, used to specify the image tag of the shown image. The equivalent of the ``as`` property."
+msgstr ""
+
+#: ../../source/inc/se_images:84
+msgid "`behind`"
+msgstr ""
+
+#: ../../source/inc/se_images:84
+msgid "A list of strings, giving image tags that this image is shown behind. The equivalent of the ``behind`` property."
+msgstr ""
+
+#: ../../source/inc/se_images:89
+msgid "The Python equivalent of the ``show layer`` `layer` ``at`` `at_list` statement."
+msgstr ""
+
+#: ../../source/inc/se_images:94
+msgid "`reset`"
+msgstr ""
+
+#: ../../source/inc/se_images:93
+msgid "If true, the transform state is reset to the start when it is shown. If false, the transform state is persisted, allowing the new transform to update that state."
+msgstr ""
+
 #: ../../source/statement_equivalents.rst:83
 msgid "Transitions"
 msgstr ""
 
 #: ../../source/statement_equivalents.rst:85
 msgid "The equivalent of the with statement is the :func:`renpy.with_statement` function."
+msgstr ""
+
+#: ../../source/inc/se_with:5
+msgid "Causes a transition to occur. This is the Python equivalent of the with statement."
+msgstr ""
+
+#: ../../source/inc/se_with:9
+msgid "`trans`"
+msgstr ""
+
+#: ../../source/inc/se_with:9
+msgid "The transition."
+msgstr ""
+
+#: ../../source/inc/se_with:13
+msgid "`always`"
+msgstr ""
+
+#: ../../source/inc/se_with:12
+msgid "If True, the transition will always occur, even if the user has disabled transitions."
+msgstr ""
+
+#: ../../source/inc/se_with:15
+msgid "This function returns true if the user chose to interrupt the transition, and false otherwise."
 msgstr ""
 
 #: ../../source/statement_equivalents.rst:91
@@ -76,11 +281,31 @@ msgstr ""
 msgid "The equivalent of the jump statement is the :func:`renpy.jump` function."
 msgstr ""
 
+#: ../../source/inc/se_jump:5
+msgid "Causes the current statement to end, and control to jump to the given label."
+msgstr ""
+
 #: ../../source/statement_equivalents.rst:98
 msgid "Call"
 msgstr ""
 
 #: ../../source/statement_equivalents.rst:100
 msgid "The equivalent of the call statement is the :func:`renpy.call` function."
+msgstr ""
+
+#: ../../source/inc/se_call:5
+msgid "Causes the current Ren'Py statement to terminate, and a jump to a `label` to occur. When the jump returns, control will be passed to the statement following the current statement."
+msgstr ""
+
+#: ../../source/inc/se_call:12
+msgid "`from_current`"
+msgstr ""
+
+#: ../../source/inc/se_call:10
+msgid "If true, control will return to the current statement, rather than the statement following the current statement. (This will lead to the current statement being run twice. This must be passed as a keyword argument.)"
+msgstr ""
+
+#: ../../source/inc/se_call:17
+msgid "Causes Ren'Py to return from the current Ren'Py-level call."
 msgstr ""
 

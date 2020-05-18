@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 21:47+0900\n"
-"PO-Revision-Date: 2020-04-30 22:00+0900\n"
+"POT-Creation-Date: 2020-05-18 23:55+0900\n"
+"PO-Revision-Date: 2020-05-19 00:04+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
-"Language-Team: \n"
 
 #: ../../source/screen_optimization.rst:8
 msgid "Screen Language Optimization"
@@ -399,6 +399,66 @@ msgstr ""
 msgid "Const Functions"
 msgstr "Const 関数"
 
+#: ../../source/inc/const:5
+msgid "Declares a variable in the store to be constant."
+msgstr "store の変数を const と宣言します。"
+
+#: ../../source/inc/const:7
+msgid ""
+"A variable is constant if nothing can change its value, or any value reached "
+"by indexing it or accessing its attributes. Variables must remain constant "
+"out of define, init, and translate python blocks."
+msgstr ""
+"変数はその値や、それを索引するかまたはそのアトリビュートにアクセスして得られ"
+"る値が変更不可能ならば constant です。変数は define, init, translate python "
+"ブロック以外では変更してはいけません。"
+
+#: ../../source/inc/const:11 ../../source/inc/const:21
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/const:12
+msgid "A string giving the name of the variable to declare constant."
+msgstr "const と宣言する変数の名前の文字列です。"
+
+#: ../../source/inc/const:16
+msgid "Declares a name in the store to be not constant."
+msgstr "store の変数を非 const と宣言します。"
+
+#: ../../source/inc/const:18
+msgid ""
+"This undoes the effect of calls to :func:`renpy.const` and :func:`renpy."
+"pure`."
+msgstr ":func:`renpy.const` と :func:`renpy.pure` 呼び出しの影響を戻します。"
+
+#: ../../source/inc/const:22
+msgid "The name to declare not constant."
+msgstr "非 const と宣言する変数の名前です。"
+
+#: ../../source/inc/const:26
+msgid ""
+"Declares a function as pure. A pure function must always return the same "
+"value when it is called with the same arguments, outside of define, init, "
+"and translate python blocks."
+msgstr ""
+"pure として宣言する関数です。define, init, translate python ブロックを除い"
+"て、 pure 関数は同じ引数で呼び出されたときは常に同じ値を返すべきです。"
+
+#: ../../source/inc/const:32
+msgid "`fn`"
+msgstr "`fn`"
+
+#: ../../source/inc/const:31
+msgid ""
+"The name of the function to declare pure. This may either be a string "
+"containing the name of the function, or the function itself."
+msgstr ""
+"pure として宣言する関数の名前です。これは関数名の文字列か、関数自身です。"
+
+#: ../../source/inc/const:34
+msgid "Returns `fn`, allowing this function to be used as a decorator."
+msgstr "`fn` を返し、この関数はデコレーターとして使用出来ます。"
+
 #: ../../source/screen_optimization.rst:232
 msgid "Profiling"
 msgstr "プロファイリング"
@@ -410,6 +470,130 @@ msgid ""
 msgstr ""
 "Ren'Py は ``renpy.profile_screen`` 関数を使用してスクリーンプロファイリングの"
 "実行をサポートしています。"
+
+#: ../../source/inc/profile_screen:5
+msgid ""
+"Requests screen profiling for the screen named `name`, which must be a "
+"string."
+msgstr ""
+"`name` を名前とするスクリーンに対してスクリーンプロファイリングをリクエストし"
+"ます。"
+
+#: ../../source/inc/profile_screen:8
+msgid ""
+"Apart from `name`, all arguments must be supplied as keyword arguments. This "
+"function takes three groups of arguments."
+msgstr ""
+"`name` 以外のすべての引数はキーワード引数として与えられます。この関数は 3 グ"
+"ループの引数を取ります。"
+
+#: ../../source/inc/profile_screen:12
+msgid "The first group of arguments determines when profiling occurs."
+msgstr "引数の最初のグループは何時プロファイリングするかを決定します。"
+
+#: ../../source/inc/profile_screen:15
+msgid "`predict`"
+msgstr "`predict`"
+
+#: ../../source/inc/profile_screen:15
+msgid "If true, profiling occurs when the screen is being predicted."
+msgstr "True なら、スクリーンが予測されるとプロファイリングを実行します。"
+
+#: ../../source/inc/profile_screen:18
+msgid "`show`"
+msgstr "`show`"
+
+#: ../../source/inc/profile_screen:18
+msgid "If true, profiling occurs when the screen is first shown."
+msgstr ""
+"True なら、スクリーンが最初に表示されるとプロファイリングを実行します。"
+
+#: ../../source/inc/profile_screen:21
+msgid "`update`"
+msgstr "`update`"
+
+#: ../../source/inc/profile_screen:21
+msgid "If true, profiling occurs when the screen is updated."
+msgstr "True なら、スクリーンが更新されるとプロファイリングを実行します。"
+
+#: ../../source/inc/profile_screen:24
+msgid "`request`"
+msgstr "`request`"
+
+#: ../../source/inc/profile_screen:24
+msgid "If true, profiling occurs when requested by pressing F8."
+msgstr "True なら、 F8 でリクエストされるとプロファイリングを実行します。"
+
+#: ../../source/inc/profile_screen:26
+msgid ""
+"The second group of arguments controls what profiling output is produced "
+"when profiling occurs."
+msgstr "引数の第二グループは何をプロファイリングで出力するかを制御します。"
+
+#: ../../source/inc/profile_screen:31
+msgid "`time`"
+msgstr "`time`"
+
+#: ../../source/inc/profile_screen:30
+msgid ""
+"If true, Ren'Py will log the amount of time it takes to evaluate the screen."
+msgstr "True なら、スクリーンを制御するのにかかった時間を記録します。"
+
+#: ../../source/inc/profile_screen:43
+msgid "`debug`"
+msgstr "`debug`"
+
+#: ../../source/inc/profile_screen:34
+msgid ""
+"If true, Ren'Py will log information as to how screens are evaluated, "
+"including:"
+msgstr ""
+"True なら、以下のどの項目についてどのようにスクリーンが評価されたかを記録しま"
+"す。 :"
+
+#: ../../source/inc/profile_screen:37
+msgid "Which displayables Ren'Py considers constant."
+msgstr "どの displayable を Ren'Py は constant と評価したか。"
+
+#: ../../source/inc/profile_screen:38
+msgid "Which arguments, if any, needed to be evaluated."
+msgstr "あるならばどの引数が評価を必要としたか。"
+
+#: ../../source/inc/profile_screen:39
+msgid "Which displayables were reused."
+msgstr "どの displayable が再利用されたか。"
+
+#: ../../source/inc/profile_screen:41
+msgid ""
+"Producing and saving this debug information takes a noticeable amount of "
+"time, and so the `time` output should not be considered reliable if `debug` "
+"is set."
+msgstr ""
+"このデバッグ情報の生成と保存には時間がかかるため、`debug` が設定されているな"
+"ら `time` の情報はあてになりません。"
+
+#: ../../source/inc/profile_screen:45
+msgid ""
+"The last group of arguments controls what output is produced once per Ren'Py "
+"run."
+msgstr "引数の最後のグループは Ren'Py 実行毎になにを出力するか制御します。"
+
+#: ../../source/inc/profile_screen:50
+msgid "`const`"
+msgstr "`const`"
+
+#: ../../source/inc/profile_screen:49
+msgid ""
+"Displays the variables in the screen that are marked as const and not-const."
+msgstr "const と non-const とマークされたそのスクリーンの変数を表示します。"
+
+#: ../../source/inc/profile_screen:52
+msgid ""
+"All profiling output will be logged to profile_screen.txt in the game "
+"directory."
+msgstr ""
+"すべてのプロファイリング結果はゲームディレクトリーの profile_screen.txt に保"
+"存されます。"
 
 #: ../../source/screen_optimization.rst:243
 msgid "Const Names"
@@ -456,148 +640,148 @@ msgid "ADVSpeaker"
 msgstr "ADVSpeaker"
 
 #: ../../source/inc/pure_vars:3
-msgid "AddToSet"
-msgstr "AddToSet"
+msgid ":func:`AddToSet`"
+msgstr ":func:`AddToSet`"
 
 #: ../../source/inc/pure_vars:4
 msgid "Alpha"
 msgstr "Alpha"
 
 #: ../../source/inc/pure_vars:5
-msgid "AlphaBlend"
-msgstr "AlphaBlend"
+msgid ":func:`AlphaBlend`"
+msgstr ":func:`AlphaBlend`"
 
 #: ../../source/inc/pure_vars:6
-msgid "AlphaDissolve"
-msgstr "AlphaDissolve"
+msgid ":func:`AlphaDissolve`"
+msgstr ":func:`AlphaDissolve`"
 
 #: ../../source/inc/pure_vars:7
-msgid "AlphaMask"
-msgstr "AlphaMask"
+msgid ":func:`AlphaMask`"
+msgstr ":func:`AlphaMask`"
 
 #: ../../source/inc/pure_vars:8
-msgid "AnimatedValue"
-msgstr "AnimatedValue"
+msgid ":func:`AnimatedValue`"
+msgstr ":func:`AnimatedValue`"
 
 #: ../../source/inc/pure_vars:9
 msgid "Animation"
 msgstr "Animation"
 
 #: ../../source/inc/pure_vars:10
-msgid "At"
-msgstr "At"
+msgid ":func:`At`"
+msgstr ":func:`At`"
 
 #: ../../source/inc/pure_vars:11
-msgid "AudioPositionValue"
-msgstr "AudioPositionValue"
+msgid ":func:`AudioPositionValue`"
+msgstr ":func:`AudioPositionValue`"
 
 #: ../../source/inc/pure_vars:12
-msgid "Call"
-msgstr "Call"
+msgid ":func:`Call`"
+msgstr ":func:`Call`"
 
 #: ../../source/inc/pure_vars:13
-msgid "Character"
-msgstr "Character"
+msgid ":func:`Character`"
+msgstr ":func:`Character`"
 
 #: ../../source/inc/pure_vars:14
-msgid "Color"
-msgstr "Color"
+msgid ":class:`Color`"
+msgstr ":class:`Color`"
 
 #: ../../source/inc/pure_vars:15
-msgid "ComposeTransition"
-msgstr "ComposeTransition"
+msgid ":func:`ComposeTransition`"
+msgstr ":func:`ComposeTransition`"
 
 #: ../../source/inc/pure_vars:16
-msgid "ConditionSwitch"
-msgstr "ConditionSwitch"
+msgid ":func:`ConditionSwitch`"
+msgstr ":func:`ConditionSwitch`"
 
 #: ../../source/inc/pure_vars:17
-msgid "Confirm"
-msgstr "Confirm"
+msgid ":func:`Confirm`"
+msgstr ":func:`Confirm`"
 
 #: ../../source/inc/pure_vars:18
-msgid "CropMove"
-msgstr "CropMove"
+msgid ":func:`CropMove`"
+msgstr ":func:`CropMove`"
 
 #: ../../source/inc/pure_vars:19
-msgid "DictInputValue"
-msgstr "DictInputValue"
+msgid ":func:`DictInputValue`"
+msgstr ":func:`DictInputValue`"
 
 #: ../../source/inc/pure_vars:20
-msgid "DictValue"
-msgstr "DictValue"
+msgid ":func:`DictValue`"
+msgstr ":func:`DictValue`"
 
 #: ../../source/inc/pure_vars:21
-msgid "DisableAllInputValues"
-msgstr "DisableAllInputValues"
+msgid ":func:`DisableAllInputValues`"
+msgstr ":func:`DisableAllInputValues`"
 
 #: ../../source/inc/pure_vars:22
-msgid "Dissolve"
-msgstr "Dissolve"
+msgid ":func:`Dissolve`"
+msgstr ":func:`Dissolve`"
 
 #: ../../source/inc/pure_vars:23
-msgid "Drag"
-msgstr "Drag"
+msgid ":class:`Drag`"
+msgstr ":class:`Drag`"
 
 #: ../../source/inc/pure_vars:24
 msgid "DynamicCharacter"
 msgstr "DynamicCharacter"
 
 #: ../../source/inc/pure_vars:25
-msgid "DynamicDisplayable"
-msgstr "DynamicDisplayable"
+msgid ":func:`DynamicDisplayable`"
+msgstr ":func:`DynamicDisplayable`"
 
 #: ../../source/inc/pure_vars:26
-msgid "EndReplay"
-msgstr "EndReplay"
+msgid ":func:`EndReplay`"
+msgstr ":func:`EndReplay`"
 
 #: ../../source/inc/pure_vars:27
 msgid "FactorZoom"
 msgstr "FactorZoom"
 
 #: ../../source/inc/pure_vars:28
-msgid "Fade"
-msgstr "Fade"
+msgid ":func:`Fade`"
+msgstr ":func:`Fade`"
 
 #: ../../source/inc/pure_vars:29
-msgid "FieldInputValue"
-msgstr "FieldInputValue"
+msgid ":func:`FieldInputValue`"
+msgstr ":func:`FieldInputValue`"
 
 #: ../../source/inc/pure_vars:30
-msgid "FieldValue"
-msgstr "FieldValue"
+msgid ":func:`FieldValue`"
+msgstr ":func:`FieldValue`"
 
 #: ../../source/inc/pure_vars:31
-msgid "FileDelete"
-msgstr "FileDelete"
+msgid ":func:`FileDelete`"
+msgstr ":func:`FileDelete`"
 
 #: ../../source/inc/pure_vars:32
-msgid "FilePage"
-msgstr "FilePage"
+msgid ":func:`FilePage`"
+msgstr ":func:`FilePage`"
 
 #: ../../source/inc/pure_vars:33
-msgid "FilePageNameInputValue"
-msgstr "FilePageNameInputValue"
+msgid ":func:`FilePageNameInputValue`"
+msgstr ":func:`FilePageNameInputValue`"
 
 #: ../../source/inc/pure_vars:34
-msgid "FileTakeScreenshot"
-msgstr "FileTakeScreenshot"
+msgid ":func:`FileTakeScreenshot`"
+msgstr ":func:`FileTakeScreenshot`"
 
 #: ../../source/inc/pure_vars:35
 msgid ":func:`Fixed`"
 msgstr ":func:`Fixed`"
 
 #: ../../source/inc/pure_vars:36
-msgid "Flatten"
-msgstr "Flatten"
+msgid ":func:`Flatten`"
+msgstr ":func:`Flatten`"
 
 #: ../../source/inc/pure_vars:37
-msgid "FontGroup"
-msgstr "FontGroup"
+msgid ":func:`FontGroup`"
+msgstr ":func:`FontGroup`"
 
 #: ../../source/inc/pure_vars:38
-msgid "Frame"
-msgstr "Frame"
+msgid ":func:`Frame`"
+msgstr ":func:`Frame`"
 
 #: ../../source/inc/pure_vars:39
 msgid ":func:`Grid`"
@@ -608,28 +792,28 @@ msgid ":func:`HBox`"
 msgstr ":func:`HBox`"
 
 #: ../../source/inc/pure_vars:41
-msgid "Help"
-msgstr "Help"
+msgid ":func:`Help`"
+msgstr ":func:`Help`"
 
 #: ../../source/inc/pure_vars:42
-msgid "Hide"
-msgstr "Hide"
+msgid ":func:`Hide`"
+msgstr ":func:`Hide`"
 
 #: ../../source/inc/pure_vars:43
-msgid "HideInterface"
-msgstr "HideInterface"
+msgid ":func:`HideInterface`"
+msgstr ":func:`HideInterface`"
 
 #: ../../source/inc/pure_vars:44
-msgid "If"
-msgstr "If"
+msgid ":func:`If`"
+msgstr ":func:`If`"
 
 #: ../../source/inc/pure_vars:45
-msgid "Image"
-msgstr "Image"
+msgid ":func:`Image`"
+msgstr ":func:`Image`"
 
 #: ../../source/inc/pure_vars:46
-msgid "ImageDissolve"
-msgstr "ImageDissolve"
+msgid ":func:`ImageDissolve`"
+msgstr ":func:`ImageDissolve`"
 
 #: ../../source/inc/pure_vars:47
 msgid "ImageReference"
@@ -640,16 +824,16 @@ msgid ":class:`InputValue`"
 msgstr ":class:`InputValue`"
 
 #: ../../source/inc/pure_vars:49
-msgid "InvertSelected"
-msgstr "InvertSelected"
+msgid ":func:`InvertSelected`"
+msgstr ":func:`InvertSelected`"
 
 #: ../../source/inc/pure_vars:50
-msgid "Jump"
-msgstr "Jump"
+msgid ":func:`Jump`"
+msgstr ":func:`Jump`"
 
 #: ../../source/inc/pure_vars:51
-msgid "Language"
-msgstr "Language"
+msgid ":func:`Language`"
+msgstr ":func:`Language`"
 
 #: ../../source/inc/pure_vars:52
 msgid "LiveComposite"
@@ -664,20 +848,20 @@ msgid "LiveTile"
 msgstr "LiveTile"
 
 #: ../../source/inc/pure_vars:55
-msgid "MainMenu"
-msgstr "MainMenu"
+msgid ":func:`MainMenu`"
+msgstr ":func:`MainMenu`"
 
 #: ../../source/inc/pure_vars:56
-msgid "MixerValue"
-msgstr "MixerValue"
+msgid ":func:`MixerValue`"
+msgstr ":func:`MixerValue`"
 
 #: ../../source/inc/pure_vars:57
 msgid "Motion"
 msgstr "Motion"
 
 #: ../../source/inc/pure_vars:58
-msgid "MouseMove"
-msgstr "MouseMove"
+msgid ":func:`MouseMove`"
+msgstr ":func:`MouseMove`"
 
 #: ../../source/inc/pure_vars:59
 msgid "Move"
@@ -696,120 +880,120 @@ msgid "MoveOut"
 msgstr "MoveOut"
 
 #: ../../source/inc/pure_vars:63
-msgid "MoveTransition"
-msgstr "MoveTransition"
+msgid ":func:`MoveTransition`"
+msgstr ":func:`MoveTransition`"
 
 #: ../../source/inc/pure_vars:64
-msgid "Movie"
-msgstr "Movie"
+msgid ":func:`Movie`"
+msgstr ":func:`Movie`"
 
 #: ../../source/inc/pure_vars:65
-msgid "MultipleTransition"
-msgstr "MultipleTransition"
+msgid ":func:`MultipleTransition`"
+msgstr ":func:`MultipleTransition`"
 
 #: ../../source/inc/pure_vars:66
 msgid "NVLCharacter"
 msgstr "NVLCharacter"
 
 #: ../../source/inc/pure_vars:67
-msgid "Notify"
-msgstr "Notify"
+msgid ":func:`Notify`"
+msgstr ":func:`Notify`"
 
 #: ../../source/inc/pure_vars:68
-msgid "Null"
-msgstr "Null"
+msgid ":func:`Null`"
+msgstr ":func:`Null`"
 
 #: ../../source/inc/pure_vars:69
-msgid "NullAction"
-msgstr "NullAction"
+msgid ":func:`NullAction`"
+msgstr ":func:`NullAction`"
 
 #: ../../source/inc/pure_vars:70
 msgid "OldMoveTransition"
 msgstr "OldMoveTransition"
 
 #: ../../source/inc/pure_vars:71
-msgid "OpenURL"
-msgstr "OpenURL"
+msgid ":func:`OpenURL`"
+msgstr ":func:`OpenURL`"
 
 #: ../../source/inc/pure_vars:72
 msgid "Pan"
 msgstr "Pan"
 
 #: ../../source/inc/pure_vars:73
-msgid "ParameterizedText"
-msgstr "ParameterizedText"
+msgid ":func:`ParameterizedText`"
+msgstr ":func:`ParameterizedText`"
 
 #: ../../source/inc/pure_vars:74
 msgid "Particles"
 msgstr "Particles"
 
 #: ../../source/inc/pure_vars:75
-msgid "Pause"
-msgstr "Pause"
+msgid ":func:`Pause`"
+msgstr ":func:`Pause`"
 
 #: ../../source/inc/pure_vars:76
-msgid "PauseAudio"
-msgstr "PauseAudio"
+msgid ":func:`PauseAudio`"
+msgstr ":func:`PauseAudio`"
 
 #: ../../source/inc/pure_vars:77
-msgid "Pixellate"
-msgstr "Pixellate"
+msgid ":func:`Pixellate`"
+msgstr ":func:`Pixellate`"
 
 #: ../../source/inc/pure_vars:78
 msgid "Play"
 msgstr "Play"
 
 #: ../../source/inc/pure_vars:79
-msgid "PlayCharacterVoice"
-msgstr "PlayCharacterVoice"
+msgid ":func:`PlayCharacterVoice`"
+msgstr ":func:`PlayCharacterVoice`"
 
 #: ../../source/inc/pure_vars:80
 msgid "Position"
 msgstr "Position"
 
 #: ../../source/inc/pure_vars:81
-msgid "Preference"
-msgstr "Preference"
+msgid ":func:`Preference`"
+msgstr ":func:`Preference`"
 
 #: ../../source/inc/pure_vars:82
-msgid "PushMove"
-msgstr "PushMove"
+msgid ":func:`PushMove`"
+msgstr ":func:`PushMove`"
 
 #: ../../source/inc/pure_vars:83
-msgid "Queue"
-msgstr "Queue"
+msgid ":func:`Queue`"
+msgstr ":func:`Queue`"
 
 #: ../../source/inc/pure_vars:84
-msgid "QueueEvent"
-msgstr "QueueEvent"
+msgid ":func:`QueueEvent`"
+msgstr ":func:`QueueEvent`"
 
 #: ../../source/inc/pure_vars:85
-msgid "QuickLoad"
-msgstr "QuickLoad"
+msgid ":func:`QuickLoad`"
+msgstr ":func:`QuickLoad`"
 
 #: ../../source/inc/pure_vars:86
-msgid "QuickSave"
-msgstr "QuickSave"
+msgid ":func:`QuickSave`"
+msgstr ":func:`QuickSave`"
 
 #: ../../source/inc/pure_vars:87
-msgid "Quit"
-msgstr "Quit"
+msgid ":func:`Quit`"
+msgstr ":func:`Quit`"
 
 #: ../../source/inc/pure_vars:88
-msgid "RemoveFromSet"
-msgstr "RemoveFromSet"
+msgid ":func:`RemoveFromSet`"
+msgstr ":func:`RemoveFromSet`"
 
 #: ../../source/inc/pure_vars:89
-msgid "Replay"
-msgstr "Replay"
+msgid ":func:`Replay`"
+msgstr ":func:`Replay`"
 
 #: ../../source/inc/pure_vars:90
-msgid "RestartStatement"
-msgstr "RestartStatement"
+msgid ":func:`RestartStatement`"
+msgstr ":func:`RestartStatement`"
 
 #: ../../source/inc/pure_vars:91
-msgid "Return"
-msgstr "Return"
+msgid ":func:`Return`"
+msgstr ":func:`Return`"
 
 #: ../../source/inc/pure_vars:92
 msgid "Revolve"
@@ -820,160 +1004,160 @@ msgid "RevolveInOut"
 msgstr "RevolveInOut"
 
 #: ../../source/inc/pure_vars:94
-msgid "RollForward"
-msgstr "RollForward"
+msgid ":func:`RollForward`"
+msgstr ":func:`RollForward`"
 
 #: ../../source/inc/pure_vars:95
-msgid "Rollback"
-msgstr "Rollback"
+msgid ":func:`Rollback`"
+msgstr ":func:`Rollback`"
 
 #: ../../source/inc/pure_vars:96
 msgid "RotoZoom"
 msgstr "RotoZoom"
 
 #: ../../source/inc/pure_vars:97
-msgid "ScreenVariableValue"
-msgstr "ScreenVariableValue"
+msgid ":func:`ScreenVariableValue`"
+msgstr ":func:`ScreenVariableValue`"
 
 #: ../../source/inc/pure_vars:98
-msgid "Screenshot"
-msgstr "Screenshot"
+msgid ":func:`Screenshot`"
+msgstr ":func:`Screenshot`"
 
 #: ../../source/inc/pure_vars:99
-msgid "Scroll"
-msgstr "Scroll"
+msgid ":func:`Scroll`"
+msgstr ":func:`Scroll`"
 
 #: ../../source/inc/pure_vars:100
-msgid "SelectedIf"
-msgstr "SelectedIf"
+msgid ":func:`SelectedIf`"
+msgstr ":func:`SelectedIf`"
 
 #: ../../source/inc/pure_vars:101
-msgid "SensitiveIf"
-msgstr "SensitiveIf"
+msgid ":func:`SensitiveIf`"
+msgstr ":func:`SensitiveIf`"
 
 #: ../../source/inc/pure_vars:102
-msgid "SetCharacterVolume"
-msgstr "SetCharacterVolume"
+msgid ":func:`SetCharacterVolume`"
+msgstr ":func:`SetCharacterVolume`"
 
 #: ../../source/inc/pure_vars:103
-msgid "SetDict"
-msgstr "SetDict"
+msgid ":func:`SetDict`"
+msgstr ":func:`SetDict`"
 
 #: ../../source/inc/pure_vars:104
-msgid "SetField"
-msgstr "SetField"
+msgid ":func:`SetField`"
+msgstr ":func:`SetField`"
 
 #: ../../source/inc/pure_vars:105
-msgid "SetMixer"
-msgstr "SetMixer"
+msgid ":func:`SetMixer`"
+msgstr ":func:`SetMixer`"
 
 #: ../../source/inc/pure_vars:106
-msgid "SetMute"
-msgstr "SetMute"
+msgid ":func:`SetMute`"
+msgstr ":func:`SetMute`"
 
 #: ../../source/inc/pure_vars:107
-msgid "SetScreenVariable"
-msgstr "SetScreenVariable"
+msgid ":func:`SetScreenVariable`"
+msgstr ":func:`SetScreenVariable`"
 
 #: ../../source/inc/pure_vars:108
-msgid "SetVariable"
-msgstr "SetVariable"
+msgid ":func:`SetVariable`"
+msgstr ":func:`SetVariable`"
 
 #: ../../source/inc/pure_vars:109
-msgid "SetVoiceMute"
-msgstr "SetVoiceMute"
+msgid ":func:`SetVoiceMute`"
+msgstr ":func:`SetVoiceMute`"
 
 #: ../../source/inc/pure_vars:110
-msgid "Show"
-msgstr "Show"
+msgid ":func:`Show`"
+msgstr ":func:`Show`"
 
 #: ../../source/inc/pure_vars:111
-msgid "ShowMenu"
-msgstr "ShowMenu"
+msgid ":func:`ShowMenu`"
+msgstr ":func:`ShowMenu`"
 
 #: ../../source/inc/pure_vars:112
-msgid "ShowTransient"
-msgstr "ShowTransient"
+msgid ":func:`ShowTransient`"
+msgstr ":func:`ShowTransient`"
 
 #: ../../source/inc/pure_vars:113
-msgid "ShowingSwitch"
-msgstr "ShowingSwitch"
+msgid ":func:`ShowingSwitch`"
+msgstr ":func:`ShowingSwitch`"
 
 #: ../../source/inc/pure_vars:114
 msgid "SizeZoom"
 msgstr "SizeZoom"
 
 #: ../../source/inc/pure_vars:115
-msgid "Skip"
-msgstr "Skip"
+msgid ":func:`Skip`"
+msgstr ":func:`Skip`"
 
 #: ../../source/inc/pure_vars:116
-msgid "SnowBlossom"
-msgstr "SnowBlossom"
+msgid ":func:`SnowBlossom`"
+msgstr ":func:`SnowBlossom`"
 
 #: ../../source/inc/pure_vars:117
-msgid "Solid"
-msgstr "Solid"
+msgid ":func:`Solid`"
+msgstr ":func:`Solid`"
 
 #: ../../source/inc/pure_vars:118
 msgid "Speaker"
 msgstr "Speaker"
 
 #: ../../source/inc/pure_vars:119
-msgid "Start"
-msgstr "Start"
+msgid ":func:`Start`"
+msgstr ":func:`Start`"
 
 #: ../../source/inc/pure_vars:120
-msgid "StaticValue"
-msgstr "StaticValue"
+msgid ":func:`StaticValue`"
+msgstr ":func:`StaticValue`"
 
 #: ../../source/inc/pure_vars:121
 msgid "Stop"
 msgstr "Stop"
 
 #: ../../source/inc/pure_vars:122
-msgid "StylePreference"
-msgstr "StylePreference"
+msgid ":func:`StylePreference`"
+msgstr ":func:`StylePreference`"
 
 #: ../../source/inc/pure_vars:123
 msgid "SubTransition"
 msgstr "SubTransition"
 
 #: ../../source/inc/pure_vars:124
-msgid "Text"
-msgstr "Text"
+msgid ":func:`Text`"
+msgstr ":func:`Text`"
 
 #: ../../source/inc/pure_vars:125
-msgid "ToggleDict"
-msgstr "ToggleDict"
+msgid ":func:`ToggleDict`"
+msgstr ":func:`ToggleDict`"
 
 #: ../../source/inc/pure_vars:126
-msgid "ToggleField"
-msgstr "ToggleField"
+msgid ":func:`ToggleField`"
+msgstr ":func:`ToggleField`"
 
 #: ../../source/inc/pure_vars:127
-msgid "ToggleMute"
-msgstr "ToggleMute"
+msgid ":func:`ToggleMute`"
+msgstr ":func:`ToggleMute`"
 
 #: ../../source/inc/pure_vars:128
-msgid "ToggleScreen"
-msgstr "ToggleScreen"
+msgid ":func:`ToggleScreen`"
+msgstr ":func:`ToggleScreen`"
 
 #: ../../source/inc/pure_vars:129
-msgid "ToggleScreenVariable"
-msgstr "ToggleScreenVariable"
+msgid ":func:`ToggleScreenVariable`"
+msgstr ":func:`ToggleScreenVariable`"
 
 #: ../../source/inc/pure_vars:130
-msgid "ToggleSetMembership"
-msgstr "ToggleSetMembership"
+msgid ":func:`ToggleSetMembership`"
+msgstr ":func:`ToggleSetMembership`"
 
 #: ../../source/inc/pure_vars:131
-msgid "ToggleVariable"
-msgstr "ToggleVariable"
+msgid ":func:`ToggleVariable`"
+msgstr ":func:`ToggleVariable`"
 
 #: ../../source/inc/pure_vars:132
-msgid "ToggleVoiceMute"
-msgstr "ToggleVoiceMute"
+msgid ":func:`ToggleVoiceMute`"
+msgstr ":func:`ToggleVoiceMute`"
 
 #: ../../source/inc/pure_vars:133
 msgid ":class:`Transform`"
@@ -988,20 +1172,20 @@ msgid ":func:`VBox`"
 msgstr ":func:`VBox`"
 
 #: ../../source/inc/pure_vars:136
-msgid "VariableInputValue"
-msgstr "VariableInputValue"
+msgid ":func:`VariableInputValue`"
+msgstr ":func:`VariableInputValue`"
 
 #: ../../source/inc/pure_vars:137
-msgid "VariableValue"
-msgstr "VariableValue"
+msgid ":func:`VariableValue`"
+msgstr ":func:`VariableValue`"
 
 #: ../../source/inc/pure_vars:138
 msgid "Viewport"
 msgstr "Viewport"
 
 #: ../../source/inc/pure_vars:139
-msgid "VoiceReplay"
-msgstr "VoiceReplay"
+msgid ":func:`VoiceReplay`"
+msgstr ":func:`VoiceReplay`"
 
 #: ../../source/inc/pure_vars:140
 msgid "Window"
@@ -1092,8 +1276,8 @@ msgid "_notify_transform"
 msgstr "_notify_transform"
 
 #: ../../source/inc/pure_vars:162
-msgid "_p"
-msgstr "_p"
+msgid ":func:`_p`"
+msgstr ":func:`_p`"
 
 #: ../../source/inc/pure_vars:163
 msgid "abs"
@@ -1188,16 +1372,16 @@ msgid "globals"
 msgstr "globals"
 
 #: ../../source/inc/pure_vars:186
-msgid "gui.SetPreference"
-msgstr "gui.SetPreference"
+msgid ":func:`gui.SetPreference`"
+msgstr ":func:`gui.SetPreference`"
 
 #: ../../source/inc/pure_vars:187
-msgid "gui.TogglePreference"
-msgstr "gui.TogglePreference"
+msgid ":func:`gui.TogglePreference`"
+msgstr ":func:`gui.TogglePreference`"
 
 #: ../../source/inc/pure_vars:188
-msgid "gui.preference"
-msgstr "gui.preference"
+msgid ":func:`gui.preference`"
+msgstr ":func:`gui.preference`"
 
 #: ../../source/inc/pure_vars:189
 msgid "hasattr"
@@ -1312,8 +1496,8 @@ msgid "renpy.ParameterizedText"
 msgstr "renpy.ParameterizedText"
 
 #: ../../source/inc/pure_vars:217
-msgid "renpy.check_text_tags"
-msgstr "renpy.check_text_tags"
+msgid ":func:`renpy.check_text_tags`"
+msgstr ":func:`renpy.check_text_tags`"
 
 #: ../../source/inc/pure_vars:218
 msgid "renpy.curried_call_in_new_context"
@@ -1332,28 +1516,28 @@ msgid "renpy.easy_displayable"
 msgstr "renpy.easy_displayable"
 
 #: ../../source/inc/pure_vars:222
-msgid "renpy.exists"
-msgstr "renpy.exists"
+msgid ":func:`renpy.exists`"
+msgstr ":func:`renpy.exists`"
 
 #: ../../source/inc/pure_vars:223
-msgid "renpy.filter_text_tags"
-msgstr "renpy.filter_text_tags"
+msgid ":func:`renpy.filter_text_tags`"
+msgstr ":func:`renpy.filter_text_tags`"
 
 #: ../../source/inc/pure_vars:224
-msgid "renpy.fsdecode"
-msgstr "renpy.fsdecode"
+msgid ":func:`renpy.fsdecode`"
+msgstr ":func:`renpy.fsdecode`"
 
 #: ../../source/inc/pure_vars:225
-msgid "renpy.fsencode"
-msgstr "renpy.fsencode"
+msgid ":func:`renpy.fsencode`"
+msgstr ":func:`renpy.fsencode`"
 
 #: ../../source/inc/pure_vars:226
-msgid "renpy.get_all_labels"
-msgstr "renpy.get_all_labels"
+msgid ":func:`renpy.get_all_labels`"
+msgstr ":func:`renpy.get_all_labels`"
 
 #: ../../source/inc/pure_vars:227
-msgid "renpy.has_label"
-msgstr "renpy.has_label"
+msgid ":func:`renpy.has_label`"
+msgstr ":func:`renpy.has_label`"
 
 #: ../../source/inc/pure_vars:228
 msgid "renpy.has_screen"
@@ -1364,449 +1548,410 @@ msgid "renpy.image_exists"
 msgstr "renpy.image_exists"
 
 #: ../../source/inc/pure_vars:230
-msgid "renpy.known_languages"
-msgstr "renpy.known_languages"
+msgid ":func:`renpy.image_size`"
+msgstr ":func:`renpy.image_size`"
 
 #: ../../source/inc/pure_vars:231
+msgid ":func:`renpy.known_languages`"
+msgstr ":func:`renpy.known_languages`"
+
+#: ../../source/inc/pure_vars:232
 msgid ":var:`renpy.license`"
 msgstr ":var:`renpy.license`"
 
-#: ../../source/inc/pure_vars:232
-msgid "renpy.list_files"
-msgstr "renpy.list_files"
-
 #: ../../source/inc/pure_vars:233
-msgid "renpy.loadable"
-msgstr "renpy.loadable"
+msgid ":func:`renpy.list_files`"
+msgstr ":func:`renpy.list_files`"
 
 #: ../../source/inc/pure_vars:234
+msgid ":func:`renpy.loadable`"
+msgstr ":func:`renpy.loadable`"
+
+#: ../../source/inc/pure_vars:235
 msgid "renpy.munged_filename"
 msgstr "renpy.munged_filename"
 
-#: ../../source/inc/pure_vars:235
+#: ../../source/inc/pure_vars:236
 msgid "renpy.partial"
 msgstr "renpy.partial"
 
-#: ../../source/inc/pure_vars:236
+#: ../../source/inc/pure_vars:237
 msgid "renpy.unelide_filename"
 msgstr "renpy.unelide_filename"
 
-#: ../../source/inc/pure_vars:237
-msgid "renpy.variant"
-msgstr "renpy.variant"
-
 #: ../../source/inc/pure_vars:238
-msgid "renpy.version"
-msgstr "renpy.version"
+msgid ":func:`renpy.variant`"
+msgstr ":func:`renpy.variant`"
 
 #: ../../source/inc/pure_vars:239
+msgid ":func:`renpy.version`"
+msgstr ":func:`renpy.version`"
+
+#: ../../source/inc/pure_vars:240
 msgid ":var:`renpy.version_name`"
 msgstr ":var:`renpy.version_name`"
 
-#: ../../source/inc/pure_vars:240
+#: ../../source/inc/pure_vars:241
 msgid ":var:`renpy.version_only`"
 msgstr ":var:`renpy.version_only`"
 
-#: ../../source/inc/pure_vars:241
+#: ../../source/inc/pure_vars:242
 msgid ":var:`renpy.version_string`"
 msgstr ":var:`renpy.version_string`"
 
-#: ../../source/inc/pure_vars:242
+#: ../../source/inc/pure_vars:243
 msgid ":var:`renpy.version_tuple`"
 msgstr ":var:`renpy.version_tuple`"
 
-#: ../../source/inc/pure_vars:243
+#: ../../source/inc/pure_vars:244
 msgid "repr"
 msgstr "repr"
 
-#: ../../source/inc/pure_vars:244
+#: ../../source/inc/pure_vars:245
 msgid "round"
 msgstr "round"
 
-#: ../../source/inc/pure_vars:245
+#: ../../source/inc/pure_vars:246
 msgid "set"
 msgstr "set"
 
-#: ../../source/inc/pure_vars:246
+#: ../../source/inc/pure_vars:247
 msgid "slideawaydown"
 msgstr "slideawaydown"
 
-#: ../../source/inc/pure_vars:247
+#: ../../source/inc/pure_vars:248
 msgid ":var:`slideawayleft`"
 msgstr ":var:`slideawayleft`"
 
-#: ../../source/inc/pure_vars:248
+#: ../../source/inc/pure_vars:249
 msgid "slideawayright"
 msgstr "slideawayright"
 
-#: ../../source/inc/pure_vars:249
+#: ../../source/inc/pure_vars:250
 msgid "slideawayup"
 msgstr "slideawayup"
 
-#: ../../source/inc/pure_vars:250
+#: ../../source/inc/pure_vars:251
 msgid "slidedown"
 msgstr "slidedown"
 
-#: ../../source/inc/pure_vars:251
+#: ../../source/inc/pure_vars:252
 msgid ":var:`slideleft`"
 msgstr ":var:`slideleft`"
 
-#: ../../source/inc/pure_vars:252
+#: ../../source/inc/pure_vars:253
 msgid "slideright"
 msgstr "slideright"
 
-#: ../../source/inc/pure_vars:253
+#: ../../source/inc/pure_vars:254
 msgid "slideup"
 msgstr "slideup"
 
-#: ../../source/inc/pure_vars:254
+#: ../../source/inc/pure_vars:255
 msgid "sorted"
 msgstr "sorted"
 
-#: ../../source/inc/pure_vars:255
+#: ../../source/inc/pure_vars:256
 msgid ":var:`squares`"
 msgstr ":var:`squares`"
 
-#: ../../source/inc/pure_vars:256
+#: ../../source/inc/pure_vars:257
 msgid "str"
 msgstr "str"
 
-#: ../../source/inc/pure_vars:257
+#: ../../source/inc/pure_vars:258
 msgid "sum"
 msgstr "sum"
 
-#: ../../source/inc/pure_vars:258
+#: ../../source/inc/pure_vars:259
 msgid "tuple"
 msgstr "tuple"
 
-#: ../../source/inc/pure_vars:259
+#: ../../source/inc/pure_vars:260
 msgid "ui.callsinnewcontext"
 msgstr "ui.callsinnewcontext"
 
-#: ../../source/inc/pure_vars:260
+#: ../../source/inc/pure_vars:261
 msgid "ui.gamemenus"
 msgstr "ui.gamemenus"
 
-#: ../../source/inc/pure_vars:261
+#: ../../source/inc/pure_vars:262
 msgid "ui.invokesinnewcontext"
 msgstr "ui.invokesinnewcontext"
 
-#: ../../source/inc/pure_vars:262
+#: ../../source/inc/pure_vars:263
 msgid "ui.jumps"
 msgstr "ui.jumps"
 
-#: ../../source/inc/pure_vars:263
+#: ../../source/inc/pure_vars:264
 msgid "ui.jumpsoutofcontext"
 msgstr "ui.jumpsoutofcontext"
 
-#: ../../source/inc/pure_vars:264
+#: ../../source/inc/pure_vars:265
 msgid "ui.returns"
 msgstr "ui.returns"
 
-#: ../../source/inc/pure_vars:265
+#: ../../source/inc/pure_vars:266
 msgid "unichr"
 msgstr "unichr"
 
-#: ../../source/inc/pure_vars:266
+#: ../../source/inc/pure_vars:267
 msgid "unicode"
 msgstr "unicode"
 
-#: ../../source/inc/pure_vars:267
+#: ../../source/inc/pure_vars:268
 msgid "vars"
 msgstr "vars"
 
-#: ../../source/inc/pure_vars:268
+#: ../../source/inc/pure_vars:269
 msgid "vcentered"
 msgstr "vcentered"
 
-#: ../../source/inc/pure_vars:269
+#: ../../source/inc/pure_vars:270
 msgid ":var:`vpunch`"
 msgstr ":var:`vpunch`"
 
-#: ../../source/inc/pure_vars:270
+#: ../../source/inc/pure_vars:271
 msgid "wipedown"
 msgstr "wipedown"
 
-#: ../../source/inc/pure_vars:271
+#: ../../source/inc/pure_vars:272
 msgid ":var:`wipeleft`"
 msgstr ":var:`wipeleft`"
 
-#: ../../source/inc/pure_vars:272
+#: ../../source/inc/pure_vars:273
 msgid "wiperight"
 msgstr "wiperight"
 
-#: ../../source/inc/pure_vars:273
+#: ../../source/inc/pure_vars:274
 msgid "wipeup"
 msgstr "wipeup"
 
-#: ../../source/inc/pure_vars:274
+#: ../../source/inc/pure_vars:275
 msgid "zip"
 msgstr "zip"
 
-#: ../../source/inc/pure_vars:275
+#: ../../source/inc/pure_vars:276
 msgid ":var:`zoomin`"
 msgstr ":var:`zoomin`"
 
-#: ../../source/inc/pure_vars:276
+#: ../../source/inc/pure_vars:277
 msgid ":var:`zoominout`"
 msgstr ":var:`zoominout`"
 
-#: ../../source/inc/pure_vars:277
+#: ../../source/inc/pure_vars:278
 msgid ":var:`zoomout`"
 msgstr ":var:`zoomout`"
 
-#~ msgid "Declares a variable in the store to be constant."
-#~ msgstr "store の変数を const と宣言します。"
-
-#~ msgid ""
-#~ "A variable is constant if nothing can change its value, or any value "
-#~ "reached by indexing it or accessing its attributes. Variables must remain "
-#~ "constant out of define, init, and translate python blocks."
-#~ msgstr ""
-#~ "変数はその値や、それを索引するかまたはそのアトリビュートにアクセスして得ら"
-#~ "れる値が変更不可能ならば constant です。変数は define, init, translate "
-#~ "python ブロック以外では変更してはいけません。"
-
-#~ msgid "`name`"
-#~ msgstr "`name`"
-
-#~ msgid "A string giving the name of the variable to declare constant."
-#~ msgstr "const と宣言する変数の名前の文字列です。"
-
-#~ msgid "Declares a name in the store to be not constant."
-#~ msgstr "store の変数を非 const と宣言します。"
-
-#~ msgid ""
-#~ "This undoes the effect of calls to :func:`renpy.const` and :func:`renpy."
-#~ "pure`."
-#~ msgstr ""
-#~ ":func:`renpy.const` と :func:`renpy.pure` 呼び出しの影響を戻します。"
-
-#~ msgid "The name to declare not constant."
-#~ msgstr "非 const と宣言する変数の名前です。"
-
-#~ msgid ""
-#~ "Declares a function as pure. A pure function must always return the same "
-#~ "value when it is called with the same arguments, outside of define, init, "
-#~ "and translate python blocks."
-#~ msgstr ""
-#~ "pure として宣言する関数です。define, init, translate python ブロックを除い"
-#~ "て、 pure 関数は同じ引数で呼び出されたときは常に同じ値を返すべきです。"
-
-#~ msgid "`fn`"
-#~ msgstr "`fn`"
-
-#~ msgid ""
-#~ "The name of the function to declare pure. This may either be a string "
-#~ "containing the name of the function, or the function itself."
-#~ msgstr ""
-#~ "pure として宣言する関数の名前です。これは関数名の文字列か、関数自身です。"
-
-#~ msgid "Returns `fn`, allowing this function to be used as a decorator."
-#~ msgstr "`fn` を返し、この関数はデコレーターとして使用出来ます。"
-
-#~ msgid ""
-#~ "Requests screen profiling for the screen named `name`, which must be a "
-#~ "string."
-#~ msgstr ""
-#~ "`name` を名前とするスクリーンに対してスクリーンプロファイリングをリクエス"
-#~ "トします。"
-
-#~ msgid ""
-#~ "Apart from `name`, all arguments must be supplied as keyword arguments. "
-#~ "This function takes three groups of arguments."
-#~ msgstr ""
-#~ "`name` 以外のすべての引数はキーワード引数として与えられます。この関数は 3 "
-#~ "グループの引数を取ります。"
-
-#~ msgid "The first group of arguments determines when profiling occurs."
-#~ msgstr "引数の最初のグループは何時プロファイリングするかを決定します。"
-
-#~ msgid "`predict`"
-#~ msgstr "`predict`"
-
-#~ msgid "If true, profiling occurs when the screen is being predicted."
-#~ msgstr "True なら、スクリーンが予測されるとプロファイリングを実行します。"
-
-#~ msgid "`show`"
-#~ msgstr "`show`"
-
-#~ msgid "If true, profiling occurs when the screen is first shown."
-#~ msgstr ""
-#~ "True なら、スクリーンが最初に表示されるとプロファイリングを実行します。"
-
-#~ msgid "`update`"
-#~ msgstr "`update`"
-
-#~ msgid "If true, profiling occurs when the screen is updated."
-#~ msgstr "True なら、スクリーンが更新されるとプロファイリングを実行します。"
-
-#~ msgid "`request`"
-#~ msgstr "`request`"
+#~ msgid "AddToSet"
+#~ msgstr "AddToSet"
 
-#~ msgid "If true, profiling occurs when requested by pressing F8."
-#~ msgstr "True なら、 F8 でリクエストされるとプロファイリングを実行します。"
+#~ msgid "AlphaBlend"
+#~ msgstr "AlphaBlend"
 
-#~ msgid ""
-#~ "The second group of arguments controls what profiling output is produced "
-#~ "when profiling occurs."
-#~ msgstr "引数の第二グループは何をプロファイリングで出力するかを制御します。"
+#~ msgid "AlphaMask"
+#~ msgstr "AlphaMask"
 
-#~ msgid "`time`"
-#~ msgstr "`time`"
+#~ msgid "At"
+#~ msgstr "At"
 
-#~ msgid ""
-#~ "If true, Ren'Py will log the amount of time it takes to evaluate the "
-#~ "screen."
-#~ msgstr "True なら、スクリーンを制御するのにかかった時間を記録します。"
+#~ msgid "Call"
+#~ msgstr "Call"
 
-#~ msgid "`debug`"
-#~ msgstr "`debug`"
+#~ msgid "Character"
+#~ msgstr "Character"
 
-#~ msgid ""
-#~ "If true, Ren'Py will log information as to how screens are evaluated, "
-#~ "including:"
-#~ msgstr ""
-#~ "True なら、以下のどの項目についてどのようにスクリーンが評価されたかを記録"
-#~ "します。 :"
+#~ msgid "Color"
+#~ msgstr "Color"
 
-#~ msgid "Which displayables Ren'Py considers constant."
-#~ msgstr "どの displayable を Ren'Py は constant と評価したか。"
+#~ msgid "ComposeTransition"
+#~ msgstr "ComposeTransition"
 
-#~ msgid "Which arguments, if any, needed to be evaluated."
-#~ msgstr "あるならばどの引数が評価を必要としたか。"
+#~ msgid "Confirm"
+#~ msgstr "Confirm"
 
-#~ msgid "Which displayables were reused."
-#~ msgstr "どの displayable が再利用されたか。"
+#~ msgid "CropMove"
+#~ msgstr "CropMove"
 
-#~ msgid ""
-#~ "Producing and saving this debug information takes a noticeable amount of "
-#~ "time, and so the `time` output should not be considered reliable if "
-#~ "`debug` is set."
-#~ msgstr ""
-#~ "このデバッグ情報の生成と保存には時間がかかるため、`debug` が設定されている"
-#~ "なら `time` の情報はあてになりません。"
+#~ msgid "DictValue"
+#~ msgstr "DictValue"
 
-#~ msgid ""
-#~ "The last group of arguments controls what output is produced once per "
-#~ "Ren'Py run."
-#~ msgstr "引数の最後のグループは Ren'Py 実行毎になにを出力するか制御します。"
+#~ msgid "Dissolve"
+#~ msgstr "Dissolve"
 
-#~ msgid "`const`"
-#~ msgstr "`const`"
+#~ msgid "Drag"
+#~ msgstr "Drag"
 
-#~ msgid ""
-#~ "Displays the variables in the screen that are marked as const and not-"
-#~ "const."
-#~ msgstr "const と non-const とマークされたそのスクリーンの変数を表示します。"
+#~ msgid "EndReplay"
+#~ msgstr "EndReplay"
 
-#~ msgid ""
-#~ "All profiling output will be logged to profile_screen.txt in the game "
-#~ "directory."
-#~ msgstr ""
-#~ "すべてのプロファイリング結果はゲームディレクトリーの profile_screen.txt に"
-#~ "保存されます。"
+#~ msgid "Fade"
+#~ msgstr "Fade"
 
-#~ msgid ":func:`AddToSet`"
-#~ msgstr ":func:`AddToSet`"
+#~ msgid "FieldValue"
+#~ msgstr "FieldValue"
 
-#~ msgid ":func:`AlphaMask`"
-#~ msgstr ":func:`AlphaMask`"
+#~ msgid "FilePage"
+#~ msgstr "FilePage"
 
-#~ msgid ":func:`At`"
-#~ msgstr ":func:`At`"
+#~ msgid "Flatten"
+#~ msgstr "Flatten"
 
-#~ msgid ":func:`Call`"
-#~ msgstr ":func:`Call`"
+#~ msgid "FontGroup"
+#~ msgstr "FontGroup"
 
-#~ msgid ":func:`Character`"
-#~ msgstr ":func:`Character`"
+#~ msgid "Frame"
+#~ msgstr "Frame"
 
-#~ msgid ":class:`Color`"
-#~ msgstr ":class:`Color`"
+#~ msgid "Help"
+#~ msgstr "Help"
 
-#~ msgid ":class:`Drag`"
-#~ msgstr ":class:`Drag`"
+#~ msgid "Hide"
+#~ msgstr "Hide"
 
-#~ msgid ":func:`Fade`"
-#~ msgstr ":func:`Fade`"
+#~ msgid "If"
+#~ msgstr "If"
 
-#~ msgid ":func:`Frame`"
-#~ msgstr ":func:`Frame`"
+#~ msgid "Image"
+#~ msgstr "Image"
 
-#~ msgid ":func:`Help`"
-#~ msgstr ":func:`Help`"
+#~ msgid "Jump"
+#~ msgstr "Jump"
 
-#~ msgid ":func:`Hide`"
-#~ msgstr ":func:`Hide`"
+#~ msgid "Language"
+#~ msgstr "Language"
 
-#~ msgid ":func:`If`"
-#~ msgstr ":func:`If`"
+#~ msgid "MainMenu"
+#~ msgstr "MainMenu"
 
-#~ msgid ":func:`Image`"
-#~ msgstr ":func:`Image`"
+#~ msgid "MouseMove"
+#~ msgstr "MouseMove"
 
-#~ msgid ":func:`Jump`"
-#~ msgstr ":func:`Jump`"
+#~ msgid "MoveTransition"
+#~ msgstr "MoveTransition"
 
-#~ msgid ":func:`MoveTransition`"
-#~ msgstr ":func:`MoveTransition`"
+#~ msgid "Movie"
+#~ msgstr "Movie"
 
-#~ msgid ":func:`Movie`"
-#~ msgstr ":func:`Movie`"
+#~ msgid "MultipleTransition"
+#~ msgstr "MultipleTransition"
 
-#~ msgid ":func:`Null`"
-#~ msgstr ":func:`Null`"
+#~ msgid "Notify"
+#~ msgstr "Notify"
 
-#~ msgid ":func:`ParameterizedText`"
-#~ msgstr ":func:`ParameterizedText`"
+#~ msgid "Null"
+#~ msgstr "Null"
 
-#~ msgid ":func:`Pause`"
-#~ msgstr ":func:`Pause`"
+#~ msgid "NullAction"
+#~ msgstr "NullAction"
 
-#~ msgid ":func:`Queue`"
-#~ msgstr ":func:`Queue`"
+#~ msgid "OpenURL"
+#~ msgstr "OpenURL"
 
-#~ msgid ":func:`Quit`"
-#~ msgstr ":func:`Quit`"
+#~ msgid "ParameterizedText"
+#~ msgstr "ParameterizedText"
 
-#~ msgid ":func:`Return`"
-#~ msgstr ":func:`Return`"
+#~ msgid "Pause"
+#~ msgstr "Pause"
 
-#~ msgid ":func:`Show`"
-#~ msgstr ":func:`Show`"
+#~ msgid "PauseAudio"
+#~ msgstr "PauseAudio"
 
-#~ msgid ":func:`Skip`"
-#~ msgstr ":func:`Skip`"
+#~ msgid "Pixellate"
+#~ msgstr "Pixellate"
 
-#~ msgid ":func:`Solid`"
-#~ msgstr ":func:`Solid`"
+#~ msgid "PushMove"
+#~ msgstr "PushMove"
 
-#~ msgid ":func:`Start`"
-#~ msgstr ":func:`Start`"
+#~ msgid "Queue"
+#~ msgstr "Queue"
 
-#~ msgid ":func:`Text`"
-#~ msgstr ":func:`Text`"
+#~ msgid "QueueEvent"
+#~ msgstr "QueueEvent"
 
-#~ msgid ":func:`_p`"
-#~ msgstr ":func:`_p`"
+#~ msgid "QuickLoad"
+#~ msgstr "QuickLoad"
 
-#~ msgid ":func:`renpy.exists`"
-#~ msgstr ":func:`renpy.exists`"
+#~ msgid "QuickSave"
+#~ msgstr "QuickSave"
 
-#~ msgid ":func:`renpy.image_size`"
-#~ msgstr ":func:`renpy.image_size`"
+#~ msgid "Quit"
+#~ msgstr "Quit"
 
-#~ msgid ":func:`renpy.variant`"
-#~ msgstr ":func:`renpy.variant`"
+#~ msgid "Replay"
+#~ msgstr "Replay"
 
-#, fuzzy
-#~ msgid ":func:`Play`"
-#~ msgstr ":func:`Replay`"
+#~ msgid "Return"
+#~ msgstr "Return"
 
-#, fuzzy
-#~ msgid ":func:`Stop`"
-#~ msgstr ":func:`Show`"
+#~ msgid "Rollback"
+#~ msgstr "Rollback"
+
+#~ msgid "Screenshot"
+#~ msgstr "Screenshot"
+
+#~ msgid "Scroll"
+#~ msgstr "Scroll"
+
+#~ msgid "SetDict"
+#~ msgstr "SetDict"
+
+#~ msgid "SetField"
+#~ msgstr "SetField"
+
+#~ msgid "SetMixer"
+#~ msgstr "SetMixer"
+
+#~ msgid "SetMute"
+#~ msgstr "SetMute"
+
+#~ msgid "SetVariable"
+#~ msgstr "SetVariable"
+
+#~ msgid "Show"
+#~ msgstr "Show"
+
+#~ msgid "ShowMenu"
+#~ msgstr "ShowMenu"
+
+#~ msgid "Skip"
+#~ msgstr "Skip"
+
+#~ msgid "Solid"
+#~ msgstr "Solid"
+
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgid "StaticValue"
+#~ msgstr "StaticValue"
+
+#~ msgid "Text"
+#~ msgstr "Text"
+
+#~ msgid "ToggleDict"
+#~ msgstr "ToggleDict"
+
+#~ msgid "ToggleField"
+#~ msgstr "ToggleField"
+
+#~ msgid "ToggleMute"
+#~ msgstr "ToggleMute"
+
+#~ msgid "_p"
+#~ msgstr "_p"
+
+#~ msgid "renpy.exists"
+#~ msgstr "renpy.exists"
+
+#~ msgid "renpy.list_files"
+#~ msgstr "renpy.list_files"
+
+#~ msgid "renpy.variant"
+#~ msgstr "renpy.variant"
+
+#~ msgid "renpy.version"
+#~ msgstr "renpy.version"
 
 #, fuzzy
 #~ msgid ":class:`Editor`"

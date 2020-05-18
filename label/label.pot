@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 21:47+0900\n"
+"POT-Creation-Date: 2020-05-18 23:55+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgid "If the ``expression`` keyword is present, the expression following it is 
 msgstr ""
 
 #: ../../source/label.rst:85
-msgid "If the optional ``from`` clause is present, it has the effect of including a label statement with the given name as the statement immediately following the call statement. An explicit label helps to ensure that saved games with return stacks can return to the proper place when loaded on a changed script. ::"
+msgid "If the optional from clause is present, it has the effect of including a label statement with the given name as the statement immediately following the call statement. An explicit label helps to ensure that saved games with return stacks can return to the proper place when loaded on a changed script. ::"
 msgstr ""
 
 #: ../../source/label.rst:107
@@ -170,5 +170,69 @@ msgstr ""
 
 #: ../../source/label.rst:166
 msgid "Labels & Control Flow Functions"
+msgstr ""
+
+#: ../../source/inc/label:5
+msgid "This creates a new context, and then starts executing Ren'Py script from the given label in that context. Rollback is disabled in the new context, and saving/loading will occur in the top level context."
+msgstr ""
+
+#: ../../source/inc/label:10
+msgid "Use this to begin a second interaction with the user while inside an interaction."
+msgstr ""
+
+#: ../../source/inc/label:15
+msgid "Returns the set of all labels defined in the program, including labels defined for internal use in the libraries."
+msgstr ""
+
+#: ../../source/inc/label:20
+msgid "Returns a list giving the current return stack. The return stack is a list of statement names."
+msgstr ""
+
+#: ../../source/inc/label:23
+msgid "The statement names will be strings (for labels), or opaque tuples (for non-label statements)."
+msgstr ""
+
+#: ../../source/inc/label:28
+msgid "Returns true if `name` is a valid label the program, or false otherwise."
+msgstr ""
+
+#: ../../source/inc/label:31
+msgid "`name`"
+msgstr ""
+
+#: ../../source/inc/label:31
+msgid "Should be a string to check for the existence of a label. It can also be an opaque tuple giving the name of a non-label statement."
+msgstr ""
+
+#: ../../source/inc/label:36
+msgid "This function creates a new context, and invokes the given Python callable (function) in that context. When the function returns or raises an exception, control returns to the the original context. It's generally used to call a Python function that needs to display information to the player (like a confirmation prompt) from inside an event handler."
+msgstr ""
+
+#: ../../source/inc/label:43
+msgid "A context maintains the state of the display (including what screens and images are being shown) and the audio system. Both are restored when the context returns."
+msgstr ""
+
+#: ../../source/inc/label:47
+msgid "Additional arguments and keyword arguments are passed to the callable."
+msgstr ""
+
+#: ../../source/inc/label:50
+msgid "A context created with this function cannot execute Ren'Py script. Functions that would change the flow of Ren'Py script, like :func:`renpy.jump`, are handled by the outer context. If you want to call Ren'Py script rather than a Python function, use :func:`renpy.call_in_new_context` instead."
+msgstr ""
+
+#: ../../source/inc/label:58
+msgid "Causes control to leave the current context, and then to be transferred in the parent context to the given label."
+msgstr ""
+
+#: ../../source/inc/label:63
+msgid "Returns true if the named label has executed at least once on the current user's system, and false otherwise. This can be used to unlock scene galleries, for example."
+msgstr ""
+
+#: ../../source/inc/label:69
+msgid "Sets the current return stack. The return stack is a list of statement names."
+msgstr ""
+
+#: ../../source/inc/label:72
+msgid "Statement names may be strings (for labels) or opaque tuples (for non-label statements)."
 msgstr ""
 

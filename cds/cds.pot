@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 21:47+0900\n"
+"POT-Creation-Date: 2020-05-18 23:55+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,174 @@ msgstr ""
 
 #: ../../source/cds.rst:32
 msgid "Creator-defined statement are registered using the :func:`renpy.register_statement` function."
+msgstr ""
+
+#: ../../source/inc/statement_register:5
+msgid "This registers a user-defined statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:10
+msgid "`name`"
+msgstr ""
+
+#: ../../source/inc/statement_register:8
+msgid "This is either a space-separated list of names that begin the statement, or the empty string to define a new default statement (the default statement will replace the say statement)."
+msgstr ""
+
+#: ../../source/inc/statement_register:17
+msgid "`block`"
+msgstr ""
+
+#: ../../source/inc/statement_register:13
+msgid "When this is False, the statement does not expect a block. When True, it expects a block, but leaves it up to the lexer to parse that block. If the string \"script\", the block is interpreted as containing one or more Ren'Py script language statements. If the string \"possible\", the block expect condition is determined by the parse function."
+msgstr ""
+
+#: ../../source/inc/statement_register:22
+msgid "`parse`"
+msgstr ""
+
+#: ../../source/inc/statement_register:20
+msgid "This is a function that takes a Lexer object. This function should parse the statement, and return an object. This object is passed as an argument to all the other functions."
+msgstr ""
+
+#: ../../source/inc/statement_register:26
+msgid "`lint`"
+msgstr ""
+
+#: ../../source/inc/statement_register:25
+msgid "This is called to check the statement. It is passed a single argument, the object returned from parse. It should call renpy.error to report errors."
+msgstr ""
+
+#: ../../source/inc/statement_register:30
+msgid "`execute`"
+msgstr ""
+
+#: ../../source/inc/statement_register:29
+msgid "This is a function that is called when the statement executes. It is passed a single argument, the object returned from parse."
+msgstr ""
+
+#: ../../source/inc/statement_register:33
+msgid "`execute_init`"
+msgstr ""
+
+#: ../../source/inc/statement_register:33
+msgid "This is a function that is called at init time, at priority 0."
+msgstr ""
+
+#: ../../source/inc/statement_register:38
+msgid "`predict`"
+msgstr ""
+
+#: ../../source/inc/statement_register:36
+msgid "This is a function that is called to predict the images used by the statement. It is passed a single argument, the object returned from parse. It should return a list of displayables used by the statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:49
+msgid "`next`"
+msgstr ""
+
+#: ../../source/inc/statement_register:41
+msgid "This is a function that is called to determine the next statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:43
+msgid "If `block` is not \"script\", this is passed a single argument, the object returned from the parse function. If `block` is \"script\", an additional argument is passed, an object that names the first statement in the block."
+msgstr ""
+
+#: ../../source/inc/statement_register:47
+msgid "The function should return either a string giving a label to jump to, the second argument to transfer control into the block, or None to continue to the statement after this one."
+msgstr ""
+
+#: ../../source/inc/statement_register:54
+msgid "`label`"
+msgstr ""
+
+#: ../../source/inc/statement_register:52
+msgid "This is a function that is called to determine the label of this statement. If it returns a string, that string is used as the statement label, which can be called and jumped to like any other label."
+msgstr ""
+
+#: ../../source/inc/statement_register:60
+msgid "`warp`"
+msgstr ""
+
+#: ../../source/inc/statement_register:57
+msgid "This is a function that is called to determine if this statement should execute during warping. If the function exists and returns true, it's run during warp, otherwise the statement is not run during warp."
+msgstr ""
+
+#: ../../source/inc/statement_register:63
+msgid "`scry`"
+msgstr ""
+
+#: ../../source/inc/statement_register:63
+msgid "Used internally by Ren'Py."
+msgstr ""
+
+#: ../../source/inc/statement_register:69
+msgid "`init`"
+msgstr ""
+
+#: ../../source/inc/statement_register:66
+msgid "True if this statement should be run at init-time. (If the statement is not already inside an init block, it's automatically placed inside an init block.) This calls the execute function, in addition to the execute_init function."
+msgstr ""
+
+#: ../../source/inc/statement_register:73
+msgid "`init_priority`"
+msgstr ""
+
+#: ../../source/inc/statement_register:72
+msgid "An integer that determines the priority of initialization of the init block."
+msgstr ""
+
+#: ../../source/inc/statement_register:78
+msgid "`translation_strings`"
+msgstr ""
+
+#: ../../source/inc/statement_register:76
+msgid "A function that is called with the parsed block. It's expected to return a list of strings, which are then reported as being available to be translated."
+msgstr ""
+
+#: ../../source/inc/statement_register:82
+msgid "`force_begin_rollback`"
+msgstr ""
+
+#: ../../source/inc/statement_register:81
+msgid "This should be set to true on statements that are likely to cause the end of a fast skip, similar to ``menu`` or ``call screen``."
+msgstr ""
+
+#: ../../source/inc/statement_register:87
+msgid "`post_execute`"
+msgstr ""
+
+#: ../../source/inc/statement_register:85
+msgid "A function that is executed as part the next statement after this one. (Adding a post_execute function changes the contents of the RPYC file, meaning a Force Compile is necessary.)"
+msgstr ""
+
+#: ../../source/inc/statement_register:93
+msgid "`post_label`"
+msgstr ""
+
+#: ../../source/inc/statement_register:90
+msgid "This is a function that is called to determine the label of this the post execute statement. If it returns a string, that string is used as the statement label, which can be called and jumped to like any other label. This can be used to create a unique return point."
+msgstr ""
+
+#: ../../source/inc/statement_register:97
+msgid "`predict_all`"
+msgstr ""
+
+#: ../../source/inc/statement_register:96
+msgid "If True, then this predicts all sub-parses of this statement and the statement after this statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:104
+msgid "`predict_next`"
+msgstr ""
+
+#: ../../source/inc/statement_register:100
+msgid "This is called with a single argument, the label of the statement that would run after this statement."
+msgstr ""
+
+#: ../../source/inc/statement_register:103
+msgid "This should be called to predict the statements that can run after this one. It's expected to return a list of of labels or SubParse objects. This is not called if `predict_all` is true."
 msgstr ""
 
 #: ../../source/cds.rst:37
@@ -186,6 +354,55 @@ msgstr ""
 
 #: ../../source/cds.rst:255
 msgid "These functions are useful in writing lint functions."
+msgstr ""
+
+#: ../../source/inc/lint:5
+msgid "Checks the text tags in s for correctness. Returns an error string if there is an error, or None if there is no error."
+msgstr ""
+
+#: ../../source/inc/lint:10
+msgid "Reports `msg`, a string, as as error for the user. This is logged as a parse or lint error when approprate, and otherwise it is raised as an exception."
+msgstr ""
+
+#: ../../source/inc/lint:16
+msgid "Tries to compile an expression, and writes an error to lint.txt if it fails."
+msgstr ""
+
+#: ../../source/inc/lint:22
+#: ../../source/inc/lint:39
+msgid "`where`"
+msgstr ""
+
+#: ../../source/inc/lint:20
+#: ../../source/inc/lint:37
+msgid "A string giving the location the expression is found. Used to generate an error message of the form \"Could not evaluate `expr` in `where`.\""
+msgstr ""
+
+#: ../../source/inc/lint:25
+#: ../../source/inc/lint:42
+msgid "`expr`"
+msgstr ""
+
+#: ../../source/inc/lint:25
+msgid "The expression to try compiling."
+msgstr ""
+
+#: ../../source/inc/lint:28
+#: ../../source/inc/lint:45
+msgid "`additional`"
+msgstr ""
+
+#: ../../source/inc/lint:28
+#: ../../source/inc/lint:45
+msgid "If given, an additional line of information that is addded to the error message."
+msgstr ""
+
+#: ../../source/inc/lint:33
+msgid "Tries to evaluate an expression, and writes an error to lint.txt if it fails."
+msgstr ""
+
+#: ../../source/inc/lint:42
+msgid "The expression to try evaluating."
 msgstr ""
 
 #: ../../source/cds.rst:260
