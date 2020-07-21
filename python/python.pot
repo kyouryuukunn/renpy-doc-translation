@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ren'Py Visual Novel Engine 7.3.5\n"
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-18 23:55+0900\n"
+"POT-Creation-Date: 2020-07-20 23:16+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,110 +121,118 @@ msgid "The define statement can take an optional named store (see below), by pre
 msgstr ""
 
 #: ../../source/python.rst:143
-msgid "One advantage of using the define statement is that it records the filename and line number at which the assignment occurred, and makes that available to the navigation feature of the launcher."
+msgid "The define statement can take an optional index, making it possible to add entries to a dictionary::"
 msgstr ""
 
-#: ../../source/python.rst:147
-msgid "Variables that are defined using the define statement are treated as constant, are not saved or loaded, and should not be changed. (Ren'Py does not enforce this, but will produce undefined behavior when this is not the case.)"
+#: ../../source/python.rst:148
+msgid "In addition to ``=``, define can take two more operators. The ``+=`` operator adds, and is generally used for list concatenaton. The ``|=`` or operator is generally used to concatenate sets. For example::"
 msgstr ""
 
 #: ../../source/python.rst:155
+msgid "One advantage of using the define statement is that it records the filename and line number at which the assignment occurred, and makes that available to the navigation feature of the launcher."
+msgstr ""
+
+#: ../../source/python.rst:159
+msgid "Variables that are defined using the define statement are treated as constant, are not saved or loaded, and should not be changed. (Ren'Py does not enforce this, but will produce undefined behavior when this is not the case.)"
+msgstr ""
+
+#: ../../source/python.rst:167
 msgid "Default Statement"
 msgstr ""
 
-#: ../../source/python.rst:157
+#: ../../source/python.rst:169
 msgid "The ``default`` statement sets a single variable to a value if that variable is not defined when the game starts, or after a new game is loaded. For example::"
 msgstr ""
 
-#: ../../source/python.rst:163
+#: ../../source/python.rst:175
 msgid "When the variable ``points`` is not defined at game start, this statement is equivalent to::"
 msgstr ""
 
-#: ../../source/python.rst:169
+#: ../../source/python.rst:181
 msgid "When the variable ``points`` is not defined at game load, it's equivalent to::"
 msgstr ""
 
-#: ../../source/python.rst:174
+#: ../../source/python.rst:186
 msgid "The default statement can take an optional named store (see below), by prepending it to the variable name with a dot. For example::"
 msgstr ""
 
-#: ../../source/python.rst:183
+#: ../../source/python.rst:195
 msgid "Init Offset Statement"
 msgstr ""
 
-#: ../../source/python.rst:185
+#: ../../source/python.rst:197
 msgid "The ``init offset`` statement sets a priority offset for all statements that run at init time (init, init python, define, default, screen, transform, style, and more). The offset applies to all following statements in the current block and child blocks, up to the next init priority statement. The statement::"
 msgstr ""
 
-#: ../../source/python.rst:193
+#: ../../source/python.rst:205
 msgid "sets the priority offset to 42. In::"
 msgstr ""
 
-#: ../../source/python.rst:203
+#: ../../source/python.rst:215
 msgid "The first define statement is run at priority 2, which means it runs after the second define statement, and hence ``foo`` winds up with a value of 2."
 msgstr ""
 
-#: ../../source/python.rst:208
+#: ../../source/python.rst:220
 msgid "Names in the Store"
 msgstr ""
 
-#: ../../source/python.rst:210
+#: ../../source/python.rst:222
 msgid "The default place that Ren'Py stores Python variables is called the store. It's important to make sure that the names you use in the store do not conflict."
 msgstr ""
 
-#: ../../source/python.rst:214
+#: ../../source/python.rst:226
 msgid "The define statement assigns a value to a variable, even when it's used to define a character. This means that it's not possible to use the same name for a character and a flag."
 msgstr ""
 
-#: ../../source/python.rst:218
+#: ../../source/python.rst:230
 msgid "The following faulty script::"
 msgstr ""
 
-#: ../../source/python.rst:231
+#: ../../source/python.rst:243
 msgid "will not work, because the variable ``e`` is being used as both a character and a flag. Other things that are usually placed into the store are transitions and transforms."
 msgstr ""
 
-#: ../../source/python.rst:235
+#: ../../source/python.rst:247
 msgid "Names beginning with underscore ``_`` are reserved for Ren'Py's internal use. In addition, there is an :ref:`Index of Reserved Names <reserved-names>`."
 msgstr ""
 
-#: ../../source/python.rst:240
+#: ../../source/python.rst:252
 msgid "Other Named Stores"
 msgstr ""
 
-#: ../../source/python.rst:242
+#: ../../source/python.rst:254
 msgid "Named stores provide a way of organizing Python functions and variables into modules. By placing Python in modules, you can minimize the chance of name conflicts."
 msgstr ""
 
-#: ../../source/python.rst:246
+#: ../../source/python.rst:258
 msgid "Named stores can be accessed by supplying the ``in`` clause to ``python`` or ``init python``, all of which run Python in a named store. Each store corresponds to a Python module. The default store is ``store``, while a named store is accessed as ``store.name``. Names in the modules can be imported using the Python ``from`` statement."
 msgstr ""
 
-#: ../../source/python.rst:252
+#: ../../source/python.rst:264
 msgid "For example::"
 msgstr ""
 
-#: ../../source/python.rst:268
+#: ../../source/python.rst:280
 msgid "Named stores participate in save, load, and rollback in the same way that the default store does. The defined statement can be used to define names in a named store."
 msgstr ""
 
-#: ../../source/python.rst:276
+#: ../../source/python.rst:288
 msgid "First and Third-Party Python Modules and Packages"
 msgstr ""
 
-#: ../../source/python.rst:278
+#: ../../source/python.rst:290
 msgid "Ren'Py can import pure-Python modules and packages. First-party modules and packages – ones written for the game – can be placed directly into the game directory. Third party packages can be placed into the game/python-packages directory."
 msgstr ""
 
-#: ../../source/python.rst:283
+#: ../../source/python.rst:295
 msgid "For example, to install the requests package, one can change into the game's base directory, and run the command::"
 msgstr ""
 
-#: ../../source/python.rst:288
+#: ../../source/python.rst:300
 msgid "In either case, the module or package can be imported from an init python block::"
 msgstr ""
 
-#: ../../source/python.rst:296
+#: ../../source/python.rst:308
 msgid "Python defined in .rpy files is transformed to allow rollback to work. Python imported from .py files is not. As a result, objects created in Python will not work with rollback, and probably should not be changed after creation."
 msgstr ""
 
