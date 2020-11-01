@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2020, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/matrixcolor.rst:7
+msgid "Matrixcolor"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:9
+msgid "Ren'Py supports recoloring images using the :tpref:`matrixcolor` transform property. This property can take either a :class:`Matrix` or a ColorMatrix object."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:14
+msgid "Premultiplied Alpha Color"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:16
+msgid "When an image is loaded, Ren'Py decompresses the image, and then copies it to the GPU of your computer or mobile device. As part of the copying, each of the four color channels (red, green, blue, and alpha - with alpha representing opacity) is scaled to a number between 0.0 and 1.0. In this system, 1.0 represents the full level of a color or fully opaque, while 0.0 represents the absence of the color or the pixel being fully transparent."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:23
+msgid "Ren'Py doesn't stop there, though. Once the values have been scaled, the red, green, and blue channels are multiplied by the alpha channel. This means that an opaque white pixel will have the value (1.0, 1.0, 1.0, 1.0), a 50% transparent red pixel will have the value (0.5, 0.0, 0.0, 0.5), and a transparent pixel will have the value (0.0, 0.0, 0.0, 0.0)."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:29
+msgid "Premultiplied alph allows Ren'Py to scale images up and down without causing dark artifacts that come from representing colors more directly. Scaling images is similar to averaging two pixels together. Without premultiplied alpha, we might have a solid white pixel and a transparent pixel - (1.0, 1.0, 1.0, 1.0) and (0.0, 0.0, 0.0, 0.0), respectively. Average those together gets (0.5, 0.5, 0.5, 0.5). But that's not right - averaging solid white and transparent black should get 50% opaque white, not 50% opaque gray."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:38
+msgid "In the premultiplied alpha system, the starting value is the same, and so is the result - except now, (0.5, 0.5, 0.5, 0.5) has been pre-defined to be 50% opaque white. By storing colors in this way, Ren'Py can draw them to the screen correctly, and not get weird artifacts when scaling."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:44
+msgid "Using a Matrix to Change Colors"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:46
+msgid "The :class:`Matrix` objects used to change colors can consist of 16 numbers, which can in turn be arranged into a 4x4 grid. Here's a way of doing this that assigns a letter to each number::"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:55
+msgid "While they're represented as letters here, realize these are really numbers, either given directly or computed."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:58
+msgid "These values are applied to the red (R), green (G), blue (B), and alpha (A) channels of the original color to make a new color, (R', G', B', A'). The formulas to do this are::"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:67
+msgid "While this might seem complex, there's a pretty simple structure to it - the first row creates the new red channel, the second the new green channel and so on. So if we wanted to make a matrix that swapped red and green for some reason, we'd write::"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:78
+msgid "While this is a simple example, there is a lot of color theory that can be expressed in this way. Matrices can be combined by multiplying them together, and when that happens the matrices are combined right to left."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:85
+msgid "ColorMatrix"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:87
+msgid "While Matrix objects are suitable for static color changes, they're not useful for animating color changes. It's also useful to have a way of taking common matrices and encapsulating them in a way that allows the matrix to be parameterized."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:92
+msgid "The ColorMatrix is a base class that is is extended by a number of Matrix-creating classes. Instances of ColorMatrix are called by Ren'Py, and return Matrixes. ColorMatrix is well integrated with ATL, allowing for matrixcolor animations. ::"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:103
+msgid "A ColorMatrix is a class that inherits from the ColorMatrix class, and implements a __call__ method. This method takes:"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:106
+msgid "An old object to interpolate off of. This object may be of any class, and may be None if the no old object exists."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:108
+msgid "A value betwee 0.0 and 1.0, representing the point to interpolate. 0.0 is entirely the old object, and 1.0 is entirely the new object."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:111
+msgid "And should return a :class:`Matrix`."
+msgstr ""
+
+#: ../../source/matrixcolor.rst:113
+msgid "As an example of a ColorMatrix, here is the implementation of Ren'Py's TintMatrix class. ::"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:158
+msgid "Built-In ColorMatrix Subclasses"
+msgstr ""
+
+#: ../../source/matrixcolor.rst:160
+msgid "The following is the list of ColorMatrix subclasses that are built into Ren'Py."
+msgstr ""
+
+#: ../../source/inc/colormatrix:5
+msgid "A ColorMatrix that can be used with :tpref:`matrixcolor` to change the brightness of an image, while leaving the Alpha channel alone."
+msgstr ""
+
+#: ../../source/inc/colormatrix:11
+#: ../../source/inc/colormatrix:41
+#: ../../source/inc/colormatrix:50
+#: ../../source/inc/colormatrix:59
+#: ../../source/inc/colormatrix:70
+msgid "`value`"
+msgstr ""
+
+#: ../../source/inc/colormatrix:10
+msgid "The amount of change in image brightness. This should be a number between -1 and 1, with -1 the darkest possible image and 1 the brightest."
+msgstr ""
+
+#: ../../source/inc/colormatrix:16
+msgid "A ColorMatrix that can be used with :tpref:`matrixcolor` to colorize black and white displayables. It uses the color of each pixel in the black and white to interpolate between the black color and the white color."
+msgstr ""
+
+#: ../../source/inc/colormatrix:21
+msgid "The alpha channel is not touched."
+msgstr ""
+
+#: ../../source/inc/colormatrix:23
+msgid "This is inteded for use with a black and white image (or one that has been desaturated with :func:`SaturationMatrix`), and will yield strange results when used with images that are not black and white."
+msgstr ""
+
+#: ../../source/inc/colormatrix:27
+msgid "`black_color`, `white_color`"
+msgstr ""
+
+#: ../../source/inc/colormatrix:28
+msgid "The colors used in the interpolation."
+msgstr ""
+
+#: ../../source/inc/colormatrix:32
+msgid "A ColorMatrix that can be used with :tpref:`matrixcolor` to rotate the hue by `value` degrees. While `value` can be any number, positive or negative, 360 degrees makes a complete rotation. The alpha channel is left alone."
+msgstr ""
+
+#: ../../source/inc/colormatrix:38
+msgid "A ColorMatrix that can be used with :tpref:`matrixcolor` that does not change the color or alpha of what is supplied to it."
+msgstr ""
+
+#: ../../source/inc/colormatrix:42
+msgid "Is ignored."
+msgstr ""
+
+#: ../../source/inc/colormatrix:46
+msgid "A ColorMatrix that can be used with :tpref:`matrixcolor` to invert each of the color channels. The alpha channel is left alone."
+msgstr ""
+
+#: ../../source/inc/colormatrix:50
+msgid "The amount to inverty by. 0.0 is not inverted, 1.0 is fully inverted. Used to animate inversion."
+msgstr ""
+
+#: ../../source/inc/colormatrix:55
+msgid "A ColorMatrix that can be used with :tpref:`matrixcolor` to change the opacity of an image, while leaving color channels alone."
+msgstr ""
+
+#: ../../source/inc/colormatrix:59
+msgid "The amount the alpha channel should be multiplied by, a number betwen 0.0 and 1.0."
+msgstr ""
+
+#: ../../source/inc/colormatrix:64
+msgid "A ColorMatrix that can be used with :tpref:`matrixcolor` that alters the saturation of an image, while leaving the alpha channel alone."
+msgstr ""
+
+#: ../../source/inc/colormatrix:69
+msgid "The amount of saturation in the resulting image. 1.0 is the unaltered image, while 0.0 is grayscale."
+msgstr ""
+
+#: ../../source/inc/colormatrix:78
+msgid "`desat`"
+msgstr ""
+
+#: ../../source/inc/colormatrix:73
+msgid "This is a 3-element tuple that controls how much of the red, green, and blue channels will be placed into all three channels of a fully desaturated image. The default is based on the constants used for the luminance channel of an NTSC television signal. Since the human eye is mostly sensitive to green, more of the green channel is kept then the other two channels."
+msgstr ""
+
+#: ../../source/inc/colormatrix:83
+msgid "A function that returns a ColorMatrix that can be used with :tpref:`matrixcolor` to sepia-tone a displayable. This is the equivalent of::"
+msgstr ""
+
+#: ../../source/inc/colormatrix:90
+msgid "A ColorMatrix can be used with :tpref:`matrixcolor` to tint an image, while leaving the alpha channel alone."
+msgstr ""
+
+#: ../../source/inc/colormatrix:95
+msgid "`color`"
+msgstr ""
+
+#: ../../source/inc/colormatrix:94
+msgid "The color that the matrix will tint things to. This is passed to :func:`Color`, and so may be anything that Color supports as its first argument."
+msgstr ""
+
