@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 23:16+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,122 +97,134 @@ msgid "The ``loop`` and ``noloop`` clauses are also optional. The loop clause ca
 msgstr ""
 
 #: ../../source/audio.rst:74
+msgid "The ``volume`` clause is also optional, and specifies a relative volume for the track, between 0.0 and 1.0. This makes it possible to adjust the volume a track is played at, each time it's played. ::"
+msgstr ""
+
+#: ../../source/audio.rst:81
 msgid "On the audio channel, multiple play statements play multiple sounds at the same time::"
 msgstr ""
 
-#: ../../source/audio.rst:82
+#: ../../source/audio.rst:89
 msgid "Stop Statement"
 msgstr ""
 
-#: ../../source/audio.rst:84
+#: ../../source/audio.rst:91
 msgid "The ``stop`` statement begins with the keyword ``stop``, followed by the the name of a channel to stop sound on. It may optionally have a ``fadeout`` clause. ::"
 msgstr ""
 
-#: ../../source/audio.rst:93
+#: ../../source/audio.rst:100
 msgid "Queue Statement"
 msgstr ""
 
-#: ../../source/audio.rst:95
+#: ../../source/audio.rst:102
 msgid "The ``queue`` statement is used to queue up audio files. They will be played when the channel finishes playing the currently playing file."
 msgstr ""
 
-#: ../../source/audio.rst:98
+#: ../../source/audio.rst:105
 msgid "The queue statement begins with keyword ``queue``, followed by the the name of a channel to play sound on. It optionally takes the ``loop`` and ``noloop`` clauses. ::"
 msgstr ""
 
-#: ../../source/audio.rst:104
+#: ../../source/audio.rst:111
+msgid "Queue also takes the ``volume`` clause. ::"
+msgstr ""
+
+#: ../../source/audio.rst:118
+msgid "When multiple queue statements are given without an interaction between them, all sound files are added to the queue. After an interaction has occured, the first queue statement clears the queue, unless it has already been cleared by a play or stop statement."
+msgstr ""
+
+#: ../../source/audio.rst:123
 msgid "The advantage of using these statements is that your program will be checked for missing sound and music files when lint is run. The functions below exist to allow access to allow music and sound to be controlled from Python, and to expose advanced (rarely used) features."
 msgstr ""
 
-#: ../../source/audio.rst:113
+#: ../../source/audio.rst:132
 msgid "Partial Playback"
 msgstr ""
 
-#: ../../source/audio.rst:115
+#: ../../source/audio.rst:134
 msgid "Ren'Py supports partial of audio files. This is done by putting a playback specification, enclosed in angle brackets, at the start of the file. The partial playback specification should consist of alternating property name and value pairs, with every thing separated by spaces."
 msgstr ""
 
-#: ../../source/audio.rst:120
+#: ../../source/audio.rst:139
 msgid "The values are always interpreted as seconds from the start of the file. The three properties are:"
 msgstr ""
 
-#: ../../source/audio.rst:125
+#: ../../source/audio.rst:144
 msgid "``from``"
 msgstr ""
 
-#: ../../source/audio.rst:124
+#: ../../source/audio.rst:143
 msgid "Specifies the position in the file at which the first play-through begins playing. (This defaults to 0.0 seconds.)"
 msgstr ""
 
-#: ../../source/audio.rst:129
+#: ../../source/audio.rst:148
 msgid "``to``"
 msgstr ""
 
-#: ../../source/audio.rst:128
+#: ../../source/audio.rst:147
 msgid "Specifies the position in the file at which the file ends playing. (This defaults to the full duration of the file.)"
 msgstr ""
 
-#: ../../source/audio.rst:134
+#: ../../source/audio.rst:153
 msgid "``loop``"
 msgstr ""
 
-#: ../../source/audio.rst:132
+#: ../../source/audio.rst:151
 msgid "Specifies the position in the file at which the second and later play-throughs begin playing. (This defaults to the start time given by ``from`` if specified, or to the start of the file.)"
 msgstr ""
 
-#: ../../source/audio.rst:136
+#: ../../source/audio.rst:155
 msgid "For example::"
 msgstr ""
 
-#: ../../source/audio.rst:140
+#: ../../source/audio.rst:159
 msgid "will play 10.5 seconds of waves.opus, starting at the 5 second mark. The statement::"
 msgstr ""
 
-#: ../../source/audio.rst:144
+#: ../../source/audio.rst:163
 msgid "will play song.opus all the way through once, then loop back to the 6.333 second mark before playing it again all the way through to the end."
 msgstr ""
 
-#: ../../source/audio.rst:150
+#: ../../source/audio.rst:169
 msgid "Playing Silence"
 msgstr ""
 
-#: ../../source/audio.rst:152
+#: ../../source/audio.rst:171
 msgid "A specified duration of silence can played using a filename like \"<silence 3.0>\", where 3.0 is the number of seconds of silence that is desired. This can be used to delay the start of a sound file. For example::"
 msgstr ""
 
-#: ../../source/audio.rst:158
+#: ../../source/audio.rst:177
 msgid "Will play silence for half a second, and then an explosion sound."
 msgstr ""
 
-#: ../../source/audio.rst:164
+#: ../../source/audio.rst:183
 msgid "Audio Namespace"
 msgstr ""
 
-#: ../../source/audio.rst:166
+#: ../../source/audio.rst:185
 msgid "The ``play`` and ``queue`` statements evaluate their arguments in the audio namespace. This means it is possible to use the define statement to provide an alias for an audio file."
 msgstr ""
 
-#: ../../source/audio.rst:170
+#: ../../source/audio.rst:189
 msgid "For example, one can write::"
 msgstr ""
 
-#: ../../source/audio.rst:174
+#: ../../source/audio.rst:193
 msgid "and then use::"
 msgstr ""
 
-#: ../../source/audio.rst:178
+#: ../../source/audio.rst:197
 msgid "Ren'Py will also automatically place sound files in the audio name face, if found in the ``game/audio`` directory. Files in this directory with a supported extension (currently, .wav, .mp2, .mp3, .ogg, and .opus) have the extension stripped, the rest of the filename forced to lower case, and are placed into the audio namespace."
 msgstr ""
 
-#: ../../source/audio.rst:184
+#: ../../source/audio.rst:203
 msgid "Note that just because a file is placed into the audio namespace, that doesn't mean it can be used. So while you could play a file named \"opening_song.ogg\" by writing::"
 msgstr ""
 
-#: ../../source/audio.rst:190
+#: ../../source/audio.rst:209
 msgid "Some filenames can't be accessed this way, as their names are not expressable as Python variables. For example, \"my song.mp3\", \"8track.opus\", and \"this-is-a-song.ogg\" won't work."
 msgstr ""
 
-#: ../../source/audio.rst:196
+#: ../../source/audio.rst:215
 msgid "Functions"
 msgstr ""
 
@@ -277,46 +289,46 @@ msgid "This stops the music currently playing on the numbered channel, dequeues 
 msgstr ""
 
 #: ../../source/inc/audio:69
-#: ../../source/inc/audio:109
+#: ../../source/inc/audio:115
 msgid "`filenames`"
 msgstr ""
 
 #: ../../source/inc/audio:69
-#: ../../source/inc/audio:109
+#: ../../source/inc/audio:115
 msgid "This may be a single file, or a list of files to be played."
 msgstr ""
 
 #: ../../source/inc/audio:72
-#: ../../source/inc/audio:112
-#: ../../source/inc/audio:191
-#: ../../source/inc/audio:224
-#: ../../source/inc/audio:237
+#: ../../source/inc/audio:118
+#: ../../source/inc/audio:203
+#: ../../source/inc/audio:236
+#: ../../source/inc/audio:249
 msgid "`channel`"
 msgstr ""
 
 #: ../../source/inc/audio:72
-#: ../../source/inc/audio:112
+#: ../../source/inc/audio:118
 msgid "The channel to play the sound on."
 msgstr ""
 
 #: ../../source/inc/audio:76
-#: ../../source/inc/audio:116
-#: ../../source/inc/audio:147
+#: ../../source/inc/audio:122
+#: ../../source/inc/audio:159
 msgid "`loop`"
 msgstr ""
 
 #: ../../source/inc/audio:75
-#: ../../source/inc/audio:115
+#: ../../source/inc/audio:121
 msgid "If this is True, the tracks will loop while they are the last thing in the queue."
 msgstr ""
 
 #: ../../source/inc/audio:80
-#: ../../source/inc/audio:240
+#: ../../source/inc/audio:252
 msgid "`fadeout`"
 msgstr ""
 
 #: ../../source/inc/audio:79
-#: ../../source/inc/audio:240
+#: ../../source/inc/audio:252
 msgid "If not None, this is a time in seconds to fade for. Otherwise the fadeout time is taken from config.fade_music."
 msgstr ""
 
@@ -329,23 +341,23 @@ msgid "Ren'Py will ensure that all channels of with synchro_start set to true wi
 msgstr ""
 
 #: ../../source/inc/audio:90
-#: ../../source/inc/audio:126
+#: ../../source/inc/audio:132
 msgid "`fadein`"
 msgstr ""
 
 #: ../../source/inc/audio:89
-#: ../../source/inc/audio:125
+#: ../../source/inc/audio:131
 msgid "This is the number of seconds to fade the music in for, on the first loop only."
 msgstr ""
 
 #: ../../source/inc/audio:94
-#: ../../source/inc/audio:130
-#: ../../source/inc/audio:155
+#: ../../source/inc/audio:136
+#: ../../source/inc/audio:167
 msgid "`tight`"
 msgstr ""
 
 #: ../../source/inc/audio:93
-#: ../../source/inc/audio:129
+#: ../../source/inc/audio:135
 msgid "If this is True, then fadeouts will span into the next-queued sound. If None, this is true when loop is True, and false otherwise."
 msgstr ""
 
@@ -357,165 +369,175 @@ msgstr ""
 msgid "If this is True, and the music file is currently playing, then it will not be stopped/faded out and faded back in again, but instead will be kept playing. (This will always queue up an additional loop of the music.)"
 msgstr ""
 
-#: ../../source/inc/audio:102
-#: ../../source/inc/audio:132
+#: ../../source/inc/audio:106
+#: ../../source/inc/audio:142
+msgid "`relative_volume`"
+msgstr ""
+
+#: ../../source/inc/audio:103
+#: ../../source/inc/audio:139
+msgid "This is the volume relative to the current channel volume. The specified file will be played at that relative volume. If not specified, it will always default to 1.0, which plays the file at the original volume as determined by the mixer, channel and secondary volume."
+msgstr ""
+
+#: ../../source/inc/audio:108
+#: ../../source/inc/audio:144
 msgid "This clears the pause flag for `channel`."
 msgstr ""
 
-#: ../../source/inc/audio:106
+#: ../../source/inc/audio:112
 msgid "This queues the given filenames on the specified channel."
 msgstr ""
 
-#: ../../source/inc/audio:122
+#: ../../source/inc/audio:128
 msgid "`clear_queue`"
 msgstr ""
 
-#: ../../source/inc/audio:119
+#: ../../source/inc/audio:125
 msgid "If True, then the queue is cleared, making these files the files that are played when the currently playing file finishes. If it is False, then these files are placed at the back of the queue. In either case, if no music is playing these files begin playing immediately."
 msgstr ""
 
-#: ../../source/inc/audio:136
+#: ../../source/inc/audio:148
 msgid "This registers a new audio channel named `name`. Audio can then be played on the channel by supplying the channel name to the play or queue statements."
 msgstr ""
 
-#: ../../source/inc/audio:144
+#: ../../source/inc/audio:156
 msgid "`mixer`"
 msgstr ""
 
-#: ../../source/inc/audio:141
+#: ../../source/inc/audio:153
 msgid "The name of the mixer the channel uses. By default, Ren'Py knows about the \"music\", \"sfx\", and \"voice\" mixers. Using other names is possible, but may require changing the preferences screens."
 msgstr ""
 
-#: ../../source/inc/audio:147
+#: ../../source/inc/audio:159
 msgid "If true, sounds on this channel loop by default."
 msgstr ""
 
-#: ../../source/inc/audio:150
+#: ../../source/inc/audio:162
 msgid "`stop_on_mute`"
 msgstr ""
 
-#: ../../source/inc/audio:150
+#: ../../source/inc/audio:162
 msgid "If true, music on the channel is stopped when the channel is muted."
 msgstr ""
 
-#: ../../source/inc/audio:153
+#: ../../source/inc/audio:165
 msgid "If true, sounds will loop even when fadeout is occurring. This should be set to True for a sound effects or seamless music channel, and False if the music fades out on its own."
 msgstr ""
 
-#: ../../source/inc/audio:159
+#: ../../source/inc/audio:171
 msgid "`file_prefix`"
 msgstr ""
 
-#: ../../source/inc/audio:158
+#: ../../source/inc/audio:170
 msgid "A prefix that is prepended to the filenames of the sound files being played on this channel."
 msgstr ""
 
-#: ../../source/inc/audio:163
+#: ../../source/inc/audio:175
 msgid "`file_suffix`"
 msgstr ""
 
-#: ../../source/inc/audio:162
+#: ../../source/inc/audio:174
 msgid "A suffix that is appended to the filenames of the sound files being played on this channel."
 msgstr ""
 
-#: ../../source/inc/audio:167
+#: ../../source/inc/audio:179
 msgid "`buffer_queue`"
 msgstr ""
 
-#: ../../source/inc/audio:166
+#: ../../source/inc/audio:178
 msgid "Should we buffer the first second or so of a queued file? This should be True for audio, and False for movie playback."
 msgstr ""
 
-#: ../../source/inc/audio:170
+#: ../../source/inc/audio:182
 msgid "`movie`"
 msgstr ""
 
-#: ../../source/inc/audio:170
+#: ../../source/inc/audio:182
 msgid "If true, this channel will be set up to play back videos."
 msgstr ""
 
-#: ../../source/inc/audio:174
+#: ../../source/inc/audio:186
 msgid "`framedrop`"
 msgstr ""
 
-#: ../../source/inc/audio:173
+#: ../../source/inc/audio:185
 msgid "This controls what a video does when lagging. If true, frames will be dropped to keep up with realtime and the soundtrack. If false, Ren'Py will display frames late rather than dropping them."
 msgstr ""
 
-#: ../../source/inc/audio:179
+#: ../../source/inc/audio:191
 msgid "Sets the pan of this channel."
 msgstr ""
 
-#: ../../source/inc/audio:185
+#: ../../source/inc/audio:197
 msgid "`pan`"
 msgstr ""
 
-#: ../../source/inc/audio:182
+#: ../../source/inc/audio:194
 msgid "A number between -1 and 1 that control the placement of the audio. If this is -1, then all audio is sent to the left channel. If it's 0, then the two channels are equally balanced. If it's 1, then all audio is sent to the right ear."
 msgstr ""
 
-#: ../../source/inc/audio:188
-#: ../../source/inc/audio:222
+#: ../../source/inc/audio:200
+#: ../../source/inc/audio:234
 msgid "`delay`"
 msgstr ""
 
-#: ../../source/inc/audio:188
+#: ../../source/inc/audio:200
 msgid "The amount of time it takes for the panning to occur."
 msgstr ""
 
-#: ../../source/inc/audio:191
+#: ../../source/inc/audio:203
 msgid "The channel the panning takes place on. This can be a sound or a music channel. Often, this is channel 7, the default music channel."
 msgstr ""
 
-#: ../../source/inc/audio:196
+#: ../../source/inc/audio:208
 msgid "Sets the pause flag for `channel` to `value`. If True, the channel will pause, otherwise it will play normally."
 msgstr ""
 
-#: ../../source/inc/audio:201
+#: ../../source/inc/audio:213
 msgid "This sets a callback that is called when the queue is empty. This callback is called when the queue first becomes empty, and at least once per interaction while the queue is empty."
 msgstr ""
 
-#: ../../source/inc/audio:205
+#: ../../source/inc/audio:217
 msgid "The callback is called with no parameters. It can queue sounds by calling renpy.music.queue with the appropriate arguments. Please note that the callback may be called while a sound is playing, as long as a queue slot is empty."
 msgstr ""
 
-#: ../../source/inc/audio:212
+#: ../../source/inc/audio:224
 msgid "Sets the volume of this channel, as a fraction of the volume of the mixer controlling the channel."
 msgstr ""
 
-#: ../../source/inc/audio:217
+#: ../../source/inc/audio:229
 msgid "`volume`"
 msgstr ""
 
-#: ../../source/inc/audio:216
+#: ../../source/inc/audio:228
 msgid "This is a number between 0.0 and 1.0, and is interpreted as a fraction of the mixer volume for the channel."
 msgstr ""
 
-#: ../../source/inc/audio:220
+#: ../../source/inc/audio:232
 msgid "It takes delay seconds to change/fade the volume from the old to the new value. This value is persisted into saves, and participates in rollback."
 msgstr ""
 
-#: ../../source/inc/audio:225
+#: ../../source/inc/audio:237
 msgid "The channel to be set"
 msgstr ""
 
-#: ../../source/inc/audio:229
+#: ../../source/inc/audio:241
 msgid "This stops the music that is currently playing, and dequeues all queued music. If fadeout is None, the music is faded out for the time given in config.fade_music, otherwise it is faded for fadeout seconds."
 msgstr ""
 
-#: ../../source/inc/audio:234
+#: ../../source/inc/audio:246
 msgid "This sets the last queued file to None."
 msgstr ""
 
-#: ../../source/inc/audio:237
+#: ../../source/inc/audio:249
 msgid "The channel to stop the sound on."
 msgstr ""
 
-#: ../../source/audio.rst:202
+#: ../../source/audio.rst:221
 msgid "Sound Functions"
 msgstr ""
 
-#: ../../source/audio.rst:204
+#: ../../source/audio.rst:223
 msgid "Most ``renpy.music`` functions have aliases in ``renpy.sound``. These functions are similar, except they default to the sound channel rather than the music channel, and default to not looping."
 msgstr ""
 

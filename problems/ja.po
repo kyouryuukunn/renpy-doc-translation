@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 07:24+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
 "PO-Revision-Date: 2019-05-05 16:04+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -28,37 +28,51 @@ msgstr "表示に関する問題への対処"
 
 #: ../../source/display_problems.rst:7
 msgid ""
-"As of version 6.13, Ren'Py will take advantage of graphics acceleration "
-"hardware, if it's present and functional. Using hardware acceleration brings "
-"with it several advantages, such as allowing vertical-blank synchronization "
-"and scaling games to full-screen size while preserving aspect ratio."
+"Ren'Py requires that your computer has functioning graphics acceleration "
+"hardware, such as a GPU or a CPU with integrated graphics. Ren'Py will "
+"automatically choose between the following renderers, in order."
 msgstr ""
-"バージョン6.13から、Ren'Py は可能であればグラフィックハードウェアアクセラレー"
-"ションを利用しようとします。ハードウェアアクセラレーションの利用には、垂直同"
-"期やアスペクト比を保存したままのフルスクリーン化などの幾つもの利点がありま"
-"す。"
 
-#: ../../source/display_problems.rst:13
-msgid "By default, Ren'Py selects a renderer to use in the following order:"
-msgstr "デフォルトでは、Ren'Py はレンダリングエンジンを次の順に選びます。 :"
+#: ../../source/display_problems.rst:11
+msgid ""
+"These are the classic renderers that were used from Ren'Py 6.13 to Ren'Py "
+"7.4. These may not be available in 7.4 and later games that require model-"
+"based rendering."
+msgstr ""
 
 #: ../../source/display_problems.rst:15
-msgid "OpenGL 2.0 or greater."
+#, fuzzy
+msgid "gl: OpenGL 2.0 or greater."
 msgstr "OpenGL 2.0 以上。"
 
 #: ../../source/display_problems.rst:16
-msgid "DirectX 9, provided that all libraries are available."
-msgstr "全てのライブラリーが利用可能であれば DirectX 9。"
+msgid "angle: Windows, DirectX 9 or DirectX 11."
+msgstr ""
 
 #: ../../source/display_problems.rst:17
-msgid "OpenGL 1.x."
-msgstr "OpenGL 1.x。"
+msgid "gles: OpenGL ES 3.0."
+msgstr ""
 
-#: ../../source/display_problems.rst:18
-msgid "Software."
-msgstr "ソフトウェアレンダリング。"
+#: ../../source/display_problems.rst:19
+msgid ""
+"These are model-based renderers present in Ren'Py 7.4 and later. These "
+"currently exist to enable new features, and are expected to become the "
+"default renderer in the future."
+msgstr ""
 
-#: ../../source/display_problems.rst:20
+#: ../../source/display_problems.rst:23
+msgid ""
+"4. gl2: OpenGL 2.0 or greater. 2. angle2: Windows, DirectX 9 or DirectX 11. "
+"3. gles2: OpenGL ES 3.0."
+msgstr ""
+
+#: ../../source/display_problems.rst:27
+msgid ""
+"Older versions of Ren'Py supported a software renderer, but this has been "
+"removed."
+msgstr ""
+
+#: ../../source/display_problems.rst:30
 msgid ""
 "A small fraction of systems may experience problems when running hardware "
 "accelerated Ren'Py games.  These problems are often due to buggy graphics "
@@ -70,7 +84,7 @@ msgstr ""
 "バーのバグに起因します。まずはグラフィックカードドライバーの更新をチェックし"
 "てください。"
 
-#: ../../source/display_problems.rst:25
+#: ../../source/display_problems.rst:35
 msgid ""
 "If upgrading your video drivers does not fix the problem, you should "
 "consider switching video renderers, using the following steps."
@@ -78,7 +92,7 @@ msgstr ""
 "更新しても直らない場合は、次の手順に従ってグラフィックレンダリングエンジンの"
 "切り替えを検討してください。"
 
-#: ../../source/display_problems.rst:28
+#: ../../source/display_problems.rst:38
 msgid ""
 "Hold down Shift while starting Ren'Py, or press Shift+G once Ren'Py has "
 "started."
@@ -86,7 +100,7 @@ msgstr ""
 "Ren'Py 起動中に Shift を押し続けるか、一旦起動した後に Shift+G を押してくださ"
 "い。"
 
-#: ../../source/display_problems.rst:29
+#: ../../source/display_problems.rst:39
 msgid ""
 "From the \"Graphics Acceleration\" menu that appears, choose the renderer to "
 "use."
@@ -94,13 +108,15 @@ msgstr ""
 "表示された「Graphics Acceleration」から使用するレンダリングエンジンを選びま"
 "す。"
 
-#: ../../source/display_problems.rst:30
+#: ../../source/display_problems.rst:40
 msgid "Choose \"Quit\", then restart Ren'Py."
 msgstr "「Quit」を選択し、Ren'Py を再起動します。"
 
-#: ../../source/display_problems.rst:32
-msgid "We suggest trying OpenGL, DirectX, and Software, in that order."
-msgstr "OpenGL、DirectX、ソフトウェアレンダリングの順にお勧めします。"
+#: ../../source/display_problems.rst:42
+msgid ""
+"We suggest trying the GL and ANGLE renderers. The GLES renderers may not "
+"function on desktop hardware."
+msgstr ""
 
 #: ../../source/problems.rst:11
 msgid "Windows Encoding Problems"
@@ -154,6 +170,33 @@ msgstr ""
 "Ren'Py 6.14.x や 6.15.0〜3 は間違った状態でコンパイルされ、しばしば 64bit "
 "Linux 上での処理に失敗します。この問題への最適な対処は Ren'Py 6.15.4 かそれ以"
 "上をダウンロードしてゲームを実行することです。 ::"
+
+#~ msgid ""
+#~ "As of version 6.13, Ren'Py will take advantage of graphics acceleration "
+#~ "hardware, if it's present and functional. Using hardware acceleration "
+#~ "brings with it several advantages, such as allowing vertical-blank "
+#~ "synchronization and scaling games to full-screen size while preserving "
+#~ "aspect ratio."
+#~ msgstr ""
+#~ "バージョン6.13から、Ren'Py は可能であればグラフィックハードウェアアクセラ"
+#~ "レーションを利用しようとします。ハードウェアアクセラレーションの利用には、"
+#~ "垂直同期やアスペクト比を保存したままのフルスクリーン化などの幾つもの利点が"
+#~ "あります。"
+
+#~ msgid "By default, Ren'Py selects a renderer to use in the following order:"
+#~ msgstr "デフォルトでは、Ren'Py はレンダリングエンジンを次の順に選びます。 :"
+
+#~ msgid "DirectX 9, provided that all libraries are available."
+#~ msgstr "全てのライブラリーが利用可能であれば DirectX 9。"
+
+#~ msgid "OpenGL 1.x."
+#~ msgstr "OpenGL 1.x。"
+
+#~ msgid "Software."
+#~ msgstr "ソフトウェアレンダリング。"
+
+#~ msgid "We suggest trying OpenGL, DirectX, and Software, in that order."
+#~ msgstr "OpenGL、DirectX、ソフトウェアレンダリングの順にお勧めします。"
 
 #~ msgid "C:\\ビジュアルノベル\\renpy-6.16.0-sdk\\"
 #~ msgstr "C:\\ビジュアルノベル\\renpy-6.16.0-sdk\\"

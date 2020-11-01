@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 23:16+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,388 +77,396 @@ msgid "Properties consist of a property name and a simple expression, and can be
 msgstr ""
 
 #: ../../source/layeredimage.rst:125
-msgid "The resulting image is the size of the bounding box of all the layers, so it probably makes sense to have one layer the full size of the image, which no other layer goes outside of. The first layer is in the back of the image, while the last is in front – in this example, the glasses will be on top of the other layers."
+msgid "The resulting image is the size of the bounding box of all the layers, so it probably makes sense to have one layer the full size of the image, which no other layer goes outside of. The first layer is in the back of the image, while the last is in front – in this example, the glasses will be on top of the other layers. It's recommended to avoid properties that assume the size of the containing image, like :propref:`xcenter` and :propref:`xalign`, as these properties do not work well the when the image size is not known."
 msgstr ""
 
-#: ../../source/layeredimage.rst:131
+#: ../../source/layeredimage.rst:133
 msgid "Groups and attributes may appear more than once in a layered image, with all of the layers with an attribute being displayed."
 msgstr ""
 
 #: ../../source/layeredimage.rst:136
+msgid "With the exception of the condition in an ``if`` statement, all Python expressions are evaluated at init time."
+msgstr ""
+
+#: ../../source/layeredimage.rst:141
 msgid "Using an Layered Image"
 msgstr ""
 
-#: ../../source/layeredimage.rst:138
+#: ../../source/layeredimage.rst:143
 msgid "To use this (but not other) layered images, the evil variable must be given a value, for example with::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:143
+#: ../../source/layeredimage.rst:148
 msgid "Then the layered image can be shown like any other image. Almost certainly, one of the outfits should be given – while Ren'Py doesn't enforce this, this image requires one::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:149
+#: ../../source/layeredimage.rst:154
 msgid "While a sprite is being shown, additional attributes will be added to those already showing provided they do not conflict. (This is the case in all of Ren'Py when an image being shown does not match one that's already defined, something that is never the case with a layered image.) So, ::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:156
+#: ../../source/layeredimage.rst:161
 msgid "Will activate the layers associated with the wink attribute. We could stop winking with::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:161
+#: ../../source/layeredimage.rst:166
 msgid "As the open eyes conflict with the winking eyes. Or we could simply remove the wink attribute using::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:166
+#: ../../source/layeredimage.rst:171
 msgid "Which would display the layer with the open attribute, as it is the default."
 msgstr ""
 
-#: ../../source/layeredimage.rst:169
+#: ../../source/layeredimage.rst:174
 msgid "Layered images can also be used with the scene statement."
 msgstr ""
 
-#: ../../source/layeredimage.rst:174
+#: ../../source/layeredimage.rst:179
 msgid "Automatic Attributes"
 msgstr ""
 
-#: ../../source/layeredimage.rst:176
+#: ../../source/layeredimage.rst:181
 msgid "There's a lot of repetition our first example, when it comes to the attribute names and the displayables that define the attribute. To save you from having to do a lot of redundant typing, Ren'Py can automatically determine a displayable name from the image name, group name, and attribute name. This is done by combining the names with underscores."
 msgstr ""
 
-#: ../../source/layeredimage.rst:182
+#: ../../source/layeredimage.rst:187
 msgid "When doing this, you can also take advantage of another feature of attributes – it's possible to add any properties to the first line and omit the block entirely."
 msgstr ""
 
-#: ../../source/layeredimage.rst:186
+#: ../../source/layeredimage.rst:191
 msgid "Here's our example of having done that::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:215
+#: ../../source/layeredimage.rst:220
 msgid "This example is equivalent to the first one (as we gave the same names for the displayables in the first example). For example, the dress attribute in the outfit group uses \"augustina_outfit_dress\" for the displayable, a displayable that references the image with  that name."
 msgstr ""
 
-#: ../../source/layeredimage.rst:220
+#: ../../source/layeredimage.rst:225
 msgid "It's possible to go even further than this, by automatically defining the attributes in a group. This is done by giving a group the `auto` keyword, which causes the group to search for defined images that would match the pattern, then define the attribute if it does not already exist."
 msgstr ""
 
-#: ../../source/layeredimage.rst:226
+#: ../../source/layeredimage.rst:231
 msgid "As with ``attribute``, properties can be placed on the first line of the group and the block omitted. The displayable and properties of the always statement can be put on the first line the same way."
 msgstr ""
 
-#: ../../source/layeredimage.rst:230
+#: ../../source/layeredimage.rst:235
 msgid "Here's an example of the final form::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:254
+#: ../../source/layeredimage.rst:259
 msgid "This is about as simply as we can define that image, without changing what we define. The savings with auto-definition increases as we have more attributes per group. We could also save lines if we didn't need default attributes. In that case, all of the groups could be written on single lines."
 msgstr ""
 
-#: ../../source/layeredimage.rst:260
+#: ../../source/layeredimage.rst:265
 msgid "There's no way to omit the displayables from the ``always`` or ``if`` statements, so this is as short as it gets – but with a few more images with proper names, it's possible to use this to define thousands or even millions of combinations of layers."
 msgstr ""
 
-#: ../../source/layeredimage.rst:267
+#: ../../source/layeredimage.rst:272
 msgid "Statement Reference"
 msgstr ""
 
-#: ../../source/layeredimage.rst:269
+#: ../../source/layeredimage.rst:274
 msgid "Note that with the conditions in the ``if`` statement, all expressions are evaluated at init time, when the layered image is first defined."
 msgstr ""
 
-#: ../../source/layeredimage.rst:273
+#: ../../source/layeredimage.rst:278
 msgid "Layeredimage"
 msgstr ""
 
-#: ../../source/layeredimage.rst:275
+#: ../../source/layeredimage.rst:280
 msgid "The ``layeredimage`` statement is a statement in the Ren'Py script language that introduces a layered image. It starts with an image name, and takes a block that can contain attribute, group, and if statements."
 msgstr ""
 
-#: ../../source/layeredimage.rst:279
+#: ../../source/layeredimage.rst:284
 msgid "Layeredimage takes the following properties:"
 msgstr ""
 
-#: ../../source/layeredimage.rst:286
+#: ../../source/layeredimage.rst:291
 #: ../../source/inc/li:114
 #: ../../source/inc/li_ff:31
 msgid "`image_format`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:282
+#: ../../source/layeredimage.rst:287
 #: ../../source/inc/li:110
 msgid "When a given image is a string, and this is supplied, the image name is interpolated into `image_format` to make an image file. For example, \"sprites/eileen/{image}.png\" will look for the image in a subdirectory of sprites. (This is not used by auto groups, which look for images and not image files.)"
 msgstr ""
 
-#: ../../source/layeredimage.rst:290
+#: ../../source/layeredimage.rst:295
 #: ../../source/inc/li:118
 msgid "`format_function`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:289
+#: ../../source/layeredimage.rst:294
 #: ../../source/inc/li:117
 msgid "A function that is used instead of `layeredimage.format_function` to format the image information into a displayable."
 msgstr ""
 
-#: ../../source/layeredimage.rst:294
-#: ../../source/layeredimage.rst:345
-#: ../../source/layeredimage.rst:431
-#: ../../source/layeredimage.rst:474
+#: ../../source/layeredimage.rst:299
+#: ../../source/layeredimage.rst:350
+#: ../../source/layeredimage.rst:436
+#: ../../source/layeredimage.rst:479
 msgid ":ref:`transform properties <transform-properties>`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:293
+#: ../../source/layeredimage.rst:298
 msgid "If present, these are used to construct a :func:`Transform` that is applied to the displayable."
 msgstr ""
 
-#: ../../source/layeredimage.rst:297
-#: ../../source/layeredimage.rst:348
-#: ../../source/layeredimage.rst:434
-#: ../../source/layeredimage.rst:477
+#: ../../source/layeredimage.rst:302
+#: ../../source/layeredimage.rst:353
+#: ../../source/layeredimage.rst:439
+#: ../../source/layeredimage.rst:482
 #: ../../source/inc/li:30
 #: ../../source/inc/li:81
 #: ../../source/inc/li:103
 msgid "`at`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:297
+#: ../../source/layeredimage.rst:302
 msgid "A transform or list of transforms that are applied to the layered image."
 msgstr ""
 
-#: ../../source/layeredimage.rst:300
+#: ../../source/layeredimage.rst:305
 msgid "Attribute"
 msgstr ""
 
-#: ../../source/layeredimage.rst:302
+#: ../../source/layeredimage.rst:307
 msgid "The ``attribute`` statement adds a layer that is displayed when the given attribute is used to display the image. The same attribute can be used with multiple layers, with all layers corresponding to the attribute being shown (the `if_all`, `if_any`, and `if_not` properties can change this)."
 msgstr ""
 
-#: ../../source/layeredimage.rst:307
+#: ../../source/layeredimage.rst:312
 msgid "An attribute takes an attribute name. It can also take two keywords. The ``default`` keyword indicates that the attribute should be present by default if no attribute in its group conflicts. The ``null`` keyword prevents Ren'Py from automatically searching for a displayable corresponding to this attribute, which is useful to have an attribute that is intended solely for use with `if_all`, `if_any`, or `if_not`."
 msgstr ""
 
-#: ../../source/layeredimage.rst:314
+#: ../../source/layeredimage.rst:319
 msgid "If the displayable is not present, it will be computed from the name of the layer, group, group variant, and attribute, by replacing all spaces with underscores and using underscores to combine everything together. So if we have an image named \"augustina\", the group \"eyes\" and the attribute \"closed\", the image \"augustina_eyes_closed\" will be used. (The layered image's format function is used to do this, defaulting to :func:`layeredimage.format_function`.)"
 msgstr ""
 
-#: ../../source/layeredimage.rst:321
+#: ../../source/layeredimage.rst:326
 msgid "If an attribute is not inside a group, it's placed in a group with the same name, but that group is not used to compute the displayable name. (So it would look for \"image_attribute\", not \"image_attribute_attribute\")."
 msgstr ""
 
-#: ../../source/layeredimage.rst:325
-msgid "The attribute statement takes the following properties:"
-msgstr ""
-
 #: ../../source/layeredimage.rst:330
-#: ../../source/layeredimage.rst:417
-#: ../../source/layeredimage.rst:459
-#: ../../source/inc/li:34
-#: ../../source/inc/li:69
-msgid "`if_all`"
-msgstr ""
-
-#: ../../source/layeredimage.rst:328
-#: ../../source/layeredimage.rst:415
-msgid "A string or list of strings giving the names of attributes. If this is present, this layer is only displayed if all of the named attributes are present."
+msgid "The attribute statement takes the following properties:"
 msgstr ""
 
 #: ../../source/layeredimage.rst:335
 #: ../../source/layeredimage.rst:422
 #: ../../source/layeredimage.rst:464
+#: ../../source/inc/li:34
+#: ../../source/inc/li:69
+msgid "`if_all`"
+msgstr ""
+
+#: ../../source/layeredimage.rst:333
+#: ../../source/layeredimage.rst:420
+msgid "A string or list of strings giving the names of attributes. If this is present, this layer is only displayed if all of the named attributes are present."
+msgstr ""
+
+#: ../../source/layeredimage.rst:340
+#: ../../source/layeredimage.rst:427
+#: ../../source/layeredimage.rst:469
 #: ../../source/inc/li:38
 #: ../../source/inc/li:73
 msgid "`if_any`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:333
-#: ../../source/layeredimage.rst:420
+#: ../../source/layeredimage.rst:338
+#: ../../source/layeredimage.rst:425
 msgid "A string or list of strings giving the names of attributes. If this is present, this layer is only displayed if any of the named attributes are present."
 msgstr ""
 
-#: ../../source/layeredimage.rst:341
-#: ../../source/layeredimage.rst:427
-#: ../../source/layeredimage.rst:470
+#: ../../source/layeredimage.rst:346
+#: ../../source/layeredimage.rst:432
+#: ../../source/layeredimage.rst:475
 #: ../../source/inc/li:42
 #: ../../source/inc/li:77
 msgid "`if_not`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:338
-#: ../../source/layeredimage.rst:425
+#: ../../source/layeredimage.rst:343
+#: ../../source/layeredimage.rst:430
 msgid "A string or list of strings giving the names of attributes. If this is present, this layer is only displayed if none of the named attributes are present."
 msgstr ""
 
-#: ../../source/layeredimage.rst:344
-#: ../../source/layeredimage.rst:430
-#: ../../source/layeredimage.rst:473
+#: ../../source/layeredimage.rst:349
+#: ../../source/layeredimage.rst:435
+#: ../../source/layeredimage.rst:478
 msgid "If present, these are used to construct a transform that is applied to the layer."
 msgstr ""
 
-#: ../../source/layeredimage.rst:348
-#: ../../source/layeredimage.rst:434
-#: ../../source/layeredimage.rst:477
+#: ../../source/layeredimage.rst:353
+#: ../../source/layeredimage.rst:439
+#: ../../source/layeredimage.rst:482
 msgid "A transform or list of transforms that are applied to the layer."
 msgstr ""
 
-#: ../../source/layeredimage.rst:351
+#: ../../source/layeredimage.rst:356
 msgid "Group"
 msgstr ""
 
-#: ../../source/layeredimage.rst:353
+#: ../../source/layeredimage.rst:358
 msgid "The ``group`` statement groups together alternative layers. When an attribute is inside a group, it is an error to include any of the other attributes in that group. (But it's fine to include the same attribute twice. The ``multiple`` keyword removes this restriction.)"
 msgstr ""
 
-#: ../../source/layeredimage.rst:358
+#: ../../source/layeredimage.rst:363
 msgid "The ``group`` statement takes a name. The name isn't used for very much, but is used to generate the default names of attributes inside the group."
 msgstr ""
 
-#: ../../source/layeredimage.rst:361
+#: ../../source/layeredimage.rst:366
 msgid "The name may be followed by the ``auto`` keyword. If it's present, after any attributes in the group have been declared, Ren'Py will scan its list of images for those that match the group's pattern (see below). Any images that are found that do not correspond to declared attributes are then added to the group as if declared with the attribute statement."
 msgstr ""
 
-#: ../../source/layeredimage.rst:367
+#: ../../source/layeredimage.rst:372
 msgid "This can be followed by the ``multiple`` keyword. If present, more than one member of the group can be selected at the same time. This is useful to have a group auto-define multiple attributes that are not exclusive. This conflicts with the default keyword being given to one of the attributes."
 msgstr ""
 
-#: ../../source/layeredimage.rst:372
+#: ../../source/layeredimage.rst:377
 msgid "Properties can then be declared on the first line of the group, and it can take a block that contains properties and attributes."
 msgstr ""
 
-#: ../../source/layeredimage.rst:375
+#: ../../source/layeredimage.rst:380
 msgid "There are two properties that are specific to groups."
 msgstr ""
 
-#: ../../source/layeredimage.rst:380
+#: ../../source/layeredimage.rst:385
 #: ../../source/inc/li_ff:22
 msgid "`variant`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:378
+#: ../../source/layeredimage.rst:383
 msgid "If given, this should be a string. If present, it adds a variant element that becomes part of automatically-generated image names and the pattern used to search for automatically-defined attributes."
 msgstr ""
 
-#: ../../source/layeredimage.rst:386
+#: ../../source/layeredimage.rst:391
 msgid "`prefix`"
 msgstr ""
 
-#: ../../source/layeredimage.rst:383
+#: ../../source/layeredimage.rst:388
 msgid "If given, this is a prefix that is concatenated using an underscore with the manually or automatically defined attribute names. So if prefix is \"leftarm\", and the attribute name \"hip\" is encountered, the attribute \"leftarm_hip\" is defined instead."
 msgstr ""
 
-#: ../../source/layeredimage.rst:388
+#: ../../source/layeredimage.rst:393
 msgid "The group statement also takes the same properties ``attribute`` does.  Properties supplied to the group are passed to the attributes inside the group, unless overridden by the same property of the attribute itself."
 msgstr ""
 
-#: ../../source/layeredimage.rst:392
+#: ../../source/layeredimage.rst:397
 msgid "**Pattern.** The image pattern used consists of:"
 msgstr ""
 
-#: ../../source/layeredimage.rst:394
+#: ../../source/layeredimage.rst:399
 msgid "The name of the image, with spaces replaced with underscores."
 msgstr ""
 
-#: ../../source/layeredimage.rst:395
+#: ../../source/layeredimage.rst:400
 msgid "The name of the group."
 msgstr ""
 
-#: ../../source/layeredimage.rst:396
+#: ../../source/layeredimage.rst:401
 msgid "The name of the variant."
 msgstr ""
 
-#: ../../source/layeredimage.rst:397
+#: ../../source/layeredimage.rst:402
 msgid "The name of the attribute."
 msgstr ""
 
-#: ../../source/layeredimage.rst:399
+#: ../../source/layeredimage.rst:404
 msgid "all combined with underscores. For example, if we have a layered image with the name \"augustina work\", and the group \"eyes\", this will match images that match the pattern augustina_work_eyes\\_\\ `attribute`. With a `variant` of `blue`, it would match the pattern augustina_work_eyes_blue\\_\\ `attribute`."
 msgstr ""
 
-#: ../../source/layeredimage.rst:406
+#: ../../source/layeredimage.rst:411
 msgid "Always"
 msgstr ""
 
-#: ../../source/layeredimage.rst:408
+#: ../../source/layeredimage.rst:413
 msgid "The ``always`` statement declares a layer that is always shown. It must be supplied a displayable, and can take properties also. Both can be placed on the same line or inside a block."
 msgstr ""
 
-#: ../../source/layeredimage.rst:412
+#: ../../source/layeredimage.rst:417
 msgid "The always statement takes the following properties:"
 msgstr ""
 
-#: ../../source/layeredimage.rst:437
+#: ../../source/layeredimage.rst:442
 msgid "If"
 msgstr ""
 
-#: ../../source/layeredimage.rst:439
+#: ../../source/layeredimage.rst:444
 msgid "The ``if`` statement (or more fully the if-elif-else) statement allows you to supply one or more conditions that are evaluated at runtime. Each condition is associated with a layer, with the first true condition being the one that is shown. If no condition is true, the ``else`` layer is shown if present."
 msgstr ""
 
-#: ../../source/layeredimage.rst:445
+#: ../../source/layeredimage.rst:450
 msgid "A more complete example of an ``if`` statement might look like::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:454
+#: ../../source/layeredimage.rst:459
 msgid "Each layer must have a displayable given. It can also be given these properties:"
 msgstr ""
 
-#: ../../source/layeredimage.rst:457
+#: ../../source/layeredimage.rst:462
 msgid "A string or list of strings giving the names of attributes. If this is present, this condition is only considered if all of the named attributes are present."
 msgstr ""
 
-#: ../../source/layeredimage.rst:462
+#: ../../source/layeredimage.rst:467
 msgid "A string or list of strings giving the names of attributes. If this is present, this condition is only considered if any of the named attributes are present."
 msgstr ""
 
-#: ../../source/layeredimage.rst:467
+#: ../../source/layeredimage.rst:472
 msgid "A string or list of strings giving the names of attributes. If this is present, this condition is only considered if none of the named attributes are present."
 msgstr ""
 
-#: ../../source/layeredimage.rst:479
+#: ../../source/layeredimage.rst:484
 msgid "The ``if`` statement is transformed to a :func:`ConditionSwitch` when the ``layeredimage`` statement runs."
 msgstr ""
 
-#: ../../source/layeredimage.rst:487
+#: ../../source/layeredimage.rst:492
 msgid "When ``predict_all`` is not true, changing the condition of the if statement should be avoided while the layered image is shown or about to be shown, as it would lead to an unpredicted image load. It's intended for use for character customization options that change rarely."
 msgstr ""
 
-#: ../../source/layeredimage.rst:493
+#: ../../source/layeredimage.rst:498
 msgid "Poses"
 msgstr ""
 
-#: ../../source/layeredimage.rst:495
+#: ../../source/layeredimage.rst:500
 msgid "It's possible to have a character that has sprites in multiple poses, where everything – or at least everything of interest – is different. For example, if a character has standing and sitting poses, all the image parts will be in different places."
 msgstr ""
 
-#: ../../source/layeredimage.rst:500
+#: ../../source/layeredimage.rst:505
 msgid "In that case, it makes sense to define multiple layered images for the same image tag. The ``layeredimage`` statement makes this possible by allowing you to include attributes as part of the image name. So we can have::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:510
+#: ../../source/layeredimage.rst:515
 msgid "This is especially useful when using a layered image to compose a side image, where the side images of different characters will have nothing to do with each other. ::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:522
+#: ../../source/layeredimage.rst:527
 msgid "Advice"
 msgstr ""
 
-#: ../../source/layeredimage.rst:524
+#: ../../source/layeredimage.rst:529
 msgid "**Use underscores in image names.** By default, Ren'Py's layered images use underscores to separate sections of image names. It might be tempting to use images with spaces between sections, but that could lead to problems later on."
 msgstr ""
 
-#: ../../source/layeredimage.rst:529
+#: ../../source/layeredimage.rst:534
 msgid "Ren'Py has a rule that if you show an image with the exact name as one that's being shown, it's shown instead. This can bypass the layered image you defined and show the layer directly, which can lead to weird problems like a pair of eyes floating in space."
 msgstr ""
 
-#: ../../source/layeredimage.rst:534
+#: ../../source/layeredimage.rst:539
 msgid "By having each layer have a different tag from the main image, this is no longer a problem."
 msgstr ""
 
-#: ../../source/layeredimage.rst:537
+#: ../../source/layeredimage.rst:542
 msgid "**Cropping layers isn't necessary.** Ren'Py optimizes images by cropping them to the bounding box of the non-transparent pixels before loading them into RAM. As a result, assuming the images are being predicted properly, it generally won't improve performance or image size much to crop the images yourself."
 msgstr ""
 
-#: ../../source/layeredimage.rst:545
+#: ../../source/layeredimage.rst:548
+msgid "**Layered images shouldn't use data that changes at runtime.** With the exception of the condition inside an if statement, all of the expressions in a layered images are run at init time. The layered image will not pick up changes in variables that occur after the game starts. (However, expressions in ATL transforms will be run each time the image is show, as with other ATL transforms.)"
+msgstr ""
+
+#: ../../source/layeredimage.rst:558
 msgid "Python"
 msgstr ""
 
-#: ../../source/layeredimage.rst:547
+#: ../../source/layeredimage.rst:560
 msgid "Of course, the ``layeredimage`` statements have a Python equivalents. The group statement does not – the group is supplied to ``attribute``, and the auto functionality can be implemented using :func:`renpy.list_images`."
 msgstr ""
 
@@ -602,7 +610,7 @@ msgstr ""
 msgid "A LayeredImage is not a displayable, and can't be used in all the places a displayable can be used. This is because it requires an image name (generally including image attributes) to be provided. As such, it should either be displayed through a scene or show statement, or by an image name string used as a displayable."
 msgstr ""
 
-#: ../../source/layeredimage.rst:553
+#: ../../source/layeredimage.rst:566
 msgid ":func:`layeredimage.format_function` is a function that is used to format attributes and displayables into image files. It's supplied so you can see how it's documented, and the arguments it takes if you want to supply your own `format_function` to replace it."
 msgstr ""
 
@@ -654,23 +662,23 @@ msgstr ""
 msgid "So if `name` is \"eileen\", `group` is \"expression\", and `attribute` is \"happy\", `image` would be set to \"eileen_expression_happy\". If `image_format` is \"images/{image}.png\", the final image Ren'Py finds is \"images/eileen_expression_happy.png\". But note that it would have found the same image without the format argument."
 msgstr ""
 
-#: ../../source/layeredimage.rst:561
+#: ../../source/layeredimage.rst:574
 msgid "Proxying Layered Images"
 msgstr ""
 
-#: ../../source/layeredimage.rst:563
+#: ../../source/layeredimage.rst:576
 msgid "Sometimes, it's necessary to proxy a layered image, to use the same layered image in multiple places. One reason for this would be to have the same sprite at multiple sizes, while another would be to use it as a side image."
 msgstr ""
 
-#: ../../source/layeredimage.rst:568
+#: ../../source/layeredimage.rst:581
 msgid "The :func:`LayeredImageProxy` object does this, taking one layered image and duplicating it somewhere else."
 msgstr ""
 
-#: ../../source/layeredimage.rst:571
+#: ../../source/layeredimage.rst:584
 msgid "For example::"
 msgstr ""
 
-#: ../../source/layeredimage.rst:575
+#: ../../source/layeredimage.rst:588
 msgid "creates a duplicate of the image that can be displayed independently. This also takes a transform argument that makes it useful to position a side image, like this::"
 msgstr ""
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-18 23:14+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 "これは `screen` と名付けられたスクリーンを、もし表示されていれば非表示にしま"
 "す。"
 
-#: ../../source/inc/control_action:12
+#: ../../source/inc/control_action:13
 msgid "`transition`"
 msgstr "`transition`"
 
@@ -90,15 +90,23 @@ msgid "If not None, a transition that occurs when hiding the screen."
 msgstr ""
 "None でなければスクリーンを非表示にするときにトランジションが使用されます。"
 
-#: ../../source/inc/control_action:17
+#: ../../source/inc/control_action:15
+msgid "`_layer`"
+msgstr ""
+
+#: ../../source/inc/control_action:16
+msgid "This is passed as the layer argument to :func:`renpy.hide_screen`."
+msgstr ""
+
+#: ../../source/inc/control_action:20
 msgid "Causes control to transfer to `label`."
 msgstr "制御を `label` に移します。"
 
-#: ../../source/inc/control_action:21
+#: ../../source/inc/control_action:24
 msgid "Does nothing."
 msgstr "何もしません。"
 
-#: ../../source/inc/control_action:23
+#: ../../source/inc/control_action:26
 msgid ""
 "This can be used to make a button responsive to hover/unhover events, "
 "without actually doing anything."
@@ -106,7 +114,7 @@ msgstr ""
 "これはボタンの hover/unhover イベントに対する反応として、実際には何もしない時"
 "に使用されます。"
 
-#: ../../source/inc/control_action:28
+#: ../../source/inc/control_action:31
 msgid ""
 "Causes the current interaction to return the supplied value, which must not "
 "be None. This is often used with menus and imagemaps, to select what the "
@@ -119,14 +127,14 @@ msgstr ""
 "imagemap で使用されます。スクリーンが ``call screen`` ステートメントで呼び出"
 "されると、返り値は `_return` 変数に配置されます。"
 
-#: ../../source/inc/control_action:34
+#: ../../source/inc/control_action:37
 msgid ""
 "When in a menu, this returns from the menu. (The value should be None in "
 "this case.)"
 msgstr ""
 "menu ではこれで menu から戻ります。(この場合値は None であるべきです。)"
 
-#: ../../source/inc/control_action:39
+#: ../../source/inc/control_action:42
 msgid ""
 "This causes another screen to be shown. `screen` is a string giving the name "
 "of the screen. The arguments are passed to the screen being shown."
@@ -134,12 +142,12 @@ msgstr ""
 "これは他のスクリーン表示します。 `screen` は表示するスクリーンを表す文字列"
 "で、引き数はそのスクリーンに渡されます。"
 
-#: ../../source/inc/control_action:43 ../../source/inc/control_action:51
+#: ../../source/inc/control_action:46 ../../source/inc/control_action:54
 msgid "If not None, `transition` is use to show the new screen."
 msgstr ""
 "None でなければ `transition` が新しいスクリーンを表示するために使用されます。"
 
-#: ../../source/inc/control_action:47
+#: ../../source/inc/control_action:50
 msgid ""
 "Shows a transient screen. A transient screen will be hidden when the current "
 "interaction completes. The arguments are passed to the screen being shown."
@@ -147,7 +155,7 @@ msgstr ""
 "一時的なスクリーンを表示します。一時的なスクリーンは現在のインタラクションが"
 "完了すると非表示になります。引数は表示されるスクリーンに渡されます。"
 
-#: ../../source/inc/control_action:55
+#: ../../source/inc/control_action:58
 msgid ""
 "This toggles the visibility of `screen`. If it is not currently shown, the "
 "screen is shown with the provided arguments. Otherwise, the screen is hidden."
@@ -155,7 +163,7 @@ msgstr ""
 "`screen` の表示をトグルします。現在表示されていなければ、スクリーンは与えられ"
 "た引数で呼び出され、そうでなければ非表示になります。"
 
-#: ../../source/inc/control_action:59
+#: ../../source/inc/control_action:62
 msgid "If not None, `transition` is use to show and hide the screen."
 msgstr ""
 "None でなければ `transition` がスクリーンを表示または非表示するのに使用されま"
@@ -428,18 +436,25 @@ msgstr ""
 "合、「 _screen」を付け足してそのラベルにジャンプします。"
 
 #: ../../source/inc/menu_action:30
+msgid ""
+"If the optional keyword argument `_transition` is given, the menu will "
+"change screens using the provided transition. If not manually specified, the "
+"default transition is `config.intra_transition`."
+msgstr ""
+
+#: ../../source/inc/menu_action:35
 msgid "ShowMenu(\"load\")"
 msgstr "ShowMenu(\"load\")"
 
-#: ../../source/inc/menu_action:31
+#: ../../source/inc/menu_action:36
 msgid "ShowMenu(\"save\")"
 msgstr "ShowMenu(\"save\")"
 
-#: ../../source/inc/menu_action:32
+#: ../../source/inc/menu_action:37
 msgid "ShowMenu(\"preferences\")"
 msgstr "ShowMenu(\"preferences\")"
 
-#: ../../source/inc/menu_action:34
+#: ../../source/inc/menu_action:39
 msgid ""
 "This can also be used to show user-defined menu screens. For example, if one "
 "has a \"stats\" screen defined, one can show it as part of the game menu "
@@ -449,11 +464,11 @@ msgstr ""
 "「 starts 」スクリーンが定義されていれば以下のように game menu の一部としてそ"
 "れを表示できます。 :"
 
-#: ../../source/inc/menu_action:38
+#: ../../source/inc/menu_action:43
 msgid "ShowMenu(\"stats\")"
 msgstr "ShowMenu(\"stats\")"
 
-#: ../../source/inc/menu_action:40
+#: ../../source/inc/menu_action:45
 msgid ""
 "ShowMenu without an argument will enter the game menu at the default screen, "
 "taken from _game_menu_screen."
@@ -461,11 +476,11 @@ msgstr ""
 "引数なしの ShowMenu は _game_menu_screenから受け取ったデフォルトのゲームメ"
 "ニューには入ります。"
 
-#: ../../source/inc/menu_action:43
+#: ../../source/inc/menu_action:48
 msgid "Extra arguments and keyword arguments are passed on to the screen"
 msgstr "その他の引数とキーワード引数はそのスクリーンに渡されます。"
 
-#: ../../source/inc/menu_action:47
+#: ../../source/inc/menu_action:52
 msgid ""
 "Causes Ren'Py to jump out of the menu context to the named label. The main "
 "use of this is to start a new game from the main menu. Common uses are:"
@@ -473,11 +488,11 @@ msgstr ""
 "Ren'Py に menu コンテキストを出て名前のあるラベルにジャンプさせます。これの主"
 "な使用法はメインメニューからニューゲームを開始することです。使用法は :"
 
-#: ../../source/inc/menu_action:51
+#: ../../source/inc/menu_action:56
 msgid "Start() - Start at the start label."
 msgstr "Start() - start ラベルからスタートする。"
 
-#: ../../source/inc/menu_action:52
+#: ../../source/inc/menu_action:57
 msgid "Start(\"foo\") - Start at the \"foo\" label."
 msgstr "Start(\"foo\") - 「 foo 」 ラベルからスタートする。"
 
@@ -1983,43 +1998,49 @@ msgstr "Preference(\"self /voicing\", \"toggle\") - 自己発話をトグルし�
 
 #: ../../source/inc/preference_action:102
 msgid ""
+"Preference(\"self voicing volume drop\", 0.5) - Drops the volume of non-"
+"voice mixers when self voicing is active."
+msgstr ""
+
+#: ../../source/inc/preference_action:104
+msgid ""
 "Preference(\"clipboard voicing\", \"enable\") - Enables clipboard-voicing."
 msgstr "Preference(\"auto-forward\", \"enable\") - 自動進行を有効化する。"
 
-#: ../../source/inc/preference_action:103
+#: ../../source/inc/preference_action:105
 msgid ""
 "Preference(\"clipboard voicing\", \"disable\") - Disable clipboard-voicing."
 msgstr ""
 "Preference(\"clipboard voicing\", \"disable\") - クリップボードボイシングを無"
 "効化する。"
 
-#: ../../source/inc/preference_action:104
+#: ../../source/inc/preference_action:106
 msgid ""
 "Preference(\"clipboard voicing\", \"toggle\") - Toggles clipboard-voicing."
 msgstr ""
 "Preference(\"clipboard voicing\", \"toggle\") - クリップボードボイシングをト"
 "グルする。"
 
-#: ../../source/inc/preference_action:106
+#: ../../source/inc/preference_action:108
 msgid "Preference(\"debug voicing\", \"enable\") - Enables self.-voicing debug"
 msgstr ""
 "Preference(\"debug voicing\", \"enable\") - 自己発話のデバッグを有効化しま"
 "す。"
 
-#: ../../source/inc/preference_action:107
+#: ../../source/inc/preference_action:109
 msgid ""
 "Preference(\"debug voicing\", \"disable\") - Disable self-voicing debug."
 msgstr ""
 "Preference(\"debug voicing\", \"disable\") - 自己発話のデバッグを無効化しま"
 "す。"
 
-#: ../../source/inc/preference_action:108
+#: ../../source/inc/preference_action:110
 msgid "Preference(\"debug voicing\", \"toggle\") - Toggles self-voicing debug."
 msgstr ""
 "Preference(\"debug voicing\", \"toggle\") - 自己発話のデバッグの有効無効をト"
 "グルします。"
 
-#: ../../source/inc/preference_action:110
+#: ../../source/inc/preference_action:112
 msgid ""
 "Preference(\"rollback side\", \"left\") - Touching the left side of the "
 "screen causes rollback."
@@ -2027,7 +2048,7 @@ msgstr ""
 "Preference(\"rollback side\", \"left\") - スクリーンの左側へのタッチでロール"
 "バックします。"
 
-#: ../../source/inc/preference_action:111
+#: ../../source/inc/preference_action:113
 msgid ""
 "Preference(\"rollback side\", \"right\") - Touching the right side of the "
 "screen causes rollback."
@@ -2035,7 +2056,7 @@ msgstr ""
 "Preference(\"rollback side\", \"right\")  スクリーンの右側へのタッチでロール"
 "バックします。"
 
-#: ../../source/inc/preference_action:112
+#: ../../source/inc/preference_action:114
 msgid ""
 "Preference(\"rollback side\", \"disable\") - Touching the screen will not "
 "cause rollback."
@@ -2043,7 +2064,7 @@ msgstr ""
 "Preference(\"rollback side\", \"disable\") - スクリーンへのタッチでロールバッ"
 "クしません。"
 
-#: ../../source/inc/preference_action:114
+#: ../../source/inc/preference_action:116
 msgid ""
 "Preference(\"gl powersave\", True) - Drop framerate to allow for power "
 "savings."
@@ -2051,7 +2072,7 @@ msgstr ""
 "Preference(\"gl powersave\", True) - 電力節約のため、フレームレートを低下させ"
 "ます。"
 
-#: ../../source/inc/preference_action:115
+#: ../../source/inc/preference_action:117
 msgid ""
 "Preference(\"gl powersave\", False) - Do not drop framerate to allow for "
 "power savings."
@@ -2059,37 +2080,37 @@ msgstr ""
 "Preference(\"gl powersave\", False) - 電力節約のため、フレームレートを低下さ"
 "せません。"
 
-#: ../../source/inc/preference_action:116
+#: ../../source/inc/preference_action:118
 msgid ""
 "Preference(\"gl powersave\", \"auto\") - Enable powersave when running on "
 "battery."
 msgstr ""
 "Preference(\"gl powersave\", \"auto\") - バッテリー動作時、電力を節約します。"
 
-#: ../../source/inc/preference_action:118
+#: ../../source/inc/preference_action:120
 msgid "Preference(\"gl framerate\", None) - Runs at the display framerate."
 msgstr ""
 "Preference(\"gl framerate\", None) - ディスプレイのフレームレートで実行しま"
 "す。"
 
-#: ../../source/inc/preference_action:119
+#: ../../source/inc/preference_action:121
 msgid "Preference(\"gl framerate\", 60) - Runs at the given framerate."
 msgstr ""
 "Preference(\"gl framerate\", 60) - 指定したフレームレートで実行します。"
 
-#: ../../source/inc/preference_action:121
+#: ../../source/inc/preference_action:123
 msgid "Preference(\"gl tearing\", True) - Tears rather than skipping frames."
 msgstr ""
 "Preference(\"gl tearing\", True) - フレームをスキップせずテアリングを発生させ"
 "ます。"
 
-#: ../../source/inc/preference_action:122
+#: ../../source/inc/preference_action:124
 msgid "Preference(\"gl tearing\", False) - Skips frames rather than tearing."
 msgstr ""
 "Preference(\"gl tearing\", False) - フレームをスキップしてテアリングを防ぎま"
 "す。"
 
-#: ../../source/inc/preference_action:124
+#: ../../source/inc/preference_action:126
 msgid ""
 "Preference(\"font transform\", \"opendyslexic\") - Sets the accessibility "
 "font transform to opendyslexic."
@@ -2097,7 +2118,7 @@ msgstr ""
 "Preference(\"font transform\", \"opendyslexic\") - ゲーム内のフォントを "
 "opendyslexic に設定します。"
 
-#: ../../source/inc/preference_action:125
+#: ../../source/inc/preference_action:127
 msgid ""
 "Preference(\"font transform\", \"dejavusans\") - Sets the accessibility font "
 "transform to deja vu sans."
@@ -2105,14 +2126,14 @@ msgstr ""
 "Preference(\"font transform\", \"dejavusans\") -ゲーム内のフォントを "
 "dejavusans　に設定します。"
 
-#: ../../source/inc/preference_action:126
+#: ../../source/inc/preference_action:128
 msgid ""
 "Preference(\"font transform\", None) - Disables the accessibility font "
 "transform."
 msgstr ""
 "Preference(\"font transform\", None) - ゲーム内のフォントを無効にします。"
 
-#: ../../source/inc/preference_action:128
+#: ../../source/inc/preference_action:130
 msgid ""
 "Preference(\"font size\", 1.0) - Sets the accessibility font size scaling "
 "factor."
@@ -2120,7 +2141,7 @@ msgstr ""
 "Preference(\"font size\", 1.0) - ゲーム内のフォントのサイズのスケーリング率を"
 "設定します。"
 
-#: ../../source/inc/preference_action:129
+#: ../../source/inc/preference_action:131
 msgid ""
 "Preference(\"font line spacing\", 1.0) - Sets the accessibility font "
 "vertical spacing scaling factor."
@@ -2128,43 +2149,48 @@ msgstr ""
 "Preference(\"font line spacing\", 1.0) - ゲーム内のフォントの行間スペースのス"
 "ケーリング率を設定します。"
 
-#: ../../source/inc/preference_action:131
+#: ../../source/inc/preference_action:133
 msgid "Values that can be used with bars are:"
 msgstr "バーで使用される value  :"
 
-#: ../../source/inc/preference_action:133
+#: ../../source/inc/preference_action:135
 msgid "Preference(\"text speed\")"
 msgstr "Preference(\"text speed\")"
 
-#: ../../source/inc/preference_action:134
+#: ../../source/inc/preference_action:136
 msgid "Preference(\"auto-forward time\")"
 msgstr "Preference(\"auto-forward time\")"
 
-#: ../../source/inc/preference_action:135
+#: ../../source/inc/preference_action:137
 msgid "Preference(\"music volume\")"
 msgstr "Preference(\"music volume\")"
 
-#: ../../source/inc/preference_action:136
+#: ../../source/inc/preference_action:138
 msgid "Preference(\"sound volume\")"
 msgstr "Preference(\"sound volume\")"
 
-#: ../../source/inc/preference_action:137
+#: ../../source/inc/preference_action:139
 msgid "Preference(\"voice volume\")"
 msgstr "Preference(\"voice volume\")"
 
-#: ../../source/inc/preference_action:138
+#: ../../source/inc/preference_action:140
 msgid "Preference(\"mixer <mixer> volume\")"
 msgstr "Preference(\"mixer <mixer> volume\")"
 
-#: ../../source/inc/preference_action:139
+#: ../../source/inc/preference_action:141
+#, fuzzy
+msgid "Preference(\"self voicing volume drop\")"
+msgstr "Preference(\"voice volume\")"
+
+#: ../../source/inc/preference_action:142
 msgid "Preference(\"font size\")"
 msgstr "Preference(\"font size\")"
 
-#: ../../source/inc/preference_action:140
+#: ../../source/inc/preference_action:143
 msgid "Preference(\"font line spacing\")"
 msgstr "Preference(\"font line spacing\")"
 
-#: ../../source/inc/preference_action:142
+#: ../../source/inc/preference_action:145
 msgid ""
 "The `range` parameter can be given to give the range of certain bars. For "
 "\"text speed\", it defaults to 200 cps. For \"auto-forward time\", it "
@@ -2176,11 +2202,18 @@ msgstr ""
 "ルトでテキストの一塊毎に 30.0 秒です。 (これらは最大値になり、デフォルト値に"
 "はなりません)"
 
-#: ../../source/screen_actions.rst:129
+#: ../../source/inc/preference_functions:5
+msgid ""
+"This returns the volume associated with voice tag, a number between 0.0 and "
+"1.0, which is interpreted as a fraction of the mixer volume for the `voice` "
+"channel."
+msgstr ""
+
+#: ../../source/screen_actions.rst:131
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: ../../source/screen_actions.rst:131
+#: ../../source/screen_actions.rst:133
 msgid "These functions and actions work with the gamepad."
 msgstr "これらの関数とアクションはゲームパッドで動作します。"
 
@@ -2203,11 +2236,11 @@ msgid ""
 "true."
 msgstr ":var:`config.developer` が True である間常に True を返します。"
 
-#: ../../source/screen_actions.rst:136
+#: ../../source/screen_actions.rst:138
 msgid "File Functions"
 msgstr "ファイル関数"
 
-#: ../../source/screen_actions.rst:138
+#: ../../source/screen_actions.rst:140
 msgid ""
 "These functions return useful information about files. They use the same "
 "default page as the file actions."
@@ -2402,11 +2435,11 @@ msgstr ""
 "True の場合、数字の大きなファイルスロットから最初にリストアップされます。そう"
 "でなけらば小さな数字のスロットから最初にリストアップされます。"
 
-#: ../../source/screen_actions.rst:144
+#: ../../source/screen_actions.rst:146
 msgid "Side Image Functions"
 msgstr "サイドイメージ関数"
 
-#: ../../source/screen_actions.rst:146
+#: ../../source/screen_actions.rst:148
 msgid "This function returns the side image to use."
 msgstr "この関数は使用するサイドイメージを返します。"
 
@@ -2418,11 +2451,11 @@ msgstr ""
 "現在話しているキャラクターに関連づけられたサイドイメージか、そのようなサイド"
 "イメージが存在しない場合は Null displayable を返します。"
 
-#: ../../source/screen_actions.rst:153
+#: ../../source/screen_actions.rst:155
 msgid "Tooltips"
 msgstr "Tooltip"
 
-#: ../../source/screen_actions.rst:155
+#: ../../source/screen_actions.rst:157
 msgid ""
 "Tooltips can now be accessed by the tooltip property available on all "
 "displayables, and the GetTooltip function. The GetTooltip function returns "
@@ -2433,7 +2466,7 @@ msgstr ""
 "がフォーカスを得たとき、その displayable の tooltip プロパティーの値を返しま"
 "す。"
 
-#: ../../source/screen_actions.rst:160
+#: ../../source/screen_actions.rst:162
 msgid "Here's an example::"
 msgstr "例 ::"
 
@@ -2458,17 +2491,17 @@ msgstr ""
 " None またはスクリーンの名前かタグです。指定されると、フォーカスを持つ "
 "displayable がそのスクリーンの一部であるときのみツールチップを返します。"
 
-#: ../../source/screen_actions.rst:188
+#: ../../source/screen_actions.rst:190
 msgid "Legacy"
 msgstr "Legacy"
 
-#: ../../source/screen_actions.rst:190
+#: ../../source/screen_actions.rst:192
 msgid ""
 "This has been obsoleted by the above, but you might see it in older projects."
 msgstr ""
 "これらは上述のものより旧来のものです。古いプロジェクトで見かけるでしょう。"
 
-#: ../../source/screen_actions.rst:192
+#: ../../source/screen_actions.rst:194
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 "Tooltip クラスはあるボタンの上にマウスが入ると、スクリーンを変更します。"
@@ -2505,7 +2538,7 @@ msgstr ""
 "す。ボタンがフォーカスを失うとこの Tooltip の value フィールドはデフォルトに"
 "戻ります。"
 
-#: ../../source/screen_actions.rst:196
+#: ../../source/screen_actions.rst:198
 msgid ""
 "When using a tooltip with a screen, the usual behavior is to create a "
 "tooltip object in a default statement. The value of the tooltip and the "
@@ -2518,7 +2551,7 @@ msgstr ""
 "スクリーンに使用されます。スクリーンでの使用順は問題にはなりません。 -  "
 "Action の前に値を利用することも可能です。"
 
-#: ../../source/screen_actions.rst:202
+#: ../../source/screen_actions.rst:204
 msgid ""
 "Tooltips can take on any value. While in the example below we use the text "
 "statement to display a string on the screen, it's also possible to use the "

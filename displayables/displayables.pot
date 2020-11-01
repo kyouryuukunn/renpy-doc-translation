@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 23:16+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgid "Strings may have one or more square-bracket substitutions in them, such a
 msgstr ""
 
 #: ../../source/displayables.rst:44
-msgid "When a string has \"[prefix_]\" in it, that substitution is replaced with each of the style prefixes associated with the current displayable."
+msgid "When a string has \"[prefix\\_]\" in it, that substitution is replaced with each of the style prefixes associated with the current displayable."
 msgstr ""
 
 #: ../../source/displayables.rst:50
@@ -152,131 +152,135 @@ msgstr ""
 msgid "The `child` and `mask` parameters may be arbitrary displayables. The size of the AlphaMask is the size of `child`."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:16
+#: ../../source/inc/disp_imagelike:14
+msgid "Note that this takes different arguments from :func:`im.AlphaMask`, which uses the mask's red channel."
+msgstr ""
+
+#: ../../source/inc/disp_imagelike:19
 msgid "This object provides border size and tiling information to a :func:`Frame`. It can also provide padding information that can be supplied to the :propref:`padding` style property of a window or frame."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:22
+#: ../../source/inc/disp_imagelike:25
 msgid "`left`, `top`, `right`, `bottom`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:21
+#: ../../source/inc/disp_imagelike:24
 msgid "These provide the size of the insets used by a frame, and are added to the padding on each side. They should zero or a positive integer."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:27
+#: ../../source/inc/disp_imagelike:30
 msgid "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:25
+#: ../../source/inc/disp_imagelike:28
 msgid "These are added to the padding on each side, and may be positive or negative. (For example, if `left` is 5 and `pad_left` is -3, the final padding is 2.)"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:29
+#: ../../source/inc/disp_imagelike:32
 msgid "The padding information is supplied via a field:"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:33
+#: ../../source/inc/disp_imagelike:36
 msgid "This is a four-element tuple containing the padding on each of the four sides."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:38
+#: ../../source/inc/disp_imagelike:41
 msgid "This creates a new displayable of `size`, by compositing other displayables. `size` is a (width, height) tuple."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:41
-msgid "The remaining positional arguments are used to place images inside the LiveComposite. The remaining positional arguments should come in groups of two, with the first member of each group an (x, y) tuple, and the second member of a group is a displayable that is composited at that position."
+#: ../../source/inc/disp_imagelike:44
+msgid "The remaining positional arguments are used to place images inside the Composite. The remaining positional arguments should come in groups of two, with the first member of each group an (x, y) tuple, and the second member of a group is a displayable that is composited at that position."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:47
+#: ../../source/inc/disp_imagelike:50
 msgid "Displayables are composited from back to front."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:59
+#: ../../source/inc/disp_imagelike:62
 msgid "This creates a displayable by cropping `child` to `rect`, where `rect` is an (x, y, width, height) tuple. ::"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:66
+#: ../../source/inc/disp_imagelike:69
 msgid "A DynamicImage is a displayable that has text interpolation performed on it to yield a string giving a new displayable. Such interpolation is performed at the start of each interaction."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:72
+#: ../../source/inc/disp_imagelike:75
 msgid "This flattens `child`, which may be made up of multiple textures, into a single texture."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:75
+#: ../../source/inc/disp_imagelike:78
 msgid "Certain operations, like the alpha transform property, apply to every texture making up a displayable, which can yield incorrect results when the textures overlap on screen. Flatten creates a single texture from multiple textures, which can prevent this problem."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:80
+#: ../../source/inc/disp_imagelike:83
 msgid "Flatten is a relatively expensive operation, and so should only be used when absolutely required."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:85
+#: ../../source/inc/disp_imagelike:88
 msgid "A displayable that resizes an image to fill the available area, while preserving the width and height of its borders. It is often used as the background of a window or button."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:91
+#: ../../source/inc/disp_imagelike:94
 msgid "Using a frame to resize an image to double its size."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:94
+#: ../../source/inc/disp_imagelike:97
 msgid "`image`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:94
+#: ../../source/inc/disp_imagelike:97
 msgid "An image manipulator that will be resized by this frame."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:99
+#: ../../source/inc/disp_imagelike:102
 msgid "`left`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:97
+#: ../../source/inc/disp_imagelike:100
 msgid "The size of the border on the left side. This can also be a :func:`Borders` object, in which case that object is used in place of the other parameters."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:102
+#: ../../source/inc/disp_imagelike:105
 msgid "`top`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:102
+#: ../../source/inc/disp_imagelike:105
 msgid "The size of the border on the top."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:106
+#: ../../source/inc/disp_imagelike:109
 msgid "`right`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:105
+#: ../../source/inc/disp_imagelike:108
 msgid "The size of the border on the right side. If None, defaults to `left`."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:109
+#: ../../source/inc/disp_imagelike:112
 msgid "`bottom`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:109
+#: ../../source/inc/disp_imagelike:112
 msgid "The side of the border on the bottom. If None, defaults to `top`."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:115
+#: ../../source/inc/disp_imagelike:118
 msgid "`tile`"
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:112
+#: ../../source/inc/disp_imagelike:115
 msgid "If set to True, tiling is used to resize sections of the image, rather than scaling. If set to the string \"integer\", the nearest integer number of tiles will be used in each direction. That set of full tiles will then be scaled up or down to fit the required area."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:126
+#: ../../source/inc/disp_imagelike:129
 msgid "A displayable that creates an empty box on the screen. The size of the box is controlled by `width` and `height`. This can be used when a displayable requires a child, but no child is suitable, or as a spacer inside a box."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:137
+#: ../../source/inc/disp_imagelike:140
 msgid "A displayable that fills the area its assigned with `color`."
 msgstr ""
 
-#: ../../source/inc/disp_imagelike:145
+#: ../../source/inc/disp_imagelike:148
 msgid "Tiles `child` until it fills the area allocated to this displayable."
 msgstr ""
 
@@ -392,7 +396,7 @@ msgid "A default image should be specified."
 msgstr ""
 
 #: ../../source/inc/disp_dynamic:85
-msgid "One use of ShowingSwitch is to have side images change depending on the current emotion of a character. For example::"
+msgid "One use of ShowingSwitch is to have images change depending on the current emotion of a character. For example::"
 msgstr ""
 
 #: ../../source/displayables.rst:148
@@ -589,78 +593,6 @@ msgstr ""
 
 #: ../../source/inc/im_matrixcolor:29
 msgid "The components of the transformed color are clamped to the range [0.0, 1.0]."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:34
-msgid "Constructs an im.matrix object from `matrix`. im.matrix objects support The operations supported are matrix multiplication, scalar multiplication, element-wise addition, and element-wise subtraction. These operations are invoked using the standard mathematical operators (\\*, \\*, +, and -, respectively). If two im.matrix objects are multiplied, matrix multiplication is performed, otherwise scalar multiplication is used."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:42
-msgid "`matrix` is a 20 or 25 element list or tuple. If it is 20 elements long, it is padded with (0, 0, 0, 0, 1) to make a 5x5 matrix, suitable for multiplication."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:48
-msgid "Returns an im.matrix that alters the brightness of an image."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:52
-msgid "`b`"
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:51
-msgid "The amount of change in image brightness. This should be a number between -1 and 1, with -1 the darkest possible image and 1 the brightest."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:57
-msgid "Returns an im.matrix that colorizes a black and white image. `black_color` and `white_color` are Ren'Py style colors, so they may be specified as strings or tuples of (0-255) color values. ::"
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:69
-msgid "Returns an im.matrix that alters the contrast of an image. `c` should be greater than 0.0, with values between 0.0 and 1.0 decreasing contrast, and values greater than 1.0 increasing contrast."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:75
-msgid "Returns an im.matrix that desaturates the image (makes it grayscale). This is equivalent to calling im.matrix.saturation(0)."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:81
-msgid "Returns an im.matrix that rotates the hue by `h` degrees, while preserving luminosity."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:86
-msgid "Returns an identity matrix, one that does not change color or alpha."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:91
-msgid "Returns an im.matrix that inverts the red, green, and blue channels of the image without changing the alpha channel."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:96
-msgid "Returns an im.matrix that alters the opacity of an image. An `o` of 0.0 is fully transparent, while 1.0 is fully opaque."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:101
-msgid "Returns an im.matrix that alters the saturation of an image. The alpha channel is untouched."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:106
-msgid "`level`"
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:105
-msgid "The amount of saturation in the resulting image. 1.0 is the unaltered image, while 0.0 is grayscale."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:114
-msgid "`desat`"
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:109
-msgid "This is a 3-element tuple that controls how much of the red, green, and blue channels will be placed into all three channels of a fully desaturated image. The default is based on the constants used for the luminance channel of an NTSC television signal. Since the human eye is mostly sensitive to green, more of the green channel is kept then the other two channels."
-msgstr ""
-
-#: ../../source/inc/im_matrixcolor:119
-msgid "Returns an im.matrix that tints an image, without changing the alpha channel. `r`, `g`, and `b` should be numbers between 0 and 1, and control what fraction of the given channel is placed into the final image. (For example, if `r` is .5, and the value of the red channel is 100, the transformed color will have a red value of 50.)"
 msgstr ""
 
 #: ../../source/displayables.rst:246

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 23:16+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,7 @@ msgstr ""
 msgid "This causes the screen named `screen` to be hidden, if it is shown."
 msgstr ""
 
-#: ../../source/inc/control_action:12
+#: ../../source/inc/control_action:13
 msgid "`transition`"
 msgstr ""
 
@@ -64,44 +64,52 @@ msgstr ""
 msgid "If not None, a transition that occurs when hiding the screen."
 msgstr ""
 
-#: ../../source/inc/control_action:17
+#: ../../source/inc/control_action:15
+msgid "`_layer`"
+msgstr ""
+
+#: ../../source/inc/control_action:16
+msgid "This is passed as the layer argument to :func:`renpy.hide_screen`."
+msgstr ""
+
+#: ../../source/inc/control_action:20
 msgid "Causes control to transfer to `label`."
 msgstr ""
 
-#: ../../source/inc/control_action:21
+#: ../../source/inc/control_action:24
 msgid "Does nothing."
 msgstr ""
 
-#: ../../source/inc/control_action:23
+#: ../../source/inc/control_action:26
 msgid "This can be used to make a button responsive to hover/unhover events, without actually doing anything."
 msgstr ""
 
-#: ../../source/inc/control_action:28
+#: ../../source/inc/control_action:31
 msgid "Causes the current interaction to return the supplied value, which must not be None. This is often used with menus and imagemaps, to select what the return value of the interaction is. If the screen was called using the ``call screen`` statement, the return value is placed in the `_return` variable."
 msgstr ""
 
-#: ../../source/inc/control_action:34
+#: ../../source/inc/control_action:37
 msgid "When in a menu, this returns from the menu. (The value should be None in this case.)"
 msgstr ""
 
-#: ../../source/inc/control_action:39
+#: ../../source/inc/control_action:42
 msgid "This causes another screen to be shown. `screen` is a string giving the name of the screen. The arguments are passed to the screen being shown."
 msgstr ""
 
-#: ../../source/inc/control_action:43
-#: ../../source/inc/control_action:51
+#: ../../source/inc/control_action:46
+#: ../../source/inc/control_action:54
 msgid "If not None, `transition` is use to show the new screen."
 msgstr ""
 
-#: ../../source/inc/control_action:47
+#: ../../source/inc/control_action:50
 msgid "Shows a transient screen. A transient screen will be hidden when the current interaction completes. The arguments are passed to the screen being shown."
 msgstr ""
 
-#: ../../source/inc/control_action:55
+#: ../../source/inc/control_action:58
 msgid "This toggles the visibility of `screen`. If it is not currently shown, the screen is shown with the provided arguments. Otherwise, the screen is hidden."
 msgstr ""
 
-#: ../../source/inc/control_action:59
+#: ../../source/inc/control_action:62
 msgid "If not None, `transition` is use to show and hide the screen."
 msgstr ""
 
@@ -304,42 +312,46 @@ msgid "`screen` is usually the name of a screen, which is shown using the screen
 msgstr ""
 
 #: ../../source/inc/menu_action:30
+msgid "If the optional keyword argument `_transition` is given, the menu will change screens using the provided transition. If not manually specified, the default transition is `config.intra_transition`."
+msgstr ""
+
+#: ../../source/inc/menu_action:35
 msgid "ShowMenu(\"load\")"
 msgstr ""
 
-#: ../../source/inc/menu_action:31
+#: ../../source/inc/menu_action:36
 msgid "ShowMenu(\"save\")"
 msgstr ""
 
-#: ../../source/inc/menu_action:32
+#: ../../source/inc/menu_action:37
 msgid "ShowMenu(\"preferences\")"
 msgstr ""
 
-#: ../../source/inc/menu_action:34
+#: ../../source/inc/menu_action:39
 msgid "This can also be used to show user-defined menu screens. For example, if one has a \"stats\" screen defined, one can show it as part of the game menu using:"
 msgstr ""
 
-#: ../../source/inc/menu_action:38
+#: ../../source/inc/menu_action:43
 msgid "ShowMenu(\"stats\")"
 msgstr ""
 
-#: ../../source/inc/menu_action:40
+#: ../../source/inc/menu_action:45
 msgid "ShowMenu without an argument will enter the game menu at the default screen, taken from _game_menu_screen."
 msgstr ""
 
-#: ../../source/inc/menu_action:43
+#: ../../source/inc/menu_action:48
 msgid "Extra arguments and keyword arguments are passed on to the screen"
 msgstr ""
 
-#: ../../source/inc/menu_action:47
+#: ../../source/inc/menu_action:52
 msgid "Causes Ren'Py to jump out of the menu context to the named label. The main use of this is to start a new game from the main menu. Common uses are:"
 msgstr ""
 
-#: ../../source/inc/menu_action:51
+#: ../../source/inc/menu_action:56
 msgid "Start() - Start at the start label."
 msgstr ""
 
-#: ../../source/inc/menu_action:52
+#: ../../source/inc/menu_action:57
 msgid "Start(\"foo\") - Start at the \"foo\" label."
 msgstr ""
 
@@ -1488,134 +1500,146 @@ msgid "Preference(\"self voicing\", \"toggle\") - Toggles self-voicing."
 msgstr ""
 
 #: ../../source/inc/preference_action:102
-msgid "Preference(\"clipboard voicing\", \"enable\") - Enables clipboard-voicing."
-msgstr ""
-
-#: ../../source/inc/preference_action:103
-msgid "Preference(\"clipboard voicing\", \"disable\") - Disable clipboard-voicing."
+msgid "Preference(\"self voicing volume drop\", 0.5) - Drops the volume of non-voice mixers when self voicing is active."
 msgstr ""
 
 #: ../../source/inc/preference_action:104
-msgid "Preference(\"clipboard voicing\", \"toggle\") - Toggles clipboard-voicing."
+msgid "Preference(\"clipboard voicing\", \"enable\") - Enables clipboard-voicing."
+msgstr ""
+
+#: ../../source/inc/preference_action:105
+msgid "Preference(\"clipboard voicing\", \"disable\") - Disable clipboard-voicing."
 msgstr ""
 
 #: ../../source/inc/preference_action:106
-msgid "Preference(\"debug voicing\", \"enable\") - Enables self.-voicing debug"
-msgstr ""
-
-#: ../../source/inc/preference_action:107
-msgid "Preference(\"debug voicing\", \"disable\") - Disable self-voicing debug."
+msgid "Preference(\"clipboard voicing\", \"toggle\") - Toggles clipboard-voicing."
 msgstr ""
 
 #: ../../source/inc/preference_action:108
-msgid "Preference(\"debug voicing\", \"toggle\") - Toggles self-voicing debug."
+msgid "Preference(\"debug voicing\", \"enable\") - Enables self.-voicing debug"
+msgstr ""
+
+#: ../../source/inc/preference_action:109
+msgid "Preference(\"debug voicing\", \"disable\") - Disable self-voicing debug."
 msgstr ""
 
 #: ../../source/inc/preference_action:110
-msgid "Preference(\"rollback side\", \"left\") - Touching the left side of the screen causes rollback."
-msgstr ""
-
-#: ../../source/inc/preference_action:111
-msgid "Preference(\"rollback side\", \"right\") - Touching the right side of the screen causes rollback."
+msgid "Preference(\"debug voicing\", \"toggle\") - Toggles self-voicing debug."
 msgstr ""
 
 #: ../../source/inc/preference_action:112
-msgid "Preference(\"rollback side\", \"disable\") - Touching the screen will not cause rollback."
+msgid "Preference(\"rollback side\", \"left\") - Touching the left side of the screen causes rollback."
+msgstr ""
+
+#: ../../source/inc/preference_action:113
+msgid "Preference(\"rollback side\", \"right\") - Touching the right side of the screen causes rollback."
 msgstr ""
 
 #: ../../source/inc/preference_action:114
-msgid "Preference(\"gl powersave\", True) - Drop framerate to allow for power savings."
-msgstr ""
-
-#: ../../source/inc/preference_action:115
-msgid "Preference(\"gl powersave\", False) - Do not drop framerate to allow for power savings."
+msgid "Preference(\"rollback side\", \"disable\") - Touching the screen will not cause rollback."
 msgstr ""
 
 #: ../../source/inc/preference_action:116
-msgid "Preference(\"gl powersave\", \"auto\") - Enable powersave when running on battery."
+msgid "Preference(\"gl powersave\", True) - Drop framerate to allow for power savings."
+msgstr ""
+
+#: ../../source/inc/preference_action:117
+msgid "Preference(\"gl powersave\", False) - Do not drop framerate to allow for power savings."
 msgstr ""
 
 #: ../../source/inc/preference_action:118
+msgid "Preference(\"gl powersave\", \"auto\") - Enable powersave when running on battery."
+msgstr ""
+
+#: ../../source/inc/preference_action:120
 msgid "Preference(\"gl framerate\", None) - Runs at the display framerate."
 msgstr ""
 
-#: ../../source/inc/preference_action:119
+#: ../../source/inc/preference_action:121
 msgid "Preference(\"gl framerate\", 60) - Runs at the given framerate."
 msgstr ""
 
-#: ../../source/inc/preference_action:121
+#: ../../source/inc/preference_action:123
 msgid "Preference(\"gl tearing\", True) - Tears rather than skipping frames."
 msgstr ""
 
-#: ../../source/inc/preference_action:122
+#: ../../source/inc/preference_action:124
 msgid "Preference(\"gl tearing\", False) - Skips frames rather than tearing."
 msgstr ""
 
-#: ../../source/inc/preference_action:124
+#: ../../source/inc/preference_action:126
 msgid "Preference(\"font transform\", \"opendyslexic\") - Sets the accessibility font transform to opendyslexic."
 msgstr ""
 
-#: ../../source/inc/preference_action:125
+#: ../../source/inc/preference_action:127
 msgid "Preference(\"font transform\", \"dejavusans\") - Sets the accessibility font transform to deja vu sans."
 msgstr ""
 
-#: ../../source/inc/preference_action:126
+#: ../../source/inc/preference_action:128
 msgid "Preference(\"font transform\", None) - Disables the accessibility font transform."
 msgstr ""
 
-#: ../../source/inc/preference_action:128
+#: ../../source/inc/preference_action:130
 msgid "Preference(\"font size\", 1.0) - Sets the accessibility font size scaling factor."
 msgstr ""
 
-#: ../../source/inc/preference_action:129
+#: ../../source/inc/preference_action:131
 msgid "Preference(\"font line spacing\", 1.0) - Sets the accessibility font vertical spacing scaling factor."
 msgstr ""
 
-#: ../../source/inc/preference_action:131
+#: ../../source/inc/preference_action:133
 msgid "Values that can be used with bars are:"
 msgstr ""
 
-#: ../../source/inc/preference_action:133
+#: ../../source/inc/preference_action:135
 msgid "Preference(\"text speed\")"
 msgstr ""
 
-#: ../../source/inc/preference_action:134
+#: ../../source/inc/preference_action:136
 msgid "Preference(\"auto-forward time\")"
 msgstr ""
 
-#: ../../source/inc/preference_action:135
+#: ../../source/inc/preference_action:137
 msgid "Preference(\"music volume\")"
 msgstr ""
 
-#: ../../source/inc/preference_action:136
+#: ../../source/inc/preference_action:138
 msgid "Preference(\"sound volume\")"
 msgstr ""
 
-#: ../../source/inc/preference_action:137
+#: ../../source/inc/preference_action:139
 msgid "Preference(\"voice volume\")"
 msgstr ""
 
-#: ../../source/inc/preference_action:138
+#: ../../source/inc/preference_action:140
 msgid "Preference(\"mixer <mixer> volume\")"
 msgstr ""
 
-#: ../../source/inc/preference_action:139
-msgid "Preference(\"font size\")"
-msgstr ""
-
-#: ../../source/inc/preference_action:140
-msgid "Preference(\"font line spacing\")"
+#: ../../source/inc/preference_action:141
+msgid "Preference(\"self voicing volume drop\")"
 msgstr ""
 
 #: ../../source/inc/preference_action:142
+msgid "Preference(\"font size\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:143
+msgid "Preference(\"font line spacing\")"
+msgstr ""
+
+#: ../../source/inc/preference_action:145
 msgid "The `range` parameter can be given to give the range of certain bars. For \"text speed\", it defaults to 200 cps. For \"auto-forward time\", it defaults to 30.0 seconds per chunk of text. (These are maximums, not defaults.)"
 msgstr ""
 
-#: ../../source/screen_actions.rst:129
-msgid "Gamepad"
+#: ../../source/inc/preference_functions:5
+msgid "This returns the volume associated with voice tag, a number between 0.0 and 1.0, which is interpreted as a fraction of the mixer volume for the `voice` channel."
 msgstr ""
 
 #: ../../source/screen_actions.rst:131
+msgid "Gamepad"
+msgstr ""
+
+#: ../../source/screen_actions.rst:133
 msgid "These functions and actions work with the gamepad."
 msgstr ""
 
@@ -1635,11 +1659,11 @@ msgstr ""
 msgid "Forces this function to always return true while :var:`config.developer` is true."
 msgstr ""
 
-#: ../../source/screen_actions.rst:136
+#: ../../source/screen_actions.rst:138
 msgid "File Functions"
 msgstr ""
 
-#: ../../source/screen_actions.rst:138
+#: ../../source/screen_actions.rst:140
 msgid "These functions return useful information about files. They use the same default page as the file actions."
 msgstr ""
 
@@ -1767,11 +1791,11 @@ msgstr ""
 msgid "If true, the highest-numbered file slot is listed first. Otherwise, the lowest-numbered slot is listed first."
 msgstr ""
 
-#: ../../source/screen_actions.rst:144
+#: ../../source/screen_actions.rst:146
 msgid "Side Image Functions"
 msgstr ""
 
-#: ../../source/screen_actions.rst:146
+#: ../../source/screen_actions.rst:148
 msgid "This function returns the side image to use."
 msgstr ""
 
@@ -1779,15 +1803,15 @@ msgstr ""
 msgid "Returns the side image associated with the currently speaking character, or a Null displayable if no such side image exists."
 msgstr ""
 
-#: ../../source/screen_actions.rst:153
+#: ../../source/screen_actions.rst:155
 msgid "Tooltips"
 msgstr ""
 
-#: ../../source/screen_actions.rst:155
+#: ../../source/screen_actions.rst:157
 msgid "Tooltips can now be accessed by the tooltip property available on all displayables, and the GetTooltip function. The GetTooltip function returns the value of the tooltip property when the displayable gains focus."
 msgstr ""
 
-#: ../../source/screen_actions.rst:160
+#: ../../source/screen_actions.rst:162
 msgid "Here's an example::"
 msgstr ""
 
@@ -1803,15 +1827,15 @@ msgstr ""
 msgid "If not None, this should be the name or tag of a screen. If given, this function only returns the tooltip if the focused displayable is part of the screen."
 msgstr ""
 
-#: ../../source/screen_actions.rst:188
+#: ../../source/screen_actions.rst:190
 msgid "Legacy"
 msgstr ""
 
-#: ../../source/screen_actions.rst:190
+#: ../../source/screen_actions.rst:192
 msgid "This has been obsoleted by the above, but you might see it in older projects."
 msgstr ""
 
-#: ../../source/screen_actions.rst:192
+#: ../../source/screen_actions.rst:194
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 
@@ -1827,11 +1851,11 @@ msgstr ""
 msgid "Returns an action that is generally used as the hovered property of a button. When the button is hovered, the value field of this tooltip is set to `value`. When the button loses focus, the value field of this tooltip reverts to the default."
 msgstr ""
 
-#: ../../source/screen_actions.rst:196
+#: ../../source/screen_actions.rst:198
 msgid "When using a tooltip with a screen, the usual behavior is to create a tooltip object in a default statement. The value of the tooltip and the action method can then be used within the screen. The order of use within a screen doesn't matter – it's possible to use the value before an action is used."
 msgstr ""
 
-#: ../../source/screen_actions.rst:202
+#: ../../source/screen_actions.rst:204
 msgid "Tooltips can take on any value. While in the example below we use the text statement to display a string on the screen, it's also possible to use the add statement to add a displayable. More complex behavior is also possible."
 msgstr ""
 

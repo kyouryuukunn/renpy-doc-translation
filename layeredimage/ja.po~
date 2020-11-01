@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 21:47+0900\n"
+"POT-Creation-Date: 2020-05-18 23:14+0900\n"
 "PO-Revision-Date: 2020-01-03 02:32+0900\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -373,11 +373,12 @@ msgstr ""
 msgid "Layeredimage takes the following properties:"
 msgstr "layerdimage は以下のプロパティーをとります。 :"
 
-#: ../../source/layeredimage.rst:286
+#: ../../source/layeredimage.rst:286 ../../source/inc/li:114
+#: ../../source/inc/li_ff:31
 msgid "`image_format`"
 msgstr "`image_format`"
 
-#: ../../source/layeredimage.rst:282
+#: ../../source/layeredimage.rst:282 ../../source/inc/li:110
 msgid ""
 "When a given image is a string, and this is supplied, the image name is "
 "interpolated into `image_format` to make an image file. For example, "
@@ -390,11 +391,11 @@ msgstr ""
 "ライトのサブディレクトリーからその画像を探します ( これは画像ではなく画像ファ"
 "イルを探す自動グループでは使用されません )。"
 
-#: ../../source/layeredimage.rst:290
+#: ../../source/layeredimage.rst:290 ../../source/inc/li:118
 msgid "`format_function`"
 msgstr "`format_function`"
 
-#: ../../source/layeredimage.rst:289
+#: ../../source/layeredimage.rst:289 ../../source/inc/li:117
 msgid ""
 "A function that is used instead of `layeredimage.format_function` to format "
 "the image information into a displayable."
@@ -417,6 +418,7 @@ msgstr ""
 
 #: ../../source/layeredimage.rst:297 ../../source/layeredimage.rst:348
 #: ../../source/layeredimage.rst:434 ../../source/layeredimage.rst:477
+#: ../../source/inc/li:30 ../../source/inc/li:81 ../../source/inc/li:103
 msgid "`at`"
 msgstr "`at`"
 
@@ -488,7 +490,8 @@ msgid "The attribute statement takes the following properties:"
 msgstr "attribute ステートメントは以下のプロパティーをとります :"
 
 #: ../../source/layeredimage.rst:330 ../../source/layeredimage.rst:417
-#: ../../source/layeredimage.rst:459
+#: ../../source/layeredimage.rst:459 ../../source/inc/li:34
+#: ../../source/inc/li:69
 msgid "`if_all`"
 msgstr "`if_all`"
 
@@ -502,7 +505,8 @@ msgstr ""
 "性名が与えられなければ表示されません。"
 
 #: ../../source/layeredimage.rst:335 ../../source/layeredimage.rst:422
-#: ../../source/layeredimage.rst:464
+#: ../../source/layeredimage.rst:464 ../../source/inc/li:38
+#: ../../source/inc/li:73
 msgid "`if_any`"
 msgstr "`if_any`"
 
@@ -516,7 +520,8 @@ msgstr ""
 "れかが与えられなければ表示されません。"
 
 #: ../../source/layeredimage.rst:341 ../../source/layeredimage.rst:427
-#: ../../source/layeredimage.rst:470
+#: ../../source/layeredimage.rst:470 ../../source/inc/li:42
+#: ../../source/inc/li:77
 msgid "`if_not`"
 msgstr "`if_not`"
 
@@ -602,7 +607,7 @@ msgstr ""
 msgid "There are two properties that are specific to groups."
 msgstr "グループに指定される 2 つのプロパティーがあります。"
 
-#: ../../source/layeredimage.rst:380
+#: ../../source/layeredimage.rst:380 ../../source/inc/li_ff:22
 msgid "`variant`"
 msgstr "`variant`"
 
@@ -861,6 +866,236 @@ msgstr ""
 "group ステートメントは ``attribute`` に与えられるためありません。自動機能は :"
 "func:`renpy.list_image` を使用して実装できます。"
 
+#: ../../source/inc/li:5
+msgid ""
+"This is used to represent a layer of an LayeredImage that is controlled by "
+"an attribute. A single attribute can control multiple layers, in which case "
+"all layers corresponding to that attribute will be displayed."
+msgstr ""
+"これを使用して属性に制御される LayerdImage のレイヤーを表します。1つの属性で"
+"複数のレイヤーを制御でき、この場合、その属性に対応する全てのレイヤーが表示さ"
+"れます。"
+
+#: ../../source/inc/li:13 ../../source/inc/li_ff:18
+msgid "`group`"
+msgstr "`group`"
+
+#: ../../source/inc/li:11
+msgid ""
+"A string giving the group the attribute is part of. This may be None, in "
+"which case a group with the same name as the attribute is created."
+msgstr ""
+"属性が加わるグループの文字列です。 None である場合、属性と同じ名前のグループ"
+"が作成されます。"
+
+#: ../../source/inc/li:16 ../../source/inc/li_ff:25
+msgid "`attribute`"
+msgstr "`attribute`"
+
+#: ../../source/inc/li:16
+msgid "A string giving the name of the attribute."
+msgstr "属性の名前の文字列です。"
+
+#: ../../source/inc/li:20 ../../source/inc/li:65 ../../source/inc/li_ff:28
+msgid "`image`"
+msgstr "`image`"
+
+#: ../../source/inc/li:19
+msgid ""
+"If not None, this should be a displayable that is displayed when this "
+"attribute is shown."
+msgstr "これは None または、この属性が表示される displayable です。"
+
+#: ../../source/inc/li:24
+msgid "`default`"
+msgstr "`default`"
+
+#: ../../source/inc/li:23
+msgid ""
+"If True, and no other attribute for the group is selected, this attribute is."
+msgstr ""
+"True かつそのグループの他の属性が選択されていなければ、この属性となります。"
+
+#: ../../source/inc/li:26
+msgid "The following keyword arguments are also known:"
+msgstr "以下のキーワード引数もあります。 :"
+
+#: ../../source/inc/li:29 ../../source/inc/li:80
+msgid "A transform or list of transforms that are applied to the image."
+msgstr "画像に適用される変換または変換のリストです。"
+
+#: ../../source/inc/li:33
+msgid ""
+"An attribute or list of attributes. The displayable is only shown if all of "
+"these are showing."
+msgstr ""
+"属性または属性のリストです。 displayable はこれらの全てがあるときだけ表示され"
+"ます。"
+
+#: ../../source/inc/li:37
+msgid ""
+"An attribute or list of attributes. if not empty, the displayable is only "
+"shown if any of these are showing."
+msgstr ""
+"属性または属性のリストです。 displayable はこれらのどれかがあるときだけ表示さ"
+"れます。"
+
+#: ../../source/inc/li:41
+msgid ""
+"An attribute or list of attributes. The displayable is only shown if none of "
+"these are showing."
+msgstr ""
+"属性または属性のリストです。 displayable はこれらの全てがないときだけ表示され"
+"ます。"
+
+#: ../../source/inc/li:44 ../../source/inc/li:83
+msgid ""
+"Other keyword arguments are interpreted as transform properties. If any are "
+"present, a transform is created that wraps the image. (For example, "
+"pos=(100, 200) can be used to offset the image by 100 pixels horizontally "
+"and 200 vertically.)"
+msgstr ""
+"他のキーワード引数は変換プロパティーとして解釈されます。与えられると、画像を"
+"ラップする変換が作成されます(例えば、 pos=(100, 200) を使用して、画像を 100 "
+"ピクセル横に、 200 ピクセル縦にオフセットできます)。"
+
+#: ../../source/inc/li:49
+msgid ""
+"If the `image` parameter is omitted or None, and the LayeredImage has been "
+"given the `image_format` parameter, the image_format is used to generate an "
+"image filename."
+msgstr ""
+"`image` 引数が省略されるか None であり、LayerdImage に `image_format` 引数が"
+"与えられると、 image_format を使用して画像ファイル名を生成します。"
+
+#: ../../source/inc/li:55
+msgid ""
+"This is used to represent a layer of an LayeredImage that is controlled by a "
+"condition. When the condition is true, the layer is displayed. Otherwise, "
+"nothing is displayed."
+msgstr ""
+"これにより条件で制御される LayerdImage のレイヤーを表します。条件が True なら"
+"レイヤーが表示され、そうでなければ表示されません。"
+
+#: ../../source/inc/li:61
+msgid "`condition`"
+msgstr "`condition`"
+
+#: ../../source/inc/li:60
+msgid ""
+"This should be a string giving a Python condition that determines if the "
+"layer is displayed."
+msgstr "レイヤーが表示されるかどうかを決定する Python  の条件の文字列です。"
+
+#: ../../source/inc/li:64
+msgid ""
+"If not None, this should be a displayable that is displayed when the "
+"condition is true."
+msgstr "これは None または条件が True なら表示される displayable です。"
+
+#: ../../source/inc/li:68
+msgid ""
+"An attribute or list of attributes. The condition is only evaluated if all "
+"of these are showing."
+msgstr ""
+"属性または属性のリストです。これらのすべてがあるときのみ条件は評価されます。"
+
+#: ../../source/inc/li:72
+msgid ""
+"An attribute or list of attributes. If not empty, the condition is only "
+"evaluated if any of these are showing."
+msgstr ""
+"属性または属性のリストです。これらのどれかがあるときのみ条件は評価されます。"
+
+#: ../../source/inc/li:76
+msgid ""
+"An attribute or list of attributes. The condition is only evaluated if none "
+"of these are showing."
+msgstr ""
+"属性または属性のリストです。これらのすべてがないときのみ条件は評価されます。"
+
+#: ../../source/inc/li:90
+msgid ""
+"This is an image-like object that, when shown with the proper set of "
+"attributes, shows a displayable created by compositing together the "
+"displayables associated with those attribute."
+msgstr ""
+"これは画像のようなオブジェクトで、適切な属性の組み合わせで表示されると、それ"
+"らの属性と関連付けられた displayable を合成して作成した displayable を表示し"
+"ます。"
+
+#: ../../source/inc/li:99
+msgid "`attributes`"
+msgstr "`attributes`"
+
+#: ../../source/inc/li:95
+msgid ""
+"This must be a list of Attribute objects. Each Attribute object reflects a "
+"displayable that may or may not be displayed as part of the image. The items "
+"in this list are in back-to-front order, with the first item further from "
+"the viewer and the last closest."
+msgstr ""
+"これは Attribute オブジェクトのリストです。各 Attribute オブジェクトはその画"
+"像の一部として表示され、またはされない displayable を反映します。このリストの"
+"要素は後ろから前の順となり、プレイヤーから見て最初の要素は遠くに、最後のもの"
+"は近くになります。"
+
+#: ../../source/inc/li:102
+msgid ""
+"A transform or list of transforms that are applied to the displayable after "
+"it is parameterized."
+msgstr "合成後に displayable に適用される変換または変換のリストです。"
+
+#: ../../source/inc/li:107 ../../source/inc/li_ff:14
+#: ../../source/inc/li_proxy:9
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/li:106
+msgid ""
+"The name of the attribute image. This is used as part of the names of image "
+"components."
+msgstr "属性画像の名前で、画像要素の名前の一部として使用されます。"
+
+#: ../../source/inc/li:125
+msgid "`attribute_function`"
+msgstr "`attribute_function`"
+
+#: ../../source/inc/li:121
+msgid ""
+"If not None, a function that's called with a set of attributes supplied to "
+"the image, and returns the set of attributes used to select layers. This is "
+"called when determining the layers to display, after the attribute "
+"themselves have been chosen. It can be used to express complex dependencies "
+"between attributes or select attributes at random."
+msgstr ""
+"None を指定するか、画像に渡される属性の set で呼び出され、レイヤーの選択に使"
+"用される属性の set を返す関数です。"
+
+#: ../../source/inc/li:127
+msgid ""
+"Additional keyword arguments are passed to a Fixed that is created to hold "
+"the layer. Unless explicitly overridden, xfit and yfit are set to true on "
+"the Fixed, which means it will shrink to the smallest size that fits all of "
+"the layer images it is showing."
+msgstr ""
+"追加のキーワード引数はレイヤーを貼り付けるために作成された Fixed に渡されま"
+"す。明示的な上書きがなければ、 xfit と yfit は Fixed で True に設定され、表示"
+"している全てのレイヤー画像にフィットする最小サイズに縮みます。"
+
+#: ../../source/inc/li:132
+msgid ""
+"A LayeredImage is not a displayable, and can't be used in all the places a "
+"displayable can be used. This is because it requires an image name "
+"(generally including image attributes) to be provided. As such, it should "
+"either be displayed through a scene or show statement, or by an image name "
+"string used as a displayable."
+msgstr ""
+"LayerdImage は displayable ではなく、 displayable が使用可能な全ての場所では"
+"使用出来ません。これは (一般的に画像属性を含む) 画像名 の提供が必要なためで"
+"す。そういうわけで、 LayerdImage は scene や show ステートメントか、 "
+"displayable として使用される画像名の文字列から表示されるべきです。"
+
 #: ../../source/layeredimage.rst:553
 msgid ""
 ":func:`layeredimage.format_function` is a function that is used to format "
@@ -871,6 +1106,85 @@ msgstr ""
 ":func:`layeredimage.format_function` は属性と displayable を画像ファイルに"
 "フォーマットするための関数です。自身の `format_function` で置き換えたいなら、"
 "これがどう記述されるかやどう引数をとるかを参照しましょう。"
+
+#: ../../source/inc/li_ff:5
+msgid ""
+"This is called to format the information about an attribute or condition "
+"into a displayable. This can be replaced by a creator, but the new function "
+"should ignore unknown kwargs."
+msgstr ""
+"これを呼び出して属性や条件を displayable の情報にフォーマットします。制作者に"
+"よって置き換えられますが、新しい関数は未知のキーワード引数を無視するはずで"
+"す。"
+
+#: ../../source/inc/li_ff:11
+msgid "`what`"
+msgstr "`what`"
+
+#: ../../source/inc/li_ff:10
+msgid ""
+"A string giving a description of the thing being formatted, which is used to "
+"create better error messages."
+msgstr ""
+"フォーマットされるものを記述する文字列で、よりよいエラーメッセージを作成する"
+"ために使用されます。"
+
+#: ../../source/inc/li_ff:14
+msgid "The name of the attribute image."
+msgstr "属性名の文字列です。"
+
+#: ../../source/inc/li_ff:17
+msgid ""
+"The group of an attribute, None if not supplied or if it's part of a "
+"condition."
+msgstr "属性のグループで、 提供されないか条件の一部なら None になります。"
+
+#: ../../source/inc/li_ff:21
+msgid "The variant argument to the group, or None if it is not supplied."
+msgstr "グループへのバリエーション引数で、提供されなければ None です。"
+
+#: ../../source/inc/li_ff:25
+msgid "The attribute itself."
+msgstr "属性です。"
+
+#: ../../source/inc/li_ff:28
+msgid "Either a displayable or string."
+msgstr "displayable または文字列です。"
+
+#: ../../source/inc/li_ff:31
+msgid "The image_format argument of the LayeredImage."
+msgstr "LayerdImage の image_format 引数です。"
+
+#: ../../source/inc/li_ff:33
+msgid ""
+"If `image` is None, then `name`, `group` (if not None), `variant` (if not "
+"None), and `attribute` are combined with underscores to create `image`, "
+"which will then be a string."
+msgstr ""
+"`image` が None なら、 `name` と (あれば) `group`,(あれば)  `variant`, "
+"`attribute` がアンダースコアで結合され、 `image` の文字列になります。"
+
+#: ../../source/inc/li_ff:37
+msgid ""
+"If `images` is a string, and `image_format` is not None, `image` is "
+"formatted into the string to get the final displayable."
+msgstr ""
+"`images` が文字列で、 `image_format` が None でなければ、 `image` は最終的な "
+"displayable を所得する文字列にフォーマットされます。"
+
+#: ../../source/inc/li_ff:40
+msgid ""
+"So if `name` is \"eileen\", `group` is \"expression\", and `attribute` is "
+"\"happy\", `image` would be set to \"eileen_expression_happy\". If "
+"`image_format` is \"images/{image}.png\", the final image Ren'Py finds is "
+"\"images/eileen_expression_happy.png\". But note that it would have found "
+"the same image without the format argument."
+msgstr ""
+"つまり `name` が \"eileen\", `group` が \"expression\", `attribute` が "
+"\"happy\" なら、 `image` は \"eileen_expression_happy\" に設定されます。 "
+"`image_format` が \"images/{image}.png\" なら、Ren'Py が見つける最終的な画像"
+"は \"images/eileen_expression_happy.png\" です。ただしフォーマット引数なしで"
+"も同じ画像を見つけたことに注意してください。"
 
 #: ../../source/layeredimage.rst:561
 msgid "Proxying Layered Images"
@@ -907,288 +1221,24 @@ msgstr ""
 "独立して表示出来る画像の複製を作成します。これはこのように transform を引数に"
 "取り、サイドイメージを配置するのに便利です。 ::"
 
-#~ msgid ""
-#~ "This is used to represent a layer of an LayeredImage that is controlled "
-#~ "by an attribute. A single attribute can control multiple layers, in which "
-#~ "case all layers corresponding to that attribute will be displayed."
-#~ msgstr ""
-#~ "これを使用して属性に制御される LayerdImage のレイヤーを表します。1つの属性"
-#~ "で複数のレイヤーを制御でき、この場合、その属性に対応する全てのレイヤーが表"
-#~ "示されます。"
+#: ../../source/inc/li_proxy:5
+msgid ""
+"This is an image-like object that proxies attributes passed to it to another "
+"layered image."
+msgstr ""
+"これは画像のようなオブジェクトで。渡される属性を他のレイヤー画像に中継しま"
+"す。"
 
-#~ msgid "`group`"
-#~ msgstr "`group`"
+#: ../../source/inc/li_proxy:9
+msgid "A string giving the name of the layered image to proxy to."
+msgstr "中継するレイヤー画像の名前の文字列です。"
 
-#~ msgid ""
-#~ "A string giving the group the attribute is part of. This may be None, in "
-#~ "which case a group with the same name as the attribute is created."
-#~ msgstr ""
-#~ "属性が加わるグループの文字列です。 None である場合、属性と同じ名前のグルー"
-#~ "プが作成されます。"
+#: ../../source/inc/li_proxy:12
+msgid "`transform`"
+msgstr "`transform`"
 
-#~ msgid "`attribute`"
-#~ msgstr "`attribute`"
-
-#~ msgid "A string giving the name of the attribute."
-#~ msgstr "属性の名前の文字列です。"
-
-#~ msgid "`image`"
-#~ msgstr "`image`"
-
-#~ msgid ""
-#~ "If not None, this should be a displayable that is displayed when this "
-#~ "attribute is shown."
-#~ msgstr "これは None または、この属性が表示される displayable です。"
-
-#~ msgid "`default`"
-#~ msgstr "`default`"
-
-#~ msgid ""
-#~ "If True, and no other attribute for the group is selected, this attribute "
-#~ "is."
-#~ msgstr ""
-#~ "True かつそのグループの他の属性が選択されていなければ、この属性となりま"
-#~ "す。"
-
-#~ msgid "The following keyword arguments are also known:"
-#~ msgstr "以下のキーワード引数もあります。 :"
-
-#~ msgid "A transform or list of transforms that are applied to the image."
-#~ msgstr "画像に適用される変換または変換のリストです。"
-
-#~ msgid ""
-#~ "An attribute or list of attributes. The displayable is only shown if all "
-#~ "of these are showing."
-#~ msgstr ""
-#~ "属性または属性のリストです。 displayable はこれらの全てがあるときだけ表示"
-#~ "されます。"
-
-#~ msgid ""
-#~ "An attribute or list of attributes. if not empty, the displayable is only "
-#~ "shown if any of these are showing."
-#~ msgstr ""
-#~ "属性または属性のリストです。 displayable はこれらのどれかがあるときだけ表"
-#~ "示されます。"
-
-#~ msgid ""
-#~ "An attribute or list of attributes. The displayable is only shown if none "
-#~ "of these are showing."
-#~ msgstr ""
-#~ "属性または属性のリストです。 displayable はこれらの全てがないときだけ表示"
-#~ "されます。"
-
-#~ msgid ""
-#~ "Other keyword arguments are interpreted as transform properties. If any "
-#~ "are present, a transform is created that wraps the image. (For example, "
-#~ "pos=(100, 200) can be used to offset the image by 100 pixels horizontally "
-#~ "and 200 vertically.)"
-#~ msgstr ""
-#~ "他のキーワード引数は変換プロパティーとして解釈されます。与えられると、画像"
-#~ "をラップする変換が作成されます(例えば、 pos=(100, 200) を使用して、画像を "
-#~ "100 ピクセル横に、 200 ピクセル縦にオフセットできます)。"
-
-#~ msgid ""
-#~ "If the `image` parameter is omitted or None, and the LayeredImage has "
-#~ "been given the `image_format` parameter, the image_format is used to "
-#~ "generate an image filename."
-#~ msgstr ""
-#~ "`image` 引数が省略されるか None であり、LayerdImage に `image_format` 引数"
-#~ "が与えられると、 image_format を使用して画像ファイル名を生成します。"
-
-#~ msgid ""
-#~ "This is used to represent a layer of an LayeredImage that is controlled "
-#~ "by a condition. When the condition is true, the layer is displayed. "
-#~ "Otherwise, nothing is displayed."
-#~ msgstr ""
-#~ "これにより条件で制御される LayerdImage のレイヤーを表します。条件が True "
-#~ "ならレイヤーが表示され、そうでなければ表示されません。"
-
-#~ msgid "`condition`"
-#~ msgstr "`condition`"
-
-#~ msgid ""
-#~ "This should be a string giving a Python condition that determines if the "
-#~ "layer is displayed."
-#~ msgstr "レイヤーが表示されるかどうかを決定する Python  の条件の文字列です。"
-
-#~ msgid ""
-#~ "If not None, this should be a displayable that is displayed when the "
-#~ "condition is true."
-#~ msgstr "これは None または条件が True なら表示される displayable です。"
-
-#~ msgid ""
-#~ "An attribute or list of attributes. The condition is only evaluated if "
-#~ "all of these are showing."
-#~ msgstr ""
-#~ "属性または属性のリストです。これらのすべてがあるときのみ条件は評価されま"
-#~ "す。"
-
-#~ msgid ""
-#~ "An attribute or list of attributes. If not empty, the condition is only "
-#~ "evaluated if any of these are showing."
-#~ msgstr ""
-#~ "属性または属性のリストです。これらのどれかがあるときのみ条件は評価されま"
-#~ "す。"
-
-#~ msgid ""
-#~ "An attribute or list of attributes. The condition is only evaluated if "
-#~ "none of these are showing."
-#~ msgstr ""
-#~ "属性または属性のリストです。これらのすべてがないときのみ条件は評価されま"
-#~ "す。"
-
-#~ msgid ""
-#~ "This is an image-like object that, when shown with the proper set of "
-#~ "attributes, shows a displayable created by compositing together the "
-#~ "displayables associated with those attribute."
-#~ msgstr ""
-#~ "これは画像のようなオブジェクトで、適切な属性の組み合わせで表示されると、そ"
-#~ "れらの属性と関連付けられた displayable を合成して作成した displayable を表"
-#~ "示します。"
-
-#~ msgid "`attributes`"
-#~ msgstr "`attributes`"
-
-#~ msgid ""
-#~ "This must be a list of Attribute objects. Each Attribute object reflects "
-#~ "a displayable that may or may not be displayed as part of the image. The "
-#~ "items in this list are in back-to-front order, with the first item "
-#~ "further from the viewer and the last closest."
-#~ msgstr ""
-#~ "これは Attribute オブジェクトのリストです。各 Attribute オブジェクトはその"
-#~ "画像の一部として表示され、またはされない displayable を反映します。このリ"
-#~ "ストの要素は後ろから前の順となり、プレイヤーから見て最初の要素は遠くに、最"
-#~ "後のものは近くになります。"
-
-#~ msgid ""
-#~ "A transform or list of transforms that are applied to the displayable "
-#~ "after it is parameterized."
-#~ msgstr "合成後に displayable に適用される変換または変換のリストです。"
-
-#~ msgid "`name`"
-#~ msgstr "`name`"
-
-#~ msgid ""
-#~ "The name of the attribute image. This is used as part of the names of "
-#~ "image components."
-#~ msgstr "属性画像の名前で、画像要素の名前の一部として使用されます。"
-
-#~ msgid "`attribute_function`"
-#~ msgstr "`attribute_function`"
-
-#~ msgid ""
-#~ "If not None, a function that's called with a set of attributes supplied "
-#~ "to the image, and returns the set of attributes used to select layers. "
-#~ "This is called when determining the layers to display, after the "
-#~ "attribute themselves have been chosen. It can be used to express complex "
-#~ "dependencies between attributes or select attributes at random."
-#~ msgstr ""
-#~ "None を指定するか、画像に渡される属性の set で呼び出され、レイヤーの選択に"
-#~ "使用される属性の set を返す関数です。"
-
-#~ msgid ""
-#~ "Additional keyword arguments are passed to a Fixed that is created to "
-#~ "hold the layer. Unless explicitly overridden, xfit and yfit are set to "
-#~ "true on the Fixed, which means it will shrink to the smallest size that "
-#~ "fits all of the layer images it is showing."
-#~ msgstr ""
-#~ "追加のキーワード引数はレイヤーを貼り付けるために作成された Fixed に渡され"
-#~ "ます。明示的な上書きがなければ、 xfit と yfit は Fixed で True に設定さ"
-#~ "れ、表示している全てのレイヤー画像にフィットする最小サイズに縮みます。"
-
-#~ msgid ""
-#~ "A LayeredImage is not a displayable, and can't be used in all the places "
-#~ "a displayable can be used. This is because it requires an image name "
-#~ "(generally including image attributes) to be provided. As such, it should "
-#~ "either be displayed through a scene or show statement, or by an image "
-#~ "name string used as a displayable."
-#~ msgstr ""
-#~ "LayerdImage は displayable ではなく、 displayable が使用可能な全ての場所で"
-#~ "は使用出来ません。これは (一般的に画像属性を含む) 画像名 の提供が必要なた"
-#~ "めです。そういうわけで、 LayerdImage は scene や show ステートメントか、 "
-#~ "displayable として使用される画像名の文字列から表示されるべきです。"
-
-#~ msgid ""
-#~ "This is called to format the information about an attribute or condition "
-#~ "into a displayable. This can be replaced by a creator, but the new "
-#~ "function should ignore unknown kwargs."
-#~ msgstr ""
-#~ "これを呼び出して属性や条件を displayable の情報にフォーマットします。制作"
-#~ "者によって置き換えられますが、新しい関数は未知のキーワード引数を無視するは"
-#~ "ずです。"
-
-#~ msgid "`what`"
-#~ msgstr "`what`"
-
-#~ msgid ""
-#~ "A string giving a description of the thing being formatted, which is used "
-#~ "to create better error messages."
-#~ msgstr ""
-#~ "フォーマットされるものを記述する文字列で、よりよいエラーメッセージを作成す"
-#~ "るために使用されます。"
-
-#~ msgid "The name of the attribute image."
-#~ msgstr "属性名の文字列です。"
-
-#~ msgid ""
-#~ "The group of an attribute, None if not supplied or if it's part of a "
-#~ "condition."
-#~ msgstr "属性のグループで、 提供されないか条件の一部なら None になります。"
-
-#~ msgid "The variant argument to the group, or None if it is not supplied."
-#~ msgstr "グループへのバリエーション引数で、提供されなければ None です。"
-
-#~ msgid "The attribute itself."
-#~ msgstr "属性です。"
-
-#~ msgid "Either a displayable or string."
-#~ msgstr "displayable または文字列です。"
-
-#~ msgid "The image_format argument of the LayeredImage."
-#~ msgstr "LayerdImage の image_format 引数です。"
-
-#~ msgid ""
-#~ "If `image` is None, then `name`, `group` (if not None), `variant` (if not "
-#~ "None), and `attribute` are combined with underscores to create `image`, "
-#~ "which will then be a string."
-#~ msgstr ""
-#~ "`image` が None なら、 `name` と (あれば) `group`,(あれば)  `variant`, "
-#~ "`attribute` がアンダースコアで結合され、 `image` の文字列になります。"
-
-#~ msgid ""
-#~ "If `images` is a string, and `image_format` is not None, `image` is "
-#~ "formatted into the string to get the final displayable."
-#~ msgstr ""
-#~ "`images` が文字列で、 `image_format` が None でなければ、 `image` は最終的"
-#~ "な displayable を所得する文字列にフォーマットされます。"
-
-#~ msgid ""
-#~ "So if `name` is \"eileen\", `group` is \"expression\", and `attribute` is "
-#~ "\"happy\", `image` would be set to \"eileen_expression_happy\". If "
-#~ "`image_format` is \"images/{image}.png\", the final image Ren'Py finds is "
-#~ "\"images/eileen_expression_happy.png\". But note that it would have found "
-#~ "the same image without the format argument."
-#~ msgstr ""
-#~ "つまり `name` が \"eileen\", `group` が \"expression\", `attribute` が "
-#~ "\"happy\" なら、 `image` は \"eileen_expression_happy\" に設定されます。 "
-#~ "`image_format` が \"images/{image}.png\" なら、Ren'Py が見つける最終的な画"
-#~ "像は \"images/eileen_expression_happy.png\" です。ただしフォーマット引数な"
-#~ "しでも同じ画像を見つけたことに注意してください。"
-
-#~ msgid ""
-#~ "This is an image-like object that proxies attributes passed to it to "
-#~ "another layered image."
-#~ msgstr ""
-#~ "これは画像のようなオブジェクトで。渡される属性を他のレイヤー画像に中継しま"
-#~ "す。"
-
-#~ msgid "A string giving the name of the layered image to proxy to."
-#~ msgstr "中継するレイヤー画像の名前の文字列です。"
-
-#~ msgid "`transform`"
-#~ msgstr "`transform`"
-
-#~ msgid ""
-#~ "If given, a transform or list of transforms that are applied to the image "
-#~ "after it has been proxied."
-#~ msgstr "与えるなら、中継先の画像に適用される変換または変換のリストです。"
+#: ../../source/inc/li_proxy:12
+msgid ""
+"If given, a transform or list of transforms that are applied to the image "
+"after it has been proxied."
+msgstr "与えるなら、中継先の画像に適用される変換または変換のリストです。"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 23:16+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,27 +184,31 @@ msgstr ""
 msgid "For example, the following screen does not execute any Python or create any displayables after the first time it is predicted or shown::"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:202
+#: ../../source/screen_optimization.rst:204
 msgid "Const Text"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:204
+#: ../../source/screen_optimization.rst:206
 msgid "When defining text, please note that strings containing new-style text substitutions are const::"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:210
+#: ../../source/screen_optimization.rst:212
 msgid "Supplying a variable containing the text directly is generally not const::"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:215
+#: ../../source/screen_optimization.rst:217
 msgid "Neither is using percent-substitution::"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:220
+#: ../../source/screen_optimization.rst:222
 msgid "Lastly, note that the _ text translation function is pure, so if it contains a string, the entire expression is const::"
 msgstr ""
 
 #: ../../source/screen_optimization.rst:227
+msgid "If a variable containing the text contain substitution it's necessary to use ``!i`` conversion flag::"
+msgstr ""
+
+#: ../../source/screen_optimization.rst:235
 msgid "Const Functions"
 msgstr ""
 
@@ -241,23 +245,23 @@ msgstr ""
 msgid "Declares a function as pure. A pure function must always return the same value when it is called with the same arguments, outside of define, init, and translate python blocks."
 msgstr ""
 
-#: ../../source/inc/const:32
+#: ../../source/inc/const:34
 msgid "`fn`"
 msgstr ""
 
 #: ../../source/inc/const:31
-msgid "The name of the function to declare pure. This may either be a string containing the name of the function, or the function itself."
+msgid "The name of the function to declare pure. This may either be a string containing the name of the function, or the function itself. If a string is passed and the function is inside the module, this string should contain the module name with the dot."
 msgstr ""
 
-#: ../../source/inc/const:34
+#: ../../source/inc/const:36
 msgid "Returns `fn`, allowing this function to be used as a decorator."
 msgstr ""
 
-#: ../../source/screen_optimization.rst:232
+#: ../../source/screen_optimization.rst:240
 msgid "Profiling"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:234
+#: ../../source/screen_optimization.rst:242
 msgid "Ren'Py supports profiling screen execution through the ``renpy.profile_screen`` function:"
 msgstr ""
 
@@ -357,11 +361,11 @@ msgstr ""
 msgid "All profiling output will be logged to profile_screen.txt in the game directory."
 msgstr ""
 
-#: ../../source/screen_optimization.rst:243
+#: ../../source/screen_optimization.rst:251
 msgid "Const Names"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:245
+#: ../../source/screen_optimization.rst:253
 msgid "The following names are const by default."
 msgstr ""
 
@@ -385,11 +389,11 @@ msgstr ""
 msgid "style"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:253
+#: ../../source/screen_optimization.rst:261
 msgid "Pure Names"
 msgstr ""
 
-#: ../../source/screen_optimization.rst:255
+#: ../../source/screen_optimization.rst:263
 msgid "The following names are both pure and const by default."
 msgstr ""
 
@@ -754,7 +758,7 @@ msgid ":func:`RestartStatement`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:91
-msgid ":func:`Return`"
+msgid "Return"
 msgstr ""
 
 #: ../../source/inc/pure_vars:92
@@ -970,534 +974,550 @@ msgid "_InputValueAction"
 msgstr ""
 
 #: ../../source/inc/pure_vars:145
-msgid "__renpy__dict__"
+msgid "_TouchKeyboardBackspace"
 msgstr ""
 
 #: ../../source/inc/pure_vars:146
-msgid "__renpy__list__"
+msgid "_TouchKeyboardReturn"
 msgstr ""
 
 #: ../../source/inc/pure_vars:147
-msgid "__renpy__set__"
+msgid "_TouchKeyboardTextInput"
 msgstr ""
 
 #: ../../source/inc/pure_vars:148
-msgid "_m1_00gallery__GalleryAction"
+msgid "__renpy__dict__"
 msgstr ""
 
 #: ../../source/inc/pure_vars:149
-msgid "_m1_00gallery__GalleryToggleSlideshow"
+msgid "__renpy__list__"
 msgstr ""
 
 #: ../../source/inc/pure_vars:150
-msgid "_m1_00musicroom__MusicRoomPlay"
+msgid "__renpy__set__"
 msgstr ""
 
 #: ../../source/inc/pure_vars:151
-msgid "_m1_00musicroom__MusicRoomRandomPlay"
+msgid "_m1_00gallery__GalleryAction"
 msgstr ""
 
 #: ../../source/inc/pure_vars:152
-msgid "_m1_00musicroom__MusicRoomStop"
+msgid "_m1_00gallery__GalleryToggleSlideshow"
 msgstr ""
 
 #: ../../source/inc/pure_vars:153
-msgid "_m1_00musicroom__MusicRoomTogglePlay"
+msgid "_m1_00musicroom__MusicRoomPlay"
 msgstr ""
 
 #: ../../source/inc/pure_vars:154
-msgid "_m1_00preferences__DisplayAction"
+msgid "_m1_00musicroom__MusicRoomRandomPlay"
 msgstr ""
 
 #: ../../source/inc/pure_vars:155
-msgid "_movebottom"
+msgid "_m1_00musicroom__MusicRoomStop"
 msgstr ""
 
 #: ../../source/inc/pure_vars:156
-msgid "_moveleft"
+msgid "_m1_00musicroom__MusicRoomTogglePlay"
 msgstr ""
 
 #: ../../source/inc/pure_vars:157
-msgid "_moveright"
+msgid "_m1_00preferences__DisplayAction"
 msgstr ""
 
 #: ../../source/inc/pure_vars:158
-msgid "_movetop"
+msgid "_movebottom"
 msgstr ""
 
 #: ../../source/inc/pure_vars:159
-msgid "_narrator"
+msgid "_moveleft"
 msgstr ""
 
 #: ../../source/inc/pure_vars:160
-msgid "_notify_transform"
+msgid "_moveright"
 msgstr ""
 
 #: ../../source/inc/pure_vars:161
-msgid ":func:`_p`"
+msgid "_movetop"
 msgstr ""
 
 #: ../../source/inc/pure_vars:162
-msgid "abs"
+msgid "_narrator"
 msgstr ""
 
 #: ../../source/inc/pure_vars:163
-msgid "absolute"
+msgid "_notify_transform"
 msgstr ""
 
 #: ../../source/inc/pure_vars:164
-msgid "all"
+msgid ":func:`_p`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:165
-msgid "any"
+msgid "_touch_keyboard"
 msgstr ""
 
 #: ../../source/inc/pure_vars:166
-msgid "apply"
+msgid "abs"
 msgstr ""
 
 #: ../../source/inc/pure_vars:167
-msgid "bin"
+msgid "absolute"
 msgstr ""
 
 #: ../../source/inc/pure_vars:168
-msgid ":var:`blinds`"
+msgid "all"
 msgstr ""
 
 #: ../../source/inc/pure_vars:169
-msgid "bool"
+msgid "any"
 msgstr ""
 
 #: ../../source/inc/pure_vars:170
-msgid "bytes"
+msgid "apply"
 msgstr ""
 
 #: ../../source/inc/pure_vars:171
-msgid "callable"
+msgid "bin"
 msgstr ""
 
 #: ../../source/inc/pure_vars:172
-msgid "centered"
+msgid ":var:`blinds`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:173
-msgid "chr"
+msgid "bool"
 msgstr ""
 
 #: ../../source/inc/pure_vars:174
-msgid "cmp"
+msgid "bytes"
 msgstr ""
 
 #: ../../source/inc/pure_vars:175
-msgid "color"
+msgid "callable"
 msgstr ""
 
 #: ../../source/inc/pure_vars:176
-msgid "dict"
+msgid "centered"
 msgstr ""
 
 #: ../../source/inc/pure_vars:177
-msgid ":var:`dissolve`"
+msgid "chr"
 msgstr ""
 
 #: ../../source/inc/pure_vars:178
-msgid "divmod"
+msgid "cmp"
 msgstr ""
 
 #: ../../source/inc/pure_vars:179
-msgid ":var:`fade`"
+msgid "color"
 msgstr ""
 
 #: ../../source/inc/pure_vars:180
-msgid "filter"
+msgid "dict"
 msgstr ""
 
 #: ../../source/inc/pure_vars:181
-msgid "float"
+msgid ":var:`dissolve`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:182
-msgid "frozenset"
+msgid "divmod"
 msgstr ""
 
 #: ../../source/inc/pure_vars:183
-msgid "getattr"
+msgid ":var:`fade`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:184
-msgid "globals"
+msgid "filter"
 msgstr ""
 
 #: ../../source/inc/pure_vars:185
-msgid ":func:`gui.SetPreference`"
+msgid "float"
 msgstr ""
 
 #: ../../source/inc/pure_vars:186
-msgid ":func:`gui.TogglePreference`"
+msgid "frozenset"
 msgstr ""
 
 #: ../../source/inc/pure_vars:187
-msgid ":func:`gui.preference`"
+msgid "getattr"
 msgstr ""
 
 #: ../../source/inc/pure_vars:188
-msgid "hasattr"
+msgid "globals"
 msgstr ""
 
 #: ../../source/inc/pure_vars:189
-msgid "hash"
+msgid ":func:`gui.SetPreference`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:190
-msgid "hex"
+msgid ":func:`gui.TogglePreference`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:191
-msgid ":var:`hpunch`"
+msgid ":func:`gui.preference`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:192
-msgid "int"
+msgid "hasattr"
 msgstr ""
 
 #: ../../source/inc/pure_vars:193
-msgid ":var:`irisin`"
+msgid "hash"
 msgstr ""
 
 #: ../../source/inc/pure_vars:194
-msgid "irisout"
+msgid "hex"
 msgstr ""
 
 #: ../../source/inc/pure_vars:195
-msgid "isinstance"
+msgid ":var:`hpunch`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:196
-msgid "len"
+msgid "int"
 msgstr ""
 
 #: ../../source/inc/pure_vars:197
-msgid "list"
+msgid ":var:`irisin`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:198
-msgid "long"
+msgid "irisout"
 msgstr ""
 
 #: ../../source/inc/pure_vars:199
-msgid "map"
+msgid "isinstance"
 msgstr ""
 
 #: ../../source/inc/pure_vars:200
-msgid "max"
+msgid "len"
 msgstr ""
 
 #: ../../source/inc/pure_vars:201
-msgid "min"
+msgid "list"
 msgstr ""
 
 #: ../../source/inc/pure_vars:202
-msgid ":var:`name_only`"
+msgid "long"
 msgstr ""
 
 #: ../../source/inc/pure_vars:203
-msgid ":var:`narrator`"
+msgid "map"
 msgstr ""
 
 #: ../../source/inc/pure_vars:204
-msgid "oct"
+msgid "max"
 msgstr ""
 
 #: ../../source/inc/pure_vars:205
-msgid "ord"
+msgid "min"
 msgstr ""
 
 #: ../../source/inc/pure_vars:206
-msgid ":var:`pixellate`"
+msgid ":var:`name_only`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:207
-msgid "pow"
+msgid ":var:`narrator`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:208
-msgid "pushdown"
+msgid "oct"
 msgstr ""
 
 #: ../../source/inc/pure_vars:209
-msgid "pushleft"
+msgid "ord"
 msgstr ""
 
 #: ../../source/inc/pure_vars:210
-msgid ":var:`pushright`"
+msgid ":var:`pixellate`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:211
-msgid "pushup"
+msgid "pow"
 msgstr ""
 
 #: ../../source/inc/pure_vars:212
-msgid "range"
+msgid "pushdown"
 msgstr ""
 
 #: ../../source/inc/pure_vars:213
-msgid "reduce"
+msgid "pushleft"
 msgstr ""
 
 #: ../../source/inc/pure_vars:214
-msgid "renpy.Keymap"
+msgid ":var:`pushright`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:215
-msgid "renpy.ParameterizedText"
+msgid "pushup"
 msgstr ""
 
 #: ../../source/inc/pure_vars:216
-msgid ":func:`renpy.check_text_tags`"
+msgid "range"
 msgstr ""
 
 #: ../../source/inc/pure_vars:217
-msgid "renpy.curried_call_in_new_context"
+msgid "reduce"
 msgstr ""
 
 #: ../../source/inc/pure_vars:218
-msgid "renpy.curried_invoke_in_new_context"
+msgid "renpy.Keymap"
 msgstr ""
 
 #: ../../source/inc/pure_vars:219
-msgid "renpy.curry"
+msgid "renpy.ParameterizedText"
 msgstr ""
 
 #: ../../source/inc/pure_vars:220
-msgid "renpy.easy_displayable"
+msgid ":func:`renpy.check_text_tags`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:221
-msgid ":func:`renpy.exists`"
+msgid "renpy.curried_call_in_new_context"
 msgstr ""
 
 #: ../../source/inc/pure_vars:222
-msgid ":func:`renpy.filter_text_tags`"
+msgid "renpy.curried_invoke_in_new_context"
 msgstr ""
 
 #: ../../source/inc/pure_vars:223
-msgid ":func:`renpy.fsdecode`"
+msgid "renpy.curry"
 msgstr ""
 
 #: ../../source/inc/pure_vars:224
-msgid ":func:`renpy.fsencode`"
+msgid "renpy.easy_displayable"
 msgstr ""
 
 #: ../../source/inc/pure_vars:225
-msgid ":func:`renpy.get_all_labels`"
+msgid ":func:`renpy.exists`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:226
-msgid ":func:`renpy.has_label`"
+msgid ":func:`renpy.filter_text_tags`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:227
-msgid "renpy.has_screen"
+msgid ":func:`renpy.fsdecode`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:228
-msgid "renpy.image_exists"
+msgid ":func:`renpy.fsencode`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:229
-msgid ":func:`renpy.known_languages`"
+msgid ":func:`renpy.get_all_labels`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:230
-msgid ":var:`renpy.license`"
+msgid ":func:`renpy.has_label`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:231
-msgid ":func:`renpy.list_files`"
+msgid "renpy.has_screen"
 msgstr ""
 
 #: ../../source/inc/pure_vars:232
-msgid ":func:`renpy.loadable`"
+msgid "renpy.image_exists"
 msgstr ""
 
 #: ../../source/inc/pure_vars:233
-msgid "renpy.munged_filename"
+msgid ":func:`renpy.known_languages`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:234
-msgid "renpy.partial"
+msgid ":var:`renpy.license`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:235
-msgid "renpy.unelide_filename"
+msgid ":func:`renpy.list_files`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:236
-msgid ":func:`renpy.variant`"
+msgid ":func:`renpy.loadable`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:237
-msgid ":func:`renpy.version`"
+msgid "renpy.munged_filename"
 msgstr ""
 
 #: ../../source/inc/pure_vars:238
-msgid ":var:`renpy.version_name`"
+msgid "renpy.partial"
 msgstr ""
 
 #: ../../source/inc/pure_vars:239
-msgid ":var:`renpy.version_only`"
+msgid "renpy.unelide_filename"
 msgstr ""
 
 #: ../../source/inc/pure_vars:240
-msgid ":var:`renpy.version_string`"
+msgid ":func:`renpy.variant`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:241
-msgid ":var:`renpy.version_tuple`"
+msgid ":func:`renpy.version`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:242
-msgid "repr"
+msgid ":var:`renpy.version_name`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:243
-msgid "round"
+msgid ":var:`renpy.version_only`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:244
-msgid "set"
+msgid ":var:`renpy.version_string`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:245
-msgid "slideawaydown"
+msgid ":var:`renpy.version_tuple`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:246
-msgid ":var:`slideawayleft`"
+msgid "repr"
 msgstr ""
 
 #: ../../source/inc/pure_vars:247
-msgid "slideawayright"
+msgid "round"
 msgstr ""
 
 #: ../../source/inc/pure_vars:248
-msgid "slideawayup"
+msgid "set"
 msgstr ""
 
 #: ../../source/inc/pure_vars:249
-msgid "slidedown"
+msgid "slideawaydown"
 msgstr ""
 
 #: ../../source/inc/pure_vars:250
-msgid ":var:`slideleft`"
+msgid ":var:`slideawayleft`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:251
-msgid "slideright"
+msgid "slideawayright"
 msgstr ""
 
 #: ../../source/inc/pure_vars:252
-msgid "slideup"
+msgid "slideawayup"
 msgstr ""
 
 #: ../../source/inc/pure_vars:253
-msgid "sorted"
+msgid "slidedown"
 msgstr ""
 
 #: ../../source/inc/pure_vars:254
-msgid ":var:`squares`"
+msgid ":var:`slideleft`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:255
-msgid "str"
+msgid "slideright"
 msgstr ""
 
 #: ../../source/inc/pure_vars:256
-msgid "sum"
+msgid "slideup"
 msgstr ""
 
 #: ../../source/inc/pure_vars:257
-msgid "tuple"
+msgid "sorted"
 msgstr ""
 
 #: ../../source/inc/pure_vars:258
-msgid "ui.callsinnewcontext"
+msgid ":var:`squares`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:259
-msgid "ui.gamemenus"
+msgid "str"
 msgstr ""
 
 #: ../../source/inc/pure_vars:260
-msgid "ui.invokesinnewcontext"
+msgid "sum"
 msgstr ""
 
 #: ../../source/inc/pure_vars:261
-msgid "ui.jumps"
+msgid "tuple"
 msgstr ""
 
 #: ../../source/inc/pure_vars:262
-msgid "ui.jumpsoutofcontext"
+msgid "ui.callsinnewcontext"
 msgstr ""
 
 #: ../../source/inc/pure_vars:263
-msgid "ui.returns"
+msgid "ui.gamemenus"
 msgstr ""
 
 #: ../../source/inc/pure_vars:264
-msgid "unichr"
+msgid "ui.invokesinnewcontext"
 msgstr ""
 
 #: ../../source/inc/pure_vars:265
-msgid "unicode"
+msgid "ui.jumps"
 msgstr ""
 
 #: ../../source/inc/pure_vars:266
-msgid ":func:`updater.Update`"
+msgid "ui.jumpsoutofcontext"
 msgstr ""
 
 #: ../../source/inc/pure_vars:267
-msgid "vars"
+msgid "ui.returns"
 msgstr ""
 
 #: ../../source/inc/pure_vars:268
-msgid "vcentered"
+msgid "unichr"
 msgstr ""
 
 #: ../../source/inc/pure_vars:269
-msgid ":var:`vpunch`"
+msgid "unicode"
 msgstr ""
 
 #: ../../source/inc/pure_vars:270
-msgid "wipedown"
+msgid ":func:`updater.Update`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:271
-msgid ":var:`wipeleft`"
+msgid "vars"
 msgstr ""
 
 #: ../../source/inc/pure_vars:272
-msgid "wiperight"
+msgid "vcentered"
 msgstr ""
 
 #: ../../source/inc/pure_vars:273
-msgid "wipeup"
+msgid ":var:`vpunch`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:274
-msgid "zip"
+msgid "wipedown"
 msgstr ""
 
 #: ../../source/inc/pure_vars:275
-msgid ":var:`zoomin`"
+msgid ":var:`wipeleft`"
 msgstr ""
 
 #: ../../source/inc/pure_vars:276
-msgid ":var:`zoominout`"
+msgid "wiperight"
 msgstr ""
 
 #: ../../source/inc/pure_vars:277
+msgid "wipeup"
+msgstr ""
+
+#: ../../source/inc/pure_vars:278
+msgid "zip"
+msgstr ""
+
+#: ../../source/inc/pure_vars:279
+msgid ":var:`zoomin`"
+msgstr ""
+
+#: ../../source/inc/pure_vars:280
+msgid ":var:`zoominout`"
+msgstr ""
+
+#: ../../source/inc/pure_vars:281
 msgid ":var:`zoomout`"
 msgstr ""
 
