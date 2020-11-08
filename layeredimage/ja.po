@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-01 10:50+0900\n"
-"PO-Revision-Date: 2020-01-03 02:32+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-11-04 21:39+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.2.4\n"
+"Language-Team: \n"
 
 #: ../../source/layeredimage.rst:7
 msgid "Layered Images"
@@ -178,7 +178,6 @@ msgstr ""
 "口の画像の左上端を移動する変換を作成しています。"
 
 #: ../../source/layeredimage.rst:125
-#, fuzzy
 msgid ""
 "The resulting image is the size of the bounding box of all the layers, so it "
 "probably makes sense to have one layer the full size of the image, which no "
@@ -190,8 +189,10 @@ msgid ""
 msgstr ""
 "最終的な画像は全てのレイヤーの短形領域の最大サイズとなるため、画像からはみ出"
 "すレイヤーがない十分な大きさのレイヤーが1つあるとよいでしょう。最初のレイヤー"
-"は画像の背景に、最後のは前になります。この例では、眼鏡が他のレイヤーの上とな"
-"ります。"
+"は画像の後ろに、最後のは前になります。この例では、眼鏡が他のレイヤーの上とな"
+"ります。画像サイズが不明なとき正常に動作しないので :propref:`xcenter` や :"
+"propref:`xalign` のような含む画像のサイズを仮定するプロパティーは避けましょ"
+"う。"
 
 #: ../../source/layeredimage.rst:133
 msgid ""
@@ -202,13 +203,12 @@ msgstr ""
 "に一回以上表れるでしょう。"
 
 #: ../../source/layeredimage.rst:136
-#, fuzzy
 msgid ""
 "With the exception of the condition in an ``if`` statement, all Python "
 "expressions are evaluated at init time."
 msgstr ""
-"そのレイヤー画像が最初に定義される初期化時に ``if`` ステートメントの条件であ"
-"るすべての式が評価されることに注意してください。"
+"`if`` ステートメントの condition を除いて Python 式は初期火事にすべて評価され"
+"ます。"
 
 #: ../../source/layeredimage.rst:141
 msgid "Using an Layered Image"
@@ -873,6 +873,10 @@ msgid ""
 "in ATL transforms will be run each time the image is show, as with other ATL "
 "transforms.)"
 msgstr ""
+"** レイヤー画像では起動時に変化するデータを使用してはいけません。 ** if ス"
+"テートメントの condition を除いて、レイヤー画像のすべての式は初期化時に実行さ"
+"れ、ゲーム開始後に起きた変数の変化を反映しません(ただし ATL 変換の式は他の "
+"ATL 変換とどうように画像の表示ごとに実行されます)。"
 
 #: ../../source/layeredimage.rst:558
 msgid "Python"

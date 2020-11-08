@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-01 10:50+0900\n"
-"PO-Revision-Date: 2020-07-21 20:07+0900\n"
+"PO-Revision-Date: 2020-11-01 19:04+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -240,6 +240,13 @@ msgid ""
 "Catmull-Rom, the first and last knot are control nodes (often outside the "
 "displayed path) and the other knots are points the path passes through."
 msgstr ""
+"値に1つ以上の knot が続くと、スプラインモーションが使用されます。初めの値は補"
+"間開始時のそのプロパティーの値で、終わりの値はそのプロパティーの値で、knot を"
+"使用するとスプラインを制御できます。単一の knot には2次曲線が使用され、 2つに"
+"はベジェ曲線、3つ以上の knot にはキャットムル-ロム スプラインが使用されます。"
+"前者2つでは、 knot はすべて(しばしば描画される経路外となる)制御nodeです。"
+"キャットムル-ロム スプラインでは、最初と最後の knot が制御nodeで他の knot は"
+"通過点です。"
 
 #: ../../source/atl.rst:165
 msgid ""
@@ -1347,13 +1354,13 @@ msgid "None or string"
 msgstr "None または文字列"
 
 #: ../../source/atl.rst:917
-#, fuzzy
 msgid ""
 "If not None, causes the displayable to be sized according to the table "
 "below. In this context \"dimensions\" refers to one or more of ``xsize`` and "
 "``ysize`` that are not None."
 msgstr ""
-"ここでの「方向」は None でない1つ以上の ``xsize`` と ``ysize`` を指します。"
+"None または Displayable を以下の表に応じてスケールする文字列です。ここでの"
+"「方向」は None でない ``xsize`` と \\``ysize`` のうちの1つ以上を指します。"
 
 #: ../../source/atl.rst:925
 msgid "Value"
@@ -1385,9 +1392,8 @@ msgstr ""
 "アスペクト比を維持してすべての方向の指定に合う、または超えるように小さくする"
 
 #: ../../source/atl.rst:933
-#, fuzzy
 msgid "None or ``fill``"
-msgstr "None or float"
+msgstr "None または ``fill``"
 
 #: ../../source/atl.rst:934
 msgid "Stretches/squashes displayable to exactly match dimensions."
@@ -1500,18 +1506,16 @@ msgstr ""
 "ます)"
 
 #: ../../source/atl.rst:1020
-#, fuzzy
 msgid "None or Matrix or MatrixColor"
-msgstr "None または im.matrix, MatrixColor"
+msgstr "None, Matrix または  MatrixColor"
 
 #: ../../source/atl.rst:1023
-#, fuzzy
 msgid ""
 "If not None, the value of this property is used to recolor everything that "
 "children of this transform draw. See :ref:`matrixcolor` for more information."
 msgstr ""
-"None またはこの変換の子が描画するすべてを再色づけするプロパティーの値です。詳"
-"細は ref:`matricolor` を参照してください。"
+"None またはこの変換の子が描画するすべてをの色を置き換えるプロパティーの値で"
+"す。詳細は ref:`matricolor` を参照してください。"
 
 #: ../../source/atl.rst:1032
 msgid ""
@@ -1520,6 +1524,9 @@ msgid ""
 "versions, and the blurring may exhibit artifactsm, especially when the image "
 "being blurred is changing."
 msgstr ""
+"displayable の境界まで `blur` ピクセル分この画像の子をブラーします。ブラー方"
+"法の正確な詳細は Ren'Py のバージョンで変更するかもしれません。また、特に画像"
+"のブラーが変化していくときはブラーが人工的に感じられるかもしれません。"
 
 #: ../../source/atl.rst:1038
 msgid "These properties are applied in the following order:"
