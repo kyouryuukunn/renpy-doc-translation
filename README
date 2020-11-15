@@ -182,3 +182,17 @@ HTMLファイル生成
 	LANGUAGE=ja make html
 
 これで~/renpy/sphinx/buildにhtmlファイルが生成されます。
+
+
+Q&A
+Q 生成したドキュメントのサイドバーがブラウザを小さくするとメイン画面を覆ってしまう
+A html/_static/renpydoc.cssのposition, widthを消すと直る
+  何故こうなるのか発生原因は不明だが、結構な頻度でこの余分のコードができてしまう。
+
+#sidebar {
+    /* position: fixed; */
+	max-height: 82vh;
+    overflow-y: auto;
+    /* width: 263px; */
+}
+
