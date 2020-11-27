@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-27 18:09+0900\n"
+"POT-Creation-Date: 2020-11-27 18:52+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,15 +22,29 @@ msgid "Model-Based Rendering"
 msgstr ""
 
 #: ../../source/model.rst:7
-msgid "While Ren'Py is primarily used with two dimensional rectangular images that are common in visual novels, underneath the hood it has a model-based renderer intended to to take advantage of features found in modern GPUs. This allows for a number of visual effects that would not otherwise be possible."
+msgid ""
+"While Ren'Py is primarily used with two dimensional rectangular images that "
+"are common in visual novels, underneath the hood it has a model-based "
+"renderer intended to to take advantage of features found in modern GPUs. "
+"This allows for a number of visual effects that would not otherwise be "
+"possible."
 msgstr ""
 
 #: ../../source/model.rst:12
-msgid "As a warning, this is one of the most advanced features available in Ren'Py. In many cases, it's not necessary to understand how model-based rendering works behind the scenes - features like :tpref:`matrixcolor` and Live2D support can be used without understanding how Model-Based rendering works, and more such features will be added to the understanding. This documentation is intended for very advanced creators, and for developers looking to add to Ren'Py itself."
+msgid ""
+"As a warning, this is one of the most advanced features available in Ren'Py. "
+"In many cases, it's not necessary to understand how model-based rendering "
+"works behind the scenes - features like :tpref:`matrixcolor` and Live2D "
+"support can be used without understanding how Model-Based rendering works, "
+"and more such features will be added to the understanding. This "
+"documentation is intended for very advanced creators, and for developers "
+"looking to add to Ren'Py itself."
 msgstr ""
 
 #: ../../source/model.rst:20
-msgid "As of Ren'Py 7.4 (late 2020), Model-Based rendering needs to be enabled to be used. This is done by setting config.gl2 to True, using::"
+msgid ""
+"As of Ren'Py 7.4 (late 2020), Model-Based rendering needs to be enabled to "
+"be used. This is done by setting config.gl2 to True, using::"
 msgstr ""
 
 #: ../../source/model.rst:27
@@ -37,11 +52,20 @@ msgid "If true, Ren'Py will default to using a model-based renderer."
 msgstr ""
 
 #: ../../source/model.rst:29
-msgid "As it's expected that model-based rendering will become the only renderer in the near future, the rest of this documentation is written as if model-based rendering is enabled all the time."
+msgid ""
+"As it's expected that model-based rendering will become the only renderer in "
+"the near future, the rest of this documentation is written as if model-based "
+"rendering is enabled all the time."
 msgstr ""
 
 #: ../../source/model.rst:33
-msgid "Model-Based Rendering is one of the most advanced features in Ren'Py, and this documentation may be hard to understand without first looking at the OpenGL, OpenGL ES, GLSL, and GLSL ES manual. What's more, since there are portions of the models that are passed directly to your GPU drivers, which may accept erroneous inputs, it's important to check on multiple kinds of hardware."
+msgid ""
+"Model-Based Rendering is one of the most advanced features in Ren'Py, and "
+"this documentation may be hard to understand without first looking at the "
+"OpenGL, OpenGL ES, GLSL, and GLSL ES manual. What's more, since there are "
+"portions of the models that are passed directly to your GPU drivers, which "
+"may accept erroneous inputs, it's important to check on multiple kinds of "
+"hardware."
 msgstr ""
 
 #: ../../source/model.rst:42
@@ -49,51 +73,88 @@ msgid "Models, Renders, and Drawing Operations"
 msgstr ""
 
 #: ../../source/model.rst:44
-msgid "The fundamental thing that Ren'Py draws to the screen is a Model. A model consists of the following things:"
+msgid ""
+"The fundamental thing that Ren'Py draws to the screen is a Model. A model "
+"consists of the following things:"
 msgstr ""
 
 #: ../../source/model.rst:47
-msgid "A Mesh of one or more triangles. A triangle consists of three vertices (corners), each of which contains a position in two or three-dimensional space, and may contain additional information, most commonly texture coordinates."
+msgid ""
+"A Mesh of one or more triangles. A triangle consists of three vertices "
+"(corners), each of which contains a position in two or three-dimensional "
+"space, and may contain additional information, most commonly texture "
+"coordinates."
 msgstr ""
 
 #: ../../source/model.rst:52
-msgid "Zero or more textures, with the precise number allowed being limited by the GPUs your game can run on. All GPUs should support at least three textures per model. A texture is a rectangle containing image data that's been loaded on the GPU, either directly or using a render-to-texture operation."
+msgid ""
+"Zero or more textures, with the precise number allowed being limited by the "
+"GPUs your game can run on. All GPUs should support at least three textures "
+"per model. A texture is a rectangle containing image data that's been loaded "
+"on the GPU, either directly or using a render-to-texture operation."
 msgstr ""
 
 #: ../../source/model.rst:57
-msgid "A list of shader part names. Ren'Py uses these shader parts to created shaders, which are programs that are run on the GPU to render the model. Shader part names can be prefixed with a \"-\" to prevent that shader part from being used."
+msgid ""
+"A list of shader part names. Ren'Py uses these shader parts to created "
+"shaders, which are programs that are run on the GPU to render the model. "
+"Shader part names can be prefixed with a \"-\" to prevent that shader part "
+"from being used."
 msgstr ""
 
 #: ../../source/model.rst:61
-msgid "Uniform values. A uniform is additional data that is the same throughout the model. For example, when a model represents a solid color, the color is a uniform."
+msgid ""
+"Uniform values. A uniform is additional data that is the same throughout the "
+"model. For example, when a model represents a solid color, the color is a "
+"uniform."
 msgstr ""
 
 #: ../../source/model.rst:65
-msgid "GL properties. GL properties are flags that further control how things are rendered, such as the minification/magnification modes and the color mask."
+msgid ""
+"GL properties. GL properties are flags that further control how things are "
+"rendered, such as the minification/magnification modes and the color mask."
 msgstr ""
 
 #: ../../source/model.rst:69
-msgid "As Ren'Py usually draws more than one thing to the screen, it creates a tree of :class:`Render` objects. These Render objects may have Models or other Renders as children. (A Render object can also be turned into a Model. as described below.) A Render contains:"
+msgid ""
+"As Ren'Py usually draws more than one thing to the screen, it creates a tree "
+"of :class:`Render` objects. These Render objects may have Models or other "
+"Renders as children. (A Render object can also be turned into a Model. as "
+"described below.) A Render contains:"
 msgstr ""
 
 #: ../../source/model.rst:74
-msgid "A list of children, including a 2-dimensional offset that is applied to each child."
+msgid ""
+"A list of children, including a 2-dimensional offset that is applied to each "
+"child."
 msgstr ""
 
 #: ../../source/model.rst:77
-msgid "A :class:`Matrix` that describes how the children are transformed in three-dimensional space."
+msgid ""
+"A :class:`Matrix` that describes how the children are transformed in three-"
+"dimensional space."
 msgstr ""
 
 #: ../../source/model.rst:80
-msgid "Lists of shader part names, uniforms, and GL properties that are applied to the Models when being drawn."
+msgid ""
+"Lists of shader part names, uniforms, and GL properties that are applied to "
+"the Models when being drawn."
 msgstr ""
 
 #: ../../source/model.rst:83
-msgid "Flags that determine if the drawable-space clipping polygon should be updated."
+msgid ""
+"Flags that determine if the drawable-space clipping polygon should be "
+"updated."
 msgstr ""
 
 #: ../../source/model.rst:86
-msgid "Ren'Py draws the screen by performing a depth-first walk through the tree of Renders, until a Model is encountered. During this walk, Ren'Py updates a matrix transforming the location of the Model, a clipping polygon, and lists of shader parts, uniforms, and gl properties. When a Model is encountered as part of this walk, the appropriate shader program is activated on the GPU, all information is transferred, and a drawing operation occurs."
+msgid ""
+"Ren'Py draws the screen by performing a depth-first walk through the tree of "
+"Renders, until a Model is encountered. During this walk, Ren'Py updates a "
+"matrix transforming the location of the Model, a clipping polygon, and lists "
+"of shader parts, uniforms, and gl properties. When a Model is encountered as "
+"part of this walk, the appropriate shader program is activated on the GPU, "
+"all information is transferred, and a drawing operation occurs."
 msgstr ""
 
 #: ../../source/model.rst:95
@@ -101,7 +162,10 @@ msgid "Where Models are Created"
 msgstr ""
 
 #: ../../source/model.rst:97
-msgid "Ren'Py creates Models automatically as part of its normal operation. The main reason to understand where models are created is that models correspond to drawing operations, and hence are the units that shaders are applied to."
+msgid ""
+"Ren'Py creates Models automatically as part of its normal operation. The "
+"main reason to understand where models are created is that models correspond "
+"to drawing operations, and hence are the units that shaders are applied to."
 msgstr ""
 
 #: ../../source/model.rst:105
@@ -109,7 +173,10 @@ msgid "Images and Image Manipulators"
 msgstr ""
 
 #: ../../source/model.rst:103
-msgid "These create a model with a mesh containing two triangles that cover the rectangle of the image. The mesh contains texture coordinates. The model uses the \"renpy.texture\" shader."
+msgid ""
+"These create a model with a mesh containing two triangles that cover the "
+"rectangle of the image. The mesh contains texture coordinates. The model "
+"uses the \"renpy.texture\" shader."
 msgstr ""
 
 #: ../../source/model.rst:110
@@ -117,15 +184,22 @@ msgid ":func:`Solid`"
 msgstr ""
 
 #: ../../source/model.rst:108
-msgid "The Solid displayable creates a mesh containing two triangles, and no texture coordinates. The model uses the \"renpy.solid\" shader, with the color placed in the ``u_renpy_solid_color`` uniform."
+msgid ""
+"The Solid displayable creates a mesh containing two triangles, and no "
+"texture coordinates. The model uses the \"renpy.solid\" shader, with the "
+"color placed in the ``u_renpy_solid_color`` uniform."
 msgstr ""
 
 #: ../../source/model.rst:114
-msgid ":func:`Dissolve`, :func:`ImageDissolve`, :func:`AlphaDissolve`, :func:`Pixellate`, :func:`AlphaMask`, :func:`Flatten`"
+msgid ""
+":func:`Dissolve`, :func:`ImageDissolve`, :func:`AlphaDissolve`, :func:"
+"`Pixellate`, :func:`AlphaMask`, :func:`Flatten`"
 msgstr ""
 
 #: ../../source/model.rst:113
-msgid "Each of these transforms and displayables creates a Model with a mesh, shaders, and uniforms as is needed for its purposes."
+msgid ""
+"Each of these transforms and displayables creates a Model with a mesh, "
+"shaders, and uniforms as is needed for its purposes."
 msgstr ""
 
 #: ../../source/model.rst:118
@@ -133,7 +207,9 @@ msgid "Live2D"
 msgstr ""
 
 #: ../../source/model.rst:117
-msgid "Live2D displayables may created multiple Models when rendered, generally one Model for each layer."
+msgid ""
+"Live2D displayables may created multiple Models when rendered, generally one "
+"Model for each layer."
 msgstr ""
 
 #: ../../source/model.rst:129
@@ -141,11 +217,18 @@ msgid ":func:`Transform` and ATL"
 msgstr ""
 
 #: ../../source/model.rst:121
-msgid "A Transform creates a model if :tpref:`mesh` is true, or if :tpref:`blur` is being used. In this case, the children of the Transform are rendered to textures, with the mesh of the first texture being used for the mesh associated with the model."
+msgid ""
+"A Transform creates a model if :tpref:`mesh` is true, or if :tpref:`blur` is "
+"being used. In this case, the children of the Transform are rendered to "
+"textures, with the mesh of the first texture being used for the mesh "
+"associated with the model."
 msgstr ""
 
 #: ../../source/model.rst:126
-msgid "Not every transform creates a Model. Some transforms will simply add shaders and uniforms to a Render (such as transforms that use :tpref:`blur` or :tpref:`alpha`). Other transforms simply affect geometry."
+msgid ""
+"Not every transform creates a Model. Some transforms will simply add shaders "
+"and uniforms to a Render (such as transforms that use :tpref:`blur` or :"
+"tpref:`alpha`). Other transforms simply affect geometry."
 msgstr ""
 
 #: ../../source/model.rst:135
@@ -153,11 +236,17 @@ msgid ":class:`Render`"
 msgstr ""
 
 #: ../../source/model.rst:132
-msgid "A Transform creates a model if its ``mesh`` attribute is True. is being used. In this case, the children of the Render are rendered to textures, with the mesh of the first texture being used for the mesh associated with the model."
+msgid ""
+"A Transform creates a model if its ``mesh`` attribute is True. is being "
+"used. In this case, the children of the Render are rendered to textures, "
+"with the mesh of the first texture being used for the mesh associated with "
+"the model."
 msgstr ""
 
 #: ../../source/model.rst:137
-msgid "It's expected that Ren'Py will add more ways of creating models in the future."
+msgid ""
+"It's expected that Ren'Py will add more ways of creating models in the "
+"future."
 msgstr ""
 
 #: ../../source/model.rst:141
@@ -165,19 +254,36 @@ msgid "Shader Program Generation"
 msgstr ""
 
 #: ../../source/model.rst:143
-msgid "Ren'Py generates a shader program by first assembling a list of shader part names. This list consists of \"renpy.geometry\", the list of shader parts taken from Renders, and the list of shader parts found in the Model being drawn."
+msgid ""
+"Ren'Py generates a shader program by first assembling a list of shader part "
+"names. This list consists of \"renpy.geometry\", the list of shader parts "
+"taken from Renders, and the list of shader parts found in the Model being "
+"drawn."
 msgstr ""
 
 #: ../../source/model.rst:148
-msgid "The shader parts are then deduplicated. If a shader part begins with \"-\", it is removed from the list, as is the rest of that part without the leading \"-\". (So \"-renpy.geometry\" will cause itself and \"renpy.geometry\" to be removed.)"
+msgid ""
+"The shader parts are then deduplicated. If a shader part begins with \"-\", "
+"it is removed from the list, as is the rest of that part without the leading "
+"\"-\". (So \"-renpy.geometry\" will cause itself and \"renpy.geometry\" to "
+"be removed.)"
 msgstr ""
 
 #: ../../source/model.rst:153
-msgid "Ren'Py then takes the list of shader parts, and retrieves lists of variables, functions, vertex shade parts, and fragment shader parts. These are, in turn, used to generate the source code for shaders, with the parts of the vertex and fragement shaders being included in low-number to high-number priority order."
+msgid ""
+"Ren'Py then takes the list of shader parts, and retrieves lists of "
+"variables, functions, vertex shade parts, and fragment shader parts. These "
+"are, in turn, used to generate the source code for shaders, with the parts "
+"of the vertex and fragement shaders being included in low-number to high-"
+"number priority order."
 msgstr ""
 
 #: ../../source/model.rst:158
-msgid "Ren'Py keeps a cache of all combinations of shader parts that have ever been used in game/cache/shaders.txt, and loads them at startup. If major changes in shader use occur, this file should be edited or deleted so it can be re-created with valid data."
+msgid ""
+"Ren'Py keeps a cache of all combinations of shader parts that have ever been "
+"used in game/cache/shaders.txt, and loads them at startup. If major changes "
+"in shader use occur, this file should be edited or deleted so it can be re-"
+"created with valid data."
 msgstr ""
 
 #: ../../source/model.rst:165
@@ -185,15 +291,21 @@ msgid "Creating a Custom Shader"
 msgstr ""
 
 #: ../../source/model.rst:167
-msgid "New shader parts can be created by calling the renpy.register_shader function and supplying portions of GLSL shaders."
+msgid ""
+"New shader parts can be created by calling the renpy.register_shader "
+"function and supplying portions of GLSL shaders."
 msgstr ""
 
 #: ../../source/model.rst:170
-msgid "Generally, shader parts should be of the form \"namespace.part\", such as \"mygame.recolor\" or \"mylibrary.warp\". Names beginning with \"renpy.\" or \"live2d.\" are reserved for Ren'Py, as are names beginning with _."
+msgid ""
+"Generally, shader parts should be of the form \"namespace.part\", such as "
+"\"mygame.recolor\" or \"mylibrary.warp\". Names beginning with \"renpy.\" or "
+"\"live2d.\" are reserved for Ren'Py, as are names beginning with _."
 msgstr ""
 
 #: ../../source/inc/register_shader:5
-msgid "This registers a shader part. This takes `name`, and then keyword arguments."
+msgid ""
+"This registers a shader part. This takes `name`, and then keyword arguments."
 msgstr ""
 
 #: ../../source/inc/register_shader:10
@@ -201,7 +313,9 @@ msgid "`name`"
 msgstr ""
 
 #: ../../source/inc/register_shader:9
-msgid "A string giving the name of the shader part. Names starting with an underscore or \"renpy.\" are reserved for Ren'Py."
+msgid ""
+"A string giving the name of the shader part. Names starting with an "
+"underscore or \"renpy.\" are reserved for Ren'Py."
 msgstr ""
 
 #: ../../source/inc/register_shader:21
@@ -209,7 +323,10 @@ msgid "`variables`"
 msgstr ""
 
 #: ../../source/inc/register_shader:13
-msgid "The variables used by the shader part. These should be listed one per line, a storage (uniform, attribute, or varying) followed by a type, name, and semicolon. For example::"
+msgid ""
+"The variables used by the shader part. These should be listed one per line, "
+"a storage (uniform, attribute, or varying) followed by a type, name, and "
+"semicolon. For example::"
 msgstr ""
 
 #: ../../source/inc/register_shader:25
@@ -217,7 +334,9 @@ msgid "`vertex_functions`"
 msgstr ""
 
 #: ../../source/inc/register_shader:24
-msgid "If given, a string containing functions that will be included in the vertex shader."
+msgid ""
+"If given, a string containing functions that will be included in the vertex "
+"shader."
 msgstr ""
 
 #: ../../source/inc/register_shader:29
@@ -225,11 +344,17 @@ msgid "`fragment_functions`"
 msgstr ""
 
 #: ../../source/inc/register_shader:28
-msgid "If given, a string containing functions that will be included in the fragment shader."
+msgid ""
+"If given, a string containing functions that will be included in the "
+"fragment shader."
 msgstr ""
 
 #: ../../source/inc/register_shader:31
-msgid "Other keyword arguments should start with ``vertex_`` or ``fragment_``, and end with an integer priority. So \"fragment_200\" or \"vertex_300\". These give text that's placed in the appropriate shader at the given priority, with lower priority numbers inserted before higher priority numbers."
+msgid ""
+"Other keyword arguments should start with ``vertex_`` or ``fragment_``, and "
+"end with an integer priority. So \"fragment_200\" or \"vertex_300\". These "
+"give text that's placed in the appropriate shader at the given priority, "
+"with lower priority numbers inserted before higher priority numbers."
 msgstr ""
 
 #: ../../source/model.rst:176
@@ -261,15 +386,23 @@ msgid "sampler2D (supplied by Ren'Py)"
 msgstr ""
 
 #: ../../source/model.rst:185
-msgid "Uniform variables should begin with u\\_, attributes with a\\_, and varying variables with v\\_. Names starting with u_renpy\\_, a_renpy, and v_renpy are reserved, as as the standard variables given below."
+msgid ""
+"Uniform variables should begin with u\\_, attributes with a\\_, and varying "
+"variables with v\\_. Names starting with u_renpy\\_, a_renpy, and v_renpy "
+"are reserved, as as the standard variables given below."
 msgstr ""
 
 #: ../../source/model.rst:189
-msgid "As a general sketch for priority levels, priority 100 sets up geometry, priority 200 determines the initial fragment color (gl_FragColor), and higher-numbered priorities can apply effects to alter that color."
+msgid ""
+"As a general sketch for priority levels, priority 100 sets up geometry, "
+"priority 200 determines the initial fragment color (gl_FragColor), and "
+"higher-numbered priorities can apply effects to alter that color."
 msgstr ""
 
 #: ../../source/model.rst:193
-msgid "Here's an example of a custom shader part that applies a gradient across each model it is used to render::"
+msgid ""
+"Here's an example of a custom shader part that applies a gradient across "
+"each model it is used to render::"
 msgstr ""
 
 #: ../../source/model.rst:209
@@ -281,15 +414,16 @@ msgid "Transforms and Model-Based Rendering"
 msgstr ""
 
 #: ../../source/model.rst:221
-msgid "Model-Based rendering adds the following properties to ATL and :func:`Transform`:"
+msgid ""
+"Model-Based rendering adds the following properties to ATL and :func:"
+"`Transform`:"
 msgstr ""
 
 #: ../../source/model.rst:225
 msgid "None or True or tuple"
 msgstr ""
 
-#: ../../source/model.rst:226
-#: ../../source/model.rst:240
+#: ../../source/model.rst:226 ../../source/model.rst:240
 msgid "None"
 msgstr ""
 
@@ -298,7 +432,10 @@ msgid "If not None, this Transform will be rendered as a model. This means:"
 msgstr ""
 
 #: ../../source/model.rst:230
-msgid "A mesh will be created. If this is a 2-component tuple, it's taken as the number of points in the mesh, in the x and y directions. (Eacn dimension must be at least 2.) If True, the mesh is taken from the child."
+msgid ""
+"A mesh will be created. If this is a 2-component tuple, it's taken as the "
+"number of points in the mesh, in the x and y directions. (Eacn dimension "
+"must be at least 2.) If True, the mesh is taken from the child."
 msgstr ""
 
 #: ../../source/model.rst:234
@@ -314,11 +451,18 @@ msgid "None or str or list of str"
 msgstr ""
 
 #: ../../source/model.rst:242
-msgid "If not None, a shader part name or list of shader part names that will be applied to the  this Render (if a Model is created) or the Models reached through this Render."
+msgid ""
+"If not None, a shader part name or list of shader part names that will be "
+"applied to the  this Render (if a Model is created) or the Models reached "
+"through this Render."
 msgstr ""
 
 #: ../../source/model.rst:246
-msgid "In addition, uniforms that start with u\\_ and not u_renpy are made available as Transform properties. GL properties are made available as transform properties starting with gl\\_. For example, the color_mask property is made available as gl_color_mask."
+msgid ""
+"In addition, uniforms that start with u\\_ and not u_renpy are made "
+"available as Transform properties. GL properties are made available as "
+"transform properties starting with gl\\_. For example, the color_mask "
+"property is made available as gl_color_mask."
 msgstr ""
 
 #: ../../source/model.rst:253
@@ -358,7 +502,10 @@ msgid "``float u_time``"
 msgstr ""
 
 #: ../../source/model.rst:267
-msgid "The time of the frame. The epoch is undefined, so it's best to treat this as a number that increases by one second a second. The time is modulo 86400, so it will reset to 0.0 once a day."
+msgid ""
+"The time of the frame. The epoch is undefined, so it's best to treat this as "
+"a number that increases by one second a second. The time is modulo 86400, so "
+"it will reset to 0.0 once a day."
 msgstr ""
 
 #: ../../source/model.rst:273
@@ -366,7 +513,9 @@ msgid "``vec4 u_random``"
 msgstr ""
 
 #: ../../source/model.rst:272
-msgid "Four random numbers between 0.0 and 1.0 that are (with incredibly high likelyhood) different from frame to frame."
+msgid ""
+"Four random numbers between 0.0 and 1.0 that are (with incredibly high "
+"likelyhood) different from frame to frame."
 msgstr ""
 
 #: ../../source/model.rst:277
@@ -374,7 +523,9 @@ msgid "``sampler2D tex0``, ``sampler2D tex1``, ``sampler2D tex2``"
 msgstr ""
 
 #: ../../source/model.rst:276
-msgid "If textures are available, the corresponding samplers are placed in this variable."
+msgid ""
+"If textures are available, the corresponding samplers are placed in this "
+"variable."
 msgstr ""
 
 #: ../../source/model.rst:283
@@ -382,7 +533,11 @@ msgid "``vec2 res0``, ``vec2 res1``, ``vec2 res2``"
 msgstr ""
 
 #: ../../source/model.rst:280
-msgid "If textures are available, the size of the textures are placed in these variables. When the texture is loaded from disk, this is the size of the image file. After a render to texture, it's the number of drawable pixels the rendered texture covered."
+msgid ""
+"If textures are available, the size of the textures are placed in these "
+"variables. When the texture is loaded from disk, this is the size of the "
+"image file. After a render to texture, it's the number of drawable pixels "
+"the rendered texture covered."
 msgstr ""
 
 #: ../../source/model.rst:285
@@ -414,7 +569,8 @@ msgid "GL Properties"
 msgstr ""
 
 #: ../../source/model.rst:299
-msgid "GL properties change the global state of OpenGL, or the Model-Based renderer."
+msgid ""
+"GL properties change the global state of OpenGL, or the Model-Based renderer."
 msgstr ""
 
 #: ../../source/model.rst:305
@@ -422,7 +578,10 @@ msgid "``color_masks``"
 msgstr ""
 
 #: ../../source/model.rst:302
-msgid "This is expecting to be a 4-tuple of booleans, corresponding to the four channels of a pixel (red, green, blue, and alpha). If a given channel is treu, the draw operation will write to that pixel. Otherwise, it will not."
+msgid ""
+"This is expecting to be a 4-tuple of booleans, corresponding to the four "
+"channels of a pixel (red, green, blue, and alpha). If a given channel is "
+"treu, the draw operation will write to that pixel. Otherwise, it will not."
 msgstr ""
 
 #: ../../source/model.rst:308
@@ -433,21 +592,15 @@ msgstr ""
 msgid "renpy.geometry (priority 100)"
 msgstr ""
 
-#: ../../source/inc/shadersource:3
-#: ../../source/inc/shadersource:14
-#: ../../source/inc/shadersource:40
-#: ../../source/inc/shadersource:62
-#: ../../source/inc/shadersource:88
-#: ../../source/inc/shadersource:98
-#: ../../source/inc/shadersource:115
-#: ../../source/inc/shadersource:125
+#: ../../source/inc/shadersource:3 ../../source/inc/shadersource:14
+#: ../../source/inc/shadersource:40 ../../source/inc/shadersource:62
+#: ../../source/inc/shadersource:88 ../../source/inc/shadersource:98
+#: ../../source/inc/shadersource:115 ../../source/inc/shadersource:125
 msgid "Variables::"
 msgstr ""
 
-#: ../../source/inc/shadersource:8
-#: ../../source/inc/shadersource:21
-#: ../../source/inc/shadersource:49
-#: ../../source/inc/shadersource:73
+#: ../../source/inc/shadersource:8 ../../source/inc/shadersource:21
+#: ../../source/inc/shadersource:49 ../../source/inc/shadersource:73
 #: ../../source/inc/shadersource:105
 msgid "Vertex shader::"
 msgstr ""
@@ -456,12 +609,9 @@ msgstr ""
 msgid "renpy.blur (priority 200)"
 msgstr ""
 
-#: ../../source/inc/shadersource:25
-#: ../../source/inc/shadersource:53
-#: ../../source/inc/shadersource:77
-#: ../../source/inc/shadersource:92
-#: ../../source/inc/shadersource:109
-#: ../../source/inc/shadersource:119
+#: ../../source/inc/shadersource:25 ../../source/inc/shadersource:53
+#: ../../source/inc/shadersource:77 ../../source/inc/shadersource:92
+#: ../../source/inc/shadersource:109 ../../source/inc/shadersource:119
 #: ../../source/inc/shadersource:130
 msgid "Fragment shader::"
 msgstr ""
@@ -489,4 +639,3 @@ msgstr ""
 #: ../../source/inc/shadersource:124
 msgid "renpy.alpha (priority 500)"
 msgstr ""
-
