@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-01 10:50+0900\n"
+"POT-Creation-Date: 2020-11-27 14:12+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -480,7 +480,7 @@ msgid "An image manipulator can be used any place a displayable can, but not vic
 msgstr ""
 
 #: ../../source/displayables.rst:213
-msgid "With the few exceptions listed below, the use of image manipulators is historic. A number of image manipulators that had been documented in the past should no longer be used, as they suffer from inherent problems. In many cases, the :func:`Transform` displayable provides similar functionality in a more general manner, while fixing the problems."
+msgid "With the few exceptions listed below, the use of image manipulators is historic. A number of image manipulators that had been documented in the past should no longer be used, as they suffer from inherent problems. In any case except for `im.Data`, the :func:`Transform` displayable provides similar functionality in a more general manner, while fixing the problems, although it sometimes requires gl2 to be enabled."
 msgstr ""
 
 #: ../../source/inc/im_im:5
@@ -559,20 +559,24 @@ msgstr ""
 msgid "If not None, a (width, height) tuple. If None, this defaults to (:var:`config.screen_width`, :var:`config.screen_height`)."
 msgstr ""
 
-#: ../../source/displayables.rst:222
+#: ../../source/displayables.rst:223
 msgid "im.MatrixColor"
 msgstr ""
 
-#: ../../source/displayables.rst:224
+#: ../../source/displayables.rst:225
 msgid "The im.MatrixColor image manipulator is an image manipulator that uses a matrix to control how the colors of an image are transformed. The matrix used can be an im.matrix object, which encodes a 5x5 matrix in an object that supports matrix multiplication, and is returned by a series of functions. im.matrix objects may be multiplied together to yield a second object that performs both operations. For example::"
 msgstr ""
 
-#: ../../source/displayables.rst:235
+#: ../../source/displayables.rst:236
 msgid "first desaturates the image, and then tints it blue. When the intermediate image is not needed, multiplying matrices is far more efficient, in both time and image cache space, than using two im.MatrixColors."
 msgstr ""
 
-#: ../../source/displayables.rst:240
-msgid "The im.MatrixColor image manipulator has been replaced by Transforms and ATL transforms that specify the matrixcolor property."
+#: ../../source/displayables.rst:241
+msgid "The im.MatrixColor image manipulator has been replaced by Transforms and ATL transforms that specify the matrixcolor property. Each `im.matrix` generator has been given a new `Matrix` equivalent, as shown."
+msgstr ""
+
+#: ../../source/displayables.rst:247
+msgid "The new Matrix objects multiply in the opposite order as the im.Matrixcolor ones. With X being the Matrix corresponding to im.Matrixcolor.x, ``C*B*A`` will be the Matrix corresponding to ``im.a*im.b*im.c``."
 msgstr ""
 
 #: ../../source/inc/im_matrixcolor:5
@@ -595,11 +599,11 @@ msgstr ""
 msgid "The components of the transformed color are clamped to the range [0.0, 1.0]."
 msgstr ""
 
-#: ../../source/displayables.rst:246
+#: ../../source/displayables.rst:254
 msgid "Placeholders"
 msgstr ""
 
-#: ../../source/displayables.rst:248
+#: ../../source/displayables.rst:256
 msgid "The Placeholder displayable is used to display background or character images as appropriate. Placeholders are used automatically when an undefined image is used in developer mode. Placeholder displayables can also be used manually when the defaults are inappropriate. ::"
 msgstr ""
 
@@ -671,23 +675,23 @@ msgstr ""
 msgid "If true, the sprite is flipped horizontally."
 msgstr ""
 
-#: ../../source/displayables.rst:265
+#: ../../source/displayables.rst:273
 msgid "Displayable Prefixes"
 msgstr ""
 
-#: ../../source/displayables.rst:267
+#: ../../source/displayables.rst:275
 msgid "Displayable prefixes make it possible for a creator to define their own displayables, and refer to them anywhere a displayable can be used in Ren'Py. A prefixed displayable is a string with a colon in it. The prefix is to the left of the colon, and the argument is anything to the right of it. The :var:`config.displayable_prefix` variable maps a prefix to a function. The function takes the argument, and either returns a displayable or None."
 msgstr ""
 
-#: ../../source/displayables.rst:274
+#: ../../source/displayables.rst:282
 msgid "For example, this makes the big prefix return an image that is twice as big as the original. ::"
 msgstr ""
 
-#: ../../source/displayables.rst:283
+#: ../../source/displayables.rst:291
 msgid "The ``init -10`` makes sure the prefix is defined before any images that use it. The prefix can then be used to define images::"
 msgstr ""
 
-#: ../../source/displayables.rst:288
+#: ../../source/displayables.rst:296
 msgid "or in any other place where a displayable is required."
 msgstr ""
 

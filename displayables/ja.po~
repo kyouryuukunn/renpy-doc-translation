@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-20 23:16+0900\n"
-"PO-Revision-Date: 2020-07-20 23:34+0900\n"
+"POT-Creation-Date: 2020-11-01 10:50+0900\n"
+"PO-Revision-Date: 2020-11-04 21:11+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../../source/displayables.rst:12
 msgid "Assignment to an image name using the ``image`` statement."
-msgstr "``image`` ステートメントを使って画像に代入する。"
+msgstr "``image`` ステートメントを使って画像名に代入する。"
 
 #: ../../source/displayables.rst:13
 msgid "Added to a screen using the screen language ``add`` statement."
@@ -118,16 +118,16 @@ msgstr ""
 "文字列には \"eileen [mood]\" や \"eileen_[outfit]_[mood].png\" のように1 つ以"
 "上の角括弧があるかもしれません。そのような文字列が指定されると、dynamic "
 "image が作成されます。dynamic image には各インタラクション(say または menu ス"
-"テートメントなど)の開始時に処理される :ref:`データの補完 <text-"
+"テートメントなど)の開始時に処理される :ref:`データの置換 <text-"
 "interpolation>` があります。結果の文字列は上記のルールに基いて処理されます。"
 
 #: ../../source/displayables.rst:44
 msgid ""
-"When a string has \"[prefix_]\" in it, that substitution is replaced with "
+"When a string has \"[prefix\\_]\" in it, that substitution is replaced with "
 "each of the style prefixes associated with the current displayable."
 msgstr ""
-"\"[prefix_]\" を含む文字列は、現在の displayable に対応する各スタイル接頭辞に"
-"置き換えられます。"
+"\"[prefix\\_]\" を含む文字列は、現在の displayable に対応する各スタイル接頭辞"
+"に置き換えられます。"
 
 #: ../../source/displayables.rst:50
 msgid "Images"
@@ -281,7 +281,15 @@ msgstr ""
 "`child` と `mask` 引数は任意の displayable です。 AlphaMask のサイズは  "
 "`child` のサイズになります。"
 
-#: ../../source/inc/disp_imagelike:16
+#: ../../source/inc/disp_imagelike:14
+msgid ""
+"Note that this takes different arguments from :func:`im.AlphaMask`, which "
+"uses the mask's red channel."
+msgstr ""
+"mask のred チャンネルを使用する :func:`im.AlphaMask` とは別の引数をとることに"
+"注意してください。"
+
+#: ../../source/inc/disp_imagelike:19
 msgid ""
 "This object provides border size and tiling information to a :func:`Frame`. "
 "It can also provide padding information that can be supplied to the :propref:"
@@ -291,11 +299,11 @@ msgstr ""
 "これはウィンドウやフレームの :propref:`padding` スタイルプロパティーに与えら"
 "れるパッディング情報も渡せます。"
 
-#: ../../source/inc/disp_imagelike:22
+#: ../../source/inc/disp_imagelike:25
 msgid "`left`, `top`, `right`, `bottom`"
 msgstr "`left`, `top`, `right`, `bottom`"
 
-#: ../../source/inc/disp_imagelike:21
+#: ../../source/inc/disp_imagelike:24
 msgid ""
 "These provide the size of the insets used by a frame, and are added to the "
 "padding on each side. They should zero or a positive integer."
@@ -303,11 +311,11 @@ msgstr ""
 "これらはフレームに使用される挿入図のサイズを与え、各側面のパッディングに加え"
 "られます。これらは 0 または 正の整数です。"
 
-#: ../../source/inc/disp_imagelike:27
+#: ../../source/inc/disp_imagelike:30
 msgid "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
 msgstr "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
 
-#: ../../source/inc/disp_imagelike:25
+#: ../../source/inc/disp_imagelike:28
 msgid ""
 "These are added to the padding on each side, and may be positive or "
 "negative. (For example, if `left` is 5 and `pad_left` is -3, the final "
@@ -316,17 +324,17 @@ msgstr ""
 "これらは各側面のパディングに加えられ、 正または負です。 ( 例えば、 `left` が "
 "5, `pad_left` が -3 なら、最終的なパディングは 2 です )"
 
-#: ../../source/inc/disp_imagelike:29
+#: ../../source/inc/disp_imagelike:32
 msgid "The padding information is supplied via a field:"
 msgstr "パッディング情報はフィールドとして渡します。"
 
-#: ../../source/inc/disp_imagelike:33
+#: ../../source/inc/disp_imagelike:36
 msgid ""
 "This is a four-element tuple containing the padding on each of the four "
 "sides."
 msgstr "これは 4 要素のタプルで、各4つの側面のパディングを含みます。"
 
-#: ../../source/inc/disp_imagelike:38
+#: ../../source/inc/disp_imagelike:41
 msgid ""
 "This creates a new displayable of `size`, by compositing other displayables. "
 "`size` is a (width, height) tuple."
@@ -334,22 +342,22 @@ msgstr ""
 "これは他の displayable を合成して `size` の新しい displayable を作成します。 "
 "`size` は (width, height) のタプルです。"
 
-#: ../../source/inc/disp_imagelike:41
+#: ../../source/inc/disp_imagelike:44
 msgid ""
 "The remaining positional arguments are used to place images inside the "
-"LiveComposite. The remaining positional arguments should come in groups of "
-"two, with the first member of each group an (x, y) tuple, and the second "
-"member of a group is a displayable that is composited at that position."
+"Composite. The remaining positional arguments should come in groups of two, "
+"with the first member of each group an (x, y) tuple, and the second member "
+"of a group is a displayable that is composited at that position."
 msgstr ""
-"残りの位置引数は LiveComposite 内に画像を配置するために使用されます。残りの位"
-"置引数は各グループの第一要素が (x, y) のタプルで、第二要素がその位置に合成さ"
-"れる displayable 、の 2 つからなります。"
+"残りの位置引数は Composite 内に画像を配置するために使用されます。残りの位置引"
+"数は各グループの第一要素が (x, y) のタプルで、第二要素がその位置に合成される "
+"displayable の 2 つからなります。"
 
-#: ../../source/inc/disp_imagelike:47
+#: ../../source/inc/disp_imagelike:50
 msgid "Displayables are composited from back to front."
 msgstr "Displayable は後ろから前へ合成されます。"
 
-#: ../../source/inc/disp_imagelike:59
+#: ../../source/inc/disp_imagelike:62
 msgid ""
 "This creates a displayable by cropping `child` to `rect`, where `rect` is an "
 "(x, y, width, height) tuple. ::"
@@ -357,42 +365,42 @@ msgstr ""
 "`child` を `rect` に刈りこんで displayable を作成します。ここで `rect` は "
 "(x, y, width, height) タプルです。 ::"
 
-#: ../../source/inc/disp_imagelike:66
+#: ../../source/inc/disp_imagelike:69
 msgid ""
 "A DynamicImage is a displayable that has text interpolation performed on it "
 "to yield a string giving a new displayable. Such interpolation is performed "
 "at the start of each interaction."
 msgstr ""
-"dynamic image はテキスト補完により新しい displayable の文字列を生成するテキス"
-"トを持つ displayable です。そのような補完は各インタラクションの開始時に処理さ"
+"dynamic image はテキスト置換により新しい displayable の文字列を生成するテキス"
+"トを持つ displayable です。そのような置換は各インタラクションの開始時に処理さ"
 "れます。"
 
-#: ../../source/inc/disp_imagelike:72
+#: ../../source/inc/disp_imagelike:75
 msgid ""
 "This flattens `child`, which may be made up of multiple textures, into a "
 "single texture."
 msgstr ""
 "これは複数のテクスチャで構成された `child` を一つのテクスチャに貼り付けます。"
 
-#: ../../source/inc/disp_imagelike:75
+#: ../../source/inc/disp_imagelike:78
 msgid ""
 "Certain operations, like the alpha transform property, apply to every "
 "texture making up a displayable, which can yield incorrect results when the "
 "textures overlap on screen. Flatten creates a single texture from multiple "
 "textures, which can prevent this problem."
 msgstr ""
-"alpha 変換プロパティーのような特定の処理は displayable を構成するすべてのテク"
+"alpha transform プロパティーのような特定の処理は displayable を構成するすべてのテク"
 "スチャに適用され、スクリーン上でテクスチャが重なり合っていると誤った結果にな"
 "る可能性があります。貼り付けは複数のテクスチャから一つのテクスチャを作成し、"
 "この問題を防ぎます。"
 
-#: ../../source/inc/disp_imagelike:80
+#: ../../source/inc/disp_imagelike:83
 msgid ""
 "Flatten is a relatively expensive operation, and so should only be used when "
 "absolutely required."
 msgstr "貼り付けは比較的重い処理なので絶対的に必要なときのみ使用するべきです。"
 
-#: ../../source/inc/disp_imagelike:85
+#: ../../source/inc/disp_imagelike:88
 msgid ""
 "A displayable that resizes an image to fill the available area, while "
 "preserving the width and height of its borders. It is often used as the "
@@ -401,23 +409,23 @@ msgstr ""
 "境界の幅と高さを保ちながら、利用できる領域を満たすようにリサイズする "
 "displayable です。ウィンドウやボタンの背景によく使われます。"
 
-#: ../../source/inc/disp_imagelike:91
+#: ../../source/inc/disp_imagelike:94
 msgid "Using a frame to resize an image to double its size."
 msgstr "フレームを使用し、画像サイズを2倍にリサイズ。"
 
-#: ../../source/inc/disp_imagelike:94
+#: ../../source/inc/disp_imagelike:97
 msgid "`image`"
 msgstr "`image`"
 
-#: ../../source/inc/disp_imagelike:94
+#: ../../source/inc/disp_imagelike:97
 msgid "An image manipulator that will be resized by this frame."
 msgstr "Frame によって大きさを変えられる画像マニピュレータです。"
 
-#: ../../source/inc/disp_imagelike:99
+#: ../../source/inc/disp_imagelike:102
 msgid "`left`"
 msgstr "`left`"
 
-#: ../../source/inc/disp_imagelike:97
+#: ../../source/inc/disp_imagelike:100
 msgid ""
 "The size of the border on the left side. This can also be a :func:`Borders` "
 "object, in which case that object is used in place of the other parameters."
@@ -425,35 +433,35 @@ msgstr ""
 "左側面の境界サイズです。これは :func:`Borders` オブジェクトでもよく、その場合"
 "オブジェクトは他の引数の位置にも使用されます。"
 
-#: ../../source/inc/disp_imagelike:102
+#: ../../source/inc/disp_imagelike:105
 msgid "`top`"
 msgstr "`top`"
 
-#: ../../source/inc/disp_imagelike:102
+#: ../../source/inc/disp_imagelike:105
 msgid "The size of the border on the top."
 msgstr "上側の境界のサイズです。"
 
-#: ../../source/inc/disp_imagelike:106
+#: ../../source/inc/disp_imagelike:109
 msgid "`right`"
 msgstr "`right`"
 
-#: ../../source/inc/disp_imagelike:105
+#: ../../source/inc/disp_imagelike:108
 msgid "The size of the border on the right side. If None, defaults to `left`."
 msgstr "右側の境界のサイズです。None なら、デフォルトでは `left` です。"
 
-#: ../../source/inc/disp_imagelike:109
+#: ../../source/inc/disp_imagelike:112
 msgid "`bottom`"
 msgstr "`bottom`"
 
-#: ../../source/inc/disp_imagelike:109
+#: ../../source/inc/disp_imagelike:112
 msgid "The side of the border on the bottom. If None, defaults to `top`."
 msgstr "下側の境界のサイズです。None なら、デフォルトでは `top` です。"
 
-#: ../../source/inc/disp_imagelike:115
+#: ../../source/inc/disp_imagelike:118
 msgid "`tile`"
 msgstr "`tile`"
 
-#: ../../source/inc/disp_imagelike:112
+#: ../../source/inc/disp_imagelike:115
 msgid ""
 "If set to True, tiling is used to resize sections of the image, rather than "
 "scaling. If set to the string \"integer\", the nearest integer number of "
@@ -464,7 +472,7 @@ msgstr ""
 "\"integer\" に設定されると、各方向に最も近い整数個のタイルが使用されます。必"
 "要な領域に一致するようすべてのタイルが拡大縮小されます。"
 
-#: ../../source/inc/disp_imagelike:126
+#: ../../source/inc/disp_imagelike:129
 msgid ""
 "A displayable that creates an empty box on the screen. The size of the box "
 "is controlled by `width` and `height`. This can be used when a displayable "
@@ -474,11 +482,11 @@ msgstr ""
 "`width` と `height` で制御できます。これは、displayable が子を要求しているが"
 "適切な子が無いときや、ボックス内の空間を埋めるのに使えます。"
 
-#: ../../source/inc/disp_imagelike:137
+#: ../../source/inc/disp_imagelike:140
 msgid "A displayable that fills the area its assigned with `color`."
 msgstr "割り当てられた領域を `color` で満たす displayable です。"
 
-#: ../../source/inc/disp_imagelike:145
+#: ../../source/inc/disp_imagelike:148
 msgid "Tiles `child` until it fills the area allocated to this displayable."
 msgstr "この displayable に割り当てられた領域まで `child` をタイル張りします。"
 
@@ -646,22 +654,22 @@ msgstr "デフォルトの画像は指定されなければなりません。"
 
 #: ../../source/inc/disp_dynamic:85
 msgid ""
-"One use of ShowingSwitch is to have side images change depending on the "
-"current emotion of a character. For example::"
+"One use of ShowingSwitch is to have images change depending on the current "
+"emotion of a character. For example::"
 msgstr ""
-"ShowingSwitch の使い方の一つは、キャラクターの現在の表情に応じてサイドイメー"
-"ジを変えることです。例 ::"
+"ShowingSwitch の使い方の一つは、キャラクターの現在の表情に応じて画像を変える"
+"ことです。例 ::"
 
 #: ../../source/displayables.rst:148
 msgid "Applying Transforms to Displayables"
-msgstr "displayable への変換の適用"
+msgstr "displayable への transform の適用"
 
 #: ../../source/displayables.rst:150
 msgid ""
 "The At function produces a displayable from a displayable and one or more :"
 "ref:`transforms <transforms>`."
 msgstr ""
-"At 関数は、1 つの displayable と 1 つ以上の :ref:`変換 <transforms>` とから、"
+"At 関数は、1 つの displayable と 1 つ以上の :ref:`transform <transforms>` とから、"
 "displayable を作成します。"
 
 #: ../../source/inc/disp_at:5
@@ -670,8 +678,8 @@ msgid ""
 "transforms are applied in left-to-right order, so that the outermost "
 "transform is the rightmost argument. ::"
 msgstr ""
-"与えられた displayable `d` に `args` のそれぞれの変換を適用します。変換は左か"
-"ら右へ順に適用され、最後になされる変換は最も右側の引数です。 ::"
+"与えられた displayable `d` に `args` のそれぞれの transform を適用します。 transform は左か"
+"ら右へ順に適用され、最後になされる transform は最も右側の引数です。 ::"
 
 #: ../../source/displayables.rst:157
 msgid "Layout Boxes and Grids"
@@ -725,8 +733,7 @@ msgid ""
 "The Grid layout displays its children in a grid on the screen. It takes :ref:"
 "`position-style-properties` and the :propref:`spacing` style property."
 msgstr ""
-"グリッドはその子を画面上のグリッドに表示します。これは ref:`position-style-"
-"properties` と :propref:`spacing` スタイルプロパティーを受け取ります。"
+"グリッドはその子を画面上のグリッドに表示します。これは ref:`position-style-properties` と :propref:`spacing` スタイルプロパティーを受け取ります。"
 
 #: ../../source/inc/disp_grid:5
 msgid ""
@@ -754,8 +761,8 @@ msgid ""
 "opaque, and the `old` displayable is used when it is transparent."
 msgstr ""
 "このトランジションは、ある displayable から別の displayable へのトランジショ"
-"ンに `control` displayable ( ほとんどはATL変換を並べたものです )を使います。"
-"その変換が評価され、変換が不透明な領域は `new` displayable が使われ、変換が透"
+"ンに `control` displayable ( ほとんどはATL transform を並べたものです )を使います。"
+"その transform が評価され、 transform が不透明な領域は `new` displayable が使われ、 transform が透"
 "明な領域は `old` displayable が使われます。"
 
 #: ../../source/inc/disp_effects:11
@@ -981,7 +988,7 @@ msgid ""
 "The im.MatrixColor image manipulator has been replaced by Transforms and ATL "
 "transforms that specify the matrixcolor property."
 msgstr ""
-"im.MatrixColor画像マニピュレータは matrixcolor プロパティーを指定する変換と"
+"im.MatrixColor画像マニピュレータは matrixcolor プロパティーを指定する transform と"
 "ATLで置き換えられました。"
 
 #: ../../source/inc/im_matrixcolor:5
@@ -989,7 +996,7 @@ msgid ""
 "An image operator that uses `matrix` to linearly transform the image "
 "manipulator `im`."
 msgstr ""
-"`matrix` を使って画像マニピュレータ `im` を線形に変換する画像マニピュレータで"
+"`matrix` を使って画像マニピュレータ `im` を線形に transform する画像マニピュレータで"
 "す。"
 
 #: ../../source/inc/im_matrixcolor:8
@@ -1019,147 +1026,6 @@ msgstr "変換先の色は以下の公式で計算されます ::"
 msgid ""
 "The components of the transformed color are clamped to the range [0.0, 1.0]."
 msgstr "変換先の色の構成要素は範囲 [0.0, 1.0] に固定されます。"
-
-#: ../../source/inc/im_matrixcolor:34
-msgid ""
-"Constructs an im.matrix object from `matrix`. im.matrix objects support The "
-"operations supported are matrix multiplication, scalar multiplication, "
-"element-wise addition, and element-wise subtraction. These operations are "
-"invoked using the standard mathematical operators (\\*, \\*, +, and -, "
-"respectively). If two im.matrix objects are multiplied, matrix "
-"multiplication is performed, otherwise scalar multiplication is used."
-msgstr ""
-"matrix から im.matrix オブジェクトを構成します。im.matrix オブジェクトがサ"
-"ポートする演算は、行列乗算、スカラー乗算、要素ごとの加算、要素ごとの減算で"
-"す。これらの演算は、標準の数学演算子 (それぞれ *, *, +, および -) を使って呼"
-"び出されます。二つの im.matrix オブジェクトを乗じると行列乗算が行われ、そうで"
-"なければスカラー乗算が使われます。"
-
-#: ../../source/inc/im_matrixcolor:42
-msgid ""
-"`matrix` is a 20 or 25 element list or tuple. If it is 20 elements long, it "
-"is padded with (0, 0, 0, 0, 1) to make a 5x5 matrix, suitable for "
-"multiplication."
-msgstr ""
-"`matrix` は 20 または 25 要素のリストまたはタプルです。これが 20 要素なら、乗"
-"算をしやすいように (0, 0, 0, 0, 1) が付け足され、5x5 の行列になります。"
-
-#: ../../source/inc/im_matrixcolor:48
-msgid "Returns an im.matrix that alters the brightness of an image."
-msgstr "画像の輝度を変える im.matrix を返します。"
-
-#: ../../source/inc/im_matrixcolor:52
-msgid "`b`"
-msgstr "`b`"
-
-#: ../../source/inc/im_matrixcolor:51
-msgid ""
-"The amount of change in image brightness. This should be a number between -1 "
-"and 1, with -1 the darkest possible image and 1 the brightest."
-msgstr ""
-"画像の輝度を変化させる量です。これは -1 から 1 でなければならず、-1 は可能な"
-"中で最も暗い画像で、1 は最も明るい画像です。"
-
-#: ../../source/inc/im_matrixcolor:57
-msgid ""
-"Returns an im.matrix that colorizes a black and white image. `black_color` "
-"and `white_color` are Ren'Py style colors, so they may be specified as "
-"strings or tuples of (0-255) color values. ::"
-msgstr ""
-"白黒の画像に着色する im.matrix を返します。 `black_color` および "
-"`white_color` は Ren'Py スタイルの色で、文字列か (0-255) の明度値のタプルかで"
-"指定できます。 ::"
-
-#: ../../source/inc/im_matrixcolor:69
-msgid ""
-"Returns an im.matrix that alters the contrast of an image. `c` should be "
-"greater than 0.0, with values between 0.0 and 1.0 decreasing contrast, and "
-"values greater than 1.0 increasing contrast."
-msgstr ""
-"画像のコントラストを変化させる im.matrix を返します。 `c` は 0.0 より大きく、"
-"0.0 から 1.0 の値はコントラストを下げ、1.0 より大きい値はコントラストを上げま"
-"す。"
-
-#: ../../source/inc/im_matrixcolor:75
-msgid ""
-"Returns an im.matrix that desaturates the image (makes it grayscale). This "
-"is equivalent to calling im.matrix.saturation(0)."
-msgstr ""
-"画像の彩度を無くす (グレースケールにする) im.matrix を返します。これは、im."
-"matrix.saturation(0) を呼び出すのと等価です。"
-
-#: ../../source/inc/im_matrixcolor:81
-msgid ""
-"Returns an im.matrix that rotates the hue by `h` degrees, while preserving "
-"luminosity."
-msgstr "高度を変えずに色相を `h` 度循環させる im.matrix を返します。"
-
-#: ../../source/inc/im_matrixcolor:86
-msgid "Returns an identity matrix, one that does not change color or alpha."
-msgstr "色やアルファ値を変えない恒等行列を返します。"
-
-#: ../../source/inc/im_matrixcolor:91
-msgid ""
-"Returns an im.matrix that inverts the red, green, and blue channels of the "
-"image without changing the alpha channel."
-msgstr ""
-"アルファ値を変えずに赤、緑、青のチャンネルを反転させる im.matrix を返します。"
-
-#: ../../source/inc/im_matrixcolor:96
-msgid ""
-"Returns an im.matrix that alters the opacity of an image. An `o` of 0.0 is "
-"fully transparent, while 1.0 is fully opaque."
-msgstr ""
-"画像の不透明度を変更する im.matrix を返します。 `o` は 0.0 で完全に透明、1.0 "
-"で完全に不透明になります。"
-
-#: ../../source/inc/im_matrixcolor:101
-msgid ""
-"Returns an im.matrix that alters the saturation of an image. The alpha "
-"channel is untouched."
-msgstr ""
-"画像の彩度を変える im.matrix を返します。アルファチャンネルはそのままです。"
-
-#: ../../source/inc/im_matrixcolor:106
-msgid "`level`"
-msgstr "`level`"
-
-#: ../../source/inc/im_matrixcolor:105
-msgid ""
-"The amount of saturation in the resulting image. 1.0 is the unaltered image, "
-"while 0.0 is grayscale."
-msgstr ""
-"変更後の画像の彩度です。1.0 はそのままの画像で、0.0 はグレースケールです。"
-
-#: ../../source/inc/im_matrixcolor:114
-msgid "`desat`"
-msgstr "`desat`"
-
-#: ../../source/inc/im_matrixcolor:109
-msgid ""
-"This is a 3-element tuple that controls how much of the red, green, and blue "
-"channels will be placed into all three channels of a fully desaturated "
-"image. The default is based on the constants used for the luminance channel "
-"of an NTSC television signal. Since the human eye is mostly sensitive to "
-"green, more of the green channel is kept then the other two channels."
-msgstr ""
-"これは 3 要素のタプルで、赤、緑、青チャンネルが完全に彩度を無くされた 3 つの"
-"チャンネルにどれだけ置かれるかを制御します。デフォルトは、NTSC テレビジョンシ"
-"グナルの輝度チャンネルに使われる定数に基づきます。人間の目は緑に一番敏感なの"
-"で、緑チャンネルは他の 2 つのチャンネルよりも多く残されます。"
-
-#: ../../source/inc/im_matrixcolor:119
-msgid ""
-"Returns an im.matrix that tints an image, without changing the alpha "
-"channel. `r`, `g`, and `b` should be numbers between 0 and 1, and control "
-"what fraction of the given channel is placed into the final image. (For "
-"example, if `r` is .5, and the value of the red channel is 100, the "
-"transformed color will have a red value of 50.)"
-msgstr ""
-"画像のアルファチャンネルはそのままで色合いをつける im.matrix を返します。 "
-"`r`,`g`, および `b` は 0 から 1 の数で、与えられたチャンネルのうちの最終的な"
-"画像に置かれる割合を制御します。(例えば、 `r` が .5 で、赤チャンネルの値が "
-"100 なら、変換された後の色の赤値は 50 になります。)"
 
 #: ../../source/displayables.rst:246
 msgid "Placeholders"
@@ -1306,18 +1172,139 @@ msgid "or in any other place where a displayable is required."
 msgstr "displayable が要求されるどこにでも使用できます。"
 
 #~ msgid ""
+#~ "Constructs an im.matrix object from `matrix`. im.matrix objects support "
+#~ "The operations supported are matrix multiplication, scalar "
+#~ "multiplication, element-wise addition, and element-wise subtraction. "
+#~ "These operations are invoked using the standard mathematical operators "
+#~ "(\\*, \\*, +, and -, respectively). If two im.matrix objects are "
+#~ "multiplied, matrix multiplication is performed, otherwise scalar "
+#~ "multiplication is used."
+#~ msgstr ""
+#~ "matrix から im.matrix オブジェクトを構成します。im.matrix オブジェクトがサ"
+#~ "ポートする演算は、行列乗算、スカラー乗算、要素ごとの加算、要素ごとの減算で"
+#~ "す。これらの演算は、標準の数学演算子 (それぞれ *, *, +, および -) を使って"
+#~ "呼び出されます。二つの im.matrix オブジェクトを乗じると行列乗算が行われ、"
+#~ "そうでなければスカラー乗算が使われます。"
+
+#~ msgid ""
+#~ "`matrix` is a 20 or 25 element list or tuple. If it is 20 elements long, "
+#~ "it is padded with (0, 0, 0, 0, 1) to make a 5x5 matrix, suitable for "
+#~ "multiplication."
+#~ msgstr ""
+#~ "`matrix` は 20 または 25 要素のリストまたはタプルです。これが 20 要素な"
+#~ "ら、乗算をしやすいように (0, 0, 0, 0, 1) が付け足され、5x5 の行列になりま"
+#~ "す。"
+
+#~ msgid "Returns an im.matrix that alters the brightness of an image."
+#~ msgstr "画像の輝度を変える im.matrix を返します。"
+
+#~ msgid "`b`"
+#~ msgstr "`b`"
+
+#~ msgid ""
+#~ "The amount of change in image brightness. This should be a number between "
+#~ "-1 and 1, with -1 the darkest possible image and 1 the brightest."
+#~ msgstr ""
+#~ "画像の輝度を変化させる量です。これは -1 から 1 でなければならず、-1 は可能"
+#~ "な中で最も暗い画像で、1 は最も明るい画像です。"
+
+#~ msgid ""
+#~ "Returns an im.matrix that colorizes a black and white image. "
+#~ "`black_color` and `white_color` are Ren'Py style colors, so they may be "
+#~ "specified as strings or tuples of (0-255) color values. ::"
+#~ msgstr ""
+#~ "白黒の画像に着色する im.matrix を返します。 `black_color` および "
+#~ "`white_color` は Ren'Py スタイルの色で、文字列か (0-255) の明度値のタプル"
+#~ "かで指定できます。 ::"
+
+#~ msgid ""
+#~ "Returns an im.matrix that alters the contrast of an image. `c` should be "
+#~ "greater than 0.0, with values between 0.0 and 1.0 decreasing contrast, "
+#~ "and values greater than 1.0 increasing contrast."
+#~ msgstr ""
+#~ "画像のコントラストを変化させる im.matrix を返します。 `c` は 0.0 より大き"
+#~ "く、0.0 から 1.0 の値はコントラストを下げ、1.0 より大きい値はコントラスト"
+#~ "を上げます。"
+
+#~ msgid ""
+#~ "Returns an im.matrix that desaturates the image (makes it grayscale). "
+#~ "This is equivalent to calling im.matrix.saturation(0)."
+#~ msgstr ""
+#~ "画像の彩度を無くす (グレースケールにする) im.matrix を返します。これは、"
+#~ "im.matrix.saturation(0) を呼び出すのと等価です。"
+
+#~ msgid ""
+#~ "Returns an im.matrix that rotates the hue by `h` degrees, while "
+#~ "preserving luminosity."
+#~ msgstr "高度を変えずに色相を `h` 度循環させる im.matrix を返します。"
+
+#~ msgid "Returns an identity matrix, one that does not change color or alpha."
+#~ msgstr "色やアルファ値を変えない恒等行列を返します。"
+
+#~ msgid ""
+#~ "Returns an im.matrix that inverts the red, green, and blue channels of "
+#~ "the image without changing the alpha channel."
+#~ msgstr ""
+#~ "アルファ値を変えずに赤、緑、青のチャンネルを反転させる im.matrix を返しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "Returns an im.matrix that alters the opacity of an image. An `o` of 0.0 "
+#~ "is fully transparent, while 1.0 is fully opaque."
+#~ msgstr ""
+#~ "画像の不透明度を変更する im.matrix を返します。 `o` は 0.0 で完全に透明、"
+#~ "1.0 で完全に不透明になります。"
+
+#~ msgid ""
+#~ "Returns an im.matrix that alters the saturation of an image. The alpha "
+#~ "channel is untouched."
+#~ msgstr ""
+#~ "画像の彩度を変える im.matrix を返します。アルファチャンネルはそのままで"
+#~ "す。"
+
+#~ msgid "`level`"
+#~ msgstr "`level`"
+
+#~ msgid ""
+#~ "The amount of saturation in the resulting image. 1.0 is the unaltered "
+#~ "image, while 0.0 is grayscale."
+#~ msgstr ""
+#~ "変更後の画像の彩度です。1.0 はそのままの画像で、0.0 はグレースケールです。"
+
+#~ msgid "`desat`"
+#~ msgstr "`desat`"
+
+#~ msgid ""
+#~ "This is a 3-element tuple that controls how much of the red, green, and "
+#~ "blue channels will be placed into all three channels of a fully "
+#~ "desaturated image. The default is based on the constants used for the "
+#~ "luminance channel of an NTSC television signal. Since the human eye is "
+#~ "mostly sensitive to green, more of the green channel is kept then the "
+#~ "other two channels."
+#~ msgstr ""
+#~ "これは 3 要素のタプルで、赤、緑、青チャンネルが完全に彩度を無くされた 3 つ"
+#~ "のチャンネルにどれだけ置かれるかを制御します。デフォルトは、NTSC テレビ"
+#~ "ジョンシグナルの輝度チャンネルに使われる定数に基づきます。人間の目は緑に一"
+#~ "番敏感なので、緑チャンネルは他の 2 つのチャンネルよりも多く残されます。"
+
+#~ msgid ""
+#~ "Returns an im.matrix that tints an image, without changing the alpha "
+#~ "channel. `r`, `g`, and `b` should be numbers between 0 and 1, and control "
+#~ "what fraction of the given channel is placed into the final image. (For "
+#~ "example, if `r` is .5, and the value of the red channel is 100, the "
+#~ "transformed color will have a red value of 50.)"
+#~ msgstr ""
+#~ "画像のアルファチャンネルはそのままで色合いをつける im.matrix を返します。 "
+#~ "`r`,`g`, および `b` は 0 から 1 の数で、与えられたチャンネルのうちの最終的"
+#~ "な画像に置かれる割合を制御します。(例えば、 `r` が .5 で、赤チャンネルの値"
+#~ "が 100 なら、変換された後の色の赤値は 50 になります。)"
+
+#~ msgid ""
 #~ "If true, tiling is used to resize sections of the image, rather than "
 #~ "scaling."
 #~ msgstr ""
 #~ "True なら、画像の一部をリサイズするのにスケーリングではなくタイリングが使"
 #~ "われます。"
-
-#~ msgid ""
-#~ "Note that this takes different arguments from :func:`im.AlphaMask`, which "
-#~ "uses the mask's color channel."
-#~ msgstr ""
-#~ "mask のカラーチャンネルを使用する :func:`im.AlphaMask` とは別の引数をとる"
-#~ "ことに注意してください。"
 
 #~ msgid ""
 #~ "This image manipulator composites multiple images together to form a "
@@ -1363,7 +1350,7 @@ msgstr "displayable が要求されるどこにでも使用できます。"
 #~ "manipulators can only take images or other image manipulators as input."
 #~ msgstr ""
 #~ "画像マニピュレータは、キャッシュに画像データを保存するだけです。よって、結"
-#~ "果は一定の大きさになり、事前に知ることができ、ゲームの状態や入力によっては"
+#~ "果は一定の大きさになり、事前に知られ、ゲームの状態や入力によっては"
 #~ "変化しません。一般に、画像マニピュレータは画像や別の画像マニピュレータしか"
 #~ "取れません。"
 

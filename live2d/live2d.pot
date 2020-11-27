@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-01 10:50+0900\n"
+"POT-Creation-Date: 2020-11-27 14:12+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,151 +36,171 @@ msgstr ""
 msgid "Ren'Py supports Live2D animations in the Cubism 3 and Cubism 4 formats. It supports the playback of expressions and motions."
 msgstr ""
 
-#: ../../source/live2d.rst:29
+#: ../../source/live2d.rst:30
+msgid "Live2D is not supported on the x86_64 Android platform, as a DLL is not provided for this platform. This means that it may have problems running on the Android emulator or ChromeOS."
+msgstr ""
+
+#: ../../source/live2d.rst:34
+msgid "Live2D is not supported on the web platform."
+msgstr ""
+
+#: ../../source/live2d.rst:36
+msgid "Installing Live2D on iOS requires copying the static libraries into your iOS project by hand."
+msgstr ""
+
+#: ../../source/live2d.rst:40
 msgid "Installing Live2D"
 msgstr ""
 
-#: ../../source/live2d.rst:31
+#: ../../source/live2d.rst:42
 msgid "Before you can use Live2D, you'll need to download and install the Cubism SDK for Native, found on the `Live2D website <https://www.live2d.com/en/download/cubism-sdk/download-native/>`_. Please note that you may need to purchase a license to use Live2D if your business makes more than a certain amount of money a year."
 msgstr ""
 
-#: ../../source/live2d.rst:37
+#: ../../source/live2d.rst:48
 msgid "Once you've downloaded Live2D, you can install it from the Ren'Py launcher. To install, go to \"preferences\", then click \"Install libraries\". Place the CubismSdkForNative-4-r.1.zip file in the Ren'Py SDK directory, which can be accessed using the button in the bottom right of the install libraries screen. Then click \"Install Live2D Cubism SDK for Native\". After a short amount of time, Live2D will be installed."
 msgstr ""
 
-#: ../../source/live2d.rst:45
+#: ../../source/live2d.rst:56
 msgid "Opt in to GL2"
 msgstr ""
 
-#: ../../source/live2d.rst:47
+#: ../../source/live2d.rst:58
 msgid "To use Live2D, you'll need to opt in to the Model-based renderer, by adding the line::"
 msgstr ""
 
-#: ../../source/live2d.rst:52
+#: ../../source/live2d.rst:63
 msgid "to your game. This has to be done once per game."
 msgstr ""
 
-#: ../../source/live2d.rst:56
+#: ../../source/live2d.rst:67
 msgid "Defining Animations"
 msgstr ""
 
-#: ../../source/live2d.rst:58
+#: ../../source/live2d.rst:69
 msgid "Live2D animations are defined using the Live2D displayable and the image statement:"
 msgstr ""
 
-#: ../../source/live2d.rst:110
+#: ../../source/live2d.rst:130
 msgid "Live2D displayables should be assigned to an image statement::"
 msgstr ""
 
-#: ../../source/live2d.rst:114
+#: ../../source/live2d.rst:134
 msgid "It's also possible to define attributes, and this is very useful when defining different zooms and scaling factors. ::"
 msgstr ""
 
-#: ../../source/live2d.rst:121
+#: ../../source/live2d.rst:141
 msgid "Using Animations"
 msgstr ""
 
-#: ../../source/live2d.rst:123
+#: ../../source/live2d.rst:143
 msgid "The usual way to display a Live2D image is to display it using the show statement. In addition to any attributes added as part of the image statement, the names of expressions and motions can be used."
 msgstr ""
 
-#: ../../source/live2d.rst:127
+#: ../../source/live2d.rst:147
 msgid "Some examples are::"
 msgstr ""
 
-#: ../../source/live2d.rst:133
+#: ../../source/live2d.rst:153
 msgid "These use the default names found in the Cubism SDK sample names. The names of the motions and expressions are taken from the Live2D files, and if they begin with the name of the model3.json file (without directories or extensions), followed by an underscore, then that prefix is removed. (For example, \"Hiyori_m01\" becomes just m01.)"
 msgstr ""
 
-#: ../../source/live2d.rst:139
+#: ../../source/live2d.rst:159
 msgid "At most one exclusive expression can be used, and any number of nonexclusive expressions and motions can be given. When more than one motion is given, the motions are played in order, and the final motion is looped if loop is True. This makes it possible for a motion to be played, followed by an idle animation. Each motion can only appear once, unless multiple aliases for that motion are created."
 msgstr ""
 
-#: ../../source/live2d.rst:145
+#: ../../source/live2d.rst:165
 msgid "There are two special attributes ``null`` and ``still``. The null attribute means that no exclusive expression file should be applied, giving the character's default expression. The ``still`` motion stops all motion."
 msgstr ""
 
-#: ../../source/live2d.rst:149
+#: ../../source/live2d.rst:169
 msgid "Nonexclusive expressions persist until removed with attribute negation::"
 msgstr ""
 
-#: ../../source/live2d.rst:154
+#: ../../source/live2d.rst:174
 msgid "Scaling"
 msgstr ""
 
-#: ../../source/live2d.rst:156
+#: ../../source/live2d.rst:176
 msgid "Many Live2D models are defined at high resolutions, at least in the internal coordinate system that the models use. To compensate for this, Ren'Py includes two ways to scale down the Live2D model."
 msgstr ""
 
-#: ../../source/live2d.rst:160
+#: ../../source/live2d.rst:180
 msgid "The first is the `zoom` argument. This can directly set the zoom factor of the model. If zoom is used, then the other scaling parameters are ignored."
 msgstr ""
 
-#: ../../source/live2d.rst:163
+#: ../../source/live2d.rst:183
 msgid "Otherwise, the `top`, `base`, and `height` arguments are used. The first two specify two lines, relative to the top and bottom of the image. (As elsewhere in Ren'Py, 0.0 is the top and 1.0 is the bottom.) When these arguments are used, two things happen:"
 msgstr ""
 
-#: ../../source/live2d.rst:168
+#: ../../source/live2d.rst:188
 msgid "The image is scaled so that the area between `top` and `base` takes up `height`, where `height` is a fraction of the screen."
 msgstr ""
 
-#: ../../source/live2d.rst:170
+#: ../../source/live2d.rst:190
 msgid "The anchor is adjusted so that `base` will be placed at the bottom of the screen."
 msgstr ""
 
-#: ../../source/live2d.rst:173
+#: ../../source/live2d.rst:193
 msgid "When figuring out how to scale a Live2D animation, what I do first is adjust the `base` parameter until the right part of the animation is lined up with the bottom of the screen. Then:"
 msgstr ""
 
-#: ../../source/live2d.rst:176
+#: ../../source/live2d.rst:196
 msgid "If the image is too big, reduce `height` until it's the right size."
 msgstr ""
 
-#: ../../source/live2d.rst:177
+#: ../../source/live2d.rst:197
 msgid "If the image is too small, increase `top` to reduce the amount of blank space above the animation."
 msgstr ""
 
-#: ../../source/live2d.rst:181
+#: ../../source/live2d.rst:201
 msgid "Motion Fading"
 msgstr ""
 
-#: ../../source/live2d.rst:183
+#: ../../source/live2d.rst:203
 msgid "Ren'Py's support for Live2D includes motion fading. Normally, when Ren'Py changes from one animation to another, the transition is abrupt - one animation is stopped, and the other starts. If a transition occurs, both animations are played at the same time."
 msgstr ""
 
-#: ../../source/live2d.rst:188
+#: ../../source/live2d.rst:208
 msgid "Live2D supports a different model, in which the old animation can be smoothly faded into the new one, but interpolating the parameters. Think of this like a character moving their arms into position, rather than dissolving from one position to another."
 msgstr ""
 
-#: ../../source/live2d.rst:193
+#: ../../source/live2d.rst:213
 msgid "Motion fading is controlled with the `fade` argument. If it's true, motion fading is used, and if it's false, then abrupt changes occur. If None, motion fading is controlled by the ``_live2d_fade`` variable:"
 msgstr ""
 
-#: ../../source/live2d.rst:199
+#: ../../source/live2d.rst:219
 msgid "If true, Live2D animations use motion fading. If False, animations are transitioned abruptly."
 msgstr ""
 
-#: ../../source/live2d.rst:203
+#: ../../source/live2d.rst:223
 msgid "Aliasing"
 msgstr ""
 
-#: ../../source/live2d.rst:205
+#: ../../source/live2d.rst:225
 msgid "The `alias` parameter lets you specify your own names for the motions that would otherwise be automatically defined. For example, one could do::"
 msgstr ""
 
-#: ../../source/live2d.rst:210
+#: ../../source/live2d.rst:230
 msgid "To be able to use::"
 msgstr ""
 
-#: ../../source/live2d.rst:214
+#: ../../source/live2d.rst:234
 msgid "Instead of::"
 msgstr ""
 
-#: ../../source/live2d.rst:220
+#: ../../source/live2d.rst:240
 msgid "Loop and Image Prediction"
 msgstr ""
 
-#: ../../source/live2d.rst:222
+#: ../../source/live2d.rst:242
 msgid "Ren'Py's Live2D support can loop the final animation if the `loop` parameter is set to True. If the animation is being looped, it is important to add greater than .2 second pauses that Ren'Py can exploit to perform expensive image prediction. (This may not be necessary if image prediction and loading can happen at other times.)"
+msgstr ""
+
+#: ../../source/live2d.rst:249
+msgid "Functions"
+msgstr ""
+
+#: ../../source/inc/live2d:5
+msgid "Returns True if Live2d is supported on the current platform, and False otherwise."
 msgstr ""
 

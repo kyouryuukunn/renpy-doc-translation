@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-01 10:50+0900\n"
+"POT-Creation-Date: 2020-11-27 14:12+0900\n"
 "PO-Revision-Date: 2020-11-04 21:11+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -389,10 +389,10 @@ msgid ""
 "textures overlap on screen. Flatten creates a single texture from multiple "
 "textures, which can prevent this problem."
 msgstr ""
-"alpha transform プロパティーのような特定の処理は displayable を構成するすべてのテク"
-"スチャに適用され、スクリーン上でテクスチャが重なり合っていると誤った結果にな"
-"る可能性があります。貼り付けは複数のテクスチャから一つのテクスチャを作成し、"
-"この問題を防ぎます。"
+"alpha transform プロパティーのような特定の処理は displayable を構成するすべて"
+"のテクスチャに適用され、スクリーン上でテクスチャが重なり合っていると誤った結"
+"果になる可能性があります。貼り付けは複数のテクスチャから一つのテクスチャを作"
+"成し、この問題を防ぎます。"
 
 #: ../../source/inc/disp_imagelike:83
 msgid ""
@@ -669,8 +669,8 @@ msgid ""
 "The At function produces a displayable from a displayable and one or more :"
 "ref:`transforms <transforms>`."
 msgstr ""
-"At 関数は、1 つの displayable と 1 つ以上の :ref:`transform <transforms>` とから、"
-"displayable を作成します。"
+"At 関数は、1 つの displayable と 1 つ以上の :ref:`transform <transforms>` と"
+"から、displayable を作成します。"
 
 #: ../../source/inc/disp_at:5
 msgid ""
@@ -678,8 +678,9 @@ msgid ""
 "transforms are applied in left-to-right order, so that the outermost "
 "transform is the rightmost argument. ::"
 msgstr ""
-"与えられた displayable `d` に `args` のそれぞれの transform を適用します。 transform は左か"
-"ら右へ順に適用され、最後になされる transform は最も右側の引数です。 ::"
+"与えられた displayable `d` に `args` のそれぞれの transform を適用します。 "
+"transform は左から右へ順に適用され、最後になされる transform は最も右側の引数"
+"です。 ::"
 
 #: ../../source/displayables.rst:157
 msgid "Layout Boxes and Grids"
@@ -733,7 +734,8 @@ msgid ""
 "The Grid layout displays its children in a grid on the screen. It takes :ref:"
 "`position-style-properties` and the :propref:`spacing` style property."
 msgstr ""
-"グリッドはその子を画面上のグリッドに表示します。これは ref:`position-style-properties` と :propref:`spacing` スタイルプロパティーを受け取ります。"
+"グリッドはその子を画面上のグリッドに表示します。これは ref:`position-style-"
+"properties` と :propref:`spacing` スタイルプロパティーを受け取ります。"
 
 #: ../../source/inc/disp_grid:5
 msgid ""
@@ -761,9 +763,10 @@ msgid ""
 "opaque, and the `old` displayable is used when it is transparent."
 msgstr ""
 "このトランジションは、ある displayable から別の displayable へのトランジショ"
-"ンに `control` displayable ( ほとんどはATL transform を並べたものです )を使います。"
-"その transform が評価され、 transform が不透明な領域は `new` displayable が使われ、 transform が透"
-"明な領域は `old` displayable が使われます。"
+"ンに `control` displayable ( ほとんどはATL transform を並べたものです )を使い"
+"ます。その transform が評価され、 transform が不透明な領域は `new` "
+"displayable が使われ、 transform が透明な領域は `old` displayable が使われま"
+"す。"
 
 #: ../../source/inc/disp_effects:11
 msgid "`alpha`"
@@ -802,12 +805,14 @@ msgstr ""
 "レータが要求されたときはいつでも使えます。"
 
 #: ../../source/displayables.rst:213
+#, fuzzy
 msgid ""
 "With the few exceptions listed below, the use of image manipulators is "
 "historic. A number of image manipulators that had been documented in the "
-"past should no longer be used, as they suffer from inherent problems. In "
-"many cases, the :func:`Transform` displayable provides similar functionality "
-"in a more general manner, while fixing the problems."
+"past should no longer be used, as they suffer from inherent problems. In any "
+"case except for `im.Data`, the :func:`Transform` displayable provides "
+"similar functionality in a more general manner, while fixing the problems, "
+"although it sometimes requires gl2 to be enabled."
 msgstr ""
 "以下示すいくつかの例外を除いて、画像マニピュレータの使用はレガシーなもので"
 "す。かつてドキュメントに記されていた多くの画像マニピュレータは本質的に問題が"
@@ -954,11 +959,11 @@ msgstr ""
 "フォルトで (:var:`config.screen_width`, :var:`config.screen_height`) になりま"
 "す。"
 
-#: ../../source/displayables.rst:222
+#: ../../source/displayables.rst:223
 msgid "im.MatrixColor"
 msgstr "im.MatrixColor"
 
-#: ../../source/displayables.rst:224
+#: ../../source/displayables.rst:225
 msgid ""
 "The im.MatrixColor image manipulator is an image manipulator that uses a "
 "matrix to control how the colors of an image are transformed. The matrix "
@@ -973,7 +978,7 @@ msgstr ""
 "によって返されます。im.matrix オブジェクトを掛け合わせて、両方の演算を行う一"
 "つのオブジェクトを得られます。例えば、このコードは ::"
 
-#: ../../source/displayables.rst:235
+#: ../../source/displayables.rst:236
 msgid ""
 "first desaturates the image, and then tints it blue. When the intermediate "
 "image is not needed, multiplying matrices is far more efficient, in both "
@@ -983,21 +988,30 @@ msgstr ""
 "MatrixColors を二度使うよりも行列を掛け合わせましょう。そのほうが時間上も画像"
 "キャッシュ領域上も遥かに効率的です。"
 
-#: ../../source/displayables.rst:240
+#: ../../source/displayables.rst:241
+#, fuzzy
 msgid ""
 "The im.MatrixColor image manipulator has been replaced by Transforms and ATL "
-"transforms that specify the matrixcolor property."
+"transforms that specify the matrixcolor property. Each `im.matrix` generator "
+"has been given a new `Matrix` equivalent, as shown."
 msgstr ""
-"im.MatrixColor画像マニピュレータは matrixcolor プロパティーを指定する transform と"
-"ATLで置き換えられました。"
+"im.MatrixColor画像マニピュレータは matrixcolor プロパティーを指定する "
+"transform とATLで置き換えられました。"
+
+#: ../../source/displayables.rst:247
+msgid ""
+"The new Matrix objects multiply in the opposite order as the im.Matrixcolor "
+"ones. With X being the Matrix corresponding to im.Matrixcolor.x, ``C*B*A`` "
+"will be the Matrix corresponding to ``im.a*im.b*im.c``."
+msgstr ""
 
 #: ../../source/inc/im_matrixcolor:5
 msgid ""
 "An image operator that uses `matrix` to linearly transform the image "
 "manipulator `im`."
 msgstr ""
-"`matrix` を使って画像マニピュレータ `im` を線形に transform する画像マニピュレータで"
-"す。"
+"`matrix` を使って画像マニピュレータ `im` を線形に transform する画像マニピュ"
+"レータです。"
 
 #: ../../source/inc/im_matrixcolor:8
 msgid ""
@@ -1027,11 +1041,11 @@ msgid ""
 "The components of the transformed color are clamped to the range [0.0, 1.0]."
 msgstr "変換先の色の構成要素は範囲 [0.0, 1.0] に固定されます。"
 
-#: ../../source/displayables.rst:246
+#: ../../source/displayables.rst:254
 msgid "Placeholders"
 msgstr "プレースホルダ"
 
-#: ../../source/displayables.rst:248
+#: ../../source/displayables.rst:256
 msgid ""
 "The Placeholder displayable is used to display background or character "
 "images as appropriate. Placeholders are used automatically when an undefined "
@@ -1133,11 +1147,11 @@ msgstr "`flip`"
 msgid "If true, the sprite is flipped horizontally."
 msgstr "True なら画像は水平に反転します。"
 
-#: ../../source/displayables.rst:265
+#: ../../source/displayables.rst:273
 msgid "Displayable Prefixes"
 msgstr "Displayable Prefixes"
 
-#: ../../source/displayables.rst:267
+#: ../../source/displayables.rst:275
 msgid ""
 "Displayable prefixes make it possible for a creator to define their own "
 "displayables, and refer to them anywhere a displayable can be used in "
@@ -1152,14 +1166,14 @@ msgstr ""
 "ます。 :var:`config.displayable_prefix` 変数は接頭辞をキーに関数を値としま"
 "す。その関数は引数をとり、 displayable または None を返します。"
 
-#: ../../source/displayables.rst:274
+#: ../../source/displayables.rst:282
 msgid ""
 "For example, this makes the big prefix return an image that is twice as big "
 "as the original. ::"
 msgstr ""
 "例えば、オリジナルの二倍の大きさの画像を返す big 接頭辞を作成します。 ::"
 
-#: ../../source/displayables.rst:283
+#: ../../source/displayables.rst:291
 msgid ""
 "The ``init -10`` makes sure the prefix is defined before any images that use "
 "it. The prefix can then be used to define images::"
@@ -1167,7 +1181,7 @@ msgstr ""
 "``init -10`` によって接頭辞は使用するどの画像よりも前に定義され、その接頭辞を"
 "使用して画像の定義や ::"
 
-#: ../../source/displayables.rst:288
+#: ../../source/displayables.rst:296
 msgid "or in any other place where a displayable is required."
 msgstr "displayable が要求されるどこにでも使用できます。"
 
@@ -1350,9 +1364,9 @@ msgstr "displayable が要求されるどこにでも使用できます。"
 #~ "manipulators can only take images or other image manipulators as input."
 #~ msgstr ""
 #~ "画像マニピュレータは、キャッシュに画像データを保存するだけです。よって、結"
-#~ "果は一定の大きさになり、事前に知られ、ゲームの状態や入力によっては"
-#~ "変化しません。一般に、画像マニピュレータは画像や別の画像マニピュレータしか"
-#~ "取れません。"
+#~ "果は一定の大きさになり、事前に知られ、ゲームの状態や入力によっては変化しま"
+#~ "せん。一般に、画像マニピュレータは画像や別の画像マニピュレータしか取れませ"
+#~ "ん。"
 
 #~ msgid ""
 #~ "Many image manipulators provide the same functionality as other "
