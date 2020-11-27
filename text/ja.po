@@ -37,7 +37,7 @@ msgstr ""
 "<menu-statement>` ステートメントです。スクリーン言語ステートメント :ref:"
 "`text <sl-text>`, :ref:`textbutton <sl-textbutton>`, や :ref:`label <sl-"
 "label>` を使ってユーザーインタフェースにテキストを表示することもよくありま"
-"す。これらやその他の関数は :func:`Text` displayable` を作成し、これをスクリー"
+"す。これらやその他の関数は :func:`Text` displayable を作成し、これをスクリー"
 "ンに表示します。"
 
 #: ../../source/text.rst:18
@@ -46,7 +46,7 @@ msgid ""
 "text to the user. The text displayable performs actions in the following "
 "order:"
 msgstr ""
-"テキスト displayable の役割はユーザーにテキストを表示する工程を管理することで"
+"テキスト displayable の役割はユーザーにテキストを表示する工程の管理で"
 "す。テキスト displayable は以下の順序にそって処理されます:"
 
 #: ../../source/text.rst:23
@@ -55,7 +55,7 @@ msgstr "テキストを翻訳する。"
 
 #: ../../source/text.rst:24
 msgid "Interpolating data into the text."
-msgstr "データをテキストに補完する。"
+msgstr "データをテキストに置換する。"
 
 #: ../../source/text.rst:25
 msgid "Styling the text using styles and text tags."
@@ -116,7 +116,7 @@ msgstr "シングルクオートで囲まれた文字列にシングルクオー
 
 #: ../../source/text.rst:52
 msgid "\\\\\\  (backslash-space)"
-msgstr "\\\\\\ (バックスラッシュ-スペース)"
+msgstr "\\\\\\  (バックスラッシュ-スペース)"
 
 #: ../../source/text.rst:50
 msgid ""
@@ -152,7 +152,7 @@ msgid ""
 "text. To include a single left bracket in your text, double it – write "
 "``[[``."
 msgstr ""
-"左角括弧はテキストへ値の補完を導入するために使われます。テキストに左角括弧自"
+"左角括弧はテキストへ値の置換を導入するために使われます。テキストに左角括弧自"
 "体を含めるには二重にして、 ``[[`` と書いてください。"
 
 #: ../../source/text.rst:68
@@ -169,7 +169,7 @@ msgstr ""
 
 #: ../../source/text.rst:73
 msgid "Interpolating Data"
-msgstr "データの補完"
+msgstr "データの置換"
 
 #: ../../source/text.rst:75
 msgid ""
@@ -177,7 +177,7 @@ msgid ""
 "displayed. For example, if the player's name is stored in the ``playername`` "
 "variable, one could write a line of dialogue like::"
 msgstr ""
-"Ren'Py ではテキスト文字列が表示される前にデータを補完できます。例えば、プレイ"
+"Ren'Py ではテキスト文字列が表示される前にデータを置換できます。例えば、プレイ"
 "ヤー名が ``playername`` 変数に保存されているとすると、台詞をこのように書けま"
 "す::"
 
@@ -188,9 +188,9 @@ msgid ""
 "variables. (This can be overridden by supplying an explicit scope argument "
 "to the Text displayable.)"
 msgstr ""
-"Ren'Py はグローバルスコープに保存されている変数を補完します。スクリーンでテキ"
-"ストウィジェットを使っているときは、Ren'Py はスクリーンのローカル変数も補完し"
-"ます。(テキスト displayable にスコープ引数を明示的に与えることで、これをオー"
+"Ren'Py はグローバルスコープに保存されている変数を置換します。スクリーンでテキ"
+"ストウィジェットを使っているときは、Ren'Py はスクリーンのローカル変数も置換し"
+"ます。(テキスト displayable にスコープ引数を明示的に与えて、これをオー"
 "バーライドできます。)"
 
 #: ../../source/text.rst:86
@@ -198,7 +198,7 @@ msgid ""
 "Ren'Py isn't limited to interpolating simple variables. It can also "
 "interpolate fields and components of tuples. So it's possible to have::"
 msgstr ""
-"Ren'Py の補完は単なる変数に限りません。フィールドやタプルの要素も補完できま"
+"Ren'Py の置換は単なる変数に限りません。フィールドやタプルの要素も置換できま"
 "す。ですから、以下のコードも書けます ::"
 
 #: ../../source/text.rst:91
@@ -215,7 +215,7 @@ msgid ""
 "formatting syntax. Ren'Py uses [ to introduce string formatting because "
 "{ was taken by text tags."
 msgstr ""
-"Ren'Py の文字列補完は :pep:`3101` 文字列フォーマット化構文を引き継いでいま"
+"Ren'Py の文字列置換は :pep:`3101` 文字列フォーマット化構文を引き継いでいま"
 "す。Ren'Py では { をテキストタグに使うので、文字列フォーマット化に [ を使いま"
 "す。"
 
@@ -226,27 +226,27 @@ msgid ""
 "text tags are properly quoted, so that displaying a string will not "
 "introduce unwanted formatting constructs. For example::"
 msgstr ""
-"Python でサポートされている ``!s`` や `` !r`` 変換フラグに加え、 Ren'Py は他"
+"Python でサポートされている ``!s`` や ``!r`` 変換フラグに加え、 Ren'Py は他"
 "にもいくつかのフラグをサポートします。 ``!q`` 変換フラグはテキストタグが適切"
 "にクォートされていることを保証し、表示する文字列を望まない形式の構造にしませ"
 "ん。例えば ::"
 
 #: ../../source/text.rst:108
 msgid "The ``!t`` flag will translate the interpolated string::"
-msgstr "``!t`` 変換フラグは補完した文字列を翻訳します。 ::"
+msgstr "``!t`` 変換フラグは置換した文字列を翻訳します。 ::"
 
 #: ../../source/text.rst:117
 msgid ""
 "The ``!i`` flag will make additional interpolate for the interpolated "
 "string::"
-msgstr "``!t`` 変換フラグは補完された文字列さらに補完します。 ::"
+msgstr "``!i`` 変換フラグは置換された文字列をさらに置換します。 ::"
 
 #: ../../source/text.rst:122
 msgid ""
 "This should be used to substitute the text that has a substitution inside. "
 "It's often useful in screen language, see :ref:`Const Text <const-text>`."
 msgstr ""
-"これは補完を含むテキストを補完するのに使用するべきです。スクリーン言語で役立"
+"これは置換を含むテキストを置換するのに使用するべきです。スクリーン言語で役立"
 "つでしょう。 :ref:`Const Text <const-text>` も参照してください。"
 
 #: ../../source/text.rst:125
@@ -364,7 +364,7 @@ msgid ""
 "When the argument begins with ``showmenu:``, the rest of the argument is a "
 "game menu screen to show."
 msgstr ""
-"引数が ``showmenu:`` で始まるなら、残りの引数は表示するゲームナイ選択肢のスク"
+"引数が ``showmenu:`` で始まるなら、残りの引数は表示するゲーム内選択肢のスク"
 "リーンです。"
 
 #: ../../source/text.rst:187
@@ -403,7 +403,7 @@ msgid ""
 "The alt tag prevents text from being rendered, while still maing the text "
 "available for the text-to-speech system. ::"
 msgstr ""
-"alt タグはテキストが表示されないようにしますが、読み上げ機能では利用可能にし"
+"alt タグはテキストが表示されないようにする一方、読み上げ機能では利用可能にし"
 "ます。"
 
 #: ../../source/text.rst:234
@@ -586,7 +586,7 @@ msgstr "台詞のテキストタグ"
 
 #: ../../source/text.rst:386
 msgid "Text tags that only apply to dialogue are:"
-msgstr "台詞にのみ適用されるテキストタグはです :"
+msgstr "台詞にのみ適用されるテキストタグです :"
 
 #: ../../source/text.rst:390
 msgid ""
@@ -665,7 +665,7 @@ msgid ""
 "It's also possible to define :ref:`custom text tags <custom-text-tags>` "
 "using Python."
 msgstr ""
-"Pythonを使用して :ref:` カスタムテキストタグ <custom-text-tags>` も定義出来ま"
+"Pythonを使用して :ref:`カスタムテキストタグ <custom-text-tags>` も定義出来ま"
 "す。"
 
 #: ../../source/text.rst:467
@@ -753,8 +753,8 @@ msgid ""
 "between words. Ren'Py has a special mode to support Korean with spaces, "
 "which can be enabled by setting::"
 msgstr ""
-"これだけの設定で、Ren'Py は世界の殆どの言語をサポートするでしょう。しかし、朝"
-"鮮語は分かち書きをするかしないかを選べます。Ren'Py には韓国語の分かち書きをサ"
+"これだけの設定で、Ren'Py は世界の殆どの言語をサポートするでしょう。しかし、"
+"韓国語は分かち書きをするかしないかを選べます。Ren'Py には韓国語の分かち書きをサ"
 "ポートする特別なモードがあり、このコードで有効にできます ::"
 
 #: ../../source/text.rst:505
@@ -1248,7 +1248,7 @@ msgid ""
 "Unicode character points, and the first range to cover a point is used."
 msgstr ""
 "フォントグループを作成するためには、 :class:`FontGroup`  オブジェクトを作成"
-"し、その `` .add`` メソッドを一回以上呼び出してください。フォントグループは"
+"し、その ``.add`` メソッドを一回以上呼び出してください。フォントグループは"
 "フォント名が使用可能などこででも使用できます。 add メソッドはユニコードの文字"
 "コードの最初と最後を引数にし、ある文字コードをカバーする最初の範囲が使用され"
 "ます。"
@@ -1375,7 +1375,7 @@ msgid ""
 "If not None, this should be a dictionary that provides an additional scope "
 "for text interpolation to occur in."
 msgstr ""
-"None を設定するか、テキスト補完を行うための追加のスコープを提供する辞書を指定"
+"None を設定するか、テキスト置換を行うための追加のスコープを提供する辞書を指定"
 "します。"
 
 #: ../../source/inc/text:40
@@ -1387,7 +1387,7 @@ msgid ""
 "If true, text interpolation occurs. If false, it will not occur. If None, "
 "they are controlled by :var:`config.new_substitutions`."
 msgstr ""
-"True なら、テキスト補完が行われます。 False なら行われません。None なら、 :"
+"True なら、テキスト置換が行われます。 False なら行われません。None なら、 :"
 "var:`config.new_substitutions` で制御されます。"
 
 #: ../../source/text.rst:700
@@ -1425,7 +1425,7 @@ msgstr ""
 
 #: ../../source/inc/text_utility:16
 msgid "Transforms `s`, while leaving text tags and interpolation the same."
-msgstr "テキストタグと補完はそのままに、 `s` を transform します。"
+msgstr "テキストタグと置換はそのままに、 `s` を変換します。"
 
 #: ../../source/inc/text_utility:21
 msgid "`function`"

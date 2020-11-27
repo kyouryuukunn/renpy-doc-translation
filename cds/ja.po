@@ -43,13 +43,13 @@ msgstr ""
 "ユーザー定義ステートメント (CDS) は独自のステートメントを Ren'Py に追加出来る"
 "ようにします。これにより現在の Ren'Py の文法ではサポートされない機能が追加出"
 "来ます。CDS はダイレクトな python コードより柔軟です。ほとんどの場合、繰り返"
-"し構造があるときに使用できます。例えば、決まった1つの引数で関数を呼ぶときで"
+"し構造があるときに使用できます。例えば決まった1つの引数で関数を呼ぶときで"
 "す。 Ren'Py はこの関数が何をして、どのように実行されるべきか分からないため、 "
-"実行してもしあればエラーが出るまで何もしません。CDS伸しようにより、 parse を"
-"使用して文法の妥当性の確認や(引数が妥当な文字列かなど)。実行時に不正なデータ"
+"実行まで何もせず、例外が出たらエラーとなります。CDSの使用により parse を"
+"使用して文法の妥当性の確認(引数が妥当な文字列かなど)や実行時に不正なデータ"
 "の無視(致命的でないエラーでは、例外を投げるよりその実行をスキップした方がよい"
-"です)、(使用するなら) displayable の予想、Linkt 時の追加銃砲の掲示(起動時に無"
-"視させてもこちらで情報を得られます)。CDS は実行の成功は保証しませんが、ステー"
+"です)、(使用するなら) displayable の予想、Lint 時の追加情報の掲示(実行時に無"
+"視させてもこちらで情報を得られます)が出来ます。CDS は実行の成功は保証しませんが、ステー"
 "トメントのコーティングを改善し、Ren'Py に何がしたいかを「理解」させられます。"
 
 #: ../../source/cds.rst:24
@@ -201,8 +201,8 @@ msgid ""
 "second argument to transfer control into the block, or None to continue to "
 "the statement after this one."
 msgstr ""
-"ジャンプ先のラベルを指定する文字列、ブロックへ制御を移すための第二引数また"
-"は、この後のステートメントに制御を継続するなら None を返す関数であるべきで"
+"ジャンプ先のラベルを指定する文字列またはブロックへ制御を移すなら第二引数、"
+"この後のステートメントに制御を移すなら None を返す関数であるべきで"
 "す。"
 
 #: ../../source/inc/statement_register:54
@@ -251,8 +251,8 @@ msgid ""
 "function."
 msgstr ""
 "このステートメントの初期化時にのみ実行されるべきなら True です ( ステートメン"
-"トが init ブロック内になければ自動的に init 0 ブロックに配置されます)。　これ"
-"は execute_init  関数に加えては実行関数を呼び出します。"
+"トが init ブロック内になければ自動的に init 0 ブロックに配置されます)。これ"
+"は execute_init  関数に加えて execute 関数を呼び出します。"
 
 #: ../../source/inc/statement_register:73
 msgid "`init_priority`"
@@ -272,7 +272,7 @@ msgid ""
 "A function that is called with the parsed block. It's expected to return a "
 "list of strings, which are then reported as being available to be translated."
 msgstr ""
-"パースされたブロックを引数に呼び出される関数で、邦訳可能として報告される文字"
+"パースされたブロックを引数に呼び出される関数で、翻訳可能として報告される文字"
 "列のリストを返します。"
 
 #: ../../source/inc/statement_register:82
@@ -297,7 +297,7 @@ msgid ""
 "(Adding a post_execute function changes the contents of the RPYC file, "
 "meaning a Force Compile is necessary.)"
 msgstr ""
-"次のステートメントの一部としてじっ蔵される関数です( post_execute 関数の追加に"
+"次のステートメントの一部としてじ実行される関数です( post_execute 関数の追加に"
 "より RPYC ファイルの内容が変化するため、強制コンパイルが必要になります )。"
 
 #: ../../source/inc/statement_register:93
@@ -324,7 +324,7 @@ msgid ""
 "If True, then this predicts all sub-parses of this statement and the "
 "statement after this statement."
 msgstr ""
-"True なら、子のステートメントと、次のステートメントのすべての sub-parse を予"
+"True なら、このステートメントと次のステートメントのすべての sub-parse を予"
 "測します。"
 
 #: ../../source/inc/statement_register:104
@@ -407,7 +407,7 @@ msgstr ""
 
 #: ../../source/cds.rst:79
 msgid "True if the current line has a non-empty block."
-msgstr "現在行にから出ないブロックがあれば True です。"
+msgstr "現在行に空でないブロックがあれば True です。"
 
 #: ../../source/cds.rst:83
 msgid "Matches an arbitrary regexp string."
@@ -502,7 +502,7 @@ msgid ""
 msgstr ""
 "これは引数リストの丸括弧の前に呼び出されなければなりません。引数リストが確認"
 "されなければ None を返し、そうでなければ引数を表すオブジェクトを関数呼び出し"
-"に渡します。このオブジェクトには `scope` 辞書を省略可能な引数にとりる  "
+"に渡します。このオブジェクトには `scope` 辞書を省略可能な引数にとる  "
 "``evalute`` メソッドがあり、1番目が一引数のタプル、二番目がキーワード引数の辞"
 "書であるタプルを返します。"
 
@@ -548,9 +548,9 @@ msgid ""
 "the parse result of the statement."
 msgstr ""
 "Ren'Py スクリプトステートメントとして現在行をパースし、不可能ならエラーを生成"
-"します。このメソッドは get_next() から返されたり func:`renpy.jump` 、 :func:"
+"します。このメソッドは get_next() から返されたり :func:`renpy.jump` 、 :func:"
 "`renpy.call` に渡される不透明なオブジェクトを返します。このオブジェクトはス"
-"テートメントのパース結果としてを除いて保存されるべきですはありません。"
+"テートメントのパース結果としてを除いて保存されるべきではありません。"
 
 #: ../../source/cds.rst:187
 msgid ""
@@ -573,7 +573,7 @@ msgstr ""
 "これは現在ブロックの残りの行を Ren'Py スクリプトとしてパースし、ブロックの最"
 "初のステートメントに対応する SubParse を返します。そのブロック内で実行される"
 "すべてのステートメントとともにブロックが処理されると、制御はこのユーザー定義"
-"ステートメントの次のステートメントンに渡されます。"
+"ステートメントの次のステートメントに渡されます。"
 
 #: ../../source/cds.rst:199
 msgid ""
@@ -654,7 +654,7 @@ msgid ""
 "A string giving the location the expression is found. Used to generate an "
 "error message of the form \"Could not evaluate `expr` in `where`.\""
 msgstr ""
-"式が見つかる場所を指定する文字列です。 \"where` で  `expr` を評価できませ"
+"式が見つかる場所を指定する文字列です。 \"`where` で  `expr` を評価できませ"
 "ん。 \" のような形式でエラーメッセージを生成するために使用されます。"
 
 #: ../../source/inc/lint:25 ../../source/inc/lint:42
@@ -693,8 +693,8 @@ msgid ""
 "This creates a new statement ``line`` that allows lines of text to be "
 "specified without quotes. ::"
 msgstr ""
-"これは新しいステートメント ``line`` を作成し、クォーテーションを付けずにテキ"
-"ストを指定できるようにします。::"
+"ここでは新しいステートメント ``line`` を作成し、クォーテーションを付けずにテキ"
+"ストを指定できるようにしています。::"
 
 #: ../../source/cds.rst:289
 msgid "This can be used by writing::"
