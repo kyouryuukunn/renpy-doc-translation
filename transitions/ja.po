@@ -77,7 +77,7 @@ msgid ""
 "locations. An instance of the :func:`MoveTransition` transition class."
 msgstr ""
 "0.5 秒かけて画像を新しい場所に移動します。 :func:`MoveTransition` トランジ"
-"ションクラスのインスタンスです。"
+"ションクラスのインスタンスです(*訳注 タグが同じ画像の移動に使用します)。"
 
 #: ../../source/transitions.rst:51
 msgid "Also: **moveinleft, moveintop, moveinbottom**"
@@ -87,7 +87,7 @@ msgstr "Also: **moveinleft, moveintop, moveinbottom**"
 msgid ""
 "These move entering images onto the screen from the appropriate side, taking "
 "0.5 seconds to do so."
-msgstr "0.5 秒かけて画像を画面の対応する方向から進入させます。"
+msgstr "0.5 秒かけて画像を画面の対応する方向から進入させます(*訳注 タグが同じ画像がすでにあるとトランジションしません)。"
 
 #: ../../source/transitions.rst:58
 msgid "Also: **moveoutleft, moveouttop, moveoutbottom**"
@@ -164,7 +164,7 @@ msgid ""
 "Wipes the scene in the given direction. Instances of the :func:`CropMove` "
 "transition class."
 msgstr ""
-"画面を与えられた方向へワイプします。 :func:`CropMove` トランジションクラスの"
+"画面を指定の方向へワイプして更新します。 :func:`CropMove` トランジションクラスの"
 "インスタンスです。"
 
 #: ../../source/transitions.rst:111
@@ -176,7 +176,7 @@ msgid ""
 "Slides the new scene in the given direction. Instances of the :func:"
 "`CropMove` transition class."
 msgstr ""
-"新しい画面を与えられた方向へスライドインします。 :func:`CropMove` トランジ"
+"新しい画面を指定の方向からスライドインします。 :func:`CropMove` トランジ"
 "ションクラスのインスタンスです。"
 
 #: ../../source/transitions.rst:118
@@ -188,7 +188,7 @@ msgid ""
 "Slides the old scene in the given direction. Instances of the :func:"
 "`CropMove` transition class."
 msgstr ""
-"古い画面を与えられた方向にスライドします。 :func:`CropMove` トランジションク"
+"古い画面を指定の方向へスライドアウトします。 :func:`CropMove` トランジションク"
 "ラスのインスタンスです。"
 
 #: ../../source/transitions.rst:125
@@ -200,7 +200,7 @@ msgid ""
 "These use the new scene to slide the old scene out the named side. Instances "
 "of the :func:`PushMove` transition class."
 msgstr ""
-"新しい画面で以前の画面をスライドアウトします。 :func:`PushMove` トランジショ"
+"指定の方向に新しい画面で以前の画面を押し出します。 :func:`PushMove` トランジショ"
 "ンクラスのインスタンスです。"
 
 #: ../../source/transitions.rst:132
@@ -392,7 +392,7 @@ msgid ""
 "relative to the size of the image. So a crop of (0.25, 0.0, 0.5, 1.0) takes "
 "the middle half of an image."
 msgstr ""
-"以下のパラメーターは、モードが 「custom」 であるときのみ考慮されます。ポジ"
+"次のパラメーターは、モードが 「custom」 であるときのみ考慮されます。ポジ"
 "ションはスクリーンのサイズに対する割合で、クロップは画像のサイズに対する割合"
 "です。ですから、(0.25, 0.0, 0.5, 1.0) のクロップは画像の中半分を切り抜きま"
 "す。"
@@ -454,7 +454,7 @@ msgid ""
 "If true, the scene that is cropped and moved (and is on top of the other "
 "scene) is the new scene. If false, it is the old scene."
 msgstr ""
-"True なら、切り取られてたり動いたりする場面 (そして手前にある方の場面) は新し"
+"True なら、切り取られてたり動いたりする場面 (1番手前に場面です) は新し"
 "い場面です。 False なら、元の場面です。"
 
 #: ../../source/inc/transition:116
@@ -555,7 +555,7 @@ msgid ""
 "`enter` should be a transform that is applied to the image to get its "
 "starting position."
 msgstr ""
-"None でない場合、その場面に挿入される画像も移動されます。 `enter` には、その"
+"None でない場合、その場面に新しく挿入される画像も移動されます。 `enter` には、その"
 "画像が開始位置に至るために適用される transform を指定します。"
 
 #: ../../source/inc/transition:199
@@ -568,7 +568,7 @@ msgid ""
 "`leave` should be a transform that is applied to the image to get its ending "
 "position."
 msgstr ""
-"None でない場合、その場面から去る画像も移動されます。 `leave` には、その画像"
+"None でない場合、その場面から消される画像も移動されます。 `leave` には、その画像"
 "が最終的な位置に至るために適用される transform を指定します。"
 
 #: ../../source/inc/transition:202 ../../source/inc/transition_family:33
@@ -601,7 +601,7 @@ msgstr "`enter_time_warp`"
 
 #: ../../source/inc/transition:213
 msgid "A time warp function that's applied to images entering the scene."
-msgstr "画像が場面に入るときに適用されるタイムワープ関数です。"
+msgstr "新しく挿入される画像に適用されるタイムワープ関数です。"
 
 #: ../../source/inc/transition:215
 msgid "`leave_time_warp`"
@@ -609,7 +609,7 @@ msgstr "`leave_time_warp`"
 
 #: ../../source/inc/transition:216
 msgid "A time warp function that's applied to images leaving the scene."
-msgstr "画像が場面から出るときに適用されるタイムワープ関数です。"
+msgstr "消える画像に適用されるタイムワープ関数です。"
 
 #: ../../source/inc/transition:220
 msgid ""
@@ -703,7 +703,7 @@ msgid ""
 "Returns a transition that works by taking the new scene and using it to "
 "\"push\" the old scene off the screen."
 msgstr ""
-"新しい場面で元の場面を \"plush\" するディゾルブするトランジションを返します。"
+"新しい場面で元の場面を \"plush\" するトランジションを返します。"
 
 #: ../../source/inc/transition:274
 msgid ""
@@ -731,7 +731,7 @@ msgid ""
 "transitions. For a given `prefix`, this defines the transitions:"
 msgstr ""
 "これは、move トランジションや ease トランジションみたいなトランジション属を定"
-"義します。与えられた `prefix` に対しては、以下のトランジションを定義します ::"
+"義します。与えられた `prefix` に対しては、次のトランジションを定義します ::"
 
 #: ../../source/inc/transition_family:8
 msgid ""
@@ -832,7 +832,7 @@ msgid ""
 "dialogue is being shown on the screen. For example, if we wrote::"
 msgstr ""
 "これを使用して,台詞をスクリーンに表示したまま、マスターレイヤーにトランジショ"
-"ンを実行できます。例えば、以下のように記述し、"
+"ンを実行できます。例えば、次のように記述してから"
 
 #: ../../source/transitions.rst:191
 msgid "and::"
@@ -873,7 +873,7 @@ msgstr ""
 "これは ``window auto`` で起きるトランジションのような、自身でトランジショ"
 "ンを起こす with ステートメントに良くない作用をするかもしれません。それには異なるレイヤーには2つ目の"
 "辞書トランジションを適用して対処できます。例えば、もし台詞ウィンドウの表示非"
-"表示時で唐突な点滅を目にするなら options.rpy を以下のように変更すること"
+"表示時で唐突な点滅を目にするなら options.rpy を次のように変更すること"
 "を考えてください。 ::"
 
 #: ../../source/transitions.rst:218

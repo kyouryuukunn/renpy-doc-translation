@@ -29,9 +29,9 @@ msgid ""
 "transformations such as rotation, zoom, and alpha-modification. These can be "
 "changed over time, and in response to events."
 msgstr ""
-"Animation and Transformation Language (ATL) では以下のことが高水準に可能で"
-"す。表示する displayable を選択し、それをスクリーンに配置し、 回転、ズーム、"
-"アルファ修正のような transform を適用する。これらは時間の経過やイベントに対応"
+"Animation and Transformation Language (ATL) では"
+"表示する displayable を選択してスクリーンに配置し、 回転やズーム、"
+"アルファ変更のような transform を適用する高度な手段を提供します。これらは時間の経過やイベントに対応"
 "して変化させられます。"
 
 #: ../../source/atl.rst:15
@@ -61,7 +61,7 @@ msgid ""
 "of an at clause. The syntax of the transform statement is:"
 msgstr ""
 "``transform`` ステートメントは、at 節に与えるATL transform を作成します。"
-"transform ステートメントの構文は以下の通りです。 ::"
+"transform ステートメントの構文は次の通りです。 ::"
 
 #: ../../source/atl.rst:35
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 msgstr ""
 "transform ステートメントは、初期化時に実行されなければなりません。 ``init`` "
 "ブロックの外にあると、自動的に優先度0の  ``init`` ブロック内に配置されます。"
-"transform にはパラメーターリストを与えられ、これらは呼び出されたときに提供さ"
+"transform にはパラメーターリストを与えられ、その場合は呼び出し時に提供さ"
 "れなければなりません。"
 
 #: ../../source/atl.rst:40
@@ -97,7 +97,7 @@ msgstr ""
 "ATL を使う第二の方法は、 ``image`` ステートメントの ATL ブロックとして使うこ"
 "とです。これは画像名を指定した transform に関連付けします。この transform に"
 "パラメーターを与える方法はないので、この使い道はアニメーションの定義ぐらいで"
-"す。image ステートメントに ATL ブロックを加える構文は以下のとおりです。 :"
+"す。image ステートメントに ATL ブロックを加える構文は次のとおりです。 :"
 
 #: ../../source/atl.rst:73
 msgid "Scene and Show Statements with ATL Block"
@@ -155,7 +155,7 @@ msgid ""
 "Execution of a block terminates when all statements in the block have "
 "terminated."
 msgstr ""
-"ブロックの実行は、ブロックの全てのステートメントが終了したときに終わります"
+"ブロックの実行は、ブロックの全てのステートメントが終了したときに終わります。"
 
 #: ../../source/atl.rst:115
 msgid ""
@@ -197,7 +197,7 @@ msgstr ""
 "補間ステートメントの最初の部分で補間をタイムラップする関数を選びます(これは、"
 "線形時間から非線形時間への変換関数です)。 それには ATL に登録されたワーパーの"
 "名前を与えるか、予約語「 warp 」に続けて関数を与える式を与えてください。どち"
-"らの場合でも補間にかける秒数を続けます。"
+"らの場合でも補間にかける時間の秒数を続けます。"
 
 #: ../../source/atl.rst:144
 msgid ""
@@ -214,9 +214,9 @@ msgid ""
 "interpolation. This is clamped to the duration, and then passed to the "
 "warper. The result returned by the warper is the completion fraction."
 msgstr ""
-"このワーパーと補間にかける時間は、完了率を計算するのに使われます。これは補間"
-"にかかった時間を補間にかける時間で割って算出され、ワーパーに渡されます。この"
-"ワーパーから返された結果が完了率です。"
+"このワーパーと補間にかける時間は、完了率を計算するのに使われます。補間"
+"にかかった時間を補間にかける時間で割った値をワーパーに渡し、"
+"ワーパーから返された結果が完了率となります。"
 
 #: ../../source/atl.rst:152
 msgid ""
@@ -225,9 +225,9 @@ msgid ""
 "will obtain at the end of the statement. The value can be obtained in "
 "several ways:"
 msgstr ""
-"補間ステートメントには、他にも節をいくつか加えられます。プロパティーと値があ"
+"補間ステートメントには続いて、いくつかの他の節を加えられます。プロパティーと値があ"
 "るとき、その値はステートメントの終わりにそのプロパティーがとる値です。この値"
-"には数種類の経過で到達します 。:"
+"には数種類の経過で到達します。 :"
 
 #: ../../source/atl.rst:156
 msgid ""
@@ -240,12 +240,12 @@ msgid ""
 "Catmull-Rom, the first and last knot are control nodes (often outside the "
 "displayed path) and the other knots are points the path passes through."
 msgstr ""
-"値に1つ以上の knot が続くと、スプラインモーションが使用されます。補間開始時の"
-"そのプロパティーの値から始まり、そのプロパティーの値で終わり、knot を使用して"
-"スプラインを制御します。単一の knot には2次曲線が使用され、 2つにはベジェ曲"
+"値に1つ以上の knot が続くと、スプラインモーションが使用されます。そのプロパティーの"
+"補間開始時の値から始まって指定した値で終わり、knot を使用して"
+"スプラインを制御します。1つの knot には2次曲線が使用され、 2つにはベジェ曲"
 "線、3つ以上の knot にはキャットムル-ロム スプラインが使用されます。前者2つで"
 "は、 knot はすべて(しばしば描画される経路外となる)制御nodeです。キャットムル-"
-"ロム スプラインでは、最初と最後の knot が制御nodeで他の knot は通過点です。"
+"ロム スプラインでは、最初と最後の knot が制御nodeで他の knot は通過点になります。"
 
 #: ../../source/atl.rst:165
 msgid ""
@@ -253,7 +253,7 @@ msgid ""
 "\" clause, circular motion is used, as described below."
 msgstr ""
 "補間ステートメントに「 clockwise 」または「 counterclockwise 」が含まれると、"
-"以下で解説する円運動が使われます。"
+"後述する円運動が使われます。"
 
 #: ../../source/atl.rst:168
 msgid ""
@@ -269,7 +269,7 @@ msgid ""
 "were included in this statement."
 msgstr ""
 "単純式があれば、その評価はワーパーもスプラインも円運動も含まない一つの補間ス"
-"テートメントを持つ transform でなければなりません。 transform から取られたプ"
+"テートメントを持つ transform でなければなりません。その transform から取られたプ"
 "ロパティーは、このステートメントに含まれていたかのように処理されます。"
 
 #: ../../source/atl.rst:176
@@ -281,7 +281,7 @@ msgid ""
 "An important special case is that the pause warper, followed by a time and "
 "nothing else, causes ATL execution to pause for that amount of time."
 msgstr ""
-"重要な特例は pause ワーパーで、続けて時間だけを書き、その時間だけ ATL の実行"
+"重要な特例は pause ワーパーで、続けて時間だけを書いてその時間 ATL の実行"
 "を休止します。"
 
 #: ../../source/atl.rst:205
@@ -348,7 +348,7 @@ msgid ""
 "expression."
 msgstr ""
 "式 ステートメントは、単純式で始まる simple ステートメントです。with 節で 2 つ"
-"めの単純式を続けることもできます。"
+"めの単純式も続けられます。"
 
 #: ../../source/atl.rst:251
 msgid "There are three things the first simple expression may evaluate to:"
@@ -359,7 +359,7 @@ msgid ""
 "If it's a transform, that transform is executed. With clauses are ignored "
 "when a transform is supplied."
 msgstr ""
-"これが transform の場合、その transform が実行されます。with 節は transform "
+"transform の場合、その transform が実行されます。with 節は transform "
 "が与えられたときは無視されます。"
 
 #: ../../source/atl.rst:256
@@ -376,7 +376,7 @@ msgid ""
 "expression is evaluated as a transition, and the transition is applied to "
 "the old and new displayables."
 msgstr ""
-"そうでなければ、この式は displayable と解釈されます。この displayable は、こ"
+"これら以外の場合、この式は displayable と解釈されます。この displayable はこ"
 "の節が実行されたときに transform の子を置き換えるので、アニメーションに便利で"
 "す。with 節があると、第二の式はトランジションと評価され、そのトランジションが"
 "前後の displayable に適用されます。"
@@ -391,7 +391,7 @@ msgid ""
 "This can be used when there's a desire to separate statements, like when "
 "there are two sets of choice statements that would otherwise be back-to-back."
 msgstr ""
-"`` pass`` ステートメントは、何も起こさない  simple ステートメントです。これ"
+"``pass`` ステートメントは、何も起こさない  simple ステートメントです。これ"
 "は、ステートメントを分割したいときに使えます。例えば、2 組の choice ステート"
 "メントが連続するのではなく分かれている方が望ましいときです。"
 
@@ -463,7 +463,7 @@ msgid ""
 "The ``parallel`` statement is used to define a set of ATL blocks to execute "
 "in parallel."
 msgstr ""
-"``parallel`` ステートメントを使用して、並行して実行される ATL ブロック群を定"
+"``parallel`` ステートメントを使用して並行して実行される ATL ブロック群を定"
 "義出来ます。"
 
 #: ../../source/atl.rst:372
@@ -474,7 +474,7 @@ msgid ""
 "terminates when the last block terminates."
 msgstr ""
 "ブロック内の連続する parallel  ステートメントは 貪欲にグループ化されます。全"
-"ての parallel ステートメントのブロックが同時進行で実行されます。parallel  ス"
+"ての parallel ステートメントのブロックが同時進行は実行されます。parallel  ス"
 "テートメントは、最後のブロックが終了したときに終了します。"
 
 #: ../../source/atl.rst:377
@@ -496,7 +496,7 @@ msgid ""
 "The ``event`` statement is a simple statement that causes an event with the "
 "given name to be produced."
 msgstr ""
-"event ステートメントは、指定した名前のイベントを引き起こす simple ステートメ"
+"event ステートメントは指定した名前のイベントを引き起こす simple ステートメ"
 "ントです。"
 
 #: ../../source/atl.rst:404
@@ -521,7 +521,7 @@ msgid ""
 "On statements are greedily grouped into a single statement. On statement can "
 "handle a single event name, or a comma-separated list of event names."
 msgstr ""
-"on ステートメントは、イベントハンドラを定義する complex ステートメントです。"
+"on ステートメントはイベントハンドラを定義する complex ステートメントです。"
 "on ステートメントは一つのステートメントに貪欲にグループ化されます。 onステー"
 "トメントでは、1つまたはコンマで区切られた複数のイベント名を扱えます。"
 
@@ -557,7 +557,7 @@ msgid ""
 "contains statement."
 msgstr ""
 "``contains`` ステートメントは、この ATL transform に含まれる displayable "
-"( transform の子transform ) を設定します。contains ステートメントには 2 種類"
+"( transform の子 transform ) を設定します。contains ステートメントには 2 種類"
 "あります。"
 
 #: ../../source/atl.rst:449
@@ -592,7 +592,7 @@ msgid ""
 msgstr ""
 "それぞれのブロックで使用する displayable を定義していなければならず、そうでな"
 "ければ例外が発生します。contains  ステートメントは、子が完了するのを待たずに"
-"すぐに実行します。このステートメントは、引数を子に簡単に渡せるようにするシン"
+"すぐに実行します。このステートメントは引数を子に簡単に渡せるようにするシン"
 "タックスシュガーに近いです。"
 
 #: ../../source/atl.rst:504
@@ -968,9 +968,9 @@ msgid ""
 "float. If it's a float, it's interpreted as a fraction of the size of the "
 "containing area (for :propref:`pos`) or displayable (for :propref:`anchor`)."
 msgstr ""
-"型が position と書かれていれば、それは整数、浮動小数点数、または ``renpy."
-"absolute`` にできます。浮動小数点数なら、それが含まれる領域 (:propref:"
-"`pos` ) または displayable ( :propref:`anchor`)に対する割合として解釈されま"
+"型(Type)に position が指定されていれば、整数、浮動小数点数、または ``renpy."
+"absolute`` にできます。 float ならそれが含まれる領域 (:propref:"
+"`pos` ) または displayable (:propref:`anchor`)に対する割合として解釈されま"
 "す。"
 
 #: ../../source/atl.rst:603
@@ -990,7 +990,7 @@ msgstr ""
 
 #: ../../source/atl.rst:611 ../../source/atl.rst:634 ../../source/atl.rst:816
 msgid "(position, position)"
-msgstr "(位置表現, 位置表現)"
+msgstr "(position, position)"
 
 #: ../../source/atl.rst:612 ../../source/atl.rst:635
 msgid "(0, 0)"
@@ -998,7 +998,7 @@ msgstr "(0, 0)"
 
 #: ../../source/atl.rst:614
 msgid "The position, relative to the top-left corner of the containing area."
-msgstr "それを含む領域の左上隅に対する位置です。"
+msgstr "これを含む領域の左上隅に対する位置です。"
 
 #: ../../source/atl.rst:619 ../../source/atl.rst:627 ../../source/atl.rst:642
 #: ../../source/atl.rst:650 ../../source/atl.rst:841
@@ -1013,25 +1013,25 @@ msgstr "0"
 #: ../../source/atl.rst:622
 msgid ""
 "The horizontal position, relative to the left side of the containing area."
-msgstr "それを含む領域の左端に対する水平位置です。"
+msgstr "これを含む領域の左端に対する水平位置です。"
 
 #: ../../source/atl.rst:630
 msgid "The vertical position, relative to the top of the containing area."
-msgstr "それを含む領域の上端に対する垂直位置です。"
+msgstr "これを含む領域の上端に対する垂直位置です。"
 
 #: ../../source/atl.rst:637
 msgid ""
 "The anchor position, relative to the top-left corner of the displayable."
-msgstr "それを含む displayable の左上隅に対するアンカー位置です。"
+msgstr "displayable の左上隅に対するアンカー位置です。"
 
 #: ../../source/atl.rst:645
 msgid ""
 "The horizontal anchor position, relative to the left side of the displayable."
-msgstr "それを含む displayable の左端に対する水平アンカー位置です。"
+msgstr "displayable の左端に対する水平アンカー位置です。"
 
 #: ../../source/atl.rst:653
 msgid "The vertical anchor position, relative to the top of the displayable."
-msgstr "それを含む displayable の上端に対する垂直アンカー位置です。"
+msgstr "displayable の上端に対する垂直アンカー位置です。"
 
 #: ../../source/atl.rst:658 ../../source/atl.rst:825
 msgid "(float, float)"
@@ -1043,7 +1043,7 @@ msgstr "(0.0, 0.0)"
 
 #: ../../source/atl.rst:661
 msgid "Equivalent to setting pos and anchor to the same value."
-msgstr "それを含む displayable の上端に対する垂直アンカー位置です。"
+msgstr "pos と anchor を同じ値にするのと等価です。"
 
 #: ../../source/atl.rst:665 ../../source/atl.rst:672 ../../source/atl.rst:679
 #: ../../source/atl.rst:687 ../../source/atl.rst:695 ../../source/atl.rst:703
@@ -1135,7 +1135,7 @@ msgid ""
 "displayable. This is more suited to fixed rotations."
 msgstr ""
 "True の場合、回転された displayable の幅と高さが、元の幅と高さの斜辺と同じに"
-"なるように埋め込まれます。これは、 transform が内容を回転させてもサイズが変わ"
+"なるように埋め込まれます。これは transform が中身を回転させてもサイズが変わ"
 "らないことを保証します。 False の場合、 transform は transform された "
 "displayable を含む最小限のサイズになります。これは固定回転に向いています。"
 
@@ -1149,8 +1149,8 @@ msgid ""
 "rotated as the child is transformed. Effectively, this makes the anchor the "
 "point that the child is rotated and scaled around."
 msgstr ""
-"True なら anchor の位置は切り取られた子に配置され、子の transform と共に位置"
-"を調整します。つまりこれは anchor をその周りで子が回転したり、サイズが変更し"
+"True なら anchor の位置は切り取られた子に配置され、子の transform とともに"
+"拡大や回転します。つまりこれは anchor をそれを中心に子が回転したり、サイズが変更し"
 "たりする点にします。"
 
 #: ../../source/atl.rst:744 ../../source/atl.rst:752 ../../source/atl.rst:761
@@ -1160,14 +1160,14 @@ msgstr "1.0"
 
 #: ../../source/atl.rst:746
 msgid "This causes the displayable to be zoomed by the supplied factor."
-msgstr "これは、displayable に与えられた係数倍ズームします。"
+msgstr "displayable を指定した係数倍ズームします。"
 
 #: ../../source/atl.rst:754
 msgid ""
 "This causes the displayable to be horizontally zoomed by the supplied "
 "factor. A negative value causes the image to be flipped horizontally."
 msgstr ""
-"これは、displayable に与えられた係数倍水平にズームします。負の値は画像を水平"
+"displayable を指定した係数倍水平にズームします。負の値は画像を水平"
 "に反転します。"
 
 #: ../../source/atl.rst:763
@@ -1175,7 +1175,7 @@ msgid ""
 "This causes the displayable to be vertically zoomed by the supplied factor. "
 "A negative value causes the image to be flipped vertically."
 msgstr ""
-"これは、displayable に与えられた係数倍垂直にズームします。負の値は画像を垂直"
+"displayable を指定した係数倍垂直にズームします。負の値は画像を垂直"
 "に反転します。"
 
 #: ../../source/atl.rst:771
@@ -1192,7 +1192,7 @@ msgstr ""
 
 #: ../../source/atl.rst:781
 msgid "This controls the opacity of the displayable."
-msgstr "これは、displayable の不透明度を制御します。"
+msgstr "displayable の不透明度を制御します。"
 
 #: ../../source/atl.rst:783
 msgid ""
@@ -1203,7 +1203,7 @@ msgid ""
 msgstr ""
 "alpha transform は transform の子で構成される各画像に独立して適用されます。こ"
 "れはキャラクターとの距離を考慮してキャラクターを見るときのように、子が重なり"
-"合っていると望まぬ結果になるかもしれません。   :func:`Flatten` displayable は"
+"合っていると望まぬ結果になるかもしれません。 :func:`Flatten` displayable は"
 "これらの問題の手助けになるでしょう。"
 
 #: ../../source/atl.rst:793
@@ -1211,7 +1211,7 @@ msgid ""
 "This controls how much additive blending Ren'Py performs. When 1.0, Ren'Py "
 "draws using the ADD operator. When 0.0, Ren'Py draws using the OVER operator."
 msgstr ""
-"これは Ren'Py が加算合成をどう処理するかを制御します。 1.0 なら Ren'Py は "
+"Ren'Py が加算合成をどう処理するかを制御します。 1.0 なら Ren'Py は "
 "ADD 処理を使用し、 0.0 なら OVER 処理を使用して描画します。"
 
 #: ../../source/atl.rst:797
@@ -1228,7 +1228,7 @@ msgid ""
 msgstr ""
 "完全な加算合成は対象のアルファチャンネルを置き換えず、加算合成された画像は不"
 "透明な部分に直接描画されていなければ見えないでしょう ( viewport, :func:"
-"`Flatten`, :func:`Frame`, や一部のトランジションのような複雑な処理は加算合成"
+"`Flatten`, :func:`Frame` や一部のトランジションのような複雑な処理は加算合成"
 "で問題を起こすかもしれません )。"
 
 #: ../../source/atl.rst:806
@@ -1255,7 +1255,7 @@ msgid ""
 "left of the containing area. Setting the center using this allows for "
 "circular motion in position mode."
 msgstr ""
-"None を指定するか、それを含む領域の左上に対する極座標の中心を指定します。これ"
+"None を指定するか、これを含む領域の左上に対する極座標の中心を指定します。これ"
 "で中心を設定すると、position モードで円運動ができます。"
 
 #: ../../source/atl.rst:828
@@ -1264,7 +1264,7 @@ msgid ""
 "left of the containing area. Setting the center using this allows for "
 "circular motion in align mode."
 msgstr ""
-"None を指定するか、それを含む領域の左上に対する極座標の中心を指定します。これ"
+"None を指定するか、これを含む領域の左上に対する極座標の中心を指定します。これ"
 "で中心を設定すると、align モードで円運動ができます。"
 
 #: ../../source/atl.rst:836
@@ -1362,7 +1362,7 @@ msgid ""
 "``ysize`` that are not None."
 msgstr ""
 "None または Displayable を以下の表に応じてスケールする文字列です。ここでの"
-"「方向」は None でない ``xsize`` と \\``ysize`` のうちの1つ以上を指します。"
+"「方向」は None でない ``xsize`` と ``ysize`` のうちの1つ以上を指します。"
 
 #: ../../source/atl.rst:925
 msgid "Value"
@@ -1424,7 +1424,7 @@ msgid ""
 "box of this size, while preserving aspect ratio. (Note that this means that "
 "one of the dimensions may be smaller than the size of this box.)"
 msgstr ""
-"None を指定しなければ、 指定したサイズのボックスに収まる範囲ででアスペクト比"
+"None を指定しなければ、 指定したサイズのボックスに収まる範囲でアスペクト比"
 "を維持しつつ displayable を拡大します。"
 
 #: ../../source/atl.rst:954
@@ -1496,16 +1496,16 @@ msgid ""
 "The number of times to tile the image horizontally. (This is ignored when "
 "xpan is given.)"
 msgstr ""
-"水平に画像をいくつ敷き詰めるかの回数です。　(これは xpan が指定されると無視さ"
-"れます)"
+"水平に敷き詰める画像の個数です(これは xpan が指定されると無視さ"
+"れます)。"
 
 #: ../../source/atl.rst:1015
 msgid ""
 "The number of times to tile the image vertically. (This is ignored when ypan "
 "is given.)"
 msgstr ""
-"縦に画像をいくつ敷き詰めるかの回数です。　(これは ypan が指定されると無視され"
-"ます)"
+"縦に敷き詰める画像の個数です(これは ypan が指定されると無視され"
+"ます)。"
 
 #: ../../source/atl.rst:1020
 msgid "None or Matrix or MatrixColor"
@@ -1516,7 +1516,7 @@ msgid ""
 "If not None, the value of this property is used to recolor everything that "
 "children of this transform draw. See :ref:`matrixcolor` for more information."
 msgstr ""
-"None またはこの transform の子が描画するすべてをの色を置き換えるプロパティー"
+"None またはこの transform の子が描画するすべての色を置き換えるプロパティー"
 "の値です。詳細は :ref:`matricolor` を参照してください。"
 
 #: ../../source/atl.rst:1032
@@ -1564,7 +1564,7 @@ msgstr "rotate"
 
 #: ../../source/atl.rst:1047
 msgid "position properties"
-msgstr "位置のプロパティー"
+msgstr "位置プロパティー"
 
 #: ../../source/atl.rst:1048
 msgid "matrixcolor"
