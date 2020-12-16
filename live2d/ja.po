@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-27 14:12+0900\n"
+"POT-Creation-Date: 2020-12-17 08:18+0900\n"
 "PO-Revision-Date: 2020-11-27 14:44+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -155,22 +155,182 @@ msgstr ""
 "Live2DアニメーションはLive2D Displayable と image ステートメントを使用して定"
 "義されます。"
 
-#: ../../source/live2d.rst:130
+#: ../../source/live2d.rst:73
+msgid "This displayable displays a Live2D animation."
+msgstr ""
+
+#: ../../source/live2d.rst:82
+msgid "`filename`"
+msgstr ""
+
+#: ../../source/live2d.rst:76
+msgid ""
+"This may either be a model3.json file defining a Live2D animation, or a "
+"directory containing that animation. In the latter case, the last component "
+"of the directory is taken, and has .model3.json appended to find the file."
+msgstr ""
+
+#: ../../source/live2d.rst:81
+msgid ""
+"For example, \"Resources/Hiyori\" and \"Resources/Hiyori/Hiyori.model3.json"
+"\" are equivalent."
+msgstr ""
+
+#: ../../source/live2d.rst:86
+msgid "`zoom`"
+msgstr ""
+
+#: ../../source/live2d.rst:85
+msgid ""
+"If not None, a zoom factor that is applied. This takes precedence over `top` "
+"and `base`."
+msgstr ""
+
+#: ../../source/live2d.rst:90
+msgid "`top`"
+msgstr ""
+
+#: ../../source/live2d.rst:89
+msgid ""
+"The top of the image, for sizing purposes. This is a fraction of the image, "
+"with 0.0 being the top and 1.0 the bottom."
+msgstr ""
+
+#: ../../source/live2d.rst:95
+msgid "`base`"
+msgstr ""
+
+#: ../../source/live2d.rst:93
+msgid ""
+"The bottom of the image, for sizing purposes. This is a fraction of the "
+"image, with 0.0 being the top and 1.0 being the bottom. This also becomes "
+"the default value of yanchor."
+msgstr ""
+
+#: ../../source/live2d.rst:99
+msgid "`height`"
+msgstr ""
+
+#: ../../source/live2d.rst:98
+msgid ""
+"The height that the image is scaled to. This is a fraction of the virtual "
+"height of the screen."
+msgstr ""
+
+#: ../../source/live2d.rst:102
+msgid "`loop`"
+msgstr ""
+
+#: ../../source/live2d.rst:102
+msgid "True if the final motion should be looped, False otherwise."
+msgstr ""
+
+#: ../../source/live2d.rst:106
+msgid "`alias`"
+msgstr ""
+
+#: ../../source/live2d.rst:105
+msgid "A dictionary mapping aliases to the motions or expressions they alias."
+msgstr ""
+
+#: ../../source/live2d.rst:110
+msgid "`fade`"
+msgstr ""
+
+#: ../../source/live2d.rst:109
+msgid ""
+"True if motion fading should be enabled, False if motion fading should not "
+"be enabled, and None to use the value of :var:`_live2d_fade`."
+msgstr ""
+
+#: ../../source/live2d.rst:116
+msgid "`nonexclusive`"
+msgstr ""
+
+#: ../../source/live2d.rst:113
+msgid ""
+"If not None, this should be a list of names of nonexclusive expressions. "
+"Expressions default to being exlcusive, with only one beign shown at a time. "
+"If listed here, any number of nonexclusive expressions can be shown, in "
+"addition to one exclusive expression."
+msgstr ""
+
+#: ../../source/live2d.rst:122
+msgid "`seamless`"
+msgstr ""
+
+#: ../../source/live2d.rst:119
+msgid ""
+"This determines if seamless looping should be used. Seamless looping avoids "
+"fading between loops of a single motion. This may be True to enable seamless "
+"looping all the time, False to dispable it all the time, or a set of motions "
+"to be looped."
+msgstr ""
+
+#: ../../source/live2d.rst:129
+msgid "`attribute_function`"
+msgstr ""
+
+#: ../../source/live2d.rst:125
+msgid ""
+"If not None, this is a function that takes a tuple of attributes, and "
+"returns a second tuple of attributes. This can be used to replace attributes "
+"for the purpose of display only - the attributes it returns are not used "
+"when showing an image.  It should ensure that at most one attribute "
+"corresponding to an expression is given."
+msgstr ""
+
+#: ../../source/live2d.rst:137
+msgid "`attribute_filter`"
+msgstr ""
+
+#: ../../source/live2d.rst:132
+msgid ""
+"If not None, this is a function that takes a tuple of attributes, and "
+"returns a second tuple of attributes. This is usually used to filter out "
+"nonexclusice attributes that conflict with each other. The attributes are "
+"ordered such that more recently requested attributes come first, meaning "
+"that in the case of a conflict, the first attribute should win."
+msgstr ""
+
+#: ../../source/live2d.rst:139
+msgid ""
+"The difference between `attribute_function` and `attribute_filter` is that "
+"the former is generally used to compute replacement - the presence of two "
+"attributes means one should be replaced by a third. The latter is used to "
+"resolve conflicts between attributes, like having a group of attributes "
+"where only one is valid."
+msgstr ""
+
+#: ../../source/live2d.rst:145
+msgid ""
+"Only `filename` should be given positionally, and all other arguments should "
+"be given as keyword arguments."
+msgstr ""
+
+#: ../../source/live2d.rst:148
+msgid ""
+"The values of `alias`, `fade`, `nonexclusive`, and `seamless`, "
+"`attribute_function` and `attribute_filter` are shared between all Live2D "
+"objects that share `filename`, such that these only need to be supplied once."
+msgstr ""
+
+#: ../../source/live2d.rst:151
 msgid "Live2D displayables should be assigned to an image statement::"
 msgstr "Live2D Displayableはimage ステートメントで代入するべきです。"
 
-#: ../../source/live2d.rst:134
+#: ../../source/live2d.rst:155
 msgid ""
 "It's also possible to define attributes, and this is very useful when "
 "defining different zooms and scaling factors. ::"
 msgstr ""
 "属性も定義でき、これは様々なズームとスケーリングの係数にとても便利です。 ::"
 
-#: ../../source/live2d.rst:141
+#: ../../source/live2d.rst:162
 msgid "Using Animations"
 msgstr "アニメーションの使用"
 
-#: ../../source/live2d.rst:143
+#: ../../source/live2d.rst:164
 msgid ""
 "The usual way to display a Live2D image is to display it using the show "
 "statement. In addition to any attributes added as part of the image "
@@ -180,17 +340,18 @@ msgstr ""
 "トメントの一部として追加された属性を追加して expression とモーションの名前が"
 "使用出来ます。"
 
-#: ../../source/live2d.rst:147
+#: ../../source/live2d.rst:168
 msgid "Some examples are::"
 msgstr "例 ::"
 
-#: ../../source/live2d.rst:153
+#: ../../source/live2d.rst:174
+#, fuzzy
 msgid ""
 "These use the default names found in the Cubism SDK sample names. The names "
-"of the motions and expressions are taken from the Live2D files, and if they "
-"begin with the name of the model3.json file (without directories or "
-"extensions), followed by an underscore, then that prefix is removed. (For "
-"example, \"Hiyori_m01\" becomes just m01.)"
+"of the motions and expressions are taken from the Live2D files, then forced "
+"to lower case, and if they begin with the name of the model3.json file "
+"(without directories or extensions), followed by an underscore, then that "
+"prefix is removed. (For example, \"Hiyori_Motion01\" becomes just motion01.)"
 msgstr ""
 "これらは Cubism SDKのサンプル名にあるデフォルトの名前を使用しています。モー"
 "ションとexpressionの名前は Live2D ファイルから取られており、もしそれらが"
@@ -198,7 +359,7 @@ msgstr ""
 "続くなら、接頭辞は除去されます(例えば \"Hiyori_m01\" はただの m01 になりま"
 "す)。"
 
-#: ../../source/live2d.rst:159
+#: ../../source/live2d.rst:180
 msgid ""
 "At most one exclusive expression can be used, and any number of nonexclusive "
 "expressions and motions can be given. When more than one motion is given, "
@@ -213,7 +374,7 @@ msgstr ""
 "メーションが続くモーションが再生出来るようになります。各モーションはそのモー"
 "ションに複数のエイリアスが作成されない限り一度だけ現れます。"
 
-#: ../../source/live2d.rst:165
+#: ../../source/live2d.rst:186
 msgid ""
 "There are two special attributes ``null`` and ``still``. The null attribute "
 "means that no exclusive expression file should be applied, giving the "
@@ -224,16 +385,16 @@ msgstr ""
 "expression を指定します。 ``still`` モーションはすべてのモーションを停止しま"
 "す。"
 
-#: ../../source/live2d.rst:169
+#: ../../source/live2d.rst:190
 msgid ""
 "Nonexclusive expressions persist until removed with attribute negation::"
 msgstr "非排他的な expression は属性の否定で除去されるまで保持されます。 ::"
 
-#: ../../source/live2d.rst:174
+#: ../../source/live2d.rst:195
 msgid "Scaling"
 msgstr "スケーリング"
 
-#: ../../source/live2d.rst:176
+#: ../../source/live2d.rst:197
 msgid ""
 "Many Live2D models are defined at high resolutions, at least in the internal "
 "coordinate system that the models use. To compensate for this, Ren'Py "
@@ -243,7 +404,7 @@ msgstr ""
 "れます。これを調整するため、 Ren'Py には Live2D をスケールダウンする 2つの方"
 "法があります。"
 
-#: ../../source/live2d.rst:180
+#: ../../source/live2d.rst:201
 msgid ""
 "The first is the `zoom` argument. This can directly set the zoom factor of "
 "the model. If zoom is used, then the other scaling parameters are ignored."
@@ -251,7 +412,7 @@ msgstr ""
 "1つめは `zoom` 引数です。これは直接モデルの拡大係数を設定します。zoomが使用さ"
 "れると他のスケーリングパラメーターは無視されます。"
 
-#: ../../source/live2d.rst:183
+#: ../../source/live2d.rst:204
 msgid ""
 "Otherwise, the `top`, `base`, and `height` arguments are used. The first two "
 "specify two lines, relative to the top and bottom of the image. (As "
@@ -262,7 +423,7 @@ msgstr ""
 "を画像の上端と下端からの相対指定で指定します (Ren'Py の他の場所では、 0.0 は"
 "上端で、1.0 は下端です)。これらの引数が使用されると次の2つが起きます。 :"
 
-#: ../../source/live2d.rst:188
+#: ../../source/live2d.rst:209
 msgid ""
 "The image is scaled so that the area between `top` and `base` takes up "
 "`height`, where `height` is a fraction of the screen."
@@ -270,13 +431,13 @@ msgstr ""
 "画像は `top` と `base` の間の領域が `height` になるまでスケーリングされます。"
 "ここで `height` はスクリーンの割合です。"
 
-#: ../../source/live2d.rst:190
+#: ../../source/live2d.rst:211
 msgid ""
 "The anchor is adjusted so that `base` will be placed at the bottom of the "
 "screen."
 msgstr "アンカーが調整され、 `base` はスクリーンの下端に配置されます。"
 
-#: ../../source/live2d.rst:193
+#: ../../source/live2d.rst:214
 msgid ""
 "When figuring out how to scale a Live2D animation, what I do first is adjust "
 "the `base` parameter until the right part of the animation is lined up with "
@@ -286,11 +447,11 @@ msgstr ""
 "`base` パラメータをアニメーションの正しい部分がスクリーンの下端に揃えられるま"
 "で調整します。つぎに :"
 
-#: ../../source/live2d.rst:196
+#: ../../source/live2d.rst:217
 msgid "If the image is too big, reduce `height` until it's the right size."
 msgstr "画像が大きすぎたら、 `height` を正しいサイズまで縮めます。"
 
-#: ../../source/live2d.rst:197
+#: ../../source/live2d.rst:218
 msgid ""
 "If the image is too small, increase `top` to reduce the amount of blank "
 "space above the animation."
@@ -298,11 +459,11 @@ msgstr ""
 "画像が小さすぎたら、 `top` を大きくしてアニメーション上部の空き空間を縮めま"
 "す。"
 
-#: ../../source/live2d.rst:201
+#: ../../source/live2d.rst:222
 msgid "Motion Fading"
 msgstr "Motion Fading"
 
-#: ../../source/live2d.rst:203
+#: ../../source/live2d.rst:224
 msgid ""
 "Ren'Py's support for Live2D includes motion fading. Normally, when Ren'Py "
 "changes from one animation to another, the transition is abrupt - one "
@@ -314,7 +475,7 @@ msgstr ""
 "突然の変化となり、元のアニメーションは停止し、他のものが開始します。トランジ"
 "ションが起きると、両方のアニメーションが同時に再生されます。"
 
-#: ../../source/live2d.rst:208
+#: ../../source/live2d.rst:229
 msgid ""
 "Live2D supports a different model, in which the old animation can be "
 "smoothly faded into the new one, but interpolating the parameters. Think of "
@@ -325,7 +486,7 @@ msgstr ""
 "フェードインするとともにパラメーターが補間されます。この考え方はボジションの"
 "変更と言うよりキャラクターが腕の位置を移動するようなものを考えてください。"
 
-#: ../../source/live2d.rst:213
+#: ../../source/live2d.rst:234
 msgid ""
 "Motion fading is controlled with the `fade` argument. If it's true, motion "
 "fading is used, and if it's false, then abrupt changes occur. If None, "
@@ -335,7 +496,7 @@ msgstr ""
 "ドが使用され、 False なら突発的な変化になります。 None ならモーションフェード"
 "は ``_live2d_fade`` 変数によって制御されます。 :"
 
-#: ../../source/live2d.rst:219
+#: ../../source/live2d.rst:240
 msgid ""
 "If true, Live2D animations use motion fading. If False, animations are "
 "transitioned abruptly."
@@ -343,11 +504,11 @@ msgstr ""
 "True なら、 Live2D アニメーションはモーションフェードを使用し、 False なら、"
 "アニメーションは突発的に変化します。"
 
-#: ../../source/live2d.rst:223
+#: ../../source/live2d.rst:244
 msgid "Aliasing"
 msgstr "エイリアス"
 
-#: ../../source/live2d.rst:225
+#: ../../source/live2d.rst:246
 msgid ""
 "The `alias` parameter lets you specify your own names for the motions that "
 "would otherwise be automatically defined. For example, one could do::"
@@ -355,19 +516,19 @@ msgstr ""
 "`alias` パラメーターは自動的に定義されるモーションの固有名を制作者に指定させ"
 "ます。例えば、次のコードにより ::"
 
-#: ../../source/live2d.rst:230
+#: ../../source/live2d.rst:251
 msgid "To be able to use::"
 msgstr "次が使用可能になります ::"
 
-#: ../../source/live2d.rst:234
+#: ../../source/live2d.rst:255
 msgid "Instead of::"
 msgstr "これは次のコードの代替となります。 ::"
 
-#: ../../source/live2d.rst:240
+#: ../../source/live2d.rst:261
 msgid "Loop and Image Prediction"
 msgstr "ループと画像の予測"
 
-#: ../../source/live2d.rst:242
+#: ../../source/live2d.rst:263
 msgid ""
 "Ren'Py's Live2D support can loop the final animation if the `loop` parameter "
 "is set to True. If the animation is being looped, it is important to add "
@@ -380,7 +541,7 @@ msgstr ""
 "測を処理するのに利用できる 0.2 秒以上のポーズの追加が重要です(これは画像予測"
 "とロードが他の時に終わっていれば不要です)。"
 
-#: ../../source/live2d.rst:249
+#: ../../source/live2d.rst:270
 msgid "Functions"
 msgstr "Functions"
 
