@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-27 18:52+0900\n"
-"PO-Revision-Date: 2020-11-27 19:04+0900\n"
+"POT-Creation-Date: 2021-01-01 13:29+0900\n"
+"PO-Revision-Date: 2021-01-01 13:47+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -91,10 +91,10 @@ msgstr ""
 #: ../../source/displayables.rst:30
 msgid ""
 "An image name. Any other string is interpreted as a reference to an image "
-"defined with the image statement."
+"defined with the image statement, or if none exist, to a filename."
 msgstr ""
-"画像名 他の文字列は image ステートメントで定義された画像への参照として解釈さ"
-"れます。"
+"画像名 上記以外の文字列は image ステートメントで定義された画像、ないしはファ"
+"イル名への参照として解釈されます。"
 
 #: ../../source/displayables.rst:32
 msgid ""
@@ -102,9 +102,9 @@ msgid ""
 "checked to see if it matches a filename or image name. If so, expansion "
 "stops and the matched thing is then processed as described above."
 msgstr ""
-"リスト リストが与えられると、各要素は後述するように拡張され、ファイル名や"
-"画像名にマッチするか確認されます。マッチすれば拡張は止まり、マッチしたものが"
-"上述のように処理されます。"
+"リスト リストが与えられると、各要素は後述するように拡張され、ファイル名や画像"
+"名にマッチするか確認されます。マッチすれば拡張は止まり、マッチしたものが上述"
+"のように処理されます。"
 
 #: ../../source/displayables.rst:37
 msgid ""
@@ -233,10 +233,10 @@ msgid ""
 "800x600 image, two 400x600 images, and so on.) This can be changed with the :"
 "var:`config.image_cache_size` configuration variable."
 msgstr ""
-"デフォルトでは、Ren'Py は前もって最大画像データ 8 画面分だけキャッシュしま"
-"す(画面が 800x600 なら、その画面は 800x600 の画像 1 枚、400x600 の画像 2 "
-"枚、などのデータに相当します)。 これは :var:`config.image_cache_size`  設定変"
-"数で変更できます。"
+"デフォルトでは、Ren'Py は前もって最大画像データ 8 画面分だけキャッシュします"
+"(画面が 800x600 なら、その画面は 800x600 の画像 1 枚、400x600 の画像 2 枚、な"
+"どのデータに相当します)。 これは :var:`config.image_cache_size`  設定変数で変"
+"更できます。"
 
 #: ../../source/displayables.rst:103
 msgid ""
@@ -796,13 +796,14 @@ msgstr "画像マニピュレータ"
 
 #: ../../source/displayables.rst:204
 msgid ""
-"An image manipulator is a displayable that takes an image or image "
-"manipulator, and either loads it or performs an operation on it. Image "
-"manipulators can only take images or other image manipulators as input."
+"An :ref:`image manipulator <image-manipulator>` is a displayable that takes "
+"an image or image manipulator, and either loads it or performs an operation "
+"on it. Image manipulators can only take images or other image manipulators "
+"as input."
 msgstr ""
-"画像マニピュレータは、画像や画像マニピュレータを取る displayable で、それらを"
-"読み込み、または処理します。画像マニピュレータは画像または他の画像マニピュ"
-"レータのみを入力として受け取れます。"
+":ref:`画像マニピュレータ <image-manipulator>` は、画像または画像マニピュレー"
+"タを取る displayable であり、それらを読み込み、または処理します。画像マニピュ"
+"レータは画像または他の画像マニピュレータのみを入力として受け取れます。"
 
 #: ../../source/displayables.rst:209
 msgid ""
@@ -816,12 +817,12 @@ msgstr ""
 
 #: ../../source/displayables.rst:213
 msgid ""
-"With the few exceptions listed below, the use of image manipulators is "
-"historic. A number of image manipulators that had been documented in the "
-"past should no longer be used, as they suffer from inherent problems. In any "
-"case except for `im.Data`, the :func:`Transform` displayable provides "
-"similar functionality in a more general manner, while fixing the problems, "
-"although it sometimes requires gl2 to be enabled."
+"The use of image manipulators is historic. A number of image manipulators "
+"that had been documented in the past should no longer be used, as they "
+"suffer from inherent problems. In any case except for :func:`im.Data`, the :"
+"func:`Transform` displayable provides similar functionality in a more "
+"general manner, while fixing the problems, although it sometimes requires "
+"gl2 to be enabled."
 msgstr ""
 "以下に示すいくつかの例外を除いて、画像マニピュレータの使用はレガシーなもので"
 "す。かつてドキュメントに記されていた多くの画像マニピュレータは本質的に問題が"
@@ -829,286 +830,19 @@ msgstr ""
 "`Transform` displayable はそれらの問題を解決しつつ同様な機能をより一般的な方"
 "法で提供しますが、 gl2 を有効化する必要がある場合もあります。"
 
-#: ../../source/inc/im_im:5
+#: ../../source/displayables.rst:220
 msgid ""
-"An image manipulator that takes two image manipulators, `base` and `mask`, "
-"as arguments. It replaces the alpha channel of `base` with the red channel "
-"of `mask`."
+"For the list of image manipulators, see the :ref:`image manipulator <image-"
+"manipulator>` documentation."
 msgstr ""
-"`base` と `mask` 2 つの画像マニピュレータを引数として取る画像マニピュレータで"
-"す。 `base` のアルファチャンネルを `mask` の赤いチャンネルで置き換えます。"
+"画像マニピュレータのリストは :ref:`画像マニピュレータ <image-manipulator>` を"
+"参照してください。"
 
-#: ../../source/inc/im_im:9
-msgid ""
-"This is used to provide an image's alpha channel in a second image, like "
-"having one jpeg for color data, and a second one for alpha. In some cases, "
-"two jpegs can be smaller than a single png file."
-msgstr ""
-"これは一枚目の jpeg を色データに、二枚目をアルファデータにといった具合に、二"
-"枚目の画像のアルファチャンネルを適用するのに使います。2 枚の jpeg の方が 1 枚"
-"の png ファイルよりも容量が小さいことがあります。"
-
-#: ../../source/inc/im_im:14
-msgid ""
-"Note that this takes different arguments from :func:`AlphaMask`, which uses "
-"the mask's alpha channel."
-msgstr ""
-"mask のアルファチャンネルを使用する :func:`AlphaMask` とは別の引数をとること"
-"に注意してください。"
-
-#: ../../source/inc/im_im:19
-msgid ""
-"An image manipulator that blurs the image manipulator `im` using an "
-"elliptical kernel described by `xrad` and optionally `yrad`."
-msgstr ""
-"`xrad` とオプションの `yrad` で記述される elliptical kernel を使用して画像マ"
-"ニピュレータ `im` にブラーをかける画像マニピュレータです。"
-
-#: ../../source/inc/im_im:22
-msgid ""
-"If `yrad` is None, it will take the value of `xrad` resulting in a circular "
-"kernel being used."
-msgstr ""
-"`yrad` が None なら、 `xrad` の値と同じ値になり、 circular kernel が使用され"
-"ます。"
-
-#: ../../source/inc/im_im:29
-msgid ""
-"The same effect can now be achieved with the :tpref:`blur` transform "
-"property."
-msgstr ""
-"現行では同じエフェクトが :tpref:`blur` transform プロパティーで得られます。"
-
-#: ../../source/inc/im_im:33
-msgid ""
-"An image manipulator that crops `rect`, a (x, y, width, height) tuple, out "
-"of `im`, an image manipulator."
-msgstr ""
-"画像マニピュレータ `im` から (x, y, width, height) タプル `rect` を刈りこむ画"
-"像マニピュレータです。"
-
-#: ../../source/inc/im_im:40
-msgid ""
-"The same effect can now be achieved by setting the :tpref:`crop` transform "
-"property."
-msgstr ""
-"現行では同じエフェクトが :tpref:`crop` transform プロパティーで得られます。"
-
-#: ../../source/inc/im_im:44
-msgid "This image manipulator loads an image from binary data."
-msgstr "この画像マニピュレータは、バイナリデータから画像をロードします。"
-
-#: ../../source/inc/im_im:48
-msgid "`data`"
-msgstr "`data`"
-
-#: ../../source/inc/im_im:47
-msgid ""
-"A string of bytes, giving the compressed image data in a standard file "
-"format."
-msgstr "バイナリの文字列です。標準フォーマットでの圧縮画像データを指定します。"
-
-#: ../../source/inc/im_im:52
-msgid "`filename`"
-msgstr "`filename`"
-
-#: ../../source/inc/im_im:51
-msgid ""
-"A \"filename\" associated with the image. This is used to provide a hint to "
-"Ren'Py about the format of `data`. (It's not actually loaded from disk.)"
-msgstr ""
-"画像に関連付けられる \"filename\" です。これによって Ren'Py にその `data` の"
-"フォーマットに関するヒントを与えるます(実際にディスクからロードはされませ"
-"ん)。"
-
-#: ../../source/inc/im_im:57
-msgid ""
-"An image manipulator that scales `im` (a second image manipulator) to "
-"`width` times its original `width`, and `height` times its original height. "
-"If `height` is omitted, it defaults to `width`."
-msgstr ""
-"別の画像マニピュレータ `im` の大きさを調整し、幅を `width` 倍、高さを "
-"`height` 倍にする画像マニピュレータです。 `height` を省略すると、デフォルト"
-"で `width` になります。"
-
-#: ../../source/inc/im_im:61
-msgid ""
-"If `bilinear` is true, then bilinear interpolation is used for the scaling. "
-"Otherwise, nearest neighbor interpolation is used."
-msgstr ""
-"`bilinear` が True なら、大きさの調整に双線形補間が使われます。そうでなけれ"
-"ば、近隣補間が使われます。"
-
-#: ../../source/inc/im_im:68
-msgid ""
-"The same effect can now be achieved with the :tpref:`zoom` or the :tpref:"
-"`xzoom` and :tpref:`yzoom` transform properties."
-msgstr ""
-"現行では同じエフェクトが :tpref:`zoom` や :tpref:`xzoom`, :tpref:`yzoom` "
-"transform プロパティーで得られます。"
-
-#: ../../source/inc/im_im:73
-msgid ""
-"An image manipulator that flips `im` (an image manipulator) vertically or "
-"horizontally.  `vertical` and `horizontal` control the directions in which "
-"the image is flipped."
-msgstr ""
-"`im` (画像マニピュレータ) を水平または垂直に裏返す画像マニピュレータです。 "
-"`vertical`  および `horizontal` で画像が裏返される方向を制御します。"
-
-#: ../../source/inc/im_im:81
-msgid ""
-"The same effect can now be achieved by setting :tpref:`xzoom` (for "
-"horizontal flip) or :tpref:`yzoom` (for vertical flip) to a negative value."
-msgstr ""
-"現行では同じエフェクトが :tpref:`xzoom` (水平方向のフリップ) や :tpref:"
-"`yzoom` (垂直方向のフリップ)を負の値に設定して得られます。"
-
-#: ../../source/inc/im_im:87
-msgid ""
-"An image manipulator that creates a desaturated version of the image "
-"manipulator `im`."
-msgstr ""
-"画像マニピュレータ `im` の彩度をなくしたものを作成する画像マニピュレータです。"
-
-#: ../../source/inc/im_im:90
-msgid ""
-"The same effect can now be achieved by supplying SaturationMatrix(0) to the :"
-"tpref:`matrixcolor` transform property."
-msgstr ""
-"現行では同じエフェクトが :tpref:`matrixcolor` transform プロパティーに "
-"SaturationMatrix(0) を与えて得られます。"
-
-#: ../../source/inc/im_im:95
-msgid ""
-"An image manipulator that creates a sepia-toned version of the image "
-"manipulator `im`."
-msgstr ""
-"画像マニピュレータ `im` のセピアトーン版を作成する画像マニピュレータです。"
-
-#: ../../source/inc/im_im:98
-msgid ""
-"The same effect can now be achieved by supplying SepiaMatrix() to the :tpref:"
-"`matrixcolor` transform property."
-msgstr ""
-"現行では同じエフェクトが :tpref:`matrixcolor` transform プロパティーに "
-"SepiaMatrix() を与えて得られます。"
-
-#: ../../source/inc/im_im:103
-msgid ""
-"An image manipulator that tiles the image manipulator `im`, until it is "
-"`size`."
-msgstr ""
-"画像マニピュレータ `im` を `size` になるまでタイル張りする画像マニピュレータ"
-"です。"
-
-#: ../../source/inc/im_im:108
-msgid "`size`"
-msgstr "`size`"
-
-#: ../../source/inc/im_im:107
-msgid ""
-"If not None, a (width, height) tuple. If None, this defaults to (:var:"
-"`config.screen_width`, :var:`config.screen_height`)."
-msgstr ""
-"None を指定するか、(width, height) タプルでを指定します。None であれば、デ"
-"フォルトで (:var:`config.screen_width`, :var:`config.screen_height`) になりま"
-"す。"
-
-#: ../../source/inc/im_im:110
-msgid "The same effect can now be achieved with Tile(im, size=size)"
-msgstr "現行では同じエフェクトが Tile(im, size=size) で得られます。"
-
-#: ../../source/displayables.rst:223
-msgid "im.MatrixColor"
-msgstr "im.MatrixColor"
-
-#: ../../source/displayables.rst:225
-msgid ""
-"The im.MatrixColor image manipulator is an image manipulator that uses a "
-"matrix to control how the colors of an image are transformed. The matrix "
-"used can be an im.matrix object, which encodes a 5x5 matrix in an object "
-"that supports matrix multiplication, and is returned by a series of "
-"functions. im.matrix objects may be multiplied together to yield a second "
-"object that performs both operations. For example::"
-msgstr ""
-"im.MatrixColor 画像マニピュレータは、画像の色の変換を行列で指定する画像マニ"
-"ピュレータです。使われる行列は im.matrix オブジェクトです。im.matrix オブジェ"
-"クトは 5x5 行列をオブジェクトにエンコードし、行列操作をサポートし、一連の関数"
-"によって返されます。im.matrix オブジェクトを掛け合わせて、両方の演算を行う一"
-"つのオブジェクトを得られます。例えば、このコードは ::"
-
-#: ../../source/displayables.rst:236
-msgid ""
-"first desaturates the image, and then tints it blue. When the intermediate "
-"image is not needed, multiplying matrices is far more efficient, in both "
-"time and image cache space, than using two im.MatrixColors."
-msgstr ""
-"まず画像の彩度をなくし、それから青く染めます。中間の画像が必要ないときは、im."
-"MatrixColors を二度使うよりも行列を掛け合わせましょう。そのほうが時間上も画像"
-"キャッシュ領域上も遥かに効率的です。"
-
-#: ../../source/displayables.rst:241
-msgid ""
-"The im.MatrixColor image manipulator has been replaced by Transforms and ATL "
-"transforms that specify the matrixcolor property. Each `im.matrix` generator "
-"has been given a new `Matrix` equivalent, as shown."
-msgstr ""
-"im.MatrixColor 画像マニピュレータは matrixcolor プロパティーを指定する "
-"transform と ATL transform で置き換えられました。各 `im.matrix` ジェネレー"
-"ターには新しく等価な `Matrix` が与えられました。"
-
-#: ../../source/displayables.rst:247
-msgid ""
-"The new Matrix objects multiply in the opposite order as the im.Matrixcolor "
-"ones. With X being the Matrix corresponding to im.Matrixcolor.x, ``C*B*A`` "
-"will be the Matrix corresponding to ``im.a*im.b*im.c``."
-msgstr ""
-"新しい Matrix オブジェクトは im.Matrixcolor とは逆の順序で乗算されます。 X "
-"が im.Matrixcolor.x に対応する Matrix であるとすると, ``C*B*A`` は ``im.a*im."
-"b*im.c`` に対応する Matrix となります。"
-
-#: ../../source/inc/im_matrixcolor:5
-msgid ""
-"An image operator that uses `matrix` to linearly transform the image "
-"manipulator `im`."
-msgstr ""
-"`matrix` を使って画像マニピュレータ `im` を線形に変換する画像マニピュ"
-"レータです。"
-
-#: ../../source/inc/im_matrixcolor:8
-msgid ""
-"`Matrix` should be a list, tuple, or :func:`im.matrix` that is 20 or 25 "
-"elements long. If the object has 25 elements, then elements past the 20th "
-"are ignored."
-msgstr ""
-"`Matrix` は、20 または 25 要素のリスト、タプル、または  :func:`im.matrix` に"
-"してください。オブジェクトに 25 要素あれば、20 番目よりあとは無視されます。"
-
-#: ../../source/inc/im_matrixcolor:12
-msgid ""
-"When the four components of the source color are R, G, B, and A, which range "
-"from 0.0 to 1.0; the four components of the transformed color are R', G', "
-"B', and A', with the same range; and the elements of the matrix are named::"
-msgstr ""
-"ソースカラーの 4 つの構成要素が R, G, B, および A でそれぞれの範囲が 0.0 か"
-"ら 1.0、変換された後の色の 4 つの構成要素が R', G', B', および A' で同じ範"
-"囲、そして行列の要素が次のように名付けられるとすると ::"
-
-#: ../../source/inc/im_matrixcolor:22
-msgid "the transformed colors can be computed with the formula::"
-msgstr "変換先の色は次の公式で計算されます ::"
-
-#: ../../source/inc/im_matrixcolor:29
-msgid ""
-"The components of the transformed color are clamped to the range [0.0, 1.0]."
-msgstr "変換先の色の構成要素は範囲 [0.0, 1.0] に固定されます。"
-
-#: ../../source/displayables.rst:254
+#: ../../source/displayables.rst:224
 msgid "Placeholders"
 msgstr "プレースホルダ"
 
-#: ../../source/displayables.rst:256
+#: ../../source/displayables.rst:226
 msgid ""
 "The Placeholder displayable is used to display background or character "
 "images as appropriate. Placeholders are used automatically when an undefined "
@@ -1117,8 +851,8 @@ msgid ""
 msgstr ""
 "プレースホルダ displayable を使用して適切な背景やキャラクターを表示します。開"
 "発者モードで未定義の画像が使用されるとプレースホルダが自動的に使用されます。"
-"プレースホルダ displayable はデフォルトが適切でないときには手動でも使用"
-"出来ます。"
+"プレースホルダ displayable はデフォルトが適切でないときには手動でも使用出来ま"
+"す。"
 
 #: ../../source/inc/placeholder:5
 msgid ""
@@ -1127,7 +861,7 @@ msgid ""
 msgstr ""
 "この displayable を使用して プレースホルダキャラクターや背景を表示出来ます。"
 
-#: ../../source/inc/placeholder:34
+#: ../../source/inc/placeholder:29
 msgid "`base`"
 msgstr "`base`"
 
@@ -1165,7 +899,7 @@ msgid ""
 "Displays a female-identified placeholder with the image name on her chest."
 msgstr "肩に画像の名前をいれて女性プレースホルダを表示します。"
 
-#: ../../source/inc/placeholder:34
+#: ../../source/inc/placeholder:29
 msgid "None"
 msgstr "None"
 
@@ -1178,43 +912,31 @@ msgstr ""
 "動的に使用する画像タイプを判断します。 "
 
 #: ../../source/inc/placeholder:29
-msgid ""
-"Otherwise, contacts a web service to guess gender from the character's name, "
-"and uses that. (The 'girl' placeholder is used when the service can't guess.)"
-msgstr ""
-"そうでなければウェブサービスにアクセスしてキャラクター名から性別を推測し、そ"
-"れを使用します (サービスにアクセス出来ないと 'girl' プレイスフォルダーが使"
-"用されます)。"
+msgid "Otherwise, the 'girl' placeholder is used."
+msgstr "それ以外では `girl` プレースホルダを使用します。"
 
 #: ../../source/inc/placeholder:33
-msgid ""
-"The webservice will only be contacted when :var:`config.developer` is True."
-msgstr ""
-"ウェブサービスには :var:`config.developer` が True のときのみアクセスされま"
-"す。"
-
-#: ../../source/inc/placeholder:38
 msgid "`full`"
 msgstr "`full`"
 
-#: ../../source/inc/placeholder:37
+#: ../../source/inc/placeholder:32
 msgid "If true, a full-body sprite is used. Otherwise, a 3/4 sprite is used."
 msgstr ""
 "True なら全身画像が使用されます。そうでなければ 3/4 画像が使用されます。"
 
-#: ../../source/inc/placeholder:40
+#: ../../source/inc/placeholder:35
 msgid "`flip`"
 msgstr "`flip`"
 
-#: ../../source/inc/placeholder:41
+#: ../../source/inc/placeholder:36
 msgid "If true, the sprite is flipped horizontally."
 msgstr "True なら画像は水平に反転します。"
 
-#: ../../source/displayables.rst:273
+#: ../../source/displayables.rst:243
 msgid "Displayable Prefixes"
 msgstr "Displayable Prefixes"
 
-#: ../../source/displayables.rst:275
+#: ../../source/displayables.rst:245
 msgid ""
 "Displayable prefixes make it possible for a creator to define their own "
 "displayables, and refer to them anywhere a displayable can be used in "
@@ -1229,14 +951,14 @@ msgstr ""
 "ます。 :var:`config.displayable_prefix` 変数は接頭辞をキーに関数を値としま"
 "す。その関数は引数をとり、 displayable または None を返します。"
 
-#: ../../source/displayables.rst:282
+#: ../../source/displayables.rst:252
 msgid ""
 "For example, this makes the big prefix return an image that is twice as big "
 "as the original. ::"
 msgstr ""
 "例えば、オリジナルの二倍の大きさの画像を返す big 接頭辞を作成します。 ::"
 
-#: ../../source/displayables.rst:291
+#: ../../source/displayables.rst:261
 msgid ""
 "The ``init -10`` makes sure the prefix is defined before any images that use "
 "it. The prefix can then be used to define images::"
@@ -1244,9 +966,275 @@ msgstr ""
 "``init -10`` によって接頭辞は使用するどの画像よりも前に定義され、その接頭辞を"
 "使用して画像の定義ができます ::"
 
-#: ../../source/displayables.rst:296
+#: ../../source/displayables.rst:266
 msgid "or in any other place where a displayable is required."
 msgstr "また、 displayable が要求されるどこにでも使用できます。"
+
+#~ msgid ""
+#~ "An image manipulator that takes two image manipulators, `base` and "
+#~ "`mask`, as arguments. It replaces the alpha channel of `base` with the "
+#~ "red channel of `mask`."
+#~ msgstr ""
+#~ "`base` と `mask` 2 つの画像マニピュレータを引数として取る画像マニピュレー"
+#~ "タです。 `base` のアルファチャンネルを `mask` の赤いチャンネルで置き換えま"
+#~ "す。"
+
+#~ msgid ""
+#~ "This is used to provide an image's alpha channel in a second image, like "
+#~ "having one jpeg for color data, and a second one for alpha. In some "
+#~ "cases, two jpegs can be smaller than a single png file."
+#~ msgstr ""
+#~ "これは一枚目の jpeg を色データに、二枚目をアルファデータにといった具合に、"
+#~ "二枚目の画像のアルファチャンネルを適用するのに使います。2 枚の jpeg の方"
+#~ "が 1 枚の png ファイルよりも容量が小さいことがあります。"
+
+#~ msgid ""
+#~ "Note that this takes different arguments from :func:`AlphaMask`, which "
+#~ "uses the mask's alpha channel."
+#~ msgstr ""
+#~ "mask のアルファチャンネルを使用する :func:`AlphaMask` とは別の引数をとるこ"
+#~ "とに注意してください。"
+
+#~ msgid ""
+#~ "An image manipulator that blurs the image manipulator `im` using an "
+#~ "elliptical kernel described by `xrad` and optionally `yrad`."
+#~ msgstr ""
+#~ "`xrad` とオプションの `yrad` で記述される elliptical kernel を使用して画像"
+#~ "マニピュレータ `im` にブラーをかける画像マニピュレータです。"
+
+#~ msgid ""
+#~ "If `yrad` is None, it will take the value of `xrad` resulting in a "
+#~ "circular kernel being used."
+#~ msgstr ""
+#~ "`yrad` が None なら、 `xrad` の値と同じ値になり、 circular kernel が使用さ"
+#~ "れます。"
+
+#~ msgid ""
+#~ "The same effect can now be achieved with the :tpref:`blur` transform "
+#~ "property."
+#~ msgstr ""
+#~ "現行では同じエフェクトが :tpref:`blur` transform プロパティーで得られま"
+#~ "す。"
+
+#~ msgid ""
+#~ "An image manipulator that crops `rect`, a (x, y, width, height) tuple, "
+#~ "out of `im`, an image manipulator."
+#~ msgstr ""
+#~ "画像マニピュレータ `im` から (x, y, width, height) タプル `rect` を刈りこ"
+#~ "む画像マニピュレータです。"
+
+#~ msgid ""
+#~ "The same effect can now be achieved by setting the :tpref:`crop` "
+#~ "transform property."
+#~ msgstr ""
+#~ "現行では同じエフェクトが :tpref:`crop` transform プロパティーで得られま"
+#~ "す。"
+
+#~ msgid "This image manipulator loads an image from binary data."
+#~ msgstr "この画像マニピュレータは、バイナリデータから画像をロードします。"
+
+#~ msgid "`data`"
+#~ msgstr "`data`"
+
+#~ msgid ""
+#~ "A string of bytes, giving the compressed image data in a standard file "
+#~ "format."
+#~ msgstr ""
+#~ "バイナリの文字列です。標準フォーマットでの圧縮画像データを指定します。"
+
+#~ msgid "`filename`"
+#~ msgstr "`filename`"
+
+#~ msgid ""
+#~ "A \"filename\" associated with the image. This is used to provide a hint "
+#~ "to Ren'Py about the format of `data`. (It's not actually loaded from "
+#~ "disk.)"
+#~ msgstr ""
+#~ "画像に関連付けられる \"filename\" です。これによって Ren'Py にその `data` "
+#~ "のフォーマットに関するヒントを与えるます(実際にディスクからロードはされま"
+#~ "せん)。"
+
+#~ msgid ""
+#~ "An image manipulator that scales `im` (a second image manipulator) to "
+#~ "`width` times its original `width`, and `height` times its original "
+#~ "height. If `height` is omitted, it defaults to `width`."
+#~ msgstr ""
+#~ "別の画像マニピュレータ `im` の大きさを調整し、幅を `width` 倍、高さを "
+#~ "`height` 倍にする画像マニピュレータです。 `height` を省略すると、デフォル"
+#~ "トで `width` になります。"
+
+#~ msgid ""
+#~ "If `bilinear` is true, then bilinear interpolation is used for the "
+#~ "scaling. Otherwise, nearest neighbor interpolation is used."
+#~ msgstr ""
+#~ "`bilinear` が True なら、大きさの調整に双線形補間が使われます。そうでなけ"
+#~ "れば、近隣補間が使われます。"
+
+#~ msgid ""
+#~ "The same effect can now be achieved with the :tpref:`zoom` or the :tpref:"
+#~ "`xzoom` and :tpref:`yzoom` transform properties."
+#~ msgstr ""
+#~ "現行では同じエフェクトが :tpref:`zoom` や :tpref:`xzoom`, :tpref:`yzoom` "
+#~ "transform プロパティーで得られます。"
+
+#~ msgid ""
+#~ "An image manipulator that flips `im` (an image manipulator) vertically or "
+#~ "horizontally.  `vertical` and `horizontal` control the directions in "
+#~ "which the image is flipped."
+#~ msgstr ""
+#~ "`im` (画像マニピュレータ) を水平または垂直に裏返す画像マニピュレータで"
+#~ "す。 `vertical`  および `horizontal` で画像が裏返される方向を制御します。"
+
+#~ msgid ""
+#~ "The same effect can now be achieved by setting :tpref:`xzoom` (for "
+#~ "horizontal flip) or :tpref:`yzoom` (for vertical flip) to a negative "
+#~ "value."
+#~ msgstr ""
+#~ "現行では同じエフェクトが :tpref:`xzoom` (水平方向のフリップ) や :tpref:"
+#~ "`yzoom` (垂直方向のフリップ)を負の値に設定して得られます。"
+
+#~ msgid ""
+#~ "An image manipulator that creates a desaturated version of the image "
+#~ "manipulator `im`."
+#~ msgstr ""
+#~ "画像マニピュレータ `im` の彩度をなくしたものを作成する画像マニピュレータで"
+#~ "す。"
+
+#~ msgid ""
+#~ "The same effect can now be achieved by supplying SaturationMatrix(0) to "
+#~ "the :tpref:`matrixcolor` transform property."
+#~ msgstr ""
+#~ "現行では同じエフェクトが :tpref:`matrixcolor` transform プロパティーに "
+#~ "SaturationMatrix(0) を与えて得られます。"
+
+#~ msgid ""
+#~ "An image manipulator that creates a sepia-toned version of the image "
+#~ "manipulator `im`."
+#~ msgstr ""
+#~ "画像マニピュレータ `im` のセピアトーン版を作成する画像マニピュレータです。"
+
+#~ msgid ""
+#~ "The same effect can now be achieved by supplying SepiaMatrix() to the :"
+#~ "tpref:`matrixcolor` transform property."
+#~ msgstr ""
+#~ "現行では同じエフェクトが :tpref:`matrixcolor` transform プロパティーに "
+#~ "SepiaMatrix() を与えて得られます。"
+
+#~ msgid ""
+#~ "An image manipulator that tiles the image manipulator `im`, until it is "
+#~ "`size`."
+#~ msgstr ""
+#~ "画像マニピュレータ `im` を `size` になるまでタイル張りする画像マニピュレー"
+#~ "タです。"
+
+#~ msgid "`size`"
+#~ msgstr "`size`"
+
+#~ msgid ""
+#~ "If not None, a (width, height) tuple. If None, this defaults to (:var:"
+#~ "`config.screen_width`, :var:`config.screen_height`)."
+#~ msgstr ""
+#~ "None を指定するか、(width, height) タプルでを指定します。None であれば、デ"
+#~ "フォルトで (:var:`config.screen_width`, :var:`config.screen_height`) にな"
+#~ "ります。"
+
+#~ msgid "The same effect can now be achieved with Tile(im, size=size)"
+#~ msgstr "現行では同じエフェクトが Tile(im, size=size) で得られます。"
+
+#~ msgid "im.MatrixColor"
+#~ msgstr "im.MatrixColor"
+
+#~ msgid ""
+#~ "The im.MatrixColor image manipulator is an image manipulator that uses a "
+#~ "matrix to control how the colors of an image are transformed. The matrix "
+#~ "used can be an im.matrix object, which encodes a 5x5 matrix in an object "
+#~ "that supports matrix multiplication, and is returned by a series of "
+#~ "functions. im.matrix objects may be multiplied together to yield a second "
+#~ "object that performs both operations. For example::"
+#~ msgstr ""
+#~ "im.MatrixColor 画像マニピュレータは、画像の色の変換を行列で指定する画像マ"
+#~ "ニピュレータです。使われる行列は im.matrix オブジェクトです。im.matrix オ"
+#~ "ブジェクトは 5x5 行列をオブジェクトにエンコードし、行列操作をサポートし、"
+#~ "一連の関数によって返されます。im.matrix オブジェクトを掛け合わせて、両方の"
+#~ "演算を行う一つのオブジェクトを得られます。例えば、このコードは ::"
+
+#~ msgid ""
+#~ "first desaturates the image, and then tints it blue. When the "
+#~ "intermediate image is not needed, multiplying matrices is far more "
+#~ "efficient, in both time and image cache space, than using two im."
+#~ "MatrixColors."
+#~ msgstr ""
+#~ "まず画像の彩度をなくし、それから青く染めます。中間の画像が必要ないときは、"
+#~ "im.MatrixColors を二度使うよりも行列を掛け合わせましょう。そのほうが時間上"
+#~ "も画像キャッシュ領域上も遥かに効率的です。"
+
+#~ msgid ""
+#~ "The im.MatrixColor image manipulator has been replaced by Transforms and "
+#~ "ATL transforms that specify the matrixcolor property. Each `im.matrix` "
+#~ "generator has been given a new `Matrix` equivalent, as shown."
+#~ msgstr ""
+#~ "im.MatrixColor 画像マニピュレータは matrixcolor プロパティーを指定する "
+#~ "transform と ATL transform で置き換えられました。各 `im.matrix` ジェネレー"
+#~ "ターには新しく等価な `Matrix` が与えられました。"
+
+#~ msgid ""
+#~ "The new Matrix objects multiply in the opposite order as the im."
+#~ "Matrixcolor ones. With X being the Matrix corresponding to im.Matrixcolor."
+#~ "x, ``C*B*A`` will be the Matrix corresponding to ``im.a*im.b*im.c``."
+#~ msgstr ""
+#~ "新しい Matrix オブジェクトは im.Matrixcolor とは逆の順序で乗算されます。 "
+#~ "X が im.Matrixcolor.x に対応する Matrix であるとすると, ``C*B*A`` は ``im."
+#~ "a*im.b*im.c`` に対応する Matrix となります。"
+
+#~ msgid ""
+#~ "An image operator that uses `matrix` to linearly transform the image "
+#~ "manipulator `im`."
+#~ msgstr ""
+#~ "`matrix` を使って画像マニピュレータ `im` を線形に変換する画像マニピュレー"
+#~ "タです。"
+
+#~ msgid ""
+#~ "`Matrix` should be a list, tuple, or :func:`im.matrix` that is 20 or 25 "
+#~ "elements long. If the object has 25 elements, then elements past the 20th "
+#~ "are ignored."
+#~ msgstr ""
+#~ "`Matrix` は、20 または 25 要素のリスト、タプル、または  :func:`im.matrix` "
+#~ "にしてください。オブジェクトに 25 要素あれば、20 番目よりあとは無視されま"
+#~ "す。"
+
+#~ msgid ""
+#~ "When the four components of the source color are R, G, B, and A, which "
+#~ "range from 0.0 to 1.0; the four components of the transformed color are "
+#~ "R', G', B', and A', with the same range; and the elements of the matrix "
+#~ "are named::"
+#~ msgstr ""
+#~ "ソースカラーの 4 つの構成要素が R, G, B, および A でそれぞれの範囲が 0.0 "
+#~ "から 1.0、変換された後の色の 4 つの構成要素が R', G', B', および A' で同じ"
+#~ "範囲、そして行列の要素が次のように名付けられるとすると ::"
+
+#~ msgid "the transformed colors can be computed with the formula::"
+#~ msgstr "変換先の色は次の公式で計算されます ::"
+
+#~ msgid ""
+#~ "The components of the transformed color are clamped to the range [0.0, "
+#~ "1.0]."
+#~ msgstr "変換先の色の構成要素は範囲 [0.0, 1.0] に固定されます。"
+
+#~ msgid ""
+#~ "Otherwise, contacts a web service to guess gender from the character's "
+#~ "name, and uses that. (The 'girl' placeholder is used when the service "
+#~ "can't guess.)"
+#~ msgstr ""
+#~ "そうでなければウェブサービスにアクセスしてキャラクター名から性別を推測し、"
+#~ "それを使用します (サービスにアクセス出来ないと 'girl' プレイスフォルダーが"
+#~ "使用されます)。"
+
+#~ msgid ""
+#~ "The webservice will only be contacted when :var:`config.developer` is "
+#~ "True."
+#~ msgstr ""
+#~ "ウェブサービスには :var:`config.developer` が True のときのみアクセスされ"
+#~ "ます。"
 
 #~ msgid ""
 #~ "Constructs an im.matrix object from `matrix`. im.matrix objects support "
