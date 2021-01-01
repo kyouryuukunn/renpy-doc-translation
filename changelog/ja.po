@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-17 19:58+0900\n"
-"PO-Revision-Date: 2015-06-05 12:53+0900\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2020-12-17 21:29+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,14 @@ msgid ""
 "DirectX 9.0c or 11, and mobile devices and embedded systems that support "
 "OpenGL ES 3."
 msgstr ""
+"このリリースには新しいモデルベースのレンダラーがあります。これは Ren'Py 6.10 "
+"で追加された元の OpenGL レンダラーを補強(最終的には置き換えを予定しています)"
+"し、ユーザーのディスプレイへのテキストや画像の描画を担当する Ren'Py の要素で"
+"す。このレンダラーはモダンな GPU(グラフィックカードやプロセッサー組み込みの"
+"GPU) でのハードウェアの存在をより有効活用して処理を改善し、能力を増強します。"
+"このレンダラーは OpenGL 2.2 または DirectX 9.0c, 11 をサポートするデスクトッ"
+"プコンピューターとモバイルデバイス、OpenGL ES 3をサポートする組み込みデバイス"
+"をサポートします。"
 
 #: ../../source/changelog.rst:25
 msgid ""
@@ -52,6 +60,11 @@ msgid ""
 "same way, this opens up Ren'Py to non-rectangular meshes, and eventually "
 "full three dimensional geometry."
 msgstr ""
+"モデルベースのレンダラーでの最大の変化は Ren'Py はもう 2 次元の平面内の短形画"
+"像に制限されないということです。代わりに Ren'Py は三次元空間での三角形で構成"
+"されるメッシュを使用するように変換します。既存の短形スプライトは同じ方法で表"
+"示されますが、これは Ren'Py を 非短形のメッシュ、最終的には完全な3次元ジオメ"
+"トリに解放ます。"
 
 #: ../../source/changelog.rst:32
 msgid ""
@@ -60,6 +73,10 @@ msgid ""
 "their game. Shaders are small programs that run on the GPU, that can process "
 "geometry and pixel data, to allow for all sorts of graphical effects."
 msgstr ""
+"メッシュジオメトリーに加え、モデルベースのレンダラーは Ren'Py に含まれるもの"
+"と制作者によってゲームの一部として指定されたシェーダーの両方をサポートしま"
+"す。シェーダーは GPU で動作する小さなプログラムで、ジオメトリとピクセルデータ"
+"を処理してあらゆる種類のグラフィカルエフェクトを出来るようにします。"
 
 #: ../../source/changelog.rst:38
 msgid ""
@@ -67,6 +84,9 @@ msgid ""
 "moves an expensive part of texture loading, alpha premultiplication, from "
 "the CPU to the GPU."
 msgstr ""
+"モデルベースのレンダラーでは新しい高速なテクスチャーのロードシステムを実施し"
+"ます。これはテクスチャーのロードのうち重い部分 alpha premultiplication を "
+"CPU から GPU に移します。"
 
 #: ../../source/changelog.rst:42
 msgid ""
@@ -77,6 +97,12 @@ msgid ""
 "of the aliasing artifacts. This is especially relevant when assets meant for "
 "4K monitors are used on 1080P and smaller displays."
 msgstr ""
+"モデルベースのレンダラーは GPU にロードされる各テクスチャーのミップマップも作"
+"成します。ミップマップは一連の GPU に保存されるテクスチャの軽量なものです。"
+"ミップマップを作成して使用することで、エイリアシングの出現なしに Ren'Py は画"
+"像を元のサイズの 50％ 以下に圧縮できるようになりました。これは得に 4K モニ"
+"ター用に作成されたアセットが 1080P や小さなモニターで使用されたときに差が出ま"
+"す。"
 
 #: ../../source/changelog.rst:49
 msgid ""
@@ -125,7 +151,7 @@ msgid ""
 "The model-based renderer enables new functionality in transforms, such as "
 "matrixcolor and blur."
 msgstr ""
-"モデルベースのレンダリングにより transform に matrixcolor や blur のような新"
+"モデルベースのレンダラーにより transform に matrixcolor や blur のような新"
 "機能が有効になりました。"
 
 #: ../../source/changelog.rst:72
@@ -303,11 +329,11 @@ msgstr "Windows"
 
 #: ../../source/changelog.rst:153
 msgid "A new port to 64-bit Windows Vista and later."
-msgstr ""
+msgstr "64bit の Windows Vista 以降への新しいポートです。"
 
 #: ../../source/changelog.rst:156
 msgid "Raised minimum version to Windows Vista."
-msgstr ""
+msgstr "最低バージョンを Windows Vista に上げました。"
 
 #: ../../source/changelog.rst:157
 msgid "macOS"
@@ -439,13 +465,16 @@ msgstr "iOS ブラウザーの素ポートを改善しました。"
 
 #: ../../source/changelog.rst:213 ../../source/changelog.rst:3397
 msgid "Steam"
-msgstr ""
+msgstr "Steam"
 
 #: ../../source/changelog.rst:215
 msgid ""
 "It is now possible to install Steam support from the Ren'Py launcher, by "
 "choosing \"preferences\", \"Install libraries\", \"Install Steam Support\"."
 msgstr ""
+"Ren'Py ランチャーから \"preferences\", \"Install libraries\", \"Install "
+"Steam Support\" を選択して Steam サポートをインストール出来るようになりまし"
+"た。"
 
 #: ../../source/changelog.rst:218
 msgid ""
@@ -453,6 +482,9 @@ msgid ""
 "steam_appid.txt file for you. This needs to be set by a ``define`` "
 "statement, or in a python early block."
 msgstr ""
+":var:`config.steam_appid` 変数は自動的に steam_appid.txt ファイルをあなたに作"
+"成します。これは ``define`` ステートメントを使用するか python early block で"
+"設定されるか必要があります。"
 
 #: ../../source/changelog.rst:223 ../../source/changelog.rst:459
 #: ../../source/changelog.rst:476 ../../source/changelog.rst:531
@@ -482,7 +514,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:232
 msgid "Depreciations and Removals"
-msgstr ""
+msgstr "価値低落と削減"
 
 #: ../../source/changelog.rst:234
 msgid "As described above, Ren'Py no longer support Windows XP."
