@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-27 21:52+0900\n"
-"PO-Revision-Date: 2020-12-17 21:29+0900\n"
+"PO-Revision-Date: 2021-01-31 09:05+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -36,20 +36,23 @@ msgstr "翻訳の変更"
 msgid ""
 "The behavior of the ``pause`` statement with a time has changed, so that::"
 msgstr ""
+"時間指定の ``pause`` ステートメントの動作が変更しました。次のコードは ::"
 
 #: ../../source/changelog.rst:21
 msgid "is now equivalent to::"
-msgstr ""
+msgstr "次と等価です。 ::"
 
 #: ../../source/changelog.rst:25
 msgid "and not::"
-msgstr ""
+msgstr "次とは等価ではありません。 ::"
 
 #: ../../source/changelog.rst:29
 msgid ""
 "This means that other features that expect a real pause will work during the "
 "pause statement."
 msgstr ""
+"つまり実際のポーズを期待する他の機能は pause ステートメント中でも動作するよう"
+"になりました。"
 
 #: ../../source/changelog.rst:32
 msgid ""
@@ -57,10 +60,13 @@ msgid ""
 "pause()`. this means that a pause can end even if a modal screen is "
 "displayed above it."
 msgstr ""
+"モーダルスクリーンはもう ``pause`` ステートメントや :func:`renpy.pause()` を"
+"ブロックしません。つまり pause はその上にモーダルスクリーンが表示されていても"
+"完了できます。"
 
 #: ../../source/changelog.rst:36
 msgid "Say Statement Id Clause"
-msgstr ""
+msgstr "Say ステートメントの Id 節"
 
 #: ../../source/changelog.rst:38
 msgid ""
@@ -69,12 +75,18 @@ msgid ""
 "original language, such as to fix an obvious typo, without needing to update "
 "all the translations."
 msgstr ""
+"say ステートメントの ``id`` 節を拡張し、以前の say ステートメント id を指定で"
+"きるようにしました。これはオリジナルの言語のタイプミスをその翻訳の更新をせず"
+"に修正するような、オリジナルの言語の say ステートメントを変更するのに便利で"
+"す。"
 
 #: ../../source/changelog.rst:43
 msgid ""
 "To use it, just add ``id`` to the say statement, followed by the statement "
 "id::"
 msgstr ""
+"使用には、単に ``id`` を say ステートメントに追加し、そのステートメントの id "
+"を続ければよいです。 ::"
 
 #: ../../source/changelog.rst:49 ../../source/changelog.rst:205
 msgid "Live2D"
@@ -85,14 +97,16 @@ msgid ""
 "Live2D support has has a `default_fade` argument added, which can change the "
 "default duration of fades at the start and end of motions and expressions."
 msgstr ""
+"Live2D サポートに `default_fade` 引数が追加されました。これは motion と "
+"expression の最初と最後のフェードのデフォルト時間を変更します。"
 
 #: ../../source/changelog.rst:54
 msgid "An issue with Live2D that manifested as a tuple error has been fixed."
-msgstr ""
+msgstr "Live2D でのタプルエラーを修正しました。"
 
 #: ../../source/changelog.rst:57
 msgid "Controller Blocklist"
-msgstr ""
+msgstr "コントローラーブロックリスト"
 
 #: ../../source/changelog.rst:59
 msgid ""
@@ -100,6 +114,8 @@ msgid ""
 "requires an initialization sequence to be sent to cause it to act as a "
 "Joystick, and not return incorrect data."
 msgstr ""
+"Nintendo Switch Pro コントローラーはUSBでPCに接続されると、ジョイスティックと"
+"して動作して不正確なデータを送信しないために、初期化シーケンスを要求します。"
 
 #: ../../source/changelog.rst:63
 msgid ""
@@ -108,12 +124,17 @@ msgid ""
 "computer. We've decided that this functionality is too prone to "
 "compatibility problems to include in Ren'Py."
 msgstr ""
+"Ren'Py 7.4.0 このシーケンスの送信を試みましたが、直接USBバスへアクセスする必"
+"要があり、コンピュータをクラッシュし、長時間のフリーズを起こしかねないませ"
+"ん。この機能は Ren'Py に含めるには好ましくないです。"
 
 #: ../../source/changelog.rst:68
 msgid ""
 "As a result, the Switch Pro Controller has been added to a new controller "
 "blocklist, and will not function in Ren'Py."
 msgstr ""
+"よって Switch Pro コントローラーは新しいコントローラーブロックリストに追加さ"
+"れ、Ren'Py では動作しません。"
 
 #: ../../source/changelog.rst:72 ../../source/changelog.rst:308
 msgid "macOS"
@@ -125,18 +146,24 @@ msgid ""
 "did not run on this version, so this represents a restoration of support for "
 "this version."
 msgstr ""
+"MacOS の最低サポートバージョンは 10.10(Yosemi) になりました。 Ren'Py 7.4 はこ"
+"のバージョンでは動作しないので、これはこのバージョンの再サポートとなります。"
 
 #: ../../source/changelog.rst:78
 msgid ""
 "Choosing the projects directory was broken on macOS 11.0 (Big Sur). This has "
 "been fixed."
 msgstr ""
+"MacOs 10.10( Big Sur) でプロジェクトディレクトリの選択が動作しない問題を修正"
+"しました。"
 
 #: ../../source/changelog.rst:81
 msgid ""
 "Pyobjus is now part of the macOS build of Ren'Py, in addition to the iOS "
 "build. This library makes it possible to access Cocoa APIs."
 msgstr ""
+"iOS ビルドに加えて Pyobjus が Ren'Py の macOS ビルドに組み込まれました。この"
+"ライブラリは Cocoa APIへのアクセスを可能にします。"
 
 #: ../../source/changelog.rst:85 ../../source/changelog.rst:311
 #: ../../source/changelog.rst:314 ../../source/changelog.rst:317
@@ -152,6 +179,9 @@ msgid ""
 "attempting to acquire an example of a device exhibiting the problem, and "
 "will make a new release as required."
 msgstr ""
+"Ren'Py 7.4.1 のプレリリースがSamung Galaxy S5のような古いAndroidデバイスでは"
+"では動作しない問題が報告されていました。問題の発生するデバイスのサンプルを得"
+"て、必要な新バージョンをリリースしました。"
 
 #: ../../source/changelog.rst:93 ../../source/changelog.rst:374
 #: ../../source/changelog.rst:614 ../../source/changelog.rst:631
@@ -179,18 +209,22 @@ msgid ""
 "An issue that could cause crashes on movies of certain sizes when Ren'Py was "
 "run on a computer that supports SSE3 has been fixed."
 msgstr ""
+"SSE3をサポートするコンピュータ上でRen'Pyが動作しているとき特定のサイズのムー"
+"ビーでクラッシュする可能性がある問題を修正しました。"
 
 #: ../../source/changelog.rst:103
 msgid ""
 "Movie playback now uses multiple cores for video decoding, as it did in "
 "previous versions of Ren'Py."
-msgstr ""
+msgstr "ムービー再生はビデオデコードに複数のコアを使用するようになりました。"
 
 #: ../../source/changelog.rst:106
 msgid ""
 "An issue that could cause the size of the Ren'Py window to increase when run "
 "on Windows with a non-100% DPI has been fixed."
 msgstr ""
+"Windows で 100% 以外の DPI で動作しているとウィンドウサイズが拡大される問題を"
+"修正しました。"
 
 #: ../../source/changelog.rst:109
 msgid ""
@@ -198,12 +232,14 @@ msgid ""
 "renderer is selected, such as when using the GL or ANGLE renderer on a game "
 "that requires gl2."
 msgstr ""
+"Ren'Py は GL2 を要求するゲームで GL や ANGLE を使用しているときのように未サ"
+"ポートのレンダラーが選択されている時に警告をしなくなりました。"
 
 #: ../../source/changelog.rst:113
 msgid ""
 "An issue that would, in some cases, prevent say attributes from being shown "
 "has been fixed."
-msgstr ""
+msgstr "いくつかのケースで、 say 属性が表示されない問題を修正しますた。"
 
 #: ../../source/changelog.rst:116
 #, fuzzy
@@ -218,23 +254,27 @@ msgstr ""
 msgid ""
 "The flags for compiling Python when ``rpy python 3`` is enabled have been "
 "improved."
-msgstr ""
+msgstr "``rpy python3`` が有効時の Python のコンパイルフラグは改善されました。"
 
 #: ../../source/changelog.rst:122
 msgid ""
 "An issue that prevented triple-quoted strings (like the strings used for gui."
 "about) from being evaluated correctly has been fixed."
 msgstr ""
+"gui.about で使用されるようなトリプルクウォート文字列が正常に評価されない問題"
+"を修正しました。"
 
 #: ../../source/changelog.rst:125
 msgid "Ren'Py now detects its path during certain reloads."
-msgstr ""
+msgstr "Ren'Py はリロード中にそのパスを検出するようになりました。"
 
 #: ../../source/changelog.rst:127
 msgid ""
 "Ren'Py will determine of all functions a renderer requires can be "
 "dynamically loaded, and will try different renderers if this is not the case."
 msgstr ""
+"Ren’Py はレンダラーが要求するすべての機能が動的にロード可能かを確定し、そうで"
+"なければ様々なレンダラーを試行します。"
 
 #: ../../source/changelog.rst:131
 msgid ""
@@ -242,23 +282,29 @@ msgid ""
 "participate in the rollback system, and will fire if the game rolls back to "
 "a point where the timer has not fired."
 msgstr ""
+"あるステートメント開始後に作成されたタイマーは適切にロールバックに参加するよ"
+"うになり、タイマーがまだ切れていないポイントにロールバックすると、時間切れに"
+"なるようになりました。"
 
 #: ../../source/changelog.rst:135
 msgid ""
 "Ren'Py now allows the screensaver to activate while a Ren'Py game is running."
 msgstr ""
+"Ren'Py は Ren'Py の動作中でもスクリーンセイバーを有効にするようになりました。"
 
 #: ../../source/changelog.rst:138
 msgid ""
 "A problem with dynamic variables not remaining dynamic during a rollback has "
 "been fixed."
-msgstr ""
+msgstr "動的変数がロールバック中動的にならない問題を修正しました。"
 
 #: ../../source/changelog.rst:141
 msgid ""
 "When given a size, the hbox and vbox displayables now position children in "
 "the same way those children were positioned in Ren'Py 7.4."
 msgstr ""
+"あるサイズを指定されると、hbox と vbox Displayable はその子を Ren'Py 7.4 でそ"
+"れらの子がされるのと同様に配置されるようにないました。"
 
 #: ../../source/changelog.rst:144
 msgid ""
@@ -272,16 +318,26 @@ msgid ""
 "mipmap_dissolves`, :var:`config.mipmap_movies`, or :var:`config."
 "mipmap_text`, as appropriate."
 msgstr ""
+"新しい :propref:`mipmap` スタイルプロパティーが :func:`Dissolve` と :func:"
+"`ImageDissolve`, :func:`AlphaDissolve` トランジション, :func:`AlphaMask`, :"
+"func:`Movie`, :func:`Text` displayables, 一般的なテキストに適用されます。この"
+"プロパティーはそれらの Displayable に作成されたテクスチャに mipmap を作成する"
+"か制御します。 mipmap を作成しないようにすると低速なPCでレンダリングスピード"
+"が改善するでしょうが、スケールダウン時にゆがみが生じます。指定がなければこの"
+"プロパティーのデフォルトは :var:`config.mipmap_dissolves` または :var:"
+"`config.mipmap_movies`, :var:`config.mipmap_text` に適切に従います。"
 
 #: ../../source/changelog.rst:153
 msgid ""
 "The toggle version of self-voicing preferences have been changed to provide "
 "a better selected state."
 msgstr ""
+"self-voicing preference が変更され、より適切な選択状態を提供するようになりま"
+"した。"
 
 #: ../../source/changelog.rst:156
 msgid "Lint now once again reports statistics by translation."
-msgstr ""
+msgstr "Lint が翻訳によって2回分析結果を報告するようになりました。"
 
 #: ../../source/changelog.rst:162
 msgid "7.4.0"
@@ -594,7 +650,7 @@ msgstr "最低バージョンを Windows Vista に上げました。"
 
 #: ../../source/changelog.rst:310
 msgid "macOS 10.10+"
-msgstr ""
+msgstr "macOS 10.10+"
 
 #: ../../source/changelog.rst:312
 msgid "armv7a"
@@ -790,6 +846,9 @@ msgid ""
 "controllers, and the libraries that Ren'Py uses have been compiled to "
 "support many of the more popular game controllers."
 msgstr ""
+"コントローラーのサポートが改善しました。リピートがサポートされるようになり、"
+"Ren'Pyが使用するライブラリはより多くの人気のゲームコントローラーをサポートす"
+"るようになりました。"
 
 #: ../../source/changelog.rst:405
 msgid ""
@@ -914,7 +973,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:466
 msgid "7.3.5"
-msgstr ""
+msgstr "7.3.5"
 
 #: ../../source/changelog.rst:469 ../../source/changelog.rst:494
 #: ../../source/changelog.rst:625 ../../source/changelog.rst:672
@@ -962,7 +1021,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:491
 msgid "7.3.4"
-msgstr ""
+msgstr "7.3.4"
 
 #: ../../source/changelog.rst:496
 msgid ""
