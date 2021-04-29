@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-27 21:52+0900\n"
+"POT-Creation-Date: 2021-04-30 08:08+0900\n"
 "PO-Revision-Date: 2021-01-28 05:27+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -693,7 +693,21 @@ msgstr ""
 msgid "This can be used in a string translation, using the construct::"
 msgstr "これは文字列の翻訳において、次のように使用できます。 ::"
 
-#: ../../source/translation.rst:447
+#: ../../source/inc/translate_string:5
+#, fuzzy
+msgid ""
+"Returns `s` immediately translated into `language`. If `language` is "
+"Default, uses the language set in the preferences. Strings enclosed in this "
+"function will **not** be added to the list of translatable strings. Note "
+"that the string may be double-translated, if it matches a string translation "
+"when it is displayed."
+msgstr ""
+"(2重アンダースコア) `s` を現在の言語に直ちに翻訳して返します。この関数で囲ま"
+"れた文字列は、翻訳可能な文字列のリストに追加されます。翻訳後の文字列が表示さ"
+"れる時に、文字列翻訳にマッチすると文字列が2重に翻訳されてしまうことに注意して"
+"ください。"
+
+#: ../../source/translation.rst:449
 msgid ""
 "There are two language-related variables. One is :var:`config.language`, "
 "which is used to change the default language of the game."
@@ -701,7 +715,7 @@ msgstr ""
 "言語関連の変数は2つあります。1つは :var:`config.language` で、これはゲームの"
 "既定の言語を変更するために使用されます。"
 
-#: ../../source/translation.rst:453
+#: ../../source/translation.rst:455
 msgid ""
 "The name of the current language, or None if the default language is being "
 "used. This should be treated as a read-only variable. To change the "
@@ -711,11 +725,11 @@ msgstr ""
 "用の変数として扱わなければなりません。言語を変更するには :func:`renpy."
 "change_language` を使用して下さい。"
 
-#: ../../source/translation.rst:461
+#: ../../source/translation.rst:463
 msgid "Unsanctioned Translations"
 msgstr "正式な認可を受けていない場合の翻訳"
 
-#: ../../source/translation.rst:465
+#: ../../source/translation.rst:467
 msgid ""
 "It's best to ask a game's creators for permission before creating an "
 "unsanctioned translation."
@@ -723,7 +737,7 @@ msgstr ""
 "正式に認可されていない翻訳を作成する前に、ゲーム制作者の許諾を得ることが最善"
 "です。"
 
-#: ../../source/translation.rst:468
+#: ../../source/translation.rst:470
 msgid ""
 "Ren'Py includes a small amount of support for creating translations without "
 "the active assistance of the game's creators. This support consists of the "
@@ -736,25 +750,25 @@ msgstr ""
 "る機能です。未翻訳の台詞に対して文字列翻訳を行う方法によりゲームの翻訳が可能"
 "となります。"
 
-#: ../../source/translation.rst:475
+#: ../../source/translation.rst:477
 msgid "To create a string translation file, perform the following steps:"
 msgstr "文字列翻訳ファイルの作成は、次の手順で行います:"
 
-#: ../../source/translation.rst:477
+#: ../../source/translation.rst:479
 msgid ""
 "Set the RENPY_LANGUAGE environment variable to the language you want to "
 "translate to."
 msgstr "RENPY_LANGUAGE 環境変数を翻訳先にしたい言語に設定します。"
 
-#: ../../source/translation.rst:479
+#: ../../source/translation.rst:481
 msgid "Set the RENPY_UPDATE_STRINGS environment variable to a non-empty value."
 msgstr "RENPY_UPDATE_STRINGS 環境変数を空でない値に設定します。"
 
-#: ../../source/translation.rst:481
+#: ../../source/translation.rst:483
 msgid "Play through the game until all text is seen."
 msgstr "すべてのテキストが表示されるまでゲームを動かします。"
 
-#: ../../source/translation.rst:483
+#: ../../source/translation.rst:485
 msgid ""
 "This will update the \"game/tl/language/strings.rpy\" file with a "
 "translation template that contains all of the strings in it."
@@ -762,7 +776,7 @@ msgstr ""
 "これにより \"game/tl/language/strings.rpy\" ファイルが更新され、すべてのテキ"
 "ストが含まれた翻訳の雛形となります。"
 
-#: ../../source/translation.rst:486
+#: ../../source/translation.rst:488
 msgid ""
 "If a game doesn't include support for changing the language, it may be "
 "appropriate to use an ``init python`` block to set :var:`config.language` to "
@@ -771,7 +785,7 @@ msgstr ""
 "ゲームに言語切り替え機能が含まれていない場合は、 ``init python`` ブロックで :"
 "var:`config.language` にその言語を設定するのが適切でしょう。"
 
-#: ../../source/translation.rst:490
+#: ../../source/translation.rst:492
 msgid ""
 "Along with the use of string translations for dialogue, unsanctioned "
 "translators may be interested in using the techniques described above to "

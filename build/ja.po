@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-01 09:08+0900\n"
+"POT-Creation-Date: 2021-04-30 08:08+0900\n"
 "PO-Revision-Date: 2021-01-28 05:50+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -380,22 +380,24 @@ msgid ""
 msgstr "他に分類されていないファイルは「 all 」ファイルリストに入れられます。"
 
 #: ../../source/build.rst:158
+#, fuzzy
 msgid ""
 "To exclude files from distribution, classify them as None or the empty "
-"string."
+"string. In this case, \\* and \\*\\* at the end of the pattern must match at "
+"least one character."
 msgstr ""
 "配布物からファイルを除外するためには、それらをNoneまたは空の文字列に分類しま"
 "す。"
 
-#: ../../source/build.rst:161
+#: ../../source/build.rst:162
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/build.rst:174
+#: ../../source/build.rst:175
 msgid "Documentation"
 msgstr "ドキュメント"
 
-#: ../../source/build.rst:176
+#: ../../source/build.rst:177
 msgid ""
 "Calling the build.documentation function with patterns marks files matching "
 "those patterns as documentation. Documentation files are included twice in a "
@@ -405,7 +407,7 @@ msgstr ""
 "のパターンにマッチするファイルをマークします。ドキュメントファイルは "
 "Macintosh アプリではアプリケーション内部と外部の両方に含まれます。"
 
-#: ../../source/build.rst:181
+#: ../../source/build.rst:182
 msgid ""
 "For example, to mark all txt and html files in the base directory as "
 "documentation, call::"
@@ -413,11 +415,11 @@ msgstr ""
 "例えば、ベースディレクトリーにあるすべてのテキストと html ファイルをドキュメ"
 "ントとしてマークする方法は次の通りです ::"
 
-#: ../../source/build.rst:190
+#: ../../source/build.rst:191
 msgid "Packages"
 msgstr "パッケージ"
 
-#: ../../source/build.rst:192
+#: ../../source/build.rst:193
 msgid ""
 "It's also possible to add new types of packages to the Ren'Py build process. "
 "This is done by calling the build.package function with a package name, "
@@ -427,7 +429,7 @@ msgstr ""
 "の名前と含めるべきファイルリストの文字列を引数に build. package 関数を呼び出"
 "して行います。"
 
-#: ../../source/build.rst:197
+#: ../../source/build.rst:198
 msgid ""
 "Say we wanted to build a normal version of our game, and one containing "
 "bonus material. We could classify the bonus files in to a \"bonus\" file "
@@ -437,7 +439,7 @@ msgstr ""
 "ファイルを「 bonus 」ファイルリストに分類して、次のように all-premium パッ"
 "ケージを宣言します。 ::"
 
-#: ../../source/build.rst:203
+#: ../../source/build.rst:204
 msgid ""
 "Supported package types are \"zip\" and \"tar.bz2\" to generate files in "
 "those formats, and \"directory\" to create a directory filled with files."
@@ -445,11 +447,11 @@ msgstr ""
 "サポートされるタイプは対応するフォーマットで生成される \"zip\" と \"tar."
 "bz2\" 、ファイルを含むディレクトリーを作成する \"directory\" です。"
 
-#: ../../source/build.rst:208
+#: ../../source/build.rst:209
 msgid "Archives"
 msgstr "アーカイブ"
 
-#: ../../source/build.rst:210
+#: ../../source/build.rst:211
 msgid ""
 "Ren'Py supports combining files into a simple archive format. While not very "
 "secure, this protects files from casual copying."
@@ -457,7 +459,7 @@ msgstr ""
 "Ren'Py は複数ファイルのひとつのアーカイブへの統合をサポートしています。それほ"
 "ど安全ではありませんが、これは単純なコピーからファイルを守ります。"
 
-#: ../../source/build.rst:213
+#: ../../source/build.rst:214
 msgid ""
 "By default, all files classified into the \"archive\" file list will be "
 "placed in an archive.rpa archive, which is included in the all file list."
@@ -465,7 +467,7 @@ msgstr ""
 "デフォルトでは「 archive 」ファイルリストに分類されたすべてのファイルは、 "
 "all ファイルリストに含まれる archive.rpa アーカイブに置かれます。"
 
-#: ../../source/build.rst:217
+#: ../../source/build.rst:218
 msgid ""
 "By calling build.archive, it's possible to declare a new archives and the "
 "file lists they will be included in. (It's rare to use anything but the all "
@@ -476,7 +478,7 @@ msgstr ""
 "を宣言できます( all ファイルリスト以外を使うことはめったにありませんが)。ある"
 "アーカイブを使って、ファイルをその名前のリストに分類します。"
 
-#: ../../source/build.rst:222
+#: ../../source/build.rst:223
 msgid ""
 "For example, the following will archive images in images.rpa, and game "
 "scripts into scripts.rpa::"
@@ -484,11 +486,11 @@ msgstr ""
 "例えば、以下のコードは画像を image.rpa に、スクリプトを script.rpa に保存しま"
 "す ::"
 
-#: ../../source/build.rst:237
+#: ../../source/build.rst:238
 msgid "If an archive file is empty, it will not be built."
 msgstr "空のアーカイブはビルドされません。"
 
-#: ../../source/build.rst:239
+#: ../../source/build.rst:240
 msgid ""
 "Please think twice about archiving your game. Keeping files open will help "
 "others run your game on future platforms – platforms that may not exist "
@@ -498,11 +500,67 @@ msgstr ""
 "ファイルをオープンなままにしておけばあなたの頃にはなかった将来のプラット"
 "フォームで、誰かがゲームを実行する助けになるでしょう。"
 
-#: ../../source/build.rst:244
+#: ../../source/build.rst:247
+msgid "The Old-game Directory"
+msgstr ""
+
+#: ../../source/build.rst:249
+msgid ""
+"When making multiple releases, like when a game is distributed through early "
+"access or platforms like Patreon, it's necessary to keep the old .rpyc files "
+"around. The .rpyc files contain information that is necessary to ensure that "
+"saves can be loaded, and omitting these files can cause problems."
+msgstr ""
+
+#: ../../source/build.rst:255
+msgid ""
+"At the same time, Ren'Py  will update the .rpyc files in the game directory "
+"when these files are changed, making the files unsuitable for inclusion in "
+"version control."
+msgstr ""
+
+#: ../../source/build.rst:259
+msgid ""
+"To solve this problem, Ren'Py allows you to place the .rpyc files from a "
+"previous distribution into the old-game directory, which is alongside the "
+"game directory. The directory structure of old-game/ should match the "
+"directory structure of game/. For example, game/scripts/day1.rpyc should be "
+"moved to old-game/scripts/day1.rpyc. Files in old-game that are not .rpyc "
+"files are ignored."
+msgstr ""
+
+#: ../../source/build.rst:266
+msgid ""
+"The advantage of using old-game is that the old-game .rpyc files can be "
+"checked in, and that Ren'Py will always start from a known source when "
+"generating .rpyc files. While this might not be necessary for a single-"
+"developer game with minor changes, old-game is useful for large multiple "
+"developer games."
+msgstr ""
+
+#: ../../source/build.rst:272
+msgid ""
+"More information about how .rpyc files help with loading saves into changed "
+"games can be found at:"
+msgstr ""
+
+#: ../../source/build.rst:275
+msgid ""
+"`Under the hood: .rpyc files <https://www.patreon.com/posts/under-hood-"
+"rpyc-23035810>`_"
+msgstr ""
+
+#: ../../source/build.rst:276
+msgid ""
+"`Ren'Py developer update: February 20201 <https://www.patreon.com/posts/"
+"renpy-developer-48146908>`_"
+msgstr ""
+
+#: ../../source/build.rst:280
 msgid "Requirements"
 msgstr "Requirements"
 
-#: ../../source/build.rst:246
+#: ../../source/build.rst:282
 msgid ""
 "Some stores ask the requirements for Ren'Py applications to run. While this "
 "varies from game to game, here's a set of minimums for a generic visual "
@@ -511,52 +569,52 @@ msgstr ""
 "ストアによっては Ren'Py アプリの必要環境を尋ねることがあります。これはゲーム"
 "によりますが、こちらが一般的なビジュアルノベルの最低環境となります。"
 
-#: ../../source/build.rst:250
+#: ../../source/build.rst:286
 msgid "**Windows**"
 msgstr "**Windows**"
 
-#: ../../source/build.rst:252
+#: ../../source/build.rst:288
 msgid "Version: Windows Vista or higher."
 msgstr "Version: Windows Vista 以上"
 
-#: ../../source/build.rst:253 ../../source/build.rst:267
+#: ../../source/build.rst:289 ../../source/build.rst:303
 msgid "CPU: 2.0 GHz Core 2 Duo"
 msgstr "CPU: 2.0 GHz Core 2 Duo"
 
-#: ../../source/build.rst:254 ../../source/build.rst:261
-#: ../../source/build.rst:268
+#: ../../source/build.rst:290 ../../source/build.rst:297
+#: ../../source/build.rst:304
 msgid "RAM: 2.0 GB"
 msgstr "RAM: 2.0 GB"
 
-#: ../../source/build.rst:255
+#: ../../source/build.rst:291
 msgid "Graphics: OpenGL 2.0 or DirectX 9.0c"
 msgstr "Graphics: OpenGL 2.0 または DirectX 9.0c"
 
-#: ../../source/build.rst:257
+#: ../../source/build.rst:293
 msgid "**macOS**"
 msgstr "**macOS**"
 
-#: ../../source/build.rst:259
+#: ../../source/build.rst:295
 msgid "Version: 10.10+"
 msgstr "Version: 10.10+"
 
-#: ../../source/build.rst:260
+#: ../../source/build.rst:296
 msgid "CPU: 2.0 GHz Core 2 Duo (64 bit only)"
 msgstr "CPU: 2.0 GHz Core 2 Duo (64 bit only)"
 
-#: ../../source/build.rst:262 ../../source/build.rst:269
+#: ../../source/build.rst:298 ../../source/build.rst:305
 msgid "Graphics: OpenGL 2.0"
 msgstr "Graphics: OpenGL 2.0"
 
-#: ../../source/build.rst:264
+#: ../../source/build.rst:300
 msgid "**Linux**"
 msgstr "**Linux**"
 
-#: ../../source/build.rst:266
+#: ../../source/build.rst:302
 msgid "Version: Ubuntu 16.04+"
 msgstr "Version: Ubuntu 16.04+"
 
-#: ../../source/build.rst:271
+#: ../../source/build.rst:307
 msgid ""
 "The amount of disk space required is entirely determined by the assets in "
 "your game, and the amount of CPU and RAM needed may also vary."
@@ -564,7 +622,7 @@ msgstr ""
 "ディスクスペースの要求量は完全にあなたのゲームの容量次第であり、CPU と RAM の"
 "要求もまたゲームにより変動します。"
 
-#: ../../source/build.rst:276
+#: ../../source/build.rst:312
 msgid "Build Functions"
 msgstr "ビルド関数"
 
@@ -735,15 +793,15 @@ msgstr "`hidden`"
 msgid "If true, this will be hidden from the list of packages in the launcher."
 msgstr "True ならこれはランチャーのパッケージリストでは非表示になります。"
 
-#: ../../source/build.rst:281
+#: ../../source/build.rst:317
 msgid "Advanced Configuration"
 msgstr "高度な設定"
 
-#: ../../source/build.rst:283
+#: ../../source/build.rst:319
 msgid "The following variables provide further control of the build process:"
 msgstr "以下の変数はビルドプロセスのさらなる機能を提供します。"
 
-#: ../../source/build.rst:288
+#: ../../source/build.rst:324
 msgid ""
 "Allows Ren'Py to run on the integrated GPU on platforms that have both "
 "integrated and discrete GPUs. Right now, this is only supported on Mac OS X."
@@ -751,7 +809,7 @@ msgstr ""
 "組み込みと外付けの GPU が両方あるプラットフォームでは、組み込みの GPU で起動"
 "するようにします。現在これは Mac OS X でのみサポートされます。"
 
-#: ../../source/build.rst:294
+#: ../../source/build.rst:330
 msgid ""
 "Gives the path to the directory the archive files will be placed in. This "
 "may be an absolute or a relative path. A relative path is considered to be "
@@ -760,37 +818,37 @@ msgstr ""
 "アーカイブファイルが出力されるディレクトリーへのパスを与えます。これは絶対ま"
 "たは相対パスです。相対パスはプロジェクトのディレクトリーから始まります。"
 
-#: ../../source/build.rst:298
+#: ../../source/build.rst:334
 msgid ""
 "The following values are substituted in using Python's ``str.format`` "
 "function."
 msgstr "以下の値は  ``str.format``  関数を使用して置換します。"
 
-#: ../../source/build.rst:301
+#: ../../source/build.rst:337
 msgid "``{directory_name}``"
 msgstr "``{directory_name}``"
 
-#: ../../source/build.rst:301
+#: ../../source/build.rst:337
 msgid "The value of build.directory_name."
 msgstr "build.directory_name の値です。"
 
-#: ../../source/build.rst:304
+#: ../../source/build.rst:340
 msgid "``{executable_name}``"
 msgstr "``{executable_name}``"
 
-#: ../../source/build.rst:304
+#: ../../source/build.rst:340
 msgid "The value of build.executable_name."
 msgstr "build.executable_name の値です。"
 
-#: ../../source/build.rst:306
+#: ../../source/build.rst:342
 msgid "``{version}``"
 msgstr "``{version}``"
 
-#: ../../source/build.rst:307
+#: ../../source/build.rst:343
 msgid "The value of build.version."
 msgstr "build.version の値です。"
 
-#: ../../source/build.rst:311
+#: ../../source/build.rst:347
 msgid ""
 "If True, and icon.ico exists, the icon of the 32-bit Windows executable will "
 "be changed. If False, the icon will not be changed. Setting this to False "
@@ -798,7 +856,7 @@ msgid ""
 "game."
 msgstr ""
 
-#: ../../source/build.rst:318
+#: ../../source/build.rst:354
 msgid ""
 "If true, empty directories (including directories left empty by file "
 "archiving) will be removed from generated packages. If false, empty "
@@ -808,13 +866,13 @@ msgstr ""
 "を含む) が生成されたパッケージから除外され、 False の場合は空のディレクトリー"
 "も含まれます。"
 
-#: ../../source/build.rst:323
+#: ../../source/build.rst:359
 msgid ""
 "If true, files necessary to run on 32-bit x86 processors will be included in "
 "the Linux and Mac builds. If False, these files will not be included."
 msgstr ""
 
-#: ../../source/build.rst:328
+#: ../../source/build.rst:364
 msgid ""
 "When true, files required to support themes that existed before Ren'Py "
 "6.99.9 will be included in the build. When false, such files are excluded."
@@ -822,11 +880,11 @@ msgstr ""
 "True なら、Ren'Py 6.99.9以前に存在していたテーマのサポートに必要なファイルが"
 "ビルドに含まれます。False ならそのようなファイルは除外されます。"
 
-#: ../../source/build.rst:331
+#: ../../source/build.rst:367
 msgid "This is set to False when :func:`gui.init` is called."
 msgstr ":func:`gui.init` が呼び出されるとこれは False に設定されます。"
 
-#: ../../source/build.rst:335
+#: ../../source/build.rst:371
 msgid ""
 "Setting this allows the Ren'Py launcher to upload your project to itch.io. "
 "This should be set to the name of a project registered with itch. (For "
@@ -836,7 +894,7 @@ msgstr ""
 "ロードできるようになります。これは itch で登録されたプロジェクトの名前に設定"
 "するべきです (例 \"renpytom/the-question\")。"
 
-#: ../../source/build.rst:339
+#: ../../source/build.rst:375
 msgid ""
 "Once this is set, after the distributions have been built, you can click "
 "\"Build distributions\", \"Upload to itch.io\" to cause an upload to occur."
@@ -844,7 +902,7 @@ msgstr ""
 "いったんこれが設定されると、配布物の生成後、 \"Build distributions\", "
 "\"Upload to itch.io\" をクリックしてアップロードできます。"
 
-#: ../../source/build.rst:345
+#: ../../source/build.rst:381
 msgid ""
 "This is a dictionary mapping strings to strings, that can be used to add or "
 "override keys in the mac's Info.plist file."

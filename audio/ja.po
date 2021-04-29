@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-01 09:08+0900\n"
+"POT-Creation-Date: 2021-04-30 08:08+0900\n"
 "PO-Revision-Date: 2020-11-04 20:59+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -208,10 +208,11 @@ msgstr ""
 "ンネルが現在再生中のファイルを終了してから再生されます。"
 
 #: ../../source/audio.rst:105
+#, fuzzy
 msgid ""
 "The queue statement begins with keyword ``queue``, followed by the the name "
-"of a channel to play sound on. It optionally takes the ``loop`` and "
-"``noloop`` clauses. ::"
+"of a channel to play sound on. It optionally takes the ``fadein``, ``loop`` "
+"and ``noloop`` clauses. ::"
 msgstr ""
 "queue ステートメントはキーワード ``queue`` で始まり、再生するチャンネルの名前"
 "が続きます。任意で ``loop`` 、 ``noloop`` 節を取ります。 ::"
@@ -315,10 +316,35 @@ msgid ""
 msgstr "song.opus 全体を一回再生した後、 6.333 秒からループします。"
 
 #: ../../source/audio.rst:169
+msgid "Sync Start Position"
+msgstr ""
+
+#: ../../source/audio.rst:171
+msgid ""
+"The position in the file at which the clip begins playing can also be synced "
+"to another channel with a currently-playing track using a filename like "
+"\"<sync channelname>track.opus\", where channelname is the name of the "
+"channel, which could be music, sound, or any other registered channels."
+msgstr ""
+
+#: ../../source/audio.rst:176
+msgid ""
+"This can be used to sync multi-layered looping tracks together. For example::"
+msgstr ""
+
+#: ../../source/audio.rst:180
+msgid ""
+"Will play layer_2.opus with the start time synced to the current track in "
+"channel music_1 in the first iteration, before playing the whole track in "
+"subsequent iterations. (By default, the layer_2.opus start time will remain "
+"modified even in subsequent iterations in the loop.)"
+msgstr ""
+
+#: ../../source/audio.rst:188
 msgid "Playing Silence"
 msgstr "Playing Silence"
 
-#: ../../source/audio.rst:171
+#: ../../source/audio.rst:190
 msgid ""
 "A specified duration of silence can played using a filename like \"<silence "
 "3.0>\", where 3.0 is the number of seconds of silence that is desired. This "
@@ -328,15 +354,15 @@ msgstr ""
 "て、指定された時間無音を再生できます。これにより再生位置を遅延できます。 "
 "例 ::"
 
-#: ../../source/audio.rst:177
+#: ../../source/audio.rst:196
 msgid "Will play silence for half a second, and then an explosion sound."
 msgstr "0.5 秒の無音の後、爆発音を再生します。"
 
-#: ../../source/audio.rst:183
+#: ../../source/audio.rst:202
 msgid "Audio Namespace"
 msgstr "Audio 名前空間"
 
-#: ../../source/audio.rst:185
+#: ../../source/audio.rst:204
 msgid ""
 "The ``play`` and ``queue`` statements evaluate their arguments in the audio "
 "namespace. This means it is possible to use the define statement to provide "
@@ -346,15 +372,15 @@ msgstr ""
 "これにより define ステートメントでオーディオファイルにエイリアスを定義出来ま"
 "す。"
 
-#: ../../source/audio.rst:189
+#: ../../source/audio.rst:208
 msgid "For example, one can write::"
 msgstr "例えばこのように書いて ::"
 
-#: ../../source/audio.rst:193
+#: ../../source/audio.rst:212
 msgid "and then use::"
 msgstr "このように使用します。 ::"
 
-#: ../../source/audio.rst:197
+#: ../../source/audio.rst:216
 msgid ""
 "Ren'Py will also automatically place sound files in the audio name face, if "
 "found in the ``game/audio`` directory. Files in this directory with a "
@@ -367,7 +393,7 @@ msgstr ""
 "ル(現在のところ .wav, .mp2, .mp3, .ogg, .opus) は拡張子を除去し、残りのファイ"
 "ル名を小文字にして audio 名前空間に配置します。"
 
-#: ../../source/audio.rst:203
+#: ../../source/audio.rst:222
 msgid ""
 "Note that just because a file is placed into the audio namespace, that "
 "doesn't mean it can be used. So while you could play a file named "
@@ -376,7 +402,7 @@ msgstr ""
 "ファイルが audio 名前空間に配置されるだけで、使用可能であるとは意味しませ"
 "ん。 以下の記述で \"opening_song.ogg\"  を再生可能な一方、 ::"
 
-#: ../../source/audio.rst:209
+#: ../../source/audio.rst:228
 msgid ""
 "Some filenames can't be accessed this way, as their names are not "
 "expressable as Python variables. For example, \"my song.mp3\", \"8track.opus"
@@ -386,7 +412,7 @@ msgstr ""
 "イルもあります。例えば、 \"my song.mp3\", \"8track.opus\",  \"this-is-a-song."
 "ogg\"  は動作しません。"
 
-#: ../../source/audio.rst:215
+#: ../../source/audio.rst:234
 msgid "Functions"
 msgstr "関数"
 
@@ -847,11 +873,11 @@ msgstr "これは最後にキューされたファイルを None に設定しま
 msgid "The channel to stop the sound on."
 msgstr "再生を停止するチャンネル"
 
-#: ../../source/audio.rst:221
+#: ../../source/audio.rst:240
 msgid "Sound Functions"
 msgstr "サウンドの関数"
 
-#: ../../source/audio.rst:223
+#: ../../source/audio.rst:242
 msgid ""
 "Most ``renpy.music`` functions have aliases in ``renpy.sound``. These "
 "functions are similar, except they default to the sound channel rather than "
