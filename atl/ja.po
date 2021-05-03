@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-30 08:08+0900\n"
-"PO-Revision-Date: 2021-01-28 05:50+0900\n"
+"PO-Revision-Date: 2021-05-01 14:57+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -651,6 +651,8 @@ msgid ""
 "object in the first argument, and may be called at any time with any value "
 "to enable prediction."
 msgstr ""
+"この関数は第一引数の Transform オブジェクトの変更の他には副作用を持つべきでは"
+"なく、予測のためにいつどの数値で呼び出されるか分かりません。"
 
 #: ../../source/atl.rst:552
 msgid "Warpers"
@@ -1442,7 +1444,6 @@ msgstr ""
 "た :tpref:`size` の使用を検討してください。"
 
 #: ../../source/atl.rst:965
-#, fuzzy
 msgid "If True, causes the child to be placed using subpixel positioning."
 msgstr ""
 "True の場合、ピクセル以下の位置調整を利用してスクリーンに描画されます。"
@@ -1455,6 +1456,10 @@ msgid ""
 "transparent borders in the directions it might be moved in, if those edges "
 "are visible on the screen."
 msgstr ""
+"Subpixel によるポジションニングは複数のピクセルに渡って描画され、特定の1つの"
+"ピクセルには描画されない(透明度を含む)色に影響を与えます。subpixel ポジション"
+"は (通常) 移動と組み合わせて使用され、その画像はその端が画面の可視領域にあれ"
+"ば移動方向に透明な境界をもつようになります。"
 
 #: ../../source/atl.rst:973
 msgid ""
@@ -1463,6 +1468,9 @@ msgid ""
 "necessary when panning over a background that extends outside the visible "
 "area, as the edges will not be seen."
 msgstr ""
+"例えばあるキャラクターの立ち絵が水平に移動しているなら、左右に透明な境界線を"
+"持つことになります。背景に対するパンニングでは可視領域を拡張して端が見えない"
+"のでこれらは起こりません。"
 
 #: ../../source/atl.rst:983
 msgid ""
@@ -1548,7 +1556,6 @@ msgstr ""
 "化する必要があります。"
 
 #: ../../source/atl.rst:1048
-#, fuzzy
 msgid ""
 "This blurs the child of this image by `blur` pixels, up to the border of the "
 "displayable. The precise details of the blurring may change between Ren'Py "
