@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-18 23:14+0900\n"
+"POT-Creation-Date: 2021-05-03 21:04+0900\n"
 "PO-Revision-Date: 2020-01-03 03:03+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/gui_advanced.rst:8
+#: ../../source/gui_advanced.rst:5
 msgid "Advanced GUI"
 msgstr "Advanced GUI"
 
-#: ../../source/gui_advanced.rst:10
+#: ../../source/gui_advanced.rst:7
 msgid "This section has some odds and ends about advanced usage of the GUI."
 msgstr "この章では gui の高度な使用についての雑多な事柄を扱います。"
 
-#: ../../source/gui_advanced.rst:14
+#: ../../source/gui_advanced.rst:11
 msgid "Python Functions"
 msgstr "Python 関数"
 
-#: ../../source/gui_advanced.rst:16
+#: ../../source/gui_advanced.rst:13
 msgid "There are some Python functions that support the GUI."
 msgstr "GUI をサポートするPython関数がいくつかあります。"
 
@@ -244,11 +244,11 @@ msgstr ""
 "用可能です。例えば gui.kind_text_outlines は outline スタイルプロパティーを設"
 "定し、 gui.kind_text_kerning はカーニングを設定します。"
 
-#: ../../source/gui_advanced.rst:21
+#: ../../source/gui_advanced.rst:18
 msgid "More on gui.rebuild"
 msgstr "guit.rebuild"
 
-#: ../../source/gui_advanced.rst:23
+#: ../../source/gui_advanced.rst:20
 msgid ""
 "The gui.rebuild function is a rather slow function that updates the GUI to "
 "reflect the current state of Ren'Py. What it does is:"
@@ -256,7 +256,7 @@ msgstr ""
 "gui.rebuild 関数は GUI を更新して Ren'Py の 現在の状態を反映するやや遅い関数"
 "です。これは以下のことをします。 :"
 
-#: ../../source/gui_advanced.rst:26
+#: ../../source/gui_advanced.rst:23
 msgid ""
 "Re-runs all of the ``define`` statements that define variables in the gui "
 "namespace."
@@ -264,20 +264,20 @@ msgstr ""
 "gui 名前空間で変数を定義するすべての ``define`` ステートメントを再実行しま"
 "す。"
 
-#: ../../source/gui_advanced.rst:28
+#: ../../source/gui_advanced.rst:25
 msgid ""
 "Re-runs all of the ``translate python`` blocks for the current language."
 msgstr "現在の言語ですべての ``translate python`` ブロックを再実行します。"
 
-#: ../../source/gui_advanced.rst:29
+#: ../../source/gui_advanced.rst:26
 msgid "Re-runs all of the ``style`` statements."
 msgstr "すべての  ``style`` ステートメントを再実行します。"
 
-#: ../../source/gui_advanced.rst:30
+#: ../../source/gui_advanced.rst:27
 msgid "Rebuilds all of the styles in the system."
 msgstr "システムのすべてのスタイルを再構築します。"
 
-#: ../../source/gui_advanced.rst:32
+#: ../../source/gui_advanced.rst:29
 msgid ""
 "Note that ``init python`` blocks are not re-run on ``gui.rebuild``. In this "
 "way, ::"
@@ -285,19 +285,19 @@ msgstr ""
 "``init python`` ブロックは ``gui.rebuild`` で再実行されないことに注意してくだ"
 "さい。このため ::"
 
-#: ../../source/gui_advanced.rst:36
+#: ../../source/gui_advanced.rst:33
 msgid "and::"
 msgstr "と ::"
 
-#: ../../source/gui_advanced.rst:41
+#: ../../source/gui_advanced.rst:38
 msgid "are different."
 msgstr "は異なります。"
 
-#: ../../source/gui_advanced.rst:44
+#: ../../source/gui_advanced.rst:41
 msgid "The default statement, the gui namespace, and gui.rebuild"
 msgstr "default ステートメント, gui 名前空間, gui.rebuild"
 
-#: ../../source/gui_advanced.rst:46
+#: ../../source/gui_advanced.rst:43
 msgid ""
 "The ``default`` statement has changed semantics when applied to the ``gui`` "
 "namespace. When applied to a variable in the ``gui`` namespace, the default "
@@ -309,11 +309,11 @@ msgstr ""
 "define ステートメントが挟まれ、default ステートメントは :func:`gui.rebulid` "
 "が呼び出されても再実行されません。"
 
-#: ../../source/gui_advanced.rst:51
+#: ../../source/gui_advanced.rst:48
 msgid "What this means is that if we have::"
 msgstr "つまり、以下のコードがあるとすると ::"
 
-#: ../../source/gui_advanced.rst:56
+#: ../../source/gui_advanced.rst:53
 msgid ""
 "The first time the game is run, the accent color will be set, and then the "
 "hover color will be set to the accent color. (Both are then used to set "
@@ -322,11 +322,11 @@ msgstr ""
 "ゲームの最初の起動時、accent color が設定され、hover color は accent color に"
 "設定されます(共に様々なスタイルの色に使用されます)。"
 
-#: ../../source/gui_advanced.rst:60
+#: ../../source/gui_advanced.rst:57
 msgid "However, if as part of the game script, we have::"
 msgstr "しかし、ゲームスクリプトとして以下のソースがあると ::"
 
-#: ../../source/gui_advanced.rst:65
+#: ../../source/gui_advanced.rst:62
 msgid ""
 "Ren'Py will only re-run the define, so it will set the hover color to the "
 "accent color, and then update the styles. This makes it possible to have "
@@ -335,17 +335,17 @@ msgstr ""
 "Ren'Py は define のみを再実行し、 hover color を accent color に設定し、スタ"
 "イルを更新します。これにより、ゲーム中に gui の一部を変更可能になります。"
 
-#: ../../source/gui_advanced.rst:72
+#: ../../source/gui_advanced.rst:69
 msgid "GUI Preferences"
 msgstr "GUI Preferences"
 
-#: ../../source/gui_advanced.rst:74
+#: ../../source/gui_advanced.rst:71
 msgid ""
 "Ren'Py also supports a GUI preference system, consisting of a single "
 "function and a pair of actions."
 msgstr ""
-"Ren'Py は1つの関数とペアのアクションから成る GUI Preference システムもサポート"
-"しています。"
+"Ren'Py は1つの関数とペアのアクションから成る GUI Preference システムもサポー"
+"トしています。"
 
 #: ../../source/inc/gui_preference:5
 msgid "This Action sets the gui preference with `name` to `value`."
@@ -398,11 +398,11 @@ msgstr ""
 "指定されると、この値はその gui preference のデフォルトの値になります。デフォ"
 "ルト値はその preference が最初に使用される時に指定されるべきです。"
 
-#: ../../source/gui_advanced.rst:80
+#: ../../source/gui_advanced.rst:77
 msgid "Example"
 msgstr "例"
 
-#: ../../source/gui_advanced.rst:82
+#: ../../source/gui_advanced.rst:79
 msgid ""
 "The GUI preference system is used by calling :func:`gui.preference` when "
 "defining variables, with the name of the preference and the default value. "
@@ -412,7 +412,7 @@ msgstr ""
 "に :func:`gui.preference` を呼び出して使用します。例えば、 gui preferences を"
 "使用してテキストのフォントとサイズを定義できます。 ::"
 
-#: ../../source/gui_advanced.rst:90
+#: ../../source/gui_advanced.rst:87
 msgid ""
 "It's then possible to use the :class:`gui.SetPreference` and :class:`gui."
 "TogglePreference` actions to add change the values of the preferences. "

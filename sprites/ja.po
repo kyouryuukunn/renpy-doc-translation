@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-18 23:14+0900\n"
+"POT-Creation-Date: 2021-05-03 21:04+0900\n"
 "PO-Revision-Date: 2014-06-14 07:09+0000\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
 "X-Generator: Launchpad (build 17058)\n"
 
-#: ../../source/sprites.rst:7
+#: ../../source/sprites.rst:4
 msgid "Sprites"
 msgstr "Sprite"
 
-#: ../../source/sprites.rst:9
+#: ../../source/sprites.rst:6
 msgid ""
 "To support the display of a large number of images at once, Ren'Py supports "
 "a sprite system. This system allows one to create sprites, where each sprite "
@@ -34,7 +34,7 @@ msgstr ""
 "displayable を含みます。 sprite はスクリーン上にそれぞれの座標を持ち、 z-"
 "order を変更できます。"
 
-#: ../../source/sprites.rst:14
+#: ../../source/sprites.rst:11
 msgid ""
 "If one ignores performance, the sprite system is conceptually similar to a :"
 "func:`Fixed` wrapping :func:`Transform`\\s. Sprites are much faster than "
@@ -45,13 +45,13 @@ msgid ""
 "properties that a Transform has."
 msgstr ""
 "パフォーマンスを無視すれば、 sprite システムは概念的に :func:`Transform` を"
-"ラッピングした :func:`Fixed` と同一です。 sprite は transform よりずっと速いですが、"
-"融通が利きません。 sprite の大きなパフォーマンスの改善は displayable が多く"
-"の sprite で使用されているとしても、各 displayable がフレーム毎に一回だけレン"
-"ダリングされることです。制限としては sprite は transform が持つ多くのプロパティーの"
-"うち xoffset と yoffset しか変更できません。"
+"ラッピングした :func:`Fixed` と同一です。 sprite は transform よりずっと速い"
+"ですが、融通が利きません。 sprite の大きなパフォーマンスの改善は displayable "
+"が多くの sprite で使用されているとしても、各 displayable がフレーム毎に一回だ"
+"けレンダリングされることです。制限としては sprite は transform が持つ多くのプ"
+"ロパティーのうち xoffset と yoffset しか変更できません。"
 
-#: ../../source/sprites.rst:22
+#: ../../source/sprites.rst:19
 msgid ""
 "To use the sprite system, create a SpriteManager object, and then call its "
 "create method to create new particles. As necessary, update the xoffset, "
@@ -62,10 +62,10 @@ msgstr ""
 "sprite システムを使用するためには SpriteManager オブジェクトを作成し、create "
 "メソッドを呼び出して新しい sprite を作成してください。必要であれば、スクリー"
 "ン上を移動するために各 sprite の xoffset, yoffset, zorder フィールドを更新し"
-"てください。 `update` と `event` 引数を SpriteManager に渡して時間の経"
-"過に連れて、またはユーザーの入力に反応して sprite を変化させられます。"
+"てください。 `update` と `event` 引数を SpriteManager に渡して時間の経過に連"
+"れて、またはユーザーの入力に反応して sprite を変化させられます。"
 
-#: ../../source/sprites.rst:30
+#: ../../source/sprites.rst:27
 msgid "Sprite Classes"
 msgstr "Sprite クラス"
 
@@ -156,10 +156,10 @@ msgid ""
 "number of seconds until the function is called again, and the SpriteManager "
 "is rendered again."
 msgstr ""
-"None または SpriteManager に sprite がレンダリングされる度に呼び出さ"
-"れる関数を指定します。これは1つの引数で呼び出され、それはこの SpriteManager "
-"が最初に表示されてからの秒数です。関数が再び呼び出され、 SpriteManager がもう"
-"一度レンダリングされるまでの秒数を返すことが期待されます。"
+"None または SpriteManager に sprite がレンダリングされる度に呼び出される関数"
+"を指定します。これは1つの引数で呼び出され、それはこの SpriteManager が最初に"
+"表示されてからの秒数です。関数が再び呼び出され、 SpriteManager がもう一度レン"
+"ダリングされるまでの秒数を返すことが期待されます。"
 
 #: ../../source/inc/sprites:59
 msgid "`event`"
@@ -173,10 +173,10 @@ msgid ""
 "shown. If it returns a non-None value, the interaction ends, and that value "
 "is returned."
 msgstr ""
-"None またはイベントが発生した時に呼び出される関数を指定します。引数と"
-"して次をとります。 : * pygame イベントオブジェクト、 * イベントの x 座標、 * "
-"イベントの y 座標 、* SpriteManager が最初に表示されてからの秒数。 None 以外"
-"の値を返すと処理は終了し、その値が返されます。"
+"None またはイベントが発生した時に呼び出される関数を指定します。引数として次を"
+"とります。 : * pygame イベントオブジェクト、 * イベントの x 座標、 * イベント"
+"の y 座標 、* SpriteManager が最初に表示されてからの秒数。 None 以外の値を返"
+"すと処理は終了し、その値が返されます。"
 
 #: ../../source/inc/sprites:64
 msgid "`predict`"
@@ -320,18 +320,18 @@ msgid ""
 msgstr ""
 "True の場合、粒子はスクリーンの上端や下端からではなく、左右の端から現れます。"
 
-#: ../../source/sprites.rst:36
+#: ../../source/sprites.rst:33
 msgid "Sprite Examples"
 msgstr "Sprite の例"
 
-#: ../../source/sprites.rst:38
+#: ../../source/sprites.rst:35
 msgid ""
 "The SnowBlossom class is an easy-to use way of placing falling things on the "
 "screen."
 msgstr ""
 "SnowBlossom クラスはスクリーンに何かが落ちているのを表示する簡単な方法です。"
 
-#: ../../source/sprites.rst:46
+#: ../../source/sprites.rst:43
 msgid ""
 "This example shows how a SpriteManager can be used to create complex "
 "behaviors. In this case, it shows 400 particles, and has them avoid the "

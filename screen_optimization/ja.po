@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-30 08:08+0900\n"
+"POT-Creation-Date: 2021-05-03 21:04+0900\n"
 "PO-Revision-Date: 2021-05-02 07:58+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/screen_optimization.rst:8
+#: ../../source/screen_optimization.rst:5
 msgid "Screen Language Optimization"
 msgstr "スクリーン言語の最適化"
 
-#: ../../source/screen_optimization.rst:10
+#: ../../source/screen_optimization.rst:7
 msgid ""
 "Ren'Py uses a number of techniques to optimize screen language speed. When "
 "using Ren'Py to create complex interfaces, such as those used by simulation "
@@ -32,7 +32,7 @@ msgstr ""
 "レーションゲームのような複雑なインターフェースを作成するなら、スクリーン言語"
 "の動作を理解することは最大のパフォーマンスを得る役に立つでしょう。"
 
-#: ../../source/screen_optimization.rst:15
+#: ../../source/screen_optimization.rst:12
 msgid ""
 "This guide is applicable to the second implementation of screen language, "
 "which was added to Ren'Py 6.18. If your game was created in Ren'Py 6.17 or "
@@ -43,7 +43,7 @@ msgstr ""
 "す。 Ren'Py 6.17 以前で作成されたゲームでは、ランチャーから  \"Force "
 "Recompile\" を選んでスクリーンを最新バージョンに更新する必要があります。"
 
-#: ../../source/screen_optimization.rst:20
+#: ../../source/screen_optimization.rst:17
 msgid ""
 "This guide isn't a substitute for good programming practice. If a screen "
 "uses nested loops to do a lot of unproductive work, it will be slower than a "
@@ -57,11 +57,11 @@ msgstr ""
 "すが、そのような動作を避けることが Ren'Py にあなたの仕事を最適化させるよりも"
 "常に適切です。"
 
-#: ../../source/screen_optimization.rst:27
+#: ../../source/screen_optimization.rst:24
 msgid "Parameter List"
 msgstr "引数リスト"
 
-#: ../../source/screen_optimization.rst:29
+#: ../../source/screen_optimization.rst:26
 msgid ""
 "For best performance, all screens should be defined with a parameter list. "
 "When a screen doesn't take parameters, it should be defined with an empty "
@@ -70,11 +70,11 @@ msgstr ""
 "最適な処理のために、すべてのスクリーンには引数リストが定義されるべきです。ス"
 "クリーンが引数を取らないなら空の引数リストで定義すべきです。 ::"
 
-#: ../../source/screen_optimization.rst:38
+#: ../../source/screen_optimization.rst:35
 msgid "is faster than::"
 msgstr "上のスクリーンは下のスクリーンより高速です。 ::"
 
-#: ../../source/screen_optimization.rst:45
+#: ../../source/screen_optimization.rst:42
 msgid ""
 "When a screen is defined without a parameter list, any name used in that "
 "screen can be redefined when the screen is shown. This requires Ren'Py to be "
@@ -86,11 +86,11 @@ msgstr ""
 "Ren'Py が分析するときにより保守的であることが要求され、そのパフォーマンス最適"
 "化が制限されるかもしれません。"
 
-#: ../../source/screen_optimization.rst:51
+#: ../../source/screen_optimization.rst:48
 msgid "Prediction"
 msgstr "予測"
 
-#: ../../source/screen_optimization.rst:53
+#: ../../source/screen_optimization.rst:50
 msgid ""
 "Screens perform better when they're predicted in advance. That's because "
 "Ren'Py will execute the screen during prediction time, and load in images "
@@ -100,11 +100,11 @@ msgstr ""
 "予測中にそのスクリーンを実行し、そのスクリーンで使用された画像をロードするた"
 "めです。"
 
-#: ../../source/screen_optimization.rst:57
+#: ../../source/screen_optimization.rst:54
 msgid "There are two ways Ren'Py automatically predicts screens:"
 msgstr "スクリーンを自動的に予測する 2 つの方法が Ren'Py にはあります。 :"
 
-#: ../../source/screen_optimization.rst:59
+#: ../../source/screen_optimization.rst:56
 msgid ""
 "Ren'Py will predict screens shown by the ``show screen`` and ``call screen`` "
 "statements."
@@ -112,7 +112,7 @@ msgstr ""
 "``show screen`` と ``call screen`` ステートメントで表示されるスクリーンを "
 "Ren'Py は予測します。"
 
-#: ../../source/screen_optimization.rst:61
+#: ../../source/screen_optimization.rst:58
 msgid ""
 "Ren'Py will predict screens that will be shown by the :func:`Show` and :func:"
 "`ShowMenu` actions."
@@ -120,7 +120,7 @@ msgstr ""
 ":func:`Show` と :func:`ShowMenu` アクションで表示されるスクリーンを Ren'Py は"
 "予測します。"
 
-#: ../../source/screen_optimization.rst:64
+#: ../../source/screen_optimization.rst:61
 msgid ""
 "If screens are shown from Python, it's a good idea to start predicting the "
 "screen before it is shown. To start predicting a screen, use the :func:"
@@ -132,11 +132,11 @@ msgstr ""
 "start_predict_screen` 関数を使用します。予測を停止するには  :func:`renpy."
 "stop_predict_screen` 関数を使用します。"
 
-#: ../../source/screen_optimization.rst:71
+#: ../../source/screen_optimization.rst:68
 msgid "Displayable Reuse"
 msgstr "Displayable の再利用"
 
-#: ../../source/screen_optimization.rst:73
+#: ../../source/screen_optimization.rst:70
 msgid ""
 "When evaluating a screen language statement that creates a displayable, "
 "Ren'Py will check to see if the positional arguments and properties given to "
@@ -150,7 +150,7 @@ msgstr ""
 "もしそうなら新しい displayable を作成する代わりに既存の displayable を "
 "Ren'Py は使用します。"
 
-#: ../../source/screen_optimization.rst:79
+#: ../../source/screen_optimization.rst:76
 msgid ""
 "Displayable reuse has a number of performance implications. It saves the "
 "cost of creating a new displayable, which may be significant for "
@@ -165,7 +165,7 @@ msgstr ""
 "ンダリングしてユーザーに表示する必要がなくなり、さらなる速度向上に繋がりま"
 "す。"
 
-#: ../../source/screen_optimization.rst:85
+#: ../../source/screen_optimization.rst:82
 msgid ""
 "To compare positional arguments and properties, Ren'Py uses the notion of "
 "equality embodied by Python's == operator. We've extended this notion of "
@@ -178,7 +178,7 @@ msgstr ""
 "クションが使用されるか、選択または無効状態かが問題ではないときは等価であると"
 "判断して、この等式の概念をアクションにまで拡張しました。"
 
-#: ../../source/screen_optimization.rst:92
+#: ../../source/screen_optimization.rst:89
 msgid ""
 "All actions provided with Ren'Py conform to this definition. When defining "
 "your own actions, it makes sense to provide them with this notion of "
@@ -189,7 +189,7 @@ msgstr ""
 "を定義するときは、この等式の概念を用意するとよいです。これは適切な "
 "``__eq__`` メソッドを提供して実現出来ます。例えば ::"
 
-#: ../../source/screen_optimization.rst:111
+#: ../../source/screen_optimization.rst:108
 msgid ""
 "It's important to define the ``__eq__`` function carefully, making sure it "
 "compares all fields, and uses equality (==) and identity (is) comparison as "
@@ -198,11 +198,11 @@ msgstr ""
 "``__eq__`` 関数は注意深く定義して、 (==) と (is) を適切に使用し、すべての"
 "フィールドを比較しているか確認してください。"
 
-#: ../../source/screen_optimization.rst:116
+#: ../../source/screen_optimization.rst:113
 msgid "Const Expressions and Pure Functions"
 msgstr "const 式と pure 関数"
 
-#: ../../source/screen_optimization.rst:118
+#: ../../source/screen_optimization.rst:115
 msgid ""
 "Ren'Py can exploit the properties of const variables and pure functions to "
 "improve the speed of screen evaluation, and to entirely avoid the evaluation "
@@ -211,11 +211,11 @@ msgstr ""
 "Ren'Py は const 変数と pure 関数を活用して、スクリーンの評価を高速化し、スク"
 "リーンの一部の評価を完全に省略出来ます。"
 
-#: ../../source/screen_optimization.rst:123
+#: ../../source/screen_optimization.rst:120
 msgid "Definitions"
 msgstr "定義"
 
-#: ../../source/screen_optimization.rst:125
+#: ../../source/screen_optimization.rst:122
 msgid ""
 "An expression is **const** (short for constant) if it always represents the "
 "same value when it is evaluated. For Ren'Py's purposes, an expression is "
@@ -226,7 +226,7 @@ msgstr ""
 "Ren'Py においては、以下の式の評価が常に同じ一定の値になるなら式は const であ"
 "り、そうでなければ未定義であるということになります。 :"
 
-#: ../../source/screen_optimization.rst:130
+#: ../../source/screen_optimization.rst:127
 msgid ""
 "Applying any unary, binary, or ternary operator to the expression, provided "
 "the other operands are also const."
@@ -234,15 +234,15 @@ msgstr ""
 "単項、二項、三項演算子のその式への適用。提供される他の演算対象も const であ"
 "る。"
 
-#: ../../source/screen_optimization.rst:132
+#: ../../source/screen_optimization.rst:129
 msgid "Accessing a field on the expression."
 msgstr "その式でアクセスするフィールド"
 
-#: ../../source/screen_optimization.rst:133
+#: ../../source/screen_optimization.rst:130
 msgid "Indexing the expression, either using a number or an object."
 msgstr "数字かオブジェクトを使用したその式の索引"
 
-#: ../../source/screen_optimization.rst:135
+#: ../../source/screen_optimization.rst:132
 msgid ""
 "Python numbers and strings are const, as are list, tuple, set, and dict "
 "literals for which all components are const. Ren'Py marks variables defined "
@@ -258,7 +258,7 @@ msgstr ""
 "に制御出来ます。デフォルトの const 名のリストが後述の :ref:`Const 名 <const-"
 "names>` にあります。"
 
-#: ../../source/screen_optimization.rst:143
+#: ../../source/screen_optimization.rst:140
 msgid ""
 "If you have a variable that will never change, it makes sense to use "
 "``define`` to both define it and declare it const. For example::"
@@ -266,7 +266,7 @@ msgstr ""
 "決して変更されない変数があるなら、 ``define`` を使用してそれを定義するとよい"
 "です。例 ::"
 
-#: ../../source/screen_optimization.rst:149
+#: ../../source/screen_optimization.rst:146
 msgid ""
 "A callable function, class, or action is **pure** if, when all of its "
 "arguments are const values, it always gives the same const value. "
@@ -277,7 +277,7 @@ msgstr ""
 "とき、常に同じ値を返すなら **pure** です。 const 式を引数に pure 関数を使用す"
 "る式も const 式です。"
 
-#: ../../source/screen_optimization.rst:154
+#: ../../source/screen_optimization.rst:151
 msgid ""
 "A large number of default functions, classes, and actions are marked as "
 "pure. These functions are listed in the :ref:`Pure Names <pure-names>` "
@@ -286,7 +286,7 @@ msgstr ""
 "多くのデフォルトの関数やクラス、アクションが pure としてマークされています。"
 "これらの関数は後述する :ref:`Pure 名 <pure-names>` でリストされています。"
 
-#: ../../source/screen_optimization.rst:158
+#: ../../source/screen_optimization.rst:155
 msgid ""
 "Functions are declared pure using the :func:`renpy.pure` function, which can "
 "be used as a decorator for functions declared in the default store."
@@ -294,30 +294,30 @@ msgstr ""
 ":func:`renpy.pure` 関数を使用して、関数は pure と宣言され、それらはデフォルト"
 "の store で宣言された関数のデコレータとして使用出来ます。"
 
-#: ../../source/screen_optimization.rst:161
+#: ../../source/screen_optimization.rst:158
 msgid ""
 "Const expressions and pure functions do not need to retain the same value "
 "across the following events:"
 msgstr ""
 "const 式と pure 関数は以下のイベントでは同じ値を維持する必要はありません。 :"
 
-#: ../../source/screen_optimization.rst:164
+#: ../../source/screen_optimization.rst:161
 msgid "The end of the init phase."
 msgstr "初期化の終了"
 
-#: ../../source/screen_optimization.rst:165
+#: ../../source/screen_optimization.rst:162
 msgid "A change of the language."
 msgstr "言語の変更"
 
-#: ../../source/screen_optimization.rst:166
+#: ../../source/screen_optimization.rst:163
 msgid "A style rebuild."
 msgstr "スタイルの再ビルド"
 
-#: ../../source/screen_optimization.rst:169
+#: ../../source/screen_optimization.rst:166
 msgid "How Const Optimizes Screen Language"
 msgstr "const のスクリーン言語最適化効果"
 
-#: ../../source/screen_optimization.rst:171
+#: ../../source/screen_optimization.rst:168
 msgid ""
 "There are three advantages to ensuring that screen language arguments and "
 "properties are const."
@@ -325,7 +325,7 @@ msgstr ""
 "スクリーン言語の引数とプロパティーが const だと保証することには 3 つの利点が"
 "あります。"
 
-#: ../../source/screen_optimization.rst:174
+#: ../../source/screen_optimization.rst:171
 msgid ""
 "The first is that const arguments and properties are evaluated when screens "
 "are prepared, which is at the end of the init phase, when the language is "
@@ -336,7 +336,7 @@ msgstr ""
 "ド時に const 引数とプロパティーは評価されます。その後はもう const 引数やプロ"
 "パティーを評価するために時間を消費する必要はありません。"
 
-#: ../../source/screen_optimization.rst:179
+#: ../../source/screen_optimization.rst:176
 msgid ""
 "The second is that const works well with displayable reuse. When all of the "
 "arguments and properties of a displayable are const, the displayable can "
@@ -346,7 +346,7 @@ msgstr ""
 "引数とプロパティーが const であると、その displayable は常に再利用され、 "
 "displayable 再利用の利益が得られます。"
 
-#: ../../source/screen_optimization.rst:183
+#: ../../source/screen_optimization.rst:180
 msgid ""
 "Lastly, when Ren'Py encounters a tree of displayables such that all "
 "arguments, properties, and expressions affecting control flow are also "
@@ -358,7 +358,7 @@ msgstr ""
 "displayable の評価も作成もせずにツリーをまるごと再利用します。これは明らかな"
 "パフォーマンス向上に寄与します。"
 
-#: ../../source/screen_optimization.rst:189
+#: ../../source/screen_optimization.rst:186
 msgid ""
 "For example, the following screen does not execute any Python or create any "
 "displayables after the first time it is predicted or shown::"
@@ -366,11 +366,11 @@ msgstr ""
 "例えば、以下のスクリーンは最初に予測や表示をされてからは、どんなコードの評価"
 "も displayable の作成もしません。 ::"
 
-#: ../../source/screen_optimization.rst:204
+#: ../../source/screen_optimization.rst:201
 msgid "Const Text"
 msgstr "const テキスト"
 
-#: ../../source/screen_optimization.rst:206
+#: ../../source/screen_optimization.rst:203
 msgid ""
 "When defining text, please note that strings containing new-style text "
 "substitutions are const::"
@@ -378,16 +378,16 @@ msgstr ""
 "テキストを定義するときは、新スタイルの置換を使用している文字列は const である"
 "ことに注意してください。 ::"
 
-#: ../../source/screen_optimization.rst:212
+#: ../../source/screen_optimization.rst:209
 msgid ""
 "Supplying a variable containing the text directly is generally not const::"
 msgstr "テキストの変数を直接与えると一般的には非 const になります。 ::"
 
-#: ../../source/screen_optimization.rst:217
+#: ../../source/screen_optimization.rst:214
 msgid "Neither is using percent-substitution::"
 msgstr "% による置換でも同様です。 ::"
 
-#: ../../source/screen_optimization.rst:222
+#: ../../source/screen_optimization.rst:219
 msgid ""
 "Lastly, note that the _ text translation function is pure, so if it contains "
 "a string, the entire expression is const::"
@@ -395,7 +395,7 @@ msgstr ""
 "最後に、 _ テキスト関数は pure であるため、文字列を含むと式全体が const にな"
 "ります。 ::"
 
-#: ../../source/screen_optimization.rst:227
+#: ../../source/screen_optimization.rst:224
 msgid ""
 "If a variable containing the text contain substitution it's necessary to use "
 "``!i`` conversion flag::"
@@ -403,7 +403,7 @@ msgstr ""
 "変数が置換を含むテキストを含んでいたら、 ``!i`` 変換フラグの使用が必要で"
 "す。 ::"
 
-#: ../../source/screen_optimization.rst:235
+#: ../../source/screen_optimization.rst:232
 msgid "Const Functions"
 msgstr "Const 関数"
 
@@ -471,11 +471,11 @@ msgstr ""
 msgid "Returns `fn`, allowing this function to be used as a decorator."
 msgstr "`fn` を返し、この関数はデコレーターとして使用出来ます。"
 
-#: ../../source/screen_optimization.rst:240
+#: ../../source/screen_optimization.rst:237
 msgid "Profiling"
 msgstr "プロファイリング"
 
-#: ../../source/screen_optimization.rst:242
+#: ../../source/screen_optimization.rst:239
 msgid ""
 "Ren'Py supports profiling screen execution through the ``renpy."
 "profile_screen`` function:"
@@ -607,11 +607,11 @@ msgstr ""
 "すべてのプロファイリング結果はゲームディレクトリーの profile_screen.txt に保"
 "存されます。"
 
-#: ../../source/screen_optimization.rst:251
+#: ../../source/screen_optimization.rst:248
 msgid "Const Names"
 msgstr "const 名"
 
-#: ../../source/screen_optimization.rst:253
+#: ../../source/screen_optimization.rst:250
 msgid "The following names are const by default."
 msgstr "以下の名前はデフォルトで const です。"
 
@@ -635,11 +635,11 @@ msgstr "config"
 msgid "style"
 msgstr "style"
 
-#: ../../source/screen_optimization.rst:261
+#: ../../source/screen_optimization.rst:258
 msgid "Pure Names"
 msgstr "pure 名"
 
-#: ../../source/screen_optimization.rst:263
+#: ../../source/screen_optimization.rst:260
 msgid "The following names are both pure and const by default."
 msgstr "以下の名前はデフォルトで pure かつ const です。"
 
