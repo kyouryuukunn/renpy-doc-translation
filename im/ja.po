@@ -1,0 +1,527 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2021, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.4.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-03 21:04+0900\n"
+"PO-Revision-Date: 2021-05-03 21:35+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ../../source/im.rst:6
+msgid "Image Manipulators"
+msgstr "画像マニピュレータ"
+
+#: ../../source/im.rst:8
+msgid ""
+"An image manipulator is a displayable that takes an image or image "
+"manipulator, and either loads it or performs an operation on it. Image "
+"manipulators can only take images or other image manipulators as input."
+msgstr ""
+
+#: ../../source/im.rst:13
+msgid ""
+"An image manipulator can be used any place a displayable can, but not vice-"
+"versa. An :func:`Image` is a kind of image manipulator, so an Image can be "
+"used whenever an image manipulator is required."
+msgstr ""
+"画像マニピュレータは displayable が使える所ならどこででも使えますが、その逆は"
+"できません。 :func:`Image` は画像マニピュレータの一種なので、Image は画像マニ"
+"ピュレータが要求されたときはいつでも使えます。"
+
+#: ../../source/im.rst:17
+msgid ""
+"With the few exceptions listed below, the use of image manipulators is "
+"historic. A number of image manipulators that had been documented in the "
+"past should no longer be used, as they suffer from inherent problems. In any "
+"case except for `im.Data`, the :func:`Transform` displayable provides "
+"similar functionality in a more general manner, while fixing the problems, "
+"although it sometimes requires gl2 to be enabled."
+msgstr ""
+
+#: ../../source/inc/im_im:5
+msgid ""
+"An image manipulator that takes two image manipulators, `base` and `mask`, "
+"as arguments. It replaces the alpha channel of `base` with the red channel "
+"of `mask`."
+msgstr ""
+"`base` と `mask` 2 つの画像マニピュレータを引数として取る画像マニピュレータで"
+"す。 `base` のアルファチャンネルを `mask` の赤いチャンネルで置き換えます。"
+
+#: ../../source/inc/im_im:9
+msgid ""
+"This is used to provide an image's alpha channel in a second image, like "
+"having one jpeg for color data, and a second one for alpha. In some cases, "
+"two jpegs can be smaller than a single png file."
+msgstr ""
+"これは一枚目の jpeg を色データに二枚目をアルファデータにといった具合に、二枚"
+"目の画像のアルファチャンネルを適用するのに使います。2 枚の jpeg の方が 1 枚"
+"の png ファイルよりも容量が小さいことがあります。"
+
+#: ../../source/inc/im_im:14
+msgid ""
+"Note that this takes different arguments from :func:`AlphaMask`, which uses "
+"the mask's alpha channel."
+msgstr ""
+"mask のアルファチャンネルを使用する :func:`AlphaMask` とは別の引数をとること"
+"に注意してください。"
+
+#: ../../source/inc/im_im:19
+msgid ""
+"An image manipulator that blurs the image manipulator `im` using an "
+"elliptical kernel described by `xrad` and optionally `yrad`."
+msgstr ""
+
+#: ../../source/inc/im_im:22
+msgid ""
+"If `yrad` is None, it will take the value of `xrad` resulting in a circular "
+"kernel being used."
+msgstr ""
+
+#: ../../source/inc/im_im:29
+msgid ""
+"The same effect can now be achieved with the :tpref:`blur` transform "
+"property."
+msgstr ""
+
+#: ../../source/inc/im_im:33
+msgid ""
+"An image manipulator that crops `rect`, a (x, y, width, height) tuple, out "
+"of `im`, an image manipulator."
+msgstr ""
+"画像マニピュレータ `im` から (x, y, width, height) タプル `rect` を刈りこむ画"
+"像マニピュレータです。"
+
+#: ../../source/inc/im_im:40
+msgid ""
+"The same effect can now be achieved by setting the :tpref:`crop` transform "
+"property."
+msgstr ""
+
+#: ../../source/inc/im_im:44
+msgid "This image manipulator loads an image from binary data."
+msgstr ""
+
+#: ../../source/inc/im_im:48
+msgid "`data`"
+msgstr "`data`"
+
+#: ../../source/inc/im_im:47
+msgid ""
+"A string of bytes, giving the compressed image data in a standard file "
+"format."
+msgstr ""
+
+#: ../../source/inc/im_im:52
+msgid "`filename`"
+msgstr "`filename`"
+
+#: ../../source/inc/im_im:51
+msgid ""
+"A \"filename\" associated with the image. This is used to provide a hint to "
+"Ren'Py about the format of `data`. (It's not actually loaded from disk.)"
+msgstr ""
+
+#: ../../source/inc/im_im:57
+msgid ""
+"An image manipulator that scales `im` (a second image manipulator) to "
+"`width` times its original `width`, and `height` times its original height. "
+"If `height` is omitted, it defaults to `width`."
+msgstr ""
+"別の画像マニピュレータ `im` の大きさを調整し、幅を `width` 倍、高さを "
+"`height` 倍にする画像マニピュレータです。 `height` を省略すると、デフォルト"
+"で `width` になります。"
+
+#: ../../source/inc/im_im:61
+msgid ""
+"If `bilinear` is true, then bilinear interpolation is used for the scaling. "
+"Otherwise, nearest neighbor interpolation is used."
+msgstr ""
+"`bilinear` が True なら、大きさの調整に双線形補間が使われます。そうでなけれ"
+"ば、近隣補間が使われます。"
+
+#: ../../source/inc/im_im:68
+msgid ""
+"The same effect can now be achieved with the :tpref:`zoom` or the :tpref:"
+"`xzoom` and :tpref:`yzoom` transform properties."
+msgstr ""
+"同じ効果が :tpref:`zoom` や the :tpref:`xzoom`, :tpref:`yzoom` transform プロ"
+"パティーで達成できます。"
+
+#: ../../source/inc/im_im:73
+msgid ""
+"An image manipulator that flips `im` (an image manipulator) vertically or "
+"horizontally.  `vertical` and `horizontal` control the directions in which "
+"the image is flipped."
+msgstr ""
+"`im` (画像マニピュレータ) を水平または垂直に裏返す画像マニピュレータです。 "
+"`vertical`  および `horizontal` で画像が裏返される方向を制御します。"
+
+#: ../../source/inc/im_im:81
+msgid ""
+"The same effect can now be achieved by setting :tpref:`xzoom` (for "
+"horizontal flip) or :tpref:`yzoom` (for vertical flip) to a negative value."
+msgstr ""
+"同じ効果が :tpref:`xzoom`(水平方向) や the :tpref:`yzoom`(垂直方向) を負の値"
+"にして達成できます。"
+
+#: ../../source/inc/im_im:87
+msgid ""
+"An image manipulator that creates a desaturated version of the image "
+"manipulator `im`."
+msgstr ""
+"画像マニピュレータ `im` の彩度をなくした版を作成する画像マニピュレータです。"
+
+#: ../../source/inc/im_im:90
+msgid ""
+"The same effect can now be achieved by supplying SaturationMatrix(0) to the :"
+"tpref:`matrixcolor` transform property."
+msgstr ""
+"同じ効果が :tpref:`matrixcolor`に SaturationMatrix()0 を与えて達成できます。"
+
+#: ../../source/inc/im_im:95
+msgid ""
+"An image manipulator that creates a sepia-toned version of the image "
+"manipulator `im`."
+msgstr ""
+"画像マニピュレータ `im` のセピアトーン版を作成する画像マニピュレータです。"
+
+#: ../../source/inc/im_im:98
+msgid ""
+"The same effect can now be achieved by supplying SepiaMatrix() to the :tpref:"
+"`matrixcolor` transform property."
+msgstr "同じ効果が :tpref:`matrixcolor`に SepiaMatrix() を与えて達成できます。"
+
+#: ../../source/inc/im_im:103
+msgid ""
+"An image manipulator that tiles the image manipulator `im`, until it is "
+"`size`."
+msgstr ""
+"画像マニピュレータ `im` を `size` になるまでタイル張りする画像マニピュレータ"
+"です。"
+
+#: ../../source/inc/im_im:108
+msgid "`size`"
+msgstr "`size`"
+
+#: ../../source/inc/im_im:107
+msgid ""
+"If not None, a (width, height) tuple. If None, this defaults to (:var:"
+"`config.screen_width`, :var:`config.screen_height`)."
+msgstr ""
+"None を指定するか、(width, height) タプルでを指定します。None であれば、デ"
+"フォルトで (:var:`config.screen_width`, :var:`config.screen_height`) になりま"
+"す。"
+
+#: ../../source/inc/im_im:110
+msgid "The same effect can now be achieved with Tile(im, size=size)"
+msgstr "同じ効果が Tile(im, size=size)　で達成できます。"
+
+#: ../../source/im.rst:27
+msgid "im.MatrixColor"
+msgstr "im.MatrixColor"
+
+#: ../../source/im.rst:29
+msgid ""
+"The im.MatrixColor image manipulator is an image manipulator that uses a "
+"matrix to control how the colors of an image are transformed. The matrix "
+"used can be an im.matrix object, which encodes a 5x5 matrix in an object "
+"that supports matrix multiplication, and is returned by a series of "
+"functions. im.matrix objects may be multiplied together to yield a second "
+"object that performs both operations. For example::"
+msgstr ""
+"im.MatrixColor 画像マニピュレータは、画像の色の変換を行列で指定する画像マニ"
+"ピュレータです。使われる行列は im.matrix オブジェクトです。im.matrix オブジェ"
+"クトは 5x5 行列をオブジェクトにエンコードし、行列操作をサポートし、一連の関数"
+"によって返されます。im.matrix オブジェクトを掛け合わせて、両方の演算を行う一"
+"つのオブジェクトを得られます。例えば、このコードは ::"
+
+#: ../../source/im.rst:40
+msgid ""
+"first desaturates the image, and then tints it blue. When the intermediate "
+"image is not needed, multiplying matrices is far more efficient, in both "
+"time and image cache space, than using two im.MatrixColors."
+msgstr ""
+"まず画像の彩度をなくし、それから青く染めます。中間の画像が必要ないときは、im."
+"MatrixColors を二度使うよりも行列を掛け合わせましょう。そのほうが時間上も画像"
+"キャッシュ領域上も遥かに効率的です。"
+
+#: ../../source/im.rst:45
+msgid ""
+"The im.MatrixColor image manipulator has been replaced by Transforms and ATL "
+"transforms that specify the matrixcolor property. Each `im.matrix` generator "
+"has been given a new `Matrix` equivalent, which can be found in the :ref:"
+"`matrixcolor documentation <matrixcolor>`."
+msgstr ""
+
+#: ../../source/im.rst:52
+msgid ""
+"The new Matrix objects multiply in the opposite order as the im.Matrixcolor "
+"ones. With X being the Matrix corresponding to im.Matrixcolor.x, ``C*B*A`` "
+"will be the Matrix corresponding to ``im.a*im.b*im.c``."
+msgstr ""
+
+#: ../../source/inc/im_matrixcolor:5
+msgid ""
+"An image operator that uses `matrix` to linearly transform the image "
+"manipulator `im`."
+msgstr ""
+"`matrix` を使って画像マニピュレータ `im` を線形に変換する画像マニピュレータで"
+"す。"
+
+#: ../../source/inc/im_matrixcolor:8
+msgid ""
+"`Matrix` should be a list, tuple, or :func:`im.matrix` that is 20 or 25 "
+"elements long. If the object has 25 elements, then elements past the 20th "
+"are ignored."
+msgstr ""
+"`Matrix` は、20 または 25 要素のリスト、タプル、または  :func:`im.matrix` に"
+"してください。オブジェクトに 25 要素あれば、20 番目よりあとは無視されます。"
+
+#: ../../source/inc/im_matrixcolor:12
+msgid ""
+"When the four components of the source color are R, G, B, and A, which range "
+"from 0.0 to 1.0; the four components of the transformed color are R', G', "
+"B', and A', with the same range; and the elements of the matrix are named::"
+msgstr ""
+"ソースカラーの 4 つの構成要素が R, G, B, および A でそれぞれの範囲が 0.0 か"
+"ら 1.0、変換された後の色の 4 つの構成要素が R', G', B', および A' で同じ範"
+"囲、そして行列の要素が以下のように名付けられるとすると ::"
+
+#: ../../source/inc/im_matrixcolor:22
+msgid "the transformed colors can be computed with the formula::"
+msgstr "変換先の色は以下の公式で計算されます ::"
+
+#: ../../source/inc/im_matrixcolor:29
+msgid ""
+"The components of the transformed color are clamped to the range [0.0, 1.0]."
+msgstr "変換先の色の構成要素は範囲 [0.0, 1.0] に固定されます。"
+
+#: ../../source/inc/im_matrix:5
+msgid ""
+"Constructs an im.matrix object from `matrix`. im.matrix objects support The "
+"operations supported are matrix multiplication, scalar multiplication, "
+"element-wise addition, and element-wise subtraction. These operations are "
+"invoked using the standard mathematical operators (\\*, \\*, +, and -, "
+"respectively). If two im.matrix objects are multiplied, matrix "
+"multiplication is performed, otherwise scalar multiplication is used."
+msgstr ""
+"matrix から im.matrix オブジェクトを構成します。im.matrix オブジェクトがサ"
+"ポートする演算は、行列乗算、スカラー乗算、要素ごとの加算、要素ごとの減算で"
+"す。これらの演算は、標準の数学演算子 (それぞれ *, *, +, および -) を使って呼"
+"び出されます。二つの im.matrix オブジェクトを乗じると行列乗算が行われ、そうで"
+"なければスカラー乗算が使われます。"
+
+#: ../../source/inc/im_matrix:13
+msgid ""
+"`matrix` is a 20 or 25 element list or tuple. If it is 20 elements long, it "
+"is padded with (0, 0, 0, 0, 1) to make a 5x5 matrix, suitable for "
+"multiplication."
+msgstr ""
+"`matrix` は 20 または 25 要素のリストまたはタプルです。これが 20 要素なら、乗"
+"算をしやすいように (0, 0, 0, 0, 1) が付け足され、5x5 の行列になります。"
+
+#: ../../source/inc/im_matrix:19
+msgid "Returns an im.matrix that alters the brightness of an image."
+msgstr "画像の輝度を変える im.matrix を返します。"
+
+#: ../../source/inc/im_matrix:24
+msgid "`b`"
+msgstr "`b`"
+
+#: ../../source/inc/im_matrix:22
+msgid ""
+"The amount of change in image brightness. This should be a number between -1 "
+"and 1, with -1 the darkest possible image and 1 the brightest."
+msgstr ""
+"画像の輝度を変化させる量です。これは -1 から 1 でなければならず、-1 は可能な"
+"中で最も暗い画像で、1 は最も明るい画像です。"
+
+#: ../../source/inc/im_matrix:26
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"BrightnessMatrix(b)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"BrightnessMatrix(b) です。"
+
+#: ../../source/inc/im_matrix:31
+msgid ""
+"Returns an im.matrix that colorizes a black and white image. `black_color` "
+"and `white_color` are Ren'Py style colors, so they may be specified as "
+"strings or tuples of (0-255) color values. ::"
+msgstr ""
+"白黒の画像に着色する im.matrix を返します。 `black_color` および "
+"`white_color` は Ren'Py スタイルの色で、文字列か (0-255) の明度値のタプルかで"
+"指定できます。 ::"
+
+#: ../../source/inc/im_matrix:42
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"ColorizeMatrix(black_color, white_color)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"ColorizeMatrix(black_color, white_color) です。"
+
+#: ../../source/inc/im_matrix:47
+msgid ""
+"Returns an im.matrix that alters the contrast of an image. `c` should be "
+"greater than 0.0, with values between 0.0 and 1.0 decreasing contrast, and "
+"values greater than 1.0 increasing contrast."
+msgstr ""
+"画像のコントラストを変化させる im.matrix を返します。 `c` は 0.0 より大きく、"
+"0.0 から 1.0 の値はコントラストを下げ、1.0 より大きい値はコントラストを上げま"
+"す。"
+
+#: ../../source/inc/im_matrix:51
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"ContrastMatrix(c)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"ContrastMatrix(c) です。"
+
+#: ../../source/inc/im_matrix:56
+msgid ""
+"Returns an im.matrix that desaturates the image (makes it grayscale). This "
+"is equivalent to calling im.matrix.saturation(0)."
+msgstr ""
+"画像の彩度を無くす (グレースケールにする) im.matrix を返します。これは、im."
+"matrix.saturation(0) を呼び出すのと等価です。"
+
+#: ../../source/inc/im_matrix:60
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"SaturationMatrix(0)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"SaturationMatrix(0) です。"
+
+#: ../../source/inc/im_matrix:65
+msgid ""
+"Returns an im.matrix that rotates the hue by `h` degrees, while preserving "
+"luminosity."
+msgstr "高度を変えずに色相を `h` 度循環させる im.matrix を返します。"
+
+#: ../../source/inc/im_matrix:68
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"HueMatrix(h)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は HueMatrix"
+"(h) です。"
+
+#: ../../source/inc/im_matrix:73
+msgid "Returns an identity matrix, one that does not change color or alpha."
+msgstr "色やアルファ値を変えない恒等行列を返します。"
+
+#: ../../source/inc/im_matrix:76
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"IdentityMatrix()."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"IdentityMatrix() です。"
+
+#: ../../source/inc/im_matrix:81
+msgid ""
+"Returns an im.matrix that inverts the red, green, and blue channels of the "
+"image without changing the alpha channel."
+msgstr ""
+"アルファ値を変えずに赤、緑、青のチャンネルを反転させる im.matrix を返します。"
+
+#: ../../source/inc/im_matrix:84
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"InvertMatrix(1.0)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"InvertMatrix(1.0) です。"
+
+#: ../../source/inc/im_matrix:89
+msgid ""
+"Returns an im.matrix that alters the opacity of an image. An `o` of 0.0 is "
+"fully transparent, while 1.0 is fully opaque."
+msgstr ""
+"画像の不透明度を変更する im.matrix を返します。 `o` は 0.0 で完全に透明、1.0 "
+"で完全に不透明になります。"
+
+#: ../../source/inc/im_matrix:92
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"OpacityMatrix(o)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"OpacityMatrix(o) です。"
+
+#: ../../source/inc/im_matrix:97
+msgid ""
+"Returns an im.matrix that alters the saturation of an image. The alpha "
+"channel is untouched."
+msgstr ""
+"画像の彩度を変える im.matrix を返します。アルファチャンネルはそのままです。"
+
+#: ../../source/inc/im_matrix:102
+msgid "`level`"
+msgstr "`level`"
+
+#: ../../source/inc/im_matrix:101
+msgid ""
+"The amount of saturation in the resulting image. 1.0 is the unaltered image, "
+"while 0.0 is grayscale."
+msgstr ""
+"変更後の画像の彩度です。1.0 はそのままの画像で、0.0 はグレースケールです。"
+
+#: ../../source/inc/im_matrix:111
+msgid "`desat`"
+msgstr "`desat`"
+
+#: ../../source/inc/im_matrix:105
+msgid ""
+"This is a 3-element tuple that controls how much of the red, green, and blue "
+"channels will be placed into all three channels of a fully desaturated "
+"image. The default is based on the constants used for the luminance channel "
+"of an NTSC television signal. Since the human eye is mostly sensitive to "
+"green, more of the green channel is kept then the other two channels."
+msgstr ""
+"これは 3 要素のタプルで、赤、緑、青チャンネルが完全に彩度を無くされた 3 つの"
+"チャンネルにどれだけ置かれるかを制御します。デフォルトは、NTSC テレビジョンシ"
+"グナルの輝度チャンネルに使われる定数に基づきます。人間の目は緑に一番敏感なの"
+"で、緑チャンネルは他の 2 つのチャンネルよりも多く残されます。"
+
+#: ../../source/inc/im_matrix:113
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"SaturationMatrix(value, desat)."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は "
+"SaturationMatrix(value, desat) です。"
+
+#: ../../source/inc/im_matrix:118
+msgid ""
+"Returns an im.matrix that tints an image, without changing the alpha "
+"channel. `r`, `g`, and `b` should be numbers between 0 and 1, and control "
+"what fraction of the given channel is placed into the final image. (For "
+"example, if `r` is .5, and the value of the red channel is 100, the "
+"transformed color will have a red value of 50.)"
+msgstr ""
+"画像のアルファチャンネルはそのままで色合いをつける im.matrix を返します。 "
+"`r`,`g`, および `b` は 0 から 1 の数で、与えられたチャンネルのうちの最終的な"
+"画像に置かれる割合を制御します。(例えば、 `r` が .5 で、赤チャンネルの値が "
+"100 なら、変換された後の色の赤値は 50 になります。)"
+
+#: ../../source/inc/im_matrix:125
+msgid ""
+"A suitable equivalent for the :tpref:`matrixcolor` transform property is "
+"TintMatrix(Color((r, g, b)))."
+msgstr ""
+":tpref:`matrixcolor` transform プロパティーに対する適切な等価物は TintMatrix"
+"(Color((r, g, b))) です。"
