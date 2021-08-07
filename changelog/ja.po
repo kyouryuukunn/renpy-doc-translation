@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-22 23:20+0900\n"
-"PO-Revision-Date: 2021-05-23 21:37+0900\n"
+"PO-Revision-Date: 2021-05-25 23:11+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -40,7 +40,6 @@ msgstr ""
 "した。これを無効化するには :var:`config.gl2` を False にしてください。"
 
 #: ../../source/changelog.rst:20
-#, fuzzy
 msgid ""
 "When the model-based renderer is being used, Ren'Py now supports a \"3D Stage"
 "\". This adds a third dimension to shown images, allowing for perspective "
@@ -49,20 +48,19 @@ msgid ""
 "documentation for more information."
 msgstr ""
 "モデルベースのレンダラー使用時に、 \"3D Stage\" をサポートするようになりまし"
-"た。これは奥行きをスプライトに追加して遠近補正をしたズームと移動、回転、 "
-"displayable の 3D への変換、その他多くの新しい演出を可能します。詳細は :ref:"
-"`3D Stage <three-d-stage>` を参照してください。"
+"た。これは奥行きをスプライトに追加して遠近補正をしたズームと移動、回転を可能"
+"にして、 displayable の 3D への変換やその他多くの新しい演出を可能します。詳細"
+"は :ref:`3D Stage <three-d-stage>` を参照してください。"
 
 #: ../../source/changelog.rst:26
-#, fuzzy
 msgid ""
 "To facilitate the 3D Stage, the ``scene`` statement no longer clears "
 "transforms applied to a layer as a whole with ``show layer`` or :func:`renpy."
 "layer_at_list`."
 msgstr ""
 "3D ステージの促進のため、 ``scene`` ステートメントは　:func:`renpy."
-"layer_at_list` の ``show layer`` で適用されたレイヤー全体をクリアしなくなりま"
-"した。"
+"layer_at_list` や ``show layer`` でレイヤーに適用された transform をクリアし"
+"なくなりました。"
 
 #: ../../source/changelog.rst:30
 msgid ""
@@ -75,7 +73,6 @@ msgstr ""
 "ンから切り替えます。"
 
 #: ../../source/changelog.rst:34
-#, fuzzy
 msgid ""
 "The new :tpref:`blend` transform property allows the blend function to be "
 "specified. The blend function controls how a pixel being drawn is combined "
@@ -122,16 +119,18 @@ msgid ""
 "these objects are large, it is possible to store them in regular and "
 "persistent saves."
 msgstr ""
+"新しい :func:`renpy.screenshot_to_bytes` 関数はスクリーンショットを撮り、それ"
+"を :func:`im.Data` に渡せるバイトオブジェクトととして保存します。これらのオブ"
+"ジェクトは大きいですが、通常または永続的なセーブに保存可能です。"
 
 #: ../../source/changelog.rst:61
-#, fuzzy
 msgid ""
 "The new :func:`renpy.music.get_loop` function returns a list of sound files "
 "that are set to be looped on a channel, making it possible to store and "
 "replay them."
 msgstr ""
-"新しい関数 :func:`renpy.image_exists` は画像が定義されていれば True を返し"
-"ま。"
+"新しい :func:`renpy.music.get_loop` 関数はチャンネル上でループに設定されてい"
+"る音声のリストを返し、その保存と再生を可能にします。"
 
 #: ../../source/changelog.rst:65
 msgid ""
@@ -139,10 +138,13 @@ msgid ""
 "parameter, that specifies a string that masks out characters that would be "
 "shown to the player. This can be used to hide the text of a password."
 msgstr ""
+"The :func:`renpy.input` 関数と input displayable がプレイヤーに表示する文字を"
+"マスクする文字を指定する `mask` パラメータを取るようになりました。これはパス"
+"ワードテキストを隠すのに使用できます。"
 
 #: ../../source/changelog.rst:70
 msgid "There is now a dark theme for the launcher."
-msgstr "ランチャーにダークテーマが追加"
+msgstr "ランチャーにダークテーマが追加されました。"
 
 #: ../../source/changelog.rst:72
 msgid ""
@@ -201,6 +203,11 @@ msgid ""
 "improve compatibility with Android devices, and prevent instances of black "
 "screens on start."
 msgstr ""
+"Ren'Py が Android でプレスプラッシュスクリーンを表示する方法が変更されまし"
+"た。プレスプラッシュはOpenGL 層の新規トップレイヤーである Java boostrap によ"
+"り表示されます。これは SDL 2d レンダリングで表示していた v7.4 に対して新しい"
+"アプローチとなります。この変更は Android デバイスの互換性を改善し、開始時の暗"
+"転を防ぎます。"
 
 #: ../../source/changelog.rst:99
 msgid ""
@@ -208,6 +215,9 @@ msgid ""
 "changed. Ren'Py will now scale-to-fit the presplash image inside the "
 "available area."
 msgstr ""
+"この変更の一環で、 Ren'Py がプレスプラッシュ画像をスケーリングする方法が変更"
+"され、利用可能な領域にフィットするよう(アスペクト比を無視して)拡大するように"
+"なります。"
 
 #: ../../source/changelog.rst:103
 msgid ""
@@ -215,6 +225,8 @@ msgid ""
 "part of Ren'Py. This fixes errors that are related to Bintray being shut "
 "down."
 msgstr ""
+"Android上でビルドされる必要のあるパッケージの一部が Ren'Py に含まれました。こ"
+"れは Bintray の終了によるエラーを修正します。"
 
 #: ../../source/changelog.rst:107
 msgid ""
@@ -229,6 +241,9 @@ msgid ""
 "answering the Android Configuration question \"Do you want to automatically "
 "update the Java source code?\" with \"Yes.\""
 msgstr ""
+"Android 向けの修正ではプロジェクトの再生が必要となるため、Android 設定の質問 "
+"\"Do you want to automatically update the Java source code?\" で \"Yes\" と答"
+"えてください。"
 
 #: ../../source/changelog.rst:115
 msgid "Other Platforms"
@@ -246,6 +261,11 @@ msgid ""
 "Apple. This regression affects other iOS browsers that are shells for Mobile "
 "Safari, like Chrome and Firefox."
 msgstr ""
+"iOS 14.5.1以降のモバイル版 Safari の退行により、Ren'Pyはそれらのプラット"
+"フォームでスタートしません。モバイル版Safari の問題は可能な回避策がなく、"
+"Apple にコンタクトするようプレイヤーにプロンプトを表示します。この退行はモバ"
+"イル版Safariのシェルを使用する Chrome や firefox のような他のブラウザにも影響"
+"します。"
 
 #: ../../source/changelog.rst:125
 msgid "Building for iOS has been fixed."
