@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-22 23:20+0900\n"
+"POT-Creation-Date: 2021-08-08 14:30+0900\n"
 "PO-Revision-Date: 2021-05-23 21:38+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -86,9 +86,9 @@ msgstr ""
 
 #: ../../source/3dstage.rst:50
 msgid ""
-"The initial placement of the camera is controlled by the parameters to :"
-"renpy:`gui.init`. First, Ren'Py uses `width` and `fov` to compute the "
-"default `z` distance. For the default `fov` of 75:"
+"The initial placement of the camera is controlled by the parameters to :func:"
+"`gui.init`. First, Ren'Py uses `width` and `fov` to compute the default `z` "
+"distance. For the default `fov` of 75:"
 msgstr ""
 
 #: ../../source/3dstage.rst:54
@@ -139,7 +139,7 @@ msgstr ""
 #: ../../source/3dstage.rst:80
 msgid ""
 "The first thing to do to use the 3D stage is to enable it for a layer, using "
-"the ``show layer`` statement. This is usually done with::"
+"the ``camera`` statement. This is usually done with::"
 msgstr ""
 
 #: ../../source/3dstage.rst:86
@@ -194,30 +194,27 @@ msgstr ""
 
 #: ../../source/3dstage.rst:153
 msgid ""
-"It's possible to move the camera, as well, using ``show layer``. For "
-"example, ::"
+"It's possible to move the camera, as well, using ``camera``. For example, ::"
 msgstr ""
 
 #: ../../source/3dstage.rst:160
 msgid ""
 "When doing this, it probably makes sense to use background images that are "
-"larger than the window. As of Ren'Py 7.4.5, properties do not persist "
-"between invocations of ``show layer``, so all properties need to be "
-"specified each time ``show layer`` is used."
+"larger than the window."
 msgstr ""
 
-#: ../../source/3dstage.rst:165
+#: ../../source/3dstage.rst:163
 msgid ""
 "If you apply a zpos to a sprite, and it doesn't take effect, the reason is "
-"probably because you omitted the ``perspective`` clause of the ``show "
-"layer`` statement."
+"probably because you omitted the ``perspective`` clause of the ``camera`` "
+"transform."
 msgstr ""
 
-#: ../../source/3dstage.rst:170
+#: ../../source/3dstage.rst:168
 msgid "Depth"
 msgstr ""
 
-#: ../../source/3dstage.rst:172
+#: ../../source/3dstage.rst:170
 msgid ""
 "By default, Ren'Py will display the images in its usual order, with the last "
 "image to be shown above the others. This might lead to odd results, like an "
@@ -225,24 +222,24 @@ msgid ""
 "farther away."
 msgstr ""
 
-#: ../../source/3dstage.rst:177
+#: ../../source/3dstage.rst:175
 msgid ""
 "If your game shows images out of order like this, you can tell the GPU to "
 "sort by depth, using :tpref:`gl_depth`::"
 msgstr ""
 
-#: ../../source/3dstage.rst:184
+#: ../../source/3dstage.rst:182
 msgid ""
 "Slight rounding errors can cause images that are nominally at the same depth "
 "to appear above or below each other. Flattening these images and displaying "
 "them together may be the solution to this."
 msgstr ""
 
-#: ../../source/3dstage.rst:189
+#: ../../source/3dstage.rst:187
 msgid "Matrix Transforms"
 msgstr ""
 
-#: ../../source/3dstage.rst:191
+#: ../../source/3dstage.rst:189
 msgid ""
 "Ren'Py uses the :tpref:`matrixtransform` transform property to apply a "
 "matrix to displayables, which allows an image to be scaled, offset, and "
@@ -251,7 +248,7 @@ msgid ""
 "vertices at the corners of the images being displayed."
 msgstr ""
 
-#: ../../source/3dstage.rst:197
+#: ../../source/3dstage.rst:195
 msgid ""
 "Ren'Py uses the :tpref:`matrixanchor` transform property to make applying a "
 "matrix easier. This defaults to (0.5, 0.5), and is translated to a pixel "
@@ -260,7 +257,7 @@ msgid ""
 "otherwise it's a fraction of the size of the image.)"
 msgstr ""
 
-#: ../../source/3dstage.rst:203
+#: ../../source/3dstage.rst:201
 msgid ""
 "Ren'Py applies the image by first shifting the image so the anchor is at (0, "
 "0, 0). It then applies the transform, and then shifts it back by the same "
@@ -268,34 +265,34 @@ msgid ""
 "the center of the image."
 msgstr ""
 
-#: ../../source/3dstage.rst:208
+#: ../../source/3dstage.rst:206
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/3dstage.rst:213
+#: ../../source/3dstage.rst:211
 msgid ""
 "Will rotate the image around the line going horizontally through it's "
 "center. The top of the image will move back, and then bottom of the image "
 "will move forwards."
 msgstr ""
 
-#: ../../source/3dstage.rst:217
+#: ../../source/3dstage.rst:215
 msgid ""
 "Matrixes can be chained together with multiplication. It's easiest to think "
 "about them being applied right to left. In this example::"
 msgstr ""
 
-#: ../../source/3dstage.rst:224
+#: ../../source/3dstage.rst:222
 msgid ""
 "The image will be shifted up by 300 pixels, and then will be rotated around "
 "the X axis."
 msgstr ""
 
-#: ../../source/3dstage.rst:228
+#: ../../source/3dstage.rst:226
 msgid "TransformMatrix"
 msgstr "TransformMatrix"
 
-#: ../../source/3dstage.rst:230
+#: ../../source/3dstage.rst:228
 msgid ""
 "While Matrix objects are suitable for static transformations, they're not "
 "useful for animating changing transformations. It's also useful to have a "
@@ -303,7 +300,7 @@ msgid ""
 "the matrix to be parameterized."
 msgstr ""
 
-#: ../../source/3dstage.rst:235
+#: ../../source/3dstage.rst:233
 msgid ""
 "The TransformMatrix is a base class that is is extended by a number of "
 "Matrix-creating classes. Instances of TransformMatrix are called by Ren'Py, "
@@ -311,13 +308,13 @@ msgid ""
 "for matrixtransform animations. ::"
 msgstr ""
 
-#: ../../source/3dstage.rst:245
+#: ../../source/3dstage.rst:243
 msgid ""
 "Subclasses of TransformMatrix are expected to implement the ``__call__`` "
 "method. This method takes:"
 msgstr ""
 
-#: ../../source/3dstage.rst:248
+#: ../../source/3dstage.rst:246
 msgid ""
 "An old object to interpolate off of. This object may be of any class, and "
 "may be None if no old object exists."
@@ -325,19 +322,20 @@ msgstr ""
 "補間する以前のオブジェクトです。このオブジェクトは任意のクラスである可能性が"
 "あり、以前のオブジェクトがなければ None です。"
 
-#: ../../source/3dstage.rst:250
+#: ../../source/3dstage.rst:248
+#, fuzzy
 msgid ""
-"A value betwee 0.0 and 1.0, representing the point to interpolate. 0.0 is "
+"A value between 0.0 and 1.0, representing the point to interpolate. 0.0 is "
 "entirely the old object, and 1.0 is entirely the new object."
 msgstr ""
 "0.0 から 1.0の間の値で、補間の進行度を表します。0.0が完全な old オブジェクト"
 "で、1.0が完全な new オブジェクトです。"
 
-#: ../../source/3dstage.rst:254
+#: ../../source/3dstage.rst:252
 msgid "Built-In TransformMatrix Subclasses"
 msgstr ""
 
-#: ../../source/3dstage.rst:256
+#: ../../source/3dstage.rst:254
 msgid ""
 "The following is the list of TransformMatrix subclasses that are built into "
 "Ren'Py."
@@ -355,9 +353,9 @@ msgid ""
 "the origin."
 msgstr ""
 
-#: ../../source/inc/transform_matrix:14
-msgid "`x`, `y`, `x`"
-msgstr "`x`, `y`, `x`"
+#: ../../source/inc/transform_matrix:14 ../../source/inc/transform_matrix:26
+msgid "`x`, `y`, `z`"
+msgstr "`x`, `y`, `z`"
 
 #: ../../source/inc/transform_matrix:13
 msgid "The amount to rotate around the origin, in degrees."
@@ -383,23 +381,19 @@ msgstr "X/Y 面で `z` 度時計回りに回転します。"
 msgid "A TransformMatrix that returns a matrix that scales the displayable."
 msgstr ""
 
-#: ../../source/inc/transform_matrix:26
-msgid "`x`, `y`, `z`"
-msgstr "`x`, `y`, `z`"
-
 #: ../../source/inc/transform_matrix:27
 msgid "The factor to scale each axis by."
 msgstr "各軸に対するスケーリングファクターです。"
 
-#: ../../source/3dstage.rst:263
+#: ../../source/3dstage.rst:261
 msgid "Transform Properties"
 msgstr ""
 
-#: ../../source/3dstage.rst:265
+#: ../../source/3dstage.rst:263
 msgid "The following transform properties are used by ther 3D Stage."
 msgstr ""
 
-#: ../../source/3dstage.rst:267
+#: ../../source/3dstage.rst:265
 msgid ""
 ":tpref:`perspective`, :tpref:`matrixanchor`, :tpref:`matrixtransform`, :"
 "tpref:`zpos`, :tpref:`zzoom`"
@@ -407,104 +401,107 @@ msgstr ""
 ":tpref:`perspective`, :tpref:`matrixanchor`, :tpref:`matrixtransform`, :"
 "tpref:`zpos`, :tpref:`zzoom`"
 
-#: ../../source/3dstage.rst:271
+#: ../../source/3dstage.rst:269
 msgid "(position, position)"
 msgstr "(position, position)"
 
-#: ../../source/3dstage.rst:272
+#: ../../source/3dstage.rst:270
 msgid "(0.5, 0.5)"
 msgstr "(0.5, 0.5)"
 
-#: ../../source/3dstage.rst:274
+#: ../../source/3dstage.rst:272
 msgid ""
 "This gives the position of the matrix anchor relative to the image. If the "
 "variables are floats, this is relative to the size of the child, otherwise "
 "it's absolute pixels."
 msgstr ""
 
-#: ../../source/3dstage.rst:278
+#: ../../source/3dstage.rst:276
 msgid ""
 "This sets the location of the (0, 0, 0) point that matrixtransform applies "
 "its transform to."
 msgstr ""
 
-#: ../../source/3dstage.rst:283
+#: ../../source/3dstage.rst:281
 msgid "None or Matrix or TransformMatrix"
 msgstr ""
 
-#: ../../source/3dstage.rst:284
+#: ../../source/3dstage.rst:282
 msgid "None"
 msgstr "None"
 
-#: ../../source/3dstage.rst:286
+#: ../../source/3dstage.rst:284
 msgid ""
 "If not None, this gives a matrix that is used to transform the vertices of "
 "the child of the transform. The transformation goes from the coordinates "
 "used by the screen to the coordinates used by the child of the transform."
 msgstr ""
 
-#: ../../source/3dstage.rst:292
+#: ../../source/3dstage.rst:290
 msgid "True or False or Float or (Float, Float, Float)"
 msgstr ""
 
-#: ../../source/3dstage.rst:293 ../../source/3dstage.rst:321
+#: ../../source/3dstage.rst:291 ../../source/3dstage.rst:319
 msgid "False"
 msgstr "False"
 
-#: ../../source/3dstage.rst:295
+#: ../../source/3dstage.rst:293
 msgid ""
 "When applied to a transform, this enables perspective rendering. This takes "
 "a triple, giving the near plane, z-distance to the 1:1 plane, and far plane."
 msgstr ""
 
-#: ../../source/3dstage.rst:299
+#: ../../source/3dstage.rst:297
 msgid ""
 "If a single float, the distances to the near and far planes are taken from :"
 "var:`config.perspective`. If True, all three values are taken from that "
 "variable."
 msgstr ""
 
-#: ../../source/3dstage.rst:303
+#: ../../source/3dstage.rst:301
 msgid ""
 "When perspective is not false, the meaning of the :tpref:`xpos`, :tpref:"
 "`ypos`, and :tpref:`zpos` are inverted, providing the effect of positioning "
 "the camera rather than the child."
 msgstr ""
 
-#: ../../source/3dstage.rst:309
+#: ../../source/3dstage.rst:307
 msgid "float"
 msgstr "float"
 
-#: ../../source/3dstage.rst:310
+#: ../../source/3dstage.rst:308
 msgid "0"
 msgstr "0"
 
-#: ../../source/3dstage.rst:312
+#: ../../source/3dstage.rst:310
 msgid ""
 "This offsets the child along the z-axis. When perspective is false, this is "
 "used directly, otherwise it is multiplied by -1 and used."
 msgstr ""
 
-#: ../../source/3dstage.rst:315
+#: ../../source/3dstage.rst:313
 msgid ""
 "If setting this causes the child to disappear, it's likely that the "
 "transform is not being used with a displayable where zpos is False."
 msgstr ""
 
-#: ../../source/3dstage.rst:320
+#: ../../source/3dstage.rst:318
 msgid "bool"
 msgstr "bool"
 
-#: ../../source/3dstage.rst:323
+#: ../../source/3dstage.rst:321
 msgid ""
 "If this is true, the z-distance to the 1:1 plane (`zone`) is determined, "
 "along with this displayable's zpos. The child is then scaled by (`zone` - "
 "`zpos`) / `zone` in the x and y axes."
 msgstr ""
 
-#: ../../source/3dstage.rst:327
+#: ../../source/3dstage.rst:325
 msgid ""
 "The intended use for this is in displaying a background with a negative "
 "`zpos`, which would normally make the background small. Setting this to true "
 "means that the background will be displayed at 1:1 size."
 msgstr ""
+
+#~ msgid "`x`, `y`, `x`"
+#~ msgstr "`x`, `y`, `x`"

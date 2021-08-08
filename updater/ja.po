@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-22 21:18+0900\n"
+"POT-Creation-Date: 2021-08-08 14:30+0900\n"
 "PO-Revision-Date: 2019-05-04 13:41+0900\n"
 "Last-Translator: \n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -97,6 +97,10 @@ msgstr ""
 "囲の問い合わせをサポートする必要があります。"
 
 #: ../../source/updater.rst:38
+msgid "HTTPS is not supported for patching."
+msgstr ""
+
+#: ../../source/updater.rst:40
 msgid ""
 "(This means paying for web hosting, as \"sharing\" sites tend not to support "
 "the required features.)"
@@ -105,10 +109,18 @@ msgstr ""
 "グのために代金を払う必要があります )"
 
 #: ../../source/updater.rst:43
+msgid ""
+"If the `patch` parameter is set to False, or an https url is given, the "
+"updater will not attempt to patch the game. Instead, it will download the "
+"full archive, and unpack that update. While this is a larger download, it "
+"will work with many more web servers."
+msgstr ""
+
+#: ../../source/updater.rst:49
 msgid "Building an Update"
 msgstr "アップデートのビルド"
 
-#: ../../source/updater.rst:45
+#: ../../source/updater.rst:51
 msgid ""
 "Updates are built automatically when distributions are built. To build an "
 "update, set build.include_update to True in options.rpy. This will unlock "
@@ -121,39 +133,39 @@ msgstr ""
 "い。このオプションをチェックすると Ren'Py はアップデートファイルを作成しま"
 "す。"
 
-#: ../../source/updater.rst:51
+#: ../../source/updater.rst:57
 msgid "The update files consist of:"
 msgstr "アップデートファイルは以下で構成されます :"
 
-#: ../../source/updater.rst:54
+#: ../../source/updater.rst:60
 msgid "updates.json"
 msgstr "updates.json"
 
-#: ../../source/updater.rst:54
+#: ../../source/updater.rst:60
 msgid "An index of available updates and their versions."
 msgstr "利用可能なアップデートとそのバージョンのインデックス"
 
-#: ../../source/updater.rst:57
+#: ../../source/updater.rst:63
 msgid "*package*.sums"
 msgstr "*package*.sums"
 
-#: ../../source/updater.rst:57
+#: ../../source/updater.rst:63
 msgid "Contains checksums for each block in the package."
 msgstr "そのパッケージの各ブロックのチェックサム"
 
-#: ../../source/updater.rst:60
+#: ../../source/updater.rst:66
 msgid "*package*.update.gz"
 msgstr "*package*.update.gz"
 
-#: ../../source/updater.rst:60
+#: ../../source/updater.rst:66
 msgid "Contains the update data for the given package."
 msgstr "特定のパッケージのアップデートデータを含んでいます。"
 
-#: ../../source/updater.rst:64
+#: ../../source/updater.rst:70
 msgid "*package*.update.json"
 msgstr "*package*.update.json"
 
-#: ../../source/updater.rst:63
+#: ../../source/updater.rst:69
 msgid ""
 "Contains a list of the files in each package, which the updater uses when "
 "downloading DLC."
@@ -161,27 +173,27 @@ msgstr ""
 "DLC をダウンロードするとき、アップデーターが使用する各パッケージのファイルの"
 "リストが含まれます。"
 
-#: ../../source/updater.rst:67
+#: ../../source/updater.rst:73
 msgid "*package*.zsync"
 msgstr "*package*.zsync"
 
-#: ../../source/updater.rst:67
+#: ../../source/updater.rst:73
 msgid "This is a control file that's used by zsync to manage the download."
 msgstr ""
 "これは zsync によってダウンロードを管理するために使用される制御ファイルです。"
 
-#: ../../source/updater.rst:69
+#: ../../source/updater.rst:75
 msgid ""
 "You must upload all these files to a single directory on your web server."
 msgstr ""
 "これらすべてのファイルをウェブサーバーのひとつのディレクトリーにアップロード"
 "しなければなりません。"
 
-#: ../../source/updater.rst:74
+#: ../../source/updater.rst:80
 msgid "Functions"
 msgstr "関数"
 
-#: ../../source/updater.rst:76
+#: ../../source/updater.rst:82
 msgid ""
 "To cause an update to occur, invoke either updater.update or the updater."
 "Update action."
@@ -363,7 +375,7 @@ msgstr "`restart`"
 msgid "Restart the game after the update."
 msgstr "アップデート後にゲームを再起動します。"
 
-#: ../../source/inc/updater:82
+#: ../../source/inc/updater:83
 msgid "`confirm`"
 msgstr "`confirm`"
 
@@ -375,11 +387,23 @@ msgstr ""
 "Ren'Py はユーザーにアップデートの確認を求めますか？ False なら、確認なしで"
 "アップデートが実行されます。"
 
-#: ../../source/updater.rst:82
+#: ../../source/inc/updater:88
+msgid "`patch`"
+msgstr ""
+
+#: ../../source/inc/updater:86
+msgid ""
+"If true, Ren'Py will attempt to patch the game, downloading only changed "
+"data. If false, Ren'Py will download a complete copy of the game, and update "
+"from that. This is set to false automatically when the url does not begin "
+"with \"http:\"."
+msgstr ""
+
+#: ../../source/updater.rst:88
 msgid "Screen"
 msgstr "スクリーン"
 
-#: ../../source/updater.rst:84
+#: ../../source/updater.rst:90
 msgid ""
 "To customize the look of the updater, you may override the ``updater`` "
 "screen. The default screen is defined in common/00updater.rpy."
