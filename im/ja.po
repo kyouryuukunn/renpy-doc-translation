@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-22 23:20+0900\n"
-"PO-Revision-Date: 2021-05-03 21:35+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-08-10 08:13+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.2.4\n"
+"Language-Team: \n"
 
 #: ../../source/im.rst:9
 msgid "Image Manipulators"
@@ -27,6 +27,9 @@ msgid ""
 "manipulator, and either loads it or performs an operation on it. Image "
 "manipulators can only take images or other image manipulators as input."
 msgstr ""
+"画像マニピュレータは、画像や画像マニピュレータを取る displayable で、それらを"
+"読み込み、または処理します。画像マニピュレータは画像または他の画像マニピュ"
+"レータのみを入力として受け取れます。"
 
 #: ../../source/im.rst:16
 msgid ""
@@ -47,6 +50,11 @@ msgid ""
 "similar functionality in a more general manner, while fixing the problems, "
 "although it sometimes requires gl2 to be enabled."
 msgstr ""
+"以下に示すいくつかの例外を除いて、画像マニピュレータの使用はレガシーなもので"
+"す。かつてドキュメントに記されていた多くの画像マニピュレータは本質的に問題が"
+"あるため、すでに使用されていません。 `im.Data` を除いて多くの場合で :func:"
+"`Transform` displayable はそれらの問題を解決しつつ同様な機能をより一般的な方"
+"法で提供しますが、 gl2 を有効化する必要がある場合もあります。"
 
 #: ../../source/inc/im_im:5
 msgid ""
@@ -80,18 +88,23 @@ msgid ""
 "An image manipulator that blurs the image manipulator `im` using an "
 "elliptical kernel described by `xrad` and optionally `yrad`."
 msgstr ""
+"`xrad` とオプションの `yrad` で記述される elliptical kernel を使用して画像マ"
+"ニピュレータ `im` にブラーをかける画像マニピュレータです。"
 
 #: ../../source/inc/im_im:22
 msgid ""
 "If `yrad` is None, it will take the value of `xrad` resulting in a circular "
 "kernel being used."
 msgstr ""
+"`yrad` が None なら、 `xrad` の値と同じ値になり、 circular kernel が使用され"
+"ます。"
 
 #: ../../source/inc/im_im:29
 msgid ""
 "The same effect can now be achieved with the :tpref:`blur` transform "
 "property."
 msgstr ""
+"現行では同じエフェクトが :tpref:`blur` transform プロパティーで得られます。"
 
 #: ../../source/inc/im_im:33
 msgid ""
@@ -106,10 +119,11 @@ msgid ""
 "The same effect can now be achieved by setting the :tpref:`crop` transform "
 "property."
 msgstr ""
+"現行では同じエフェクトが :tpref:`crop` transform プロパティーで得られます。"
 
 #: ../../source/inc/im_im:44
 msgid "This image manipulator loads an image from binary data."
-msgstr ""
+msgstr "この画像マニピュレータは、バイナリデータから画像をロードします。"
 
 #: ../../source/inc/im_im:48
 msgid "`data`"
@@ -119,7 +133,7 @@ msgstr "`data`"
 msgid ""
 "A string of bytes, giving the compressed image data in a standard file "
 "format."
-msgstr ""
+msgstr "バイナリの文字列です。標準フォーマットでの圧縮画像データを指定します。"
 
 #: ../../source/inc/im_im:52
 msgid "`filename`"
@@ -130,6 +144,9 @@ msgid ""
 "A \"filename\" associated with the image. This is used to provide a hint to "
 "Ren'Py about the format of `data`. (It's not actually loaded from disk.)"
 msgstr ""
+"画像に関連付けられる \"filename\" です。これによって Ren'Py にその `data` の"
+"フォーマットに関するヒントを与えるます(実際にディスクからロードはされませ"
+"ん)。"
 
 #: ../../source/inc/im_im:57
 msgid ""
@@ -262,6 +279,10 @@ msgid ""
 "has been given a new `Matrix` equivalent, which can be found in the :ref:"
 "`matrixcolor documentation <matrixcolor>`."
 msgstr ""
+"im.MatrixColor 画像マニピュレータは matrixcolor プロパティーを指定する "
+"transform と ATL transform で置き換えられました。各 im.matrix ジェネレーター"
+"には :ref:`matrixcolor <matrixcolor>` に記述されている新しい等価な Matrix が"
+"与えられました。"
 
 #: ../../source/im.rst:55
 msgid ""
@@ -269,6 +290,9 @@ msgid ""
 "ones. With X being the Matrix corresponding to im.Matrixcolor.x, ``C*B*A`` "
 "will be the Matrix corresponding to ``im.a*im.b*im.c``."
 msgstr ""
+"新しい Matrix オブジェクトは im.Matrixcolor とは逆の順序で乗算されます。 X "
+"が im.Matrixcolor.x に対応する Matrix であるとすると, ``C*B*A`` は ``im.a*im."
+"b*im.c`` に対応する Matrix となります。"
 
 #: ../../source/inc/im_matrixcolor:5
 msgid ""

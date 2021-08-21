@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-08 14:30+0900\n"
-"PO-Revision-Date: 2021-05-22 22:36+0900\n"
+"PO-Revision-Date: 2021-08-10 12:28+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -655,15 +655,17 @@ msgstr ""
 "なく、予測のためにいつどの数値で呼び出されるか分かりません。"
 
 #: ../../source/atl.rst:550
-#, fuzzy
 msgid "Animation Statement"
-msgstr "Function ステートメント"
+msgstr "Animation ステートメント"
 
 #: ../../source/atl.rst:552
 msgid ""
 "The ``animation`` statement must be the first statement in an ATL block, and "
 "tells Ren'Py this statement uses the animation timebase."
 msgstr ""
+"``animation`` ステートメントは ATL ブロックの最初のステートメントでなくてはな"
+"らず、 Ren'Py にこのステートメントがアニメーション時間軸に従うことを通知しま"
+"す。timebase."
 
 #: ../../source/atl.rst:558
 msgid ""
@@ -672,6 +674,9 @@ msgid ""
 "to have one image replaced by a second one at the same apparent time. For "
 "example::"
 msgstr ""
+"通常の出現時間軸に対して、アニメーション時間軸は同じタグの画像やスクリーンが"
+"表示されたときに開始します。これは通常おなじ時間軸で別の物で置き換えられる画"
+"像があるときに使用します。例 ::"
 
 #: ../../source/atl.rst:584
 msgid ""
@@ -681,6 +686,10 @@ msgid ""
 "Without the animation statement, the position would reset when the player "
 "clicks."
 msgstr ""
+"この例では Eileen は最初の pause 終了時に表示を変えますが、その位置は両方のア"
+"ニメーションで共有のアニメーション時間軸を持ち、同じ場所にスプライトを配置す"
+"るため変わりません。アニメーションステートメントがないと、その位置はプレイ"
+"ヤークリック時にリセットされます。"
 
 #: ../../source/atl.rst:594
 msgid "Warpers"
@@ -986,6 +995,8 @@ msgid ""
 "These warpers can be accessed in the ``_warper`` read-only module, which "
 "contains the functions listed above."
 msgstr ""
+"これらのワーパーは上記のリストの関数を含む読み込み専用モジュールの "
+"``_warper`` からアクセス可能です。"
 
 #: ../../source/atl.rst:630
 msgid ""
@@ -1006,14 +1017,13 @@ msgid "The following transform properties exist."
 msgstr "以下の transform プロパティーが存在します。"
 
 #: ../../source/atl.rst:647
-#, fuzzy
 msgid ""
 "When the type is given as position, it may be an int, an ``absolute``, or a "
 "float. If it's a float, it's interpreted as a fraction of the size of the "
 "containing area (for :propref:`pos`) or displayable (for :propref:`anchor`)."
 msgstr ""
-"型(Type)に position が指定されていれば、整数、浮動小数点数、または ``renpy."
-"absolute`` にできます。 float ならそれが含まれる領域 (:propref:`pos` ) また"
+"型(Type)に position が指定されていれば、整数、浮動小数点数、または "
+"``absolute`` にできます。 float ならそれが含まれる領域 (:propref:`pos` ) また"
 "は displayable (:propref:`anchor`)に対する割合として解釈されます。"
 
 #: ../../source/atl.rst:651
@@ -1046,7 +1056,7 @@ msgstr "これを含む領域の左上隅に対する位置です。"
 #: ../../source/atl.rst:667 ../../source/atl.rst:675 ../../source/atl.rst:690
 #: ../../source/atl.rst:698 ../../source/atl.rst:889
 msgid "position"
-msgstr "位置表現"
+msgstr "position"
 
 #: ../../source/atl.rst:668 ../../source/atl.rst:676 ../../source/atl.rst:691
 #: ../../source/atl.rst:699
@@ -1849,7 +1859,7 @@ msgstr ""
 
 #: ../../source/atl.rst:1191
 msgid "Replacing Transforms"
-msgstr ""
+msgstr "transofrm の置き換え"
 
 #: ../../source/atl.rst:1193
 msgid ""
@@ -1857,6 +1867,9 @@ msgid ""
 "class is replaced by another class, the properties of the transform that's "
 "being replaced are inherited by the transform that's replacing it."
 msgstr ""
+":func:`Transform` クラスを使用して定義された ATL transform や transform が他"
+"のクラスで置き換えられるとその transform のプロパティーは置き換えた "
+"transform に引き継がれます。"
 
 #: ../../source/atl.rst:1197
 msgid ""
@@ -1864,12 +1877,16 @@ msgid ""
 "transforms are matched from last to first, until one list runs out. For "
 "example, in::"
 msgstr ""
+"``show`` ステートメントの at リスト内に複数の transform があるとき、それらの "
+"transform は最後から最初の順にリストがなくなるまでマッチします。例えば ::"
 
 #: ../../source/atl.rst:1205
 msgid ""
 "the ``c`` transform is replaced by ``e``, the ``b`` transform is replaced by "
 "``d``, and nothing replaces the ``a`` transform."
 msgstr ""
+"``c`` transform は``e`` で、 ``b`` transform は``d`` で置き換えられ、 ``a`` "
+"transform は置き換えられません。"
 
 #: ../../source/atl.rst:1208
 msgid ""
@@ -1877,6 +1894,9 @@ msgid ""
 "transform get inherited by the new transform. If the old transform was being "
 "animated, this might mean an intermediate value is inherited. For example::"
 msgstr ""
+"置き換え時、以前の transform のプロパティーの値は新しい transform に継承され"
+"ます。以前の transform がアニメーションなら、途中の値が継承されます。例え"
+"ば ::"
 
 #: ../../source/atl.rst:1226
 msgid ""
@@ -1885,6 +1905,9 @@ msgid ""
 "used to initialize the ``xalign`` of headright, and so the sprite will move "
 "from where it was when the player first clicked."
 msgstr ""
+"この例ではスプライトはプレイヤーがクリックするまで左右に往復します。クリック"
+"すると ``bounce`` の ``xalign`` でheadright の ``xalighn`` が初期化され、スプ"
+"ライトはプレイヤーが最初にクリックしたときにあった位置から動き始めます。"
 
 #: ../../source/atl.rst:1231
 msgid ""
@@ -1895,13 +1918,23 @@ msgid ""
 "takes precedence. These properties may be set in multiple ways - for "
 "example, :tpref:`xalign` sets xpos and xanchor."
 msgstr ""
+"位置プロパティー (:tpref:`xpos`, :tpref:`ypos`, :tpref:`xanchor`, :tpref:"
+"`yanchor`) の継承には特別なルールがあり、子で設定された値は親で設定された値を"
+"上書きします。これは Displayable の位置は1つのみで、アクティブに設定された位"
+"置が優先されるからです。これらのプロパティーは複数の方法で設定されます。例え"
+"ば :tpref:`xalign` は xpos と xanchor を設定します。"
 
 #: ../../source/atl.rst:1237
+#, fuzzy
 msgid ""
 "Finally, when a ``show`` statement does not include and ``at`` clause, the "
 "same displayables are used, so no inheritence is necessary. To prevent "
 "inheritance, show and then hide the displayable."
 msgstr ""
+"最終的に ``show`` ステートメントが含まず、 ``at`` 節がなければ同じ "
+"Displayable が使用されるので継承は不要です。継承をしないためには表示後に非表"
+"示してください。\n"
+"(何を含まないかの指定がない)"
 
 #~ msgid "type"
 #~ msgstr "type"

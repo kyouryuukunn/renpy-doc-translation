@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-08 14:30+0900\n"
-"PO-Revision-Date: 2021-05-25 23:11+0900\n"
+"PO-Revision-Date: 2021-08-21 13:58+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -20,12 +20,14 @@ msgstr ""
 
 #: ../../source/changelog.rst:6
 msgid "Changelog (Ren'Py 7.x-)"
-msgstr "Changelog (Ren'Py 7.x-)"
+msgstr ""
+"新しい :var:`config.audio_filename_callback` により Web やその他のプラット"
+"フォーム用に再生時に再生するオーディオファイル名を調整出来るようになりまし"
+"た。"
 
 #: ../../source/changelog.rst:11
-#, fuzzy
 msgid "7.4.8"
-msgstr "7.4.5"
+msgstr "7.4.8"
 
 #: ../../source/changelog.rst:14 ../../source/changelog.rst:198
 #: ../../source/changelog.rst:379 ../../source/changelog.rst:1060
@@ -43,21 +45,23 @@ msgid ""
 "dictionaries, sets, and objects. Everyone that uses 7.4.7 is recommended to "
 "upgrade."
 msgstr ""
+"これはロールバックによりリストや辞書、セットその他のオブジェクトが破壊される"
+"主な問題を修正します。7.4.7を使用している人は更新を推奨します。"
 
 #: ../../source/changelog.rst:20
-#, fuzzy
 msgid "A crash that could be caused by non-integer outlines has been fixed."
-msgstr "ジェスチャーやコントローラーで発生していたクラッシュを修正しました。"
+msgstr "整数でないアウトラインによるクラッシュを修正しました。"
 
 #: ../../source/changelog.rst:22
 msgid ""
 "The correct size of a viewport is used for edge and mouse wheel scrolling."
 msgstr ""
+"ビューポートの正しいサイズがエッジスクロールとマウススクロールに使用されるよ"
+"うになりました。"
 
 #: ../../source/changelog.rst:24
-#, fuzzy
 msgid "Game controller detection has been fixed."
-msgstr "macOS での Steam 向けのビルドが修正されました。"
+msgstr "ゲームコントローラの検出が改善しました。"
 
 #: ../../source/changelog.rst:27 ../../source/changelog.rst:267
 #: ../../source/changelog.rst:453
@@ -69,12 +73,16 @@ msgid ""
 "It is now possible, using :func:`PauseAction` or :func:`renpy.music."
 "set_pause`, to pause a channel that's playing video."
 msgstr ""
+":func:`PauseAction` または :func:`renpy.music.set_pause` を使用してビデオを再"
+"生しているチャンネルを停止できるようになりました。"
 
 #: ../../source/changelog.rst:32
 msgid ""
 "The default channel for movies can now be set with :var:`config."
 "single_movie_channel`."
 msgstr ""
+"ムービーのデフォルトチャンネルが :var:`config.single_movie_channel` で設定さ"
+"れるようになりました。"
 
 #: ../../source/changelog.rst:35 ../../source/changelog.rst:1233
 #: ../../source/changelog.rst:1626 ../../source/changelog.rst:2112
@@ -87,12 +95,15 @@ msgid ""
 "the developer, rather than causing a placeholder (the gray ghost girl) to "
 "appear."
 msgstr ""
+"開発者モードでは、画像がないときプレースホルダー(灰色の幽霊少女)の表示の代わ"
+"りにエラーを報告するようになりました。"
 
 #: ../../source/changelog.rst:41
+#, fuzzy
 msgid ""
 "The text window will not be shown before being hidden by the ``centered`` "
 "and ``vcentered`` characters."
-msgstr ""
+msgstr "テキストウィンドウは \"centered\" と \"vcentered\" キャラクター"
 
 #: ../../source/changelog.rst:44
 msgid ""
@@ -100,15 +111,16 @@ msgid ""
 "state of the game will not cause the effects of the console to be reverted. "
 "Rolling back one step further will."
 msgstr ""
+"Shift+O のコンソールでゲームの状態を変更した地点までのロールバックでロール"
+"バックの作用を戻さなくなりました。さらに1ステップロールバックします。"
 
 #: ../../source/changelog.rst:50
-#, fuzzy
 msgid "7.4.7"
-msgstr "7.4.5"
+msgstr "7.4.7"
 
 #: ../../source/changelog.rst:53
 msgid "Web and Web Audio"
-msgstr ""
+msgstr "Web と Web Audio"
 
 #: ../../source/changelog.rst:55
 msgid ""
@@ -118,6 +130,10 @@ msgid ""
 "often multithreaded, and so prevents the skipping and crackling that had "
 "been occurring with the web port."
 msgstr ""
+"webプラットフォームでオーディオを再生する方法が書き直されました。他のプラット"
+"フォームのようにffmpeを使用する代わりに、webバージョンではブラウザ組み込みの"
+"オーディオプレイヤーでファイルを再生するようになりました。これはマルチスレッ"
+"ドであることが多く、webバージョンで発生する音飛びや音割れを防ぎます。"
 
 #: ../../source/changelog.rst:61
 msgid ""
@@ -125,18 +141,25 @@ msgid ""
 "supported in browsers. This is Opus, Ogg, and MP3 in modern web browsers, "
 "and just MP3 in Safari. (But see the Safari issues below.)"
 msgstr ""
+"web プラットフォームでサポートされるファイルフォーマットはブラウザでサポート"
+"されるフォーマットとなりました。これはモダンな web ブラウザでは Opus, Ogg "
+"で、 Safari では MP3 も加わります(Safari での後述の問題も参照してください)。"
 
 #: ../../source/changelog.rst:66
 msgid ""
 "The new :var:`config.audio_filename_callback` makes it possible to adjust "
 "audio filenames on play, on the web and on other platforms."
 msgstr ""
+"新しい :var:`config.audio_filename_callback` によりweb やその他プラットフォー"
+"ムえ再生時にオーディオファイル名を調整できるようになりました。"
 
 #: ../../source/changelog.rst:69
 msgid ""
 "Self-voicing, with the 'v' key, now works on the web platform if the browser "
 "supports it."
 msgstr ""
+"ブラウザでサポートされていれば 'v' キーでの自己発話が web 版で動作するように"
+"なりました。"
 
 #: ../../source/changelog.rst:72
 msgid ""
@@ -146,6 +169,10 @@ msgid ""
 "fix this issue in Ren'Py, the web shell has been modified to report the "
 "issue."
 msgstr ""
+"Ren'Py でサポートするブラウザーは https://bugs.webkit.org/show_bug.cgi?"
+"id=227421 のため webkit ベースの物に限定されます。つまり iOS 上のすべてのブラ"
+"ウザと特に M 1 MacOS 上の Safari に影響します。 Ren'Py でこの問題を修正するす"
+"べはありません。"
 
 #: ../../source/changelog.rst:79 ../../source/changelog.rst:911
 #: ../../source/changelog.rst:914
@@ -159,50 +186,61 @@ msgid ""
 "the pillarboxing (or worse, both pillarboxing and letterboxing) that would "
 "otherwise be required."
 msgstr ""
+"iOS ビルダはより新しいバージョンの Clang でコンパイルされるようになり、他の方"
+"法では必要となる pillarboxing (さらに悪いときは pillarboxing と letterboxing "
+"の両方)なしで 12 世代 iPhone と 2世代 iPhone SE で動作できます。"
 
 #: ../../source/changelog.rst:86
 msgid ""
 "Ren'Py can compile for the iOS simulator on M1 macs, but the simulator "
 "itself may cause runtime issues."
 msgstr ""
+"M1 Mac で iOS シミュレータ用に Ren'Py をコンパイルできますが、シミュレータ自"
+"身がランタイムエラーを出します。"
 
 #: ../../source/changelog.rst:90
 msgid "Input"
-msgstr ""
+msgstr "Input"
 
 #: ../../source/changelog.rst:92
 msgid ""
 "The input displayable now supports a number of new quality of life features. "
 "Specifically, the following new features now work:"
 msgstr ""
+"input Displayable では複数の新機能をサポートしました。特に以下の機能が動作す"
+"るようになりました。 :"
 
 #: ../../source/changelog.rst:95
 msgid "Jumping a word to the left. (Ctrl-Left, Alt-Left on Macintosh.)"
-msgstr ""
+msgstr "単語の左への移動 (Ctrl-Left, Macでは Alt-Left)"
 
 #: ../../source/changelog.rst:96
 msgid "Jumping a word to the right. (Ctrl-Right, Alt-Right on Macintosh.)"
-msgstr ""
+msgstr "単語の右への移動 (Ctrl-Right, Macでは Alt-Right)"
 
 #: ../../source/changelog.rst:97
 msgid "Deleting a word. (Ctrl-Backspace, Alt-Backspace on Macintosh.)"
-msgstr ""
+msgstr "単語の削除 (Ctrl-Backspace,Mac では Alt-Backspace)"
 
 #: ../../source/changelog.rst:98
 msgid "Deleting the line. (Windows-Backspace, Command-Backspace on Macintosh.)"
-msgstr ""
+msgstr "行の削除 (Windows-Backspace, Mac では Command-Backspace)"
 
 #: ../../source/changelog.rst:100
 msgid ""
 "In addition, Command-Left and Command-Right on Macintosh now navigate to the "
 "start and end of the line, in addition to the usual Home and End keys."
 msgstr ""
+"さらに通常の Home と End に加えて mac では Command-Left と Command-Right で行"
+"頭行末に移動するようになりました。"
 
 #: ../../source/changelog.rst:103
 msgid ""
 "The input caret now blinks to draw attention. The blink rate is controlled "
 "by the :var:`config.input_caret_blink` variable."
 msgstr ""
+"入力キャッレットは注目を集めるために点滅するようになりました。点滅頻度は :"
+"var:`config.input_caret_blink` 変数で制御できます。"
 
 #: ../../source/changelog.rst:107 ../../source/changelog.rst:394
 #: ../../source/changelog.rst:2011
@@ -214,15 +252,16 @@ msgid ""
 "The :func:`Preferences` function can now return actions that allow access to "
 "the renderer and accessibility menus."
 msgstr ""
+":func:`Preferences` 関数はレンダーおよびアクセス性メニューへアクセスするアク"
+"ションを返せるようになりました。"
 
 #: ../../source/changelog.rst:112
-#, fuzzy
 msgid ""
 "The new :func:`renpy.set_focus` function makes it possible to set the "
 "focused displayable, though mouse motions might immediately change the focus."
 msgstr ""
-"新しい関数 :func:`renpy.image_exists` は画像が定義されていれば True を返し"
-"ま。"
+"新しい関数 :func:`renpy.set_focus` は displayable のフォーカスを設定します。"
+"マウスを少しでも動かすとこのフォーカスは変更します。"
 
 #: ../../source/changelog.rst:116
 msgid ""
@@ -231,49 +270,60 @@ msgid ""
 "attributes to conflict, such as when :tpref:`align` was given to the group "
 "and :tpref:`xalign` was given to the attribute."
 msgstr ""
+"レイヤー画像で属性に指定された transform プロパティーがグループに指定された物"
+"より優先されるようになりました。以前までは :tpref:`align` がグループに指定さ"
+"れ :tpref:`xalign` が属性に指定されるときなどに衝突が発生し得ました。"
 
 #: ../../source/changelog.rst:121
 msgid "It is now possible to roll back past variables set in the console."
 msgstr ""
+"コンソールで設定された以前の変数にロールバックで戻れるようになりました。"
 
 #: ../../source/changelog.rst:123
 msgid ""
 "The new :func:`mark_label_seen` and :func:`mark_label_unseen` make it "
 "possible to manipulate the set of seen labels."
 msgstr ""
+"新しい :func:`mark_label_seen` と :func:`mark_label_unseen` で既読ラベルを操"
+"作できます。"
 
 #: ../../source/changelog.rst:126
 msgid ""
 "The new :func:`mark_audio_seen` and :func:`mark_audio_unseen` make it "
 "possible to manipulate the set of seen audio files."
 msgstr ""
+"新しい :func:`mark_audio_seen`と :func:`mark_audio_unseen` でオーディオファイ"
+"ルが視聴済みか設定出来るようになりました。"
 
 #: ../../source/changelog.rst:129
-#, fuzzy
 msgid ""
 "The new :func:`mark_image_seen` and :func:`mark_image_unseen` make it "
 "possible to manipulate the set of seen images."
 msgstr ""
-"新しい関数 :func:`renpy.image_exists` は画像が定義されていれば True を返し"
-"ま。"
+"新しい :func:`mark_image_seen` と :func:`mark_image_unseen` で画像をすでに見"
+"たかの状態を操作できるようになりました。"
 
 #: ../../source/changelog.rst:132
 msgid ""
 "ATL transforms in screens now start when first shown, rather than when the "
 "screen containing the transform is first shown."
 msgstr ""
+"スクリーン内の ATL transform はその ATL transform を含むスクリーンが最初に表"
+"示されたときではなく、 ATL transform が最初に表示されたときに開始します。"
 
 #: ../../source/changelog.rst:135
 msgid ""
 "The new :var:`config.autosave_on_input` variabel controls if autosaving "
 "occurs on input."
 msgstr ""
+"新しい :var:`config.autosave_on_input` 変数は入力画面で自動保存するかを制御し"
+"ます。"
 
 #: ../../source/changelog.rst:138
 msgid ""
 "Ren'Py will now report an error when a positional argument follows a keyword "
 "argument."
-msgstr ""
+msgstr "キーワード引数の後に位置引数が来るとエラーを報告するようになりますた。"
 
 #: ../../source/changelog.rst:141
 msgid ""
@@ -283,31 +333,33 @@ msgid ""
 "represent 1/4 of the available width, rather than the correct 1/2 as it does "
 "now."
 msgstr ""
+":propref:`xsize` と :propref:`ysize に浮動小数を使用して適切な結果になるよう"
+"に出来ました。以前浮動小数は2倍で適用されたので、 :func:`xsize` に 0.5 を指定"
+"すると現在の利用可能な領域の 1/2 ではなく 1/4 を表しました。"
 
 #: ../../source/changelog.rst:147
 msgid ""
 "The :func:`persistent._clear` method, which clears persistent data, is now "
 "documented."
 msgstr ""
+"永続データをクリアする :func:`persistent._clear` メソッドがドキュメントに記述"
+"されました。"
 
 #: ../../source/changelog.rst:150 ../../source/changelog.rst:686
 msgid "The Spanish translation has been updated."
 msgstr "スペイン語の翻訳が更新されました。"
 
 #: ../../source/changelog.rst:152
-#, fuzzy
 msgid "Atom has been updated."
-msgstr "Webベータ版が更新されました。"
+msgstr "Atom が更新されました。"
 
 #: ../../source/changelog.rst:158
-#, fuzzy
 msgid "7.4.6"
-msgstr "7.4.5"
+msgstr "7.4.6"
 
 #: ../../source/changelog.rst:161
-#, fuzzy
 msgid "Camera Statement"
-msgstr "ユーザー定義ステートメント"
+msgstr "camera ステートメント"
 
 #: ../../source/changelog.rst:163
 msgid ""
@@ -316,15 +368,17 @@ msgid ""
 "that the layer name is not required, and it is not cleared when a ``scene`` "
 "statement is run."
 msgstr ""
+"新しい ``camera`` ステートメントは 3D ステージシステムでの使用が意図されてま"
+"す。このステートメントは ``show layer`` ステートメントと似ていますが、レイ"
+"ヤー名を必要とせず、 ``scene`` ステートメントの実行でクリアされません。"
 
 #: ../../source/changelog.rst:167
-#, fuzzy
 msgid "This statement lets you write::"
-msgstr "これはつまり、次のようなコード::"
+msgstr "次のようなコードを書けば ::"
 
 #: ../../source/changelog.rst:172
 msgid "to enable the 3D State system."
-msgstr ""
+msgstr "3D Stage システムが有効化されます。"
 
 #: ../../source/changelog.rst:174
 msgid ""
@@ -332,10 +386,12 @@ msgid ""
 "reverted to their behavior in 7.4.4 and earlier, where the ``scene`` "
 "statement clears the list of transforms."
 msgstr ""
+"この一環で、 ``show layer`` と ``scene`` ステートメントが v7.4.4 以前の振る舞"
+"いに戻り、 ``scene`` ステートメントは transform のリストをクリアします。"
 
 #: ../../source/changelog.rst:179
 msgid "Model Displayable"
-msgstr ""
+msgstr "モデル Displayable"
 
 #: ../../source/changelog.rst:181
 msgid ""
@@ -344,16 +400,21 @@ msgid ""
 "models with multiple textures, making it possible to create custom "
 "transforms that work like some of the built-in transforms do."
 msgstr ""
+"新しい :class:`Model` displayable はモデルベースのレンダラーで使用されるモデ"
+"ルを作成する方法を提供します。現在、このクラスでは複数のテクスチャのある 2D "
+"モデルを制作でき、組み込みの transform 同様に動作するカスタム transform を制"
+"作できます。"
 
 #: ../../source/changelog.rst:186
 msgid ""
 "This displayable doesn't support 3D, yet, but that's expected in the future."
 msgstr ""
+"この Displayable はまだ 3D をサポートしませんが、将来的に対応が期待されます。"
 
 #: ../../source/changelog.rst:189 ../../source/changelog.rst:1407
 #: ../../source/changelog.rst:1491 ../../source/changelog.rst:1890
 msgid "Other Improvements"
-msgstr ""
+msgstr "その他改善"
 
 #: ../../source/changelog.rst:191
 msgid ""
@@ -361,28 +422,36 @@ msgid ""
 "assoicated with it has been updated to support the new keywords introduced "
 "in recent versions of Ren'Py."
 msgstr ""
+"Atomエディターとその language-renpy プラグインが更新され、最近のバージョンの "
+"Ren'Py で導入された新しいキーワードをサポートしました。"
 
 #: ../../source/changelog.rst:195
 msgid "Using a controller immediately hides the mouse cursor."
-msgstr ""
+msgstr "コントローラーを使用するとすぐにマウスカーソルを隠すようになりました。"
 
 #: ../../source/changelog.rst:200
 msgid ""
 "A mistake in the build process meant that a change to fix compilation on iOS "
 "that had been in the nightly didn't make it into the Ren'Py release."
 msgstr ""
+"ビルドプロセスのミスで nightly バージョンにはあった iOS でのコンパイルの修正"
+"がこのリリースに反映されていませんでした。"
 
 #: ../../source/changelog.rst:204
 msgid ""
 "An issue where a modal screen would not block time events when the Ren'Py "
 "window lost focus has been fixed."
 msgstr ""
+"Ren'PY のウィンドウがフォーカスを失っているとモーダルスクリーンで時間が止まら"
+"ない問題"
 
 #: ../../source/changelog.rst:207
 msgid ""
 "The number of iterations of the blur shader has been limited, which ensures "
 "that Ren'Py is compatible with more webgl devices."
 msgstr ""
+"ブラーシェーダのイテレーションの数が制限され、 webgl デバイスとの互換性が向上"
+"しました。"
 
 #: ../../source/changelog.rst:210
 msgid ""
@@ -391,17 +460,22 @@ msgid ""
 "recompiled for some reason, the path to Ren'Py on the creator's system will "
 "not be included."
 msgstr ""
+"強制再コンパイルのオプションがチェックされていれば renpy/ ディレクトリの "
+"python ファイルを再コンパイルするようになりました。これにより何らかの理由によ"
+"りそれらのファイルが再コンパイルされても制作者のシステムでの Ren'Py へのパス"
+"が含まれなくなりました。"
 
 #: ../../source/changelog.rst:215
 msgid ""
 "ATL will now skip to the first frame to be displayed when using the "
 "animation timebase."
 msgstr ""
+"ATL はアニメーション時間軸使用時に表示される最初のフレームをスキップするよう"
+"になりました。"
 
 #: ../../source/changelog.rst:218
-#, fuzzy
 msgid "Ren'Py will no longer pauses without timeouts after a rollback."
-msgstr "Ren'Py はもうメインメニューでオートセーブをしません。"
+msgstr "Ren'Py はもうロールバック後に時間指定のないパーズをしません。"
 
 #: ../../source/changelog.rst:224
 msgid "7.4.5"
@@ -572,7 +646,6 @@ msgid "Android"
 msgstr "Android"
 
 #: ../../source/changelog.rst:305
-#, fuzzy
 msgid ""
 "Several packages that are required to build on Android are now included as "
 "part of Ren'Py. This fixes errors that are related to Bintray being shut "
@@ -580,7 +653,8 @@ msgid ""
 "for Android."
 msgstr ""
 "Android上でビルドされる必要のあるパッケージの一部が Ren'Py に含まれました。こ"
-"れは Bintray の終了によるエラーを修正します。"
+"れは Bintray の終了によるエラーを修正します。このエラーは Ren'Py 7.4.4 の新規"
+"インストールで Android 版をビルドすることを妨げます。"
 
 #: ../../source/changelog.rst:310
 msgid ""
@@ -619,6 +693,8 @@ msgid ""
 "An issue playing some less-used video and audio file formats on Android has "
 "been fixed."
 msgstr ""
+"Android でのあまり使用されていないビデオとオーディオファイルのフォーマットの"
+"再生の問題を修正しました。"
 
 #: ../../source/changelog.rst:327
 msgid ""
@@ -2153,7 +2229,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1112
-#, fuzzy
 msgid "7.3.3"
 msgstr "7.3.3"
 
@@ -2342,7 +2417,7 @@ msgstr "日本語とスペイン語の翻訳が更新されました。"
 
 #: ../../source/changelog.rst:1213
 msgid "7.3.2"
-msgstr ""
+msgstr "7.3.2"
 
 #: ../../source/changelog.rst:1218
 msgid ""
@@ -2356,7 +2431,7 @@ msgstr "繁体字の翻訳が更新されました。"
 
 #: ../../source/changelog.rst:1230
 msgid "7.3.1"
-msgstr ""
+msgstr "7.3.1"
 
 #: ../../source/changelog.rst:1235
 msgid ""
@@ -2433,7 +2508,6 @@ msgid "The Russian, Korean, and Spanish translations were updated."
 msgstr "日本語とスペイン語の翻訳が更新されました。"
 
 #: ../../source/changelog.rst:1285
-#, fuzzy
 msgid "7.3.0"
 msgstr "7.3.0"
 
@@ -2468,7 +2542,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1309
-#, fuzzy
 msgid "Creator-Defined Statements"
 msgstr "ユーザー定義ステートメント"
 
@@ -2594,9 +2667,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1379
-#, fuzzy
 msgid "Android and iOS Improvements"
-msgstr "ボイスの改善"
+msgstr "Android と iOS の改善"
 
 #: ../../source/changelog.rst:1381
 msgid ""
@@ -2650,13 +2722,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1416
-#, fuzzy
 msgid ""
 "The :func:`renpy.show_screen` and :func:`renpy.call_screen` functions now "
 "take a zorder argument."
 msgstr ""
-":func:`renpy.reset_physical_size` と :func:`ui.screen_id` 関数が追加されまし"
-"た。"
+"The :func:`renpy.show_screen` と :func:`renpy.call_screen` 関数は zorder 引数"
+"を取るようになりました。"
 
 #: ../../source/changelog.rst:1419
 msgid ""
@@ -2703,7 +2774,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1449
-#, fuzzy
 msgid "7.2.2"
 msgstr "7.2.2"
 
@@ -2750,12 +2820,11 @@ msgstr ""
 
 #: ../../source/changelog.rst:1478
 msgid "7.2.1"
-msgstr ""
+msgstr "7.2.1"
 
 #: ../../source/changelog.rst:1481
-#, fuzzy
 msgid "iOS Improvements"
-msgstr "ボイスの改善"
+msgstr "iOS の改善"
 
 #: ../../source/changelog.rst:1483
 msgid ""
@@ -2788,12 +2857,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1506
-#, fuzzy
 msgid ""
 "The new ``RENPY_SEARCHPATH`` environment variable makes it possible to "
 "override :var:`config.searchpath` on launch."
 msgstr ""
-"RENPY_TIMEWARP  環境変数は時間を早めたり、遅くしたりするために使えます。"
+"新しい ``RENPY_SEARCHPATH`` 環境変数は :var:`config.searchpath` を起動時に変"
+"更できます。"
 
 #: ../../source/changelog.rst:1512
 msgid ""
@@ -2846,7 +2915,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:1544
 msgid "7.2.0"
-msgstr ""
+msgstr "7.2.0"
 
 #: ../../source/changelog.rst:1547
 msgid "Menu Arguments"
@@ -3018,9 +3087,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1669
-#, fuzzy
 msgid "Android Changes"
-msgstr "Android"
+msgstr "Android の変更"
 
 #: ../../source/changelog.rst:1671
 msgid ""
@@ -3107,7 +3175,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:1722
 msgid "7.1.3"
-msgstr ""
+msgstr "7.1.3"
 
 #: ../../source/changelog.rst:1724
 msgid ""
@@ -3118,12 +3186,11 @@ msgstr ""
 
 #: ../../source/changelog.rst:1732
 msgid "7.1.2"
-msgstr ""
+msgstr "7.1.2"
 
 #: ../../source/changelog.rst:1735
-#, fuzzy
 msgid "Improvements"
-msgstr "ボイスの改善"
+msgstr "改善"
 
 #: ../../source/changelog.rst:1737
 msgid ""
@@ -3225,9 +3292,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1803
-#, fuzzy
 msgid "Android Fixes"
-msgstr "Android"
+msgstr "Android の修正"
 
 #: ../../source/changelog.rst:1805
 msgid ""
@@ -3236,7 +3302,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1812
-#, fuzzy
 msgid "7.1.1"
 msgstr "7.1.1"
 
@@ -3273,9 +3338,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1872
-#, fuzzy
 msgid "Android Improvements"
-msgstr "ボイスの改善"
+msgstr "Android の改善"
 
 #: ../../source/changelog.rst:1874
 msgid ""
@@ -3357,7 +3421,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1928
-#, fuzzy
 msgid "7.1"
 msgstr "7.1"
 
@@ -3435,9 +3498,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1987
-#, fuzzy
 msgid "Updater Changes"
-msgstr "その他の変更"
+msgstr "アップデータの変更"
 
 #: ../../source/changelog.rst:1989
 msgid ""
@@ -3579,7 +3641,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:2074
-#, fuzzy
 msgid "7.0"
 msgstr "7.0"
 
@@ -3599,7 +3660,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:2086
-#, fuzzy
 msgid "Layered Images"
 msgstr "レイヤー画像"
 
@@ -3771,7 +3831,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:2195
 msgid "https://www.renpy.org/dl/6.10.2/CHANGELOG.txt"
-msgstr ""
+msgstr "https://www.renpy.org/dl/6.10.2/CHANGELOG.txt"
 
 #~ msgid "Platform Support Fixes"
 #~ msgstr "プラットフォーム対応の改善"
