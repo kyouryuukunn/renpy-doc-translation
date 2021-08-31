@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-08 14:30+0900\n"
+"POT-Creation-Date: 2021-08-31 20:54+0900\n"
 "PO-Revision-Date: 2021-08-09 15:36+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -2634,7 +2634,7 @@ msgstr ""
 "リーンの予測を禁止します。スクリーンの予測中にスクリーンへの引数は評価されま"
 "す。スクリーン引数の評価が不測の副作用を起さないように確認してください。"
 
-#: ../../source/screens.rst:1924 ../../source/screens.rst:1981
+#: ../../source/screens.rst:1924 ../../source/screens.rst:1989
 msgid ""
 "If evaluating the arguments to a screen causes side-effects to occur, your "
 "game may behave in unexpected ways."
@@ -2698,8 +2698,9 @@ msgstr ""
 "使用してラベルにジャンプできます。"
 
 #: ../../source/screens.rst:1969
+#, fuzzy
 msgid ""
-"The call screen statement takes an optional ``nopredict`` keyword, that "
+"The call screen statement takes an optional ``nopredict`` keyword, which "
 "prevents screen prediction from occurring. During screen prediction, "
 "arguments to the screen are evaluated. Please ensure that evaluating the "
 "screen arguments does not cause unexpected side-effects to occur."
@@ -2710,20 +2711,31 @@ msgstr ""
 
 #: ../../source/screens.rst:1974
 msgid ""
-"The call screen statement takes an optional ``with`` keyword, followed by a "
-"transition. The transition takes place when the screen is first displayed. A "
-"with statement after the transition runs after the screen is hidden, "
-"provided control is not transferred."
+"In a call screen statement, the ``with`` clause causes a transition to occur "
+"when the screen is shown."
 msgstr ""
-"call screen ステートメントは任意で ``with`` キーワードに続くトランジションを"
-"受け取ります。トランジションはスクリーンが最初に置き換えられると実行されま"
-"す。"
 
-#: ../../source/screens.rst:1997
+#: ../../source/screens.rst:1977
+msgid ""
+"Since calling a screen is an interaction, and interactions trigger an "
+"implicit ``with None``, using a ``with`` statement after the ``call screen`` "
+"instruction won't make the screen disappear using the transition, as the "
+"screen will already will be gone. To disable the implicit ``with None`` "
+"transition, pass the ``_with_none=False`` special keyword argument to the "
+"screen, as in the example below."
+msgstr ""
+
+#: ../../source/screens.rst:1984
+msgid ""
+"Other ways of triggering transitions also work, such as the "
+"``[ With(dissolve), Return() ]`` action list."
+msgstr ""
+
+#: ../../source/screens.rst:2010
 msgid "Screen Variants"
 msgstr "スクリーンバージョン"
 
-#: ../../source/screens.rst:1999
+#: ../../source/screens.rst:2012
 msgid ""
 "Ren'Py runs both on traditional mouse-oriented devices such as Windows, Mac, "
 "and Linux PCs, and newer touch-oriented devices such as Android-based "
@@ -2736,7 +2748,7 @@ msgstr ""
 "ス、両方で動作します。スクリーンバージョンはゲームが複数の種類のスクリーンを"
 "持てるようにして実行中のハードウェアに最適なものを使用します。"
 
-#: ../../source/screens.rst:2005
+#: ../../source/screens.rst:2018
 msgid ""
 "Ren'Py chooses a screen variant to use by searching variants in the order "
 "they are listed in :var:`config.variants`. The first variant that exists is "
@@ -2746,7 +2758,7 @@ msgstr ""
 "するスクリーンバージョンを選択します。存在する最初のバージョンが使用されま"
 "す。"
 
-#: ../../source/screens.rst:2009
+#: ../../source/screens.rst:2022
 msgid ""
 "If the RENPY_VARIANT environment variable is present, config.variants is "
 "initialized by splitting the value of the variable on whitespace, and then "
@@ -2759,7 +2771,7 @@ msgstr ""
 "「small phone touch」のように設定すると PC で android デバイス用のスクリーン"
 "をテスト出来ます。"
 
-#: ../../source/screens.rst:2015
+#: ../../source/screens.rst:2028
 msgid ""
 "If the environment variable is not present, a list of variants is built up "
 "automatically, by going through the following list in order and choosing the "
@@ -2768,11 +2780,11 @@ msgstr ""
 "環境変数がなければバージョンのリストは以下のリストを順番に探索して現在のプ"
 "ラットフォームに対応するものを選んで自動的に生成されます。"
 
-#: ../../source/screens.rst:2022
+#: ../../source/screens.rst:2035
 msgid "``\"large\"``"
 msgstr "``\"large\"``"
 
-#: ../../source/screens.rst:2020
+#: ../../source/screens.rst:2033
 msgid ""
 "A screen large enough that relatively small text can be comfortably read, "
 "and buttons can be easily clicked. This is used for computer screens."
@@ -2780,11 +2792,11 @@ msgstr ""
 "比較的小さなテキストを快適に読め、ボタンを簡単にクリックできる十分大きな画面"
 "です。これはコンピューターの画面に使用されます。"
 
-#: ../../source/screens.rst:2027
+#: ../../source/screens.rst:2040
 msgid "``\"medium\"``"
 msgstr "``\"medium\"``"
 
-#: ../../source/screens.rst:2025
+#: ../../source/screens.rst:2038
 msgid ""
 "A screen where smallish text can be read, but buttons may need to grow in "
 "size so they can be comfortably pressed. This is used for tablets."
@@ -2792,11 +2804,11 @@ msgstr ""
 "やや小さいテキストは読めるが、ボタンは快適に押せるためにはサイズを大きくしな"
 "ければならない画面です。これはタブレットで使用されます。"
 
-#: ../../source/screens.rst:2033
+#: ../../source/screens.rst:2046
 msgid "``\"small\"``"
 msgstr "``\"small\"``"
 
-#: ../../source/screens.rst:2030
+#: ../../source/screens.rst:2043
 msgid ""
 "A screen where text must be expanded in order to be read. This is used for "
 "phones and televisions. (A television might be physically large, but it's "
@@ -2805,11 +2817,11 @@ msgstr ""
 "テキストを読むためにも字を大きくする必要がある画面です。これは携帯やテレビで"
 "使用されます ( テレビは物理的には大きいですが、大概遠くて見にくいです )。"
 
-#: ../../source/screens.rst:2038
+#: ../../source/screens.rst:2051
 msgid "``\"tablet\"``"
 msgstr "``\"tablet\"``"
 
-#: ../../source/screens.rst:2036
+#: ../../source/screens.rst:2049
 msgid ""
 "Defined on touchscreen based devices where the screen has a diagonal size of "
 "6 inches or more. (In general, ``\"medium\"`` should be used instead of ``"
@@ -2818,11 +2830,11 @@ msgstr ""
 "画面の対角線が 6 インチタッチかそれ以上のタッチスクリーンベースのデバイスで定"
 "義されます ( 通常は「 medium 」が「 tablet 」の代わりに使用されます )。"
 
-#: ../../source/screens.rst:2044
+#: ../../source/screens.rst:2057
 msgid "``\"phone\"``"
 msgstr "``\"phone\"``"
 
-#: ../../source/screens.rst:2041
+#: ../../source/screens.rst:2054
 msgid ""
 "Defined on touchscreen-based devices where the diagonal size of the screen "
 "is less than 6 inches. On such a small device, it's important to make "
@@ -2834,38 +2846,38 @@ msgstr ""
 "きるようにすることが重要です ( 通常は「 small 」が「 phone 」の代わりに使用さ"
 "れます )。"
 
-#: ../../source/screens.rst:2047
+#: ../../source/screens.rst:2060
 msgid "``\"touch\"``"
 msgstr "``\"touch\"``"
 
-#: ../../source/screens.rst:2047
+#: ../../source/screens.rst:2060
 msgid "Defined on touchscreen-based devices."
 msgstr "タッチスクリーンベースのデバイスで定義されます。"
 
-#: ../../source/screens.rst:2050
+#: ../../source/screens.rst:2063
 msgid "``\"tv\"``"
 msgstr "``\"tv\"``"
 
-#: ../../source/screens.rst:2050
+#: ../../source/screens.rst:2063
 msgid "Defined on television-based devices."
 msgstr "TV ベースのデバイスで定義されます。"
 
-#: ../../source/screens.rst:2053
+#: ../../source/screens.rst:2066
 msgid "``\"ouya\"``"
 msgstr "``\"ouya\"``"
 
-#: ../../source/screens.rst:2053
+#: ../../source/screens.rst:2066
 msgid ""
 "Defined on the OUYA console. (``\"tv\"`` and ``\"small\"`` are also defined.)"
 msgstr ""
 "OUYA のコンソール上で定義されます (``\"tv\"`` と ``\"small\"`` も定義されま"
 "す )。"
 
-#: ../../source/screens.rst:2056
+#: ../../source/screens.rst:2069
 msgid "``\"firetv\"``"
 msgstr "``\"firetv\"``"
 
-#: ../../source/screens.rst:2056
+#: ../../source/screens.rst:2069
 msgid ""
 "Defined on the Amazon Fire TV console. (``\"tv\"`` and ``\"small\"`` are "
 "also defined.)"
@@ -2873,19 +2885,19 @@ msgstr ""
 "Amazon Fire TV のコンソール上で定義されます (\"tv\" と \"small\" も定義されま"
 "す )。"
 
-#: ../../source/screens.rst:2059
+#: ../../source/screens.rst:2072
 msgid "``\"android\"``"
 msgstr "``\"android\"``"
 
-#: ../../source/screens.rst:2059
+#: ../../source/screens.rst:2072
 msgid "Defined on all Android devices."
 msgstr "すべての Android デバイスで定義されます。"
 
-#: ../../source/screens.rst:2064
+#: ../../source/screens.rst:2077
 msgid "``\"ios\"``"
 msgstr "``\"ios\"``"
 
-#: ../../source/screens.rst:2062
+#: ../../source/screens.rst:2075
 msgid ""
 "Defined on iOS devices, like the iPad (where ``\"tablet\"`` and ``\"medium"
 "\"`` are also defined) and the iPhone (where ``\"phone\"`` and ``\"small\"`` "
@@ -2894,22 +2906,22 @@ msgstr ""
 "iPad ( ``\"tablet\"`` と ``\"medium\"`` も定義されます )や iPhone (``\"phone"
 "\"`` と ``\"small\"`` も定義されます)のような iOS デバイスで定義されます。"
 
-#: ../../source/screens.rst:2067
+#: ../../source/screens.rst:2080
 msgid "``\"mobile\"``"
 msgstr "``\"mobile\"``"
 
-#: ../../source/screens.rst:2067
+#: ../../source/screens.rst:2080
 msgid ""
 "Defined on mobile platforms, such as Android, iOS and mobile web browsers."
 msgstr ""
 "Android や iOS, モバイルウェブブラウザー のようなモバイルプラットフォームを定"
 "義します。"
 
-#: ../../source/screens.rst:2072
+#: ../../source/screens.rst:2085
 msgid "``\"pc\"``"
 msgstr "``\"pc\"``"
 
-#: ../../source/screens.rst:2070
+#: ../../source/screens.rst:2083
 msgid ""
 "Defined on Windows, Mac OS X, and Linux. A PC is expected to have a mouse "
 "and keyboard present, to allow buttons to be hovered, and to allow precise "
@@ -2918,25 +2930,35 @@ msgstr ""
 "Windows, Mac OS X, Linux で定義されます。 PCはマウスとキーボードを所持し、ボ"
 "タンへのフォーカスと正確な移動が出来ると期待されます。"
 
-#: ../../source/screens.rst:2075
+#: ../../source/screens.rst:2088
 msgid "``\"web\"``"
 msgstr "``\"web\"``"
 
-#: ../../source/screens.rst:2075
+#: ../../source/screens.rst:2088
 msgid "Defined when running inside a web browser."
 msgstr "ウェブブラウザー内部で実行しているときに定義されます。"
 
-#: ../../source/screens.rst:2078
+#: ../../source/screens.rst:2091
 msgid "``None``"
 msgstr "``None``"
 
-#: ../../source/screens.rst:2078
+#: ../../source/screens.rst:2091
 msgid "Always defined."
 msgstr "常に定義されます。"
 
-#: ../../source/screens.rst:2080
+#: ../../source/screens.rst:2093
 msgid "An example of defining a screen variant is:"
 msgstr "スクリーンバージョンを定義する例です。 :"
+
+#~ msgid ""
+#~ "The call screen statement takes an optional ``with`` keyword, followed by "
+#~ "a transition. The transition takes place when the screen is first "
+#~ "displayed. A with statement after the transition runs after the screen is "
+#~ "hidden, provided control is not transferred."
+#~ msgstr ""
+#~ "call screen ステートメントは任意で ``with`` キーワードに続くトランジション"
+#~ "を受け取ります。トランジションはスクリーンが最初に置き換えられると実行され"
+#~ "ます。"
 
 #, fuzzy
 #~ msgid ""
