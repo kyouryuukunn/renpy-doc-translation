@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 20:54+0900\n"
+"POT-Creation-Date: 2021-10-03 16:54+0900\n"
 "PO-Revision-Date: 2021-09-05 15:20+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -258,11 +258,21 @@ msgstr ""
 "もし zpos をスプライトに適用しても効果がなければ、それはおそらく ``camera`` "
 "transform の ``perspective`` 節を省力したからです。"
 
-#: ../../source/3dstage.rst:168
+#: ../../source/3dstage.rst:167
+msgid "The camera can be rotated, with::"
+msgstr ""
+
+#: ../../source/3dstage.rst:173
+msgid ""
+"As the camera is what is rotating, the rotation is in the opposite direction "
+"as one that rotates a displayable."
+msgstr ""
+
+#: ../../source/3dstage.rst:178
 msgid "Depth"
 msgstr "深度"
 
-#: ../../source/3dstage.rst:170
+#: ../../source/3dstage.rst:180
 msgid ""
 "By default, Ren'Py will display the images in its usual order, with the last "
 "image to be shown above the others. This might lead to odd results, like an "
@@ -273,7 +283,7 @@ msgstr ""
 "り上になります。このため、( perspective を使用した ) より近い画像がより遠い画"
 "像の下にある奇妙な結果になることがあります。"
 
-#: ../../source/3dstage.rst:175
+#: ../../source/3dstage.rst:185
 msgid ""
 "If your game shows images out of order like this, you can tell the GPU to "
 "sort by depth, using :tpref:`gl_depth`::"
@@ -281,7 +291,7 @@ msgstr ""
 "このように奇妙な順で画像が表示されるなら、 :tpref:`gl_depth` を使用して GPU "
 "に深度によって順番を変えるよう指示します。 ::"
 
-#: ../../source/3dstage.rst:182
+#: ../../source/3dstage.rst:192
 msgid ""
 "Slight rounding errors can cause images that are nominally at the same depth "
 "to appear above or below each other. Flattening these images and displaying "
@@ -291,11 +301,11 @@ msgstr ""
 "あります。このような問題にはそれらの画像をくっつけて一緒に表示するとよいで"
 "しょう。"
 
-#: ../../source/3dstage.rst:187
+#: ../../source/3dstage.rst:197
 msgid "Matrix Transforms"
 msgstr "Matrix Transform"
 
-#: ../../source/3dstage.rst:189
+#: ../../source/3dstage.rst:199
 msgid ""
 "Ren'Py uses the :tpref:`matrixtransform` transform property to apply a "
 "matrix to displayables, which allows an image to be scaled, offset, and "
@@ -308,7 +318,7 @@ msgstr ""
 "用します。このプロパティは、:func:`Matrix` または TransformMatrix (以下で定"
 "義) のいずれかを受け取り、表示されている画像の角の頂点に適用します。"
 
-#: ../../source/3dstage.rst:195
+#: ../../source/3dstage.rst:205
 msgid ""
 "Ren'Py uses the :tpref:`matrixanchor` transform property to make applying a "
 "matrix easier. This defaults to (0.5, 0.5), and is translated to a pixel "
@@ -322,7 +332,7 @@ msgstr ""
 "フセットに変換されます ( 整数または absolute の場合はピクセル数と見なされ、そ"
 "れ以外の場合は画像サイズの割合となります ) 。"
 
-#: ../../source/3dstage.rst:201
+#: ../../source/3dstage.rst:211
 msgid ""
 "Ren'Py applies the image by first shifting the image so the anchor is at (0, "
 "0, 0). It then applies the transform, and then shifts it back by the same "
@@ -333,11 +343,11 @@ msgstr ""
 "を適用します。次に transform を適用し、同じ量だけシフトして戻ります。デフォル"
 "トでは matrix はイメージの中心に適用されます。"
 
-#: ../../source/3dstage.rst:206
+#: ../../source/3dstage.rst:216
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/3dstage.rst:211
+#: ../../source/3dstage.rst:221
 msgid ""
 "Will rotate the image around the line going horizontally through it's "
 "center. The top of the image will move back, and then bottom of the image "
@@ -346,7 +356,7 @@ msgstr ""
 "画像の中心を通る水平線を中心に画像が回転します。画像の上部は後ろに下部は前に"
 "移動します。"
 
-#: ../../source/3dstage.rst:215
+#: ../../source/3dstage.rst:225
 msgid ""
 "Matrixes can be chained together with multiplication. It's easiest to think "
 "about them being applied right to left. In this example::"
@@ -354,17 +364,17 @@ msgstr ""
 "Matrix は複数連結できます。右から左に適用されると考えればわかりやすいです。例"
 "えば ::"
 
-#: ../../source/3dstage.rst:222
+#: ../../source/3dstage.rst:232
 msgid ""
 "The image will be shifted up by 300 pixels, and then will be rotated around "
 "the X axis."
 msgstr "これは画像が 300 ピクセル上昇してから X軸を中心に回転します。"
 
-#: ../../source/3dstage.rst:226
+#: ../../source/3dstage.rst:236
 msgid "TransformMatrix"
 msgstr "TransformMatrix"
 
-#: ../../source/3dstage.rst:228
+#: ../../source/3dstage.rst:238
 msgid ""
 "While Matrix objects are suitable for static transformations, they're not "
 "useful for animating changing transformations. It's also useful to have a "
@@ -375,7 +385,7 @@ msgstr ""
 "る transform には不便です。共通の matrix を受け取ってそれらをパラメータ化でき"
 "るようにするようカプセル化する方法があると便利です。"
 
-#: ../../source/3dstage.rst:233
+#: ../../source/3dstage.rst:243
 msgid ""
 "The TransformMatrix is a base class that is is extended by a number of "
 "Matrix-creating classes. Instances of TransformMatrix are called by Ren'Py, "
@@ -387,7 +397,7 @@ msgstr ""
 "す。 TransformMatrixはATLと十分に統合されているため、matrixtransform によるア"
 "ニメーションが可能です。 ::"
 
-#: ../../source/3dstage.rst:243
+#: ../../source/3dstage.rst:253
 msgid ""
 "Subclasses of TransformMatrix are expected to implement the ``__call__`` "
 "method. This method takes:"
@@ -395,7 +405,7 @@ msgstr ""
 "TransformMatrix のサブクラスには ``__call__`` メソッドの実装が期待され、この"
 "メソッドはつぎを受け取ります。 :"
 
-#: ../../source/3dstage.rst:246
+#: ../../source/3dstage.rst:256
 msgid ""
 "An old object to interpolate off of. This object may be of any class, and "
 "may be None if no old object exists."
@@ -403,7 +413,7 @@ msgstr ""
 "補間する以前のオブジェクト。このオブジェクトは任意のクラスである可能性があ"
 "り、以前のオブジェクトがなければ None です。"
 
-#: ../../source/3dstage.rst:248
+#: ../../source/3dstage.rst:258
 msgid ""
 "A value between 0.0 and 1.0, representing the point to interpolate. 0.0 is "
 "entirely the old object, and 1.0 is entirely the new object."
@@ -411,13 +421,13 @@ msgstr ""
 "補間の進行度を表す 0.0 から 1.0の間の値。 0.0が完全な old オブジェクトで、1.0"
 "が完全な new オブジェクトです。"
 
-#: ../../source/3dstage.rst:252
+#: ../../source/3dstage.rst:262
 msgid "Built-In TransformMatrix Subclasses"
 msgstr ""
 "組み込みの TransformMatrix サブクラ\n"
 "ス"
 
-#: ../../source/3dstage.rst:254
+#: ../../source/3dstage.rst:264
 msgid ""
 "The following is the list of TransformMatrix subclasses that are built into "
 "Ren'Py."
@@ -467,15 +477,15 @@ msgstr "Displayable をスケーリングする Matrix を返す TransformMatrix
 msgid "The factor to scale each axis by."
 msgstr "各軸に対するスケーリングファクターです。"
 
-#: ../../source/3dstage.rst:261
+#: ../../source/3dstage.rst:271
 msgid "Transform Properties"
 msgstr "Transform プロパティー"
 
-#: ../../source/3dstage.rst:263
+#: ../../source/3dstage.rst:273
 msgid "The following transform properties are used by the 3D Stage."
 msgstr "以下の transform プロパティーが 3D ステージで使用されます。"
 
-#: ../../source/3dstage.rst:265
+#: ../../source/3dstage.rst:275
 msgid ""
 ":tpref:`perspective`, :tpref:`matrixanchor`, :tpref:`matrixtransform`, :"
 "tpref:`zpos`, :tpref:`zzoom`"
@@ -483,15 +493,15 @@ msgstr ""
 ":tpref:`perspective`, :tpref:`matrixanchor`, :tpref:`matrixtransform`, :"
 "tpref:`zpos`, :tpref:`zzoom`"
 
-#: ../../source/3dstage.rst:269
+#: ../../source/3dstage.rst:279
 msgid "(position, position)"
 msgstr "(position, position)"
 
-#: ../../source/3dstage.rst:270
+#: ../../source/3dstage.rst:280
 msgid "(0.5, 0.5)"
 msgstr "(0.5, 0.5)"
 
-#: ../../source/3dstage.rst:272
+#: ../../source/3dstage.rst:282
 msgid ""
 "This gives the position of the matrix anchor relative to the image. If the "
 "variables are floats, this is relative to the size of the child, otherwise "
@@ -500,7 +510,7 @@ msgstr ""
 "画像に対する matrix アンカーの相対位置を指定します。変数が浮動小数なら、子の"
 "サイズの割合で、そうでなければピクセル数での絶対値です。"
 
-#: ../../source/3dstage.rst:276
+#: ../../source/3dstage.rst:286
 msgid ""
 "This sets the location of the (0, 0, 0) point that matrixtransform applies "
 "its transform to."
@@ -508,15 +518,15 @@ msgstr ""
 "これは matrixtransform がその transform に適用する (0, 0, 0) の点の場所を設定"
 "します。"
 
-#: ../../source/3dstage.rst:281
+#: ../../source/3dstage.rst:291
 msgid "None or Matrix or TransformMatrix"
 msgstr "None または Matrix または TransformMatrix"
 
-#: ../../source/3dstage.rst:282
+#: ../../source/3dstage.rst:292
 msgid "None"
 msgstr "None"
 
-#: ../../source/3dstage.rst:284
+#: ../../source/3dstage.rst:294
 msgid ""
 "If not None, this gives a matrix that is used to transform the vertices of "
 "the child of the transform. The transformation goes from the coordinates "
@@ -525,15 +535,15 @@ msgstr ""
 "None でなければ transform の子の頂点を変換する matrix を指定します。画面で使"
 "用される座標から transform の子で使用される座標へ変換します。"
 
-#: ../../source/3dstage.rst:290
+#: ../../source/3dstage.rst:300
 msgid "True or False or Float or (Float, Float, Float)"
 msgstr "True または False または浮動小数 or (浮動小数, 浮動小数, 浮動小数)"
 
-#: ../../source/3dstage.rst:291 ../../source/3dstage.rst:319
+#: ../../source/3dstage.rst:301 ../../source/3dstage.rst:334
 msgid "False"
 msgstr "False"
 
-#: ../../source/3dstage.rst:293
+#: ../../source/3dstage.rst:303
 msgid ""
 "When applied to a transform, this enables perspective rendering. This takes "
 "a triple, giving the near plane, z-distance to the 1:1 plane, and far plane."
@@ -542,7 +552,7 @@ msgstr ""
 "面、(訳注:画像サイズが ) 1:1になる面までの z距離、最遠方の面を指定する 3 つを"
 "受け取ります。"
 
-#: ../../source/3dstage.rst:297
+#: ../../source/3dstage.rst:307
 msgid ""
 "If a single float, the distances to the near and far planes are taken from :"
 "var:`config.perspective`. If True, all three values are taken from that "
@@ -551,24 +561,33 @@ msgstr ""
 "浮動小数 1つなら最近接面と最遠方面までの距離は :var:`config.perspective` から"
 "取られます。 True なら、 3つすべてがこの変数から取られます。"
 
-#: ../../source/3dstage.rst:301
+#: ../../source/3dstage.rst:311
+#, fuzzy
 msgid ""
 "When perspective is not false, the meaning of the :tpref:`xpos`, :tpref:"
-"`ypos`, and :tpref:`zpos` are inverted, providing the effect of positioning "
-"the camera rather than the child."
+"`ypos`, :tpref:`zpos`, and :tpref:`rotate` are inverted, providing the "
+"effect of positioning the camera rather than the child."
 msgstr ""
 "perspective が False でなければ子ではなくカメラの方を配置移動ので :tpref:"
 "`xpos` と :tpref:`ypos`, :tpref:`zpos` の意味は反転します。"
 
-#: ../../source/3dstage.rst:307
+#: ../../source/3dstage.rst:315
+msgid ""
+"As the perspective transformation assumes it's aligned wiht the window, it "
+"doesn't make sense to reposition it using :tpref:`xanchor`, and :tpref:"
+"`yanchor`, or properties that set those, such as :tpref:`anchor`, :tpref:"
+"`align`, :tpref:`center`, etc."
+msgstr ""
+
+#: ../../source/3dstage.rst:322
 msgid "float"
 msgstr "浮動小数"
 
-#: ../../source/3dstage.rst:308
+#: ../../source/3dstage.rst:323
 msgid "0"
 msgstr "0"
 
-#: ../../source/3dstage.rst:310
+#: ../../source/3dstage.rst:325
 msgid ""
 "This offsets the child along the z-axis. When perspective is false, this is "
 "used directly, otherwise it is multiplied by -1 and used."
@@ -576,7 +595,7 @@ msgstr ""
 "z軸に沿って子をオフセットします。 perspective が False なら、これは直接使用さ"
 "れ、そうでなければ -1 を掛けて使用されます。"
 
-#: ../../source/3dstage.rst:313
+#: ../../source/3dstage.rst:328
 msgid ""
 "If setting this causes the child to disappear, it's likely that the "
 "transform is not being used with a displayable where zpos is False."
@@ -584,11 +603,11 @@ msgstr ""
 "この設定で子が消える場合、その transform は displayable に使用されず、 zpos "
 "は False になります。"
 
-#: ../../source/3dstage.rst:318
+#: ../../source/3dstage.rst:333
 msgid "bool"
 msgstr "bool"
 
-#: ../../source/3dstage.rst:321
+#: ../../source/3dstage.rst:336
 msgid ""
 "If this is true, the z-distance to the 1:1 plane (`zone`) is determined, "
 "along with this displayable's zpos. The child is then scaled by (`zone` - "
@@ -598,7 +617,7 @@ msgstr ""
 "り決定されます。その子はx, y軸について (`zone` - `zpos`) / `zone` でスケーリ"
 "ングされます。"
 
-#: ../../source/3dstage.rst:325
+#: ../../source/3dstage.rst:340
 msgid ""
 "The intended use for this is in displaying a background with a negative "
 "`zpos`, which would normally make the background small. Setting this to true "
