@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-03 16:54+0900\n"
-"PO-Revision-Date: 2021-08-31 22:35+0900\n"
+"PO-Revision-Date: 2021-11-13 12:36+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -20,7 +20,10 @@ msgstr ""
 
 #: ../../source/changelog.rst:6
 msgid "Changelog (Ren'Py 7.x-)"
-msgstr "Changelog (Ren'Py 7.x-)"
+msgstr ""
+"新しい :var:`build.android_permissions` 変数と :func:`renpy."
+"check_permission`, :func:`renpy.request_permission` 関数により Ren'Py が自身"
+"で使用する以上の権限を要求出来るようになりました。"
 
 #: ../../source/changelog.rst:11
 msgid "7.4.9"
@@ -50,6 +53,8 @@ msgid ""
 "uninstall and reinstall the game when switching from APKs to Bundles for "
 "testing."
 msgstr ""
+"バンドルは APK とは異なる署名を使用するため、 APK から バンドルにテストのため"
+"切り替えるとき、ゲームをアンインストールと再インストールする必要があります。"
 
 #: ../../source/changelog.rst:24
 msgid ""
@@ -119,6 +124,8 @@ msgid ""
 "The inclusion of :ref:`Pyjnius <pyjinus>`, a library for calling the Android "
 "API, is now documented."
 msgstr ""
+"Android API を呼び出すライブラリ :ref:`Pyjnius <pyjinus>` が含まれていること"
+"がドキュメントに記載されました。"
 
 #: ../../source/changelog.rst:54
 msgid ""
@@ -127,18 +134,25 @@ msgid ""
 "provide a way to request permissions on Android beyond those that Ren'Py "
 "users itself."
 msgstr ""
+"新しい :var:`build.android_permissions` 変数、 :func:`renpy."
+"check_permission` と :func:`renpy.request_permission` 関数により Ren'Py 自身"
+"が使用する権限をこえてそれらを要求出来るようにします。"
 
 #: ../../source/changelog.rst:58
 msgid ""
 "When creating Android keys, Ren'Py will back them up to the same place it "
 "backs up script files. This isn't a substitute for making your own backups."
 msgstr ""
+"Android の key を生成するとき、 Ren'Py はスクリプトファイルと同じ場所にそれら"
+"をバックアップしますが、あなた自身でのバックアップの代わりにはなりません。"
 
 #: ../../source/changelog.rst:61
 msgid ""
 "An issue that could cause black screenshots on Android and other platforms "
 "has been (hopefully) fixed."
 msgstr ""
+"Android や他のプラットフォームで発生するスクリーンショットが真っ黒になる問題"
+"が (おそらく) 修正されました。"
 
 #: ../../source/changelog.rst:64
 msgid ""
@@ -146,6 +160,9 @@ msgid ""
 "to make these files group-readable, ensuring the player can access logs and "
 "files."
 msgstr ""
+"セーブと log.txt の権限は、 Android で明示的に管理されるようになり、これらの"
+"ファイルをグループで読み取り可能にして、プレーヤーがログとファイルにアクセス"
+"できるようにします。"
 
 #: ../../source/changelog.rst:69 ../../source/changelog.rst:254
 #: ../../source/changelog.rst:1086 ../../source/changelog.rst:1089
@@ -158,18 +175,25 @@ msgid ""
 "complete after the initial generation, with the launch screen set up and no "
 "unused schemas."
 msgstr ""
+"更新された iOS ビルドプロセスは最初の生成後、画面設定を起動し、未使用のスキー"
+"マがないより完璧なプロジェクトを作成します。"
 
 #: ../../source/changelog.rst:75
 msgid ""
 "As always, it's necessary to create a new iOS project each time Ren'Py is "
 "updated."
 msgstr ""
+"いつものように Ren'Py が更新されるたびに iOS プロジェクトは新しく生成する必要"
+"があります。"
 
 #: ../../source/changelog.rst:78
 msgid ""
 "The inclusion of :ref:`Pyobjus <pyobjus>` with Ren'Py is now documented. The "
 "Pyobjus library allows games to call APIs on iOS and macOS."
 msgstr ""
+":ref:`Pyobjus <pyobjus>` が Ren'Py に含まれていることが記載されました。 "
+"Pyobjus ライブラリーはゲームが iOS や macOS 上でAPI を呼び出せるようにしま"
+"す。"
 
 #: ../../source/changelog.rst:83
 msgid "Updater"
@@ -254,17 +278,23 @@ msgid ""
 "apply to displayables withoin a screen or layout displayable, which are "
 "still read first to last."
 msgstr ""
+"自己発話がレイヤーや、スクリーン、 レイヤー上に直接配置されている "
+"Displayable を読み上げる順番が変更されました。最後に描画された (プレイヤーに"
+"近い) スクリーンや Displayable から順に読み上げられます。これはスクリーンや "
+"layout Displayable 中の Displayable には適用されず、それらはまだ最初から最後"
+"の順に読み上げられます。"
 
 #: ../../source/changelog.rst:124
 msgid ""
 "Modal screens cause self-voicing to stop after the contents of the screen "
 "has been read."
 msgstr ""
+"モーダルスクリーンはそのスクリーンの内容が読み上げられた後自己発話を止めま"
+"す。"
 
 #: ../../source/changelog.rst:129
-#, fuzzy
 msgid "Transform Properties"
-msgstr "Transforms"
+msgstr "Transform プロパティー"
 
 #: ../../source/changelog.rst:131
 msgid ""
@@ -276,6 +306,12 @@ msgid ""
 "The old wrapper, :tpref:`size`, is deprecated, and the new wrapper, :tpref:"
 "`xysize`, should be used instead."
 msgstr ""
+":tpref:`xsize` と :tpref:`ysize` transform プロパティーの振る舞いが少し変わ"
+"り、対応するスタイルのプロパティーにより合うようになりました。それらにはピク"
+"セル数のみが使用されていましたが、ピクセル数を表す ``int`` や、 "
+"``absolute``, 利用可能なスペースのでの割合を示す `float`` のいずれかを表す "
+"\"position\" を受け取れるようになりました。以前のラッパーである :tpref:"
+"`size` は非推奨となり、新しいラッパー :tpref:`xysize` で代用するべきです。"
 
 #: ../../source/changelog.rst:139 ../../source/changelog.rst:282
 #: ../../source/changelog.rst:569 ../../source/changelog.rst:2186
@@ -287,40 +323,43 @@ msgid ""
 "The :ref:`bar <sl-bar>` screen language statement now has a new property, "
 "`released`, that gives an action to perform when the bar is released."
 msgstr ""
+":ref:`bar <sl-bar>` スクリーン言語ステートメントの新しいプロパティー "
+"`released` によりバーがリリースされたときのアクションが追加されました。"
 
 #: ../../source/changelog.rst:144
 msgid ""
 "It's now documented that the :ref:`key <sl-key>` screen language statement "
 "can take a list of keysyms."
 msgstr ""
+":ref:`key <sl-key>` スクリーン言語ステートメントが keysyms のリストを受け取れ"
+"ることがドキュメントに記載されました。"
 
 #: ../../source/changelog.rst:147
 msgid ""
 "On Linux, if Ren'Py detects the \"C\" locale, it will enable support for "
 "UTF-8 filesystems. This is intented to provide better compatibility with "
 "Steam Linux, which uses this locale."
-msgstr ""
+msgstr "Linux で Ren'Py が \"C\" ロケーションを検知すると"
 
 #: ../../source/changelog.rst:151
-#, fuzzy
 msgid "A new Polish translation of the launcher has been added."
-msgstr ""
-"このリリースで、ランチャーとテンプレートゲームにスペイン語の翻訳が追加されま"
-"した。"
+msgstr "ランチャーのポルトガル語の翻訳が追加されました。"
 
 #: ../../source/changelog.rst:153
 msgid ""
 "The music room has been updated to include a TogglePause button, that pauses "
 "and unpauses music."
 msgstr ""
+"ミュージックルームがポーズとアンポーズをトグルする TogglePause ボタンを含むよ"
+"う更新されました。"
 
 #: ../../source/changelog.rst:156
 msgid "There is now a --safe-mode flag, that starts Ren'Py in safe mode."
-msgstr ""
+msgstr "セーフモードで Ren'Py を開始する --safe-mode フラグが追加されました。"
 
 #: ../../source/changelog.rst:158
 msgid "Mute now mutes movies."
-msgstr ""
+msgstr "ミュートがムービーもミュートするようになりました。"
 
 #: ../../source/changelog.rst:160
 msgid ""
@@ -336,8 +375,8 @@ msgid ""
 "The :propref:`hover_sound` and :properef:`activate_sound` properties now "
 "apply to bars."
 msgstr ""
-"The :propref:`hover_sound` と :properef:`activate_sound` プロパティーがバーに"
-"適用されるようになりました。"
+"The :propref:`hover_sound` と :`properef:`activate_sound` プロパティーがバー"
+"に適用されるようになりました。"
 
 #: ../../source/changelog.rst:167
 msgid ""
@@ -2564,7 +2603,6 @@ msgid "7.3.3"
 msgstr "7.3.3"
 
 #: ../../source/changelog.rst:1290
-#, fuzzy
 msgid "Audio"
 msgstr "オーディオ"
 
@@ -3287,7 +3325,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:1767
-#, fuzzy
 msgid "Text"
 msgstr "Text"
 
@@ -3779,7 +3816,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:2123
 msgid "Monologue Mode"
-msgstr ""
+msgstr "モノローグモード"
 
 #: ../../source/changelog.rst:2125
 msgid ""
@@ -4015,9 +4052,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:2277
-#, fuzzy
 msgid "Dict Transitions"
-msgstr "翻訳"
+msgstr "辞書トランジション"
 
 #: ../../source/changelog.rst:2279
 msgid ""
