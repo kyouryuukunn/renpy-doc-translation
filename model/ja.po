@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-03 16:54+0900\n"
+"POT-Creation-Date: 2021-12-11 14:36+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -593,21 +593,33 @@ msgid ""
 "likelyhood) different from frame to frame."
 msgstr ""
 
-#: ../../source/model.rst:347
-msgid "``sampler2D tex0``, ``sampler2D tex1``, ``sampler2D tex2``"
+#: ../../source/model.rst:349
+msgid "``vec4 u_viewport``"
 msgstr ""
 
 #: ../../source/model.rst:346
+msgid ""
+"This gives the current viewport being drawn into. u_viewport.xy is are the "
+"coordinates of the bottom-left corner of the viewport, relative to the "
+"bottom-left corner of the window. u_viewport.pq is the width and height of "
+"the viewport."
+msgstr ""
+
+#: ../../source/model.rst:353
+msgid "``sampler2D tex0``, ``sampler2D tex1``, ``sampler2D tex2``"
+msgstr ""
+
+#: ../../source/model.rst:352
 msgid ""
 "If textures are available, the corresponding samplers are placed in this "
 "variable."
 msgstr ""
 
-#: ../../source/model.rst:353
+#: ../../source/model.rst:359
 msgid "``vec2 res0``, ``vec2 res1``, ``vec2 res2``"
 msgstr ""
 
-#: ../../source/model.rst:350
+#: ../../source/model.rst:356
 msgid ""
 "If textures are available, the size of the textures are placed in these "
 "variables. When the texture is loaded from disk, this is the size of the "
@@ -615,91 +627,91 @@ msgid ""
 "the rendered texture covered."
 msgstr ""
 
-#: ../../source/model.rst:355
+#: ../../source/model.rst:361
 msgid "The following attributes are available to all models:"
 msgstr ""
 
-#: ../../source/model.rst:358
+#: ../../source/model.rst:364
 msgid "``vec4 a_position``"
 msgstr ""
 
-#: ../../source/model.rst:358
+#: ../../source/model.rst:364
 msgid "The position of the vertex being rendered."
 msgstr ""
 
-#: ../../source/model.rst:360
+#: ../../source/model.rst:366
 msgid "If textures are available, so is the following attribute:"
 msgstr ""
 
-#: ../../source/model.rst:363
+#: ../../source/model.rst:369
 msgid "``vec2 a_tex_coord``"
 msgstr ""
 
-#: ../../source/model.rst:363
+#: ../../source/model.rst:369
 msgid "The coordinate that this vertex projects to inside the textures."
 msgstr ""
 
-#: ../../source/model.rst:368
+#: ../../source/model.rst:374
 msgid "GL Properties"
 msgstr ""
 
-#: ../../source/model.rst:370
+#: ../../source/model.rst:376
 msgid ""
 "GL properties change the global state of OpenGL, or the Model-Based "
 "renderer. These properties can be used with a Transform, or with the :func:"
 "`Render.add_property` function."
 msgstr ""
 
-#: ../../source/model.rst:393
+#: ../../source/model.rst:399
 msgid "``gl_blend_func``"
 msgstr ""
 
-#: ../../source/model.rst:375
+#: ../../source/model.rst:381
 msgid ""
 "If present, this is expected to be a six-component tuple, which is used to "
 "set the equation used to blend the pixel being drawn with the pixel it is "
 "being drawn to, and the parameters to that equation."
 msgstr ""
 
-#: ../../source/model.rst:379
+#: ../../source/model.rst:385
 msgid ""
 "Specifically, this should be (`rgb_equation`, `src_rgb`, `dst_rgb`, "
 "`alpha_equation`, `src_alpha`, `dst_alpha`). These will be used to call::"
 msgstr ""
 
-#: ../../source/model.rst:386
+#: ../../source/model.rst:392
 msgid ""
 "Please see the OpenGL documentation for what these functions do. OpenGL "
 "constants can be imported from renpy.uguu::"
 msgstr ""
 
-#: ../../source/model.rst:392
+#: ../../source/model.rst:398
 msgid ""
 "The :tpref:`blend` transform property is generally an easy way to use this."
 msgstr ""
 
-#: ../../source/model.rst:399
+#: ../../source/model.rst:405
 msgid "``gl_color_mask``"
 msgstr ""
 
-#: ../../source/model.rst:396
+#: ../../source/model.rst:402
 msgid ""
 "This is expecting to be a 4-tuple of booleans, corresponding to the four "
 "channels of a pixel (red, green, blue, and alpha). If a given channel is "
 "true, the draw operation will write to that pixel. Otherwise, it will not."
 msgstr ""
 
-#: ../../source/model.rst:408
+#: ../../source/model.rst:414
 msgid "``gl_depth``"
 msgstr ""
 
-#: ../../source/model.rst:402
+#: ../../source/model.rst:408
 msgid ""
 "If true, this will clear the depth buffer, and then enable depth rendering "
 "for this displayable and the children of this displayable."
 msgstr ""
 
-#: ../../source/model.rst:405
+#: ../../source/model.rst:411
 msgid ""
 "Note that drawing any pixel, even transparent pixels, will update the depth "
 "buffer. As a result, using this with images that have transparency may lead "
@@ -707,39 +719,39 @@ msgid ""
 "``behind`` clauses of the ``show`` statement.)"
 msgstr ""
 
-#: ../../source/model.rst:413
+#: ../../source/model.rst:419
 msgid "``gl_pixel_perfect``"
 msgstr ""
 
-#: ../../source/model.rst:411
+#: ../../source/model.rst:417
 msgid ""
 "When True, Ren'Py will move the mesh such that the first vertex is aligned "
 "with a pixel on the screen. This is mostly used in conjunction with text, to "
 "ensure that the text remains sharp."
 msgstr ""
 
-#: ../../source/model.rst:415
+#: ../../source/model.rst:421
 msgid ""
 "The following properties only take effect when a texture is being created, "
 "by a Transform with :tpref:`mesh` set, or by :func:`Model`, where these can "
 "be supplied the property method."
 msgstr ""
 
-#: ../../source/model.rst:421
+#: ../../source/model.rst:427
 msgid "``gl_mipmap``"
 msgstr ""
 
-#: ../../source/model.rst:420
+#: ../../source/model.rst:426
 msgid ""
 "If supplied, this determines if the textures supplied to a mesh are created "
 "with mipmaps. This defaults to true."
 msgstr ""
 
-#: ../../source/model.rst:430
+#: ../../source/model.rst:436
 msgid "``gl_anisotropic``"
 msgstr ""
 
-#: ../../source/model.rst:424
+#: ../../source/model.rst:430
 msgid ""
 "If supplied, this determines if the textures applied to a mesh are created "
 "with anisotropy. Anisotropy is a feature that causes multiple texels "
@@ -747,17 +759,17 @@ msgid ""
 "amount in X and Y."
 msgstr ""
 
-#: ../../source/model.rst:429
+#: ../../source/model.rst:435
 msgid ""
 "This defaults to true. Ren'Py sets this to False for certain effects, like "
 "the Pixellate transition."
 msgstr ""
 
-#: ../../source/model.rst:442
+#: ../../source/model.rst:448
 msgid "``gl_texture_wrap``"
 msgstr ""
 
-#: ../../source/model.rst:433
+#: ../../source/model.rst:439
 msgid ""
 "When supplied, this determines how the textures applied to a mesh are "
 "wrapped. This expects a 2-component tuple, where the first component is used "
@@ -766,15 +778,15 @@ msgid ""
 "textyure."
 msgstr ""
 
-#: ../../source/model.rst:439
+#: ../../source/model.rst:445
 msgid "The values should be OpenGL constants imported from renpy.uguu::"
 msgstr ""
 
-#: ../../source/model.rst:445
+#: ../../source/model.rst:451
 msgid "Model Displayable"
 msgstr ""
 
-#: ../../source/model.rst:447
+#: ../../source/model.rst:453
 msgid ""
 "The Model displayable acts as a factory to created models for use with the "
 "model-based renderer."
@@ -917,23 +929,23 @@ msgid ""
 "floats, or a Matrix."
 msgstr ""
 
-#: ../../source/model.rst:453
+#: ../../source/model.rst:459
 msgid "Model Displayable Examples"
 msgstr ""
 
-#: ../../source/model.rst:455
+#: ../../source/model.rst:461
 msgid ""
 "The Model displayable can be used in conjunction with an ATL transform and a "
 "built-in shader to create the Dissolve transform::"
 msgstr ""
 
-#: ../../source/model.rst:466
+#: ../../source/model.rst:472
 msgid ""
 "Using the Model displayable as the child of a displayable is incompatible "
 "with :tpref:`mesh`, as the two both create models inside Ren'Py."
 msgstr ""
 
-#: ../../source/model.rst:470
+#: ../../source/model.rst:476
 msgid "Default Shader Parts"
 msgstr ""
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-08 14:30+0900\n"
-"PO-Revision-Date: 2021-08-10 06:45+0900\n"
+"POT-Creation-Date: 2021-12-11 14:36+0900\n"
+"PO-Revision-Date: 2021-12-11 14:54+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -248,15 +248,15 @@ msgstr "キューは ``volume`` 節も取ります。 ::"
 msgid ""
 "When multiple queue statements are given without an interaction between "
 "them, all sound files are added to the queue. After an interaction has "
-"occured, the first queue statement clears the queue, unless it has already "
+"occurred, the first queue statement clears the queue, unless it has already "
 "been cleared by a play or stop statement."
 msgstr ""
 "複数の queue ステートメントがインタラクションなしで指定されると、すべての音声"
-"ファイルがそのキューに追加されます。インタラクション後、play や stop ステート"
-"メントですでにクリアされていないなれば最初の queue ステートメントがキューをク"
-"リアします。"
+"ファイルはそのキューに追加されます。play や stop ステートメントで既󠄂にクリアさ"
+"れていなければインタラクション後の最初の queue ステートメントはキューをクリア"
+"します。"
 
-#: ../../source/audio.rst:136
+#: ../../source/audio.rst:142
 msgid ""
 "The advantage of using these statements is that your program will be checked "
 "for missing sound and music files when lint is run. The functions below "
@@ -267,11 +267,11 @@ msgstr ""
 "失をチェック出来ることです。以下の関数は曲と効果音を python から制御出来るよ"
 "うにし、( 滅多に使用されませんが )高度な機能を利用するために存在します。"
 
-#: ../../source/audio.rst:145
+#: ../../source/audio.rst:151
 msgid "Partial Playback"
 msgstr "部分再生"
 
-#: ../../source/audio.rst:147
+#: ../../source/audio.rst:153
 msgid ""
 "Ren'Py supports partial of audio files. This is done by putting a playback "
 "specification, enclosed in angle brackets, at the start of the file. The "
@@ -282,38 +282,38 @@ msgstr ""
 "ルの始めの山括弧のなかで位置を指定します。部分再生指定は適切な名前と値のペア"
 "からなり、それぞれスペースで区切られます。"
 
-#: ../../source/audio.rst:152
+#: ../../source/audio.rst:158
 msgid ""
 "The values are always interpreted as seconds from the start of the file. The "
 "three properties are:"
 msgstr ""
 "値はファイルの開始からの秒数と解釈され、3つのプロパティーがあります。 :"
 
-#: ../../source/audio.rst:157
+#: ../../source/audio.rst:163
 msgid "``from``"
 msgstr "``from``"
 
-#: ../../source/audio.rst:156
+#: ../../source/audio.rst:162
 msgid ""
 "Specifies the position in the file at which the first play-through begins "
 "playing. (This defaults to 0.0 seconds.)"
 msgstr "最初に再生を開始するときの位置を指定します (デフォルトでは 0.0 秒)。"
 
-#: ../../source/audio.rst:161
+#: ../../source/audio.rst:167
 msgid "``to``"
 msgstr "``to``"
 
-#: ../../source/audio.rst:160
+#: ../../source/audio.rst:166
 msgid ""
 "Specifies the position in the file at which the file ends playing. (This "
 "defaults to the full duration of the file.)"
 msgstr "最初に再生を停止する位置を指定します (デフォルトでは 0.0 秒)。"
 
-#: ../../source/audio.rst:166
+#: ../../source/audio.rst:172
 msgid "``loop``"
 msgstr "``loop``"
 
-#: ../../source/audio.rst:164
+#: ../../source/audio.rst:170
 msgid ""
 "Specifies the position in the file at which the second and later play-"
 "throughs begin playing. (This defaults to the start time given by ``from`` "
@@ -322,27 +322,27 @@ msgstr ""
 "二回目からの再生開始位置を指定します (デフォルトでは ``from`` で指定された開"
 "始位置またはそのファイルの開始位置です )。"
 
-#: ../../source/audio.rst:168
+#: ../../source/audio.rst:174
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/audio.rst:172
+#: ../../source/audio.rst:178
 msgid ""
 "will play 10.5 seconds of waves.opus, starting at the 5 second mark. The "
 "statement::"
 msgstr "5 秒から開始し、 waves.opus の10.5 秒までを再生します。 ::"
 
-#: ../../source/audio.rst:176
+#: ../../source/audio.rst:182
 msgid ""
 "will play song.opus all the way through once, then loop back to the 6.333 "
 "second mark before playing it again all the way through to the end."
 msgstr "song.opus 全体を一回再生した後、 6.333 秒からループします。"
 
-#: ../../source/audio.rst:182
+#: ../../source/audio.rst:188
 msgid "Sync Start Position"
 msgstr "開始位置の同期"
 
-#: ../../source/audio.rst:184
+#: ../../source/audio.rst:190
 msgid ""
 "The position in the file at which the clip begins playing can also be synced "
 "to another channel with a currently-playing track using a filename like "
@@ -354,12 +354,12 @@ msgstr ""
 "ます。ここでの channelname はそのチャンネルの名前で、 music, sound, その他登"
 "録されたチャンネルのいずれかになります。 "
 
-#: ../../source/audio.rst:189
+#: ../../source/audio.rst:195
 msgid ""
 "This can be used to sync multi-layered looping tracks together. For example::"
 msgstr "これによって多層レイヤーのループトラックを一緒に同期できます。 例 ::"
 
-#: ../../source/audio.rst:193
+#: ../../source/audio.rst:199
 msgid ""
 "Will play layer_2.opus with the start time synced to the current track in "
 "channel music_1 in the first iteration, before playing the whole track in "
@@ -371,11 +371,11 @@ msgstr ""
 "を再生します(デフォルトでは layer_2.opus の開始時間はそのループの後続のイテ"
 "レーションでも変更が維持されます)。"
 
-#: ../../source/audio.rst:201
+#: ../../source/audio.rst:207
 msgid "Playing Silence"
 msgstr "Playing Silence"
 
-#: ../../source/audio.rst:203
+#: ../../source/audio.rst:209
 msgid ""
 "A specified duration of silence can played using a filename like \"<silence "
 "3.0>\", where 3.0 is the number of seconds of silence that is desired. This "
@@ -385,15 +385,15 @@ msgstr ""
 "て、指定された時間無音を再生できます。これにより再生位置を遅延できます。 "
 "例 ::"
 
-#: ../../source/audio.rst:209
+#: ../../source/audio.rst:215
 msgid "Will play silence for half a second, and then an explosion sound."
 msgstr "0.5 秒の無音の後、爆発音を再生します。"
 
-#: ../../source/audio.rst:215
+#: ../../source/audio.rst:221
 msgid "Audio Namespace"
 msgstr "Audio 名前空間"
 
-#: ../../source/audio.rst:217
+#: ../../source/audio.rst:223
 msgid ""
 "The ``play`` and ``queue`` statements evaluate their arguments in the audio "
 "namespace. This means it is possible to use the define statement to provide "
@@ -403,15 +403,15 @@ msgstr ""
 "これにより define ステートメントでオーディオファイルにエイリアスを定義出来ま"
 "す。"
 
-#: ../../source/audio.rst:221
+#: ../../source/audio.rst:227
 msgid "For example, one can write::"
 msgstr "例えばこのように書いて ::"
 
-#: ../../source/audio.rst:225
+#: ../../source/audio.rst:231
 msgid "and then use::"
 msgstr "このように使用します。 ::"
 
-#: ../../source/audio.rst:229
+#: ../../source/audio.rst:235
 msgid ""
 "Ren'Py will also automatically place sound files in the audio namespace, if "
 "found in the ``game/audio`` directory. Files in this directory with a "
@@ -424,7 +424,7 @@ msgstr ""
 "ル(現在のところ .wav, .mp2, .mp3, .ogg, .opus) は拡張子を除去し、残りのファイ"
 "ル名を小文字にして audio 名前空間に配置します。"
 
-#: ../../source/audio.rst:235
+#: ../../source/audio.rst:241
 msgid ""
 "Note that just because a file is placed into the audio namespace, that "
 "doesn't mean it can be used. So while you could play a file named "
@@ -433,7 +433,7 @@ msgstr ""
 "ファイルが audio 名前空間に配置されるだけで、使用可能であるとは意味しませ"
 "ん。 以下の記述で \"opening_song.ogg\"  を再生可能な一方、 ::"
 
-#: ../../source/audio.rst:241
+#: ../../source/audio.rst:247
 msgid ""
 "Some filenames can't be accessed this way, as their names are not "
 "expressable as Python variables. For example, \"my song.mp3\", \"8track.opus"
@@ -443,7 +443,7 @@ msgstr ""
 "イルもあります。例えば、 \"my song.mp3\", \"8track.opus\",  \"this-is-a-song."
 "ogg\"  は動作しません。"
 
-#: ../../source/audio.rst:247
+#: ../../source/audio.rst:253
 msgid "Functions"
 msgstr "関数"
 
@@ -928,11 +928,11 @@ msgstr "これは最後にキューされたファイルを None に設定しま
 msgid "The channel to stop the sound on."
 msgstr "再生を停止するチャンネル"
 
-#: ../../source/audio.rst:253
+#: ../../source/audio.rst:259
 msgid "Sound Functions"
 msgstr "サウンドの関数"
 
-#: ../../source/audio.rst:255
+#: ../../source/audio.rst:261
 msgid ""
 "Most ``renpy.music`` functions have aliases in ``renpy.sound``. These "
 "functions are similar, except they default to the sound channel rather than "
