@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-22 21:18+0900\n"
+"POT-Creation-Date: 2022-05-01 12:00+0900\n"
 "PO-Revision-Date: 2021-01-01 13:56+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -53,6 +53,12 @@ msgstr ""
 
 #: ../../source/side_image.rst:23
 msgid ""
+"In addition to the tag, there must be at least one attribute in the pool. If "
+"not, no side image is shown."
+msgstr ""
+
+#: ../../source/side_image.rst:26
+msgid ""
 "To determine the side image associated with a tag, Ren'Py tries to find an "
 "image with the tag \"side\", and the largest number of attributes from the "
 "pool. If no image can be found, or more than one image has the same number "
@@ -62,11 +68,11 @@ msgstr ""
 "タグとプール内のより多くの属性を持つ画像を探します。画像が見つからないか、ひ"
 "とつ以上の画像が同数の属性を持つなら :class:`Null` が代わりに表示されます。"
 
-#: ../../source/side_image.rst:28
+#: ../../source/side_image.rst:31
 msgid "For example, say we have the following script::"
 msgstr "例えば以下のスクリプトとについて述べます ::"
 
-#: ../../source/side_image.rst:46
+#: ../../source/side_image.rst:49
 msgid ""
 "At point A, the character ``e`` is speaking, which is linked to the image "
 "tag \"eileen\". The \"eileen happy\" image is showing, so the pool of "
@@ -80,7 +86,7 @@ msgstr ""
 "を持つ画像を探すと「 side eileen happy 」がマッチし、それが Ren'Py に表示され"
 "るサイドイメージになります。"
 
-#: ../../source/side_image.rst:52
+#: ../../source/side_image.rst:55
 msgid ""
 "At point B, the \"eileen concerned\" image is showing. The pool of "
 "attributes is now \"eileen\" and \"concerned\". The only matching image is "
@@ -93,11 +99,11 @@ msgstr ""
 "で、 Ren'Py はそれを選択します。 画像「 side concerned 」があると、曖昧になる"
 "ので、 Ren'Py は画像を表示できません。"
 
-#: ../../source/side_image.rst:59
+#: ../../source/side_image.rst:62
 msgid "Invisible Characters"
 msgstr "透明なキャラクター"
 
-#: ../../source/side_image.rst:61
+#: ../../source/side_image.rst:64
 msgid ""
 "Another use of the side image is to show an image of the player character, "
 "when that character has dialogue. The way to do this is to link an image to "
@@ -109,21 +115,27 @@ msgstr ""
 "けし、表示するサイドイメージを選択するための属性つきで say ステートメントを使"
 "用します。"
 
-#: ../../source/side_image.rst:66 ../../source/inc/side:27
+#: ../../source/side_image.rst:69 ../../source/inc/side:29
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/side_image.rst:82
-msgid "Variations"
-msgstr "変数"
+#: ../../source/side_image.rst:85
+msgid "Config and Store Variables"
+msgstr ""
 
-#: ../../source/side_image.rst:84
+#: ../../source/side_image.rst:87
 msgid ""
 "There are a number of attributes of side images that can be controlled using "
 "config variables."
 msgstr "設定変数を使って制御可能なサイドイメージの属性がいくつかあります。"
 
-#: ../../source/side_image.rst:89
+#: ../../source/side_image.rst:93
+msgid ""
+"If _side_image_tag is not None, it takes preference over config."
+"side_image_tag."
+msgstr ""
+
+#: ../../source/side_image.rst:95
 msgid ""
 "If this is given, then the side image will track the given image tag, rather "
 "than the image associated with currently speaking character. For example,"
@@ -131,7 +143,7 @@ msgstr ""
 "これが与えられるとサイドイメージは現在話しているキャラクターに関連付けられた"
 "画像タグではなく、指定されたタグに従います。例えば"
 
-#: ../../source/side_image.rst:99
+#: ../../source/side_image.rst:103
 msgid ""
 "Will make the side image track the \"eileen\" image tag, which is associated "
 "with the ``e`` character."
@@ -139,7 +151,7 @@ msgstr ""
 "サイドイメージに ``e`` キャラクターに関連付けられた \"eileen\" 画像タグを取ら"
 "せます。"
 
-#: ../../source/side_image.rst:104
+#: ../../source/side_image.rst:108
 msgid ""
 "When set to true, the side image will only show if an image with that tag is "
 "not already being shown on the screen."
@@ -147,13 +159,20 @@ msgstr ""
 "True の時、サイドイメージはそのタグの画像がスクリーンにすでに表示されていない"
 "時だけ表示されます。"
 
-#: ../../source/side_image.rst:109
+#: ../../source/side_image.rst:114
+msgid ""
+"If _side_image_prefix_tag is not None, it takes preference over config."
+"side_image_prefix_tag."
+msgstr ""
+
+#: ../../source/side_image.rst:117
 msgid "The prefix that is used when searching for a side image."
 msgstr "サイドイメージを検索するときに使用される接頭辞です。"
 
-#: ../../source/side_image.rst:113
+#: ../../source/side_image.rst:121
+#, fuzzy
 msgid ""
-"The Null displayable to use when not displaying a side image. This be "
+"The Null displayable to use when not displaying a side image. This can be "
 "changed, but only to other Null objects. One reason for doing so would be to "
 "set the side of the Null (eg. ``Null(width=200, height=150)``) to prevent "
 "dissolves from being cut off."
@@ -163,7 +182,7 @@ msgstr ""
 "height=150)`` ) のサイドイメージを配置して、ディゾルブが遮られるのを防ぎま"
 "す。"
 
-#: ../../source/side_image.rst:120
+#: ../../source/side_image.rst:128
 msgid ""
 "If not None, a transform that is used when the new side image shares the "
 "same image tag as the previous side image."
@@ -171,7 +190,7 @@ msgstr ""
 "None または新しいサイドイメージが以前のサイドイメージと同じ画像タグの時に使用"
 "される transform です。"
 
-#: ../../source/side_image.rst:125
+#: ../../source/side_image.rst:133
 msgid ""
 "If not None, a transform that is used when the new side image does not share "
 "the name image tag (or one of the new or old side images does not exist)."
@@ -180,11 +199,11 @@ msgstr ""
 "たは新しいサイドイメージや以前のサイドイメージがないとき) に使用される "
 "transform です。"
 
-#: ../../source/side_image.rst:131
+#: ../../source/side_image.rst:139
 msgid "Transforms and Transitions"
 msgstr "transform とトランジション"
 
-#: ../../source/side_image.rst:133
+#: ../../source/side_image.rst:141
 msgid ""
 "The :var:`config.side_image_same_transform` and :var:`config."
 "side_image_change_transform` transforms are called with two arguments – old "
@@ -197,7 +216,7 @@ msgstr ""
 "の引数、新旧のサイドイメージ displayable で呼び出されます。これらを使用してサ"
 "イドイメージを動かしたりトランジション出来ます。"
 
-#: ../../source/side_image.rst:139
+#: ../../source/side_image.rst:147
 msgid ""
 "This causes the side image to slide in and out when the character associated "
 "with that image changes::"
@@ -205,7 +224,7 @@ msgstr ""
 "画像に関連付けられたキャラクターが変更するとき、このコードはサイドイメージを"
 "スライドイン、アウトします。 ::"
 
-#: ../../source/side_image.rst:156
+#: ../../source/side_image.rst:164
 msgid ""
 "This is used to dissolve between old and new side images when the character "
 "remains the same. (For example, when the character changes emotion.) For "
@@ -216,48 +235,13 @@ msgstr ""
 "のサイドイメージをディゾルブします。 :class:`Dissolve` が正確に動作するために"
 "は両方のサイドイメージが同じ大きさでなくてはいけません。 ::"
 
-#: ../../source/side_image.rst:169
-msgid "Leaving Room / Customization"
-msgstr "Leaving Room / Customization"
-
-#: ../../source/side_image.rst:171
+#: ../../source/side_image.rst:176
 msgid ""
-"By default, the entire width of the screen is taken up by the text. If one "
-"tries to display a side image, it will be displayed on top of the text. To "
-"fix this, one should include margin or padding on the appropriate side of "
-"the text window::"
+"When the :func:`SideImage` is scaled down, it might make sense to enable "
+"mipmapping in the :func:`Dissolve`::"
 msgstr ""
-"デフォルトではスクリーンのすべての幅はテキストに専有されます。サイドイメージ"
-"を表示しようとすると、テキストの上部に表示されるでしょう。これを修正するため"
-"には、以下の様なコードを使って、 margin, padding をテキストウィンドウの適切な"
-"サイドに含めるべきです。 ::"
 
-#: ../../source/side_image.rst:179
-msgid ""
-"The position of the side image can be changed by customizing the ``say`` or "
-"``nvl`` screens. Both include the line::"
-msgstr ""
-"サイドイメージの場所は ``say`` または ``nvl`` スクリーンをカスタマイズして変"
-"更できます。ともに次の行を含んでいます。"
-
-#: ../../source/side_image.rst:184
-msgid ""
-"By changing the :propref:`xalign` and :propref:`yalign` properties, you can "
-"control the positioning of the side image on the screen."
-msgstr ""
-":propref:`xalign` と :propref:`yalign` プロパティーを変更すれば、スクリーン上"
-"のサイドイメージのある位置を制御できます。"
-
-#: ../../source/side_image.rst:187
-msgid ""
-"Finally, the :func:`SideImage` function returns, as a displayable, the "
-"current side image. This can be used as part of more advanced screen "
-"customization."
-msgstr ""
-"最終的には :func:`SideImage` 関数は displayable として現在のサイドイメージを"
-"返します。このことはより高度なカスタマイズの一部で使用されます。"
-
-#: ../../source/side_image.rst:193
+#: ../../source/side_image.rst:186
 msgid "Functions"
 msgstr "Functions"
 
@@ -266,22 +250,25 @@ msgid "This attempts to find an image to show as the side image."
 msgstr "サイドイメージとして表示する画像を見つけようと試みます。"
 
 #: ../../source/inc/side:7
+#, fuzzy
 msgid ""
 "It begins by determining a set of image attributes. If `image_tag` is given, "
 "it gets the image attributes from the tag. Otherwise, it gets them from the "
-"currently showing character."
+"currently showing character. If no attributes are available for the tag, "
+"this returns None."
 msgstr ""
 "一連の画像属性を決定するところからはじめます。 `image_tag` が指定されればその"
 "タグから画像属性を所得します。そうでなければそれらを現在表示しているキャラク"
 "ターから所得します。"
 
-#: ../../source/inc/side:11
+#: ../../source/inc/side:12
 msgid ""
-"It then looks up an image with the tag `prefix_tag` and those attributes, "
-"and returns it if it exists."
-msgstr "次に `prefix_tag` タグとそれらの属性をもつ画像を探し、あれば返します。"
+"It then looks up an image with the tag `prefix_tag`, and the image tage "
+"(either from `image_tag` or the currently showing character) and the set of "
+"image attributes as attributes. If such an image exists, it's returned."
+msgstr ""
 
-#: ../../source/inc/side:14
+#: ../../source/inc/side:16
 msgid ""
 "If not_showing is True, this only returns a side image if the image the "
 "attributes are taken from is not on the screen. If Nome, the value is taken "
@@ -291,14 +278,14 @@ msgstr ""
 "イメージを返します。None なら値は :var:`config.side_image_only_not_showing` "
 "から取られます。"
 
-#: ../../source/inc/side:18
+#: ../../source/inc/side:20
 msgid ""
 "If `layer` is None, uses the default layer for the currently showing tag."
 msgstr ""
 "`layer` が None なら、現在タグを表示しているレイヤーとしてデフォルトレイヤー"
 "を使用します。"
 
-#: ../../source/inc/side:23
+#: ../../source/inc/side:25
 msgid ""
 "This sets the attributes associated with an image tag when that image tag is "
 "not showing. The main use of this would be to directly set the attributes "
@@ -307,10 +294,55 @@ msgstr ""
 "画像タグに対応する属性を、その画像タグが表示されていないときに設定します。主"
 "な用途は直接サイドイメージで使用する属性を設定することでしょう。"
 
-#: ../../source/inc/side:32
+#: ../../source/inc/side:34
 msgid "and::"
 msgstr "と ::"
 
-#: ../../source/inc/side:36
+#: ../../source/inc/side:38
 msgid "are equivalent."
 msgstr "は等価です。"
+
+#~ msgid "Variations"
+#~ msgstr "変数"
+
+#~ msgid "Leaving Room / Customization"
+#~ msgstr "Leaving Room / Customization"
+
+#~ msgid ""
+#~ "By default, the entire width of the screen is taken up by the text. If "
+#~ "one tries to display a side image, it will be displayed on top of the "
+#~ "text. To fix this, one should include margin or padding on the "
+#~ "appropriate side of the text window::"
+#~ msgstr ""
+#~ "デフォルトではスクリーンのすべての幅はテキストに専有されます。サイドイメー"
+#~ "ジを表示しようとすると、テキストの上部に表示されるでしょう。これを修正する"
+#~ "ためには、以下の様なコードを使って、 margin, padding をテキストウィンドウ"
+#~ "の適切なサイドに含めるべきです。 ::"
+
+#~ msgid ""
+#~ "The position of the side image can be changed by customizing the ``say`` "
+#~ "or ``nvl`` screens. Both include the line::"
+#~ msgstr ""
+#~ "サイドイメージの場所は ``say`` または ``nvl`` スクリーンをカスタマイズして"
+#~ "変更できます。ともに次の行を含んでいます。"
+
+#~ msgid ""
+#~ "By changing the :propref:`xalign` and :propref:`yalign` properties, you "
+#~ "can control the positioning of the side image on the screen."
+#~ msgstr ""
+#~ ":propref:`xalign` と :propref:`yalign` プロパティーを変更すれば、スクリー"
+#~ "ン上のサイドイメージのある位置を制御できます。"
+
+#~ msgid ""
+#~ "Finally, the :func:`SideImage` function returns, as a displayable, the "
+#~ "current side image. This can be used as part of more advanced screen "
+#~ "customization."
+#~ msgstr ""
+#~ "最終的には :func:`SideImage` 関数は displayable として現在のサイドイメージ"
+#~ "を返します。このことはより高度なカスタマイズの一部で使用されます。"
+
+#~ msgid ""
+#~ "It then looks up an image with the tag `prefix_tag` and those attributes, "
+#~ "and returns it if it exists."
+#~ msgstr ""
+#~ "次に `prefix_tag` タグとそれらの属性をもつ画像を探し、あれば返します。"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-13 12:41+0900\n"
+"POT-Creation-Date: 2022-05-01 12:00+0900\n"
 "PO-Revision-Date: 2021-12-11 18:42+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -422,10 +422,11 @@ msgstr ""
 "れるタプルの画像名が与えられます。タグと新しい一連の属性を含む調整されたタプ"
 "ルを返すべきです。"
 
-#: ../../source/config.rst:234
+#: ../../source/config.rst:234 ../../source/config.rst:397
+#, fuzzy
 msgid ""
-"As this function may be called during prediction, it should not rely on the "
-"image's state."
+"As this function may be called during prediction, it must not rely on any "
+"state."
 msgstr ""
 "この関数は予測の間に呼び出されるかもしれないため、画像の状態に依存しないべき"
 "です。"
@@ -448,6 +449,14 @@ msgstr "True なら Ren'Py はグリッドがすべて満たされていなく�
 
 #: ../../source/config.rst:253
 msgid ""
+"A list of names of screens that Ren'Py will always show, even in menus, and "
+"when the interface is hidden. This is mostly used by Ren'Py, which assumes "
+"this will be a list. The :var:`config.overlay_screens` list is usually more "
+"appropriate."
+msgstr ""
+
+#: ../../source/config.rst:260
+msgid ""
 "If not None, this is a function that is called with an audio filename, and "
 "is expected to return a second audio filename, the latter of which will be "
 "played."
@@ -455,7 +464,7 @@ msgstr ""
 "None でなければオーディオファイル名を引数とする関数であり、別のオーディオファ"
 "イル名を返してそれを再生するようにします。"
 
-#: ../../source/config.rst:257
+#: ../../source/config.rst:264
 msgid ""
 "This is intended for use when an a games has audio file formats changed, but "
 "it's not destired to update the game script."
@@ -463,7 +472,7 @@ msgstr ""
 "これはゲームにあるオーディオファイルのフォーマットが変更されたが、ゲームスク"
 "リプトの更新は望ましくないときの使用を意図しています。"
 
-#: ../../source/config.rst:262
+#: ../../source/config.rst:269
 msgid ""
 "This is used to define automatic audio channels. It's a map the channel name "
 "to a tuple containing 3 components:"
@@ -471,19 +480,19 @@ msgstr ""
 "自動的にオーディオチャンネルを決定するために使用されます。チャンネル名と次の "
 "3 要素のタプルの辞書です。:"
 
-#: ../../source/config.rst:265
+#: ../../source/config.rst:272
 msgid "The mixer the channel uses."
 msgstr "そのチャンネルが使用するミキサーです。"
 
-#: ../../source/config.rst:266
+#: ../../source/config.rst:273
 msgid "A prefix that is given to files played on the channel."
 msgstr "そのチャンネルで再生するファイルに与えられる接頭辞です。"
 
-#: ../../source/config.rst:267
+#: ../../source/config.rst:274
 msgid "A suffix that is given to files played on the channel."
 msgstr "そのチャンネルで再生するファイルに与えられる接尾辞です。"
 
-#: ../../source/config.rst:271
+#: ../../source/config.rst:278
 msgid ""
 "If True, and the `play` argument is give to :func:`Movie`, an audio channel "
 "name is automatically generated for each movie."
@@ -491,11 +500,11 @@ msgstr ""
 "True かつ `play` 引数が :func:`Movie` に指定されるとオーディオチャンネル名が"
 "自動的に各ムービーに対して生成されます。"
 
-#: ../../source/config.rst:274
+#: ../../source/config.rst:281
 msgid ":var:`config.single_movie_channel` takes precendece over this variable."
 msgstr ":var:`config.single_movie_channel` はこの変数に対して優先されます。"
 
-#: ../../source/config.rst:279
+#: ../../source/config.rst:286
 msgid ""
 "If not None, the name of a save file to automatically load when Ren'Py "
 "starts up. This is intended for developer use, rather than for end users. "
@@ -504,14 +513,14 @@ msgstr ""
 "None を指定するか、 Ren'Py 起動時に自動的にロードされるセーブファイルの名前を"
 "指定します。これはエンドユーザーというより開発者向けです。"
 
-#: ../../source/config.rst:286
+#: ../../source/config.rst:293
 msgid ""
 "This may be a string, a function, or None. If None, auto-voice is disabled."
 msgstr ""
 "ここには、文字列、関数、None のいずれかを指定し、None の場合は自動ボイスは無"
 "効化されます。"
 
-#: ../../source/config.rst:289
+#: ../../source/config.rst:296
 msgid ""
 "If a string, this is formatted with the ``id`` variable bound to the "
 "identifier of the current line of dialogue. If this gives an existing file, "
@@ -521,7 +530,7 @@ msgstr ""
 "ます。その文字列が存在するファイルであればそのファイルがボイスとして再生され"
 "ます。"
 
-#: ../../source/config.rst:293
+#: ../../source/config.rst:300
 msgid ""
 "If a function, the function is called with a single argument, the identifier "
 "of the current line of dialogue. The function is expected to return a "
@@ -531,70 +540,15 @@ msgstr ""
 "れます。この関数は文字列を返すことが期待されます。その文字列が存在するファイ"
 "ルであればそのファイルがボイスとして再生されます。"
 
-#: ../../source/config.rst:298
+#: ../../source/config.rst:305
 msgid "See :ref:`Automatic Voice <automatic-voice>` for more details."
 msgstr "詳細は :ref:`Automatic Voice <automatic-voice>` を参照してください。"
 
-#: ../../source/config.rst:302
-msgid "If not None, this causes Ren'Py to automatically define images."
-msgstr "None でなければ Ren'Py に自動的に画像を定義させます。"
-
-#: ../../source/config.rst:305
-msgid ""
-"When not set to None, this should be set to a list of separators. (For "
-"example, ``[ ' ', '_', '/' ]``.)"
-msgstr ""
-"None を指定するか、区切り文字のリストを指定します (例えば  ``[ ' ', '_', "
-"'/' ]``)。"
-
-#: ../../source/config.rst:308
-msgid ""
-"Ren'Py will scan through the list of files on disk and in archives. When it "
-"finds a file ending with .png or .jpg, it will strip the extension, then "
-"break the name at separators, to create an image name. If the name consists "
-"of at least two components, and no image with that name already is defined, "
-"Ren'Py will define that image to refer to a filename."
-msgstr ""
-"Ren'Pyはディスクとアーカイブのファイルリストをスキャンします。 .png や .jpg "
-"で終わるファイルが見つかると、拡張子を取り除いて区切り文字で名前を分割し、画"
-"像名を作成します。その名前が少なくとも二つの要素で構成され、その名前の画像が"
-"すでに定義されていなければ Ren'Py はその画像をファイル名を参照して定義しま"
-"す。"
-
-#: ../../source/config.rst:315
-msgid "With the example list of separators, if your game directory contains:"
-msgstr ""
-"この区切り文字のリストの例では、 game ディレクトリーが次のファイルを持つな"
-"ら :"
-
-#: ../../source/config.rst:318
-msgid "eileen_happy.png, Ren'Py will define the image \"eileen happy\"."
-msgstr "eileen_happy.png ならRen'Pyは画像「 eileen happy 」を定義します。"
-
-#: ../../source/config.rst:319
-msgid "lucy/mad.png, Ren'Py will define the image \"lucy mad\"."
-msgstr "lucy/mad.png なら Ren'Py は画像「 lucy mad 」を定義します。"
-
-#: ../../source/config.rst:320
-msgid ""
-"mary.png, Ren'Py will do nothing. (As the image does not have two "
-"components.)"
-msgstr "mary.png なら Ren'Py は何もしません (画像が2つの要素を持たないため)。"
-
-#: ../../source/config.rst:324
-msgid ""
-"A list of strings giving prefixes that are stripped out when defining "
-"automatic images. This can be used to remove directory names, when "
-"directories contain images."
-msgstr ""
-"自動的に画像を定義するときに取り除かれる、接頭辞の文字列のリストです。これを"
-"使用して画像を含むディレクトリーの名前を取り除けます。"
-
-#: ../../source/config.rst:330
+#: ../../source/config.rst:309
 msgid "The number of slots used by autosaves."
 msgstr "オートセーブで使用するスロット数"
 
-#: ../../source/config.rst:334
+#: ../../source/config.rst:313
 msgid ""
 "If True, the underlying data of an image is stored in RAM, allowing image "
 "manipulators to be applied to that image without reloading it from disk. If "
@@ -606,7 +560,7 @@ msgstr ""
 "キャッシュから外れますが、ビデオメモリーにテクスチャとして保持され、 RAM の使"
 "用を減らします。"
 
-#: ../../source/config.rst:341
+#: ../../source/config.rst:320
 msgid ""
 "This specifies a list of style property prefixes that can be given to a :"
 "func:`Character`. When a style prefixed with one of the given prefix is "
@@ -616,7 +570,7 @@ msgstr ""
 "定します。指定した接頭辞のうち一つのスタイル接頭辞が指定されると、 ID がその"
 "接頭辞である displayable にプロパティーが適用されます。"
 
-#: ../../source/config.rst:346
+#: ../../source/config.rst:325
 msgid ""
 "For example, the default GUI adds \"namebox\" to this. When a Character is "
 "given the `namebox_background` property, it sets :propref:`background` on "
@@ -626,7 +580,7 @@ msgstr ""
 "`namebox_background` プロパティーが指定されると、id \"namebox\" の say スク"
 "リーンの displayable に :propref:`background` を設定します。"
 
-#: ../../source/config.rst:352
+#: ../../source/config.rst:331
 msgid ""
 "The default value of the predict_all argument for :func:`ConditionSwitch` "
 "and :func:`ShowingSwitch`, which determines if all possible displayables are "
@@ -635,7 +589,7 @@ msgstr ""
 ":func:`ConditionSwitch` と :func:`ShowingSwitch` に対する predict_all 引数の"
 "デフォルト値で、これはすべての可能な displayable が表示されるかを決定します。"
 
-#: ../../source/config.rst:358
+#: ../../source/config.rst:337
 msgid ""
 "This is a callback that is called when Ren'Py enters a new context, such as "
 "a menu context."
@@ -643,7 +597,7 @@ msgstr ""
 "menu コンテキストのような新しいコンテキストに Ren'Py が入ったときに呼び出され"
 "るコールバックです。"
 
-#: ../../source/config.rst:363
+#: ../../source/config.rst:342
 msgid ""
 "Contains a list of screens that are removed when a context is copied for "
 "rollback or saving."
@@ -651,7 +605,7 @@ msgstr ""
 "コンテキストがロールバックやセーブのためにコピーされるときに除去されるスク"
 "リーンのリストを含みます。"
 
-#: ../../source/config.rst:368
+#: ../../source/config.rst:347
 msgid ""
 "The amount of time in seconds Ren'Py spends fading in music when the music "
 "is played due to a context change. (Usually, when the game is loaded.)"
@@ -659,7 +613,7 @@ msgstr ""
 "コンテキスの変更により Ren'Py が音声を再生するときフェードインに掛ける時間の"
 "秒数です(通常はゲームロード時です)。"
 
-#: ../../source/config.rst:373
+#: ../../source/config.rst:352
 msgid ""
 "The amount of time in seconds Ren'Py spends fading out music when the music "
 "is played due to a context change. (Usually, when the game is loaded.)"
@@ -667,15 +621,7 @@ msgstr ""
 "コンテキスの変更により Ren'Py が音声を再生するときフェードアウトに掛ける時間"
 "の秒数です(通常はゲームロード時です)。"
 
-#: ../../source/config.rst:378
-msgid ""
-"Enables debugging functionality (mostly by turning some missing files into "
-"errors.) This should always be turned off in a release."
-msgstr ""
-"デバッグ機能を有効化する(ほとんどは、見つからないファイルをエラーにすることで"
-"す)。 これはリリース時に常にオフにされるべきです。"
-
-#: ../../source/config.rst:383
+#: ../../source/config.rst:357
 msgid ""
 "If True, Ren'Py will write information about the :ref:`image cache <images>` "
 "to image_cache.txt."
@@ -683,7 +629,7 @@ msgstr ""
 "True ならRen'Pyは :ref:`画像キャッシュ <images>` の内容を、 image_cache.txt "
 "に書き出します。"
 
-#: ../../source/config.rst:388
+#: ../../source/config.rst:362
 msgid ""
 "If True, Ren'Py will will write information about and errors that occur "
 "during prediction (of execution flow, images, and screens) to log.txt and "
@@ -692,7 +638,7 @@ msgstr ""
 "True なら Ren'Py は ( 実行フロー、画像、スクリーンの ) 予測についてとその最中"
 "に発生したエラーを log.txt とコンソールに書き出します。"
 
-#: ../../source/config.rst:394
+#: ../../source/config.rst:368
 msgid ""
 "Enables debugging of sound functionality. This disables the suppression of "
 "errors when generating sound. However, if a sound card is missing or flawed, "
@@ -704,7 +650,7 @@ msgstr ""
 "あることで Ren'Py の動作を妨げません。これはゲームのリリース時には常に False "
 "であるべきです。"
 
-#: ../../source/config.rst:402
+#: ../../source/config.rst:376
 msgid ""
 "When true, Ren'Py will log text overflows to text_overflow.txt. A text "
 "overflow occurs when a :class:`Text` displayable renders to a size larger "
@@ -720,12 +666,43 @@ msgstr ""
 "ウのサイズに設定すると、台詞がウィンドウより大きい場合は報告するように出来ま"
 "す。"
 
-#: ../../source/config.rst:411
+#: ../../source/config.rst:385
+#, fuzzy
 msgid ""
-"The layer an image is shown on if its tag is not found in config.tag_layer."
+"When a statement or function that contains image attributes executes or is "
+"predicted, and the tag is not currently being shown, it's looked up in this "
+"dictionary. If it is not found, the None key is looked up instead."
+msgstr ""
+"None でなければこれは辞書です。画像属性を含むステートメントや関数が実行または"
+"予測されるときに、そのタグがこの辞書から探されます。見つからなければ、 None "
+"キーがこの辞書から探されます。"
+
+#: ../../source/config.rst:389
+#, fuzzy
+msgid ""
+"If either is found, they're expected to be a function. The function is given "
+"an image name, a tuple consisting of the tag and any attributes. It should "
+"return an iterable which contains any additional attributes to be applied "
+"when an image is first shown."
+msgstr ""
+"見つかれば、それらは関数であることが期待されます。関数にはタグと属性で構成さ"
+"れるタプルの画像名が与えられます。タグと新しい一連の属性を含む調整されたタプ"
+"ルを返すべきです。"
+
+#: ../../source/config.rst:394
+msgid ""
+"The results of the function are treated as additive-only, and any explicit "
+"conflicting or negative attributes will still take precedence."
+msgstr ""
+
+#: ../../source/config.rst:402
+#, fuzzy
+msgid ""
+"The layer an image is shown on if its tag is not found in :var:`config."
+"tag_layer`."
 msgstr "config.tag_layer にタグがない画像を表示するレイヤーです。"
 
-#: ../../source/config.rst:415
+#: ../../source/config.rst:406
 msgid ""
 "When a displayable is shown using the show or scene statements, the "
 "transform properties are taken from this transform and used to initialize "
@@ -735,11 +712,11 @@ msgstr ""
 "transform プロパティーはこの transform から受け取られ、 displayable の "
 "transform の値を初期化するために使用されます。"
 
-#: ../../source/config.rst:419
+#: ../../source/config.rst:410
 msgid "The default transform is :var:`center`."
 msgstr "デフォルトの transform は :var:`center` です。"
 
-#: ../../source/config.rst:423
+#: ../../source/config.rst:414
 msgid ""
 "When true, the execution of style statements is deferred until after all "
 "``translate python`` blocks have executed. This lets a ``translate python`` "
@@ -751,7 +728,7 @@ msgstr ""
 "テートメント ( translate style ではありません ) で使用される変数を更新出来ま"
 "す。"
 
-#: ../../source/config.rst:428
+#: ../../source/config.rst:419
 msgid ""
 "While this defaults to False, it's set to True when :func:`gui.init` is "
 "called."
@@ -759,7 +736,7 @@ msgstr ""
 "これはデフォルトで False で、 :func:`gui.init` が呼び出されるとこれは True に"
 "設定されます。"
 
-#: ../../source/config.rst:433
+#: ../../source/config.rst:424
 msgid ""
 "If set to True, developer mode is enabled. Developer mode gives access to "
 "the shift+D developer menu, shift+R reloading, and various other features "
@@ -769,7 +746,7 @@ msgstr ""
 "メニューや、Shift+R でのリロードなどエンドユーザー向けではないその他様々な機"
 "能を提供します。"
 
-#: ../../source/config.rst:437
+#: ../../source/config.rst:428
 msgid ""
 "This can be True, False, or \"auto\". If \"auto\", Ren'Py will detect if the "
 "game has been packaged into a distribution, and set config.developer as "
@@ -778,22 +755,22 @@ msgstr ""
 "True または False, \"auto\" です。 \"auto\" なら Ren'Py はゲームが配布物に"
 "パッケージされたかを確認して、 config.developer を適切に定義します。"
 
-#: ../../source/config.rst:443
+#: ../../source/config.rst:434
 msgid ""
 "When true, :func:`renpy.input` terminates immediately and returns its "
 "`default` argument."
 msgstr ""
 "True なら :func:`renpy.input` は即座に停止し、その `default` 引数を返します。"
 
-#: ../../source/config.rst:448
+#: ../../source/config.rst:439
 msgid "See :ref:`Displayable prefixes <displayable-prefix>`."
 msgstr ":ref:`Displayable prefixes <displayable-prefix>` を参照してください。"
 
-#: ../../source/config.rst:452
+#: ../../source/config.rst:443
 msgid "A list of strings giving audio channel names."
 msgstr "オーディオチャンネル名の文字列のリストです。"
 
-#: ../../source/config.rst:454
+#: ../../source/config.rst:445
 msgid ""
 "If the \"emphasize audio\" preference is enabled, when one of the audio "
 "channels listed starts playing a sound, all channels that are not listed in "
@@ -805,7 +782,7 @@ msgstr ""
 "リュームを :var:`config.emphasize_audio_time` 秒かけて :var:`config."
 "emphasize_audio_volume` まで減少させます。"
 
-#: ../../source/config.rst:460
+#: ../../source/config.rst:451
 msgid ""
 "When no channels listed in this variable are playing audio, all channels "
 "that are not listed have their secondary audio volume raised to 1.0 over :"
@@ -815,7 +792,7 @@ msgstr ""
 "ンネルはそのセカンダリーボリュームを :var:`config.emphasize_audio_time` 秒か"
 "けて 1.0 に上げます。"
 
-#: ../../source/config.rst:464
+#: ../../source/config.rst:455
 msgid ""
 "For example, setting this to ``[ 'voice' ]]`` will lower the volume of all "
 "non-voice channels when a voice is played."
@@ -823,11 +800,11 @@ msgstr ""
 "例えばこれを ``[ 'voice' ]]`` に設定すると、ボイス再生中はボイス以外のチャン"
 "ネルのボリュームを下げるでしょう。"
 
-#: ../../source/config.rst:469 ../../source/config.rst:473
+#: ../../source/config.rst:460 ../../source/config.rst:464
 msgid "See above."
 msgstr "上記参照。"
 
-#: ../../source/config.rst:477
+#: ../../source/config.rst:468
 msgid ""
 "This is called when _window is True, and no window has been shown on the "
 "screen. (That is, no call to :func:`renpy.shown_window` has occurred.) It's "
@@ -839,7 +816,7 @@ msgstr ""
 "ウが画面に表示され、インタラクションを起こさずに処理を返すことが期待されま"
 "す。"
 
-#: ../../source/config.rst:482
+#: ../../source/config.rst:473
 msgid ""
 "The default implementation of this uses the narrator character to display a "
 "blank line without interacting."
@@ -847,7 +824,7 @@ msgstr ""
 "デフォルトの実装ではこれを narrator キャラクターでインタラクションなしで空白"
 "を表示するために使用します。"
 
-#: ../../source/config.rst:487
+#: ../../source/config.rst:478
 msgid ""
 "If true, Ren'Py will attempt to determine the name of the language to use "
 "based on the locale of the player's system. If successful, this language "
@@ -856,21 +833,21 @@ msgstr ""
 "True なら、Ren'Py はプレーヤーのシステムのロケールに基づいた言語名の決定を試"
 "みます。成功すればその言語がデフォルトの言語として使用されます。"
 
-#: ../../source/config.rst:493
+#: ../../source/config.rst:484
 msgid ""
 "If not None, this is a sound file that is played when entering the game menu."
 msgstr ""
 "None を指定するか、ゲームメニューに入るときに再生される音楽ファイルを指定しま"
 "す。"
 
-#: ../../source/config.rst:498
+#: ../../source/config.rst:489
 msgid ""
 "If not None, this is a sound file that is played when exiting the game menu."
 msgstr ""
 "None を指定するか、ゲームメニューを出るときに再生される音楽ファイルを指定しま"
 "す。"
 
-#: ../../source/config.rst:503
+#: ../../source/config.rst:494
 msgid ""
 "This option determines how the built in menus or imagemaps behave during "
 "fixed rollback. The default value is False, which means that menu only the "
@@ -883,7 +860,7 @@ msgstr ""
 "選択肢のみがクリック可能であることであることを意味します。True に設定されると"
 "選択された選択肢は目印が付きますが、クリック可能な選択肢はありません。"
 
-#: ../../source/config.rst:512
+#: ../../source/config.rst:503
 msgid ""
 "This is a map from (font, bold, italics) to (font, bold, italics), used to "
 "replace a font with one that's specialized as having bold and/or italics. "
@@ -895,7 +872,7 @@ msgstr ""
 "ために使用されます。例えば「Vera.ttf」のイタリックを使用するものすべてに、代"
 "わりに「VeraIt.ttf」を使用して欲しいなら次のようにコードを書きます。 :"
 
-#: ../../source/config.rst:521
+#: ../../source/config.rst:512
 msgid ""
 "Please note that these mappings only apply to specific variants of a font. "
 "In this case, requests for a bold italic version of vera will get a bold "
@@ -905,25 +882,12 @@ msgstr ""
 "リックを要求されると VeraIt のボールドではなく Vera のボールドイタリックが使"
 "用されます。"
 
-#: ../../source/config.rst:528
-msgid ""
-"This is used to customize the choices on the game menu. Please read Main and "
-"Game Menus for more details on the contents of this variable."
-msgstr ""
-"これはゲームメニューの選択肢をカスタマイズするために使用されます。詳細はこの"
-"変数の内容のメインメニューやゲームメニューを読んでくさい。"
-
-#: ../../source/config.rst:532
-msgid "This is not used when the game menu is defined using screens."
-msgstr ""
-"これはゲームメニューがスクリーンを使用して定義されていると使用されません。"
-
-#: ../../source/config.rst:536
+#: ../../source/config.rst:519
 msgid "If not None, a music file to play when at the game menu."
 msgstr ""
 "None を指定するか、ゲームメニューで再生される音楽ファイルを指定します。"
 
-#: ../../source/config.rst:540
+#: ../../source/config.rst:523
 msgid ""
 "The color that the window is cleared to before images are drawn. This is "
 "mainly seen as the color of the letterbox or pillarbox edges drawn when "
@@ -934,7 +898,7 @@ msgstr ""
 "クリーンモードでのモニターのアスペクト比が、ゲームのアスペクト比と合わないと"
 "きに描画されるレターボックスやピラーボックスの色にみられます。"
 
-#: ../../source/config.rst:547
+#: ../../source/config.rst:530
 msgid ""
 "The default value of the :ref:`u_lod_bias <u-lod-bias>` uniform, which "
 "controls the mipmap level Ren'Py uses."
@@ -942,7 +906,7 @@ msgstr ""
 ":ref:`u_lod_bias <u-lod-bias>` uniform のデフォルト値で、 Ren'Py が使用する "
 "mipmap レベルを制御します。"
 
-#: ../../source/config.rst:552
+#: ../../source/config.rst:535
 msgid ""
 "The name of the image that is used when running the OpenGL performance test. "
 "This image will be shown for 5 frames or .25 seconds, on startup. It will "
@@ -951,13 +915,13 @@ msgstr ""
 "OpenGL のパフォーマンステスト実行時に使用される画像の名前です。この画像は 5 "
 "フレームか 0.25 秒起動時に表示され、その後自動的に hide されます。"
 
-#: ../../source/config.rst:558
+#: ../../source/config.rst:541
 msgid "If true, the game will autosave. If false, no autosaving will occur."
 msgstr ""
 "True ならゲームはオートセーブを使用し、 False ならオートセーブは起こりませ"
 "ん。"
 
-#: ../../source/config.rst:563
+#: ../../source/config.rst:546
 msgid ""
 "This contains a list of callbacks that are called before Ren'Py adds a new "
 "object to _history_list. The callbacks are called with the new HistoryEntry "
@@ -967,7 +931,7 @@ msgstr ""
 "バックリストが含まれます。コールバックは新しい HistoryEntry オブジェクトを第"
 "一引数に呼び出され、そのオブジェクトに新しい field を加えられます。"
 
-#: ../../source/config.rst:568
+#: ../../source/config.rst:551
 msgid ""
 "Ren'Py uses history callbacks internally, so creators should append their "
 "own callbacks to this  list, rather than replacing it entirely."
@@ -975,7 +939,7 @@ msgstr ""
 "Ren'Py は内部で history コールバックを使用するため、開発者は完全な置き換えで"
 "はなく、自身のコールバックをこのリストに杖加えてください。"
 
-#: ../../source/config.rst:573
+#: ../../source/config.rst:556
 msgid ""
 "The number of entries of dialogue history Ren'Py keeps. This is set to 250 "
 "by the default gui."
@@ -983,7 +947,7 @@ msgstr ""
 "Ren'Py が保有するテキスト履歴の数です。これはデフォルト gui では 250 に設定さ"
 "れます。"
 
-#: ../../source/config.rst:578
+#: ../../source/config.rst:561
 msgid ""
 "If true, hardware video playback will be used on mobile platforms. This may "
 "be faster, but only some formats are supported and only fullscreen video is "
@@ -993,7 +957,7 @@ msgstr ""
 "これはより高速ですが、いくつかのフォーマットとフルスクリーンでのみ利用可能で"
 "す。False ならソフトウェア再生が使用されます。"
 
-#: ../../source/config.rst:584
+#: ../../source/config.rst:567
 msgid ""
 "A dictionary mapping a hyperlink protocol to the handler for that protocol. "
 "A handler is a function that takes the value (everything after the :) and "
@@ -1005,7 +969,7 @@ msgstr ""
 "理します。値が返されると、インタラクションが終わります。そうでなければ、ク"
 "リックは無視され、インタラクションは継続します。"
 
-#: ../../source/config.rst:591
+#: ../../source/config.rst:574
 msgid ""
 "The protocol that is used for hyperlinks that do not have a protocol "
 "assigned to them. See :ref:`the a text tag <a-tag>` for a description as to "
@@ -1014,7 +978,7 @@ msgstr ""
 "担当するプロトコルを持たないハイパーリンクに使用されるプロトコルです。詳細"
 "は :ref:`テキストタグ <a-tag>` を参照してください。"
 
-#: ../../source/config.rst:597
+#: ../../source/config.rst:580
 msgid ""
 "If not None, this is used to set the size of the :ref:`image cache "
 "<images>`, as a multiple of the screen size. This number is multiplied by "
@@ -1025,7 +989,7 @@ msgstr ""
 "サイズの倍数として設定します。この数はピクセル数での画面サイズの倍数で、ピク"
 "セル数での画像キャッシュのサイズを取得するためのものです。"
 
-#: ../../source/config.rst:601
+#: ../../source/config.rst:584
 msgid ""
 "If set too large, this can waste memory. If set too small, images can be "
 "repeatedly loaded, hurting performance."
@@ -1033,7 +997,7 @@ msgstr ""
 "大きく設定し過ぎるとこれはメモリーを浪費しかねません。小さすぎると画像は繰り"
 "返しロードされ、パフォーマンスを悪化させます。"
 
-#: ../../source/config.rst:606
+#: ../../source/config.rst:589
 msgid ""
 "This is used to set the size of the :ref:`image cache <images>`, in "
 "megabytes. If :var:`config.cache_surfaces` is False, an image takes 4 bytes "
@@ -1043,7 +1007,7 @@ msgstr ""
 "ます。 :var:`config.cache_surfaces` が False なら、画像は 1 ピクセル毎に 4 バ"
 "イト使用し、そうでなければ、 1 ピクセル毎に 8 バイト使用します。"
 
-#: ../../source/config.rst:610
+#: ../../source/config.rst:593
 msgid ""
 "If set too large, this can waste memory. If set too small, images can be "
 "repeatedly loaded, hurting performance. If not none, :var:`config."
@@ -1053,12 +1017,12 @@ msgstr ""
 "返しロードされ、パフォーマンスを悪化させます。 None でなければ、 :var:"
 "`config.image_cache_size` がこの変数の代わりに使用されます。"
 
-#: ../../source/config.rst:616
+#: ../../source/config.rst:599
 msgid ""
 "If not False, sets the blinking period of the default caret, in seconds."
 msgstr "False でなければ、デフォルトキャレットの点滅時間の秒数です。"
 
-#: ../../source/config.rst:620
+#: ../../source/config.rst:603
 msgid ""
 "If not None, this should be a string giving the default language that the "
 "game is translated into by the translation framework."
@@ -1066,7 +1030,15 @@ msgstr ""
 "None を指定するか、翻訳フレームワークでゲームが翻訳されるデフォルトの言語の文"
 "字列を指定します。"
 
-#: ../../source/config.rst:625
+#: ../../source/config.rst:608
+msgid ""
+"If true, and :var:`config.developer` is true, the lint report will include "
+"statistics about the number of dialogue blocks spoken for each character. "
+"The chanracter statistics are disabled when the game is packaged, to prevent "
+"spoilers."
+msgstr ""
+
+#: ../../source/config.rst:615
 msgid ""
 "If a string, this is a label that is jumped to when a load fails because the "
 "script has changed so much that Ren'Py can't recover. Before performing the "
@@ -1077,14 +1049,14 @@ msgstr ""
 "敗したときにジャンプするラベルです。ロード処理の前に、 Ren'Py は最後のステー"
 "トメントを開始まで戻り、呼び出しスタックをします。"
 
-#: ../../source/config.rst:630
+#: ../../source/config.rst:620
 msgid ""
 "This may also be a function. If it is, the function is called with no "
 "arguments, and is expected to return a string giving the label."
 msgstr ""
 "関数も指定できます。関数は引数なしで呼び出され、ラベルの文字列を返します。"
 
-#: ../../source/config.rst:635
+#: ../../source/config.rst:625
 msgid ""
 "A function that determines the language the game should use, based on the "
 "the user's locale. It takes 2 string arguments that give the ISO code of the "
@@ -1093,7 +1065,7 @@ msgstr ""
 "ゲームが使用するべき言語を決定する関数で、ユーザーのロケールに基づきます。2つ"
 "の文字列引数を取り、 ロケールの ISOコードと地域の ISO コードです。"
 
-#: ../../source/config.rst:640
+#: ../../source/config.rst:630
 msgid ""
 "It should return a string giving the name of a translation to use, or None "
 "to use the default translation."
@@ -1101,24 +1073,16 @@ msgstr ""
 "使用する翻訳の名前の文字列か、デフォルト翻訳を使用するなら None を返すべきで"
 "す。"
 
-#: ../../source/config.rst:645
-msgid ""
-"The default main menu, when not using screens. For more details, see Main "
-"and Game Menus."
-msgstr ""
-"スクリーンを使用しない時のデフォルトのメインメニューです。詳細は Main and "
-"Game Menus を参照してください。"
-
-#: ../../source/config.rst:650
+#: ../../source/config.rst:635
 msgid "If not None, a music file to play when at the main menu."
 msgstr ""
 "None を指定するか、メインメニューで再生される音楽ファイルを指定します。"
 
-#: ../../source/config.rst:654
+#: ../../source/config.rst:639
 msgid "The number of seconds to take to fade in :var:`config.main_menu_music`."
 msgstr ":var:`config.main_menu_music` にフェードインするのに掛かる秒数です。"
 
-#: ../../source/config.rst:658
+#: ../../source/config.rst:643
 msgid ""
 "If not None, this should be a function that takes positional and/or keyword "
 "arguments. It's called whenever a menu statement runs, with the arguments to "
@@ -1128,7 +1092,7 @@ msgstr ""
 "テートメントが実行するときにその menu ステートメントへの引数で常に呼び出され"
 "ます。"
 
-#: ../../source/config.rst:662
+#: ../../source/config.rst:647
 msgid ""
 "This should return a pair, containing a tuple of positional arguments "
 "(almost always empty), and a dictionary of keyword arguments."
@@ -1136,14 +1100,14 @@ msgstr ""
 "これは位置引数 (ほとんどは空) のタプルとキーワード引数の辞書を含むペアを返す"
 "べきです。"
 
-#: ../../source/config.rst:667
+#: ../../source/config.rst:652
 msgid ""
 "A list of layer names (as strings) that are cleared when entering the game "
 "menu."
 msgstr ""
 "ゲームメニューに入るときに非表示されるレイヤー名 ( 文字列 ) のリストです。"
 
-#: ../../source/config.rst:672
+#: ../../source/config.rst:657
 msgid ""
 "When this variable is set, choices disables with the if statement are "
 "included as disabled buttons."
@@ -1151,7 +1115,7 @@ msgstr ""
 "この変数が設定されると、 if ステートメントで無効化された選択肢は無効なボタン"
 "として選択肢に表示されます。"
 
-#: ../../source/config.rst:677
+#: ../../source/config.rst:662
 msgid ""
 "The :var:`_window_subtitle` variable is set to this value when entering the "
 "main or game menus."
@@ -1159,7 +1123,7 @@ msgstr ""
 ":var:`_window_subtitle` 変数はメインメニューまたはゲームメニューに入った時に"
 "この値に設定されます。"
 
-#: ../../source/config.rst:682
+#: ../../source/config.rst:667
 msgid ""
 "The minimum amount of time, in seconds, a presplash, Android presplash, or "
 "iOS LaunchImage is displayed for. If Ren'Py initializes before this amount "
@@ -1172,7 +1136,7 @@ msgstr ""
 "されることを保証します。Ren'Py の起動に時間がかかると画像はより長く表示されま"
 "す。"
 
-#: ../../source/config.rst:690
+#: ../../source/config.rst:675
 msgid ""
 "This is the background that is used when :var:`config.developer` is True and "
 "an undefined image is used in a :ref:`scene statement <scene-statement>`. "
@@ -1182,7 +1146,7 @@ msgstr ""
 "メント <scene-statement>` で使用されると使われる背景画像です。これは "
 "displayable ではなく画像名の文字列であるべきです。"
 
-#: ../../source/config.rst:697
+#: ../../source/config.rst:682
 msgid ""
 "A list of callbacks called when entering a mode. For more documentation, see "
 "the section on :ref:`Modes`."
@@ -1190,7 +1154,7 @@ msgstr ""
 "あるモードに入るときに呼び出されるコールバックのリストです。より詳しくは :"
 "ref:`Modes` の章を参照してください。"
 
-#: ../../source/config.rst:700
+#: ../../source/config.rst:685
 msgid ""
 "The default value includes a callback that implements :var:`config."
 "adv_nvl_transition` and :var:`config.nvl_adv_transition`."
@@ -1198,7 +1162,7 @@ msgstr ""
 "デフォルトの値は :var:`config.adv_nvl_transition` と :var:`config."
 "nvl_adv_transition` を実装するコールバックを含んでいます。"
 
-#: ../../source/config.rst:705
+#: ../../source/config.rst:690
 msgid ""
 "This variable controls the use of user-defined mouse cursors. If None, the "
 "system mouse is used, which is usually a black-and-white mouse cursor."
@@ -1206,7 +1170,7 @@ msgstr ""
 "この変数はユーザー定義マウスカーソルの使用を制御します。 None ならシステムマ"
 "ウスが使用され、それは通常白と黒のマウスカーソルです。"
 
-#: ../../source/config.rst:709
+#: ../../source/config.rst:694
 msgid ""
 "Otherwise, this should be a dictionary giving the mouse animations for "
 "various mouse types. Keys used by the default library include \"default\", "
@@ -1220,7 +1184,7 @@ msgstr ""
 "「 mainmenu 」, 「 gamemenu 」 を含みます。 「 default 」 キーはより特別な"
 "キーが存在しないときに使用されるので常に存在するべきです。"
 
-#: ../../source/config.rst:716
+#: ../../source/config.rst:701
 msgid ""
 "Each value in the dictionary should be a list of (`image`, `xoffset`, "
 "`yoffset`) tuples, representing frames."
@@ -1228,11 +1192,11 @@ msgstr ""
 "辞書の各値はフレームを表す (`image`, `xoffset`, `offset`) のタプルのリストで"
 "あるべきです。"
 
-#: ../../source/config.rst:723
+#: ../../source/config.rst:708
 msgid "`image`"
 msgstr "`image`"
 
-#: ../../source/config.rst:720
+#: ../../source/config.rst:705
 msgid ""
 "The mouse cursor image. The maximum size for this image varies based on the "
 "player's hardware. 32x32 is guaranteed to work everywhere, while 64x64 works "
@@ -1242,23 +1206,23 @@ msgstr ""
 "よって変化します。 32x32 はどんな環境でも動作すると保証される一方、 64x64 は"
 "殆どのハードで動作します。より大きな画像は恐らく動作しません。"
 
-#: ../../source/config.rst:727
+#: ../../source/config.rst:712
 msgid "`xoffset`"
 msgstr "`xoffset`"
 
-#: ../../source/config.rst:726
+#: ../../source/config.rst:711
 msgid "The offset of the hotspot pixel from the left side of the cursor."
 msgstr "カーソルの左端からのピクセル数でのホットスポットのオフセットです。"
 
-#: ../../source/config.rst:730
+#: ../../source/config.rst:715
 msgid "`yoffset`"
 msgstr "`yoffset`"
 
-#: ../../source/config.rst:730
+#: ../../source/config.rst:715
 msgid "The offset of the hotspot pixel from the top of the cursor."
 msgstr "カーソルの上端からのピクセル数でのホットスポットのオフセットです。"
 
-#: ../../source/config.rst:732
+#: ../../source/config.rst:717
 msgid ""
 "The frames are played back at 20Hz, and the animation loops after all frames "
 "have been shown."
@@ -1266,7 +1230,7 @@ msgstr ""
 "フレームは 20hz で再生され、アニメーションはすべてのフレームが表示されたら"
 "ループします。"
 
-#: ../../source/config.rst:737
+#: ../../source/config.rst:722
 msgid ""
 "If not None, this should either be a displayable, or a callable that returns "
 "a displayable. The callable may return None, in which case Ren'Py proceeds "
@@ -1276,7 +1240,7 @@ msgstr ""
 "クトであるべきです。呼び出し可能オブジェクトは None を返すかもしれませんが、"
 "その場合 Ren'Py は displayable が None かどうかを処理します。"
 
-#: ../../source/config.rst:741
+#: ../../source/config.rst:726
 msgid ""
 "If a displayable is given, the mouse cursor is hidden, and the displayable "
 "is shown above anything else. This displayable is responsible for "
@@ -1287,17 +1251,17 @@ msgstr ""
 "番上に表示されます。この displayable はマウスカーソルの配置と描画を担当するた"
 "め、おそらく :func:`MouseDisplayable` やよく似た何かであるべきです。"
 
-#: ../../source/config.rst:749
+#: ../../source/config.rst:734
+#, fuzzy
 msgid ""
-"(This is set to True by the default screens.rpy file.) If true, then "
-"narration inside a menu is displayed using the narrator character. "
+"If true, narration inside a menu is displayed using the narrator character. "
 "Otherwise, narration is displayed as captions within the menu itself."
 msgstr ""
 "True ( これはデフォルトのscreen.rpy で True に設定されます) なら選択肢でのナ"
 "レーションは narator キャラクターを使用して表示されます。そうでなければナレー"
 "ションはその選択肢の見出しに表示されます。"
 
-#: ../../source/config.rst:756
+#: ../../source/config.rst:740
 msgid ""
 "Uses nearest-neighbor filtering by default, to support pixel art or melting "
 "players' eyes."
@@ -1305,7 +1269,7 @@ msgstr ""
 "デフォルトで最近傍補間を使用して、ピクセルアートのサポートや、プレイヤーの目"
 "になじませんます。"
 
-#: ../../source/config.rst:761
+#: ../../source/config.rst:745
 msgid ""
 "This is called by :func:`renpy.notify` or :func:`Notify` with a single  "
 "`message` argument, to display the notification. The default implementation "
@@ -1316,7 +1280,7 @@ msgstr ""
 "通知を表示します。デフォルトの実装は :func:`renpy.display_notify` です。これ"
 "は制作者が通知を加工できるように意図しています。"
 
-#: ../../source/config.rst:768
+#: ../../source/config.rst:752
 msgid ""
 "When True, Ren'Py will scan images to find the bounding box of the non-"
 "transparent pixels, and only load those pixels into a texture."
@@ -1324,7 +1288,7 @@ msgstr ""
 "True なら、Ren'Py は画像をスキャンして不透明なピクセルのバウンディングボック"
 "スを見つけ、それらのピクセルをテクスチャにロードします。"
 
-#: ../../source/config.rst:773
+#: ../../source/config.rst:757
 msgid ""
 "A list of functions. When called, each function is expected to use ui "
 "functions to add displayables to the overlay layer."
@@ -1332,7 +1296,7 @@ msgstr ""
 "関数のリストです。呼び出されると各関数は ui 関数を使用して displayable を "
 "overlay レイヤーに追加することが期待されます。"
 
-#: ../../source/config.rst:778
+#: ../../source/config.rst:762
 msgid ""
 "A list of screens that are displayed when the overlay is enabled, and hidden "
 "when the overlay is suppressed. (The screens are shown on the screens layer, "
@@ -1341,7 +1305,7 @@ msgstr ""
 "オーバーレイが有効なとき表示され、停止すると非表示されるスクリーンのリストで"
 "す(スクリーンは overlay レイヤーではなく screens レイヤーに表示されます)。"
 
-#: ../../source/config.rst:784
+#: ../../source/config.rst:768
 msgid ""
 "If False, the default, rolling back will skip any pauses (timed or not) and "
 "stop only at other interactions such as dialogues, menus... If True, renpy "
@@ -1352,7 +1316,7 @@ msgstr ""
 "して台詞やメニューのような他のインタラクションに止まります。 True ならロール"
 "バックは時間指定のないポーズでも止まります。"
 
-#: ../../source/config.rst:791
+#: ../../source/config.rst:775
 msgid ""
 "A list of the names of TrueType and OpenType fonts that Ren'Py should load "
 "when starting up. Including the name of a font here can prevent Ren'Py from "
@@ -1362,7 +1326,7 @@ msgstr ""
 "です。ここにフォントの名前を含むと、 Ren'Py が新しいタイプのフォントを導入す"
 "るときに、停止するのを防げます。"
 
-#: ../../source/config.rst:797
+#: ../../source/config.rst:781
 msgid ""
 "A list of functions. The functions in this list are called, without any "
 "arguments, whenever a Python block is run outside of the init phase."
@@ -1370,7 +1334,7 @@ msgstr ""
 "関数のリストです。このリストの関数は初期化時以外で python ブロックが実行され"
 "るたびに引数なしで呼び出されます。"
 
-#: ../../source/config.rst:801
+#: ../../source/config.rst:785
 msgid ""
 "One possible use of this would be to have a function limit a variable to "
 "within a range each time it is adjusted."
@@ -1378,7 +1342,7 @@ msgstr ""
 "考えられるこれの使用法の一つは、変数をそれが調整されるたびにある範囲内に制限"
 "する関数の追加です。"
 
-#: ../../source/config.rst:804
+#: ../../source/config.rst:788
 msgid ""
 "The functions may be called while Ren'Py is starting up, before the start of "
 "the game proper, and  potentially before the variables the function depends "
@@ -1390,11 +1354,11 @@ msgstr ""
 "ているかチェックするために ``hasattr(store, 'varname')``  を使用してこれを考"
 "慮する必要があります。"
 
-#: ../../source/config.rst:812
+#: ../../source/config.rst:796
 msgid "The number of slots used by quicksaves."
 msgstr "クイックセーブで使用するスロット数"
 
-#: ../../source/config.rst:816
+#: ../../source/config.rst:800
 msgid ""
 "The action that is called when the user clicks the quit button on a window. "
 "The default action prompts the user to see if he wants to quit the game."
@@ -1402,7 +1366,7 @@ msgstr ""
 "ユーザーがウィンドウの閉じるボタンを押した時に呼び出されるアクションです。デ"
 "フォルトのアクションではユーザーにゲームを終了するか確認します。"
 
-#: ../../source/config.rst:822
+#: ../../source/config.rst:806
 msgid ""
 "A list of strings giving the names of python modules that should be reloaded "
 "along with the game. Any submodules of these modules will also be reloaded."
@@ -1410,7 +1374,7 @@ msgstr ""
 "ゲームと共に再読込されるべき python モジュール名の文字列のリストです。これら"
 "のモジュールのどのようなサブモジュールも再読込されます。"
 
-#: ../../source/config.rst:828
+#: ../../source/config.rst:812
 msgid ""
 "If not None, a function that is called with a single argument, a text to be "
 "displayed to the user. The function can return the same text it was passed, "
@@ -1419,7 +1383,7 @@ msgstr ""
 "None または、ユーザーに表示されるテキストを引数に呼び出される関数です。関数は"
 "渡されたものと同じテキストか、代わりに表示される代替テキストを返します。"
 
-#: ../../source/config.rst:832
+#: ../../source/config.rst:816
 msgid ""
 "The function is called after substitutions have been performed and after the "
 "text has been split on tags, so its argument contains nothing but actual "
@@ -1430,7 +1394,7 @@ msgstr ""
 "は実際のテキストを含みません。表示されるすべてのテキストはこの関数を通過しま"
 "す(ダイアログテキストだけでなくユーザーインターフェーステキストも含みます)。"
 
-#: ../../source/config.rst:837
+#: ../../source/config.rst:821
 msgid ""
 "This can be used to replace specific ASCII sequences with corresponding "
 "Unicode characters, as demonstrated by the following::"
@@ -1438,7 +1402,7 @@ msgstr ""
 "以下のコードで示すように、これを使用して特定の ASCII 番号を対応するユニコード"
 "文字で置き換えられます。 ::"
 
-#: ../../source/config.rst:849
+#: ../../source/config.rst:833
 msgid ""
 "A dictionary mapping variables in the default store to the values the "
 "variables will be given when entering a replay."
@@ -1446,7 +1410,7 @@ msgstr ""
 "リプレイに入るときに、デフォルト store の変数をキーに、その値をその変数の値に"
 "する辞書です。"
 
-#: ../../source/config.rst:854
+#: ../../source/config.rst:838
 msgid ""
 "If not None, a label that is jumped to when a return site is not found. The "
 "call stack is cleared before this jump occurs."
@@ -1454,7 +1418,7 @@ msgstr ""
 "None または帰る場所が見つからないときにジャンプするラベルです。コールスタック"
 "はこのジャンプの実行前にクリアされます。"
 
-#: ../../source/config.rst:859
+#: ../../source/config.rst:843
 msgid ""
 "A list of callback functions that are used to create the json object that is "
 "stored with each save and marked accessible through :func:`FileJson` and :"
@@ -1464,7 +1428,7 @@ msgstr ""
 "`renpy.slot_json` を利用してアクセス可能にするために使用されるコールバック関"
 "数のリストです。"
 
-#: ../../source/config.rst:863
+#: ../../source/config.rst:847
 msgid ""
 "Each callback is called with a Python dictionary that will eventually be "
 "saved. Callbacks should modify that dictionary by adding JSON-compatible "
@@ -1476,7 +1440,7 @@ msgstr ""
 "を追加して変更するべきです。辞書は最後のコールバックが終わるとセーブスロット"
 "にセーブされます。"
 
-#: ../../source/config.rst:868
+#: ../../source/config.rst:852
 msgid ""
 "The dictionary passed to the callbacks may have already have keys beginning "
 "with an underscore ``_``. These keys are used by Ren'Py, and should not be "
@@ -1486,7 +1450,19 @@ msgstr ""
 "ているかもしれません。これらのキーは Ren'Py が使用するので変更するべきではあ"
 "りません。"
 
-#: ../../source/config.rst:874
+#: ../../source/config.rst:856 ../../source/config.rst:881
+msgid "For example::"
+msgstr "例 ::"
+
+#: ../../source/config.rst:864
+msgid ""
+"``FileJson(slot)`` and ``renpy.slot_json(slot)`` will recover the state of "
+"the ``d`` dict-like object as it was at the moment the game was saved. The "
+"value of the ``player_name`` variable at the moment the game was saved is "
+"also accessible by ``FileJson(slot, \"playername\")``."
+msgstr ""
+
+#: ../../source/config.rst:871
 msgid ""
 "If not None, this should be a function that takes the speaking character, "
 "followed by positional and keyword arguments. It's called whenever a say "
@@ -1499,7 +1475,7 @@ msgstr ""
 "で実行されるたびに呼び出されます。これは interact を常に引数に含み、say ス"
 "テートメントで提供されている他の引数も含められます。"
 
-#: ../../source/config.rst:880
+#: ../../source/config.rst:877
 msgid ""
 "This should return a pair, containing a tuple of positional arguments "
 "(almost always empty), and a dictionary of keyword arguments (almost always "
@@ -1508,19 +1484,21 @@ msgstr ""
 "これは位置引数 (ほとんどは空) のタプルとキーワード引数 (ほとんどは interact "
 "のみ) の辞書を含むペアを返すべきです。"
 
-#: ../../source/config.rst:884
-msgid "For example::"
-msgstr "例 ::"
-
-#: ../../source/config.rst:893
-msgid "The height of the screen. Usually set by :func:`gui.init`."
+#: ../../source/config.rst:890
+#, fuzzy
+msgid ""
+"The height of the screen. Usually set by :func:`gui.init` to a much larger "
+"size."
 msgstr "スクリーンの高さで、通常 :func:`gui.init` で設定します。"
 
-#: ../../source/config.rst:897
-msgid "The width of the screen. Usually set by :func:`gui.init`."
+#: ../../source/config.rst:895
+#, fuzzy
+msgid ""
+"The width of the screen. Usually set by :func:`gui.init` to a much larger "
+"size."
 msgstr "スクリーンの幅です。通常 :func:`gui.init` から設定されます。"
 
-#: ../../source/config.rst:901
+#: ../../source/config.rst:900
 msgid ""
 "If not None, and the `play` argument is give to :func:`Movie`, this is the "
 "name used for the channel the movie is played on. This should not be \"movie"
@@ -1530,12 +1508,12 @@ msgstr ""
 "れるチャンネル名に使用されます。Ren'Py 内部での使用に予約されているため、これ"
 "は \"movie\" であるべきではないです。"
 
-#: ../../source/config.rst:908
+#: ../../source/config.rst:907
 msgid "If False, non-looping audio will not be played when Ren'Py is skipping."
 msgstr ""
 "False なら、ループしないオーディオは Ren'Py がスキップ中は再生されません。"
 
-#: ../../source/config.rst:913
+#: ../../source/config.rst:912
 msgid ""
 "If not None, this should be a string giving the name of an image attribute. "
 "The image attribute is added to the image when the character's image tag "
@@ -1544,7 +1522,7 @@ msgstr ""
 "None または画像属性の文字列を指定します。画像属性はキャラクターが話すと追加さ"
 "れ、止めると除かれます。"
 
-#: ../../source/config.rst:918
+#: ../../source/config.rst:917
 msgid ""
 "This is applied to the image on the default layer for the tag, which can be "
 "set using :var:`config.tag_layer`."
@@ -1552,18 +1530,19 @@ msgstr ""
 "これは :var:`config.tag_layer` で設定されるそのタグのデフォルトのレイヤー上の"
 "画像に適用されます。"
 
-#: ../../source/config.rst:923
+#: ../../source/config.rst:922
+#, fuzzy
 msgid ""
 "A dictionary mapping image tag strings to layer name strings. When an image "
 "is shown without a specific layer name, the image's tag is looked up in this "
 "dictionary to get the layer to show it on. If the tag is not found here, :"
-"var:`config.default_tag_name` is used."
+"var:`config.default_tag_layer` is used."
 msgstr ""
 "画像タグとレイヤー名の文字列の辞書です。レイヤー名の指定なしに画像が表示され"
 "ると、この辞書からタグを探し、表示するレイヤーを所得します。タグが見付からな"
 "ければ、 :var:`config.default_tag_name` が使用されます。"
 
-#: ../../source/config.rst:930
+#: ../../source/config.rst:929
 msgid ""
 "A dictionary mapping image tag strings to transforms or lists of transforms. "
 "When an image is newly-shown without an at clause, the image's tag is looked "
@@ -1573,7 +1552,7 @@ msgstr ""
 "に画像が表示されると、この辞書からタグを探し、使用する transform または "
 "transform のリストを見付けます。"
 
-#: ../../source/config.rst:937
+#: ../../source/config.rst:936
 msgid ""
 "A dictionary mapping image tag strings to zorders. When an image is newly-"
 "shown without a zorder clause, the image's tag is looked up in this "
@@ -1583,7 +1562,7 @@ msgstr ""
 "と、この辞書からタグを探し、使用する zorder を見付けます。 zorder が見付から"
 "なければ 0 が使用されます。"
 
-#: ../../source/config.rst:944
+#: ../../source/config.rst:943
 msgid ""
 "The height of the thumbnails that are taken when the game is saved. These "
 "thumbnails are shown when the game is loaded. Please note that the thumbnail "
@@ -1595,11 +1574,11 @@ msgstr ""
 "でのこの設定の値ではなく、それが撮られたサイズで表示されることに注意してくだ"
 "さい。"
 
-#: ../../source/config.rst:950 ../../source/config.rst:960
+#: ../../source/config.rst:949 ../../source/config.rst:959
 msgid "This is changed by the default GUI."
 msgstr "これはデフォルトのGUIによって変更されます。"
 
-#: ../../source/config.rst:954
+#: ../../source/config.rst:953
 msgid ""
 "The width of the thumbnails that are taken when the game is saved. These "
 "thumbnails are shown when the game is loaded. Please note that the thumbnail "
@@ -1611,7 +1590,7 @@ msgstr ""
 "でのこの設定の値ではなく、それが撮られたサイズで表示されることに注意してくだ"
 "さい。"
 
-#: ../../source/config.rst:964
+#: ../../source/config.rst:963
 msgid ""
 "If not None, a string giving a non-default voice that is used to play back "
 "text-to-speech for self voicing. The possible choices are platform specific, "
@@ -1622,7 +1601,26 @@ msgstr ""
 "です．選択可能なものはプラットフォームに依存するので、プラットフォームごとに"
 "設定するべきです(翻訳においても同様に変更してください)。"
 
-#: ../../source/config.rst:971
+#: ../../source/config.rst:970
+msgid ""
+"When running on the web platform, Ren'Py will check the browser to see if it "
+"can play audio files of these mime types. If the browser can, it is used to "
+"play the files. If not, a slower and potentially skip prone wasm decoder is "
+"used."
+msgstr ""
+
+#: ../../source/config.rst:975
+msgid ""
+"By default, the browser's web audio system is used on Chrome and Firefox, "
+"and wasm is used on safari. If your game only uses mp3 audio, this can be "
+"changed using ::"
+msgstr ""
+
+#: ../../source/config.rst:981
+msgid "To used the faster web audio system on Safari as well."
+msgstr ""
+
+#: ../../source/config.rst:985
 msgid ""
 "A list of statements that cause ``window auto`` to hide the empty dialogue "
 "window."
@@ -1630,14 +1628,14 @@ msgstr ""
 "``window auto`` によって空の会話ウィンドウを非表示にするステートメントのリス"
 "ト。"
 
-#: ../../source/config.rst:976
+#: ../../source/config.rst:990
 msgid ""
 "A list of statements that cause ``window auto`` to show the empty dialogue "
 "window."
 msgstr ""
 "``window auto`` によって空の会話ウィンドウを表示するステートメントのリスト。"
 
-#: ../../source/config.rst:981
+#: ../../source/config.rst:995
 msgid ""
 "If not None, this is expected to be the filename of an image giving an icon "
 "that is used for the game's main window. This does not set the icon used by "
@@ -1648,13 +1646,13 @@ msgstr ""
 "名を指定します。これはwindows の実行ファイルや mac app で使用されるアイコンを"
 "設定しません。それらは :ref:`special-files` によって制御されます。"
 
-#: ../../source/config.rst:988
+#: ../../source/config.rst:1002
 msgid ""
 "A list of overlay functions that are only called when the window is shown."
 msgstr ""
 "ウィンドウが表示されるときにのみ呼び出されるオーバーレイ関数のリストです。"
 
-#: ../../source/config.rst:993
+#: ../../source/config.rst:1007
 msgid ""
 "The static portion of the title of the window containing the Ren'Py game. :"
 "var:`_window_subtitle` is appended to this to get the full title of the "
@@ -1663,15 +1661,15 @@ msgstr ""
 "Ren'Py のゲームウィンドウのタイトルに常に表示される文字列です。 :var:"
 "`_window_subtitle` がこれに追加されてウィンドウの完全なタイトルになります。"
 
-#: ../../source/config.rst:997
+#: ../../source/config.rst:1011
 msgid "If None, the default, this defaults to the value of :var:`config.name`."
 msgstr "None なら :var:`config.name` の値になります。"
 
-#: ../../source/config.rst:1002
+#: ../../source/config.rst:1016
 msgid "Rarely or Internally Used"
 msgstr "滅多に使われないか内部で使用されているもの"
 
-#: ../../source/config.rst:1006
+#: ../../source/config.rst:1020
 msgid ""
 "If not None, this should be a function taking two arguments, the width and "
 "height of the physical window. It is expected to return a tuple giving the "
@@ -1682,7 +1680,7 @@ msgstr ""
 "viewport , Ren'Py が画像を描画する画面の領域の幅と高さを指定するタプルを返し"
 "てください。"
 
-#: ../../source/config.rst:1011
+#: ../../source/config.rst:1025
 msgid ""
 "This can be used to configure Ren'Py to only allow certain sizes of screen. "
 "For example, the following allows only integer multiples of the original "
@@ -1691,14 +1689,14 @@ msgstr ""
 "これを使用して、特定の画面サイズのみを許可するよう Ren'Py を設定出来ます。例"
 "えば次のコードは元の画面サイズの整数倍のみ許可します。 ::"
 
-#: ../../source/config.rst:1026
+#: ../../source/config.rst:1040
 msgid ""
 "The number of bonus characters added to every string when auto-forward mode "
 "is in effect."
 msgstr ""
 "オートモードが有効の時にすべての文字列に対して追加される特別な文字数です。"
 
-#: ../../source/config.rst:1031
+#: ../../source/config.rst:1045
 msgid ""
 "If not None, a Python function that is called to determine if it is safe to "
 "auto-forward. The intent is that this can be used by a voice system to "
@@ -1708,7 +1706,7 @@ msgstr ""
 "関数を指定します。これによってボイスシステムによるボイス再生中に、自動読み進"
 "めを無効化できます。"
 
-#: ../../source/config.rst:1037
+#: ../../source/config.rst:1051
 msgid ""
 "The number of characters in a string it takes to cause the amount of time "
 "specified in the auto forward mode preference to be delayed before auto-"
@@ -1717,14 +1715,14 @@ msgstr ""
 "自動進行の設定で指定された、自動進行が開始するまでの時間を算出するための文字"
 "列の文字数です。この文字数ごとに設定された時間自動進行の開始を待ちます。"
 
-#: ../../source/config.rst:1043
+#: ../../source/config.rst:1057
 msgid ""
 "The number of seconds after a voice file finishes playing before AFM can "
 "advance text."
 msgstr ""
 "ボイスファイルが再生を終了後、自動進行がテキストを読み進めるまでの秒数です。"
 
-#: ../../source/config.rst:1048
+#: ../../source/config.rst:1062
 msgid ""
 "A list of callbacks that are called by all characters. This list is "
 "prepended to the list of character-specific callbacks."
@@ -1732,7 +1730,7 @@ msgstr ""
 "すべてのキャラクターから呼び出されるコールバックのリストです。このリストは"
 "キャラクター指定コールバックリストの先頭に追加されます。"
 
-#: ../../source/config.rst:1053
+#: ../../source/config.rst:1067
 msgid ""
 "If set to False, the user is not able to skip over the text of the game. "
 "See :var:`_skipping`."
@@ -1740,14 +1738,14 @@ msgstr ""
 "False に設定されるなら、ユーザーはゲームのテキストをスキップ出来ません。 :"
 "var:`_skipping` を参照してください。"
 
-#: ../../source/config.rst:1058
+#: ../../source/config.rst:1072
 msgid ""
 "If True, the screensaver may activite while the game is running. If False, "
 "the screensaver is disabled."
 msgstr ""
 "True ならスクリーンセーバーはゲーム起動中有効です。False なら無効です。"
 
-#: ../../source/config.rst:1063
+#: ../../source/config.rst:1077
 msgid ""
 "A list of archive files that will be searched for images and other data. The "
 "entries in this should consist of strings giving the base names of archive "
@@ -1756,7 +1754,7 @@ msgstr ""
 "画像やその他のデータを探索するアーカイブファイルのリストです。この要素は、 ."
 "rpa 拡張子を取り除いたアーカイブファイルのベース名で構成されるはずです。"
 
-#: ../../source/config.rst:1067
+#: ../../source/config.rst:1081
 msgid ""
 "The archives are searched in the order they are found in this list. A file "
 "is taken from the first archive it is found in."
@@ -1764,7 +1762,7 @@ msgstr ""
 "このリストで見つかった順にアーカイブが探索され、ファイルは最初に見つかった"
 "アーカイブから受け取ります。"
 
-#: ../../source/config.rst:1070
+#: ../../source/config.rst:1084
 msgid ""
 "At startup, Ren'Py will automatically populate this variable with the names "
 "of all archives found in the game directory, sorted in reverse ascii order. "
@@ -1776,7 +1774,16 @@ msgstr ""
 "がファイル data.rpa, patch01.rpa, patch02.rpa を見つけると、この変数には "
 "``['patch02', 'patch01', 'data']`` が加えられます。"
 
-#: ../../source/config.rst:1078
+#: ../../source/config.rst:1092
+#, fuzzy
+msgid ""
+"A list of callbacks that are called when Ren'Py quits or restarts the game. "
+"These callbacks should not interact with the user."
+msgstr ""
+"インタラクションの開始時に ( 引数なしで ) 呼び出される関数のリストです。これ"
+"らのコールバックはインタラクションの再開時には呼び出されません。"
+
+#: ../../source/config.rst:1097
 msgid ""
 "If not None, this variable gives a number of seconds that Ren'Py will pause "
 "at an in-game menu before picking a random choice from that menu. We'd "
@@ -1788,7 +1795,7 @@ msgstr ""
 "与えます。この変数はリリースされたゲームでは常に None に設定されると良いです"
 "が、数字に設定して人の手のいらない自動的なゲームのデモが出来ます。"
 
-#: ../../source/config.rst:1086
+#: ../../source/config.rst:1105
 msgid ""
 "If True, Shift+R will toggle automatic reloading. When automatic reloading "
 "is enabled, Ren'Py will reload the game whenever a used file is modified."
@@ -1796,11 +1803,11 @@ msgstr ""
 "True なら shift+R で自動リロードの有効無効がトグルします。自動リロードが有効"
 "なら、 Ren'Py は使用するファイルが変更されるたびにゲームをリロードします。"
 
-#: ../../source/config.rst:1090
+#: ../../source/config.rst:1109
 msgid "If False, Ren'Py will reload the game once per press of Shift+R."
 msgstr "False なら Ren'Py は shift+R を押すたびにゲームをリロードします。"
 
-#: ../../source/config.rst:1094
+#: ../../source/config.rst:1113
 msgid ""
 "Roughly, the number of interactions that will occur before an autosave "
 "occurs. To disable autosaving, set :var:`config.has_autosave` to False, "
@@ -1810,7 +1817,7 @@ msgstr ""
 "を無効化するためには :var:`config.has_autosave` を False に設定して、この変数"
 "を変更しないでください。"
 
-#: ../../source/config.rst:1100
+#: ../../source/config.rst:1119
 msgid ""
 "If True, Ren'Py will autosave upon encountering an in-game choice. (When :"
 "func:`renpy.choice_for_skipping` is called.)"
@@ -1818,7 +1825,7 @@ msgstr ""
 "True なら Ren'Py はゲーム中の選択肢に入ると自動セーブします ( :func:`renpy."
 "choice_for_skipping`  呼び出し時 )。"
 
-#: ../../source/config.rst:1105
+#: ../../source/config.rst:1124
 msgid ""
 "If True, Ren'Py will attempt to autosave when the user attempts to quit, "
 "return to the main menu, or load a game over the existing game. (To save "
@@ -1829,7 +1836,7 @@ msgstr ""
 "ゲームをロードすると Ren'Pyが自動セーブをします(時間を節約するため、ユーザー"
 "にプロントが表示されている間に自動セーブは行なわれます)。"
 
-#: ../../source/config.rst:1112
+#: ../../source/config.rst:1131
 msgid ""
 "If True, Ren'Py will autosave when the user inputs text. (When :func:`renpy."
 "input` is called.)"
@@ -1837,28 +1844,55 @@ msgstr ""
 "True なら Ren'Py はユーザーがテキストを入力すると自動セーブします ( :func:"
 "`renpy.input` 呼び出し時 )。"
 
-#: ../../source/config.rst:1117
+#: ../../source/config.rst:1136
+msgid "The value is used when the `roll_forward` property of a screen is None."
+msgstr ""
+
+#: ../../source/config.rst:1141
 msgid "The default value of the callback parameter of Character."
 msgstr "Character クラスの callback 引数のデフォルト値になります。"
 
-#: ../../source/config.rst:1121
+#: ../../source/config.rst:1145
+msgid ""
+"If not None, and a choice menu (usually invoked with the ``menu`` statement) "
+"does not have a caption, this function is called with the arguments (\"\", "
+"interact=False)."
+msgstr ""
+
+#: ../../source/config.rst:1149
+msgid "The expected use of this is::"
+msgstr ""
+
+#: ../../source/config.rst:1153
+msgid ""
+"Doing this displays repeats the last line of dialogue as the caption of the "
+"menu, if no other caption is given."
+msgstr ""
+
+#: ../../source/config.rst:1156
+msgid ""
+"Other implementations are possible, but it's assumed that this will always "
+"display a dialogue window."
+msgstr ""
+
+#: ../../source/config.rst:1161
 msgid "The layer the choice screen (used by the menu statement) is shown on."
 msgstr ""
 "( menu ステートメントで使用される ) choice スクリーンが表示されるレイヤーで"
 "す。"
 
-#: ../../source/config.rst:1125
+#: ../../source/config.rst:1165
 msgid ""
 "A list of names of layers to clear when entering the main and game menus."
 msgstr ""
 "メインメニューまたはゲームメニューに入るとき非表示されるレイヤー名のリストで"
 "す。"
 
-#: ../../source/config.rst:1130
+#: ../../source/config.rst:1170
 msgid "A list of layers that are cleared when entering a new context."
 msgstr "新しいコンテキストに入るとき非表示されるレイヤーのリストです。"
 
-#: ../../source/config.rst:1134
+#: ../../source/config.rst:1174
 msgid ""
 "A list of strings, where each string is matched against the GUID of a game "
 "controller. These strings are mached as a prefix to the controller GUID "
@@ -1869,12 +1903,12 @@ msgstr ""
 "らの文字列はGUUIDコントローラーの接頭辞(log.txtで確認できます)としてマッチ"
 "し、マッチすればそのコントローラーを初期化から省きます。"
 
-#: ../../source/config.rst:1141
+#: ../../source/config.rst:1181
 msgid "If not None, this should be a function that takes three arguments:"
 msgstr ""
 "None を指定するか、関数を指定します。関数は次の 3 つの引数で呼び出されます :"
 
-#: ../../source/config.rst:1143
+#: ../../source/config.rst:1183
 msgid ""
 "A string giving the text of a traceback, abbreviated so that it only "
 "includes creator-written files."
@@ -1882,7 +1916,7 @@ msgstr ""
 "トレースバックのテキストの文字列ですが、省略されてて制作者作成のファイルのみ"
 "を含みます。"
 
-#: ../../source/config.rst:1145
+#: ../../source/config.rst:1185
 msgid ""
 "The full text of the traceback, including both creator-written and Ren'Py "
 "files."
@@ -1890,11 +1924,11 @@ msgstr ""
 "トレースバックの完全なテキストで、製作所作成と Ren'Py のファイルの両方を含み"
 "ます。"
 
-#: ../../source/config.rst:1147
+#: ../../source/config.rst:1187
 msgid "The path to a file containing a traceback method."
 msgstr "トレースバックされたメソッドを含むファイルへのパスです。"
 
-#: ../../source/config.rst:1149
+#: ../../source/config.rst:1189
 msgid ""
 "This function can present the error to a user in any way fit. If it returns "
 "True, the exception is ignored and control is transferred to the next "
@@ -1907,7 +1941,7 @@ msgstr ""
 "ドラーが使用されます。この関数は :func:`renpy.jump` を呼び出して制御を他のラ"
 "ベルに移します。"
 
-#: ../../source/config.rst:1156
+#: ../../source/config.rst:1196
 msgid ""
 "This is the amount of time in seconds to spend fading the old track out "
 "before a new music track starts. This should probably be fairly short, so "
@@ -1916,13 +1950,13 @@ msgstr ""
 "これは新しい曲が開始する前に古い曲をフェードアウトするのにかかる秒数です。こ"
 "れは多分かなり短いはずで、長すぎると曲が再生されません。"
 
-#: ../../source/config.rst:1162
+#: ../../source/config.rst:1202
 msgid "Set this to True to allow fast skipping outside of developer mode."
 msgstr ""
 "開発者モード以外でもファストスキップを許可したい場合これを True に設定してく"
 "ださい。"
 
-#: ../../source/config.rst:1166
+#: ../../source/config.rst:1206
 msgid ""
 "If not None, this is a function that is called with the file name when a "
 "file needs to be opened. It should return a file-like object, or None to "
@@ -1933,14 +1967,14 @@ msgstr ""
 "れる関数を指定します。通常の Ren'Py の仕組みを使用してファイルをロードするた"
 "めに、 file-like オブジェクトか None を返すべきです。"
 
-#: ../../source/config.rst:1172
+#: ../../source/config.rst:1212
 msgid ""
 "One may want to also define a :var:`config.loadable_callback` that matches "
 "this."
 msgstr ""
 "これとともに :var:`config.loadable_callback` も定義するとよいかもしれません。"
 
-#: ../../source/config.rst:1177
+#: ../../source/config.rst:1217
 msgid ""
 "This is the amount of penalty to apply to moves perpendicular to the "
 "selected direction of motion, when moving focus with the keyboard."
@@ -1948,12 +1982,12 @@ msgstr ""
 "これはキーボードでフォーカスを移動するときに、選択された方向に対して垂直な移"
 "動に適用される曖昧さの値です。"
 
-#: ../../source/config.rst:1183
+#: ../../source/config.rst:1223
 msgid "Determines if the user is allowed to resize an OpenGL-drawn window."
 msgstr ""
 "ユーザーが OpenGL が描画したウィンドウのサイズを変更できるか決定します。"
 
-#: ../../source/config.rst:1187
+#: ../../source/config.rst:1227
 msgid ""
 "This is the number of steps that Ren'Py will let the user interactively "
 "rollback. Set this to 0 to disable rollback entirely, although we don't "
@@ -1965,30 +1999,13 @@ msgstr ""
 "ユーザーが間違えてスキップしたテキストを見るために便利ですのでこれはお勧めし"
 "ません。"
 
-#: ../../source/config.rst:1194
+#: ../../source/config.rst:1234
 msgid ""
-"This controls the functionality of the help system invoked by the help "
-"button on the main and game menus, or by pressing F1 or Command-?."
+"The name of the screen shown by the :func:`Help` action, or by pressing f1 "
+"on the keyboard."
 msgstr ""
-"これはメインメニュー、ゲームメニュー、または F1 や command + ? を押すことで実"
-"行されるヘルプシステムを制御します。"
 
-#: ../../source/config.rst:1198
-msgid ""
-"If None, the help system is disabled and does not show up on menus.  If a "
-"string corresponding to a label found in the script, that label is invoked "
-"in a new context. This allows you to define an in-game help-screen.  "
-"Otherwise, this is interpreted as a filename relative to the base directory, "
-"that is opened in a web browser. If the file is not exist, the action is "
-"ignored."
-msgstr ""
-"None の場合、ヘルプシステムは無効化され、メニューには表示されません。スクリプ"
-"ト内で見つけられるラベルに対応する文字列の場合、そのラベルを新しいコンテキス"
-"トで実行します。これでゲーム内のヘルプ画面を定義できます。それ以外の場合はこ"
-"の文字列はブラウザーで開かれるベースディレクトリーに対する相対パスのファイル"
-"名として解釈されます。ファイルが存在しなければアクションは無視されます。"
-
-#: ../../source/config.rst:1207
+#: ../../source/config.rst:1239
 msgid ""
 "A function that is called when the :ref:`hide statement <hide-statement>` is "
 "executed. This should take the same arguments as renpy.hide."
@@ -1996,7 +2013,7 @@ msgstr ""
 ":ref:`hide ステートメント <hide-statement>` が実行されるときに呼び出される関"
 "数です。これは renpy.hide と同じ引数をとるべきです。"
 
-#: ../../source/config.rst:1212
+#: ../../source/config.rst:1244
 msgid ""
 "A function that expands the `auto` property of a screen language :ref:"
 "`imagebutton <sl-imagebutton>` or :ref:`imagemap <sl-imagemap>` statement "
@@ -2011,7 +2028,7 @@ msgstr ""
 "「 ground 」 のいずれかの画像を探します。これは displayable か None を返すは"
 "ずです。"
 
-#: ../../source/config.rst:1219
+#: ../../source/config.rst:1251
 msgid ""
 "The default implementation formats the `auto` property with the desired "
 "image, and then checks if the computed filename exists."
@@ -2019,24 +2036,14 @@ msgstr ""
 "デフォルトの実装では `auto`  プロパティーを要求した画像でフォーマットし、その"
 "結果のファイル名が存在するかを確認します。"
 
-#: ../../source/config.rst:1224
+#: ../../source/config.rst:1256
 msgid ""
 "If True, the order of substrings in the Side positions will be determine the "
 "order of children render."
 msgstr ""
 "True なら、Side の位置での部分文字列の順番が子のレンダリング順を決定します。"
 
-#: ../../source/config.rst:1229
-msgid ""
-"If True, imagemap hotspots will be cached to PNG files, reducing time and "
-"memory usage, but increasing the size of the game on disk. Set this to False "
-"to disable this behavior."
-msgstr ""
-"True ならイメージマップのホットスポットは PNG ファイルにキャッシュされ、時間"
-"とメモリーを節約しますが、ディスク上のゲームサイズを増大させます。この振る舞"
-"いを無効化するにはこれを False に設定してください。"
-
-#: ../../source/config.rst:1235
+#: ../../source/config.rst:1261
 msgid ""
 "If True, then by default the equivalent of a :ref:`with None <with-none>` "
 "statement will be performed after interactions caused by dialogue, menus "
@@ -2047,7 +2054,7 @@ msgstr ""
 "詞、選択肢、入力、イメージマップによって起きるインタラクションの後に処理され"
 "ます。これはトランジション中に以前の画面が表示されないことを保証します。"
 
-#: ../../source/config.rst:1242
+#: ../../source/config.rst:1268
 msgid ""
 "A list of functions that are called (without any arguments) when an "
 "interaction is started or restarted."
@@ -2055,7 +2062,7 @@ msgstr ""
 "インタラクションが開始または再開されるときに ( 引数なしで ) 呼び出される関数"
 "のリストです。"
 
-#: ../../source/config.rst:1247
+#: ../../source/config.rst:1273
 msgid ""
 "If True, showing an image without supplying a transform or ATL block will "
 "cause the image to continue the previous transform an image with that tag "
@@ -2065,16 +2072,17 @@ msgstr ""
 "を持つ画像が以前使用していた transform を、それが何であっても維持するようにし"
 "ます。 False なら transform は停止されます。"
 
-#: ../../source/config.rst:1254
+#: ../../source/config.rst:1280
+#, fuzzy
 msgid ""
 "This variable contains a keymap giving the keys and mouse buttons assigned "
-"to each possible operation. Please see the section on Keymaps for more "
-"information."
+"to each possible operation. Please see the section on :ref:`Keymaps "
+"<keymap>` for more information."
 msgstr ""
 "この変数は可能な各処理に代入されたキーボードとマウスのボタンを与えるキーマッ"
 "プを含みます。より詳しくはキーマップの章を参照してください。"
 
-#: ../../source/config.rst:1260
+#: ../../source/config.rst:1286
 msgid ""
 "If not None, this is a function that is called whenever a label is reached. "
 "It is called with two parameters. The first is the name of the label. The "
@@ -2085,7 +2093,7 @@ msgstr ""
 "引数で呼び出され、最初はラベル名、2つ目はラベルがジャンプまたは呼び出し、ある"
 "いは新しいコンテキストから到達したなら True 、そうでないなら False です。"
 
-#: ../../source/config.rst:1268
+#: ../../source/config.rst:1294
 msgid ""
 "This variable gives a way of causing jumps and calls of labels in Ren'Py "
 "script to be redirected to other labels. For example, if you add a mapping "
@@ -2097,7 +2105,7 @@ msgstr ""
 "ピングを追加すると、「 start 」へのすべてのジャンプと呼び出しは代わりに"
 "「 mystart 」へ向かいます。"
 
-#: ../../source/config.rst:1275
+#: ../../source/config.rst:1301
 msgid ""
 "Controls layer clipping. This is a map from layer names to (x, y, height, "
 "width) tuples, where x and y are the coordinates of the upper-left corner of "
@@ -2107,7 +2115,7 @@ msgstr ""
 "y, height, width) の辞書で、x,y はレイヤーサイズを与える height と width を持"
 "つレイヤーの左上端からの座標です。"
 
-#: ../../source/config.rst:1280
+#: ../../source/config.rst:1306
 msgid ""
 "If a layer is not mentioned in config.layer_clipping, then it is assumed to "
 "take up the full screen."
@@ -2115,7 +2123,14 @@ msgstr ""
 "レイヤーが config.layer_clipping で述べられないと、フルスクリーンを取ると推測"
 "されます。"
 
-#: ../../source/config.rst:1285
+#: ../../source/config.rst:1311
+msgid ""
+"This variable sets the default value for the ``offer_screen`` property of "
+"layeredimages. See :ref:`the related section <layeredimage>` for more "
+"information."
+msgstr ""
+
+#: ../../source/config.rst:1317
 msgid ""
 "This variable gives a list of all of the layers that Ren'Py knows about, in "
 "the order that they will be displayed to the screen. (The lowest layer is "
@@ -2128,7 +2143,13 @@ msgstr ""
 "Ren'Py はレイヤー 「master」, 「transient」, 「screens」, 「overlay」 を内部"
 "で使用するので、常にこのリスト内にあるべきです。"
 
-#: ../../source/config.rst:1293
+#: ../../source/config.rst:1323
+msgid ""
+"The :func:`renpy.add_layer` can add layers to this variable without needing "
+"to know the original contents."
+msgstr ""
+
+#: ../../source/config.rst:1328
 msgid ""
 "This is a list of functions that are called, with no arguments, when lint is "
 "run. The functions are expected to check the script data for errors, and "
@@ -2140,7 +2161,7 @@ msgstr ""
 "見したものを表示します ( この場合 python ``print`` ステートメントの使用が適切"
 "です )。"
 
-#: ../../source/config.rst:1300
+#: ../../source/config.rst:1335
 msgid ""
 "If True, the start of an interaction will be delayed until all images used "
 "by that interaction have loaded. (Yeah, it's a lousy name.)"
@@ -2148,7 +2169,7 @@ msgstr ""
 "True の場合、すべての画像がロードされるまで入力を受け付けません (はい、これは"
 "変な名前ですね)。"
 
-#: ../../source/config.rst:1306
+#: ../../source/config.rst:1341
 msgid ""
 "When not None, a function that's called with a filename. It should return "
 "True if the file is loadable, and False if not. This can be used with :var:"
@@ -2159,11 +2180,11 @@ msgstr ""
 "file_open_callback` や :var:`config.missing_image_callback` とともに使用可能"
 "です。"
 
-#: ../../source/config.rst:1312
+#: ../../source/config.rst:1347
 msgid "The width of lines logged when :var:`config.log` is used."
 msgstr ":var:`config.log` 使用時の記録される行の幅です。"
 
-#: ../../source/config.rst:1316
+#: ../../source/config.rst:1351
 msgid ""
 "The amount of time the player must press the screen for a longpress to be "
 "recognized on a touch device."
@@ -2171,17 +2192,17 @@ msgstr ""
 "プレイヤーがタッチデバイスで、長押しとして認識されるためにスクリーンを押さな"
 "ければならない時間です。"
 
-#: ../../source/config.rst:1321
+#: ../../source/config.rst:1356
 msgid ""
 "The number of pixels the touch must remain within for a press to be "
 "recognized as a longpress."
 msgstr "長押しと認識するために、押している間とどまる必要のあるピクセル数です。"
 
-#: ../../source/config.rst:1326
+#: ../../source/config.rst:1361
 msgid "The amount of time the device will vibrate for after a longpress."
 msgstr "長押し後にデバイスがバイブする時間です。"
 
-#: ../../source/config.rst:1330
+#: ../../source/config.rst:1365
 msgid ""
 "If not None, this is expected to be a filename. Much of the text shown to "
 "the user by :ref:`say <say-statement>` or :ref:`menu <menu-statement>` "
@@ -2191,7 +2212,14 @@ msgstr ""
 "ref:`menu <menu-statement>` ステートメントによって表示されるテキストの多くは"
 "このファイルに保存されます。"
 
-#: ../../source/config.rst:1336
+#: ../../source/config.rst:1371
+#, fuzzy
+msgid ""
+"A list of channels that are stopped when entering or returning to the main "
+"menu."
+msgstr "新しいコンテキストに入るとき非表示されるレイヤーのリストです。"
+
+#: ../../source/config.rst:1376
 msgid ""
 "The default value of the mipmap argument to :func:`Dissolve`, :func:"
 "`ImageDissolve`, :func:`AlphaDissolve`, and :func:`AlphaMask`."
@@ -2199,11 +2227,11 @@ msgstr ""
 ":func:`Dissolve` および :func:`ImageDissolve`, :func:`AlphaDissolve`, :func:"
 "`AlphaMask` へのミップマップ引数のデフォルト設定値です。"
 
-#: ../../source/config.rst:1341
+#: ../../source/config.rst:1381
 msgid "The default value of the mipmap argument to :func:`Movie`."
 msgstr " :func:`Movie` へのミップマップ引数のデフォルト値になります。"
 
-#: ../../source/config.rst:1345
+#: ../../source/config.rst:1385
 msgid ""
 "The default value of the mipmap argument to :func:`Text`, including text "
 "used in screen statements."
@@ -2211,7 +2239,7 @@ msgstr ""
 "スクリーンステートメントで使用されるテキストを含む :func:`Text` へのミップ"
 "マップ引数のデフォルト値です。"
 
-#: ../../source/config.rst:1350
+#: ../../source/config.rst:1390
 msgid ""
 "If not None, this function is called when an attempt to load an image fails. "
 "It may return None, or it may return an image manipulator. If an image "
@@ -2223,7 +2251,7 @@ msgstr ""
 "像マニュピレーターが返されるとその画像マニュピレーターは失敗した画像の代わり"
 "にロードされます。"
 
-#: ../../source/config.rst:1355
+#: ../../source/config.rst:1395
 msgid ""
 "One may want to also define a :var:`config.loadable_callback`, especially if "
 "this is used with a :func:`DynamicImage`."
@@ -2231,7 +2259,7 @@ msgstr ""
 "特にこれが :func:`DynamicImage` に使用されるなら、 :var:`config."
 "loadable_callback` も定義するとよいかもしれません。"
 
-#: ../../source/config.rst:1360
+#: ../../source/config.rst:1400
 msgid ""
 "If not None, this function is called when Ren'Py attempts to access a label "
 "that does not exist in the game. The callback should take a single "
@@ -2243,7 +2271,7 @@ msgstr ""
 "す。存在しないラベルを引数とし、その代わりに使用されるラベル名を返すか、None"
 "を返して Ren'Py に例外を投げるべきです。"
 
-#: ../../source/config.rst:1368
+#: ../../source/config.rst:1408
 msgid ""
 "If true, clicks that cause a window to be focused will be processed "
 "normally. If false, such clicks will be ignored."
@@ -2251,7 +2279,7 @@ msgstr ""
 "True ならゲームウィンドウへフォーカスするクリックは通常通り処理され、 False "
 "ならそのようなクリックは無視されます。"
 
-#: ../../source/config.rst:1373
+#: ../../source/config.rst:1413
 msgid ""
 "The mouse is hidden after this number of seconds has elapsed without any "
 "mouse input. This should be set to longer than the expected time it will "
@@ -2262,11 +2290,11 @@ msgstr ""
 "クリーンを読むのにかかるだろう時間より長めに設定して、ユーザーがクリックのた"
 "びにマウスが出たり消えたりするのを経験しないようにしましょう。"
 
-#: ../../source/config.rst:1379
+#: ../../source/config.rst:1419
 msgid "If None, the mouse will never be hidden."
 msgstr "None ならマウスは非表示になりません。"
 
-#: ../../source/config.rst:1383
+#: ../../source/config.rst:1423
 msgid ""
 "The mixer that is used when a :func:`Movie` automatically defines a channel "
 "for video playback."
@@ -2274,7 +2302,7 @@ msgstr ""
 ":func:`Movie` がビデオ再生用のチャンネルを自動的に決定するときに使用されるミ"
 "キサーです。"
 
-#: ../../source/config.rst:1388
+#: ../../source/config.rst:1428
 msgid ""
 "Enables the new order of style and translate statements introduced in :ref:"
 "`Ren'Py 6.99.11 <renpy-6.99.11>`."
@@ -2282,7 +2310,7 @@ msgstr ""
 ":ref:`Ren'Py 6.99.11 <renpy-6.99.11>` で述べられた新しい style と translate "
 "ステートメントの順番を有効化します。"
 
-#: ../../source/config.rst:1393
+#: ../../source/config.rst:1433
 msgid ""
 "If True, Ren'Py will apply new-style (square-bracket) substitutions to all "
 "text displayed."
@@ -2290,7 +2318,7 @@ msgstr ""
 "True なら Ren'Py はすべての表示されるテキストに新しいスタイル ( 角括弧 ) の置"
 "換を適用します。"
 
-#: ../../source/config.rst:1398
+#: ../../source/config.rst:1438
 msgid ""
 "If True, Ren'Py will apply old-style (percent) substitutions to text "
 "displayed by the :ref:`say <say-statement>` and :ref:`menu <menu-statement>` "
@@ -2300,7 +2328,7 @@ msgstr ""
 "statement>` ステートメントで表示されるテキストに旧スタイル ( % ) の置換を適用"
 "します。"
 
-#: ../../source/config.rst:1404
+#: ../../source/config.rst:1444
 msgid ""
 "True if we want overlays to be shown during :ref:`with statements <with-"
 "statement>`, or False if we'd prefer that they be hidden during the with "
@@ -2310,7 +2338,7 @@ msgstr ""
 "て欲しいなら True 、with ステートメントの間はそれらが非表示になる方が好みな"
 "ら、 False に設定してください。"
 
-#: ../../source/config.rst:1410
+#: ../../source/config.rst:1450
 msgid ""
 "This is a list of all of the overlay layers. Overlay layers are cleared "
 "before the overlay functions are called. \"overlay\" should always be in "
@@ -2320,7 +2348,7 @@ msgstr ""
 "バーレイ関数が呼び出される前にクリアされます。「 overlay 」は常にこのリスト内"
 "にあるべきです。"
 
-#: ../../source/config.rst:1416
+#: ../../source/config.rst:1456
 msgid ""
 "If false, :func:`renpy.pause` is always, used by the ``pause`` statement. If "
 "true, when given a delay, ``pause`` is equivalent to ``with Pause(...)``."
@@ -2329,7 +2357,7 @@ msgstr ""
 "True で遅延時間が指定されていればなら ``pause`` は ``with Pause(...)`` と等価"
 "です。"
 
-#: ../../source/config.rst:1421
+#: ../../source/config.rst:1461
 msgid ""
 "This is a list of strings giving the name of screens that are updated once "
 "per frame, rather than once per interaction. Ren'Py uses this internally, so "
@@ -2340,7 +2368,7 @@ msgstr ""
 "列のリストです。 Ren'Py は内部でこのリストを使用するので、スクリーンを追加す"
 "るなら、リスト全体を置き換えずに名前を追加してください。"
 
-#: ../../source/config.rst:1428
+#: ../../source/config.rst:1468
 msgid ""
 "If not None, this should be a function. The function is called, with no "
 "arguments, at around 20Hz."
@@ -2348,7 +2376,7 @@ msgstr ""
 "None を指定するか、関数を指定します。関数は引数なしで、 20hz 毎に呼び出されま"
 "す。"
 
-#: ../../source/config.rst:1433
+#: ../../source/config.rst:1473
 msgid ""
 "The name of the audio channel used by :func:`renpy.play`, :propref:"
 "`hover_sound`, and :propref:`activate_sound`."
@@ -2356,7 +2384,7 @@ msgstr ""
 ":func:`renpy.play`, :propref:`hover_sound`, :propref:`activate_sound` で使用"
 "されるチャンネル名です。"
 
-#: ../../source/config.rst:1438
+#: ../../source/config.rst:1478
 msgid ""
 "This is the number of statements, including the current one, to consider "
 "when doing predictive image loading. A breadth-first search from the current "
@@ -2370,11 +2398,11 @@ msgstr ""
 "像がバックグラウンドで予測ロードされます。これを 0 に設定すると画像の予測ロー"
 "ドは無効化されます。"
 
-#: ../../source/config.rst:1447
+#: ../../source/config.rst:1487
 msgid "If set to True, some profiling information will be output to stdout."
 msgstr "True ならプロファイル情報が標準出力に出力されます。"
 
-#: ../../source/config.rst:1452
+#: ../../source/config.rst:1492
 msgid ""
 "``init`` and ``init python`` blocks taking longer than this amount of time "
 "to run are reported to log file."
@@ -2382,11 +2410,14 @@ msgstr ""
 "``init`` と ``init python`` ブロックの実行にこの時間以上かかると log ファイル"
 "にレポートされます。"
 
-#: ../../source/config.rst:1457
-msgid "If True, the mobile app will quit when it loses focus."
-msgstr "True ならモバイル app ではフォーカスを失なうと停止します。"
+#: ../../source/config.rst:1497
+msgid ""
+"If True, the mobile app will quit when it loses focus, rather than saving "
+"and restoring its state. (See also :var:`config.save_on_mobile_background`, "
+"which controls this behavior.)"
+msgstr ""
 
-#: ../../source/config.rst:1461
+#: ../../source/config.rst:1503
 msgid ""
 "Should the user be allowed to rollback the game? If set to False, the user "
 "cannot interactively rollback."
@@ -2394,7 +2425,7 @@ msgstr ""
 "ユーザーはゲーム中にロールバック出来るべきですよね？ False の場合、ユーザーは"
 "インタラクションにロールバック出来ません。"
 
-#: ../../source/config.rst:1466
+#: ../../source/config.rst:1508
 msgid ""
 "When there are more than this many statements in the rollback log, Ren'Py "
 "will consider trimming the log. This also covers how many steps Ren'Py will "
@@ -2404,12 +2435,12 @@ msgstr ""
 "す。これはスクリプトが変更されたセーブデータをロードしようとしたときに、 "
 "Ren'Py が何回ロールバックするかも制御します。"
 
-#: ../../source/config.rst:1471
+#: ../../source/config.rst:1513
 msgid ""
 "Decreasing this below the default value may cause Ren'Py to become unstable."
 msgstr "デフォルト値より下げると、 Ren'Py は不安定になります。"
 
-#: ../../source/config.rst:1476
+#: ../../source/config.rst:1518
 msgid ""
 "If the rollback side is enabled, the fraction of the screen on the rollback "
 "side that, when clicked or touched, causes a rollback to occur."
@@ -2417,7 +2448,7 @@ msgstr ""
 "rollback side が有効のとき、クリックまたはタッチでロールバックする側の画面の"
 "割合です。"
 
-#: ../../source/config.rst:1482
+#: ../../source/config.rst:1524
 msgid ""
 "If not None, this should be a function. The function is called with no "
 "arguments when the user attempts to dismiss a :ref:`say statement <say-"
@@ -2428,11 +2459,11 @@ msgstr ""
 "ト <say-statement>` を省略しようとすると引数なしで呼び出されます。この関数が "
 "True を返すと、省略は許可され、そうでなければ無視されます。"
 
-#: ../../source/config.rst:1489
+#: ../../source/config.rst:1531
 msgid "The layer the say screen is shown on."
 msgstr "say スクリーンが表示されるレイヤーです。"
 
-#: ../../source/config.rst:1493
+#: ../../source/config.rst:1535
 msgid ""
 "If not None, then this is a function that is given the text found in strings "
 "in the :ref:`say <say-statement>` and :ref:`menu <menu-statement>` "
@@ -2444,7 +2475,7 @@ msgstr ""
 "これは新しい ( または同じ ) 文字列を返して、それらで置き換えることが期待され"
 "ます。"
 
-#: ../../source/config.rst:1500
+#: ../../source/config.rst:1542
 msgid ""
 "A list of functions that are called, without arguments, before the second "
 "and later interactions caused by a line of dialogue with pauses in it. Used "
@@ -2454,7 +2485,7 @@ msgstr ""
 "れる関数のリストです。 ポーズ越しでもボイスを再生し続けるために使用されていま"
 "す。"
 
-#: ../../source/config.rst:1506
+#: ../../source/config.rst:1548
 msgid ""
 "If set to True, Ren'Py will create the file save_dump.txt whenever it saves "
 "a game. This file contains information about the objects contained in the "
@@ -2467,7 +2498,7 @@ msgstr ""
 "の情報を含みます。各行は相対的なサイズの見積もり、オブジェクトへのパス、オブ"
 "ジェクトがエイリアスかどうかの情報、オブジェクトの説明で構成されています。"
 
-#: ../../source/config.rst:1514
+#: ../../source/config.rst:1556
 msgid ""
 "If True, the mobile app will save its state when it loses focus. The state "
 "is saved in a way that allows it to be automatically loaded (and the game to "
@@ -2477,7 +2508,7 @@ msgstr ""
 "が保存されると、その app が再び起動されたときに自動的にロードされ、ゲームが再"
 "開されます。"
 
-#: ../../source/config.rst:1520
+#: ../../source/config.rst:1562
 msgid ""
 "If True, the physical size of the window will be saved in the preferences, "
 "and restored when the game resumes."
@@ -2485,7 +2516,7 @@ msgstr ""
 "True ならウィンドウの実際のサイズは設定に保存され、ゲーム再開時に再現されま"
 "す。"
 
-#: ../../source/config.rst:1525
+#: ../../source/config.rst:1567
 msgid ""
 "The complete path to the directory in which the game is saved. This should "
 "only be set in a ``python early`` block. See also config.save_directory, "
@@ -2496,7 +2527,7 @@ msgstr ""
 "ロックでのみ設定されるべきです。  ``python early`` ブロック内で設定されなかっ"
 "たらこれのデフォルト値を生成する config.save_directory も参照しましょう。"
 
-#: ../../source/config.rst:1532
+#: ../../source/config.rst:1574
 msgid ""
 "A function that's used in place of renpy.scene by the :ref:`scene statement "
 "<scene-statement>`. Note that this is used to clear the screen, and config."
@@ -2508,7 +2539,7 @@ msgstr ""
 "像を表示することに注意しましょう。これは renpy.scene と同じ引数、返り値を持つ"
 "べきです。"
 
-#: ../../source/config.rst:1539
+#: ../../source/config.rst:1581
 msgid ""
 "A function that is called when a screenshot is taken. The function is called "
 "with a single parameter, the full filename the screenshot was saved as."
@@ -2516,7 +2547,7 @@ msgstr ""
 "スクリーンショットを撮るときに呼び出される関数です。関数はスクリーンショット"
 "がセーブしたファイル名をひとつの引数にして呼び出されます。"
 
-#: ../../source/config.rst:1545
+#: ../../source/config.rst:1587
 msgid ""
 "If not None, this should be a (`x`, `y`, `height`, `width`) tuple. "
 "Screenshots are cropped to this rectangle before being saved."
@@ -2524,7 +2555,7 @@ msgstr ""
 "None を指定するか、 (`x`, `y`, `height`, `width`) のタプルを指定します。スク"
 "リーンショットはセーブされる前にこの長方形にクロッピングされます。"
 
-#: ../../source/config.rst:1551
+#: ../../source/config.rst:1593
 msgid ""
 "The pattern used to create screenshot files. This pattern is applied (using "
 "Python's %-formatting rules) to the natural numbers to generate a sequence "
@@ -2538,11 +2569,11 @@ msgstr ""
 "す。存在していない最初のファイル名がスクリーンショットの名前として使用されま"
 "す。"
 
-#: ../../source/config.rst:1557
+#: ../../source/config.rst:1599
 msgid "Directories are created if they do not exist."
 msgstr "辞書がなければ作られます。"
 
-#: ../../source/config.rst:1559
+#: ../../source/config.rst:1601
 msgid ""
 "See also :var:`_screenshot_pattern`, which is used in preference to this "
 "variable if not None."
@@ -2550,7 +2581,7 @@ msgstr ""
 ":var:`_screenshot_pattern` も参照してください。None でなければこの変数より優"
 "先して使用されます。"
 
-#: ../../source/config.rst:1564
+#: ../../source/config.rst:1606
 msgid ""
 "If not None, this is interpreted as a script version. The library will use "
 "this script version to enable some compatibility features, if necessary. If "
@@ -2560,7 +2591,7 @@ msgstr ""
 "のスクリプトバージョンをいくつかの互換性機能を有効化するために使用します。 "
 "None ならこれは最新バージョンのスクリプトと推測されます。"
 
-#: ../../source/config.rst:1569
+#: ../../source/config.rst:1611
 msgid ""
 "This is normally set in a file added by the Ren'Py launcher when "
 "distributions are built."
@@ -2568,7 +2599,7 @@ msgstr ""
 "これは通常 Ren'Py ランチャーにより配布物のビルド時に追加されるファイルで設定"
 "されます。"
 
-#: ../../source/config.rst:1574
+#: ../../source/config.rst:1616
 msgid ""
 "A list of directories that are searched for images, music, archives, and "
 "other media, but not scripts. This is initialized to a list containing "
@@ -2578,12 +2609,12 @@ msgstr ""
 "スクリプトではありません。これはリストが 「 common 」とゲームディレクトリーを"
 "含むように初期化されます。"
 
-#: ../../source/config.rst:1580
+#: ../../source/config.rst:1622
 msgid ""
 "A list of prefixes that are prepended to filenames that are searched for."
 msgstr "検索時にファイル名の先頭に追加される接頭辞のリストです。"
 
-#: ../../source/config.rst:1585
+#: ../../source/config.rst:1627
 msgid ""
 "A function that is used in place of renpy.show by the :ref:`show <show-"
 "statement>` and :ref:`scene <scene-statement>` statements. This should have "
@@ -2593,7 +2624,7 @@ msgstr ""
 "statement>` ステートメントで使用される関数です。これは renpy.show と同じ引"
 "数、返り値の構造を持つべきです。"
 
-#: ../../source/config.rst:1591
+#: ../../source/config.rst:1633
 msgid ""
 "The amount of time that dialogue will be shown for, when skipping statements "
 "using ctrl, in milliseconds. (Although it's nowhere near that precise in "
@@ -2602,7 +2633,7 @@ msgstr ""
 "ctrl キーを使用してスキップしている時に台詞が表示されているミリ秒単位の時間で"
 "す ( 実際はそれほど正確ではないが )。"
 
-#: ../../source/config.rst:1597
+#: ../../source/config.rst:1639
 msgid ""
 "If True, the library will display a skip indicator when skipping through the "
 "script."
@@ -2610,7 +2641,7 @@ msgstr ""
 "True ならライブラリーはスクリプトをスキップするときにスキップインディケーター"
 "を表示します。"
 
-#: ../../source/config.rst:1602
+#: ../../source/config.rst:1644
 msgid ""
 "If True, sound works. If False, the sound/mixer subsystem is completely "
 "disabled."
@@ -2618,7 +2649,7 @@ msgstr ""
 "True なら効果音が動作します。 False なら sound/mixere サブシステムは完全に無"
 "効化されます。"
 
-#: ../../source/config.rst:1607
+#: ../../source/config.rst:1649
 msgid ""
 "The sample rate that the sound card will be run at. If all of your wav files "
 "are of a lower rate, changing this to that rate may make things more "
@@ -2628,7 +2659,7 @@ msgstr ""
 "低いレートであるなら、これをそのレートに変更すると処理が効率的になるかもしれ"
 "ません。"
 
-#: ../../source/config.rst:1613
+#: ../../source/config.rst:1655
 msgid ""
 "A list of callbacks functions that are called with no arguments after the "
 "init phase, but before the game (including the splashscreen) starts. This is "
@@ -2638,7 +2669,7 @@ msgstr ""
 "数のリストです。これは保存される変数を初期化するためにフレームワークによって"
 "使用されることを意図しています。"
 
-#: ../../source/config.rst:1618
+#: ../../source/config.rst:1660
 msgid ""
 "The default value of this variable includes callbacks that Ren'Py uses "
 "internally to implement features such as nvl-mode. New callbacks can be "
@@ -2648,7 +2679,7 @@ msgstr ""
 "るために使用しているコールバックを含みます。新しいコールバックはこのリストに"
 "追加できますが、すでにあるコールバックは除去してはいけません。"
 
-#: ../../source/config.rst:1625
+#: ../../source/config.rst:1667
 msgid ""
 "A list of functions that are called (without any arguments) when an "
 "interaction is started. These callbacks are not called when an interaction "
@@ -2657,7 +2688,7 @@ msgstr ""
 "インタラクションの開始時に ( 引数なしで ) 呼び出される関数のリストです。これ"
 "らのコールバックはインタラクションの再開時には呼び出されません。"
 
-#: ../../source/config.rst:1631
+#: ../../source/config.rst:1673
 msgid ""
 "A list of functions that are called (without any arguments) when Ren'Py "
 "terminates. This is intended to free resources, such as opened files or "
@@ -2666,7 +2697,7 @@ msgstr ""
 "Ren'Py 停止時に(引数なしで)呼び出される関数のリストです。これはファイル開いた"
 "り、スレッドを開始したようなリソースを解放することを意図しています。"
 
-#: ../../source/config.rst:1637
+#: ../../source/config.rst:1679
 msgid ""
 "This is a list of names of layers that are displayed above all other layers, "
 "and do not participate in a transition that is applied to all layers. If a "
@@ -2676,7 +2707,7 @@ msgstr ""
 "ヤーに適用されるトランジションには参加しません。レイヤー名がここにリストアッ"
 "プされるなら、 config.layers にはリストアップされるべきではありません。"
 
-#: ../../source/config.rst:1644
+#: ../../source/config.rst:1686
 msgid ""
 "This variable gives a list of all of the transient layers. Transient layers "
 "are layers that are cleared after each interaction. \"transient\" should "
@@ -2686,7 +2717,7 @@ msgstr ""
 "ンタラクションの後にクリアされるレイヤーです。「 transient 」は常にこのリスト"
 "内にあるべきです。"
 
-#: ../../source/config.rst:1650
+#: ../../source/config.rst:1692
 msgid ""
 "If True, transforms will inherit :ref:`position properties <position-style-"
 "properties>` from their child. If not, they won't."
@@ -2694,7 +2725,7 @@ msgstr ""
 "True なら transform はその子から :ref:`position properties <position-style-"
 "properties>` を引き継ぎます。そうでないなら引き継ぎません。"
 
-#: ../../source/config.rst:1655
+#: ../../source/config.rst:1697
 msgid ""
 "If True, screens will participate in transitions, dissolving from the old "
 "state of the screen to the new state of the screen. If False, only the "
@@ -2704,14 +2735,14 @@ msgstr ""
 "リーンの状態へのトランジションに参加します。False ならただ最新のスクリーン状"
 "態が表示されます。"
 
-#: ../../source/config.rst:1661
+#: ../../source/config.rst:1703
 msgid ""
 "A list of named stores that are cleaned to their state at the end of the "
 "init phase when the translation language changes."
 msgstr ""
 "翻訳言語変更時に初期化の最後で状態が初期化される名前付き store のリストです。"
 
-#: ../../source/config.rst:1666
+#: ../../source/config.rst:1708
 msgid ""
 "A list of screen variants that are searched when choosing a screen to "
 "display to the user. This should always end with None, to ensure that the "
@@ -2721,7 +2752,7 @@ msgstr ""
 "ストです。デフォルトのスクリーンが選択されることを保証するために、これは常に "
 "None で終わるべきです。 :ref:`screen-variants` を参照してください。"
 
-#: ../../source/config.rst:1672
+#: ../../source/config.rst:1714
 msgid ""
 "A string that is formatted with the string argument to the voice statement "
 "to produce the filename that is played to the user. For example, if this is "
@@ -2731,7 +2762,7 @@ msgstr ""
 "字列でフォーマットされる文字列です。例えばこれが \"{filename}.ogg\" なら "
 "``voice \"test\"`` ステートメントは test.oggを再生します。"
 
-#: ../../source/config.rst:1679
+#: ../../source/config.rst:1721
 msgid ""
 "If not None, this should be a function that is called when a :ref:`with "
 "statement <with-statement>` occurs. This function can be responsible for "
@@ -2747,11 +2778,11 @@ msgstr ""
 "とが期待され、それが実際のトランジションに使用されますが、引数と同じでもそう"
 "でなくてもかまいません。"
 
-#: ../../source/config.rst:1688
+#: ../../source/config.rst:1730
 msgid "Garbage Collection"
 msgstr "ガーベッジコレクション"
 
-#: ../../source/config.rst:1690
+#: ../../source/config.rst:1732
 msgid ""
 "These variables allow you to tune the Python garbage collector and the "
 "Ren'Py management of the Python garbage collector."
@@ -2759,14 +2790,14 @@ msgstr ""
 "これらの変数により、 python のガーベッジコレクターとpython ガーベッジコレク"
 "ターによる Ren'Py の管理を調整できます。"
 
-#: ../../source/config.rst:1695
+#: ../../source/config.rst:1737
 msgid ""
 "If True, Ren'Py will manage the GC itself. This means that it will apply the "
 "settings below."
 msgstr ""
 "True なら、 Ren'Py は GC を自身で管理します。つまり以下の設定を適用します。"
 
-#: ../../source/config.rst:1700
+#: ../../source/config.rst:1742
 msgid ""
 "The GC thresholds that Ren'Py uses when not idle. These are set to try to "
 "ensure that garbage collection doesn't happen. The three numbers are:"
@@ -2774,22 +2805,22 @@ msgstr ""
 "非アイドル時に Ren'Py が使用する GC のしきい値です。これらの数字以下でガー"
 "ベッジコレクションが起動しないようにします。 3 つの数字は :"
 
-#: ../../source/config.rst:1703
+#: ../../source/config.rst:1745
 msgid ""
 "The net number of objects that need to be allocated before a level-0 "
 "collection."
 msgstr ""
 "level 0 コレクション以前に割り当てられるべきオブジェクトのネットナンバー"
 
-#: ../../source/config.rst:1705
+#: ../../source/config.rst:1747
 msgid "The number of level-0 collections that trigger a level-1 collection."
 msgstr "level-1 コレクションを引き起こす level-0 コレクションの数"
 
-#: ../../source/config.rst:1706
+#: ../../source/config.rst:1748
 msgid "The number of level-1 collections that trigger a level-2 collection."
 msgstr "level-2 コレクションを引き起こす level-1 コレクションの数"
 
-#: ../../source/config.rst:1708
+#: ../../source/config.rst:1750
 msgid ""
 "(Level-0 collections should be fast enough to not cause a frame drop, "
 "level-1 collections might, level-2 will.)"
@@ -2797,7 +2828,7 @@ msgstr ""
 "(Level-0 コレクションはフレームドロップを引き起こさない程度に高速であるはず"
 "で、 level-1  コレクションはたぶん、 level-2 はきっと)"
 
-#: ../../source/config.rst:1713
+#: ../../source/config.rst:1755
 msgid ""
 "The net number of objects that triggers a collection when Ren'Py has reached "
 "a steady state. (The fourth frame or later after the screen has been "
@@ -2806,13 +2837,121 @@ msgstr ""
 "Ren'Py が安定状態になったときに、コレクションを起動するオブジェクトのネットナ"
 "ンバーです( スクリーンが更新されてから 4 フレーム以上後です)。"
 
-#: ../../source/config.rst:1719
+#: ../../source/config.rst:1761
 msgid ""
 "If True, Ren'Py will print to its console and logs information about the "
 "objects that are triggering collections."
 msgstr ""
 "True なら、Ren'Py はコレクションを起動するオブジェクトに関する情報をコンソー"
 "ルとログに書き出します。"
+
+#~ msgid "If not None, this causes Ren'Py to automatically define images."
+#~ msgstr "None でなければ Ren'Py に自動的に画像を定義させます。"
+
+#~ msgid ""
+#~ "When not set to None, this should be set to a list of separators. (For "
+#~ "example, ``[ ' ', '_', '/' ]``.)"
+#~ msgstr ""
+#~ "None を指定するか、区切り文字のリストを指定します (例えば  ``[ ' ', '_', "
+#~ "'/' ]``)。"
+
+#~ msgid ""
+#~ "Ren'Py will scan through the list of files on disk and in archives. When "
+#~ "it finds a file ending with .png or .jpg, it will strip the extension, "
+#~ "then break the name at separators, to create an image name. If the name "
+#~ "consists of at least two components, and no image with that name already "
+#~ "is defined, Ren'Py will define that image to refer to a filename."
+#~ msgstr ""
+#~ "Ren'Pyはディスクとアーカイブのファイルリストをスキャンします。 .png や ."
+#~ "jpg で終わるファイルが見つかると、拡張子を取り除いて区切り文字で名前を分割"
+#~ "し、画像名を作成します。その名前が少なくとも二つの要素で構成され、その名前"
+#~ "の画像がすでに定義されていなければ Ren'Py はその画像をファイル名を参照して"
+#~ "定義します。"
+
+#~ msgid ""
+#~ "With the example list of separators, if your game directory contains:"
+#~ msgstr ""
+#~ "この区切り文字のリストの例では、 game ディレクトリーが次のファイルを持つな"
+#~ "ら :"
+
+#~ msgid "eileen_happy.png, Ren'Py will define the image \"eileen happy\"."
+#~ msgstr "eileen_happy.png ならRen'Pyは画像「 eileen happy 」を定義します。"
+
+#~ msgid "lucy/mad.png, Ren'Py will define the image \"lucy mad\"."
+#~ msgstr "lucy/mad.png なら Ren'Py は画像「 lucy mad 」を定義します。"
+
+#~ msgid ""
+#~ "mary.png, Ren'Py will do nothing. (As the image does not have two "
+#~ "components.)"
+#~ msgstr ""
+#~ "mary.png なら Ren'Py は何もしません (画像が2つの要素を持たないため)。"
+
+#~ msgid ""
+#~ "A list of strings giving prefixes that are stripped out when defining "
+#~ "automatic images. This can be used to remove directory names, when "
+#~ "directories contain images."
+#~ msgstr ""
+#~ "自動的に画像を定義するときに取り除かれる、接頭辞の文字列のリストです。これ"
+#~ "を使用して画像を含むディレクトリーの名前を取り除けます。"
+
+#~ msgid ""
+#~ "Enables debugging functionality (mostly by turning some missing files "
+#~ "into errors.) This should always be turned off in a release."
+#~ msgstr ""
+#~ "デバッグ機能を有効化する(ほとんどは、見つからないファイルをエラーにするこ"
+#~ "とです)。 これはリリース時に常にオフにされるべきです。"
+
+#~ msgid ""
+#~ "This is used to customize the choices on the game menu. Please read Main "
+#~ "and Game Menus for more details on the contents of this variable."
+#~ msgstr ""
+#~ "これはゲームメニューの選択肢をカスタマイズするために使用されます。詳細はこ"
+#~ "の変数の内容のメインメニューやゲームメニューを読んでくさい。"
+
+#~ msgid "This is not used when the game menu is defined using screens."
+#~ msgstr ""
+#~ "これはゲームメニューがスクリーンを使用して定義されていると使用されません。"
+
+#~ msgid ""
+#~ "The default main menu, when not using screens. For more details, see Main "
+#~ "and Game Menus."
+#~ msgstr ""
+#~ "スクリーンを使用しない時のデフォルトのメインメニューです。詳細は Main and "
+#~ "Game Menus を参照してください。"
+
+#~ msgid ""
+#~ "This controls the functionality of the help system invoked by the help "
+#~ "button on the main and game menus, or by pressing F1 or Command-?."
+#~ msgstr ""
+#~ "これはメインメニュー、ゲームメニュー、または F1 や command + ? を押すこと"
+#~ "で実行されるヘルプシステムを制御します。"
+
+#~ msgid ""
+#~ "If None, the help system is disabled and does not show up on menus.  If a "
+#~ "string corresponding to a label found in the script, that label is "
+#~ "invoked in a new context. This allows you to define an in-game help-"
+#~ "screen.  Otherwise, this is interpreted as a filename relative to the "
+#~ "base directory, that is opened in a web browser. If the file is not "
+#~ "exist, the action is ignored."
+#~ msgstr ""
+#~ "None の場合、ヘルプシステムは無効化され、メニューには表示されません。スク"
+#~ "リプト内で見つけられるラベルに対応する文字列の場合、そのラベルを新しいコン"
+#~ "テキストで実行します。これでゲーム内のヘルプ画面を定義できます。それ以外の"
+#~ "場合はこの文字列はブラウザーで開かれるベースディレクトリーに対する相対パス"
+#~ "のファイル名として解釈されます。ファイルが存在しなければアクションは無視さ"
+#~ "れます。"
+
+#~ msgid ""
+#~ "If True, imagemap hotspots will be cached to PNG files, reducing time and "
+#~ "memory usage, but increasing the size of the game on disk. Set this to "
+#~ "False to disable this behavior."
+#~ msgstr ""
+#~ "True ならイメージマップのホットスポットは PNG ファイルにキャッシュされ、時"
+#~ "間とメモリーを節約しますが、ディスク上のゲームサイズを増大させます。この振"
+#~ "る舞いを無効化するにはこれを False に設定してください。"
+
+#~ msgid "If True, the mobile app will quit when it loses focus."
+#~ msgstr "True ならモバイル app ではフォーカスを失なうと停止します。"
 
 #~ msgid ""
 #~ "Controls the rate of keyboard repeat. When key repeat is enabled, this "

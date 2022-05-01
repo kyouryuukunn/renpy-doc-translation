@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-22 21:18+0900\n"
-"PO-Revision-Date: 2020-11-01 13:17+0900\n"
+"POT-Creation-Date: 2022-05-01 12:00+0900\n"
+"PO-Revision-Date: 2022-05-01 12:28+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -167,28 +167,29 @@ msgstr "NVL モード・ウィンドウの表示/非表示"
 #: ../../source/nvl_mode.rst:124
 msgid ""
 "The NVL-mode window can be controlled with the standard ``window show`` and "
-"``window hide`` statements. To enable this, add the following to your game::"
+"``window hide`` statements. To select the default transitions to be used for "
+"showing and hiding the window, add the following to your game::"
 msgstr ""
 "NVL モード・ウィンドウは、標準の ``window show`` 及び ``window hide`` ステー"
-"トメントによって制御できます。この制御方法を有効にするには、以下のコードを"
-"ゲームに追加します ::"
+"トメントによって制御できます。ウィンドウの表示、非表示時のデフォルトトランジ"
+"ションを指定するには次のコードをゲームに追加します ::"
 
-#: ../../source/nvl_mode.rst:133
+#: ../../source/nvl_mode.rst:132
 msgid ""
-"Setting :var:`config.empty_window` to ``nvl_show_core`` will cause the NVL-"
-"mode window to be displayed during a transition. (The last two lines select "
-"the default transitions to be used for showing and hiding the window.)"
+"The default :var:`config.empty_window` should select appropriate window "
+"automatically, but setting :var:`config.empty_window` to ``nvl_show_core`` "
+"will force the NVL-mode window to be displayed during a transition.::"
 msgstr ""
-":var:`config.empty_window` を ``nvl_show_core`` に設定すると、NVL モード・"
-"ウィンドウはトランジションを伴って表示されます(最後の2行では、ウィンドウの表"
-"示/非表示の切り替えに使われる既定のトランジションを設定しています)。"
+"デフォルトの :var:`config.empty_window` は適切なウィンドウを自動的に選択する"
+"はずですが、 :var:`config.empty_window` を ``nvl_show_core`` に設定するとNVL "
+"モードウィンドウがトランジション中に強制的に表示されてしまいます。.::"
 
-#: ../../source/nvl_mode.rst:138
+#: ../../source/nvl_mode.rst:139
 msgid ""
 "An example of using the window commands to show and hide the window is::"
 msgstr "window コマンドを用いてウィンドウの表示/非表示を行う例を次に示します::"
 
-#: ../../source/nvl_mode.rst:165
+#: ../../source/nvl_mode.rst:166
 msgid ""
 "There are also explicit ``nvl show`` and ``nvl hide`` commands that show "
 "hide the NVL-mode window. These take an optional transition, and can be used "
@@ -198,11 +199,11 @@ msgstr ""
 "します。これらは任意でトランジションを取り、また、 NVL と ADV 両方のモードの"
 "ウィンドウが混在するコードで使用出来ます。"
 
-#: ../../source/nvl_mode.rst:170
+#: ../../source/nvl_mode.rst:171
 msgid "Customizing Characters"
 msgstr "キャラクターのカスタマイズ"
 
-#: ../../source/nvl_mode.rst:172
+#: ../../source/nvl_mode.rst:173
 msgid ""
 "NVL-mode characters can be customized to have several looks, hopefully "
 "allowing you to pick the one that is most appropriate to the game you are "
@@ -211,7 +212,7 @@ msgstr ""
 "NVL モード・キャラクターの外観はカスタマイズできるため、うまく設定すると作成"
 "中のゲームに最も適切な外観を選べます。"
 
-#: ../../source/nvl_mode.rst:175
+#: ../../source/nvl_mode.rst:176
 msgid ""
 "The default look has a character's name to the left, and dialogue indented "
 "to the right of the name. The color of the name is controlled by the "
@@ -220,7 +221,7 @@ msgstr ""
 "既定の状態ではキャラクター名が左側で、台詞がキャラクター名の右側にインデント"
 "されて配置されています。名前の色は「color」パラメーターで設定できます。 ::"
 
-#: ../../source/nvl_mode.rst:181
+#: ../../source/nvl_mode.rst:182
 msgid ""
 "A second look has the character's name embedded in with the text. Dialogue "
 "spoken by the character is enclosed in quotes. Note that here, the "
@@ -232,7 +233,7 @@ msgstr ""
 "what_prefix パラメーターの中に開きクォーテーション(括弧開き)とともにあること"
 "です(閉じクォーテーションは what_suffix パラメーターの中にあります)。 ::"
 
-#: ../../source/nvl_mode.rst:190
+#: ../../source/nvl_mode.rst:191
 msgid ""
 "A third look dispenses with the character name entirely, while putting the "
 "dialogue in quotes. ::"
@@ -240,7 +241,7 @@ msgstr ""
 "3つ目はキャラクター名を完全に省くとともに、台詞をクォーテーションの中に入れて"
 "います。 ::"
 
-#: ../../source/nvl_mode.rst:195
+#: ../../source/nvl_mode.rst:196
 msgid ""
 "Since the third look might make it hard to distinguish who's speaking, we "
 "can tint the dialogue using the ''what_color'' parameter. ::"
@@ -248,7 +249,7 @@ msgstr ""
 "3つ目の表示は、誰が話した言葉なのかを見分けるのが難しくなる可能性があります。"
 "その場合は、「what_color」パラメーターを用いて台詞に色を付けられます。 ::"
 
-#: ../../source/nvl_mode.rst:202
+#: ../../source/nvl_mode.rst:203
 msgid ""
 "Of course, a completely uncustomized NVL-mode character can be used, if you "
 "want to take total control of what is shown. (This is often used for the "
@@ -257,19 +258,19 @@ msgstr ""
 "もちろん、全くカスタマイズされていない NVL モードのキャラクターを使うこともで"
 "きます(これはナレーターに使われることが多いです)。 ::"
 
-#: ../../source/nvl_mode.rst:210
+#: ../../source/nvl_mode.rst:211
 msgid "Config Variables"
 msgstr "設定変数"
 
-#: ../../source/nvl_mode.rst:212
+#: ../../source/nvl_mode.rst:213
 msgid "The following config variables control nvl-related functionality."
 msgstr "以下の設定変数は nvl に関連する機能を制御します。"
 
-#: ../../source/nvl_mode.rst:216
+#: ../../source/nvl_mode.rst:217
 msgid "The layer the nvl screens are shown on."
 msgstr "NVLスクリーンを表示するレイヤーです。"
 
-#: ../../source/nvl_mode.rst:220
+#: ../../source/nvl_mode.rst:221
 msgid ""
 "If not None, the maximum length of the the list of NVL dialogue. This can be "
 "set (often in conjuction with forcing the dialogue to have a fixed height) "
@@ -279,7 +280,7 @@ msgstr ""
 "るNVL ウィンドウを再現出来ます(しばしばダイアログを固定長に強制して問題になり"
 "ます)。"
 
-#: ../../source/nvl_mode.rst:227
+#: ../../source/nvl_mode.rst:228
 msgid ""
 "If not None, this is the click-to-continue indicator that is used for NVL "
 "mode characters that are at the end of a page. (That is, immediately "
@@ -290,7 +291,7 @@ msgstr ""
 "の ) で NVL キャラクターに使用する ctc を指定します。これは :func:"
 "`Character` の ctc 引数を置き換えます。"
 
-#: ../../source/nvl_mode.rst:234
+#: ../../source/nvl_mode.rst:235
 msgid ""
 "If not None, this is the click-to-continue indicator position that is used "
 "for NVL mode characters that are at the end of a page. (That is, immediately "
@@ -301,13 +302,13 @@ msgstr ""
 "の ) で NVL キャラクターに使用する ctc の座標を指定します。これは :func:"
 "`Character` の ctc_position 引数を置き換えます。"
 
-#: ../../source/nvl_mode.rst:241
+#: ../../source/nvl_mode.rst:242
 msgid "If true, NVL-mode rollback will occur a full page at a time."
 msgstr ""
 "True の場合、一度にページ全体に対して発生するNVLモード・ロールバックとなりま"
 "す。"
 
-#: ../../source/nvl_mode.rst:244
+#: ../../source/nvl_mode.rst:245
 msgid "Python Functions"
 msgstr "Python 関数"
 
@@ -344,11 +345,11 @@ msgstr "``nvl show`` ステートメントと等価な Python 式です。"
 msgid "The transition to use to show the NVL-mode window."
 msgstr "NVLモードウィンドウを表示するトランジションです。"
 
-#: ../../source/nvl_mode.rst:250
+#: ../../source/nvl_mode.rst:251
 msgid "Paged Rollback"
 msgstr "ページ毎のロールバック"
 
-#: ../../source/nvl_mode.rst:252
+#: ../../source/nvl_mode.rst:253
 msgid ""
 "Paged rollback causes Ren'Py to rollback one NVL-mode page at a time, rather "
 "than one block of text at a time.  It can be enabled by including the "
@@ -358,17 +359,27 @@ msgstr ""
 "バックするようになります。この機能は、以下のコードをスクリプトに入れて有効化"
 "できます。 ::"
 
-#: ../../source/nvl_mode.rst:261
+#: ../../source/nvl_mode.rst:262
 msgid "Script of The Question (NVL-mode Edition)"
 msgstr "The Question のスクリプト (NVLモード版)"
 
-#: ../../source/nvl_mode.rst:263
+#: ../../source/nvl_mode.rst:264
 msgid ""
 "You can view the full script of the NVL-mode edition of ''The Question'' :"
 "ref:`here <thequestion_nvl>`."
 msgstr ""
 "NVL モード版の「The Question」の完全なスクリプトは、 :ref:`ここ "
 "<thequestion_nvl>` で入手できます。"
+
+#~ msgid ""
+#~ "Setting :var:`config.empty_window` to ``nvl_show_core`` will cause the "
+#~ "NVL-mode window to be displayed during a transition. (The last two lines "
+#~ "select the default transitions to be used for showing and hiding the "
+#~ "window.)"
+#~ msgstr ""
+#~ ":var:`config.empty_window` を ``nvl_show_core`` に設定すると、NVL モード・"
+#~ "ウィンドウはトランジションを伴って表示されます(最後の2行では、ウィンドウの"
+#~ "表示/非表示の切り替えに使われる既定のトランジションを設定しています)。"
 
 #~ msgid "Menus"
 #~ msgstr "メニュー"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-13 12:41+0900\n"
+"POT-Creation-Date: 2022-05-01 12:00+0900\n"
 "PO-Revision-Date: 2021-10-04 22:36+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -110,17 +110,24 @@ msgstr ""
 
 #: ../../source/inc/iap:22
 msgid ""
+"Initialize iap. This should be called after all calls to iap.register(), but "
+"before any other iap function. If not called explicitly, this is "
+"automatically called at the end of the initialization phase."
+msgstr ""
+
+#: ../../source/inc/iap:28
+msgid ""
 "Returns True if the user has asked to purchase `product`, but that request "
 "has to be approved by a third party, such as a parent or guardian."
 msgstr ""
 "ユーザーが `product` の購入を要求しても、親や保護者のような第三者による承認が"
 "必要ならば True を返します。"
 
-#: ../../source/inc/iap:28
+#: ../../source/inc/iap:34
 msgid "This function requests the purchase of `product`."
 msgstr "この関数は `product` の購入をリクエストします。"
 
-#: ../../source/inc/iap:30
+#: ../../source/inc/iap:36
 msgid ""
 "It returns true if the purchase succeeds, or false if the purchase fails. If "
 "the product has been registered as consumable, the purchase is consumed "
@@ -129,15 +136,15 @@ msgstr ""
 "購入が成功したら True を、そうでなければ False を返します。製品が consumable "
 "として登録されていると、その購入分はこの呼び出しが返る前に消費されます。"
 
-#: ../../source/inc/iap:36
+#: ../../source/inc/iap:42
 msgid "Registers a product with the in-app purchase system."
 msgstr "アプリ内課金システムに製品を登録します。"
 
-#: ../../source/inc/iap:41
+#: ../../source/inc/iap:47
 msgid "`product`"
 msgstr "`product`"
 
-#: ../../source/inc/iap:39
+#: ../../source/inc/iap:45
 msgid ""
 "A string giving the high-level name of the product. This is the string that "
 "will be passed to :func:`iap.purchase`, :func:`iap.Purchase`, and :func:`iap."
@@ -147,11 +154,11 @@ msgstr ""
 "func:`iap.Purchase`, :func:`iap.has_purchased` に渡される文字列で、この製品を"
 "表わします。"
 
-#: ../../source/inc/iap:48
+#: ../../source/inc/iap:54
 msgid "`identifier`"
 msgstr "`identifier`"
 
-#: ../../source/inc/iap:44
+#: ../../source/inc/iap:50
 msgid ""
 "A string that's used to identify the product internally. Once used to "
 "represent a product, this must never change. These strings are generally of "
@@ -161,15 +168,15 @@ msgstr ""
 "ら、これは決して変更してはいけません。これらの文字列は一般的に \"com.domain."
 "game.product\" という形式になります。"
 
-#: ../../source/inc/iap:48
+#: ../../source/inc/iap:54
 msgid "If None, defaults to `product`."
 msgstr "None ならデフォルトで `product` を使用します。"
 
-#: ../../source/inc/iap:52
+#: ../../source/inc/iap:58
 msgid "`amazon`"
 msgstr "`amazon`"
 
-#: ../../source/inc/iap:51
+#: ../../source/inc/iap:57
 msgid ""
 "A string that identifies the product in the Amazon app store. If not given, "
 "defaults to `identifier`."
@@ -177,11 +184,11 @@ msgstr ""
 "Amazon app ストアで製品を識別するための文字列です。指定されないとデフォルト"
 "で `identifier` になります。"
 
-#: ../../source/inc/iap:56
+#: ../../source/inc/iap:62
 msgid "`google`"
 msgstr "`google`"
 
-#: ../../source/inc/iap:55
+#: ../../source/inc/iap:61
 msgid ""
 "A string that identifies the product in the Google Play store. If not given, "
 "defaults to `identifier`."
@@ -189,11 +196,11 @@ msgstr ""
 "Google ストアで製品を識別するための文字列です。指定されないとデフォルトで "
 "`identifier` になります。"
 
-#: ../../source/inc/iap:60
+#: ../../source/inc/iap:66
 msgid "`ios`"
 msgstr "`ios`"
 
-#: ../../source/inc/iap:59
+#: ../../source/inc/iap:65
 msgid ""
 "A string that identifies the product in the Apple App store for iOS. If not "
 "given, defaults to `identifier`."
@@ -201,11 +208,11 @@ msgstr ""
 "Apple app ストアで製品を識別するための文字列です。指定されないとデフォルトで "
 "`identifier` になります。"
 
-#: ../../source/inc/iap:63
+#: ../../source/inc/iap:69
 msgid "`consumable`"
 msgstr "`consumable`"
 
-#: ../../source/inc/iap:63
+#: ../../source/inc/iap:69
 msgid ""
 "True if this is a consumable purchase. Right now, consumable purchases are "
 "only supported on iOS."
@@ -213,15 +220,15 @@ msgstr ""
 "consumable purchaseなら True です。現在 consumable purchase は iOS でのみサ"
 "ポートされています。"
 
-#: ../../source/inc/iap:68
+#: ../../source/inc/iap:74
 msgid "Contacts the app store and restores any missing purchases."
 msgstr "appストアに  アクセスして購入ミスを取り消します。"
 
-#: ../../source/inc/iap:71
+#: ../../source/inc/iap:77
 msgid "`interact`"
 msgstr "`interact`"
 
-#: ../../source/inc/iap:71
+#: ../../source/inc/iap:77
 msgid ""
 "If True, renpy.pause will be called while waiting for the app store to "
 "respond."

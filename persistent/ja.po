@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-08 14:30+0900\n"
+"POT-Creation-Date: 2022-05-01 12:00+0900\n"
 "PO-Revision-Date: 2021-08-09 15:50+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -46,14 +46,17 @@ msgstr ""
 "す。"
 
 #: ../../source/persistent.rst:17
+#, fuzzy
 msgid ""
 "The persistent object is special in that an access to an undefined field "
-"will have a None value, rather than causing an exception."
+"will have a None value, rather than causing an exception. If something other "
+"than None is to be the default of a persistent value, the :ref:`default "
+"<default-statement>` statement should be used::"
 msgstr ""
 "persistent オブジェクトは特別で、未定義のフィールドにアクセスすると、例外を出"
 "力する代わりに None を返します。"
 
-#: ../../source/persistent.rst:20
+#: ../../source/persistent.rst:24
 msgid ""
 "An example use of persistent is the creation of an unlockable image gallery. "
 "This is done by storing a flag in persistent that determines if the gallery "
@@ -63,7 +66,7 @@ msgstr ""
 "ラリーがアンロックされているかどうかのフラグを永続データに置くことで行われま"
 "す。 ::"
 
-#: ../../source/persistent.rst:33
+#: ../../source/persistent.rst:37
 msgid ""
 "When the user gets an ending that causes the gallery to be unlocked, the "
 "flag must be set to True. ::"
@@ -71,7 +74,7 @@ msgstr ""
 "ユーザーがギャラリーをアンロックするエンディングに到達したらフラグを True に"
 "設定しなければなりません。 ::"
 
-#: ../../source/persistent.rst:38
+#: ../../source/persistent.rst:42
 msgid ""
 "As persistent data is loaded before ``init python`` blocks are run, "
 "persistent data should only contain types that are native to Python or "
@@ -83,11 +86,11 @@ msgstr ""
 "等号演算子が実装されているなら、 ``python early`` ブロックで定義されたクラス"
 "も使用出来ます。"
 
-#: ../../source/persistent.rst:44
+#: ../../source/persistent.rst:48
 msgid "Merging Persistent Data"
 msgstr "永続データの統合"
 
-#: ../../source/persistent.rst:46
+#: ../../source/persistent.rst:50
 msgid ""
 "There are cases where Ren'Py has to merge persistent data from two sources. "
 "For example, Ren'Py may need to merge persistent data stored on a USB drive "
@@ -97,7 +100,7 @@ msgstr ""
 "ば、 Ren'Py は USB ドライブにある persistent データとローカルマシンにある "
 "persistent データを統合する必要があるでしょう。"
 
-#: ../../source/persistent.rst:50
+#: ../../source/persistent.rst:54
 msgid ""
 "Ren'Py does this merging on a field-by-field basis, taking the value of the "
 "field that was updated more recently. In some cases, this is not the desired "
@@ -108,7 +111,7 @@ msgstr ""
 "ます。いくつかのケースではこれは望ましい動作ではありません。その場合、 :func:"
 "`renpy.register_persistent` 関数が使用可能です。"
 
-#: ../../source/persistent.rst:55
+#: ../../source/persistent.rst:59
 msgid ""
 "For example, if we have a set of seen endings, we'd like to take the union "
 "of that set when merging data. ::"
@@ -116,23 +119,23 @@ msgstr ""
 "例えば既読エンディングの set があるなら、データの統合時にその set を引数に取"
 "りたいです。 ::"
 
-#: ../../source/persistent.rst:70
+#: ../../source/persistent.rst:74
 msgid "Persistent Functions"
 msgstr "Persistent 関数"
 
-#: ../../source/persistent.rst:74
+#: ../../source/persistent.rst:78
 msgid "Resets the persistent data."
 msgstr "永続データのリセット"
 
-#: ../../source/persistent.rst:77
+#: ../../source/persistent.rst:81
 msgid "`progress`"
 msgstr "`progress`"
 
-#: ../../source/persistent.rst:77
+#: ../../source/persistent.rst:81
 msgid "If true, also resets progress data that Ren'Py keeps."
 msgstr "True なら Ren'Py が保持している進行度のデータもリセットします。"
 
-#: ../../source/persistent.rst:79
+#: ../../source/persistent.rst:83
 msgid ""
 "Note that this will delete all persistent data, and will not re-apply "
 "defaults until Ren'Py restarts."
@@ -207,11 +210,11 @@ msgstr ""
 msgid "Saves the persistent data to disk."
 msgstr "永続データをディスクに保存します。"
 
-#: ../../source/persistent.rst:86
+#: ../../source/persistent.rst:90
 msgid "Multi-Game Persistence"
 msgstr "ゲーム間永続データ"
 
-#: ../../source/persistent.rst:88
+#: ../../source/persistent.rst:92
 msgid ""
 "Multi-Game persistence is a feature that lets you share information between "
 "Ren'Py games. This may be useful if you plan to make a series of games, and "
@@ -220,7 +223,7 @@ msgstr ""
 "ゲーム間永続的データは Ren'Py ゲーム間で情報を共有させる機能です。これはシ"
 "リーズ物のゲームを計画していて、それらに情報を 共有させたい場合に有益です。"
 
-#: ../../source/persistent.rst:92
+#: ../../source/persistent.rst:96
 msgid ""
 "To use multipersistent data, a MultiPersistent object must be created inside "
 "an ``init`` block. The user can then update this object, and save it to disk "
@@ -234,7 +237,7 @@ msgstr ""
 "フィールドはデフォルトで None です。オブジェクトがもう一度ロード可能だと保証"
 "するために、ユーザー定義型のインスタンスを 代入しないことを勧めます。"
 
-#: ../../source/persistent.rst:100
+#: ../../source/persistent.rst:104
 msgid ""
 "Creates a new ``MultiPersistent`` object. This should only be called inside "
 "an ``init`` block, and it returns a new ``MultiPersistent`` with the given "
@@ -244,11 +247,11 @@ msgstr ""
 "でのみ呼び出されるべきで、 指定した key に対応する新しい ``MultiPersistent`` "
 "オブジェクトを返します。"
 
-#: ../../source/persistent.rst:105
+#: ../../source/persistent.rst:109
 msgid "`key`"
 msgstr "`key`"
 
-#: ../../source/persistent.rst:104
+#: ../../source/persistent.rst:108
 msgid ""
 "The key used to to access the multipersistent data. Games using the same key "
 "will access the same multipersistent data."
@@ -256,17 +259,17 @@ msgstr ""
 "key はゲーム間永続データにアクセスするために使われるキーです。ゲームは同じ"
 "キーを使用して同じゲーム間永続データにアクセスします。"
 
-#: ../../source/persistent.rst:108
+#: ../../source/persistent.rst:112
 msgid "`save_on_quit`"
 msgstr "`save_on_quit`"
 
-#: ../../source/persistent.rst:108
+#: ../../source/persistent.rst:112
 msgid ""
 "If it is True, this object will be automatically saved when Ren'Py "
 "terminates."
 msgstr "True ならこのオブジェクトは Ren'Py 終了時に自動保存されます。"
 
-#: ../../source/persistent.rst:112
+#: ../../source/persistent.rst:116
 msgid ""
 "Saves the multipersistent data to disk. This must be called after the data "
 "is modified."
@@ -274,10 +277,10 @@ msgstr ""
 "MultiPersistent オブジェクトをディスクにセーブします。これはデータが変更され"
 "てから呼び出されるべきです。"
 
-#: ../../source/persistent.rst:116
+#: ../../source/persistent.rst:120
 msgid "As an example, take the first part of a two-part game::"
 msgstr "例 複数パートのゲームその1 ::"
 
-#: ../../source/persistent.rst:132
+#: ../../source/persistent.rst:136
 msgid "And the second part::"
 msgstr "その2 ::"
