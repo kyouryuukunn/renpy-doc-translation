@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2021-12-11 18:44+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-04 12:59+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/screens.rst:8
 msgid "Screens and Screen Language"
@@ -351,9 +351,8 @@ msgid ""
 msgstr "そのスクリーンが表示されるデフォルトのレイヤー名の文字列です。"
 
 #: ../../source/screens.rst:171
-#, fuzzy
 msgid "`roll_forward`"
-msgstr "`scrollbars`"
+msgstr "`roll_forward`"
 
 #: ../../source/screens.rst:162
 msgid ""
@@ -361,6 +360,9 @@ msgid ""
 "screen`` statement. If false, roll forward is disable, and if None, the "
 "value of :var:`config.call_screen_roll_forward` is used."
 msgstr ""
+"True なら、ロールフォワードはそのスクリーンが ``call screen`` ステートメント"
+"で呼び出されたとき有効化されます。 False なら無効、 None ならば :var:`config."
+"call_screen_roll_forward` の値が使用されます。"
 
 #: ../../source/screens.rst:167
 msgid ""
@@ -370,6 +372,11 @@ msgid ""
 "`Return` actions, it's safe to enable `roll_forward`. Other actions may have "
 "side-effects that will not occur duting the `roll_forward`."
 msgstr ""
+"``call screen`` ステートメントからロールフォワードする場合、戻り値やターミナ"
+"ルジャンプは保持されますが、その他の副作用は発生しません。つまり、スクリーン"
+"が :func:`Jump` と :func:`Return` アクションのみで構成されている場合には、 "
+"`roll_forward` を有効にすると安全です。他のアクションには副作用があるかもしれ"
+"ませんが、 `roll_forward` 中は副作用は発生しません。"
 
 #: ../../source/screens.rst:182
 msgid "A screen can take a parameter list::"
@@ -385,6 +392,12 @@ msgid ""
 "internally, see the :ref:`screen optimization section <screen-optimization>` "
 "concerning parameters."
 msgstr ""
+"もしスクリーンにパラメータがなくても空の括弧を与えるべきです。他のスクリーン"
+"が括弧のないスクリーンを ``use`` で使用したときの動作の違いは :ref:`use ス"
+"テートメント <sl-use>` に関するセクションで説明されています。他のスクリーン"
+"が ``use`` で使用しなくても、そのスクリーンに括弧を与えないと、 Ren'pyの内部"
+"で動作する方法において、純粋に非効率になります。パラメータに関する :ref:`スク"
+"リーン言語の最適化 <screen-optimization>` セクションを参照してください。"
 
 #: ../../source/screens.rst:198
 msgid "User Interface Statements"
@@ -1326,7 +1339,7 @@ msgstr ""
 
 #: ../../source/screens.rst:747
 msgid "`capture`"
-msgstr ""
+msgstr "`capture`"
 
 #: ../../source/screens.rst:744
 msgid ""
@@ -1334,6 +1347,9 @@ msgid ""
 "other displayables. If false and the action does not end the interaction, "
 "the event will be procssed by other displayables."
 msgstr ""
+"デフォルトでは True で、そのイベントは捕捉され、他の Displayable には渡されま"
+"せん。 False かつアクションがインタラクションを終えなければ、そのイベントは他"
+"の Displayable に渡されます。"
 
 #: ../../source/screens.rst:749 ../../source/screens.rst:1041
 msgid "It takes no children."
@@ -1841,26 +1857,30 @@ msgstr ""
 #: ../../source/screens.rst:1190
 msgid "When `scrollbars` is not None, the `vpgrid` takes prefixed properties:"
 msgstr ""
+"`scrollbars` が None 出なければ、 `vpgrid` は次の接頭辞のプロパティーを受け取"
+"ります :"
 
 #: ../../source/screens.rst:1192
 msgid "Properties beginning with ``viewport_`` are passed to the viewport."
-msgstr ""
+msgstr "``viewport_`` で始まるプロパティーは viewport に渡されます。"
 
 #: ../../source/screens.rst:1193
 msgid "Properties beginning with ``side_`` are passed to the side."
-msgstr ""
+msgstr "``side_`` で始まるプロパティーは side に渡されます。"
 
 #: ../../source/screens.rst:1194
 msgid ""
 "Properties beginning with ``scrollbar_`` are passed to the horizontal "
 "scrollbar, if it exists."
 msgstr ""
+"``scrollbar_`` で始まるプロパティーはあれば水平スクロールバーに渡されます。"
 
 #: ../../source/screens.rst:1195
 msgid ""
 "Properties beginning with ``vscrollbar_`` are passed to the verical "
 "scrollbar, if it exists."
 msgstr ""
+"``vscrollbar_`` で始まるプロパティーはあれば 垂直スクロールバーに渡されます。"
 
 #: ../../source/screens.rst:1197
 msgid ""
@@ -1868,6 +1888,8 @@ msgid ""
 "are passed to the side, while other unprefixed properties are supplied to "
 "the viewport."
 msgstr ""
+"接頭辞のないプロパティーも受け取られます。 :ref:`position-style-properties` "
+"は side に渡され、他は viewport に渡されます。"
 
 #: ../../source/screens.rst:1205
 msgid "`arrowkeys`"
@@ -1990,6 +2012,8 @@ msgid ""
 "the vpgrid in the same way as they are with viewports. (Properties prefixed "
 "with ``viewport_`` are passed to the vpgrid itself.)"
 msgstr ""
+"`scrollbar` プロパティーが指定されると、接頭辞つきのプロパティーは viewport "
+"同様に vpgrid に渡されます (``viewport_`` は vpgrid 自体に渡されます)。"
 
 #: ../../source/screens.rst:1310
 msgid "Window"
@@ -2512,6 +2536,10 @@ msgid ""
 "the ``use`` statement. Otherwise, its scope is initialized to the result of "
 "assigning the arguments to those parameters. ::"
 msgstr ""
+"使用されるスクリーンに括弧がなければ、現在のスクリーンのスコープに読み込み書"
+"き込みでき、 ``use`` ステートメントで渡されたキーワード引数で更新されます。そ"
+"うでなければそのスコープは引数をそれらのパラメータに割り当てた結果で初期化さ"
+"れます。 ::"
 
 #: ../../source/screens.rst:1758
 msgid ""
@@ -2883,19 +2911,19 @@ msgstr ""
 
 #: ../../source/screens.rst:2080
 msgid "``\"steam_deck\"``"
-msgstr ""
+msgstr "``\"steam_deck\"``"
 
 #: ../../source/screens.rst:2080
 msgid "True if running on a Steam Deck or equivalent hardware."
-msgstr ""
+msgstr "Steam Deck または等価なハードウェアで実行していれば True です。"
 
 #: ../../source/screens.rst:2083
 msgid "``\"steam_big_picture\"``"
-msgstr ""
+msgstr "``\"steam_big_picture\"``"
 
 #: ../../source/screens.rst:2083
 msgid "True if running in Steam Big Picture mode."
-msgstr ""
+msgstr "Steam Big Picture モードで実行していれば True です。"
 
 #: ../../source/screens.rst:2088
 msgid "``\"large\"``"

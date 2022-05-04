@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2021-10-04 22:28+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-04 15:47+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/layeredimage.rst:7
 msgid "Layered Images"
@@ -361,14 +361,13 @@ msgid "Statement Reference"
 msgstr "Statement"
 
 #: ../../source/layeredimage.rst:274
-#, fuzzy
 msgid ""
 "Note that with the exception of the conditions in the ``if`` statement, all "
 "expressions are evaluated at init time, when the layered image is first "
 "defined."
 msgstr ""
-"そのレイヤー画像が最初に定義される初期化時に ``if`` ステートメントの条件であ"
-"るすべての式が評価されることに注意してください。"
+"そのレイヤー画像が最初に定義される初期化時に ``if`` ステートメントの条件式以"
+"外のすべての式が評価されることに注意してください。"
 
 #: ../../source/layeredimage.rst:278
 msgid "Layeredimage"
@@ -444,7 +443,7 @@ msgstr "レイヤー画像へ適用される transform または transform の�
 
 #: ../../source/layeredimage.rst:313 ../../source/inc/li:131
 msgid "`offer_screen`"
-msgstr ""
+msgstr "`offer_screen`"
 
 #: ../../source/layeredimage.rst:305
 msgid ""
@@ -455,12 +454,18 @@ msgid ""
 "an hbox containing other elements, and the display of the layeredimage will "
 "not be consistent every time it is shown."
 msgstr ""
+"これが True ならそのレイヤー画像はゲームの画面全体と一致する領域が与えられた"
+"ように、その子を配置し、可変サイズの子のサイズを合わせます。 False なら、利用"
+"可能な領域を考慮しながらこれらの動作が行われ、例えば他の要素を含む hbox では"
+"小さくなり、レイヤー画像の表示は表示されるたびに一貫しなくなります。"
 
 #: ../../source/layeredimage.rst:312
 msgid ""
 "If None, the default, falls back to :var:`config.layeredimage_offer_screen`, "
 "which defaults to True."
 msgstr ""
+"None の場合、デフォルトの :var:`config.layeredimage_offer_screen` に戻りま"
+"す。これはデフォルトでは True です。"
 
 #: ../../source/layeredimage.rst:316
 msgid "Attribute"
@@ -1130,6 +1135,10 @@ msgid ""
 "If False, the available area is considered, and if True it is not. If None, "
 "defaults to :var:`config.layeredimage_offer_screen`."
 msgstr ""
+"子の配置と (可変サイズである場合) サイズ合わせで利用可能な領域を考慮するかど"
+"うか設定します。 False であれば利用可能な領域を考慮し、True であれば考慮しま"
+"せん。 None の場合、デフォルトは :var:`config.layeredimage_offer_screen` で"
+"す。"
 
 #: ../../source/inc/li:133
 msgid ""
@@ -1310,7 +1319,7 @@ msgstr ""
 
 #: ../../source/layeredimage.rst:608
 msgid "Selecting attributes to display"
-msgstr ""
+msgstr "表示する属性の選択"
 
 #: ../../source/layeredimage.rst:610
 msgid ""
@@ -1319,12 +1328,16 @@ msgid ""
 "section showcases the life of a set of attributes, from the show instruction "
 "to the on-screen display."
 msgstr ""
+"指定された ``show`` 命令の後に何が表示されるかにはいくつかの要素が影響しま"
+"す。どのような順番で何が起こるかをより明確にするために、このセクションでは "
+"show 命令から画面上の表示まで、一連の属性の一生を紹介します。"
 
 #: ../../source/layeredimage.rst:614
 msgid ""
 "The ``show`` statement provides the initial set of attributes, following the "
 "image tag."
 msgstr ""
+"``show`` ステートメントは画像タグに続いて最初の属性のセットを提供します。"
 
 #: ../../source/layeredimage.rst:616
 msgid ""
@@ -1332,12 +1345,17 @@ msgid ""
 "it is called, and returns a potentially different set of attributes. If so, "
 "it replaces the former set, which is forgotten."
 msgstr ""
+":var:`config.adjust_attributes` 関数があり、その画像タグに一致すれば呼び出さ"
+"れて変更された可能性のある属性のセットを返します。もしそうであれば以前のセッ"
+"トは置き換えられ、忘れられます。"
 
 #: ../../source/layeredimage.rst:619
 msgid ""
 "If a :var:`config.default_attributes` function exists and if its trigger "
 "conditions are met, it is called and potentially adds attributes to the set."
 msgstr ""
+":var:`config.default_attributes` 関数があり、その実行条件が満たされていれば呼"
+"び出されて属性がそのセットに追加される可能性があります。"
 
 #: ../../source/layeredimage.rst:621
 msgid ""
@@ -1347,6 +1365,11 @@ msgid ""
 "to one, and only one, defined image (or layeredimage, Live2D...), using the "
 "behavior described in the :ref:`show statement section<show-statement>`."
 msgstr ""
+"前の2つの段階はレイヤー画像に限定されません。この後の段階で Ren'Py はどの画像"
+"またはレイヤー画像を呼び出して表示するか決定します。そのために、与えられた属"
+"性のセットは、 :ref:`show statement section<show-statement>` で説明されている"
+"動作で、1つの、そして唯一の定義された画像 ( または layeredimage, Live2D...) "
+"につながる必要があります。"
 
 #: ../../source/layeredimage.rst:626
 msgid ""
@@ -1364,6 +1387,16 @@ msgid ""
 "visible without having to be called again if at some point the condition of "
 "the if\\_x clause is no longer fulfilled."
 msgstr ""
+"次に、提供された属性はレイヤー画像に定義された属性と結合され、先に表示されて"
+"いた属性のいくつかは破棄され、他の属性は保存されます。認識されない属性はここ"
+"で検出され、エラーが発生します。そのようなエラーが発生しなければ、新しい属性"
+"と捨てられなかった属性が renpyによってその画像タグに関連する属性のセットとし"
+"て認識されます。この計算では非互換性の制約のいくつかを考慮に入れていますが、"
+"すべてではありません。例えば、属性が同じ非多重グループにあることによる非互換"
+"性はこの時点で発生しますが、if_any/if_all/if_not 節ではエラーは発生しません。"
+"そのため、このような節で否定された属性も renpy ではアクティブとみなされ、例え"
+"ば、 if\\_x 節の条件が満たされなくなった時点で再度呼び出されなくとも表示され"
+"るようになるのです。"
 
 #: ../../source/layeredimage.rst:638
 msgid ""
@@ -1371,6 +1404,8 @@ msgid ""
 "with the set of remaining attributes. It returns a potentially different set "
 "of attributes."
 msgstr ""
+"attribute_function がレイヤー画像に提供されている場合、残りの属性のセットで呼"
+"び出されます。これは潜在的に異なる可能性のある属性のセットを返します。"
 
 #: ../../source/layeredimage.rst:641
 msgid ""
@@ -1378,6 +1413,8 @@ msgid ""
 "the layeredimage, this time in full. That is the final stage, and remaining "
 "attributes are called into display."
 msgstr ""
+"このセットは、もう一度レイヤーイメージの非互換性の制約に直面します。これが最"
+"終段階であり、残っている属性が表示されます。"
 
 #~ msgid "The name of the group."
 #~ msgstr "グループの名前です。"

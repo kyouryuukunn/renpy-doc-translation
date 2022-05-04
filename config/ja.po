@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2021-12-11 18:42+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-04 14:19+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:26+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/config.rst:6
 msgid "Configuration Variables"
@@ -418,18 +418,16 @@ msgid ""
 "return an adjusted tuple, which contains and a potential new set of "
 "attributes."
 msgstr ""
-"見つかれば、それらは関数であることが期待されます。関数にはタグと属性で構成さ"
-"れるタプルの画像名が与えられます。タグと新しい一連の属性を含む調整されたタプ"
-"ルを返すべきです。"
+"どちらかが見つかれば、それらは関数であることが期待されます。関数にはタグと属"
+"性で構成されるタプルの画像名が与えられます。タグと新しい一連の属性を含む調整"
+"されたタプルを返すべきです。"
 
 #: ../../source/config.rst:234 ../../source/config.rst:397
-#, fuzzy
 msgid ""
 "As this function may be called during prediction, it must not rely on any "
 "state."
 msgstr ""
-"この関数は予測の間に呼び出されるかもしれないため、画像の状態に依存しないべき"
-"です。"
+"この関数は予測の間に呼び出されるかもしれないため、状態に依存しないべきです。"
 
 #: ../../source/config.rst:239
 msgid ""
@@ -454,6 +452,10 @@ msgid ""
 "this will be a list. The :var:`config.overlay_screens` list is usually more "
 "appropriate."
 msgstr ""
+"Ren'Py がメニューや、そのインターフェイスが隠されているときにも常に表示する画"
+"面の名前のリストです。これは主に Ren'Py によって使用され、Ren'Py はこれがリス"
+"トであることを前提にしています。通常は :var:`config.overlay_screens` のリスト"
+"の方がより適切です。"
 
 #: ../../source/config.rst:260
 msgid ""
@@ -667,18 +669,16 @@ msgstr ""
 "す。"
 
 #: ../../source/config.rst:385
-#, fuzzy
 msgid ""
 "When a statement or function that contains image attributes executes or is "
 "predicted, and the tag is not currently being shown, it's looked up in this "
 "dictionary. If it is not found, the None key is looked up instead."
 msgstr ""
-"None でなければこれは辞書です。画像属性を含むステートメントや関数が実行または"
-"予測されるときに、そのタグがこの辞書から探されます。見つからなければ、 None "
-"キーがこの辞書から探されます。"
+"画像属性を含む関数やステートメントが実行または予測され、そのタグが現在表示さ"
+"れていなければ、この辞書から探されます。見つからなければ、 None キーで代わり"
+"に探されます。"
 
 #: ../../source/config.rst:389
-#, fuzzy
 msgid ""
 "If either is found, they're expected to be a function. The function is given "
 "an image name, a tuple consisting of the tag and any attributes. It should "
@@ -686,21 +686,22 @@ msgid ""
 "when an image is first shown."
 msgstr ""
 "見つかれば、それらは関数であることが期待されます。関数にはタグと属性で構成さ"
-"れるタプルの画像名が与えられます。タグと新しい一連の属性を含む調整されたタプ"
-"ルを返すべきです。"
+"れるタプルの画像名が与えられます。画像が最初に表示されるときに適用される追加"
+"の属性を含むイテレーターをを返すべきです。"
 
 #: ../../source/config.rst:394
 msgid ""
 "The results of the function are treated as additive-only, and any explicit "
 "conflicting or negative attributes will still take precedence."
 msgstr ""
+"関数の結果は追加専用として扱われ、明示的に競合する属性や負の属性で優先されま"
+"す。"
 
 #: ../../source/config.rst:402
-#, fuzzy
 msgid ""
 "The layer an image is shown on if its tag is not found in :var:`config."
 "tag_layer`."
-msgstr "config.tag_layer にタグがない画像を表示するレイヤーです。"
+msgstr ":var:`config.tag_layer` にタグがない画像を表示するレイヤーです。"
 
 #: ../../source/config.rst:406
 msgid ""
@@ -1037,6 +1038,9 @@ msgid ""
 "The chanracter statistics are disabled when the game is packaged, to prevent "
 "spoilers."
 msgstr ""
+"True かつ :var:`config.developer` も True ならば、 lint レポートに各キャラク"
+"ターが話したダイアログブロックの数の統計が含まれます。この統計はゲームがパッ"
+"ケージ化された時点で、ネタバレを防ぐために無効化されます。"
 
 #: ../../source/config.rst:615
 msgid ""
@@ -1252,14 +1256,12 @@ msgstr ""
 "め、おそらく :func:`MouseDisplayable` やよく似た何かであるべきです。"
 
 #: ../../source/config.rst:734
-#, fuzzy
 msgid ""
 "If true, narration inside a menu is displayed using the narrator character. "
 "Otherwise, narration is displayed as captions within the menu itself."
 msgstr ""
-"True ( これはデフォルトのscreen.rpy で True に設定されます) なら選択肢でのナ"
-"レーションは narator キャラクターを使用して表示されます。そうでなければナレー"
-"ションはその選択肢の見出しに表示されます。"
+"True なら選択肢でのナレーションは narrator キャラクターで表示されます。そうで"
+"なければその選択肢の見出しとして表示されます。"
 
 #: ../../source/config.rst:740
 msgid ""
@@ -1461,6 +1463,10 @@ msgid ""
 "value of the ``player_name`` variable at the moment the game was saved is "
 "also accessible by ``FileJson(slot, \"playername\")``."
 msgstr ""
+"``FileJson(slot)`` と ``renpy.slot_json(slot)`` は辞書化されたオブジェクト "
+"``d`` の状態をゲームが保存された時点と同じに復元してくれます。ゲームが保存さ"
+"れた時点の ``player_name`` 変数の値も ``FileJson(slot, \"playername\")`` でア"
+"クセス可能です。"
 
 #: ../../source/config.rst:871
 msgid ""
@@ -1485,18 +1491,18 @@ msgstr ""
 "のみ) の辞書を含むペアを返すべきです。"
 
 #: ../../source/config.rst:890
-#, fuzzy
 msgid ""
 "The height of the screen. Usually set by :func:`gui.init` to a much larger "
 "size."
-msgstr "スクリーンの高さで、通常 :func:`gui.init` で設定します。"
+msgstr ""
+"スクリーンの高さで、通常 :func:`gui.init` でより大きなサイズが設定されます。"
 
 #: ../../source/config.rst:895
-#, fuzzy
 msgid ""
 "The width of the screen. Usually set by :func:`gui.init` to a much larger "
 "size."
-msgstr "スクリーンの幅です。通常 :func:`gui.init` から設定されます。"
+msgstr ""
+"スクリーンの幅で、通常 :func:`gui.init` でより大きなサイズが設定されます。"
 
 #: ../../source/config.rst:900
 msgid ""
@@ -1531,16 +1537,15 @@ msgstr ""
 "画像に適用されます。"
 
 #: ../../source/config.rst:922
-#, fuzzy
 msgid ""
 "A dictionary mapping image tag strings to layer name strings. When an image "
 "is shown without a specific layer name, the image's tag is looked up in this "
 "dictionary to get the layer to show it on. If the tag is not found here, :"
 "var:`config.default_tag_layer` is used."
 msgstr ""
-"画像タグとレイヤー名の文字列の辞書です。レイヤー名の指定なしに画像が表示され"
-"ると、この辞書からタグを探し、表示するレイヤーを所得します。タグが見付からな"
-"ければ、 :var:`config.default_tag_name` が使用されます。"
+"画像タグの文字列に対するレイヤー名の文字列の辞書です。レイヤー名の指定なしに"
+"画像が表示されるとき、この辞書からタグを探し表示するレイヤーを所得します。タ"
+"グが見付からなければ、 :var:`config.default_tag_name` が使用されます。"
 
 #: ../../source/config.rst:929
 msgid ""
@@ -1608,6 +1613,10 @@ msgid ""
 "play the files. If not, a slower and potentially skip prone wasm decoder is "
 "used."
 msgstr ""
+"Ren'Py は、ウェブプラットフォーム上で動作するとき、ブラウザがこれらの MIME タ"
+"イプのオーディオファイルを再生可能か調べます。可能であれば、そのブラウザで"
+"ファイルを再生します。そうでなければ、より遅く、音飛びしやすい可能性のある "
+"wasm デコーダが使われます。"
 
 #: ../../source/config.rst:975
 msgid ""
@@ -1615,10 +1624,13 @@ msgid ""
 "and wasm is used on safari. If your game only uses mp3 audio, this can be "
 "changed using ::"
 msgstr ""
+"デフォルトでは、ChromeとFirefoxではブラウザのウェブオーディオシステムが使用さ"
+"れ、safariではwasmが使用されます。もし、あなたのゲームがmp3 オーディオしか使"
+"わないのであれば、これは次のコードにより変更でき ::"
 
 #: ../../source/config.rst:981
 msgid "To used the faster web audio system on Safari as well."
-msgstr ""
+msgstr "Safari でもより高速なウェブオーディオシステムが使用出来ます。"
 
 #: ../../source/config.rst:985
 msgid ""
@@ -1775,13 +1787,12 @@ msgstr ""
 "``['patch02', 'patch01', 'data']`` が加えられます。"
 
 #: ../../source/config.rst:1092
-#, fuzzy
 msgid ""
 "A list of callbacks that are called when Ren'Py quits or restarts the game. "
 "These callbacks should not interact with the user."
 msgstr ""
-"インタラクションの開始時に ( 引数なしで ) 呼び出される関数のリストです。これ"
-"らのコールバックはインタラクションの再開時には呼び出されません。"
+"ゲームの開始または終了時に呼び出される関数のリストです。これらのコールバック"
+"ではユーザーとのインタラクションがあるべきではありません。"
 
 #: ../../source/config.rst:1097
 msgid ""
@@ -1847,6 +1858,7 @@ msgstr ""
 #: ../../source/config.rst:1136
 msgid "The value is used when the `roll_forward` property of a screen is None."
 msgstr ""
+"スクリーンの `roll_forward` プロパティーが None のときに値が使用されます。"
 
 #: ../../source/config.rst:1141
 msgid "The default value of the callback parameter of Character."
@@ -1858,22 +1870,29 @@ msgid ""
 "does not have a caption, this function is called with the arguments (\"\", "
 "interact=False)."
 msgstr ""
+"None ではなく、 (通常は ``menu`` ステートメントで呼び出される) 選択肢メニュー"
+"がキャプションを持っていない場合、この関数が引数（\"\"、interact=False）で呼"
+"び出されます。"
 
 #: ../../source/config.rst:1149
 msgid "The expected use of this is::"
-msgstr ""
+msgstr "これの想定される使用は次のように ::"
 
 #: ../../source/config.rst:1153
 msgid ""
 "Doing this displays repeats the last line of dialogue as the caption of the "
 "menu, if no other caption is given."
 msgstr ""
+"他のキャプションがなければ選択肢のキャプションとして台詞の最後の行を繰り返し"
+"表示することです。"
 
 #: ../../source/config.rst:1156
 msgid ""
 "Other implementations are possible, but it's assumed that this will always "
 "display a dialogue window."
 msgstr ""
+"他の実装も可能ですが、これは常にダイアログウィンドウを表示することを想定して"
+"います。"
 
 #: ../../source/config.rst:1161
 msgid "The layer the choice screen (used by the menu statement) is shown on."
@@ -2003,7 +2022,7 @@ msgstr ""
 msgid ""
 "The name of the screen shown by the :func:`Help` action, or by pressing f1 "
 "on the keyboard."
-msgstr ""
+msgstr ":func:`Help` アクションや F1 を押したときに表示されるスクリーン名"
 
 #: ../../source/config.rst:1239
 msgid ""
@@ -2073,14 +2092,14 @@ msgstr ""
 "ます。 False なら transform は停止されます。"
 
 #: ../../source/config.rst:1280
-#, fuzzy
 msgid ""
 "This variable contains a keymap giving the keys and mouse buttons assigned "
 "to each possible operation. Please see the section on :ref:`Keymaps "
 "<keymap>` for more information."
 msgstr ""
-"この変数は可能な各処理に代入されたキーボードとマウスのボタンを与えるキーマッ"
-"プを含みます。より詳しくはキーマップの章を参照してください。"
+"この変数には各可能な処理に代入されたキーボードとマウスのボタンを与えるキー"
+"マップを含みます。より詳しくは :ref:`キーマップ <keymap>` を参照してくださ"
+"い。"
 
 #: ../../source/config.rst:1286
 msgid ""
@@ -2129,6 +2148,8 @@ msgid ""
 "layeredimages. See :ref:`the related section <layeredimage>` for more "
 "information."
 msgstr ""
+"レイヤー画像の ``offer_screen`` プロパティーのデフォルト値を設定します。詳細"
+"は :ref:`関連する章 <layeredimage>` を参照してください。"
 
 #: ../../source/config.rst:1317
 msgid ""
@@ -2148,6 +2169,8 @@ msgid ""
 "The :func:`renpy.add_layer` can add layers to this variable without needing "
 "to know the original contents."
 msgstr ""
+":func:`renpy.add_layer` を使用すれば元の値がわからなくてもこの変数にレイヤー"
+"を追加できます。"
 
 #: ../../source/config.rst:1328
 msgid ""
@@ -2213,11 +2236,10 @@ msgstr ""
 "このファイルに保存されます。"
 
 #: ../../source/config.rst:1371
-#, fuzzy
 msgid ""
 "A list of channels that are stopped when entering or returning to the main "
 "menu."
-msgstr "新しいコンテキストに入るとき非表示されるレイヤーのリストです。"
+msgstr "メインメニューに入るまたは出るときに停止されるチャンネルのリストです。"
 
 #: ../../source/config.rst:1376
 msgid ""
@@ -2416,6 +2438,9 @@ msgid ""
 "and restoring its state. (See also :var:`config.save_on_mobile_background`, "
 "which controls this behavior.)"
 msgstr ""
+"True ならモバイルアプリでフォーカスを失ったとき、状態を保存して戻れるようにす"
+"るのではなく終了します(振る舞いを制御する :var:`config."
+"save_on_mobile_background` も参照してください)。"
 
 #: ../../source/config.rst:1503
 msgid ""

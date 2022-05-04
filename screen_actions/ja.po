@@ -4,13 +4,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
 "PO-Revision-Date: \n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/screen_actions.rst:8
 msgid "Screen Actions, Values, and Functions"
@@ -76,10 +76,8 @@ msgstr ""
 "は :func:`renpy.call` に渡されます。"
 
 #: ../../source/inc/control_action:10
-#, fuzzy
 msgid "This causes a screen to be hidden if it is shown."
-msgstr ""
-"`screen` と名付けられたスクリーンがもし表示されていれば非表示にします。"
+msgstr "表示されていればスクリーンを非表示にします。"
 
 #: ../../source/inc/control_action:14 ../../source/inc/get_tooltip:10
 msgid "`screen`"
@@ -90,6 +88,8 @@ msgid ""
 "Either a string giving the name of the screen to be hidden, or None to hide "
 "the current screen."
 msgstr ""
+"非表示するスクリーンの名前の文字列または、現在のスクリーンを非表示する場合は "
+"None です。"
 
 #: ../../source/inc/control_action:17
 msgid "`transition`"
@@ -105,11 +105,12 @@ msgid "`_layer`"
 msgstr "`_layer`"
 
 #: ../../source/inc/control_action:20
-#, fuzzy
 msgid ""
 "This is passed as the layer argument to :func:`renpy.hide_screen`. Ignored "
 "if `screen` is None."
-msgstr "layer 引数として :func:`renpy.hide_screen` に渡されます。"
+msgstr ""
+"layer 引数として :func:`renpy.hide_screen` に渡されます。 `screen` が None な"
+"ら無視されます。"
 
 #: ../../source/inc/control_action:25
 msgid "Causes control to transfer to `label`."
@@ -248,20 +249,20 @@ msgid ""
 msgstr "現在のローカルコンテキストで変数 `name`  を `value` に設定します。"
 
 #: ../../source/inc/data_action:37
-#, fuzzy
 msgid ""
 "This function is only useful in a screen that has been ``use``\\ d by "
 "another screen, as it provides a way of setting the value of a variable "
 "inside the used screen. In all other cases, :func:`SetScreenVariable` should "
 "be preferred, as it allows more of the screen to be cached."
 msgstr ""
-"この関数は使用されるスクリーン内の変数を設定できるので、そのスクリーンが他の"
-"シーンで使用されている場合のみ有用です。そうでない場合は、 :func:"
-"`SetScreenVariable` がより有用です。"
+"この関数では ``use`` で使用されているスクリーン内の変数の値を設定できるので、"
+"そのスクリーンが他のスクリーンに使用されている場合有用です。そうでない場合は"
+"スクリーンのより多くをキャッシュできるので :func:`SetScreenVariable` がより有"
+"用です。"
 
 #: ../../source/inc/data_action:43 ../../source/inc/data_action:95
 msgid "For more information, see :ref:`sl-use`."
-msgstr ""
+msgstr "詳細は :ref:`sl-use` を参照してください。"
 
 #: ../../source/inc/data_action:45 ../../source/inc/data_action:97
 msgid ""
@@ -279,6 +280,11 @@ msgid ""
 "within a ``use``\\ d screen, and only in that case, use :func:"
 "`SetLocalVariable` instead."
 msgstr ""
+"現在のスクリーンに関連づけられた `name` 変数を `value` に設定します。 "
+"``use`` で使用されているスクリーン内では、このアクションはそのスクリーンを内"
+"包しているスクリーンのコンテキストでその変数を設定します。使用されているスク"
+"リーン内で変数を設定する場合のみ :func:`SetLocalVariable` を代わりに使用して"
+"ください。"
 
 #: ../../source/inc/data_action:59
 msgid "Causes the variable with `name` to be set to `value`."
@@ -345,16 +351,16 @@ msgid "Toggles the value of `name` in the current local context."
 msgstr "現在のローカルコンテキストでの `name` の値をトグルします。"
 
 #: ../../source/inc/data_action:89
-#, fuzzy
 msgid ""
 "This function is only useful in a screen that has been ``use``\\ d by "
 "another screen, as it provides a way of setting the value of a variable "
 "inside the used screen. In all other cases, :func:`ToggleScreenVariable` "
 "should be preferred, as it allows more of the screen to be cached."
 msgstr ""
-"この関数は使用されるスクリーン内の変数を設定できるので、そのスクリーンが他の"
-"シーンで使用されている場合のみ有用です。そうでない場合は、 :func:"
-"`ToggleScreenVariable` がより有用です。"
+"この関数では ``use`` で使用されているスクリーン内の変数の値を設定できるので、"
+"そのスクリーンが他のスクリーンに使用されている場合有用です。そうでない場合は"
+"スクリーンのより多くをキャッシュできるので :func:`ToggleScreenVariable` がよ"
+"り有用です。"
 
 #: ../../source/inc/data_action:107
 msgid ""
@@ -364,6 +370,11 @@ msgid ""
 "within a ``use``\\ d screen, and only in that case, use :func:"
 "`ToggleLocalVariable` instead."
 msgstr ""
+"現在のスクリーンの `name` 変数の値をトグルします。 ``use`` で使用されているス"
+"クリーン内では、このアクションはそのスクリーンを内包しているスクリーンのコン"
+"テキストでその変数にアクセスし設定します。使用されているスクリーン内で変数に"
+"アクセスし設定する場合のみ :func:`ToggleLocalVariable` を代わりに使用してくだ"
+"さい。"
 
 #: ../../source/inc/data_action:120
 msgid ""
@@ -2269,29 +2280,28 @@ msgstr ""
 "効状態をトグルします。"
 
 #: ../../source/inc/preference_action:143
-#, fuzzy
 msgid ""
 "Preference(\"audio when minimized\", \"enable\") - Enable sounds playing "
 "when the window is not in focus."
 msgstr ""
-"Preference(\"automatic move\", \"enable\") - マウス自動移動を有効化します。"
+"Preference(\"audio when minimized\", \"enable\") - ウィンドウがフォーカスを"
+"失っても再生を続けます。"
 
 #: ../../source/inc/preference_action:144
-#, fuzzy
 msgid ""
 "Preference(\"audio when minimized\", \"disable\") - Disable sounds playing "
 "when the window is not in focus."
 msgstr ""
-"Preference(\"automatic move\", \"disable\") - マウス自動移動を無効化します。"
+"Preference(\"audio when minimized\", \"disable\") - ウィンドウがフォーカスを"
+"失うと再生を停止します。"
 
 #: ../../source/inc/preference_action:145
-#, fuzzy
 msgid ""
 "Preference(\"audio when minimized\", \"toggle\") - Toggle sounds playing "
 "when the window is not in focus."
 msgstr ""
-"Preference(\"after choices\", \"toggle\") - 選択肢後のスキップ継続をトグルす"
-"る。"
+"Preference(\"audio when minimized\", \"toggle\") - ウィンドウがフォーカスを"
+"失ったとき、再生するかをトグルします。"
 
 #: ../../source/inc/preference_action:147
 msgid "Values that can be used with bars are:"
@@ -2437,36 +2447,31 @@ msgstr "`name` の Json 情報にアクセスします。"
 
 #: ../../source/inc/file_action_function:20
 msgid "This always returns `empty` if the slot is empty."
-msgstr ""
+msgstr "これはそのスロットが空なら常に `empty` を返します。"
 
 #: ../../source/inc/file_action_function:22
-#, fuzzy
 msgid ""
 "If not, and if `key` is None, returns the entire dictionary containing the "
 "Json data."
-msgstr ""
-"`key` が None なら全く別の Json 情報を、そのスロットが空なら `empty` を返しま"
-"す。"
+msgstr "そうでなく、かつ `key` が None なら Json データを含む辞書を返します。"
 
 #: ../../source/inc/file_action_function:24
-#, fuzzy
 msgid ""
 "Otherwise, this returns json[key] if `key` is defined on the json object of "
 "the save, and `missing` if there is a save with the given name, but it does "
 "not contain `key`."
 msgstr ""
-"そうではなくそのセーブの json オブジェクトで `key` が定義されていればこれは "
-"json[key] を返し、指定された名前のセーブはあるが `key` をがないなら "
-"`missing` を返し、セーブスロットが空なら `empty` を返します。"
+"そうではなく、そのセーブの json オブジェクトで `key` が定義されていればこれ"
+"は json[key] を返し、指定された名前のセーブはあるが `key` をがないなら "
+"`missing` を返します。"
 
 #: ../../source/inc/file_action_function:27
-#, fuzzy
 msgid ""
 "Such Json data is added to a save slot by callbacks registered using :var:"
 "`config.save_json_callbacks`."
 msgstr ""
-":var:`config.save_json_callbacks` を使用してコールバックが登録されると、Json "
-"がセーブスロットに追加されます。"
+":var:`config.save_json_callbacks` を使用して登録されたコールバックによりその"
+"ような Json はセーブスロットに追加されます。"
 
 #: ../../source/inc/file_action_function:32
 msgid ""

@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2019-12-31 17:01+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-03 08:36+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-03-29 05:43+0000\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/python.rst:7
 msgid "Python Statements"
@@ -37,7 +37,7 @@ msgstr ""
 
 #: ../../source/python.rst:15
 msgid "Ren'Py 7 supports Python 2.7. Ren'Py 8 supports Python 3.9."
-msgstr ""
+msgstr "Ren'Py 7 は Python 2.7 を、 Ren'Py 8 は Python 3.9 をサポートします。"
 
 #: ../../source/python.rst:18
 msgid ""
@@ -45,6 +45,9 @@ msgid ""
 "everything you know about Python will apply directly. For example. Python "
 "packages that don't ship with Ren'Py may not work inside Ren'Py."
 msgstr ""
+"Python を知っているなら、それを活用できるでしょう。しかし Python について知っ"
+"ていることがそのまま適用出来るわけではありません。たとえば Ren'Py には含まれ"
+"ていない Python パッケージは Ren'Py 内で動作しません。"
 
 #: ../../source/python.rst:22
 msgid ""
@@ -54,6 +57,11 @@ msgid ""
 "<cant-save>`. (You need to be careful with files, sockets, iterators, task, "
 "futures, and generators.)"
 msgstr ""
+"また、いくつかのPythonのコンストラクトは動作しますが、セーブ時に問題が発生す"
+"る可能性があります。詳しくは :ref:`セーブ、ロード、ロールバック <save-load-"
+"rollback>` のページ、特に :ref:`何がセーブされないか <cant-save>` にある保存"
+"できないものについてのセクションを読んでください (ファイル、ソケット、イテ"
+"レータ、タスク、フューチャー、ジェネレータには注意が必要です）。"
 
 #: ../../source/python.rst:28
 msgid ""
@@ -61,6 +69,10 @@ msgid ""
 "can be inferior. For example, Ren'Py can predict the ``show`` statement, and "
 "load images early, but it can't predict the :func:`renpy.show` function."
 msgstr ""
+"最後に、多くのステートメントには Python で等価なものがありますが、それらの等"
+"価物は劣っている可能性があります。例えば、Ren'Pyは ``show`` ステートメントを"
+"予測し、画像を早期にロードできますが、 :func:`renpy.show` 関数は予測できませ"
+"ん。"
 
 #: ../../source/python.rst:35
 msgid "Python"
@@ -206,12 +218,18 @@ msgid ""
 "``__slots__``. Trying to do so will misbehave with rollback in older "
 "versions of renpy, and will raise errors in newer versions."
 msgstr ""
+"Ren'py 内で作成され、何も継承しないか明示的に ``object`` を継承するクラス、お"
+"よびこれらのクラスのサブクラスは、 ``__slots__`` をサポートしません。これを実"
+"行しようとすると、古いバージョンのrenpyではロールバックの動作がおかしくなり、"
+"新しいバージョンではエラーが発生します。"
 
 #: ../../source/python.rst:144
 msgid ""
 "In order to have slotted classes, creators should explicitly subclass "
 "``python_object``, which doesn't support rollback."
 msgstr ""
+"スロットを持つクラスを作成するには、ロールバックをサポートしない "
+"``python_object`` を明示的にサブクラスとして作成する必要があります。"
 
 #: ../../source/python.rst:150
 msgid "Define Statement"
@@ -228,14 +246,13 @@ msgid "is equivalent to::"
 msgstr "これは以下と等価です。 ::"
 
 #: ../../source/python.rst:162
-#, fuzzy
 msgid ""
 "The define statement can take an optional named store (see below), by "
 "prepending it to the variable name with a dot. The store is created if it "
 "doesn't already exist. For example::"
 msgstr ""
-"define ステートメントは、ドットと変数名を続けて名前付き store (以下参照) も取"
-"られます。例 ::"
+"define ステートメントはドットと変数名を続けて任意で名前付き store (以下参照) "
+"も取られます。その store がなければ作成されます。例 ::"
 
 #: ../../source/python.rst:168
 msgid ""
@@ -304,14 +321,13 @@ msgstr ""
 "変数 ``points`` がゲームロード時に定義されていなければ、次と等しいです。 ::"
 
 #: ../../source/python.rst:211
-#, fuzzy
 msgid ""
 "The default statement can take an optional named store (see below), by "
 "prepending it to the variable name with a dot. The store is created if it "
 "doesn't already exist. For example::"
 msgstr ""
-"default ステートメントは任意で名前付き store を取れ(以下参照)、その後にドット"
-"と変数名を続けます。 例 ::"
+"default ステートメントはドットと変数名を続けて任意で名前付き store (以下参"
+"照) も取られます。その store がなければ作成されます。例 ::"
 
 #: ../../source/python.rst:221
 msgid "Init Offset Statement"
@@ -403,7 +419,6 @@ msgstr ""
 "ジュールにコードを置くと名前が衝突する機会を減らせます。"
 
 #: ../../source/python.rst:284
-#, fuzzy
 msgid ""
 "Named stores can be accessed by supplying the ``in`` clause to ``python`` or "
 "``init python``, all of which run Python in a named store. Each store "
@@ -415,15 +430,15 @@ msgstr ""
 "名前付きの store は ``in`` 節を ``python`` や ``init python`` に与えるとアク"
 "セス可能で、コードは名前付き store で実行されます。各 store は python モ"
 "ジュールに対応します。デフォルトのstore は ``store`` で、名前付きの store は "
-"``store.name`` でアクセスされます。これらの python モジュール内の名前には "
-"python の import ステートメントを使用してインポート出来ます。"
+"``store.name`` でアクセスされます。モジュール内の名前は python の from ステー"
+"トメントを使用してインポート出来ます。名前付き store は ``init python in`` ブ"
+"ロックや default または define ステートメントを使用して作成できます。"
 
 #: ../../source/python.rst:292
 msgid "For example::"
 msgstr "例 ::"
 
 #: ../../source/python.rst:315
-#, fuzzy
 msgid ""
 "Named stores participate in save, load, and rollback in the same way that "
 "the default store does. Special namespaces such as ``persistent``, "
@@ -431,8 +446,8 @@ msgid ""
 "within them."
 msgstr ""
 "名前付きの store はデフォルトの store 同様にセーブロード、ロールバックに参加"
-"します。 define ステートメントを使用して名前付き store に変数名を定義出来ま"
-"す。"
+"します。 ``persistent``, ``config``, ``renpy`` などのような特別な名前空間はそ"
+"うではなく、その中への substore 作成もサポートしません。"
 
 #: ../../source/python.rst:324
 msgid "First and Third-Party Python Modules and Packages"

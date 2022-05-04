@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2021-01-01 13:56+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-02 08:10+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/side_image.rst:7
 msgid "Side Images"
@@ -56,6 +56,8 @@ msgid ""
 "In addition to the tag, there must be at least one attribute in the pool. If "
 "not, no side image is shown."
 msgstr ""
+"そのタグに加え、少なくとも一つの属性がプールになければいけません。そうでなけ"
+"ればサイドイメージは表示されません。"
 
 #: ../../source/side_image.rst:26
 msgid ""
@@ -121,7 +123,7 @@ msgstr "例 ::"
 
 #: ../../source/side_image.rst:85
 msgid "Config and Store Variables"
-msgstr ""
+msgstr "config と store 変数"
 
 #: ../../source/side_image.rst:87
 msgid ""
@@ -134,6 +136,7 @@ msgid ""
 "If _side_image_tag is not None, it takes preference over config."
 "side_image_tag."
 msgstr ""
+"_side_image_tag が None でなければ、 config.side_image_tag より優先されます。"
 
 #: ../../source/side_image.rst:95
 msgid ""
@@ -164,13 +167,14 @@ msgid ""
 "If _side_image_prefix_tag is not None, it takes preference over config."
 "side_image_prefix_tag."
 msgstr ""
+"_side_image_prefix_tag が None でなければ、 config.side_image_prefix_tag より"
+"優先されます。"
 
 #: ../../source/side_image.rst:117
 msgid "The prefix that is used when searching for a side image."
 msgstr "サイドイメージを検索するときに使用される接頭辞です。"
 
 #: ../../source/side_image.rst:121
-#, fuzzy
 msgid ""
 "The Null displayable to use when not displaying a side image. This can be "
 "changed, but only to other Null objects. One reason for doing so would be to "
@@ -178,9 +182,9 @@ msgid ""
 "dissolves from being cut off."
 msgstr ""
 "Null displayable はサイドイメージを表示しないときに使用します。これは他の "
-"Null オブジェクトにのみ変更してください。これは Null (eg. ``Null(width=200, "
-"height=150)`` ) のサイドイメージを配置して、ディゾルブが遮られるのを防ぎま"
-"す。"
+"Null オブジェクトにのみ変更してください。この理由は Null (eg. "
+"``Null(width=200, height=150)`` ) のサイドイメージを配置して、ディゾルブが遮"
+"られるのを防ぐためです。"
 
 #: ../../source/side_image.rst:128
 msgid ""
@@ -240,6 +244,8 @@ msgid ""
 "When the :func:`SideImage` is scaled down, it might make sense to enable "
 "mipmapping in the :func:`Dissolve`::"
 msgstr ""
+":func:`SideImage` がスケールダウンされると、 :func:`Dissolve` で mipmap が有"
+"効になります。 ::"
 
 #: ../../source/side_image.rst:186
 msgid "Functions"
@@ -250,7 +256,6 @@ msgid "This attempts to find an image to show as the side image."
 msgstr "サイドイメージとして表示する画像を見つけようと試みます。"
 
 #: ../../source/inc/side:7
-#, fuzzy
 msgid ""
 "It begins by determining a set of image attributes. If `image_tag` is given, "
 "it gets the image attributes from the tag. Otherwise, it gets them from the "
@@ -259,7 +264,7 @@ msgid ""
 msgstr ""
 "一連の画像属性を決定するところからはじめます。 `image_tag` が指定されればその"
 "タグから画像属性を所得します。そうでなければそれらを現在表示しているキャラク"
-"ターから所得します。"
+"ターから所得します。そのタグで利用できる属性が無ければ、 None を返します。"
 
 #: ../../source/inc/side:12
 msgid ""
@@ -267,6 +272,9 @@ msgid ""
 "(either from `image_tag` or the currently showing character) and the set of "
 "image attributes as attributes. If such an image exists, it's returned."
 msgstr ""
+"`prefix_tag` タグと (`image_tag` または現在表示中のキャラクターのどちらかの) "
+"画像タグ、属性として一連の画像属性を持つ画像を探します。そのような画像があれ"
+"ば、それを返します。"
 
 #: ../../source/inc/side:16
 msgid ""
