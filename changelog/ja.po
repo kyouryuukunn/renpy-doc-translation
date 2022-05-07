@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2022-05-07 23:08+0900\n"
+"PO-Revision-Date: 2022-05-07 23:44+0900\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -58,6 +58,10 @@ msgid ""
 "Since 6.99.13, Ren'Py has been trying various methods to guarantee single "
 "frame display, and many of which led to visual glitches."
 msgstr ""
+"``pause 0`` ステートメントが、常に1フレームを表示するように特殊化され、少なく"
+"とも1フレームが表示されることを保証する唯一の方法となりました。6.99.13 以降、"
+"Ren'Py は 1 フレーム表示を保証するためにさまざまな方法を試し、その多くが視覚"
+"的な不具合につながっていました。"
 
 #: ../../source/changelog.rst:36
 msgid ""
@@ -117,6 +121,11 @@ msgid ""
 "supported in the browser. If not, webasm is used for playback, which is more "
 "likely to cause skipping if the computer is slow."
 msgstr ""
+"新しい :var:`config.webaudio_required_types` 変数には、ゲームで使用されるオー"
+"ディオファイルの MIME タイプのリストを指定するできます。 Ren'Py は、すべての "
+"MIME タイプがブラウザでサポートされている場合のみ、ウェブブラウザのウェブオー"
+"ディオシステムを再生に使用します。そうでない場合は、 webasm が再生に使用され"
+"ますが、コンピュータの速度が遅い場合、スキップが発生しやすくなります。"
 
 #: ../../source/changelog.rst:66
 msgid ""
@@ -124,6 +133,9 @@ msgid ""
 "ogg or opus audio to run on Safari, and can be changed if a game only uses "
 "mp3 audio."
 msgstr ""
+"config.webaudio_required_types 変数は、ogg または opus オーディオを使用する"
+"ゲームを Safari で実行できるようにするためのもので、ゲームが mp3 オーディオし"
+"か使用しない場合は変更できます。"
 
 #: ../../source/changelog.rst:70
 msgid "Boxes, Grids and Vpgrids"
@@ -135,12 +147,17 @@ msgid ""
 "`hbox <sl-hbox>` will not be surrounded with :propref:`spacing` when the "
 "condition is false and the child displayable is not shown."
 msgstr ""
+":ref:`vbox <sl-vbox>` や :ref:`hbox <sl-hbox>` 内の :ref:`showif` ステートメ"
+"ントは、条件が False でその子の Displayable が非表示なら、 :propref:"
+"`spacing` で囲まれなくなりました。"
 
 #: ../../source/changelog.rst:76
 msgid ""
 "Having an overfull vpgrid - when both ``rows`` and ``cols`` are specified - "
 "is now disallowed."
 msgstr ""
+"``rows`` と ``cols`` の両方が指定された時、 overfull な vpgrid が不許可になり"
+"ました。"
 
 #: ../../source/changelog.rst:79
 msgid ""
@@ -148,6 +165,9 @@ msgid ""
 "out using either the ``allow_underfull`` property or :var:`config."
 "allow_underfull_grids`, the former taking precedence on the latter."
 msgstr ""
+"underfull な vpgrid があると、 ``allow_underfull`` プロパティか :var:`config."
+"allow_underfull_grids` で警告が抑制されない限り、エラーが発生するようになりま"
+"した。"
 
 #: ../../source/changelog.rst:83
 msgid ""
@@ -156,10 +176,13 @@ msgid ""
 "specified is underfull if and when its number of children is not a multiple "
 "of the specified value."
 msgstr ""
+"cols と rows の両方が指定された　vpgrid　は含まれる子が rows \\* cols より少"
+"ない場合、 underfull　になります。 cols と rows のどちらかを指定した vpgrid "
+"は、子の数が指定した値の倍数でない場合、 underfull になります。"
 
 #: ../../source/changelog.rst:90
 msgid "Call Screen and Roll Forward"
-msgstr ""
+msgstr "Call Screen と Roll Forward"
 
 #: ../../source/changelog.rst:92
 msgid ""
@@ -170,6 +193,12 @@ msgid ""
 "with other side effects, like changing variables or playing music, were not "
 "preserved through a roll forwards."
 msgstr ""
+"ロールフォワード機能は ``call screen`` ステートメントではデフォルトで無効にな"
+"りました。一般的なケースでは安全でなく、混乱を招くからです。ロールフォワード"
+"が保持するスクリーンの副作用は、そのスクリーンの戻り値、またはスクリーンが"
+"ジャンプする場合のジャンプ位置だけであることが問題です。変数の変更や音楽の再"
+"生など、他の副作用を持つアクションは、ロールフォワードによって保存されません"
+"でした。"
 
 #: ../../source/changelog.rst:99
 msgid ""
@@ -178,6 +207,11 @@ msgid ""
 "If all screens in your game support roll forward, it can be enabled with the "
 "new :var:`config.call_screen_roll_forward` variable."
 msgstr ""
+"ロールフォワードは特定のスクリーンでは安全かもしれません。そのため、スクリー"
+"ン上で新しい `roll_forward` プロパティを有効にすることで、スクリーンごとに有"
+"効にすることができます。ゲーム内のすべてのスクリーンがロールフォワードをサ"
+"ポートしている場合、新しい :var:`config.call_screen_roll_forward` 変数で有効"
+"にできます。"
 
 #: ../../source/changelog.rst:105 ../../source/changelog.rst:572
 #: ../../source/changelog.rst:814 ../../source/changelog.rst:1000
@@ -190,17 +224,23 @@ msgid ""
 "preferences screen of the launcher. This can remove these files to reduce "
 "the space Ren'Py requires."
 msgstr ""
+"Ren'Py の temporary ディレクトリーをクリーンアップするボタンが、ランチャーの"
+"環境設定画面に追加されました。これにより、これらのファイルを削除し、Ren'Py が"
+"必要とする容量を減らせます。"
 
 #: ../../source/changelog.rst:111
 msgid ""
 "The new :var:`config.choice_empty_window` variable can customize the empty "
 "window that is shown when a choice menu is displayed. The intended use is::"
 msgstr ""
+"新しい :var:`config.choice_empty_window` 変数により、選択肢メニューが表示され"
+"たときに表示される空のウィンドウをカスタマイズできます。使用目的は次のとおり"
+"です。 ::"
 
 #: ../../source/changelog.rst:117
 msgid ""
 "Which repeats the last line of dialogue as the caption of the choice menu."
-msgstr ""
+msgstr "これは選択肢メニューのキャプションとして台詞の最後の行を繰り返します。"
 
 #: ../../source/changelog.rst:120
 msgid ""
@@ -208,6 +248,9 @@ msgid ""
 "controls if the pressed key is handled further it does not end an "
 "interaction."
 msgstr ""
+":ref:`key <sl-key>` displayable が `capture` プロパティーをサポートするように"
+"なりました。これは押したキーがインタラクションを終了しない場合、他にイベント"
+"が渡されるかを制御します。"
 
 #: ../../source/changelog.rst:124
 msgid ""
@@ -215,6 +258,9 @@ msgid ""
 "Ren'Py to break anywhere in a string, for when keeping to a fixed width is "
 "the most important aspect of breaking."
 msgstr ""
+":propref:`language` スタイルプロパティの新しい値 \"anywhere\" は、Ren'Py が文"
+"字列のどこでも改行できるようにするもので、幅の固定が優先されるときのためのも"
+"のです。"
 
 #: ../../source/changelog.rst:128
 msgid ""
@@ -222,30 +268,39 @@ msgid ""
 "until image prediction is finished, including prediction caused by :func:"
 "`renpy.start_predict` and :func:`renpy.start_predict_screen`."
 msgstr ""
+"func:`renpy.pause` の新しい `predict` 引数により :func:`renpy.start_predict` "
+"や :func:`renpy.start_predict_screen` による予測を含めて、画像予測が終了する"
+"までポーズできるようになりました。"
 
 #: ../../source/changelog.rst:132
 msgid ""
 "It is now possible to select a language other than the default when "
 "extracting dialogue."
-msgstr ""
+msgstr "台詞を抽出する際に、デフォルト以外の言語を選択できるようになりました。"
 
 #: ../../source/changelog.rst:135
 msgid ""
 "The screen language ``add`` statement now takes an `alt` property, making it "
 "possible to write::"
 msgstr ""
+"スクリーン言語の ``add`` ステートメントが `alt` プロパティを取るようになり、"
+"次のように書けるようになりました。"
 
 #: ../../source/changelog.rst:141
 msgid ""
 "The :func:`Hide` action now takes None for the screen name, to hide the "
 "current screen."
 msgstr ""
+"func:`Hide` アクションは、 None を受け取ると、現在のスクリーンを隠すようにな"
+"りました。"
 
 #: ../../source/changelog.rst:144
 msgid ""
 ":func:`Placeholder` now takes a `text` argument, that overrides the "
 "automatically determined text with something the creator specifies."
 msgstr ""
+"func:`Placeholder` は `text` 引数を取るようになりました。これは自動的に決定さ"
+"れたテキストを、作成者が指定した何かで上書きするものです。"
 
 #: ../../source/changelog.rst:147
 msgid ""
@@ -315,6 +370,11 @@ msgid ""
 "happened at least once.) The new `offer_screen` property of layered images "
 "controls this behavior."
 msgstr ""
+"レイヤー画像には、レンダリング時につねに画面全体のサイズが渡されるようになり"
+"ました。以前は、レイヤー画像はレイアウト（hbox、vbox、side など）内で使用され"
+"る場合、レイヤー画像に提供されるスペースが変わり、相対位置も変わる可能性があ"
+"りました(これは滅多にありませんが、報告されました) レイヤー画像の新しい "
+"`offer_screen` プロパティは、この動作を制御します。"
 
 #: ../../source/changelog.rst:178
 msgid ""
@@ -322,6 +382,9 @@ msgid ""
 "non-interactive way will now cause an automatic voice line to play, if the "
 "relevant file exists."
 msgstr ""
+"func:`Character` の `interact` を False で定義した場合、あるいは Character を"
+"非インタラクティブな方法で使用した場合でも、関連するファイルが存在すれば、自"
+"動的に音声が再生されるようになりました。"
 
 #: ../../source/changelog.rst:182
 msgid ""
@@ -330,6 +393,10 @@ msgid ""
 "uses NVL or ADV, and will display the correct window. Previously, the last "
 "character in a say statement was used."
 msgstr ""
+"``window auto`` が say や menu-with-caption ステートメントの前にウィンドウを"
+"表示する場合、 Ren'Py は発言する キャラクター が NVL と ADV のどちらを使って"
+"いるかを自動的に判断し、正しいウィンドウを表示するようになりました。以前は、"
+"say ステートメントの最後の キャラクター が使用されていました。"
 
 #: ../../source/changelog.rst:187
 msgid "The :propref:`activate_sound` plays when activating a drag displayable."
@@ -352,6 +419,10 @@ msgid ""
 "narration in new games. This might cause the spacing of text to change, when "
 "the game is resized, in exchange for keeping it stable when extend is used."
 msgstr ""
+"新しく始めたゲームでは、台詞とナレーションに対する :propref:`adjust_spacing` "
+"プロパティーが False に設定されるようになりました。これにより、ゲームのサイズ"
+"が変更されたときにテキストの間隔が変更される可能性がありますが、その代わりに "
+"extend が使用されたときにテキストの間隔が安定するようになりました。"
 
 #: ../../source/changelog.rst:196
 msgid "Playing or stopping music on a channel now unpauses that channel."
