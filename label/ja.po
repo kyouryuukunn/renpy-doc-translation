@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-01 12:00+0900\n"
+"POT-Creation-Date: 2022-05-08 00:04+0900\n"
 "PO-Revision-Date: 2022-05-01 20:13+0900\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-03-29 05:43+0000\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/label.rst:5
+#: ../../source/label.rst:2
 msgid "Labels & Control Flow"
 msgstr "ラベルと制御フロー"
 
-#: ../../source/label.rst:8
+#: ../../source/label.rst:5
 msgid "Label Statement"
 msgstr "label ステートメント"
 
-#: ../../source/label.rst:10
+#: ../../source/label.rst:7
 msgid ""
 "Label statements allow the given name to be assigned to a program point. "
 "They exist solely to be called or jumped to, either from Ren'Py script, "
@@ -36,7 +36,7 @@ msgstr ""
 "は単に Ren'Py スクリプトや python 関数、スクリーンから呼び出されたり、ジャン"
 "プされたりするために存在します。 ::"
 
-#: ../../source/label.rst:21
+#: ../../source/label.rst:18
 msgid ""
 "A label statement may have a block associated with it. In that case, control "
 "enters the block whenever the label statement is reached, and proceeds with "
@@ -47,7 +47,7 @@ msgstr ""
 "の labe ステートメントに到達すると制御はそのブロックに入り、そのブロックの終"
 "端に到達すると label ステートメントの次のステートメントに移ります。"
 
-#: ../../source/label.rst:25
+#: ../../source/label.rst:22
 msgid ""
 "There are two kinds of labels: *global* and *local* labels. Global labels "
 "live in one global scope shared across all project files and thus should "
@@ -61,7 +61,7 @@ msgstr ""
 "配置されます。local label を宣言するには接頭辞 ``.`` を名前につけてください。"
 "例: ::"
 
-#: ../../source/label.rst:37
+#: ../../source/label.rst:34
 msgid ""
 "Local labels can be referenced directly inside the same global label they "
 "are declared in or by their full name, consisting of global and local name "
@@ -70,7 +70,7 @@ msgstr ""
 "local label はそれが宣言されたのと同じグローバルラベル内なら直接に、そうでな"
 "ければグローバルとローカルネームからなるフルネームで参照出来ます。 : ::"
 
-#: ../../source/label.rst:44
+#: ../../source/label.rst:41
 msgid ""
 "The label statement may take an optional list of parameters. These "
 "parameters are processed as described in :pep:`570`, with two exceptions:"
@@ -78,15 +78,15 @@ msgstr ""
 "label ステートメントは任意で引数を取ります。これらの引数は :pep:`570` で記述"
 "されたとおりに処理されますが、2つの例外があります :"
 
-#: ../../source/label.rst:47
+#: ../../source/label.rst:44
 msgid "The values of default parameters are evaluated at call time."
 msgstr "デフォルト引数の値は呼び出し時に評価されます。"
 
-#: ../../source/label.rst:48
+#: ../../source/label.rst:45
 msgid "The variables are dynamically, rather than lexically, scoped."
 msgstr "変数は静的スコープではなく、動的スコープです。"
 
-#: ../../source/label.rst:50
+#: ../../source/label.rst:47
 msgid ""
 "When a variable is dynamically scoped, its value lasts until a return "
 "statement following the label. It doesn't generally make sense to have a "
@@ -99,15 +99,15 @@ msgstr ""
 "は無意味です。引数つきラベルの例として、 :ref:`call statement <call-"
 "statement>` を参照してください。"
 
-#: ../../source/label.rst:60
+#: ../../source/label.rst:57
 msgid "Jump Statement"
 msgstr "jump ステートメント"
 
-#: ../../source/label.rst:62
+#: ../../source/label.rst:59
 msgid "The jump statement is used to transfer control to the given label."
 msgstr "jump ステートメントを使用して指定のラベルに制御を移します。"
 
-#: ../../source/label.rst:64
+#: ../../source/label.rst:61
 msgid ""
 "If the ``expression`` keyword is present, the expression following it is "
 "evaluated, and the string so computed is used as the label name of the "
@@ -118,7 +118,7 @@ msgstr ""
 "ジャンプ先のラベル名に使用されます。 ``expression`` キーワードがなければジャ"
 "ンプ先のラベル名は明示的に指定されなければなりません。"
 
-#: ../../source/label.rst:69
+#: ../../source/label.rst:66
 msgid ""
 "Unlike call, jump does not push the next statement onto a stack. As a "
 "result, there's no way to return to where you've jumped from. ::"
@@ -126,11 +126,11 @@ msgstr ""
 "call とは異なり、jump は次のステートメントをスタックにプッシュしません。この"
 "ため、ジャンプ元に戻る方法はありません。::"
 
-#: ../../source/label.rst:81
+#: ../../source/label.rst:78
 msgid "Call Statement"
 msgstr "call ステートメント"
 
-#: ../../source/label.rst:83
+#: ../../source/label.rst:80
 msgid ""
 "The call statement is used to transfer control to the given label. It also "
 "pushes the next statement onto the call stack, allowing the return statement "
@@ -140,7 +140,7 @@ msgstr ""
 "テートメントをコールスタックにプッシュし、 return ステートメントで制御を "
 "call ステートメントの次のステートメントに返せるようにします。"
 
-#: ../../source/label.rst:87
+#: ../../source/label.rst:84
 msgid ""
 "If the ``expression`` keyword is present, the expression following it is "
 "evaluated, and the string so computed is used as the name of the label to "
@@ -151,7 +151,7 @@ msgstr ""
 "列をラベルの名前として呼び出します。``expression`` キーワードが与えられない場"
 "合は、呼び出すステートメントの名前を明示的に指定する必要があります。"
 
-#: ../../source/label.rst:92
+#: ../../source/label.rst:89
 msgid ""
 "If the optional ``from`` clause is present, it has the effect of including a "
 "label statement with the given name as the statement immediately following "
@@ -164,7 +164,7 @@ msgstr ""
 "の明示はコールスタックを保存したゲームデータがスクリプトを変更した後にロード"
 "されても適切な場所に返れるようにします。 ::"
 
-#: ../../source/label.rst:118
+#: ../../source/label.rst:115
 msgid ""
 "The call statement may take arguments, which are processed as described in :"
 "pep:`448`."
@@ -172,7 +172,7 @@ msgstr ""
 "call ステートメントには引数も取られ、それらは :pep:`448` に記述されたとおりに"
 "処理されます。"
 
-#: ../../source/label.rst:120
+#: ../../source/label.rst:117
 msgid ""
 "When using a call expression with an arguments list, the ``pass`` keyword "
 "must be inserted between the expression and the arguments list. Otherwise, "
@@ -183,11 +183,11 @@ msgstr ""
 "リストの間に入らなければなりません。そうでなければ引数リストは call ステート"
 "メントではなく式の一部と解釈されます。"
 
-#: ../../source/label.rst:128
+#: ../../source/label.rst:125
 msgid "Return Statement"
 msgstr "return ステートメント"
 
-#: ../../source/label.rst:130
+#: ../../source/label.rst:127
 msgid ""
 "The ``return`` statement pops the top statement off of the call stack, and "
 "transfers control to it. If the call stack is empty, the return statement "
@@ -197,7 +197,7 @@ msgstr ""
 "制御をそのステートメントに移します。コールスタックが空の場合、return ステート"
 "メントは Ren'Py を再起動し、メインメニューに戻ります。"
 
-#: ../../source/label.rst:134
+#: ../../source/label.rst:131
 msgid ""
 "If the optional expression is given to return, it is evaluated, and it's "
 "result is stored in the ``_return`` variable. This variable is dynamically "
@@ -206,27 +206,27 @@ msgstr ""
 "任意の式が return に指定されると、それは評価され、その結果が _return 変数に保"
 "存されます。この変数は各コンテキストに対して動的スコープに属します。"
 
-#: ../../source/label.rst:139
+#: ../../source/label.rst:136
 msgid "Special Labels"
 msgstr "特別なラベル"
 
-#: ../../source/label.rst:141
+#: ../../source/label.rst:138
 msgid "The following labels are used by Ren'Py:"
 msgstr "以下のラベルは Ren'Py 本体で使用されます。 :"
 
-#: ../../source/label.rst:144
+#: ../../source/label.rst:141
 msgid "``start``"
 msgstr "``start``"
 
-#: ../../source/label.rst:144
+#: ../../source/label.rst:141
 msgid "By default, Ren'Py jumps to this label when the game starts."
 msgstr "デフォルトでは Ren'Py はゲーム開始時にこのラベルにジャンプします。"
 
-#: ../../source/label.rst:148
+#: ../../source/label.rst:145
 msgid "``quit``"
 msgstr "``quit``"
 
-#: ../../source/label.rst:147
+#: ../../source/label.rst:144
 msgid ""
 "If it exists, this label is called in a new context when the user quits the "
 "game."
@@ -234,11 +234,11 @@ msgstr ""
 "存在すればこのラベルはユーザーがゲーム終了時に新しいコンテキストで呼び出され"
 "ます。"
 
-#: ../../source/label.rst:152
+#: ../../source/label.rst:149
 msgid "``after_load``"
 msgstr "``after_load``"
 
-#: ../../source/label.rst:151
+#: ../../source/label.rst:148
 msgid ""
 "If it exists, this label is called when a game is loaded. It can be use to "
 "fix data when the game is updated."
@@ -246,11 +246,11 @@ msgstr ""
 "存在すればこのラベルはゲームがロードされると呼び出されます。ゲーム更新時に"
 "データを修正するために使用可能です。"
 
-#: ../../source/label.rst:156
+#: ../../source/label.rst:153
 msgid "``splashscreen``"
 msgstr "``splashscreen``"
 
-#: ../../source/label.rst:155
+#: ../../source/label.rst:152
 msgid ""
 "If it exists, this label is called when the game is first run, before "
 "showing the main menu. Please see :ref:`Adding a Splashscreen <adding-a-"
@@ -260,11 +260,11 @@ msgstr ""
 "されます。 :ref:`スプラッシュスクリーン追加 <adding-a-splashscreen>` も参照し"
 "てください。"
 
-#: ../../source/label.rst:161
+#: ../../source/label.rst:158
 msgid "``before_main_menu``"
 msgstr "``before_main_menu``"
 
-#: ../../source/label.rst:159
+#: ../../source/label.rst:156
 msgid ""
 "If it exists, this label is called before the main menu. It is used in rare "
 "cases to set up the main menu, for example by starting a movie playing in "
@@ -274,11 +274,11 @@ msgstr ""
 "用意、例えばバックグラウンドでムービーを再生するような特別な場合に使用されま"
 "す。"
 
-#: ../../source/label.rst:170
+#: ../../source/label.rst:167
 msgid "``main_menu``"
 msgstr "``main_menu``"
 
-#: ../../source/label.rst:164
+#: ../../source/label.rst:161
 msgid ""
 "If it exists, this label is called instead of the main menu. If it returns, "
 "Ren'Py will start the game at the ``start`` label. For example, the "
@@ -289,11 +289,11 @@ msgstr ""
 "と Ren'Py は ``start`` ラベルからゲームを開始します。例えば以下のコードではメ"
 "インメニューを表示せずに即座にゲームを開始します。 ::"
 
-#: ../../source/label.rst:174
+#: ../../source/label.rst:171
 msgid "``after_warp``"
 msgstr "``after_warp``"
 
-#: ../../source/label.rst:173
+#: ../../source/label.rst:170
 msgid ""
 "If it is existed, this label is called after a warp but before the warped-to "
 "statement executes. Please see :ref:`Warping to a line <warping_to_a_line>`."
@@ -301,11 +301,11 @@ msgstr ""
 "存在すればこのラベルはワープ後にワープ先のステートメントが実行される前に呼び"
 "出されます。 :ref:`行ワープ <warping_to_a_line>` を参照してください。"
 
-#: ../../source/label.rst:180
+#: ../../source/label.rst:177
 msgid "``hide_windows``"
 msgstr "``hide_windows``"
 
-#: ../../source/label.rst:177
+#: ../../source/label.rst:174
 msgid ""
 "If it exists, this label is called when the player hides the windows with "
 "the right mouse button or the H key. If this returns true, the hide is "
@@ -316,7 +316,7 @@ msgstr ""
 "たときに呼び出されます。これが True を返せば、その非表示は (非表示が既に実行"
 "された後) キャンセルされ、そうで無ければその非表示が続きます。"
 
-#: ../../source/label.rst:183
+#: ../../source/label.rst:180
 msgid "Labels & Control Flow Functions"
 msgstr "ラベルと制御フロー関数"
 

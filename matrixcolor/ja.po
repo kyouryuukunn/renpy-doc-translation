@@ -7,21 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-13 12:41+0900\n"
-"PO-Revision-Date: 2021-11-13 12:55+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2022-05-08 00:04+0900\n"
+"PO-Revision-Date: 2022-05-08 00:32+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: ../../source/matrixcolor.rst:7
+#: ../../source/matrixcolor.rst:4
 msgid "Matrixcolor"
 msgstr "Matrixcolor"
 
-#: ../../source/matrixcolor.rst:9
+#: ../../source/matrixcolor.rst:6
 msgid ""
 "Ren'Py supports recoloring images using the :tpref:`matrixcolor` transform "
 "property. This property can take either a :class:`Matrix` or a ColorMatrix "
@@ -31,11 +31,11 @@ msgstr ""
 "サポートします。このプロパティーは :class:`Matrix` または ColorMatrix オブ"
 "ジェクトを取ります。"
 
-#: ../../source/matrixcolor.rst:14
+#: ../../source/matrixcolor.rst:11
 msgid "Premultiplied Alpha Color"
 msgstr "Premultiplied Alpha Color"
 
-#: ../../source/matrixcolor.rst:16
+#: ../../source/matrixcolor.rst:13
 msgid ""
 "When an image is loaded, Ren'Py decompresses the image, and then copies it "
 "to the GPU of your computer or mobile device. As part of the copying, each "
@@ -50,7 +50,7 @@ msgstr ""
 "す。このシステムでは1.0が色または透明度の最大値で、0.0はその色がないまたはピ"
 "クセルが完全に透明であることを表します。"
 
-#: ../../source/matrixcolor.rst:23
+#: ../../source/matrixcolor.rst:20
 msgid ""
 "Ren'Py doesn't stop there, though. Once the values have been scaled, the "
 "red, green, and blue channels are multiplied by the alpha channel. This "
@@ -63,7 +63,7 @@ msgstr ""
 "ピクセルは (1.0, 1.0, 1.0, 1.0) となり、50%の透明度の赤いピクセルは(0.5, "
 "0.0, 0.0, 0.5)になり、透明なピクセルは(0.0, 0.0, 0.0, 0.0)になります。"
 
-#: ../../source/matrixcolor.rst:29
+#: ../../source/matrixcolor.rst:26
 msgid ""
 "Premultiplied alph allows Ren'Py to scale images up and down without causing "
 "dark artifacts that come from representing colors more directly. Scaling "
@@ -80,7 +80,7 @@ msgstr ""
 "れは正しくなありません。完全な白と透明の平均は不透明な灰色ではなく 50% 不透明"
 "な白になるはずです。"
 
-#: ../../source/matrixcolor.rst:38
+#: ../../source/matrixcolor.rst:35
 msgid ""
 "In the premultiplied alpha system, the starting value is the same, and so is "
 "the result - except now, (0.5, 0.5, 0.5, 0.5) has been pre-defined to be 50% "
@@ -92,11 +92,11 @@ msgstr ""
 "で貯めることで Ren'Py はそれらをスクリーンに正確に描画でき、スケーリング時の"
 "ひどい副作用がありません。"
 
-#: ../../source/matrixcolor.rst:44
+#: ../../source/matrixcolor.rst:41
 msgid "Using a Matrix to Change Colors"
 msgstr "マトリックスを使用した色の変更"
 
-#: ../../source/matrixcolor.rst:46
+#: ../../source/matrixcolor.rst:43
 msgid ""
 "The :class:`Matrix` objects used to change colors can consist of 16 numbers, "
 "which can in turn be arranged into a 4x4 grid. Here's a way of doing this "
@@ -105,7 +105,7 @@ msgstr ""
 "色の変更に使用される :class:`Matrix` オブジェクトは16の数値で構成され、4x4の"
 "グリッドで表せます。文字を各数値に代入してこれをする方法をここに表します。 ::"
 
-#: ../../source/matrixcolor.rst:55
+#: ../../source/matrixcolor.rst:52
 msgid ""
 "While they're represented as letters here, realize these are really numbers, "
 "either given directly or computed."
@@ -113,7 +113,7 @@ msgstr ""
 "ここでそれらは文字で表現されていますが、これらは実際には直接与えられるまたは"
 "算出される数値です。"
 
-#: ../../source/matrixcolor.rst:58
+#: ../../source/matrixcolor.rst:55
 msgid ""
 "These values are applied to the red (R), green (G), blue (B), and alpha (A) "
 "channels of the original color to make a new color, (R', G', B', A'). The "
@@ -123,7 +123,7 @@ msgstr ""
 "ネルに適用され、新しいカラー (R', G', B', A') を作ります。これは次の形式で実"
 "行されます。:"
 
-#: ../../source/matrixcolor.rst:67
+#: ../../source/matrixcolor.rst:64
 msgid ""
 "While this might seem complex, there's a pretty simple structure to it - the "
 "first row creates the new red channel, the second the new green channel and "
@@ -134,7 +134,7 @@ msgstr ""
 "作成し、2番目が新しい green チャンネルと続きます。赤と緑を入れ替えるマトリッ"
 "クスを作りたいなら、次のように記述します。 ::"
 
-#: ../../source/matrixcolor.rst:78
+#: ../../source/matrixcolor.rst:75
 msgid ""
 "While this is a simple example, there is a lot of color theory that can be "
 "expressed in this way. Matrices can be combined by multiplying them "
@@ -143,11 +143,11 @@ msgstr ""
 "これは単純な式ですが、このように表現されるたくさんの色の理論があります。マト"
 "リックスは複数組み合わせでき、そのときは右から左に組み合わされます。"
 
-#: ../../source/matrixcolor.rst:85
+#: ../../source/matrixcolor.rst:82
 msgid "ColorMatrix"
 msgstr "ColorMatrix"
 
-#: ../../source/matrixcolor.rst:87
+#: ../../source/matrixcolor.rst:84
 msgid ""
 "While Matrix objects are suitable for static color changes, they're not "
 "useful for animating color changes. It's also useful to have a way of taking "
@@ -158,7 +158,7 @@ msgstr ""
 "の変化には不向きです。共通のマトリックスを取ってマトリックスが媒介変数になる"
 "ようにカプセル化する方法があると便利です。"
 
-#: ../../source/matrixcolor.rst:92
+#: ../../source/matrixcolor.rst:89
 msgid ""
 "The ColorMatrix is a base class that is is extended by a number of Matrix-"
 "creating classes. Instances of ColorMatrix are called by Ren'Py, and return "
@@ -170,7 +170,7 @@ msgstr ""
 "ColorMatrix はよく ATL に組み込まれ、matrixcolor アニメーションを可能にしま"
 "す。 ::"
 
-#: ../../source/matrixcolor.rst:103
+#: ../../source/matrixcolor.rst:100
 msgid ""
 "The ColorMatrix class can be subclassed, with the subclasses replacing its "
 "``__call__`` method. This method takes:"
@@ -178,7 +178,7 @@ msgstr ""
 "ColorMatrix クラスはその ``__call__`` メソッドを置き換えるサブクラスによって"
 "継承されえます。このメソッドは次を引数に取ります。 :"
 
-#: ../../source/matrixcolor.rst:106
+#: ../../source/matrixcolor.rst:103
 msgid ""
 "An old object to interpolate off of. This object may be of any class, and "
 "may be None if no old object exists."
@@ -186,7 +186,7 @@ msgstr ""
 "補間する以前のオブジェクトです。このオブジェクトは任意のクラスである可能性が"
 "あり、以前のオブジェクトがなければ None です。"
 
-#: ../../source/matrixcolor.rst:108
+#: ../../source/matrixcolor.rst:105
 msgid ""
 "A value between 0.0 and 1.0, representing the point to interpolate. 0.0 is "
 "entirely the old object, and 1.0 is entirely the new object."
@@ -194,11 +194,11 @@ msgstr ""
 "0.0 から 1.0の間の値で、補間の進行度を表します。0.0が完全な old オブジェクト"
 "で、1.0が完全な new オブジェクトです。"
 
-#: ../../source/matrixcolor.rst:111
+#: ../../source/matrixcolor.rst:108
 msgid "And should return a :class:`Matrix`."
 msgstr ":class:`Matrix` を返します。"
 
-#: ../../source/matrixcolor.rst:113
+#: ../../source/matrixcolor.rst:110
 msgid ""
 "As an example of a ColorMatrix, here is the implementation of Ren'Py's "
 "TintMatrix class. ::"
@@ -206,11 +206,54 @@ msgstr ""
 "ColorMatrix の例として、こちらが Ren'Py の TintMatrix クラスの実装となりま"
 "す。 ::"
 
-#: ../../source/matrixcolor.rst:158
+#: ../../source/matrixcolor.rst:155
+msgid ""
+"**Structural Similarity.** In ATL, interpolating a the :tpref:`matrixcolor` "
+"property requires the use of ColorMatrixes that have structural similarity. "
+"That means the same types of ColorMatrix, multiplied together in the same "
+"order."
+msgstr ""
+"**構造的類似** ATLでは、 :tpref:`matrixcolor` プロパティーを補間するために、"
+"構造的に類似した ColorMatrix を使用する必要があります。つまり、同じタイプの "
+"ColorMatrix を、同じ順番で掛け合わせるということです。"
+
+#: ../../source/matrixcolor.rst:160
+msgid ""
+"As an example, the following will interpolate from normal to a desaturated "
+"blue tint, and then return to normal."
+msgstr ""
+"例として、以下は、通常状態から脱色された青味に補間され、その後通常状態に戻る"
+"というものです。"
+
+#: ../../source/matrixcolor.rst:166
+msgid "show eileen happy at center:"
+msgstr "show eileen happy at center:"
+
+#: ../../source/matrixcolor.rst:164
+msgid ""
+"matrixcolor TintMatrix(\"#ffffff\") * SaturationMatrix(1.0) linear 2.0 "
+"matrixcolor TintMatrix(\"#ccccff\") * SaturationMatrix(0.0) linear 2.0 "
+"matrixcolor TintMatrix(\"#ffffff\") * SaturationMatrix(1.0)"
+msgstr ""
+"matrixcolor TintMatrix(\"#ffffff\") * SaturationMatrix(1.0) linear 2.0 "
+"matrixcolor TintMatrix(\"#ccccff\") * SaturationMatrix(0.0) linear 2.0 "
+"matrixcolor TintMatrix(\"#ffffff\") * SaturationMatrix(1.0)"
+
+#: ../../source/matrixcolor.rst:168
+msgid ""
+"While the first setting of matrixcolor may seem unnecessary, it is required "
+"to provide a base for the first linear interpolation. If it wasn't present, "
+"that interpolation would be skipped."
+msgstr ""
+"matrixcolor の最初の設定は不要に思えるかもしれませんが、最初の線形補間に開始"
+"状態を提供するために必要です。もしこれがなければ、その補間はスキップされま"
+"す。"
+
+#: ../../source/matrixcolor.rst:174
 msgid "Built-In ColorMatrix Subclasses"
 msgstr "組み込み ColorMatrix サブクラス"
 
-#: ../../source/matrixcolor.rst:160
+#: ../../source/matrixcolor.rst:176
 msgid ""
 "The following is the list of ColorMatrix subclasses that are built into "
 "Ren'Py."
