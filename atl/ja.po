@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2021-12-11 14:58+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-04 20:07+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-07-05 05:54+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/atl.rst:8
 msgid "Animation and Transformation Language"
@@ -281,6 +281,8 @@ msgid ""
 "one or more lines containing the clauses available above. This lets an ATL "
 "interpolation apply to multiple lines of properties."
 msgstr ""
+"ワーパーにはコロン(:)が続く場合もあります。その場合、上述の利用可能な節が1行"
+"以上続きます。これによりある ATL 補間を複数行のプロパティーに適用できます。"
 
 #: ../../source/atl.rst:186
 msgid "Some sample interpolations are::"
@@ -371,16 +373,20 @@ msgid ""
 "or `old_widget` argument), the ATL transform is included at the location of "
 "the expression. The ``with`` clause is ignored."
 msgstr ""
+"ATL transform であり、 (transform や トランジションとして呼び出されることで、"
+"または `child` や `old_widget` 引数で呼び出されることで) その ATL transform "
+"に child が渡されていなければ、その ATL transform はその式の位置に含まれま"
+"す。 ``with`` 節は無視されます。"
 
 #: ../../source/atl.rst:276
-#, fuzzy
 msgid ""
 "If it's an integer or floating point number,  it's taken as a number of "
 "seconds to pause execution for. The ``with`` clause is ignored."
-msgstr "整数または浮動小数点数の場合、pause が実行される秒数になります。"
+msgstr ""
+"整数または浮動小数点数の場合、 pause が実行される秒数になります。 ``with`` 節"
+"は無視されます。"
 
 #: ../../source/atl.rst:279
-#, fuzzy
 msgid ""
 "Otherwise, the expression is interpreted to be a displayable. This "
 "displayable replaces the child of the transform when this clause executes, "
@@ -388,10 +394,10 @@ msgid ""
 "expression is evaluated as a transition, and the transition is applied to "
 "the old and new displayables."
 msgstr ""
-"これら以外の場合、この式は displayable と解釈されます。この displayable はこ"
-"の節が実行されたときに transform の子を置き換えるので、アニメーションに便利で"
-"す。with 節があると、第二の式はトランジションと評価され、そのトランジションが"
-"前後の displayable に適用されます。"
+"これら以外の場合、式は displayable と解釈されます。この displayable はこの節"
+"が実行されたときにその transform の子を置き換えるので、アニメーションに便利で"
+"す。 ``with`` 節があると、第二の式はトランジションと評価され、そのトランジ"
+"ションが前後の displayable に適用されます。"
 
 #: ../../source/atl.rst:304
 msgid "Pass Statement"
@@ -1374,16 +1380,16 @@ msgstr ""
 "いときには未定義です。"
 
 #: ../../source/atl.rst:935
-#, fuzzy
 msgid "None or (position, position, position, position)"
-msgstr "None or (position, position)"
+msgstr "None or (position, position, position, position)"
 
 #: ../../source/atl.rst:938
-#, fuzzy
 msgid ""
 "If not None, causes the displayable to be cropped to the given box. The box "
 "is specified as a tuple of (x, y, width, height)."
-msgstr "None でない場合、displayable は与えられた高さに合わせられます。"
+msgstr ""
+"None でない場合、displayable は指定の大きさに切り取られます。切り取りサイズ"
+"は (x, y, width, height) のタプルで指定されます。"
 
 #: ../../source/atl.rst:941
 msgid "If corners and crop are given, crop takes priority over corners."
@@ -1415,14 +1421,13 @@ msgid "None or (position, position)"
 msgstr "None or (position, position)"
 
 #: ../../source/atl.rst:964
-#, fuzzy
 msgid ""
 "If not None, causes the displayable to be scaled to the given size. This is "
 "equivalent to setting the :tpref:`xsize` and :tpref:`ysize` properties to "
 "the first and second components."
 msgstr ""
-"None または Displayable を以下の表に応じてスケールする文字列です。ここでの"
-"「方向」は None でない ``xsize`` と ``ysize`` のうちの1つ以上を指します。"
+"None でなければ Displayable を指定のサイズにスケールします。これは ``xsize`` "
+"と ``ysize`` プロパティーをそれぞれ1つ目と2つ目の要素に設定するのと同じです。"
 
 #: ../../source/atl.rst:968 ../../source/atl.rst:977 ../../source/atl.rst:986
 msgid "This is affected by the :tpref:`fit` property."
@@ -1445,35 +1450,41 @@ msgid "None or string"
 msgstr "None または文字列"
 
 #: ../../source/atl.rst:993
-#, fuzzy
 msgid ""
 "Causes the displayable to be sized according to the table below. In the "
 "context of the the table below, the \"dimensions\" are:"
 msgstr ""
-"None または Displayable を以下の表に応じてスケールする文字列です。ここでの"
-"「方向」は None でない ``xsize`` と ``ysize`` のうちの1つ以上を指します。"
+"以下の表に応じて Displayable のサイズを合わせます。ここでの「方向」は次の通り"
+"です。 :"
 
 #: ../../source/atl.rst:996
 msgid ""
 "If both :tpref:`xsize` and :tpref:`ysize` are not None, both sizes are used "
 "as the dimensions."
 msgstr ""
+":tpref:`xsize` と :tpref:`ysize` の両方が None でなければ、両方のサイズが方向"
+"として扱われます。"
 
 #: ../../source/atl.rst:998
 msgid ""
 "If only one of those properties is not None, it is used as the sole "
 "dimension."
 msgstr ""
+"それらのプロパティーの一方のみが None でなけれあばその方向のみが使用されま"
+"す。"
 
 #: ../../source/atl.rst:1000
 msgid ""
 "Otherwise, if fit is not None the area that the Transform is contained in is "
 "used as the dimensions."
 msgstr ""
+"そうではなく、 fit が None でなければ、その transform が含まれている領域が方"
+"向として使用されます。"
 
 #: ../../source/atl.rst:1003
 msgid "If fit, xsize, and ysize are all None, this property does not apply."
 msgstr ""
+"fit と xsize, ysize がすべて None なら、このプロパティーは適用されません。"
 
 #: ../../source/atl.rst:1009
 msgid "Value"
@@ -1606,15 +1617,12 @@ msgid "1"
 msgstr "1"
 
 #: ../../source/atl.rst:1086
-#, fuzzy
 msgid "The number of times to tile the image horizontally."
-msgstr ""
-"水平に敷き詰める画像の個数です(これは xpan が指定されると無視されます)。"
+msgstr "水平に敷き詰める画像の個数です。"
 
 #: ../../source/atl.rst:1093
-#, fuzzy
 msgid "The number of times to tile the image vertically."
-msgstr "縦に敷き詰める画像の個数です(これは ypan が指定されると無視されます)。"
+msgstr "縦に敷き詰める画像の個数です。"
 
 #: ../../source/atl.rst:1097
 msgid "None or Matrix or MatrixColor"
@@ -1759,9 +1767,8 @@ msgid "position properties"
 msgstr "位置プロパティー"
 
 #: ../../source/atl.rst:1153
-#, fuzzy
 msgid "Deprecated Transform Properties"
-msgstr "transform プロパティーの一覧"
+msgstr "廃止された transform プロパティーの一覧"
 
 #: ../../source/atl.rst:1157
 msgid ""
@@ -1769,14 +1776,18 @@ msgid ""
 "conflict with more recent features. They are only kept here for "
 "compatibility, along with the new way of achieving the same behavior."
 msgstr ""
+"より最近の機能と衝突する可能性があるため現在のゲームでは次のプロパティーは使"
+"用するべきでありません。これらは互換性を保つためだけに同じ動作を実現する新し"
+"い方法とともに残されています。"
 
 #: ../../source/atl.rst:1166
-#, fuzzy
 msgid ""
 "If False, float components of :tpref:`crop` are interpreted as an absolute "
 "number of pixels, instead of a fraction of the width and height of the "
 "source image."
-msgstr "True なら crop の小数の要素は元画像の幅と高さの割合として扱われます。"
+msgstr ""
+"False 、なら :tpref:`crop` の浮動小数要素は元画像の高さと幅の割合ではなくピク"
+"セル数の絶対値として処理されます。"
 
 #: ../../source/atl.rst:1170
 msgid ""
@@ -1785,12 +1796,17 @@ msgid ""
 "crop_relative property. If necessary, values of dubious type can be wrapped "
 "in the ``absolute`` callable."
 msgstr ""
+"ピクセル数の絶対値を表現する場合には、 crop_relative プロパティを使用する代わ"
+"りに ``absolute`` インスタンスを :tpref:`crop` プロパティに指定する必要があり"
+"ます。必要であれば、不明確な型の値は ``absolute`` callable でラップできます。"
 
 #: ../../source/atl.rst:1180
 msgid ""
 "This is an older version of :tpref:`xysize` interpreting floating-point "
 "values as an absolute number of pixels."
 msgstr ""
+"これは、浮動小数点値をピクセルの絶対数として解釈する :tpref:`xysize` の古い"
+"バージョンです。"
 
 #: ../../source/atl.rst:1188
 msgid ""
@@ -1806,6 +1822,8 @@ msgid ""
 "To achieve the same result, give the values to the :tpref:`xysize` property, "
 "and set the :tpref:`fit` property to the value \"contain\"."
 msgstr ""
+"同じ結果を得るには、 :tpref:`xysize` プロパティーにその値を与え、 :tpref:"
+"`fit` プロパティーの値に \"contain\" を設定します。"
 
 #: ../../source/atl.rst:1197
 msgid "Circular Motion"
@@ -2020,7 +2038,7 @@ msgstr ""
 
 #: ../../source/atl.rst:1307
 msgid "ATL Transitions"
-msgstr ""
+msgstr "ATL トランジション"
 
 #: ../../source/atl.rst:1309
 msgid ""
@@ -2028,6 +2046,9 @@ msgid ""
 "transitions accept the `old_widget` and `new_widget` arguments, which are "
 "given displayables that are transitioned from and to, respectively."
 msgstr ""
+"ATL transform を使用してトランジションを定義できます。それらのトランジション"
+"は `old_widget` と `new_widget` 引数を受け取ります。それらはそれぞれトランジ"
+"ション前と後の displayable に渡されます。"
 
 #: ../../source/atl.rst:1313
 msgid ""
@@ -2035,20 +2056,25 @@ msgid ""
 "seconds the transition lasts for. It may user the :tpref:`events` property "
 "to prevent the old displayable from receiving events. ::"
 msgstr ""
+"ATL トランジションは :tpref:`delay` プロパティーをそのトランジションが続く秒"
+"数の数値に設定しなければいけません。 :tpref:`events` プロパティーを使用して "
+"old Displayable がイベントを受け取らないようにもできます。"
 
 #: ../../source/atl.rst:1341
 msgid "Special ATL Keyword Parameters"
-msgstr ""
+msgstr "特別な ATL キーワード引数"
 
 #: ../../source/atl.rst:1343
 msgid ""
 "There are several parameters that Ren'Py will supply to ATL, in certain "
 "contexts, if the parameter is in the parameter list."
 msgstr ""
+"パラメーターリストにそのパラメーターがあれば、特定のコンテキストで Ren'Py が "
+"ATL に提供するいくつかのパラメーターがあります。"
 
 #: ../../source/atl.rst:1373
 msgid "`child`"
-msgstr ""
+msgstr "`child`"
 
 #: ../../source/atl.rst:1347
 msgid ""
@@ -2057,21 +2083,26 @@ msgid ""
 "to explicitly. For example, it becomes possible to swap between the s "
 "supplied child and another displayable::"
 msgstr ""
+"ATL が transform として使用されるとき、 child パラメーターにはその transform "
+"が適用された元の child が渡されます。これによりそのchild が明示的に参照されま"
+"す。例えば提供された child と 他の Displayable を交換できます。"
 
 #: ../../source/atl.rst:1359
 msgid ""
 "If can also be used to place the original child inside a ``contains`` block::"
-msgstr ""
+msgstr "``contains`` ブロック 内にもとの child を配置しても使用出来ます。 ::"
 
 #: ../../source/atl.rst:1376
 msgid "`old_widget`, `new_widget`"
-msgstr ""
+msgstr "`old_widget`, `new_widget`"
 
 #: ../../source/atl.rst:1376
 msgid ""
 "When an ATL block is used as a transition, these are given displayables that "
 "are transitioned from and to, respectively."
 msgstr ""
+"ATL ブロックがトランジションとして使用されるとき、これらはトランジション前と"
+"後の Displayable にそれぞれ与えられます。"
 
 #~ msgid ""
 #~ "If it's a transform, that transform is executed. With clauses are ignored "

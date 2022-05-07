@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2021-05-22 22:54+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-05 10:30+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/save_load_rollback.rst:8
 msgid "Saving, Loading, and Rollback"
@@ -232,9 +232,8 @@ msgstr ""
 "ではなく Ren'Py で同一のコードを行えばこの問題は避けられます ::"
 
 #: ../../source/save_load_rollback.rst:137
-#, fuzzy
 msgid "What Ren'Py Can Save"
-msgstr "Ren'Py は何をセーブできるか"
+msgstr "Ren'Py がセーブできるもの"
 
 #: ../../source/save_load_rollback.rst:139
 msgid ""
@@ -271,9 +270,8 @@ msgid "Character, Displayable, Transform, and Transition objects."
 msgstr "Character, Displayable, Transform, Transition オブジェクト"
 
 #: ../../source/save_load_rollback.rst:152
-#, fuzzy
 msgid "What Ren'Py Can't Save"
-msgstr "Ren'Py は何をセーブできるか"
+msgstr "Ren'Py がセーブできないもの"
 
 #: ../../source/save_load_rollback.rst:154
 msgid "There are certain types that cannot be pickled:"
@@ -288,14 +286,15 @@ msgid "Iterator objects."
 msgstr "Iterator オブジェクト"
 
 #: ../../source/save_load_rollback.rst:158
-#, fuzzy
 msgid "Generator objects."
-msgstr "Iterator オブジェクト"
+msgstr "ジェネレーターオブジェクト"
 
 #: ../../source/save_load_rollback.rst:159
 msgid ""
 "Coroutine tasks and futures, like those created with ``async`` and ``await``."
 msgstr ""
+"``async`` や ``await`` で作成されるようなコルーチンタスクやフューチャーのこ"
+"と。"
 
 #: ../../source/save_load_rollback.rst:160
 msgid "File-like objects."
@@ -303,7 +302,7 @@ msgstr "File-like オブジェクト"
 
 #: ../../source/save_load_rollback.rst:161
 msgid "Network sockets, and objects that enclose them."
-msgstr ""
+msgstr "ネットワークソケット、およびそれを含むオブジェクト。"
 
 #: ../../source/save_load_rollback.rst:162
 msgid "Inner functions and lambdas."
@@ -311,7 +310,7 @@ msgstr "内部関数とラムダ関数"
 
 #: ../../source/save_load_rollback.rst:164
 msgid "This may not be an exhaustive list."
-msgstr ""
+msgstr "これは完全なリストではないかもしれません。"
 
 #: ../../source/save_load_rollback.rst:166
 msgid ""
@@ -319,40 +318,50 @@ msgid ""
 "combined to namespaces that aren't saved by Ren'Py (like init variables, "
 "namespaces inside functions,  or ``python hide`` blocks.)"
 msgstr ""
+"ピクルス化できないオブジェクトも、 Ren'Py が保存しない名前空間 (init 変数、関"
+"数内の名前空間、``python hide`` ブロックなど ) と組み合わせて使用すれば、使用"
+"できます。"
 
 #: ../../source/save_load_rollback.rst:170
 msgid "For example, using a file object like::"
-msgstr ""
+msgstr "例えば、次のようにファイルオブジェクトを使用しても ::"
 
 #: ../../source/save_load_rollback.rst:176
 msgid ""
 "Won't work, as ``f`` could be saved between any of the three Python "
 "statements. Putting this in a ``python hide`` block will work::"
 msgstr ""
+"``f`` は 3 つの Python ステートメントのどれかの間に保存される可能性があるた"
+"め、うまくいきません。これを ``python hide`` ブロックに入れるとうまくいきま"
+"す ::"
 
 #: ../../source/save_load_rollback.rst:185
 msgid "(Of course, using the python ``with`` statement would be cleaner.) ::"
-msgstr ""
+msgstr "(もちろん ``with`` ステートメントを使用したほうがすっきりします) ::"
 
 #: ../../source/save_load_rollback.rst:192
 msgid ""
 "Coroutines, like those made with ``async``, ``await``, or the ``asyncio`` "
 "are similar. If you have::"
 msgstr ""
+"``async`` や ``await``, ``asyncio`` で作られるようなコルーチンは、これに似て"
+"います。次のコードを書き ::"
 
 #: ../../source/save_load_rollback.rst:203
 msgid "then::"
-msgstr ""
+msgstr "さらに次のコードを記述すると ::"
 
 #: ../../source/save_load_rollback.rst:208
 msgid ""
 "will have problems, since `sleep_task` can't be saved. But if it's not "
 "assigned to a variable::"
 msgstr ""
+"`sleep_task` が保存されないため問題が起きます。しかし次のようにそれが変数に代"
+"入されなければ ::"
 
 #: ../../source/save_load_rollback.rst:213
 msgid "will run fine."
-msgstr ""
+msgstr "正常に動作します。"
 
 #: ../../source/save_load_rollback.rst:217
 msgid "Save Functions and Variables"
@@ -375,6 +384,8 @@ msgid ""
 "More per-save data customization can be done with the Json supplementary "
 "data system, see :var:`config.save_json_callbacks`."
 msgstr ""
+"さらなるセーブデートのカスタマイズが Json 補助データシステムにより可能で"
+"す。 :var:`config.save_json_callbacks` を参照してください。"
 
 #: ../../source/save_load_rollback.rst:229
 msgid ""
@@ -518,6 +529,9 @@ msgid ""
 "function, it will be returned as a dictionary. More precisely, the "
 "dictionary will contain the same data as it did when the game was saved."
 msgstr ""
+"var:`config.save_json_callbacks` 関数への ``d`` 引数と同じように辞書として返"
+"されます。より正確には、この辞書にはゲームが保存されたときと同じデータが含ま"
+"れます。"
 
 #: ../../source/inc/loadsave:78
 msgid "Returns the modification time for `slot`, or None if the slot is empty."
@@ -612,7 +626,7 @@ msgstr ""
 
 #: ../../source/save_load_rollback.rst:282
 msgid "What Data is Rolled Back?"
-msgstr ""
+msgstr "どのデータがロールバックされますか?"
 
 #: ../../source/save_load_rollback.rst:284
 msgid ""
@@ -622,6 +636,11 @@ msgid ""
 "revertable as are instances of classes defined in Ren'Py scripts. Data "
 "created inside Python or inside Ren'Py usually isn't revertable."
 msgstr ""
+"ロールバックは、初期化後に変更された変数と、その変数から到達可能な "
+"revertable 型のオブジェクトに影響します。簡単に言うと、Ren'Pyスクリプトで作成"
+"されたリスト、辞書、セットは、Ren'Pyスクリプトで定義されたクラスのインスタン"
+"スと同様に、 revertable です。 Python内部や Ren'Py 内部で作成されたデータは、"
+"通常、 revertable ではありません。"
 
 #: ../../source/save_load_rollback.rst:290
 msgid ""
@@ -631,24 +650,33 @@ msgid ""
 "are also revertable. The :class:`renpy.Displayable` type inherits from the "
 "revertable object type."
 msgstr ""
+"より詳細には、 Ren'Py スクリプトに埋め込まれた Python が実行される store 内"
+"で、 object, list, dict, set 型は revertable である同等の型に置き換えられま"
+"す。これらの型を継承するオブジェクトもまた revertable です。 :class:`renpy."
+"Displayable` 型は revertable オブジェクト型を継承しています。"
 
 #: ../../source/save_load_rollback.rst:296
 msgid ""
 "To make the use of revertable objects more convenient, Ren'Py modifies "
 "Python found inside Ren'Py script files in the following way."
 msgstr ""
+"revertable オブジェクトの使用をより便利にするために、 Ren'Py は、 Ren'Py スク"
+"リプトファイル内の Python を以下のように変更します。"
 
 #: ../../source/save_load_rollback.rst:299
 msgid ""
 "Literal lists, dicts, and sets are automatically converted to the revertable "
 "equivalent."
 msgstr ""
+"literal なリスト、辞書、およびセットは自動的に revertable な等価物に変換され"
+"ます。"
 
 #: ../../source/save_load_rollback.rst:301
 msgid ""
 "List, dict, and set comprehensions are also automatically converted to the "
 "revertable equivalent."
 msgstr ""
+"リスト、辞書、セットの内包表記も自動的に revertable な同等品に変換されます。"
 
 #: ../../source/save_load_rollback.rst:303
 msgid ""
@@ -658,28 +686,36 @@ msgid ""
 "(that create dictionaries of extra keyword arguments) are not converted to "
 "revertable objects."
 msgstr ""
+"リスト、辞書、セットを作成できる拡張アンパックのような他の Python 構文は、結"
+"果を revertable な同等のものに変換します。しかし、パフォーマンス上の理由か"
+"ら、関数やメソッドへの (追加のキーワード引数の辞書を作成する）二重アスタリス"
+"ク付きのパラメータは、 revertable オブジェクトへ変換されません。"
 
 #: ../../source/save_load_rollback.rst:308
 msgid ""
 "Classes that do not inherit from any other types automatically inherit from "
 "the revertable object."
 msgstr ""
+"その他の revertable オブジェクトを自動的に継承するどの型も継承しないクラス"
 
 #: ../../source/save_load_rollback.rst:311
 msgid "In addition:"
-msgstr ""
+msgstr "さらに :"
 
 #: ../../source/save_load_rollback.rst:313
 msgid ""
 "The methods and operators of revertable types have been modified to return "
 "revertable objects when a list, dict, or set is produced."
 msgstr ""
+"revertable 型のメソッドと演算子は変更され、リスト、辞書、セットの生成時に、 "
+"revertable なオブジェクトを返すようになります。"
 
 #: ../../source/save_load_rollback.rst:315
 msgid ""
 "Built in functions that return lists, dicts, and sets return a revertable "
 "equivalent."
 msgstr ""
+"リスト、辞書、セットを返す組み込み関数は revertable　な同等のものを返します。"
 
 #: ../../source/save_load_rollback.rst:318
 msgid ""
@@ -687,10 +723,13 @@ msgid ""
 "Some cases where you'll get an object that may not participate in rollback "
 "are:"
 msgstr ""
+"Python のコードを呼び出しても一般的には revertable オブジェクトは生成されませ"
+"ん。ロールバックに参加しない可能性のあるオブジェクトができる場合として次があ"
+"ります。 :"
 
 #: ../../source/save_load_rollback.rst:321
 msgid "Calling methods on built-in types, like the str.split method."
-msgstr ""
+msgstr "str.split メソッドのような組み込み型のメソッドの呼び出し"
 
 #: ../../source/save_load_rollback.rst:322
 msgid ""
@@ -698,16 +737,21 @@ msgid ""
 "return to Ren'Py. (For example, an instance of collections.defaultdict won't "
 "participate in rollback.)"
 msgstr ""
+"インポートされた python モジュールで作成され、 Ren'Py に返されたオブジェクト "
+"(例えば collections.defaultdict のインスタンスはロールバックに参加しませ"
+"ん) 。"
 
 #: ../../source/save_load_rollback.rst:325
 msgid "Objects returned from Ren'Py's API, unless documented otherwise."
-msgstr ""
+msgstr "Ren'Py の API から返されるオブジェクトで特に記載のないもの。"
 
 #: ../../source/save_load_rollback.rst:327
 msgid ""
 "If such data needs to participate in rollback, it may make sense to convert "
 "it to a type that does partipate. For example::"
 msgstr ""
+"そのようなデータをロールバックに参加させる必要があるなら、参加する型に変換す"
+"ると良いです。例 ::"
 
 #: ../../source/save_load_rollback.rst:336
 msgid "Supporting Rollback and Roll Forward"
@@ -962,7 +1006,6 @@ msgstr ""
 "だ出来ます。しかし、違った選択をすることは出来ません。"
 
 #: ../../source/save_load_rollback.rst:428
-#, fuzzy
 msgid ""
 "There are some caveats to consider when designing a game for fix_rollback. "
 "Ren'Py will automatically take care of locking any data that is given to :"
@@ -974,10 +1017,11 @@ msgid ""
 msgstr ""
 "fix_rollback についてゲームデザイン時にいくつか配慮すべき点があります。"
 "Ren'Py は自動的に :func:`checkpoint` に与えられたすべてのデータをロックするよ"
-"う気をつけますが、 Ren'Py の性質のために python コードを書いてこれを突破し、"
-"結果を予測出来ない方法でこれらを変更することが可能です。プログラムを使用する"
-"場所でロールバックを禁止するか、これをうまく扱うために追加のコードを書くかは"
-"ゲームデザイナー次第です。"
+"う気をつけますが、 Ren'Py の性質上、突破しして予測出来ない結果にする python "
+"コードを書くことは可能です。最も注目すべきは ``call screen`` は固定ロールバッ"
+"クでは上手く動作しないことです。プログラムを使用する場所でロールバックを禁止"
+"するか、これをうまく扱うために追加のコードを書くかはゲームデザイナー次第で"
+"す。"
 
 #: ../../source/save_load_rollback.rst:436
 msgid ""
@@ -1174,36 +1218,32 @@ msgid "NoRollback"
 msgstr "NoRollback"
 
 #: ../../source/inc/norollback:5
-#, fuzzy
 msgid ""
 "Instances of this class, and classes inheriting from this class, do not "
 "participate in rollback. Objects reachable through an instance of a "
 "NoRollback class only participate in rollback if they are reachable through "
 "other paths."
 msgstr ""
-"このクラスを継承したクラスのインスタンスはロールバックに参加しません。 "
-"NoRollback クラスのインスタンスからアクセス可能なオブジェクトはそれが他のルー"
-"トからもアクセス可能な場合のみロールバックに参加します。"
+"このクラスおよびこのクラスを継承したクラスのインスタンスはロールバックに参加"
+"しません。 NoRollback クラスのインスタンスからアクセス可能なオブジェクトはそ"
+"れが他のルートからもアクセス可能な場合のみロールバックに参加します。"
 
 #: ../../source/inc/norollback:12
-#, fuzzy
 msgid ""
 "Instances of classes inheriting from this class do not participate in "
 "rollback. The difference between this and :class:`NoRollback` is that this "
 "class does not have an associated dictionary, hence can be used with "
 "``__slots__`` to reduce memory usage."
 msgstr ""
-"このクラスを継承したクラスのインスタンスはロールバックに参加しません。 "
-"NoRollback クラスのインスタンスからアクセス可能なオブジェクトはそれが他のルー"
-"トからもアクセス可能な場合のみロールバックに参加します。"
+"このクラスおよびこのクラスを継承したクラスのインスタンスはロールバックに参加"
+"しません。このクラスは :class:`NoRollback` と違い関連づけられた辞書を持たない"
+"ため、 ``__slots__`` を使用してメモリー使用量を削減できます。"
 
 #: ../../source/inc/norollback:17
-#, fuzzy
 msgid ""
 "Objects reachable through an instance of a NoRollback class only participate "
 "in rollback if they are reachable through other paths."
 msgstr ""
-"このクラスを継承したクラスのインスタンスはロールバックに参加しません。 "
 "NoRollback クラスのインスタンスからアクセス可能なオブジェクトはそれが他のルー"
 "トからもアクセス可能な場合のみロールバックに参加します。"
 

@@ -8,38 +8,37 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-01 12:00+0900\n"
-"PO-Revision-Date: 2019-10-27 10:12+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-05-07 15:34+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/cds.rst:7
 msgid "Creator-Defined Statements"
 msgstr "ユーザー定義ステートメント"
 
 #: ../../source/cds.rst:9
-#, fuzzy
 msgid ""
 "Creator-Defined Statements (CDS) allow you to add your own statements to "
 "Ren'Py's scripting language. This makes it possible to add functionality "
 "that is not supported by the current syntax."
 msgstr ""
-"ユーザー定義ステートメントは独自のステートメントを Ren'Py に追加出来るように"
-"します。これにより現在の Ren'Py の文法ではサポートされない機能が追加出来ま"
-"す。"
+"ユーザー定義ステートメント (Creator-Defined Statements CDS) は独自のステート"
+"メントを Ren'Py に追加出来るようにします。これにより現在の文法ではサポートさ"
+"れない機能が追加出来ます。"
 
 #: ../../source/cds.rst:13
 msgid "CDS can be more flexible than the direct Python code equivalent."
-msgstr ""
+msgstr "CDS は直接的な同等の Python コードより柔軟です。"
 
 #: ../../source/cds.rst:15
 msgid "For example, picking a line of dialogue at random:"
-msgstr ""
+msgstr "例えば、ランダムに1行の台詞を所得します :"
 
 #: ../../source/cds.rst:27
 msgid ""
@@ -47,40 +46,49 @@ msgid ""
 "or how it should be executed. It does not do anything with this code until "
 "execution and triggers an error if an exception occurs."
 msgstr ""
+"Ren'Py のパーサーでは Python ブロック内で何が起こり、どのように実行されるはず"
+"か予め分かりません。実行までこのコードにできることはなく、例外が発生するとエ"
+"ラーとなります。"
 
 #: ../../source/cds.rst:30
 msgid "Using a CDS allows you to:"
-msgstr ""
+msgstr "CDS を使用すれば次のことができます。 :"
 
 #: ../../source/cds.rst:32
 msgid ""
 "Check the correctness of the parsed syntax (For example, check that the "
 "items in the list sent to renpy.random.choice have valid text)"
 msgstr ""
+"パースされた文法の妥当性確認 (例えば、 renpy.random.choice に送られるリストの"
+"要素が妥当なテキストか確認します)"
 
 #: ../../source/cds.rst:34
 msgid ""
 "Ignore incorrect data at execution (For non-critical functions, it is often "
 "better to skip the execution than to throw an exception)"
 msgstr ""
+"実行時の不正なデータの無視 (クリティカルでない関数に対しては、例外を投げるよ"
+"りも実行をスキップする方がしばしばよいです)"
 
 #: ../../source/cds.rst:36
 msgid "Predict Displayables (If the function uses them)"
-msgstr ""
+msgstr "Displayable の予測 (関数が使用する場合)"
 
 #: ../../source/cds.rst:38
 msgid ""
 "Give you addition information during lint (If at runtime an error was "
 "ignored you can have a report here)."
 msgstr ""
+"リント中の追加情報の掲示 (実行時エラーが無視されるなら、ここでレポートとして"
+"受け取られます)"
 
 #: ../../source/cds.rst:40
 msgid "For example, the above behaviour, but written as a CDS:"
-msgstr ""
+msgstr "例えば、上記のような動作は CDS では次のように書けます。 :"
 
 #: ../../source/cds.rst:75
 msgid "``random`` is now available as a statement:"
-msgstr ""
+msgstr "``random`` がステートメントとして利用できるようになります。 :"
 
 #: ../../source/cds.rst:86
 msgid ""
@@ -88,21 +96,23 @@ msgid ""
 "the better you code your statement, the better Ren'Py can \"understand\" "
 "what you expect from it."
 msgstr ""
+"CDS の使用は実行の安全を保証しませんが、あなたのステートメントのコードが良け"
+"れば、その分 Ren'Py はあなたがそれに何を期待しているか \"理解\" できます。"
 
 #: ../../source/cds.rst:92
 msgid "Usage"
-msgstr ""
+msgstr "使用方"
 
 #: ../../source/cds.rst:94
 msgid "Creator-Defined Statements (CDS) must conform to the following rules:"
 msgstr ""
+"ユーザー定義ステートメント (CDS) は次のルールに準拠しなければなりません :"
 
 #: ../../source/cds.rst:96
 msgid "They must be defined in a ``python early`` block."
-msgstr ""
+msgstr "``python early`` ブロックで定義されなければならない"
 
 #: ../../source/cds.rst:98
-#, fuzzy
 msgid "They cannot be used in the same file in which they are defined."
 msgstr ""
 "ユーザー定義ステートメントはそれが定義されたファイル内では使用不能です。"
@@ -112,6 +122,8 @@ msgid ""
 "The file containing the CDS must be loaded earlier than any file that uses "
 "it."
 msgstr ""
+"CDS を含むファイルはそれを使用するどのファイルよりも先にロードされなければい"
+"けない。"
 
 #: ../../source/cds.rst:101
 msgid ""
@@ -119,25 +131,25 @@ msgid ""
 "prefix the name of any file containing a CDS with 01 or some other small "
 "number.)"
 msgstr ""
+"(Ren'Py のファイルロードはユニコーン順なので、 CDS　を含むファイル名に接頭辞 "
+"01 やその他小さな数値を付けると良いです)"
 
 #: ../../source/cds.rst:104
-#, fuzzy
 msgid ""
 "Creator-Defined Statements are registered using the :func:`renpy."
 "register_statement` function. This functions takes other functions that "
 "perform operations on the content of the CDS."
 msgstr ""
 "ユーザー定義ステートメントは :func:`renpy.register_statement` 関数を使用して"
-"登録されます。"
+"登録されます。この関数は CDS 内の処理を実行する他の関数を受け取ります。"
 
 #: ../../source/cds.rst:107
-#, fuzzy
 msgid ""
 "For example, a new statement named ``line`` that allows lines of text to be "
 "specified without quotes."
 msgstr ""
 "ここでは新しいステートメント ``line`` を作成し、クォーテーションを付けずにテ"
-"キストを指定できるようにしています。::"
+"キストを指定できるようにしています。"
 
 #: ../../source/cds.rst:114
 msgid ""
@@ -145,10 +157,13 @@ msgid ""
 "function should run an operation on the parsed content. The lint function "
 "should report any errors in the parsed content."
 msgstr ""
+"parse 関数には、パースのための字句解析されたコンテンツが送られます。 execute "
+"関数はパースされたコンテンツに対して操作を実行するべきです。 lint 関数は、"
+"パースされたコンテンツにエラーがあればそれを報告します。"
 
 #: ../../source/cds.rst:150
 msgid "API Reference"
-msgstr ""
+msgstr "API リファレンス"
 
 #: ../../source/inc/statement_register:5
 msgid "This registers a user-defined statement."
@@ -180,10 +195,10 @@ msgid ""
 "script language statements. If the string \"possible\", the block expect "
 "condition is determined by the parse function."
 msgstr ""
-"False なら、ステートメントはブロックを予測しません。 True ならブロックを予測"
+"False なら、ステートメントはブロックを使用しません。 True ならブロックを使用"
 "し、 そのブロックの解釈は lexer に任せます。文字列 \"script\" なら、ブロック"
 "は一つ以上の Ren'Py スクリプト言語を含むものとして解釈されれます。文字列 "
-"\"possible\" なら、パース関数でブロックを予測するか決定します。"
+"\"possible\" なら、パース関数でブロックを使用するか決定します。"
 
 #: ../../source/inc/statement_register:22
 msgid "`parse`"
@@ -208,9 +223,9 @@ msgid ""
 "This is called to check the statement. It is passed a single argument, the "
 "object returned from parse. It should call renpy.error to report errors."
 msgstr ""
-"これはステートメントをチェックするために呼び出され、 parse から返された 1 つ"
-"のオブジェクトを引数として渡されます。 :func:`renpy.error` を呼び出してエラー"
-"を報告するとよいでしょう。"
+"これはステートメントをチェックするために呼び出され、 parse から返されたオブ"
+"ジェクトを引数として渡されます。 :func:`renpy.error` を呼び出してエラーを報告"
+"するとよいでしょう。"
 
 #: ../../source/inc/statement_register:30
 msgid "`execute`"
@@ -221,8 +236,8 @@ msgid ""
 "This is a function that is called when the statement executes. It is passed "
 "a single argument, the object returned from parse."
 msgstr ""
-"これはステートメントが実行されると呼び出される関数で、 parse から返された 1 "
-"つのオブジェクトを引数として渡されます。"
+"これはステートメントが実行されると呼び出される関数で、 parse から返されたオブ"
+"ジェクトを引数として渡されます。"
 
 #: ../../source/inc/statement_register:33
 msgid "`execute_init`"
@@ -230,7 +245,7 @@ msgstr "`execute_init`"
 
 #: ../../source/inc/statement_register:33
 msgid "This is a function that is called at init time, at priority 0."
-msgstr "これは優先度 0 で初期化時に呼び出される関数です。"
+msgstr "これは初期化時の優先度 0 に呼び出される関数です。"
 
 #: ../../source/inc/statement_register:38
 msgid "`predict`"
@@ -243,8 +258,8 @@ msgid ""
 "It should return a list of displayables used by the statement."
 msgstr ""
 "これはステートメントに使用される画像を予測するために呼び出される関数で、 "
-"parse から返された 1 つのオブジェクトを引数として渡されます。 ステートメント"
-"に使用される displayable のリストを返すべきです。"
+"parse から返されたオブジェクトを引数として渡されます。 ステートメントに使用さ"
+"れる displayable のリストを返すべきです。"
 
 #: ../../source/inc/statement_register:49
 msgid "`next`"
@@ -260,9 +275,9 @@ msgid ""
 "returned from the parse function. If `block` is \"script\", an additional "
 "argument is passed, an object that names the first statement in the block."
 msgstr ""
-"`block` が \"script\" でないなら、これには一つの引数が渡され、パース関数から"
-"返されたオブジェクトです。 `block` が \"script\" なら、追加の引数が渡され、そ"
-"のブロックの最初のステートメントを名付けるオブジェクトです。"
+"`block` が \"script\" でないなら、これには parse 関数から返されたオブジェクト"
+"が引数に渡されます。 `block` が \"script\" ならそのブロックの最初のステートメ"
+"ントの名前のオブジェクトが追加の引数に渡されます。"
 
 #: ../../source/inc/statement_register:47
 msgid ""
@@ -270,8 +285,8 @@ msgid ""
 "second argument to transfer control into the block, or None to continue to "
 "the statement after this one."
 msgstr ""
-"ジャンプ先のラベルを指定する文字列またはブロックへ制御を移すなら第二引数、こ"
-"の後のステートメントに制御を移すなら None を返す関数であるべきです。"
+"この関数はジャンプ先のラベルを指定する文字列、ブロックへ制御を移すなら第二引"
+"数、この後のステートメントに制御を移すなら None を返すべきです。"
 
 #: ../../source/inc/statement_register:54
 msgid "`label`"
@@ -284,7 +299,7 @@ msgid ""
 "can be called and jumped to like any other label."
 msgstr ""
 "ステートメントのラベルを決定する関数です。返した文字列がステートメントのラベ"
-"ルとしてしようされ、その他のラベル同様に呼び出しやジャンプが出来ます。"
+"ルとして使用され、その他のラベル同様に呼び出しやジャンプが出来ます。"
 
 #: ../../source/inc/statement_register:60
 msgid "`warp`"
@@ -365,8 +380,8 @@ msgid ""
 "(Adding a post_execute function changes the contents of the RPYC file, "
 "meaning a Force Compile is necessary.)"
 msgstr ""
-"次のステートメントの一部としてじ実行される関数です( post_execute 関数の追加に"
-"より RPYC ファイルの内容が変化するため、強制コンパイルが必要になります )。"
+"次のステートメントの一部として実行される関数です( post_execute 関数の追加によ"
+"り RPYC ファイルの内容が変化するため、強制コンパイルが必要になります )。"
 
 #: ../../source/inc/statement_register:93
 msgid "`post_label`"
@@ -380,8 +395,8 @@ msgid ""
 "This can be used to create a unique return point."
 msgstr ""
 "post_execute ステートメントのラベルを決定する関数です。返した文字列がステート"
-"メントのラベルとしてしようされ、その他のラベル同様に呼び出しやジャンプが出来"
-"ます。これを使用して唯一のリターンポイントを作成できます。"
+"メントのラベルとして使用され、その他のラベル同様に呼び出しやジャンプが出来ま"
+"す。これを使用して他と被らないリターンポイントを作成できます。"
 
 #: ../../source/inc/statement_register:97
 msgid "`predict_all`"
@@ -418,19 +433,20 @@ msgstr ""
 
 #: ../../source/cds.rst:156
 msgid "Lexer object"
-msgstr ""
+msgstr "Lexer オブジェクト"
 
 #: ../../source/cds.rst:158
 msgid ""
 "A custom statement's parse function takes an instance of a Lexer object."
 msgstr ""
+"Lexer オブジェクトのインスタンスを受け取ってカスタムステートメントをパースす"
+"る関数です。"
 
 #: ../../source/cds.rst:164
 msgid "Message to add to the list of detected parsing errors."
-msgstr ""
+msgstr "検出したパースエラーのリストに追加されるメッセージです。"
 
 #: ../../source/cds.rst:166
-#, fuzzy
 msgid ""
 "Add `msg` (with the current position) to the list of detected parsing "
 "errors. This interrupts the parsing of the current statement, but does not "
@@ -440,51 +456,48 @@ msgstr ""
 "現在のステートメントのパースを停止しますが、以降のパースは妨げません。"
 
 #: ../../source/cds.rst:172
-#, fuzzy
 msgid "Try to parse `thing` and report an error if it cannot be done."
 msgstr "`thing` のパースを試み、出来なければエラーを返します。"
 
 #: ../../source/cds.rst:174
 msgid "If `thing` is a string, try to parse it using :func:`match`."
 msgstr ""
+"`thing` が文字列なら、 :func:`match` を使用してそれをパースしようとします。"
 
 #: ../../source/cds.rst:176
 msgid ""
 "Otherwise, thing must be another method on this lexer object which is called "
 "without arguments."
 msgstr ""
+"そうでなければ、 thing はこの lexer オブジェクトの引数無しで呼び出される他の"
+"メソッドでなければいけません。"
 
 #: ../../source/cds.rst:179
-#, fuzzy
 msgid ""
 "If `name` is not specified, the name of the method will be used in the "
 "message (or `thing` if it's a string), otherwise `name` will be used."
 msgstr ""
-"`thing` が文字列なら、 :func:`match` を使用してパースを試みます。それ以外な"
-"ら、 `thing` は引数なしで呼び出されるこの Lexer オブジェクトの他のメソッドで"
-"あるべきです。 `name` が指定されなければ、メソッド名が (文字列であるなら "
-"`thing` が) メッセージに使用され、そうでないければ `name` が使用されます。"
+"`name` が指定されなければ、メソッド名が (文字列であるなら `thing` が) メッ"
+"セージに使用され、そうでないければ `name` が使用されます。"
 
 #: ../../source/cds.rst:184
-#, fuzzy
 msgid "True if the lexer is at the end of the line, else False."
-msgstr "lexerが行の末端に達していれば True を返します。"
+msgstr ""
+"lexerが行の末端に達していれば True を返し、そうでなければ False を返します。"
 
 #: ../../source/cds.rst:189
-#, fuzzy
 msgid "If not at the end of the line, raise an error."
 msgstr "行の末端に達していなければエラーを投げます。"
 
 #: ../../source/cds.rst:193
-#, fuzzy
 msgid ""
 "Called to indicate this statement does not expect a block. If a block is "
 "found, raise an error. `stmt` should be a string, it will be added to the "
 "message with an error."
 msgstr ""
-"このステートメントブロックを予測しないと示すために呼び出されます。ブロックが"
-"発見されると、例外が投げられます。 `stmt` はエラーとともにメッセージに追加さ"
-"れる文字列です。"
+"このステートメントがブロックを使用しないと示すために呼び出されます。ブロック"
+"が発見されると、例外が投げられます。 `stmt` はエラーとともにメッセージに追加"
+"される文字列です。"
 
 #: ../../source/cds.rst:199
 msgid ""
@@ -492,16 +505,14 @@ msgid ""
 "present. `stmt` should be a string, it will be added to the message with an "
 "error."
 msgstr ""
-"このステートメントが空でないブロックを予測すると示すために呼び出されます。 "
+"このステートメントが空でないブロックを必要とする示すために呼び出されます。 "
 "`stmt` はエラーとともにメッセージに追加される文字列です。"
 
 #: ../../source/cds.rst:205
-#, fuzzy
 msgid "True if the current line has a non-empty block, else False."
-msgstr "現在行に空でないブロックがあれば True です。"
+msgstr "現在行に空でないブロックがあれば True 、そうでなければ False です。"
 
 #: ../../source/cds.rst:210
-#, fuzzy
 msgid "Match an arbitrary regexp string."
 msgstr "任意の正規表現文字列にマッチします。"
 
@@ -518,58 +529,48 @@ msgstr ""
 "れ、 Lexer は変更されません。"
 
 #: ../../source/cds.rst:220
-#, fuzzy
 msgid "Match `s` as a keyword."
 msgstr "キーワードとして `s` にマッチします。"
 
 #: ../../source/cds.rst:224
-#, fuzzy
 msgid "Match a name. This does not match built-in keywords."
 msgstr "名前にマッチしますが組み込みのキーワードにはマッチしません。"
 
 #: ../../source/cds.rst:228
 msgid "The text of the matched word."
-msgstr ""
+msgstr "マッチされた単語のテキストです。"
 
 #: ../../source/cds.rst:231
-#, fuzzy
 msgid "Match any word, including keywords."
-msgstr ""
-"キーワードを含むどのような単語にもマッチします。マッチした単語を返します。"
+msgstr "キーワードを含むどのような単語にもマッチします。"
 
 #: ../../source/cds.rst:235
-#, fuzzy
 msgid ""
 "Match an image name component. Unlike a word, an image name component can "
 "begin with a number."
 msgstr "画像名にマッチします。単語と違い画像名は数字で始められます。"
 
 #: ../../source/cds.rst:240
-#, fuzzy
 msgid "Match a Ren'Py string."
 msgstr "文字列にマッチします。"
 
 #: ../../source/cds.rst:244
-#, fuzzy
 msgid "String containing the found integer."
-msgstr "整数にマッチし、整数の文字列を返します。"
+msgstr "整数を含む文字列"
 
 #: ../../source/cds.rst:247
-#, fuzzy
 msgid "Match an integer."
-msgstr "文字列にマッチします。"
+msgstr "整数にマッチします。"
 
 #: ../../source/cds.rst:251
-#, fuzzy
 msgid "String containing the found floating point number."
-msgstr "浮動小数点にマッチし、浮動小数点の文字列を返します。"
+msgstr "浮動小数点を含む文字列"
 
 #: ../../source/cds.rst:254
 msgid "Match a floating point number."
-msgstr ""
+msgstr "浮動小数にマッチします。"
 
 #: ../../source/cds.rst:258
-#, fuzzy
 msgid ""
 "Match a label name, either absolute or relative. If `declare` is true, then "
 "the global label name is set. (Note that this does not actually declare the "
@@ -577,21 +578,21 @@ msgid ""
 "`label` function.)"
 msgstr ""
 "ラベル名または、absolute, relative にマッチします。 `declare` が True なら、"
-"グローバルラベルが設定され( ステートメントはラベル関数からラベルを返すために"
-"そうする必要あるだけで、実際にはラベルを宣言しないコトに注意してください)。"
+"グローバルラベルが設定されます ( ステートメントは `label` 関数からラベルを返"
+"す必要あるためにそうしているだけで、これはは実際にはラベルを宣言しないことに"
+"注意してください)。"
 
 #: ../../source/cds.rst:265
-#, fuzzy
 msgid ""
 "Match a simple Python expression, returns it as a string. This is often used "
 "when you expect a variable name. It is not recommended to change the result. "
 "The correct action is to evaluate the result in the future."
 msgstr ""
 "単純式にマッチし、それを文字列として返します。これはしばしば変数名を期待する"
-"時に使用されます。結果の変更は推奨されません。結果を評価してください。"
+"時に使用されます。結果の変更は推奨されません。正しいアクションは future(訳"
+"注: python3互換モジュールのこと?) で結果を評価することです。"
 
 #: ../../source/cds.rst:272
-#, fuzzy
 msgid ""
 "Match a Python expression that ends in a `delim`, for example ':'. This is "
 "often used when you expect a condition until the delimiter. It is not "
@@ -600,8 +601,9 @@ msgid ""
 "the delimiter."
 msgstr ""
 "':' のような `delim` で終わる Python 式にマッチします。これはしばしばデリミタ"
-"までを条件として期待する場合に使用されます。結果の変更は推奨されません。結果"
-"を評価してください。デリミタの前に行端に達すればエラーを投げます。"
+"までを条件として期待する場合に使用されます。結果の変更は推奨されません。正し"
+"いアクションは future(訳注: python3互換モジュールのこと?) で結果を評価するこ"
+"とです。デリミタの前に行端に達すればエラーを投げます。"
 
 #: ../../source/cds.rst:280
 msgid ""
@@ -615,18 +617,16 @@ msgstr ""
 "これは引数リストの丸括弧の前に呼び出されなければなりません。引数リストが確認"
 "されなければ None を返し、そうでなければ引数を表すオブジェクトを関数呼び出し"
 "に渡します。このオブジェクトには `scope` 辞書を省略可能な引数にとる  "
-"``evalute`` メソッドがあり、1番目が一引数のタプル、二番目がキーワード引数の辞"
-"書であるタプルを返します。"
+"``evalute`` メソッドがあり、1番目が位置引数のタプル、二番目がキーワード引数の"
+"辞書であるタプルを返します。"
 
 #: ../../source/cds.rst:290
-#, fuzzy
 msgid "Skip whitespace, then return the rest of the line."
 msgstr "空白をスキップし、行の残りを返します。"
 
 #: ../../source/cds.rst:294
-#, fuzzy
 msgid "Return an opaque object representing the current state of the lexer."
-msgstr "現在の lexer の状態を表現するオブジェクトを返します。"
+msgstr "現在の lexer の状態を表現する opaque オブジェクトを返します。"
 
 #: ../../source/cds.rst:298
 msgid ""
@@ -635,25 +635,23 @@ msgid ""
 "backtracking.)"
 msgstr ""
 "`o` が checkpoint() から返されたオブジェクトなら、 lexer の状態を "
-"checkpoint() が呼び出されたときにまで戻します ( これはロールバックのために使"
-"用されます )。"
+"checkpoint() が呼び出されたときにまで戻します ( これはバックトラッキングのた"
+"めに使用されます )。"
 
 #: ../../source/cds.rst:304
-#, fuzzy
 msgid "A Lexer for the block associated with the current line."
-msgstr "現在のブロックと関連付けられたブロックに対する Lexer を返します。"
+msgstr "現在行と対応するブロックに対する Lexer"
 
 #: ../../source/cds.rst:308
-#, fuzzy
 msgid ""
 "In a subblock lexer, advance to the next line. This must be called before "
 "the first line, so the first line can be parsed. Return True if we've "
 "successfully advanced to a line in the block, or False if we have advanced "
 "beyond all lines in the block."
 msgstr ""
-"サブブロック lexer で、次の行に解析を進めます。一行目を解析できるようにするた"
+"サブブロック lexer 内で次の行に解析を進めます。一行目を解析できるようにするた"
 "めに、一行目よりも前で呼び出される必要があります。そのブロック内の行に進めれ"
-"ば、 True を返し、末端に達していれば False を返します。"
+"ば、 True を返し、末端を越えていれば False を返します。"
 
 #: ../../source/cds.rst:315
 msgid ""
@@ -665,11 +663,10 @@ msgid ""
 msgstr ""
 "Ren'Py スクリプトステートメントとして現在行をパースし、不可能ならエラーを生成"
 "します。このメソッドは get_next() から返されたり :func:`renpy.jump` 、 :func:"
-"`renpy.call` に渡される不透明なオブジェクトを返します。このオブジェクトはス"
+"`renpy.call` に渡される opaque オブジェクトを返します。このオブジェクトはス"
 "テートメントのパース結果としてを除いて保存されるべきではありません。"
 
 #: ../../source/cds.rst:321
-#, fuzzy
 msgid ""
 "When the statement returned from this completes, control is transferred to "
 "the statement after the creator-defined statement. (Which might be the "
@@ -680,7 +677,6 @@ msgstr ""
 "に渡されます。"
 
 #: ../../source/cds.rst:327
-#, fuzzy
 msgid ""
 "Parse all of the remaining lines in the current block as Ren'Py script, and "
 "return a SubParse corresponding to the first statement in the block. The "
@@ -741,7 +737,6 @@ msgid "Lint Utility Functions"
 msgstr "Lint 用ユーティリティー関数"
 
 #: ../../source/cds.rst:385
-#, fuzzy
 msgid "These functions are useful when writing lint functions."
 msgstr "これらの関数は lint 関数を記述するのに便利です。"
 
