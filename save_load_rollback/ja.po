@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-08 00:04+0900\n"
+"POT-Creation-Date: 2022-05-15 15:18+0900\n"
 "PO-Revision-Date: 2022-05-05 10:30+0900\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: ../../source/save_load_rollback.rst:5
+#: ../../source/save_load_rollback.rst:8
 msgid "Saving, Loading, and Rollback"
 msgstr "セーブ、ロード、ロールバック"
 
-#: ../../source/save_load_rollback.rst:7
+#: ../../source/save_load_rollback.rst:10
 msgid ""
 "Ren'Py has support for saving game state, loading game state, and rolling "
 "back to a previous game state. Although implemented in a slightly different "
@@ -35,7 +35,7 @@ msgstr ""
 "ザーとのインタラクションを持つ各ステートメントの開始でセーブし、ユーザーが"
 "ロールバックするとセーブをロードするものとして考えられます。"
 
-#: ../../source/save_load_rollback.rst:15
+#: ../../source/save_load_rollback.rst:18
 msgid ""
 "While we usually attempt to keep save compatibility between releases, this "
 "compatibility is not guaranteed. We may decide to break save-compatibility "
@@ -44,11 +44,11 @@ msgstr ""
 "通常リリース間でのセーブの互換性を保とうとはしますが、この互換性は保証されま"
 "せん。十分大きな利益があればセーブの互換性を破壊する決定をします。"
 
-#: ../../source/save_load_rollback.rst:20
+#: ../../source/save_load_rollback.rst:23
 msgid "What is Saved"
 msgstr "何がセーブされるか"
 
-#: ../../source/save_load_rollback.rst:22
+#: ../../source/save_load_rollback.rst:25
 msgid ""
 "Ren'Py attempts to save the game state. This includes both internal state "
 "and Python state."
@@ -56,7 +56,7 @@ msgstr ""
 "Ren'Py はゲーム状態のセーブを試みます。これは内部の状態と python の状態の両方"
 "を含みます。"
 
-#: ../../source/save_load_rollback.rst:25
+#: ../../source/save_load_rollback.rst:28
 msgid ""
 "The internal state consists of all aspects of Ren'Py that are intented to "
 "change once the game has started, and includes:"
@@ -64,28 +64,28 @@ msgstr ""
 "内部状態は一旦ゲームが開始されてから Ren'Py が変更を試みたすべての要素で構成"
 "され、以下を含みます :"
 
-#: ../../source/save_load_rollback.rst:28
+#: ../../source/save_load_rollback.rst:31
 msgid "The current statement, and all statements that can be returned to."
 msgstr "現在のステートメントと呼び出し先から戻るすべてのステートメント"
 
-#: ../../source/save_load_rollback.rst:29
+#: ../../source/save_load_rollback.rst:32
 msgid "The images and displayables that are being shown."
 msgstr "表示されている画像と displayable"
 
-#: ../../source/save_load_rollback.rst:30
+#: ../../source/save_load_rollback.rst:33
 msgid ""
 "The screens being shown, and the values of variables within those screens."
 msgstr "表示されているスクリーンとそれらのスクリーン内部の変数の値"
 
-#: ../../source/save_load_rollback.rst:32
+#: ../../source/save_load_rollback.rst:35
 msgid "The music that Ren'Py is playing."
 msgstr "Ren'Py が再生している曲"
 
-#: ../../source/save_load_rollback.rst:33
+#: ../../source/save_load_rollback.rst:36
 msgid "The list of nvl-mode text blocks."
 msgstr "NVLモードのテキストブロックのリスト"
 
-#: ../../source/save_load_rollback.rst:35
+#: ../../source/save_load_rollback.rst:38
 msgid ""
 "The Python state consists of the variables in the store that have changed "
 "since the game began, and all objects reachable from those variables. Note "
@@ -97,7 +97,7 @@ msgstr ""
 "更という点が重要であり、オブジェクト内のフィールドへの変更は保存の対象になら"
 "ないという点に注意してください。"
 
-#: ../../source/save_load_rollback.rst:40
+#: ../../source/save_load_rollback.rst:43
 msgid ""
 "Variables set using the :ref:`default statement <default-statement>` will "
 "always be saved."
@@ -105,11 +105,11 @@ msgstr ""
 ":ref:`default statement <default-statement>` を使用して設定した変数は常に保存"
 "されます。"
 
-#: ../../source/save_load_rollback.rst:43
+#: ../../source/save_load_rollback.rst:46
 msgid "In this example::"
 msgstr "この例では ::"
 
-#: ../../source/save_load_rollback.rst:53
+#: ../../source/save_load_rollback.rst:56
 msgid ""
 "only `b` and `c` will be saved. `A` will not be saved because it does not "
 "change once the game begins. `O` is not saved because it does not change – "
@@ -119,11 +119,11 @@ msgstr ""
 "ていないのでセーブされません。 `O` はそれが参照するオブジェクトは変更されまし"
 "たが、変数自体は変更されていないのでセーブされません。"
 
-#: ../../source/save_load_rollback.rst:58
+#: ../../source/save_load_rollback.rst:61
 msgid "What isn't Saved"
 msgstr "何がセーブされないか"
 
-#: ../../source/save_load_rollback.rst:60
+#: ../../source/save_load_rollback.rst:63
 msgid ""
 "Python variables that are not changed after the game begins will not be "
 "saved. This can be a major problem if a variable that is not saved and one "
@@ -133,7 +133,7 @@ msgstr ""
 "は、ある保存される変数が別の保存されないオブジェクトを参照(エイリアス)してい"
 "る場合に問題となりえます。例 ::"
 
-#: ../../source/save_load_rollback.rst:74
+#: ../../source/save_load_rollback.rst:77
 msgid ""
 "`a` and `b` are aliased. Saving and loading may break this aliasing, causing "
 "`a` and `b` to refer to different objects. Since this can be very confusing, "
@@ -147,15 +147,15 @@ msgstr ""
 "れは直接的には滅多にないことですが、保存されない変数と保存されるフィールドの"
 "エイリアスで起こるかもしれません)。"
 
-#: ../../source/save_load_rollback.rst:80
+#: ../../source/save_load_rollback.rst:83
 msgid "There are several other kinds of state that isn't saved:"
 msgstr "その他いくつかの種類の、セーブされない状態を示します:"
 
-#: ../../source/save_load_rollback.rst:85
+#: ../../source/save_load_rollback.rst:88
 msgid "control flow path"
 msgstr "制御フローのパス"
 
-#: ../../source/save_load_rollback.rst:83
+#: ../../source/save_load_rollback.rst:86
 msgid ""
 "Ren'Py only saves the current statement, and the statement it needs to "
 "return to. It doesn't remember how it got there. Importantly, statements "
@@ -166,11 +166,11 @@ msgstr ""
 "ことは、(変数の代入のような)コードがゲームに追加された場合、それは実行されな"
 "いことです。"
 
-#: ../../source/save_load_rollback.rst:90
+#: ../../source/save_load_rollback.rst:93
 msgid "mappings of image names to displayables"
 msgstr "画像名の displayable へのマッピング"
 
-#: ../../source/save_load_rollback.rst:88
+#: ../../source/save_load_rollback.rst:91
 msgid ""
 "Since this mapping is not saved, the image may change to a new image when "
 "the game loads again. This allows an image to change to a new file as the "
@@ -180,11 +180,11 @@ msgstr ""
 "しい画像に変更しているかもしれません。これにより画像はゲームの更新とともに新"
 "しいファイルに変更できるようになります。"
 
-#: ../../source/save_load_rollback.rst:96
+#: ../../source/save_load_rollback.rst:99
 msgid "configuration variables, styles, and style properties"
 msgstr "設定変数、スタイル、スタイルプロパティー"
 
-#: ../../source/save_load_rollback.rst:93
+#: ../../source/save_load_rollback.rst:96
 msgid ""
 "Configuration variables and styles aren't saved as part of the game. "
 "Therefore, they should only be changed in ``init`` blocks, and left alone "
@@ -194,11 +194,11 @@ msgstr ""
 "``init`` ブロックでのみ変更され、一旦ゲームが開始されたらそのままであるべきで"
 "す。"
 
-#: ../../source/save_load_rollback.rst:99
+#: ../../source/save_load_rollback.rst:102
 msgid "Where Ren'Py Saves"
 msgstr "どこで Ren'Py はセーブされるか"
 
-#: ../../source/save_load_rollback.rst:101
+#: ../../source/save_load_rollback.rst:104
 msgid ""
 "Saves occur at the start of a Ren'Py statement in the outermost interaction "
 "context."
@@ -206,7 +206,7 @@ msgstr ""
 "セーブは最も外側のインタラクションコンテキストにある Ren'Py のステートメント"
 "開始点で実行されます。"
 
-#: ../../source/save_load_rollback.rst:104
+#: ../../source/save_load_rollback.rst:107
 msgid ""
 "What's important here is to note that saving occurs at the **start** of a "
 "statement. If a load or rollback occurs in the middle of a statement that "
@@ -217,13 +217,13 @@ msgstr ""
 "つけることです。複数回実行されるステートメントの内部でロードやロールバックが"
 "起きると、ステートメント開始時にアクティブだった状態になります。"
 
-#: ../../source/save_load_rollback.rst:109
+#: ../../source/save_load_rollback.rst:112
 msgid "This can be a problem in Python-defined statements. In::"
 msgstr ""
 "このことは python で定義されたステートメントで問題になり得ます。 このような"
 "コードでは ::"
 
-#: ../../source/save_load_rollback.rst:121
+#: ../../source/save_load_rollback.rst:124
 msgid ""
 "if the user saves and loads in the middle, the loop will begin anew. Using "
 "Ren'Py script – rather than Python – to loop avoids this problem.::"
@@ -231,11 +231,11 @@ msgstr ""
 "ユーザーが内部でセーブし、ロードすると、ループは最初から始まります。 python "
 "ではなく Ren'Py で同一のコードを行えばこの問題は避けられます ::"
 
-#: ../../source/save_load_rollback.rst:134
+#: ../../source/save_load_rollback.rst:137
 msgid "What Ren'Py Can Save"
 msgstr "Ren'Py がセーブできるもの"
 
-#: ../../source/save_load_rollback.rst:136
+#: ../../source/save_load_rollback.rst:139
 msgid ""
 "Ren'Py uses the Python pickle system to save game state. This module can "
 "save:"
@@ -243,7 +243,7 @@ msgstr ""
 "Ren'Py はゲーム状態をセーブするために python pickle システムを使用していま"
 "す。 このモジュールは以下をセーブできます :"
 
-#: ../../source/save_load_rollback.rst:139
+#: ../../source/save_load_rollback.rst:142
 msgid ""
 "Basic types, such as True, False, None, int, str, float, complex, str, and "
 "Unicode objects."
@@ -251,11 +251,11 @@ msgstr ""
 "True, False, None, int, str, float, complex, str, unicode オブジェクトのよう"
 "な基本的な型"
 
-#: ../../source/save_load_rollback.rst:140
+#: ../../source/save_load_rollback.rst:143
 msgid "Compound types, like lists, tuples, sets, and dicts."
 msgstr "list, tuple, set, dict のようなコレクション型"
 
-#: ../../source/save_load_rollback.rst:141
+#: ../../source/save_load_rollback.rst:144
 msgid ""
 "Creator-defined objects, classes, functions, methods, and bound methods. For "
 "pickling these functions to succeed, they must remain available under their "
@@ -265,54 +265,54 @@ msgstr ""
 "数の保存を成功させるためには、それらをオリジナルの名前で利用可能なままにして"
 "おく必要があります。"
 
-#: ../../source/save_load_rollback.rst:144
+#: ../../source/save_load_rollback.rst:147
 msgid "Character, Displayable, Transform, and Transition objects."
 msgstr "Character, Displayable, Transform, Transition オブジェクト"
 
-#: ../../source/save_load_rollback.rst:149
+#: ../../source/save_load_rollback.rst:152
 msgid "What Ren'Py Can't Save"
 msgstr "Ren'Py がセーブできないもの"
 
-#: ../../source/save_load_rollback.rst:151
+#: ../../source/save_load_rollback.rst:154
 msgid "There are certain types that cannot be pickled:"
 msgstr "ある特定の型は pickle できません :"
 
-#: ../../source/save_load_rollback.rst:153
+#: ../../source/save_load_rollback.rst:156
 msgid "Render objects."
 msgstr "Render オブジェクト"
 
-#: ../../source/save_load_rollback.rst:154
+#: ../../source/save_load_rollback.rst:157
 msgid "Iterator objects."
 msgstr "Iterator オブジェクト"
 
-#: ../../source/save_load_rollback.rst:155
+#: ../../source/save_load_rollback.rst:158
 msgid "Generator objects."
 msgstr "ジェネレーターオブジェクト"
 
-#: ../../source/save_load_rollback.rst:156
+#: ../../source/save_load_rollback.rst:159
 msgid ""
 "Coroutine tasks and futures, like those created with ``async`` and ``await``."
 msgstr ""
 "``async`` や ``await`` で作成されるようなコルーチンタスクやフューチャーのこ"
 "と。"
 
-#: ../../source/save_load_rollback.rst:157
+#: ../../source/save_load_rollback.rst:160
 msgid "File-like objects."
 msgstr "File-like オブジェクト"
 
-#: ../../source/save_load_rollback.rst:158
+#: ../../source/save_load_rollback.rst:161
 msgid "Network sockets, and objects that enclose them."
 msgstr "ネットワークソケット、およびそれを含むオブジェクト。"
 
-#: ../../source/save_load_rollback.rst:159
+#: ../../source/save_load_rollback.rst:162
 msgid "Inner functions and lambdas."
 msgstr "内部関数とラムダ関数"
 
-#: ../../source/save_load_rollback.rst:161
+#: ../../source/save_load_rollback.rst:164
 msgid "This may not be an exhaustive list."
 msgstr "これは完全なリストではないかもしれません。"
 
-#: ../../source/save_load_rollback.rst:163
+#: ../../source/save_load_rollback.rst:166
 msgid ""
 "Objects that can't be pickled can still be used, provided that their use is "
 "combined to namespaces that aren't saved by Ren'Py (like init variables, "
@@ -322,11 +322,11 @@ msgstr ""
 "数内の名前空間、``python hide`` ブロックなど ) と組み合わせて使用すれば、使用"
 "できます。"
 
-#: ../../source/save_load_rollback.rst:167
+#: ../../source/save_load_rollback.rst:170
 msgid "For example, using a file object like::"
 msgstr "例えば、次のようにファイルオブジェクトを使用しても ::"
 
-#: ../../source/save_load_rollback.rst:173
+#: ../../source/save_load_rollback.rst:176
 msgid ""
 "Won't work, as ``f`` could be saved between any of the three Python "
 "statements. Putting this in a ``python hide`` block will work::"
@@ -335,11 +335,11 @@ msgstr ""
 "め、うまくいきません。これを ``python hide`` ブロックに入れるとうまくいきま"
 "す ::"
 
-#: ../../source/save_load_rollback.rst:182
+#: ../../source/save_load_rollback.rst:185
 msgid "(Of course, using the python ``with`` statement would be cleaner.) ::"
 msgstr "(もちろん ``with`` ステートメントを使用したほうがすっきりします) ::"
 
-#: ../../source/save_load_rollback.rst:189
+#: ../../source/save_load_rollback.rst:192
 msgid ""
 "Coroutines, like those made with ``async``, ``await``, or the ``asyncio`` "
 "are similar. If you have::"
@@ -347,11 +347,11 @@ msgstr ""
 "``async`` や ``await``, ``asyncio`` で作られるようなコルーチンは、これに似て"
 "います。次のコードを書き ::"
 
-#: ../../source/save_load_rollback.rst:200
+#: ../../source/save_load_rollback.rst:203
 msgid "then::"
 msgstr "さらに次のコードを記述すると ::"
 
-#: ../../source/save_load_rollback.rst:205
+#: ../../source/save_load_rollback.rst:208
 msgid ""
 "will have problems, since `sleep_task` can't be saved. But if it's not "
 "assigned to a variable::"
@@ -359,19 +359,19 @@ msgstr ""
 "`sleep_task` が保存されないため問題が起きます。しかし次のようにそれが変数に代"
 "入されなければ ::"
 
-#: ../../source/save_load_rollback.rst:210
+#: ../../source/save_load_rollback.rst:213
 msgid "will run fine."
 msgstr "正常に動作します。"
 
-#: ../../source/save_load_rollback.rst:214
+#: ../../source/save_load_rollback.rst:217
 msgid "Save Functions and Variables"
 msgstr "セーブ関数と変数"
 
-#: ../../source/save_load_rollback.rst:216
+#: ../../source/save_load_rollback.rst:219
 msgid "There is one variable that is used by the high-level save system:"
 msgstr "高級なセーブシステムによって使用される一つの変数があります。"
 
-#: ../../source/save_load_rollback.rst:220
+#: ../../source/save_load_rollback.rst:223
 msgid ""
 "This is a string that is stored with each save. It can be used to give a "
 "name to the save, to help users tell them apart."
@@ -379,7 +379,7 @@ msgstr ""
 "これは各セーブに保存される文字列です。セーブに名前を与え、ユーザーがそれらを"
 "区別するのを助けるために使われます。"
 
-#: ../../source/save_load_rollback.rst:223
+#: ../../source/save_load_rollback.rst:226
 msgid ""
 "More per-save data customization can be done with the Json supplementary "
 "data system, see :var:`config.save_json_callbacks`."
@@ -387,7 +387,7 @@ msgstr ""
 "さらなるセーブデートのカスタマイズが Json 補助データシステムにより可能で"
 "す。 :var:`config.save_json_callbacks` を参照してください。"
 
-#: ../../source/save_load_rollback.rst:226
+#: ../../source/save_load_rollback.rst:229
 msgid ""
 "There are a number of high-level save actions and functions defined in the :"
 "ref:`screen actions <screen-actions>`. In addition, there are the following "
@@ -557,11 +557,11 @@ msgstr ""
 msgid "Deletes the save slot with the given name."
 msgstr "与えられた名前のセーブスロットを削除します。"
 
-#: ../../source/save_load_rollback.rst:234
+#: ../../source/save_load_rollback.rst:237
 msgid "Retaining Data After Load"
 msgstr "ロード後のデータ保持"
 
-#: ../../source/save_load_rollback.rst:236
+#: ../../source/save_load_rollback.rst:239
 msgid ""
 "When a game is loaded, the state of the game is reset (using the rollback "
 "system described below) to the state of the game when the current statement "
@@ -570,7 +570,7 @@ msgstr ""
 "ゲームがロードされると、ゲームの状態は現在のステートメントが処理を開始した時"
 "の状態まで ( 後述するロールバックシステムを用いて ) リセットされます。"
 
-#: ../../source/save_load_rollback.rst:240
+#: ../../source/save_load_rollback.rst:243
 msgid ""
 "In some cases, this may not be desirable. For example, when a screen allows "
 "editing of a value, we may want to retain that value when the game is "
@@ -584,7 +584,7 @@ msgstr ""
 "ションの終了以前にゲームがセーブ・ロードされた場合でもデータは復元されませ"
 "ん。"
 
-#: ../../source/save_load_rollback.rst:246
+#: ../../source/save_load_rollback.rst:249
 msgid ""
 "Note that while data is not changed, control is reset to the start of the "
 "current statement. That statement will execute again, with the new data in "
@@ -594,8 +594,8 @@ msgstr ""
 "れることに注意してください。そのステートメントは、ステートメント開始位置にお"
 "ける新しいデータで再び実行されます。"
 
-#: ../../source/save_load_rollback.rst:250
-#: ../../source/save_load_rollback.rst:523
+#: ../../source/save_load_rollback.rst:253
+#: ../../source/save_load_rollback.rst:526
 msgid "For example::"
 msgstr "例 ::"
 
@@ -607,11 +607,11 @@ msgstr ""
 "現在のステートメントと次のチェックポイントを含むステートメントの間で変更され"
 "たデータを、ロード時に保持します。"
 
-#: ../../source/save_load_rollback.rst:269
+#: ../../source/save_load_rollback.rst:272
 msgid "Rollback"
 msgstr "ロールバック"
 
-#: ../../source/save_load_rollback.rst:271
+#: ../../source/save_load_rollback.rst:274
 msgid ""
 "Rollback allows the user to revert the game to an earlier state in much the "
 "same way as undo/redo systems that are available in most modern "
@@ -624,11 +624,11 @@ msgstr ""
 "す。ロールバックの間システムは外見とゲーム変数の維持に注意していますが、ゲー"
 "ム作成時にはいくつか配慮するべきところがあります。"
 
-#: ../../source/save_load_rollback.rst:279
+#: ../../source/save_load_rollback.rst:282
 msgid "What Data is Rolled Back?"
 msgstr "どのデータがロールバックされますか?"
 
-#: ../../source/save_load_rollback.rst:281
+#: ../../source/save_load_rollback.rst:284
 msgid ""
 "Rollback affects variables that have been changed after the init phase, and "
 "objects of revertable types reachable from those variables. The short "
@@ -642,7 +642,7 @@ msgstr ""
 "スと同様に、 revertable です。 Python内部や Ren'Py 内部で作成されたデータは、"
 "通常、 revertable ではありません。"
 
-#: ../../source/save_load_rollback.rst:287
+#: ../../source/save_load_rollback.rst:290
 msgid ""
 "In more detail, inside the stores that Python embedded inside Ren'Py scripts "
 "run in, the object, list, dict, and set types have been replaced with "
@@ -655,7 +655,7 @@ msgstr ""
 "す。これらの型を継承するオブジェクトもまた revertable です。 :class:`renpy."
 "Displayable` 型は revertable オブジェクト型を継承しています。"
 
-#: ../../source/save_load_rollback.rst:293
+#: ../../source/save_load_rollback.rst:296
 msgid ""
 "To make the use of revertable objects more convenient, Ren'Py modifies "
 "Python found inside Ren'Py script files in the following way."
@@ -663,7 +663,7 @@ msgstr ""
 "revertable オブジェクトの使用をより便利にするために、 Ren'Py は、 Ren'Py スク"
 "リプトファイル内の Python を以下のように変更します。"
 
-#: ../../source/save_load_rollback.rst:296
+#: ../../source/save_load_rollback.rst:299
 msgid ""
 "Literal lists, dicts, and sets are automatically converted to the revertable "
 "equivalent."
@@ -671,14 +671,14 @@ msgstr ""
 "literal なリスト、辞書、およびセットは自動的に revertable な等価物に変換され"
 "ます。"
 
-#: ../../source/save_load_rollback.rst:298
+#: ../../source/save_load_rollback.rst:301
 msgid ""
 "List, dict, and set comprehensions are also automatically converted to the "
 "revertable equivalent."
 msgstr ""
 "リスト、辞書、セットの内包表記も自動的に revertable な同等品に変換されます。"
 
-#: ../../source/save_load_rollback.rst:300
+#: ../../source/save_load_rollback.rst:303
 msgid ""
 "Other python syntax, such as extended unpacking, that can create lists, "
 "dicts, or sets converts the result to the revertable equivalent. However, "
@@ -691,18 +691,18 @@ msgstr ""
 "ら、関数やメソッドへの (追加のキーワード引数の辞書を作成する）二重アスタリス"
 "ク付きのパラメータは、 revertable オブジェクトへ変換されません。"
 
-#: ../../source/save_load_rollback.rst:305
+#: ../../source/save_load_rollback.rst:308
 msgid ""
 "Classes that do not inherit from any other types automatically inherit from "
 "the revertable object."
 msgstr ""
 "その他の revertable オブジェクトを自動的に継承するどの型も継承しないクラス"
 
-#: ../../source/save_load_rollback.rst:308
+#: ../../source/save_load_rollback.rst:311
 msgid "In addition:"
 msgstr "さらに :"
 
-#: ../../source/save_load_rollback.rst:310
+#: ../../source/save_load_rollback.rst:313
 msgid ""
 "The methods and operators of revertable types have been modified to return "
 "revertable objects when a list, dict, or set is produced."
@@ -710,14 +710,14 @@ msgstr ""
 "revertable 型のメソッドと演算子は変更され、リスト、辞書、セットの生成時に、 "
 "revertable なオブジェクトを返すようになります。"
 
-#: ../../source/save_load_rollback.rst:312
+#: ../../source/save_load_rollback.rst:315
 msgid ""
 "Built in functions that return lists, dicts, and sets return a revertable "
 "equivalent."
 msgstr ""
 "リスト、辞書、セットを返す組み込み関数は revertable　な同等のものを返します。"
 
-#: ../../source/save_load_rollback.rst:315
+#: ../../source/save_load_rollback.rst:318
 msgid ""
 "Calling into Python code will not generally produce a revertable object. "
 "Some cases where you'll get an object that may not participate in rollback "
@@ -727,11 +727,11 @@ msgstr ""
 "ん。ロールバックに参加しない可能性のあるオブジェクトができる場合として次があ"
 "ります。 :"
 
-#: ../../source/save_load_rollback.rst:318
+#: ../../source/save_load_rollback.rst:321
 msgid "Calling methods on built-in types, like the str.split method."
 msgstr "str.split メソッドのような組み込み型のメソッドの呼び出し"
 
-#: ../../source/save_load_rollback.rst:319
+#: ../../source/save_load_rollback.rst:322
 msgid ""
 "When the object is created in a Python module that's been imported, and then "
 "return to Ren'Py. (For example, an instance of collections.defaultdict won't "
@@ -741,11 +741,11 @@ msgstr ""
 "(例えば collections.defaultdict のインスタンスはロールバックに参加しませ"
 "ん) 。"
 
-#: ../../source/save_load_rollback.rst:322
+#: ../../source/save_load_rollback.rst:325
 msgid "Objects returned from Ren'Py's API, unless documented otherwise."
 msgstr "Ren'Py の API から返されるオブジェクトで特に記載のないもの。"
 
-#: ../../source/save_load_rollback.rst:324
+#: ../../source/save_load_rollback.rst:327
 msgid ""
 "If such data needs to participate in rollback, it may make sense to convert "
 "it to a type that does partipate. For example::"
@@ -753,11 +753,11 @@ msgstr ""
 "そのようなデータをロールバックに参加させる必要があるなら、参加する型に変換す"
 "ると良いです。例 ::"
 
-#: ../../source/save_load_rollback.rst:333
+#: ../../source/save_load_rollback.rst:336
 msgid "Supporting Rollback and Roll Forward"
 msgstr "ロールバックとロールフォワードのサポート"
 
-#: ../../source/save_load_rollback.rst:335
+#: ../../source/save_load_rollback.rst:338
 msgid ""
 "Most Ren'Py statements automatically support rollback and roll forward. If "
 "you call :func:`ui.interact` directly, you'll need to add support for "
@@ -768,7 +768,7 @@ msgstr ""
 "ポートしていますが、直接 :func:`ui.interact` を呼び出すと、ロールバックとロー"
 "ルフォワードのサポートを自分で追加する必要があります ::"
 
-#: ../../source/save_load_rollback.rst:352
+#: ../../source/save_load_rollback.rst:355
 msgid ""
 "It's important that your game does not interact with the user after renpy."
 "checkpoint has been called. (If you do, the user may not be able to "
@@ -936,11 +936,11 @@ msgstr ""
 "`flag` が True なら、ロールバックは停止されます。 False ならロールバックは再"
 "開されます。"
 
-#: ../../source/save_load_rollback.rst:358
+#: ../../source/save_load_rollback.rst:361
 msgid "Blocking Rollback"
 msgstr "ロールバックの禁止"
 
-#: ../../source/save_load_rollback.rst:362
+#: ../../source/save_load_rollback.rst:365
 msgid ""
 "Blocking rollback is a user-unfriendly thing to do. If a user mistakenly "
 "clicks on an unintended choice, he or she will be unable to correct their "
@@ -952,7 +952,7 @@ msgstr ""
 "はセーブとロードに等しいので、ユーザーはさらにセーブを強要されてゲームの印象"
 "が悪くなります。"
 
-#: ../../source/save_load_rollback.rst:367
+#: ../../source/save_load_rollback.rst:370
 msgid ""
 "It is possible to disable rollback in part or in full. If rollback is not "
 "wanted at all, it can simply be turned off through the :var:`config."
@@ -962,7 +962,7 @@ msgstr ""
 "れていないなら、 :var:`config.rollback_enabled` を利用して簡単に無効化できま"
 "す。"
 
-#: ../../source/save_load_rollback.rst:371
+#: ../../source/save_load_rollback.rst:374
 msgid ""
 "More common is a partial block of rollback. This can be achieved by the :"
 "func:`renpy.block_rollback` function. When called, it will instruct Ren'Py "
@@ -972,7 +972,7 @@ msgstr ""
 "block_rollback` 関数によって行われます。呼び出されると Ren'Py がその位置より"
 "前にロールバック出来ないようにします。例えば ::"
 
-#: ../../source/save_load_rollback.rst:392
+#: ../../source/save_load_rollback.rst:395
 msgid ""
 "When the label no_return is reached, Ren'Py won't allow a rollback back to "
 "the menu."
@@ -980,11 +980,11 @@ msgstr ""
 "ラベル no_return に着いたら、 Ren'Py は選択肢へのロールバックを許可しなくなり"
 "ます。"
 
-#: ../../source/save_load_rollback.rst:397
+#: ../../source/save_load_rollback.rst:400
 msgid "Fixing Rollback"
 msgstr "固定ロールバック"
 
-#: ../../source/save_load_rollback.rst:399
+#: ../../source/save_load_rollback.rst:402
 msgid ""
 "Fixing rollback provides for an intermediate choice between unconstrained "
 "rollback and blocking rollback entirely. Rollback is allowed, but the user "
@@ -996,7 +996,7 @@ msgstr ""
 "ます。ロールバックは可能ですが、ユーザーは決定を変更出来ません。固定ロール"
 "バック以下の例で示すように、:func:`renpy.fix_rollback`  関数で実行されます。"
 
-#: ../../source/save_load_rollback.rst:421
+#: ../../source/save_load_rollback.rst:424
 msgid ""
 "Now, after the fix_rollback function is called, it will still be possible "
 "for the user to roll back to the menu. However, it will not be possible to "
@@ -1005,7 +1005,7 @@ msgstr ""
 "fix_rollback 関数が呼び出された後もユーザーが選択肢へロールバックすることはま"
 "だ出来ます。しかし、違った選択をすることは出来ません。"
 
-#: ../../source/save_load_rollback.rst:425
+#: ../../source/save_load_rollback.rst:428
 msgid ""
 "There are some caveats to consider when designing a game for fix_rollback. "
 "Ren'Py will automatically take care of locking any data that is given to :"
@@ -1023,7 +1023,7 @@ msgstr ""
 "するか、これをうまく扱うために追加のコードを書くかはゲームデザイナー次第で"
 "す。"
 
-#: ../../source/save_load_rollback.rst:433
+#: ../../source/save_load_rollback.rst:436
 msgid ""
 "The internal user interaction options for menus, :func:`renpy.input` and :"
 "func:`renpy.imagemap` are designed to fully work with fix_rollback."
@@ -1032,11 +1032,11 @@ msgstr ""
 "ザーに対するインタラクションは固定ロールバックでも十分に動作するようにデザイ"
 "ンされています。"
 
-#: ../../source/save_load_rollback.rst:437
+#: ../../source/save_load_rollback.rst:440
 msgid "Styling Fixed Rollback"
 msgstr "固定ロールバックのスタイル"
 
-#: ../../source/save_load_rollback.rst:439
+#: ../../source/save_load_rollback.rst:442
 msgid ""
 "Because fix_rollback changes the functionality of menus and imagemaps, it is "
 "advisable to reflect this in the appearance. To do this, it is important to "
@@ -1049,7 +1049,7 @@ msgstr ""
 "されるのかを理解することが重要です。 :var:`config."
 "fix_rollback_without_choice` を通して選択される2つのモードがあります。"
 
-#: ../../source/save_load_rollback.rst:445
+#: ../../source/save_load_rollback.rst:448
 msgid ""
 "The default option will set the chosen option to \"selected\", thereby "
 "activating the style properties with the \"selected\\_\" prefix. All other "
@@ -1062,7 +1062,7 @@ msgstr ""
 "「 insensitive\\_ 」を接頭辞に持つプロパティーを使用して表示されます。結果と"
 "してこれは選択肢にただ一つの選択可能な選択肢を残します。"
 
-#: ../../source/save_load_rollback.rst:451
+#: ../../source/save_load_rollback.rst:454
 msgid ""
 "When the :var:`config.fix_rollback_without_choice` option is set to False, "
 "all buttons are made insensitive. This means that the chosen option will use "
@@ -1074,11 +1074,11 @@ msgstr ""
 "「selected_insensitive\\_  」の接頭辞を使用し、一方その他のボタンは"
 "「 insensitive\\_ 」を接頭辞に持つプロパティーを使用することを意味します。"
 
-#: ../../source/save_load_rollback.rst:458
+#: ../../source/save_load_rollback.rst:461
 msgid "Fixed Rollback and Custom Screens"
 msgstr "固定ロールバックとスクリーンのカスタム"
 
-#: ../../source/save_load_rollback.rst:460
+#: ../../source/save_load_rollback.rst:463
 msgid ""
 "When writing custom Python routines that must play nice with the "
 "fix_rollback system there are a few simple things to know. First of all the :"
@@ -1097,7 +1097,7 @@ msgstr ""
 "`renpy.checkpoint` 関数が使用されると、動作のほとんどが決定されるということで"
 "す。"
 
-#: ../../source/save_load_rollback.rst:469
+#: ../../source/save_load_rollback.rst:472
 msgid ""
 "To simplify the creation of custom screens, two actions are provided to help "
 "with the most common uses. The :func:`ui.ChoiceReturn` action returns the "
@@ -1113,12 +1113,12 @@ msgstr ""
 "リーンが ``call screen`` ステートメントで呼び出されているときのみ適切に動作し"
 "ます。"
 
-#: ../../source/save_load_rollback.rst:476
-#: ../../source/save_load_rollback.rst:490
+#: ../../source/save_load_rollback.rst:479
+#: ../../source/save_load_rollback.rst:493
 msgid "Example::"
 msgstr "例 ::"
 
-#: ../../source/save_load_rollback.rst:514
+#: ../../source/save_load_rollback.rst:517
 msgid "Rollback-blocking and -fixing Functions"
 msgstr "ロールバックの禁止と固定用関数"
 
@@ -1213,7 +1213,7 @@ msgstr ""
 msgid "The value this is returned when the choice is chosen."
 msgstr "その選択肢が選択されると返される値"
 
-#: ../../source/save_load_rollback.rst:519
+#: ../../source/save_load_rollback.rst:522
 msgid "NoRollback"
 msgstr "NoRollback"
 

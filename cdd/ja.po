@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-08 00:04+0900\n"
+"POT-Creation-Date: 2022-05-15 15:18+0900\n"
 "PO-Revision-Date: 2021-08-08 14:54+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/cdd.rst:6
+#: ../../source/cdd.rst:9
 msgid "Creator-Defined Displayables"
 msgstr "ユーザー定義 Displayable"
 
-#: ../../source/cdd.rst:8
+#: ../../source/cdd.rst:11
 msgid ""
 "The most complex, but most powerful, way of customizing Ren'Py's behavior is "
 "to use a creator-defined displayable. A creator-defined displayable is "
@@ -39,7 +39,7 @@ msgstr ""
 "に最適です。( :ref:`sprites <sprites>` の章も見てください。大量の同一"
 "displayableを扱う高度な方法が述べられています。 )"
 
-#: ../../source/cdd.rst:17
+#: ../../source/cdd.rst:20
 msgid ""
 "Creator-defined displayables are programmed entirely in Python, and we "
 "encourage you to have a reasonable degree of skill at object-oriented Python "
@@ -49,11 +49,11 @@ msgstr ""
 "める前にある程度のオブジェクト指向 Python プログラミングのスキルを獲得するこ"
 "とを勧めます。"
 
-#: ../../source/cdd.rst:22
+#: ../../source/cdd.rst:25
 msgid "Example"
 msgstr "例"
 
-#: ../../source/cdd.rst:24
+#: ../../source/cdd.rst:27
 msgid ""
 "Here's an example of a creator-defined displayable. This displayable changes "
 "renders its child with an alpha that is determined by the distance of the "
@@ -63,7 +63,7 @@ msgstr ""
 "マウスポインターとの距離により決まる alpha 値で、その子のレンダリングを変更し"
 "ます。 ::"
 
-#: ../../source/cdd.rst:103
+#: ../../source/cdd.rst:106
 msgid ""
 "To use the creator-defined displayable, we can create an instance of it, and "
 "add that instance to the screen. ::"
@@ -71,11 +71,11 @@ msgstr ""
 "ユーザー定義 displayable を使用するためにそのインスタンスを作成し、それをスク"
 "リーンに追加できます。 ::"
 
-#: ../../source/cdd.rst:120
+#: ../../source/cdd.rst:123
 msgid "renpy.Displayable"
 msgstr "renpy.Displayable"
 
-#: ../../source/cdd.rst:122
+#: ../../source/cdd.rst:125
 msgid ""
 "A creator-defined displayable is created by subclassing the renpy."
 "Displayable class. A creator-defined displayable must override the render "
@@ -85,7 +85,7 @@ msgstr ""
 "す。ユーザー定義 displayable では render メソッドと多分その他のメソッドも同様"
 "に上書きしなければなりません。"
 
-#: ../../source/cdd.rst:126
+#: ../../source/cdd.rst:129
 msgid ""
 "A displayable object must be pickleable, which means it may not contain "
 "references to objects that cannot be pickled. Most notably, Render objects "
@@ -95,7 +95,7 @@ msgstr ""
 "できないオブジェクトへの参照を含んではいけないということです。 特に Render オ"
 "ブジェクトはユーザー定義 displayable に保存できません。"
 
-#: ../../source/cdd.rst:130
+#: ../../source/cdd.rst:133
 msgid ""
 "Since we expect you to override the methods of the displayable class, we'll "
 "present them with the `self` parameter."
@@ -103,11 +103,11 @@ msgstr ""
 "displayable クラスのメソッド上書きをして欲しいので、 `self` 引数付きで表示し"
 "ます。"
 
-#: ../../source/cdd.rst:135
+#: ../../source/cdd.rst:138
 msgid "Base class for creator-defined displayables."
 msgstr "ユーザー定義 displayable の基本クラスです。"
 
-#: ../../source/cdd.rst:139
+#: ../../source/cdd.rst:142
 msgid ""
 "A subclass may override the constructor, perhaps adding new parameters. If "
 "it does, it should pass all unknown keyword arguments to the renpy."
@@ -117,7 +117,7 @@ msgstr ""
 "その場合、以下のようなコードを使用して、すべての未知のキーワード引数をrenpy."
 "Displayable のコンストラクターに渡すべきです。 ::"
 
-#: ../../source/cdd.rst:148
+#: ../../source/cdd.rst:151
 msgid ""
 "Subclasses must override this, to return a :class:`renpy.Render` object. The "
 "render object determines what, if anything, is shown on the screen."
@@ -125,20 +125,20 @@ msgstr ""
 "サブクラスはこれを上書きして :class:`renpy.Render` オブジェクトを返さなければ"
 "なりません。 render オブジェクトは画面に何が表示されるかを決定します。"
 
-#: ../../source/cdd.rst:154 ../../source/cdd.rst:231
+#: ../../source/cdd.rst:157 ../../source/cdd.rst:234
 #: ../../source/inc/udd_utility:45
 msgid "`width`, `height`"
 msgstr "`width`, `height`"
 
-#: ../../source/cdd.rst:153
+#: ../../source/cdd.rst:156
 msgid "The amount of space available to this displayable, in pixels."
 msgstr "この displayable が利用できるピクセル数での空間です。"
 
-#: ../../source/cdd.rst:159 ../../source/cdd.rst:194
+#: ../../source/cdd.rst:162 ../../source/cdd.rst:197
 msgid "`st`"
 msgstr "`st`"
 
-#: ../../source/cdd.rst:157
+#: ../../source/cdd.rst:160
 msgid ""
 "A float, the shown timebase, in seconds. The shown timebase begins when this "
 "displayable is first shown on the screen."
@@ -146,11 +146,11 @@ msgstr ""
 "秒数での出現時間軸の小数です。出現時間軸はこの displayable が最初に画面に表示"
 "されると開始します。"
 
-#: ../../source/cdd.rst:165
+#: ../../source/cdd.rst:168
 msgid "`at`"
 msgstr "`at`"
 
-#: ../../source/cdd.rst:162
+#: ../../source/cdd.rst:165
 msgid ""
 "A float, the animation timebase, in seconds. The animation timebase begins "
 "when an image with the same tag was shown, without being hidden. (When the "
@@ -160,7 +160,7 @@ msgstr ""
 "画像が hide されていない状態で表示されると開始します。 ( displayable がタグな"
 "しで表示されるとこれは出現時間軸と同じです。 )"
 
-#: ../../source/cdd.rst:167
+#: ../../source/cdd.rst:170
 msgid ""
 "The render method is called when the displayable is first shown. It can be "
 "called again if :func:`renpy.redraw` is called on this object."
@@ -169,7 +169,7 @@ msgstr ""
 "このオブジェクトの :func:`renpy.redraw` が呼び出されると、もう一度呼び出され"
 "ます。"
 
-#: ../../source/cdd.rst:173
+#: ../../source/cdd.rst:176
 msgid ""
 "The event method is called to pass a pygame event to the creator-defined "
 "displayable. If the event method returns a value other than None, that value "
@@ -181,14 +181,14 @@ msgstr ""
 "ンの結果として返されます。イベントメソッドが None を返すと、そのイベントは他"
 "の Displayable に渡されます。"
 
-#: ../../source/cdd.rst:179
+#: ../../source/cdd.rst:182
 msgid ""
 "To ignore the event without returning None, raise :class:`renpy.IgnoreEvent`."
 msgstr ""
 "None を返す以外でイベントを無視するには :class:`renpy.IgnoreEvent` を投げま"
 "す。"
 
-#: ../../source/cdd.rst:181
+#: ../../source/cdd.rst:184
 msgid ""
 "The event method exists on other displayables, allowing the creator-defined "
 "displayable to pass on the event."
@@ -196,19 +196,19 @@ msgstr ""
 "event メソッドは他の displayable にも存在し、ユーザー定義 displayable がその"
 "イベントを渡せるようにします。"
 
-#: ../../source/cdd.rst:185
+#: ../../source/cdd.rst:188
 msgid "`ev`"
 msgstr "`ev`"
 
-#: ../../source/cdd.rst:185
+#: ../../source/cdd.rst:188
 msgid "An `event object <http://www.pygame.org/docs/ref/event.html>`_"
 msgstr "`event オブジェクト <http://www.pygame.org/docs/ref/event.html>`_"
 
-#: ../../source/cdd.rst:191
+#: ../../source/cdd.rst:194
 msgid "`x`, `y`"
 msgstr "`x`, `y`"
 
-#: ../../source/cdd.rst:188
+#: ../../source/cdd.rst:191
 msgid ""
 "The x and y coordinates of the event, relative to the upper-left corner of "
 "the displayable. These should be used in preference to position information "
@@ -217,11 +217,11 @@ msgstr ""
 "displayable の左上に対するイベントの x,y 座標です。これらは pygame イベントオ"
 "ブジェクトで見つけられる位置情報より優先して使用されるはずです。"
 
-#: ../../source/cdd.rst:194
+#: ../../source/cdd.rst:197
 msgid "A float, the shown timebase, in seconds."
 msgstr "出現する時間軸の秒数"
 
-#: ../../source/cdd.rst:196
+#: ../../source/cdd.rst:199
 msgid ""
 "An event is generated at the start of each interaction, and :func:`renpy."
 "timeout` can be used to cause another event to occur."
@@ -229,7 +229,7 @@ msgstr ""
 "event は各インタラクションの開始で生成され、 :func:`renpy.timeout` はもう一つ"
 "のイベントを発生させるために使用できます。"
 
-#: ../../source/cdd.rst:202
+#: ../../source/cdd.rst:205
 msgid ""
 "This method is called at the start of each interaction. It can be used to "
 "trigger a redraw, and probably should be used to trigger a redraw if the "
@@ -239,7 +239,7 @@ msgstr ""
 "使用でき、また、オブジェクトがロールバックに参加するなら、再描画に使用するべ"
 "きです。"
 
-#: ../../source/cdd.rst:208
+#: ../../source/cdd.rst:211
 msgid ""
 "If the displayable has child displayables, this method should be overridden "
 "to return a list of those displayables. This ensures that the per_interact "
@@ -251,11 +251,11 @@ msgstr ""
 "displayable の per_interact メソッドが呼び出されることを保証し、それらの "
 "displayable に使用される画像が予測されるようにもします。"
 
-#: ../../source/cdd.rst:215
+#: ../../source/cdd.rst:218
 msgid "renpy.Render"
 msgstr "renpy.Render"
 
-#: ../../source/cdd.rst:217
+#: ../../source/cdd.rst:220
 msgid ""
 "Creator-defined displayables work with renpy.Render objects. Render objects "
 "are returned by calling the :func:`renpy.render` function on a displayable. "
@@ -267,7 +267,7 @@ msgstr ""
 "れます。ユーザー定義 displayable はその render メソッドから :class:`renpy."
 "Render` を呼び出して Render オブジェクトを作成するべきです。"
 
-#: ../../source/cdd.rst:222
+#: ../../source/cdd.rst:225
 msgid ""
 "Since the render object isn't intended to be subclassed, we will omit the "
 "implicit `self` parameter."
@@ -275,31 +275,31 @@ msgstr ""
 "render オブジェクトはサブクラスにすることが意図されていないので、 `self` 引数"
 "を省略します。"
 
-#: ../../source/cdd.rst:227
+#: ../../source/cdd.rst:230
 msgid "Creates a new Render object."
 msgstr "新しい Render オブジェクトを作成します。"
 
-#: ../../source/cdd.rst:230
+#: ../../source/cdd.rst:233
 msgid "The width and height of the render object, in pixels."
 msgstr "ピクセル数での Render オブジェクトの幅と高さです。"
 
-#: ../../source/cdd.rst:235
+#: ../../source/cdd.rst:238
 msgid "Draws another render object into this render object."
 msgstr "この Render オブジェクトにもう一つの Render オブジェクトを描写します。"
 
-#: ../../source/cdd.rst:238
+#: ../../source/cdd.rst:241
 msgid "`source`"
 msgstr "`source`"
 
-#: ../../source/cdd.rst:238
+#: ../../source/cdd.rst:241
 msgid "The render object to draw."
 msgstr "描画する Render オブジェクト"
 
-#: ../../source/cdd.rst:243
+#: ../../source/cdd.rst:246
 msgid "`pos`"
 msgstr "`pos`"
 
-#: ../../source/cdd.rst:241
+#: ../../source/cdd.rst:244
 msgid ""
 "The location to draw into. This is an (x, y) tuple with the coordinates "
 "being pixels relative to the upper-left corner of the target render."
@@ -307,11 +307,11 @@ msgstr ""
 "描画する座標。これは対象の Render の左上端に対するピクセル数の座標 (x,y) のタ"
 "プルです。"
 
-#: ../../source/cdd.rst:246 ../../source/cdd.rst:265
+#: ../../source/cdd.rst:249 ../../source/cdd.rst:268
 msgid "`main`"
 msgstr "`main`"
 
-#: ../../source/cdd.rst:246
+#: ../../source/cdd.rst:249
 msgid ""
 "A keyword-only parameter. If true, `source` will be displayed in the style "
 "inspector."
@@ -319,7 +319,7 @@ msgstr ""
 "キーワード引数です。 True なら `source` がスタイルインスペクターに表示されま"
 "す。"
 
-#: ../../source/cdd.rst:251
+#: ../../source/cdd.rst:254
 msgid ""
 "Renders `d` and places it into the rectangle defined by the `x`, `y`, "
 "`width`, and `height`, using Ren'Py's standard placement algorithm."
@@ -327,11 +327,11 @@ msgstr ""
 "`d` をレンダリングし、 `x`, `y`, `width`, `height` で定義された長方形に配置し"
 "ます。"
 
-#: ../../source/cdd.rst:256
+#: ../../source/cdd.rst:259
 msgid "`x`, `y`, `width`, `height`"
 msgstr "`x`, `y`, `width`, `height`"
 
-#: ../../source/cdd.rst:255
+#: ../../source/cdd.rst:258
 msgid ""
 "The rectangle to place in. If `width` or `height`, when None, are the width "
 "and height of this render, respectively."
@@ -339,11 +339,11 @@ msgstr ""
 "配置する長方形です。 `width` や `height` が None でなければ、それぞれこの "
 "render の幅と高さになります。"
 
-#: ../../source/cdd.rst:260 ../../source/inc/udd_utility:48
+#: ../../source/cdd.rst:263 ../../source/inc/udd_utility:48
 msgid "`st`, `at`"
 msgstr "`st`, `at`"
 
-#: ../../source/cdd.rst:259
+#: ../../source/cdd.rst:262
 msgid ""
 "The times passed to Render. If None, defaults to the times passed to the "
 "render method calling this method."
@@ -351,19 +351,19 @@ msgstr ""
 "render に渡される時間です。 None なら、このメソッドを呼び出している render メ"
 "ソッドに渡される時間になります。"
 
-#: ../../source/cdd.rst:263
+#: ../../source/cdd.rst:266
 msgid "`render`"
 msgstr "`render`"
 
-#: ../../source/cdd.rst:263
+#: ../../source/cdd.rst:266
 msgid "If not None, this is used instead of rendering `d`."
 msgstr "None でなければこれが `d` の代わりに使用されます。"
 
-#: ../../source/cdd.rst:266
+#: ../../source/cdd.rst:269
 msgid "As for .blit()."
 msgstr ".blit() と同様です。"
 
-#: ../../source/cdd.rst:270
+#: ../../source/cdd.rst:273
 msgid ""
 "Returns a canvas object. A canvas object has methods corresponding to the "
 "`pygame.draw <http://www.pygame.org/docs/ref/draw.html>`_ functions, with "
@@ -373,7 +373,7 @@ msgstr ""
 "www.pygame.org/docs/ref/draw.html>`_ の関数に対応し、最初の引数 ( surface ) "
 "を省略したメソッドを持ちます。"
 
-#: ../../source/cdd.rst:275
+#: ../../source/cdd.rst:278
 msgid ""
 "Canvas objects also have a get_surface() method that returns the pygame "
 "Surface underlying the canvas."
@@ -381,23 +381,23 @@ msgstr ""
 "Canvas オブジェクトはその canvas 下にある pygame Surface を返す "
 "get_surface() メソッドも持ちます。"
 
-#: ../../source/cdd.rst:280
+#: ../../source/cdd.rst:283
 msgid "Returns a (width, height) tuple giving the size of this render."
 msgstr "この Render のサイズを与える (width, height) のタプルを返します。"
 
-#: ../../source/cdd.rst:285
+#: ../../source/cdd.rst:288
 msgid "Returns a render consisting of a rectangle cut out of this render."
 msgstr "この Render を長方形に切り取って構成される Render を返します。"
 
-#: ../../source/cdd.rst:288
+#: ../../source/cdd.rst:291
 msgid "`rect`"
 msgstr "`rect`"
 
-#: ../../source/cdd.rst:289
+#: ../../source/cdd.rst:292
 msgid "A (x, y, width, height) tuple."
 msgstr "(x, y, width, height) のタプル"
 
-#: ../../source/cdd.rst:293
+#: ../../source/cdd.rst:296
 msgid ""
 "Sets the zoom level of the children of this displayable in the horitzontal "
 "and vertical axes. Only the children of the displayable are zoomed – the "
@@ -406,43 +406,43 @@ msgstr ""
 "この displayable の子の水平、垂直方向のズームレベルを設定します。displayable "
 "の子のみが拡大され、幅、高さ、 blit 座標は拡大されません。"
 
-#: ../../source/cdd.rst:297
+#: ../../source/cdd.rst:300
 msgid ""
 "The following attributes and methods are only used when model-based "
 "rendering is enabled:"
 msgstr ""
 "以下の属性とメソッドはモデルベースのレンダリング有効時のみ使用可能です。"
 
-#: ../../source/cdd.rst:302
+#: ../../source/cdd.rst:305
 msgid "This field enables model-based rendering for this Render. If true:"
 msgstr ""
 "このフィールドはこのレンダーに対してモデルベースのレンダリングを有効にしま"
 "す。 :"
 
-#: ../../source/cdd.rst:304
+#: ../../source/cdd.rst:307
 msgid "If set to True:"
 msgstr "True なら :"
 
-#: ../../source/cdd.rst:306
+#: ../../source/cdd.rst:309
 msgid "All of the children of this displayable are rendered to textures."
 msgstr "この Displayable のすべての子がテクスチャにレンダリングされます。"
 
-#: ../../source/cdd.rst:307
+#: ../../source/cdd.rst:310
 msgid "A mesh the size of the first child is assocated with this displayable."
 msgstr "mesh はこの Displayable の最初の子のサイズです。"
 
-#: ../../source/cdd.rst:308
+#: ../../source/cdd.rst:311
 msgid ""
 "A model is created with the mesh, shaders, uniforms, and properties "
 "associated with this Render."
 msgstr ""
 "モデルはこのレンダーの mesh, shader, uniform, properties で作成されます。"
 
-#: ../../source/cdd.rst:311
+#: ../../source/cdd.rst:314
 msgid "The model will then be drawn in a single operation."
 msgstr "モデル1つのオペレーションで描画されます。"
 
-#: ../../source/cdd.rst:315
+#: ../../source/cdd.rst:318
 msgid ""
 "This causes the shader part `shader` to be used when this Render or its "
 "children are drawn. The part should be a string, or can be a string "
@@ -452,14 +452,14 @@ msgstr ""
 "きに使用されるようにします。文字列またはshaderで描画されないようにする \"-\" "
 "で始まる文字列です。"
 
-#: ../../source/cdd.rst:321
+#: ../../source/cdd.rst:324
 msgid ""
 "Causes the uniform `name` to have `value` when this Render or its children "
 "are drawn."
 msgstr ""
 "このレンダーやその子が描画されるときに uniform `name` を `value` にします。"
 
-#: ../../source/cdd.rst:326
+#: ../../source/cdd.rst:329
 msgid ""
 "Causes the GL property `name` to have `value` when this Render or one of its "
 "children are drawn."
@@ -467,7 +467,7 @@ msgstr ""
 "このレンダーまたはその子の1つが描画されるときに GL プロパティー `name` を "
 "`value` にします。"
 
-#: ../../source/cdd.rst:332
+#: ../../source/cdd.rst:335
 msgid "Utility Functions and Classes"
 msgstr "ユーソリティー関数とクラス"
 
@@ -573,12 +573,12 @@ msgstr ""
 "event が `seconds` 秒が経過後に生成されます。これは ユーザー定義 displayable "
 "の event メソッドが呼び出されることを保証します。"
 
-#: ../../source/cdd.rst:338
+#: ../../source/cdd.rst:341
 msgid ""
 "Causes the displayable `d` to be redrawn after `when` seconds have elapsed."
 msgstr "displayable `d` が `when` 秒経過後に再描画されます。"
 
-#: ../../source/cdd.rst:343
+#: ../../source/cdd.rst:346
 msgid ""
 "This is an exception that, if raised, causes Ren'Py to ignore the event. To "
 "raise this inside the event method, write::"
