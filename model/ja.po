@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-04 21:39+0900\n"
-"PO-Revision-Date: 2022-05-08 00:14+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2022-06-05 11:21+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/model.rst:7
 msgid "Model-Based Rendering"
@@ -376,6 +376,9 @@ msgid ""
 "There is no scope like in Python functions to protect interference between "
 "shaders."
 msgstr ""
+"つまり、あるシェーダで作成された変数は、そのシェーダパーツのリストにある他の"
+"シェーダからのあらゆるフラグメントからアクセスできるようになります。 Python "
+"の関数のように、シェーダ間の干渉を防ぐためのスコープは存在しません。"
 
 #: ../../source/model.rst:165
 msgid ""
@@ -544,6 +547,10 @@ msgid ""
 "system, but it can also lead to name collisions when using two independent "
 "shaders."
 msgstr ""
+"前述したように、example.gradient シェーダの ``gradient_done`` 変数は、同じリ"
+"ストから適用される他のすべてのシェーダからアクセス可能になります。これは、あ"
+"るシェーダシステムにオプションのパーツがある場合に便利ですが、独立した2つの"
+"シェーダを使用する場合に名前の衝突を引き起こす可能性もあります。"
 
 #: ../../source/model.rst:234
 msgid "There is a variable that can help in debugging custom shaders:"
@@ -658,7 +665,6 @@ msgid "None or str"
 msgstr "None or str"
 
 #: ../../source/model.rst:300
-#, fuzzy
 msgid ""
 "if not None, this should be a string. This string is looked up in :var:"
 "`config.gl_blend_func` to get the value for the gl_blend_func property. It's "
@@ -678,30 +684,28 @@ msgstr ""
 "合成モードに相当します)。"
 
 #: ../../source/model.rst:308
-#, fuzzy
 msgid ""
 "In addition, uniforms that start with u\\_ but not with u_renpy are made "
 "available as Transform properties. GL properties are made available as "
 "transform properties starting with gl\\_. For example, the color_mask "
 "property is made available as gl_color_mask."
 msgstr ""
-"加えて、 u_renpy でなければ u\\_ で始めれば uniform を Transform プロパティー"
-"として利用できるようになります。 GL プロパティー は gl\\_ で始めると "
-"Transformプロパティとして利用できるようになります。例えば color_mask プロパ"
-"ティは gl_color_mask として利用可能です。"
+"加えて、 u_renpy でない u\\_ で始まる uniform は Transform プロパティーとして"
+"利用できます。 GL プロパティー は gl\\_ で始めると Transformプロパティとして"
+"利用できるようになります。例えば color_mask プロパティは gl_color_mask として"
+"利用可能です。"
 
 #: ../../source/model.rst:314
 msgid "Blend Functions"
 msgstr "Blend 関数"
 
 #: ../../source/model.rst:318
-#, fuzzy
 msgid ""
 "A dictionary used to map a blend mode name to a blend function. The blend "
 "modes are supplied to the blend func property, given below."
 msgstr ""
 "ブレンドモード名をブレンド関数にマップする辞書です。ブレンドモードは、後述す"
-"るブレンド関数プロパティに追加されます。"
+"る blend_func プロパティに提供されます。"
 
 #: ../../source/model.rst:321
 msgid "The default blend modes are::"
@@ -951,9 +955,8 @@ msgstr ""
 "果を持ちます。"
 
 #: ../../source/model.rst:441
-#, fuzzy
 msgid "``gl_drawable_resolution``"
-msgstr "``gl_blend_func``"
+msgstr "``gl_drawable_resolution``"
 
 #: ../../source/model.rst:439
 msgid ""
@@ -961,6 +964,9 @@ msgid ""
 "window displaying the game. If false, it's rendered at the virtual "
 "resolution of the displayable."
 msgstr ""
+"True または設定されていない場合、テクスチャーはウィンドウがゲームを表示してい"
+"るのと同じ解像度でレンダリングされます。 False ならその Displayable の仮想解"
+"像度でレンダリングされます。"
 
 #: ../../source/model.rst:450
 msgid "``gl_anisotropic``"

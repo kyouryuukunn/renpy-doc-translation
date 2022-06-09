@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-04 21:39+0900\n"
-"PO-Revision-Date: 2022-05-15 15:37+0900\n"
+"PO-Revision-Date: 2022-06-05 08:15+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -97,14 +97,14 @@ msgstr ""
 "music.register_channel` で登録されます。"
 
 #: ../../source/audio.rst:35
-#, fuzzy
 msgid ""
 "The Music Volume, Sound Volume, and Voice Volume settings of the in-game "
 "preferences menu are used to set individual volumes for these channels. See :"
 "ref:`volume` for more information."
 msgstr ""
-"ゲーム内で設定画面の Music Volume, Sound Volume, Voice Volume を設定してそれ"
-"ぞれのチャンネルの個々のボリュームを設定できます。"
+"ゲーム内の設定画面の Music Volume, Sound Volume, Voice Volume を使用してそれ"
+"ぞれのチャンネルの個々のボリュームを設定できます。詳細は :ref:`volume` を参照"
+"してください。"
 
 #: ../../source/audio.rst:39
 msgid ""
@@ -395,38 +395,38 @@ msgstr ""
 "レーションでも変更が維持されます)。"
 
 #: ../../source/audio.rst:226
-#, fuzzy
 msgid "Volume"
-msgstr "`volume`"
+msgstr "Volume"
 
 #: ../../source/audio.rst:228
 msgid ""
 "The volume at which a given track is going to be played depends on a number "
 "of variables:"
-msgstr ""
+msgstr "指定したトラックが再生される音量はいくつかの変数に依存します。 :"
 
 #: ../../source/audio.rst:231
 msgid "the \"main\" mixer's volume"
-msgstr ""
+msgstr "\"main\" ミキサーボリューム"
 
 #: ../../source/audio.rst:232
 msgid "the volume of the mixer which the channel relates to"
-msgstr ""
+msgstr "そのチャンネルに紐付けられたミキサーのボリューム"
 
 #: ../../source/audio.rst:233
-#, fuzzy
 msgid "the volume of the channel"
-msgstr "このチャンネルのパンを設定します。"
+msgstr "チャンネルのボリューム"
 
 #: ../../source/audio.rst:234
 msgid "the relative volume of the track itself"
-msgstr ""
+msgstr "そのトラック自体の相対ボリューム"
 
 #: ../../source/audio.rst:236
 msgid ""
 "These four volumes are values between 0 and 1, and their multiplication "
 "results in the volume the track will be played at."
 msgstr ""
+"これら 4 つの音量は 0 から 1 の数値であり、掛け合わせた結果がそのトラックの再"
+"生音量になります。"
 
 #: ../../source/audio.rst:239
 msgid ""
@@ -434,6 +434,10 @@ msgid ""
 "the channel volume is 50% (0.5) and the track's relative volume is 25% "
 "(0.25), the resulting volume is .8\\*1.\\*.5\\*.25 = .1, so 10%."
 msgstr ""
+"例えば、メインボリュームが 80%(または 0.8)で、ミキサーボリュームが 100%(また"
+"は 1.0)で、チャンネルボリュームが 50%(または 0.5)で、トラックの相対ボリューム"
+"が 25%(または 0.25)では結果のボリュームは .8\\*1.\\*.5\\*.25 = .1 になり、 "
+"10%です。"
 
 #: ../../source/audio.rst:243
 msgid ""
@@ -444,6 +448,12 @@ msgid ""
 "\"voice\" channel to the \"voice\" mixer. Every channel additionally relates "
 "to the \"main\" mixer, as shown above."
 msgstr ""
+":func:`preferences.set_volume` や :func:`SetMixer` アクション、 \"mixer "
+"<mixer> volume\" を引数にした :func:`Preference` アクションを使用してミキサー"
+"のボリュームは設定できます。 \"audio\" と \"sound\" チャンネルは \"sfx\" ミキ"
+"サーに \"music\" チャンネルは \"music\" ミキサーに、 \"voice\" チャンネルは "
+"\"voice\" ミキサーに紐付けられています。各チャンネルは上記のようにさらに "
+"\"main\" ミキサーにも紐付けられています。"
 
 #: ../../source/audio.rst:250
 msgid ""
@@ -453,12 +463,18 @@ msgid ""
 "mixer the registered channel relates, creating it in the process if it "
 "doesn't already exist."
 msgstr ""
+"チャンネルのボリュームは :func:`renpy.music.set_volume` を使用して設定できま"
+"す。これは複数のチャンネルが同じミキサーを使用しているときのみ有用です。 :"
+"func:`renpy.music.register_channel` 関数の \"mixier\" 引数は登録するチャンネ"
+"ルに紐付けられるミキサーを設定し、それがまだなければ、作成します。"
 
 #: ../../source/audio.rst:255
 msgid ""
 "A track's relative volume is set with the ``volume`` clause of the :ref:"
 "`play-statement`."
 msgstr ""
+"トラックの相対ボリュームは play ステートメント の ``volume`` 節に設定されま"
+"す。"
 
 #: ../../source/audio.rst:258
 msgid ""
@@ -468,10 +484,15 @@ msgid ""
 "actions, or using the :func:`Preference` action with the \"mixer <mixer> mute"
 "\" key, or using the :func:`preferences.set_mute` function."
 msgstr ""
+"これらのボリューム値に加え、そのチャンネルが紐付けられたミキサーのミュートフ"
+"ラグもあり、有効なら再生音量は 0 まで低下します。それらは :func:`SetMute` "
+"や :func:`ToggleMute` アクション、 \"mixer <mixer> mute\" を引数にする :func:"
+"`Preference` アクション、 :func:`preferences.set_mute` 関数を使用して設定でき"
+"ます。"
 
 #: ../../source/audio.rst:267
 msgid "Playing Silence"
-msgstr "Playing Silence"
+msgstr "無音再生"
 
 #: ../../source/audio.rst:269
 msgid ""
@@ -542,13 +563,12 @@ msgstr ""
 "ogg\"  は動作しません。"
 
 #: ../../source/audio.rst:313
-#, fuzzy
 msgid "Actions"
-msgstr "関数"
+msgstr "Actions"
 
 #: ../../source/audio.rst:315
 msgid "See :ref:`audio-actions`."
-msgstr ""
+msgstr ":ref:`audio-actions` を参照してください。"
 
 #: ../../source/audio.rst:319
 msgid "Functions"
@@ -836,30 +856,28 @@ msgstr ""
 "生されます。"
 
 #: ../../source/inc/audio:173
-#, fuzzy
 msgid "`name`"
-msgstr "`filename`"
+msgstr "`name`"
 
 #: ../../source/inc/audio:173
-#, fuzzy
 msgid "The name of the channel."
-msgstr "このチャンネルのパンを設定します。"
+msgstr "チャンネルの名前です。"
 
 #: ../../source/inc/audio:179
 msgid "`mixer`"
 msgstr "`mixer`"
 
 #: ../../source/inc/audio:176
-#, fuzzy
 msgid ""
 "The name of the mixer the channel uses. By default, Ren'Py knows about the "
 "\"music\", \"sfx\", and \"voice\" mixers. Using other names is possible, and "
 "will create the mixer if it doesn't already exist, but making new mixers "
 "reachable by the player requires changing the preferences screens."
 msgstr ""
-"チャンネルが使用するミキサーの名前。デフォルトで Ren'Py には「 music 」,"
-"「 sfx 」,「 voice 」ミキサーが設定されています。他の名前の使用は可能ですが、"
-"設定画面の変更も必要かもしれません。"
+"チャンネルが使用するミキサーの名前です。デフォルトで Ren'Py には「 music 」,"
+"「 sfx 」,「 voice 」ミキサーが設定されています。他の名前の使用も可能であり、"
+"そのミキサーがなければ作成しますが、プレイヤーがチャンネルを設定できるよう設"
+"定画面の変更も必要かもしれません。"
 
 #: ../../source/inc/audio:182
 msgid "If true, sounds on this channel loop by default."

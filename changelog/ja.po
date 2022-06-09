@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-04 21:39+0900\n"
-"PO-Revision-Date: 2022-05-16 21:50+0900\n"
+"PO-Revision-Date: 2022-06-10 02:16+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -20,21 +20,23 @@ msgstr ""
 
 #: ../../source/changelog.rst:6
 msgid "Changelog (Ren'Py 7.x-)"
-msgstr "Changelog (Ren'Py 7.x-)"
+msgstr "ウェブプラットフォームは現在 Ren'Py 7.5 でのみサポートされています。"
 
 #: ../../source/changelog.rst:12
 msgid "8.0 / 7.5"
-msgstr ""
+msgstr "8.0 / 7.5"
 
 #: ../../source/changelog.rst:15
 msgid "Python 3 Support (Ren'Py 8.0)"
-msgstr ""
+msgstr "Python 3 サポート (Ren'Py 8.0)"
 
 #: ../../source/changelog.rst:17
 msgid ""
 "Ren'Py 8.0 runs under Python 3, the latest major version of the Python "
 "language."
 msgstr ""
+"Ren'Py 8.0 は Python 言語の最新メジャーバージョンである Python 3 で動作しま"
+"す。"
 
 #: ../../source/changelog.rst:20
 msgid ""
@@ -42,6 +44,9 @@ msgid ""
 "and flags), it should work the same as it did before. Otherwise, please read "
 "on."
 msgstr ""
+"あなたのゲームで Python の使用が最低限 ( 例えば単にキャラクター名やフラグの保"
+"存など ) であれば、以前と同様に動作するはずです。そうでなければ下記を読み進め"
+"てください。"
 
 #: ../../source/changelog.rst:24
 msgid ""
@@ -51,24 +56,32 @@ msgid ""
 "documentation. There are far too many changes in Python 3 to include here, "
 "so please check that and other Python websites for descriptions."
 msgstr ""
+"Python 3 への移行により十年以上にわたる Python 言語とライブラリーの改善を、 "
+"`What's new in Python <https://docs.python.org/ja/3.9/whatsnew/index.html>`_ "
+"で述べられているように、 Ren'Py の開発者が利用可能になります。 Python 3 の変"
+"更はここで述べるには多すぎるので、上記と他の Python について述べているウェブ"
+"サイトをチェックしてください。"
 
 #: ../../source/changelog.rst:30
 msgid ""
 "That being said, a few things made available to the Python in your Ren'Py "
 "games are:"
-msgstr ""
+msgstr "あなたの Ren'Py ゲームで利用可能になった物を少し述べると :"
 
 #: ../../source/changelog.rst:33
 msgid ""
 "Functions can have keyword-only parameters. (These are also supported in "
 "parameter lists for labels, transforms, and screens.)"
 msgstr ""
+"関数はキーワード専用引数を持てるようになりました(ラベルや transform, screen "
+"の引数リストでもサポートされます)。"
 
 #: ../../source/changelog.rst:36
 msgid ""
 "The ability to annotate functions arguments and return values with type "
 "information. (This is only supported in Python.)"
 msgstr ""
+"関数の引数と返り値に型情報の注釈をつけられます (Python でのみのサポートです )"
 
 #: ../../source/changelog.rst:39
 msgid ""
@@ -78,6 +91,11 @@ msgid ""
 "Ren'Py dialogue. This is only available in Python, however, and not in most "
 "purely Ren'Py statements."
 msgstr ""
+"フォーマットされた文字列リテラルを使えるようになりました。これは ``f "
+"\"characters/{character}.chr\"`` のような文字列で、中括弧内のテキストは、"
+"Ren'Py のダイアログで置換が機能するのと同様に、フォーマットされた Python 変数"
+"に置き換えられます。これは、 Python でのみ利用可能で、純粋な Ren'Py のステー"
+"トメントではほとんど利用できません。"
 
 #: ../../source/changelog.rst:45
 msgid ""
@@ -85,6 +103,10 @@ msgid ""
 "Python between 2.7 and 3.9, so be sure to read the above and other Python "
 "documentation to find out everything that's improved."
 msgstr ""
+"Python 2.7 と 3.9 の間の 10 のメジャーリリースには大量のその他の改善があるの"
+"で、改善されたすべては上記と他の Python のドキュメントを読んでください(訳注: "
+"日本語で特に重要に思えるのは、変数名に日本語が可能になったことで、画像タグ、"
+"属性、ラベルなどを日本語の単語にできるようになりました)。"
 
 #: ../../source/changelog.rst:49
 msgid ""
@@ -92,12 +114,16 @@ msgid ""
 "which is no longer supported by the Python Software Foundation, and so the "
 "move to Ren'Py 8.0 helps secure Ren'Py's future."
 msgstr ""
+"最大の利点は Ren'Py が Python ソフトウェア財団がもはやサポートしない Python "
+"2.7 を離れるため、 Ren'Py 8.0 への移行は Ren'Py の将来の確保の助けになること"
+"です。."
 
 #: ../../source/changelog.rst:53
 msgid ""
 "There are a few things that may need to be converted if you used advanced "
 "Python."
 msgstr ""
+"高度な Python を使用していれば、少し変更しなければいけないことがあります。"
 
 #: ../../source/changelog.rst:56
 msgid ""
@@ -106,6 +132,10 @@ msgid ""
 "an integer. This change can affect Ren'Py positioning, where floats are "
 "treated differently from integers."
 msgstr ""
+"Python 3 では、割り算は常に整数ではなく浮動小数を返します ( 例えば ``3 / 2`` "
+"は 1 ではなく 1.5 になりました ) 。 ``//`` 演算子を使用すれば整数として割れま"
+"す。この変更は浮動小数が整数とは異なる扱いとなる Ren'Py の位置決めに影響しま"
+"す。"
 
 #: ../../source/changelog.rst:61
 msgid ""
@@ -113,12 +143,17 @@ msgid ""
 "views, not lists. The iterkeys, iteritems, and itervalues methods are not "
 "supported. The xrange method is gone, and range no longer returns a list."
 msgstr ""
+"Python 3 では、辞書の keys, items, values メソッドはリストではなく views を返"
+"すようになりました。iterkeys, iteritems, itervalues メソッドはサポートされま"
+"せん。xrange メソッドはなくなり、range はもうリストを返しません。"
 
 #: ../../source/changelog.rst:66
 msgid ""
 "Except clauses now must be written like ``except Exception as e:``, as the "
 "old syntax, ``except Exception, e:`` is not supported."
 msgstr ""
+"Except 節は、``except Exception, e:`` という古い構文がサポートされていないた"
+"め、 ``except Exception as e:`` のように書かなければならなくなりました。"
 
 #: ../../source/changelog.rst:69
 msgid ""
@@ -127,14 +162,19 @@ msgid ""
 "func:`renpy.file` opens files in binary mode. It's been renamed to :func:"
 "`renpy.open_file` and can take a default encoding.)"
 msgstr ""
+"すべての文字列はデフォルトで unicode になり (Ren'Py は数年前からこれを強制し"
+"ています)、ファイルはデフォルトで text モードで開かれます ( しかし、 :func:"
+"`renpy.file` はファイルをバイナリモードで開きます。これは :func:`renpy."
+"open_file` という名前に変更され、デフォルトのエンコーディングを使用できるよう"
+"になりました)。"
 
 #: ../../source/changelog.rst:74
 msgid "Many Python modules have been renamed."
-msgstr ""
+msgstr "多くの Python モジュールはリネームされました。"
 
 #: ../../source/changelog.rst:76
 msgid "This is not an exhaustive list."
-msgstr ""
+msgstr "これは包括的なリストではありません。"
 
 #: ../../source/changelog.rst:78
 msgid ""
@@ -144,6 +184,11 @@ msgid ""
 "not require a library dependency. While ``async`` and ``await`` are "
 "available, Ren'Py doesn't directly support coroutines."
 msgstr ""
+"Ren'Py は Python 標準ライブラリの縮小版を伴って公開されているため、すべての "
+"Python モジュールが Ren'Py で利用できるわけではありません。有効に活用できる物"
+"が欠けていて、特にそのモジュールがライブラリへの依存を必要としない場合は私た"
+"ちに知らせてください。 ``async`` と ``await`` は利用可能ですが、Ren'Pyはコ"
+"ルーチンを直接サポートしていません。"
 
 #: ../../source/changelog.rst:84
 msgid ""
@@ -151,6 +196,9 @@ msgid ""
 "Linux, Android, and iOS platforms. The web platform will be supported in a "
 "future release."
 msgstr ""
+"Ren'Py 8.0 には Python 3.9.10 が含まれており、 Windows と macOS, Linux, "
+"Android, iOS プラットフォームで利用可能です。ウェブプラットフォームは将来のリ"
+"リースでサポート予定です。"
 
 #: ../../source/changelog.rst:88
 msgid ""
@@ -158,6 +206,9 @@ msgid ""
 "Python ``-O`` flag. This means that docstrings and assert statements are "
 "available."
 msgstr ""
+"Ren'Py 8 で動作しているとき、 Ren'Py は Python でいう ``-O`` フラグに相当する"
+"ものなしで動作するようになりました。つまり docstrings と assert ステートメン"
+"トが利用可能になったということです。"
 
 #: ../../source/changelog.rst:92
 msgid ""
@@ -166,10 +217,13 @@ msgid ""
 "state. Ren'Py 8 has been used to run unmodified Ren'Py games going back to "
 "the year 2006."
 msgstr ""
+"私たちの経験では、多くのゲーム、特にゲームの状態を管理するために主に Ren'Py "
+"API を通じて Python を使用しているゲームでも修正なしで動作します。 Ren'Py 8 "
+"で 2006年までさかのぼり、修正されていない Ren'Py のゲームを実行できました。"
 
 #: ../../source/changelog.rst:99
 msgid "Continued Python 2.7 Support (Ren'Py 7.5)"
-msgstr ""
+msgstr "Python 2.7 サポートの継続 (Ren'Py 7.5)"
 
 #: ../../source/changelog.rst:101
 msgid ""
@@ -178,18 +232,24 @@ msgid ""
 "games in development (or being maintained after release) that still require "
 "Python 2.7."
 msgstr ""
+"Ren'Py 7.5 は Ren'Py 8.0 と同時にリリースされます。これは、Python 2.7 を必要"
+"とする開発中（あるいはリリース後にメンテナンス中）のゲームに対応するため、"
+"Python 2.7 で動作するバージョンの Ren'Py を引き続き提供するためです。"
 
 #: ../../source/changelog.rst:106
 msgid ""
 "In this release, Ren'Py 7.5 also supports the web platform, which Ren'Py 8.0 "
 "does not yet support."
 msgstr ""
+"今回のリリースでは、Ren'Py 8.0 がまだサポートしていない Web プラットフォーム"
+"を Ren'Py 7.5 でもサポートしました。"
 
 #: ../../source/changelog.rst:109
 msgid ""
 "For this release, Ren'Py 7.5 and Ren'Py 8.0 should support the same set of "
 "of features."
 msgstr ""
+"このリリースでは、Ren'Py 7.5 と Ren'Py 8.0 は同じ機能をサポートするはずです。"
 
 #: ../../source/changelog.rst:112
 msgid ""
@@ -197,6 +257,9 @@ msgid ""
 "has moved to Ren'Py 8.x, or until changes to the Python ecosystem mean that "
 "supporting Ren'Py on Python 2 is no longer tenable."
 msgstr ""
+"私たちは、コミュニティが Ren'Py 8.x に移行したことが確認できるまで、あるいは "
+"Python のエコシステムの変化によって Python 2 での Ren'Py のサポートが維持でき"
+"なくなるまで、Ren'Py 7.x のサポートを継続する予定です。"
 
 #: ../../source/changelog.rst:116
 msgid ""
@@ -204,11 +267,13 @@ msgid ""
 "be needed. If for some reason you can't port your game to Ren'Py 8, please "
 "let us know what is holding you back."
 msgstr ""
+"あなたのゲームを Ren'Py 8 でテストしてください。多くのゲームでは、ほとんど、"
+"あるいはまったく変更が必要ありません。もし何らかの理由で Ren'Py 8 に移植でき"
+"ない場合は、その理由を教えてください。"
 
 #: ../../source/changelog.rst:122
-#, fuzzy
 msgid "Platform Support Changes"
-msgstr "プラットフォーム対応の改善"
+msgstr "プラットフォームサポートの変更"
 
 #: ../../source/changelog.rst:124
 msgid ""
@@ -216,6 +281,9 @@ msgid ""
 "While based on Ubuntu 20.04, this has been tested on Chromebooks, and should "
 "also work on the 64-bit ARM platform."
 msgstr ""
+"このリリースでは 64bit ARM Linux プラットフォーム (linux-aarch64) のサポート"
+"が追加されました。 Ubuntu 20.04をベースにしていますが、Chromebookでテストされ"
+"ており、64bit ARM プラットフォームでも動作するはずです。"
 
 #: ../../source/changelog.rst:128
 msgid ""
@@ -225,26 +293,35 @@ msgid ""
 "when a Linux distribution is made, they will be included, creating a game "
 "that can be launched on ARM, but this is not the default, for size reasons."
 msgstr ""
+"Ren'Py のゲームを ARM Linux 上で動かす方法は、新しい ARM Linux SDK パッケージ"
+"をダウンロードし、projects ディレクトリにゲームを配置し、それを使ってゲームを"
+"起動します。 Linux 配布物が作成されるときにARM Linux SDKのファイルが存在すれ"
+"ば、それらは含まれて、 ARM 上で起動できるゲームが作成されますが、サイズの関係"
+"でこれはデフォルトではありません。"
 
 #: ../../source/changelog.rst:135
 msgid ""
 "With the move to Ren'Py 8, we are removing support for the following "
 "platforms:"
 msgstr ""
+"Ren'Py 8 への移行に伴い、次のプラットフォームのサポートを除去しました。"
 
 #: ../../source/changelog.rst:138
 msgid "32-bit x86 Windows (i686)"
-msgstr ""
+msgstr "32-bit x86 Windows (i686)"
 
 #: ../../source/changelog.rst:139
 msgid "32-bit x86 Linux (i686)"
-msgstr ""
+msgstr "32-bit x86 Linux (i686)"
 
 #: ../../source/changelog.rst:141
 msgid ""
 "This reflects the obsolescence of 32-bit x86 computing. These platforms "
 "remain supported by Ren'Py 7.5, but will not be supported by Ren'Py 8."
 msgstr ""
+"これは、32-bit x86 コンピューティングの陳腐化を反映しています。これらのプラッ"
+"トフォームは Ren'Py 7.5 では引き続きサポートされていますが、Ren'Py 8 ではサ"
+"ポートされません。"
 
 #: ../../source/changelog.rst:145
 msgid "Web and ChromeOS"
@@ -252,7 +329,7 @@ msgstr "Web and ChromeOS"
 
 #: ../../source/changelog.rst:147
 msgid "The web platform is currently only supported on Ren'Py 7.5."
-msgstr ""
+msgstr "ウェブプラットフォームは現在 Ren'Py 7.5 でのみサポートされています。"
 
 #: ../../source/changelog.rst:149
 msgid ""
@@ -262,6 +339,11 @@ msgid ""
 "used inside web browsers. As a result, Ren'Py now runs again inside Chrome "
 "and Safari, including on iOS devices."
 msgstr ""
+"Safari と Chrome の Web ブラウザの変更により、Ren'Py が使用するメモリが約 50 "
+"倍になり、Web ブラウザのスタックメモリが不足したときに RangeError が発生する"
+"ようになりました。Ren'Py 7.5 では、ウェブブラウザの内部で使用されるメモリ量を"
+"減らすための変更を行いました。その結果、iOS デバイスを含め、Chrome と Safari "
+"で Ren'Py が再び動作するようになりました。"
 
 #: ../../source/changelog.rst:155
 msgid ""
@@ -292,6 +374,8 @@ msgid ""
 "When importing save files into a web distribution, Ren'Py will now refresh "
 "the list of save files without a restart."
 msgstr ""
+"web 配布物にセーブファイルをインポートするとき、 Ren'Py は再起動せずにセーブ"
+"ファイルのリストを更新するようになりました。"
 
 #: ../../source/changelog.rst:167
 msgid ""
@@ -303,11 +387,11 @@ msgstr ""
 
 #: ../../source/changelog.rst:170
 msgid "The Ren'Py SDK can be run on ARM Chromebooks."
-msgstr ""
+msgstr "Ren'Py が ARM Chromebooks 上で実行できるようになりました。"
 
 #: ../../source/changelog.rst:174
 msgid "Steam, Steam Deck, and Epic Games Store"
-msgstr ""
+msgstr "Steam, Steam Deck, Epic Games Store"
 
 #: ../../source/changelog.rst:176
 msgid ""
@@ -317,10 +401,17 @@ msgid ""
 "module <achievement>` remains unchanged, this gives advanced Python "
 "programmers access to more Steam functionality."
 msgstr ""
+"このリリースでは、 Steam サポートがコールバックを含む Steamworks API 全体にア"
+"クセスできる新しい ctypes ベースのバインディングによるものに書き直されまし"
+"た。 Steam サポートは :ref:`achievement モジュール <achievement>` によって提"
+"供され、変更はありませんが、上級 Python プログラマはより多くの Steam 機能にア"
+"クセスできるようになりました。"
 
 #: ../../source/changelog.rst:182
 msgid "When Steam is active, Ren'Py will now enable the \"steam\" variant."
 msgstr ""
+"Steam が アクティブのとき、 Ren'Py は \"steam\" variant を有効化するようにな"
+"りました。"
 
 #: ../../source/changelog.rst:184
 msgid ""
@@ -329,6 +420,11 @@ msgid ""
 "when :func:`renpy.input` is called. The steam deck also causes Ren'Py to "
 "enable the \"steam_deck\", \"steam\", \"medium\", and \"touch\" variants."
 msgstr ""
+"このリリースでは、Steam Deck ハードウェアのビルトインサポートが含まれていま"
+"す。このサポートには、 :func:`renpy.input` が呼ばれたときに、自動的にオンスク"
+"リーンキーボードを表示する機能が含まれています。 Steam Deck はまた、Ren'Py "
+"に \"steam_deck\", \"steam\", \"medium\", \"touch\" という variant を有効にさ"
+"せます。"
 
 #: ../../source/changelog.rst:190
 msgid ""
@@ -336,16 +432,21 @@ msgid ""
 "guide>`_ to help you get your game certified on that platform. Thanks go to "
 "Valve for supplying a Steam Deck to test on."
 msgstr ""
+"`Ren'Py on Steam Deck Guide <https://github.com/renpy/steam-deck-guide>`_ "
+"は、あなたのゲームをSteamプラットフォームで認証するためのガイドです。テスト用"
+"のSteam Deckを提供してくれたValveに感謝します。"
 
 #: ../../source/changelog.rst:194
 msgid ""
 "Ren'Py now includes support for being launched by the Epic Games Store, by "
 "ignoring various command line arguments supplied by EGS."
 msgstr ""
+"Ren'Py は Epic Games Store からの様々なコマンドライン引数を無視することによ"
+"り、EGS からの起動をサポートするようになりました。"
 
 #: ../../source/changelog.rst:199
 msgid "Visual Studio Code"
-msgstr ""
+msgstr "Visual Studio Code"
 
 #: ../../source/changelog.rst:201
 msgid ""
@@ -353,6 +454,9 @@ msgid ""
 "including downloading the `Ren'Py Language <https://marketplace.visualstudio."
 "com/items?itemName=LuqueDaniel.languague-renpy>`_ extension."
 msgstr ""
+"Ren'Py は Visual Studio Code のダウンロードと使用、および `Ren'Py Language "
+"<https://marketplace.visualstudio.com/items?itemName=LuqueDaniel.languague-"
+"renpy>`_ 拡張のダウンロードをサポートしました。"
 
 #: ../../source/changelog.rst:205
 msgid ""
@@ -360,12 +464,17 @@ msgid ""
 "syntax highlighting, snippets, completion, color previews, documentation, go "
 "to definition, function signatures, error diagnostics, outlining, and more."
 msgstr ""
+"Ren'Py 言語拡張はシンタックスハイライト、スニペット、補間、色のプレビュー、ド"
+"キュメント、定義ジャンプ、関数シグネチャ 、エラー診断、アウトラインなどを含"
+"む Ren'Py のリッチなサポートを提供します。"
 
 #: ../../source/changelog.rst:210
 msgid ""
 "Visual Studio Code also has a large system of extensions, including spell-"
 "checkers, that can be used with with the Ren'Py Language extension."
 msgstr ""
+"Visual Studio Code にはスペルチェックを含む大きなシステム拡張もあり、 Ren'Py "
+"Language extension と共に使用できます。"
 
 #: ../../source/changelog.rst:213
 msgid ""
@@ -373,16 +482,21 @@ msgid ""
 "choosing to download it. It's also possible to configure Ren'Py to use a "
 "system install of Ren'Py with extensions that you choose."
 msgstr ""
+"Visual Studio Code はエディター設定に移動して、ダウンロードを選択すればアク"
+"ティベートできます。 It's also possible to configure Ren'Py to use a system "
+"install of Ren'Py with extensions that you choose."
 
 #: ../../source/changelog.rst:219
 msgid "Dismiss, Nearrect, and Focus Rectangles"
-msgstr ""
+msgstr "Dismiss, Nearrect, フォーカスされた短形"
 
 #: ../../source/changelog.rst:221
 msgid ""
 "Two new displayables have been added to Ren'Py to help use cases like drop-"
 "down menus, pulldown menus, and tooltips."
 msgstr ""
+"2 つの新しい Displayable が Ren'Py に追加され、ドロップダウンメニューやプルダ"
+"ウンメニュー、ツールチップのような使用事例で役に立ちます。"
 
 #: ../../source/changelog.rst:224
 msgid ""
@@ -391,6 +505,9 @@ msgid ""
 "other things, a behavior where if the player clicks outside the frame, the "
 "frame gets hidden."
 msgstr ""
+":ref:`dismiss <sl-dismiss>` displayable は一般的にモーダルフレームの後ろで使"
+"用され、アクティベートされるとアクションを起こします。これにより、特にプレイ"
+"ヤーがフレーム外をクリックしたような場合にフレームを非表示にできます。"
 
 #: ../../source/changelog.rst:229
 msgid ""
@@ -400,6 +517,11 @@ msgid ""
 "down menu is documented with nearrect, and an example of tooltip usage is "
 "with :ref:`tooltips <tooltips>`."
 msgstr ""
+":ref:`nearrect <sl-nearrect>` displayable は、スクリーン上の矩形の上または下"
+"に displayable を配置します。これは、ボタンの上にツールチップを表示したり、ボ"
+"タンの下にドロップダウンメニューを表示するのに使用できます (ドロップダウンメ"
+"ニューの例は nearrect で、ツールチップの例は :ref:`tooltips <tooltips>` で説"
+"明されています) 。"
 
 #: ../../source/changelog.rst:235
 msgid ""
@@ -410,11 +532,16 @@ msgid ""
 "the captured focus,  and the :func:`ToggleFocus` action captures and clears "
 "focus based on the current focus state."
 msgstr ""
+"nearrect によりそばに配置される矩形は、スクリーン上の現在のボタンの位置を保存"
+"できる新しい :func:`CaptureFocus` アクションによって保存できます。保存された"
+"後、 :func:`GetFocusRect` 関数でそのフォーカスされた矩形を取得し、 :func:"
+"`ClearFocus` で保存したフォーカスをクリアできます。また :func:`ToggleFocus` "
+"アクションでは現在のフォーカス状態に基づいてフォーカスを保存したりクリアした"
+"りできます。"
 
 #: ../../source/changelog.rst:243
-#, fuzzy
 msgid "ATL and Transforms"
-msgstr "Tags, Layers, Transforms"
+msgstr "ATL と Transform"
 
 #: ../../source/changelog.rst:245
 msgid ""
@@ -458,13 +585,12 @@ msgstr ""
 "が始まります。"
 
 #: ../../source/changelog.rst:267
-#, fuzzy
 msgid ""
 "The default for the :tpref:`crop_relative` transform property has been "
 "changed to True."
 msgstr ""
-"0 から 1 までの :tpref:`blur` transform プロパティーの値が適切に動作するよう"
-"になりました。"
+":tpref:`crop_relative` transform プロパティーのデフォルトが True に変更されま"
+"した。"
 
 #: ../../source/changelog.rst:271
 msgid "Image Gallery"
@@ -479,7 +605,6 @@ msgstr ""
 "リー画像の表示カスタマイズに利用できるようになりました。"
 
 #: ../../source/changelog.rst:276
-#, fuzzy
 msgid ""
 "The :func:`Gallery.image` and :func:`Gallery.unlock_image` methods now take "
 "keyword arguments beginning with `show\\_`. These arguments have the `show"
@@ -573,7 +698,6 @@ msgstr ""
 "にできます。"
 
 #: ../../source/changelog.rst:320
-#, fuzzy
 msgid "New Features"
 msgstr "新機能"
 
@@ -583,6 +707,9 @@ msgid ""
 "an ``expression`` modifier, which allows a Python expression to supply the "
 "name of the screen."
 msgstr ""
+"``show screen`` と ``hide screen``, ``call screen`` ステートメントが "
+"``expression`` 修飾子が受け取れるようになりました。これで Python 式で screen "
+"の名前を与えられるます。"
 
 #: ../../source/changelog.rst:326
 msgid ""
@@ -729,6 +856,9 @@ msgid ""
 "quits. This is intended to allow the game to save additional data created by "
 "the developer."
 msgstr ""
+"新しく :var:`config.at_exit_callbacks` 関数がゲーム終了時に呼び出されます。こ"
+"れは開発者により追加で作成されたデータをゲームが保存出来るように意図されてい"
+"ます。"
 
 #: ../../source/changelog.rst:391
 msgid ""
@@ -736,11 +866,13 @@ msgid ""
 "specify default attributes for a tag that are used when other attributes do "
 "not conflict."
 msgstr ""
+":var:`config.default_attribute_callbacks` 変数はあるタグに対してゲームがデ"
+"フォルト属性を指定できるようにします。これは他の属性との衝突がないときに使用"
+"されます。"
 
 #: ../../source/changelog.rst:396
-#, fuzzy
 msgid "Removed Features"
-msgstr "以前からの機能"
+msgstr "除去された機能"
 
 #: ../../source/changelog.rst:398
 msgid ""
@@ -750,6 +882,10 @@ msgid ""
 "it will continue to be supported, the system has been removed from the "
 "documentation."
 msgstr ""
+"Ren'Py は Python 関数としてスクリーンを作成できる非常に古いシステム (``ui`` "
+"システム) をサポートしてきました。現在の Ren'Py の状態では、このシステムは時"
+"代遅れで非常に不十分な最適化しかされていません。これを使用する古いゲームのサ"
+"ポートは続きますが、ドキュメントからは記載を取り除きました。"
 
 #: ../../source/changelog.rst:403
 msgid ""
@@ -757,6 +893,10 @@ msgid ""
 "``input`` displayable are now documented as not supporting IME-based (non-"
 "alphabetic) input on Android."
 msgstr ""
+"以前ライブラリの問題のため、 :func:`renpy.input` 関数と ``input`` "
+"Displayable は Android 上での IME ベースの入力はサポートされていないことがド"
+"キュメントに記載されました(訳注: `スクリーンキーボード <https://akakyouryuu."
+"com/%e9%85%8d%e5%b8%83%e7%89%a9/renpy/>`_ )。"
 
 #: ../../source/changelog.rst:408 ../../source/changelog.rst:1908
 #: ../../source/changelog.rst:1935 ../../source/changelog.rst:1998
@@ -769,6 +909,9 @@ msgid ""
 "with the old named retained. It has also gained an `encoding` parameter to "
 "open the file with an encoding."
 msgstr ""
+":func:`renpy.file` 関数は :func:`renpy.open_file` に変更されました。 以前の名"
+"前も残されています。特定のエンコーディングでファイルを開く `encoding` 引数が"
+"増えました。"
 
 #: ../../source/changelog.rst:414
 msgid ""
@@ -784,22 +927,28 @@ msgstr ""
 msgid ""
 "When adding files to the audio namespace, Ren'Py now scans for flac files."
 msgstr ""
+"オーディオ名前空間にファイルを追加すると、 Ren'Py は flac ファイルをスキャン"
+"するようになりました。"
 
 #: ../../source/changelog.rst:421
 msgid ""
 "Say statements used as menu captions can now take permanent and temporary "
 "image attributes, just like say statements elsewhere."
 msgstr ""
+"選択肢のキャプションに使用される say ステートメントでも他の say ステートメン"
+"ト同様に永続的、一時的画像属性が受け取られるようになりました。"
 
 #: ../../source/changelog.rst:424
 msgid ""
 "All position properties can now be supplied as gui variables to buttons. For "
 "example::"
 msgstr ""
+"すべての位置プロパティーが gui 変数としてボタンに渡せるようになりました 例え"
+"ば ::"
 
 #: ../../source/changelog.rst:429
 msgid "now works."
-msgstr ""
+msgstr "上記が動作します。"
 
 #: ../../source/changelog.rst:431
 msgid ""
@@ -808,6 +957,9 @@ msgid ""
 "being transferred to displayables fully behind the frame, while allowing "
 "focus to be given to other displayables."
 msgstr ""
+"モーダルな :ref:`frames <sl-frame>` の動作が変更されました。モーダルフレーム"
+"はその内部でマウスイベントをとどめ、他の Displayable にはフォーカスを移せます"
+"が、全体がその後ろにある displayable にはフォーカスを移さなくなりました。"
 
 #: ../../source/changelog.rst:436
 msgid ""
@@ -895,18 +1047,19 @@ msgstr ""
 
 #: ../../source/changelog.rst:469
 msgid "The default for :propref:`outline_scaling` is now \"linear\"."
-msgstr ""
+msgstr ":propref:`outline_scaling` のデフォルトが \"linear\" になりました。"
 
 #: ../../source/changelog.rst:471
 msgid ""
 "The version of SDL used by Ren'Py has been upgraded to 2.0.20 on non-web "
 "platforms."
 msgstr ""
+"Ren'Py で使用されている SDL のバージョンが非ウェブプラットフォームで 2.0.20 "
+"になりました。"
 
 #: ../../source/changelog.rst:474
-#, fuzzy
 msgid "Many translations have been updated."
-msgstr "フランス語の翻訳が更新されました。"
+msgstr "多くの翻訳が更新されました。"
 
 #: ../../source/changelog.rst:476
 msgid ""
@@ -914,40 +1067,44 @@ msgid ""
 "obsolete. However, if the version from 7.4.0 is unpacked, it should be "
 "selectable in the launcher."
 msgstr ""
+"jEdit エディタは、Ren'Py との連携がほぼ終了したため、削除されました。しか"
+"し、 v7.4.0 からのバージョンを解凍すれば、ランチャーで選択できるようになるは"
+"ずです。"
 
 #: ../../source/changelog.rst:481
 msgid "Versioning"
-msgstr ""
+msgstr "Versioning"
 
 #: ../../source/changelog.rst:483
 msgid ""
 "Ren'Py's full version numbers are now of the form major.minor.patch."
 "YYMMDDCCnu, where:"
 msgstr ""
+"Ren'Py の完全なバージョン番号は major.minor.patch.YYMMDDCCnu になりました。 :"
 
 #: ../../source/changelog.rst:486
 msgid "YY is the two digit year of the latest commit."
-msgstr ""
+msgstr "YY は最新のコミットの2桁の年です。"
 
 #: ../../source/changelog.rst:487
 msgid "MM is the month of the commit."
-msgstr ""
+msgstr "MM そのコミットの月です。"
 
 #: ../../source/changelog.rst:488
 msgid "DD is the day of the commit"
-msgstr ""
+msgstr "DD はそのコミットの日にちです。"
 
 #: ../../source/changelog.rst:489
 msgid "CC is the commit number on that day"
-msgstr ""
+msgstr "CC はその日のコミット番号です。"
 
 #: ../../source/changelog.rst:490
 msgid "n is present if this is a nightly build."
-msgstr ""
+msgstr "n はナイトリービルドであればつきます。"
 
 #: ../../source/changelog.rst:491
 msgid "u is present if this is an unofficial build."
-msgstr ""
+msgstr "u は非公式のビルドであればあります。"
 
 #: ../../source/changelog.rst:497
 msgid "7.4.11"
@@ -3883,7 +4040,7 @@ msgstr ""
 #: ../../source/changelog.rst:1973
 #, fuzzy
 msgid "Platforms"
-msgstr "Transforms"
+msgstr "その他プラットフォーム"
 
 #: ../../source/changelog.rst:1975
 msgid ""
@@ -3944,8 +4101,9 @@ msgid "The pygame.draw module is now included, allowing Canvas support."
 msgstr ""
 
 #: ../../source/changelog.rst:1994
+#, fuzzy
 msgid "WebGL compatibility has been improved."
-msgstr ""
+msgstr "一般的に Android デバイスとの互換性が改善されました。"
 
 #: ../../source/changelog.rst:2000
 msgid ""
@@ -4047,7 +4205,7 @@ msgstr ""
 #: ../../source/changelog.rst:2063
 #, fuzzy
 msgid "Update the spanish translation."
-msgstr "繁体字の翻訳が更新されました。"
+msgstr "スペイン語の翻訳が更新されました。"
 
 #: ../../source/changelog.rst:2069
 msgid "7.3.1"
@@ -4132,8 +4290,9 @@ msgid "7.3.0"
 msgstr "7.3.0"
 
 #: ../../source/changelog.rst:2127
+#, fuzzy
 msgid "Renpyweb"
-msgstr ""
+msgstr "https://github.com/renpy/renpyweb (Web)"
 
 #: ../../source/changelog.rst:2129
 msgid ""
@@ -4258,7 +4417,7 @@ msgstr ""
 #: ../../source/changelog.rst:2203
 #, fuzzy
 msgid "Text Improvements"
-msgstr "ボイスの改善"
+msgstr "改善"
 
 #: ../../source/changelog.rst:2205
 msgid ""
@@ -4369,11 +4528,15 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:2268
+#, fuzzy
 msgid ""
 "The interface of :var:`config.say_attribute_transition_callback` has been "
 "changed in an incompatible way, to allow sets of old and new tags to be "
 "given."
 msgstr ""
+":var:`config.say_attribute_transition_callback` のインターフェースに破壊的変"
+"更があり、新旧のタグのセットを取るようになりました。以前のインターフェースに"
+"戻すには次のようにします。 ::"
 
 #: ../../source/changelog.rst:2272
 msgid ""
@@ -4538,8 +4701,12 @@ msgid "7.2.0"
 msgstr "7.2.0"
 
 #: ../../source/changelog.rst:2386
+#, fuzzy
 msgid "Menu Arguments"
 msgstr ""
+":ref:`引数付き選択肢 <menu-arguments>` を使用しても NVL-mode 選択肢にアクセス"
+"できます。これは `nvl` 引数に True を入れて実行できます。これは NVL-mode と "
+"ADV-mode の選択肢を1つのゲーム内で併用するときに便利です。 ::"
 
 #: ../../source/changelog.rst:2388
 msgid ""
@@ -4557,8 +4724,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:2410
+#, fuzzy
 msgid "Temporary Say Attributes"
-msgstr ""
+msgstr "画像属性を伴う say"
 
 #: ../../source/changelog.rst:2412
 msgid ""
@@ -4605,8 +4773,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:2449
+#, fuzzy
 msgid "Statements"
-msgstr ""
+msgstr "ATL ステートメント"
 
 #: ../../source/changelog.rst:2451
 msgid ""
@@ -4765,8 +4934,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/changelog.rst:2543
+#, fuzzy
 msgid "A regression in support for imagefonts has been fixed."
-msgstr ""
+msgstr "macOS での Steam 向けのビルドが修正されました。"
 
 #: ../../source/changelog.rst:2545
 msgid "Creating a new file from the navigation menu of the launcher now works."
@@ -4925,8 +5095,9 @@ msgid "7.1.1"
 msgstr "7.1.1"
 
 #: ../../source/changelog.rst:2656
+#, fuzzy
 msgid "History Fix"
-msgstr ""
+msgstr "ヒストリー"
 
 #: ../../source/changelog.rst:2658
 msgid ""
