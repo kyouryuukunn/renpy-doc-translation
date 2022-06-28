@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-15 15:18+0900\n"
+"POT-Creation-Date: 2022-06-28 19:28+0900\n"
 "PO-Revision-Date: 2021-08-08 15:49+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -34,19 +34,28 @@ msgstr ""
 "関数で構成されていますが、ステートメントと等価に動作する複数のコードで構成さ"
 "れることもあります。"
 
-#: ../../source/statement_equivalents.rst:17
+#: ../../source/statement_equivalents.rst:15
+msgid ""
+"Note that using statement equivalents in lieu of the original statements "
+"usually removes any possible :ref:`lint` checks and prediction "
+"optimizations, making your game less easily checkable and possibly less "
+"fluid."
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:21
 msgid "Dialogue"
 msgstr "台詞"
 
-#: ../../source/statement_equivalents.rst:19
+#: ../../source/statement_equivalents.rst:23
+#, fuzzy
 msgid ""
-"The Ren'Py say statement is equivalent to calling the character object as a "
-"function. The following displays the same line twice::"
+"The Ren'Py :ref:`say-statement` is equivalent to calling the character "
+"object as a function. The following displays the same line twice::"
 msgstr ""
 "Ren'Py の say ステートメントはキャラクターオブジェクトを関数として呼び出すこ"
 "とと等価です。次は、同じ行を2回表示させるコードです ::"
 
-#: ../../source/statement_equivalents.rst:26
+#: ../../source/statement_equivalents.rst:30
 msgid ""
 "Displaying narration can be done the same way, by using the ``narrator`` "
 "character. When calling a character, it's possible to supply the keyword "
@@ -59,7 +68,7 @@ msgstr ""
 "False なら、 Ren'Py はキャラクターのダイアログボックスを表示しますが、インタ"
 "ラクションを実行する前に処理を戻します。"
 
-#: ../../source/statement_equivalents.rst:32
+#: ../../source/statement_equivalents.rst:36
 msgid ""
 "This equivalence of characters and function objects works in the other "
 "direction as well. It is possible to declare a Python function, and then use "
@@ -70,7 +79,7 @@ msgstr ""
 "python 関数を宣言して、キャラクターオブジェクトの代わりに使用できます。例え"
 "ば、以下の関数は二人のキャラクターを選択するために変数を使用しています。 ::"
 
-#: ../../source/statement_equivalents.rst:59
+#: ../../source/statement_equivalents.rst:63
 msgid ""
 "A function used in this way should either ignore unknown keyword arguments, "
 "or pass them to a character function. Doing this will allow the game to "
@@ -129,12 +138,13 @@ msgid ""
 "equivalent. ::"
 msgstr "次の3行が等価なためこの関数は滅多に必要ありません。 :"
 
-#: ../../source/statement_equivalents.rst:67
+#: ../../source/statement_equivalents.rst:71
 msgid "Choice Menus"
 msgstr "選択肢"
 
-#: ../../source/statement_equivalents.rst:69
-msgid "The menu statement has an equivalent Python function."
+#: ../../source/statement_equivalents.rst:73
+#, fuzzy
+msgid "The :ref:`menu statement <menus>` has an equivalent Python function."
 msgstr "menu ステートメントには等価な Python 関数があります。"
 
 #: ../../source/inc/se_menu:5
@@ -177,14 +187,15 @@ msgstr ""
 "ションを使用します。ナレーションを使用してメニューを表示するには次のように記"
 "述します。 ::"
 
-#: ../../source/statement_equivalents.rst:75
+#: ../../source/statement_equivalents.rst:79
 msgid "Displaying Images"
 msgstr "画像の表示"
 
-#: ../../source/statement_equivalents.rst:77
+#: ../../source/statement_equivalents.rst:81
+#, fuzzy
 msgid ""
 "The image, scene, show, and hide statements each have an equivalent Python "
-"function."
+"function (see :ref:`displaying-images` for the original statements)."
 msgstr ""
 "image, scene, show,  hide ステートメントはそれぞれ等価な python 関数を持ちま"
 "す。"
@@ -320,8 +331,8 @@ msgid ""
 "image."
 msgstr ""
 "None でないならこれは画像を 探す代わりに表示される displayable です ( これは "
-"show expression ステートメントと等価です )。 `what` パラメーターが与えられると、 "
-"`name` はその画像とタグを関連づけるために使用されます。"
+"show expression ステートメントと等価です )。 `what` パラメーターが与えられる"
+"と、 `name` はその画像とタグを関連づけるために使用されます。"
 
 #: ../../source/inc/se_images:77
 msgid "`zorder`"
@@ -380,14 +391,15 @@ msgstr ""
 "True なら、 transform の状態は表示時までリセットされ、 False なら永続的にな"
 "り、次のtransform が状態を更新できるようにします。"
 
-#: ../../source/statement_equivalents.rst:83
+#: ../../source/statement_equivalents.rst:87
 msgid "Transitions"
 msgstr "トランジション"
 
-#: ../../source/statement_equivalents.rst:85
+#: ../../source/statement_equivalents.rst:89
+#, fuzzy
 msgid ""
-"The equivalent of the with statement is the :func:`renpy.with_statement` "
-"function."
+"The equivalent of the :ref:`with-statement` is the :func:`renpy."
+"with_statement` function."
 msgstr "with ステートメントと等価な  :func:`renpy.with_statement` 関数です。"
 
 #: ../../source/inc/se_with:5
@@ -425,13 +437,15 @@ msgstr ""
 "この関数はユーザーがトランジションの中断を選択するなら True を、そうでないな"
 "ら False を返します。"
 
-#: ../../source/statement_equivalents.rst:91
+#: ../../source/statement_equivalents.rst:95
 msgid "Jump"
 msgstr "Jump"
 
-#: ../../source/statement_equivalents.rst:93
+#: ../../source/statement_equivalents.rst:97
+#, fuzzy
 msgid ""
-"The equivalent of the jump statement is the :func:`renpy.jump` function."
+"The equivalent of the :ref:`jump-statement` is the :func:`renpy.jump` "
+"function."
 msgstr "jump ステートメントは :func:`renpy.jump` 関数と等価です。"
 
 #: ../../source/inc/se_jump:5
@@ -439,13 +453,15 @@ msgid ""
 "Causes the current statement to end, and control to jump to the given label."
 msgstr "現在のステートメントを終了し、制御を指定されたラベルに移します。"
 
-#: ../../source/statement_equivalents.rst:98
+#: ../../source/statement_equivalents.rst:102
 msgid "Call"
 msgstr "Call"
 
-#: ../../source/statement_equivalents.rst:100
+#: ../../source/statement_equivalents.rst:104
+#, fuzzy
 msgid ""
-"The equivalent of the call statement is the :func:`renpy.call` function."
+"The equivalent of the :ref:`call-statement` is the :func:`renpy.call` "
+"function."
 msgstr "call ステートメントと等価なものは :func:`renpy.call` 関数です。"
 
 #: ../../source/inc/se_call:5
@@ -475,6 +491,84 @@ msgstr ""
 #: ../../source/inc/se_call:17
 msgid "Causes Ren'Py to return from the current Ren'Py-level call."
 msgstr "現在の Ren'Py の呼び出しレベルから Ren'Py を返します。"
+
+#: ../../source/statement_equivalents.rst:109
+msgid "Pause"
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:111
+#, fuzzy
+msgid ""
+"The equivalent of the :ref:`pause-statement` is the :func:`renpy.pause` "
+"function."
+msgstr "jump ステートメントは :func:`renpy.jump` 関数と等価です。"
+
+#: ../../source/inc/se_pause:5
+msgid ""
+"Causes Ren'Py to pause. Returns true if the user clicked to end the pause, "
+"or false if the pause timed out or was skipped."
+msgstr ""
+
+#: ../../source/inc/se_pause:9
+msgid "`delay`"
+msgstr ""
+
+#: ../../source/inc/se_pause:9
+msgid "If given, the number of seconds Ren'Py should pause for."
+msgstr ""
+
+#: ../../source/inc/se_pause:11
+msgid "The following should be given as keyword arguments:"
+msgstr ""
+
+#: ../../source/inc/se_pause:29
+msgid "`hard`"
+msgstr ""
+
+#: ../../source/inc/se_pause:14
+msgid ""
+"This must be given as a keyword argument. When True, Ren'Py may prevent the "
+"user from clicking to interrupt the pause. If the player enables skipping, "
+"the hard pause will be skipped. There may be other circumstances where the "
+"hard pause ends early or prevents Ren'Py from operating properly, these will "
+"not be treated as bugs."
+msgstr ""
+
+#: ../../source/inc/se_pause:20
+msgid ""
+"In general, using hard pauses is rude. When the user clicks to advance the "
+"game, it's an explicit request - the user wishes the game to advance. To "
+"override that request is to assume you understand what the player wants more "
+"than the player does."
+msgstr ""
+
+#: ../../source/inc/se_pause:25
+msgid ""
+"Calling renpy.pause guarantees that whatever is on the screen will be "
+"displayed for at least one frame, and hence has been shown to the player."
+msgstr ""
+
+#: ../../source/inc/se_pause:29
+msgid "tl;dr - Don't use renpy.pause with hard=True."
+msgstr ""
+
+#: ../../source/inc/se_pause:37
+msgid "`predict`"
+msgstr ""
+
+#: ../../source/inc/se_pause:32
+msgid ""
+"If True, Ren'Py will end the pause when all prediction, including prediction "
+"scheduled with :func:`renpy.start_predict` and :func:`renpy."
+"start_predict_screen`, has been finished."
+msgstr ""
+
+#: ../../source/inc/se_pause:36
+msgid ""
+"This also causes Ren'Py to prioritize prediction over display smoothness for "
+"the duration of the pause. Because of that, it's recommended to not display "
+"animations during prediction."
+msgstr ""
 
 #~ msgid "The layer on which this function operates."
 #~ msgstr "この関数を実行するレイヤー"
