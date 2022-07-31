@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-31 18:47+0900\n"
-"PO-Revision-Date: 2022-07-31 18:43+0900\n"
+"PO-Revision-Date: 2022-07-31 21:19+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -23,14 +23,12 @@ msgid "Changelog (Ren'Py 7.x-)"
 msgstr "Changelog (Ren'Py 7.x-)"
 
 #: ../../source/changelog.rst:12
-#, fuzzy
 msgid "8.1 / 7.6"
-msgstr "8.0 / 7.5"
+msgstr "8.1 / 7.6"
 
 #: ../../source/changelog.rst:15
-#, fuzzy
 msgid "Mixer Volume Changes"
-msgstr "修正と変更"
+msgstr "Mixer Volume Changes"
 
 #: ../../source/changelog.rst:17
 msgid ""
@@ -39,6 +37,10 @@ msgid ""
 "with the samples to produce the voltage supplied to the speakers or "
 "headphones, and hence the square of this determines the power."
 msgstr ""
+"Ren'Py は、ミキサーの音量の表現方法を変更しました。内部的には、ミキサーの音量"
+"は 0.0 から 1.0 の間の数値として保存されます。この数値とサンプルを掛け合わせ"
+"ることで、スピーカーやヘッドフォンに供給される電圧を生成し、その2乗でパワーを"
+"決定します。"
 
 #: ../../source/changelog.rst:22
 msgid ""
@@ -47,6 +49,9 @@ msgid ""
 "dB below the maximum volume, while a full bar represents 0 dB, the full "
 "volume."
 msgstr ""
+"ミキサーは、オーディオ機器やコンピュータのボリュームコントロールと同じよう"
+"に、デシベル（電力）で動作するようになりました。ミキサースライダーが空の場合"
+"は最大音量より-60dB、バーがいっぱいの場合は0dB、つまり最大音量を表します"
 
 #: ../../source/changelog.rst:26
 msgid ""
@@ -56,6 +61,11 @@ msgid ""
 "dB. :func:`SetCharacterVolume` works in a similar way, as do the new :func:"
 "`preferences.set_mixer` and :func:`preferences.get_mixer` functions."
 msgstr ""
+"var:`config.default_music_volume`, :var:`config.default_sfx_volume`, :var:"
+"`config.default_voice_volume` などのミキサーのデフォルトボリュームをコント"
+"ロールする変数が、0.0 から 1.0 のスケールで動作するように変更になりました。 "
+"func:`Preferences.set_mixer` と :func:`Preferences.get_mixer` 関数も同様に動"
+"作します。"
 
 #: ../../source/changelog.rst:31
 msgid ""
@@ -64,6 +74,9 @@ msgid ""
 "it had an effect. Now, the volume increases and decreases match the way "
 "people perceive loudness."
 msgstr ""
+"この変更の利点は、ボリュームスライダがよりダイナミックになることです。以前"
+"は、ボリュームスライダが一番下に近い位置にないと効果がありませんでした。これ"
+"により、音量の増減は、人が感じるラウドネスと一致するようになりました。"
 
 #: ../../source/changelog.rst:36 ../../source/changelog.rst:441
 msgid "New Features"
@@ -77,11 +90,15 @@ msgid ""
 "faded out. (By default, a ``play`` followed by a ``stop`` causes the track "
 "to never be played, and hence never faded out.)"
 msgstr ""
+"新しい :func:`renpy.music.pump` 関数を呼び出すと、オーディオの変更を次のイン"
+"タラクションの開始時ではなく、即座に反映させられるようになりました。主な用途"
+"としては、サウンドを再生し、そのすぐ後フェードアウトさせられます(デフォルトで"
+"は、``play`` の後に ``stop`` が続くとそのトラックは再生されず、したがって"
+"フェードアウトもされません)。"
 
 #: ../../source/changelog.rst:49
-#, fuzzy
 msgid "8.0.2 / 7.5.2"
-msgstr "8.0.1 / 7.5.1"
+msgstr "8.0.2 / 7.5.2"
 
 #: ../../source/changelog.rst:56
 msgid "8.0.1 / 7.5.1"
