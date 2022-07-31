@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-04 21:39+0900\n"
+"POT-Creation-Date: 2022-07-31 17:47+0900\n"
 "PO-Revision-Date: 2022-06-05 11:36+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -131,32 +131,21 @@ msgid "This function can be used to check if a screen is showing::"
 msgstr "この関数を使用してスクリーンが表示されているかチェック出来ます。例 ::"
 
 #: ../../source/inc/screens:59
+#, fuzzy
 msgid ""
-"The ScreenDisplayable objects returnd by this function have the following "
+"The ScreenDisplayable objects returned by this function have the following "
 "documented fields:"
 msgstr ""
 "この関数から返された ScreenDisplayable オブジェクトのフィールドのうち、次の"
 "フィールドを記載します :"
 
-#: ../../source/inc/screens:62
-msgid "`ScreenDisplayable.layer`"
-msgstr "`ScreenDisplayable.layer`"
-
 #: ../../source/inc/screens:64
 msgid "The layer the screen is being displayed on."
 msgstr "スクリーンを表示するためのレイヤーです。"
 
-#: ../../source/inc/screens:66
-msgid "`ScreenDisplayable.name`"
-msgstr "`ScreenDisplayable.name`"
-
 #: ../../source/inc/screens:68
 msgid "The name of the screen."
 msgstr "表示するスクリーンの名前です。"
-
-#: ../../source/inc/screens:70
-msgid "`ScreenDisplayable.zorder`"
-msgstr "`ScreenDisplayable.zorder`"
 
 #: ../../source/inc/screens:72
 msgid "The zorder the screen is being displayed at."
@@ -194,7 +183,8 @@ msgstr "プログラム的には show screen ステートメントに相当し�
 #: ../../source/inc/screens:93
 msgid "Shows the named screen. This takes the following keyword arguments:"
 msgstr ""
-"その名前のスクリーンを表示します。これは以下のキーワード引数を受け取ります。 :"
+"その名前のスクリーンを表示します。これは以下のキーワード引数を受け取りま"
+"す。 :"
 
 #: ../../source/inc/screens:95
 msgid "`_screen_name`"
@@ -247,9 +237,9 @@ msgid ""
 "a widget with that id is shown by the screen, the specified properties are "
 "added to it."
 msgstr ""
-"ウィジェットの id から、プロパティー名からその値へのマップのマップです。"
-"その id のウィジェットがスクリーンによって表示されると、指定したプロ"
-"パティーがそこに追加されます。"
+"ウィジェットの id から、プロパティー名からその値へのマップのマップです。その "
+"id のウィジェットがスクリーンによって表示されると、指定したプロパティーがそこ"
+"に追加されます。"
 
 #: ../../source/inc/screens:113
 msgid "`_transient`"
@@ -303,8 +293,8 @@ msgid ""
 msgstr ""
 "`name` が現在 Ren'Py に実行されているスクリーン variant なら True を返しま"
 "す。詳細は :ref:`screen-variants` を参考にしてください。この関数を if ステー"
-"トメントで条件に使用して、選択したスクリーン variant に対して振る舞いを変更"
-"出来ます。"
+"トメントで条件に使用して、選択したスクリーン variant に対して振る舞いを変更出"
+"来ます。"
 
 #: ../../source/inc/screens:138
 msgid ""
@@ -526,16 +516,16 @@ msgid ""
 "Many of the displayables created in the screen language take actions as "
 "arguments. An action is one of three things:"
 msgstr ""
-"スクリーン言語で作成された displayable の多くは引数としてアクションを受け取りま"
-"す。アクションは以下の三つのうちいずれかです。 :"
+"スクリーン言語で作成された displayable の多くは引数としてアクションを受け取り"
+"ます。アクションは以下の三つのうちいずれかです。 :"
 
 #: ../../source/screen_python.rst:25
 msgid ""
 "A callable Python object (like a function or bound method) that takes no "
 "arguments."
 msgstr ""
-"引数を受け取らない呼び出し可能な ( 関数や bound method のような ) python オブジェ"
-"クト"
+"引数を受け取らない呼び出し可能な ( 関数や bound method のような ) python オブ"
+"ジェクト"
 
 #: ../../source/screen_python.rst:27
 msgid "An object of a class that inherits from the Action class."
@@ -568,13 +558,14 @@ msgid ""
 "cases, returning a non-None value from the action will cause the current "
 "interaction to end."
 msgstr ""
-"これはアクションがアクティベートされると呼び出されるメソッドです。多くの場合 None でな"
-"い値を返すと、現在のインタラクションが終了します。"
+"これはアクションがアクティベートされると呼び出されるメソッドです。多くの場合 "
+"None でない値を返すと、現在のインタラクションが終了します。"
 
-#: ../../source/screen_python.rst:45 ../../source/screen_python.rst:120
+#: ../../source/screen_python.rst:45
+#, fuzzy
 msgid ""
-"This method must be overridden, as the default method will raise "
-"NotImplemented (and hence cause Ren'Py to report an error)."
+"This method must be overridden, as the default method will raise a "
+"NotImplemented exception (and hence cause Ren'Py to report an error)."
 msgstr ""
 "このメソッドはデフォルトでは NotImplemented の例外を出す ( Ren'Py にエラーを"
 "報告させる ) ため、上書きする必要があります。"
@@ -723,6 +714,14 @@ msgstr ""
 "func:`ui.adjustment` で adjustment を作成し、作成されたオブジェクトを返しま"
 "す。"
 
+#: ../../source/screen_python.rst:120
+msgid ""
+"This method must be overridden, as the default method will raise "
+"NotImplemented (and hence cause Ren'Py to report an error)."
+msgstr ""
+"このメソッドはデフォルトでは NotImplemented の例外を出す ( Ren'Py にエラーを"
+"報告させる ) ため、上書きする必要があります。"
+
 #: ../../source/screen_python.rst:126
 msgid ""
 "This is used to determine the style of bars that use this value. It should "
@@ -866,13 +865,14 @@ msgid "becomes::"
 msgstr "こうなります。 ::"
 
 #: ../../source/screen_python.rst:236
+#, fuzzy
 msgid ""
 "Creator-defined screen language statements must be registered in a ``python "
 "early`` block. What's more, the filename containing the creator-defined "
 "statement must be be loaded earlier than any file that uses it. Since Ren'Py "
-"loads files in Unicode sort order, it generally makes sense to prefix the "
-"name of any file registering a user-defined statement with 01, or some other "
-"small number."
+"loads files in the Unicode sort order of their paths, it generally makes "
+"sense to prefix the name of any file registering a user-defined statement "
+"with 01, or some other small number."
 msgstr ""
 "ユーザー定義スクリーン言語ステートメントは ``python early`` ブロックで登録さ"
 "れなければなりません。また、そのユーザー定義ステートメントがあるファイル名は"
@@ -970,8 +970,8 @@ msgid ""
 "The displayable takes 1 child. If more than one child is given, the children "
 "are placed in a Fixed."
 msgstr ""
-"displayable はひとつ子を受け取ります。ひとつ以上の子が与えられると、子は Fixed に"
-"配置されます。"
+"displayable はひとつ子を受け取ります。ひとつ以上の子が与えられると、子は "
+"Fixed に配置されます。"
 
 #: ../../source/inc/custom_sl:38
 msgid "\"many\""
@@ -1179,6 +1179,15 @@ msgstr ""
 "`add_property_group` のような大きなプロパティ―グループを使用するなら、 \\*"
 "\\*properties シンタックスを使用してどこかに properties キーワードを使うとよ"
 "いです。例 ::"
+
+#~ msgid "`ScreenDisplayable.layer`"
+#~ msgstr "`ScreenDisplayable.layer`"
+
+#~ msgid "`ScreenDisplayable.name`"
+#~ msgstr "`ScreenDisplayable.name`"
+
+#~ msgid "`ScreenDisplayable.zorder`"
+#~ msgstr "`ScreenDisplayable.zorder`"
 
 #~ msgid ""
 #~ "Ren'Py supports defining screens in Python, as well as in the Ren'Py "
