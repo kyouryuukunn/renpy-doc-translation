@@ -33,7 +33,7 @@ msgstr ""
 "Ren'Py はゲーム状態のセーブ、ゲーム状態のロード、そして以前のゲーム状態への"
 "ロールバックをサポートしています。少し流行とは違いますが、ロールバックはユー"
 "ザーとのインタラクションを持つ各ステートメントの開始でセーブし、ユーザーが"
-"ロールバックするとセーブをロードするものとして考えられます。"
+"ロールバックするとそのセーブをロードするものとして考えられます。"
 
 #: ../../source/save_load_rollback.rst:18
 msgid ""
@@ -177,7 +177,7 @@ msgid ""
 "game evolves."
 msgstr ""
 "このマッピングはセーブされないので、画像はゲームをもう一度ロードするときに新"
-"しい画像に変更しているかもしれません。これにより画像はゲームの更新とともに新"
+"しい画像に変わっているかもしれません。これにより画像はゲームの更新とともに新"
 "しいファイルに変更できるようになります。"
 
 #: ../../source/save_load_rollback.rst:99
@@ -318,7 +318,7 @@ msgid ""
 "combined to namespaces that aren't saved by Ren'Py (like init variables, "
 "namespaces inside functions,  or ``python hide`` blocks.)"
 msgstr ""
-"ピクルス化できないオブジェクトも、 Ren'Py が保存しない名前空間 (init 変数、関"
+"pickle 化できないオブジェクトも、 Ren'Py が保存しない名前空間 (init 変数、関"
 "数内の名前空間、``python hide`` ブロックなど ) と組み合わせて使用すれば、使用"
 "できます。"
 
@@ -376,8 +376,8 @@ msgid ""
 "This is a string that is stored with each save. It can be used to give a "
 "name to the save, to help users tell them apart."
 msgstr ""
-"これは各セーブに保存される文字列です。セーブに名前を与え、ユーザーがそれらを"
-"区別するのを助けるために使われます。"
+"これは各セーブに保存される文字列です。セーブに名前を与えて、ユーザーがそれらを"
+"区別するのを助けます。"
 
 #: ../../source/save_load_rollback.rst:226
 msgid ""
@@ -416,11 +416,11 @@ msgstr ""
 
 #: ../../source/inc/loadsave:16
 msgid "The filename of the save."
-msgstr "セーブのファイル名です。"
+msgstr "セーブのファイル名"
 
 #: ../../source/inc/loadsave:17
 msgid "The extra_info that was passed in."
-msgstr "渡された extra_info です。"
+msgstr "渡された extra_info"
 
 #: ../../source/inc/loadsave:18
 msgid ""
@@ -440,7 +440,7 @@ msgstr "`regexp`"
 msgid ""
 "A regular expression that is matched against the start of the filename to "
 "filter the list."
-msgstr "リストを絞り込むためのファイル名の最初に対してマッチする正規表現"
+msgstr "ファイル名の先頭に対してマッチするリストを絞り込むための正規表現"
 
 #: ../../source/inc/loadsave:27
 msgid "`fast`"
@@ -464,7 +464,7 @@ msgid ""
 "successfully, this function never returns."
 msgstr ""
 "セーブスロット `filename` からゲームの状態をロードします。ファイルが正しく"
-"ロードされると、この関数は復帰しません。"
+"ロードされると、この関数は返りません。"
 
 #: ../../source/inc/loadsave:43
 msgid ""
@@ -668,7 +668,7 @@ msgid ""
 "Literal lists, dicts, and sets are automatically converted to the revertable "
 "equivalent."
 msgstr ""
-"literal なリスト、辞書、およびセットは自動的に revertable な等価物に変換され"
+"literal なリスト、辞書、およびセットは自動的に revertable な同等物に変換され"
 "ます。"
 
 #: ../../source/save_load_rollback.rst:301
@@ -696,7 +696,7 @@ msgid ""
 "Classes that do not inherit from any other types automatically inherit from "
 "the revertable object."
 msgstr ""
-"その他の revertable オブジェクトを自動的に継承するどの型も継承しないクラス"
+"revertable オブジェクトを自動的に継承するどの型も継承しないその他のクラス"
 
 #: ../../source/save_load_rollback.rst:311
 msgid "In addition:"
@@ -994,7 +994,7 @@ msgid ""
 msgstr ""
 "固定ロールバックは自由なロールバックとロールバックの完全な禁止の中間に当たり"
 "ます。ロールバックは可能ですが、ユーザーは決定を変更出来ません。固定ロール"
-"バック以下の例で示すように、:func:`renpy.fix_rollback`  関数で実行されます。"
+"バックは以下の例で示すように、:func:`renpy.fix_rollback`  関数で実行されます。"
 
 #: ../../source/save_load_rollback.rst:424
 msgid ""
@@ -1057,9 +1057,9 @@ msgid ""
 "\"insensitive\\_\" prefix. Effectively this leaves the menu with a single "
 "selectable choice."
 msgstr ""
-"デフォルトでは「selected」で、それゆえ「 selected\\_ 」を接頭辞に持つスタイル"
+"デフォルトでは選択された選択肢を「選択状態」にします。つまり「 selected\\_ 」を接頭辞に持つスタイル"
 "プロパティーを有効化します。それ以外のすべてのボタンは無効化され、"
-"「 insensitive\\_ 」を接頭辞に持つプロパティーを使用して表示されます。結果と"
+"「 insensitive\\_ 」を接頭辞に持つプロパティーを有効化して表示されます。結果と"
 "してこれは選択肢にただ一つの選択可能な選択肢を残します。"
 
 #: ../../source/save_load_rollback.rst:454
@@ -1070,9 +1070,9 @@ msgid ""
 "other buttons use properties with the \"insensitive\\_\" prefix."
 msgstr ""
 ":var:`config.fix_rollback_without_choice` が False に設定されると、すべてのボ"
-"タンが無効化されます。これはつまり選択された選択肢はスタイルプロパティーに"
-"「selected_insensitive\\_  」の接頭辞を使用し、一方その他のボタンは"
-"「 insensitive\\_ 」を接頭辞に持つプロパティーを使用することを意味します。"
+"タンが無効化されます。つまり選択された選択肢はスタイルプロパティーに"
+"「 selected_insensitive\\_ 」の接頭辞を使用する一方、その他のボタンには"
+"「 insensitive\\_ 」を接頭辞に持つプロパティーを使用します。"
 
 #: ../../source/save_load_rollback.rst:461
 msgid "Fixed Rollback and Custom Screens"

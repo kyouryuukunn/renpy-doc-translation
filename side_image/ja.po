@@ -30,7 +30,7 @@ msgid ""
 "the dialogue."
 msgstr ""
 "多くのヴィジュアルノベルはインターフェースの一部に会話しているキャラクターの"
-"画像を含みます。 Ren'Py はこの画像をサイドイメージと呼び、台詞と同時の自動的"
+"画像を含みます。 Ren'Py はこの画像をサイドイメージと呼び、台詞の一部としての自動的"
 "なサイドイメージの選択と表示をサポートしています。"
 
 #: ../../source/side_image.rst:14
@@ -67,12 +67,12 @@ msgid ""
 "of attributes, a :class:`Null` is shown instead."
 msgstr ""
 "あるタグに関連付けられたサイドイメージを決定するために、 Ren'Py は「 side 」"
-"タグとプール内のより多くの属性を持つ画像を探します。画像が見つからないか、ひ"
+"タグやプール内の属性をより多く持つ画像を探します。画像が見つからないか、ひ"
 "とつ以上の画像が同数の属性を持つなら :class:`Null` が代わりに表示されます。"
 
 #: ../../source/side_image.rst:31
 msgid "For example, say we have the following script::"
-msgstr "例えば以下のスクリプトとについて述べます ::"
+msgstr "例えば以下のスクリプトについて述べます ::"
 
 #: ../../source/side_image.rst:49
 msgid ""
@@ -113,7 +113,7 @@ msgid ""
 "side image to show."
 msgstr ""
 "サイドイメージのもう一つの使い方は、プレイヤーであるキャラクターに台詞がある"
-"ときのそのキャラクター画像の表示です。これには画像タグとキャラクターを関連付"
+"ときの、そのキャラクター画像の表示です。これには画像タグとキャラクターを関連付"
 "けし、表示するサイドイメージを選択するための属性つきで say ステートメントを使"
 "用します。"
 
@@ -143,15 +143,15 @@ msgid ""
 "If this is given, then the side image will track the given image tag, rather "
 "than the image associated with currently speaking character. For example,"
 msgstr ""
-"これが与えられるとサイドイメージは現在話しているキャラクターに関連付けられた"
-"画像タグではなく、指定されたタグに従います。例えば"
+"これが与えられると現在話しているキャラクターに関連付けられた"
+"画像タグではなく、指定されたタグにサイドイメージは従います。例えば"
 
 #: ../../source/side_image.rst:103
 msgid ""
 "Will make the side image track the \"eileen\" image tag, which is associated "
 "with the ``e`` character."
 msgstr ""
-"サイドイメージに ``e`` キャラクターに関連付けられた \"eileen\" 画像タグを取ら"
+"サイドイメージに ``e`` キャラクターに関連付けられた \"eileen\" 画像タグを所得さ"
 "せます。"
 
 #: ../../source/side_image.rst:108
@@ -159,8 +159,8 @@ msgid ""
 "When set to true, the side image will only show if an image with that tag is "
 "not already being shown on the screen."
 msgstr ""
-"True の時、サイドイメージはそのタグの画像がスクリーンにすでに表示されていない"
-"時だけ表示されます。"
+"True の時、そのタグの画像がスクリーンにすでに表示されていない"
+"時だけサイドイメージが表示されます。"
 
 #: ../../source/side_image.rst:114
 msgid ""
@@ -225,7 +225,7 @@ msgid ""
 "This causes the side image to slide in and out when the character associated "
 "with that image changes::"
 msgstr ""
-"画像に関連付けられたキャラクターが変更するとき、このコードはサイドイメージを"
+"画像に関連付けられたキャラクターが変わるとき、次のコードはサイドイメージを"
 "スライドイン、アウトします。 ::"
 
 #: ../../source/side_image.rst:164
@@ -235,7 +235,7 @@ msgid ""
 "the :class:`Dissolve` to work correctly, both side images must be the same "
 "size. ::"
 msgstr ""
-"キャラクターは同じとき ( 例えば表情が変わるとき ) 、このコードを使用して新旧"
+"キャラクターが同じとき ( 例えば表情が変わるとき ) 、次のコードを使用して新旧"
 "のサイドイメージをディゾルブします。 :class:`Dissolve` が正確に動作するために"
 "は両方のサイドイメージが同じ大きさでなくてはいけません。 ::"
 
@@ -262,7 +262,7 @@ msgid ""
 "currently showing character. If no attributes are available for the tag, "
 "this returns None."
 msgstr ""
-"一連の画像属性を決定するところからはじめます。 `image_tag` が指定されればその"
+"画像属性のセットを決定するところからはじめます。 `image_tag` が指定されればその"
 "タグから画像属性を所得します。そうでなければそれらを現在表示しているキャラク"
 "ターから所得します。そのタグで利用できる属性が無ければ、 None を返します。"
 
@@ -272,8 +272,8 @@ msgid ""
 "(either from `image_tag` or the currently showing character) and the set of "
 "image attributes as attributes. If such an image exists, it's returned."
 msgstr ""
-"`prefix_tag` タグと (`image_tag` または現在表示中のキャラクターのどちらかの) "
-"画像タグ、属性として一連の画像属性を持つ画像を探します。そのような画像があれ"
+"次に `prefix_tag` タグと (`image_tag` または現在表示中のキャラクターのどちらかの) "
+"画像タグ、属性としてその画像属性のセットを持つ画像を探します。そのような画像があれ"
 "ば、それを返します。"
 
 #: ../../source/inc/side:16
@@ -284,7 +284,7 @@ msgid ""
 msgstr ""
 "not_showing が True なら、その属性を所得できる画像が画面にないときのみサイド"
 "イメージを返します。None なら値は :var:`config.side_image_only_not_showing` "
-"から取られます。"
+"から所得されます。"
 
 #: ../../source/inc/side:20
 msgid ""
@@ -299,16 +299,16 @@ msgid ""
 "not showing. The main use of this would be to directly set the attributes "
 "used by a side image."
 msgstr ""
-"画像タグに対応する属性を、その画像タグが表示されていないときに設定します。主"
-"な用途は直接サイドイメージで使用する属性を設定することでしょう。"
+"ある画像タグが表示されていないときに、その画像タグに関連づけられる属性を設定します。主"
+"な用途は、サイドイメージで使用する属性の直接設定でしょう。"
 
 #: ../../source/inc/side:34
 msgid "and::"
-msgstr "と ::"
+msgstr "は ::"
 
 #: ../../source/inc/side:38
 msgid "are equivalent."
-msgstr "は等価です。"
+msgstr "に等しいです。"
 
 #~ msgid "Variations"
 #~ msgstr "変数"

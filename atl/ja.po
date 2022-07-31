@@ -39,7 +39,7 @@ msgid ""
 "The Python equivalent of an ATL transform is the :func:`Transform` "
 "displayable. There is no way to create an ATL transform programmatically."
 msgstr ""
-"Python で ATL transform と等価なのは :func:`Transform` displayable です。ATL "
+"Python で ATL transform に相当するのは :func:`Transform` displayable です。ATL "
 "transform はプログラム的には作成できません。"
 
 #: ../../source/atl.rst:19
@@ -60,7 +60,7 @@ msgid ""
 "The ``transform`` statement creates a transform that can be supplied as part "
 "of an at clause. The syntax of the transform statement is:"
 msgstr ""
-"``transform`` ステートメントは、at 節に与えるATL transform を作成します。"
+"``transform`` ステートメントは、at 節に指定する ATL transform を作成します。"
 "transform ステートメントの構文は次の通りです。 ::"
 
 #: ../../source/atl.rst:35
@@ -74,7 +74,7 @@ msgid ""
 msgstr ""
 "transform ステートメントは、初期化時に実行されなければなりません。 ``init`` "
 "ブロックの外にあると、自動的に優先度0の ``init`` ブロック内に配置されます。"
-"transform にはパラメーターリストを与えられ、その場合は呼び出し時に提供されな"
+"transform にはパラメーターリストを指定出来、その場合は呼び出し時に提供されな"
 "ければなりません。右側のパラメーターのデフォルトの値は \"=\" と値を追加して指"
 "定できます( 例 \"transform a (b, c=0):\") 。"
 
@@ -137,7 +137,7 @@ msgid ""
 "colon ``:``."
 msgstr ""
 "ATL ステートメントには 2 種類あります。 simple ステートメントと complex ス"
-"テートメントです。 simple ステートメントは ATL ブロックを取りません。1 行の論"
+"テートメントです。 simple ステートメントは ATL ブロックを受け取りません。1 行の論"
 "理行には、カンマで区切られた 1 つ以上の ATL ステートメントを含めます。 "
 "complex ステートメントにはブロックがあり、行にそれ以外を置くことはできませ"
 "ん。 complex ステートメントの最初の行は必ずコロン ``:`` で終わります。"
@@ -197,9 +197,9 @@ msgid ""
 "expression giving a function. Either case is followed by a number, giving "
 "the number of seconds the interpolation should take."
 msgstr ""
-"補間ステートメントの最初の部分で補間をタイムラップする関数を選びます(これは、"
+"補間ステートメントの最初の部分で補間をタイムワープする関数を選びます(これは、"
 "線形時間から非線形時間への変換関数です)。 それには ATL に登録されたワーパーの"
-"名前を与えるか、予約語「 warp 」に続けて関数を与える式を与えてください。どち"
+"名前を指定するか、予約語「 warp 」に続けて関数を与える式を与えてください。どち"
 "らの場合でも補間にかける時間の秒数を続けます。"
 
 #: ../../source/atl.rst:150
@@ -262,7 +262,7 @@ msgstr ""
 msgid ""
 "Otherwise, the value is linearly interpolated between the start and end "
 "locations, using the completion fraction."
-msgstr "そうでなければ、完了率を使って線形補間されます。"
+msgstr "そうでなければ、値は開始から終了まで完了率を使って線形補間されます。"
 
 #: ../../source/atl.rst:177
 msgid ""
@@ -272,7 +272,7 @@ msgid ""
 "were included in this statement."
 msgstr ""
 "単純式があれば、その評価はワーパーもスプラインも円運動も含まない一つの補間ス"
-"テートメントを持つ transform でなければなりません。その transform から取られ"
+"テートメントを持つ transform でなければなりません。その transform から所得され"
 "たプロパティーは、このステートメントに含まれていたかのように処理されます。"
 
 #: ../../source/atl.rst:182
@@ -302,7 +302,7 @@ msgid ""
 "`xpos` property can be an int, float, or absolute. The behavior is undefined "
 "when an interpolation has old and new property values of different types."
 msgstr ""
-"プロパティーには、複数の型の値を取れるものがあります。例えば :propref:`xpos` "
+"プロパティーには、複数の型の値を受け取られるものがあります。例えば :propref:`xpos` "
 "プロパティーは整数、浮動小数点数、または absolute にできます。補間に異なる型"
 "の古いプロパティーと新しいプロパティーがあるときの動作は未定義です。"
 
@@ -426,7 +426,7 @@ msgid ""
 "twice.)"
 msgstr ""
 "``repeat`` ステートメントは、そのブロックの実行を再び最初から始める simple ス"
-"テートメントです。式があれば、その評価がブロックの実行回数を与える整数になり"
+"テートメントです。式があれば、その評価がブロックの実行回数を指定する整数になり"
 "ます(ですから、``repeat 2`` で終わるステートメントは最高で 2 回実行されま"
 "す)。"
 
@@ -458,7 +458,7 @@ msgid ""
 "the last choice in the choice set."
 msgstr ""
 "``choice`` ステートメントは、ランダムな選択肢群の 1 つを定義する complex ス"
-"テートメントです。Ren'py はその選択肢群から 1 つ選び、対応する ATL ブロックを"
+"テートメントです。Ren'Py はその選択肢群から 1 つ選び、対応する ATL ブロックを"
 "実行します。その後、最後の選択肢の後から実行を続けます。"
 
 #: ../../source/atl.rst:367
@@ -468,7 +468,7 @@ msgid ""
 "`simple_expression` is supplied, it is a floating-point weight given to that "
 "block, otherwise 1.0 is assumed."
 msgstr ""
-"ブロック内の連続する choice  ステートメントは貪欲にグループ化されます。"
+"ブロック内の連続する choice  ステートメントは積極的にグループ化されます。"
 "`simple_expression` が与えられているなら、それはそのブロックに浮動小数点数で"
 "指定するウェイトになり、なければ 1.0 になります。"
 
@@ -491,7 +491,7 @@ msgid ""
 "parallel statements are then executed simultaneously. The parallel statement "
 "terminates when the last block terminates."
 msgstr ""
-"ブロック内の連続する parallel  ステートメントは 貪欲にグループ化されます。全"
+"ブロック内の連続する parallel  ステートメントは 積極的にグループ化されます。全"
 "ての parallel ステートメントのブロックが同時進行は実行されます。parallel  ス"
 "テートメントは、最後のブロックが終了したときに終了します。"
 
@@ -540,7 +540,7 @@ msgid ""
 "handle a single event name, or a comma-separated list of event names."
 msgstr ""
 "on ステートメントはイベントハンドラを定義する complex ステートメントです。on "
-"ステートメントは一つのステートメントに貪欲にグループ化されます。 onステートメ"
+"ステートメントは一つのステートメントに積極的にグループ化されます。 onステートメ"
 "ントでは、1つまたはコンマで区切られた複数のイベント名を扱えます。"
 
 #: ../../source/atl.rst:443
@@ -584,7 +584,7 @@ msgid ""
 "expression as the child of the transform. This is useful when an ATL "
 "transform wishes to contain, rather than include, a second ATL transform."
 msgstr ""
-"contains 式は式を取り、その式を transform の子 transform として設定します。こ"
+"contains 式は式を受け取り、その式を transform の子 transform として設定します。こ"
 "れは ATL transform に第2の ATL transform を含みたいが組み込みたくはないときに"
 "便利です。"
 
@@ -596,7 +596,7 @@ msgid ""
 "child of this transform."
 msgstr ""
 "contains ブロックではこの ATL transform の子 transform として使われる ATL ブ"
-"ロックを定義できます。連続する contains ブロックステートメントは貪欲にグルー"
+"ロックを定義できます。連続する contains ブロックステートメントは積極的にグルー"
 "プ化され、 :func:`Fixed` でラップされ、この transform の子 transform として設"
 "定されます。全ての parallel ステートメントのブロックが同時進行で実行されま"
 "す。"
@@ -1117,7 +1117,7 @@ msgstr "(0.0, 0.0)"
 
 #: ../../source/atl.rst:732
 msgid "Equivalent to setting pos and anchor to the same value."
-msgstr "pos と anchor を同じ値にするのと等価です。"
+msgstr "pos と anchor を同じ値にするのに相当します。"
 
 #: ../../source/atl.rst:736 ../../source/atl.rst:743 ../../source/atl.rst:830
 #: ../../source/atl.rst:838 ../../source/atl.rst:847 ../../source/atl.rst:865
@@ -1132,11 +1132,11 @@ msgstr "0.0"
 
 #: ../../source/atl.rst:739
 msgid "Equivalent to setting xpos and xanchor to this value."
-msgstr "xpos および xanchor をこの値に設定するのと等価です。"
+msgstr "xpos および xanchor をこの値に設定するのに相当します。"
 
 #: ../../source/atl.rst:746
 msgid "Equivalent to setting ypos and yanchor to this value."
-msgstr "ypos および yanchor をこの値に設定するのと等価です。"
+msgstr "ypos および yanchor をこの値に設定するのに相当します。"
 
 #: ../../source/atl.rst:750
 msgid "(int, int)"
@@ -1175,17 +1175,17 @@ msgstr ""
 msgid ""
 "Equivalent to setting pos to the value of this property, and anchor to (0.5, "
 "0.5)."
-msgstr "xpos をこのプロパティーの値に、xanchor を 0.5 に設定するのと等価です。"
+msgstr "xpos をこのプロパティーの値に、xanchor を 0.5 に設定するのに相当します。"
 
 #: ../../source/atl.rst:785
 msgid ""
 "Equivalent to setting xpos to the value of this property, and xanchor to 0.5."
-msgstr "xpos をこのプロパティーの値に、xanchor を 0.5 に設定するのと等価です。"
+msgstr "xpos をこのプロパティーの値に、xanchor を 0.5 に設定するのに相当します。"
 
 #: ../../source/atl.rst:793
 msgid ""
 "Equivalent to setting ypos to the value of this property, and yanchor to 0.5."
-msgstr "ypos をこのプロパティーの値に、ranchor を 0.5 に設定するのと等価です。"
+msgstr "ypos をこのプロパティーの値に、ranchor を 0.5 に設定するのに相当しますえ"
 
 #: ../../source/atl.rst:798
 msgid "float or None"
@@ -1368,7 +1368,7 @@ msgid ""
 "Get the angle component of the polar coordinate position. This is undefined "
 "when the polar coordinate center is not set."
 msgstr ""
-"極座標における位置の角度成分を取ります。これは、極座標の中心が設定されていな"
+"極座標における位置の角度成分を受け取ります。これは、極座標の中心が設定されていな"
 "いときには未定義です。"
 
 #: ../../source/atl.rst:930
@@ -1376,7 +1376,7 @@ msgid ""
 "Get the radius component of the polar coordinate position. This is undefined "
 "when the polar coordinate center is not set."
 msgstr ""
-"極座標における位置の半径成分を取ります。これは、極座標の中心が設定されていな"
+"極座標における位置の半径成分を受け取ります。これは、極座標の中心が設定されていな"
 "いときには未定義です。"
 
 #: ../../source/atl.rst:935
@@ -1438,11 +1438,11 @@ msgstr "None または position"
 
 #: ../../source/atl.rst:977
 msgid "If not None, causes the displayable to be scaled to the given width."
-msgstr "None でない場合、displayable は与えられた幅に合わせられます。"
+msgstr "None または、displayable の幅が合わせられる値を指定します。"
 
 #: ../../source/atl.rst:986
 msgid "If not None, causes the displayable to be scaled to the given height."
-msgstr "None でない場合、displayable は与えられた高さに合わせられます。"
+msgstr "None または、displayable の高さが合わせられる値を指定します。"
 
 #: ../../source/atl.rst:992
 msgid "None or string"
@@ -1469,7 +1469,7 @@ msgid ""
 "If only one of those properties is not None, it is used as the sole "
 "dimension."
 msgstr ""
-"それらのプロパティーの一方のみが None でなけれあばその方向のみが使用されま"
+"それらのプロパティーの一方のみが None でなければその方向のみが使用されま"
 "す。"
 
 #: ../../source/atl.rst:1002
@@ -1542,7 +1542,7 @@ msgstr "``cover`` 同様だが、 displayable のサイズを小さくしない"
 #: ../../source/atl.rst:1033
 msgid "If True, causes the child to be placed using subpixel positioning."
 msgstr ""
-"True の場合、ピクセル以下の位置調整を利用してスクリーンに描画されます。"
+"True の場合、サブピクセル(訳注: 1ピクセル以下での描画)による位置決めを使用して子は配置されます。"
 
 #: ../../source/atl.rst:1035
 msgid ""

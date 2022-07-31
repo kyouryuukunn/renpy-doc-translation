@@ -44,8 +44,8 @@ msgid ""
 "evaluated at runtime."
 msgstr ""
 "このような状況に対処するため、Ren'Py には複数レイヤーで構成される画像を定義す"
-"る方法があります(ここでのレイヤーは Photoshop やGIMP のようなペイントソフトで"
-"のレイヤーで、Ren'Py の他の場所で語られるレイヤーではありません)。レイヤーは"
+"る方法があります(ここで言うレイヤーは Photoshop やGIMP のようなペイントソフトで"
+"のレイヤーであり、Ren'Py の他の場所で語られているようなレイヤーではありません)。レイヤーは"
 "無条件で表示される他、画像に提供された属性や実行時に評価される条件によって選"
 "択されたりもできます。"
 
@@ -57,8 +57,8 @@ msgid ""
 "an image but can be assigned to an image statement and used like one."
 msgstr ""
 "レイヤー画像の定義をより簡単に定義するため、 Ren'Py には ``layerdimage`` ス"
-"テートメントがあり、それはレイヤー画像の定義に使用される固有の言語を導入しま"
-"す。画像ではありませんが、 image ステートメントで画像のように使用出来る :"
+"テートメントがあります。これはレイヤー画像の定義に使用される固有の言語を導入しま"
+"す。画像ではありませんが、 image ステートメントに代入して画像のように使用出来る :"
 "func:`LayerdImage` オブジェクトもあります。"
 
 #: ../../source/layeredimage.rst:29
@@ -81,14 +81,14 @@ msgid ""
 "To introduce the language, here's a layered image that uses the available "
 "features, with things that could be implied instead explicitly given. ::"
 msgstr ""
-"この言語の紹介のため、ここで利用可能な機能を使用しレイヤー画像を示します。 ::"
+"この言語の紹介のため、ここで利用可能な機能を使用したレイヤー画像を示します。 ::"
 
 #: ../../source/layeredimage.rst:85
 msgid ""
 "That is a large amount of script, but it's very regular, and below we'll "
 "show how to simplify it."
 msgstr ""
-"長いスクリプトですが、かなり定型的で、どのように簡略化しているかを以下に示し"
+"長いスクリプトですが、かなり定型的なものです。以下でどのように簡略化しているかを述べ"
 "ます。"
 
 #: ../../source/layeredimage.rst:88
@@ -109,7 +109,7 @@ msgid ""
 "optionally be supplied one. All statements can be supplied properties."
 msgstr ""
 "レイヤー画像のブロックには always と group, if ステートメントを含められま"
-"す。 ``group`` ステートメントは属性を取れます。 ``always`` と ``if`` ステート"
+"す。 ``group`` ステートメントは属性を受け取れます。 ``always`` と ``if`` ステート"
 "メントには displayable が提供されなければなりませんが、 ``attribute`` ステー"
 "トメントへの提供は任意です。すべてのステートメントにはプロパティーが提供出来"
 "ます。"
@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "``group`` ステートメントは一度にその属性のうちの1つだけが表示される属性グルー"
 "プを導入します。これにより、このレイヤー画像は目、眉、口それぞれの位置で1つず"
-"つ、服で1つしか出力されません。グループへのプロパティーは属性に渡され、グルー"
+"つ、服で1つしか出力されません。グループへのプロパティーはその属性に渡され、グルー"
 "プでは自動的に属性を宣言できます。"
 
 #: ../../source/layeredimage.rst:106
@@ -240,16 +240,16 @@ msgid ""
 "Ren'Py when an image being shown does not match one that's already defined, "
 "something that is never the case with a layered image.) So, ::"
 msgstr ""
-"スプライトが表示されている間、衝突しなければ追加の属性を既に表示しているスプ"
+"スプライトが表示されている間、衝突しなければ追加の属性は既に表示されているスプ"
 "ライトに加えられます(これは表示されている画像が既に定義されている画像に一致し"
-"ないときの場合で、レイヤー画像では起こりません)。そのため、 ::"
+"ないときにRen'Pyのどこででも起こりますが、レイヤー画像では起こりません)。そのため、次のコードでは ::"
 
 #: ../../source/layeredimage.rst:161
 msgid ""
 "Will activate the layers associated with the wink attribute. We could stop "
 "winking with::"
 msgstr ""
-"これは wink 属性と関連付けされたレイヤーをアクティベートします。開いた目は"
+"wink 属性と関連付けされたレイヤーをアクティベートします。開いた目は"
 "ウィンクと衝突するので次のようにしてウィンクを止められます。 ::"
 
 #: ../../source/layeredimage.rst:166
@@ -304,7 +304,7 @@ msgid ""
 "the outfit group uses \"augustina_outfit_dress\" for the displayable, a "
 "displayable that references the image with  that name."
 msgstr ""
-"(displayable に最初の例と同じ名前を与えているため)この例は最初の例と等価で"
+"(displayable に最初の例と同じ名前を与えているため)この例は最初の例と同じことをしていま"
 "す。例えば、 outfit グループの dress 属性は displayable に "
 "\"augustina_outfit_dress\" を使用し、 displayable はその名前で画像を参照しま"
 "す。"
@@ -385,7 +385,7 @@ msgstr ""
 
 #: ../../source/layeredimage.rst:286
 msgid "Layeredimage takes the following properties:"
-msgstr "layerdimage は次のプロパティーを取ります。 :"
+msgstr "layerdimage は次のプロパティーを受け取ります。 :"
 
 #: ../../source/layeredimage.rst:293 ../../source/inc/li:114
 #: ../../source/inc/li_ff:31
@@ -400,8 +400,8 @@ msgid ""
 "sprites. (This is not used by auto groups, which look for images and not "
 "image files.)"
 msgstr ""
-"文字列で画像が与えられかつこのプロパティーが与えられると、画像名は "
-"`image_format` に置換され、画像ファイルになります。例えば、 \"sprites/eileen/"
+"文字列で画像が与えられており、かつこのプロパティーが与えられていると、"
+"`image_format` にその画像名が補完され、画像ファイルになります。例えば、 \"sprites/eileen/"
 "{image}.png\" ならsptritesのサブディレクトリーからその画像を探します ( これは"
 "画像ファイルではなく画像を探す自動グループでは使用されません )。"
 
@@ -527,7 +527,7 @@ msgstr ""
 
 #: ../../source/layeredimage.rst:343
 msgid "The attribute statement takes the following properties:"
-msgstr "attribute ステートメントは次のプロパティーを取ります :"
+msgstr "attribute ステートメントは次のプロパティーを受け取ります :"
 
 #: ../../source/layeredimage.rst:348 ../../source/layeredimage.rst:435
 #: ../../source/layeredimage.rst:477 ../../source/inc/li:34
@@ -607,7 +607,7 @@ msgid ""
 "The ``group`` statement takes a name. The name isn't used for very much, but "
 "is used to generate the default names of attributes inside the group."
 msgstr ""
-"``group`` ステートメントは名前を取ります。名前はあまり使用されませんが、グ"
+"``group`` ステートメントは名前を受け取ります。名前はあまり使用されませんが、グ"
 "ループ内の属性のデフォルト名を生成するのに使われます。"
 
 #: ../../source/layeredimage.rst:379
@@ -682,8 +682,8 @@ msgid ""
 "Properties supplied to the group are passed to the attributes inside the "
 "group, unless overridden by the same property of the attribute itself."
 msgstr ""
-"group ステートメントは ``attribute`` と同じプロパティーを取ります。グループに"
-"提供されたプロパティーは、属性の同じプロパティーを上書きしない限りそのグルー"
+"group ステートメントは ``attribute`` と同じプロパティーを受け取ります。グループに"
+"提供されたプロパティーは、属性自身の同じプロパティーを上書きしない限りそのグルー"
 "プ内の属性に渡されます。"
 
 #: ../../source/layeredimage.rst:410
@@ -730,12 +730,12 @@ msgid ""
 "the same line or inside a block."
 msgstr ""
 "``always`` ステートメントは常に表示されるレイヤーを宣言します。 displayable "
-"が与えられなければならず、プロパティーも取れます。両方を同じ行にもブロック内"
+"が与えられなければならず、プロパティーも受け取れます。両方を同じ行にもブロック内"
 "にも配置できます。"
 
 #: ../../source/layeredimage.rst:430
 msgid "The always statement takes the following properties:"
-msgstr "always ステートメントは次のプロパティーを取ります。 :"
+msgstr "always ステートメントは次のプロパティーを受け取ります。 :"
 
 #: ../../source/layeredimage.rst:455
 msgid "If"
@@ -844,7 +844,7 @@ msgid ""
 "with each other. ::"
 msgstr ""
 "これは特にレイヤー画像を使用してサイドイメージを構成するのに便利です。別々の"
-"キャラクターのサイドイメージは互いに影響がありません。"
+"キャラクターのサイドイメージは互いに影響しません。"
 
 #: ../../source/layeredimage.rst:540
 msgid "Advice"
@@ -868,9 +868,9 @@ msgid ""
 "you defined and show the layer directly, which can lead to weird problems "
 "like a pair of eyes floating in space."
 msgstr ""
-"Ren'Py には表示されているものと同じ名前の画像を表示するときは置き換えて表示さ"
-"れるルールがあります。これにより定義したレイヤー画像を越えて、直接レイヤーを"
-"表示できます。これはなにもない空間に目が浮かぶような妙な問題に繋がる可能性が"
+"Ren'Py には既に表示されているものと正確に同じ名前の画像を表示するときは置き換えて表示する"
+"ルールがあります。これにより定義したレイヤー画像ではなく、直接レイヤーを"
+"表示できます。しかし、これはなにもない空間に目が浮かぶような妙な問題に繋がる可能性が"
 "あります。"
 
 #: ../../source/layeredimage.rst:552
@@ -917,7 +917,7 @@ msgid ""
 "group statement does not – the group is supplied to ``attribute``, and the "
 "auto functionality can be implemented using :func:`renpy.list_images`."
 msgstr ""
-"もちろん ``layerdimage`` ステートメントには等価な Python がありますが、 "
+"もちろん ``layerdimage`` ステートメントには相当する Python がありますが、 "
 "group ステートメントは ``attribute`` に与えられるためありません。自動機能は :"
 "func:`renpy.list_image` を使用して実装できます。"
 
@@ -1210,7 +1210,7 @@ msgstr "レイヤー画像の文字列です。"
 msgid ""
 "The group of an attribute, None if not supplied or if it's part of a "
 "condition."
-msgstr "属性のグループで、 提供されないか条件の一部なら None になります。"
+msgstr "属性のグループで、 提供されないか条件内での使用なら None になります。"
 
 #: ../../source/inc/li_ff:21
 msgid "The variant argument to the group, or None if it is not supplied."
@@ -1257,7 +1257,7 @@ msgstr ""
 "\"happy\" なら、 `image` は \"eileen_expression_happy\" に設定されます。 "
 "`image_format` が \"images/{image}.png\" なら、Ren'Py が見つける最終的な画像"
 "は \"images/eileen_expression_happy.png\" です。ただしフォーマット引数なしで"
-"も同じ画像を見つけたことに注意してください。"
+"も同じ画像を見るので注意してください。"
 
 #: ../../source/layeredimage.rst:587
 msgid "Proxying Layered Images"
@@ -1278,7 +1278,7 @@ msgid ""
 "The :func:`LayeredImageProxy` object does this, taking one layered image and "
 "duplicating it somewhere else."
 msgstr ""
-":func:`LayeredImageProxy` オブジェクトでこれを行います。レイヤー画像を1つ取っ"
+":func:`LayeredImageProxy` オブジェクトでこれを行います。レイヤー画像を1つ受け取っ"
 "て複製します。"
 
 #: ../../source/layeredimage.rst:597
@@ -1292,14 +1292,14 @@ msgid ""
 "image, like this::"
 msgstr ""
 "独立して表示出来る画像の複製を作成します。これはこのように transform を引数に"
-"取り、サイドイメージを配置するのに便利です。 ::"
+"受け取り、サイドイメージを配置するのに便利です。 ::"
 
 #: ../../source/inc/li_proxy:5
 msgid ""
 "This is an image-like object that proxies attributes passed to it to another "
 "layered image."
 msgstr ""
-"これは画像のようなオブジェクトで。渡される属性を他のレイヤー画像に中継しま"
+"これは画像のようなオブジェクトです。渡される属性を他のレイヤー画像に中継しま"
 "す。"
 
 #: ../../source/inc/li_proxy:9
@@ -1347,7 +1347,7 @@ msgid ""
 "it replaces the former set, which is forgotten."
 msgstr ""
 ":var:`config.adjust_attributes` 関数があり、その画像タグに一致すれば呼び出さ"
-"れて変更された可能性のある属性のセットを返します。もしそうであれば以前のセッ"
+"れて属性のセットを返します。これは変更された可能性があります。もしそうであれば以前のセッ"
 "トは置き換えられ、忘れられます。"
 
 #: ../../source/layeredimage.rst:621
@@ -1394,7 +1394,7 @@ msgstr ""
 "で検出され、エラーが発生します。そのようなエラーが発生しなければ、新しい属性"
 "と捨てられなかった属性が renpyによってその画像タグに関連する属性のセットとし"
 "て認識されます。この計算では非互換性の制約のいくつかを考慮に入れていますが、"
-"すべてではありません。例えば、属性が同じ非多重グループにあることによる非互換"
+"すべてではありません。例えば、属性が同じ非 multiple グループにあることによる非互換"
 "性はこの時点で発生しますが、if_any/if_all/if_not 節ではエラーは発生しません。"
 "そのため、このような節で否定された属性も renpy ではアクティブとみなされ、例え"
 "ば、 if\\_x 節の条件が満たされなくなった時点で再度呼び出されなくとも表示され"

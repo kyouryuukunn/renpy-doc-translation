@@ -62,10 +62,12 @@ msgstr "gui/overlay/main_menu.png"
  -- 原文: Please also add your released game to our `games database <http://games.renpy.org>`_, so we can keep track of the Ren'Py games being made.
  -- 日訳: リリースされたゲームは、ぜひ `ゲームデータベース <http://games.renpy.org>` に登録してください。出来上がったゲームをこれで追跡できます。
 
-* ダブルクォーテーション("...")はカギ括弧(「...」)にする
+* ダブルクォーテーション("...")はカギ括弧(「...」)にする。文字列として使用されている場合はそのままダブルクォーテーションを使用
 
 * If this is not None, ?
- -- None を指定するか、? を指定します。
+ -- None または ? を指定します。
+
+* 「すること」という形式は避ける
 
 *** 原文が間違っている場合 ***
 開発元にバグ報告をするか、パッチを送ってください。
@@ -82,6 +84,26 @@ msgstr "gui/overlay/main_menu.png"
 * image attribute → 画像属性
 * at list → 式リスト
 * simple expression → 単純式
+* Field → フィールド = メンバ変数
+* attribute → 属性 = メンバ変数とメソッド両方
+* parameter → パラメータ(仮引数)
+* assigment → 引数(具体的な値)
+* map → 対応させる。対応付ける。マップ
+  辞書はマッピングオブジェクトに分類される、標準では辞書のみ
+* set → セット
+* focus rectange → フォーカスされた短形
+* screen variant → variant
+* variant → バージョン、その類のもの
+* take → 取るではなく受け取る
+* activate → 実行
+* keyword-only parameter → キーワード専用パラメーター
+* is equivalet → 相当します。
+* equivalent  → 相当する
+* given  → 与えられた(Ren'Pyが与える場合) or 指定された(ユーザー側が与える場合) or 指定しての方が適切か都度判断
+ 指定では限定された範囲から渡している感じ
+* 保証する(Ren'Pyがする場合) or なにかで言い変える(ユーザー側がする場合)
+* one-based number of the dialogue block 台詞ブロック番号
+* substitute 置換
 
 *** 翻訳方法 ***
 git 上で翻訳を進めます。
@@ -196,3 +218,22 @@ A html/_static/renpydoc.cssのposition, widthを消すと直る
     /* width: 263px; */
 }
 
+
+確認が必要な項目
+gui
+"ランチャーから GUI を変更するとき、 Ren'Py は単にランチャーを変更したいの"
+"か、 gui.rpy を更新するかを尋ねます。どちらの選択肢もほとんどの画像ファイルを"
+"上書きし、 gui.rpy の更新はそのファイルの変更を失わせます。"
+
+These variables should generally ... poファイルにない
+CDS, CDD
+
+developer_tool
+このヘルプを表示します
+
+config
+
+model
+
+cds catch_error なのか catch_errors なのか
+other scryの内容 nvl_clearの他 who, say, menu_with_captionもある

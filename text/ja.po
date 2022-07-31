@@ -283,7 +283,7 @@ msgid ""
 "the order in which the flags are given does not change the result : ``!cl`` "
 "will do just the same as ``!lc``."
 msgstr ""
-"フラグの指定順は結果を変更しません。 :``!cl``は ``!lc`` と同じく動作します。"
+"フラグの指定順は結果を変更しません。 : ``!cl`` は ``!lc`` と同じく動作します。"
 
 #: ../../source/text.rst:139
 msgid ""
@@ -567,7 +567,7 @@ msgid ""
 "format. ::"
 msgstr ""
 "outlinecolor テキストタグは(影を含む)すべてのアウトラインを指定の色に変更しま"
-"す。色は #rgb, #rgba, #rrggbb, または #rrggbbaa の形式にしてください。::"
+"す。色は #rgb, #rgba, #rrggbb, または #rrggbbaa の形式にしてください(訳注 このタグは既存のアウトラインの色を変更するものなので、変更前にアウトラインがなければ機能しません。通常アウトラインを使用しない場合、このタグを使用するには予め透明なアウトラインを使用するなどの必要があります)。::"
 
 #: ../../source/text.rst:341
 msgid ""
@@ -632,7 +632,7 @@ msgid ""
 "lines of text. As an argument, it takes an integer giving the number of "
 "pixels of space to add. ::"
 msgstr ""
-"スペースタグはテキストの行間に水平スペースを挿入する自己終了タグです。引数と"
+"vスペースタグはテキストの行間に垂直スペースを挿入する自己終了タグです。引数と"
 "して追加されるスペースのピクセル数を与える整数を取ります。 ::"
 
 #: ../../source/text.rst:400
@@ -640,8 +640,7 @@ msgid ""
 "Text tags beginning with # are ignored, but can be included to distinguish "
 "strings for the purpose of translation. ::"
 msgstr ""
-"# で始まるテキストタグは無視されますが、翻訳時に文字列を区別するために加えら"
-"れます ::"
+"# で始まるテキストタグは無視されますが、これを加えて翻訳時に文字列を区別できます。 ::"
 
 #: ../../source/text.rst:406
 msgid "Dialogue Text Tags"
@@ -657,7 +656,7 @@ msgid ""
 "allow text to avoid jumping around when :propref:`adjust_spacing` is True."
 msgstr ""
 "doneタグ後のテキストは表示されません。これにより、 :propref:`adjust_spacing` "
-"が True のときでもテキストが飛び回らないようにします。"
+"が True のときでもレイアウトが変化しないようにしてテキストが飛び回らないようにします。"
 
 #: ../../source/text.rst:416
 msgid ""
@@ -806,7 +805,7 @@ msgid ""
 "support these languages, a project must first change the fonts it uses."
 msgstr ""
 "Ren'Py のデフォルトフォントには、英語やその他多くの文字が含まれています。容量"
-"の都合から、中国語、日本語、韓国語などに必要な文字は含まれていません。あるプ"
+"の都合から、中国語、日本語、韓国語などに必要な文字は含まれていません(訳注 付属の日本語フォントには常用漢字しか含まれません)。あるプ"
 "ロジェクトでこれらの言語をサポートするためには、まず使用するフォントを変更し"
 "なければなりません。"
 
@@ -831,9 +830,8 @@ msgid ""
 "\"japanese-normal\", and moving to \"japanese-loose\" or \"japanese-strict\" "
 "for more or less break opportunities, respectively. ::"
 msgstr ""
-"日本語には複数の改行方法があります。「 japanese-normal 」で始めて、改行の機会"
-"を増やす、または減らすために、それぞれ 「 japanese-loose 」または「 japanese-"
-"strict 」に移ることを勧めます。 ::"
+"日本語には複数の改行方法があります。「 japanese-normal 」から始めて、改行の機会"
+"を増やす、または減らすために、それぞれ 「 japanese-loose 」または「 japanese-strict 」への変更を勧めます。 ::"
 
 #: ../../source/text.rst:535
 msgid ""
@@ -869,7 +867,7 @@ msgid ""
 "vertically oriented text. The text is written top-to-bottom, right-to-left."
 msgstr ""
 ":propref:`vertical` スタイルが適切に設定されていると、Ren'Py は縦書きテキスト"
-"を生成します。そのテキストは上から下。右から左に書かれます。"
+"を生成します。そのテキストは上から下。右から左に書かれます(訳注: 標準のsay, nvl スクリーンは縦書きをサポートしていません。 `参照 <https://akakyouryuu.com/renpy/renpy%e3%81%a7%e7%b8%a6%e6%9b%b8%e3%81%8d%e3%82%92%e3%81%99%e3%82%8b/>`_)。"
 
 #: ../../source/text.rst:555
 msgid "There are two text tags that interact with vertical text."
@@ -978,7 +976,7 @@ msgid ""
 "the left and right of the text to prevent these errors from occurring."
 msgstr ""
 "クリエータは、ルビテキストがテキストの境界を超えないようにしなければなりませ"
-"ん。そのようなエラーが起こらないように、先頭や左右に文字間のスペースを開ける"
+"ん。そのようなエラーが起こらないように、そのテキストの先頭や左右に文字間のスペースを開ける"
 "必要があるかもしれません。"
 
 #: ../../source/text.rst:625
@@ -1038,7 +1036,7 @@ msgid ""
 msgstr ""
 ":var:`config.font_replacement_map` 変数は、フォントを対応付けるのに使われま"
 "す。フォントのファイル名、ボールド体、イタリック体の組合せをべつの同様の組合"
-"せと対応付けられます。これにより、自動的に生成されたイタリック体の代わりに適"
+"せと対応付けられます。これにより、自動的に生成されるイタリック体の代わりに適"
 "切なイタリック体を使用できます。"
 
 #: ../../source/text.rst:653
@@ -1065,10 +1063,10 @@ msgid ""
 "specification of a name, size, boldness, italicness, and underline. When all "
 "of these properties match the registered font, the registered font is used."
 msgstr ""
-"画像ベースのフォントは、次の登録関数の何れかを呼び出すことで登録できます。画"
+"画像ベースのフォントは、次の登録関数の何れかを呼び出いて登録できます。画"
 "像ベースのフォントの登録には、名前、大きさ、ボールド体、イタリック体、下線付"
 "きを指定する必要があります。これらすべてのプロパティーが登録されたフォントに"
-"合致するとき、登録されたフォントが使われます。"
+"合致すれば、その登録されたフォントが使われます。"
 
 #: ../../source/inc/image_fonts:5
 msgid ""
@@ -1091,9 +1089,9 @@ msgid ""
 msgstr ""
 "BMPFont を作成するツールは `BMFont home page <http://www.angelcode.com/"
 "products/bmfont/>`_ をご覧ください。Ren'Py は、filename パラメーターが "
-"BMFont テキストフォーマットのファイルであることを期待し、 32-bit フォントを記"
-"述するものでなければなりません。アルファチャンネルはフォント情報を含まなけれ"
-"ばならず、そこに Red, Green, および Blue チャンネルが設定されます。 画像ファ"
+"BMFont テキストフォーマットのファイルであるとを想定しており、それは 32-bit フォントを記"
+"述するものです。アルファチャンネルにはフォント情報がなければ"
+"ならず、 Red, Green, および Blue チャンネルにはそれぞれの色が設定されているはず。画像ファ"
 "イル、カーニング、その他の制御情報は BMPFont から読み取られます。"
 
 #: ../../source/inc/image_fonts:16
@@ -1182,8 +1180,8 @@ msgid ""
 msgstr ""
 "MudgeFonts を作成するツールについては、 `MudgeFont home page <http://www."
 "larryhastings.com/programming/mudgefont/>`_ をご覧ください。Ren'Py は、"
-"MudgeFont xml ファイルに見つかった文字コードが Unicode 文字番号であると推測"
-"し、負の文字コードを無視します。"
+"MudgeFont xml ファイルに見つかった文字コードが Unicode 文字番号であると想定"
+"しており、負の文字コードを無視します。"
 
 #: ../../source/inc/image_fonts:64
 msgid ""
@@ -1259,7 +1257,7 @@ msgid ""
 "the height (i.e., is at the very bottom of the font)."
 msgstr ""
 "フォントの上端からベースライン (文字を置く不可視のライン) までのピクセルの整"
-"数での距離です。このフォントが他のフォントと合成されると、ベースラインで合わ"
+"数での距離です。このフォントが他のフォントと合成されるときには、ベースラインで合わ"
 "せられます。負の値だと代わりにフォントの下端からの距離になり、 ``None`` だと"
 "ベースラインとの距離は高さと同じになります(つまりフォントの最下端になりま"
 "す)。"
@@ -1284,7 +1282,7 @@ msgid ""
 "use is::"
 msgstr ""
 "BMFont は Ren'Py がサポートする三つの画像フォント中では最も完全なものなので、"
-"新しいプロジェクトでは推奨されます。 BMFont の使用例は次の通りです :"
+"新しいプロジェクトでは推奨します。 BMFont の使用例は次の通りです :"
 
 #: ../../source/text.rst:688
 msgid "Font Groups"
@@ -1313,7 +1311,7 @@ msgstr ""
 "フォントグループを作成するためには、 :class:`FontGroup`  オブジェクトを作成"
 "し、その ``.add`` メソッドを一回以上呼び出してください。フォントグループは"
 "フォント名が使用可能などこででも使用できます。 add メソッドはユニコードの文字"
-"コードの最初と最後を引数にし、ある文字コードをカバーする最初の範囲が使用され"
+"コードの最初と最後を引数に受け取って範囲とし、ある文字コードに対してはそれをカバーする最初の範囲が使用され"
 "ます。"
 
 #: ../../source/inc/font_group:5
@@ -1383,7 +1381,7 @@ msgid ""
 "When multiple .add() calls include the same character, the first call takes "
 "precedence."
 msgstr ""
-"複数回の .add() 呼び出しが同じ文字を含めるとき、最初の呼び出しが優先されま"
+"複数回の .add() 呼び出しが同じ文字を含めるときは最初の呼び出しが優先されま"
 "す。"
 
 #: ../../source/inc/font_group:36
@@ -1406,8 +1404,8 @@ msgid ""
 "The character or characters to remap. This may be a single-character string, "
 "or an integer giving a unicode code point, or an iterable of either."
 msgstr ""
-"リマップする文字または文字群です。1文字の文字列、ユニコード番号の整数または範"
-"囲の終わりです。これは一文字の文字列か、ユニコードコードポイントの整数、また"
+"リマップする文字または文字群です。"
+"これは一文字の文字列か、ユニコードコードポイントの整数、また"
 "はそのどちらかのイテレータです。"
 
 #: ../../source/inc/font_group:49
@@ -1453,7 +1451,7 @@ msgid ""
 "part of the pre-defined ``text`` image."
 msgstr ""
 "これは追加の文字列パラメーターを表示可能な displayable で、文字列を画像のよう"
-"に表示出来ます。これは通常、予め定義された ``text`` 画像の一部で使用されま"
+"に表示出来ます。これは通常は予め定義された ``text`` 画像の内部で使用されま"
 "す。"
 
 #: ../../source/inc/text:9
@@ -1481,7 +1479,7 @@ msgid ""
 "The text to display on the screen. This may be a string, or a list of "
 "strings and displayables."
 msgstr ""
-"画面に表示するテキストです。これは文字列か、文字列や displayable のリストにで"
+"画面に表示するテキストです。これは文字列か、文字列または displayable のリストにで"
 "きます。"
 
 #: ../../source/inc/text:33
@@ -1535,8 +1533,8 @@ msgid ""
 "text finishes displaying."
 msgstr ""
 "None でなく、スローテキストモード (`slow` パラメーターを参照してください) が有効なら"
-"ば、これはそのテキストの表示が完了したときに呼び出される、引数なしで呼び出さ"
-"れる呼び出し可能オブジェクトまたは関数です。"
+"ば、これはそのテキストの表示が完了したときに引数なしで呼び出される"
+"呼び出し可能オブジェクト、または関数です。"
 
 #: ../../source/inc/text:48
 msgid "`**properties`"
@@ -1585,7 +1583,7 @@ msgstr ""
 
 #: ../../source/inc/text_utility:16
 msgid "Transforms `s`, while leaving text tags and interpolation the same."
-msgstr "テキストタグと置換はそのままに、 `s` を変換します。"
+msgstr "テキストタグと置換部分はそのままに、 `s` を変換します。"
 
 #: ../../source/inc/text_utility:21
 msgid "`function`"
@@ -1633,7 +1631,7 @@ msgid ""
 "Horizontal artifacts are also possible when characters are kerned together, "
 "but these artifacts are less severe, as they exist for only a single frame."
 msgstr ""
-"字詰めをしても水平方向の乱れ起こりえますが、この乱れはたった 1 フレームだけな"
+"字詰めをしても水平方向の乱れは起こりえますが、この乱れはたった 1 フレームだけな"
 "のでそれほど深刻ではありません。"
 
 #: ../../source/text.rst:745
