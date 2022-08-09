@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-28 19:28+0900\n"
-"PO-Revision-Date: 2022-06-04 21:49+0900\n"
+"POT-Creation-Date: 2022-08-09 10:46+0900\n"
+"PO-Revision-Date: 2022-08-09 13:23+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -191,8 +191,8 @@ msgid ""
 "The fraction of the total memory usage to show. 1.0 will show all memory "
 "usage, .9 will show the top 90%."
 msgstr ""
-"全体のメモリー使用のうち表示する割合です。 1.0 ならすべてのメモリー使用を表示し"
-"、.9 なら上位90%を表示します。"
+"全体のメモリー使用のうち表示する割合です。 1.0 ならすべてのメモリー使用を表示"
+"し、.9 なら上位90%を表示します。"
 
 #: ../../source/inc/memory:38
 msgid "`minimum`"
@@ -226,8 +226,8 @@ msgid ""
 "copied when entering a new context, but changes to the copy do not change "
 "the original."
 msgstr ""
-"現在のコンテキストに対してユニークなオブジェクトを返します。新しいコンテキスト"
-"に入るとそのオブジェクトはコピーされますが、コピーへの変更はオリジナルに影"
+"現在のコンテキストに対してユニークなオブジェクトを返します。新しいコンテキス"
+"トに入るとそのオブジェクトはコピーされますが、コピーへの変更はオリジナルに影"
 "響を与えません。"
 
 #: ../../source/inc/context:9
@@ -372,7 +372,7 @@ msgstr ""
 msgid "One of `behind` or `above` must be given."
 msgstr "`below` または `above` のどちらかが指定さなければいけません。"
 
-#: ../../source/inc/other:11 ../../source/inc/other:573
+#: ../../source/inc/other:11 ../../source/inc/other:585
 msgid "`layer`"
 msgstr "`layer`"
 
@@ -570,8 +570,9 @@ msgid ""
 "be called when an image file changes on disk to force Ren'Py to use the new "
 "version."
 msgstr ""
-"`fn` ファイルを参照するすべての画像イメージのキャッシュをクリアします。"
-"ディスクの画像ファイルが変わったときに、これを呼び出して、 Ren'Pyに新バージョンの使用を強制します。"
+"`fn` ファイルを参照するすべての画像イメージのキャッシュをクリアします。ディス"
+"クの画像ファイルが変わったときに、これを呼び出して、 Ren'Pyに新バージョンの使"
+"用を強制します。"
 
 #: ../../source/inc/other:130
 msgid ""
@@ -883,9 +884,9 @@ msgid ""
 "function. Most other portions of the Ren'Py API are expected to be called "
 "from the main thread."
 msgstr ""
-"このスレッドは Ren'Py API で実行できる範囲が非常に制限されています。 store 変数"
-"の変更と :func:`renpy.queue_event` 関数の呼び出しは許可されていますが、その他"
-"の殆どの Ren'Py API はメインスレッドからの呼び出しを想定しています。"
+"このスレッドは Ren'Py API で実行できる範囲が非常に制限されています。 store 変"
+"数の変更と :func:`renpy.queue_event` 関数の呼び出しは許可されていますが、その"
+"他の殆どの Ren'Py API はメインスレッドからの呼び出しを想定しています。"
 
 #: ../../source/inc/other:298
 msgid ""
@@ -1267,13 +1268,12 @@ msgstr "現在のステートメントに対する scry オブジェクトを返
 #: ../../source/inc/other:505
 msgid ""
 "The scry object tells Ren'Py about things that must be true in the future of "
-"the current statement. Right now, the scry object has one field:"
+"the current statement. Right now, the scry object has the following fields:"
 msgstr ""
-"scry オブジェクトは Ren'Py に次のステートメント"
-"について報せます。現在、 scry オブジェクトは 1 つのフィールドを持ちま"
-"す。 :"
+"scry オブジェクトは Ren'Py に次のステートメントについて報せます。現在、 scry "
+"オブジェクトは 次のフィールドを持ちます。 :"
 
-#: ../../source/inc/other:510
+#: ../../source/inc/other:511
 msgid "``nvl_clear``"
 msgstr "``nvl_clear``"
 
@@ -1286,6 +1286,40 @@ msgstr ""
 "です。"
 
 #: ../../source/inc/other:515
+msgid "``say``"
+msgstr "``say``"
+
+#: ../../source/inc/other:514
+msgid ""
+"Is true if an ``say`` statement will execute before the next interaction."
+msgstr ""
+"次のインタラクションの前に ``say`` ステートメントが処理されるなら True です。"
+
+#: ../../source/inc/other:519
+msgid "``menu_with_caption``"
+msgstr "``menu_with_caption``"
+
+#: ../../source/inc/other:518
+msgid ""
+"Is true if a ``menu`` statement with a caption will execute before the next "
+"interaction."
+msgstr ""
+"次のインタラクションの前にキャプションありで ``menu`` ステートメントが処理さ"
+"れるなら True です。"
+
+#: ../../source/inc/other:522
+msgid "``who``"
+msgstr "``who``"
+
+#: ../../source/inc/other:522
+msgid ""
+"If a ``say`` or ``menu-with-caption`` statement will execute before the next "
+"interaction, this is the character object it will use."
+msgstr ""
+"次のインタラクションの前に ``say`` または ``menu-with-caption`` ステートメン"
+"トが処理されるなら、そのキャラクターオブジェクトです。"
+
+#: ../../source/inc/other:527
 msgid ""
 "Sets the autoreload flag, which determines if the game will be automatically "
 "reloaded after file changes. Autoreload will not be fully enabled until the "
@@ -1295,7 +1329,7 @@ msgstr ""
 "どうかを決定します。自動リロードはゲームが :func:`renpy.utter_restart` でリ"
 "ロードされて始めて完全に有効化されます。"
 
-#: ../../source/inc/other:521
+#: ../../source/inc/other:533
 msgid ""
 "Jump the mouse pointer to the location given by arguments x and y. If the "
 "device does not have a mouse pointer, this does nothing."
@@ -1303,17 +1337,17 @@ msgstr ""
 "引数 x, y で指定された位置にマウスポインターを移動します。デバイスにマウスポ"
 "インターがない場合はこれは何もしません。"
 
-#: ../../source/inc/other:525
+#: ../../source/inc/other:537
 msgid "`duration`"
 msgstr "`duration`"
 
-#: ../../source/inc/other:525
+#: ../../source/inc/other:537
 msgid ""
 "The time it will take to perform the move, in seconds. During this time, the "
 "mouse may be unresponsive."
 msgstr "移動処理にかける秒数です。この時間の間はマウスが反応しません。"
 
-#: ../../source/inc/other:530
+#: ../../source/inc/other:542
 msgid ""
 "Attempts to set the size of the physical window to `size`. This has the side "
 "effect of taking the screen out of fullscreen mode."
@@ -1321,7 +1355,7 @@ msgstr ""
 "実際のウィンドウのサイズを `size` に設定しようと試みます。これは全画面モード"
 "を無効化する副作用を持ちます。"
 
-#: ../../source/inc/other:535
+#: ../../source/inc/other:547
 msgid ""
 "Call this to indicate that the window has been shown. This interacts with "
 "the \"window show\" statement, which shows an empty window whenever this "
@@ -1331,7 +1365,7 @@ msgstr ""
 "テートメントに対応し、この関数が インタラクションの最中に呼び出されない限り空"
 "のウィンドウを表示します。"
 
-#: ../../source/inc/other:541
+#: ../../source/inc/other:553
 msgid ""
 "Splits up `properties` into multiple dictionaries, one per `prefix`. This "
 "function checks each key in properties against each prefix, in turn. When a "
@@ -1342,7 +1376,7 @@ msgstr ""
 "ティーの各キーを順番にチェックします。接頭辞と一致すればその接頭辞がキーから"
 "除かれ、その結果のキーが対応する辞書でその値に対応付けられます。"
 
-#: ../../source/inc/other:546
+#: ../../source/inc/other:558
 msgid ""
 "If no prefix matches, an exception is thrown. (The empty string, \"\", can "
 "be used as the last prefix to create a catch-all dictionary.)"
@@ -1350,7 +1384,7 @@ msgstr ""
 "合う接頭辞がなければ例外が投げられます(空の文字列 \"\" を最後の接頭辞に使用し"
 "てすべての辞書を受け取れます)。"
 
-#: ../../source/inc/other:549
+#: ../../source/inc/other:561
 msgid ""
 "For example, this splits properties beginning with text from those that do "
 "not::"
@@ -1358,38 +1392,38 @@ msgstr ""
 "例えば、このコードは text で始まるプロパティーとそうでないものを分割しま"
 "す。 ::"
 
-#: ../../source/inc/other:556
+#: ../../source/inc/other:568
 msgid "Applies translation and new-style formatting to the string `s`."
 msgstr "翻訳と新スタイルのフォーマットを文字列 `s` に適用します。"
 
-#: ../../source/inc/other:560
+#: ../../source/inc/other:572
 msgid "`scope`"
 msgstr "`scope`"
 
-#: ../../source/inc/other:559
+#: ../../source/inc/other:571
 msgid ""
 "If not None, a scope which is used in formatting, in addition to the default "
 "store."
 msgstr ""
 "None かフォーマットに使用するスコープで、デフォルト store に追加されます。"
 
-#: ../../source/inc/other:563
+#: ../../source/inc/other:575
 msgid "`translate`"
 msgstr "`translate`"
 
-#: ../../source/inc/other:563
+#: ../../source/inc/other:575
 msgid "Determines if translation occurs."
 msgstr "翻訳するかを決定します。"
 
-#: ../../source/inc/other:565
+#: ../../source/inc/other:577
 msgid "Returns the translated and formatted string."
 msgstr "翻訳とフォーマットが終了した文字列を返します。"
 
-#: ../../source/inc/other:569
+#: ../../source/inc/other:581
 msgid "Sets the transition that will be used during the next interaction."
 msgstr "次のインタラクションの間使用されるトランジションをセットします。"
 
-#: ../../source/inc/other:572
+#: ../../source/inc/other:584
 msgid ""
 "The layer the transition applies to. If None, the transition applies to the "
 "entire scene."
@@ -1397,11 +1431,11 @@ msgstr ""
 "トランジションが適用されるレイヤーです。 None ならトランジションは全てのレイ"
 "ヤーに適用されます。"
 
-#: ../../source/inc/other:576
+#: ../../source/inc/other:588
 msgid "`always`"
 msgstr "`always`"
 
-#: ../../source/inc/other:576
+#: ../../source/inc/other:588
 msgid ""
 "If false, this respects the transition preference. If true, the transition "
 "is always run."
@@ -1409,7 +1443,7 @@ msgstr ""
 "False ならこれはトランジション設定を反映します。 True ならトランジションは常"
 "に実行されます。"
 
-#: ../../source/inc/other:581
+#: ../../source/inc/other:593
 msgid ""
 "Causes the device to vibrate for `duration` seconds. Currently, this is only "
 "supported on Android."
@@ -1417,7 +1451,7 @@ msgstr ""
 "デバイスを `duration` 秒間バイブさせます。現在これはアンドロイドのみのサポー"
 "トです。"
 
-#: ../../source/inc/other:586
+#: ../../source/inc/other:598
 msgid ""
 "This causes the a yes/no prompt screen with the given message to be "
 "displayed. The screen will be hidden when the user hits yes or no."
@@ -1425,27 +1459,27 @@ msgstr ""
 "これは与えられたメッセージで Yes/No プロンプトを表示します。ユーザーが Yes "
 "か No を押したらスクリーンは消えます。"
 
-#: ../../source/inc/other:591
+#: ../../source/inc/other:603
 msgid "`message`"
 msgstr "`message`"
 
-#: ../../source/inc/other:591
+#: ../../source/inc/other:603
 msgid "The message that will be displayed."
 msgstr "表示されるメッセージ"
 
-#: ../../source/inc/other:594
+#: ../../source/inc/other:606
 msgid "`yes`"
 msgstr "`yes`"
 
-#: ../../source/inc/other:594
+#: ../../source/inc/other:606
 msgid "An action that is run when the user chooses yes."
 msgstr "ユーザーが Yes を選んだときに実行されるアクション"
 
-#: ../../source/inc/other:596
+#: ../../source/inc/other:608
 msgid "`no`"
 msgstr "`no`"
 
-#: ../../source/inc/other:597
+#: ../../source/inc/other:609
 msgid "An action that is run when the user chooses no."
 msgstr "ユーザーが No を選んだときに実行されるアクション"
 
