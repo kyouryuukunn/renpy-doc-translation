@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-31 18:47+0900\n"
-"PO-Revision-Date: 2022-07-31 21:01+0900\n"
+"POT-Creation-Date: 2022-08-09 13:27+0900\n"
+"PO-Revision-Date: 2022-08-09 14:36+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -52,16 +52,16 @@ msgstr ""
 #: ../../source/python.rst:22
 msgid ""
 "There are also some Python constructs that work, but may lead to problems in "
-"saving. Please read the :ref:`save, load, and rollback <save-load-rollback>` "
+"saving. Please read the :doc:`save, load, and rollback <save_load_rollback>` "
 "page for more details, especially the section on :ref:`what can't be saved "
 "<cant-save>`. (You need to be careful with files, sockets, iterators, task, "
 "futures, and generators.)"
 msgstr ""
 "また、いくつかのPythonのコンストラクトは動作しますが、セーブ時に問題が発生す"
-"る可能性があります。詳しくは :ref:`セーブ、ロード、ロールバック <save-load-"
-"rollback>` のページ、特に :ref:`何がセーブされないか <cant-save>` にある保存"
-"できないものについてのセクションを読んでください (ファイル、ソケット、イテ"
-"レータ、タスク、フューチャー、ジェネレータには注意が必要です）。"
+"る可能性があります。詳しくは :doc:`セーブ、ロード、ロールバック "
+"<save_load_rollback>` のページ、特に :ref:`何がセーブされないか <cant-save>` "
+"にある保存できないものについてのセクションを読んでください (ファイル、ソケッ"
+"ト、イテレータ、タスク、フューチャー、ジェネレータには注意が必要です）。"
 
 #: ../../source/python.rst:28
 msgid ""
@@ -412,12 +412,11 @@ msgstr ""
 #: ../../source/python.rst:279
 msgid ""
 "Names beginning with underscore ``_`` are reserved for Ren'Py's internal "
-"use. In addition, there is an :ref:`Index of Reserved Names <reserved-"
-"names>`."
+"use. In addition, there is an :doc:`Index of Reserved Names <reserved>`."
 msgstr ""
 "アンダースコア \"_\" で初まる名前は Ren'Py 内部で使用するものとして扱われま"
-"す。詳しくは以下を参照してください。 :ref:`Index of Reserved Names <reserved-"
-"names>`"
+"す。詳しくは以下を参照してください。 :doc:`Index of Reserved Names "
+"<reserved>`"
 
 #: ../../source/python.rst:285
 msgid "Other Named Stores"
@@ -466,10 +465,63 @@ msgstr ""
 "うではなく、その中への substore 作成もサポートしません。"
 
 #: ../../source/python.rst:331
+msgid "Constant Stores"
+msgstr "定数 store"
+
+#: ../../source/python.rst:333
+msgid ""
+"A named store can be declared to be constant by setting a variable named "
+"``_constant`` to a true value, using, for example::"
+msgstr ""
+"名前付きの store はその ``_constant`` という名前の変数を True に設定して定数"
+"であると宣言できます。例 ::"
+
+#: ../../source/python.rst:339
+msgid ""
+"When a store is constant, variables in that store are not saved, and objects "
+"reachable solely from those variables do not participate in rollback."
+msgstr ""
+"ある store が定数であるとき、その store の変数は保存されず、それらの変数から"
+"のみアクセス出来るオブジェクトはロールバックに参加しません。"
+
+#: ../../source/python.rst:342
+msgid ""
+"Variables in a constant store can be changed during the init phase. It's "
+"only after init (including statements like ``define``, ``transform``, etc.) "
+"completes that the store must be treated as constant."
+msgstr ""
+"定数 store の変数は初期化時の間は変更できます。その store が定数として扱われ"
+"なければいけないのは初期化 ( ``define`` や ``transfor`` ステートメントなどを"
+"含め ) 完了後のみです。"
+
+#: ../../source/python.rst:346
+msgid ""
+"As Ren'Py has no way of enforcing this, it is the responsibility of the "
+"creator to ensure that variables in a constant store do not change after the "
+"init phase."
+msgstr ""
+"Ren'Py にはこれを強制する方法はないので、定数 store の変数が初期化後には変更"
+"されないと保証するのは制作者の責任です。"
+
+#: ../../source/python.rst:349
+msgid ""
+"The reason for declaring a store constant is that each store and variable "
+"incurs a small amount of overhead to support saving, loading, and rollback. "
+"A constant store avoids this overhead."
+msgstr ""
+"store が定数であると宣言する理由は、各 store と変数にはセーブ、ロード、ロール"
+"バックをサポートするためのオーバーヘッドが僅かながらあるためです。定数 store "
+"はこのオーバーヘッドを回避します。"
+
+#: ../../source/python.rst:353
+msgid "The following stores are declared constant by default::"
+msgstr "以下の store はデフォルトで定数として宣言されています。"
+
+#: ../../source/python.rst:371
 msgid "First and Third-Party Python Modules and Packages"
 msgstr "本体、サードパーティーの Python モジュールとパッケージ"
 
-#: ../../source/python.rst:333
+#: ../../source/python.rst:373
 msgid ""
 "Ren'Py can import pure-Python modules and packages. First-party modules and "
 "packages – ones written for the game – can be placed directly into the game "
@@ -481,7 +533,7 @@ msgstr ""
 "ます。サードパーティーのパッケージは game/python-packages ディレクトリーに配"
 "置できます。"
 
-#: ../../source/python.rst:338
+#: ../../source/python.rst:378
 msgid ""
 "For example, to install the requests package, one can change into the game's "
 "base directory, and run the command::"
@@ -489,7 +541,7 @@ msgstr ""
 "例えば必要なパッケージをインストールするにはゲームのベースディレクトリーを自"
 "環境に合わせて次のコマンドを実行します。 ::"
 
-#: ../../source/python.rst:343
+#: ../../source/python.rst:383
 msgid ""
 "In either case, the module or package can be imported from an init python "
 "block::"
@@ -497,7 +549,7 @@ msgstr ""
 "モジュールとパッケージどちらでも init python ブロックからインポート出来ま"
 "す。 ::"
 
-#: ../../source/python.rst:351
+#: ../../source/python.rst:391
 msgid ""
 "Python defined in .rpy files is transformed to allow rollback to work. "
 "Python imported from .py files is not. As a result, objects created in "
