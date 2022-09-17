@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 13:27+0900\n"
+"POT-Creation-Date: 2022-09-17 12:16+0900\n"
 "PO-Revision-Date: 2022-08-09 14:36+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -418,11 +418,11 @@ msgstr ""
 "す。詳しくは以下を参照してください。 :doc:`Index of Reserved Names "
 "<reserved>`"
 
-#: ../../source/python.rst:285
+#: ../../source/python.rst:284
 msgid "Other Named Stores"
 msgstr "その他の名前付き store"
 
-#: ../../source/python.rst:287
+#: ../../source/python.rst:286
 msgid ""
 "Named stores provide a way of organizing Python functions and variables into "
 "modules. By placing Python in modules, you can minimize the chance of name "
@@ -431,15 +431,15 @@ msgstr ""
 "名前付きの store はpython コードをモジュールに分ける方法を提供します。モ"
 "ジュールにコードを置くと名前が衝突する機会を減らせます。"
 
-#: ../../source/python.rst:291
+#: ../../source/python.rst:290
+#, fuzzy
 msgid ""
 "Named stores can be accessed by supplying the ``in`` clause to ``python`` or "
 "``init python``, all of which run Python in a named store. Each store "
 "corresponds to a Python module. The default store is ``store``, while a "
 "named store is accessed as ``store.name``. Names in the modules can be "
 "imported using the Python ``from`` statement. Named stores can be created "
-"using ``init python in`` blocks, or using ``default``, ``define`` or :ref:"
-"`transform <transform-statement>` statements."
+"using ``init python in`` blocks, or using default or define statements."
 msgstr ""
 "名前付きの store は ``in`` 節を ``python`` や ``init python`` に与えるとアク"
 "セス可能で、コードは名前付き store で実行されます。各 store は python モ"
@@ -449,11 +449,11 @@ msgstr ""
 "in`` ブロックや default, define または :ref:`transform <transform-"
 "statement>` ステートメントを使用して作成できます。"
 
-#: ../../source/python.rst:299
+#: ../../source/python.rst:298
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/python.rst:322
+#: ../../source/python.rst:321
 msgid ""
 "Named stores participate in save, load, and rollback in the same way that "
 "the default store does. Special namespaces such as ``persistent``, "
@@ -464,64 +464,11 @@ msgstr ""
 "します。 ``persistent``, ``config``, ``renpy`` などのような特別な名前空間はそ"
 "うではなく、その中への substore 作成もサポートしません。"
 
-#: ../../source/python.rst:331
-msgid "Constant Stores"
-msgstr "定数 store"
-
-#: ../../source/python.rst:333
-msgid ""
-"A named store can be declared to be constant by setting a variable named "
-"``_constant`` to a true value, using, for example::"
-msgstr ""
-"名前付きの store はその ``_constant`` という名前の変数を True に設定して定数"
-"であると宣言できます。例 ::"
-
-#: ../../source/python.rst:339
-msgid ""
-"When a store is constant, variables in that store are not saved, and objects "
-"reachable solely from those variables do not participate in rollback."
-msgstr ""
-"ある store が定数であるとき、その store の変数は保存されず、それらの変数から"
-"のみアクセス出来るオブジェクトはロールバックに参加しません。"
-
-#: ../../source/python.rst:342
-msgid ""
-"Variables in a constant store can be changed during the init phase. It's "
-"only after init (including statements like ``define``, ``transform``, etc.) "
-"completes that the store must be treated as constant."
-msgstr ""
-"定数 store の変数は初期化時の間は変更できます。その store が定数として扱われ"
-"なければいけないのは初期化 ( ``define`` や ``transfor`` ステートメントなどを"
-"含め ) 完了後のみです。"
-
-#: ../../source/python.rst:346
-msgid ""
-"As Ren'Py has no way of enforcing this, it is the responsibility of the "
-"creator to ensure that variables in a constant store do not change after the "
-"init phase."
-msgstr ""
-"Ren'Py にはこれを強制する方法はないので、定数 store の変数が初期化後には変更"
-"されないと保証するのは制作者の責任です。"
-
-#: ../../source/python.rst:349
-msgid ""
-"The reason for declaring a store constant is that each store and variable "
-"incurs a small amount of overhead to support saving, loading, and rollback. "
-"A constant store avoids this overhead."
-msgstr ""
-"store が定数であると宣言する理由は、各 store と変数にはセーブ、ロード、ロール"
-"バックをサポートするためのオーバーヘッドが僅かながらあるためです。定数 store "
-"はこのオーバーヘッドを回避します。"
-
-#: ../../source/python.rst:353
-msgid "The following stores are declared constant by default::"
-msgstr "以下の store はデフォルトで定数として宣言されています。"
-
-#: ../../source/python.rst:371
+#: ../../source/python.rst:330
 msgid "First and Third-Party Python Modules and Packages"
 msgstr "本体、サードパーティーの Python モジュールとパッケージ"
 
-#: ../../source/python.rst:373
+#: ../../source/python.rst:332
 msgid ""
 "Ren'Py can import pure-Python modules and packages. First-party modules and "
 "packages – ones written for the game – can be placed directly into the game "
@@ -533,7 +480,7 @@ msgstr ""
 "ます。サードパーティーのパッケージは game/python-packages ディレクトリーに配"
 "置できます。"
 
-#: ../../source/python.rst:378
+#: ../../source/python.rst:337
 msgid ""
 "For example, to install the requests package, one can change into the game's "
 "base directory, and run the command::"
@@ -541,7 +488,7 @@ msgstr ""
 "例えば必要なパッケージをインストールするにはゲームのベースディレクトリーを自"
 "環境に合わせて次のコマンドを実行します。 ::"
 
-#: ../../source/python.rst:383
+#: ../../source/python.rst:342
 msgid ""
 "In either case, the module or package can be imported from an init python "
 "block::"
@@ -549,7 +496,7 @@ msgstr ""
 "モジュールとパッケージどちらでも init python ブロックからインポート出来ま"
 "す。 ::"
 
-#: ../../source/python.rst:391
+#: ../../source/python.rst:350
 msgid ""
 "Python defined in .rpy files is transformed to allow rollback to work. "
 "Python imported from .py files is not. As a result, objects created in "
@@ -560,6 +507,53 @@ msgstr ""
 "れます。 .py ファイルからインポートされた Python コードは変換されません。その"
 "ため、 python コードで作成されたオブジェクトはロールバックで動作しないので、"
 "作成後は変更するべきではありません。"
+
+#~ msgid "Constant Stores"
+#~ msgstr "定数 store"
+
+#~ msgid ""
+#~ "A named store can be declared to be constant by setting a variable named "
+#~ "``_constant`` to a true value, using, for example::"
+#~ msgstr ""
+#~ "名前付きの store はその ``_constant`` という名前の変数を True に設定して定"
+#~ "数であると宣言できます。例 ::"
+
+#~ msgid ""
+#~ "When a store is constant, variables in that store are not saved, and "
+#~ "objects reachable solely from those variables do not participate in "
+#~ "rollback."
+#~ msgstr ""
+#~ "ある store が定数であるとき、その store の変数は保存されず、それらの変数か"
+#~ "らのみアクセス出来るオブジェクトはロールバックに参加しません。"
+
+#~ msgid ""
+#~ "Variables in a constant store can be changed during the init phase. It's "
+#~ "only after init (including statements like ``define``, ``transform``, "
+#~ "etc.) completes that the store must be treated as constant."
+#~ msgstr ""
+#~ "定数 store の変数は初期化時の間は変更できます。その store が定数として扱わ"
+#~ "れなければいけないのは初期化 ( ``define`` や ``transfor`` ステートメントな"
+#~ "どを含め ) 完了後のみです。"
+
+#~ msgid ""
+#~ "As Ren'Py has no way of enforcing this, it is the responsibility of the "
+#~ "creator to ensure that variables in a constant store do not change after "
+#~ "the init phase."
+#~ msgstr ""
+#~ "Ren'Py にはこれを強制する方法はないので、定数 store の変数が初期化後には変"
+#~ "更されないと保証するのは制作者の責任です。"
+
+#~ msgid ""
+#~ "The reason for declaring a store constant is that each store and variable "
+#~ "incurs a small amount of overhead to support saving, loading, and "
+#~ "rollback. A constant store avoids this overhead."
+#~ msgstr ""
+#~ "store が定数であると宣言する理由は、各 store と変数にはセーブ、ロード、"
+#~ "ロールバックをサポートするためのオーバーヘッドが僅かながらあるためです。定"
+#~ "数 store はこのオーバーヘッドを回避します。"
+
+#~ msgid "The following stores are declared constant by default::"
+#~ msgstr "以下の store はデフォルトで定数として宣言されています。"
 
 #~ msgid "is equivalent to::"
 #~ msgstr "これは以下と等価です。 ::"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 13:27+0900\n"
+"POT-Creation-Date: 2022-09-17 12:16+0900\n"
 "PO-Revision-Date: 2022-07-31 20:57+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -55,19 +55,21 @@ msgstr ""
 "す)。"
 
 #: ../../source/preferences.rst:26
+#, fuzzy
 msgid ""
-"If True, auto-forward move will be continue after a click. If False, a click "
-"will end auto-forward mode. The equivalent of the \"auto-forward after click"
-"\" preference."
+"If True, the auto-forward mode will be continued after a click. If False, a "
+"click will end auto-forward mode. The equivalent of the \"auto-forward after "
+"click\" preference."
 msgstr ""
 "True なら、自動読み進めはクリック後も続きます。 False なら、クリックで自動読"
 "み進めは終ります。  \"auto-forward after click\" preference に相当するもので"
 "す。"
 
 #: ../../source/preferences.rst:32
+#, fuzzy
 msgid ""
 "If True, auto-forward move is enabled, otherwise False. The equivalent of "
-"the \"auto-forward\" preference."
+"the \"auto-forward time\" preference."
 msgstr ""
 "True なら、自動読み進めが有効化され、False なら無効化します。これは  \"auto-"
 "forward\" preference に相当するものです。"
@@ -305,27 +307,21 @@ msgstr ""
 "ミキサー名の文字列です。デフォルトのミキサーは \"main\" と \"music\", \"sfx"
 "\", \"voice\" です (\"main\" は特別なミキサーです) 。"
 
-#: ../../source/preferences.rst:178
+#: ../../source/preferences.rst:177
 msgid "`volume`"
 msgstr "`volume`"
 
 #: ../../source/preferences.rst:178
-msgid ""
-"A number between 0.0 and 1.0, where 0.0 is -60 dB (power), and 1.0 is 0 dB "
-"(power)."
-msgstr "0.0 から 1.0 の間の数値です。 0.0 は -60dB で 1.0 は 0 dB になります。"
+msgid "A number between 0.0 and 1.0."
+msgstr "0.0 と 1.0 の間の数値です。"
 
-#: ../../source/preferences.rst:183
-msgid ""
-"Gets the volume for `mixer`. If the mixer is muted, this returns 0.0. The is "
-"returns a number between 0.0 and 1.0, where 0.0 is -60 dB (power) and 1.0 is "
-"0 dB (power)."
+#: ../../source/preferences.rst:182
+msgid "Gets the volume for `mixer`. If the mixer is muted, this returns 0.0."
 msgstr ""
-"`mixer` のボリュームを取得します。ミキサーがミュート状態なら、これは 0.0 を返"
-"します。0.0 から 1.0 の間の数値を返し、 0.0 は -60dB で 1.0 は 0 dB になりま"
+"`mixer` のボリュームを所得します。そのミキサーがミュートなら、 0.0 を返しま"
 "す。"
 
-#: ../../source/preferences.rst:189
+#: ../../source/preferences.rst:187
 msgid ""
 "Sets the mute setting for `mixer`. If `mute` is true, the mixer is muted. If "
 "`mute` is false, the mixer's volume is reverted to its value before it was "
@@ -334,20 +330,20 @@ msgstr ""
 "`mixer` のミュートを設定します。 `mute` が True なら、ミキサーはミュートされ"
 "ます。 `mute` が False なら、ミュートになる前のミキサーの音量に戻ります。"
 
-#: ../../source/preferences.rst:195
+#: ../../source/preferences.rst:193
 msgid "Gets the mute setting for `mixer`."
 msgstr "`mixer` のミュート設定を所得します。"
 
-#: ../../source/preferences.rst:199
+#: ../../source/preferences.rst:197
 msgid "Audio Channel Defaults"
 msgstr "オーディオチャンネル"
 
-#: ../../source/preferences.rst:201
+#: ../../source/preferences.rst:199
 msgid "These config variables set the default volumes on various audio mixers."
 msgstr ""
 "これらの設定変数は様々なオーディオミキサーのデフォルトの音量を設定します。"
 
-#: ../../source/preferences.rst:205
+#: ../../source/preferences.rst:203
 msgid ""
 "The default volume of the music mixer, which is used for the music and movie "
 "channels. This should be a number between 0.0 and 1.0, with 1.0 being full "
@@ -356,7 +352,7 @@ msgstr ""
 "music ミキサーのデフォルトの音量で、 music や movie チャンネルに使用されま"
 "す。これは 0.0 と 1.0 の間の数であるべきで、 1.0 が最大音量です。"
 
-#: ../../source/preferences.rst:211
+#: ../../source/preferences.rst:209
 msgid ""
 "The default volume of the sfx mixer, which is used for the sound and audio "
 "channels. This should be a number between 0.0 and 1.0, with 1.0 being full "
@@ -365,7 +361,7 @@ msgstr ""
 "sfx ミキサーのデフォルト音量で、 sound と audio チャンネルに使用されます。こ"
 "れは 0.0 と 1.0 の間の数であるべきで、 1.0 が最大音量です。"
 
-#: ../../source/preferences.rst:217
+#: ../../source/preferences.rst:215
 msgid ""
 "The default volume of the voice mixer, which is used for the voice channel "
 "(and hence the voice statement, auto-voice, etc.). This should be a number "
@@ -375,11 +371,17 @@ msgstr ""
 "メントや auto-voice など ) に使用されます。これは 0.0 と 1.0 の間の数であるべ"
 "きで、 1.0 が最大音量です。"
 
-#~ msgid "A number between 0.0 and 1.0."
-#~ msgstr "0.0 と 1.0 の間の数値です。"
+#~ msgid ""
+#~ "A number between 0.0 and 1.0, where 0.0 is -60 dB (power), and 1.0 is 0 "
+#~ "dB (power)."
+#~ msgstr ""
+#~ "0.0 から 1.0 の間の数値です。 0.0 は -60dB で 1.0 は 0 dB になります。"
 
 #~ msgid ""
-#~ "Gets the volume for `mixer`. If the mixer is muted, this returns 0.0."
+#~ "Gets the volume for `mixer`. If the mixer is muted, this returns 0.0. The "
+#~ "is returns a number between 0.0 and 1.0, where 0.0 is -60 dB (power) and "
+#~ "1.0 is 0 dB (power)."
 #~ msgstr ""
-#~ "`mixer` のボリュームを所得します。そのミキサーがミュートなら、 0.0 を返し"
-#~ "ます。"
+#~ "`mixer` のボリュームを取得します。ミキサーがミュート状態なら、これは 0.0 "
+#~ "を返します。0.0 から 1.0 の間の数値を返し、 0.0 は -60dB で 1.0 は 0 dB に"
+#~ "なります。"
