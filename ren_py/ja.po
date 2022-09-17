@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2022, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 7.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-27 12:12+0900\n"
+"PO-Revision-Date: 2022-08-28 14:51+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: ../../source/ren_py.rst:6
+msgid "\\_ren.py Files - Ren'Py in Python"
+msgstr "\\_ren.py ファイル - Ren'Py in Python"
+
+#: ../../source/ren_py.rst:8
+msgid "In more complicated games, it's possible to have files that consist of mostly Python, with a small number of Ren'Py statements, like ``init python:``, to introduce the Python code to Ren'Py. Ren'Py has an alternative way to write these Python-heavy files. Files with a name ending in ``_ren.py`` can be writen in Python syntax, which is then transformed to Ren'Py script and processed."
+msgstr "より複雑なゲームでは、ほとんどが Python で構成され、Python のコードを Ren'Py に導入するために ``init python:`` のような僅かな Ren'Py のステートメントがあるのみのファイルを作成することがありえます。 Ren'Py には、このような Python を多用したファイルを書くための代替方法があります。ファイル名が ``_ren.py`` で終わるファイルは、Python の構文で書け、 Ren'Py スクリプトに変換されてから処理されます。"
+
+#: ../../source/ren_py.rst:15
+msgid "There are two main reasons to take advantage of this:"
+msgstr "この利用には二つの利点があります。 :"
+
+#: ../../source/ren_py.rst:17
+msgid "Using the \\_ren.py syntax removes an extra layer of indentation that needs to be placed before every line of Python."
+msgstr "\\_ren.py 構文を使用すると、Python の各行の前に配置する必要がある余分なインデント層が削除されます。"
+
+#: ../../source/ren_py.rst:19
+msgid "Editors can open \\_ren.py files using tools that are specialized for Python, allowing the editor to perform code analysis and refactoring operations that aren't avalable for Python-in-Ren'Py."
+msgstr "Pythonに特化したツールを使って \\_ren.py をエディターで開き、 Ren'Py 中の Python ではできないコード解析やリファクタリングがエディターでできるようになります。"
+
+#: ../../source/ren_py.rst:23
+msgid "Ren'Py in Python files have names that end with \\_ren.py, for example, ``actions_ren.py``. These files are processed in the same unicode order that .rpy files are processed, so ``actions_ren.py`` is processed at the same place that ``actions.rpy`` would have been. It's an error to have both a \\_ren.py and a .rpy file with the same root - for example, ``actions.rpy`` and ``actions_ren.py`` conflict, and will cause an error if both exist in the same directory."
+msgstr "Ren'Py in Python ファイルは、例えば ``actions_ren.py`` のように、名前が \\_ren.py で終わります。これらのファイルは .rpy ファイルと同じ unicode 順で処理されるので、 ``actions_ren.py`` は ``actions.rpy`` が処理されるのと同じ場所で処理されます。 \\_ren.py と a .rpy が同じディレクトリにあるとエラーになります。例えば、``actions.rpy`` と ``actions_ren.py`` は競合し、同じディレクトリに存在するとエラーになります。"
+
+#: ../../source/ren_py.rst:32
+msgid "Syntax and Transformation"
+msgstr "構文と変換"
+
+#: ../../source/ren_py.rst:34
+msgid "Ren'Py in Python files contain three types of sections."
+msgstr "Ren'Py in Python ファイルには3つのセクションがあります。"
+
+#: ../../source/ren_py.rst:36
+msgid "A single ignored section starts the file. This can be used for Python imports and other constructs that will help the editors and other tools, but aren't part of the game and will not be executed by Ren'Py."
+msgstr "ファイル最初の無視されるセクション。これは Python のインポートやエディターやその他のツールで使用される他の物で、ゲームの一部ではなく、Ren'Pyでは実行されない部分"
+
+#: ../../source/ren_py.rst:40
+msgid "One or more Ren'Py sections, which contain Ren'Py script. Ren'Py script is generally used to introduce Python sections, and also sets the indentation of that Python."
+msgstr "Ren'Py スクリプトを含める一つ以上の Ren'Py セクション。 Ren'Py スクリプトは一般的に Python セクションの導入に使用され、その Python のインデントも設定します。"
+
+#: ../../source/ren_py.rst:44
+msgid "A Ren'Py section is introduced with ``\"\"\"renpy`` on a line by itself, and is terminated with ``\"\"\"`` on a line by itself. Both the start and the end need to be placed at the start of a line, without any indentation before it. If either is indented, the file will not be processed correctly."
+msgstr "Ren'Py セクションはその行の ``\"\"\"renpy`` で始まり ``\"\"\"`` で終わります。開始と終了は行の最初にある必要があり、その前にインデントがあってはいけません。どちらかでもインデントがあると、正常に処理されません。"
+
+#: ../../source/ren_py.rst:49
+msgid "One or more Python sections. Python sections occur after Ren'Py sections, and are indented to the indentation level of the last non-whitespace, non-comment line in the Ren'Py section. If that line ends with a colon (:), the Python is indented by 4 more spaces."
+msgstr "一つ以上の Python セクション。 Python セクションは Ren'Py セクション後にあり、最後の Ren'Py セクションの非空白、非コメント行のインデントレベルまでインデントされます。その行がコロン (:) で終わるとさらに 4 つのスペースで Python はインデントされます。"
+
+#: ../../source/ren_py.rst:54
+msgid "This transformation is used to create the equivalent of a .rpy file in memory, and this file is compiled in the usual way. Notably, Ren'Py in Python runs in the Ren'Py store (rather than in an isolated module), and the Python code is subject to the transformations that enable rollback and save/load to work - see :doc:`python` and :ref:`rollback`."
+msgstr "この変換によってメモリーに等しい .rpy ファイルを作成し、このファイルは通常の方法でコンパイルされます。注意点として、 Ren'Py in Python は (独立したモジュールではなく) Ren'Py store で実行され、その Python コードはロールバックとセーブロードを有効にするものに置換されます。 :doc:`python` と :ref:`rollback` を参照ください。"
+
+#: ../../source/ren_py.rst:61
+msgid "Example"
+msgstr "例"
+
+#: ../../source/ren_py.rst:63
+msgid "Here's an example of a \\_ren.py file::"
+msgstr "こちらは \\_ren.py ファイルの例です ::"
+
+#: ../../source/ren_py.rst:83
+msgid "This file is transformed into (with some blank lines removed)::"
+msgstr "このファイルは (空行を除去して) 次のように変換されます ::"
