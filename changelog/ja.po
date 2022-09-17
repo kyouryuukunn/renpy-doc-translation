@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-17 12:16+0900\n"
-"PO-Revision-Date: 2022-08-27 12:47+0900\n"
+"PO-Revision-Date: 2022-09-17 16:49+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -23,13 +23,12 @@ msgid "Changelog (Ren'Py 7.x-)"
 msgstr "Changelog (Ren'Py 7.x-)"
 
 #: ../../source/changelog.rst:12
-#, fuzzy
 msgid "8.0.3 / 7.5.3"
-msgstr "8.0.2 / 7.5.2"
+msgstr "8.0.3 / 7.5.3"
 
 #: ../../source/changelog.rst:15
 msgid "Security"
-msgstr ""
+msgstr "セキュリティー"
 
 #: ../../source/changelog.rst:17
 msgid ""
@@ -37,10 +36,12 @@ msgid ""
 "help players understand the security implications of mods and sharing save "
 "files."
 msgstr ""
+"MOD やセーブファイルの共有がセキュリティに与える影響について、プレイヤーが理"
+"解できるよう、ドキュメントに :doc:`security` のページを新たに設けました。"
 
 #: ../../source/changelog.rst:21
 msgid "Modal Screen, Pauses, and Timers"
-msgstr ""
+msgstr "モーダルスクリーンとポーズ、タイマー"
 
 #: ../../source/changelog.rst:23
 msgid ""
@@ -49,6 +50,10 @@ msgid ""
 "end when a modal screen is shown, while timers will trigger while a modal "
 "screen is shown above the timer."
 msgstr ""
+"制作者からのフィードバックに基づき、モーダルスクリーンとポーズおよびタイマー"
+"の相互作用の変更をやり直しました。このバージョンでは、モーダルスクリーンを表"
+"示してもポーズは終了せず、タイマーはモーダルスクリーンがタイマーの上に表示さ"
+"れている間もトリガーされます。"
 
 #: ../../source/changelog.rst:28
 msgid ""
@@ -60,11 +65,16 @@ msgid ""
 "pauses to end and timers to trigger while the modal screen is still "
 "displayed."
 msgstr ""
+"この動作が望ましくないケースもあります。そのようなケースに対応するために、 :"
+"ref:`timer displayable <sl-timer>` と :func:`renpy.pause` には新しい `modal` "
+"というプロパティ/パラメータが追加されました。 `modal` が True の場合、ポーズ"
+"は終了し、タイマーはモーダルスクリーンを尊重し、スクリーンが消えるまでトリ"
+"ガーしません。 false の場合、モーダルスクリーンを尊重せず、モーダルスクリーン"
+"が表示されていてもポーズがは了し、タイマーはトリガーされます。"
 
 #: ../../source/changelog.rst:37
-#, fuzzy
 msgid "Changes and Fixes"
-msgstr "その他の変更と修正"
+msgstr "変更と修正"
 
 #: ../../source/changelog.rst:39
 msgid ""
@@ -72,20 +82,25 @@ msgid ""
 "Android 13, allowing new games to be added to the Google Play store. The "
 "Play Billing library has been updated to version 5."
 msgstr ""
+"Ren'Py が Android 13 に対応する Android API レベル 33 をターゲットに更新さ"
+"れ、Google Play ストアに新しいゲームを追加できるようになりました。Play "
+"Billing ライブラリがバージョン 5 に更新されました。"
 
 #: ../../source/changelog.rst:43
 msgid ""
 "Init statements inside a module loaded with :func:`renpy.load_module` are "
 "now run in init-priority order."
 msgstr ""
+":func::`renpy.load_module` でロードされたモジュール内の Init ステートメント"
+"が、 init-priority の順番で実行されるようになりました。"
 
 #: ../../source/changelog.rst:46
 msgid "Lint now respects :var:`config.adjust_attributes`."
-msgstr ""
+msgstr "Lint は :var:`config.adjust_attributes` を尊重するようになりました。"
 
 #: ../../source/changelog.rst:48
 msgid "A case where blurs could become transparent has been addressed."
-msgstr ""
+msgstr "ブラーで透明になる場合に対応しました。"
 
 #: ../../source/changelog.rst:50
 msgid ""
@@ -93,6 +108,9 @@ msgid ""
 "as a caption, Ren'Py will jump the game back to the start of the say "
 "statement that added that dialogue, allowing it to be re-translated."
 msgstr ""
+"台詞をキャプションとして使用しているメニューの途中で翻訳言語が変わった場合、"
+"その台詞を追加した say ステートメントの最初にゲームをジャンプさせて、再翻訳を"
+"可能にするようになりました。"
 
 #: ../../source/changelog.rst:54
 msgid ""
@@ -100,9 +118,11 @@ msgid ""
 "first use of :func:`gui.preference` has not been given a default. This makes "
 "an error that could happen at runtime in that case more explicit."
 msgstr ""
+"ゲームを開発しているとき、 Ren'Py は :func:`gui.preference` の最初の使用でデ"
+"フォルトが指定されていない場合にエラーを出すようになりました。これは、そのよ"
+"うな場合に実行時に起こりうるエラーをより明確にするものです。"
 
 #: ../../source/changelog.rst:58
-#, fuzzy
 msgid "There have been many documentation improvements."
 msgstr "多くのドキュメントが改善されました。"
 
@@ -111,19 +131,21 @@ msgid ""
 "This release fixes a problem with Matrix equality that could prevent "
 "transform properties that use Matrixes from being animated correctly."
 msgstr ""
+"このリリースでは、Matrix を使用する transform プロパティーが正しくアニメー"
+"ションされない可能性のある Matrix の等式に関する問題が修正されました。"
 
 #: ../../source/changelog.rst:63
 msgid "Ren'Py now properly analyzes variables that are bound by lambdas."
 msgstr ""
+"Ren'Py はラムダ式に関連付けられた変数を適切に解析できるようになりました。"
 
 #: ../../source/changelog.rst:65
-#, fuzzy
 msgid ""
 "The Tutorial and The Question have been translated into Ukrainian, and the "
 "Ukrainian translation of the launcher has been updated."
 msgstr ""
-"このリリースで、ロシア語のチュートリアルが追加され、ランチャーの翻訳が完了し"
-"ました。"
+"このリリースで、ウクライナ語のチュートリアルと The question がが追加され、ラ"
+"ンチャーの翻訳が更新しました。"
 
 #: ../../source/changelog.rst:73
 msgid "8.0.2 / 7.5.2"
