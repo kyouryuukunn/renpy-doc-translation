@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-31 17:47+0900\n"
+"POT-Creation-Date: 2022-11-20 00:53+0900\n"
 "PO-Revision-Date: 2022-07-31 17:59+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -316,35 +316,44 @@ msgstr "`scry`"
 msgid "Used internally by Ren'Py."
 msgstr "Ren'Py 内部で使用されます。"
 
-#: ../../source/inc/statement_register:69
+#: ../../source/inc/statement_register:72
 msgid "`init`"
 msgstr "`init`"
 
 #: ../../source/inc/statement_register:66
+#, fuzzy
 msgid ""
 "True if this statement should be run at init-time. (If the statement is not "
 "already inside an init block, it's automatically placed inside an init "
-"block.) This calls the execute function, in addition to the execute_init "
-"function."
+"block.)"
 msgstr ""
 "このステートメントが初期化時にのみ実行されるべきなら True です ( ステートメン"
 "トが init ブロック内になければ自動的に init 0 ブロックに配置されます)。これ"
 "は execute_init  関数に加えて execute 関数を呼び出します。"
 
-#: ../../source/inc/statement_register:73
+#: ../../source/inc/statement_register:70
+msgid ""
+"You probably don't want this if you have an `execute_init` function, as "
+"wrapping the statement in an init block will cause the `execute_init` and "
+"`execute` functions to be called at the same time."
+msgstr ""
+
+#: ../../source/inc/statement_register:76
 msgid "`init_priority`"
 msgstr "`init_priority`"
 
-#: ../../source/inc/statement_register:72
+#: ../../source/inc/statement_register:75
+#, fuzzy
 msgid ""
-"An integer that determines the priority of initialization of the init block."
+"An integer that determines the priority of initialization of the init block "
+"created by `init` and `execute_init` function."
 msgstr "init ブロックの初期化優先度の整数値です。"
 
-#: ../../source/inc/statement_register:78
+#: ../../source/inc/statement_register:81
 msgid "`translation_strings`"
 msgstr "`translation_strings`"
 
-#: ../../source/inc/statement_register:76
+#: ../../source/inc/statement_register:79
 msgid ""
 "A function that is called with the parsed block. It's expected to return a "
 "list of strings, which are then reported as being available to be translated."
@@ -352,11 +361,11 @@ msgstr ""
 "パースされたブロックを引数に呼び出される関数で、翻訳可能として報告される文字"
 "列のリストを返します。"
 
-#: ../../source/inc/statement_register:82
+#: ../../source/inc/statement_register:85
 msgid "`force_begin_rollback`"
 msgstr "`force_begin_rollback`"
 
-#: ../../source/inc/statement_register:81
+#: ../../source/inc/statement_register:84
 msgid ""
 "This should be set to true on statements that are likely to cause the end of "
 "a fast skip, similar to ``menu`` or ``call screen``."
@@ -364,11 +373,11 @@ msgstr ""
 "これは ``menu`` や ``call screen``  のようなファストスキップを停止するステー"
 "トメントでは  True にするべきです。"
 
-#: ../../source/inc/statement_register:87
+#: ../../source/inc/statement_register:90
 msgid "`post_execute`"
 msgstr "`post_execute`"
 
-#: ../../source/inc/statement_register:85
+#: ../../source/inc/statement_register:88
 msgid ""
 "A function that is executed as part the next statement after this one. "
 "(Adding a post_execute function changes the contents of the RPYC file, "
@@ -377,11 +386,11 @@ msgstr ""
 "次のステートメントの一部として実行される関数です( post_execute 関数の追加によ"
 "り RPYC ファイルの内容が変化するため、強制コンパイルが必要になります )。"
 
-#: ../../source/inc/statement_register:93
+#: ../../source/inc/statement_register:96
 msgid "`post_label`"
 msgstr "`post_label`"
 
-#: ../../source/inc/statement_register:90
+#: ../../source/inc/statement_register:93
 msgid ""
 "This is a function that is called to determine the label of this the post "
 "execute statement. If it returns a string, that string is used as the "
@@ -392,11 +401,11 @@ msgstr ""
 "メントのラベルとして使用され、その他のラベル同様に呼び出しやジャンプが出来ま"
 "す。これを使用して他と被らないリターンポイントを作成できます。"
 
-#: ../../source/inc/statement_register:97
+#: ../../source/inc/statement_register:100
 msgid "`predict_all`"
 msgstr "`predict_all`"
 
-#: ../../source/inc/statement_register:96
+#: ../../source/inc/statement_register:99
 msgid ""
 "If True, then this predicts all sub-parses of this statement and the "
 "statement after this statement."
@@ -404,18 +413,18 @@ msgstr ""
 "True なら、このステートメントと次のステートメントのすべての sub-parse を予測"
 "します。"
 
-#: ../../source/inc/statement_register:104
+#: ../../source/inc/statement_register:107
 msgid "`predict_next`"
 msgstr "`predict_next`"
 
-#: ../../source/inc/statement_register:100
+#: ../../source/inc/statement_register:103
 msgid ""
 "This is called with a single argument, the label of the statement that would "
 "run after this statement."
 msgstr ""
 "これはこのステートメントの次のステートメントのラベルを引数とする関数です。"
 
-#: ../../source/inc/statement_register:103
+#: ../../source/inc/statement_register:106
 msgid ""
 "This should be called to predict the statements that can run after this one. "
 "It's expected to return a list of of labels or SubParse objects. This is not "

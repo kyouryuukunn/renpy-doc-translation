@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 12:16+0900\n"
+"POT-Creation-Date: 2022-11-20 00:53+0900\n"
 "PO-Revision-Date: 2022-06-10 02:25+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -1222,6 +1222,34 @@ msgstr ""
 "を作成するので、 :tpref:`mesh` と互換性がなくなります。"
 
 #: ../../source/model.rst:494
+msgid "Animated Shaders"
+msgstr ""
+
+#: ../../source/model.rst:496
+msgid ""
+"When using shaders that depend on ``u_time`` to animate, one must be aware, "
+"that even though every shader on screen will run on every frame displayed, "
+"Ren'Py does not run on constant FPS, and will fall back to the minimum frame "
+"rate of 5 FPS if no displayables require to be redrawn."
+msgstr ""
+
+#: ../../source/model.rst:501
+msgid ""
+"When using an animating shader in an ATL transform, this can cause that "
+"shader to \"stutter\" and only animate properly while some other object on "
+"screen animates as well, in case the transform you're using it in does not "
+"cause redraws otherwise. In this case, an empty ATL loop can be introduced "
+"to force redraws to happen::"
+msgstr ""
+
+#: ../../source/model.rst:512
+msgid ""
+"``pause 0`` will cycle the frames as fast as possible. You can also set "
+"different values for ``pause`` to specify a minimum frame rate, like ``pause "
+"1.0/30``."
+msgstr ""
+
+#: ../../source/model.rst:517
 msgid "Default Shader Parts"
 msgstr "デフォルトのシェーダーパーツ"
 
