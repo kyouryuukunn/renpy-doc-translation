@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-20 00:53+0900\n"
-"PO-Revision-Date: 2022-09-17 12:23+0900\n"
+"PO-Revision-Date: 2022-11-20 11:20+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -450,7 +450,6 @@ msgid "If True, Ren'Py will not require grids to be full in order to display."
 msgstr "True なら Ren'Py はグリッドがすべて満たされていなくても表示します。"
 
 #: ../../source/config.rst:252
-#, fuzzy
 msgid ""
 "A list of names of screens that Ren'Py will always show, even in menus, and "
 "when the interface is hidden. If a screen in this list is ever not shown, "
@@ -458,13 +457,13 @@ msgid ""
 "list."
 msgstr ""
 "Ren'Py がメニューや、そのインターフェイスが隠されているときにも常に表示する "
-"screen 名のリストです。これは主に Ren'Py によって使用され、Ren'Py はこれがリ"
-"ストであることを前提にしています。通常は :var:`config.overlay_screens` のリス"
-"トの方がより適切です。"
+"screen 名のリストです。このリストのスクリーンが表示されたことがなければ、その"
+"スクリーンが再表示されます。これは Ren'Py によって使用され、Ren'Py はこのリス"
+"トの内容を変更することがあります。"
 
 #: ../../source/config.rst:256
 msgid "Setting :var:`config.overlay_screens` is usually more appropriate."
-msgstr ""
+msgstr "通常は :var:`config.overlay_screens` のリストの方がより適切です。"
 
 #: ../../source/config.rst:260
 msgid ""
@@ -504,7 +503,6 @@ msgid "A suffix that is given to files played on the channel."
 msgstr "そのチャンネルで再生するファイルに与えられる接尾辞です。"
 
 #: ../../source/config.rst:278
-#, fuzzy
 msgid ""
 "If True, and the `play` argument is given to :func:`Movie`, an audio channel "
 "name is automatically generated for each movie."
@@ -1359,6 +1357,9 @@ msgid ""
 "in pixels. If not set, the height of the window defaults to :var:`config."
 "screen_height`."
 msgstr ""
+"設定すればこれは Ren'Py のゲームを表示するウィンドウのデフォルト高さになりま"
+"す。設定しなければ、ウィンドウの高さのデフォルトは :var:`config."
+"screen_height` になります。"
 
 #: ../../source/config.rst:793
 msgid ""
@@ -1366,6 +1367,9 @@ msgid ""
 "in pixels. If not set, the height of the window defaults to :var:`config."
 "screen_width`."
 msgstr ""
+"設定すればこれは Ren'Py のゲームを表示するウィンドウのデフォルト幅になりま"
+"す。設定しなければ、ウィンドウの幅のデフォルトは :var:`config.screen_width` "
+"になります。"
 
 #: ../../source/config.rst:799
 msgid ""
@@ -1557,12 +1561,18 @@ msgid ""
 "after the layer is cleared, but before the optional image is added, if "
 "present."
 msgstr ""
+"scene ステートメントの実行や :func:`renpy.scene` が呼び出されると実行される関"
+"数のリストです。関数は1つの引数で呼び出され、それは scene ステートメントが呼"
+"び出されるレイヤーです。これらの関数はレイヤーがクリアされた後、あれば任意の"
+"画像が追加される前に呼び出されます。"
 
 #: ../../source/config.rst:926
 msgid ""
 "Ren'Py may call renpy.scene for its own purposes, so it's recommended to "
 "check the layer name before acting on these callbacks."
 msgstr ""
+"Ren'Py はrenpy.scene を自身の目的で呼び出すかもしれないので、これらのコール"
+"バックの実行前にレイヤー名のチェックを推奨します。"
 
 #: ../../source/config.rst:931
 msgid ""
@@ -1570,6 +1580,9 @@ msgid ""
 "physical_height` is not set, this is also the default size of the window "
 "containing the game. Usually set by :func:`gui.init` to a much larger size."
 msgstr ""
+"ゲームのピクセル数での仮想の高さです。 :var:`config.physical_height` が設定さ"
+"れていなければ、これはゲームを含めるウィンドウのデフォルトサイズにもなりま"
+"す。通常、 :func:`gui.init` をかなり大きなサイズに設定します。"
 
 #: ../../source/config.rst:937
 msgid ""
@@ -1577,6 +1590,9 @@ msgid ""
 "physical_width` is not set, this is also the default size of the window "
 "containing the game. Usually set by :func:`gui.init` to a much larger size."
 msgstr ""
+"ゲームのピクセル数での仮想の幅です。 :var:`config.physical_width` が設定され"
+"ていなければ、これはゲームを含めるウィンドウのデフォルトサイズにもなります。"
+"通常、 :func:`gui.init` をかなり大きなサイズに設定します。"
 
 #: ../../source/config.rst:943
 msgid ""
@@ -1809,14 +1825,14 @@ msgstr ""
 "ボイスファイルが再生を終了後、自動進行がテキストを読み進めるまでの秒数です。"
 
 #: ../../source/config.rst:1105
-#, fuzzy
 msgid ""
 "A list of callbacks that are called by all characters. This list is "
 "prepended to the list of character-specific callbacks. Ren'Py includes it's "
 "own callbacks at the start of this list."
 msgstr ""
 "すべてのキャラクターから呼び出されるコールバックのリストです。このリストは"
-"キャラクター指定コールバックリストの先頭に追加されます。"
+"キャラクター指定コールバックリストの先頭に追加されます。 Ren'Py はこのリスト"
+"の先頭に内部で使用するためのコールバックを含めます。"
 
 #: ../../source/config.rst:1111
 msgid ""
@@ -2178,17 +2194,15 @@ msgstr ""
 "い。"
 
 #: ../../source/config.rst:1330
-#, fuzzy
 msgid ""
 "This is a list of callbacks that are called whenever a labels is reached. "
 "The callbacks are called with two arguments. The first is the name of the "
 "label. The second is True if the label was reached through jumping, calling, "
 "or creating a new context, and False otherwise."
 msgstr ""
-"None を指定するか、どのラベルに到達しても呼び出される関数を指定します。2つの"
-"パラメーターで呼び出され、最初はラベル名、2つ目はラベルがジャンプまたは呼び出"
-"し、あるいは新しいコンテキストから到達したなら True 、そうでないなら False で"
-"す。"
+"これはどのラベルに到達しても呼び出されるコールバックのリストです。2つの引数で"
+"呼び出され、最初はラベル名、2つ目はラベルがジャンプ、呼び出し、あるいは新しい"
+"コンテキストの作成により到達したなら True 、そうでないなら False になります。"
 
 #: ../../source/config.rst:1337
 msgid ""

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-20 00:53+0900\n"
-"PO-Revision-Date: 2022-09-17 12:32+0900\n"
+"PO-Revision-Date: 2022-12-07 00:14+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -199,16 +199,15 @@ msgstr ""
 "ヤーです。このレイヤーは、インタラクションが再開する度に消去されます。"
 
 #: ../../source/displaying_images.rst:91
-#, fuzzy
 msgid ""
 "Additional layers can be defined by calling :func:`renpy.add_layer`, and "
 "using the various layer-related :doc:`configuration variables <config>`. "
 "Using the :ref:`camera statement <camera>`, one or more transforms can be "
 "applied to a layer."
 msgstr ""
-"その他のレイヤーも定義できます。 :var:`config.layers` や、レイヤー関連のその"
-"他いろいろな設定変数をアップデートしてください。:func:`renpy.layer_at_list` "
-"を使うと、レイヤーに1つ以上の transform を適用できます。"
+"追加のレイヤーは :func:`renpy.add_layer` の呼び出しと様々なレイヤー関連の :"
+"doc:`設定変数 <config>` を使用して定義できます。 :ref:`camera ステートメント "
+"<camera>` の使用により、1つ以上の transforms をレイヤーに適用できます。"
 
 #: ../../source/displaying_images.rst:99
 msgid "Defining Images"
@@ -240,7 +239,6 @@ msgid "Images Directory"
 msgstr "画像 ディレクトリー"
 
 #: ../../source/displaying_images.rst:116
-#, fuzzy
 msgid ""
 "The image directory is named \"images\", and is placed under the game "
 "directory. When a file with a .jpg, .jpeg, .jxl, .png, or .webp extension is "
@@ -249,9 +247,10 @@ msgid ""
 "image name if an image with that name has not been previously defined."
 msgstr ""
 "画像ディレクトリーは「 images 」と名付けられ、ゲームディレクトリーに配置され"
-"ます。このディレクトリー以下に .jpg や .png 拡張子を持つファイルを配置する"
-"と、その拡張子が除外され、ファイル名の残りは強制的に小文字になります。その結"
-"果のファイル名が既に画像名に使用されていなけらば画像名として使用されます。"
+"ます。このディレクトリー以下に .jpeg や .jpg, jxl .png, webp 拡張子を持つファ"
+"イルを配置すると、その拡張子が除外され、ファイル名の残りは強制的に小文字にな"
+"ります。その結果のファイル名が既に画像名に使用されていなければ画像名として使"
+"用されます。"
 
 #: ../../source/displaying_images.rst:122
 msgid ""
@@ -263,7 +262,7 @@ msgstr ""
 
 #: ../../source/displaying_images.rst:132
 msgid "Oversampling"
-msgstr ""
+msgstr "オーバーサンプリング"
 
 #: ../../source/displaying_images.rst:134
 msgid ""
@@ -272,6 +271,10 @@ msgid ""
 "configured, using :func:`gui.init`, to run at 1920x1080, the image will fill "
 "the entire screen."
 msgstr ""
+"デフォルトでは表示されたときのサイズは画像のピクセルでのサイズが定義します。"
+"例えば、ある画像が 1920x1080 ピクセルであり、ゲームが :func:`gui.init` を使用"
+"して、 1920x1080 で実行されるよう設定されていれば、その画像は画面全体を満たし"
+"ます。"
 
 #: ../../source/displaying_images.rst:139
 msgid ""
@@ -280,6 +283,10 @@ msgid ""
 "3480x2160, and has an oversamply of 2, then each axis will be halved, and "
 "the image would fill the same 1920x1080 window."
 msgstr ""
+"オーバーサンプリングが有効なときは、その画像が表示されるサイズは画像サイズの"
+"ものより小さくなります。例えば、ある画像が 3480x2160 であり、オーバーサンプリ"
+"ングが 2 ならば、各軸は半減し、画像は同じく 1920x1080 のウィンドウを満たしま"
+"す。"
 
 #: ../../source/displaying_images.rst:144
 msgid ""
@@ -288,6 +295,10 @@ msgid ""
 "physical_width` and :var:`config.physical_height` to allow a game to be "
 "remade with higher resolution graphics."
 msgstr ""
+"これは、画像がズームインされる可能性があり、さらなるディテールが必要な場合に"
+"便利です。オーバーサンプリングは :var:`config.physical_width` や :var:"
+"`config.physical_height` と組み合わせて、ゲームを高解像度グラフィックでリメイ"
+"クする場合にも有効です。"
 
 #: ../../source/displaying_images.rst:149
 msgid ""
@@ -297,6 +308,11 @@ msgid ""
 "Oversampling can also be enabled by giving the `oversample` keyword argument "
 "to :func:`Image`."
 msgstr ""
+"画像の拡張子の前に '@' と数字が続くと、自動的にオーバーサンプリングが有効にな"
+"ります。例えば、\"eileen happy@2.png\" は2倍のオーバーサンプリング"
+"で、\"eileen happy@3x.png\" は3倍のオーバーサンプリングになります。オーバーサ"
+"ンプリングは :func:`Image` に `oversample` キーワード引数を与えても有効にでき"
+"ます。"
 
 #: ../../source/displaying_images.rst:157
 msgid "Image Statement"
@@ -547,13 +563,12 @@ msgid "Show Layer"
 msgstr "Show Layer"
 
 #: ../../source/displaying_images.rst:318
-#, fuzzy
 msgid ""
 "The ``show layer`` statement is discussed alongside the :ref:`camera "
 "statement <camera>`, below."
 msgstr ""
-"``show layer`` ステートメントについては後述の camera ステートメントと共に記述"
-"されています。"
+"``show layer`` ステートメントについては後述の :ref:`camera ステートメント "
+"<camera>` と共に記述されています。"
 
 #: ../../source/displaying_images.rst:324
 msgid "Scene Statement"
@@ -885,10 +900,12 @@ msgid ""
 "Adds a new layer to the screen. If the layer already exists, this function "
 "does nothing."
 msgstr ""
+"新しいレイヤーを追加します。レイヤーが既に存在すればこの関数はなにもしませ"
+"ん。"
 
 #: ../../source/inc/image_func:8
 msgid "One of `behind` or `above` must be given."
-msgstr ""
+msgstr "`below` または `above` のどちらかが指定さなければいけません。"
 
 #: ../../source/inc/image_func:11 ../../source/inc/image_func:37
 #: ../../source/inc/image_func:55 ../../source/inc/image_func:89
@@ -897,39 +914,40 @@ msgid "`layer`"
 msgstr "`layer`"
 
 #: ../../source/inc/image_func:11
-#, fuzzy
 msgid "A string giving the name of the new layer to add."
-msgstr "スペース区切りの新しい画像名の要素の文字列です。"
+msgstr "追加する新しいレイヤー名の文字列です。"
 
 #: ../../source/inc/image_func:15
 msgid "`above`"
-msgstr ""
+msgstr "`above`"
 
 #: ../../source/inc/image_func:14
 msgid ""
 "If not None, a string giving the name of a layer the new layer will be "
 "placed above."
-msgstr ""
+msgstr "None または新しいレイヤーの下に配置されるレイヤー名の文字列です。"
 
 #: ../../source/inc/image_func:19
 msgid "`below`"
-msgstr ""
+msgstr "`below`"
 
 #: ../../source/inc/image_func:18
 msgid ""
 "If not None, a string giving the name of a layer the new layer will be "
 "placed below."
-msgstr ""
+msgstr "None または新しいレイヤーの上に配置されるレイヤー名の文字列です。"
 
 #: ../../source/inc/image_func:22
 msgid "`menu_clear`"
-msgstr ""
+msgstr "`menu_clear`"
 
 #: ../../source/inc/image_func:22
 msgid ""
 "If true, this layer will be cleared when entering the game menu context, and "
 "restored when leaving it."
 msgstr ""
+"True ならこのレイヤーはゲームメニューコンテキストに入るとクリアされ、出るとき"
+"に復元されます。"
 
 #: ../../source/inc/image_func:27
 msgid ""
@@ -979,6 +997,8 @@ msgid ""
 "Clears all image attributes for the `tag` image. If the tag had no attached "
 "image attributes, this does nothing."
 msgstr ""
+"`tag` 画像のすべての画像属性をクリアします。そのタグに画像属性が泣ければ、お"
+"れは何もしません。"
 
 #: ../../source/inc/image_func:60
 msgid ""
@@ -1018,6 +1038,9 @@ msgid ""
 "be called when an image file changes on disk to force Ren'Py to use the new "
 "version."
 msgstr ""
+"`fn` ファイルを参照するすべての画像イメージのキャッシュをクリアします。ディス"
+"クの画像ファイルが変わったときにはこれを呼び出して、 Ren'Pyに新バージョンの使"
+"用を強制します。"
 
 #: ../../source/inc/image_func:85
 msgid ""

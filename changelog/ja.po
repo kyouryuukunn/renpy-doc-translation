@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-20 00:53+0900\n"
-"PO-Revision-Date: 2022-09-17 16:49+0900\n"
+"PO-Revision-Date: 2022-12-11 15:30+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -25,6 +25,7 @@ msgstr "Changelog (Ren'Py 7.x-)"
 #: ../../source/changelog.rst:8
 msgid "*There is also a list of* :doc:`incompatible changes <incompatible>`"
 msgstr ""
+"また、 :doc:`incompatible changes<incompatible>` のリスト変更もあります。"
 
 #: ../../source/changelog.rst:14
 msgid "8.1 / 7.6"
@@ -84,7 +85,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:39
 msgid "Draggable Viewports"
-msgstr ""
+msgstr "ドラッグ可能 viewport"
 
 #: ../../source/changelog.rst:41
 msgid ""
@@ -93,6 +94,10 @@ msgid ""
 "user is dragging, and switch focus to the viewport, allowing the viewport to "
 "move."
 msgstr ""
+"ユーザーがビューポートを、その内部のボタンや他の Displayable にフォーカスが当"
+"たっていても、ドラッグできるようになりました。 Ren'Py は、ユーザーのドラッグ"
+"を検知して、ビューポートにフォーカスを移すようになり、ビューポートが移動でき"
+"るようになりました。"
 
 #: ../../source/changelog.rst:45
 msgid ""
@@ -101,6 +106,10 @@ msgid ""
 "\"touch\", in which case the viewport will only be draggable if touch is "
 "enabled."
 msgstr ""
+":ref:`viewports<sl-viewport>` と :ref:`vpgrids<sl-vpgrid>` の `draggable` プ"
+"ロパティは \"touch\" のような :ref:`screen variant <screen-variants>` を受け"
+"取られるようになりました。この場合、そのビューポートは touch が有効な場合にの"
+"みドラッグ可能になります。"
 
 #: ../../source/changelog.rst:51
 msgid "\\_ren.py Files - Ren'Py in Python"
@@ -131,7 +140,6 @@ msgid "Constant Stores"
 msgstr "定数 store"
 
 #: ../../source/changelog.rst:75
-#, fuzzy
 msgid ""
 "Ren'Py has the ability to mark a :ref:`named store <named-stores>` as a "
 "constant, by setting the ``_constant`` variable in that store. If true, "
@@ -185,6 +193,10 @@ msgid ""
 "the hide transform. The new :tpref:`show_cancels_hide` transform property "
 "controls this behavior."
 msgstr ""
+"通常、非表示になっているものと同じタグや名前を持つ displayable やスクリーンが"
+"表示されると、その非表示になっている displayable やスクリーンが削除され、非表"
+"示の transform はキャンセルされます。新しい :tpref:`show_cancels_hide` トラン"
+"スフォームプロパティーは、この動作を制御します。"
 
 #: ../../source/changelog.rst:109
 msgid ""
@@ -192,12 +204,17 @@ msgid ""
 "expression, in which case it display the pydoc documentation for the "
 "function or class that expression refers to."
 msgstr ""
+"(shift+Oでアクセスできる)コンソールの``help`` コマンドが式を受け取られるよう"
+"になしました。その場合、その式が参照する関数やクラスに対する pydoc ドキュメン"
+"トを表示します。"
 
 #: ../../source/changelog.rst:113
 msgid ""
 "The new :func:`renpy.get_translation_identifier` function returns the unique "
 "identifier for the current line of dialogue, if there is one."
 msgstr ""
+"新しい :func:`renpy.get_translation_identifier` 関数は台詞の現在行に対するユ"
+"ニークな識別子を返します。"
 
 #: ../../source/changelog.rst:116
 msgid ""
@@ -205,10 +222,15 @@ msgid ""
 "that are called when the scene statement is run or the :func:`renpy.scene` "
 "function is called."
 msgstr ""
+"新しい :var:`config.scene_callbacks` 関数には scene ステートメントが実行され"
+"るか :func:`renpy.scene` 関数が呼び出されると呼び出される関数のリストが含まれ"
+"ます。"
 
 #: ../../source/changelog.rst:120
 msgid "The size text tag now takes multipliers, so it's possible to have::"
 msgstr ""
+"size テキストタグが乗数を取るようになったので、次のような書き方が可能で"
+"す。 ::"
 
 #: ../../source/changelog.rst:124
 msgid ""
@@ -248,6 +270,10 @@ msgid ""
 "resetting the placement of the image on the screen. It is not the case with "
 "this function."
 msgstr ""
+"新しい :func:`renpy.clear_attributes` 関数を使用すると、画像タグに付けられた"
+"すべての属性をクリアできます。以前の方法では、画像の表示と非表示を繰り返す必"
+"要があり、その結果、画面上の画像の配置もリセットされていました。この関数では"
+"そのようなことはありません。"
 
 #: ../../source/changelog.rst:142 ../../source/changelog.rst:773
 #: ../../source/changelog.rst:2277 ../../source/changelog.rst:2304
@@ -261,12 +287,17 @@ msgid ""
 "the `init_priority` argument. Previously, all `execute_init` function ran at "
 "init priority 0."
 msgstr ""
+"func:`renpy.register_statement` の `execute_init` 引数は、 `init_priority` 引"
+"数を尊重するようになりました。以前は、すべての `execute_init` 関数は init 優"
+"先度 0 で実行されていました。"
 
 #: ../../source/changelog.rst:148
 msgid ""
 "The config.label_callback variable has been renamed to :var`config."
 "label_callbacks`, and now takes a list of callback functions."
 msgstr ""
+"config.label_callback 変数は :var`config.label_callbacks` に名前が変更され、"
+"コールバック関数のリストを受け取れるようになりました。"
 
 #: ../../source/changelog.rst:156
 msgid "8.0.3 / 7.5.3"

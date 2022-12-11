@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-20 00:53+0900\n"
-"PO-Revision-Date: 2022-06-10 02:25+0900\n"
+"PO-Revision-Date: 2022-12-04 14:46+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1223,7 +1223,7 @@ msgstr ""
 
 #: ../../source/model.rst:494
 msgid "Animated Shaders"
-msgstr ""
+msgstr "アニメーションシェーダー"
 
 #: ../../source/model.rst:496
 msgid ""
@@ -1232,6 +1232,10 @@ msgid ""
 "Ren'Py does not run on constant FPS, and will fall back to the minimum frame "
 "rate of 5 FPS if no displayables require to be redrawn."
 msgstr ""
+"``u_time`` に依存してアニメーションするシェーダーを使用するとき、画面のすべて"
+"のシェーダーが表示されるすべてのフレームで実行されてさえ、 Ren'Py が一定の "
+"FPS では動作せず、再描画する displayable がなければ、5 FPS の最小フレームレー"
+"トに落ち込むことに気をつけてください。"
 
 #: ../../source/model.rst:501
 msgid ""
@@ -1241,6 +1245,11 @@ msgid ""
 "cause redraws otherwise. In this case, an empty ATL loop can be introduced "
 "to force redraws to happen::"
 msgstr ""
+"ATL transform でアニメーションシェーダーを使用するとき、このことがシェーダー"
+"にカクツキを起こさせたり、使用している transform が他に再描画を起こさせない場"
+"合、画面の他のオブジェクトがアニメーションする間だけ正常にアニメーションさせ"
+"たりするかもしれません。この場合は空の ATL ループを加えて再描画の実行を強制で"
+"きます。"
 
 #: ../../source/model.rst:512
 msgid ""
@@ -1248,6 +1257,9 @@ msgid ""
 "different values for ``pause`` to specify a minimum frame rate, like ``pause "
 "1.0/30``."
 msgstr ""
+"``pause 0`` はそのフレームを可能な限り早く繰り返します。 ``pause`` に "
+"``pause 1.0/30`` のような異なる値を設定して、最終フレームレートの指定もできま"
+"す。"
 
 #: ../../source/model.rst:517
 msgid "Default Shader Parts"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-20 00:53+0900\n"
-"PO-Revision-Date: 2022-09-17 12:55+0900\n"
+"PO-Revision-Date: 2022-12-04 15:23+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -48,7 +48,6 @@ msgstr ""
 "端に到達すると label ステートメントの次のステートメントに移ります。"
 
 #: ../../source/label.rst:29
-#, fuzzy
 msgid ""
 "There are two kinds of labels: *global* and *local* labels. Global labels "
 "live in one global scope shared across all project files and thus should "
@@ -58,21 +57,22 @@ msgid ""
 "label, prefix its name with a period ``.``, and put it under a global label "
 "which it will belong to. For example::"
 msgstr ""
-"二種類のラベル *global* と *local* があります。 global label はプロジェクト"
-"ファイルのすべてに渡るグローバルスコープに置かれ、ゲーム毎に固有な名前を持つ"
-"べきです。local label はそれが宣言されたグローバルラベルのスコープ内部に論理"
-"的に配置されます。local label を宣言するには接頭辞 ``.`` を名前につけてくださ"
-"い。例: ::"
+"二種類のラベル *global* と *local* があります。グローバルはプロジェクトファイ"
+"ルのすべてに渡るグローバルスコープに置かれ、ゲーム毎に固有な名前を持つべきで"
+"す。一方ローカルラベルはグローバルラベルを参照するため、異なるグローバルラベ"
+"ルに関連付けられていればゲーム内のいくつかのローカルラベルが同じ名前を持てま"
+"す。それが宣言されたグローバルラベルのスコープ内部に論理的に配置されます。"
+"local label を宣言するには接頭辞 ``.`` を名前につけて参加するグローバルラベル"
+"の下に置いてください。例 ::"
 
 #: ../../source/label.rst:46
-#, fuzzy
 msgid ""
 "Local labels can be referenced directly inside the same global label they "
 "are declared in, or by their full name, consisting of global and local name "
 "parts::"
 msgstr ""
-"local label はそれが宣言されたのと同じグローバルラベル内なら直接に、そうでな"
-"ければグローバルとローカルネームからなるフルネームで参照出来ます。 : ::"
+"ローカルラベルはそれが宣言されたのと同じグローバルラベル内なら直接に、そうで"
+"なければグローバルとローカルネームからなるフルネームで参照出来ます。 : ::"
 
 #: ../../source/label.rst:53
 msgid ""
@@ -355,6 +355,8 @@ msgid ""
 "calls that have run without being returned from or popped from the call "
 "stack."
 msgstr ""
+"現在のコンテキストのコールスタックの深さ、つまり呼び出し先から返らないでいる"
+"か、コールスタックからポップされた呼び出しの数を返します。"
 
 #: ../../source/inc/label:11
 msgid ""
@@ -362,17 +364,20 @@ msgid ""
 "variables dynamically scoped to the current call. When the call returns, the "
 "variables will be reset to the value they had when this function was called."
 msgstr ""
+"これには 1つ以上の変数名が引数として指定できます。これによりそれらの変数を動"
+"的に現在の呼び出しに対するスコープにします。その呼び出しが返ると、変数はこの"
+"関数が呼び出されたときの値にリセットされます。"
 
 #: ../../source/inc/label:15
-#, fuzzy
 msgid ""
 "If the variables are given as keyword arguments, the value of the argument "
 "is assigned to the variable name."
-msgstr "追加の引数とキーワード引数はその呼び出し可能オブジェクトに渡されます。"
+msgstr ""
+"変数はキーワード引数として渡され、引数の値はその変数名に代入されました。"
 
 #: ../../source/inc/label:18
 msgid "Example calls are::"
-msgstr ""
+msgstr "呼び出し例 ::"
 
 #: ../../source/inc/label:25
 msgid ""
@@ -436,12 +441,14 @@ msgstr ""
 msgid ""
 "Pops the current call from the call stack, without returning to the location."
 msgstr ""
+"コールスタックから現在の呼び出しをポップしますが、呼び出し元には返りません。"
 
 #: ../../source/inc/label:59
 msgid ""
 "This can be used if a label that is called decides not to return to its "
 "caller."
 msgstr ""
+"これは呼び出されたラベルからその呼び出し元に返らないときに利用出来ます。"
 
 #: ../../source/inc/label:64
 msgid ""
@@ -470,7 +477,7 @@ msgstr ""
 
 #: ../../source/label.rst:215
 msgid "Contexts"
-msgstr ""
+msgstr "コンテキスト"
 
 #: ../../source/inc/context:5
 msgid ""
@@ -495,10 +502,13 @@ msgid ""
 "copied when entering a new context, but changes to the copy do not change "
 "the original."
 msgstr ""
+"現在のコンテキストに対してユニークなオブジェクトを返します。新しいコンテキス"
+"トに入るとそのオブジェクトはコピーされますが、コピーへの変更はオリジナルに影"
+"響を与えません。"
 
 #: ../../source/inc/context:19
 msgid "The object is saved and participates in rollback."
-msgstr ""
+msgstr "オブジェクトは保存され、ロールバックに参加します。"
 
 #: ../../source/inc/context:23
 msgid ""
@@ -506,10 +516,13 @@ msgid ""
 "variables dynamically scoped to the current context. The variables will be "
 "reset to their original value when the call returns."
 msgstr ""
+"これは1つ以上の変数名を引数として指定できます。これは現在のコンテキストに対す"
+"る動的スコープの変数を作成します。呼び出しから戻ると変数は元の値にリセットさ"
+"れます。"
 
 #: ../../source/inc/context:27
 msgid "An example call is::"
-msgstr ""
+msgstr "呼び出し例 ::"
 
 #: ../../source/inc/context:33
 msgid ""
@@ -517,6 +530,9 @@ msgid ""
 "outermost context (the context that is saved, loaded, and rolled-back), and "
 "is non-zero in other contexts, such as menu and replay contexts."
 msgstr ""
+"現在のコンテキストのネストレベルを返します。これは (セーブロード、ロールバッ"
+"クされる) 最も外側のコンテキストに対しては 0 で、メニューや回想のような他のコ"
+"ンテキストでは 0 ではありません。"
 
 #: ../../source/inc/context:39
 msgid ""
