@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-15 15:18+0900\n"
+"POT-Creation-Date: 2023-04-23 11:09+0900\n"
 "PO-Revision-Date: 2019-10-28 23:39+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: ../../source/custom_text_tags.rst:8
+#: ../../source/custom_text_tags.rst:5
 msgid "Custom Text Tags"
 msgstr "カスタムテキストタグ"
 
-#: ../../source/custom_text_tags.rst:10
+#: ../../source/custom_text_tags.rst:7
 msgid ""
 "Ren'Py has support for defining your own text tags. These text tags can "
 "manipulate the text and text tags defined within, including adding and "
@@ -30,7 +30,7 @@ msgstr ""
 "Ren'Pyはテキストタグの定義をサポートしています。これらのテキストタグは、内部"
 "でテキストやその他のタグを追加削除してテキストやタグを扱えます。"
 
-#: ../../source/custom_text_tags.rst:14
+#: ../../source/custom_text_tags.rst:11
 msgid ""
 "Custom text tags are created by assigning a text tag function to an entry in "
 "the config.custom_text_tags dictionary or the config."
@@ -39,7 +39,7 @@ msgstr ""
 "カスタムテキストタグはテキストタグ関数を config.custom_text_tags または "
 "config.self_closing_custom_tags に加えれば作成します。"
 
-#: ../../source/custom_text_tags.rst:20
+#: ../../source/custom_text_tags.rst:17
 msgid ""
 "Maps text tag names to text tag functions, when the text tag can wrap other "
 "text."
@@ -47,7 +47,7 @@ msgstr ""
 "テキストタグの名前をキー、テキストタグ関数を値とする辞書であり、他のテキスト"
 "を囲めるタグです。"
 
-#: ../../source/custom_text_tags.rst:26
+#: ../../source/custom_text_tags.rst:23
 msgid ""
 "Maps text tag names to a self-closing text tag functions, when the text tag "
 "does not wrap other text."
@@ -55,15 +55,15 @@ msgstr ""
 "テキストタグの名前をキー、self-closing テキストタグ関数を値とする辞書であり、"
 "他のテキストを囲めないタグです。"
 
-#: ../../source/custom_text_tags.rst:29
+#: ../../source/custom_text_tags.rst:26
 msgid ""
 "A text tag function takes three arguments: The tag itself, the argument for "
 "the tag, and a list of content tuples. For example, for the text::"
 msgstr ""
-"テキストタグ関数は 3 つの引数を受け取ります。 : タグ自身とそのタグへの引数、内容"
-"のタプルのリストです。 例えば以下のテキストでは ::"
+"テキストタグ関数は 3 つの引数を受け取ります。 : タグ自身とそのタグへの引数、"
+"内容のタプルのリストです。 例えば以下のテキストでは ::"
 
-#: ../../source/custom_text_tags.rst:34
+#: ../../source/custom_text_tags.rst:31
 msgid ""
 "The tag will be \"big\", the argument will be the string \"2\", and the list "
 "of content tuples will be::"
@@ -71,7 +71,7 @@ msgstr ""
 "タグは \"big\" であり、引数は文字列の \"2\" に、内容のタプルは以下になりま"
 "す。 ::"
 
-#: ../../source/custom_text_tags.rst:44
+#: ../../source/custom_text_tags.rst:41
 msgid ""
 "The text tag function should return a new list of content tuples, which is "
 "used to replace the text tag and its contents."
@@ -79,7 +79,7 @@ msgstr ""
 "テキストタグ関数は新しい内容のタプルのリストを返すべきで、それを使用して、テ"
 "キストタグとその内容を置き換えます。"
 
-#: ../../source/custom_text_tags.rst:47
+#: ../../source/custom_text_tags.rst:44
 msgid ""
 "Content tuples consist of two components. The first component is one of the "
 "the constants in the following list. The second component varies based on "
@@ -88,48 +88,54 @@ msgstr ""
 "内容のタプルは 2 つの要素で構成されます。最初の要素は以下のリストにある定数"
 "の 1 つです。 2 つ目の要素は後述するとおり、最初の要素により様々です。"
 
-#: ../../source/custom_text_tags.rst:52
+#: ../../source/custom_text_tags.rst:49
 msgid "renpy.TEXT_TEXT"
 msgstr "renpy.TEXT_TEXT"
 
-#: ../../source/custom_text_tags.rst:52
+#: ../../source/custom_text_tags.rst:49
 msgid "The second component is text that is intended for display to the user."
 msgstr "2 つ目の要素はユーザーに表示されることを意図したテキストです。"
 
-#: ../../source/custom_text_tags.rst:56
+#: ../../source/custom_text_tags.rst:53
 msgid "renpy.TEXT_TAG"
 msgstr "renpy.TEXT_TAG"
 
-#: ../../source/custom_text_tags.rst:55
+#: ../../source/custom_text_tags.rst:52
 msgid ""
 "The second component is the contents of a text tag, without the enclosing "
 "braces."
 msgstr "2 つ目の要素はテキストタグの中身で、閉じ括弧は含みません。"
 
-#: ../../source/custom_text_tags.rst:59
+#: ../../source/custom_text_tags.rst:56
 msgid "renpy.TEXT_DISPLAYABLE"
 msgstr "renpy.TEXT_DISPLAYABLE"
 
-#: ../../source/custom_text_tags.rst:59
+#: ../../source/custom_text_tags.rst:56
 msgid "The second component is a displayable to be embedded into the text."
 msgstr "2 つ目の要素はテキストに埋め込まれる displayable です。"
 
-#: ../../source/custom_text_tags.rst:63
+#: ../../source/custom_text_tags.rst:60
 msgid "renpy.TEXT_PARAGRAPH"
 msgstr "renpy.TEXT_PARAGRAPH"
 
-#: ../../source/custom_text_tags.rst:62
+#: ../../source/custom_text_tags.rst:59
 msgid ""
 "This represents a break between paragraphs, and the second component is "
 "undefined (but must be present)."
 msgstr ""
 "これは段落分けを表し、2 つ目の要素は未定義です(が、なくてはなりません)。"
 
-#: ../../source/custom_text_tags.rst:65
+#: ../../source/custom_text_tags.rst:62
 msgid ""
 "A self-closing text tag function is similar, except that it does not take "
 "the third argument."
 msgstr "self-closing テキストタグも、三番目の引数をとらない以外は同じです。"
+
+#: ../../source/custom_text_tags.rst:65
+msgid ""
+"Lists of tokens can be passed to :func:`Text` when its `tokenized` argument "
+"is True."
+msgstr ""
 
 #: ../../source/custom_text_tags.rst:69
 msgid "Caveats"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 00:53+0900\n"
+"POT-Creation-Date: 2023-04-23 11:09+0900\n"
 "PO-Revision-Date: 2022-12-03 23:04+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/screens.rst:8
+#: ../../source/screens.rst:5
 msgid "Screens and Screen Language"
 msgstr "スクリーンとスクリーン言語"
 
-#: ../../source/screens.rst:10
+#: ../../source/screens.rst:7
 msgid ""
 "The things that a user sees when looking at a Ren'Py game can be divided "
 "into images and user interface. Images are displayed to the user using the "
@@ -36,11 +36,11 @@ msgstr ""
 "の部分はユーザーインターフェイスの一部で、スクリーンを使ってカスタマイズしま"
 "す。"
 
-#: ../../source/screens.rst:16
+#: ../../source/screens.rst:13
 msgid "Screens can be displayed in four ways:"
 msgstr "スクリーンは4つの方法で表示できます:"
 
-#: ../../source/screens.rst:18
+#: ../../source/screens.rst:15
 msgid ""
 "Implicitly, when script statements execute. For example, the say statement "
 "will cause the `say` screen to be displayed."
@@ -48,7 +48,7 @@ msgstr ""
 "スクリプトのステートメントが実行されるときに暗黙的に表示する。例えば、say ス"
 "テートメントが実行されると、 `say` スクリーンが表示されます。"
 
-#: ../../source/screens.rst:20
+#: ../../source/screens.rst:17
 msgid ""
 "Automatically. For example, Ren'Py will display the `main_menu` screen when "
 "it starts running, or when the user returns to the main menu."
@@ -56,7 +56,7 @@ msgstr ""
 "自動的に表示する。例えば Ren'Py はゲーム開始時やユーザーがメインメニューに戻"
 "るとき、 `main_menu` スクリーンを表示します。"
 
-#: ../../source/screens.rst:23
+#: ../../source/screens.rst:20
 msgid ""
 "As an action, associated with a button, mouse button, or keyboard key. By "
 "default, the `save` screen is shown when the user right-clicks or presses "
@@ -68,15 +68,15 @@ msgstr ""
 "リーンが表示されます。他にも、スクリーン上にボタンを定義して `save` スクリー"
 "ンを表示も可能です。"
 
-#: ../../source/screens.rst:27
+#: ../../source/screens.rst:24
 msgid "Explicitly, using statements that cause screens to be shown."
 msgstr "明示的に、ステートメントを使ってスクリーンを表示する。"
 
-#: ../../source/screens.rst:29
+#: ../../source/screens.rst:26
 msgid "More than one screen can be shown at a time."
 msgstr "一度に複数のスクリーンを表示できます。"
 
-#: ../../source/screens.rst:31
+#: ../../source/screens.rst:28
 msgid ""
 "Screens have two main functions. The first is to display information to the "
 "user. Information can be displayed using text, bars, and images. Some of the "
@@ -90,7 +90,7 @@ msgstr ""
 "キャラクター名と彼女が話している内容を含んだダイアログをユーザーに表示しま"
 "す。"
 
-#: ../../source/screens.rst:37
+#: ../../source/screens.rst:34
 msgid ""
 "The other thing a screen can do is to allow the user to interact with the "
 "game. Buttons and bars allow the user to invoke actions and adjust values. "
@@ -104,27 +104,90 @@ msgstr ""
 "調整したり、ゲームをロード・セーブしたり、その他多数のアクションを発生させた"
 "りできます。ゲーム製作者も新しいアクションを Python で書けます。"
 
-#: ../../source/screens.rst:44
+#: ../../source/screens.rst:41
+#, fuzzy
 msgid ""
 "Screens are updated at the start of each interaction, and each time an "
 "interaction is restarted. Note that a ``with None`` statement does not cause "
-"an interaction to happen, and hence won't update a screen."
+"an interaction to happen, and hence won't update a screen. A ``with "
+"Pause(0)`` will be enough to trigger one, if necessary."
 msgstr ""
 "スクリーンはゲームがインタラクションを開始した時、及びインタラクションが再開"
 "されるたびに更新されます。``with None`` ステートメントはインタラクションを発"
 "生させず、スクリーンを更新させないので注意してください。"
 
-#: ../../source/screens.rst:48
+#: ../../source/screens.rst:46
+#, fuzzy
 msgid ""
 "A screen has a scope associated with it, giving values to some variables. "
-"When a variable is accessed by a screen, it's first looked up in the scope, "
-"and then looked up as a global variable."
+"There are different kinds of variables, in screens, which are resolved as "
+"shown in the following list:"
 msgstr ""
 "スクリーンはそれに関連付けられたスコープを持ち、変数に値を与えます。スクリー"
 "ンから変数にアクセスされると最初にそのスコープ内を参照し、次にグローバルス"
 "コープを参照します。"
 
-#: ../../source/screens.rst:52
+#: ../../source/screens.rst:49
+msgid ""
+"First are local variables. These only exist in a screen that is being "
+"included in another with the :ref:`use <sl-use>` statement instead of being "
+"shown (or called) on its own. They are very similar with screen variables "
+"(see below), and created the same way, except that local variables can only "
+"be accessed by the used screen. Those are set using :class:"
+"`SetLocalVariable`, among other actions, or by a python block or line in the "
+"used screen. Actions such as :class:`SetScreenVariable` will *not work* on "
+"local variables."
+msgstr ""
+
+#: ../../source/screens.rst:56
+msgid ""
+"Local parameters are the parameters taken by the used screen. They live in "
+"the same scope as local variables, and follow the same behavior and "
+"constraints as screen parameters - see below."
+msgstr ""
+
+#: ../../source/screens.rst:60
+msgid ""
+"If a name cannot be resolved among local variables - or if we are not in a "
+"screen being :ref:`used <sl-use>` by another - the name is searched for in "
+"screen variables. These are variables created with the in-screen :ref:`sl-"
+"default` or :ref:`sl-python` statements, in the top-level screen. Screen "
+"variables can be set through the :class:`SetScreenVariable` action, among "
+"others, or by a python block or line in the top-level screen, or any used "
+"screen if no local variable has the same name."
+msgstr ""
+
+#: ../../source/screens.rst:67
+msgid ""
+"Screen parameters (that is, values defined and passed through the "
+"parentheses of the screen statement) live in the same scope as screen "
+"variables (that is, they can't have the same name), but they can't be set or "
+"edited through actions, since they will be reset to their original value at "
+"arbitrary times, including every time an action is executed. So, if their "
+"value were edited through the :class:`SetScreenVariable` action (or any "
+"other action really), it would be reset immediately afterwards. This is also "
+"the case for variables defined in in-screen python blocks, since these "
+"blocks are executed at arbitrary times, as opposed to the in-screen :ref:"
+"`default <sl-default>` statement which executes only at the time the screen "
+"gets shown."
+msgstr ""
+
+#: ../../source/screens.rst:77
+msgid ""
+"In last resort, a variable name is looked for in the general store, where "
+"all of Ren'Py's global variables are. Such variables can be set through the :"
+"class:`SetVariable` action, among others."
+msgstr ""
+
+#: ../../source/screens.rst:82
+msgid ""
+"If you want an action to set a variable inside a screen, and you want that "
+"screen to be sometimes shown directly and sometimes used inside another, "
+"use :class:`SetLocalVariable`. It will be far less efficient, but it will "
+"work in both cases."
+msgstr ""
+
+#: ../../source/screens.rst:86
 msgid ""
 "**Screens must not cause side effects that are visible from outside the "
 "screen.** Ren'Py will run a screen multiple times, as it deems necessary. It "
@@ -137,7 +200,7 @@ msgstr ""
 "リーンのコードを実行します。結果としてスクリーンのコードが副作用を持つなら、"
 "それが何回実行されるかはわかりません。"
 
-#: ../../source/screens.rst:59
+#: ../../source/screens.rst:93
 msgid ""
 "**Using Python generators in screens may cause unpredictable results.** This "
 "traces back to an issue with the way the Python interpreter compiles Python "
@@ -149,11 +212,11 @@ msgstr ""
 "コードをコンパイルする方法による問題に由来します。スクリーンから呼び出される "
 "Python 関数ではジェネレーターは使用可能ですが、スクリーン自体ではできません。"
 
-#: ../../source/screens.rst:68
+#: ../../source/screens.rst:102
 msgid "Screen Language"
 msgstr "スクリーン言語"
 
-#: ../../source/screens.rst:70
+#: ../../source/screens.rst:104
 msgid ""
 "The screen language is a mostly-declarative way of displaying screens. It "
 "consists of a statement that declares a new screen, statements that add "
@@ -163,11 +226,11 @@ msgstr ""
 "displayable の宣言、スクリーンへの  displayable の追加、ステートメントを制御"
 "するステートメントで構成されます。"
 
-#: ../../source/screens.rst:75
+#: ../../source/screens.rst:109
 msgid "Here's an example of a screen::"
 msgstr "ここにスクリーンの例があります。 ::"
 
-#: ../../source/screens.rst:85
+#: ../../source/screens.rst:119
 msgid ""
 "The first line of this is a screen statement, a Ren'Py language statement "
 "that's used to declare a screen. The name of the screen is `say`, so this is "
@@ -179,7 +242,7 @@ msgstr ""
 "するために使用されるスクリーンです。 2 つのパラメーター `who`, `what` を受け"
 "取ります。"
 
-#: ../../source/screens.rst:90
+#: ../../source/screens.rst:124
 msgid ""
 "The screen contains a window, which has been given the id of \"window\". "
 "This window contains a vertical box, and the spacing inside that box is 10 "
@@ -191,11 +254,11 @@ msgstr ""
 "つのテキスト用の領域があり、一つは話し手の名前、もう一つは話している内容を表"
 "示するものです。"
 
-#: ../../source/screens.rst:96
+#: ../../source/screens.rst:130
 msgid "Screen Language Syntax"
 msgstr "スクリーン言語の構文"
 
-#: ../../source/screens.rst:98
+#: ../../source/screens.rst:132
 msgid ""
 "Most screen language statements share a common syntax. (Some of the control "
 "statements have other syntaxes.)  A statement starts at the beginning of a "
@@ -205,7 +268,7 @@ msgstr ""
 "かは違う構文を持ちますが )。 ステートメントはステートメントを導入するキーワー"
 "ドで行の最初から始まります。"
 
-#: ../../source/screens.rst:102
+#: ../../source/screens.rst:136
 msgid ""
 "If a statement takes parameters, they immediately follow the keyword. The "
 "parameters are space-separated simple expressions, unless otherwise noted."
@@ -213,7 +276,7 @@ msgstr ""
 "ステートメントがパラメーターを受け取るなら、キーワードの直後に続きます。パラ"
 "メーターはスペースで区切られた単純式で、そうでないなら記載します。"
 
-#: ../../source/screens.rst:106
+#: ../../source/screens.rst:140
 msgid ""
 "The positional parameters are followed by a property list. A property "
 "consists of the property name, followed by the value of that property. "
@@ -225,7 +288,7 @@ msgstr ""
 "は特に記載がなければ単純式です。プロパティーリストはスペースで区切られた一連"
 "のプロパティーです。"
 
-#: ../../source/screens.rst:111
+#: ../../source/screens.rst:145
 msgid ""
 "If a statement ends with a colon ``:``, then it takes a block. Each line in "
 "a block may be one of two things:"
@@ -233,19 +296,19 @@ msgstr ""
 "ステートメントがコロン ``:`` で終るとその後にブロックが続きます。ブロックの各"
 "行は以下の二つのどちらかです。 :"
 
-#: ../../source/screens.rst:114
+#: ../../source/screens.rst:148
 msgid "A property list."
 msgstr "プロパティーリスト"
 
-#: ../../source/screens.rst:115
+#: ../../source/screens.rst:149
 msgid "A screen language statement."
 msgstr "スクリーン言語のステートメント"
 
-#: ../../source/screens.rst:120
+#: ../../source/screens.rst:154
 msgid "Screen Statement"
 msgstr "screen ステートメント"
 
-#: ../../source/screens.rst:122
+#: ../../source/screens.rst:156
 msgid ""
 "The ``screen`` statement is a Ren'Py script language statement that is used "
 "to declare a new screen. It is parsed using the screen language common "
@@ -254,7 +317,7 @@ msgstr ""
 "`screen` ステートメントは新しいスクリーンを宣言するための Ren'Py のスクリプト"
 "言語の一つで、スクリーン言語共通の文法で解釈されます。"
 
-#: ../../source/screens.rst:126
+#: ../../source/screens.rst:160
 msgid ""
 "It takes one parameter, the name of the screen. This is a name, not an "
 "expression. It takes the following properties:"
@@ -262,12 +325,12 @@ msgstr ""
 "パラメーターを一つ受け取り、それはスクリーンの名前です。これは名前であって、"
 "式ではありません。以下のプロパティーも受け取ります。 :"
 
-#: ../../source/screens.rst:133 ../../source/screens.rst:460
-#: ../../source/screens.rst:1221
+#: ../../source/screens.rst:167 ../../source/screens.rst:513
+#: ../../source/screens.rst:1281
 msgid "`modal`"
 msgstr "`modal`"
 
-#: ../../source/screens.rst:130
+#: ../../source/screens.rst:164
 msgid ""
 "If True, the screen is modal. A modal screen prevents the user from "
 "interacting with displayables below it, except for the default keymap. This "
@@ -277,13 +340,13 @@ msgstr ""
 "マップを除いて、ユーザーがその下にある displayable に作用できないようにしま"
 "す。これはゲーム開始時に一度評価されます。"
 
-#: ../../source/screens.rst:137 ../../source/screens.rst:411
-#: ../../source/screens.rst:682 ../../source/screens.rst:1165
-#: ../../source/screens.rst:1650
+#: ../../source/screens.rst:171 ../../source/screens.rst:464
+#: ../../source/screens.rst:737 ../../source/screens.rst:1225
+#: ../../source/screens.rst:1711
 msgid "`sensitive`"
 msgstr "`sensitive`"
 
-#: ../../source/screens.rst:136
+#: ../../source/screens.rst:170
 msgid ""
 "An expression that determines whether the screen is sensitive or not. This "
 "expression is evaluated at least once per interaction."
@@ -291,11 +354,11 @@ msgstr ""
 "ボタンが有効かどうかを決定する式です。この式はインテラクション毎に少なくとも"
 "一回評価されます。 "
 
-#: ../../source/screens.rst:143
+#: ../../source/screens.rst:177
 msgid "`tag`"
 msgstr "`tag`"
 
-#: ../../source/screens.rst:140
+#: ../../source/screens.rst:174
 msgid ""
 "Parsed as a name, not an expression. This specifies a tag associated with "
 "this screen. Showing a screen replaces other screens with the same tag. This "
@@ -307,11 +370,11 @@ msgstr ""
 "使用して一つのコンテキストには同時に一つのメニューのスクリーンのみが表示され"
 "るようにできます。"
 
-#: ../../source/screens.rst:148
+#: ../../source/screens.rst:182
 msgid "`zorder`"
 msgstr "`zorder`"
 
-#: ../../source/screens.rst:146
+#: ../../source/screens.rst:180
 msgid ""
 "This controls how close to the user a screen is displayed. The larger the "
 "number, the closer the screen is displayed to the user. It defaults to 0."
@@ -319,11 +382,11 @@ msgstr ""
 "これはスクリーンがどれぐらいユーザーに近いかを制御します。数字が大きいほどス"
 "クリーンはユーザーの近くに表示されます。デフォルトでは 0 です。"
 
-#: ../../source/screens.rst:152
+#: ../../source/screens.rst:186
 msgid "`variant`"
 msgstr "`variant`"
 
-#: ../../source/screens.rst:151
+#: ../../source/screens.rst:185
 msgid ""
 "If present, this should be a string or list of strings giving the variant of "
 "screen to be defined. See :ref:`screen-variants`."
@@ -331,11 +394,11 @@ msgstr ""
 "与えられるならこれは定義されるスクリーン variant 名の文字列または文字列のリス"
 "トです。 :ref:`screen-variants` を参照してください。"
 
-#: ../../source/screens.rst:156 ../../source/screens.rst:272
+#: ../../source/screens.rst:190 ../../source/screens.rst:325
 msgid "`style_prefix`"
 msgstr "`style_prefix`"
 
-#: ../../source/screens.rst:155
+#: ../../source/screens.rst:189
 msgid ""
 "A string that's used to provide a prefix for the style for the children of "
 "this screen, as :ref:`described below <style-prefix>`."
@@ -343,20 +406,20 @@ msgstr ""
 ":ref:`後述のように <style-prefix>` このスクリーンの子のスタイルに接頭辞を与え"
 "る文字列です。"
 
-#: ../../source/screens.rst:160
+#: ../../source/screens.rst:194
 msgid "`layer`"
 msgstr "`layer`"
 
-#: ../../source/screens.rst:159
+#: ../../source/screens.rst:193
 msgid ""
 "A string giving the name of the layer the screen is shown on by default."
 msgstr "そのスクリーンが表示されるデフォルトのレイヤー名の文字列です。"
 
-#: ../../source/screens.rst:172
+#: ../../source/screens.rst:206
 msgid "`roll_forward`"
 msgstr "`roll_forward`"
 
-#: ../../source/screens.rst:163
+#: ../../source/screens.rst:197
 msgid ""
 "If true, roll forward will be enabled when the screen is used in a ``call "
 "screen`` statement. If false, roll forward is disabled, and if None or not "
@@ -366,7 +429,7 @@ msgstr ""
 "ロールフォワードが有効化されます。 False なら無効、 None または未指定ならば :"
 "var:`config.call_screen_roll_forward` の値が使用されます。"
 
-#: ../../source/screens.rst:168
+#: ../../source/screens.rst:202
 msgid ""
 "When roll forwarding from a ``call screen`` statement, return values and "
 "terminal jumps are preserved, but other side effects will not occur. This "
@@ -380,11 +443,11 @@ msgstr ""
 "`roll_forward` を有効しても安全です。その他のアクションは副作用を持つかもしれ"
 "ませんが、 `roll_forward` 中は発生しません。"
 
-#: ../../source/screens.rst:183
+#: ../../source/screens.rst:217
 msgid "A screen can take a parameter list::"
 msgstr "スクリーンはパラメーターリストも受け取れます。 ::"
 
-#: ../../source/screens.rst:188
+#: ../../source/screens.rst:222
 msgid ""
 "If a screen has no parameters, it still should be given empty parentheses. "
 "If any other screen ``use``\\ s a screen with no parentheses, the difference "
@@ -401,11 +464,11 @@ msgstr ""
 "で動作する方法において、純粋に非効率になります。パラメータに関する :doc:`スク"
 "リーン言語の最適化 <screen_optimization>` セクションを参照してください。"
 
-#: ../../source/screens.rst:199
+#: ../../source/screens.rst:233
 msgid "User Interface Statements"
 msgstr "ユーザーインターフェイス・ステートメント"
 
-#: ../../source/screens.rst:201
+#: ../../source/screens.rst:235
 msgid ""
 "The user interface statements create displayables and add them either to the "
 "screen, or to an enclosing displayable. They allow the user to display "
@@ -416,17 +479,17 @@ msgstr ""
 "ンか、これを含めるdisplayable に追加します。ユーザーに情報を表示してゲームに"
 "作用したり、ゲームが様々なイベントに反応できるようにします。"
 
-#: ../../source/screens.rst:208
+#: ../../source/screens.rst:242
 msgid "All user interface statements take the following common properties:"
 msgstr ""
 "すべてのユーザーインターフェイスステートメントは以下の共通のプロパティーを受"
 "け取ります。 :"
 
-#: ../../source/screens.rst:232
+#: ../../source/screens.rst:279
 msgid "`at`"
 msgstr "`at`"
 
-#: ../../source/screens.rst:211
+#: ../../source/screens.rst:245
 msgid ""
 "This can be a transform, or a list of transforms, or an anonymous transform "
 "(a transform that is defined directly in at) ::"
@@ -434,7 +497,7 @@ msgstr ""
 "これは transform または transform のリスト、無名の transform ( at 節で直接定"
 "義された transform )です。 ::"
 
-#: ../../source/screens.rst:225
+#: ../../source/screens.rst:258
 msgid ""
 "This transforms are used to wrap this displayable. The show, hide, replace, "
 "and replaced external events are delivered to a transform if and only if it "
@@ -444,7 +507,7 @@ msgstr ""
 "replace, replaced の外部イベントは直接スクリーンに加えられた場合のみ が"
 "transform に送られます。"
 
-#: ../../source/screens.rst:229
+#: ../../source/screens.rst:262
 msgid ""
 "For example, if a vbox is wrapped in a transform, and added directly to the "
 "screen, then events are delivered to that transform. But if a transform "
@@ -456,11 +519,17 @@ msgstr ""
 "るテキストボタンに適用されていると、この第二の transform にはイベントが送られ"
 "ません。"
 
-#: ../../source/screens.rst:240
+#: ../../source/screens.rst:267
+msgid ""
+"It's possible for a single statement to have both an `at` property and an "
+"``at transform``. The property must come first, and is applied first. ::"
+msgstr ""
+
+#: ../../source/screens.rst:287
 msgid "`default_focus`"
 msgstr "`default_focus`"
 
-#: ../../source/screens.rst:235
+#: ../../source/screens.rst:282
 msgid ""
 "If given and true, the displayable is focused by default. When multiple "
 "displayables have this, the values are compared and the displayable with the "
@@ -470,7 +539,7 @@ msgstr ""
 "す。複数の displayable がこれを持つときは、その値が比較されて最大のものをも"
 "つ displayable がデフォルトフォーカスを持ちます。"
 
-#: ../../source/screens.rst:239
+#: ../../source/screens.rst:286
 msgid ""
 "The default focus is only used when the last interaction was not a mouse "
 "click, mouse movement, or touch."
@@ -478,11 +547,11 @@ msgstr ""
 "デフォルトフォーカスは最後のインタラクションがマウスクリックやマウスの動き、"
 "タッチでないときのみ使用されます。"
 
-#: ../../source/screens.rst:248
+#: ../../source/screens.rst:295
 msgid "`id`"
 msgstr "`id`"
 
-#: ../../source/screens.rst:243
+#: ../../source/screens.rst:290
 msgid ""
 "An identifier for the user-interface statement. When a screen is shown, "
 "property values can be supplied for the displayables with a given "
@@ -493,15 +562,28 @@ msgstr ""
 "ときに指定された id を持つ displayable に適切な値が提供されます。いくつかのス"
 "クリーンでは指定された id を持つ displayable 作成が必要とされます。"
 
-#: ../../source/screens.rst:248
+#: ../../source/screens.rst:295
 msgid "By default, the ``id`` is automatically-generated."
 msgstr "デフォルトでは ``id`` は自動的に生成されます。"
 
-#: ../../source/screens.rst:252
+#: ../../source/screens.rst:301
+#, fuzzy
+msgid "`prefer_screen_to_id`"
+msgstr "`prefer_top`"
+
+#: ../../source/screens.rst:298
+msgid ""
+"If true, when a property is provided by both the the screen and a displayble "
+"identifier, the screen property is used. If false, the default, the "
+"displayable property is used. (This can be used to decide if the screen "
+"overrides properties set by a Character.)"
+msgstr ""
+
+#: ../../source/screens.rst:305
 msgid "`style`"
 msgstr "`style`"
 
-#: ../../source/screens.rst:251
+#: ../../source/screens.rst:304
 msgid ""
 "A string giving the name of the style applied to this displayable. The style "
 "gives default values for style properties."
@@ -509,7 +591,7 @@ msgstr ""
 "この displayable に適用されるスタイルの名前です。そのスタイルはスタイルプロパ"
 "ティーにデフォルトの値を与えます。"
 
-#: ../../source/screens.rst:257
+#: ../../source/screens.rst:310
 msgid ""
 "Provides a prefix to the style of this displayable and all of its children, "
 "unless those children have a more specific style or style prefix set."
@@ -517,7 +599,7 @@ msgstr ""
 "より限定的なスタイルやスタイル接頭辞がこの displayable とその子になければ、そ"
 "のすべての子のスタイルに接頭辞を与えます"
 
-#: ../../source/screens.rst:261
+#: ../../source/screens.rst:314
 msgid ""
 "The style name is created by concatenating a style prefix, underscore, and a "
 "style suffix. The style suffix is either specified using `style_suffix`, or "
@@ -527,7 +609,7 @@ msgstr ""
 "す。スタイル接尾辞は `style_suffix` から指定されるか、 displayable によって決"
 "定されます。"
 
-#: ../../source/screens.rst:265
+#: ../../source/screens.rst:318
 msgid ""
 "For example, if a vbox has a style prefix of ``\"pref\"``, the vbox will be "
 "given the style ``\"pref_vbox\"``. Unless a more specific style or style "
@@ -538,7 +620,7 @@ msgstr ""
 "「 pref_vbox 」が指定されます。より限定的なスタイルやスタイル接頭辞が指定され"
 "ていなければ、その vbox 内のボタンはスタイル「 pref_button 」を持ちます。"
 
-#: ../../source/screens.rst:270
+#: ../../source/screens.rst:323
 msgid ""
 "Styles accessed in this way are automatically created, if the style does not "
 "exist. Setting a prefix of ``None`` removes the prefix from this displayable "
@@ -547,20 +629,20 @@ msgstr ""
 "このようにアクセスされるスタイルは、もしなければ作成されます。接頭辞を "
 "``None`` に設定するとこの displayable とその子から接頭辞がなくなります。"
 
-#: ../../source/screens.rst:275
+#: ../../source/screens.rst:328
 msgid "`style_group`"
 msgstr "`style_group`"
 
-#: ../../source/screens.rst:275
+#: ../../source/screens.rst:328
 msgid "An alias for `style_prefix`, used in older versions of Ren'Py."
 msgstr ""
 "`style_prefix` のエイリアスで、古いバージョンの Ren'Py で使用されます。"
 
-#: ../../source/screens.rst:285
+#: ../../source/screens.rst:338
 msgid "`style_suffix`"
 msgstr "`style_suffix`"
 
-#: ../../source/screens.rst:278
+#: ../../source/screens.rst:331
 msgid ""
 "Specifies the suffix that is combined with the `style_prefix` to generate a "
 "style name. If this is ``\"small_button\"`` and the style prefix is ``\"pref"
@@ -570,7 +652,7 @@ msgstr ""
 "\"small_button\"`` でスタイル接頭辞が ``\"pref\"`` なら、スタイルは ``"
 "\"pref_small_button\"`` が使用されます。"
 
-#: ../../source/screens.rst:283
+#: ../../source/screens.rst:336
 msgid ""
 "If no style prefix is in use, this is used directly as the name of the "
 "style. A style suffix applies to a single displayable only, not a "
@@ -579,11 +661,11 @@ msgstr ""
 "スタイル接頭辞がなければ、これはスタイル名が直接使用されます。スタイル接尾辞"
 "は単独の displayable のみに適用され、 displayable の子には適用されません。"
 
-#: ../../source/screens.rst:294 ../../source/screens.rst:947
+#: ../../source/screens.rst:347 ../../source/screens.rst:1007
 msgid "`focus`"
 msgstr "`focus`"
 
-#: ../../source/screens.rst:288
+#: ../../source/screens.rst:341
 msgid ""
 "Takes a string or integer, and gives a name to the displayable for focus "
 "purposes. Ren'Py looks for structural similarity between focus names when "
@@ -599,11 +681,11 @@ msgstr ""
 "を所得していれば、同じフォーカス名を持つ box の三つ目のボタンが次のインタラク"
 "ションの開始時にハイライトされるます。"
 
-#: ../../source/screens.rst:303
+#: ../../source/screens.rst:356
 msgid "`tooltip`"
 msgstr "`tooltip`"
 
-#: ../../source/screens.rst:297
+#: ../../source/screens.rst:350
 msgid ""
 "Assigns a tooltip to this displayable. When the displayable gains focus, the "
 "value of this property will be made available from the :func:`GetTooltip` "
@@ -613,7 +695,7 @@ msgstr ""
 "のプロパティーの値が :func:`GetTooltip` 関数から利用可能になります。詳細は :"
 "ref:`tooltips` を参照してください。"
 
-#: ../../source/screens.rst:302
+#: ../../source/screens.rst:355
 msgid ""
 "Objects passed to tooltip must support equality. If equality is not "
 "supported, an infinite loop may occur."
@@ -621,25 +703,25 @@ msgstr ""
 "tooltip に渡されるオブジェクトは等号をサポートしなければなりません。そうでな"
 "ければ、無限ループが発生します。"
 
-#: ../../source/screens.rst:307
+#: ../../source/screens.rst:360
 msgid "`arguments`"
 msgstr "`arguments`"
 
-#: ../../source/screens.rst:306
+#: ../../source/screens.rst:359
 msgid ""
 "A tuple or list containing additional positional arguments that are given to "
 "the displayable."
 msgstr "displayable に与えられる追加の位置引数のタプルやリストです。"
 
-#: ../../source/screens.rst:311
+#: ../../source/screens.rst:364
 msgid "`properties`"
 msgstr "`properties`"
 
-#: ../../source/screens.rst:310
+#: ../../source/screens.rst:363
 msgid "A dictionary containing additional properties given to the displayable."
 msgstr "displayable に与えられる追加のプロパティーを含む辞書です。"
 
-#: ../../source/screens.rst:313
+#: ../../source/screens.rst:366
 msgid ""
 "Many user interface statements take classes of style properties, or "
 "transform properties. These properties can have a style prefix associated "
@@ -652,7 +734,7 @@ msgstr ""
 "トに ``hover_size`` プロパティーが与えられるとそれはテキストの上にマウスがあ"
 "るときのテキストの大きさを設定します"
 
-#: ../../source/screens.rst:319
+#: ../../source/screens.rst:372
 msgid ""
 "User interface statements take an ``as`` clause, which takes a variable "
 "name, without any quotes. The displayable that the statement creates is "
@@ -664,11 +746,11 @@ msgstr ""
 "入されます(:ref:`the drag and drop documentation <as-example>` で例が見られま"
 "す)。"
 
-#: ../../source/screens.rst:327
+#: ../../source/screens.rst:380
 msgid "Bar"
 msgstr "Bar"
 
-#: ../../source/screens.rst:329
+#: ../../source/screens.rst:382
 msgid ""
 "Creates a horizontally-oriented bar that can be used to view or adjust data. "
 "It takes the following properties:"
@@ -676,12 +758,12 @@ msgstr ""
 "データを閲覧したり調整するための水平方向のバーを作成します。以下のプロパ"
 "ティーを受け取ります。"
 
-#: ../../source/screens.rst:334 ../../source/screens.rst:732
-#: ../../source/screens.rst:1684
+#: ../../source/screens.rst:387 ../../source/screens.rst:787
+#: ../../source/screens.rst:1745
 msgid "`value`"
 msgstr "`value`"
 
-#: ../../source/screens.rst:333
+#: ../../source/screens.rst:386
 msgid ""
 "The current value of the bar. This can be either a :ref:`bar value <bar-"
 "values>` object, or a number."
@@ -689,27 +771,28 @@ msgstr ""
 "バーの現在の値です。これは :ref:`bar value <bar-values>` オブジェクトか数字に"
 "なります。"
 
-#: ../../source/screens.rst:338 ../../source/screens.rst:1688
+#: ../../source/screens.rst:391 ../../source/screens.rst:1749
 msgid "`range`"
 msgstr "`range`"
 
-#: ../../source/screens.rst:337 ../../source/screens.rst:1687
+#: ../../source/screens.rst:390 ../../source/screens.rst:1748
 msgid "The maximum value of the bar. This is required if `value` is a number."
 msgstr "バーの最大値です。これは `value` が数字なら必要です。"
 
-#: ../../source/screens.rst:341 ../../source/screens.rst:1691
+#: ../../source/screens.rst:394 ../../source/screens.rst:1752
 msgid "`adjustment`"
 msgstr "`adjustment`"
 
-#: ../../source/screens.rst:341 ../../source/screens.rst:1691
+#: ../../source/screens.rst:394 ../../source/screens.rst:1752
 msgid "A :func:`ui.adjustment` object that this bar adjusts."
 msgstr "このバーを調整する :func:`ui.adjustment` オブジェクトです。"
 
-#: ../../source/screens.rst:345 ../../source/screens.rst:764
+#: ../../source/screens.rst:398 ../../source/screens.rst:819
+#: ../../source/screens.rst:1829
 msgid "`changed`"
 msgstr "`changed`"
 
-#: ../../source/screens.rst:344
+#: ../../source/screens.rst:397
 msgid ""
 "If given, this should be a Python function. The function is called with the "
 "value of the adjustment when the adjustment is changed."
@@ -717,31 +800,31 @@ msgstr ""
 "与えるならこれは python 関数であるべきです。関数は adjustment が変更されると"
 "その adjustment の value を引数に呼び出されます。"
 
-#: ../../source/screens.rst:348 ../../source/screens.rst:398
-#: ../../source/screens.rst:669 ../../source/screens.rst:878
-#: ../../source/screens.rst:1152 ../../source/screens.rst:1637
+#: ../../source/screens.rst:401 ../../source/screens.rst:451
+#: ../../source/screens.rst:724 ../../source/screens.rst:938
+#: ../../source/screens.rst:1212 ../../source/screens.rst:1698
 msgid "`hovered`"
 msgstr "`hovered`"
 
-#: ../../source/screens.rst:348
+#: ../../source/screens.rst:401
 msgid "An action to run when the bar gains focus."
 msgstr "バーがフォーカスを所得したときのアクションです。"
 
-#: ../../source/screens.rst:351 ../../source/screens.rst:401
-#: ../../source/screens.rst:672 ../../source/screens.rst:881
-#: ../../source/screens.rst:1155 ../../source/screens.rst:1640
+#: ../../source/screens.rst:404 ../../source/screens.rst:454
+#: ../../source/screens.rst:727 ../../source/screens.rst:941
+#: ../../source/screens.rst:1215 ../../source/screens.rst:1701
 msgid "`unhovered`"
 msgstr "`unhovered`"
 
-#: ../../source/screens.rst:351
+#: ../../source/screens.rst:404
 msgid "An action to run when the bar loses focus."
 msgstr "バーがフォーカスを失うときのアクションです。"
 
-#: ../../source/screens.rst:355
+#: ../../source/screens.rst:408
 msgid "`released`"
 msgstr "`released`"
 
-#: ../../source/screens.rst:354
+#: ../../source/screens.rst:407
 msgid ""
 "An action to run when the bar button is released. This will be invoked even "
 "if the bar has not changed its value."
@@ -749,7 +832,7 @@ msgstr ""
 "バーが離されると実行されるアクションです。これはバーが変化していなくても実行"
 "されます。"
 
-#: ../../source/screens.rst:357 ../../source/screens.rst:1693
+#: ../../source/screens.rst:410 ../../source/screens.rst:1754
 msgid ""
 "One of `value` or `adjustment` must be given. In addition, this function "
 "takes:"
@@ -757,47 +840,49 @@ msgstr ""
 "`value` か `adjustment` のどちらかは与えられなければなりません。さらにこの機"
 "能は以下を受け取ります。 :"
 
-#: ../../source/screens.rst:360 ../../source/screens.rst:423
-#: ../../source/screens.rst:464 ../../source/screens.rst:507
-#: ../../source/screens.rst:536 ../../source/screens.rst:576
-#: ../../source/screens.rst:604 ../../source/screens.rst:694
-#: ../../source/screens.rst:777 ../../source/screens.rst:849
-#: ../../source/screens.rst:891 ../../source/screens.rst:954
-#: ../../source/screens.rst:1052 ../../source/screens.rst:1088
-#: ../../source/screens.rst:1120 ../../source/screens.rst:1186
-#: ../../source/screens.rst:1242 ../../source/screens.rst:1276
-#: ../../source/screens.rst:1401 ../../source/screens.rst:1460
-#: ../../source/screens.rst:1502 ../../source/screens.rst:1608
-#: ../../source/screens.rst:1662 ../../source/screens.rst:1696
+#: ../../source/screens.rst:413 ../../source/screens.rst:476
+#: ../../source/screens.rst:517 ../../source/screens.rst:560
+#: ../../source/screens.rst:589 ../../source/screens.rst:631
+#: ../../source/screens.rst:659 ../../source/screens.rst:749
+#: ../../source/screens.rst:837 ../../source/screens.rst:909
+#: ../../source/screens.rst:951 ../../source/screens.rst:1014
+#: ../../source/screens.rst:1112 ../../source/screens.rst:1148
+#: ../../source/screens.rst:1180 ../../source/screens.rst:1246
+#: ../../source/screens.rst:1302 ../../source/screens.rst:1336
+#: ../../source/screens.rst:1461 ../../source/screens.rst:1521
+#: ../../source/screens.rst:1563 ../../source/screens.rst:1669
+#: ../../source/screens.rst:1723 ../../source/screens.rst:1757
+#: ../../source/screens.rst:1842 ../../source/screens.rst:1856
+#: ../../source/screens.rst:1870
 msgid ":ref:`Common Properties <common-properties>`"
 msgstr ":ref:`共通のプロパティー <common-properties>`"
 
-#: ../../source/screens.rst:361 ../../source/screens.rst:424
-#: ../../source/screens.rst:508 ../../source/screens.rst:537
-#: ../../source/screens.rst:577 ../../source/screens.rst:605
-#: ../../source/screens.rst:695 ../../source/screens.rst:778
-#: ../../source/screens.rst:850 ../../source/screens.rst:892
-#: ../../source/screens.rst:955 ../../source/screens.rst:1053
-#: ../../source/screens.rst:1089 ../../source/screens.rst:1121
-#: ../../source/screens.rst:1187 ../../source/screens.rst:1277
-#: ../../source/screens.rst:1402 ../../source/screens.rst:1461
-#: ../../source/screens.rst:1503 ../../source/screens.rst:1609
+#: ../../source/screens.rst:414 ../../source/screens.rst:477
+#: ../../source/screens.rst:561 ../../source/screens.rst:590
+#: ../../source/screens.rst:632 ../../source/screens.rst:660
+#: ../../source/screens.rst:750 ../../source/screens.rst:838
+#: ../../source/screens.rst:910 ../../source/screens.rst:952
+#: ../../source/screens.rst:1015 ../../source/screens.rst:1113
+#: ../../source/screens.rst:1149 ../../source/screens.rst:1181
+#: ../../source/screens.rst:1247 ../../source/screens.rst:1337
+#: ../../source/screens.rst:1462 ../../source/screens.rst:1522
+#: ../../source/screens.rst:1564 ../../source/screens.rst:1670
 msgid ":ref:`position-style-properties`"
 msgstr ":ref:`position-style-properties`"
 
-#: ../../source/screens.rst:362 ../../source/screens.rst:1697
+#: ../../source/screens.rst:415 ../../source/screens.rst:1758
 msgid ":ref:`bar-style-properties`"
 msgstr ":ref:`bar-style-properties`"
 
-#: ../../source/screens.rst:364 ../../source/screens.rst:1699
+#: ../../source/screens.rst:417 ../../source/screens.rst:1760
 msgid "This does not take children."
 msgstr "これは子は受け取りません。"
 
-#: ../../source/screens.rst:379
+#: ../../source/screens.rst:432
 msgid "Button"
 msgstr "Button"
 
-#: ../../source/screens.rst:381
+#: ../../source/screens.rst:434
 msgid ""
 "Creates an area of the screen that can be activated to run an action. A "
 "button takes no parameters, and the following properties."
@@ -805,32 +890,33 @@ msgstr ""
 "スクリーンのあるエリアを、アクティベートしてアクションを実行できるようにしま"
 "す。ボタンはパラメーターを受け取らず以下のプロパティーを受け取ります。"
 
-#: ../../source/screens.rst:389 ../../source/screens.rst:450
-#: ../../source/screens.rst:660 ../../source/screens.rst:808
-#: ../../source/screens.rst:1143 ../../source/screens.rst:1212
-#: ../../source/screens.rst:1628
+#: ../../source/screens.rst:442 ../../source/screens.rst:503
+#: ../../source/screens.rst:715 ../../source/screens.rst:868
+#: ../../source/screens.rst:1203 ../../source/screens.rst:1272
+#: ../../source/screens.rst:1689
 msgid "`action`"
 msgstr "`action`"
 
-#: ../../source/screens.rst:385
+#: ../../source/screens.rst:438
+#, fuzzy
 msgid ""
 "The action to run when the button is activated. A button is activated when "
 "it is clicked, or when the player selects it and hits enter on the keyboard. "
-"This also controls if the button is sensitive if `sensitive` is not "
-"provided, and if the button is selected if `selected` is not provided."
+"This also controls if the button is sensitive if `sensitive` is not provided "
+"or None, and if the button is selected if `selected` is not provided or None."
 msgstr ""
 "ボタンがアクティベートされると実行するアクションです。ボタンはクリックされる"
 "か、プレイヤーが選択してキーボードのエンターを押すかするとアクティベートされ"
 "ます。これは `sensitive` がなければボタンが有効かどうかの、 `selected` がなけ"
 "れば選択されているかどうかの制御もします。"
 
-#: ../../source/screens.rst:395 ../../source/screens.rst:666
-#: ../../source/screens.rst:1149 ../../source/screens.rst:1634
+#: ../../source/screens.rst:448 ../../source/screens.rst:721
+#: ../../source/screens.rst:1209 ../../source/screens.rst:1695
 msgid "`alternate`"
 msgstr "`alternate`"
 
-#: ../../source/screens.rst:392 ../../source/screens.rst:663
-#: ../../source/screens.rst:1146
+#: ../../source/screens.rst:445 ../../source/screens.rst:718
+#: ../../source/screens.rst:1206
 msgid ""
 "An action that is run if the button is activated in an alternate manner. "
 "Alternate activation occurs when the player right-clicks on the button on a "
@@ -841,50 +927,52 @@ msgstr ""
 "法はプレイヤーがマウスベースのプラットフォームでボタン上で右クリックするか、"
 "タッチベースのプラットフォームで長押しすると発生します。"
 
-#: ../../source/screens.rst:398 ../../source/screens.rst:669
-#: ../../source/screens.rst:1152 ../../source/screens.rst:1637
+#: ../../source/screens.rst:451 ../../source/screens.rst:724
+#: ../../source/screens.rst:1212 ../../source/screens.rst:1698
 msgid "An action to run when the button gains focus."
 msgstr "ボタンがフォーカスを所得するときのアクションです。"
 
-#: ../../source/screens.rst:401 ../../source/screens.rst:672
-#: ../../source/screens.rst:1155 ../../source/screens.rst:1640
+#: ../../source/screens.rst:454 ../../source/screens.rst:727
+#: ../../source/screens.rst:1215 ../../source/screens.rst:1701
 msgid "An action to run when the button loses focus."
 msgstr "ボタンがフォーカスを失うときのアクションです。"
 
-#: ../../source/screens.rst:406 ../../source/screens.rst:677
-#: ../../source/screens.rst:1160 ../../source/screens.rst:1645
+#: ../../source/screens.rst:459 ../../source/screens.rst:732
+#: ../../source/screens.rst:1220 ../../source/screens.rst:1706
 msgid "`selected`"
 msgstr "`selected`"
 
-#: ../../source/screens.rst:404 ../../source/screens.rst:675
-#: ../../source/screens.rst:1158 ../../source/screens.rst:1643
+#: ../../source/screens.rst:457 ../../source/screens.rst:730
+#: ../../source/screens.rst:1218 ../../source/screens.rst:1704
+#, fuzzy
 msgid ""
 "An expression that determines whether the button is selected or not. This "
-"expression is evaluated at least once per interaction. If not provided, the "
-"action will be used to determine selectedness."
+"expression is evaluated at least once per interaction. If not provided or "
+"None, the action will be used to determine selectedness."
 msgstr ""
 "ボタンが選択されているかどうかを決定する式です。この式はインテラクション毎に"
 "少なくとも一回評価されます。 指定されなければ、アクションが選択状態決定に使用"
 "されます。"
 
-#: ../../source/screens.rst:409 ../../source/screens.rst:680
-#: ../../source/screens.rst:1163 ../../source/screens.rst:1648
+#: ../../source/screens.rst:462 ../../source/screens.rst:735
+#: ../../source/screens.rst:1223 ../../source/screens.rst:1709
+#, fuzzy
 msgid ""
 "An expression that determines whether the button is sensitive or not. This "
-"expression is evaluated at least once per interaction. If not provided, the "
-"action will be used to determine sensitivity."
+"expression is evaluated at least once per interaction. If not provided or "
+"None, the action will be used to determine sensitivity."
 msgstr ""
 "ボタンが有効かどうかを決定する式です。この式はインテラクション毎に少なくとも"
 "一回評価されます。 指定されなければ、アクションが有効無効決定に使用されます。"
 
-#: ../../source/screens.rst:415 ../../source/screens.rst:455
-#: ../../source/screens.rst:686 ../../source/screens.rst:1169
-#: ../../source/screens.rst:1654
+#: ../../source/screens.rst:468 ../../source/screens.rst:508
+#: ../../source/screens.rst:741 ../../source/screens.rst:1229
+#: ../../source/screens.rst:1715
 msgid "`keysym`"
 msgstr "`keysym`"
 
-#: ../../source/screens.rst:414 ../../source/screens.rst:685
-#: ../../source/screens.rst:1168 ../../source/screens.rst:1653
+#: ../../source/screens.rst:467 ../../source/screens.rst:740
+#: ../../source/screens.rst:1228 ../../source/screens.rst:1714
 msgid ""
 "A string giving a :doc:`keysym <keymap>` describing a keyboard key that, "
 "when pressed, invokes the action of this button."
@@ -892,13 +980,13 @@ msgstr ""
 "押すとこのボタンのアクションを実行するキーボードのキーを表わす :doc:`キーシン"
 "ボル <keymap>` の文字列です。"
 
-#: ../../source/screens.rst:419 ../../source/screens.rst:690
-#: ../../source/screens.rst:1173 ../../source/screens.rst:1658
+#: ../../source/screens.rst:472 ../../source/screens.rst:745
+#: ../../source/screens.rst:1233 ../../source/screens.rst:1719
 msgid "`alternate_keysym`"
 msgstr "`alternate_keysym`"
 
-#: ../../source/screens.rst:418 ../../source/screens.rst:689
-#: ../../source/screens.rst:1172 ../../source/screens.rst:1657
+#: ../../source/screens.rst:471 ../../source/screens.rst:744
+#: ../../source/screens.rst:1232 ../../source/screens.rst:1718
 msgid ""
 "A string giving a :doc:`keysym <keymap>` describing a keyboard key that, "
 "when pressed, invokes the alternate action of this button."
@@ -906,27 +994,27 @@ msgstr ""
 "押すとこのボタンの代替アクションを実行するキーボードのキーを表わす :doc:"
 "`keysym <keymap>` の文字列です。"
 
-#: ../../source/screens.rst:421 ../../source/screens.rst:462
-#: ../../source/screens.rst:574 ../../source/screens.rst:692
-#: ../../source/screens.rst:775 ../../source/screens.rst:847
-#: ../../source/screens.rst:889 ../../source/screens.rst:952
-#: ../../source/screens.rst:1050 ../../source/screens.rst:1184
-#: ../../source/screens.rst:1660
+#: ../../source/screens.rst:474 ../../source/screens.rst:515
+#: ../../source/screens.rst:629 ../../source/screens.rst:747
+#: ../../source/screens.rst:835 ../../source/screens.rst:907
+#: ../../source/screens.rst:949 ../../source/screens.rst:1012
+#: ../../source/screens.rst:1110 ../../source/screens.rst:1244
+#: ../../source/screens.rst:1721
 msgid "It also takes:"
 msgstr "以下も受け取ります。 :"
 
-#: ../../source/screens.rst:425 ../../source/screens.rst:538
-#: ../../source/screens.rst:696 ../../source/screens.rst:851
-#: ../../source/screens.rst:1188 ../../source/screens.rst:1504
+#: ../../source/screens.rst:478 ../../source/screens.rst:591
+#: ../../source/screens.rst:751 ../../source/screens.rst:911
+#: ../../source/screens.rst:1248 ../../source/screens.rst:1565
 msgid ":ref:`window-style-properties`"
 msgstr ":ref:`window-style-properties`"
 
-#: ../../source/screens.rst:426 ../../source/screens.rst:697
-#: ../../source/screens.rst:1189 ../../source/screens.rst:1663
+#: ../../source/screens.rst:479 ../../source/screens.rst:752
+#: ../../source/screens.rst:1249 ../../source/screens.rst:1724
 msgid ":ref:`button-style-properties`"
 msgstr ":ref:`button-style-properties`"
 
-#: ../../source/screens.rst:428
+#: ../../source/screens.rst:481
 msgid ""
 "It takes one children. If zero, two, or more children are supplied, they are "
 "implicitly added to a fixed, which is added to the button."
@@ -934,11 +1022,11 @@ msgstr ""
 "これは子を一つ受け取ります。 ゼロまたは二つ以上の子が指定されるとそれらは暗黙"
 "のうちに fixed に追加され、それがボタンに追加されます。"
 
-#: ../../source/screens.rst:435
+#: ../../source/screens.rst:488
 msgid "Dismiss"
 msgstr "Dismiss"
 
-#: ../../source/screens.rst:437
+#: ../../source/screens.rst:490
 msgid ""
 "The dismiss statement creates the highly specialized dismiss displayable, "
 "which gains focus when no other displayable has focus, and runs an action "
@@ -950,7 +1038,7 @@ msgstr ""
 "ベートされたときにアクションを実行します。この点では、say ステートメントの動"
 "作と非常によく似ています。"
 
-#: ../../source/screens.rst:442
+#: ../../source/screens.rst:495
 msgid ""
 "This is rarely used, and mostly to allow a modal frame to be dismissed when "
 "the player clicks outside it, as might be the case with a popup window."
@@ -959,11 +1047,11 @@ msgstr ""
 "モーダルフレームの外側をクリックすると、モーダルフレームが解除されるようにす"
 "るために使用されます。"
 
-#: ../../source/screens.rst:446
+#: ../../source/screens.rst:499
 msgid "This takes the following properties:"
 msgstr "これは以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:449
+#: ../../source/screens.rst:502
 msgid ""
 "The action performed when the dismiss is activated. This property is "
 "required."
@@ -971,7 +1059,7 @@ msgstr ""
 "dismiss がアクティベートされたときに処理されるアクションです。このプロパ"
 "ティーは必ず必要です。"
 
-#: ../../source/screens.rst:453
+#: ../../source/screens.rst:506
 msgid ""
 "A string giving a :doc:`keysym <keymap>` describing a key that, when "
 "pressed, invokes the action of this dismiss. This replaces the default "
@@ -980,7 +1068,7 @@ msgstr ""
 "押すとこの dissmiss のアクションを実行するキーボードのキーを表わす :doc:`キー"
 "シンボル <keymap>` の文字列です。"
 
-#: ../../source/screens.rst:458
+#: ../../source/screens.rst:511
 msgid ""
 "By default, the dimiss is modal, preventing events from being processed by "
 "displayables \"behind\" it."
@@ -988,17 +1076,17 @@ msgstr ""
 "dimiss はデフォルトではモーダルであり、その「後ろ」の displayable によってイ"
 "ベントが処理されるのを防ぎます。"
 
-#: ../../source/screens.rst:465
+#: ../../source/screens.rst:518
 msgid ""
 "The :propref:`hover_sound` and :propref:`activate_sound` style properties."
 msgstr ""
 ":propref:`hover_sound` と :propref:`activate_sound` スタイルプロパティー"
 
-#: ../../source/screens.rst:467
+#: ../../source/screens.rst:520
 msgid "Here's an example of dismiss being used::"
 msgstr "ここに dismiss の使用例があります。 ::"
 
-#: ../../source/screens.rst:490
+#: ../../source/screens.rst:543
 msgid ""
 "See also how dismiss is used in conjuction with :ref:`nearrect <sl-"
 "nearrect>`."
@@ -1006,11 +1094,11 @@ msgstr ""
 "dismiss と :ref:`nearrect <sl-nearrect>` の組み合わせの使用方法も参照してくだ"
 "さい。"
 
-#: ../../source/screens.rst:495
+#: ../../source/screens.rst:548
 msgid "Fixed"
 msgstr "Fixed"
 
-#: ../../source/screens.rst:497
+#: ../../source/screens.rst:550
 msgid ""
 "This creates an area to which children can be added. By default, the fixed "
 "expands to fill the available area, but the :propref:`xmaximum` and :propref:"
@@ -1020,7 +1108,7 @@ msgstr ""
 "すべて使用しますが、 :propref:`xmaximum` や :propref:`ymaximum` プロパティー"
 "を使用すればこれを変更できます。"
 
-#: ../../source/screens.rst:501
+#: ../../source/screens.rst:554
 msgid ""
 "The children are laid out according to their position style properties. They "
 "can overlap if not positioned properly."
@@ -1028,7 +1116,7 @@ msgstr ""
 "子はそれぞれの位置スタイルプロパティーに従って配置されます。適切に位置が指定"
 "されていないと、これらは重なり合ってしまうかもしれません。"
 
-#: ../../source/screens.rst:504
+#: ../../source/screens.rst:557
 msgid ""
 "The fixed statement takes no parameters, and the following groups of "
 "properties:"
@@ -1036,15 +1124,15 @@ msgstr ""
 "fixed ステートメントはパラメーターは受け取らず、以下のプロパティーを受け取り"
 "ます。 :"
 
-#: ../../source/screens.rst:509 ../../source/screens.rst:1610
+#: ../../source/screens.rst:562 ../../source/screens.rst:1671
 msgid ":ref:`fixed-style-properties`"
 msgstr ":ref:`fixed-style-properties`"
 
-#: ../../source/screens.rst:511
+#: ../../source/screens.rst:564
 msgid "This takes any number of children, which are added to the fixed."
 msgstr "これは fixed に追加されるすべての子を受け取ります。"
 
-#: ../../source/screens.rst:513
+#: ../../source/screens.rst:566
 msgid ""
 "It's often unnecessary to explicitly create a fixed displayable. Each screen "
 "is contained within a fixed displayable, and many screen language statements "
@@ -1054,11 +1142,11 @@ msgstr ""
 "fixed displayable に含まれており、多くのスクリーン言語は二つ以上の子を持つと"
 "自動的に fixed を生成します。"
 
-#: ../../source/screens.rst:530
+#: ../../source/screens.rst:583
 msgid "Frame"
 msgstr "Frame"
 
-#: ../../source/screens.rst:532
+#: ../../source/screens.rst:585
 msgid ""
 "A frame is a window that contains a background that is intended for "
 "displaying user-interface elements like buttons, bars, and text. It takes "
@@ -1067,8 +1155,8 @@ msgstr ""
 "frame はユーザーインターフェイスを表示するための背景を含むウィンドウで、以下"
 "のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:540 ../../source/screens.rst:1404
-#: ../../source/screens.rst:1506
+#: ../../source/screens.rst:593 ../../source/screens.rst:1464
+#: ../../source/screens.rst:1567
 msgid ""
 "It takes one child. If zero, two, or more children are supplied, then a "
 "fixed is created to contain them."
@@ -1076,11 +1164,11 @@ msgstr ""
 "これは一つの子を受け取ります。 0 か 2 以上の子が指定されると、それらを含める"
 "ために fixed が作成されます。"
 
-#: ../../source/screens.rst:561
+#: ../../source/screens.rst:614
 msgid "Grid"
 msgstr "Grid"
 
-#: ../../source/screens.rst:563
+#: ../../source/screens.rst:616
 msgid ""
 "This displays its children in a grid. Each child is given an area of the "
 "same size, the size of the largest child."
@@ -1088,20 +1176,26 @@ msgstr ""
 "これはその子をグリッドに表示します。各子には最大のサイズの子と同じサイズの領"
 "域が与えられます。"
 
-#: ../../source/screens.rst:566
+#: ../../source/screens.rst:619
+#, fuzzy
 msgid ""
 "It takes two parameters. The first is the number of columns in the grid, and "
-"the second is the number of rows in the grid. It takes the following "
-"property:"
+"the second is the number of rows in the grid. If the grid is not full, the "
+"remaining cells are filled with the ``null`` displayable."
 msgstr ""
 "二つのパラメーターを受け取ります。最初の要素はグリッドの縦の列の数で、第二要"
 "素はグリッドの横の列の数です。以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:572 ../../source/screens.rst:1455
+#: ../../source/screens.rst:623
+#, fuzzy
+msgid "Grid takes one property:"
+msgstr "side は以下のプロパティーを受け取ります。 :"
+
+#: ../../source/screens.rst:627 ../../source/screens.rst:1516
 msgid "`transpose`"
 msgstr "`transpose`"
 
-#: ../../source/screens.rst:571
+#: ../../source/screens.rst:626
 msgid ""
 "If False (the default), rows are filled before columns. If True, then "
 "columns are filled before rows."
@@ -1109,11 +1203,11 @@ msgstr ""
 "デフォルトは False で、横の列が縦の列より先に埋められます。 True なら縦の列が"
 "横の列より先に埋められます。"
 
-#: ../../source/screens.rst:578 ../../source/screens.rst:1462
+#: ../../source/screens.rst:633 ../../source/screens.rst:1523
 msgid ":ref:`grid-style-properties`"
 msgstr ":ref:`grid-style-properties`"
 
-#: ../../source/screens.rst:580
+#: ../../source/screens.rst:635
 msgid ""
 "This must be given (columns * rows) children. Giving it a different number "
 "of children is an error."
@@ -1121,11 +1215,11 @@ msgstr ""
 "これには縦x横だけの子が指定される必要があり、違う数の子が指定されるとエラーに"
 "なります。"
 
-#: ../../source/screens.rst:599
+#: ../../source/screens.rst:654
 msgid "Hbox"
 msgstr "Hbox"
 
-#: ../../source/screens.rst:601
+#: ../../source/screens.rst:656
 msgid ""
 "This displays its children side by side, in an invisible horizontal box. It "
 "takes no parameters, and the following groups of properties:"
@@ -1133,19 +1227,19 @@ msgstr ""
 "これはその子を透明な横長の箱に左から見に並べて表示します。これはパラメーター"
 "を受け取らず、以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:606 ../../source/screens.rst:1278
+#: ../../source/screens.rst:661 ../../source/screens.rst:1338
 msgid ":ref:`box-style-properties`"
 msgstr ":ref:`box-style-properties`"
 
-#: ../../source/screens.rst:608 ../../source/screens.rst:1280
+#: ../../source/screens.rst:663 ../../source/screens.rst:1340
 msgid "UI displayable children are added to the box."
 msgstr "UI displayable の子はボックスに追加されます。"
 
-#: ../../source/screens.rst:621
+#: ../../source/screens.rst:676
 msgid "Imagebutton"
 msgstr "Imagebutton"
 
-#: ../../source/screens.rst:623
+#: ../../source/screens.rst:678
 msgid ""
 "Creates a button consisting of images, that change state when the user "
 "hovers over them. This takes no parameters, and the following properties:"
@@ -1153,11 +1247,11 @@ msgstr ""
 "その上にマウスがあると状態が変化する画像で構成されるボタンを作成します。これ"
 "はパラメーターを受け取らず、以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:640 ../../source/screens.rst:1572
+#: ../../source/screens.rst:695 ../../source/screens.rst:1633
 msgid "`auto`"
 msgstr "`auto`"
 
-#: ../../source/screens.rst:628
+#: ../../source/screens.rst:683
 msgid ""
 "Used to automatically define the images used by this button. This should be "
 "a string that contains %s in it. If it is, and one of the image properties "
@@ -1169,7 +1263,7 @@ msgstr ""
 "ていると %s をそのプロパティーの名前で置き換えて、その値をそのプロパティーの"
 "デフォルトとして使用します。"
 
-#: ../../source/screens.rst:634
+#: ../../source/screens.rst:689
 msgid ""
 "For example, if `auto` is \"button_%s.png\", and `idle` is omitted, then "
 "idle defaults to \"button_idle.png\". Similarly, if `auto` is \"button %s\", "
@@ -1179,7 +1273,7 @@ msgstr ""
 "トで \"button_idle.png\" になります。同様に `auto` が \"button %s\" なら "
 "``button idle`` 画像が使用されます。"
 
-#: ../../source/screens.rst:638 ../../source/screens.rst:1571
+#: ../../source/screens.rst:693 ../../source/screens.rst:1632
 msgid ""
 "The behavior of `auto` can be customized by changing :var:`config."
 "imagemap_auto_function`."
@@ -1187,65 +1281,66 @@ msgstr ""
 "`auto` の動作は :var:`config.imagemap_auto_function` を変更してカスタマイズで"
 "きます。"
 
-#: ../../source/screens.rst:643 ../../source/screens.rst:1579
+#: ../../source/screens.rst:698 ../../source/screens.rst:1640
 msgid "`insensitive`"
 msgstr "`insensitive`"
 
-#: ../../source/screens.rst:643
+#: ../../source/screens.rst:698
 msgid "The image used when the button is insensitive."
 msgstr "ボタンが無効の時使用される画像です。"
 
-#: ../../source/screens.rst:646 ../../source/screens.rst:1583
+#: ../../source/screens.rst:701 ../../source/screens.rst:1644
 msgid "`idle`"
 msgstr "`idle`"
 
-#: ../../source/screens.rst:646
+#: ../../source/screens.rst:701
 msgid "The image used when the button is not focused."
 msgstr "ボタンがフォーカスを持っていない時使用される画像です。"
 
-#: ../../source/screens.rst:649 ../../source/screens.rst:1587
+#: ../../source/screens.rst:704 ../../source/screens.rst:1648
 msgid "`hover`"
 msgstr "`hover`"
 
-#: ../../source/screens.rst:649
+#: ../../source/screens.rst:704
 msgid "The image used when the button is focused."
 msgstr "ボタンがフォーカスを持っている時使用される画像です。"
 
-#: ../../source/screens.rst:652 ../../source/screens.rst:1591
+#: ../../source/screens.rst:707 ../../source/screens.rst:1652
 msgid "`selected_idle`"
 msgstr "`selected_idle`"
 
-#: ../../source/screens.rst:652
+#: ../../source/screens.rst:707
 msgid "The image used when the button is selected and idle."
 msgstr "ボタンが選択されアイドル状態の時使用される画像です。"
 
-#: ../../source/screens.rst:655 ../../source/screens.rst:1595
+#: ../../source/screens.rst:710 ../../source/screens.rst:1656
 msgid "`selected_hover`"
 msgstr "`selected_hover`"
 
-#: ../../source/screens.rst:655
+#: ../../source/screens.rst:710
 msgid "The image used when the button is selected and hovered."
 msgstr "ボタンが選択されフォーカスを持っている状態の時使用される画像です。"
 
-#: ../../source/screens.rst:658 ../../source/screens.rst:1141
+#: ../../source/screens.rst:713 ../../source/screens.rst:1201
+#, fuzzy
 msgid ""
 "The action to run when the button is activated. This also controls if the "
-"button is sensitive if `sensitive` is not provided, and if the button is "
-"selected if `selected` is not provided."
+"button is sensitive if `sensitive` is not provided or None, and if the "
+"button is selected if `selected` is not provided or None."
 msgstr ""
 "ボタンがアクティベートされると実行されるアクションです。これは `sensitive` が"
 "なければボタンが有効かどうかの、 `selected` がなければ選択されているかどうか"
 "の制御もします。"
 
-#: ../../source/screens.rst:699
+#: ../../source/screens.rst:754
 msgid "This takes no children."
 msgstr "これは子を受け取りません。"
 
-#: ../../source/screens.rst:714
+#: ../../source/screens.rst:769
 msgid "Input"
 msgstr "Input"
 
-#: ../../source/screens.rst:716
+#: ../../source/screens.rst:771
 msgid ""
 "Creates a text input area, which allows the user to enter text. When the "
 "user presses return, the text will be returned by the interaction. (When the "
@@ -1257,7 +1352,7 @@ msgstr ""
 "screen`` からスクリーンを呼び出したときは ``_return`` 変数に結果が代入されま"
 "す) 。"
 
-#: ../../source/screens.rst:721
+#: ../../source/screens.rst:776
 msgid ""
 "Due to limitations in supporting libraries, on Android and the web platform "
 "the input displayable is limited to alphabetic characters."
@@ -1267,13 +1362,13 @@ msgstr ""
 "akakyouryuu.com/%e9%85%8d%e5%b8%83%e7%89%a9/renpy/>`_ にカナ漢字変換対応のス"
 "クリーンキーボードを用意しました。)。"
 
-#: ../../source/screens.rst:724
+#: ../../source/screens.rst:779
 msgid "The input statement takes no parameters, and the following properties:"
 msgstr ""
 "input ステートメントはパラメーターを受け取らず、以下のプロパティーを受け取り"
 "ます。 :"
 
-#: ../../source/screens.rst:727
+#: ../../source/screens.rst:782
 msgid ""
 "An :ref:`input value <input-values>` object that this input uses. InputValue "
 "objects determine where the default value is taken from, what happens when "
@@ -1284,31 +1379,31 @@ msgstr ""
 "InputValue オブジェクトはデフォルト値、テキスト変更、エンター押下時の動作、テ"
 "キストがデフォルトで変更可能かどうかを決定します。"
 
-#: ../../source/screens.rst:732
+#: ../../source/screens.rst:787
 msgid "This should not be given at the same time as `default` and `changed`."
 msgstr "これは `default` や `changed` と同時に指定してはいけません。"
 
-#: ../../source/screens.rst:735
+#: ../../source/screens.rst:790
 msgid "`default`"
 msgstr "`default`"
 
-#: ../../source/screens.rst:735
+#: ../../source/screens.rst:790
 msgid "The default text in this input."
 msgstr "入力されるデフォルトのテキストです。"
 
-#: ../../source/screens.rst:738
+#: ../../source/screens.rst:793
 msgid "`length`"
 msgstr "`length`"
 
-#: ../../source/screens.rst:738
+#: ../../source/screens.rst:793
 msgid "The maximum length of the text in this input."
 msgstr "入力されるテキストの最大の長さです。"
 
-#: ../../source/screens.rst:742
+#: ../../source/screens.rst:797
 msgid "`pixel_width`"
 msgstr "`pixel_width`"
 
-#: ../../source/screens.rst:741
+#: ../../source/screens.rst:796
 msgid ""
 "The maximum pixel width of the input. If typing a character would cause the "
 "input to exceed this width, the keypress is ignored."
@@ -1316,32 +1411,32 @@ msgstr ""
 "入力の最大ピクセル幅です。入力した文字がこの幅を越えると、そのキー入力は無視"
 "されます。"
 
-#: ../../source/screens.rst:746
+#: ../../source/screens.rst:801
 msgid "`allow`"
 msgstr "`allow`"
 
-#: ../../source/screens.rst:745
+#: ../../source/screens.rst:800
 msgid ""
 "A string containing characters that are allowed to be typed into this input. "
 "(By default, allow all characters.)"
 msgstr ""
 "入力できる文字を含む文字列です (デフォルトではすべての文字が許可されます )。"
 
-#: ../../source/screens.rst:750
+#: ../../source/screens.rst:805
 msgid "`exclude`"
 msgstr "`exclude`"
 
-#: ../../source/screens.rst:749
+#: ../../source/screens.rst:804
 msgid ""
 "A string containing characters that are disallowed from being typed into "
 "this input. (By default, \"{}\".)"
 msgstr "入力出来ない文字を含む文字列です。 (デフォルトでは「{}」です。 )"
 
-#: ../../source/screens.rst:754
+#: ../../source/screens.rst:809
 msgid "`copypaste`"
 msgstr "`copypaste`"
 
-#: ../../source/screens.rst:753
+#: ../../source/screens.rst:808
 msgid ""
 "If True, it becomes possible to copy and paste into this input. (By default, "
 "disabled.)"
@@ -1349,23 +1444,23 @@ msgstr ""
 "True なら、この入力へのコピーとペーストが可能になります(デフォルトでは無効で"
 "す)。"
 
-#: ../../source/screens.rst:757
+#: ../../source/screens.rst:812
 msgid "`prefix`"
 msgstr "`prefix`"
 
-#: ../../source/screens.rst:757
+#: ../../source/screens.rst:812
 msgid "An immutable string to prepend to what the user has typed."
 msgstr "ユーザーが入力したテキストの先頭に追加される文字列です。"
 
-#: ../../source/screens.rst:760
+#: ../../source/screens.rst:815
 msgid "`suffix`"
 msgstr "`suffix`"
 
-#: ../../source/screens.rst:760
+#: ../../source/screens.rst:815
 msgid "An immutable string to append to what the user has typed."
 msgstr "ユーザーが入力したテキストの末尾に追加される文字列です。"
 
-#: ../../source/screens.rst:763
+#: ../../source/screens.rst:818
 msgid ""
 "A Python function that is called with what the user has typed, when the "
 "string changes."
@@ -1373,11 +1468,11 @@ msgstr ""
 "ユーザーが入力した文字列を引数に、文字列が変更したときに呼ばれる python 関数"
 "です。"
 
-#: ../../source/screens.rst:768
+#: ../../source/screens.rst:823
 msgid "`mask`"
 msgstr "`mask`"
 
-#: ../../source/screens.rst:767
+#: ../../source/screens.rst:822
 msgid ""
 "If given, a string that replaces each displayable character in the text. "
 "This can be used to mask out a password."
@@ -1385,11 +1480,11 @@ msgstr ""
 "テキストに表示される各文字を置き換える文字列です。これはパスワードのマスクに"
 "使用されます。"
 
-#: ../../source/screens.rst:773
+#: ../../source/screens.rst:827
 msgid "`caret_blink`"
 msgstr "`caret_blink`"
 
-#: ../../source/screens.rst:771
+#: ../../source/screens.rst:826
 msgid ""
 "If not False, the blinking period of the default caret. Overrides :var:"
 "`config.input_caret_blink`."
@@ -1397,19 +1492,30 @@ msgstr ""
 "False またはデフォルトキャレットの点滅期間です。 :var:`config."
 "input_caret_blink` を上書きします。"
 
-#: ../../source/screens.rst:779 ../../source/screens.rst:1122
+#: ../../source/screens.rst:833
+msgid "`multiline`"
+msgstr ""
+
+#: ../../source/screens.rst:830
+msgid ""
+"If true, it becomes possible to move caret on the next line using keyboard "
+"(Shift+Enter by default, can be changed by modifying config."
+"keymap['input_next_line'])."
+msgstr ""
+
+#: ../../source/screens.rst:839 ../../source/screens.rst:1182
 msgid ":ref:`text-style-properties`"
 msgstr ":ref:`text-style-properties`"
 
-#: ../../source/screens.rst:781 ../../source/screens.rst:1723
+#: ../../source/screens.rst:841 ../../source/screens.rst:1784
 msgid "This does not take any children."
 msgstr "これは子を受け取りません。"
 
-#: ../../source/screens.rst:796
+#: ../../source/screens.rst:856
 msgid "Key"
 msgstr "Key"
 
-#: ../../source/screens.rst:798
+#: ../../source/screens.rst:858
 msgid ""
 "This creates a keybinding that runs an action when a key is pressed, or one "
 "of the keys in a given list. Key is used in a loose sense here, as it also "
@@ -1419,7 +1525,7 @@ msgstr ""
 "を実行するキーバインドを作成します。 キーはここではジョイスティックやマウスイ"
 "ベントも含む大まかな意味で使用されています。"
 
-#: ../../source/screens.rst:802
+#: ../../source/screens.rst:862
 msgid ""
 "Key takes one positional parameter, a string giving the key to bind. See "
 "the :doc:`keymap` section for a description of available keysyms. It takes "
@@ -1429,7 +1535,7 @@ msgstr ""
 "なキーについては :doc:`keymap` の章を参照してください。これは1つのプロパ"
 "ティーを受け取ります:"
 
-#: ../../source/screens.rst:807
+#: ../../source/screens.rst:867
 msgid ""
 "This gives an action that is run when the key is pressed. This property is "
 "mandatory."
@@ -1437,11 +1543,11 @@ msgstr ""
 "これはキーが押されると実行されるアクションを与えます。このプロパティーは必ず"
 "必要です。"
 
-#: ../../source/screens.rst:814
+#: ../../source/screens.rst:874
 msgid "`capture`"
 msgstr "`capture`"
 
-#: ../../source/screens.rst:811
+#: ../../source/screens.rst:871
 msgid ""
 "If true, the default, the event will capture, and will not be processed by "
 "other displayables. If false and the action does not end the interaction, "
@@ -1451,15 +1557,15 @@ msgstr ""
 "せん。 False かつアクションがインタラクションを終えなければ、そのイベントは他"
 "の Displayable に渡されます。"
 
-#: ../../source/screens.rst:816
+#: ../../source/screens.rst:876
 msgid "It takes no children."
 msgstr "これは子を受け取りません。"
 
-#: ../../source/screens.rst:829
+#: ../../source/screens.rst:889
 msgid "Label"
 msgstr "Label"
 
-#: ../../source/screens.rst:831
+#: ../../source/screens.rst:891
 msgid ""
 "Creates a window in the label style, and then places text inside that "
 "window. Together, this combination is used to label things inside a frame."
@@ -1467,7 +1573,7 @@ msgstr ""
 "ラベルスタイルのウィンドウを作成し、その内側にテキストを置きます。同時にこの"
 "連携はフレーム内部にラベルを貼るために使用されます。"
 
-#: ../../source/screens.rst:835
+#: ../../source/screens.rst:895
 msgid ""
 "It takes one positional argument, the text of the label. It takes the "
 "property:"
@@ -1475,11 +1581,11 @@ msgstr ""
 "位置引数を一つ持ち、それはラベルの文字列です。以下のプロパティーも受け取りま"
 "す。 :"
 
-#: ../../source/screens.rst:841 ../../source/screens.rst:1178
+#: ../../source/screens.rst:901 ../../source/screens.rst:1238
 msgid "`text_style`"
 msgstr "`text_style`"
 
-#: ../../source/screens.rst:839 ../../source/screens.rst:1176
+#: ../../source/screens.rst:899 ../../source/screens.rst:1236
 msgid ""
 "The name of the style to use for the button text. If not supplied, and the "
 "`style` property is a string, then ``\"_text\"`` is appended to that string "
@@ -1489,11 +1595,11 @@ msgstr ""
 "`style` プロパティーが文字列なら、「 _text 」がその文字列に追加されてデフォル"
 "トのテキストスタイルになります。"
 
-#: ../../source/screens.rst:845 ../../source/screens.rst:1182
+#: ../../source/screens.rst:905 ../../source/screens.rst:1242
 msgid "`text_`-"
 msgstr "`text_`-"
 
-#: ../../source/screens.rst:844 ../../source/screens.rst:1181
+#: ../../source/screens.rst:904 ../../source/screens.rst:1241
 msgid ""
 "Other properties prefixed with text_ have this prefix stripped, and are then "
 "passed to the text displayable."
@@ -1501,17 +1607,17 @@ msgstr ""
 "text_ を接頭辞に持つその他のプロパティーは、この接頭辞を取り除いてテキスト "
 "displayable に渡されます。"
 
-#: ../../source/screens.rst:853 ../../source/screens.rst:894
-#: ../../source/screens.rst:1055 ../../source/screens.rst:1124
-#: ../../source/screens.rst:1191
+#: ../../source/screens.rst:913 ../../source/screens.rst:954
+#: ../../source/screens.rst:1115 ../../source/screens.rst:1184
+#: ../../source/screens.rst:1251
 msgid "It does not take children."
 msgstr "子は受け取りません。"
 
-#: ../../source/screens.rst:870
+#: ../../source/screens.rst:930
 msgid "Mousearea"
 msgstr "Mousearea"
 
-#: ../../source/screens.rst:872
+#: ../../source/screens.rst:932
 msgid ""
 "A mouse area is an area of the screen that can react to the mouse entering "
 "or leaving it. Unlike a button, a mouse area does not take focus, so it's "
@@ -1523,19 +1629,19 @@ msgstr ""
 "アも可能です。 ``mousearea`` ステートメントはパラメーターを受け取らず、以下の"
 "プロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:878
+#: ../../source/screens.rst:938
 msgid "An action to run when the mouse enters the mouse area."
 msgstr "マウスエリアにマウスが入ると実行されるアクション"
 
-#: ../../source/screens.rst:881
+#: ../../source/screens.rst:941
 msgid "An action to run when the mouse leaves the mouse area."
 msgstr "マウスエリアからマウスが出ると実行されるアクション"
 
-#: ../../source/screens.rst:887
+#: ../../source/screens.rst:947
 msgid "`focus_mask`"
 msgstr "`focus_mask`"
 
-#: ../../source/screens.rst:884
+#: ../../source/screens.rst:944
 msgid ""
 "The :propref:`focus_mask` style property, which may be a Displayable or "
 "None. If a displayable, the mousearea will only be hovered if the mouse is "
@@ -1546,7 +1652,7 @@ msgstr ""
 "displayable ならマウスがその displayable の不透明な領域上にあるときのみマウス"
 "エリアはフォーカスを持ちます ( displayable はユーザーには表示されません )。"
 
-#: ../../source/screens.rst:896
+#: ../../source/screens.rst:956
 msgid ""
 "Usually, a mousearea statement is given the :propref:`area` style property, "
 "which controls the size and position of the mouse area. Without some way of "
@@ -1557,7 +1663,7 @@ msgstr ""
 "てマウスエリアのサイズや位置を制御します。そのサイズを制御しないとマウスエリ"
 "アは画面全体になり、かなり不便です。"
 
-#: ../../source/screens.rst:903
+#: ../../source/screens.rst:963
 msgid ""
 "Since Ren'Py games can be played using the keyboard and joystick, it often "
 "makes sense to duplicate mousearea functionality by some other means."
@@ -1565,11 +1671,11 @@ msgstr ""
 "Ren'Py のゲームはキーボードとジョイスティックでもプレイ出来るので、他の方法で"
 "もマウスエリアの機能を再現してください。"
 
-#: ../../source/screens.rst:928
+#: ../../source/screens.rst:988
 msgid "Nearrect"
 msgstr "Nearrect"
 
-#: ../../source/screens.rst:930
+#: ../../source/screens.rst:990
 msgid ""
 "The ``nearrect`` statement takes a single child, and lays that child out at "
 "a location near a rectangle. Usually, this is a rectangle focus captured "
@@ -1581,15 +1687,15 @@ msgstr ""
 "ンを使用して保存された、フォーカスされた矩形です。これは、ツールチップやド"
 "ロップダウンメニュー、プルダウンメニューに使用できます。"
 
-#: ../../source/screens.rst:935
+#: ../../source/screens.rst:995
 msgid "Nearrect takes the following properties:"
 msgstr "Nearrect は次のプロパティーを受け取ります :"
 
-#: ../../source/screens.rst:939
+#: ../../source/screens.rst:999
 msgid "`rect`"
 msgstr "`rect`"
 
-#: ../../source/screens.rst:938
+#: ../../source/screens.rst:998
 msgid ""
 "If given, this should be an (x, y, w, h) rectangle that the child is "
 "positioned relative to, as described below."
@@ -1597,7 +1703,7 @@ msgstr ""
 "指定するならばこれは後述するように (x, y, w, h) の形の矩形であるべきす。これ"
 "に対し、その子が相対指定で配置されます。"
 
-#: ../../source/screens.rst:942
+#: ../../source/screens.rst:1002
 msgid ""
 "If given, this should be a string. This string is passed to the equivalent "
 "of :func:`GetFocusRect` to find the rectangle. If a focus rectangle with "
@@ -1607,7 +1713,7 @@ msgstr ""
 "当な物に渡され、その矩形を探します。その名前のフォーカスされた矩形が見つかれ"
 "ば、子が描画されます。"
 
-#: ../../source/screens.rst:946
+#: ../../source/screens.rst:1006
 msgid ""
 "Passing \"tooltip\" to this uses the location of the last displayable that "
 "was focused while displaying a tooltip."
@@ -1615,15 +1721,15 @@ msgstr ""
 "これに \"tooltip\" を渡せば、ツールチップを表示している間中、最後にフォーカス"
 "された位置を使用します。"
 
-#: ../../source/screens.rst:950
+#: ../../source/screens.rst:1010
 msgid "`prefer_top`"
 msgstr "`prefer_top`"
 
-#: ../../source/screens.rst:950
+#: ../../source/screens.rst:1010
 msgid "If given, positioning the child above the focus rect is preferred."
 msgstr "指定するとその子をフォーカスされた矩形上部に優先的に配置されます。"
 
-#: ../../source/screens.rst:958
+#: ../../source/screens.rst:1018
 msgid ""
 "Nearrect differs from the other layouts in that it positions its child near "
 "the given rectangle, rather than inside it. The child is first rendered with "
@@ -1634,7 +1740,7 @@ msgstr ""
 "配置します。その子はまずは利用可能な幅全体とその矩形の上と下の高さの最大値で"
 "描画されます。 y 座標は次のように算出されます。"
 
-#: ../../source/screens.rst:963
+#: ../../source/screens.rst:1023
 msgid ""
 "If the child will fit above the rectangle and `prefer_top` is given, the "
 "child is positioned directly above the rectangle."
@@ -1642,17 +1748,17 @@ msgstr ""
 "その子が矩形の上部におさまり、かつ `prefer_top` が指定されていれば、矩形のす"
 "ぐ上に配置されます。"
 
-#: ../../source/screens.rst:965
+#: ../../source/screens.rst:1025
 msgid ""
 "Otherwise, if the child can fit below the rectangle, it's positioned "
 "directly below the rectangle."
 msgstr "そうではなく、子が矩形の下に収まれば、矩形直下に配置されます。"
 
-#: ../../source/screens.rst:967
+#: ../../source/screens.rst:1027
 msgid "Otherwise, the child is positioned directly above the rectangle."
 msgstr "それ以外の場合、子は矩形のすぐ上に配置されます。"
 
-#: ../../source/screens.rst:969
+#: ../../source/screens.rst:1029
 msgid ""
 "The x positioning is computed using the normal rules, using the :propref:"
 "`xpos` and :propref:`xanchor` properties of the child, and properties that "
@@ -1665,7 +1771,7 @@ msgstr ""
 "されます。 位置プロパティーは矩形のx座標に対する相対値であり、浮動小数点の場"
 "合は幅に対する割合です。"
 
-#: ../../source/screens.rst:974
+#: ../../source/screens.rst:1034
 msgid ""
 "At the end of positioning, the :propref:`xoffset` and :propref:`yoffset` "
 "properties are applied as normal."
@@ -1673,7 +1779,7 @@ msgstr ""
 "最後に、 :propref:`xoffset` と :propref:`yoffset` プロパティーは通常通り適用"
 "されます。"
 
-#: ../../source/screens.rst:977
+#: ../../source/screens.rst:1037
 msgid ""
 "If the child of the nearrect is a transform, the transform is given ``show`` "
 "and ``hide`` events. However, the position will change instantly. Nearrect "
@@ -1685,21 +1791,21 @@ msgstr ""
 "の一番上で最適に動作し、 transforms と 配置は nearrect ではなくその子に適用さ"
 "れます。"
 
-#: ../../source/screens.rst:982
+#: ../../source/screens.rst:1042
 msgid "One use of nearrect is for dropdown menus::"
 msgstr "nearrect の使用の 1 つはドロップダウンメニューです。 ::"
 
-#: ../../source/screens.rst:1032
+#: ../../source/screens.rst:1092
 msgid "Dropdowns may benefit from improved styling, which isn't done here."
 msgstr ""
 "ドロップダウンではスタイルを改善した方がよいかもしれませんが、ここでは述べま"
 "せん。"
 
-#: ../../source/screens.rst:1038
+#: ../../source/screens.rst:1098
 msgid "Null"
 msgstr "Null"
 
-#: ../../source/screens.rst:1040
+#: ../../source/screens.rst:1100
 msgid ""
 "The null statement inserts an empty area on the screen. This can be used to "
 "space things out. The null statement takes no parameters, and the following "
@@ -1709,27 +1815,27 @@ msgstr ""
 "に使用されます。 null ステートメントはパラメーターは受け取らず、以下のプロパ"
 "ティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1045
+#: ../../source/screens.rst:1105
 msgid "`width`"
 msgstr "`width`"
 
-#: ../../source/screens.rst:1045
+#: ../../source/screens.rst:1105
 msgid "The width of the empty area, in pixels."
 msgstr "ピクセル数での空白の幅です。"
 
-#: ../../source/screens.rst:1048
+#: ../../source/screens.rst:1108
 msgid "`height`"
 msgstr "`height`"
 
-#: ../../source/screens.rst:1048
+#: ../../source/screens.rst:1108
 msgid "The height of the empty area, in pixels."
 msgstr "ピクセル数での空白の高さです。"
 
-#: ../../source/screens.rst:1069
+#: ../../source/screens.rst:1129
 msgid "Side"
 msgstr "Side"
 
-#: ../../source/screens.rst:1071
+#: ../../source/screens.rst:1131
 msgid ""
 "This positions displayables in the corners or center of a grid. It takes a "
 "single parameter, string containing a space-separated list of places to "
@@ -1739,33 +1845,33 @@ msgstr ""
 "受け取り、それはスペースで区切られたその子を配置する場所のリストです。このリ"
 "ストの各要素は次のうちの一つです。 :"
 
-#: ../../source/screens.rst:1076
+#: ../../source/screens.rst:1136
 msgid "'c', 't', 'b', 'l', 'r', 'tl', 'tr', 'bl', 'br'"
 msgstr "'c', 't', 'b', 'l', 'r', 'tl', 'tr', 'bl', 'br'"
 
-#: ../../source/screens.rst:1078
+#: ../../source/screens.rst:1138
 msgid "'c' means center, 't' top, 'tl' top left, 'br' bottom right, and so on."
 msgstr ""
 "「c」は中心、「t」は上端、「tl」は左上端、「br」は右下などのように表わしてい"
 "ます。"
 
-#: ../../source/screens.rst:1080
+#: ../../source/screens.rst:1140
 msgid "A side takes the following properties:"
 msgstr "side は以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1084
+#: ../../source/screens.rst:1144
 msgid "`spacing`"
 msgstr "`spacing`"
 
-#: ../../source/screens.rst:1083
+#: ../../source/screens.rst:1143
 msgid "The spacing between the rows and columns of the grid."
 msgstr "グリッドの縦横の列の間のスペース"
 
-#: ../../source/screens.rst:1086
+#: ../../source/screens.rst:1146
 msgid "A side takes the following property groups:"
 msgstr "side は以下の種類のプロパティーも受け取ります。 :"
 
-#: ../../source/screens.rst:1091
+#: ../../source/screens.rst:1151
 msgid ""
 "When being rendered, this first sizes the corners, then the sides, then the "
 "center. The corners and sides are rendered with an available area of 0, so "
@@ -1782,7 +1888,7 @@ msgstr ""
 "字列順)へ順に配置され、最後が最も高くなります。これは :var:`config."
 "keep_side_render_order` によって無効化されます。"
 
-#: ../../source/screens.rst:1101
+#: ../../source/screens.rst:1161
 msgid ""
 "Children correspond to entries in the places list, so this must have the "
 "same number of children as there are entries in the places list."
@@ -1790,11 +1896,11 @@ msgstr ""
 "位置リストのすべてに対応する子があるので、これは位置リストに登録されているの"
 "と同じ数の子を持たなければなりません。"
 
-#: ../../source/screens.rst:1115
+#: ../../source/screens.rst:1175
 msgid "Text"
 msgstr "Text"
 
-#: ../../source/screens.rst:1117
+#: ../../source/screens.rst:1177
 msgid ""
 "The text statement displays text. It takes a single parameter, the text to "
 "display. It also takes the following groups of properties:"
@@ -1802,11 +1908,11 @@ msgstr ""
 "text ステートメントはテキストを表示します。これはパラメーターを一つ受け取り、"
 "それは表示するテキストです。以下のプロパティーも受け取ります。 :"
 
-#: ../../source/screens.rst:1134
+#: ../../source/screens.rst:1194
 msgid "Textbutton"
 msgstr "Textbutton"
 
-#: ../../source/screens.rst:1136
+#: ../../source/screens.rst:1196
 msgid ""
 "Creates a button containing a text label. The button takes a single "
 "parameter, the text to include as part of the button. It takes the following "
@@ -1816,11 +1922,11 @@ msgstr ""
 "それはボタンの一部として含まれるテキストです。以下のプロパティーを受け取りま"
 "す。 :"
 
-#: ../../source/screens.rst:1204
+#: ../../source/screens.rst:1264
 msgid "Timer"
 msgstr "Timer"
 
-#: ../../source/screens.rst:1206
+#: ../../source/screens.rst:1266
 msgid ""
 "This creates a timer that runs an action when time runs out. It takes one "
 "positional parameter, giving the timeout time, in seconds. It takes the "
@@ -1829,22 +1935,22 @@ msgstr ""
 "これは時間が来るとアクションを実行するタイマーを作成します。これは位置パラ"
 "メーターを一つ受け取り、それは秒数です。以下のプロパティーも受け取ります。 :"
 
-#: ../../source/screens.rst:1211
+#: ../../source/screens.rst:1271
 msgid ""
 "This gives an action that is run when the timer expires. This property is "
 "mandatory."
 msgstr ""
 "時間が来ると実行するアクションを指定します。このプロパティーは必須です。"
 
-#: ../../source/screens.rst:1215
+#: ../../source/screens.rst:1275
 msgid "`repeat`"
 msgstr "`repeat`"
 
-#: ../../source/screens.rst:1215
+#: ../../source/screens.rst:1275
 msgid "If True, the timer repeats after it times out."
 msgstr "True ならその時間が経つ度にタイマーが繰り返し実行されます。"
 
-#: ../../source/screens.rst:1218
+#: ../../source/screens.rst:1278
 msgid ""
 "If True, the timer will not fire if it is blocked by a modal screen. If "
 "false or not given, the timer will fire even if it is blocked by a modal "
@@ -1854,15 +1960,15 @@ msgstr ""
 "ん。 False または指定されないと、タイムーはモーダルスクリーンでブロックされて"
 "も動作します。"
 
-#: ../../source/screens.rst:1223
+#: ../../source/screens.rst:1283
 msgid "Timer takes no children."
 msgstr "Timer は子を受け取りません。"
 
-#: ../../source/screens.rst:1237
+#: ../../source/screens.rst:1297
 msgid "Transform"
 msgstr "Transform"
 
-#: ../../source/screens.rst:1239
+#: ../../source/screens.rst:1299
 msgid ""
 "Applies a transform to its child. This takes no parameters, and the "
 "following property groups:"
@@ -1870,29 +1976,29 @@ msgstr ""
 "transform をその子に適用します。これはパラメーターを受け取らず、以下のプロパ"
 "ティーグループを受け取ります。 :"
 
-#: ../../source/screens.rst:1243
+#: ../../source/screens.rst:1303
 msgid ":ref:`Transform Properties <transform-properties>`"
 msgstr ":ref:`transform プロパティー <transform-properties>`"
 
-#: ../../source/screens.rst:1245
+#: ../../source/screens.rst:1305
 msgid "This should take a single child."
 msgstr "これは子を一つは受け取る必要があります。"
 
-#: ../../source/screens.rst:1251
+#: ../../source/screens.rst:1311
 msgid "Vbar"
 msgstr "Vbar"
 
-#: ../../source/screens.rst:1253
+#: ../../source/screens.rst:1313
 msgid ""
 "The vertically oriented equivalent of `bar`_. Properties are the same as "
 "`bar`."
 msgstr "横向きになった `bar`_ です。プロパティーは `bar` と同じです。"
 
-#: ../../source/screens.rst:1270
+#: ../../source/screens.rst:1330
 msgid "Vbox"
 msgstr "Vbox"
 
-#: ../../source/screens.rst:1272
+#: ../../source/screens.rst:1332
 msgid ""
 "This displays its children one above the other, in an invisible vertical "
 "box. It takes no parameters, and the following groups of properties:"
@@ -1900,11 +2006,11 @@ msgstr ""
 "これはその子を透明な縦長の箱に縦に並べて表示します。これはパラメーターを受け"
 "取らず、以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1293
+#: ../../source/screens.rst:1353
 msgid "Viewport"
 msgstr "Viewport"
 
-#: ../../source/screens.rst:1295
+#: ../../source/screens.rst:1355
 msgid ""
 "A viewport is area of the screen that can be scrolled by dragging, with the "
 "mouse wheel, or with scrollbars. It can be used to display part of something "
@@ -1914,11 +2020,11 @@ msgstr ""
 "リーンの領域です。画面より大きいものを表示するために使用され、以下のプロパ"
 "ティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1304
+#: ../../source/screens.rst:1364
 msgid "`child_size`"
 msgstr "`child_size`"
 
-#: ../../source/screens.rst:1301
+#: ../../source/screens.rst:1361
 msgid ""
 "The size that is offered to the child for rendering. An (`xsize`, `ysize`) "
 "tuple. This can usually be omitted, when the child can compute it's own "
@@ -1928,43 +2034,43 @@ msgstr ""
 "す。子が自身のサイズを算出できるとき、これは通常省略されます。どちらかの要素"
 "が None なら子のサイズが使用されます。"
 
-#: ../../source/screens.rst:1323
+#: ../../source/screens.rst:1383
 msgid "`mousewheel`"
 msgstr "`mousewheel`"
 
-#: ../../source/screens.rst:1307
+#: ../../source/screens.rst:1367
 msgid "This should be one of:"
 msgstr "これはつぎのうちの一つです"
 
-#: ../../source/screens.rst:1309
+#: ../../source/screens.rst:1369
 msgid "False"
 msgstr "False"
 
-#: ../../source/screens.rst:1310
+#: ../../source/screens.rst:1370
 msgid "To ignore the mousewheel. (The default.)"
 msgstr "マウスホイールを無視します (デフォルト)。"
 
-#: ../../source/screens.rst:1311
+#: ../../source/screens.rst:1371
 msgid "True"
 msgstr "True"
 
-#: ../../source/screens.rst:1312
+#: ../../source/screens.rst:1372
 msgid "To scroll vertically."
 msgstr "縦にスクロールします。"
 
-#: ../../source/screens.rst:1313
+#: ../../source/screens.rst:1373
 msgid "\"horizontal\""
 msgstr "\"horizontal\""
 
-#: ../../source/screens.rst:1314
+#: ../../source/screens.rst:1374
 msgid "To scroll horizontally."
 msgstr "水平にスクロールします。"
 
-#: ../../source/screens.rst:1320
+#: ../../source/screens.rst:1380
 msgid "\"change\""
 msgstr "\"change\""
 
-#: ../../source/screens.rst:1316
+#: ../../source/screens.rst:1376
 msgid ""
 "To scroll the viewport vertically, only if doing so would cause the viewport "
 "to move. If not, the mousewheel event is passed to the rest of the "
@@ -1978,19 +2084,19 @@ msgstr ""
 "記述されていれば、 viewport が下端に達しているならそのスクリーンに処理を返さ"
 "せるようにできます)。"
 
-#: ../../source/screens.rst:1323
+#: ../../source/screens.rst:1383
 msgid "\"horizontal-change\""
 msgstr "\"horizontal-change\""
 
-#: ../../source/screens.rst:1323
+#: ../../source/screens.rst:1383
 msgid "Combines horizontal scrolling with change mode."
 msgstr "Change モードと水平スクロールを組み合わせます。"
 
-#: ../../source/screens.rst:1328
+#: ../../source/screens.rst:1388
 msgid "`draggable`"
 msgstr "`draggable`"
 
-#: ../../source/screens.rst:1326
+#: ../../source/screens.rst:1386
 msgid ""
 "If True, dragging the mouse will scroll the viewport. This can also be a :"
 "ref:`variant <screen-variants>`, in which case the viewport will be "
@@ -2000,11 +2106,11 @@ msgstr ""
 "`variant <screen-variants>` も指定出来、その場合、 viewport はその variant が"
 "有効なら draggable となります(例 ``draggable \"touch\"``) 。"
 
-#: ../../source/screens.rst:1348
+#: ../../source/screens.rst:1408
 msgid "`edgescroll`"
 msgstr "`edgescroll`"
 
-#: ../../source/screens.rst:1331
+#: ../../source/screens.rst:1391
 msgid ""
 "Controlls scrolling when the mouse reaches the edge of the viewport. If not "
 "None, this should be a two- or three-element tuple:"
@@ -2012,7 +2118,7 @@ msgstr ""
 "マウスが viewport の端に到達するとスクロールします。 None を設定するか、2要素"
 "か3要素のタプルを設定します :"
 
-#: ../../source/screens.rst:1335
+#: ../../source/screens.rst:1395
 msgid ""
 "The first element in the tuple is the distance from the edge of the viewport "
 "that edgescrolling begins to take effect, in pixels."
@@ -2020,11 +2126,11 @@ msgstr ""
 "タプルの最初の要素は viewport の端からのピクセル数での距離であり、その距離か"
 "らエッジスクロールが開始されます。"
 
-#: ../../source/screens.rst:1339
+#: ../../source/screens.rst:1399
 msgid "The second element is the maximum scrolling rate, in pixels per second."
 msgstr "第二要素は一秒ごとに何ピクセルスクロールするかの最大値です。"
 
-#: ../../source/screens.rst:1342
+#: ../../source/screens.rst:1402
 msgid ""
 "If present, the third element is a function that adjusts the scrolling "
 "speed, based on how close to the pointer is to an edge. The function should "
@@ -2039,11 +2145,11 @@ msgstr ""
 "し、端との近さに比例してスクロールを加速させます。関数が入力された符号に基づ"
 "き 1.0 か -1.0 を返すと一定の速度のスクロールになります。"
 
-#: ../../source/screens.rst:1352
+#: ../../source/screens.rst:1412
 msgid "`xadjustment`"
 msgstr "`xadjustment`"
 
-#: ../../source/screens.rst:1351
+#: ../../source/screens.rst:1411
 msgid ""
 "The :func:`ui.adjustment` used for the x-axis of the viewport. When omitted, "
 "a new adjustment is created."
@@ -2051,11 +2157,11 @@ msgstr ""
 ":func:`ui.adjustment` が viewport の x 軸に使用されます。省略されると新しい "
 "adjustment が作成されます。"
 
-#: ../../source/screens.rst:1356
+#: ../../source/screens.rst:1416
 msgid "`yadjustment`"
 msgstr "`yadjustment`"
 
-#: ../../source/screens.rst:1355
+#: ../../source/screens.rst:1415
 msgid ""
 "The :func:`ui.adjustment` used for the y-axis of the viewport. When omitted, "
 "a new adjustment is created."
@@ -2063,11 +2169,11 @@ msgstr ""
 ":func:`ui.adjustment` が viewport の y 軸に使用されます。省略されると新しい "
 "adjustment が作成されます。"
 
-#: ../../source/screens.rst:1361
+#: ../../source/screens.rst:1421
 msgid "`xinitial`"
 msgstr "`xinitial`"
 
-#: ../../source/screens.rst:1359
+#: ../../source/screens.rst:1419
 msgid ""
 "The initial horizontal offset of the viewport. This may be an integer giving "
 "the number of pixels, or a float giving a fraction of the possible offset."
@@ -2075,11 +2181,11 @@ msgstr ""
 "viewport の初期の水平位置のオフセットです。これはピクセル数の整数か、可能なオ"
 "フセットの割合の小数です。"
 
-#: ../../source/screens.rst:1366
+#: ../../source/screens.rst:1426
 msgid "`yinitial`"
 msgstr "`yinitial`"
 
-#: ../../source/screens.rst:1364
+#: ../../source/screens.rst:1424
 msgid ""
 "The initial vertical offset of the viewport. This may be an integer giving "
 "the number of pixels, or a float giving a fraction of the possible offset."
@@ -2087,11 +2193,11 @@ msgstr ""
 "viewport の初期の垂直位置のオフセットです。これはピクセル数の整数か、可能なオ"
 "フセットの割合の小数です。"
 
-#: ../../source/screens.rst:1386
+#: ../../source/screens.rst:1446
 msgid "`scrollbars`"
 msgstr "`scrollbars`"
 
-#: ../../source/screens.rst:1369
+#: ../../source/screens.rst:1429
 msgid ""
 "If not None, scrollbars are added along with this viewport. This works by "
 "creating a side layout, and placing the created viewport in the center of "
@@ -2107,36 +2213,36 @@ msgstr ""
 "viewport の右に追加されます。 `scrollbars` が \"both\" なら水平垂直両方のスク"
 "ロールバーが作成されます。"
 
-#: ../../source/screens.rst:1377
+#: ../../source/screens.rst:1437
 msgid ""
 "When `scrollbars` is not None, the `viewport` takes prefixed properties:"
 msgstr ""
 "`scrollbars` が None でなければ、 `viewport` は次の接頭辞のプロパティーを受け"
 "取ります :"
 
-#: ../../source/screens.rst:1379
+#: ../../source/screens.rst:1439
 msgid "Properties beginning with ``viewport_`` are passed to the viewport."
 msgstr "``viewport_`` で始まるプロパティーは viewport に渡されます。"
 
-#: ../../source/screens.rst:1380
+#: ../../source/screens.rst:1440
 msgid "Properties beginning with ``side_`` are passed to the side."
 msgstr "``side_`` で始まるプロパティーは side に渡されます。"
 
-#: ../../source/screens.rst:1381
+#: ../../source/screens.rst:1441
 msgid ""
 "Properties beginning with ``scrollbar_`` are passed to the horizontal "
 "scrollbar, if it exists."
 msgstr ""
 "``scrollbar_`` で始まるプロパティーはあれば水平スクロールバーに渡されます。"
 
-#: ../../source/screens.rst:1382
+#: ../../source/screens.rst:1442
 msgid ""
 "Properties beginning with ``vscrollbar_`` are passed to the verical "
 "scrollbar, if it exists."
 msgstr ""
 "``vscrollbar_`` で始まるプロパティーはあれば 垂直スクロールバーに渡されます。"
 
-#: ../../source/screens.rst:1384
+#: ../../source/screens.rst:1444
 msgid ""
 "Unprefixed properties are also accepted. :ref:`position-style-properties` "
 "are passed to the side, while other unprefixed properties are supplied to "
@@ -2145,11 +2251,11 @@ msgstr ""
 "接頭辞のないプロパティーも受け取られます。 :ref:`position-style-properties` "
 "は side に渡され、他は viewport に渡されます。"
 
-#: ../../source/screens.rst:1392
+#: ../../source/screens.rst:1452
 msgid "`arrowkeys`"
 msgstr "`arrowkeys`"
 
-#: ../../source/screens.rst:1389
+#: ../../source/screens.rst:1449
 msgid ""
 "If true, the viewport can be scrolled with the left, right, up, and down "
 "arrow keys. This takes precedence over the usual function of these keys, "
@@ -2160,11 +2266,11 @@ msgstr ""
 "を変更する通常のこれらのキーの機能に優先します。しかし、viewportが端に到達す"
 "ると矢印キーはフォーカスを変更します。"
 
-#: ../../source/screens.rst:1397
+#: ../../source/screens.rst:1457
 msgid "`pagekeys`"
 msgstr "`pagekeys`"
 
-#: ../../source/screens.rst:1395
+#: ../../source/screens.rst:1455
 msgid ""
 "If true, the viewport can be scrolled up and down by the pageup and pagedown "
 "keys. This disables the usual functionality of these keys, which is to cause "
@@ -2173,11 +2279,11 @@ msgstr ""
 "True なら viewport はページアップ/ダウンキーで上下にスクロール可能です。これ"
 "はロールバック/フォワードを起こす通常のこれらのキーの機能を無効にします。"
 
-#: ../../source/screens.rst:1399
+#: ../../source/screens.rst:1459
 msgid "In addition, it takes the following groups of style properties:"
 msgstr "さらにこれは以下のスタイルプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1407
+#: ../../source/screens.rst:1467
 msgid ""
 "To make a viewport scrollable, it's often best to assign an id to it, and "
 "then use :func:`XScrollValue` and :func:`YScrollValue` with that id."
@@ -2185,11 +2291,11 @@ msgstr ""
 "viewport のスクロールバーを作成するためにはそれに id を与えて、その id を引数"
 "に :func:`XScrollValue` と :func:`YScrollValue` を使用するのが最適です。"
 
-#: ../../source/screens.rst:1429
+#: ../../source/screens.rst:1489
 msgid "Vpgrid"
 msgstr "Vpgrid"
 
-#: ../../source/screens.rst:1431
+#: ../../source/screens.rst:1491
 msgid ""
 "A vpgrid (viewport grid) combines a viewport and grid into a single "
 "displayable. The vpgrid takes multiple children (like a grid) and is "
@@ -2200,7 +2306,7 @@ msgstr ""
 "す。 vpgrid は grid のように複数の子を受け取り、それらの子のレンダリングは最"
 "適化され、 viewport 内に表示されている子のみがレンダリングされます。"
 
-#: ../../source/screens.rst:1436
+#: ../../source/screens.rst:1496
 msgid ""
 "A vpgrid assumes that all children are the same size, the size being taken "
 "from the dimensions of the first child. If a vpgrid appears to be rendering "
@@ -2210,37 +2316,39 @@ msgstr ""
 "vpgrid が誤ってレンダリングされたら、すべての子が同じサイズであるか確認してく"
 "ださい。"
 
-#: ../../source/screens.rst:1440
+#: ../../source/screens.rst:1500
+#, fuzzy
 msgid ""
 "A vpgrid must be given at least one of the `cols` and `rows` properties. If "
 "one is omitted or None, the other is automatically determined from the size, "
-"spacing, and number of children."
+"spacing, and number of children. If a row or column would be underfull, "
+"``null`` displayable are used to fill the remaining space."
 msgstr ""
 "vpgrid には `col` か `rows` の少なくとも一つのプロパティーが指定されなければ"
 "いけません。一つが省略されるか None であれば、サイズと spacing, 子の数から自"
 "動的に決定されます。"
 
-#: ../../source/screens.rst:1444
+#: ../../source/screens.rst:1505
 msgid "Vpgrids take the the following properties:"
 msgstr "Vgrids は以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1447
+#: ../../source/screens.rst:1508 ../../source/screens.rst:1816
 msgid "`cols`"
 msgstr "`cols`"
 
-#: ../../source/screens.rst:1447
+#: ../../source/screens.rst:1508
 msgid "The number of columns in the grid."
 msgstr "グリッドの行数"
 
-#: ../../source/screens.rst:1450
+#: ../../source/screens.rst:1511 ../../source/screens.rst:1820
 msgid "`rows`"
 msgstr "`rows`"
 
-#: ../../source/screens.rst:1450
+#: ../../source/screens.rst:1511
 msgid "The number of rows in the grid."
 msgstr "グリッドの列数"
 
-#: ../../source/screens.rst:1453
+#: ../../source/screens.rst:1514
 msgid ""
 "If true, columns are filled before rows. The default of this depends on the "
 "`cols` and `rows` properties. If `cols` is given, columns are filled before "
@@ -2250,7 +2358,7 @@ msgstr ""
 "ティーに依存します。 `cols` が与えられたなら、行が列の前に埋められ、そうでな"
 "ければ列が行の前に埋められます。"
 
-#: ../../source/screens.rst:1457
+#: ../../source/screens.rst:1518
 msgid ""
 "In addition, a vpgrid takes all properties a :ref:`viewport <sl-viewport>` "
 "can, and the following groups of style properties:"
@@ -2258,7 +2366,7 @@ msgstr ""
 "さらに vpgrid は :ref:`viewport <sl-viewport>` が可能なすべてのプロパティーと"
 "以下のスタイルプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1464
+#: ../../source/screens.rst:1525
 msgid ""
 "When the `scrollbar` property is given, prefixed properties are passed to "
 "the vpgrid in the same way as they are with viewports. (Properties prefixed "
@@ -2267,11 +2375,11 @@ msgstr ""
 "`scrollbar` プロパティーが指定されると、接頭辞つきのプロパティーは viewport "
 "同様に vpgrid に渡されます (``viewport_`` は vpgrid 自体に渡されます)。"
 
-#: ../../source/screens.rst:1496
+#: ../../source/screens.rst:1557
 msgid "Window"
 msgstr "Window"
 
-#: ../../source/screens.rst:1498
+#: ../../source/screens.rst:1559
 msgid ""
 "A window is a window that contains a background that is intended for "
 "displaying in-game dialogue. It takes the following groups of properties:"
@@ -2279,11 +2387,11 @@ msgstr ""
 "widow はゲーム内の台詞を表示するための背景を含むウィンドウのことです。これは"
 "以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1521
+#: ../../source/screens.rst:1582
 msgid "Imagemap Statements"
 msgstr "Imagemap ステートメント"
 
-#: ../../source/screens.rst:1523
+#: ../../source/screens.rst:1584
 msgid ""
 "A convenient way of creating a screen, especially for those who think "
 "visually, is to create an imagemap. When creating an imagemap, the imagemap "
@@ -2296,15 +2404,15 @@ msgstr ""
 "ために使用されます。hotspot と hotbar の画像はその画像の長方形の領域を切り"
 "取って、アクションと value をそれらの領域に適用するために使用されます。"
 
-#: ../../source/screens.rst:1529
+#: ../../source/screens.rst:1590
 msgid "Here's an example of a preferences screen that uses imagemaps."
 msgstr "ここに imagemap を使用した preferences スクリーンの例があります。"
 
-#: ../../source/screens.rst:1555
+#: ../../source/screens.rst:1616
 msgid "Imagemap"
 msgstr "Imagemap"
 
-#: ../../source/screens.rst:1557
+#: ../../source/screens.rst:1618
 msgid ""
 "The imagemap statement is used to specify an imagemap. It takes no "
 "parameters, and the following properties:"
@@ -2312,7 +2420,7 @@ msgstr ""
 "imagemap ステートメントは画像を指定するために使用されます。これはパラメーター"
 "は受け取らず、以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1561
+#: ../../source/screens.rst:1622
 msgid ""
 "Used to automatically define the images used by this imagemap. This should "
 "be a string that contains %s in it. If it is, and one of the image "
@@ -2324,7 +2432,7 @@ msgstr ""
 "されていると %s をそのプロパティーの名前で置き換えて、その値をそのプロパ"
 "ティーのデフォルトとして使用します。"
 
-#: ../../source/screens.rst:1567
+#: ../../source/screens.rst:1628
 msgid ""
 "For example, if `auto` is \"imagemap_%s.png\", and `idle` is omitted, then "
 "idle defaults to \"imagemap_idle.png\". If `auto` is \"imagemap %s\", the "
@@ -2334,21 +2442,21 @@ msgstr ""
 "ルトで \"imagemap_idle.png\" になります。同様に `auto` が \"imagemap %s\" な"
 "ら ``imagemap idle`` 画像が使用されます。"
 
-#: ../../source/screens.rst:1576
+#: ../../source/screens.rst:1637
 msgid "`ground`"
 msgstr "`ground`"
 
-#: ../../source/screens.rst:1575
+#: ../../source/screens.rst:1636
 msgid ""
 "The image used for portions of the imagemap that are not part of a hotspot "
 "or hotbar."
 msgstr "hotspot や hotbar の一部ではない画像を配置するために使用される画像"
 
-#: ../../source/screens.rst:1579
+#: ../../source/screens.rst:1640
 msgid "The image used when a hotspot or hotbar is insensitive."
 msgstr "hotspot や hotbar が無効の時に使用される画像"
 
-#: ../../source/screens.rst:1582
+#: ../../source/screens.rst:1643
 msgid ""
 "The image used when a hotspot is not selected and not focused, and for the "
 "empty portion of unfocused hotbars."
@@ -2356,7 +2464,7 @@ msgstr ""
 "hotspot が選択されておらず、フォーカスを持たないとき、また hotbar がフォーカ"
 "スを持たずバーが空のときに使用される画像"
 
-#: ../../source/screens.rst:1586
+#: ../../source/screens.rst:1647
 msgid ""
 "The image used when a hotspot is not selected and focused, and for the empty "
 "portion of focused hotbars."
@@ -2364,7 +2472,7 @@ msgstr ""
 "hotspot が選択されておらず、フォーカスを持つとき、また hotbar がフォーカスを"
 "持ちバーが空のときに使用される画像"
 
-#: ../../source/screens.rst:1590
+#: ../../source/screens.rst:1651
 msgid ""
 "The image used when a hotspot is selected and not focused, and for the full "
 "portion of unfocused hotbars."
@@ -2372,7 +2480,7 @@ msgstr ""
 "hotspot が選択され、フォーカスを持たないとき、また hotbar がフォーカスを持た"
 "ずバーが満タンのときに使用される画像"
 
-#: ../../source/screens.rst:1594
+#: ../../source/screens.rst:1655
 msgid ""
 "The image used when a hotspot is selected and focused, and for the full "
 "portion of focused hotbars."
@@ -2380,11 +2488,11 @@ msgstr ""
 "hotspot が選択され、フォーカスを持つとき、また hotbar がフォーカスを持ちバー"
 "が満タンのときに使用される画像"
 
-#: ../../source/screens.rst:1600
+#: ../../source/screens.rst:1661
 msgid "`alpha`"
 msgstr "`alpha`"
 
-#: ../../source/screens.rst:1598
+#: ../../source/screens.rst:1659
 msgid ""
 "If true, the default, a hotspot only gains focus when the mouse is in an "
 "area of the hover image that is opaque. If false, the hotspot gains focus "
@@ -2394,11 +2502,11 @@ msgstr ""
 "きだけフォーカスを持ちます。 False なら hotspot はマウスが長方形の領域上にあ"
 "るとフォーカスを持ちます。"
 
-#: ../../source/screens.rst:1604
+#: ../../source/screens.rst:1665
 msgid "`cache`"
 msgstr "`cache`"
 
-#: ../../source/screens.rst:1603
+#: ../../source/screens.rst:1664
 msgid ""
 "If true, the default, hotspot data is cached in to improve performance at "
 "the cost of some additional disk space."
@@ -2406,11 +2514,11 @@ msgstr ""
 "これはデフォルトでは True で、 hotspot のデータをキャッシュして追加のディスク"
 "消費の代わりにパフォーマンスを改善します。"
 
-#: ../../source/screens.rst:1606
+#: ../../source/screens.rst:1667
 msgid "It takes the following groups of properties:"
 msgstr "以下のプロパティーを受け取ります。 :"
 
-#: ../../source/screens.rst:1612
+#: ../../source/screens.rst:1673
 msgid ""
 "An imagemap creates a fixed, allowing any child to be added to it (not just "
 "hotspots and hotbars)."
@@ -2418,11 +2526,11 @@ msgstr ""
 "imagemap は fixed を作成し、 ( hotspot と hotbar だけでなく ) すべての子をそ"
 "こに追加します。"
 
-#: ../../source/screens.rst:1619
+#: ../../source/screens.rst:1680
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: ../../source/screens.rst:1621
+#: ../../source/screens.rst:1682
 msgid ""
 "A hotspot is a button consisting of a portion of the imagemap that contains "
 "it. It takes a single parameter, a (x, y, width, height) tuple giving the "
@@ -2433,7 +2541,7 @@ msgstr ""
 "るタプル (x, y, width, height) をパラメーターとして一つ受け取ります。これは以"
 "下のプロパティー受け取ります。 :"
 
-#: ../../source/screens.rst:1627
+#: ../../source/screens.rst:1688
 msgid ""
 "The action to run when the button is activated. This also controls if the "
 "button is sensitive, and if the button is selected."
@@ -2441,7 +2549,7 @@ msgstr ""
 "ボタンがアクティベートされると実行されるアクションです。これはボタンが有効"
 "か、選択されているかどうかの制御もします。"
 
-#: ../../source/screens.rst:1631
+#: ../../source/screens.rst:1692
 msgid ""
 "An action that is run if the hotspot is activated in an alternate manner. "
 "Alternate activation occurs when the player right-clicks on the hotspot on a "
@@ -2452,7 +2560,7 @@ msgstr ""
 "法はプレイヤーがマウスベースのプラットフォームでホットスポットを右クリックす"
 "るか、タッチベースのプラットフォームで長押しすると発生します。"
 
-#: ../../source/screens.rst:1665
+#: ../../source/screens.rst:1726
 msgid ""
 "A hotspot creates a fixed, allowing children to be added to it. The fixed "
 "has an area that is the same size as the hotspot, meaning that the children "
@@ -2462,7 +2570,7 @@ msgstr ""
 "hotspot と同じ大きさの領域を持つので、子は hotspot に対する相対距離で配置され"
 "ます。"
 
-#: ../../source/screens.rst:1669
+#: ../../source/screens.rst:1730
 msgid ""
 "Hotspots should be given the ``alt`` style property to allow Ren'Py's self-"
 "voicing feature to work."
@@ -2470,11 +2578,11 @@ msgstr ""
 "hotspot に ``alt`` スタイルプロパティーを指定すると Ren'Py のセルフボイシング"
 "機能が動くようになります。"
 
-#: ../../source/screens.rst:1675
+#: ../../source/screens.rst:1736
 msgid "Hotbar"
 msgstr "Hotbar"
 
-#: ../../source/screens.rst:1677
+#: ../../source/screens.rst:1738
 msgid ""
 "A hotbar is a bar that consists of a portion of the imagemap that contains "
 "it. It takes a single parameter, a (x, y, width, height) tuple giving the "
@@ -2485,7 +2593,7 @@ msgstr ""
 "ル (x, y, width, height) をパラメーターとして一つ受け取ります。これは以下のプ"
 "ロパティー受け取ります。 :"
 
-#: ../../source/screens.rst:1683
+#: ../../source/screens.rst:1744
 msgid ""
 "The current value of the bar. This can be either a :ref:`bar value <input-"
 "values>` object, or a number."
@@ -2493,7 +2601,7 @@ msgstr ""
 "バーの現在の値。これは :ref:`bar value <input-values>` オブジェクトか数字で"
 "す。"
 
-#: ../../source/screens.rst:1701
+#: ../../source/screens.rst:1762
 msgid ""
 "Hotbars should be given the ``alt`` style property to allow Ren'Py's self-"
 "voicing feature to work."
@@ -2501,11 +2609,11 @@ msgstr ""
 "hotbar に ``alt`` スタイルプロパティーを指定すると、Ren'Py のセルフボイシング"
 "機能が動くようになります。"
 
-#: ../../source/screens.rst:1705
+#: ../../source/screens.rst:1766
 msgid "Add Statement"
 msgstr "Add ステートメント"
 
-#: ../../source/screens.rst:1707
+#: ../../source/screens.rst:1768
 msgid ""
 "The add statement is a bit special, as it adds an already-exising displayble "
 "to the screen. As a result, it doesn't take the properties common to the "
@@ -2515,11 +2623,11 @@ msgstr ""
 "します。結果としてユーザーインターフェースステートメントへの共通のプロパ"
 "ティーを受け取りません。"
 
-#: ../../source/screens.rst:1714
+#: ../../source/screens.rst:1775
 msgid "Add"
 msgstr "Add"
 
-#: ../../source/screens.rst:1716
+#: ../../source/screens.rst:1777
 msgid ""
 "Adds an image or other displayable to the screen. This optionally takes :ref:"
 "`transform properties <transform-properties>`. If at least one transform "
@@ -2531,15 +2639,15 @@ msgstr ""
 "つ transform プロパティーが与えられると、 :class:`Transform` が作成され、その"
 "画像をラップして、その transform に渡します。"
 
-#: ../../source/screens.rst:1721
+#: ../../source/screens.rst:1782
 msgid "If the displayable is None, nothing is added to the screen."
 msgstr "displayable が None ならスクリーンには何も追加されません。"
 
-#: ../../source/screens.rst:1734
+#: ../../source/screens.rst:1795
 msgid "Advanced Displayables"
 msgstr "Advanced Displayables"
 
-#: ../../source/screens.rst:1736
+#: ../../source/screens.rst:1797
 msgid ""
 "In addition to the commonly-used statements, the screen language has "
 "statements that correspond to advanced displayables. The mapping from "
@@ -2554,42 +2662,144 @@ msgstr ""
 "キーワード引数およびスタイルプロパティーはスクリーン言語のプロパティーになり"
 "ます。"
 
-#: ../../source/screens.rst:1743
+#: ../../source/screens.rst:1804
 msgid "The advanced displayable statements are:"
 msgstr "高度な displayable のステートメントは次になります。 :"
 
-#: ../../source/screens.rst:1749
-msgid "``drag``"
-msgstr "``drag``"
+#: ../../source/screens.rst:1809
+msgid "Areapicker"
+msgstr ""
 
-#: ../../source/screens.rst:1746
+#: ../../source/screens.rst:1811
+#, fuzzy
 msgid ""
-"Creates a :class:`Drag`. A drag can be given an optional child, or the :"
-"propref:`child` style property can be used to supply the child, and its "
-"focused variants. Drags also take the :propref:`focus_mask` style property."
+"Intended for use in development tools, this lets the user select a "
+"rectangular area on the screen. It takes the following properties:"
+msgstr ""
+"パラメーターを一つ受け取り、それはスクリーンの名前です。これは名前であって、"
+"式ではありません。以下のプロパティーも受け取ります。 :"
+
+#: ../../source/screens.rst:1815
+msgid ""
+"If not None, the defaut, this divides the screen up into a grid with this "
+"many columns."
+msgstr ""
+
+#: ../../source/screens.rst:1819
+msgid ""
+"If not None, the defaut, this divides the screen up into a grid with this "
+"many rows."
+msgstr ""
+
+#: ../../source/screens.rst:1825
+#, fuzzy
+msgid "`position`"
+msgstr "`action`"
+
+#: ../../source/screens.rst:1823
+msgid ""
+"If not None, the default, this is a function called with the x and y "
+"coordinates of the location the user first clicked, rounded to the grid."
+msgstr ""
+
+#: ../../source/screens.rst:1828
+msgid ""
+"This is called with the rectangle, an (x, y, width, height) tuple, whenever "
+"the user changes the selected area."
+msgstr ""
+
+#: ../../source/screens.rst:1833
+msgid "`finished`"
+msgstr ""
+
+#: ../../source/screens.rst:1832
+msgid ""
+"This is called with the rectangle, an (x, y, width, height) tuple, when the "
+"user finishes selecting an area."
+msgstr ""
+
+#: ../../source/screens.rst:1838
+msgid "`persist`"
+msgstr ""
+
+#: ../../source/screens.rst:1836
+msgid ""
+"If true, the child will be shown in the selected area when the selection is "
+"complete. If false, the default, the child will be hidden once the selection "
+"is complete."
+msgstr ""
+
+#: ../../source/screens.rst:1840
+#, fuzzy
+msgid "It takes the following group of properties:"
+msgstr "以下のプロパティーを受け取ります。 :"
+
+#: ../../source/screens.rst:1844
+msgid ""
+"An areapicker takes one child. The child is displayed on the screen in the "
+"selected area."
+msgstr ""
+
+#: ../../source/screens.rst:1848
+msgid "Drag"
+msgstr ""
+
+#: ../../source/screens.rst:1850
+msgid ""
+"Creates a :class:`Drag` that can be dragged around the screen. With the "
+"acception of `d`, which is supplied by the screen language, this takes all "
+"properties defined in that class."
+msgstr ""
+
+#: ../../source/screens.rst:1854
+#, fuzzy
+msgid "It also takes the following properties:"
+msgstr "side は以下のプロパティーを受け取ります。 :"
+
+#: ../../source/screens.rst:1857
+#, fuzzy
+msgid ""
+"The :propref:`hover_sound` and :propref:`activate_sound` style properties"
+msgstr ""
+":propref:`hover_sound` と :propref:`activate_sound` スタイルプロパティー"
+
+#: ../../source/screens.rst:1859
+msgid "The :propref:`focus_mask` style_property."
+msgstr ""
+
+#: ../../source/screens.rst:1861
+#, fuzzy
+msgid ""
+"A drag takes one child, or the :propref:`child` style property can be used "
+"to supply the child and its focused variants."
 msgstr ""
 ":class:`Drag` クラスを作成します。 drag には任意の子が与えられるか、または :"
 "propref:`child` スタイルプロパティーを使用して子や、それがフォーカスを所得し"
 "た場合のバージョンが提供されます。drag は :propref:`focus_mask` スタイルプロ"
 "パティーも受け取れます。"
 
-#: ../../source/screens.rst:1754
-msgid "``draggroup``"
+#: ../../source/screens.rst:1865
+#, fuzzy
+msgid "Draggroup"
 msgstr "``draggroup``"
 
-#: ../../source/screens.rst:1752
+#: ../../source/screens.rst:1867
 msgid ""
-"Creates a :class:`DragGroup`. A drag group may have zero or more drags as "
-"its children."
+"Creates a :class:`DragGroup`.  This takes the same properties as :class:"
+"`DragGroup`, and also takes the following properties:"
 msgstr ""
-":class:`DragGroup` クラスを作成します。DragGroup はその子として 0 以上の "
-"drag を持ちます。"
 
-#: ../../source/screens.rst:1759
+#: ../../source/screens.rst:1872
+msgid ""
+"A drag group may have zero or more drags as its children. It may also have "
+"non-drags as children, in which case it functions like fixed."
+msgstr ""
+
+#: ../../source/screens.rst:1879
 msgid "Has Statement"
 msgstr "Has ステートメント"
 
-#: ../../source/screens.rst:1761
+#: ../../source/screens.rst:1881
 msgid ""
 "The has statement allows you to specify a container to use, instead of "
 "fixed, for statements that take only one child. The has statement may only "
@@ -2604,7 +2814,7 @@ msgstr ""
 "の子を受け取るコンテナの displayable を作成するステートメントでなければなりま"
 "せん。"
 
-#: ../../source/screens.rst:1768
+#: ../../source/screens.rst:1888
 msgid ""
 "The has statement changes the way in which the block that contains it is "
 "parsed. Child displayables created in that block are added to the container, "
@@ -2617,52 +2827,52 @@ msgstr ""
 "す。親の displayable に対するキーワード引数は has ステートメントの後は許可さ"
 "れません。複数の has ステートメントが同じブロックで使用可能です。"
 
-#: ../../source/screens.rst:1774
+#: ../../source/screens.rst:1894
 msgid ""
 "The has statement can be supplied as a child of the following statements:"
 msgstr "has ステートメントは以下のステートメントの子として提供されます。"
 
-#: ../../source/screens.rst:1777
+#: ../../source/screens.rst:1897
 msgid "button"
 msgstr "button"
 
-#: ../../source/screens.rst:1778
+#: ../../source/screens.rst:1898
 msgid "frame"
 msgstr "frame"
 
-#: ../../source/screens.rst:1779
+#: ../../source/screens.rst:1899
 msgid "window"
 msgstr "window"
 
-#: ../../source/screens.rst:1781
+#: ../../source/screens.rst:1901
 msgid "The has statement can be given the following statements as a container."
 msgstr "has ステートメントには以下のステートメントが入れ物として与えられます。"
 
-#: ../../source/screens.rst:1784
+#: ../../source/screens.rst:1904
 msgid "fixed"
 msgstr "fixed"
 
-#: ../../source/screens.rst:1785
+#: ../../source/screens.rst:1905
 msgid "grid"
 msgstr "grid"
 
-#: ../../source/screens.rst:1786
+#: ../../source/screens.rst:1906
 msgid "hbox"
 msgstr "hbox"
 
-#: ../../source/screens.rst:1787
+#: ../../source/screens.rst:1907
 msgid "side"
 msgstr "side"
 
-#: ../../source/screens.rst:1788
+#: ../../source/screens.rst:1908
 msgid "vbox"
 msgstr "vbox"
 
-#: ../../source/screens.rst:1802
+#: ../../source/screens.rst:1922
 msgid "Control Statements"
 msgstr "制御用のステートメント"
 
-#: ../../source/screens.rst:1804
+#: ../../source/screens.rst:1924
 msgid ""
 "The screen language includes control statements for conditional execution, "
 "iteration, including other screens, executing actions when events occur, and "
@@ -2672,11 +2882,11 @@ msgstr ""
 "アクションや任意の python コードを実行したりするための制御用ステートメントが"
 "あります。"
 
-#: ../../source/screens.rst:1811
+#: ../../source/screens.rst:1931
 msgid "Default"
 msgstr "Default"
 
-#: ../../source/screens.rst:1813
+#: ../../source/screens.rst:1933
 msgid ""
 "The ``default`` statement sets the default value of a variable, if it is not "
 "passed as an argument to the screen, or inherited from a screen that calls "
@@ -2686,26 +2896,27 @@ msgstr ""
 "use ステートメントを使用してそのスクリーンを呼び出しているスクリーンから継承"
 "されなければ変数のデフォルトの値を設定します。"
 
-#: ../../source/screens.rst:1833
+#: ../../source/screens.rst:1953
 msgid "For"
 msgstr "For"
 
-#: ../../source/screens.rst:1835
+#: ../../source/screens.rst:1955
+#, fuzzy
 msgid ""
 "The ``for`` statement is similar to the Python ``for`` statement, except "
-"that it does not support the ``else`` clause nor the ``continue`` and "
-"``break`` statements. It supports assignment to (optionally nested) tuple "
-"patterns, as well as variables."
+"that it does not support the ``else`` clause (it does, however, support the "
+"``continue`` and ``break`` statements). It supports assignment to "
+"(optionally nested) tuple patterns, as well as variables."
 msgstr ""
 "``for`` ステートメントは python の ``for`` ステートメントに相当しますが、"
 "``else`` 節をサポートしていません。 ``continue`` と ``break` ステートメントも"
 "同様です。`変数同様に(任意にネストされた)タプルへの代入もサポートしています。"
 
-#: ../../source/screens.rst:1850
+#: ../../source/screens.rst:1970
 msgid "The for statement takes an index clause::"
 msgstr "for ステートメントは index 節を受け取ります。 ::"
 
-#: ../../source/screens.rst:1858
+#: ../../source/screens.rst:1978
 msgid ""
 "If given, the ``index`` clause should consist of an expression that returns "
 "a hashable and comparable value that is unique for each row in the list. "
@@ -2721,11 +2932,11 @@ msgstr ""
 "加または除去されるときの奇妙な振る舞いを見たなら、 index 節が使いたくなるで"
 "しょう。"
 
-#: ../../source/screens.rst:1869
+#: ../../source/screens.rst:1989
 msgid "If"
 msgstr "If"
 
-#: ../../source/screens.rst:1871
+#: ../../source/screens.rst:1991
 msgid ""
 "The screen language ``if`` statement is the same as the Python/Ren'Py ``if`` "
 "statement. It supports the ``if``, ``elif``, and ``else`` clauses."
@@ -2733,11 +2944,11 @@ msgstr ""
 "スクリーン言語の ``if`` ステートメントは Python/Ren'Py の ``if`` ステートメン"
 "トと同様です。 ``if``, ``elif``, ``else`` 節をサポートしています。"
 
-#: ../../source/screens.rst:1885
+#: ../../source/screens.rst:2005
 msgid "On"
 msgstr "On"
 
-#: ../../source/screens.rst:1887
+#: ../../source/screens.rst:2007
 msgid ""
 "The ``on`` statement allows the screen to execute an action when an event "
 "occurs. It takes one parameter, a string giving the name of an event. This "
@@ -2747,33 +2958,33 @@ msgstr ""
 "にします。パラメーターを一つ受け取り、それはイベントの名前です。これは以下の"
 "うち一つであるべきです。 :"
 
-#: ../../source/screens.rst:1891
+#: ../../source/screens.rst:2011
 msgid "``\"show\"``"
 msgstr "``\"show\"``"
 
-#: ../../source/screens.rst:1892
+#: ../../source/screens.rst:2012
 msgid "``\"hide\"``"
 msgstr "``\"hide\"``"
 
-#: ../../source/screens.rst:1893
+#: ../../source/screens.rst:2013
 msgid "``\"replace\"``"
 msgstr "``\"replace\"``"
 
-#: ../../source/screens.rst:1894
+#: ../../source/screens.rst:2014
 msgid "``\"replaced\"``"
 msgstr "``\"replaced\"``"
 
-#: ../../source/screens.rst:1896
+#: ../../source/screens.rst:2016
 msgid ""
 "It then takes an action property, giving an action to run if the event "
 "occurs."
 msgstr "イベント時に実行するアクションを指定するプロパティーを受け取ります。"
 
-#: ../../source/screens.rst:1916
+#: ../../source/screens.rst:2036
 msgid "Use"
 msgstr "Use"
 
-#: ../../source/screens.rst:1918
+#: ../../source/screens.rst:2038
 msgid ""
 "The ``use`` statement allows a screen to include another. The use statement "
 "takes the name of the screen to use. This can optionally be followed by an "
@@ -2783,7 +2994,7 @@ msgstr ""
 "ステートメントは使用するスクリーンの名前を受け取ります。これには任意で括弧で"
 "囲まれた引数リストが続きます。"
 
-#: ../../source/screens.rst:1922
+#: ../../source/screens.rst:2042
 msgid ""
 "If the used screen has no parentheses, it has read and write access to the "
 "scope of the current screen, updated with any keyword arguments passed via "
@@ -2795,7 +3006,7 @@ msgstr ""
 "うでなければそのスコープは引数をそれらのパラメーターに割り当てた結果で初期化"
 "されます。 ::"
 
-#: ../../source/screens.rst:1945
+#: ../../source/screens.rst:2065
 msgid ""
 "The use statement may take one property, ``id``, which must be placed after "
 "the parameter list if present. This screen is only useful when two screens "
@@ -2809,7 +3020,7 @@ msgstr ""
 "き換えると、使用されたスクリーンの状態は以前のスクリーンから新しいスクリーン"
 "へ譲渡されます。"
 
-#: ../../source/screens.rst:1977
+#: ../../source/screens.rst:2097
 msgid ""
 "Instead of the name of the screen, the keyword ``expression`` can be given, "
 "followed by an expression giving the name of the screen to use. If "
@@ -2820,11 +3031,11 @@ msgstr ""
 "クリーン名を指定する式が続きます。スクリーンに引数が必要なら、 ``pass`` キー"
 "ワードを使用して式と分離しなければなりません。"
 
-#: ../../source/screens.rst:2004
+#: ../../source/screens.rst:2124
 msgid "Use and Transclude"
 msgstr "Use と Transclude"
 
-#: ../../source/screens.rst:2006
+#: ../../source/screens.rst:2126
 msgid ""
 "A use statement may also take a block containing screen language statements. "
 "When a block is given, the screen that is used may contain the "
@@ -2836,7 +3047,7 @@ msgstr ""
 "しょう。 ``transclude`` ステートメントは use ステートメントのブロック内にある"
 "ステートメントで置き換えられます。"
 
-#: ../../source/screens.rst:2011
+#: ../../source/screens.rst:2131
 msgid ""
 "This makes it possible to define reusable layouts using screens. For "
 "example, the screen::"
@@ -2844,7 +3055,7 @@ msgstr ""
 "これによりスクリーンを使用して再利用可能なレイアウトが定義出来るようになりま"
 "す。例えば次のスクリーン ::"
 
-#: ../../source/screens.rst:2024
+#: ../../source/screens.rst:2144
 msgid ""
 "is meant to be a reusable component that wraps other components. Here's an "
 "example of how it can be used::"
@@ -2852,7 +3063,7 @@ msgstr ""
 "これは他の要素をラップする再利用可能な要素であることを意図しています。次のよ"
 "うに使用します。 ::"
 
-#: ../../source/screens.rst:2036
+#: ../../source/screens.rst:2156
 msgid ""
 "The use and transclude constructs form the basis of :ref:`creator-defined "
 "screen language statements <creator-defined-sl>`."
@@ -2860,11 +3071,11 @@ msgstr ""
 "use と transclude は :ref:`ユーザー定義スクリーン言語ステートメント <creator-"
 "defined-sl>` に基づいて形式を組み立てます。"
 
-#: ../../source/screens.rst:2042
+#: ../../source/screens.rst:2162
 msgid "Python"
 msgstr "Python"
 
-#: ../../source/screens.rst:2044
+#: ../../source/screens.rst:2164
 msgid ""
 "The screen language also includes single-line and multiple-line Python "
 "statements, which can execute Python. The Python runs in the scope of the "
@@ -2873,7 +3084,7 @@ msgstr ""
 "スクリーン言語には python コードを実行する一行または複数行の python ステート"
 "メントも含まれます。このコードはそのスクリーンのスコープで実行します。"
 
-#: ../../source/screens.rst:2048
+#: ../../source/screens.rst:2168
 msgid ""
 "**Python must not cause side effects that are visible from outside the "
 "screen.** Ren'Py will run a screen multiple times, as it deems necessary. It "
@@ -2886,11 +3097,11 @@ msgstr ""
 "リーンのコードを実行します。結果としてスクリーンのコードが副作用を持つなら、"
 "それが何回実行されるかはわかりません。"
 
-#: ../../source/screens.rst:2070
+#: ../../source/screens.rst:2190
 msgid "Showif Statement"
 msgstr "Showif Statement"
 
-#: ../../source/screens.rst:2072
+#: ../../source/screens.rst:2192
 msgid ""
 "The ``showif`` statement takes a condition. It shows its children when the "
 "condition is true, and hides the children when the condition is false. When "
@@ -2903,7 +3114,7 @@ msgstr ""
 "子に ATL イベントを送り、表示、非表示処理を管理して Ren'Py がアニメーションで"
 "表示、非表示出来るようにします。"
 
-#: ../../source/screens.rst:2078
+#: ../../source/screens.rst:2198
 msgid ""
 "The ``showif`` statement wraps its children in a displayable that manages "
 "the show and hide process."
@@ -2911,7 +3122,7 @@ msgstr ""
 "``showif`` ステートメントは displayable 内のその子を表示非表示処理を管理する "
 "displayable にラップします。"
 
-#: ../../source/screens.rst:2081
+#: ../../source/screens.rst:2201
 msgid ""
 "Multiple showif statements can be grouped together into a single ``showif``/"
 "``elif``/``else`` construct, similiar to an if statement. **Unlike the if "
@@ -2925,15 +3136,15 @@ msgstr ""
 "す。** これは showif ステートメントが非表示される子を作成する必要があるためで"
 "す。 "
 
-#: ../../source/screens.rst:2087
+#: ../../source/screens.rst:2207
 msgid "Showif delivers three events to its children:"
 msgstr "showif は 3 つのイベントをその子に送ります。"
 
-#: ../../source/screens.rst:2090
+#: ../../source/screens.rst:2210
 msgid "``appear``"
 msgstr "``appear``"
 
-#: ../../source/screens.rst:2090
+#: ../../source/screens.rst:2210
 msgid ""
 "Is delivered if the condition is true when the screen is first shown, to "
 "instantly show the child."
@@ -2941,23 +3152,23 @@ msgstr ""
 "スクリーンが最初に表示されたときに条件が True なら送られ、即座に子を表示しま"
 "す。"
 
-#: ../../source/screens.rst:2092
+#: ../../source/screens.rst:2212
 msgid "``show``"
 msgstr "``show``"
 
-#: ../../source/screens.rst:2093
+#: ../../source/screens.rst:2213
 msgid "Is delivered when the condition changes from false to true."
 msgstr "条件が False から True に変わると送られます。"
 
-#: ../../source/screens.rst:2095
+#: ../../source/screens.rst:2215
 msgid "``hide``"
 msgstr "``hide``"
 
-#: ../../source/screens.rst:2095
+#: ../../source/screens.rst:2215
 msgid "Is delivered when the condition changes from true to false."
 msgstr "条件が True から False に変わると送られます。"
 
-#: ../../source/screens.rst:2097
+#: ../../source/screens.rst:2217
 msgid ""
 "For these purposes, the condition of an ``elif`` clause is always false if "
 "any prior condition is true, while the condition of an else clause is only "
@@ -2966,60 +3177,124 @@ msgstr ""
 "これらの目的のため、 ``elif`` 節の条件はそれ以前の条件が True なら常に False "
 "で、すべての前の条件が False なら else 節だけが True になります。"
 
-#: ../../source/screens.rst:2101
+#: ../../source/screens.rst:2221
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/screens.rst:2138
+#: ../../source/screens.rst:2258
 msgid "Screen Statements"
 msgstr "スクリーン・ステートメント"
 
-#: ../../source/screens.rst:2140
+#: ../../source/screens.rst:2260
 msgid ""
 "In addition to the screen statement, there are three Ren'Py script language "
 "statements that involve screens."
 msgstr ""
 "Ren'Py 言語にはスクリーンに作用する三つのスクリーンステートメントがあります。"
 
-#: ../../source/screens.rst:2144
+#: ../../source/screens.rst:2266
 msgid "Show Screen"
 msgstr "Show Screen"
 
-#: ../../source/screens.rst:2146
+#: ../../source/screens.rst:2268
+#, fuzzy
 msgid ""
 "The ``show screen`` statement causes a screen to be shown. It takes an "
-"screen name, and an optional Python argument list. If present, the arguments "
-"are used to initialize the scope of the screen. There are also some specific "
-"keywords passed to :func:`show_screen` and :func:`call_screen`."
+"screen name, a series of optional clauses, and optional Python arguments "
+"which are passed to the screen. :func:`renpy.show_screen` and :func:`renpy."
+"call_screen` take additional specific keywords."
 msgstr ""
 "``show screen`` ステートメントはスクリーンを表示します。スクリーン名と任意の"
 "引数リストを受け取ります。もしあるなら引数はそのスクリーンのスコープを初期化"
 "するために使用されます。 :func:`show_screen` と :func:`call_screen` に渡され"
 "るいくつかの特別なキーワードもあります。"
 
-#: ../../source/screens.rst:2151
+#: ../../source/screens.rst:2273
+#, fuzzy
+msgid ""
+"The ``show screen`` statement takes the following clauses, some of them "
+"similar to the clauses of the :ref:`show-statement`:"
+msgstr ""
+"``show screen`` ステートメントは with 節を受け取り、それは ``show`` ステート"
+"メントと同様に解釈されます。 ::"
+
+#: ../../source/screens.rst:2279 ../../source/screens.rst:2387
+msgid "``as``"
+msgstr ""
+
+#: ../../source/screens.rst:2277 ../../source/screens.rst:2385
+msgid ""
+"The ``as`` clause takes a name. If not specified, it defaults to the tag "
+"associated with the screen (see the :ref:`screen-statement`). If that's not "
+"specified, it defaults to the name of the screen."
+msgstr ""
+
+#: ../../source/screens.rst:2282 ../../source/screens.rst:2390
+#, fuzzy
+msgid "``onlayer``"
+msgstr "`layer`"
+
+#: ../../source/screens.rst:2282 ../../source/screens.rst:2390
+msgid "The layer to show the screen on."
+msgstr ""
+
+#: ../../source/screens.rst:2287 ../../source/screens.rst:2395
+#, fuzzy
+msgid "``zorder``"
+msgstr "`zorder`"
+
+#: ../../source/screens.rst:2285 ../../source/screens.rst:2393
+msgid ""
+"The zorder to show the screen on. If not specified, defaults to the zorder "
+"associated with the screen. If that's not specified, it is 0 by default."
+msgstr ""
+
+#: ../../source/screens.rst:2297 ../../source/screens.rst:2411
+msgid "``expression``"
+msgstr ""
+
+#: ../../source/screens.rst:2290
+#, fuzzy
 msgid ""
 "If the ``expression`` keyword is given, the expression following it will be "
 "evaluated as the screen name. To pass arguments to the screen with the "
 "expression keyword, separate the expression and arguments with the ``pass`` "
-"keyword."
+"keyword::"
 msgstr ""
 "``expression`` キーワードが指定されると、それに続く式がスクリーン名として評価"
 "されます。expression キーワードでスクリーンに引数を渡すには、式と引数を "
 "``pass`` キーワードで区切ります。"
 
-#: ../../source/screens.rst:2163
+#: ../../source/screens.rst:2303 ../../source/screens.rst:2415
+msgid "``with``"
+msgstr ""
+
+#: ../../source/screens.rst:2300
+#, fuzzy
 msgid ""
-"The show screen statement takes an optional ``nopredict`` keyword, that "
-"prevents screen prediction from occurring. During screen prediction, "
-"arguments to the screen are evaluated. Please ensure that evaluating the "
-"screen arguments does not cause unexpected side-effects to occur."
+"This is interpreted in the same way that the with clause of a ``show`` "
+"statement is::"
+msgstr ""
+"``show screen`` ステートメントは with 節を受け取り、それは ``show`` ステート"
+"メントと同様に解釈されます。 ::"
+
+#: ../../source/screens.rst:2314 ../../source/screens.rst:2405
+msgid "``nopredict``"
+msgstr ""
+
+#: ../../source/screens.rst:2306
+#, fuzzy
+msgid ""
+"The ``nopredict`` keyword doesn't take a value. It prevents screen "
+"prediction from occurring. During screen prediction, arguments to the screen "
+"are evaluated. Please ensure that evaluating the screen arguments does not "
+"cause unexpected side-effects to occur."
 msgstr ""
 "show screen ステートメントは任意で ``nopredict`` キーワードを受け取り、スク"
 "リーンの予測を禁止します。スクリーンの予測中にスクリーンへの引数は評価されま"
 "す。スクリーン引数の評価が不測の副作用を起さないように確認してください。"
 
-#: ../../source/screens.rst:2170 ../../source/screens.rst:2243
+#: ../../source/screens.rst:2313 ../../source/screens.rst:2404
 msgid ""
 "If evaluating the arguments to a screen causes side-effects to occur, your "
 "game may behave in unexpected ways."
@@ -3027,7 +3302,7 @@ msgstr ""
 "スクリーンの引数の評価が副作用を起すなら、あなたのゲームは予測しない方法で動"
 "作するかもしれません。"
 
-#: ../../source/screens.rst:2173
+#: ../../source/screens.rst:2316
 msgid ""
 "Screens shown in this way are displayed until they are explicitly hidden. "
 "This allows them to be used for overlay purposes."
@@ -3035,30 +3310,35 @@ msgstr ""
 "このように表示されたスクリーンは明示的に非表示にされるまで表示されます。これ"
 "によりそれらで意図的に上書きが出来ます。"
 
-#: ../../source/screens.rst:2185
+#: ../../source/screens.rst:2329
+msgid "Hide Screen"
+msgstr "Hide Screen"
+
+#: ../../source/screens.rst:2331
 msgid ""
-"The ``show screen`` statement takes a with clause, which is interpreted in "
-"the same way that the with clause of a ``show`` statement is. ::"
+"The ``hide screen`` statement is used to hide a screen that is currently "
+"being shown. It takes a screen tag. It first tries to find a screen with the "
+"given tag on the given layer (see the ``onlayer`` clause). If none is found, "
+"it looks for a screen with that name on the layer, regardless of the tag the "
+"screen is shown as. If none is found, nothing happens::"
+msgstr ""
+
+#: ../../source/screens.rst:2353
+msgid ""
+"It also takes the ``onlayer`` clause, which defaults to the ``screens`` "
+"layer."
+msgstr ""
+
+#: ../../source/screens.rst:2356
+#, fuzzy
+msgid ""
+"The with clause is interpreted the same way the ``with`` clause of a :ref:"
+"`show-statement` is."
 msgstr ""
 "``show screen`` ステートメントは with 節を受け取り、それは ``show`` ステート"
 "メントと同様に解釈されます。 ::"
 
-#: ../../source/screens.rst:2191
-msgid "Hide Screen"
-msgstr "Hide Screen"
-
-#: ../../source/screens.rst:2193
-msgid ""
-"The ``hide screen`` statement is used to hide a screen that is currently "
-"being shown. If the screen is not being shown, nothing happens. The with "
-"clause is interpreted the same way the ``with`` clause of a show statement "
-"is."
-msgstr ""
-"``hide screen`` ステートメントは現在表示されているスクリーンを非表示にしま"
-"す。そのスクリーンが表示されていなければ何もしません。 with 節は show ステー"
-"トメントの ``with`` 節と同様に解釈されます。"
-
-#: ../../source/screens.rst:2198
+#: ../../source/screens.rst:2359
 msgid ""
 "Similar to the ``show screen`` statement, ``hide screen`` also takes the "
 "``expression`` keyword, allowing to use an arbitrary expression as the "
@@ -3067,21 +3347,22 @@ msgstr ""
 "``show screen`` ステートメントと同様に、 ``hide screen`` も ``expression`` "
 "キーワードを受け取り、任意の式をスクリーン名として使用できます。"
 
-#: ../../source/screens.rst:2210
+#: ../../source/screens.rst:2371
 msgid "Call Screen"
 msgstr "Call Screen"
 
-#: ../../source/screens.rst:2212
+#: ../../source/screens.rst:2373
+#, fuzzy
 msgid ""
 "The ``call screen`` statement shows a screen, and then hides it again at the "
 "end of the current interaction. If the screen returns a value, then the "
-"value is placed in ``_return``."
+"value is placed in the global ``_return`` variable."
 msgstr ""
 "``call screen`` ステートメントはスクリーンを表示し、現在のインタラクションが"
 "終了するとそれを非表示にします。そのスクリーンが値を返すならその値は "
 "``_return`` に代入されます。"
 
-#: ../../source/screens.rst:2216
+#: ../../source/screens.rst:2377
 msgid ""
 "This can be used to display an imagemap. The imagemap can place a value into "
 "the ``_return`` variable using the :func:`Return` action, or can jump to a "
@@ -3091,18 +3372,36 @@ msgstr ""
 "クションを利用して値を変数 `_return` に代入するか、 :func:`Jump` アクションを"
 "使用してラベルにジャンプできます。"
 
-#: ../../source/screens.rst:2220
+#: ../../source/screens.rst:2381
 msgid ""
-"The call screen statement takes an optional ``nopredict`` keyword, which "
-"prevents screen prediction from occurring. During screen prediction, "
-"arguments to the screen are evaluated. Please ensure that evaluating the "
-"screen arguments does not cause unexpected side-effects to occur."
+"The call screen statement takes various optional clauses, most of them "
+"similar to those of the :ref:`show-screen-statement`:"
 msgstr ""
-"call screen ステートメントは任意で ``nopredict`` キーワードを受け取り、スク"
+
+#: ../../source/screens.rst:2398
+#, fuzzy
+msgid ""
+"This keyword prevents screen prediction from occurring. During screen "
+"prediction, arguments to the screen are evaluated. Please ensure that "
+"evaluating the screen arguments does not cause unexpected side-effects to "
+"occur."
+msgstr ""
+"show screen ステートメントは任意で ``nopredict`` キーワードを受け取り、スク"
 "リーンの予測を禁止します。スクリーンの予測中にスクリーンへの引数は評価されま"
 "す。スクリーン引数の評価が不測の副作用を起さないように確認してください。"
 
-#: ../../source/screens.rst:2225
+#: ../../source/screens.rst:2408
+#, fuzzy
+msgid ""
+"Similar to the ``show screen`` statement, ``call screen`` also takes the "
+"``expression`` keyword, allowing to use an arbitrary expression as the "
+"screen name. This also comes with the ``pass`` keyword, allowing arguments "
+"to be passed to the screen."
+msgstr ""
+"``show screen`` ステートメントと同様に、 ``call screen`` も ``expression`` "
+"キーワードを受け取り、任意の式をスクリーン名として使用できます。"
+
+#: ../../source/screens.rst:2414
 msgid ""
 "In a call screen statement, the ``with`` clause causes a transition to occur "
 "when the screen is shown."
@@ -3110,7 +3409,7 @@ msgstr ""
 "call screen ステートメントで、 ``with`` 節はそのスクリーン表示時にトランジ"
 "ションを起こさせます。"
 
-#: ../../source/screens.rst:2228
+#: ../../source/screens.rst:2417
 msgid ""
 "Since calling a screen is an interaction, and interactions trigger an "
 "implicit ``with None``, using a ``with`` statement after the ``call screen`` "
@@ -3126,7 +3425,7 @@ msgstr ""
 "別なキーワード引数 ``_with_none=False`` を以下の例のようにスクリーンに渡して"
 "ください。"
 
-#: ../../source/screens.rst:2235
+#: ../../source/screens.rst:2424
 msgid ""
 "Other ways of triggering transitions also work, such as the "
 "``[ With(dissolve), Return() ]`` action list."
@@ -3134,20 +3433,11 @@ msgstr ""
 "``[ With(dissolve), Return() ]`` アクションリストのようなトランジションを発生"
 "させる他の方法も動作します。"
 
-#: ../../source/screens.rst:2238
-msgid ""
-"Similar to the ``show screen`` statement, ``call screen`` also takes the "
-"``expression`` keyword, allowing to use an arbitrary expression as the "
-"screen name."
-msgstr ""
-"``show screen`` ステートメントと同様に、 ``call screen`` も ``expression`` "
-"キーワードを受け取り、任意の式をスクリーン名として使用できます。"
-
-#: ../../source/screens.rst:2267
+#: ../../source/screens.rst:2448
 msgid "Screen Variants"
 msgstr "スクリーン variant"
 
-#: ../../source/screens.rst:2269
+#: ../../source/screens.rst:2450
 msgid ""
 "Ren'Py runs both on traditional mouse-oriented devices such as Windows, Mac, "
 "and Linux PCs, and newer touch-oriented devices such as Android-based "
@@ -3160,7 +3450,7 @@ msgstr ""
 "ス両方で動作します。スクリーン variant によりゲームは複数の種類のスクリーンを"
 "提供でき、実行中のハードウェアに最適なものを使用できます。"
 
-#: ../../source/screens.rst:2275
+#: ../../source/screens.rst:2456
 msgid ""
 "Ren'Py chooses a screen variant to use by searching variants in the order "
 "they are listed in :var:`config.variants`. The first variant that exists is "
@@ -3169,7 +3459,7 @@ msgstr ""
 "Ren'Py は :var:`config.variants` にリストされた順番で variant を探索して使用"
 "するスクリーン variant を選択します。存在する最初の variant が使用されます。"
 
-#: ../../source/screens.rst:2279
+#: ../../source/screens.rst:2460
 msgid ""
 "If the RENPY_VARIANT environment variable is present, config.variants is "
 "initialized by splitting the value of the variable on whitespace, and then "
@@ -3182,7 +3472,7 @@ msgstr ""
 "「small phone touch」のように設定すると PC で android デバイス用のスクリーン"
 "をテスト出来ます。"
 
-#: ../../source/screens.rst:2285
+#: ../../source/screens.rst:2466
 msgid ""
 "If the environment variable is not present, a list of variants is built up "
 "automatically, by going through the following list in order and choosing the "
@@ -3191,28 +3481,28 @@ msgstr ""
 "環境変数がなければ variant のリストは以下のリストを順番に探索して現在のプラッ"
 "トフォームに対応するものを選んで自動的に生成されます。"
 
-#: ../../source/screens.rst:2290
+#: ../../source/screens.rst:2471
 msgid "``\"steam_deck\"``"
 msgstr "``\"steam_deck\"``"
 
-#: ../../source/screens.rst:2290
+#: ../../source/screens.rst:2471
 msgid "True if running on a Steam Deck or equivalent hardware."
 msgstr ""
 "Steam Deck またはそれに相当するハードウェアで実行していれば True です。"
 
-#: ../../source/screens.rst:2293
+#: ../../source/screens.rst:2474
 msgid "``\"steam_big_picture\"``"
 msgstr "``\"steam_big_picture\"``"
 
-#: ../../source/screens.rst:2293
+#: ../../source/screens.rst:2474
 msgid "True if running in Steam Big Picture mode."
 msgstr "Steam Big Picture モードで実行していれば True です。"
 
-#: ../../source/screens.rst:2298
+#: ../../source/screens.rst:2479
 msgid "``\"large\"``"
 msgstr "``\"large\"``"
 
-#: ../../source/screens.rst:2296
+#: ../../source/screens.rst:2477
 msgid ""
 "A screen large enough that relatively small text can be comfortably read, "
 "and buttons can be easily clicked. This is used for computer screens."
@@ -3220,11 +3510,11 @@ msgstr ""
 "比較的小さなテキストを快適に読め、ボタンを簡単にクリックできる十分大きな画面"
 "です。これはコンピューターの画面に使用されます。"
 
-#: ../../source/screens.rst:2303
+#: ../../source/screens.rst:2484
 msgid "``\"medium\"``"
 msgstr "``\"medium\"``"
 
-#: ../../source/screens.rst:2301
+#: ../../source/screens.rst:2482
 msgid ""
 "A screen where smallish text can be read, but buttons may need to grow in "
 "size so they can be comfortably pressed. This is used for tablets."
@@ -3232,11 +3522,11 @@ msgstr ""
 "やや小さいテキストは読めるが、ボタンは快適に押せるためにはサイズを大きくしな"
 "ければならない画面です。これはタブレットで使用されます。"
 
-#: ../../source/screens.rst:2309
+#: ../../source/screens.rst:2490
 msgid "``\"small\"``"
 msgstr "``\"small\"``"
 
-#: ../../source/screens.rst:2306
+#: ../../source/screens.rst:2487
 msgid ""
 "A screen where text must be expanded in order to be read. This is used for "
 "phones and televisions. (A television might be physically large, but it's "
@@ -3245,11 +3535,11 @@ msgstr ""
 "テキストを読むためにも字を大きくする必要がある画面です。これは携帯やテレビで"
 "使用されます ( テレビは物理的には大きいですが、大概遠くて見にくいです )。"
 
-#: ../../source/screens.rst:2314
+#: ../../source/screens.rst:2495
 msgid "``\"tablet\"``"
 msgstr "``\"tablet\"``"
 
-#: ../../source/screens.rst:2312
+#: ../../source/screens.rst:2493
 msgid ""
 "Defined on touchscreen based devices where the screen has a diagonal size of "
 "6 inches or more. (In general, ``\"medium\"`` should be used instead of ``"
@@ -3258,11 +3548,11 @@ msgstr ""
 "画面の対角線が 6 インチタッチかそれ以上のタッチスクリーンベースのデバイスで定"
 "義されます ( 通常は「 medium 」が「 tablet 」の代わりに使用されます )。"
 
-#: ../../source/screens.rst:2320
+#: ../../source/screens.rst:2501
 msgid "``\"phone\"``"
 msgstr "``\"phone\"``"
 
-#: ../../source/screens.rst:2317
+#: ../../source/screens.rst:2498
 msgid ""
 "Defined on touchscreen-based devices where the diagonal size of the screen "
 "is less than 6 inches. On such a small device, it's important to make "
@@ -3274,27 +3564,27 @@ msgstr ""
 "きるようにすることが重要です ( 通常は「 small 」が「 phone 」の代わりに使用さ"
 "れます )。"
 
-#: ../../source/screens.rst:2323
+#: ../../source/screens.rst:2504
 msgid "``\"touch\"``"
 msgstr "``\"touch\"``"
 
-#: ../../source/screens.rst:2323
+#: ../../source/screens.rst:2504
 msgid "Defined on touchscreen-based devices."
 msgstr "タッチスクリーンベースのデバイスで定義されます。"
 
-#: ../../source/screens.rst:2326
+#: ../../source/screens.rst:2507
 msgid "``\"tv\"``"
 msgstr "``\"tv\"``"
 
-#: ../../source/screens.rst:2326
+#: ../../source/screens.rst:2507
 msgid "Defined on television-based devices."
 msgstr "TV ベースのデバイスで定義されます。"
 
-#: ../../source/screens.rst:2329
+#: ../../source/screens.rst:2510
 msgid "``\"firetv\"``"
 msgstr "``\"firetv\"``"
 
-#: ../../source/screens.rst:2329
+#: ../../source/screens.rst:2510
 msgid ""
 "Defined on the Amazon Fire TV console. (``\"tv\"`` and ``\"small\"`` are "
 "also defined.)"
@@ -3302,27 +3592,27 @@ msgstr ""
 "Amazon Fire TV のコンソール上で定義されます (\"tv\" と \"small\" も定義されま"
 "す )。"
 
-#: ../../source/screens.rst:2332
+#: ../../source/screens.rst:2513
 msgid "``\"chromeos\"``"
 msgstr "``\"chromeos\"``"
 
-#: ../../source/screens.rst:2332
+#: ../../source/screens.rst:2513
 msgid "Defined when running as an Android app on a Chromebook."
 msgstr "Chromebook 上で Android app として実行時に定義されます。"
 
-#: ../../source/screens.rst:2335
+#: ../../source/screens.rst:2516
 msgid "``\"android\"``"
 msgstr "``\"android\"``"
 
-#: ../../source/screens.rst:2335
+#: ../../source/screens.rst:2516
 msgid "Defined on all Android devices."
 msgstr "すべての Android デバイスで定義されます。"
 
-#: ../../source/screens.rst:2340
+#: ../../source/screens.rst:2521
 msgid "``\"ios\"``"
 msgstr "``\"ios\"``"
 
-#: ../../source/screens.rst:2338
+#: ../../source/screens.rst:2519
 msgid ""
 "Defined on iOS devices, like the iPad (where ``\"tablet\"`` and ``\"medium"
 "\"`` are also defined) and the iPhone (where ``\"phone\"`` and ``\"small\"`` "
@@ -3331,22 +3621,22 @@ msgstr ""
 "iPad ( ``\"tablet\"`` と ``\"medium\"`` も定義されます )や iPhone (``\"phone"
 "\"`` と ``\"small\"`` も定義されます)のような iOS デバイスで定義されます。"
 
-#: ../../source/screens.rst:2343
+#: ../../source/screens.rst:2524
 msgid "``\"mobile\"``"
 msgstr "``\"mobile\"``"
 
-#: ../../source/screens.rst:2343
+#: ../../source/screens.rst:2524
 msgid ""
 "Defined on mobile platforms, such as Android, iOS and mobile web browsers."
 msgstr ""
 "Android や iOS, モバイルウェブブラウザー のようなモバイルプラットフォームを定"
 "義します。"
 
-#: ../../source/screens.rst:2348
+#: ../../source/screens.rst:2529
 msgid "``\"pc\"``"
 msgstr "``\"pc\"``"
 
-#: ../../source/screens.rst:2346
+#: ../../source/screens.rst:2527
 msgid ""
 "Defined on Windows, Mac OS X, and Linux. A PC is expected to have a mouse "
 "and keyboard present, to allow buttons to be hovered, and to allow precise "
@@ -3355,31 +3645,31 @@ msgstr ""
 "Windows, Mac OS X, Linux で定義されます。 PCはマウスとキーボードを所持し、ボ"
 "タンへのフォーカスと正確な移動が出来ると期待されます。"
 
-#: ../../source/screens.rst:2351
+#: ../../source/screens.rst:2532
 msgid "``\"web\"``"
 msgstr "``\"web\"``"
 
-#: ../../source/screens.rst:2351
+#: ../../source/screens.rst:2532
 msgid "Defined when running inside a web browser."
 msgstr "ウェブブラウザー内部で実行しているときに定義されます。"
 
-#: ../../source/screens.rst:2354
+#: ../../source/screens.rst:2535
 msgid "``None``"
 msgstr "``None``"
 
-#: ../../source/screens.rst:2354
+#: ../../source/screens.rst:2535
 msgid "Always defined."
 msgstr "常に定義されます。"
 
-#: ../../source/screens.rst:2356
+#: ../../source/screens.rst:2537
 msgid "An example of defining a screen variant is:"
 msgstr "スクリーン variant を定義する例です。 :"
 
-#: ../../source/screens.rst:2371
+#: ../../source/screens.rst:2552
 msgid "See also"
 msgstr "以下も参照してください"
 
-#: ../../source/screens.rst:2373
+#: ../../source/screens.rst:2554
 msgid ""
 ":doc:`screen_actions` : a comprehensive list of actions and other tools to "
 "be used with screens."
@@ -3387,7 +3677,7 @@ msgstr ""
 ":doc:`screen_actions` : スクリーンと使用するためのアクションやその他ツールの"
 "包括的なリストです。"
 
-#: ../../source/screens.rst:2376
+#: ../../source/screens.rst:2557
 msgid ""
 ":doc:`screen_optimization` : some useful ways of making screens as efficient "
 "as possible."
@@ -3395,13 +3685,44 @@ msgstr ""
 ":doc:`screen_optimization` : できるだけ効率のよいスクリーンを作成する便利な方"
 "法があります。"
 
-#: ../../source/screens.rst:2379
+#: ../../source/screens.rst:2560
 msgid ""
 ":doc:`screen_python` : go from using Ren'Py's predefined tools, to extending "
 "Ren'Py."
 msgstr ""
 ":doc:`screen_python` : Ren'Py であらかじめ定義されたツールの使用から、Ren'Py "
 "の拡張までがあります。"
+
+#~ msgid "``drag``"
+#~ msgstr "``drag``"
+
+#~ msgid ""
+#~ "Creates a :class:`DragGroup`. A drag group may have zero or more drags as "
+#~ "its children."
+#~ msgstr ""
+#~ ":class:`DragGroup` クラスを作成します。DragGroup はその子として 0 以上の "
+#~ "drag を持ちます。"
+
+#~ msgid ""
+#~ "The ``hide screen`` statement is used to hide a screen that is currently "
+#~ "being shown. If the screen is not being shown, nothing happens. The with "
+#~ "clause is interpreted the same way the ``with`` clause of a show "
+#~ "statement is."
+#~ msgstr ""
+#~ "``hide screen`` ステートメントは現在表示されているスクリーンを非表示にしま"
+#~ "す。そのスクリーンが表示されていなければ何もしません。 with 節は show ス"
+#~ "テートメントの ``with`` 節と同様に解釈されます。"
+
+#~ msgid ""
+#~ "The call screen statement takes an optional ``nopredict`` keyword, which "
+#~ "prevents screen prediction from occurring. During screen prediction, "
+#~ "arguments to the screen are evaluated. Please ensure that evaluating the "
+#~ "screen arguments does not cause unexpected side-effects to occur."
+#~ msgstr ""
+#~ "call screen ステートメントは任意で ``nopredict`` キーワードを受け取り、ス"
+#~ "クリーンの予測を禁止します。スクリーンの予測中にスクリーンへの引数は評価さ"
+#~ "れます。スクリーン引数の評価が不測の副作用を起さないように確認してくださ"
+#~ "い。"
 
 #~ msgid "If True, dragging the mouse will scroll the viewport."
 #~ msgstr "True ならマウスのドラッグで viewport をスクロール出来ます。"

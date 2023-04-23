@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 10:46+0900\n"
+"POT-Creation-Date: 2023-04-23 11:09+0900\n"
 "PO-Revision-Date: 2022-07-31 18:05+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/mouse.rst:5
+#: ../../source/mouse.rst:2
 msgid "Custom Mouse Cursors"
 msgstr "カスタムマウスカーソル"
 
-#: ../../source/mouse.rst:7
+#: ../../source/mouse.rst:4
 msgid ""
 "Ren'Py has two systems for creating custom mouse cursors. The first takes "
 "advantage of the hardware mouse cursor, while the second uses Ren'Py to draw "
@@ -31,23 +31,23 @@ msgstr ""
 "ドウェアマウスカーソルの利用であり、2つ目は Ren'Py を使用してマウスカーソルと"
 "して displayable を描画します。"
 
-#: ../../source/mouse.rst:11
+#: ../../source/mouse.rst:8
 msgid "The hardware mouse cursor has the advantages:"
 msgstr "ハードウェアマウスカーソルは以下の利点を持ちます :"
 
-#: ../../source/mouse.rst:13
+#: ../../source/mouse.rst:10
 msgid "It is very fast."
 msgstr "高速"
 
-#: ../../source/mouse.rst:14
+#: ../../source/mouse.rst:11
 msgid "It is very low overhead, leaving Ren'Py time to do other things."
 msgstr "オーバーヘッドがとても低く Ren'Py に他のことをする時間を残します。"
 
-#: ../../source/mouse.rst:16
+#: ../../source/mouse.rst:13
 msgid "And the limitation:"
 msgstr "以下の制限があります :"
 
-#: ../../source/mouse.rst:18
+#: ../../source/mouse.rst:15
 msgid ""
 "Cursors are limited to small sizes. 32x32 is guaranteed, while 64x64 seems "
 "to work widely."
@@ -55,11 +55,11 @@ msgstr ""
 "カーソルサイズは小さく制限されます。 32x32 が保証され、 64x64 は広く動作しま"
 "す。"
 
-#: ../../source/mouse.rst:20
+#: ../../source/mouse.rst:17
 msgid "Cursors are limited to sequences of image files."
 msgstr "カーソルは一連の画像ファイルに制限されます。"
 
-#: ../../source/mouse.rst:22
+#: ../../source/mouse.rst:19
 msgid ""
 "Using Ren'Py to draw a displayable as a cursor inverts these restrictions. "
 "While the cursors can be anything Ren'Py can draw, Ren'Py needs to do the "
@@ -71,11 +71,11 @@ msgstr ""
 "画する必要があります。トリプルバッファリングがコンピュータで有効なら、ハード"
 "ウェアカーソルではなかったラグが発生し得ます。"
 
-#: ../../source/mouse.rst:29
+#: ../../source/mouse.rst:26
 msgid "Hardware Mouse Cursor"
 msgstr "ハードウェアマウスカーソル"
 
-#: ../../source/mouse.rst:31
+#: ../../source/mouse.rst:28
 msgid ""
 "The hardware cursor is controlled by the :var:`config.mouse` variable. This "
 "variable consists of a dictionary, that maps mouse names to a list of "
@@ -86,11 +86,11 @@ msgstr ""
 "は辞書で構成され、マウス名をフレームリストに対応させます。各フレームは 3要素"
 "のタプルであり、画像ファイルとその画像内の X, Y オフセットです。"
 
-#: ../../source/mouse.rst:36
+#: ../../source/mouse.rst:33 ../../source/mouse.rst:97
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/mouse.rst:51
+#: ../../source/mouse.rst:48
 msgid ""
 "When an animation consists of multiple frames, the frames are played back at "
 "20fps. Ren'Py will only change the cursor when the image or offsets change."
@@ -98,11 +98,116 @@ msgstr ""
 "アニメーションが複数のフレームで構成されるなら、フレームは20fpsで再生されま"
 "す。 Ren'Py は画像またはオフセットが変更されたときのみカーソルを変更します。"
 
-#: ../../source/mouse.rst:56
+#: ../../source/mouse.rst:52
+msgid ""
+"The following table lists the various states that the cursor can be in and "
+"the corresponding usage:"
+msgstr ""
+
+#: ../../source/mouse.rst:58
+msgid "State"
+msgstr ""
+
+#: ../../source/mouse.rst:59
+msgid "Usage"
+msgstr ""
+
+#: ../../source/mouse.rst:61
+msgid "``default``"
+msgstr ""
+
+#: ../../source/mouse.rst:62
+msgid ""
+"Used at all times unless another state is specified. It should always be "
+"present, as it is used when a more specific key is absent"
+msgstr ""
+
+#: ../../source/mouse.rst:64
+msgid "``say``"
+msgstr ""
+
+#: ../../source/mouse.rst:65
+msgid "Used when the player is on the \"Say\" screen."
+msgstr ""
+
+#: ../../source/mouse.rst:67
+msgid "``with``"
+msgstr ""
+
+#: ../../source/mouse.rst:68
+msgid "Used during transitions."
+msgstr ""
+
+#: ../../source/mouse.rst:70
+msgid "``menu``"
+msgstr ""
+
+#: ../../source/mouse.rst:71
+msgid "Used when the player is in a menu (for example, choice)."
+msgstr ""
+
+#: ../../source/mouse.rst:73
+msgid "``prompt``"
+msgstr ""
+
+#: ../../source/mouse.rst:74
+msgid "Used when the player is prompted for input."
+msgstr ""
+
+#: ../../source/mouse.rst:76
+msgid "``imagemap``"
+msgstr ""
+
+#: ../../source/mouse.rst:77
+msgid "Used on an imagemap."
+msgstr ""
+
+#: ../../source/mouse.rst:79
+msgid "``button``"
+msgstr ""
+
+#: ../../source/mouse.rst:80
+msgid "Used when the player is hovering over a button/imagebutton."
+msgstr ""
+
+#: ../../source/mouse.rst:82
+msgid "``pause``"
+msgstr ""
+
+#: ../../source/mouse.rst:83
+msgid "Used during pause, renpy.pause()"
+msgstr ""
+
+#: ../../source/mouse.rst:85
+msgid "``mainmenu``"
+msgstr ""
+
+#: ../../source/mouse.rst:86
+msgid "Used in the main menu."
+msgstr ""
+
+#: ../../source/mouse.rst:88
+msgid "``gamemenu``"
+msgstr ""
+
+#: ../../source/mouse.rst:89
+msgid "Used in the game menu."
+msgstr ""
+
+#: ../../source/mouse.rst:91
+msgid ""
+"Every key can have an optional ``pressed_`` prefix, which indicates the "
+"cursor to use when the mouse is pressed. For instance, ``pressed_button`` is "
+"used when the user clicks on a button. To define a default pressed cursor "
+"style, use ``pressed_default`` key. It is used when no other pressed cursor "
+"is defined."
+msgstr ""
+
+#: ../../source/mouse.rst:109
 msgid "Displayable Mouse Cursor"
 msgstr "Displayable マウスカーソル"
 
-#: ../../source/mouse.rst:58
+#: ../../source/mouse.rst:111
 msgid ""
 "A displayable cursor uses the :var:`config.mouse_displayable` variable, and "
 "the MouseDisplayable displayable. As an example::"
@@ -145,11 +250,11 @@ msgstr ""
 "`name` マウスが表示時に使用される、二つ目のカーソルを追加します。これは "
 "MouseDisplayable を返すので、チェインを繋げられます。"
 
-#: ../../source/mouse.rst:79
+#: ../../source/mouse.rst:132
 msgid "Using Mouse Cursors"
 msgstr "マウスカーソルの使用"
 
-#: ../../source/mouse.rst:81
+#: ../../source/mouse.rst:134
 msgid ""
 "The usual way to use a mouse cursor is to provide the ``mouse`` property, "
 "giving the name of the cursor, to something that can be focused in a screen. "
@@ -158,7 +263,7 @@ msgstr ""
 "マウスカーソルの通常の使用方法では、そのカーソル名を指定する ``mouse`` プロパ"
 "ティーをスクリーンのフォーカス可能なもの(ボタンやバー)に提供します。例 ::"
 
-#: ../../source/mouse.rst:88
+#: ../../source/mouse.rst:141
 msgid ""
 "It's also possible to use :var:`default_mouse` to set the mouse cursor "
 "globally::"

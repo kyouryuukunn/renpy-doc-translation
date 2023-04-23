@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 13:27+0900\n"
+"POT-Creation-Date: 2023-04-23 11:09+0900\n"
 "PO-Revision-Date: 2022-08-09 13:45+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/im.rst:9
+#: ../../source/im.rst:6
 msgid "Image Manipulators"
 msgstr "画像マニピュレータ"
 
-#: ../../source/im.rst:11
+#: ../../source/im.rst:8
 msgid ""
 "An image manipulator is a displayable that takes an image or image "
 "manipulator, and either loads it or performs an operation on it. Image "
@@ -31,7 +31,7 @@ msgstr ""
 "読み込み、または処理します。画像マニピュレータは画像または他の画像マニピュ"
 "レータのみを入力として受け取れます。"
 
-#: ../../source/im.rst:16
+#: ../../source/im.rst:13
 msgid ""
 "An image manipulator can be used any place a displayable can, but not vice-"
 "versa. An :func:`Image` is a kind of image manipulator, so an Image can be "
@@ -41,14 +41,14 @@ msgstr ""
 "できません。 :func:`Image` は画像マニピュレータの一種なので、Image は画像マニ"
 "ピュレータが要求されたときはいつでも使えます。"
 
-#: ../../source/im.rst:20
+#: ../../source/im.rst:17
+#, fuzzy
 msgid ""
 "With the few exceptions listed below, the use of image manipulators is "
 "historic. A number of image manipulators that had been documented in the "
 "past should no longer be used, as they suffer from inherent problems. In any "
 "case except for `im.Data`, the :func:`Transform` displayable provides "
-"similar functionality in a more general manner, while fixing the problems, "
-"although it sometimes requires gl2 to be enabled."
+"similar functionality in a more general manner, while fixing the problems."
 msgstr ""
 "以下に示すいくつかの例外を除いて、画像マニピュレータの使用はレガシーなもので"
 "す。かつてドキュメントに記されていた多くの画像マニピュレータは本質的に問題が"
@@ -83,7 +83,12 @@ msgstr ""
 "mask のアルファチャンネルを使用する :func:`AlphaMask` とは別の引数をとること"
 "に注意してください。"
 
-#: ../../source/inc/im_im:19
+#: ../../source/inc/im_im:17
+msgid ""
+"The two images need to have the same size, and the same oversampling factor."
+msgstr ""
+
+#: ../../source/inc/im_im:21
 msgid ""
 "An image manipulator that blurs the image manipulator `im` using an "
 "elliptical kernel described by `xrad` and optionally `yrad`."
@@ -91,7 +96,7 @@ msgstr ""
 "`xrad` とオプションの `yrad` で記述される elliptical kernel を使用して画像マ"
 "ニピュレータ `im` にブラーをかける画像マニピュレータです。"
 
-#: ../../source/inc/im_im:22
+#: ../../source/inc/im_im:24
 msgid ""
 "If `yrad` is None, it will take the value of `xrad` resulting in a circular "
 "kernel being used."
@@ -99,14 +104,14 @@ msgstr ""
 "`yrad` が None なら、 `xrad` の値と同じ値になり、 circular kernel が使用され"
 "ます。"
 
-#: ../../source/inc/im_im:29
+#: ../../source/inc/im_im:31
 msgid ""
 "The same effect can now be achieved with the :tpref:`blur` transform "
 "property."
 msgstr ""
 "現行では同じエフェクトが :tpref:`blur` transform プロパティーで得られます。"
 
-#: ../../source/inc/im_im:33
+#: ../../source/inc/im_im:35
 msgid ""
 "An image manipulator that crops `rect`, a (x, y, width, height) tuple, out "
 "of `im`, an image manipulator."
@@ -114,32 +119,32 @@ msgstr ""
 "画像マニピュレータ `im` から (x, y, width, height) タプル `rect` を刈りこむ画"
 "像マニピュレータです。"
 
-#: ../../source/inc/im_im:40
+#: ../../source/inc/im_im:42
 msgid ""
 "The same effect can now be achieved by setting the :tpref:`crop` transform "
 "property."
 msgstr ""
 "現行では同じエフェクトが :tpref:`crop` transform プロパティーで得られます。"
 
-#: ../../source/inc/im_im:44
+#: ../../source/inc/im_im:46
 msgid "This image manipulator loads an image from binary data."
 msgstr "この画像マニピュレータは、バイナリデータから画像をロードします。"
 
-#: ../../source/inc/im_im:48
+#: ../../source/inc/im_im:50
 msgid "`data`"
 msgstr "`data`"
 
-#: ../../source/inc/im_im:47
+#: ../../source/inc/im_im:49
 msgid ""
 "A string of bytes, giving the compressed image data in a standard file "
 "format."
 msgstr "バイナリの文字列です。標準フォーマットでの圧縮画像データを指定します。"
 
-#: ../../source/inc/im_im:52
+#: ../../source/inc/im_im:54
 msgid "`filename`"
 msgstr "`filename`"
 
-#: ../../source/inc/im_im:51
+#: ../../source/inc/im_im:53
 msgid ""
 "A \"filename\" associated with the image. This is used to provide a hint to "
 "Ren'Py about the format of `data`. (It's not actually loaded from disk.)"
@@ -148,7 +153,7 @@ msgstr ""
 "フォーマットに関するヒントを与えるます(実際にディスクからロードはされませ"
 "ん)。"
 
-#: ../../source/inc/im_im:57
+#: ../../source/inc/im_im:59
 msgid ""
 "An image manipulator that scales `im` (a second image manipulator) to "
 "`width` times its original `width`, and `height` times its original height. "
@@ -158,7 +163,7 @@ msgstr ""
 "`height` 倍にする画像マニピュレータです。 `height` を省略すると、デフォルト"
 "で `width` になります。"
 
-#: ../../source/inc/im_im:61
+#: ../../source/inc/im_im:63
 msgid ""
 "If `bilinear` is true, then bilinear interpolation is used for the scaling. "
 "Otherwise, nearest neighbor interpolation is used."
@@ -166,7 +171,7 @@ msgstr ""
 "`bilinear` が True なら、大きさの調整に双線形補間が使われます。そうでなけれ"
 "ば、近隣補間が使われます。"
 
-#: ../../source/inc/im_im:68
+#: ../../source/inc/im_im:70
 msgid ""
 "The same effect can now be achieved with the :tpref:`zoom` or the :tpref:"
 "`xzoom` and :tpref:`yzoom` transform properties."
@@ -174,7 +179,7 @@ msgstr ""
 "同じ効果が :tpref:`zoom` や the :tpref:`xzoom`, :tpref:`yzoom` transform プロ"
 "パティーで達成できます。"
 
-#: ../../source/inc/im_im:73
+#: ../../source/inc/im_im:75
 msgid ""
 "An image manipulator that flips `im` (an image manipulator) vertically or "
 "horizontally.  `vertical` and `horizontal` control the directions in which "
@@ -183,7 +188,7 @@ msgstr ""
 "`im` (画像マニピュレータ) を水平または垂直に裏返す画像マニピュレータです。 "
 "`vertical`  および `horizontal` で画像が裏返される方向を制御します。"
 
-#: ../../source/inc/im_im:81
+#: ../../source/inc/im_im:83
 msgid ""
 "The same effect can now be achieved by setting :tpref:`xzoom` (for "
 "horizontal flip) or :tpref:`yzoom` (for vertical flip) to a negative value."
@@ -191,34 +196,34 @@ msgstr ""
 "同じ効果が :tpref:`xzoom`(水平方向) や the :tpref:`yzoom`(垂直方向) を負の値"
 "にして達成できます。"
 
-#: ../../source/inc/im_im:87
+#: ../../source/inc/im_im:89
 msgid ""
 "An image manipulator that creates a desaturated version of the image "
 "manipulator `im`."
 msgstr ""
 "画像マニピュレータ `im` の彩度をなくした版を作成する画像マニピュレータです。"
 
-#: ../../source/inc/im_im:90
+#: ../../source/inc/im_im:92
 msgid ""
 "The same effect can now be achieved by supplying SaturationMatrix(0) to the :"
 "tpref:`matrixcolor` transform property."
 msgstr ""
 "同じ効果が :tpref:`matrixcolor`に SaturationMatrix()0 を与えて達成できます。"
 
-#: ../../source/inc/im_im:95
+#: ../../source/inc/im_im:97
 msgid ""
 "An image manipulator that creates a sepia-toned version of the image "
 "manipulator `im`."
 msgstr ""
 "画像マニピュレータ `im` のセピアトーン版を作成する画像マニピュレータです。"
 
-#: ../../source/inc/im_im:98
+#: ../../source/inc/im_im:100
 msgid ""
 "The same effect can now be achieved by supplying SepiaMatrix() to the :tpref:"
 "`matrixcolor` transform property."
 msgstr "同じ効果が :tpref:`matrixcolor`に SepiaMatrix() を与えて達成できます。"
 
-#: ../../source/inc/im_im:103
+#: ../../source/inc/im_im:105
 msgid ""
 "An image manipulator that tiles the image manipulator `im`, until it is "
 "`size`."
@@ -226,11 +231,11 @@ msgstr ""
 "画像マニピュレータ `im` を `size` になるまでタイル張りする画像マニピュレータ"
 "です。"
 
-#: ../../source/inc/im_im:108
+#: ../../source/inc/im_im:110
 msgid "`size`"
 msgstr "`size`"
 
-#: ../../source/inc/im_im:107
+#: ../../source/inc/im_im:109
 msgid ""
 "If not None, a (width, height) tuple. If None, this defaults to (:var:"
 "`config.screen_width`, :var:`config.screen_height`)."
@@ -239,7 +244,7 @@ msgstr ""
 "フォルトで (:var:`config.screen_width`, :var:`config.screen_height`) になりま"
 "す。"
 
-#: ../../source/inc/im_im:110
+#: ../../source/inc/im_im:112
 msgid ""
 "The same effect can now be achieved using the :func:`Tile` displayable, with "
 "``Tile(im, size=size)``."
@@ -247,11 +252,11 @@ msgstr ""
 "同じ効果が ``Tile(im, size=size)`` によって :func:`Tile` Displayable で達成で"
 "きるようになりました。"
 
-#: ../../source/im.rst:30
+#: ../../source/im.rst:26
 msgid "im.MatrixColor"
 msgstr "im.MatrixColor"
 
-#: ../../source/im.rst:32
+#: ../../source/im.rst:28
 msgid ""
 "The im.MatrixColor image manipulator is an image manipulator that uses a "
 "matrix to control how the colors of an image are transformed. The matrix "
@@ -266,7 +271,7 @@ msgstr ""
 "によって返されます。im.matrix オブジェクトを掛け合わせて、両方の演算を行う一"
 "つのオブジェクトを得られます。例えば、このコードは ::"
 
-#: ../../source/im.rst:43
+#: ../../source/im.rst:39
 msgid ""
 "first desaturates the image, and then tints it blue. When the intermediate "
 "image is not needed, multiplying matrices is far more efficient, in both "
@@ -276,7 +281,7 @@ msgstr ""
 "MatrixColors を二度使うよりも行列を掛け合わせましょう。そのほうが時間上も画像"
 "キャッシュ領域上も遥かに効率的です。"
 
-#: ../../source/im.rst:48
+#: ../../source/im.rst:44
 msgid ""
 "The im.MatrixColor image manipulator has been replaced by Transforms and ATL "
 "transforms that specify the matrixcolor property. Each `im.matrix` generator "
@@ -288,7 +293,7 @@ msgstr ""
 "には :doc:`matrixcolor <matrixcolor>` に記述されている新しい等価な Matrix が"
 "与えられました。"
 
-#: ../../source/im.rst:55
+#: ../../source/im.rst:51
 msgid ""
 "The new Matrix objects multiply in the opposite order as the im.Matrixcolor "
 "ones. With X being the Matrix corresponding to im.Matrixcolor.x, ``C*B*A`` "

@@ -7,136 +7,284 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-20 00:53+0900\n"
+"POT-Creation-Date: 2023-04-23 11:09+0900\n"
 "PO-Revision-Date: 2022-12-18 14:00+0900\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/lifecycle.rst:6
+#: ../../source/lifecycle.rst:3
 msgid "Lifecycle of a Ren'Py game"
 msgstr "Ren'Py ゲームのライフサイクル"
 
-#: ../../source/lifecycle.rst:8
-msgid "When launching a Ren'Py game, be it from the executable or from the launcher, it follows a series of steps up until the point where it is closed. This page exposes the various phases of this lifecycle, and various related statements."
-msgstr "Ren'Py のゲームを起動するとき、それが実行ファイルからであれランチャーからであれ、閉じるまで一連のステップをたどります。このページでは、このライフサイクルのさまざまなフェーズと、それに関連するさまざまなステートメントを公開します。"
+#: ../../source/lifecycle.rst:5
+msgid ""
+"When launching a Ren'Py game, be it from the executable or from the "
+"launcher, it follows a series of steps up until the point where it is "
+"closed. This page exposes the various phases of this lifecycle, and various "
+"related statements."
+msgstr ""
+"Ren'Py のゲームを起動するとき、それが実行ファイルからであれランチャーからであ"
+"れ、閉じるまで一連のステップをたどります。このページでは、このライフサイクル"
+"のさまざまなフェーズと、それに関連するさまざまなステートメントを公開します。"
 
-#: ../../source/lifecycle.rst:13
+#: ../../source/lifecycle.rst:10
 msgid "Boot Time"
 msgstr "ブートタイム"
 
-#: ../../source/lifecycle.rst:15
-msgid "There are a lot of things happening before the game window appears. This is the boot time. The only thing that's possibly visible at that point is the :ref:`presplash <presplash>`."
-msgstr "ゲームウィンドウが表示されるまでに、さまざまなことが起こっています。これがブートタイムです。この時点で見える可能性があるのは、 :ref:`presplash <presplash>` だけです。"
+#: ../../source/lifecycle.rst:12
+msgid ""
+"There are a lot of things happening before the game window appears. This is "
+"the boot time. The only thing that's possibly visible at that point is the :"
+"ref:`presplash <presplash>`."
+msgstr ""
+"ゲームウィンドウが表示されるまでに、さまざまなことが起こっています。これが"
+"ブートタイムです。この時点で見える可能性があるのは、 :ref:`presplash "
+"<presplash>` だけです。"
 
-#: ../../source/lifecycle.rst:21
+#: ../../source/lifecycle.rst:18
 msgid "Script Parsing Phase"
 msgstr "スクリプト解析フェーズ"
 
+#: ../../source/lifecycle.rst:20
+#, fuzzy
+msgid ""
+"To read the game's code, Ren'Py reads each of the game's ``.rpy`` (and "
+"``_ren.py``) files one by one, in the unicode order of their filepaths. "
+"That's the \"parsing\" phase, or \"early\" phase."
+msgstr ""
+"ゲームのコードを読むために、 Ren'Py はゲームの ``.rpy`` (と ``_ren.py``) ファ"
+"イルを一つずつ、ファイルパスのユニコード順に読み込みます。これが \"解析"
+"\"フェーズ、または \"初期 \"フェーズです。"
+
 #: ../../source/lifecycle.rst:23
-msgid "To read the games's code, Ren'Py reads each of the game's ``.rpy`` (and ``_ren.py``) files one by one, in the unicode order of their filepaths. That's the \"parsing\" phase, or \"early\" phase."
-msgstr "ゲームのコードを読むために、 Ren'Py はゲームの ``.rpy`` (と ``_ren.py``) ファイルを一つずつ、ファイルパスのユニコード順に読み込みます。これが \"解析\"フェーズ、または \"初期 \"フェーズです。"
+msgid ""
+"The first creator-written code being executed is what's written in ``python "
+"early`` blocks. These are executed after the file they're in has been read "
+"and parsed, but before the next file gets read. This is why statements which "
+"modify how parsing works, like :doc:`cds`, :ref:`creator-defined-sl` or new "
+"custom :ref:`warpers`, must be written in ``python early`` blocks."
+msgstr ""
+"最初に実行されるクリエイターが書いたコードは、 ``python early`` ブロックに書"
+"かれたものです。これらのブロックは、そのファイルが読み込まれてパースされた"
+"後、次のファイルが読み込まれる前に実行されます。このため、 :doc:`cds` や :"
+"ref:`creator-defined-sl` 、新しいカスタムの :ref:`warpers` など、解析の方法を"
+"変更するようなステートメントは ``python early`` ブロックで記述しなければなら"
+"ないのです。"
 
-#: ../../source/lifecycle.rst:26
-msgid "The first creator-written code being executed is what's written in ``python early`` blocks. These are executed after the file they're in has been read and parsed, but before the next file gets read. This is why statements which modify how parsing works, like :doc:`cds`, :ref:`creator-defined-sl` or new custom :ref:`warpers`, must be written in ``python early`` blocks."
-msgstr "最初に実行されるクリエイターが書いたコードは、 ``python early`` ブロックに書かれたものです。これらのブロックは、そのファイルが読み込まれてパースされた後、次のファイルが読み込まれる前に実行されます。このため、 :doc:`cds` や :ref:`creator-defined-sl` 、新しいカスタムの :ref:`warpers` など、解析の方法を変更するようなステートメントは ``python early`` ブロックで記述しなければならないのです。"
+#: ../../source/lifecycle.rst:29
+#, fuzzy
+msgid ""
+"The ``init python early`` syntax is sometimes encountered, but it's "
+"redundant and doesn't change anything in how the code gets executed compared "
+"to ``python early``."
+msgstr ""
+"``init python early`` という構文に出会うことがありますが、これは冗長で、コー"
+"ドがどのように実行されるかは何も変わりません。"
 
-#: ../../source/lifecycle.rst:32
-msgid "The ``init python early`` syntax is sometimes encountered, but it's redundant and doesn't change anything in how the code gets executed."
-msgstr "``init python early`` という構文に出会うことがありますが、これは冗長で、コードがどのように実行されるかは何も変わりません。"
-
-#: ../../source/lifecycle.rst:38
+#: ../../source/lifecycle.rst:35
 msgid "Init Phase"
 msgstr "初期化フェーズ"
 
-#: ../../source/lifecycle.rst:40
-msgid "After parsing/early phase, the \"init\" phase starts. Several statements are executed at that time, including the :ref:`init-python-statement`, the :ref:`define-statement`, the :ref:`transform-statement`, the :ref:`image-statement`, the :ref:`screen-statement`, and the :doc:`style <style>` statement. The init phase is divided in successive epochs, or init priorities, from -999 to 999. Contrary to what the term may imply, epochs of lower priority are executed before epochs of higher priority."
-msgstr "解析/初期フェーズの後、\"初期化\" フェーズが開始されます。このとき、 :ref:`init-python-statement` や :ref:`define-statement` , :ref:`transform-statement` , :ref:`image-statement`, :ref:`screen-statement`, :doc:`style <style>` ステートメントなどのいくつかのステートメントが実行されます。初期化フェーズは -999 から 999 までの連続したエポック、つまり初期化の優先順位に分割されます。この用語が意味するところとは逆に、低い優先順位のエポックが高い優先順位のエポックより先に実行されます。"
+#: ../../source/lifecycle.rst:37
+msgid ""
+"After parsing/early phase, the \"init\" phase starts. Several statements are "
+"executed at that time, including the :ref:`init-python-statement`, the :ref:"
+"`define-statement`, the :ref:`transform-statement`, the :ref:`image-"
+"statement`, the :ref:`screen-statement`, and the :doc:`style <style>` "
+"statement. The init phase is divided in successive epochs, or init "
+"priorities, from -999 to 999. Contrary to what the term may imply, epochs of "
+"lower priority are executed before epochs of higher priority."
+msgstr ""
+"解析/初期フェーズの後、\"初期化\" フェーズが開始されます。このとき、 :ref:"
+"`init-python-statement` や :ref:`define-statement` , :ref:`transform-"
+"statement` , :ref:`image-statement`, :ref:`screen-statement`, :doc:`style "
+"<style>` ステートメントなどのいくつかのステートメントが実行されます。初期化"
+"フェーズは -999 から 999 までの連続したエポック、つまり初期化の優先順位に分割"
+"されます。この用語が意味するところとは逆に、低い優先順位のエポックが高い優先"
+"順位のエポックより先に実行されます。"
 
-#: ../../source/lifecycle.rst:49
-msgid "By default, these statements are executed at init offset 0. However, they can be offset using the :ref:`init-offset-statement` or by other means. The :ref:`image-statement` is an exception to both of these rules, as it executes at an init priority of 500 by default, and the init offset statement adds or substracts from this 500, rather than replacing it."
-msgstr "デフォルトでは、これらのステートメントは init offset 0 で実行されます。 しかし、 :ref:`init-offset-statement` や他の方法でオフセットできます。 :ref:`image-statement` はこれらのルールの例外で、デフォルトでは init 優先度 500 で実行され、 init offset ステートメントはこの 500 を置き換えるのではなく、追加したり減算したりします。"
+#: ../../source/lifecycle.rst:46
+msgid ""
+"By default, these statements are executed at init offset 0. However, they "
+"can be offset using the :ref:`init-offset-statement` or by other means. The :"
+"ref:`image-statement` is an exception to both of these rules, as it executes "
+"at an init priority of 500 by default, and the init offset statement adds or "
+"substracts from this 500, rather than replacing it."
+msgstr ""
+"デフォルトでは、これらのステートメントは init offset 0 で実行されます。 しか"
+"し、 :ref:`init-offset-statement` や他の方法でオフセットできます。 :ref:"
+"`image-statement` はこれらのルールの例外で、デフォルトでは init 優先度 500 で"
+"実行され、 init offset ステートメントはこの 500 を置き換えるのではなく、追加"
+"したり減算したりします。"
 
-#: ../../source/lifecycle.rst:54
-msgid "Automatic image definition from the :ref:`image-directory` occurs at init priority 0."
+#: ../../source/lifecycle.rst:51
+msgid ""
+"Automatic image definition from the :ref:`image-directory` occurs at init "
+"priority 0."
 msgstr ":ref:`image-directory` からの自動画像定義は優先度0で行われます。"
 
-#: ../../source/lifecycle.rst:56
-msgid "Note that while the :ref:`default <default-statement>` statements are not executed at init time, the priority of the statements influences the order in which they will be executed, relative to one another."
-msgstr ":ref:`default <default-statement>` ステートメントは初期化時には実行されませんが、ステートメントの優先順位は、それらが実行される順序に影響を与えることに注意してください。"
+#: ../../source/lifecycle.rst:53
+msgid ""
+"Note that while the :ref:`default <default-statement>` statements are not "
+"executed at init time, the priority of the statements influences the order "
+"in which they will be executed, relative to one another."
+msgstr ""
+":ref:`default <default-statement>` ステートメントは初期化時には実行されません"
+"が、ステートメントの優先順位は、それらが実行される順序に影響を与えることに注"
+"意してください。"
 
-#: ../../source/lifecycle.rst:63
+#: ../../source/lifecycle.rst:60
 msgid "Init Offset Statement"
 msgstr "init offset ステートメント"
 
-#: ../../source/lifecycle.rst:65
-msgid "The ``init offset`` statement sets a priority offset for all statements that run at init time. It should be placed at the top of the file, and it applies to all following statements in the current block and child blocks, up to the next init priority statement. The statement::"
-msgstr "``init offset`` ステートメントは、初期化時に実行されるすべてのステートメントに優先順位のオフセットを設定します。これはファイルの先頭に置かれるべきもので、現在のブロックと子ブロックにある、次の init priority ステートメントに続くすべてのステートメントに適用されます。 ::"
+#: ../../source/lifecycle.rst:62
+msgid ""
+"The ``init offset`` statement sets a priority offset for all statements that "
+"run at init time. It should be placed at the top of the file, and it applies "
+"to all following statements in the current block and child blocks, up to the "
+"next init priority statement. The statement::"
+msgstr ""
+"``init offset`` ステートメントは、初期化時に実行されるすべてのステートメント"
+"に優先順位のオフセットを設定します。これはファイルの先頭に置かれるべきもの"
+"で、現在のブロックと子ブロックにある、次の init priority ステートメントに続く"
+"すべてのステートメントに適用されます。 ::"
 
-#: ../../source/lifecycle.rst:72
+#: ../../source/lifecycle.rst:69
 msgid "sets the priority offset to 42. In::"
 msgstr "このコードでは優先度のオフセットを 42 に設定しています。 ::"
 
-#: ../../source/lifecycle.rst:82
-msgid "The first define statement is run at priority 2, which means it runs after the second define statement, and hence ``foo`` winds up with a value of 2."
-msgstr "最初の deffine ステートメントは優先度 2 で実行されるので 二つ目の define ステートメントの後に実行されます。 ``foo`` は 2 の値になります。"
+#: ../../source/lifecycle.rst:79
+msgid ""
+"The first define statement is run at priority 2, which means it runs after "
+"the second define statement, and hence ``foo`` winds up with a value of 2."
+msgstr ""
+"最初の deffine ステートメントは優先度 2 で実行されるので 二つ目の define ス"
+"テートメントの後に実行されます。 ``foo`` は 2 の値になります。"
 
-#: ../../source/lifecycle.rst:87
+#: ../../source/lifecycle.rst:84
 msgid "Script Execution"
 msgstr "スクリプトの実行"
 
-#: ../../source/lifecycle.rst:89
-msgid "This is what happens once the game window becomes visible. This is when normal Ren'Py statements execute, and when the rules described in :doc:`label` apply. This is also the time when the variables from :ref:`default statements <default-statement>` are set for the first time - as opposed to :ref:`define statements <define-statement>` which are set at init time."
-msgstr "これは、ゲームウィンドウが表示されるようになると起こることです。通常は Ren'Py のステートメントが実行されるときであり、 :doc:`label` で説明されているルールが適用されます。 :ref:`define statements <define-statement>` からの変数が初期化時に設定されるのとは対照的に、 :ref:`default ステートメント <default-statement>` からの変数が最初に設定されるときでもあります。"
+#: ../../source/lifecycle.rst:86
+msgid ""
+"This is what happens once the game window becomes visible. This is when "
+"normal Ren'Py statements execute, and when the rules described in :doc:"
+"`label` apply. This is also the time when the variables from :ref:`default "
+"statements <default-statement>` are set for the first time - as opposed to :"
+"ref:`define statements <define-statement>` which are set at init time."
+msgstr ""
+"これは、ゲームウィンドウが表示されるようになると起こることです。通常は "
+"Ren'Py のステートメントが実行されるときであり、 :doc:`label` で説明されている"
+"ルールが適用されます。 :ref:`define statements <define-statement>` からの変数"
+"が初期化時に設定されるのとは対照的に、 :ref:`default ステートメント <default-"
+"statement>` からの変数が最初に設定されるときでもあります。"
 
-#: ../../source/lifecycle.rst:94
-msgid "Config variables should not be changed once normal game execution starts."
+#: ../../source/lifecycle.rst:91
+msgid ""
+"Config variables should not be changed once normal game execution starts."
 msgstr "通常のゲーム実行開始後は、設定変数を変更しないでください。"
 
-#: ../../source/lifecycle.rst:97
+#: ../../source/lifecycle.rst:94
 msgid "Splashscreen"
 msgstr "スプラッシュスクリーン"
 
-#: ../../source/lifecycle.rst:99
-msgid "If it exists, the :ref:`splashscreen <adding-a-splashscreen>` label is executed until it returns."
-msgstr "あれば :ref:`splashscreen <adding-a-splashscreen>` ラベルが処理が返るまで実行されます。"
+#: ../../source/lifecycle.rst:96
+msgid ""
+"If it exists, the :ref:`splashscreen <adding-a-splashscreen>` label is "
+"executed until it returns."
+msgstr ""
+"あれば :ref:`splashscreen <adding-a-splashscreen>` ラベルが処理が返るまで実行"
+"されます。"
 
-#: ../../source/lifecycle.rst:101
-msgid "A splashscreen is only displayed once per time Ren'Py is run, and is skipped when script execution restarts."
-msgstr "スプラッシュスクリーンは Ren'Py が実行されるたびに一度だけ表示され、スクリプトの実行が再開されたときにはスキップされます。"
+#: ../../source/lifecycle.rst:98
+msgid ""
+"A splashscreen is only displayed once per time Ren'Py is run, and is skipped "
+"when script execution restarts."
+msgstr ""
+"スプラッシュスクリーンは Ren'Py が実行されるたびに一度だけ表示され、スクリプ"
+"トの実行が再開されたときにはスキップされます。"
 
-#: ../../source/lifecycle.rst:105
+#: ../../source/lifecycle.rst:102
 msgid "Main Menu"
 msgstr "メインメニュー"
 
-#: ../../source/lifecycle.rst:107
-msgid "If it exists, the ``before_main_menu`` label is executed. Then, once it returns, the :ref:`main_menu <main-menu-screen>` screen is shown, unless a ``main_menu`` label exists, in which case it is executed instead. See :ref:`special-labels` for more information."
-msgstr "あれば ``before_main_menu`` ラベルが実行されます。その後処理が返ると、 ``main_menu`` ラベルがあればそれが実行され、なければ :ref:`main_menu <main-menu-screen>` スクリーンが表示されます。詳細は :ref:`special-labels` を参照してください。"
+#: ../../source/lifecycle.rst:104
+msgid ""
+"If it exists, the ``before_main_menu`` label is executed. Then, once it "
+"returns, the :ref:`main_menu <main-menu-screen>` screen is shown, unless a "
+"``main_menu`` label exists, in which case it is executed instead. See :ref:"
+"`special-labels` for more information."
+msgstr ""
+"あれば ``before_main_menu`` ラベルが実行されます。その後処理が返ると、 "
+"``main_menu`` ラベルがあればそれが実行され、なければ :ref:`main_menu <main-"
+"menu-screen>` スクリーンが表示されます。詳細は :ref:`special-labels` を参照し"
+"てください。"
 
-#: ../../source/lifecycle.rst:111
-msgid "The main menu itself is run in it's own :ref:`context <context>`.  Ren'Py can leave this context by calling the :class:`Start` action, which also jumps to a label, or the ``start`` label if none is specified. Returning from the ``main_menu`` label also enters the in-game phase at the ``start`` label, while loading a game enters the in-game phase at the spot where the game was saved."
-msgstr "メインメニュー自体は、 :ref:`context <context>` の中で実行されます。 Ren'Py は :class:`Start` アクションを呼び出してこのコンテキストを抜けだせ、このアクションはラベル、もしくは何も指定されていない場合は ``start`` ラベルにジャンプします。 ``main_menu`` ラベルから処理を返すと、 ``start`` ラベルからゲームフェーズに入り、一方ゲームをロードすると、ゲームが保存された場所からゲームフェーズに入ります。"
+#: ../../source/lifecycle.rst:108
+#, fuzzy
+msgid ""
+"The main menu itself is run in its own :ref:`context <context>`. Ren'Py can "
+"leave this context by calling the :class:`Start` action, which also jumps to "
+"a label or to the ``start`` label if none is specified. Returning from the "
+"``main_menu`` label also enters the in-game phase at the ``start`` label, "
+"while loading a game enters the in-game phase at the spot where the game was "
+"saved."
+msgstr ""
+"メインメニュー自体は、 :ref:`context <context>` の中で実行されます。 Ren'Py "
+"は :class:`Start` アクションを呼び出してこのコンテキストを抜けだせ、このアク"
+"ションはラベル、もしくは何も指定されていない場合は ``start`` ラベルにジャンプ"
+"します。 ``main_menu`` ラベルから処理を返すと、 ``start`` ラベルからゲーム"
+"フェーズに入り、一方ゲームをロードすると、ゲームが保存された場所からゲーム"
+"フェーズに入ります。"
 
-#: ../../source/lifecycle.rst:117
+#: ../../source/lifecycle.rst:114
 msgid "In-Game Phase"
 msgstr "ゲームフェーズ"
 
-#: ../../source/lifecycle.rst:119
-msgid "This is the phase in which an actual playthrough of the game occurs, and this is the mode in which players generally spend most of their time. This phase continues until the game quits, or the game restarts and the player returns to the main menu."
-msgstr "ゲームを実際にプレイするフェーズであり、一般的にプレイヤーが最も多くの時間を費やすモードです。これはゲームが終了するか、ゲームが再開し、メインメニューに戻るまで続きます。"
+#: ../../source/lifecycle.rst:116
+msgid ""
+"This is the phase in which an actual playthrough of the game occurs, and "
+"this is the mode in which players generally spend most of their time. This "
+"phase continues until the game quits, or the game restarts and the player "
+"returns to the main menu."
+msgstr ""
+"ゲームを実際にプレイするフェーズであり、一般的にプレイヤーが最も多くの時間を"
+"費やすモードです。これはゲームが終了するか、ゲームが再開し、メインメニューに"
+"戻るまで続きます。"
+
+#: ../../source/lifecycle.rst:120
+msgid ""
+"During the in-game phase, the :class:`ShowMenu` action can be used to "
+"display a screen in a new context."
+msgstr ""
+"ゲームフェーズの間、 :class:`ShowMenu` アクションを使用して、新しいコンテキス"
+"トでスクリーンを表示できます。"
 
 #: ../../source/lifecycle.rst:123
-msgid "During the in-game phase, the :class:`ShowMenu` action can be used to display a screen in a new context."
-msgstr "ゲームフェーズの間、 :class:`ShowMenu` アクションを使用して、新しいコンテキストでスクリーンを表示できます。"
+msgid ""
+"The In-game phase continues until either the player quits or restarts the "
+"game to return to the main menu. The game may be restarted by returning when "
+"no call is on the stack, as explained explained in :doc:`label`. The game "
+"may also be restarted by the :class:`MainMenu` action or the :func:`renpy."
+"full_restart` function."
+msgstr ""
+"ゲームフェーズは、プレイヤーがゲームを終了するか、ゲームを再開してメインメ"
+"ニューに戻るまで継続します。ゲームは :doc:`label` で説明したように、スタック"
+"上にコールがないときに処理を返して再開できます。また、 :class:`MainMenu` アク"
+"ションや :func:`renpy.full_restart` 関数によってもゲームを再開できることがあ"
+"ります。"
 
-#: ../../source/lifecycle.rst:126
-msgid "The In-game phase continues until either the player quits or restarts the game to return to the main menu. The game may be restarted by returning when no call is on the stack, as explained explained in :doc:`label`. The game may also be restarted by the :class:`MainMenu` action or the :func:`renpy.full_restart` function."
-msgstr "ゲームフェーズは、プレイヤーがゲームを終了するか、ゲームを再開してメインメニューに戻るまで継続します。ゲームは :doc:`label` で説明したように、スタック上にコールがないときに処理を返して再開できます。また、 :class:`MainMenu` アクションや :func:`renpy.full_restart` 関数によってもゲームを再開できることがあります。"
-
-#: ../../source/lifecycle.rst:132
-msgid "When the game restarts, all non-persistent data is reset to what it was at the end of the script execution phase, and then the script execution phase begins again, skipping the splashscreen."
-msgstr "ゲームが再開すると、すべての非永続的データはリセットされ、スクリプトの実行フェーズの終わりの状態に戻り、スクリプトの実行フェーズがスプラッシュスクリーンをスキップして再び始まります。"
+#: ../../source/lifecycle.rst:129
+msgid ""
+"When the game restarts, all non-persistent data is reset to what it was at "
+"the end of the script execution phase, and then the script execution phase "
+"begins again, skipping the splashscreen."
+msgstr ""
+"ゲームが再開すると、すべての非永続的データはリセットされ、スクリプトの実行"
+"フェーズの終わりの状態に戻り、スクリプトの実行フェーズがスプラッシュスクリー"
+"ンをスキップして再び始まります。"

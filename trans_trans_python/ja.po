@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 12:16+0900\n"
+"POT-Creation-Date: 2023-04-23 11:09+0900\n"
 "PO-Revision-Date: 2022-09-17 15:19+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-04-08 05:43+0000\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/trans_trans_python.rst:6
+#: ../../source/trans_trans_python.rst:3
 msgid "Transforms and Transitions in Python"
 msgstr "Python による transform とトランジション"
 
-#: ../../source/trans_trans_python.rst:8
+#: ../../source/trans_trans_python.rst:5
 msgid ""
 "Python can be used to create new transforms and transitions for use by "
 "Ren'Py scripts."
@@ -30,15 +30,15 @@ msgstr ""
 "Ren'Py で使用するための新しい transform とトランジションの作成に Python を使"
 "用出来ます。"
 
-#: ../../source/trans_trans_python.rst:14
+#: ../../source/trans_trans_python.rst:11
 msgid "Transforms"
 msgstr "Transform"
 
-#: ../../source/trans_trans_python.rst:16
+#: ../../source/trans_trans_python.rst:13
 msgid "*Main articles:* :doc:`transforms` *and* :doc:`atl`"
 msgstr "*詳細:* :doc:`transforms` *と* :doc:`atl`"
 
-#: ../../source/trans_trans_python.rst:18
+#: ../../source/trans_trans_python.rst:15
 msgid ""
 "A transform is a Python callable that, when called with a displayable, "
 "returns another displayable."
@@ -46,16 +46,16 @@ msgstr ""
 "transform とは呼び出し可能な python オブジェクトで、 displayable を引数に呼び"
 "出されて別の displayable を返します。"
 
-#: ../../source/trans_trans_python.rst:21
-#: ../../source/trans_trans_python.rst:111
+#: ../../source/trans_trans_python.rst:18
+#: ../../source/trans_trans_python.rst:108
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/trans_trans_python.rst:33
+#: ../../source/trans_trans_python.rst:30
 msgid "The Python equivalent of an ATL transform is a Transform object."
 msgstr "Transform オブジェクトは ATL transform に相当する python です。"
 
-#: ../../source/trans_trans_python.rst:37
+#: ../../source/trans_trans_python.rst:34
 msgid ""
 "A transform applies operations such as cropping, rotation, scaling, and "
 "alpha-blending to its child. A transform object has fields corresponding to "
@@ -66,19 +66,19 @@ msgstr ""
 "子に適用します。 transform オブジェクトはその子に適用する :ref:`transform プ"
 "ロパティー <transform-properties>` に対応するフィールドを持ちます。"
 
-#: ../../source/trans_trans_python.rst:43
+#: ../../source/trans_trans_python.rst:40
 msgid "`child`"
 msgstr "`child`"
 
-#: ../../source/trans_trans_python.rst:43
+#: ../../source/trans_trans_python.rst:40
 msgid "The child the transform applies to."
 msgstr "transform が適用される子"
 
-#: ../../source/trans_trans_python.rst:59
+#: ../../source/trans_trans_python.rst:56
 msgid "`function`"
 msgstr "`function`"
 
-#: ../../source/trans_trans_python.rst:46
+#: ../../source/trans_trans_python.rst:43
 msgid ""
 "If not none, this is a function that is called when the transform is "
 "rendered. The function is called with three arguments:"
@@ -86,19 +86,19 @@ msgstr ""
 "None を設定するか、 transform がレンダリングされるときに呼び出される関数を設"
 "定します。関数は3つの引数で呼び出されます。"
 
-#: ../../source/trans_trans_python.rst:49
+#: ../../source/trans_trans_python.rst:46
 msgid "The transform object."
 msgstr "transform オブジェクト"
 
-#: ../../source/trans_trans_python.rst:50
+#: ../../source/trans_trans_python.rst:47
 msgid "The shown timebase, in seconds."
 msgstr "秒数での出現時間軸"
 
-#: ../../source/trans_trans_python.rst:51
+#: ../../source/trans_trans_python.rst:48
 msgid "The animation timebase, in seconds."
 msgstr "秒数でのアニメーション時間軸"
 
-#: ../../source/trans_trans_python.rst:53
+#: ../../source/trans_trans_python.rst:50
 msgid ""
 "The function should return a delay, in seconds, after which it will be "
 "called again, or None to be called again at the start of the next "
@@ -107,7 +107,7 @@ msgstr ""
 "関数が秒数を返すなら、その秒数後再度呼び出され、 None なら次のインタラクショ"
 "ン開始時に再度呼び出されます。"
 
-#: ../../source/trans_trans_python.rst:57
+#: ../../source/trans_trans_python.rst:54
 msgid ""
 "This function should not have side effects other than changing the Transform "
 "object in the first argument, and may be called at any time with any value "
@@ -116,7 +116,7 @@ msgstr ""
 "この関数は予測のためにいつどの数値で呼び出されるか分からないので、第一引数の "
 "Transform オブジェクトの変更の他には副作用を持つべきではありません。"
 
-#: ../../source/trans_trans_python.rst:61
+#: ../../source/trans_trans_python.rst:58
 msgid ""
 "Additional keyword arguments are values that transform properties are set "
 "to. These particular transform properties will be set each time the "
@@ -133,7 +133,7 @@ msgstr ""
 "して渡される関数内や :meth:`update` メソッドを呼び出す直前に設定して、変更で"
 "きます。"
 
-#: ../../source/trans_trans_python.rst:71
+#: ../../source/trans_trans_python.rst:68
 msgid ""
 "This is set to true when the function is called, to indicate that the "
 "transform is being hidden."
@@ -141,7 +141,7 @@ msgstr ""
 "これは関数が呼び出されると True に設定され、 transform が非表示されていること"
 "を示します。"
 
-#: ../../source/trans_trans_python.rst:76
+#: ../../source/trans_trans_python.rst:73
 msgid ""
 "If hide request is true, this can be set to false to prevent the transform "
 "from being hidden."
@@ -149,13 +149,13 @@ msgstr ""
 "hide_request が True なら、これを False に設定して transform が非表示されない"
 "ようにできます。"
 
-#: ../../source/trans_trans_python.rst:81
+#: ../../source/trans_trans_python.rst:78
 msgid ""
 "Call this method with a new `child` to change the child of this transform."
 msgstr ""
 "新しい `child` でこのメソッドを呼び出すと、この transform の子を変更します。"
 
-#: ../../source/trans_trans_python.rst:86
+#: ../../source/trans_trans_python.rst:83
 msgid ""
 "This should be called when a transform property field is updated outside of "
 "the function passed as the `function` argument, to ensure that the change "
@@ -164,15 +164,15 @@ msgstr ""
 "`function` 引数として渡された関数以外から transform プロパティーフィールドが"
 "更新されるときには、これを呼び出して変更を確実に反映する必要があります。"
 
-#: ../../source/trans_trans_python.rst:93
+#: ../../source/trans_trans_python.rst:90
 msgid "Transitions"
 msgstr "トランジション"
 
-#: ../../source/trans_trans_python.rst:95
+#: ../../source/trans_trans_python.rst:92
 msgid "*Main article:* :doc:`transitions` *See also:* :ref:`atl-transitions`"
 msgstr "*詳細:* :doc:`transitions` *次も参照:* :ref:`atl-transitions`"
 
-#: ../../source/trans_trans_python.rst:98
+#: ../../source/trans_trans_python.rst:95
 msgid ""
 "A transition is a Python callable that, when called with two keyword "
 "arguments, returns a displayable that performs the transition effect. The "
@@ -182,23 +182,23 @@ msgstr ""
 "する displayable を返す呼び出し可能な python です。 2つのキーワード引数は次と"
 "なります。 :"
 
-#: ../../source/trans_trans_python.rst:103
+#: ../../source/trans_trans_python.rst:100
 msgid "`old_widget`"
 msgstr "`old_widget`"
 
-#: ../../source/trans_trans_python.rst:103
+#: ../../source/trans_trans_python.rst:100
 msgid "A displayable representing the old screen."
 msgstr "以前のスクリーンを表す displayable"
 
-#: ../../source/trans_trans_python.rst:106
+#: ../../source/trans_trans_python.rst:103
 msgid "`new_widget`"
 msgstr "`new_widget`"
 
-#: ../../source/trans_trans_python.rst:106
+#: ../../source/trans_trans_python.rst:103
 msgid "A displayable representing the new screen."
 msgstr "新しいスクリーンを表す displayable"
 
-#: ../../source/trans_trans_python.rst:108
+#: ../../source/trans_trans_python.rst:105
 msgid ""
 "The returned displayable should have a ``delay`` field, which gives the "
 "number of seconds the transition should run for."

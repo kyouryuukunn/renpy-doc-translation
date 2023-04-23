@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 12:16+0900\n"
+"POT-Creation-Date: 2023-04-23 11:09+0900\n"
 "PO-Revision-Date: 2022-09-17 15:10+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: ../../source/statement_equivalents.rst:6
+#: ../../source/statement_equivalents.rst:3
 msgid "Statement Equivalents"
 msgstr "ステートメントに相当するもの"
 
-#: ../../source/statement_equivalents.rst:8
+#: ../../source/statement_equivalents.rst:5
 msgid ""
 "To allow Ren'Py to be scripted in Python, each Ren'Py statement has a Python "
 "equivalent. This usually consists of a Python function, but may also consist "
@@ -34,64 +34,103 @@ msgstr ""
 "常 Python の関数で構成されていますが、ステートメントに相当した動作をする複数"
 "のコードで構成されることもあります。"
 
-#: ../../source/statement_equivalents.rst:13
+#: ../../source/statement_equivalents.rst:10
+#, fuzzy
 msgid ""
 "Note that using statement equivalents in lieu of the original statements "
 "usually removes any possible :ref:`lint` checks and prediction "
 "optimizations, making your game less easily checkable and possibly less "
-"fluid."
+"fluid. It can also disable features in certain cases."
 msgstr ""
 "元のステートメントの代わりに相当するステートメントを使用すると、通常 :ref:"
 "`lint` によるチェックがされなくなってゲームのチェックが容易にできなくなり、予"
 "測最適化がなくなるため動作の軽快さも低下する可能性があるので注意してくださ"
 "い。"
 
-#: ../../source/statement_equivalents.rst:19
+#: ../../source/statement_equivalents.rst:16
 msgid "Dialogue"
 msgstr "台詞"
 
-#: ../../source/statement_equivalents.rst:21
+#: ../../source/statement_equivalents.rst:20
+msgid ""
+"Several features, such as skipping already-seen dialogues, are not available "
+"using the python version and only enabled when using the native say "
+"statement."
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:24
+#, fuzzy
 msgid ""
 "The Ren'Py :ref:`say-statement` is equivalent to calling the character "
-"object as a function. The following displays the same line twice::"
+"object (when any is present) as a function. Displaying narration (meaning "
+"when no character is supplied) can be done the same way, by using the "
+"``narrator`` character. ::"
 msgstr ""
 "Ren'Py の :ref:`say-statement` はキャラクターオブジェクトの関数としての呼び出"
 "しに相当します。次は、同じ行を2回表示させるコードです ::"
 
-#: ../../source/statement_equivalents.rst:28
-msgid ""
-"Displaying narration can be done the same way, by using the ``narrator`` "
-"character. When calling a character, it's possible to supply the keyword "
-"argument ``interact``. When ``interact`` is False, Ren'Py will display the "
-"character dialogue box, and will then return before performing an "
-"interaction."
+#: ../../source/statement_equivalents.rst:38
+msgid "Proxy functions"
 msgstr ""
-"台詞の表示は ``narrator`` キャラクターを用いて同様に行えます。キャラクターを"
-"呼び出すときは、キーワード引数 ``interact`` を与えられます。``interact`` が "
-"False なら、 Ren'Py はキャラクターのダイアログボックスを表示しますが、インタ"
-"ラクションを実行する前に処理を戻します。"
 
-#: ../../source/statement_equivalents.rst:34
+#: ../../source/statement_equivalents.rst:40
+#, fuzzy
 msgid ""
 "This equivalence of characters and function objects works in the other "
 "direction as well. It is possible to declare a Python function, and then use "
-"that function in the place of a character object. For example, the following "
-"function uses a variable to choose between two characters. ::"
+"that function in the place of a character object in a native say statement. "
+"For example, the following function uses a variable to choose between two "
+"characters. ::"
 msgstr ""
 "キャラクターと関数オブジェクトの対応はその他の面でも同様に働きます。 python "
 "関数を宣言して、キャラクターオブジェクトの代わりに使用できます。例えば、以下"
 "の関数は二人のキャラクターを選択するために変数を使用しています。 ::"
 
-#: ../../source/statement_equivalents.rst:61
+#: ../../source/statement_equivalents.rst:67
+#, fuzzy
 msgid ""
 "A function used in this way should either ignore unknown keyword arguments, "
 "or pass them to a character function. Doing this will allow the game to "
-"continue working if Ren'Py adds additional keyword arguments to character "
-"calls."
+"continue working if future versions of Ren'Py add additional keyword "
+"arguments to character calls."
 msgstr ""
 "このように使用された関数は未知のキーワード引数を無視するか、 キャラクター関数"
 "に渡すべきです。これによりゲームは Ren'Py が追加のキーワード引数をキャラク"
 "ター呼び出しに加えても動作し続けます。"
+
+#: ../../source/statement_equivalents.rst:72
+msgid ""
+"Note that unlike other possible arguments, ``interact=True`` will always be "
+"passed to the function - unless manually passing ``(interact=False)``. A :"
+"ref:`say-with-arguments` sees the arguments (including the supplementary "
+"`interact`) passed to the function. For example::"
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:79
+msgid "resolves to the following call::"
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:83
+msgid ""
+"Note that it's not required to pass ``interact=True`` when calling a "
+"Character object for it to work as intended. The following works just as "
+"well::"
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:88
+msgid "When e is a Character, this is further equivalent to::"
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:92
+msgid ""
+"But it's possible to use :var:`config.say_arguments_callback` or have ``e`` "
+"wrap a character to do things differently."
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:95
+msgid ""
+"There is one additional way of replacing the say statement using Python:"
+msgstr ""
 
 #: ../../source/inc/se_say:5
 msgid "The equivalent of the say statement."
@@ -111,7 +150,7 @@ msgstr ""
 "用されます。文字列なら :func:`say` を使用して発言するキャラクターが作成されま"
 "す。"
 
-#: ../../source/inc/se_say:14 ../../source/inc/se_images:73
+#: ../../source/inc/se_images:73 ../../source/inc/se_say:14
 msgid "`what`"
 msgstr "`what`"
 
@@ -121,7 +160,7 @@ msgid ""
 "string."
 msgstr "発言する文字列です。 % 置換文字列はこの文字列で使用されます。"
 
-#: ../../source/inc/se_say:19 ../../source/inc/se_menu:14
+#: ../../source/inc/se_menu:14 ../../source/inc/se_say:19
 msgid "`interact`"
 msgstr "`interact`"
 
@@ -141,11 +180,66 @@ msgid ""
 "equivalent. ::"
 msgstr "次の3行が相当するため、この関数は滅多に必要ありません。 :"
 
-#: ../../source/statement_equivalents.rst:69
+#: ../../source/statement_equivalents.rst:100
+msgid "Dialogue Window Management"
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:102
+msgid ""
+":ref:`Window management <dialogue-window-management>` is performed by "
+"setting the :var:`_window` and :var:`_window_auto` variables, and by using "
+"the following two functions:"
+msgstr ""
+
+#: ../../source/inc/window:5
+#, fuzzy
+msgid "The Python equivalent of the ``window hide`` statement."
+msgstr "say ステートメントに相当するものです。"
+
+#: ../../source/inc/se_with:9 ../../source/inc/window:10
+#: ../../source/inc/window:23
+msgid "`trans`"
+msgstr "`trans`"
+
+#: ../../source/inc/window:8
+msgid ""
+"If False, the default window hide transition is used. If None, no transition "
+"is used. Otherwise, the specified transition is used."
+msgstr ""
+
+#: ../../source/inc/window:13 ../../source/inc/window:26
+msgid "`auto`"
+msgstr ""
+
+#: ../../source/inc/window:13
+#, fuzzy
+msgid ""
+"If True, this becomes the equivalent of the ``window auto hide`` statment."
+msgstr ""
+"画像を定義する。この関数は image ステートメントに相当する python コードです。"
+
+#: ../../source/inc/window:18
+#, fuzzy
+msgid "The Python equivalent of the ``window show`` statement."
+msgstr "say ステートメントに相当するものです。"
+
+#: ../../source/inc/window:21
+msgid ""
+"If False, the default window show transition is used. If None, no transition "
+"is used. Otherwise, the specified transition is used."
+msgstr ""
+
+#: ../../source/inc/window:26
+#, fuzzy
+msgid ""
+"If True, this becomes the equivalent of the ``window auto show`` statment."
+msgstr "say ステートメントに相当するものです。"
+
+#: ../../source/statement_equivalents.rst:109
 msgid "Choice Menus"
 msgstr "選択肢"
 
-#: ../../source/statement_equivalents.rst:71
+#: ../../source/statement_equivalents.rst:111
 msgid "The :doc:`menu statement <menus>` has an equivalent Python function."
 msgstr ":doc:`menu statement <menus>` に相当する Python 関数があります。"
 
@@ -190,11 +284,11 @@ msgstr ""
 "ションを使用します。ナレーションを使用してメニューを表示するには次のように記"
 "述します。 ::"
 
-#: ../../source/statement_equivalents.rst:77
+#: ../../source/statement_equivalents.rst:117
 msgid "Displaying Images"
 msgstr "画像の表示"
 
-#: ../../source/statement_equivalents.rst:79
+#: ../../source/statement_equivalents.rst:119
 msgid ""
 "The image, scene, show, and hide statements each have an equivalent Python "
 "function (see :doc:`displaying_images` for the original statements)."
@@ -223,8 +317,8 @@ msgstr ""
 "レイヤーから画像を非表示します。 hide ステートメントに相当する python コード"
 "です。"
 
-#: ../../source/inc/se_images:17 ../../source/inc/se_images:29
-#: ../../source/inc/se_images:58
+#: ../../source/inc/li:120 ../../source/inc/se_images:17
+#: ../../source/inc/se_images:29 ../../source/inc/se_images:58
 msgid "`name`"
 msgstr "`name`"
 
@@ -362,7 +456,7 @@ msgstr ""
 "表示される画像の画像タグを指定するために使用される文字列です。 ``as`` プロパ"
 "ティーに相当します。"
 
-#: ../../source/inc/se_images:84
+#: ../../source/inc/se_images:85
 msgid "`behind`"
 msgstr "`behind`"
 
@@ -374,7 +468,7 @@ msgstr ""
 "この画像が背後に表示される画像タグの文字列のリストです。 ``behind`` プロパ"
 "ティーに相当します。"
 
-#: ../../source/inc/se_images:89
+#: ../../source/inc/se_images:107
 msgid ""
 "The Python equivalent of the ``show layer`` `layer` ``at`` `at_list` "
 "statement. If `camera` is True, the equivalent of the ``camera`` statement."
@@ -383,11 +477,11 @@ msgstr ""
 "するものです。 `camera` が True なら、 ``camera`` ステートメントに相当する物"
 "でもあります。"
 
-#: ../../source/inc/se_images:94
+#: ../../source/inc/se_images:112
 msgid "`reset`"
 msgstr "`reset`"
 
-#: ../../source/inc/se_images:93
+#: ../../source/inc/se_images:111
 msgid ""
 "If true, the transform state is reset to the start when it is shown. If "
 "false, the transform state is persisted, allowing the new transform to "
@@ -396,11 +490,11 @@ msgstr ""
 "True なら、 transform の状態はその表示時までリセットされ、 False なら持続し、"
 "次のt ransform で状態を更新できるようにします。"
 
-#: ../../source/statement_equivalents.rst:85
+#: ../../source/statement_equivalents.rst:125
 msgid "Transitions"
 msgstr "トランジション"
 
-#: ../../source/statement_equivalents.rst:87
+#: ../../source/statement_equivalents.rst:127
 msgid ""
 "The equivalent of the :ref:`with-statement` is the :func:`renpy."
 "with_statement` function."
@@ -414,10 +508,6 @@ msgid ""
 msgstr ""
 "トランジションを実行します。これは with ステートメントに相当する python コー"
 "ドです。"
-
-#: ../../source/inc/se_with:9
-msgid "`trans`"
-msgstr "`trans`"
 
 #: ../../source/inc/se_with:9
 msgid "The transition."
@@ -443,11 +533,11 @@ msgstr ""
 "この関数はユーザーがトランジションの中断を選択するなら True を、そうでないな"
 "ら False を返します。"
 
-#: ../../source/statement_equivalents.rst:93
+#: ../../source/statement_equivalents.rst:133
 msgid "Jump"
 msgstr "Jump"
 
-#: ../../source/statement_equivalents.rst:95
+#: ../../source/statement_equivalents.rst:135
 msgid ""
 "The equivalent of the :ref:`jump-statement` is the :func:`renpy.jump` "
 "function."
@@ -459,11 +549,11 @@ msgid ""
 "Causes the current statement to end, and control to jump to the given label."
 msgstr "現在のステートメントを終了し、制御を指定されたラベルに移します。"
 
-#: ../../source/statement_equivalents.rst:100
+#: ../../source/statement_equivalents.rst:140
 msgid "Call"
 msgstr "Call"
 
-#: ../../source/statement_equivalents.rst:102
+#: ../../source/statement_equivalents.rst:142
 msgid ""
 "The equivalent of the :ref:`call-statement` is the :func:`renpy.call` "
 "function."
@@ -497,11 +587,11 @@ msgstr ""
 msgid "Causes Ren'Py to return from the current Ren'Py-level call."
 msgstr "現在の Ren'Py の呼び出しレベルから Ren'Py を返します。"
 
-#: ../../source/statement_equivalents.rst:107
+#: ../../source/statement_equivalents.rst:147
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../source/statement_equivalents.rst:109
+#: ../../source/statement_equivalents.rst:149
 msgid ""
 "The equivalent of the :ref:`pause-statement` is the :func:`renpy.pause` "
 "function."
@@ -597,14 +687,312 @@ msgid "`modal`"
 msgstr "`modal`"
 
 #: ../../source/inc/se_pause:41
+#, fuzzy
 msgid ""
 "If True or None, the pause will not end when a modal screen is being "
-"displayed. If false, the pause will end while a modal screen is being "
+"displayed. If False, the pause will end while a modal screen is being "
 "displayed."
 msgstr ""
 "True または None なら、ポーズはモーダルスクリーンが表示されているときは終わり"
 "ません。 False なら、ポーズはモーダルスクリーンが表示されていても終わりませ"
 "ん。"
+
+#: ../../source/statement_equivalents.rst:154
+msgid "Layeredimage"
+msgstr ""
+
+#: ../../source/statement_equivalents.rst:156
+msgid ""
+"The :ref:`layeredimage-statement` statement has Python equivalents. The "
+"group statement does not: the name of the group is supplied to :class:"
+"`Attribute`, and the ``auto`` feature can be implemented using :func:`renpy."
+"list_images`."
+msgstr ""
+
+#: ../../source/inc/li:5
+msgid ""
+"This is used to represent a layer of an LayeredImage that is controlled by "
+"an attribute. A single attribute can control multiple layers, in which case "
+"all layers corresponding to that attribute will be displayed."
+msgstr ""
+
+#: ../../source/inc/li:13
+msgid "`group`"
+msgstr ""
+
+#: ../../source/inc/li:11
+msgid ""
+"A string giving the group the attribute is part of. This may be None, in "
+"which case a group with the same name as the attribute is created."
+msgstr ""
+
+#: ../../source/inc/li:16
+msgid "`attribute`"
+msgstr ""
+
+#: ../../source/inc/li:16
+msgid "A string giving the name of the attribute."
+msgstr ""
+
+#: ../../source/inc/li:20 ../../source/inc/li:69
+msgid "`image`"
+msgstr ""
+
+#: ../../source/inc/li:19
+msgid ""
+"If not None, this should be a displayable that is displayed when this "
+"attribute is shown."
+msgstr ""
+
+#: ../../source/inc/li:24
+msgid "`default`"
+msgstr ""
+
+#: ../../source/inc/li:23
+msgid ""
+"If True, and no other attribute for the group is selected, this attribute is."
+msgstr ""
+
+#: ../../source/inc/li:26
+#, fuzzy
+msgid "The following keyword arguments are also known:"
+msgstr "以下はキーワード引数として指定するべきです。"
+
+#: ../../source/inc/li:30 ../../source/inc/li:84 ../../source/inc/li:116
+msgid "`at`"
+msgstr ""
+
+#: ../../source/inc/li:29 ../../source/inc/li:84
+#, fuzzy
+msgid "A transform or list of transforms that are applied to the image."
+msgstr ""
+"画像に適用される transform のリストです。 ``at`` プロパティーに相当します。"
+
+#: ../../source/inc/li:34 ../../source/inc/li:73
+msgid "`if_all`"
+msgstr ""
+
+#: ../../source/inc/li:33
+msgid ""
+"An attribute or list of attributes. The displayable is only shown if all of "
+"these are showing."
+msgstr ""
+
+#: ../../source/inc/li:38 ../../source/inc/li:77
+msgid "`if_any`"
+msgstr ""
+
+#: ../../source/inc/li:37
+msgid ""
+"An attribute or list of attributes. if not empty, the displayable is only "
+"shown if any of these are showing."
+msgstr ""
+
+#: ../../source/inc/li:42 ../../source/inc/li:81
+msgid "`if_not`"
+msgstr ""
+
+#: ../../source/inc/li:41
+msgid ""
+"An attribute or list of attributes. The displayable is only shown if none of "
+"these are showing."
+msgstr ""
+
+#: ../../source/inc/li:44
+msgid ""
+"Other keyword arguments are interpreted as transform properties. If any are "
+"present, a transform is created that wraps the image. (For example, "
+"pos=(100, 200) can be used to offset the image by 100 pixels horizontally "
+"and 200 vertically.)"
+msgstr ""
+
+#: ../../source/inc/li:49
+msgid ""
+"If the `image` parameter is omitted or None, and the LayeredImage has been "
+"given the `image_format` parameter, the image_format is used to generate an "
+"image filename."
+msgstr ""
+
+#: ../../source/inc/li:55
+msgid ""
+"When the condition is true, the layer is displayed. Otherwise, nothing is "
+"displayed."
+msgstr ""
+
+#: ../../source/inc/li:58
+msgid ""
+"This is used to implement a single ``if``, ``elif`` **or** ``else`` "
+"layeredimage statement (for ``else``, `condition` should be \"True\"). "
+"Several Conditions can then be passed to a :class:`ConditionGroup` to "
+"emulate a full if/elif/else statement."
+msgstr ""
+
+#: ../../source/inc/li:65
+msgid "`condition`"
+msgstr ""
+
+#: ../../source/inc/li:64
+msgid ""
+"This should be a string giving a Python condition that determines if the "
+"layer is displayed."
+msgstr ""
+
+#: ../../source/inc/li:68
+msgid ""
+"If not None, this should be a displayable that is displayed when the "
+"condition is true."
+msgstr ""
+
+#: ../../source/inc/li:72
+msgid ""
+"An attribute or list of attributes. The condition is only evaluated if all "
+"of these are showing."
+msgstr ""
+
+#: ../../source/inc/li:76
+msgid ""
+"An attribute or list of attributes. If not empty, the condition is only "
+"evaluated if any of these are showing."
+msgstr ""
+
+#: ../../source/inc/li:80
+msgid ""
+"An attribute or list of attributes. The condition is only evaluated if none "
+"of these are showing."
+msgstr ""
+
+#: ../../source/inc/li:86
+msgid ""
+"Other keyword arguments are interpreted as transform properties. If any is "
+"present, a transform is created that wraps the image. (For example, "
+"pos=(100, 200) can be used to offset the image by 100 pixels horizontally "
+"and 200 vertically.)"
+msgstr ""
+
+#: ../../source/inc/li:93
+msgid ""
+"Takes a list of :class:`Condition` to combine them into a single :func:"
+"`ConditionSwitch`."
+msgstr ""
+
+#: ../../source/inc/li:96
+msgid "Implements the if/elif/else statement."
+msgstr ""
+
+#: ../../source/inc/li:100
+msgid ""
+"This is an image-like object that, when shown with the proper set of "
+"attributes, shows a displayable created by compositing together the "
+"displayables associated with those attribute."
+msgstr ""
+
+#: ../../source/inc/li:112
+msgid "`attributes`"
+msgstr ""
+
+#: ../../source/inc/li:105
+msgid ""
+"This must be a list of Attribute, Condition, ConditionGroup or :func:`renpy."
+"Displayable` objects. Each one reflects a displayable that may or may not be "
+"displayed as part of the image. The items in this list are in back-to-front "
+"order, with the first item further from the viewer and the last closest. "
+"Passing a displayable directly is the equivalent of the `always` "
+"layeredimage statement."
+msgstr ""
+
+#: ../../source/inc/li:115
+#, fuzzy
+msgid ""
+"A transform or list of transforms that are applied to the displayable after "
+"it is parameterized."
+msgstr ""
+"画像に適用される transform のリストです。 ``at`` プロパティーに相当します。"
+
+#: ../../source/inc/li:119
+msgid ""
+"The name of the layeredimage. This is used as part of the names of image "
+"components."
+msgstr ""
+
+#: ../../source/inc/li:127
+msgid "`image_format`"
+msgstr ""
+
+#: ../../source/inc/li:123
+msgid ""
+"When a given image is a string, and this is supplied, the image name is "
+"interpolated into `image_format` to make an image file. For example, "
+"\"sprites/eileen/{image}.png\" will look for the image in a subdirectory of "
+"sprites. (This is not used by auto groups, which look for images and not "
+"image files.)"
+msgstr ""
+
+#: ../../source/inc/li:131
+msgid "`format_function`"
+msgstr ""
+
+#: ../../source/inc/li:130
+msgid ""
+"A function that is used instead of `layeredimage.format_function` to format "
+"the image information into a displayable."
+msgstr ""
+
+#: ../../source/inc/li:138
+msgid "`attribute_function`"
+msgstr ""
+
+#: ../../source/inc/li:134
+msgid ""
+"If not None, a function that's called with a set of attributes supplied to "
+"the image, and returns the set of attributes used to select layers. This is "
+"called when determining the layers to display, after the attribute "
+"themselves have been chosen. It can be used to express complex dependencies "
+"between attributes or select attributes at random."
+msgstr ""
+
+#: ../../source/inc/li:144
+#, fuzzy
+msgid "`offer_screen`"
+msgstr "`screen`"
+
+#: ../../source/inc/li:141
+msgid ""
+"Sets whether or not the available area is taken into account as for how "
+"children are placed and how they are sized (when they have variable size). "
+"If False, the available area is considered, and if True it is not. If None, "
+"defaults to :var:`config.layeredimage_offer_screen`."
+msgstr ""
+
+#: ../../source/inc/li:146
+msgid ""
+"Additional keyword arguments may contain transform properties. If any are "
+"present, a transform is created that wraps the result image. Remaining "
+"keyword arguments are passed to a Fixed that is created to hold the layer. "
+"Unless explicitly overridden, xfit and yfit are set to true on the Fixed, "
+"which means it will shrink to the smallest size that fits all of the layer "
+"images it is showing."
+msgstr ""
+
+#: ../../source/inc/li:153
+msgid ""
+"A LayeredImage is not a displayable, and can't be used in all the places a "
+"displayable can be used. This is because it requires an image name "
+"(generally including image attributes) to be provided. As such, it should "
+"either be displayed through a scene or show statement, or by an image name "
+"string used as a displayable."
+msgstr ""
+
+#~ msgid ""
+#~ "Displaying narration can be done the same way, by using the ``narrator`` "
+#~ "character. When calling a character, it's possible to supply the keyword "
+#~ "argument ``interact``. When ``interact`` is False, Ren'Py will display "
+#~ "the character dialogue box, and will then return before performing an "
+#~ "interaction."
+#~ msgstr ""
+#~ "台詞の表示は ``narrator`` キャラクターを用いて同様に行えます。キャラクター"
+#~ "を呼び出すときは、キーワード引数 ``interact`` を与えられます。"
+#~ "``interact`` が False なら、 Ren'Py はキャラクターのダイアログボックスを表"
+#~ "示しますが、インタラクションを実行する前に処理を戻します。"
 
 #~ msgid "The layer on which this function operates."
 #~ msgstr "この関数を実行するレイヤー"
