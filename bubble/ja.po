@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2023, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 8.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-29 14:05+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/bubble.rst:2
+msgid "Speech Bubbles"
+msgstr ""
+
+#: ../../source/bubble.rst:4
+msgid "Ren'Py supports dialogue that's displayed in speech bubbles, which can be interactively positioned on the screen. This provides an alternative to the textboxes used by ADV-style games, and the full screen dialogue used by NVL-mode."
+msgstr ""
+
+#: ../../source/bubble.rst:9
+msgid "To use speech bubbles your game, you'll have to define Characters with an image tag, a kind of ``bubble``. For example, ::"
+msgstr ""
+
+#: ../../source/bubble.rst:15
+msgid "While a name is supported, in general the speaking character will be implied by the tails of the bubble, so the name can be omitted."
+msgstr ""
+
+#: ../../source/bubble.rst:18
+msgid "You may then use these characters to write dialogue normally."
+msgstr ""
+
+#: ../../source/bubble.rst:20
+msgid "To position the balloons, hit shift+B to display the speech bubble editor. For each character that has a speech balloon, this will have two buttons in it."
+msgstr ""
+
+#: ../../source/bubble.rst:24
+msgid "Pressing the area button will launch the speech bubble editor. This editor lets you drag to select the area where the speech bubble will be placed, on a grid. When you complete the drag, the speech bubble will will change locations."
+msgstr ""
+
+#: ../../source/bubble.rst:29
+msgid "Pressing the properties buttons will select between sets of properties associated with the speech bubble. For the default speech bubble, the different properties control the position of the speech bubble tail."
+msgstr ""
+
+#: ../../source/bubble.rst:33
+msgid "Once you've changed the area or properties for a character (or group of characters with the same image tage), those properties remain set until changed again, or until the next scene statement."
+msgstr ""
+
+#: ../../source/bubble.rst:37
+msgid "When the area or properties are being set on the current line of dialogue, the corresponding line is brighter. If the values are being inherited from a prior line of dialogue or the default, the button is dimmed out. Right clicking on a button will prevent the current line from setting the value."
+msgstr ""
+
+#: ../../source/bubble.rst:43
+msgid "Tips"
+msgstr ""
+
+#: ../../source/bubble.rst:45
+msgid "The speech bubbles use the same identifiers used by the translation system, see the :ref:`Translation Tips <translation-tips>` for more information about them. These identifiers can change if:"
+msgstr ""
+
+#: ../../source/bubble.rst:49
+msgid "The text of a line changes."
+msgstr ""
+
+#: ../../source/bubble.rst:50
+msgid "Another line with the same text inside the same label is added or removed."
+msgstr ""
+
+#: ../../source/bubble.rst:51
+msgid "A label before the line is added or removed (however, adding or removing a label with the ``hide`` clause will not change the translation identifier)."
+msgstr ""
+
+#: ../../source/bubble.rst:54
+msgid "If you edit a scene, it's suggested that you replay through it to make sure the changes did not affect speech bubble placement."
+msgstr ""
+
+#: ../../source/bubble.rst:59
+msgid "Configuration Variables"
+msgstr ""
+
+#: ../../source/bubble.rst:61
+msgid "The speech bubble system is controlled by variables in the ``bubble`` namespace, and by the ``bubble`` screen and its associated styles."
+msgstr ""
+
+#: ../../source/bubble.rst:64
+msgid "The ``bubble`` namespace contains the following variables:"
+msgstr ""
+
+#: ../../source/bubble.rst:68
+msgid "The database file, stored in the game directory, that contains the speech bubble information."
+msgstr ""
+
+#: ../../source/bubble.rst:74
+msgid "The granularity of the grid that's used to position and size speech bubbles, in the horizontal direction."
+msgstr ""
+
+#: ../../source/bubble.rst:79
+msgid "The granularity of the grid that's used to position and size speech bubbles, in the vertical direction."
+msgstr ""
+
+#: ../../source/bubble.rst:84
+msgid "This is the default area that speech bubbles are placed in, if no other area is specified. This is a tuple of the form (x, y, w, h), where each value is a number of grid cells."
+msgstr ""
+
+#: ../../source/bubble.rst:91
+msgid "These are properties, apart from the area, that can be used to customize the speech bubble. This is a map from the name of a set of proprerties to a dictionary of properties and values. These properties supersede those given to the character, and are then supplied to the ``bubble`` screen."
+msgstr ""
+
+#: ../../source/bubble.rst:96
+msgid "This uses the same prefixing system as :func:`Character` does. Properties beginning with ``window_`` have the prefix removed, and are passed to the displayable with id \"window\" in the bubble screen, which is the bubble itself. Properties with ``what_`` have the prefix removed, and are passed to the displayable with id \"what\" in the bubble screen, which is the text of the bubble. Properties with ``who_`` are handled similarly, and given to the characters name. Properties with ``show_`` are given as arguments to the bubble screen itself."
+msgstr ""
+
+#: ../../source/bubble.rst:105
+msgid "In a new game, screens.rpy includes::"
+msgstr ""
+
+#: ../../source/bubble.rst:131
+msgid "The bubble.frame variable is just used to make defining bubble.properties easier. Then for each of the four styles of bubble, the bubble is flipped so the tail is in the right place, and the padding is adjusted to leave room for the tail."
+msgstr ""
+
+#: ../../source/bubble.rst:138
+msgid "This is a list of the names of the sets of properties, in the order they should be cycled through in the speech bubble editor. If the names of the sets of properties are not given, the properties are cycled through in alphabetical order."
+msgstr ""
+
+#: ../../source/bubble.rst:144
+msgid "This is a map from the name of a set of properties to a (left, top, right, bottom) tuple. If found in this set, the area of the speech bubble is expanded by the given number of pixels."
+msgstr ""
+
+#: ../../source/bubble.rst:148
+msgid "This makes the speech bubble bigger than the area the creator dragged out. The intent is that this can be used to drag out the body of the speech bubble without concern for the tail, and also for the text itself to stay put when the set of properties is changed and the tail moves."
+msgstr ""
+
+#: ../../source/bubble.rst:153
+msgid "By default, this is::"
+msgstr ""
+
+#: ../../source/bubble.rst:163
+msgid "Bubble Screen"
+msgstr ""
+
+#: ../../source/bubble.rst:165
+msgid "The default ``bubble`` screen can be found in ``screens.rpy``, and is similar to the default ``say`` screen::"
+msgstr ""
+
+#: ../../source/bubble.rst:186
+msgid "It's separate from the say screen as it uses its own set of styles, including ``bubble_window``, ``bubble_what``, ``bubble_namebox``, and ``bubble_who``. These styles can be customized directly to avoid having to set a property in all of the sets of properties in :var:`bubble.properties`."
+msgstr ""
