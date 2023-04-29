@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
+"POT-Creation-Date: 2023-04-29 14:05+0900\n"
 "PO-Revision-Date: 2022-12-06 01:47+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -293,8 +293,8 @@ msgstr "画像"
 
 #: ../../source/displayables.rst:114
 msgid ""
-"Ren'Py supports many SVG images, using the SVG support built into the "
-"SVG2_image library. Some unsupported features include:"
+"Ren'Py supports many SVG 1.0 images, using the NanoSVG library. Some "
+"unsupported features include:"
 msgstr ""
 
 #: ../../source/displayables.rst:117
@@ -317,11 +317,17 @@ msgstr ""
 
 #: ../../source/displayables.rst:123
 msgid ""
+"A list of features NanoSVG supports may be found `here <https://core.tcl-"
+"lang.org/tips/doc/trunk/tip/507.md>`_."
+msgstr ""
+
+#: ../../source/displayables.rst:126
+msgid ""
 "It's recommended to convert everything in an SVG image that will not render "
 "properly into paths."
 msgstr ""
 
-#: ../../source/displayables.rst:126
+#: ../../source/displayables.rst:129
 msgid ""
 "Ren'Py will render SVG images as if the virtual screen was 96dpi. If the "
 "window is enlarged or shrunk, the SVG image will be scaled up or down, "
@@ -329,15 +335,15 @@ msgid ""
 "the image is rendered at the correct virtual size."
 msgstr ""
 
-#: ../../source/displayables.rst:132
+#: ../../source/displayables.rst:135
 msgid "This ensures the SVG will be rendered sharp if it is not scaled."
 msgstr ""
 
-#: ../../source/displayables.rst:135
+#: ../../source/displayables.rst:138
 msgid "Image-Like Displayables"
 msgstr "イメージライク displayable"
 
-#: ../../source/displayables.rst:137
+#: ../../source/displayables.rst:140
 msgid ""
 "We call these displayables image-like because they take up a rectangular "
 "area of the screen, and do not react to input.  These differ from normal "
@@ -350,7 +356,7 @@ msgstr ""
 "変えたり (Frame, Tile, および Solid)、ユーザーが大きさを指定できたり "
 "(Composite, LiveCrop, Null) します。画像マニピュレータではありません。"
 
-#: ../../source/displayables.rst:143
+#: ../../source/displayables.rst:146
 msgid "Image-like displayables take :ref:`position-style-properties`."
 msgstr ""
 "イメージライク displayable は :ref:`position-style-properties` を取ります。"
@@ -600,25 +606,25 @@ msgstr "割り当てられた領域を `color` で満たす displayable です�
 msgid "Tiles `child` until it fills the area allocated to this displayable."
 msgstr "この displayable に割り当てられた領域まで `child` をタイル張りします。"
 
-#: ../../source/displayables.rst:148
+#: ../../source/displayables.rst:151
 msgid "Text Displayables"
 msgstr "Text Displayables"
 
-#: ../../source/displayables.rst:150
+#: ../../source/displayables.rst:153
 msgid "See :ref:`text-displayables`."
 msgstr ":ref:`text-displayables` 参照。"
 
-#: ../../source/displayables.rst:154
+#: ../../source/displayables.rst:157
 msgid "Dynamic Displayables"
 msgstr "動的 displayable"
 
-#: ../../source/displayables.rst:156
+#: ../../source/displayables.rst:159
 msgid ""
 "Dynamic displayables display a child displayable based on the state of the "
 "game."
 msgstr "動的 Displayable はゲームの状態に合わせて子 Displayable を表示します。"
 
-#: ../../source/displayables.rst:159
+#: ../../source/displayables.rst:162
 msgid ""
 "Note that these dynamic displayables always display their current state. "
 "Because of this, a dynamic displayable will not participate in a transition. "
@@ -629,7 +635,7 @@ msgstr ""
 "displayable はトランジションに参加せず(ないしは正しく参加しません)、トランジ"
 "ション前後の両方の状態で同様に表示されます。"
 
-#: ../../source/displayables.rst:164
+#: ../../source/displayables.rst:167
 msgid ""
 "By design, dynamic displayables are intended to be used for things that "
 "change rarely and when an image defined this way is off screen (Such as a "
@@ -769,18 +775,18 @@ msgstr ""
 "ShowingSwitch の使い方の一つは、キャラクターの現在の表情に応じて画像を変える"
 "ことです。例 ::"
 
-#: ../../source/displayables.rst:173
+#: ../../source/displayables.rst:176
 #, fuzzy
 msgid "Layer Displayables"
 msgstr "Text Displayables"
 
-#: ../../source/displayables.rst:175
+#: ../../source/displayables.rst:178
 msgid ""
 "Layer displayables display the contents of a layer based on the state of the "
 "game. They are intended for use with :var:`config.detached_layers`."
 msgstr ""
 
-#: ../../source/displayables.rst:178
+#: ../../source/displayables.rst:181
 #, fuzzy
 msgid ""
 "Note that similar to dynamic displayables, the layers shown within always "
@@ -820,11 +826,11 @@ msgid ""
 "exceeding the bounds will be trimmed."
 msgstr ""
 
-#: ../../source/displayables.rst:220
+#: ../../source/displayables.rst:223
 msgid "Applying Transforms to Displayables"
 msgstr "displayable への transform の適用"
 
-#: ../../source/displayables.rst:222
+#: ../../source/displayables.rst:225
 msgid ""
 "The At function produces a displayable from a displayable and one or more :"
 "doc:`transforms <transforms>`."
@@ -842,11 +848,11 @@ msgstr ""
 "transform は左から右へ順に適用され、最後になされる transform は最も右側の引数"
 "です。 ::"
 
-#: ../../source/displayables.rst:229
+#: ../../source/displayables.rst:232
 msgid "Layout Boxes and Grids"
 msgstr "レイアウトボックスとグリッド"
 
-#: ../../source/displayables.rst:231
+#: ../../source/displayables.rst:234
 msgid ""
 "Layout boxes are displayables that lay out their children on the screen. "
 "They can lay out the children in a horizontal or vertical manner, or lay "
@@ -856,7 +862,7 @@ msgstr ""
 "です。子 displayable を、水平や垂直に並べたり、一定の配置法でレイアウトしたり"
 "できます。"
 
-#: ../../source/displayables.rst:235
+#: ../../source/displayables.rst:238
 msgid ""
 "The box displayables take any number of positional and keyword arguments. "
 "Positional arguments should be displayables that are added to the box as "
@@ -866,7 +872,7 @@ msgstr ""
 "ボックスに子として加えられる displayable となります。キーワード引数はボックス"
 "に適用されるスタイルプロパティーです。"
 
-#: ../../source/displayables.rst:240
+#: ../../source/displayables.rst:243
 msgid ""
 "Boxes take :ref:`position-style-properties` and :ref:`box-style-properties`."
 msgstr ""
@@ -889,7 +895,7 @@ msgstr "ボックスで、このメンバは左から右へ並べられます。
 msgid "A layout that lays out its members from top to bottom."
 msgstr "ボックスで、このメンバは上から下へ並べられます。"
 
-#: ../../source/displayables.rst:260
+#: ../../source/displayables.rst:263
 msgid ""
 "The Grid layout displays its children in a grid on the screen. It takes :ref:"
 "`position-style-properties` and the :propref:`spacing` style property."
@@ -907,11 +913,11 @@ msgstr ""
 "の列の数です。この後にはグリッドを満す `columns * rows` 個の displayable の位"
 "置引数が続かなければなりません。"
 
-#: ../../source/displayables.rst:267
+#: ../../source/displayables.rst:270
 msgid "Effects"
 msgstr "効果"
 
-#: ../../source/displayables.rst:269
+#: ../../source/displayables.rst:272
 msgid "These displayables are used to create certain visual effects."
 msgstr "これらの displayable は、特定の視覚効果を作成するのに使われます。"
 
@@ -940,11 +946,11 @@ msgstr ""
 "True であれば、画像は背後のものと合成されます。デフォルトの False であれば、"
 "画像は不透明で背後のものを上書きします。"
 
-#: ../../source/displayables.rst:274
+#: ../../source/displayables.rst:277
 msgid "Image Manipulators"
 msgstr "画像マニピュレータ"
 
-#: ../../source/displayables.rst:276
+#: ../../source/displayables.rst:279
 msgid ""
 "An :doc:`image manipulator <im>` is a displayable that takes an image or "
 "image manipulator, and either loads it or performs an operation on it. Image "
@@ -954,7 +960,7 @@ msgstr ""
 "displayable であり、それらを読み込み、または処理します。画像マニピュレータは"
 "画像または他の画像マニピュレータのみを入力として受け取れます。"
 
-#: ../../source/displayables.rst:281
+#: ../../source/displayables.rst:284
 msgid ""
 "An image manipulator can be used any place a displayable can, but not vice-"
 "versa. An :func:`Image` is a kind of image manipulator, so an Image can be "
@@ -964,7 +970,7 @@ msgstr ""
 "できません。Image() は画像マニピュレータの一種なので、Image は画像マニピュ"
 "レータが要求されたときはいつでも使えます。"
 
-#: ../../source/displayables.rst:285
+#: ../../source/displayables.rst:288
 #, fuzzy
 msgid ""
 "The use of image manipulators is historic. A number of image manipulators "
@@ -979,7 +985,7 @@ msgstr ""
 "`Transform` displayable はそれらの問題を解決しつつ同様な機能をより一般的な方"
 "法で提供しますが、 gl2 を有効化する必要がある場合もあります。"
 
-#: ../../source/displayables.rst:291
+#: ../../source/displayables.rst:294
 msgid ""
 "For the list of image manipulators, see the :doc:`image manipulator <im>` "
 "documentation."
@@ -987,11 +993,11 @@ msgstr ""
 "画像マニピュレータのリストは :doc:`画像マニピュレータ <im>` を参照してくださ"
 "い。"
 
-#: ../../source/displayables.rst:295
+#: ../../source/displayables.rst:298
 msgid "Placeholders"
 msgstr "プレースホルダ"
 
-#: ../../source/displayables.rst:297
+#: ../../source/displayables.rst:300
 msgid ""
 "The Placeholder displayable is used to display background or character "
 "images as appropriate. Placeholders are used automatically when an undefined "
@@ -1094,11 +1100,11 @@ msgstr ""
 "指定された場合、これ以外のテキストはプレースホルダーに表示されません。そうで"
 "なければテキストはそれを表示するために使用された show の指示を反映します。"
 
-#: ../../source/displayables.rst:314
+#: ../../source/displayables.rst:317
 msgid "Displayable Prefixes"
 msgstr "Displayable Prefixes"
 
-#: ../../source/displayables.rst:316
+#: ../../source/displayables.rst:319
 msgid ""
 "Displayable prefixes make it possible for a creator to define their own "
 "displayables, and refer to them anywhere a displayable can be used in "
@@ -1113,14 +1119,14 @@ msgstr ""
 "ます。 :var:`config.displayable_prefix` 変数は接頭辞を関数に対応させます。そ"
 "の関数は引数を受け取り、 displayable または None を返します。"
 
-#: ../../source/displayables.rst:323
+#: ../../source/displayables.rst:326
 msgid ""
 "For example, this makes the big prefix return an image that is twice as big "
 "as the original. ::"
 msgstr ""
 "例えば、オリジナルの二倍の大きさの画像を返す big 接頭辞を作成します。 ::"
 
-#: ../../source/displayables.rst:332
+#: ../../source/displayables.rst:335
 msgid ""
 "The ``init -10`` makes sure the prefix is defined before any images that use "
 "it. The prefix can then be used to define images::"
@@ -1128,15 +1134,15 @@ msgstr ""
 "``init -10`` によって接頭辞は使用するどの画像よりも前に定義され、その接頭辞を"
 "使用して画像の定義ができます ::"
 
-#: ../../source/displayables.rst:337
+#: ../../source/displayables.rst:340
 msgid "or in any other place where a displayable is required."
 msgstr "また、 displayable が要求されるどこにでも使用できます。"
 
-#: ../../source/displayables.rst:340
+#: ../../source/displayables.rst:343
 msgid "See also"
 msgstr "その他参照"
 
-#: ../../source/displayables.rst:342
+#: ../../source/displayables.rst:345
 msgid ""
 ":doc:`displaying_images` : the basics of how to make all these displayables "
 "appear on the screen."
