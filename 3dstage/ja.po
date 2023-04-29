@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2022-06-22 19:43+0900\n"
+"PO-Revision-Date: 2023-04-24 21:53+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -166,20 +166,22 @@ msgid ""
 "The default value used when :tpref:`perspective` is not set to a 3-tuple. "
 "``z`` depends on the size of the game, as defined above."
 msgstr ""
+":tpref:`perspective` が 3 タプルに設定されていない場合に使用されるデフォルト"
+"値です。 ``z`` は、上記で定義したように、ゲームのサイズに依存します。"
 
 #: ../../source/3dstage.rst:80
 msgid "Using the 3D Stage"
 msgstr "3D ステージの使用"
 
 #: ../../source/3dstage.rst:82
-#, fuzzy
 msgid ""
 "The first thing to do to use the 3D stage is to enable it for a layer, using "
 "the ``camera`` statement. If no layer name is provided, ``master`` is used "
 "by default. This is usually done with::"
 msgstr ""
 "3D ステージの使用で最初にすべきことは ``camera`` ステートメントを使用してレイ"
-"ヤーを有効化することです。これは通常次のコードで実行されます。 ::"
+"ヤーを有効化することです。レイヤー名が指定されなければ ``master`` がデフォル"
+"トで使用されます。これは通常次のコードで実行されます。 ::"
 
 #: ../../source/3dstage.rst:90
 msgid ""
@@ -192,6 +194,8 @@ msgid ""
 "Alternatively, you can provide a specific layer name to enable the 3D stage "
 "only for that layer. ::"
 msgstr ""
+"代わりに特定のレイヤー名を指定して、そのレイヤーでのみ 3D ステージを有効化で"
+"きます。"
 
 #: ../../source/3dstage.rst:100
 msgid ""
@@ -553,17 +557,16 @@ msgstr ""
 "イズの割合で、そうでなければピクセル数の絶対値での指定となります。"
 
 #: ../../source/3dstage.rst:314
-#, fuzzy
 msgid ""
 "This sets the location of the (0, 0, 0) point that point_to, orientation, "
 "xrotate, yrotate, zrotate and matrixtransform apply their transforms to."
 msgstr ""
-"これは matrixtransform がその transform に適用する (0, 0, 0) となる原点の場所"
-"を設定します。"
+"これは point_to や xrotate, yrotate, zrotate, matrixtransform がその "
+"transform に適用する (0, 0, 0) となる原点の場所を設定します。"
 
 #: ../../source/3dstage.rst:319
 msgid "(float, float, float), Camera, or None"
-msgstr ""
+msgstr "(float, float, float) または Camera,, None"
 
 #: ../../source/3dstage.rst:320 ../../source/3dstage.rst:346
 #: ../../source/3dstage.rst:360 ../../source/3dstage.rst:371
@@ -578,10 +581,12 @@ msgid ""
 "transformed are rotated to face that point, even if the position of the "
 "camera or the displayable is changed."
 msgstr ""
+"これは向ける位置を指定します。 transform が適用されるカメラや displayable は"
+"場所が変わっても常にその座標を向くようにに回転されます。"
 
 #: ../../source/3dstage.rst:326
 msgid "If this is None, no point-of-interest rotation is applied."
-msgstr ""
+msgstr "None なら回転は適用されません。"
 
 #: ../../source/3dstage.rst:328
 msgid ""
@@ -589,30 +594,37 @@ msgid ""
 "(x, y, z) format tuple represents the position of the point of interest. An "
 "instance of Camera means to point at the camera."
 msgstr ""
+"Noneでなければ、 3 要素のタプルか :func:`Camera` のインスタンスです。 (x, y, "
+"z) フォーマットのタプルは目標点の座標を表します。 Camera のインスタンスはその"
+"カメラの座標を意味します。"
 
 #: ../../source/3dstage.rst:332
 msgid ""
 "Note point_to isn't updated automatically. so, you should write like below "
 "if you want it is updated::"
 msgstr ""
+"point_to は自動的には更新されないため、更新したいならば次のように書くべきで"
+"す。 ::"
 
 #: ../../source/inc/point_to_camera:5
 msgid ""
 "Instances of this class can be used with point_to to point at the location "
 "of the camera for a particular layer."
 msgstr ""
+"このクラスのインスタンスは point_to に使用して、特定のレイヤーのカメラの座標"
+"を指定できます。"
 
 #: ../../source/inc/point_to_camera:8
 msgid "`layer`"
-msgstr ""
+msgstr "`layer`"
 
 #: ../../source/inc/point_to_camera:9
 msgid "The name of the layer."
-msgstr ""
+msgstr "レイヤー名です。"
 
 #: ../../source/3dstage.rst:345
 msgid "(float, float, float) or None"
-msgstr ""
+msgstr "(float, float, float) または None"
 
 #: ../../source/3dstage.rst:348
 msgid ""
@@ -620,21 +632,25 @@ msgid ""
 "and z rotations, in degrees. The rotations are applied in x, y, z order for "
 "displayables, and z, y, x order for the camera."
 msgstr ""
+"カメラや Displayable を回転させます。3つの値はそれぞれ x, y, zの回転を度数で"
+"表します。 Displayable に対しては x, y, z 順、 茶目らに対しては z, y, x 順に"
+"回転は適用されます。"
 
 #: ../../source/3dstage.rst:352
 msgid ""
 "When interpolation is used with orientation, the shortest path is taken "
 "between the old and new orientations."
 msgstr ""
+"orientation で補間が使用されると、新旧 orientation 間の最短経路がとられます。"
 
 #: ../../source/3dstage.rst:355
 msgid "If this is None, no orientation is applied."
-msgstr ""
+msgstr "None であれば、 orientation は適用されません。"
 
 #: ../../source/3dstage.rst:359 ../../source/3dstage.rst:370
 #: ../../source/3dstage.rst:381
 msgid "float or None"
-msgstr ""
+msgstr "float または None"
 
 #: ../../source/3dstage.rst:362
 msgid ""
@@ -642,10 +658,12 @@ msgid ""
 "the rotation, in degrees. Rotations are applied to displayables in x, y, z "
 "order. Rotations are applied to the camera in z, y, x order."
 msgstr ""
+"x 軸中心にカメラや Displayable を回転します。その値は度数での回転角度です。回"
+"転は Displayable には x, y, z 順で、カメラには z, y, x 順で適用されます。"
 
 #: ../../source/3dstage.rst:366
 msgid "If this is None, no x-axis rotation is applied."
-msgstr ""
+msgstr "None であれば、x 回転は適用されません。"
 
 #: ../../source/3dstage.rst:373
 msgid ""
@@ -653,10 +671,12 @@ msgid ""
 "the rotation, in degrees. Rotations are applied to displayables in x, y, z "
 "order. Rotations are applied to the camera in z, y, x order."
 msgstr ""
+"y 軸中心にカメラや Displayable を回転します。その値は度数での回転角度です。回"
+"転は Displayable には x, y, z 順で、カメラには z, y, x 順で適用されます。"
 
 #: ../../source/3dstage.rst:377
 msgid "If this is None, no y-axis rotation is applied."
-msgstr ""
+msgstr "None であれば、 y 回転は適用されません。"
 
 #: ../../source/3dstage.rst:384
 msgid ""
@@ -664,10 +684,12 @@ msgid ""
 "the rotation, in degrees. Rotations are applied to displayables in x, y, z "
 "order. Rotations are applied to the camera in z, y, x order."
 msgstr ""
+"z 軸中心にカメラや Displayable を回転します。その値は度数での回転角度です。回"
+"転は Displayable には x, y, z 順で、カメラには z, y, x 順で適用されます。"
 
 #: ../../source/3dstage.rst:388
 msgid "If this is None, no z-axis rotation is applied."
-msgstr ""
+msgstr "None であれば、 z 回転は適用されません。"
 
 #: ../../source/3dstage.rst:392
 msgid "None or Matrix or TransformMatrix"

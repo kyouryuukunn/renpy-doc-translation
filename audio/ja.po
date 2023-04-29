@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2022-11-20 10:26+0900\n"
+"PO-Revision-Date: 2023-04-24 22:05+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -165,7 +165,6 @@ msgstr ""
 "番に再生されます。"
 
 #: ../../source/audio.rst:65
-#, fuzzy
 msgid ""
 "The ``fadein`` and ``fadeout`` clauses are optional. Fadeout gives the "
 "fadeout time for currently playing music, in seconds, while fadein gives the "
@@ -174,8 +173,8 @@ msgid ""
 msgstr ""
 "``fadein`` と ``fadeout`` 節は任意です。 fadeout は現在再生中の曲をフェードア"
 "ウトする時間を秒数で指定し、 fadein は新しい曲をフェードインするのにかかる時"
-"間を指定します。 fadeout が指定されていないと、 :var:`config.fade_music` が使"
-"用されます。"
+"間を指定します。 fadeout が指定されていないと、 :var:`config.fadeout_audio` "
+"が使用されます。"
 
 #: ../../source/audio.rst:70
 msgid ""
@@ -235,15 +234,15 @@ msgid "Stop Statement"
 msgstr "stop ステートメント"
 
 #: ../../source/audio.rst:119
-#, fuzzy
 msgid ""
 "The ``stop`` statement begins with the keyword ``stop``, followed by the the "
 "name of a channel to stop sound on. It may optionally have a ``fadeout`` "
 "clause. If the fadeout clause is not given, :var:`config.fadeout_audio` is "
 "used. ::"
 msgstr ""
-"stop ステートメントはキーワード ``stop`` で始まり、ストップする チャンネルが"
-"続きます。任意で ``fadeout`` 節も持ちます。 ::"
+"``stop`` ステートメントはキーワード ``stop`` で始まり、ストップする チャンネ"
+"ル名が続きます。任意で ``fadeout`` 節も持ち、 fadeout 節がなければ、 :var:"
+"`config.fadeout_audio` が使用されます。 ::"
 
 #: ../../source/audio.rst:128
 msgid "Queue Statement"
@@ -512,9 +511,8 @@ msgid "Will play silence for half a second, and then an explosion sound."
 msgstr "0.5 秒の無音の後、爆発音を再生します。"
 
 #: ../../source/audio.rst:280
-#, fuzzy
 msgid "Audio Namespace and Directory"
-msgstr "Audio 名前空間"
+msgstr "Audio 名前空間とディレクトリ"
 
 #: ../../source/audio.rst:282
 msgid ""
@@ -563,20 +561,24 @@ msgid ""
 "\", and \"this-is-a-song.ogg\" won't work."
 msgstr ""
 "Python 変数として表現できない名前のため、このような方法でアクセスできないファ"
-"イルもあります。例えば、 \"my song.mp3\", \"8track.opus\",  \"this-is-a-song."
-"ogg\"  は動作しません。"
+"イルもあります。例えば、 \"my song.mp3\", \"8track.opus\", \"this-is-a-song."
+"ogg\" は動作しません。"
 
 #: ../../source/audio.rst:310
 msgid ""
 "When searching for an audio file, if the file is not found, Ren'Py will look "
 "in the audio directory. For example::"
 msgstr ""
+"あるオーディンファイルを検索するとき、 Ren'Py は audio ディレクトリ内を見ま"
+"す。例えば、 ::"
 
 #: ../../source/audio.rst:315
 msgid ""
 "Will first look for ``game/opening.ogg``. If not found, Ren'Py will look for "
 "``game/audio/opening.ogg``."
 msgstr ""
+"上記のコードでは ``game/opening.ogg`` を探し、なければ ``game/audio/opening."
+"ogg`` を探します。"
 
 #: ../../source/audio.rst:319
 msgid "Actions"
@@ -763,15 +765,14 @@ msgid "`fadeout`"
 msgstr "`fadeout`"
 
 #: ../../source/inc/audio:98
-#, fuzzy
 msgid ""
 "If not None, this is a time in seconds to fade for. Otherwise the fadeout "
 "time is taken from config.fadeout_audio. This is ignored if the channel is "
 "paused when the music is played."
 msgstr ""
 "None を指定するか、フェードにかかる秒数を指定します。そうでなければフェードア"
-"ウトの時間は :var:`config.fade_music` から所得されます。これはそのチャンネル"
-"が音声再生時にポーズされたときは無視されます。"
+"ウトの時間は :var:`config.fadeout_audio` から所得されます。これはそのチャンネ"
+"ルが音声再生時にポーズされたときは無視されます。"
 
 #: ../../source/inc/audio:106
 msgid "`synchro_start`"
@@ -1031,12 +1032,9 @@ msgid "The amount of time it takes for the panning to occur."
 msgstr "パンの実行に掛ける時間です。"
 
 #: ../../source/inc/audio:245
-#, fuzzy
 msgid ""
 "The channel the panning takes place on, defaulting to the music channel."
-msgstr ""
-"パンを実行するチャンネルです。これは sound または music チャンネルです。大抵"
-"これはチャンネル 7 で、デフォルトの music チャンネルです。"
+msgstr "パンを実行するチャンネルです。デフォルトでは music チャンネルです。"
 
 #: ../../source/inc/audio:249
 msgid ""
@@ -1101,15 +1099,14 @@ msgid "The channel to be set"
 msgstr "設定されるチャンネルです。"
 
 #: ../../source/inc/audio:282
-#, fuzzy
 msgid ""
 "This stops the music that is currently playing, and dequeues all queued "
 "music. If fadeout is None, the music is faded out for the time given in "
 "config.fadeout_audio, otherwise it is faded for fadeout seconds."
 msgstr ""
 "これは現在再生中の曲を停止して、キューに追加された全ての曲をキューから消しま"
-"す。 ``fadeout`` が None なら曲は :var:`config.fade_music` で指定された時間で"
-"フェードアウトします。そうでなければ ``fadeout`` 秒でフェードアウトします。"
+"す。 fadeout が None なら曲は config.fadeout_audio で指定された時間でフェード"
+"アウトします。そうでなければ fadeout 秒でフェードアウトします。"
 
 #: ../../source/inc/audio:287
 msgid "This sets the last queued file to None."
@@ -1120,15 +1117,14 @@ msgid "The channel to stop the sound on."
 msgstr "再生を停止するチャンネル"
 
 #: ../../source/inc/audio:293
-#, fuzzy
 msgid ""
 "If not None, this is a time in seconds to fade for. Otherwise the fadeout "
 "time is taken from config.fadeout_audio. This is ignored if the channel is "
 "paused."
 msgstr ""
 "None を指定するか、フェードにかかる秒数を指定します。そうでなければフェードア"
-"ウトの時間は :var:`config.fade_music` から所得されます。これはそのチャンネル"
-"がポーズされていれば無視されます。"
+"ウトの時間は config.fadeout_audio から所得されます。これはそのチャンネルが"
+"ポーズされていれば無視されます。"
 
 #: ../../source/audio.rst:331
 msgid "Sound Functions"
