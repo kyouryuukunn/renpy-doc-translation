@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2022-08-09 13:33+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2023-04-29 13:41+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/cdd.rst:6
 msgid "Creator-Defined Displayables"
@@ -257,16 +257,18 @@ msgid ""
 "area. Returns an (x, y) tuple giving the location the displayable was placed "
 "at."
 msgstr ""
+"(この Displayable の)レンダーをバウンディング領域内に配置し、 その "
+"Displayable が配置された場所を与える (x, y) タプルを返します。"
 
 #: ../../source/cdd.rst:222
 msgid "`dest`"
-msgstr ""
+msgstr "`dest`"
 
 #: ../../source/cdd.rst:221
 msgid ""
 "If not None, the `surf` will be blitted to `dest` at the computed "
 "coordinates."
-msgstr ""
+msgstr "None でなければ算出された座標で `surf` が `dest` に貼り付けられます。"
 
 #: ../../source/cdd.rst:225 ../../source/cdd.rst:278
 msgid "`x`, `y`, `width`, `height`"
@@ -274,25 +276,23 @@ msgstr "`x`, `y`, `width`, `height`"
 
 #: ../../source/cdd.rst:225
 msgid "The bounding area."
-msgstr ""
+msgstr "バウンディング領域"
 
 #: ../../source/cdd.rst:228
 msgid "`surf`"
-msgstr ""
+msgstr "`surf`"
 
 #: ../../source/cdd.rst:228
-#, fuzzy
 msgid "The render to place."
-msgstr "描画する Render オブジェクト"
+msgstr "配置される Render オブジェクト"
 
 #: ../../source/cdd.rst:230 ../../source/cdd.rst:265 ../../source/cdd.rst:287
 msgid "`main`"
 msgstr "`main`"
 
 #: ../../source/cdd.rst:231
-#, fuzzy
 msgid "This is passed to Render.blit()."
-msgstr "レンダリングする displayable"
+msgstr "これは Render.blit() に渡されます。"
 
 #: ../../source/cdd.rst:234
 msgid "renpy.Render"
@@ -359,15 +359,16 @@ msgstr ""
 "に表示されます。"
 
 #: ../../source/cdd.rst:270
-#, fuzzy
 msgid ""
 "Renders `d`, a displayable, and places it into the rectangle defined by the "
 "`x`, `y`, `width`, and `height`, using Ren'Py's standard placement "
 "algorithm. Returns an (x, y) tuple giving the location the displayable was "
 "placed at. Location is computed by calling Displayable.place() method."
 msgstr ""
-"`d` をレンダリングし、 `x`, `y`, `width`, `height` で定義された長方形に配置し"
-"ます。"
+"Displayable `d` をレンダリングし、 `x`, `y`, `width`, `height` で定義された矩"
+"形に Ren'Py 標準の配置方法で配置します。その Displayabe が配置された場所を与"
+"える (x, y) タプルを返します。場所は Displayable.place メソッドを呼び出して算"
+"出されます。"
 
 #: ../../source/cdd.rst:277
 msgid ""
@@ -436,14 +437,13 @@ msgid "A (x, y, width, height) tuple."
 msgstr "(x, y, width, height) のタプル"
 
 #: ../../source/cdd.rst:315
-#, fuzzy
 msgid ""
 "Sets the zoom level of the children of this displayable in the horizontal "
 "and vertical axes. Only the children of the displayable are zoomed – the "
 "width, height, and blit coordinates are not zoomed."
 msgstr ""
-"この displayable の子の水平、垂直方向のズームレベルを設定します。displayable "
-"の子のみが拡大され、幅、高さ、 blit 座標は拡大されません。"
+"この displayable の子の水平、垂直方向のズームレベルを設定します。 "
+"displayable の子のみが拡大され、幅、高さ、 blit 座標は拡大されません。"
 
 #: ../../source/cdd.rst:319
 msgid ""
@@ -539,6 +539,8 @@ msgid ""
 "Returns whether the pixel at (x, y) is opaque when this displayable is "
 "rendered by ``renpy.render(d, width, height, st, at)``."
 msgstr ""
+"この Displayable が ``renpy.render(d, width, height, st, at)`` によりレンダリ"
+"ングされたときに (x, y) でのピクセルが不透明かどうかを返します。"
 
 #: ../../source/inc/udd_utility:24
 msgid ""
@@ -548,20 +550,19 @@ msgstr ""
 "す。"
 
 #: ../../source/inc/udd_utility:28
-#, fuzzy
 msgid ""
 "Loads the image data `bytes` into a texture of size `size`, and return it."
 msgstr ""
-"画像キャッシュを使用して画像マニピュレータ `im` をロードし、 render を返しま"
-"す。"
+"`size` で指定したサイズのテクスチャーに画像データ `bytes` をロードし、 "
+"render を返します。"
 
 #: ../../source/inc/udd_utility:30
 msgid "`data`"
-msgstr ""
+msgstr "`data`"
 
 #: ../../source/inc/udd_utility:31
 msgid "Should be a bytes object containing the image data in RGBA8888 order."
-msgstr ""
+msgstr "RGBA8888 順の画像データを含むバイトオブジェクトであるべきです。"
 
 #: ../../source/inc/udd_utility:35
 msgid ""
@@ -641,6 +642,9 @@ msgid ""
 "(for example, when a child is redrawn), in which case a pending redraw is "
 "forgotten."
 msgstr ""
+"`when` 秒が経過後、 Displayable `d` を(renderメソッドを呼び出して)再描画しま"
+"す。 Displayable がその時間前に再描画される可能性もあります(例えば子の再描"
+"画)。その場合、保留中の再描画は破棄されます。"
 
 #: ../../source/cdd.rst:367
 msgid ""
