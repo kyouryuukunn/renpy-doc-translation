@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
+"POT-Creation-Date: 2023-04-29 14:31+0900\n"
 "PO-Revision-Date: 2022-12-04 14:08+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -534,19 +534,22 @@ msgstr ""
 
 #: ../../source/inc/jsondb:11
 msgid ""
-"JSONDBs are not intended for data that is changed after the game has been "
-"released. :doc:`persistent` or normal save files are better choices for that "
-"data."
+"JSONDBs are not intended for data that is changed through or because of the "
+"player's actions. :doc:`persistent` or normal save files are better choices "
+"for that data."
 msgstr ""
 
 #: ../../source/inc/jsondb:15
 msgid ""
 "The database should only contain data that Python can serialize to JSON. "
 "This includes lists, dictionaries (with strings as keys), strings, numbers, "
-"True, False, and None."
+"True, False, and None. See `the Python documentation <https://docs.python."
+"org/3/library/json.html#encoders-and-decoders>`__ about interoperability, "
+"how data converts between the two formats, and the various associated "
+"pitfalls."
 msgstr ""
 
-#: ../../source/inc/jsondb:19
+#: ../../source/inc/jsondb:22
 msgid ""
 "The two levels of the database are dictionaries both keyed by strings. The "
 "first level is read only - when a key on the first level dictionary is "
@@ -556,42 +559,42 @@ msgid ""
 "database whe the game exits."
 msgstr ""
 
-#: ../../source/inc/jsondb:26
+#: ../../source/inc/jsondb:29
 msgid "Like other persistent data, JSONDBs do not participate in rollback."
 msgstr ""
 
-#: ../../source/inc/jsondb:28
+#: ../../source/inc/jsondb:31
 msgid ""
 "A JSONDB should be created during init (in an init python block or define "
 "statement), and will automatically be saved to the disk provided at least "
 "one key in the dictionary is set. For example::"
 msgstr ""
 
-#: ../../source/inc/jsondb:34
+#: ../../source/inc/jsondb:37
 msgid ""
 "This creates a JSONDB that is stored in the file balloon.json, and has a "
 "default values. The second leval values can be used as normal dictionaries::"
 msgstr ""
 
-#: ../../source/inc/jsondb:50
+#: ../../source/inc/jsondb:53
 msgid "The JSONDB constructor takes the following arguments:"
 msgstr ""
 
-#: ../../source/inc/jsondb:54
+#: ../../source/inc/jsondb:57
 msgid "`filename`"
 msgstr ""
 
-#: ../../source/inc/jsondb:53
+#: ../../source/inc/jsondb:56
 msgid ""
 "The filename the database is stored in. This is relative to the game "
 "directory. It's recommended that the filename end in \".json\"."
 msgstr ""
 
-#: ../../source/inc/jsondb:60
+#: ../../source/inc/jsondb:63
 msgid "`default`"
 msgstr ""
 
-#: ../../source/inc/jsondb:57
+#: ../../source/inc/jsondb:60
 msgid ""
 "If this is not None, it should be a dictionary. When a new second level "
 "dictionary is created, this object is shallow copied and used to initialized "
