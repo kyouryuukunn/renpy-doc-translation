@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2023-04-29 13:53+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2023-05-13 14:39+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/cds.rst:2
 msgid "Creator-Defined Statements"
@@ -238,13 +238,12 @@ msgid "`execute_init`"
 msgstr "`execute_init`"
 
 #: ../../source/inc/statement_register:33
-#, fuzzy
 msgid ""
 "This is a function that is called at init time, at priority 0. It is passed "
 "a single argument, the object returned from parse."
 msgstr ""
-"これはステートメントが実行されると呼び出される関数で、 parse から返されたオブ"
-"ジェクトを引数として渡されます。"
+"これは初期化時に優先度0で呼び出される関数で、 parse から返されたオブジェクト"
+"を引数として渡されます。"
 
 #: ../../source/inc/statement_register:39
 msgid "`predict`"
@@ -279,7 +278,6 @@ msgstr ""
 "ントの名前のオブジェクトが追加の引数に渡されます。"
 
 #: ../../source/inc/statement_register:48
-#, fuzzy
 msgid ""
 "The function should return either a string giving a label to jump to, the "
 "second argument to transfer control into the block, or None to continue to "
@@ -288,7 +286,9 @@ msgid ""
 "function."
 msgstr ""
 "この関数はジャンプ先のラベルを指定する文字列、ブロックへ制御を移すなら第二引"
-"数、この後のステートメントに制御を移すなら None を返すべきです。"
+"数、この後のステートメントに制御を移すなら None を返すべきです。 `parse` "
+"function. 関数内で呼び出されれば :meth:`Lexer.renpy_statement` または :meth:"
+"`Lexer.renpy_block` の結果も返せます。"
 
 #: ../../source/inc/statement_register:57
 msgid "`label`"
@@ -445,9 +445,8 @@ msgstr ""
 "れません。"
 
 #: ../../source/inc/statement_register:119
-#, fuzzy
 msgid "`execute_default`"
-msgstr "`execute_init`"
+msgstr "`execute_default`"
 
 #: ../../source/inc/statement_register:114
 msgid ""
@@ -455,26 +454,25 @@ msgid ""
 "are run - after the init phase, but before the game starts; when the a save "
 "is loaded; after rollback; before lint; and potentially at other times."
 msgstr ""
+"これは初期化後、ゲーム開始前に default ステートメントが実行されるのと同時に呼"
+"び出される関数です。セーブのロード時、ロールバック後、 lint 前、その他の場合"
+"もあります。"
 
 #: ../../source/inc/statement_register:119
-#, fuzzy
 msgid "This is called with a single argument, the object returned from parse."
-msgstr ""
-"これはステートメントが実行されると呼び出される関数で、 parse から返されたオブ"
-"ジェクトを引数として渡されます。"
+msgstr "これは parse から返されたオブジェクトを引数に呼び出されます。"
 
 #: ../../source/inc/statement_register:152
 msgid "`reachable`"
-msgstr ""
+msgstr "`reachable`"
 
 #: ../../source/inc/statement_register:122
-#, fuzzy
 msgid ""
 "This is a function that is called to allow this statement to customize how "
 "it participates in lint's reachability analysis."
 msgstr ""
-"これはステートメントが実行されると呼び出される関数で、 parse から返されたオブ"
-"ジェクトを引数として渡されます。"
+"これは、呼び出すとこのステートメントが lint の到達可能性の解析にどのように参"
+"加するかをカスタマイズできる関数です。"
 
 #: ../../source/inc/statement_register:125
 msgid ""
@@ -483,6 +481,10 @@ msgid ""
 "statement itself is reachable. The statement is also reachable if it has a "
 "label function."
 msgstr ""
+"デフォルトでは、ステートメントのカスタムブロック、 Lexer.renpy_block() で作成"
+"されたサブパースブロック、ステートメントの後のステートメントは、そのステート"
+"メント自体が到達可能であれば到達可能です。また、ステートメントがラベル関数を"
+"持つ場合も到達可能です。"
 
 #: ../../source/inc/statement_register:130
 msgid ""
@@ -490,37 +492,41 @@ msgid ""
 "that takes five arguments (in the following, a \"label\" may be a string or "
 "an opaque object):"
 msgstr ""
+"これには reachable 関数を提供してカスタマイズできます。これは 5 つの引数を取"
+"る関数です ( 以下、 「ラベル」 は文字列でも不透明なオブジェクトでもかまいませ"
+"ん) :"
 
 #: ../../source/inc/statement_register:134
 msgid "The object returned by the parse function."
-msgstr ""
+msgstr "parse 関数から返されたオブジェクト"
 
 #: ../../source/inc/statement_register:135
 msgid "A boolean that is true if the statement is reachable."
-msgstr ""
+msgstr "ステートメントが到達可能ならば True である真偽値"
 
 #: ../../source/inc/statement_register:136
-#, fuzzy
 msgid "The label of the statement."
-msgstr "マッチされた単語のテキストです。"
+msgstr "ステートメントのラベル"
 
 #: ../../source/inc/statement_register:137
 msgid "The label of the next statement, or None if there is no next statement."
-msgstr ""
+msgstr "次のステートメントのラベルまたは次のステートメントがないときは None"
 
 #: ../../source/inc/statement_register:138
 msgid ""
 "If `block` is set to \"script\", the label of the first statement in the "
 "block, or None if there is no block."
 msgstr ""
+"`block` が \"script\" に設定されていれば、そのブロックの最初のステートメント"
+"のラベル、そうではなくブロックがないときは None"
 
 #: ../../source/inc/statement_register:141
 msgid "It's expected to return a set that may contain:"
-msgstr ""
+msgstr "次を含む set を返すと期待されます :"
 
 #: ../../source/inc/statement_register:143
 msgid "A label or subparse object of a statement that is reachable."
-msgstr ""
+msgstr "到達可能なステートメントのラベルまたは subparse オブジェクト"
 
 #: ../../source/inc/statement_register:144
 msgid ""
@@ -528,10 +534,13 @@ msgid ""
 "not intrinsically reachable. (It will become reachable if it is reported "
 "reachable by another statement.)"
 msgstr ""
+"True でこのステートメントが lint で報告されるべきでないと示しますが、本質的に"
+"は到達可能ではありません(他のステートメントで到達可能と報告されると到達可能に"
+"なります)。"
 
 #: ../../source/inc/statement_register:147
 msgid "None, which is ignored."
-msgstr ""
+msgstr "None なら無視されます"
 
 #: ../../source/inc/statement_register:149
 msgid ""
@@ -540,6 +549,10 @@ msgid ""
 "reachable or not. (For example, the next statement may only be reachable if "
 "this statement is.)"
 msgstr ""
+"この関数は、 is_reachable の両方の値で複数回呼び出せ、ステートメントが到達可"
+"能かどうかに基づいてその動作をカスタマイズできます ( 例えば、次のステートメン"
+"トは、このステートメントが到達可能である場合にのみ到達可能である可能性があり"
+"ます)。"
 
 #: ../../source/inc/statement_register:156
 msgid ""
@@ -550,6 +563,12 @@ msgid ""
 "systems. As a result, a game redefining the default statement will not be "
 "able to use these features (short of reimplementing them entirely)."
 msgstr ""
+"空文字列を名前として使用した say ステートメントの再定義は、通常、悪い考え方で"
+"す。なぜならば Ren'Pyのネイティブステートメントを置き換えると、その動作は :"
+"doc:`statement_equivalents` に依存することになるからです。say ステートメント"
+"の場合、これらの等価物は `id` と翻訳システムをサポートしていません。つまり、"
+"デフォルトのステートメントを再定義したゲームでは、これらの機能を（完全に再実"
+"装しない限り）使用できません。"
 
 #: ../../source/cds.rst:145
 msgid "Lexer object"
@@ -564,7 +583,7 @@ msgstr ""
 
 #: ../../source/cds.rst:0
 msgid "パラメータ"
-msgstr ""
+msgstr "パラメータ"
 
 #: ../../source/cds.rst:153
 msgid "Message to add to the list of detected parsing errors."
@@ -606,7 +625,7 @@ msgstr ""
 
 #: ../../source/cds.rst:0
 msgid "戻り値"
-msgstr ""
+msgstr "戻り値"
 
 #: ../../source/cds.rst:173
 msgid "True if the lexer is at the end of the line, else False."
@@ -615,7 +634,7 @@ msgstr ""
 
 #: ../../source/cds.rst:0
 msgid "戻り値の型"
-msgstr ""
+msgstr "戻り値の型"
 
 #: ../../source/cds.rst:178
 msgid "If not at the end of the line, raise an error."
@@ -786,7 +805,6 @@ msgstr ""
 "ば、 True を返し、末端を越えていれば False を返します。"
 
 #: ../../source/cds.rst:304
-#, fuzzy
 msgid ""
 "When called, this parses the current line as a Ren'Py script statement, "
 "generating an error if this is not possible. This method returns an opaque "
@@ -795,10 +813,11 @@ msgid ""
 "This object should not be stored except as part of the parse result of the "
 "statement."
 msgstr ""
-"Ren'Py スクリプトステートメントとして現在行をパースし、不可能ならエラーを生成"
-"します。このメソッドは get_next() から返されたり :func:`renpy.jump` 、 :func:"
-"`renpy.call` に渡される opaque オブジェクトを返します。このオブジェクトはス"
-"テートメントのパース結果としてを除いて保存されるべきではありません。"
+"呼び出されると、 Ren'Py スクリプトステートメントとして現在行をパースし、不可"
+"能ならエラーを生成します。このメソッドは :func:`renpy.register_statement` か"
+"ら渡された `next` 関数から返されたり :func:`renpy.jump` や :func:`renpy."
+"call` に渡される opaque オブジェクトを返します。このオブジェクトはステートメ"
+"ントのパース結果としてを除いて保存されるべきではありません。"
 
 #: ../../source/cds.rst:311
 msgid ""

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2022-08-09 15:06+0900\n"
+"PO-Revision-Date: 2023-05-10 22:02+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -90,14 +90,13 @@ msgstr ""
 "Character オブジェクトが台詞の見た目の制御に使われます。"
 
 #: ../../source/dialogue.rst:48
-#, fuzzy
 msgid ""
 "The final form consists of a string and a with clause which has a "
 "transition. In this case, th e string is shown and a screen is shaken at the "
 "same time."
 msgstr ""
-"最後の形式は文字列とトランジション付きの with 節で構成されており、文字列の表"
-"示とスクリーンの揺れが同時に起こります。"
+"最後の形式は文字列とトランジション付きの with 節で構成されています。この場"
+"合、文字列の表示とスクリーンの揺れが同時に起こります。"
 
 #: ../../source/dialogue.rst:54
 msgid ""
@@ -128,6 +127,8 @@ msgid ""
 "It's also possible to use a proxy function instead of a character object. "
 "More details about this in :ref:`this section <say-proxy>`."
 msgstr ""
+"character オブジェクトの代わりにプロキシ関数も使用できます。詳細は :ref:`こち"
+"らのセクション <say-proxy>` を参照ください。"
 
 #: ../../source/dialogue.rst:73
 msgid "Defining Character Objects"
@@ -198,6 +199,8 @@ msgid ""
 "This can also be a namespace, in which case the 'character' variable in the "
 "namespace is used as the kind."
 msgstr ""
+"これには名前空間も渡せられ、その場合その名前空間の `character` 変数が kind と"
+"して使用されます。"
 
 #: ../../source/inc/character:24
 msgid ""
@@ -436,7 +439,6 @@ msgid "`ctc_position`"
 msgstr "`ctc_position`"
 
 #: ../../source/inc/character:125
-#, fuzzy
 msgid ""
 "Controls the location of the click-to-continue indicator. If ``\"nestled"
 "\"``, the indicator is displayed as part of the text being shown, "
@@ -446,10 +448,11 @@ msgid ""
 "position style properties of the CTC displayable are used to position the "
 "CTC indicator."
 msgstr ""
-"ctc の位置を制御します。「nestled」 の時、ctcは表示されるテキストの一部とし"
-"て、最後の文字の直後に表示されます。「nestled-close」 も同じですが、最後の文"
-"字とctcとの間で改行を許可しません。 「fixed」 の場合は、標識はスクリーンに追"
-"加され、その位置は position スタイルプロパティーで制御されます。"
+"ctc の位置を制御します。 ``\"nestled\"`` の時、ctcは表示されるテキストの一部"
+"として、最後の文字の直後に表示されます。 ``\"nestled-close\"`` も同じですが、"
+"最後の文字とctcとの間で改行を許可しません。 ``\"fixed\"`` の場合は、 ctc を含"
+"む新しいスクリーンが表示され、 ctc の位置プロパティーが ctc の配置に使用され"
+"ます。"
 
 #: ../../source/inc/character:133
 msgid ""
@@ -497,7 +500,6 @@ msgstr ""
 "必要に応じて say スクリーンを表示するレイヤーの名前の文字列を指定します。"
 
 #: ../../source/inc/character:152
-#, fuzzy
 msgid ""
 "**Styling Text and Windows.** Keyword arguments beginning with ``who_``, "
 "``what_``, and ``window_`` have their prefix stripped, and are used to :doc:"
@@ -506,7 +508,7 @@ msgid ""
 msgstr ""
 "**テキストとウィンドウのスタイル** ``who_``, ``what_``, および ``window_`` で"
 "始まるキーワード引数は、接頭辞を剥ぎ取られ、それぞれキャラクター名、会話テキ"
-"スト、その両方を含むウィンドウの :ref:`スタイル <styles>` になります。"
+"スト、その両方を含むウィンドウの :doc:`スタイル <style>` になります。"
 
 #: ../../source/inc/character:158
 msgid ""
@@ -870,6 +872,9 @@ msgid ""
 "when defining the Character, passing ``interact=True`` will not override "
 "that, meaning no interaction will happen in that case."
 msgstr ""
+"`interact` パラメーターは特別です。 : その Character 定義時に False を渡す"
+"と、 ``interact=True`` を渡しても上書きされないので、その場合インタラクション"
+"が起こりません。"
 
 #: ../../source/dialogue.rst:348
 msgid ""
@@ -878,6 +883,9 @@ msgid ""
 "useful to implement conditional overrides over characters' customizations. "
 "For example::"
 msgstr ""
+":var:`config.say_arguments_callback` は引数に渡された時だけでなく say ステー"
+"トメント実行のたびに呼び出されるので注意してください。キャラクターの設定を、"
+"条件によって上書き出来するのに便利でしょう。例 ::"
 
 #: ../../source/dialogue.rst:364
 msgid "Monologue Mode"
@@ -927,14 +935,16 @@ msgid ""
 "between triple quotes be displayed as a single message, conserving line "
 "breaks, you can do it with ``rpy monologue none``."
 msgstr ""
+"これを無効にし、トリプルクォートで囲まれた行をすべて1つのメッセージとして表示"
+"して改行を節約したい場合は、 ``rpy monologue none`` とすればよいです。"
 
 #: ../../source/dialogue.rst:405
 msgid "The ``character`` Store"
-msgstr ""
+msgstr "``character`` Store"
 
 #: ../../source/dialogue.rst:407
 msgid "*Main article:* :ref:`named-stores`"
-msgstr ""
+msgstr "*詳細:* :ref:`named-stores`"
 
 #: ../../source/dialogue.rst:409
 msgid ""
@@ -956,30 +966,34 @@ msgid ""
 "This is especially useful in order to manage variable information about a "
 "character in a namespace without conflicting with the say statement::"
 msgstr ""
+"これは say ステートメントと衝突しないように、ある名前空間でキャラクターについ"
+"ての変数の情報を管理するために便利です。"
 
 #: ../../source/dialogue.rst:442
 msgid "Alternative Presentations"
-msgstr ""
+msgstr "代替の方法"
 
 #: ../../source/dialogue.rst:444
 msgid ":doc:`nvl_mode` : a mode that displays dialogue over the entire screen."
-msgstr ""
+msgstr ":doc:`nvl_mode` : 台詞を画面一杯に表示するモードです。"
 
 #: ../../source/dialogue.rst:446
 msgid ""
 ":doc:`bubble` : a mode that displays dialogue in speech bubbles that can be "
 "positioned interactively."
-msgstr ""
+msgstr ":doc:`bubble` : 動的に配置される吹き出しに台詞を表示する方法です。"
 
 #: ../../source/dialogue.rst:450
 msgid "See Also"
-msgstr ""
+msgstr "次も参照してください。"
 
 #: ../../source/dialogue.rst:452
 msgid ""
 ":doc:`statement_equivalents` : how to use most of the features described "
 "here in a python context, although with some drawbacks and limitations."
 msgstr ""
+":doc:`statement_equivalents` : python の文脈でここで記述された機能の殆どを使"
+"用する方法ですが、いくらかの欠点や制限があります。"
 
 #~ msgid ""
 #~ "The ``define`` statement causes its expression to be evaluated, and "

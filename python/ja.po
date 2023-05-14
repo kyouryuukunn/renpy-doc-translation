@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-29 14:31+0900\n"
-"PO-Revision-Date: 2022-12-04 14:08+0900\n"
+"PO-Revision-Date: 2023-05-14 10:42+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -235,14 +235,13 @@ msgid "Define Statement"
 msgstr "define ステートメント"
 
 #: ../../source/python.rst:149
-#, fuzzy
 msgid ""
 "The ``define`` statement sets a single variable to a value at init time. The "
 "variable is treated as constant, and should not be changed after being set. "
 "For example::"
 msgstr ""
-"``default`` ステートメントは、ゲーム開始時かロード後に変数が定義されていなけ"
-"ればその変数の値を設定します。例えば ::"
+"``define`` ステートメントは、初期化時に1つの変数を設定します。その変数は定数"
+"として扱われるので設定後は変更しないべきです。例えば ::"
 
 #: ../../source/python.rst:155
 msgid "is equivalent (except for some advantages, see below) to::"
@@ -357,6 +356,13 @@ msgid ""
 "newly started one. If you create these variables in the start label instead, "
 "they will be missing when you load a save file that existed before."
 msgstr ""
+"ゲームの中で変更されやすい変数はすべて ``default`` にすることを強くお勧めしま"
+"す。もし ``init python`` や ``define`` を使って変数を宣言した場合、プレイヤー"
+"がゲームをプレイしてその変数を変更した後、メインメニューに戻って新しいゲーム"
+"を始めると、その変数には ``init python`` で設定した値がないので、前のゲームが"
+"新しく始めたゲームに \"leak\" します。代わりにスタートラベルにこれらの変数を"
+"作成すると、以前から存在したセーブファイルをロードしたときに、これらの変数が"
+"欠落することになります。"
 
 #: ../../source/python.rst:233
 msgid "Names in the Store"
@@ -521,7 +527,7 @@ msgstr "以下の store はデフォルトで定数として宣言されてい�
 
 #: ../../source/python.rst:362
 msgid "JSONDB"
-msgstr ""
+msgstr "JSONDB"
 
 #: ../../source/inc/jsondb:5
 msgid ""
@@ -582,7 +588,7 @@ msgstr ""
 
 #: ../../source/inc/jsondb:57
 msgid "`filename`"
-msgstr ""
+msgstr "`filename`"
 
 #: ../../source/inc/jsondb:56
 msgid ""
@@ -592,7 +598,7 @@ msgstr ""
 
 #: ../../source/inc/jsondb:63
 msgid "`default`"
-msgstr ""
+msgstr "`default`"
 
 #: ../../source/inc/jsondb:60
 msgid ""

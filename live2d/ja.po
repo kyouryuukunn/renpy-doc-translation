@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2022-05-01 20:11+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2023-05-07 23:40+0900\n"
+"PO-Revision-Date: 2023-05-08 22:30+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/live2d.rst:4
 msgid "Live2D Cubism"
@@ -350,14 +350,14 @@ msgid ""
 "This function is used to dynamically change parameters using the "
 "`blend_parameter` method of the passed Live2D object. The function should "
 "return a delay, in seconds, after which it will be called again, or None to "
-"be called again at the start of the next interaction. Note that as long the "
-"motion is running, this function will also be called every frame."
+"be called again at the start of the next interaction. The function is also "
+"called whenever the displayable is re-rendered."
 msgstr ""
 "この関数によって、渡された Live2D オブジェクトの `blend_parameter` メソッドを"
 "使用して動的にパラメータを変更します。関数は次に呼び出されるまでの時間を秒数"
 "で返すか、 None を返して次のインタラクションの開始で呼び出されるようにしま"
-"す。 motion が実行中である間、この関数は毎フレーム呼び出されることに注意して"
-"ください。"
+"す。 motion が実行中である間、この関数は displayable の再描画毎に呼び出される"
+"ことに注意してください。"
 
 #: ../../source/live2d.rst:148
 msgid ""
@@ -394,25 +394,25 @@ msgstr ""
 
 #: ../../source/live2d.rst:164
 msgid ""
-"This method blends the current value of the parameter with passed. This have "
+"This method blends the current value of the parameter with `value` This has "
 "no effect outside of `update_function`."
 msgstr ""
-"このメソッドはパラメーターの現在の値と渡されたものを合成します。これは "
+"このメソッドはパラメーターの現在の値と `value` を合成します。これは "
 "`update_function` 外に副作用を持ちません。"
 
-#: ../../source/live2d.rst:168
+#: ../../source/live2d.rst:168 ../../source/live2d.rst:185
 msgid "`name`"
 msgstr "`name`"
 
 #: ../../source/live2d.rst:168
-msgid "Name of parameter to change defined for this model."
-msgstr "このモデルに対して定義された変更するパラメーターの名前です。"
+msgid "A string giving the name of the parameter to change."
+msgstr "変更するパラメーター名ですの文字列。"
 
-#: ../../source/live2d.rst:171
+#: ../../source/live2d.rst:171 ../../source/live2d.rst:188
 msgid "`blend`"
 msgstr "`blend`"
 
-#: ../../source/live2d.rst:171
+#: ../../source/live2d.rst:171 ../../source/live2d.rst:188
 msgid ""
 "One of \"Add\", \"Multiply\" or \"Overwrite\". The blend kind that will be "
 "used."
@@ -420,27 +420,43 @@ msgstr ""
 "\"Add\" や \"Multiply\", \"Overwrite\" のどれかです。使用する合成の種類になり"
 "ます。"
 
-#: ../../source/live2d.rst:174
+#: ../../source/live2d.rst:174 ../../source/live2d.rst:191
 msgid "`value`"
 msgstr "`value`"
 
 #: ../../source/live2d.rst:174
-msgid "The value to be used."
-msgstr "使用する値です。"
+msgid "A float giving the value that will be blended in."
+msgstr "合成される値の浮動小数です。"
 
-#: ../../source/live2d.rst:176
+#: ../../source/live2d.rst:176 ../../source/live2d.rst:193
 msgid "`weight`"
 msgstr "`weight`"
 
-#: ../../source/live2d.rst:177
+#: ../../source/live2d.rst:177 ../../source/live2d.rst:194
 msgid ""
-"Float from 0.0 to 1.0, the weight by which the new value will change the "
-"current value."
+"A float between 0.0 and 1.0, the weight by which the new value will change "
+"the current value."
 msgstr ""
 "0.0 から 1.0 までの浮動小数点で、新しい値が現在の値を変更するウェイトになりま"
 "す。"
 
-#: ../../source/live2d.rst:179
+#: ../../source/live2d.rst:181
+msgid ""
+"This method blends the current value of the part opacity with `value` This "
+"has no effect outside of `update_function`."
+msgstr ""
+"このメソッドは不透明度の現在の値と `value` を合成します。これは "
+"`update_function` 外に副作用を持ちません。"
+
+#: ../../source/live2d.rst:185
+msgid "Name of parameter to change defined for this model."
+msgstr "このモデルに対して定義された変更するパラメーターの名前です。"
+
+#: ../../source/live2d.rst:191
+msgid "A float giving the opacity value that will be blended in."
+msgstr "合成される不透明度の浮動小数です"
+
+#: ../../source/live2d.rst:197
 msgid ""
 "There is a config variable that can help in debugging what motions and "
 "expressions were loaded from .model3.json files:"
@@ -448,7 +464,7 @@ msgstr ""
 ".model3.json からどのモーションと expression がロードされたかデバッグするのを"
 "助ける設定変数があります。"
 
-#: ../../source/live2d.rst:184
+#: ../../source/live2d.rst:202
 msgid ""
 "If True, loaded path and used motions and expressions will be written to log."
 "txt on start."
@@ -456,18 +472,18 @@ msgstr ""
 "True なら、ロードされたパスと使用されたモーションと expression は log.txt に"
 "開始時に書き込まれます。"
 
-#: ../../source/live2d.rst:187
+#: ../../source/live2d.rst:205
 msgid "Live2D displayables should be assigned to an image statement::"
 msgstr "Live2D Displayableはimage ステートメントで代入するべきです。 ::"
 
-#: ../../source/live2d.rst:191
+#: ../../source/live2d.rst:209
 msgid ""
 "It's also possible to define attributes, and this is very useful when "
 "defining different zooms and scaling factors. ::"
 msgstr ""
 "属性も定義でき、これは様々なズームとスケーリングの係数にとても便利です。 ::"
 
-#: ../../source/live2d.rst:197
+#: ../../source/live2d.rst:215
 msgid ""
 "Keep in mind that the user's hardware may be unable to init Live2D, and in "
 "that case a single call to Live2D() will keep the entire project from "
@@ -481,11 +497,11 @@ msgstr ""
 "が動作するはずであったとしても例のようにラッパーや回避策を用意するべきで"
 "す。 ::"
 
-#: ../../source/live2d.rst:213
+#: ../../source/live2d.rst:231
 msgid "Using Animations"
 msgstr "アニメーションの使用"
 
-#: ../../source/live2d.rst:215
+#: ../../source/live2d.rst:233
 msgid ""
 "The usual way to display a Live2D image is to display it using the show "
 "statement. In addition to any attributes added as part of the image "
@@ -494,11 +510,11 @@ msgstr ""
 "Live2D 画像を表示する通常の方法は show ステートメントの使用です。image ステー"
 "トメントで追加した属性に加え、 expression とモーションの名前が使用出来ます。"
 
-#: ../../source/live2d.rst:219
+#: ../../source/live2d.rst:237
 msgid "Some examples are::"
 msgstr "例 ::"
 
-#: ../../source/live2d.rst:225
+#: ../../source/live2d.rst:243
 msgid ""
 "These use the default names found in the Cubism SDK sample names. The names "
 "of the motions and expressions are taken from the Live2D files, then forced "
@@ -512,7 +528,7 @@ msgstr ""
 "コアが続くなら、接頭辞は除去されます(例えば \"Hiyori_m01\" はただの m01 にな"
 "ります)。"
 
-#: ../../source/live2d.rst:231
+#: ../../source/live2d.rst:249
 msgid ""
 "At most one exclusive expression can be used, and any number of nonexclusive "
 "expressions and motions can be given. When more than one motion is given, "
@@ -528,7 +544,7 @@ msgstr ""
 "ります。各モーションはそのモーションに複数のエイリアスが作成されない限り一度"
 "だけ現れます。"
 
-#: ../../source/live2d.rst:237
+#: ../../source/live2d.rst:255
 msgid ""
 "There are two special attributes ``null`` and ``still``. The null attribute "
 "means that no exclusive expression file should be applied, giving the "
@@ -539,16 +555,16 @@ msgstr ""
 "の expression を指定します。 ``still`` モーションはすべてのモーションを停止し"
 "ます。"
 
-#: ../../source/live2d.rst:241
+#: ../../source/live2d.rst:259
 msgid ""
 "Nonexclusive expressions persist until removed with attribute negation::"
 msgstr "非排他的な expression は属性の否定で除去されるまで保持されます。 ::"
 
-#: ../../source/live2d.rst:246
+#: ../../source/live2d.rst:264
 msgid "Scaling"
 msgstr "スケーリング"
 
-#: ../../source/live2d.rst:248
+#: ../../source/live2d.rst:266
 msgid ""
 "Many Live2D models are defined at high resolutions, at least in the internal "
 "coordinate system that the models use. To compensate for this, Ren'Py "
@@ -558,7 +574,7 @@ msgstr ""
 "れます。これを調整するため、 Ren'Py には Live2D をスケールダウンする 2つの方"
 "法があります。"
 
-#: ../../source/live2d.rst:252
+#: ../../source/live2d.rst:270
 msgid ""
 "The first is the `zoom` argument. This can directly set the zoom factor of "
 "the model. If zoom is used, then the other scaling parameters are ignored."
@@ -566,7 +582,7 @@ msgstr ""
 "1つめは `zoom` 引数です。これは直接モデルの拡大係数を設定します。zoomが使用さ"
 "れると他のスケーリングパラメーターは無視されます。"
 
-#: ../../source/live2d.rst:255
+#: ../../source/live2d.rst:273
 msgid ""
 "Otherwise, the `top`, `base`, and `height` arguments are used. The first two "
 "specify two lines, relative to the top and bottom of the image. (As "
@@ -577,7 +593,7 @@ msgstr ""
 "を画像の上端と下端からの相対位置で指定します (Ren'Py の他の場所では、 0.0 は"
 "上端で、1.0 は下端です)。これらの引数が使用されると次の2つが起きます。 :"
 
-#: ../../source/live2d.rst:260
+#: ../../source/live2d.rst:278
 msgid ""
 "The image is scaled so that the area between `top` and `base` takes up "
 "`height`, where `height` is a fraction of the screen."
@@ -585,13 +601,13 @@ msgstr ""
 "画像は `top` と `base` の間の領域が `height` になるまでスケーリングされます。"
 "ここで `height` はスクリーンに対する割合です。"
 
-#: ../../source/live2d.rst:262
+#: ../../source/live2d.rst:280
 msgid ""
 "The anchor is adjusted so that `base` will be placed at the bottom of the "
 "screen."
 msgstr "アンカーが調整され、 `base` はスクリーンの下端に配置されます。"
 
-#: ../../source/live2d.rst:265
+#: ../../source/live2d.rst:283
 msgid ""
 "When figuring out how to scale a Live2D animation, what I do first is adjust "
 "the `base` parameter until the right part of the animation is lined up with "
@@ -601,11 +617,11 @@ msgstr ""
 "`base` パラメーターをアニメーションの正しい部分がスクリーンの下端に揃えられる"
 "まで調整します。つぎに :"
 
-#: ../../source/live2d.rst:268
+#: ../../source/live2d.rst:286
 msgid "If the image is too big, reduce `height` until it's the right size."
 msgstr "画像が大きすぎたら、 `height` を正しいサイズまで縮めます。"
 
-#: ../../source/live2d.rst:269
+#: ../../source/live2d.rst:287
 msgid ""
 "If the image is too small, increase `top` to reduce the amount of blank "
 "space above the animation."
@@ -613,11 +629,11 @@ msgstr ""
 "画像が小さすぎたら、 `top` を大きくしてアニメーション上部の空き空間を縮めま"
 "す。"
 
-#: ../../source/live2d.rst:273
+#: ../../source/live2d.rst:291
 msgid "Motion Fading"
 msgstr "Motion Fading"
 
-#: ../../source/live2d.rst:275
+#: ../../source/live2d.rst:293
 msgid ""
 "Ren'Py's support for Live2D includes motion fading. Normally, when Ren'Py "
 "changes from one animation to another, the transition is abrupt - one "
@@ -629,7 +645,7 @@ msgstr ""
 "り、元のアニメーションが停止して次のものが開始します。トランジションをする場"
 "合は両方のアニメーションが同時に再生されます。"
 
-#: ../../source/live2d.rst:280
+#: ../../source/live2d.rst:298
 msgid ""
 "Live2D supports a different model, in which the old animation can be "
 "smoothly faded into the new one, but interpolating the parameters. Think of "
@@ -641,7 +657,7 @@ msgstr ""
 "別の場所へディゾルブすると言うよりキャラクターがその腕の位置を移動するような"
 "ものを考えてください。"
 
-#: ../../source/live2d.rst:285
+#: ../../source/live2d.rst:303
 msgid ""
 "Motion fading is controlled with the `fade` argument. If it's true, motion "
 "fading is used, and if it's false, then abrupt changes occur. If None, "
@@ -651,7 +667,7 @@ msgstr ""
 "true なら、モーションフェードが使用され、 False なら突発的な変化になります。 "
 "None ならモーションフェードは ``_live2d_fade`` 変数によって制御されます。 :"
 
-#: ../../source/live2d.rst:291
+#: ../../source/live2d.rst:309
 msgid ""
 "If true, Live2D animations use motion fading. If False, animations are "
 "transitioned abruptly."
@@ -659,11 +675,11 @@ msgstr ""
 "True なら、 Live2D アニメーションはモーションフェードを使用し、 False なら、"
 "アニメーションは突発的に変化します。"
 
-#: ../../source/live2d.rst:295
+#: ../../source/live2d.rst:313
 msgid "Aliasing"
 msgstr "エイリアス"
 
-#: ../../source/live2d.rst:297
+#: ../../source/live2d.rst:315
 msgid ""
 "The `alias` parameter lets you specify your own names for the motions that "
 "would otherwise be automatically defined. For example, one could do::"
@@ -671,19 +687,19 @@ msgstr ""
 "`alias` パラメーターは自動的に定義されるモーションの固有名を制作者に指定させ"
 "ます。例えば、次のコードにより ::"
 
-#: ../../source/live2d.rst:302
+#: ../../source/live2d.rst:320
 msgid "To be able to use::"
 msgstr "次が使用可能になります ::"
 
-#: ../../source/live2d.rst:306
+#: ../../source/live2d.rst:324
 msgid "Instead of::"
 msgstr "これは次のコードの代替となります。 ::"
 
-#: ../../source/live2d.rst:312
+#: ../../source/live2d.rst:330
 msgid "Loop and Image Prediction"
 msgstr "ループと画像の予測"
 
-#: ../../source/live2d.rst:314
+#: ../../source/live2d.rst:332
 msgid ""
 "Ren'Py's Live2D support can loop the final animation if the `loop` parameter "
 "is set to True. If the animation is being looped, it is important to add "
@@ -696,7 +712,7 @@ msgstr ""
 "するのに Ren'Py が必要とする 0.2 秒以上のポーズの追加が重要です(これは画像予"
 "測とロードが他の時に終わっていれば不要です)。"
 
-#: ../../source/live2d.rst:321
+#: ../../source/live2d.rst:339
 msgid "Functions"
 msgstr "Functions"
 
@@ -707,6 +723,9 @@ msgid ""
 msgstr ""
 "現在のプラットフォームで Live2d がサポートされていれば True を、そうでなけれ"
 "ば False 返します。"
+
+#~ msgid "The value to be used."
+#~ msgstr "使用する値です。"
 
 #~ msgid "Opt in to GL2"
 #~ msgstr "GL2の設定"
