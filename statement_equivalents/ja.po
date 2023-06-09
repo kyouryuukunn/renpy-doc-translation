@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-07 23:40+0900\n"
-"PO-Revision-Date: 2022-09-17 15:10+0900\n"
+"PO-Revision-Date: 2023-06-03 12:15+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -35,7 +35,6 @@ msgstr ""
 "のコードで構成されることもあります。"
 
 #: ../../source/statement_equivalents.rst:10
-#, fuzzy
 msgid ""
 "Note that using statement equivalents in lieu of the original statements "
 "usually removes any possible :ref:`lint` checks and prediction "
@@ -43,9 +42,9 @@ msgid ""
 "fluid. It can also disable features in certain cases."
 msgstr ""
 "元のステートメントの代わりに相当するステートメントを使用すると、通常 :ref:"
-"`lint` によるチェックがされなくなってゲームのチェックが容易にできなくなり、予"
-"測最適化がなくなるため動作の軽快さも低下する可能性があるので注意してくださ"
-"い。"
+"`lint` によるチェックと予測最適化がなくなるため、ゲームのチェックが容易にでき"
+"なくなり、動作の軽快さも低下する可能性があるので注意してください。場合によっ"
+"ては機能を無化する可能性もあります。"
 
 #: ../../source/statement_equivalents.rst:16
 msgid "Dialogue"
@@ -57,24 +56,25 @@ msgid ""
 "using the python version and only enabled when using the native say "
 "statement."
 msgstr ""
+"既読文章のスキップのようないくつかの機能は python 版では利用出来ず、通常の "
+"say ステートメントの使用でのみ有効です。"
 
 #: ../../source/statement_equivalents.rst:24
-#, fuzzy
 msgid ""
 "The Ren'Py :ref:`say-statement` is equivalent to calling the character "
 "object (when any is present) as a function. Displaying narration (meaning "
 "when no character is supplied) can be done the same way, by using the "
 "``narrator`` character. ::"
 msgstr ""
-"Ren'Py の :ref:`say-statement` はキャラクターオブジェクトの関数としての呼び出"
-"しに相当します。次は、同じ行を2回表示させるコードです ::"
+"Ren'Py の :ref:`say-statement` は(作成された)キャラクターオブジェクトの関数と"
+"しての呼び出しに相当します。ナレーションの表示も ``narrator`` キャラクターを"
+"使用して同様に行われます。 ::"
 
 #: ../../source/statement_equivalents.rst:38
 msgid "Proxy functions"
-msgstr ""
+msgstr "Proxy 関数"
 
 #: ../../source/statement_equivalents.rst:40
-#, fuzzy
 msgid ""
 "This equivalence of characters and function objects works in the other "
 "direction as well. It is possible to declare a Python function, and then use "
@@ -82,12 +82,11 @@ msgid ""
 "For example, the following function uses a variable to choose between two "
 "characters. ::"
 msgstr ""
-"キャラクターと関数オブジェクトの対応はその他の面でも同様に働きます。 python "
-"関数を宣言して、キャラクターオブジェクトの代わりに使用できます。例えば、以下"
-"の関数は二人のキャラクターを選択するために変数を使用しています。 ::"
+"キャラクターと関数オブジェクトの等価性はその他の面でも同様に働きます。 "
+"python 関数を宣言して、キャラクターオブジェクトの代わりに使用できます。例え"
+"ば、以下の関数は二人のキャラクターを選択するために変数を使用しています。 ::"
 
 #: ../../source/statement_equivalents.rst:67
-#, fuzzy
 msgid ""
 "A function used in this way should either ignore unknown keyword arguments, "
 "or pass them to a character function. Doing this will allow the game to "
@@ -95,8 +94,8 @@ msgid ""
 "arguments to character calls."
 msgstr ""
 "このように使用された関数は未知のキーワード引数を無視するか、 キャラクター関数"
-"に渡すべきです。これによりゲームは Ren'Py が追加のキーワード引数をキャラク"
-"ター呼び出しに加えても動作し続けます。"
+"に渡すべきです。これによりゲームは Ren'Py が将来のバージョンで追加のキーワー"
+"ド引数をキャラクター呼び出しに加えても動作し続けられます。"
 
 #: ../../source/statement_equivalents.rst:72
 msgid ""
@@ -105,10 +104,14 @@ msgid ""
 "ref:`say-with-arguments` sees the arguments (including the supplementary "
 "`interact`) passed to the function. For example::"
 msgstr ""
+"他の引数とは異なり、 ``interact=True`` は常に関数に渡されることに注意してくだ"
+"さい - 手動で ``(interact=False)`` を渡さない限り。 :ref:`say-with-"
+"arguments` では、関数に渡される引数（補足の `interact` を含む）を参照します。"
+"例 ::"
 
 #: ../../source/statement_equivalents.rst:79
 msgid "resolves to the following call::"
-msgstr ""
+msgstr "これは次の呼び出しと等しいです。 ::"
 
 #: ../../source/statement_equivalents.rst:83
 msgid ""
@@ -116,21 +119,27 @@ msgid ""
 "Character object for it to work as intended. The following works just as "
 "well::"
 msgstr ""
+"キャラクターオブジェクトを呼び出して意図したように動作させるときには、 "
+"``interact=True`` を渡す必要はないことに注意してください。次の記述は同様に動"
+"作します。 :"
 
 #: ../../source/statement_equivalents.rst:88
 msgid "When e is a Character, this is further equivalent to::"
-msgstr ""
+msgstr "e がキャラクターならば、これはさらに次と等しいです。 ::"
 
 #: ../../source/statement_equivalents.rst:92
 msgid ""
 "But it's possible to use :var:`config.say_arguments_callback` or have ``e`` "
 "wrap a character to do things differently."
 msgstr ""
+"しかし、 :var:`config.say_arguments_callback` を使用したり、 ``e`` にキャラク"
+"ターをラップさせて異なる動作をさせられます。"
 
 #: ../../source/statement_equivalents.rst:95
 msgid ""
 "There is one additional way of replacing the say statement using Python:"
 msgstr ""
+"say ステートメントを Python を使用して置き換える方法はもう一つあります。 :"
 
 #: ../../source/inc/se_say:5
 msgid "The equivalent of the say statement."
@@ -182,7 +191,7 @@ msgstr "次の3行が相当するため、この関数は滅多に必要あり�
 
 #: ../../source/statement_equivalents.rst:100
 msgid "Dialogue Window Management"
-msgstr ""
+msgstr "台詞ウィンドウの管理"
 
 #: ../../source/statement_equivalents.rst:102
 msgid ""
@@ -190,11 +199,13 @@ msgid ""
 "setting the :var:`_window` and :var:`_window_auto` variables, and by using "
 "the following two functions:"
 msgstr ""
+":ref:`テキストウィンドウの管理 <dialogue-window-management>` は :var:"
+"`_window` と :var:`_window_auto` 変数の設定と次の2つの関数により処理されま"
+"す。 :"
 
 #: ../../source/inc/window:5
-#, fuzzy
 msgid "The Python equivalent of the ``window hide`` statement."
-msgstr "say ステートメントに相当するものです。"
+msgstr "``window hide`` ステートメントに相当する python コードです。"
 
 #: ../../source/inc/se_with:9 ../../source/inc/window:10
 #: ../../source/inc/window:23
@@ -206,34 +217,38 @@ msgid ""
 "If False, the default window hide transition is used. If None, no transition "
 "is used. Otherwise, the specified transition is used."
 msgstr ""
+"False ならデフォルトのウィンドウ非表示トランジションが使用されます。 None な"
+"ら、トランジションは使用されません。そうでなければ、指定のトランジションが使"
+"用されます。"
 
 #: ../../source/inc/window:13 ../../source/inc/window:26
 msgid "`auto`"
-msgstr ""
+msgstr "`auto`"
 
 #: ../../source/inc/window:13
-#, fuzzy
 msgid ""
 "If True, this becomes the equivalent of the ``window auto hide`` statment."
 msgstr ""
-"画像を定義する。この関数は image ステートメントに相当する python コードです。"
+"True なら、 ``window auto hide`` ステートメントに相当するものとなります。"
 
 #: ../../source/inc/window:18
-#, fuzzy
 msgid "The Python equivalent of the ``window show`` statement."
-msgstr "say ステートメントに相当するものです。"
+msgstr "``window show`` ステートメントに相当する python コードです。"
 
 #: ../../source/inc/window:21
 msgid ""
 "If False, the default window show transition is used. If None, no transition "
 "is used. Otherwise, the specified transition is used."
 msgstr ""
+"False ならデフォルトのウィンドウ表示トランジションが使用されます。 None な"
+"ら、トランジションは使用されません。そうでなければ、指定のトランジションが使"
+"用されます。"
 
 #: ../../source/inc/window:26
-#, fuzzy
 msgid ""
 "If True, this becomes the equivalent of the ``window auto show`` statment."
-msgstr "say ステートメントに相当するものです。"
+msgstr ""
+"True なら、 ``window auto show`` ステートメントに相当するものとなります。"
 
 #: ../../source/statement_equivalents.rst:109
 msgid "Choice Menus"
@@ -687,19 +702,17 @@ msgid "`modal`"
 msgstr "`modal`"
 
 #: ../../source/inc/se_pause:41
-#, fuzzy
 msgid ""
 "If True or None, the pause will not end when a modal screen is being "
 "displayed. If False, the pause will end while a modal screen is being "
 "displayed."
 msgstr ""
 "True または None なら、ポーズはモーダルスクリーンが表示されているときは終わり"
-"ません。 False なら、ポーズはモーダルスクリーンが表示されていても終わりませ"
-"ん。"
+"ません。 False なら、ポーズはモーダルスクリーンが表示されていても終わります。"
 
 #: ../../source/statement_equivalents.rst:154
 msgid "Layeredimage"
-msgstr ""
+msgstr "Layeredimage"
 
 #: ../../source/statement_equivalents.rst:156
 msgid ""
@@ -718,7 +731,7 @@ msgstr ""
 
 #: ../../source/inc/li:13
 msgid "`group`"
-msgstr ""
+msgstr "`group`"
 
 #: ../../source/inc/li:11
 msgid ""
@@ -728,7 +741,7 @@ msgstr ""
 
 #: ../../source/inc/li:16
 msgid "`attribute`"
-msgstr ""
+msgstr "`attribute`"
 
 #: ../../source/inc/li:16
 msgid "A string giving the name of the attribute."
@@ -736,7 +749,7 @@ msgstr ""
 
 #: ../../source/inc/li:20 ../../source/inc/li:69
 msgid "`image`"
-msgstr ""
+msgstr "`image`"
 
 #: ../../source/inc/li:19
 msgid ""
@@ -746,7 +759,7 @@ msgstr ""
 
 #: ../../source/inc/li:24
 msgid "`default`"
-msgstr ""
+msgstr "`default`"
 
 #: ../../source/inc/li:23
 msgid ""
@@ -760,7 +773,7 @@ msgstr "以下はキーワード引数として指定するべきです。"
 
 #: ../../source/inc/li:30 ../../source/inc/li:84 ../../source/inc/li:116
 msgid "`at`"
-msgstr ""
+msgstr "`at`"
 
 #: ../../source/inc/li:29 ../../source/inc/li:84
 #, fuzzy
@@ -770,7 +783,7 @@ msgstr ""
 
 #: ../../source/inc/li:34 ../../source/inc/li:73
 msgid "`if_all`"
-msgstr ""
+msgstr "`if_all`"
 
 #: ../../source/inc/li:33
 msgid ""
@@ -780,7 +793,7 @@ msgstr ""
 
 #: ../../source/inc/li:38 ../../source/inc/li:77
 msgid "`if_any`"
-msgstr ""
+msgstr "`if_any`"
 
 #: ../../source/inc/li:37
 msgid ""
@@ -790,7 +803,7 @@ msgstr ""
 
 #: ../../source/inc/li:42 ../../source/inc/li:81
 msgid "`if_not`"
-msgstr ""
+msgstr "`if_not`"
 
 #: ../../source/inc/li:41
 msgid ""
@@ -829,7 +842,7 @@ msgstr ""
 
 #: ../../source/inc/li:65
 msgid "`condition`"
-msgstr ""
+msgstr "`condition`"
 
 #: ../../source/inc/li:64
 msgid ""
@@ -888,7 +901,7 @@ msgstr ""
 
 #: ../../source/inc/li:112
 msgid "`attributes`"
-msgstr ""
+msgstr "`attributes`"
 
 #: ../../source/inc/li:105
 msgid ""
@@ -916,7 +929,7 @@ msgstr ""
 
 #: ../../source/inc/li:127
 msgid "`image_format`"
-msgstr ""
+msgstr "`image_format`"
 
 #: ../../source/inc/li:123
 msgid ""
@@ -929,7 +942,7 @@ msgstr ""
 
 #: ../../source/inc/li:131
 msgid "`format_function`"
-msgstr ""
+msgstr "`format_function`"
 
 #: ../../source/inc/li:130
 msgid ""
@@ -939,7 +952,7 @@ msgstr ""
 
 #: ../../source/inc/li:138
 msgid "`attribute_function`"
-msgstr ""
+msgstr "`attribute_function`"
 
 #: ../../source/inc/li:134
 msgid ""
@@ -951,9 +964,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/inc/li:144
-#, fuzzy
 msgid "`offer_screen`"
-msgstr "`screen`"
+msgstr "`offer_screen`"
 
 #: ../../source/inc/li:141
 msgid ""
@@ -983,9 +995,8 @@ msgid ""
 msgstr ""
 
 #: ../../source/inc/li:163
-#, fuzzy
 msgid "`a`"
-msgstr "`tag`"
+msgstr "`a`"
 
 #: ../../source/inc/li:162
 msgid ""

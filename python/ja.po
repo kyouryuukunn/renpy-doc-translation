@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-29 14:31+0900\n"
-"PO-Revision-Date: 2023-05-14 10:42+0900\n"
+"PO-Revision-Date: 2023-05-15 23:29+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -537,6 +537,10 @@ msgid ""
 "store information associated with each say statement, that can change how a "
 "say statement is displayed."
 msgstr ""
+"JSONDB は、 JSON を使用してデータを保存する2階層データベースです。ゲーム開発"
+"者が、ゲームスクリプトの一部としてバージョン管理可能なデータベースにデータを"
+"保存するのに使用することを目的としています。例えば、 say ステートメントの表示"
+"方法を変更できるような、各say ステートメントに関連する情報を保存できます。"
 
 #: ../../source/inc/jsondb:11
 msgid ""
@@ -544,6 +548,8 @@ msgid ""
 "player's actions. :doc:`persistent` or normal save files are better choices "
 "for that data."
 msgstr ""
+"JSONDB は、プレイヤーの行動によって変化するデータには向きません。そのような"
+"データには、 :doc:`persistent` や通常のセーブファイルの方が適しています。"
 
 #: ../../source/inc/jsondb:15
 msgid ""
@@ -554,6 +560,12 @@ msgid ""
 "how data converts between the two formats, and the various associated "
 "pitfalls."
 msgstr ""
+"データベースには、 Python が JSON にシリアライズできるデータのみを格納する必"
+"要があります。これにはリスト、（文字列をキーとする）辞書、文字列、数値、 "
+"True 、 False 、 None が含まれます。相互運用性や2つのフォーマット間でのデータ"
+"の変換方法、関連する様々な落とし穴については、 `Python documentation "
+"<https://docs.python.org/3/library/json.html#encoders-and-decoders>`__ を参照"
+"してください。"
 
 #: ../../source/inc/jsondb:22
 msgid ""
@@ -564,10 +576,15 @@ msgid ""
 "keys in a second level dictionary is changed, that change is saved to the "
 "database whe the game exits."
 msgstr ""
+"データベースの2つの階層は、どちらも文字列をキーとする辞書です。第1階層は読み"
+"取り専用で、第1階層辞書のキーにアクセスすると、第2階層辞書が作成され、オプ"
+"ションでデフォルトの内容を持ちます。第2階層の辞書は読み書き可能で、第2階層の"
+"辞書のキーの1つが変更されると、ゲームが終了するときにその変更がデータベースに"
+"保存されます。"
 
 #: ../../source/inc/jsondb:29
 msgid "Like other persistent data, JSONDBs do not participate in rollback."
-msgstr ""
+msgstr "他の永続データ同様、 JSONDB はロールバックに参加しません。"
 
 #: ../../source/inc/jsondb:31
 msgid ""
@@ -575,16 +592,21 @@ msgid ""
 "statement), and will automatically be saved to the disk provided at least "
 "one key in the dictionary is set. For example::"
 msgstr ""
+"JSONDB は初期化中 ( init python ブロックや define ステートメント ) に作成され"
+"るべきで、少なくとも辞書のキーが1つ設定されれば自動的にディスクに保存されま"
+"す。 例 ::"
 
 #: ../../source/inc/jsondb:37
 msgid ""
 "This creates a JSONDB that is stored in the file balloon.json, and has a "
 "default values. The second leval values can be used as normal dictionaries::"
 msgstr ""
+"これは balloon.json ファイルに JSONDB を作成し、デフォルトの値を持たせます。"
+"第二階層の値は通常の辞書として使用出来ます。 ::"
 
 #: ../../source/inc/jsondb:53
 msgid "The JSONDB constructor takes the following arguments:"
-msgstr ""
+msgstr "JSONDB のコンストラクトは次の引数を取ります。 :"
 
 #: ../../source/inc/jsondb:57
 msgid "`filename`"
@@ -595,6 +617,8 @@ msgid ""
 "The filename the database is stored in. This is relative to the game "
 "directory. It's recommended that the filename end in \".json\"."
 msgstr ""
+"そのデータベースが保存されるファイル名です。これはゲームディレクトリーに対し"
+"て相対指定です。 \".json\" でファイル名を終えることを推奨します。"
 
 #: ../../source/inc/jsondb:63
 msgid "`default`"
@@ -607,6 +631,10 @@ msgid ""
 "the new dictionary. The new dictionary will only be saved as part of the "
 "database if at least one key in it is saved."
 msgstr ""
+"None でなければ、辞書を指定します。新しい第二階層の辞書が作成されると、このオ"
+"ブジェクトはシャローコピーされ、その新しい辞書の初期化に使用されます。新しい"
+"辞書は少なくとも1つのキーが保存された場合のみ、データベースの一部として保存さ"
+"れます。"
 
 #: ../../source/python.rst:370
 msgid "First and Third-Party Python Modules and Packages"

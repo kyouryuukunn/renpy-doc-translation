@@ -129,7 +129,6 @@ msgstr ""
 "されます。"
 
 #: ../../source/inc/control_action:36
-#, fuzzy
 msgid ""
 "Causes the current interaction to return the supplied non-None value. This "
 "is often used with menus and imagemaps, to select what the return value of "
@@ -622,6 +621,8 @@ msgid ""
 "These are converted to a slot name using :var:`config."
 "file_slotname_callback`, if it's set."
 msgstr ""
+"これらは設定されていれば :var:`config.file_slotname_callback` を使用してス"
+"ロット名に変換されます。"
 
 #: ../../source/inc/file_action:5
 msgid ""
@@ -836,6 +837,8 @@ msgid ""
 "An action that is run after the save is complete. This is only run if the "
 "save is successful."
 msgstr ""
+"セーブが完了後に実行されるアクションです。これはセーブに成功した場合のみ実行"
+"されます。"
 
 #: ../../source/inc/file_action:140
 msgid ""
@@ -868,21 +871,22 @@ msgid "Set to true to mark the quicksave as the newest save."
 msgstr "最新のセーブとしてクイックセーブをマークする場合は True に設定します。"
 
 #: ../../source/screen_actions.rst:69
-#, fuzzy
 msgid "Sync Actions"
-msgstr "メニュー用アクション"
+msgstr "同期アクション"
 
 #: ../../source/inc/sync:5
 msgid ""
 "This action begins the process of downloading a Sync from the Ren'Py Sync "
 "server."
-msgstr ""
+msgstr "Ren'Py の同期サーバーから Sync のダウンロードプロセスを開始します。"
 
 #: ../../source/inc/sync:10
 msgid ""
 "This action begins the process of uploading the most recent saves to the "
 "Ren'Py Sync server."
 msgstr ""
+"このアクションは最も最近のセーブを Ren'Py 同期サーバーにアップロードするプロ"
+"セスを開始します。"
 
 #: ../../source/screen_actions.rst:77
 msgid "Audio Actions"
@@ -897,19 +901,20 @@ msgstr ""
 "に :doc:`audio` で解説されています。"
 
 #: ../../source/inc/audio_action:5
-#, fuzzy
 msgid "Returns the volume of `mixer`."
-msgstr "`mixer` の音量を `value` に設定します。"
+msgstr "`mixer` の音量を返します。"
 
 #: ../../source/inc/audio_action:8
 msgid "`db`"
-msgstr ""
+msgstr "`db`"
 
 #: ../../source/inc/audio_action:8
 msgid ""
 "If true, returns the volume in decibels. If false, the default, returns the "
 "volume as a number between 0.0 and 1.0."
 msgstr ""
+"True ならばデシベル単位で音量を返します。 False なら、デフォルトで音量を 0.0 "
+"から 1.0 の数値として返します。"
 
 #: ../../source/inc/audio_action:13
 msgid "Sets the pause flag for `channel`."
@@ -1070,7 +1075,6 @@ msgstr ""
 "す。"
 
 #: ../../source/inc/focus_action:20
-#, fuzzy
 msgid ""
 "Clears a stored focus rectangle captured with :func:`CaptureFocus`. If "
 "`name` is None, all focus rectangles are cleared."
@@ -1146,6 +1150,7 @@ msgstr "アクションの有効選択状態は `yes` アクションのそれ�
 #: ../../source/inc/other_action:20
 msgid "See :func:`layout.yesno_screen` for a function version of this action."
 msgstr ""
+"このアクションの関数版は :func:`layout.yesno_screen` を参照してください。"
 
 #: ../../source/inc/other_action:24
 msgid ""
@@ -1162,20 +1167,21 @@ msgid ""
 "web, and will raise an exception on other platforms. The script is executed "
 "asynchronously in the window context, and the return value is not available."
 msgstr ""
+"指定の JavaScript ソースコードを実行します。これは Web で飲みサポートされ、他"
+"のプラットフォームでは例外を投げます。スクリプトはウィンドウのコンテキストで"
+"非同期で実行され、返り値は利用不能です。"
 
 #: ../../source/inc/other_action:35
 msgid "`code`"
-msgstr ""
+msgstr "`code`"
 
 #: ../../source/inc/other_action:36
 msgid "The JavaScript code to execute."
-msgstr ""
+msgstr "実行される JavaScriptコードです。"
 
 #: ../../source/inc/other_action:40
-#, fuzzy
 msgid "This Action calls ``callable(*args, **kwargs)``."
-msgstr ""
-"このアクションは `callable` を `args` と `kwargs` を引数に呼び出します。"
+msgstr "このアクションは ``callable(*args, **kwargs)`` を呼び出します。"
 
 #: ../../source/inc/other_action:44
 msgid "`callable`"
@@ -1194,7 +1200,6 @@ msgid "`args`"
 msgstr "`args`"
 
 #: ../../source/inc/other_action:47
-#, fuzzy
 msgid "positional arguments to be passed to `callable`."
 msgstr "位置引数は `callable` に渡されます。"
 
@@ -1207,12 +1212,10 @@ msgid "keyword arguments to be passed to `callable`."
 msgstr "キーワード引数は `callable` に渡されます。"
 
 #: ../../source/inc/other_action:54
-#, fuzzy
 msgid "`_update_screens`"
-msgstr "`screen`"
+msgstr "`_update_screens`"
 
 #: ../../source/inc/other_action:53
-#, fuzzy
 msgid ""
 "When true, the interaction restarts and the screens are updated after the "
 "function returns."
@@ -1272,6 +1275,9 @@ msgid ""
 "also None, the :var:`config.help_screen` screen is shown in a new context, "
 "if it exists. Otherwise, does nothing."
 msgstr ""
+"`help` が None なら、 :var:`config.help` がデフォルトの値として使用されます。"
+"それも None なら、 :var:`config.help_screen` スクリーンがあれば新しいコンテキ"
+"ストで表示されます。そうでなければ何もしません。"
 
 #: ../../source/inc/other_action:83
 msgid ""
@@ -1323,7 +1329,6 @@ msgid "Displays `message` using :func:`renpy.notify`."
 msgstr ":func:`renpy.notify` を使用して  `message` を表示します。"
 
 #: ../../source/inc/other_action:113
-#, fuzzy
 msgid ""
 "Opens `directory` in a file browser. `directory` is relative to :var:`config."
 "basedir`."
@@ -1436,7 +1441,7 @@ msgstr "`delay`"
 
 #: ../../source/inc/other_action:173
 msgid "If non-zero, the scroll will be animated for this many seconds."
-msgstr ""
+msgstr "0 でなければ、この秒数を書けてスクロールがアニメーションされます。"
 
 #: ../../source/inc/other_action:177
 msgid ""
@@ -1732,7 +1737,6 @@ msgstr ""
 "ユーザーがデフォルト store の変数の値を調整出来るようにする bar value です。"
 
 #: ../../source/inc/input_value:70 ../../source/inc/value:137
-#, fuzzy
 msgid ""
 "The `variable` parameter must be a string, and can be a simple name like "
 "\"strength\", or one with dots separating the variable from fields, like "
@@ -2462,22 +2466,20 @@ msgstr ""
 "ケーリング率を設定します。"
 
 #: ../../source/inc/preference_action:134
-#, fuzzy
 msgid ""
 "Preference(\"system cursor\", \"enable\") - Use system cursor ignoring :var:"
 "`config.mouse`."
 msgstr ""
-"Preference(\"system cursor\", \"enable\") - config.mouse を無視してシステム"
-"カーソルを使用します。"
+"Preference(\"system cursor\", \"enable\") - :var:`config.mouse` を無視してシ"
+"ステムカーソルを使用します。"
 
 #: ../../source/inc/preference_action:135
-#, fuzzy
 msgid ""
 "Preference(\"system cursor\", \"disable\") - Use cursor defined in :var:"
 "`config.mouse`."
 msgstr ""
-"Preference(\"system cursor\", \"disable\") - config.mouse で定義したカーソル"
-"を使用します。"
+"Preference(\"system cursor\", \"disable\") - :var:` config.mouse` で定義した"
+"カーソルを使用します。"
 
 #: ../../source/inc/preference_action:136
 msgid "Preference(\"system cursor\", \"toggle\") - Toggle system cursor."
@@ -2509,106 +2511,100 @@ msgstr ""
 "効状態をトグルします。"
 
 #: ../../source/inc/preference_action:142
-#, fuzzy
 msgid ""
 "Preference(\"audio when minimized\", \"enable\") - Enable sounds playing "
 "when the window has been minimized."
 msgstr ""
-"Preference(\"audio when minimized\", \"enable\") - ウィンドウがフォーカスを"
-"失っても再生を続けます。"
+"Preference(\"audio when minimized\", \"enable\") - ウィンドウが最小化されても"
+"再生を続けます。"
 
 #: ../../source/inc/preference_action:143
-#, fuzzy
 msgid ""
 "Preference(\"audio when minimized\", \"disable\") - Disable sounds playing "
 "when the window has been minimized."
 msgstr ""
-"Preference(\"audio when minimized\", \"disable\") - ウィンドウがフォーカスを"
-"失うと再生を停止します。"
+"Preference(\"audio when minimized\", \"disable\") - ウィンドウが最小化される"
+"と再生を停止します。"
 
 #: ../../source/inc/preference_action:144
-#, fuzzy
 msgid ""
 "Preference(\"audio when minimized\", \"toggle\") - Toggle sounds playing "
 "when the window has been minimized."
 msgstr ""
-"Preference(\"audio when minimized\", \"toggle\") - ウィンドウがフォーカスを"
-"失ったとき、再生するかをトグルします。"
+"Preference(\"audio when minimized\", \"toggle\") - ウィンドウが最小化したとき"
+"の再生の可否をトグルします。"
 
 #: ../../source/inc/preference_action:146
-#, fuzzy
 msgid ""
 "Preference(\"audio when unfocused\", \"enable\") - Enable sounds playing "
 "when the window is not in focus."
 msgstr ""
-"Preference(\"audio when minimized\", \"enable\") - ウィンドウがフォーカスを"
+"Preference(\"audio when unfocused\", \"enable\") - ウィンドウがフォーカスを"
 "失っても再生を続けます。"
 
 #: ../../source/inc/preference_action:147
-#, fuzzy
 msgid ""
 "Preference(\"audio when unfocused\", \"disable\") - Disable sounds playing "
 "when the window is not in focus."
 msgstr ""
-"Preference(\"audio when minimized\", \"disable\") - ウィンドウがフォーカスを"
-"失うと再生を停止します。"
+"Preference(\"audio when unfocused\", \"disable\") - ウィンドウがフォーカスを"
+"失ったら再生を停止します。"
 
 #: ../../source/inc/preference_action:148
-#, fuzzy
 msgid ""
 "Preference(\"audio when unfocused\", \"toggle\") - Toggle sounds playing "
 "when the window is not in focus."
 msgstr ""
-"Preference(\"audio when minimized\", \"toggle\") - ウィンドウがフォーカスを"
-"失ったとき、再生するかをトグルします。"
+"Preference(\"audio when unfocused\", \"toggle\") - ウィンドウがフォーカスを"
+"失ったときの再生可否をトグルします。"
 
 #: ../../source/inc/preference_action:150
-#, fuzzy
 msgid ""
 "Preference(\"web cache preload\", \"enable\") - Will cause the web cache to "
 "be preloaded."
 msgstr ""
-"Preference(\"sound mute\", \"enable\") - 効果音ミキサーをミュートにする。"
+"Preference(\"web cache preload\", \"enable\") - ウェブキャッシュのプリロード"
+"を行います。"
 
 #: ../../source/inc/preference_action:151
-#, fuzzy
 msgid ""
 "Preference(\"web cache preload\", \"disable\") - Will cause the web cache to "
 "not be preloaded, and preloaded data to be deleted."
 msgstr ""
-"Preference(\"sound mute\", \"enable\") - 効果音ミキサーをミュートにする。"
+"Preference(\"web cache preload\", \"disable\") - ウェブキャッシュのプリロード"
+"を行わず、プリロードデータは削除されます。"
 
 #: ../../source/inc/preference_action:152
-#, fuzzy
 msgid ""
 "Preference(\"web cache preload\", \"toggle\") - Will toggle the web cache "
 "preload state."
 msgstr ""
-"reference(\"wait for voice\", \"toggle\") - ボイス待ち状態をトグルします。"
+"Preference(\"web cache preload\", \"toggle\") - ウェブキャッシュのプリロード"
+"有無をトグルします。"
 
 #: ../../source/inc/preference_action:154
 msgid ""
 "Preference(\"voice after game menu\", \"enable\") - Will cause the voice to "
 "continue being played when entering the game  menu."
 msgstr ""
+"Preference(\"voice after game menu\", \"enable\") - ゲームメニューに入ったと"
+"きにボイスの再生を続けます。"
 
 #: ../../source/inc/preference_action:155
-#, fuzzy
 msgid ""
 "Preference(\"voice after game menu\", \"disable\") - Will cause the voice to "
 "stop being played when entering the game menu."
 msgstr ""
-"Preference(\"voice sustain\", \"enable\") - 現在のインタラクションの終了後も"
-"ボイスを停止しません。"
+"Preference(\"voice after game menu\", \"disable\") - ゲームメニューに入ったと"
+"きにボイスの再生を停止します。"
 
 #: ../../source/inc/preference_action:156
-#, fuzzy
 msgid ""
 "Preference(\"voice after game menu\", \"toggle\") - Will toggle the voice "
 "after game menu state."
 msgstr ""
-"Preference(\"voice mute\", \"toggle\") - ボイスミキサーのミュートをトグルす"
-"る。"
+"Preference(\"voice after game menu\", \"toggle\") - ゲームメニューに入ったと"
+"きにボイスの再生を続けるかトグルします。"
 
 #: ../../source/inc/preference_action:158
 msgid "Values that can be used with bars are:"
@@ -2937,9 +2933,8 @@ msgstr ""
 "ジが存在しない場合は Null displayable を返します。"
 
 #: ../../source/screen_actions.rst:177
-#, fuzzy
 msgid "Other Functions"
-msgstr "その他のアクション"
+msgstr "その他の関数"
 
 #: ../../source/inc/other_screen_function:5
 msgid ""
@@ -2948,6 +2943,9 @@ msgid ""
 "the name of the screen that is doing the including, not the name of the "
 "screen being included."
 msgstr ""
+"現在のスクリーン名または現在のスクリーンがなければ None を返します。 use スク"
+"リーンによって含まれたスクリーンの場合、これは含まれているスクリーンの名前で"
+"はなく、含んでいる側のスクリーン名を返します。"
 
 #: ../../source/screen_actions.rst:184
 msgid "Tooltips"

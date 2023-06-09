@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2022-12-03 23:04+0900\n"
+"PO-Revision-Date: 2023-05-30 22:25+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/screens.rst:5
 msgid "Screens and Screen Language"
-msgstr "スクリーンとスクリーン言語"
+msgstr "``onlayer`` 節も受け取り、デフォルトでは ``screens`` レイヤーです。"
 
 #: ../../source/screens.rst:7
 msgid ""
@@ -105,7 +105,6 @@ msgstr ""
 "りできます。ゲーム製作者も新しいアクションを Python で書けます。"
 
 #: ../../source/screens.rst:41
-#, fuzzy
 msgid ""
 "Screens are updated at the start of each interaction, and each time an "
 "interaction is restarted. Note that a ``with None`` statement does not cause "
@@ -113,19 +112,18 @@ msgid ""
 "Pause(0)`` will be enough to trigger one, if necessary."
 msgstr ""
 "スクリーンはゲームがインタラクションを開始した時、及びインタラクションが再開"
-"されるたびに更新されます。``with None`` ステートメントはインタラクションを発"
-"生させず、スクリーンを更新させないので注意してください。"
+"されるたびに更新されます。 ``with None`` ステートメントはインタラクションを発"
+"生させず、スクリーンを更新させないので注意してください。必要であれば ``with "
+"Pause(0)`` でスクリーンを更新します。"
 
 #: ../../source/screens.rst:46
-#, fuzzy
 msgid ""
 "A screen has a scope associated with it, giving values to some variables. "
 "There are different kinds of variables, in screens, which are resolved as "
 "shown in the following list:"
 msgstr ""
 "スクリーンはそれに関連付けられたスコープを持ち、変数に値を与えます。スクリー"
-"ンから変数にアクセスされると最初にそのスコープ内を参照し、次にグローバルス"
-"コープを参照します。"
+"ンには様々な種類の変数があり、次のリストに示すように名前解決されます。 :"
 
 #: ../../source/screens.rst:49
 msgid ""
@@ -138,6 +136,14 @@ msgid ""
 "used screen. Actions such as :class:`SetScreenVariable` will *not work* on "
 "local variables."
 msgstr ""
+"最初はローカル変数です。これらは自身が表示(または呼び出し)される代わりに :"
+"ref:`use <sl-use>` ステートメントで他の物に含まれて使用されいるスクリーンにの"
+"みあります。それらは後述のスクリーン変数にかなりに類似しており、同様に作成さ"
+"れますが、例外としてローカル変数は使用されているスクリーンからのみアクセス出"
+"来ます。それらはその他のアクションの中からはとりわけ :class:"
+"`SetLocalVariable` で、または使用されているスクリーン中の python ブロックや行"
+"で設定されます。 :class:`SetScreenVariable` のようなアクションはローカル変数"
+"に対しては *動作しません。*"
 
 #: ../../source/screens.rst:56
 msgid ""
@@ -145,6 +151,9 @@ msgid ""
 "the same scope as local variables, and follow the same behavior and "
 "constraints as screen parameters - see below."
 msgstr ""
+"ローカルパラメーターは使用されるスクリーンによって所得されるパラメーターで"
+"す。それらはローカル変数と同じスコープにあり、スクリーンパラメーターと同じ動"
+"作と制約に従います。下記参照"
 
 #: ../../source/screens.rst:60
 msgid ""
@@ -156,6 +165,12 @@ msgid ""
 "others, or by a python block or line in the top-level screen, or any used "
 "screen if no local variable has the same name."
 msgstr ""
+"ローカル変数内で名前が解決できないまたは :ref:`use <sl-use>` により他のものに"
+"使用されているスクリーンでなければ、その名前はスクリーン変数から探されます。"
+"これらの変数は一番外側のスクリーン内で :ref:`sl-default` や :ref:`sl-python` "
+"ステートメントにより作成されます。スクリーン変数はとりわけ :class:"
+"`SetScreenVariable` アクションや、一番外側のスクリーンまたは同じ名前のローカ"
+"ル変数がない使用されたスクリーンの python ブロックや行で設定されます。"
 
 #: ../../source/screens.rst:67
 msgid ""
@@ -171,6 +186,15 @@ msgid ""
 "`default <sl-default>` statement which executes only at the time the screen "
 "gets shown."
 msgstr ""
+"スクリーンパラメータ（screen ステートメントの括弧の中で定義され、渡される値）"
+"はスクリーン変数と同じスコープに存在します（つまり、同じ名前を持つことはでき"
+"ません）が、アクションによって設定または編集できません。これはアクションが実"
+"行されるたびを含め、任意の回数元の値にリセットされるためです。そのためもし :"
+"class:`SetScreenVariable` アクション (または他のアクション) によって値が編集"
+"された場合、その直後にリセットされるでしょう。これは、スクリーン内の Python "
+"ブロックで定義された変数の場合もそれらのブロックが任意の回数実行されるため同"
+"様です。対照的に、スクリーン内の :ref:`default <sl-default>` ステートメントは"
+"スクリーンが表示される時にのみ実行されます。"
 
 #: ../../source/screens.rst:77
 msgid ""
@@ -178,6 +202,9 @@ msgid ""
 "all of Ren'Py's global variables are. Such variables can be set through the :"
 "class:`SetVariable` action, among others."
 msgstr ""
+"最後の場所として、一般的な store つまり Ren'Py のグローバル変数のすべてがある"
+"場所から変数の名前を探します。そのような変数はとりわけ :class:`SetVariable` "
+"アクションによって設定されます。"
 
 #: ../../source/screens.rst:82
 msgid ""
@@ -186,6 +213,9 @@ msgid ""
 "use :class:`SetLocalVariable`. It will be far less efficient, but it will "
 "work in both cases."
 msgstr ""
+"時に直接表示され、時に他のものに使用されるスクリーン内部の変数を設定するアク"
+"ションが欲しければ、 :class:`SetLocalVariable` を使用してください。かなり非効"
+"率的ですが、両方のケースで動作します。"
 
 #: ../../source/screens.rst:86
 msgid ""
@@ -524,6 +554,8 @@ msgid ""
 "It's possible for a single statement to have both an `at` property and an "
 "``at transform``. The property must come first, and is applied first. ::"
 msgstr ""
+"1つのステートメントが `at` プロパティーと ``at transform`` の両方を持てます。"
+"プロパティーは最初にこなければならず、先に適用されます。 ::"
 
 #: ../../source/screens.rst:287
 msgid "`default_focus`"
@@ -558,18 +590,17 @@ msgid ""
 "identifier. Some screens will require that a displayable with a given "
 "identifier is created."
 msgstr ""
-"ユーザーインターフェイスステートメント用の識別子です。スクリーンが表示される"
-"ときに指定された id を持つ displayable に適切な値が提供されます。いくつかのス"
-"クリーンでは指定された id を持つ displayable 作成が必要とされます。"
+"ユーザーインターフェイスステートメント用の識別子です。スクリーン表示時に、指"
+"定された id を持つ displayable にプロパティーの値を渡せます。いくつかのスク"
+"リーンでは指定された id を持つ displayable 作成が必要とされます。"
 
 #: ../../source/screens.rst:295
 msgid "By default, the ``id`` is automatically-generated."
 msgstr "デフォルトでは ``id`` は自動的に生成されます。"
 
 #: ../../source/screens.rst:301
-#, fuzzy
 msgid "`prefer_screen_to_id`"
-msgstr "`prefer_top`"
+msgstr "`prefer_screen_to_id`"
 
 #: ../../source/screens.rst:298
 msgid ""
@@ -578,6 +609,10 @@ msgid ""
 "displayable property is used. (This can be used to decide if the screen "
 "overrides properties set by a Character.)"
 msgstr ""
+"True なら、スクリーンと Displayable の識別子がプロパティーに同時に与えられた"
+"とき、スクリーンのプロパティーが使用されます。デフォルトは False であり "
+"Displayable のプロパティーが使用されます(これを使用してスクリーンが "
+"Character から渡されるプロパティーを上書きするか決められます)。"
 
 #: ../../source/screens.rst:305
 msgid "`style`"
@@ -898,7 +933,6 @@ msgid "`action`"
 msgstr "`action`"
 
 #: ../../source/screens.rst:438
-#, fuzzy
 msgid ""
 "The action to run when the button is activated. A button is activated when "
 "it is clicked, or when the player selects it and hits enter on the keyboard. "
@@ -907,8 +941,9 @@ msgid ""
 msgstr ""
 "ボタンがアクティベートされると実行するアクションです。ボタンはクリックされる"
 "か、プレイヤーが選択してキーボードのエンターを押すかするとアクティベートされ"
-"ます。これは `sensitive` がなければボタンが有効かどうかの、 `selected` がなけ"
-"れば選択されているかどうかの制御もします。"
+"ます。これは `sensitive` が指定されないか None ならばボタンが有効かどうか"
+"の、 `selected` が指定されないか None ならば選択されているかどうかの制御もし"
+"ます。"
 
 #: ../../source/screens.rst:448 ../../source/screens.rst:721
 #: ../../source/screens.rst:1209 ../../source/screens.rst:1695
@@ -944,26 +979,25 @@ msgstr "`selected`"
 
 #: ../../source/screens.rst:457 ../../source/screens.rst:730
 #: ../../source/screens.rst:1218 ../../source/screens.rst:1704
-#, fuzzy
 msgid ""
 "An expression that determines whether the button is selected or not. This "
 "expression is evaluated at least once per interaction. If not provided or "
 "None, the action will be used to determine selectedness."
 msgstr ""
 "ボタンが選択されているかどうかを決定する式です。この式はインテラクション毎に"
-"少なくとも一回評価されます。 指定されなければ、アクションが選択状態決定に使用"
-"されます。"
+"少なくとも一回評価されます。 指定されないか None ならば、アクションが選択状態"
+"決定に使用されます。"
 
 #: ../../source/screens.rst:462 ../../source/screens.rst:735
 #: ../../source/screens.rst:1223 ../../source/screens.rst:1709
-#, fuzzy
 msgid ""
 "An expression that determines whether the button is sensitive or not. This "
 "expression is evaluated at least once per interaction. If not provided or "
 "None, the action will be used to determine sensitivity."
 msgstr ""
 "ボタンが有効かどうかを決定する式です。この式はインテラクション毎に少なくとも"
-"一回評価されます。 指定されなければ、アクションが有効無効決定に使用されます。"
+"一回評価されます。 指定されないか None ならば、アクションが有効無効決定に使用"
+"されます。"
 
 #: ../../source/screens.rst:468 ../../source/screens.rst:508
 #: ../../source/screens.rst:741 ../../source/screens.rst:1229
@@ -1177,19 +1211,18 @@ msgstr ""
 "域が与えられます。"
 
 #: ../../source/screens.rst:619
-#, fuzzy
 msgid ""
 "It takes two parameters. The first is the number of columns in the grid, and "
 "the second is the number of rows in the grid. If the grid is not full, the "
 "remaining cells are filled with the ``null`` displayable."
 msgstr ""
 "二つのパラメーターを受け取ります。最初の要素はグリッドの縦の列の数で、第二要"
-"素はグリッドの横の列の数です。以下のプロパティーを受け取ります。 :"
+"素はグリッドの横の列の数です。グリッドが満たされなければ、残りのセルは "
+"``null`` Displayable で埋められます。"
 
 #: ../../source/screens.rst:623
-#, fuzzy
 msgid "Grid takes one property:"
-msgstr "side は以下のプロパティーを受け取ります。 :"
+msgstr "Grid は 1 つのプロパティーを受け取ります。 :"
 
 #: ../../source/screens.rst:627 ../../source/screens.rst:1516
 msgid "`transpose`"
@@ -1322,15 +1355,14 @@ msgid "The image used when the button is selected and hovered."
 msgstr "ボタンが選択されフォーカスを持っている状態の時使用される画像です。"
 
 #: ../../source/screens.rst:713 ../../source/screens.rst:1201
-#, fuzzy
 msgid ""
 "The action to run when the button is activated. This also controls if the "
 "button is sensitive if `sensitive` is not provided or None, and if the "
 "button is selected if `selected` is not provided or None."
 msgstr ""
 "ボタンがアクティベートされると実行されるアクションです。これは `sensitive` が"
-"なければボタンが有効かどうかの、 `selected` がなければ選択されているかどうか"
-"の制御もします。"
+"ないか None ならばボタンが有効かどうかの、 `selected` がないか None ならば選"
+"択されているかどうかの制御もします。"
 
 #: ../../source/screens.rst:754
 msgid "This takes no children."
@@ -1494,7 +1526,7 @@ msgstr ""
 
 #: ../../source/screens.rst:833
 msgid "`multiline`"
-msgstr ""
+msgstr "`multiline`"
 
 #: ../../source/screens.rst:830
 msgid ""
@@ -1502,6 +1534,8 @@ msgid ""
 "(Shift+Enter by default, can be changed by modifying config."
 "keymap['input_next_line'])."
 msgstr ""
+"True なら、キーボードを使用してキャレットを次の行に移動できます (デフォルトで"
+"は Shift+Enter であり、 config.keymap['input_next_line'] で変更できます )。"
 
 #: ../../source/screens.rst:839 ../../source/screens.rst:1182
 msgid ":ref:`text-style-properties`"
@@ -2317,7 +2351,6 @@ msgstr ""
 "ださい。"
 
 #: ../../source/screens.rst:1500
-#, fuzzy
 msgid ""
 "A vpgrid must be given at least one of the `cols` and `rows` properties. If "
 "one is omitted or None, the other is automatically determined from the size, "
@@ -2326,7 +2359,8 @@ msgid ""
 msgstr ""
 "vpgrid には `col` か `rows` の少なくとも一つのプロパティーが指定されなければ"
 "いけません。一つが省略されるか None であれば、サイズと spacing, 子の数から自"
-"動的に決定されます。"
+"動的に決定されます。 row または column が満たされていなければ、 ``null`` "
+"Displayable を使用して残りのスペースを埋めます。"
 
 #: ../../source/screens.rst:1505
 msgid "Vpgrids take the the following properties:"
@@ -2668,59 +2702,67 @@ msgstr "高度な displayable のステートメントは次になります。 :
 
 #: ../../source/screens.rst:1809
 msgid "Areapicker"
-msgstr ""
+msgstr "Areapicker"
 
 #: ../../source/screens.rst:1811
-#, fuzzy
 msgid ""
 "Intended for use in development tools, this lets the user select a "
 "rectangular area on the screen. It takes the following properties:"
 msgstr ""
-"パラメーターを一つ受け取り、それはスクリーンの名前です。これは名前であって、"
-"式ではありません。以下のプロパティーも受け取ります。 :"
+"開発ツールでの使用が意図されたもので、ユーザーがスクリーン上に矩形領域を選択"
+"できます。以下のプロパティーを受け取ります。 :"
 
 #: ../../source/screens.rst:1815
 msgid ""
 "If not None, the defaut, this divides the screen up into a grid with this "
 "many columns."
 msgstr ""
+"デフォルトではNone であり、 None でなければ、スクリーンをこの行の数のグリッド"
+"に分割します。"
 
 #: ../../source/screens.rst:1819
 msgid ""
 "If not None, the defaut, this divides the screen up into a grid with this "
 "many rows."
 msgstr ""
+"デフォルトではNone であり、 None でなければスクリーンをこの列の数のグリッドに"
+"分割します。"
 
 #: ../../source/screens.rst:1825
-#, fuzzy
 msgid "`position`"
-msgstr "`action`"
+msgstr "`position`"
 
 #: ../../source/screens.rst:1823
 msgid ""
 "If not None, the default, this is a function called with the x and y "
 "coordinates of the location the user first clicked, rounded to the grid."
 msgstr ""
+"デフォルトではNone であり、 None でなければ、これはユーザーが最初にクリックし"
+"たグリッドで丸められた x, y 座標で呼び出される関数です。"
 
 #: ../../source/screens.rst:1828
 msgid ""
 "This is called with the rectangle, an (x, y, width, height) tuple, whenever "
 "the user changes the selected area."
 msgstr ""
+"ユーザーが選択領域を変更するたび、 (x, y, width, height) タプルで表現される矩"
+"形で呼び出されます。"
 
 #: ../../source/screens.rst:1833
 msgid "`finished`"
-msgstr ""
+msgstr "`finished`"
 
 #: ../../source/screens.rst:1832
 msgid ""
 "This is called with the rectangle, an (x, y, width, height) tuple, when the "
 "user finishes selecting an area."
 msgstr ""
+"ユーザーが領域の選択を終えると (x, y, width, height) タプルで表現される矩形で"
+"呼び出されます。"
 
 #: ../../source/screens.rst:1838
 msgid "`persist`"
-msgstr ""
+msgstr "`persist`"
 
 #: ../../source/screens.rst:1836
 msgid ""
@@ -2728,21 +2770,24 @@ msgid ""
 "complete. If false, the default, the child will be hidden once the selection "
 "is complete."
 msgstr ""
+"True なら選択が完了されるとその選択領域に子が表示されます。デフォルトでは "
+"False であり子は一旦選択が完了されると非表示されます。"
 
 #: ../../source/screens.rst:1840
-#, fuzzy
 msgid "It takes the following group of properties:"
-msgstr "以下のプロパティーを受け取ります。 :"
+msgstr "以下のグループのプロパティーを受け取ります。 :"
 
 #: ../../source/screens.rst:1844
 msgid ""
 "An areapicker takes one child. The child is displayed on the screen in the "
 "selected area."
 msgstr ""
+"areapicker は子を1つ受け取ります。その子はスクリーン上の選択された領域に表示"
+"されます。"
 
 #: ../../source/screens.rst:1848
 msgid "Drag"
-msgstr ""
+msgstr "Drag"
 
 #: ../../source/screens.rst:1850
 msgid ""
@@ -2750,50 +2795,51 @@ msgid ""
 "acception of `d`, which is supplied by the screen language, this takes all "
 "properties defined in that class."
 msgstr ""
+"そのスクリーン周りでドラッグできる :class:`Drag` を作成します。スクリーン言語"
+"に提供される `d` を除き、これはそのクラスで定義されたすべてのプロパティーを受"
+"け取ります。"
 
 #: ../../source/screens.rst:1854
-#, fuzzy
 msgid "It also takes the following properties:"
-msgstr "side は以下のプロパティーを受け取ります。 :"
+msgstr "次のプロパティーも受け取ります。 :"
 
 #: ../../source/screens.rst:1857
-#, fuzzy
 msgid ""
 "The :propref:`hover_sound` and :propref:`activate_sound` style properties"
 msgstr ""
-":propref:`hover_sound` と :propref:`activate_sound` スタイルプロパティー"
+" :propref:`hover_sound` と :propref:`activate_sound` スタイルプロパティー"
 
 #: ../../source/screens.rst:1859
 msgid "The :propref:`focus_mask` style_property."
-msgstr ""
+msgstr ":propref:`focus_mask` スタイルプロパティー"
 
 #: ../../source/screens.rst:1861
-#, fuzzy
 msgid ""
 "A drag takes one child, or the :propref:`child` style property can be used "
 "to supply the child and its focused variants."
 msgstr ""
-":class:`Drag` クラスを作成します。 drag には任意の子が与えられるか、または :"
-"propref:`child` スタイルプロパティーを使用して子や、それがフォーカスを所得し"
-"た場合のバージョンが提供されます。drag は :propref:`focus_mask` スタイルプロ"
-"パティーも受け取れます。"
+"drag に子を 1 つ与えるか、 :propref:`child` スタイルプロパティーを使用して子"
+"や、それがフォーカスを所得した場合のバージョンを提供できます。"
 
 #: ../../source/screens.rst:1865
-#, fuzzy
 msgid "Draggroup"
-msgstr "``draggroup``"
+msgstr "Draggroup"
 
 #: ../../source/screens.rst:1867
 msgid ""
 "Creates a :class:`DragGroup`.  This takes the same properties as :class:"
 "`DragGroup`, and also takes the following properties:"
 msgstr ""
+":class:`DragGroup` を作成します。これは :class:`DragGroup` と同じプロパティー"
+"と、次のプロパティーも 受け取ります。 :"
 
 #: ../../source/screens.rst:1872
 msgid ""
 "A drag group may have zero or more drags as its children. It may also have "
 "non-drags as children, in which case it functions like fixed."
 msgstr ""
+"ドラッググループは子として 0 以上の Drag を受け取ります。 drag でないものも子"
+"として受け取れ、その場合、 fixed のように機能します。"
 
 #: ../../source/screens.rst:1879
 msgid "Has Statement"
@@ -2901,7 +2947,6 @@ msgid "For"
 msgstr "For"
 
 #: ../../source/screens.rst:1955
-#, fuzzy
 msgid ""
 "The ``for`` statement is similar to the Python ``for`` statement, except "
 "that it does not support the ``else`` clause (it does, however, support the "
@@ -2909,8 +2954,9 @@ msgid ""
 "(optionally nested) tuple patterns, as well as variables."
 msgstr ""
 "``for`` ステートメントは python の ``for`` ステートメントに相当しますが、"
-"``else`` 節をサポートしていません。 ``continue`` と ``break` ステートメントも"
-"同様です。`変数同様に(任意にネストされた)タプルへの代入もサポートしています。"
+"``else`` 節をサポートしていません( ``continue`` と ``break` ステートメントは"
+"サポートします)。変数同様に(任意にネストされた)タプルへの代入もサポートしてい"
+"ます。"
 
 #: ../../source/screens.rst:1970
 msgid "The for statement takes an index clause::"
@@ -3197,7 +3243,6 @@ msgid "Show Screen"
 msgstr "Show Screen"
 
 #: ../../source/screens.rst:2268
-#, fuzzy
 msgid ""
 "The ``show screen`` statement causes a screen to be shown. It takes an "
 "screen name, a series of optional clauses, and optional Python arguments "
@@ -3205,22 +3250,20 @@ msgid ""
 "call_screen` take additional specific keywords."
 msgstr ""
 "``show screen`` ステートメントはスクリーンを表示します。スクリーン名と任意の"
-"引数リストを受け取ります。もしあるなら引数はそのスクリーンのスコープを初期化"
-"するために使用されます。 :func:`show_screen` と :func:`call_screen` に渡され"
-"るいくつかの特別なキーワードもあります。"
+"一連の節、任意の Python 引数を受け取り、スクリーンに渡します。 :func:"
+"`show_screen` と :func:`call_screen` は追加の特別なキーワードも受け取ります。"
 
 #: ../../source/screens.rst:2273
-#, fuzzy
 msgid ""
 "The ``show screen`` statement takes the following clauses, some of them "
 "similar to the clauses of the :ref:`show-statement`:"
 msgstr ""
-"``show screen`` ステートメントは with 節を受け取り、それは ``show`` ステート"
-"メントと同様に解釈されます。 ::"
+"``show screen`` ステートメントは次の節を受け取り、それらの一部は :ref:`show-"
+"statement` の節と類似します。 :"
 
 #: ../../source/screens.rst:2279 ../../source/screens.rst:2387
 msgid "``as``"
-msgstr ""
+msgstr "``as``"
 
 #: ../../source/screens.rst:2277 ../../source/screens.rst:2385
 msgid ""
@@ -3228,33 +3271,36 @@ msgid ""
 "associated with the screen (see the :ref:`screen-statement`). If that's not "
 "specified, it defaults to the name of the screen."
 msgstr ""
+"``as`` 節は名前を受け取ります。指定されないとそのスクリーンに関連付けられたタ"
+"グがデフォルトとなります (:ref:`screen-statement` を参照してください)。それも"
+"指定されていないと、スクリーンの名前がデフォルトとなります。"
 
 #: ../../source/screens.rst:2282 ../../source/screens.rst:2390
-#, fuzzy
 msgid "``onlayer``"
-msgstr "`layer`"
+msgstr "``onlayer``"
 
 #: ../../source/screens.rst:2282 ../../source/screens.rst:2390
 msgid "The layer to show the screen on."
-msgstr ""
+msgstr "スクリーンを表示するレイヤーです。"
 
 #: ../../source/screens.rst:2287 ../../source/screens.rst:2395
-#, fuzzy
 msgid "``zorder``"
-msgstr "`zorder`"
+msgstr "``zorder``"
 
 #: ../../source/screens.rst:2285 ../../source/screens.rst:2393
 msgid ""
 "The zorder to show the screen on. If not specified, defaults to the zorder "
 "associated with the screen. If that's not specified, it is 0 by default."
 msgstr ""
+"そのスクリーンを表示する zorder です。指定されないとそのスクリーンに関連付け"
+"られた zorder がデフォルトとなります (:ref:`screen-statement` を参照してくだ"
+"さい)。それも指定されていないと、 0 がデフォルトとなります。"
 
 #: ../../source/screens.rst:2297 ../../source/screens.rst:2411
 msgid "``expression``"
-msgstr ""
+msgstr "``expression``"
 
 #: ../../source/screens.rst:2290
-#, fuzzy
 msgid ""
 "If the ``expression`` keyword is given, the expression following it will be "
 "evaluated as the screen name. To pass arguments to the screen with the "
@@ -3263,36 +3309,32 @@ msgid ""
 msgstr ""
 "``expression`` キーワードが指定されると、それに続く式がスクリーン名として評価"
 "されます。expression キーワードでスクリーンに引数を渡すには、式と引数を "
-"``pass`` キーワードで区切ります。"
+"``pass`` キーワードで区切ります。 ::"
 
 #: ../../source/screens.rst:2303 ../../source/screens.rst:2415
 msgid "``with``"
-msgstr ""
+msgstr "``with``"
 
 #: ../../source/screens.rst:2300
-#, fuzzy
 msgid ""
 "This is interpreted in the same way that the with clause of a ``show`` "
 "statement is::"
-msgstr ""
-"``show screen`` ステートメントは with 節を受け取り、それは ``show`` ステート"
-"メントと同様に解釈されます。 ::"
+msgstr "``show screen`` ステートメントの with 節と同様に解釈されます。 ::"
 
 #: ../../source/screens.rst:2314 ../../source/screens.rst:2405
 msgid "``nopredict``"
-msgstr ""
+msgstr "``nopredict``"
 
 #: ../../source/screens.rst:2306
-#, fuzzy
 msgid ""
 "The ``nopredict`` keyword doesn't take a value. It prevents screen "
 "prediction from occurring. During screen prediction, arguments to the screen "
 "are evaluated. Please ensure that evaluating the screen arguments does not "
 "cause unexpected side-effects to occur."
 msgstr ""
-"show screen ステートメントは任意で ``nopredict`` キーワードを受け取り、スク"
-"リーンの予測を禁止します。スクリーンの予測中にスクリーンへの引数は評価されま"
-"す。スクリーン引数の評価が不測の副作用を起さないように確認してください。"
+"``nopredict`` キーワードは値を受け取りません。スクリーンの予測を禁止します。"
+"スクリーンの予測中にスクリーンへの引数は評価されます。スクリーン引数の評価が"
+"不測の副作用を起さないように確認してください。"
 
 #: ../../source/screens.rst:2313 ../../source/screens.rst:2404
 msgid ""
@@ -3322,21 +3364,25 @@ msgid ""
 "it looks for a screen with that name on the layer, regardless of the tag the "
 "screen is shown as. If none is found, nothing happens::"
 msgstr ""
+"``hide screen`` ステートメントを使用して現在表示されているスクリーンを非表示"
+"します。スクリーンタグを受け取ります。まず指定されたタグを指定のレイヤーで探"
+"そうとし (``onlayer`` 節を参照してください)、見つからなければ、そのスクリーン"
+"が表示されたタグに関係なくそのレイヤー上の元のスクリーン名で探します。それで"
+"も見つからなければ何もしません。 ::"
 
 #: ../../source/screens.rst:2353
 msgid ""
 "It also takes the ``onlayer`` clause, which defaults to the ``screens`` "
 "layer."
 msgstr ""
+"It also takes the ``onlayer`` clause, which defaults to the ``screens`` "
+"layer."
 
 #: ../../source/screens.rst:2356
-#, fuzzy
 msgid ""
 "The with clause is interpreted the same way the ``with`` clause of a :ref:"
 "`show-statement` is."
-msgstr ""
-"``show screen`` ステートメントは with 節を受け取り、それは ``show`` ステート"
-"メントと同様に解釈されます。 ::"
+msgstr "with 節は :ref:`show-statement` の ``show`` 節と同様に解釈されます。"
 
 #: ../../source/screens.rst:2359
 msgid ""
@@ -3352,15 +3398,14 @@ msgid "Call Screen"
 msgstr "Call Screen"
 
 #: ../../source/screens.rst:2373
-#, fuzzy
 msgid ""
 "The ``call screen`` statement shows a screen, and then hides it again at the "
 "end of the current interaction. If the screen returns a value, then the "
 "value is placed in the global ``_return`` variable."
 msgstr ""
 "``call screen`` ステートメントはスクリーンを表示し、現在のインタラクションが"
-"終了するとそれを非表示にします。そのスクリーンが値を返すならその値は "
-"``_return`` に代入されます。"
+"終了するとそれを非表示にします。そのスクリーンが値を返すならその値はグローバ"
+"ルの ``_return`` 変数に代入されます。"
 
 #: ../../source/screens.rst:2377
 msgid ""
@@ -3377,21 +3422,21 @@ msgid ""
 "The call screen statement takes various optional clauses, most of them "
 "similar to those of the :ref:`show-screen-statement`:"
 msgstr ""
+"call screen ステートメントは様々な任意の節を受け取られ、それらの殆どは :ref:"
+"`show-screen-statement` のものと類似します。 :"
 
 #: ../../source/screens.rst:2398
-#, fuzzy
 msgid ""
 "This keyword prevents screen prediction from occurring. During screen "
 "prediction, arguments to the screen are evaluated. Please ensure that "
 "evaluating the screen arguments does not cause unexpected side-effects to "
 "occur."
 msgstr ""
-"show screen ステートメントは任意で ``nopredict`` キーワードを受け取り、スク"
-"リーンの予測を禁止します。スクリーンの予測中にスクリーンへの引数は評価されま"
-"す。スクリーン引数の評価が不測の副作用を起さないように確認してください。"
+"このキーワードはスクリーンの予測を近視します。スクリーンの予測中にスクリーン"
+"への引数は評価されます。スクリーン引数の評価が不測の副作用を起さないように確"
+"認してください。"
 
 #: ../../source/screens.rst:2408
-#, fuzzy
 msgid ""
 "Similar to the ``show screen`` statement, ``call screen`` also takes the "
 "``expression`` keyword, allowing to use an arbitrary expression as the "
@@ -3399,7 +3444,8 @@ msgid ""
 "to be passed to the screen."
 msgstr ""
 "``show screen`` ステートメントと同様に、 ``call screen`` も ``expression`` "
-"キーワードを受け取り、任意の式をスクリーン名として使用できます。"
+"キーワードを受け取り、任意の式をスクリーン名として使用できます。スクリーンへ"
+"引数を渡す ``pass`` キーワードも同様です。"
 
 #: ../../source/screens.rst:2414
 msgid ""
