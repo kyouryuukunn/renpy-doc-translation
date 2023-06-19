@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
+"POT-Creation-Date: 2023-06-20 02:19+0900\n"
 "PO-Revision-Date: 2023-04-30 11:18+0900\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -255,11 +255,39 @@ msgstr ""
 msgid "Shift+R reloading does not work in a replay."
 msgstr "Shift+R によるリロードはリプレイでは動作しません。"
 
-#: ../../source/developer_tools.rst:78
+#: ../../source/developer_tools.rst:75
+msgid ""
+"The following functions implement the same behavior in pure python. Note "
+"that they are only meant to be used in developer mode."
+msgstr ""
+
+#: ../../source/inc/reload:5
+msgid "Gets the autoreload flag."
+msgstr ""
+
+#: ../../source/inc/reload:9
+msgid ""
+"Causes Ren'Py to save the game, reload the script, and then load the save."
+msgstr ""
+
+#: ../../source/inc/reload:12
+msgid ""
+"This should only be called during development. It works on Windows, macOS, "
+"and Linux, but may not work on other platforms."
+msgstr ""
+
+#: ../../source/inc/reload:17
+msgid ""
+"Sets the autoreload flag, which determines if the game will be automatically "
+"reloaded after file changes. Autoreload will not be fully enabled until the "
+"game is reloaded with :func:`renpy.reload_script`."
+msgstr ""
+
+#: ../../source/developer_tools.rst:83
 msgid "Shift+I Style Inspecting"
 msgstr "Shift+I スタイルインスペクター"
 
-#: ../../source/developer_tools.rst:80
+#: ../../source/developer_tools.rst:85
 msgid ""
 "When :var:`config.developer` is true, pressing Shift+I will cause style "
 "inspection to occur. This will display a list of displayables underneath the "
@@ -273,7 +301,7 @@ msgstr ""
 "displayable には型と使用されているスタイル、描画されているサイズが表示されま"
 "す。"
 
-#: ../../source/developer_tools.rst:86
+#: ../../source/developer_tools.rst:91
 msgid ""
 "Clicking on the style name will display the styles the displayable inherits "
 "from, and the properties each style contributes to the final displayable."
@@ -281,11 +309,11 @@ msgstr ""
 "スタイル名をクリックするとその Displayable が継承しているスタイルと各スタイル"
 "が最後の Displayable に与えているプロパティーを表示します。"
 
-#: ../../source/developer_tools.rst:90
+#: ../../source/developer_tools.rst:95
 msgid "> Fast Skipping"
 msgstr "> 高速スキップ"
 
-#: ../../source/developer_tools.rst:92
+#: ../../source/developer_tools.rst:97
 msgid ""
 "When :var:`config.developer` or :var:`config.fast_skipping` is True, "
 "pressing the `fast_skip` key (by default, \">\") causes the the game to "
@@ -301,11 +329,11 @@ msgstr ""
 "これは次の選択肢へのスキップを意味しますが、ユーザー定義のインタラクションが"
 "起きてもストップします。"
 
-#: ../../source/developer_tools.rst:102
+#: ../../source/developer_tools.rst:107
 msgid "Warping to a Line"
 msgstr "行ワープ"
 
-#: ../../source/developer_tools.rst:104
+#: ../../source/developer_tools.rst:109
 msgid ""
 "Ren'Py supports warping to a line in the script, without the developer to "
 "play through the entire game to get there. While this warping technique has "
@@ -316,7 +344,7 @@ msgstr ""
 "行にワープできます。このワープ技術はいくつかの注意が必要ですが、それでもプレ"
 "ビューには便利でしょう。"
 
-#: ../../source/developer_tools.rst:109
+#: ../../source/developer_tools.rst:114
 msgid ""
 "To invoke warping, run Ren'Py with the ``--warp`` command-line argument "
 "followed by a filename:line combination, to specify where you would like to "
@@ -325,14 +353,14 @@ msgstr ""
 "ワープの実行には Ren'Py をファイル名:行が続く ``--warp`` 引数つきで実行して、"
 "ワープ先を指定する必要があります。例 ::"
 
-#: ../../source/developer_tools.rst:115
+#: ../../source/developer_tools.rst:120
 msgid ""
 "(Where `my_project` is the full path to the base directory of your project.)"
 msgstr ""
 "(ここで、 `my_project` はプロジェクトのベース・ディレクトリーへのフルパスで"
 "す)"
 
-#: ../../source/developer_tools.rst:117
+#: ../../source/developer_tools.rst:122
 msgid ""
 "When warping is invoked, Ren'Py does a number of things. It first finds all "
 "of the scene statements in the program. It then tries to find a path from "
@@ -351,7 +379,7 @@ msgstr ""
 "後、scene ステートメント及びパス上のすべての show、hide ステートメントを実行"
 "します。最後に、たどり着いたステートメントに制御を移動します。"
 
-#: ../../source/developer_tools.rst:125
+#: ../../source/developer_tools.rst:130
 msgid ""
 "There are a number of fairly major caveats to the warp feature. The first is "
 "that it only examines a single path, which means that while the path may be "
@@ -367,7 +395,7 @@ msgstr ""
 "実際には到達不可能なパスもありえます ( これは実際には python コードを多用する"
 "ような重いゲームでのみ問題になります )。"
 
-#: ../../source/developer_tools.rst:133
+#: ../../source/developer_tools.rst:138
 msgid ""
 "The biggest problem, though, is that Python is not executed before the "
 "statement that is warped to. This means that all variables will be "
@@ -382,13 +410,13 @@ msgstr ""
 "れはワープ後、ワープ先のステートメントの実行前に 呼び出されます。このラベルの"
 "コードでプログラムの変数を設定し、プレビューに戻れます。"
 
-#: ../../source/developer_tools.rst:140
+#: ../../source/developer_tools.rst:145
 msgid ""
 "The warp feature requires :var:`config.developer` to be True to operate."
 msgstr ""
 "ワープ機能の実行には :var:`config.developer` が True である必要があります。"
 
-#: ../../source/developer_tools.rst:144
+#: ../../source/developer_tools.rst:149
 msgid "Debug Functions"
 msgstr "デバッグ関数"
 
