@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
+"POT-Creation-Date: 2023-07-08 21:31+0900\n"
 "PO-Revision-Date: 2021-10-03 17:03+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -23,10 +23,11 @@ msgid "Web Updater"
 msgstr "ウェブアップデーター"
 
 #: ../../source/updater.rst:4
+#, fuzzy
 msgid ""
 "Ren'Py includes an updater that can automatically download and install "
-"updates to a Ren'Py game hosted at a website. This can be useful in keeping "
-"a large game up to date."
+"updates to a Ren'Py game from a web host. The updates work on Windows and "
+"Linux, but not macOS, Android, or iOS."
 msgstr ""
 "Ren'Py にはウェブ上の Ren'Py ホストから自動でダウンロードして更新をするアップ"
 "データーが含まれています。これは大規模なゲームを最新に保つのに便利です。"
@@ -97,10 +98,12 @@ msgstr ""
 "囲の問い合わせをサポートする必要があります。"
 
 #: ../../source/updater.rst:35
-msgid "HTTPS is not supported for patching."
-msgstr "HTTPSはパッチ用途にはサポートされません。"
+msgid ""
+"HTTPS is not supported for patching, but will download the entire file, not "
+"the patch."
+msgstr ""
 
-#: ../../source/updater.rst:37
+#: ../../source/updater.rst:38
 msgid ""
 "(This means paying for web hosting, as \"sharing\" sites tend not to support "
 "the required features.)"
@@ -108,7 +111,7 @@ msgstr ""
 "( 「共有」サイトは必要な機能をサポートしない傾向にあるので、ウェブホスティン"
 "グのために代金を払う必要があります )"
 
-#: ../../source/updater.rst:40
+#: ../../source/updater.rst:41
 msgid ""
 "If the `patch` parameter is set to False, or an https url is given, the "
 "updater will not attempt to patch the game. Instead, it will download the "
@@ -120,11 +123,11 @@ msgstr ""
 "ンロードし、アップデートを解凍します。これはダウンロードサイズを大きくします"
 "が、より多くのウェブサーバーで動作するようになります。"
 
-#: ../../source/updater.rst:46
+#: ../../source/updater.rst:47
 msgid "Building an Update"
 msgstr "アップデートのビルド"
 
-#: ../../source/updater.rst:48
+#: ../../source/updater.rst:49
 msgid ""
 "Updates are built automatically when distributions are built. To build an "
 "update, set :var:`build.include_update` to True in options.rpy. This will "
@@ -137,39 +140,39 @@ msgstr ""
 "ロックしてください。このオプションをチェックすると Ren'Py はアップデートファ"
 "イルを作成します。"
 
-#: ../../source/updater.rst:54
+#: ../../source/updater.rst:55
 msgid "The update files consist of:"
 msgstr "アップデートファイルは以下で構成されます :"
 
-#: ../../source/updater.rst:57
+#: ../../source/updater.rst:58
 msgid "updates.json"
 msgstr "updates.json"
 
-#: ../../source/updater.rst:57
+#: ../../source/updater.rst:58
 msgid "An index of available updates and their versions."
 msgstr "利用可能なアップデートとそのバージョンのインデックス"
 
-#: ../../source/updater.rst:60
+#: ../../source/updater.rst:61
 msgid "*package*.sums"
 msgstr "*package*.sums"
 
-#: ../../source/updater.rst:60
+#: ../../source/updater.rst:61
 msgid "Contains checksums for each block in the package."
 msgstr "そのパッケージの各ブロックのチェックサム"
 
-#: ../../source/updater.rst:63
+#: ../../source/updater.rst:64
 msgid "*package*.update.gz"
 msgstr "*package*.update.gz"
 
-#: ../../source/updater.rst:63
+#: ../../source/updater.rst:64
 msgid "Contains the update data for the given package."
 msgstr "特定のパッケージのアップデートデータを含んでいます。"
 
-#: ../../source/updater.rst:67
+#: ../../source/updater.rst:68
 msgid "*package*.update.json"
 msgstr "*package*.update.json"
 
-#: ../../source/updater.rst:66
+#: ../../source/updater.rst:67
 msgid ""
 "Contains a list of the files in each package, which the updater uses when "
 "downloading DLC."
@@ -177,27 +180,27 @@ msgstr ""
 "DLC をダウンロードするとき、アップデーターが使用する各パッケージのファイルの"
 "リストが含まれます。"
 
-#: ../../source/updater.rst:70
+#: ../../source/updater.rst:71
 msgid "*package*.zsync"
 msgstr "*package*.zsync"
 
-#: ../../source/updater.rst:70
+#: ../../source/updater.rst:71
 msgid "This is a control file that's used by zsync to manage the download."
 msgstr ""
 "これは zsync によってダウンロードを管理するために使用される制御ファイルです。"
 
-#: ../../source/updater.rst:72
+#: ../../source/updater.rst:73
 msgid ""
 "You must upload all these files to a single directory on your web server."
 msgstr ""
 "これらすべてのファイルをウェブサーバーのひとつのディレクトリーにアップロード"
 "しなければなりません。"
 
-#: ../../source/updater.rst:77
+#: ../../source/updater.rst:78
 msgid "Functions"
 msgstr "関数"
 
-#: ../../source/updater.rst:79
+#: ../../source/updater.rst:80
 msgid ""
 "To cause an update to occur, invoke either updater.update or the updater."
 "Update action."
@@ -407,14 +410,17 @@ msgstr ""
 "アップデートします。これは url が \"http:\" で始まらなければ自動的に False に"
 "設定されます。"
 
-#: ../../source/updater.rst:85
+#: ../../source/updater.rst:86
 msgid "Screen"
 msgstr "スクリーン"
 
-#: ../../source/updater.rst:87
+#: ../../source/updater.rst:88
 msgid ""
 "To customize the look of the updater, you may override the ``updater`` "
 "screen. The default screen is defined in common/00updater.rpy."
 msgstr ""
 "アップデーターの見た目を変更するためには、 ``updater`` スクリーンを上書きして"
 "ください。デフォルトのスクリーンは common/00updater.rpy に定義されています。"
+
+#~ msgid "HTTPS is not supported for patching."
+#~ msgstr "HTTPSはパッチ用途にはサポートされません。"
