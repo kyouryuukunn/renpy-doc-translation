@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-08 21:31+0900\n"
-"PO-Revision-Date: 2023-04-29 17:36+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2023-07-12 22:07+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-03-29 05:43+0000\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/transitions.rst:5
 msgid "Transitions"
@@ -87,6 +87,11 @@ msgid ""
 "<expression-atl-statement>`, :func:`ComposeTransition`, or other ways of "
 "applying transitions."
 msgstr ""
+"Move トランジションや ease のような類似のトランジションは、 :ref:`with ステー"
+"トメント <with-statement>` を使用して、1つのレイヤーまたはすべてのレイヤーに"
+"一度にのみ適用できます。このトランジションは :ref:`ATL <expression-atl-"
+"statement>` や :func:`ComposeTransition` などの異なるトランジションの適用方法"
+"をするコンテキストでは動作しません。"
 
 #: ../../source/transitions.rst:54
 msgid "Also: **moveinleft, moveintop, moveinbottom**"
@@ -143,12 +148,14 @@ msgstr ""
 "時に行います。"
 
 #: ../../source/transitions.rst:88
-#, fuzzy
 msgid ""
 "When invoked, this transition shakes the screen vertically for a quarter "
 "second. Imitating and customizing this transition and :var:`hpunch` is best "
 "done using :ref:`atl-transitions`."
-msgstr "呼び出されたとき、画面を 4 分の 1 秒間垂直に揺らすトランジションです。"
+msgstr ""
+"呼び出されたとき、画面を 4 分の 1 秒間垂直に揺らすトランジションです。このト"
+"ランジションと :var:`hpunch` を模倣してカスタマイズするには :ref:`atl-"
+"transitions` の使用がベストです。"
 
 #: ../../source/transitions.rst:94
 msgid ""
@@ -578,6 +585,11 @@ msgid ""
 "<expression-atl-statement>`, :func:`ComposeTransition`, or other ways of "
 "applying transitions."
 msgstr ""
+"タグを持つのはレイヤーのみなので、MoveTransitions は :ref:`with ステートメン"
+"ト <with-statement>` を使って一つのレイヤーまたはすべてのレイヤーに一度にしか"
+"適用できません。 :ref:`ATL <expression-atl-statement>` や :func:"
+"`ComposeTransition` のように、異なる方法でトランジションを適用するコンテキス"
+"トでは動作しません。"
 
 #: ../../source/inc/transition:202
 msgid "The time it takes for the interpolation to finish."
@@ -588,28 +600,26 @@ msgid "`enter`"
 msgstr "`enter`"
 
 #: ../../source/inc/transition:205
-#, fuzzy
 msgid ""
 "If not None, images entering the scene will also be moved. The value of "
 "`enter` should be a transform that is applied to the image to get it in its "
 "starting position."
 msgstr ""
-"None でない場合、その場面に新しく挿入される画像も移動されます。 `enter` に"
-"は、その画像が開始位置に至るために適用される transform を指定します。"
+"None でなければ、その場面に新しく挿入される画像も移動されます。 `enter` に"
+"は、その画像が開始位置に至るために適用される transform を指定するべきです。"
 
 #: ../../source/inc/transition:212
 msgid "`leave`"
 msgstr "`leave`"
 
 #: ../../source/inc/transition:210
-#, fuzzy
 msgid ""
 "If not None, images leaving the scene will also be moved. The value of "
 "`leave` should be a transform that is applied to the image to get it in its "
 "ending position."
 msgstr ""
-"None でない場合、その場面から消される画像も移動されます。 `leave` には、その"
-"画像が最終的な位置に至るために適用される transform を指定します。"
+"None でなければ、その場面から消される画像も移動されます。 `leave` には、その"
+"画像が最終的な位置に至るために適用される transform を指定するべきです。"
 
 #: ../../source/inc/transition:217 ../../source/inc/transition_family:36
 msgid "`old`"
@@ -621,6 +631,8 @@ msgid ""
 "image will be used in preference to the new one. Otherwise, the new images "
 "will be used."
 msgstr ""
+"True ならタグの画像がトランジション中に変更されたとき、新しい画像よりも古い画"
+"像が優先して使われます。そうでない場合は、新しい画像が使われます。"
 
 #: ../../source/inc/transition:220 ../../source/inc/transition_family:39
 msgid "`layers`"
@@ -631,14 +643,13 @@ msgid "A list of layers that moves are applied to."
 msgstr "トランジションが適用されるレイヤーのリストです。"
 
 #: ../../source/inc/transition:223
-#, fuzzy
 msgid ""
 "A :ref:`time warp function <warpers>` that's applied to the interpolation. "
 "This takes a number between 0.0 and 1.0, and should return a number in the "
 "same range."
 msgstr ""
-"補間に適用されるタイムワープ関数です。これは 0.0 から 1.0 までの数字を受け取"
-"り、同じ範囲の数字を返すはずです。"
+"補間に適用される :ref:`time warp 関数 <warpers>` です。これは 0.0 から 1.0 ま"
+"での数字を受け取り、同じ範囲の数字を返すべきです。"
 
 #: ../../source/inc/transition:228
 msgid "`enter_time_warp`"
@@ -667,15 +678,14 @@ msgid "`args`"
 msgstr "`args`"
 
 #: ../../source/inc/transition:239
-#, fuzzy
 msgid ""
 "A **list** containing an odd number of items. The first, third, and other "
 "odd-numbered items must be scenes, and the even items must be transitions. A "
 "scene can be one of:"
 msgstr ""
-"奇数個のアイテムが格納された * リスト * です。1番目、3番目、その他の奇数番目"
-"のアイテムにはシーンを、偶数番目のアイテムにはトランジションを指定します。"
-"シーンとして指定できるものは次です。 :"
+"奇数個のアイテムが格納された *リスト* です。1番目、3番目、その他の奇数番目の"
+"アイテムにはシーンを、偶数番目のアイテムにはトランジションを指定します。シー"
+"ンとして指定できるものは次の1つです。 :"
 
 #: ../../source/inc/transition:243
 msgid "A displayable."
@@ -697,6 +707,8 @@ msgstr "ほぼ必ず最初の引数は False で最後の引数は True とな�
 msgid ""
 "Note that this is a single parameter taking a list, this is not ``*args``."
 msgstr ""
+"これはリストを取る単一のパラメーターであり、 ``*args`` ではないことに注意して"
+"ください。"
 
 #: ../../source/inc/transition:251
 msgid ""
@@ -826,14 +838,14 @@ msgstr ""
 "トランジション族は、大量の関連するトランジション族を定義する関数群です。"
 
 #: ../../source/inc/transition_family:5
-#, fuzzy
 msgid ""
 "This defines a family of :class:`move transitions <MoveTransition>`, similar "
 "to the move and ease transitions. For a given `prefix`, this defines the "
 "transitions:"
 msgstr ""
-"これは、move トランジションや ease トランジションのようなトランジション属を定"
-"義します。指定の `prefix` に対して、次のトランジションを定義します ::"
+"これは、 :class:`move トランジション <MoveTransition>` や ease トランジション"
+"のようなトランジション属を定義します。指定の `prefix` に対して、次のトランジ"
+"ションを定義します ::"
 
 #: ../../source/inc/transition_family:8
 msgid ""
@@ -868,7 +880,6 @@ msgid "`time_warp`, `in_time_warp`, `out_time_warp`"
 msgstr "`time_warp`, `in_time_warp`, `out_time_warp`"
 
 #: ../../source/inc/transition_family:22
-#, fuzzy
 msgid ""
 "Time warp functions that are given a time from 0.0 to 1.0 representing the "
 "fraction of the move that is complete, and return a value in the same range "
@@ -877,7 +888,7 @@ msgid ""
 msgstr ""
 "タイムワープ関数です。これらは移動が完了するまでの時間に対する割合を表す 0.0 "
 "から 1.0 の小数を与えられ、線形移動が完了するまでの距離に対する割合を表す同じ"
-"範囲の小数値を返します。"
+"範囲の小数値を返します。詳細は :ref:`ワーパー <warpers>` を参照してください。"
 
 #: ../../source/inc/transition_family:27
 msgid ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-20 02:19+0900\n"
+"POT-Creation-Date: 2023-07-13 22:31+0900\n"
 "PO-Revision-Date: 2023-06-25 17:44+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -360,25 +360,25 @@ msgstr ""
 "と実行されるアクションです。このトリガーがモバイルプラットフォームで早すぎる"
 "場合は  :var:`config.longpress_duration` を大きくする必要があります。"
 
-#: ../../source/inc/drag_drop:103
+#: ../../source/inc/drag_drop:101
 msgid "`drag_handle`"
 msgstr "`drag_handle`"
 
 #: ../../source/inc/drag_drop:100
+#, fuzzy
 msgid ""
 "A (x, y, width, height) tuple, giving the position of the drag handle within "
-"the child. In this tuple, integers are considered to be a literal number of "
-"pixels, while floats are relative to the size of the child."
+"the child. This tuple takes :term:`positions <position>`."
 msgstr ""
 "子内部のドラッグ有効範囲の位置を与える (x, y, width, height) のタプルです。こ"
 "のタプルでは、整数はピクセルの定数として、少数は子のサイズに対する割合として"
 "解釈されます。"
 
-#: ../../source/inc/drag_drop:110
+#: ../../source/inc/drag_drop:108
 msgid "`drag_joined`"
 msgstr "`drag_joined`"
 
-#: ../../source/inc/drag_drop:106
+#: ../../source/inc/drag_drop:104
 msgid ""
 "This is called with the current Drag as an argument. It's expected to return "
 "a list of [ (drag, x, y) ] tuples, giving the draggables to drag as a unit. "
@@ -390,11 +390,11 @@ msgstr ""
 "`x`, `y` は Drag の互いに対するオフセットで、この drag に対するものではありま"
 "せん。"
 
-#: ../../source/inc/drag_drop:184
+#: ../../source/inc/drag_drop:182
 msgid "`drag_offscreen`"
 msgstr "`drag_offscreen`"
 
-#: ../../source/inc/drag_drop:113
+#: ../../source/inc/drag_drop:111
 msgid ""
 "Determines the conditions under which the drag is allowed to be dragged "
 "offscreen. Allowing offscreen dragging can be dangerous to use with "
@@ -405,47 +405,47 @@ msgstr ""
 "る drag に使用すると、その drag が完全に画面外に出て画面に戻す方法がなくなる"
 "可能性があるため危険になり得ます。"
 
-#: ../../source/inc/drag_drop:119
+#: ../../source/inc/drag_drop:117
 msgid "This should be one of:"
 msgstr "これは次のうちどれか1つであるべきです。 :"
 
-#: ../../source/inc/drag_drop:122
+#: ../../source/inc/drag_drop:120
 msgid "False"
 msgstr "False"
 
-#: ../../source/inc/drag_drop:122
+#: ../../source/inc/drag_drop:120
 msgid "To disallow dragging the drag offscreen. (The default)"
 msgstr "画面外への drag の移動を禁止します(デフォルト)。"
 
-#: ../../source/inc/drag_drop:125
+#: ../../source/inc/drag_drop:123
 msgid "True"
 msgstr "True"
 
-#: ../../source/inc/drag_drop:125
+#: ../../source/inc/drag_drop:123
 msgid "To allow dragging offscreen, in any direction."
 msgstr "どの方向にも画面外へのドラッグを許可します。"
 
-#: ../../source/inc/drag_drop:128
+#: ../../source/inc/drag_drop:126
 msgid "\"horizontal\""
 msgstr "\"horizontal\""
 
-#: ../../source/inc/drag_drop:128
+#: ../../source/inc/drag_drop:126
 msgid "To allow dragging offscreen in the horizontal direction only."
 msgstr "水平方向のみ画面外へのドラッグを許可します。"
 
-#: ../../source/inc/drag_drop:131
+#: ../../source/inc/drag_drop:129
 msgid "\"vertical\""
 msgstr "\"vertical\""
 
-#: ../../source/inc/drag_drop:131
+#: ../../source/inc/drag_drop:129
 msgid "To allow dragging offscreen in the vertical direction only."
 msgstr "垂直方向のみ画面外へのドラッグを許可します。"
 
-#: ../../source/inc/drag_drop:141
+#: ../../source/inc/drag_drop:139
 msgid "(width, height)"
 msgstr "(width, height)"
 
-#: ../../source/inc/drag_drop:134
+#: ../../source/inc/drag_drop:132
 msgid ""
 "Both width and height must be integers. The drag can be dragged offscreen as "
 "long as a (width, height)-sized part of it remains on-screen. So, (100, 100) "
@@ -460,11 +460,11 @@ msgstr ""
 "画面内に残っていると保証します。これをドラッグされている displayable の幅と高"
 "さに設定すると、全く画面外へのドラッグを許可しないのと同じになります。"
 
-#: ../../source/inc/drag_drop:163
+#: ../../source/inc/drag_drop:161
 msgid "(min_x, max_x, min_y, max_y)"
 msgstr "(min_x, max_x, min_y, max_y)"
 
-#: ../../source/inc/drag_drop:144
+#: ../../source/inc/drag_drop:142
 msgid ""
 "Where each of min_x, max_x, min_y, and max_y are integers. min_x is the "
 "number of pixels away from the left border, and max_x is the number of "
@@ -478,7 +478,7 @@ msgstr ""
 "同じです。ドラッグはその端が指定した端にぶつかるまで動かせます。 (0, 0, 0, "
 "0) は全く画面外へのドラッグを許可しないのと同じになります。"
 
-#: ../../source/inc/drag_drop:152
+#: ../../source/inc/drag_drop:150
 msgid ""
 "For example, (-100, 200, 0, 0) would allow the drag to be dragged 100 pixels "
 "off the left edge of the screen and 200 pixels off the right edge of the "
@@ -488,7 +488,7 @@ msgstr ""
 "でき、 200 ピクセル画面の端から右へドラッグできます。上下の画面外へのドラッグ"
 "は許可しません。"
 
-#: ../../source/inc/drag_drop:157
+#: ../../source/inc/drag_drop:155
 msgid ""
 "This can also be used to constrain the drag within the screen bounds. (200, "
 "-200, 200, -200) would only allow the drag within 200 pixels of the edges of "
@@ -497,7 +497,7 @@ msgstr ""
 "これを使用して、 drag を画面内の境界に制限できます。 (200, -200, 200, -200) "
 "なら画面の端から 200 ピクセル内でのみドラッグを許可します。"
 
-#: ../../source/inc/drag_drop:161
+#: ../../source/inc/drag_drop:159
 msgid ""
 "You can envision this as an additional \"border\" around the drag, which may "
 "go outside the bounds of the screen, that constrains the drag to remain "
@@ -506,11 +506,11 @@ msgstr ""
 "これは drag の周りの追加の \"境界\" を想像しください。これは画面外に境界を置"
 "き、その中に drag を制限します。"
 
-#: ../../source/inc/drag_drop:184
+#: ../../source/inc/drag_drop:182
 msgid "callable"
 msgstr "callable"
 
-#: ../../source/inc/drag_drop:166
+#: ../../source/inc/drag_drop:164
 msgid ""
 "A callable can be provided to drag_offscreen. It must take two arguments: an "
 "x and a y position which represents the dragged position of the top left "
@@ -525,11 +525,11 @@ msgstr ""
 "ジェクトは drag の移動中頻繁に呼び出されます。例えば次の関数は drag を 300 ピ"
 "クセル区切りにスナップします。 ::"
 
-#: ../../source/inc/drag_drop:189
+#: ../../source/inc/drag_drop:187
 msgid "`mouse_drop`"
 msgstr "`mouse_drop`"
 
-#: ../../source/inc/drag_drop:187
+#: ../../source/inc/drag_drop:185
 msgid ""
 "If true, the drag is dropped on the first droppable under the cursor. If "
 "false, the default, the drag is dropped onto the droppable with the largest "
@@ -539,11 +539,11 @@ msgstr ""
 "フォルトでは False で drag は重なりがもっとも大きい ドロップ可能なものにド"
 "ロップされます。"
 
-#: ../../source/inc/drag_drop:195
+#: ../../source/inc/drag_drop:193
 msgid "`drop_allowable`"
 msgstr "`drop_allowable`"
 
-#: ../../source/inc/drag_drop:192
+#: ../../source/inc/drag_drop:190
 msgid ""
 "A callback that is called to determine whether this drop will allow the "
 "current drags to be dropped onto it. It is called with two arguments. The "
@@ -554,7 +554,7 @@ msgstr ""
 "す。二つの引数で呼び出され、一つ目はドロップを受け取る Drag, 二つ目はドラッグ"
 "されている Drag のリストです。"
 
-#: ../../source/inc/drag_drop:197
+#: ../../source/inc/drag_drop:195
 msgid ""
 "Except for `d`, all of the parameters are available as fields (with the same "
 "name) on the Drag object. In addition, after the drag has been rendered, the "
@@ -564,39 +564,39 @@ msgstr ""
 "( 同じ名前で ) 利用可能です。さらに Drag がレンダリングされた後は次のフィール"
 "ドが利用可能になります。"
 
-#: ../../source/inc/drag_drop:202
+#: ../../source/inc/drag_drop:200
 msgid "`x`, `y`"
 msgstr "`x`, `y`"
 
-#: ../../source/inc/drag_drop:202
+#: ../../source/inc/drag_drop:200
 msgid "The position of the Drag relative to its parent, in pixels."
 msgstr "ピクセルでのその親に対する Drag の位置"
 
-#: ../../source/inc/drag_drop:205
+#: ../../source/inc/drag_drop:203
 msgid "`start_x`, `start_y`"
 msgstr "`start_x`, `start_y`"
 
-#: ../../source/inc/drag_drop:205
+#: ../../source/inc/drag_drop:203
 msgid "The drag start position of the Drag relative to its parent, in pixels."
 msgstr "ピクセルでのその親に対するドラッグ開始時のその Drag の位置"
 
-#: ../../source/inc/drag_drop:208
+#: ../../source/inc/drag_drop:206
 msgid "`w`, `h`"
 msgstr "`w`, `h`"
 
-#: ../../source/inc/drag_drop:208
+#: ../../source/inc/drag_drop:206
 msgid "The width and height of the Drag's child, in pixels."
 msgstr "Drag の子のピクセルでの幅と高さです。"
 
-#: ../../source/inc/drag_drop:212
+#: ../../source/inc/drag_drop:210
 msgid "Lowers this displayable to the bottom of its drag_group."
 msgstr "この displayable をその DragGroup の最下端にします。"
 
-#: ../../source/inc/drag_drop:216
+#: ../../source/inc/drag_drop:214
 msgid "Changes the child of this drag to `d`."
 msgstr "この Drag の子を `d` に変更します。"
 
-#: ../../source/inc/drag_drop:220
+#: ../../source/inc/drag_drop:218
 msgid ""
 "Changes the position of the drag. If the drag is not showing, then the "
 "position change is instantaneous. Otherwise, the position change takes "
@@ -606,11 +606,11 @@ msgstr ""
 "でなければ、位置の変更は `delay` 秒かかり、等速で移動するアニメーションが表示"
 "されます。"
 
-#: ../../source/inc/drag_drop:227
+#: ../../source/inc/drag_drop:225
 msgid "Raises this displayable to the top of its drag_group."
 msgstr "この displayable をその DragGroup のトップに持ち上げます。"
 
-#: ../../source/inc/drag_drop:231
+#: ../../source/inc/drag_drop:229
 msgid ""
 "Represents a group of Drags. A Drag is limited to the boundary of its "
 "DragGroup. Dropping only works between Drags that are in the same DragGroup. "
@@ -620,11 +620,11 @@ msgstr ""
 "ロップは同じ DragGroup に所属する Drag 間でのみ働きます。 Drag はそれが "
 "DragGroup の内側にあるときのみ持ち上げられます。"
 
-#: ../../source/inc/drag_drop:236
+#: ../../source/inc/drag_drop:234
 msgid "A DragGroup is laid out like a :func:`Fixed`."
 msgstr ":func:`Fixed` と同様に DragGroup はレイアウトされます。"
 
-#: ../../source/inc/drag_drop:238
+#: ../../source/inc/drag_drop:236
 msgid ""
 "All positional parameters to the DragGroup constructor should be Drags, that "
 "are added to the DragGroup."
@@ -632,29 +632,29 @@ msgstr ""
 "DragGroup のコンストラクターに渡されるすべての位置パラメーターはその "
 "DragGroup に追加される Drag であるべきです。"
 
-#: ../../source/inc/drag_drop:244
+#: ../../source/inc/drag_drop:242
 msgid "`min_overlap`"
 msgstr "`min_overlap`"
 
-#: ../../source/inc/drag_drop:243
+#: ../../source/inc/drag_drop:241
 msgid ""
 "An integer which means the minimum number of pixels at the overlap for the "
 "drop to be allowed."
 msgstr ""
 "ドロップが受け入れられる最小のオーバーラップするピクセル数を表す整数です。"
 
-#: ../../source/inc/drag_drop:248
+#: ../../source/inc/drag_drop:246
 msgid "Adds `child`, which must be a Drag, to this DragGroup."
 msgstr ""
 "`child` をこの DragGroup に追加します。 `child` は Drag でなければいけませ"
 "ん。"
 
-#: ../../source/inc/drag_drop:252
+#: ../../source/inc/drag_drop:250
 msgid ""
 "Returns the first child of this DragGroup that has a drag_name of `name`."
 msgstr "`name` の drag_name を持つ DragGroup の最初の子を返します。"
 
-#: ../../source/inc/drag_drop:257
+#: ../../source/inc/drag_drop:255
 msgid "Removes `child` from this DragGroup."
 msgstr "DragGroup から `child` を除去します。"
 
