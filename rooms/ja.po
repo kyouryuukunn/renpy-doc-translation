@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2023-04-30 12:14+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2023-07-21 20:57+0900\n"
+"PO-Revision-Date: 2023-07-21 22:08+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/rooms.rst:3
 msgid "Image Gallery, Music Room, and Replay Actions"
@@ -817,25 +817,25 @@ msgstr "リプレイ"
 
 #: ../../source/rooms.rst:275
 msgid ""
-"Ren'Py also includes the ability to replay a scene from inside a the main or "
-"game menu. This can be used to create a \"scene gallery\", or memory gallery "
-"that allows the player to repeat important scenes. After the scene finishes, "
-"Ren'Py returns to the menu screen that launched the replay."
+"Ren'Py also includes the ability to replay a sequence from inside the main "
+"or game menu. This can be used to create a \"sequence gallery\", or memory "
+"gallery that allows the player to repeat important sequence. After the "
+"sequence finishes, Ren'Py returns to where the replay was launched."
 msgstr ""
-"Ren'Py にはメインメニューやゲームメニューからシーンを再生する機能もあります。"
-"これはプレイヤーが重要なシーンを繰り返せるようにするシーンギャラリーを作成す"
-"るのに使えます。シーンが終わると、 Ren'Py はリプレイを実行した menu スクリー"
-"ンに戻ります。"
+"Ren'Py にはメインメニューやゲームメニューからシークエンス(訳注 物語の1シーン"
+"をシークエンスと呼ぶ) を再生する機能もあります。これはプレイヤーが重要なシー"
+"クエンスを繰り返せるようにするシークエンスギャラリーを作成するのに使えます。"
+"シークエンスが終わると、 Ren'Py はリプレイを実行した場所に戻ります。"
 
-#: ../../source/rooms.rst:281
+#: ../../source/rooms.rst:280
 msgid ""
-"Scene replay is also possible using the :func:`Start` action. The difference "
-"between the two modes are:"
+"Sequence replay is also possible using the :func:`Start` action. The "
+"difference between the two modes are:"
 msgstr ""
-"シーンリプレイは :func:`Start` アクションを使用しても可能です。2つのモードの"
-"違いは :"
+"シークエンスリプレイは :func:`Start` アクションを使用しても可能です。2つの"
+"モードの違いは :"
 
-#: ../../source/rooms.rst:284
+#: ../../source/rooms.rst:283
 msgid ""
 "A replay can be launched from any screen while Start can only be used in the "
 "main menu or screens shown by the main menu."
@@ -843,17 +843,17 @@ msgstr ""
 "リプレイはどんなスクリーンからでも実行可能な一方、 Start はメインメニューかメ"
 "インメニューから表示されたスクリーン内でしか使用できません。"
 
-#: ../../source/rooms.rst:287
+#: ../../source/rooms.rst:286
 msgid ""
 "When a replay finishes, control returns to the point where the replay was "
-"invoked. That point can be inside the main menu, game menu. If a game is in "
-"progress when replay is called, game state is preserved."
+"invoked. That point can be inside the main or game menu, for example. If a "
+"game is in progress when replay is called, game state is preserved."
 msgstr ""
 "リプレイが終わると、リプレイが実行された場所に制御が返されます。その場所はメ"
-"インメニューかゲームメニュー内があり得ます。ゲーム進行中にリプレイが呼び出さ"
-"れた場合、ゲームの状態は保存されます。"
+"インメニューかゲームメニュー内があり得ます。例えばゲーム進行中にリプレイが呼"
+"び出された場合、ゲームの状態は保存されます。"
 
-#: ../../source/rooms.rst:292
+#: ../../source/rooms.rst:291
 msgid ""
 "Saving is disabled while in replay mode. Reloading, which requires saving, "
 "is also disabled."
@@ -861,7 +861,7 @@ msgstr ""
 "リプレイモードではセーブは無効化されます。リロードもセーブを必要とするため無"
 "効となります。"
 
-#: ../../source/rooms.rst:295
+#: ../../source/rooms.rst:294
 msgid ""
 "While in replay mode, a call to :func:`renpy.end_replay` will end the "
 "replay. In normal mode, end_replay does nothing."
@@ -869,44 +869,47 @@ msgstr ""
 "リプレイモードで :func:`renpy.end_replay` を呼び出すとリプレイは終了します。"
 "ノーマルモードでは end_replay は何もしません。"
 
-#: ../../source/rooms.rst:298
+#: ../../source/rooms.rst:297
 msgid ""
-"To take advantage of the replay mode, a scene should begin with a label, and "
-"end with a call to :func:`renpy.end_replay`. The scene should make no "
+"To take advantage of the replay mode, a sequence should begin with a label, "
+"and end with a call to :func:`renpy.end_replay`. The sequence should make no "
 "assumption as to the state of the layers or variables, which can be very "
-"different in normal and replay mode. (When a replay begins, the label is "
-"invoked with a black screen.)"
+"different in normal and replay mode (except those set through the `scope` "
+"parameter when entering replay). When a replay begins, the label is invoked "
+"from a black screen."
 msgstr ""
-"リプレイモードを利用するためには、シーンがラベルで始まり、 :func:`renpy."
-"end_replay` で終わるべきです。シーンはレイヤーと変数が同じであることを当然と"
-"してはいけません。それらはノーマルモードとリプレイモードでは全く違うこともあ"
-"り得ます ( リプレイでは一旦画面をブラックアウトしてからラベルが実行されま"
-"す )。"
+"リプレイモードを利用するためには、シークエンスがラベルで始まり、 :func:"
+"`renpy.end_replay` で終わるべきです。シークエンスはレイヤーと変数が同じである"
+"ことを当然としてはいけません。それらはノーマルモードとリプレイモードでは全く"
+"違うこともあり得ます ( リプレイでは一旦画面をブラックアウトしてからラベルが実"
+"行されます )。"
 
 #: ../../source/rooms.rst:304
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/rooms.rst:328
+#: ../../source/rooms.rst:326
 msgid ""
-"With the scene define like that, the replay can be invoked with the Replay "
-"action::"
+"With the sequence defined like that, the replay can be invoked with the "
+"Replay action::"
 msgstr ""
-"シーンがこのように定義されると、リプレイは Replay アクションで実行できます ::"
+"シークエンスがこのように定義されると、リプレイは Replay アクションで実行でき"
+"ます ::"
 
-#: ../../source/rooms.rst:333
+#: ../../source/rooms.rst:331
 msgid "There is one store variable used by replay mode:"
 msgstr "リプレイモードで使われる store 変数が一つあります :"
 
-#: ../../source/rooms.rst:337
+#: ../../source/rooms.rst:335
 msgid ""
 "When in replay mode, this is sent to the label at which replay mode was "
-"started. Outside of replay mode, this is None."
+"started - the label that was called, not the one the call originated from. "
+"Outside of replay mode, this is None."
 msgstr ""
-"リプレイモードではこれはリプレイが開始されたラベルを返し、そうでなければこれ"
-"は None です。"
+"リプレイモードではこれはリプレイが開始されたラベル(呼び出されたラベルであって"
+"呼び出し元のラベルではありません)を返し、そうでなければこれは None です。"
 
-#: ../../source/rooms.rst:340
+#: ../../source/rooms.rst:339
 msgid ""
 "In addition, :var:`config.enter_replay_transition` and :var:`config."
 "exit_replay_transition` are used when entering and exiting replay mode, "
@@ -921,7 +924,7 @@ msgstr ""
 "します。リプレイ中の右クリックではpreferences スクリーンを表示するように、デ"
 "フォルトでは :var:`_game_menu_screen` を設定します。"
 
-#: ../../source/rooms.rst:347
+#: ../../source/rooms.rst:346
 msgid "The following variables and actions are used in replay mode:"
 msgstr "以下の変数とアクションはリプレイモードで実行されます。"
 
@@ -969,11 +972,11 @@ msgstr "リプレイモードでラベルを呼び出します。"
 
 #: ../../source/inc/replay:28
 msgid ""
-"Keyword arguments are used to set the initial values of variables in the "
+"The `scope` argument is used to set the initial values of variables in the "
 "memory context."
 msgstr ""
-"キーワード引数は、リプレイ用のコンテキストでの変数の値を初期化するために使用"
-"されます。"
+"`scope` 引数を使用して、リプレイ用のコンテキストでの変数の値を初期化できま"
+"す。"
 
 #: ../../source/inc/replay:33
 msgid ""

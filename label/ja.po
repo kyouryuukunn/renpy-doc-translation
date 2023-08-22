@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-08 21:31+0900\n"
-"PO-Revision-Date: 2023-07-10 18:47+0900\n"
+"POT-Creation-Date: 2023-08-08 15:19+0900\n"
+"PO-Revision-Date: 2023-08-08 15:32+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -449,18 +449,22 @@ msgstr ""
 
 #: ../../source/inc/label:57
 msgid ""
-"Pops the current call from the call stack, without returning to the location."
+"Pops the current call from the call stack, without returning to the "
+"location. Also reverts the values of :func:`dynamic <renpy.dynamic>` "
+"variables, the same way the Ren'Py return statement would."
 msgstr ""
-"コールスタックから現在の呼び出しをポップしますが、呼び出し元には返りません。"
+"元の場所には戻らずにコールスタックから現在の呼び出しを捨てます。Ren'Py の "
+"return ステートメントと同じように、 :func:`dynamic <renpy.dynamic>` 変数の値"
+"も戻します。"
 
-#: ../../source/inc/label:60
+#: ../../source/inc/label:61
 msgid ""
 "This can be used if a label that is called decides not to return to its "
 "caller."
 msgstr ""
 "これは呼び出されたラベルからその呼び出し元に返らないときに利用出来ます。"
 
-#: ../../source/inc/label:65
+#: ../../source/inc/label:66
 msgid ""
 "Returns true if the named label has executed at least once on the current "
 "user's system, and false otherwise. This can be used to unlock scene "
@@ -470,14 +474,14 @@ msgstr ""
 "ければ False が返されます。これは例えばシーンギャラリーをアンロックするために"
 "使用出来ます。"
 
-#: ../../source/inc/label:71
+#: ../../source/inc/label:72
 msgid ""
 "Sets the current return stack. The return stack is a list of statement names."
 msgstr ""
 "現在のリターンスタックを設定します。リターンスタックはステートメント名のリス"
 "トです。"
 
-#: ../../source/inc/label:74
+#: ../../source/inc/label:75
 msgid ""
 "Statement names may be strings (for labels) or opaque tuples (for non-label "
 "statements)."
@@ -589,6 +593,53 @@ msgid ""
 msgstr ""
 "現在のコンテキストを終了し、親のコンテキストで指定されたラベルに制御を移動し"
 "ます。"
+
+#: ../../source/inc/context:66
+msgid ""
+"This pops all contexts off the context stack, resetting the dynamic "
+"variables as it does so. When this is done, a new context is created, the "
+"current statement ends, and the game continues from the next statement. This "
+"will put Ren'Py into the state it was at startup, with the exception of data "
+"and the start point."
+msgstr ""
+"これにより、すべてのコンテキストがコンテキストスタックからポップされ、動的変"
+"数がリセットされます。これが終わると、新しいコンテキストが作成され、現在のス"
+"テートメントは終了し、次のステートメントからゲームが続行されます。これにより"
+"データと開始位置を除いて Ren'Py は起動時の状態に戻ります。"
+
+#: ../../source/inc/context:72
+msgid ""
+"This can be used to reset everything about the game - shown image, playing "
+"music, etc, as if the game started from the beginning."
+msgstr ""
+"これにより、表示されている画像、再生中の音楽など、ゲームに関するすべてをゲー"
+"ムが最初から開始したかのようにリセットできます。"
+
+#: ../../source/inc/context:75
+msgid ""
+"Because of how completely this resets Ren'Py, this function immediately ends "
+"the current statement."
+msgstr ""
+"Ren'Py を完全にリセットするため、この関数は現在のステートメントを即座に終了し"
+"ます。"
+
+#: ../../source/inc/context:78
+msgid ""
+"This is mainly intended for use in an after_load label, where it can bring "
+"the game back to the state it was in when it started. It's then up to the "
+"game to re-establish the scene, music, etc, and it can then jump to the "
+"label it wants to continue at."
+msgstr ""
+"これは主に after_load ラベルでの使用を想定しており、ゲームを開始時の状態に戻"
+"せます。その後、シーンや音楽などを再構築して続行したいラベルにジャンプできま"
+"す。"
+
+#~ msgid ""
+#~ "Pops the current call from the call stack, without returning to the "
+#~ "location."
+#~ msgstr ""
+#~ "コールスタックから現在の呼び出しをポップしますが、呼び出し元には返りませ"
+#~ "ん。"
 
 #~ msgid ""
 #~ "If it exists, this label is called when a game is loaded. It can be use "

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-20 02:19+0900\n"
+"POT-Creation-Date: 2023-08-21 21:37+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #: ../../source/screen_actions.rst:3
 msgid "Screen Actions, Values, and Functions"
-msgstr "Screen Actions, Values, Functions"
+msgstr "Screen Actions, Values, and Functions"
 
 #: ../../source/screen_actions.rst:5
 msgid ""
@@ -547,10 +547,10 @@ msgstr "ShowMenu(\"stats\")"
 #: ../../source/inc/menu_action:50
 msgid ""
 "ShowMenu without an argument will enter the game menu at the default screen, "
-"taken from _game_menu_screen."
+"taken from :var:`_game_menu_screen`."
 msgstr ""
-"引数なしの ShowMenu は _game_menu_screenから受け取ったデフォルトのゲームメ"
-"ニューには入ります。"
+"引数なしの ShowMenu は :var:`_game_menu_screen` から所得されるデフォルトの"
+"ゲームメニューには入ります。"
 
 #: ../../source/inc/menu_action:53
 msgid "Extra arguments and keyword arguments are passed on to the screen"
@@ -601,7 +601,7 @@ msgstr ""
 
 #: ../../source/screen_actions.rst:61 ../../source/inc/file_action:15
 #: ../../source/inc/file_action:31 ../../source/inc/file_action:49
-#: ../../source/inc/file_action:124 ../../source/inc/file_action_function:100
+#: ../../source/inc/file_action:124 ../../source/inc/file_action_function:117
 #: ../../source/inc/input_value:44
 msgid "`page`"
 msgstr "`page`"
@@ -678,7 +678,7 @@ msgstr ""
 "ファイルがロードされるページです。 None の場合、現在のページが使用されます。"
 
 #: ../../source/inc/file_action:33 ../../source/inc/file_action:57
-#: ../../source/inc/file_action:132 ../../source/inc/file_action_function:71
+#: ../../source/inc/file_action:132 ../../source/inc/file_action_function:88
 msgid "`slot`"
 msgstr "`slot`"
 
@@ -750,7 +750,7 @@ msgstr ""
 "に戻ります。"
 
 #: ../../source/inc/file_action:79 ../../source/inc/file_action:99
-#: ../../source/inc/file_action_function:77 ../../source/inc/input_value:37
+#: ../../source/inc/file_action_function:94 ../../source/inc/input_value:37
 msgid "`auto`"
 msgstr "`auto`"
 
@@ -761,7 +761,7 @@ msgid ""
 msgstr "True かつ wrap が設定されていれば、自動セーブのページに移動します。"
 
 #: ../../source/inc/file_action:82 ../../source/inc/file_action:102
-#: ../../source/inc/file_action_function:80 ../../source/inc/input_value:40
+#: ../../source/inc/file_action_function:97 ../../source/inc/input_value:40
 msgid "`quick`"
 msgstr "`quick`"
 
@@ -1148,9 +1148,8 @@ msgid ""
 msgstr "アクションの有効選択状態は `yes` アクションのそれらに合致します。"
 
 #: ../../source/inc/other_action:20
-msgid "See :func:`layout.yesno_screen` for a function version of this action."
-msgstr ""
-"このアクションの関数版は :func:`layout.yesno_screen` を参照してください。"
+msgid "See :func:`renpy.confirm` for a function version of this action."
+msgstr "このアクションの関数版は :func:`renpy.confirm` を参照してください。"
 
 #: ../../source/inc/other_action:24
 msgid ""
@@ -2786,7 +2785,53 @@ msgstr ""
 ":var:`config.save_json_callbacks` を使用して登録されたコールバックによりその"
 "ような Json はセーブスロットに追加されます。"
 
-#: ../../source/inc/file_action_function:32
+#: ../../source/inc/file_action_function:30
+msgid "By default, the following keys are defined:"
+msgstr "デフォルトでは、以下のキーが定義されています :"
+
+#: ../../source/inc/file_action_function:33
+msgid "`_save_name`"
+msgstr "`_save_name`"
+
+#: ../../source/inc/file_action_function:33
+msgid "The value of :var:`save_name` when the game was saved."
+msgstr "ゲームが保存されたときの :var:`save_name` の値"
+
+#: ../../source/inc/file_action_function:36
+msgid "`_renpy_version`"
+msgstr "`_renpy_version`"
+
+#: ../../source/inc/file_action_function:36
+msgid "The version of Ren'Py the save was created with."
+msgstr "セーブが作成された Ren'Py のバージョン"
+
+#: ../../source/inc/file_action_function:39
+msgid "`_version`"
+msgstr "`_version`"
+
+#: ../../source/inc/file_action_function:39
+msgid "The value of :var:`config.version` when the save was created."
+msgstr "セーブが作成されたときの :var:`config.version` の値"
+
+#: ../../source/inc/file_action_function:42
+msgid "`_game_runtime`"
+msgstr "`_game_runtime`"
+
+#: ../../source/inc/file_action_function:42
+msgid "The result of calling :func:`renpy.get_game_runtime`."
+msgstr ":func:`renpy.get_game_runtime` を呼び出したときの結果です。"
+
+#: ../../source/inc/file_action_function:44
+msgid "`_ctime`"
+msgstr "`_ctime`"
+
+#: ../../source/inc/file_action_function:45
+msgid "The time the save was created, in seconds since January 1, 1970, UTC."
+msgstr ""
+"セーブが作成された時間の1970/1/1 UTCからの秒数です。The time the save was "
+"created, in seconds since January 1, 1970, UTC."
+
+#: ../../source/inc/file_action_function:49
 msgid ""
 "This is a function that returns true if the file is loadable, and false "
 "otherwise."
@@ -2794,13 +2839,13 @@ msgstr ""
 "これはファイルがロード可能であれば True を、それ以外の場合は False を返しま"
 "す。"
 
-#: ../../source/inc/file_action_function:37
+#: ../../source/inc/file_action_function:54
 msgid "Returns True if this is the newest file slot, or False otherwise."
 msgstr ""
 "これが最も新しいファイルスロットであれば True を返し、それ以外の場合は False "
 "を返します。"
 
-#: ../../source/inc/file_action_function:41
+#: ../../source/inc/file_action_function:58
 msgid ""
 "Returns the name of the current file page, as a string. If a normal page, "
 "this returns the page number. Otherwise, it returns `auto` or `quick`."
@@ -2808,7 +2853,7 @@ msgstr ""
 "現在のファイルページの名前を文字列で返します。通常のページであればページ数を"
 "返し、それ以外であれば `auto` か `quick` です。"
 
-#: ../../source/inc/file_action_function:47
+#: ../../source/inc/file_action_function:64
 msgid ""
 "Return the save_name that was in effect when the file was saved, or `empty` "
 "if the file does not exist."
@@ -2816,7 +2861,7 @@ msgstr ""
 "ファイルがセーブされたときの save_name かファイルが存在しなければ `empty` を"
 "返します。"
 
-#: ../../source/inc/file_action_function:52
+#: ../../source/inc/file_action_function:69
 msgid ""
 "Returns the screenshot associated with the given file. If the file is not "
 "loadable, then `empty` is returned, unless it's None, in which case, a Null "
@@ -2826,11 +2871,11 @@ msgstr ""
 "能なとき、None でなければ `empty` が返され、None であれば Null displayable が"
 "作成されます。"
 
-#: ../../source/inc/file_action_function:56
+#: ../../source/inc/file_action_function:73
 msgid "The return value is a displayable."
 msgstr "返す値は displayable です。"
 
-#: ../../source/inc/file_action_function:60
+#: ../../source/inc/file_action_function:77
 msgid ""
 "Returns the name of the numbered slot. This assumes that slots on normal "
 "pages are numbered in a linear order starting with 1, and that page numbers "
@@ -2841,47 +2886,47 @@ msgstr ""
 "ロットは 1 から始まる連番で、ページ番号は 1 から始まります。スロットが 2、"
 "slots_per_page が 10、その他の変数が既定値の時:"
 
-#: ../../source/inc/file_action_function:65
+#: ../../source/inc/file_action_function:82
 msgid "When the first page is showing, this returns \"2\"."
 msgstr "最初のページが表示されていると、これは「2」を返します。"
 
-#: ../../source/inc/file_action_function:66
+#: ../../source/inc/file_action_function:83
 msgid "When the second page is showing, this returns \"12\"."
 msgstr "2番目のページが表示されていると、「12」を返します。"
 
-#: ../../source/inc/file_action_function:67
+#: ../../source/inc/file_action_function:84
 msgid "When the auto page is showing, this returns \"a2\"."
 msgstr "オートページが表示されていると、「a2」を返します。"
 
-#: ../../source/inc/file_action_function:68
+#: ../../source/inc/file_action_function:85
 msgid "When the quicksave page is showing, this returns \"q2\"."
 msgstr "クイックページが表示されていると、「q2」を返します。"
 
-#: ../../source/inc/file_action_function:71
+#: ../../source/inc/file_action_function:88
 msgid "The number of the slot to access."
 msgstr "アクセスするスロットの番号"
 
-#: ../../source/inc/file_action_function:74
+#: ../../source/inc/file_action_function:91
 msgid "`slots_per_page`"
 msgstr "`slots_per_page`"
 
-#: ../../source/inc/file_action_function:74
+#: ../../source/inc/file_action_function:91
 msgid "The number of slots per page."
 msgstr "ページごとのスロット数"
 
-#: ../../source/inc/file_action_function:77
+#: ../../source/inc/file_action_function:94
 msgid "A prefix to use for the auto page."
 msgstr "オートページ用の接頭辞"
 
-#: ../../source/inc/file_action_function:80
+#: ../../source/inc/file_action_function:97
 msgid "A prefix to use for the quick page."
 msgstr "クイックページ用の接頭辞"
 
-#: ../../source/inc/file_action_function:83
+#: ../../source/inc/file_action_function:100
 msgid "`format`"
 msgstr "`format`"
 
-#: ../../source/inc/file_action_function:83
+#: ../../source/inc/file_action_function:100
 msgid ""
 "The formatting code to use. This is given two arguments: A string giving the "
 "page prefix, and an integer giving the slot number."
@@ -2889,7 +2934,7 @@ msgstr ""
 "フォーマットコードです。これは二つの引数を受け取ります。  : ページ接頭辞の文"
 "字列と、スロット番号の整数です。"
 
-#: ../../source/inc/file_action_function:88
+#: ../../source/inc/file_action_function:105
 msgid ""
 "Returns the time the file was saved, formatted according to the supplied "
 "`format`. If the file is not found, `empty` is returned."
@@ -2897,24 +2942,24 @@ msgstr ""
 "ファイルがセーブされた時間を、与えられた `format` に適用して返します。ファイ"
 "ルが見つからなければ、 `empty` が返されます。"
 
-#: ../../source/inc/file_action_function:92
+#: ../../source/inc/file_action_function:109
 msgid "The return value is a string."
 msgstr "返される値は文字列です。"
 
-#: ../../source/inc/file_action_function:96
+#: ../../source/inc/file_action_function:113
 msgid "Returns a list of used numeric file slots on the page."
 msgstr "そのページの使用済みファイルスロットのリストを返します。"
 
-#: ../../source/inc/file_action_function:99
+#: ../../source/inc/file_action_function:116
 msgid ""
 "The name of the page that will be scanned. If None, the current page is used."
 msgstr "探索されるページの名前です。 None の場合は現在のページが使用されます。"
 
-#: ../../source/inc/file_action_function:103
+#: ../../source/inc/file_action_function:120
 msgid "`highest_first`"
 msgstr "`highest_first`"
 
-#: ../../source/inc/file_action_function:103
+#: ../../source/inc/file_action_function:120
 msgid ""
 "If true, the highest-numbered file slot is listed first. Otherwise, the "
 "lowest-numbered slot is listed first."

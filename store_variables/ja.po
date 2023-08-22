@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2023-04-30 11:29+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2023-08-08 15:19+0900\n"
+"PO-Revision-Date: 2023-08-08 15:52+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/store_variables.rst:2
 msgid "Store Variables"
@@ -203,26 +203,23 @@ msgstr "ロールバックの許可を制御します。"
 
 #: ../../source/store_variables.rst:127
 msgid ""
-"A function that is called by Ren'Py to display dialogue. This is called with "
-"three arguments. The first argument (`who`) is the character saying the "
-"dialogue (or None for the narrator). The second argument (`what`) is what "
-"dialogue is being said."
+"A function that is called by Ren'Py to display dialogue, when a string is "
+"used in place of the speaking character::"
 msgstr ""
-"Ren'Py に呼び出されて台詞を表示する関数です。これは 3 つの引数で呼び出されま"
-"す。最初の引数 ( `who` ) は台詞を話すキャラクター ( ナレーターなら None を指"
-"定します ) 、2 つめの引数 (`what`) は話す内容です。"
-
-#: ../../source/store_variables.rst:132
-msgid ""
-"The third argument must be a keyword argument named `interact` and "
-"defaulting to True. If true, the say function will wait for a click. If "
-"false, it will immediately return with the dialogue displayed on the screen."
-msgstr ""
-"3 つめの引数はキーワード引数 `interact` で、デフォルトでは true です。 True "
-"なら say 関数はクリック待ちをします。 False なら即座にスクリーンに台詞を表示"
-"します。"
+"話しているキャラクター名に文字列を使用するとき、台詞の表示のために Ren'Py に"
+"呼び出される関数です。 ::"
 
 #: ../../source/store_variables.rst:136
+msgid ""
+"This function should have the same signature as :func:`renpy.say`. It should "
+"not call :func:`renpy.say` but rather use the other :doc:`say statement "
+"equivalents <statement_equivalents>`."
+msgstr ""
+"この関数は :func:`renpy.say` と同じ構成になっているべきです。 :func:`renpy."
+"say` を呼び出さず、 他の :doc:`say ステートメントに相当するもの "
+"<statement_equivalents>` を使用するべきです。"
+
+#: ../../source/store_variables.rst:140
 msgid ""
 "It's rare to call this function directly, as one can simply call a character "
 "with dialogue. This variable mostly exists to be redefined, as a way of "
@@ -232,11 +229,11 @@ msgstr ""
 "ありません。この変数はほとんど say ステートメントにフックを掛けて、再定義する"
 "ために存在します。"
 
-#: ../../source/store_variables.rst:142
+#: ../../source/store_variables.rst:146
 msgid "A save name that is included with saves."
 msgstr "セーブに含まれるセーブ名です。"
 
-#: ../../source/store_variables.rst:146
+#: ../../source/store_variables.rst:150
 msgid ""
 "If not None, this string is used in preference to :var:`config."
 "screenshot_pattern` to determine the filename of a screenshot. Please see "
@@ -246,11 +243,11 @@ msgstr ""
 "され、スクリーンショットのファイル名を決定します。文字列のフォーマット用の変"
 "数についてのドキュメントを参照してください。"
 
-#: ../../source/store_variables.rst:152
+#: ../../source/store_variables.rst:156
 msgid "Controls if skipping is allowed."
 msgstr "スキップの許可を制御します。"
 
-#: ../../source/store_variables.rst:156
+#: ../../source/store_variables.rst:160
 msgid ""
 "This is set to :var:`config.version` when a new game is started. It can be "
 "used by the ``after_load`` label or :var:`config.after_load_callbacks` to "
@@ -260,14 +257,14 @@ msgstr ""
 "``after_load`` ラベルや :var:`config.after_load_callbacks` ラベルから使用し"
 "て、必要なアップグレードに利用できます。"
 
-#: ../../source/store_variables.rst:160
+#: ../../source/store_variables.rst:164
 msgid ""
 "This is only set once, upon the initial start. After that, the game is "
 "responsible for updating _version as necessary."
 msgstr ""
 "これは初期化時に一度だけ設定され、必要に応じてバージョン更新に対応します。"
 
-#: ../../source/store_variables.rst:165
+#: ../../source/store_variables.rst:169
 msgid ""
 "This set by the ``window show`` and ``window hide`` statements, and "
 "indirectly by ``window auto``. If true, the dialogue window is shown during "
@@ -277,7 +274,7 @@ msgstr ""
 "``window auto`` ステートメントにより間接的に設定され、 True なら台詞のないス"
 "テートメントの間もウィンドウを表示します。"
 
-#: ../../source/store_variables.rst:171
+#: ../../source/store_variables.rst:175
 msgid ""
 "This is set to true by ``window auto`` and to false by ``window show`` and "
 "``window hide``. If true, the window auto behavior occurs."
@@ -286,7 +283,7 @@ msgstr ""
 "``window hide`` ステートメントにより False に設定されます。 True なら window "
 "auto モードで動作します。"
 
-#: ../../source/store_variables.rst:176
+#: ../../source/store_variables.rst:180
 msgid ""
 "This is appended to :var:`config.window_title` to produce the caption for "
 "the game window. This is automatically set to :var:`config."
@@ -295,3 +292,23 @@ msgstr ""
 "これは :var:`config.window_title` の末尾に付け足され、ゲームウィンドウのキャ"
 "プションになります。これはゲームメニューでは自動的に :var:`config."
 "menu_window_subtitle` に設定されます。"
+
+#~ msgid ""
+#~ "A function that is called by Ren'Py to display dialogue. This is called "
+#~ "with three arguments. The first argument (`who`) is the character saying "
+#~ "the dialogue (or None for the narrator). The second argument (`what`) is "
+#~ "what dialogue is being said."
+#~ msgstr ""
+#~ "Ren'Py に呼び出されて台詞を表示する関数です。これは 3 つの引数で呼び出され"
+#~ "ます。最初の引数 ( `who` ) は台詞を話すキャラクター ( ナレーターなら None "
+#~ "を指定します ) 、2 つめの引数 (`what`) は話す内容です。"
+
+#~ msgid ""
+#~ "The third argument must be a keyword argument named `interact` and "
+#~ "defaulting to True. If true, the say function will wait for a click. If "
+#~ "false, it will immediately return with the dialogue displayed on the "
+#~ "screen."
+#~ msgstr ""
+#~ "3 つめの引数はキーワード引数 `interact` で、デフォルトでは true です。 "
+#~ "True なら say 関数はクリック待ちをします。 False なら即座にスクリーンに台"
+#~ "詞を表示します。"
