@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-21 21:37+0900\n"
+"POT-Creation-Date: 2023-08-24 21:18+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -51,16 +51,22 @@ msgstr ""
 #: ../../source/screen_actions.rst:21
 msgid ""
 "A list of actions can usually be provided in lieu of a single action, in "
-"which case the actions in the list are run in order."
+"which case the actions in the list are run in order. A list of actions is "
+"sensitive if all of the actions are sensitive, and selected if any of them "
+"are ; that unless :func:`SensitiveIf` or :func:`SelectedIf`, respectively, "
+"is part of the list."
 msgstr ""
-"単独のアクションの代わりに、アクションのリストも通常渡せます。その場合、その"
-"リストのアクションが順番に実行されます。"
+"アクションのリストを1つのアクションの代わりに通常渡せます。その場合、リスト内"
+"のアクションは順番に実行されます。アクションのリストはすべてのアクションが選"
+"択可能であれば選択可能となり、アクションのどれかが選択されていれば選択されて"
+"いる状態となりますが、それぞれ :func:`SensitiveIf` または :func:`SelectedIf` "
+"がリストに含まれない場合のみです。"
 
-#: ../../source/screen_actions.rst:25
+#: ../../source/screen_actions.rst:28
 msgid "Control Actions"
 msgstr "制御用のアクション"
 
-#: ../../source/screen_actions.rst:27
+#: ../../source/screen_actions.rst:30
 msgid ""
 "These are actions that manage screens, interaction results, and control flow."
 msgstr ""
@@ -195,11 +201,11 @@ msgstr ""
 "None でなければ `transition` がスクリーンを表示または非表示するのに使用されま"
 "す。"
 
-#: ../../source/screen_actions.rst:32
+#: ../../source/screen_actions.rst:35
 msgid "Data Actions"
 msgstr "データアクション"
 
-#: ../../source/screen_actions.rst:34
+#: ../../source/screen_actions.rst:37
 msgid "These set or toggle data."
 msgstr "これらはデータを設定またトグルします。"
 
@@ -435,11 +441,11 @@ msgstr ""
 "\"hero.strength\" や \"persistent.show_cutscenes\" のようなフィールドからドッ"
 "トで分けられた変数のような名前が可能です。"
 
-#: ../../source/screen_actions.rst:39
+#: ../../source/screen_actions.rst:42
 msgid "Menu Actions"
 msgstr "メニュー用アクション"
 
-#: ../../source/screen_actions.rst:41
+#: ../../source/screen_actions.rst:44
 msgid ""
 "These actions invoke menus, or are primarily useful while in the main or "
 "game menus."
@@ -572,11 +578,11 @@ msgstr "Start() - start ラベルからスタートする。"
 msgid "Start(\"foo\") - Start at the \"foo\" label."
 msgstr "Start(\"foo\") - 「 foo 」 ラベルからスタートする。"
 
-#: ../../source/screen_actions.rst:49
+#: ../../source/screen_actions.rst:52
 msgid "File Actions"
 msgstr "ファイルアクション"
 
-#: ../../source/screen_actions.rst:51
+#: ../../source/screen_actions.rst:54
 msgid ""
 "These actions handle saving, loading, and deleting of files. Many of these "
 "take the `name` and `page` arguments."
@@ -584,14 +590,14 @@ msgstr ""
 "これらのアクションはセーブ、ロード、ファイルの削除を扱い、多くは `name` や "
 "`page` 引数を受け取ります。"
 
-#: ../../source/screen_actions.rst:56 ../../source/inc/file_action:11
+#: ../../source/screen_actions.rst:59 ../../source/inc/file_action:11
 #: ../../source/inc/file_action:24 ../../source/inc/file_action:42
 #: ../../source/inc/file_action:114 ../../source/inc/focus_action:15
 #: ../../source/inc/focus_action:31 ../../source/inc/focus_action:40
 msgid "`name`"
 msgstr "`name`"
 
-#: ../../source/screen_actions.rst:55
+#: ../../source/screen_actions.rst:58
 msgid ""
 "The name of the file to save to. This can be a string or an integer. It's "
 "combined with the page to create the filename."
@@ -599,14 +605,14 @@ msgstr ""
 "セーブするファイルの名前。これは文字列か整数です。ファイルの名前を作成するた"
 "めに pageと結合されます。"
 
-#: ../../source/screen_actions.rst:61 ../../source/inc/file_action:15
+#: ../../source/screen_actions.rst:64 ../../source/inc/file_action:15
 #: ../../source/inc/file_action:31 ../../source/inc/file_action:49
 #: ../../source/inc/file_action:124 ../../source/inc/file_action_function:117
 #: ../../source/inc/input_value:44
 msgid "`page`"
 msgstr "`page`"
 
-#: ../../source/screen_actions.rst:59
+#: ../../source/screen_actions.rst:62
 msgid ""
 "The page that this action acts on. This is one of \"auto\", \"quick\", or a "
 "positive integer. If None, the page is determined automatically, based on a "
@@ -616,7 +622,7 @@ msgstr ""
 "いずれかです。 None の場合、 persistent._file_page に基づき自動的に決定されま"
 "す。"
 
-#: ../../source/screen_actions.rst:63
+#: ../../source/screen_actions.rst:66
 msgid ""
 "These are converted to a slot name using :var:`config."
 "file_slotname_callback`, if it's set."
@@ -870,7 +876,7 @@ msgstr "クイックセーブが終了するとユーザーに表示されるメ
 msgid "Set to true to mark the quicksave as the newest save."
 msgstr "最新のセーブとしてクイックセーブをマークする場合は True に設定します。"
 
-#: ../../source/screen_actions.rst:69
+#: ../../source/screen_actions.rst:72
 msgid "Sync Actions"
 msgstr "同期アクション"
 
@@ -888,11 +894,11 @@ msgstr ""
 "このアクションは最も最近のセーブを Ren'Py 同期サーバーにアップロードするプロ"
 "セスを開始します。"
 
-#: ../../source/screen_actions.rst:77
+#: ../../source/screen_actions.rst:80
 msgid "Audio Actions"
 msgstr "オーディオアクション"
 
-#: ../../source/screen_actions.rst:79
+#: ../../source/screen_actions.rst:82
 msgid ""
 "The concept of channels and how they work, as well as most information about "
 "audio in Ren'Py, is explained at :doc:`audio`."
@@ -1041,7 +1047,7 @@ msgstr "その他のキーワード引数は :func:`renpy.music.stop` に渡さ�
 msgid "Toggles the mute status of one or more mixers."
 msgstr "ひとつ以上のミキサーのミュート状態をトグルします。"
 
-#: ../../source/screen_actions.rst:86
+#: ../../source/screen_actions.rst:89
 msgid "Focus Actions"
 msgstr "フォーカスアクション"
 
@@ -1103,11 +1109,11 @@ msgid "If the focus rectangle exists, clears it, otherwise captures it."
 msgstr ""
 "フォーカスされた矩形があればそれをクリアし、そうでなければそれを保存します。"
 
-#: ../../source/screen_actions.rst:91
+#: ../../source/screen_actions.rst:94
 msgid "Other Actions"
 msgstr "その他のアクション"
 
-#: ../../source/screen_actions.rst:93
+#: ../../source/screen_actions.rst:96
 msgid "These are other actions, not found anywhere else."
 msgstr "他に分類されないその他のアクションがあります。"
 
@@ -1498,7 +1504,7 @@ msgstr "True ならスキップを開始する前に確認します。"
 msgid "Causes `transition` to occur."
 msgstr "`transition` を実行します。"
 
-#: ../../source/screen_actions.rst:97
+#: ../../source/screen_actions.rst:100
 msgid ""
 "Additional actions are available in other pages of this documentation, such "
 "as :class:`Language`, :class:`Replay` and :class:`EndReplay`, :class:`gui."
@@ -1510,15 +1516,15 @@ msgstr ""
 "TogglePreference`, :class:`StylePreference`, :ref:`voice actions <voice-"
 "actions>` のような他のアクションも参照可能です。"
 
-#: ../../source/screen_actions.rst:102
+#: ../../source/screen_actions.rst:105
 msgid "Other actions can be created using the :class:`Action` class."
 msgstr "他のアクションも :class:`Action` クラスを使用して作成できます。"
 
-#: ../../source/screen_actions.rst:108
+#: ../../source/screen_actions.rst:111
 msgid "Bar Values"
 msgstr "Bar Values"
 
-#: ../../source/screen_actions.rst:110
+#: ../../source/screen_actions.rst:113
 msgid ""
 "Bar values are used with bars, to set the bar value, and to allow the bar to "
 "adjust an underlying property. To create a new bar value, subclass the :"
@@ -1767,11 +1773,11 @@ msgstr ""
 "value です。その viewport はこの value のバーの定義前に定義されなければいけま"
 "せん。"
 
-#: ../../source/screen_actions.rst:121
+#: ../../source/screen_actions.rst:124
 msgid "Input Values"
 msgstr "Input Values"
 
-#: ../../source/screen_actions.rst:123
+#: ../../source/screen_actions.rst:126
 msgid ""
 "Input values are used with text inputs, to set the default text, to accept "
 "changed text, to respond to the enter key, and to determine if the text is "
@@ -1783,7 +1789,7 @@ msgstr ""
 "か設定します。新しい input value を作成するには :class:`InputValue` のサブク"
 "ラスを作成してください。"
 
-#: ../../source/screen_actions.rst:128
+#: ../../source/screen_actions.rst:131
 msgid ""
 "Ren'Py-defined input values inherit from InputValue, which means that all "
 "values also include Enable(), Disable(), and Toggle() methods that return "
@@ -1874,19 +1880,19 @@ msgstr "更新する変数の名前の文字列"
 msgid "An input value that updates `variable`."
 msgstr "`variable` を更新する input value です。"
 
-#: ../../source/screen_actions.rst:137
+#: ../../source/screen_actions.rst:140
 msgid "Functions and Classes"
 msgstr "関数とクラス"
 
-#: ../../source/screen_actions.rst:139
+#: ../../source/screen_actions.rst:142
 msgid "These functions and classes are useful in association with screens."
 msgstr "これらの関数やクラスはスクリーンと連携させると便利です。"
 
-#: ../../source/screen_actions.rst:142
+#: ../../source/screen_actions.rst:145
 msgid "Preferences"
 msgstr "Preferences"
 
-#: ../../source/screen_actions.rst:144
+#: ../../source/screen_actions.rst:147
 msgid ""
 "While all preferences can be defined based on the Actions and Values given "
 "above, it requires some knowledge of Ren'Py to figure out the correct one to "
@@ -2693,11 +2699,11 @@ msgstr ""
 "ボイスタグに関連付けられたボリュームを、 `voice` チャンネル用のミキサーボ"
 "リュームの音量に対する割合として0.0から1.0の数値で返します。"
 
-#: ../../source/screen_actions.rst:155
+#: ../../source/screen_actions.rst:158
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: ../../source/screen_actions.rst:157
+#: ../../source/screen_actions.rst:160
 msgid "These functions and actions work with the gamepad."
 msgstr "これらの関数とアクションはゲームパッドで動作します。"
 
@@ -2720,11 +2726,11 @@ msgid ""
 "true."
 msgstr ":var:`config.developer` が True である間常に True を返します。"
 
-#: ../../source/screen_actions.rst:162
+#: ../../source/screen_actions.rst:165
 msgid "File Functions"
 msgstr "ファイル関数"
 
-#: ../../source/screen_actions.rst:164
+#: ../../source/screen_actions.rst:167
 msgid ""
 "These functions return useful information about files. They use the same "
 "default page as the file actions."
@@ -2967,11 +2973,11 @@ msgstr ""
 "True の場合、数字の大きなファイルスロットから最初にリストアップされます。そう"
 "でなけらば小さな数字のスロットから最初にリストアップされます。"
 
-#: ../../source/screen_actions.rst:170
+#: ../../source/screen_actions.rst:173
 msgid "Side Image Functions"
 msgstr "サイドイメージ関数"
 
-#: ../../source/screen_actions.rst:172
+#: ../../source/screen_actions.rst:175
 msgid "This function returns the side image to use."
 msgstr "この関数は使用するサイドイメージを返します。"
 
@@ -2983,7 +2989,7 @@ msgstr ""
 "現在話しているキャラクターに対応するサイドイメージか、そのようなサイドイメー"
 "ジが存在しない場合は Null displayable を返します。"
 
-#: ../../source/screen_actions.rst:177
+#: ../../source/screen_actions.rst:180
 msgid "Other Functions"
 msgstr "その他の関数"
 
@@ -2998,11 +3004,11 @@ msgstr ""
 "リーンによって含まれたスクリーンの場合、これは含まれているスクリーンの名前で"
 "はなく、含んでいる側のスクリーン名を返します。"
 
-#: ../../source/screen_actions.rst:184
+#: ../../source/screen_actions.rst:187
 msgid "Tooltips"
 msgstr "Tooltip"
 
-#: ../../source/screen_actions.rst:186
+#: ../../source/screen_actions.rst:189
 msgid ""
 "Tooltips can now be accessed by the ``tooltip`` property available on all "
 "displayables, and the GetTooltip function. The GetTooltip function returns "
@@ -3012,7 +3018,7 @@ msgstr ""
 "GetTooltip 関数からアクセス可能になりました。 GetTooltip 関数はその "
 "displayable がフォーカスを得たとき、その tooltip プロパティーの値を返します。"
 
-#: ../../source/screen_actions.rst:191
+#: ../../source/screen_actions.rst:194
 msgid ""
 "As a reminder, values passed to the ``tooltip`` property must support "
 "equality."
@@ -3020,11 +3026,11 @@ msgstr ""
 "注意して欲しいのですが、 ``tooltip`` プロパティーに渡された値は比較をサポート"
 "しなければいけません。"
 
-#: ../../source/screen_actions.rst:194
+#: ../../source/screen_actions.rst:197
 msgid "Here's an example::"
 msgstr "例 ::"
 
-#: ../../source/screen_actions.rst:219
+#: ../../source/screen_actions.rst:222
 msgid ""
 "The :ref:`sl-nearrect` displayable can be used to display \"popup-style\" "
 "tooltips, and has support for a special \"tooltip\" focus name, that is set "
@@ -3060,17 +3066,17 @@ msgid ""
 "If true, returns the last non-None value this function would have returned."
 msgstr "True なら、この関数が返した最後の None でない値を返します。"
 
-#: ../../source/screen_actions.rst:265
+#: ../../source/screen_actions.rst:268
 msgid "Legacy"
 msgstr "Legacy"
 
-#: ../../source/screen_actions.rst:267
+#: ../../source/screen_actions.rst:270
 msgid ""
 "This has been obsoleted by the above, but you might see it in older projects."
 msgstr ""
 "これらは上述のものより旧来のものです。古いプロジェクトで見かけるでしょう。"
 
-#: ../../source/screen_actions.rst:269
+#: ../../source/screen_actions.rst:272
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 "Tooltip クラスはあるボタンの上にマウスが入ると、スクリーンを変更します。"
@@ -3107,7 +3113,7 @@ msgstr ""
 "す。ボタンがフォーカスを失うとこの Tooltip の value フィールドはデフォルトに"
 "戻ります。"
 
-#: ../../source/screen_actions.rst:273
+#: ../../source/screen_actions.rst:276
 msgid ""
 "When using a tooltip with a screen, the usual behavior is to create a "
 "tooltip object in a default statement. The value of the tooltip and the "
@@ -3120,7 +3126,7 @@ msgstr ""
 "スクリーンに使用されます。スクリーンでの使用順は問題にはなりません。 -  "
 "Action の前に値を利用することも可能です。"
 
-#: ../../source/screen_actions.rst:279
+#: ../../source/screen_actions.rst:282
 msgid ""
 "Tooltips can take on any value. While in the example below we use the text "
 "statement to display a string on the screen, it's also possible to use the "
@@ -3129,6 +3135,13 @@ msgstr ""
 "Tooltip はどんな値も受け取れます。以下の例ではスクリーンに文字を表示するため "
 "text ステートメントを使用していますが、 add ステートメントによって "
 "displayable を追加することも可能です。さらに複雑な動作も可能です。"
+
+#~ msgid ""
+#~ "A list of actions can usually be provided in lieu of a single action, in "
+#~ "which case the actions in the list are run in order."
+#~ msgstr ""
+#~ "単独のアクションの代わりに、アクションのリストも通常渡せます。その場合、そ"
+#~ "のリストのアクションが順番に実行されます。"
 
 #~ msgid ""
 #~ "If a screen named ``help`` is defined, that screen is displayed using :"
