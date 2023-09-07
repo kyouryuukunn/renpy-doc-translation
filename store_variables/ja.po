@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-08 15:19+0900\n"
-"PO-Revision-Date: 2023-08-08 15:52+0900\n"
+"POT-Creation-Date: 2023-09-02 10:24+0900\n"
+"PO-Revision-Date: 2023-09-02 11:16+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -102,6 +102,18 @@ msgstr ""
 "の終了で元の値に戻ります。"
 
 #: ../../source/store_variables.rst:54
+#, fuzzy
+msgid ""
+"Determines if the game performs a greedy rollback after a load. A greedy "
+"rollback will rollback to just after the last statement that interacted, "
+"rather than to just before the statement that the game was in during the "
+"load."
+msgstr ""
+"ゲームがロード後に greedy rollback を実行するかどうかを決定します。 greedy "
+"ロールバックは、ゲームのロード中にインタラクションをもつ最後のステートメント"
+"の直後にロールバックします。"
+
+#: ../../source/store_variables.rst:61
 msgid ""
 "If true, Ren'Py will record dialogue history when a line is shown. (Note "
 "that :var:`config.history_length` must be set as well.)"
@@ -109,7 +121,7 @@ msgstr ""
 "True なら、 Ren'Py は行が表示されたときにダイアログの履歴を録ります (:var:"
 "`config.history_length` も同様に設定すべきことに注意してください)。"
 
-#: ../../source/store_variables.rst:59
+#: ../../source/store_variables.rst:66
 msgid ""
 "This is a list of history objects, corresponding to each line of history "
 "from oldest to newest. See the :doc:`History <history>` section for more "
@@ -118,7 +130,7 @@ msgstr ""
 "これは履歴のリストで、古いもの順に履歴の各行に対応しています。詳細は :doc:"
 "`History <history>` を参照してください。"
 
-#: ../../source/store_variables.rst:65
+#: ../../source/store_variables.rst:72
 msgid ""
 "When this is not None, it's an action that is run after clicking Ignore on "
 "the error handling screen. The action is usually :func:`Jump`, to jump the "
@@ -130,7 +142,7 @@ msgstr ""
 "`Jump` アクションです。 None なら、次の Ren'Py ステートメントに制御は続きま"
 "す。"
 
-#: ../../source/store_variables.rst:72
+#: ../../source/store_variables.rst:79
 msgid ""
 "Ren'Py sets this variable to True while in the main menu. This can be used "
 "to have screens display differently while in the main menu."
@@ -138,7 +150,7 @@ msgstr ""
 "Ren'Py はメインメニューにいる間この変数を True に設定します。これはメインメ"
 "ニューでは違うスクリーンを表示するために使用出来ます。"
 
-#: ../../source/store_variables.rst:77
+#: ../../source/store_variables.rst:84
 msgid ""
 "Ren'Py sets this variable to True when entering a main menu or game menu "
 "context."
@@ -146,7 +158,7 @@ msgstr ""
 "Ren'Py はメインメニューやゲームメニューコンテキストにいる間この変数を True に"
 "設定します。"
 
-#: ../../source/store_variables.rst:82
+#: ../../source/store_variables.rst:89
 msgid ""
 "The function that's called to display the in-game menu. It should take the "
 "same arguments as :func:`renpy.display_menu`, and pass unknown keyword "
@@ -157,7 +169,7 @@ msgstr ""
 "とり、未知のキーワード引数は変更せずに渡すべきです。 :func:`nvl_menu` をこれ"
 "に代入すれば NVL モードで選択肢を表示します。"
 
-#: ../../source/store_variables.rst:88
+#: ../../source/store_variables.rst:95
 msgid ""
 "Controls if the mouse is visible. This is automatically set to true when "
 "entering the standard game menus."
@@ -165,7 +177,7 @@ msgstr ""
 "マウスの表示を制御します。これは標準的なゲームメニューに入ると自動的に True "
 "に設定されます。"
 
-#: ../../source/store_variables.rst:93
+#: ../../source/store_variables.rst:100
 msgid ""
 "This is a template character that is used when a string is given as the "
 "character name in a say statement. This::"
@@ -173,15 +185,15 @@ msgstr ""
 "say ステートメントで文字列でキャラクター名が指定された時に使用されるテンプ"
 "レートキャラクターです。 ::"
 
-#: ../../source/store_variables.rst:98 ../../source/store_variables.rst:112
+#: ../../source/store_variables.rst:105 ../../source/store_variables.rst:119
 msgid "is equivalent to::"
 msgstr "これは ``temp_char`` 変数が使用されない点を除いて次と等しいです::"
 
-#: ../../source/store_variables.rst:103
+#: ../../source/store_variables.rst:110
 msgid "except that the ``temp_char`` variable is not used."
 msgstr "　"
 
-#: ../../source/store_variables.rst:107
+#: ../../source/store_variables.rst:114
 msgid ""
 "This is the character that speaks narration (say statements that do not give "
 "a character or character name). This::"
@@ -189,7 +201,7 @@ msgstr ""
 "ナレーション ( キャラクターやキャラクター名を指定しない say ステートメント ) "
 "を話すキャラクターです。 ::"
 
-#: ../../source/store_variables.rst:118
+#: ../../source/store_variables.rst:125
 msgid ""
 "If not None, this should be a string giving the name of a file slot. When "
 "Ren'Py quits, the game will be saved in this slot."
@@ -197,11 +209,11 @@ msgstr ""
 "None またはファイルスロットの文字列です。Ren'Py 終了時、ゲームはこのスロット"
 "にセーブされます。"
 
-#: ../../source/store_variables.rst:123
+#: ../../source/store_variables.rst:130
 msgid "Controls if rollback is allowed."
 msgstr "ロールバックの許可を制御します。"
 
-#: ../../source/store_variables.rst:127
+#: ../../source/store_variables.rst:134
 msgid ""
 "A function that is called by Ren'Py to display dialogue, when a string is "
 "used in place of the speaking character::"
@@ -209,7 +221,7 @@ msgstr ""
 "話しているキャラクター名に文字列を使用するとき、台詞の表示のために Ren'Py に"
 "呼び出される関数です。 ::"
 
-#: ../../source/store_variables.rst:136
+#: ../../source/store_variables.rst:143
 msgid ""
 "This function should have the same signature as :func:`renpy.say`. It should "
 "not call :func:`renpy.say` but rather use the other :doc:`say statement "
@@ -219,7 +231,7 @@ msgstr ""
 "say` を呼び出さず、 他の :doc:`say ステートメントに相当するもの "
 "<statement_equivalents>` を使用するべきです。"
 
-#: ../../source/store_variables.rst:140
+#: ../../source/store_variables.rst:147
 msgid ""
 "It's rare to call this function directly, as one can simply call a character "
 "with dialogue. This variable mostly exists to be redefined, as a way of "
@@ -229,11 +241,11 @@ msgstr ""
 "ありません。この変数はほとんど say ステートメントにフックを掛けて、再定義する"
 "ために存在します。"
 
-#: ../../source/store_variables.rst:146
+#: ../../source/store_variables.rst:153
 msgid "A save name that is included with saves."
 msgstr "セーブに含まれるセーブ名です。"
 
-#: ../../source/store_variables.rst:150
+#: ../../source/store_variables.rst:157
 msgid ""
 "If not None, this string is used in preference to :var:`config."
 "screenshot_pattern` to determine the filename of a screenshot. Please see "
@@ -243,11 +255,11 @@ msgstr ""
 "され、スクリーンショットのファイル名を決定します。文字列のフォーマット用の変"
 "数についてのドキュメントを参照してください。"
 
-#: ../../source/store_variables.rst:156
+#: ../../source/store_variables.rst:163
 msgid "Controls if skipping is allowed."
 msgstr "スキップの許可を制御します。"
 
-#: ../../source/store_variables.rst:160
+#: ../../source/store_variables.rst:167
 msgid ""
 "This is set to :var:`config.version` when a new game is started. It can be "
 "used by the ``after_load`` label or :var:`config.after_load_callbacks` to "
@@ -257,14 +269,14 @@ msgstr ""
 "``after_load`` ラベルや :var:`config.after_load_callbacks` ラベルから使用し"
 "て、必要なアップグレードに利用できます。"
 
-#: ../../source/store_variables.rst:164
+#: ../../source/store_variables.rst:171
 msgid ""
 "This is only set once, upon the initial start. After that, the game is "
 "responsible for updating _version as necessary."
 msgstr ""
 "これは初期化時に一度だけ設定され、必要に応じてバージョン更新に対応します。"
 
-#: ../../source/store_variables.rst:169
+#: ../../source/store_variables.rst:176
 msgid ""
 "This set by the ``window show`` and ``window hide`` statements, and "
 "indirectly by ``window auto``. If true, the dialogue window is shown during "
@@ -274,7 +286,7 @@ msgstr ""
 "``window auto`` ステートメントにより間接的に設定され、 True なら台詞のないス"
 "テートメントの間もウィンドウを表示します。"
 
-#: ../../source/store_variables.rst:175
+#: ../../source/store_variables.rst:182
 msgid ""
 "This is set to true by ``window auto`` and to false by ``window show`` and "
 "``window hide``. If true, the window auto behavior occurs."
@@ -283,7 +295,7 @@ msgstr ""
 "``window hide`` ステートメントにより False に設定されます。 True なら window "
 "auto モードで動作します。"
 
-#: ../../source/store_variables.rst:180
+#: ../../source/store_variables.rst:187
 msgid ""
 "This is appended to :var:`config.window_title` to produce the caption for "
 "the game window. This is automatically set to :var:`config."
