@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-08 19:46+0900\n"
-"PO-Revision-Date: 2023-09-02 11:17+0900\n"
+"PO-Revision-Date: 2023-09-10 16:43+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -27,9 +27,8 @@ msgid "*There is also a list of* :doc:`incompatible changes <incompatible>`"
 msgstr "また、 :doc:`非互換の変更 <incompatible>` のリスト変更もあります。"
 
 #: ../../source/changelog.rst:12
-#, fuzzy
 msgid "8.1.2 / 7.6.2"
-msgstr "8.1.1 / 7.6.1"
+msgstr "8.1.2 / 7.6.2"
 
 #: ../../source/changelog.rst:15 ../../source/changelog.rst:1911
 #: ../../source/changelog.rst:3111 ../../source/changelog.rst:3504
@@ -47,6 +46,9 @@ msgid ""
 "do not end with /. (For example, \"renpy.app\" will match the renpy.app "
 "directory."
 msgstr ""
+":func:`renpy.classify` を使用する場合、ディレクトリが /. で終わらないパターン"
+"にマッチするようになりました（例えば、 \"renpy.app\" は renpy.app ディレクト"
+"リーにマッチします）。"
 
 #: ../../source/changelog.rst:23
 msgid ""
@@ -54,6 +56,9 @@ msgid ""
 "should be continued or restarted. This means a transform will restart if "
 "global variables it uses are changed."
 msgstr ""
+"ATL が変更され、 transform を継続するか再始動するかを決定するのに詳細な比較を"
+"するようになりました。つまりその transform が使用するグローバル変数が変更され"
+"た場合、 transform が再始動されます。"
 
 #: ../../source/changelog.rst:27
 msgid ""
@@ -61,6 +66,9 @@ msgid ""
 "focus. This was rarely used, and the style change could cause drags to be "
 "slow or missed."
 msgstr ""
+"viewport の子のスタイルが drag のフォーカスを得たときに変わらなくなりました。"
+"これは滅多に使用されませんでしたが、スタイルの変更により drag が遅くなったり"
+"失敗することがありました。"
 
 #: ../../source/changelog.rst:31
 msgid ""
@@ -68,18 +76,26 @@ msgid ""
 "that interacted to the user. (Previously, it would roll back to the start of "
 "the current statement.) This makes rollback on load match other rollbacks."
 msgstr ""
+"ロード時に、ユーザーとのインタラクションがある最後のステートメントの後にゲー"
+"ムがロールバックされるようになりました(以前は現在のステートメントの開始にロー"
+"ルバックしていました)。これによりロードによるロールバックが他のロールバックと"
+"一致するようになりました。"
 
 #: ../../source/changelog.rst:35
 msgid ""
 "The :func:`_autosave` variable now takes precedence over forced autosaves, "
 "including those on quit and at choice menus."
 msgstr ""
+":func:`_autosave` 変数が、終了時や選択肢を含む強制自動保存よりも優先されるよ"
+"うになりました。"
 
 #: ../../source/changelog.rst:38
 msgid ""
 "PYTHON* variables are filtered from the environment when launching a Ren'Py "
 "project from the launcher."
 msgstr ""
+"PYTHON* 変数は、ランチャーから Ren'Py プロジェクトを起動するときに環境変数か"
+"らフィルタリングされます。"
 
 #: ../../source/changelog.rst:41
 msgid ""
@@ -87,36 +103,48 @@ msgid ""
 "notificatons are fully spoken to the player, even if the notification window "
 "fades away."
 msgstr ""
+"セルフボイシングモードでは、Ren'Pyはたとえ通知ウィンドウが消えても、セルフボ"
+"イシング通知がプレーヤーに完全に伝わるようにしました。"
 
 #: ../../source/changelog.rst:45
 msgid ""
 "Self voicing now speaks screens closer to the player before those further "
 "away from the player."
 msgstr ""
+"セルフボイシングは、プレイヤーに近いスクリーンを、プレイヤーから遠いスクリー"
+"ンより先に話すようになりました。"
 
 #: ../../source/changelog.rst:48
 msgid ""
 ":func:`Frame` will ensure that the frames it draws are at least one pixel in "
 "size in both dimensions."
 msgstr ""
+":func:`Frame` は、描画するフレームが両方の次元で少なくとも1ピクセルの大きさで"
+"あることを保証するようになりました。"
 
 #: ../../source/changelog.rst:51
+#, fuzzy
 msgid ""
 ":func:`renpy.pause` can now roll forward to calls and jumps from screens."
 msgstr ""
+":func:`renpy.pause` の screen からの呼び出しとジャンプにをロールフォワードで"
+"きるようになった。"
 
 #: ../../source/changelog.rst:53
 msgid "On the web browser, the Window preference now disables fullscreen mode."
 msgstr ""
+"web ブラウザでは、 window preference のフルスクリーンモードが無効になりまし"
+"た。"
 
 #: ../../source/changelog.rst:55
 msgid "It is now possible to bind mouse buttons to skipping."
-msgstr ""
+msgstr "スキップ中はマウスボタンを隠せるようになりました。"
 
 #: ../../source/changelog.rst:57
 msgid ""
 "MMX acceleration for video playback has been re-enabled on Windows and Linux."
 msgstr ""
+"ビデオ再生の MMX アクセラレーターが Windows と Linux で再度有効になりました。"
 
 #: ../../source/changelog.rst:61 ../../source/changelog.rst:113
 #: ../../source/changelog.rst:883 ../../source/changelog.rst:999
@@ -132,62 +160,73 @@ msgid "Fixes"
 msgstr "修正"
 
 #: ../../source/changelog.rst:63
-#, fuzzy
 msgid "Problems with the web port entering fullscreen mode have been fixed."
-msgstr "Steamの統計情報を取得・設定する際の不具合を修正しました。"
+msgstr "web 版でのフルスクリーン化の問題を修正しました。"
 
 #: ../../source/changelog.rst:65
 msgid ""
 "The Ren'Py 8 launcher can now launch games on Windows systems where the path "
 "to Ren'Py is not representable in the system encoding."
 msgstr ""
+"Ren'Py 8 ランチャーはシステムエンコーディングで表現できないパスにあっても "
+"Windows でゲームを起動できるようになりました。"
 
 #: ../../source/changelog.rst:68
 msgid ""
 "The functionality to import Python from the game/ directory has been "
 "improved to better comply with Python's PEP 302."
 msgstr ""
+"game/ ディレクトリーから Python をインポートする機能が改善され、 Python の "
+"PEP 302 への遵守が改善されました。"
 
 #: ../../source/changelog.rst:71
 msgid ""
 ":func:`GamepadExist` now works as documented. As a byproduct of this fix, "
 "the gamepad screen will be displayed in Help when in developer mode."
 msgstr ""
+":func:`GamepadExist` がドキュメントの記載どおりに動作するようになりました。こ"
+"の修正の副作用として、開発者モードで gamepad screen が Help に表示されるよう"
+"になりました。"
 
 #: ../../source/changelog.rst:74
+#, fuzzy
 msgid ""
 "An issue analyzing nested comprehensions in screen has been fixed, fixing a "
 "case where nested comprehensions could cause default variables to not be "
 "available."
-msgstr ""
+msgstr "スクリーンのネストされた包括性の"
 
 #: ../../source/changelog.rst:78
 msgid ""
 "Viewport inertia continues even if the interaction restarts during the "
 "animation."
 msgstr ""
+"アニメーション中にインタラクションが再開しても viewport の惰性が続くようにな"
+"りました。"
 
 #: ../../source/changelog.rst:81
 msgid ""
 "The if_changed clause to ``play`` (and :func:`renpy.music.play`) now "
 "considers and preserves looping."
 msgstr ""
+"``play`` (および :func:`renpy.music.play`) への if_changed 節がループを考慮し"
+"て維持するようになりました。"
 
 #: ../../source/changelog.rst:84
 msgid "VS Code launch has been fixed on Linux."
-msgstr ""
+msgstr "Linuxでの VS Code の起動が修正されました。"
 
 #: ../../source/changelog.rst:86
-#, fuzzy
 msgid "Several crashes on the web port of Ren'Py 7 have been fixed."
-msgstr ""
-"Ren'Py 8 でアプリ内課金(IAP)を妨げていたいくつかの問題が修正されました。"
+msgstr "Ren'Py 7 でのいくつかのクラッシュが修正されました。"
 
 #: ../../source/changelog.rst:88
 msgid ""
 "Movie functions now ensure the relevant channels exist before playing. This "
 "can fix issue caused by loading a Movie from a save file."
 msgstr ""
+"Movie 関数は再生前に関連するチャンネルの存在を保証するようになりました。これ"
+"によりセーブファイルから Movie をロードしたときの問題を修正できます。"
 
 #: ../../source/changelog.rst:97
 msgid "8.1.1 / 7.6.1"
@@ -332,17 +371,16 @@ msgstr ""
 "トを使用してすべての preference を変更できます。"
 
 #: ../../source/changelog.rst:160
-#, fuzzy
 msgid ""
 "The absolute type, used to represent absolute amounts of pixels, now ensures "
 "the result of mathematically operations with integers and floats remain "
 "absolutes. This fixes a class of problems where operations performed on "
 "absolutes could produce the incorrect type, leasing to layout problems."
 msgstr ""
-":term:`absolute <position>` 型はピクセルの絶対量を表現するのに使用されていま"
-"したが、整数と浮動小数を伴う数学的処理の結果がabsolute 型のままであるようにし"
-"ました。これにより、絶対値に対する演算が不正な型を生成し、レイアウトの問題を"
-"引き起こすという問題が修正された。"
+"absolute 型はピクセルの絶対量を表現するのに使用されていましたが、整数と浮動小"
+"数を伴う数学的処理の結果がabsolute 型のままであるようにしました。これにより、"
+"絶対値に対する演算が不正な型を生成し、レイアウトの問題を引き起こすという問題"
+"が修正された。"
 
 #: ../../source/changelog.rst:166
 msgid ""
