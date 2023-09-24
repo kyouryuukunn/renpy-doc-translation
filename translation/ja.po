@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-20 21:53+0900\n"
+"POT-Creation-Date: 2023-09-24 23:21+0900\n"
 "PO-Revision-Date: 2023-04-30 11:59+0900\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -634,6 +634,22 @@ msgstr "翻訳に関連したアクション、関数、変数"
 msgid "The main way to switch languages is with the Language action."
 msgstr "言語を切り替える主な方法は、Language アクションの使用です。"
 
+#: ../../source/inc/language_action:5
+msgid "Changes the language of the game to `language`."
+msgstr "ゲームの言語を `language` に変更します。"
+
+#: ../../source/inc/language_action:8
+msgid "`language`"
+msgstr "`language`"
+
+#: ../../source/inc/language_action:8
+msgid ""
+"A string giving the language to translate to, or None to use the default "
+"language of the game script."
+msgstr ""
+"翻訳先の言語の文字列、または None のときはゲームスクリプトの既定の言語を使い"
+"ます。"
+
 #: ../../source/translation.rst:425
 msgid ""
 "The Language action can be used to add a language preference to the "
@@ -645,6 +661,24 @@ msgstr ""
 #: ../../source/translation.rst:436
 msgid "There are two translation-related functions:"
 msgstr "翻訳関連の関数は2つあります:"
+
+#: ../../source/inc/translation_functions:5
+msgid ""
+"Changes the current language to `language`, which can be a string or None to "
+"use the default language."
+msgstr ""
+"現在の言語を `language` に変更します。この値は文字列、または既定の言語の場合"
+"は None にできます。"
+
+#: ../../source/inc/translation_functions:10
+msgid "Returns the translation identifier for the current statement."
+msgstr "現在のステートメントに対する翻訳識別子を返します。"
+
+#: ../../source/inc/translation_functions:14
+msgid ""
+"Returns the set of known languages. This does not include the default "
+"language, None."
+msgstr "既知の言語のセットを返します。これには既定の言語 None は含まれません。"
 
 #: ../../source/translation.rst:440
 msgid ""
@@ -672,6 +706,44 @@ msgstr ""
 "れた文字列は、翻訳可能な文字列のリストに追加されます。翻訳後の文字列が表示さ"
 "れる時に、文字列翻訳にマッチすると文字列が2重に翻訳されてしまうことに注意して"
 "ください。"
+
+#: ../../source/inc/underscore_p:5
+msgid ""
+"Reformats a string and flags it as translatable. The string will be "
+"translated when displayed by the text displayable. This is intended to "
+"define multi-line for use in strings, of the form::"
+msgstr ""
+"文字列を再フォーマットしてから、翻訳可能としてフラグをつけます。文字列はテキ"
+"スト displayable で表示されるときに翻訳されます。これは次の形式で、文字列で使"
+"用する複数行を定義することを意図しています。 ::"
+
+#: ../../source/inc/underscore_p:16
+msgid ""
+"The reformatting is done by breaking the text up into lines, removing "
+"whitespace from the start and end of each line. Blank lines are removed at "
+"the end. When there is a blank line, a blank line is inserted to separate "
+"paragraphs. The {p} tag breaks a line, but doesn't add a blank one."
+msgstr ""
+"再フォーマットは、各行の最初と最後のホワイトスペースを除去してテキストを1つの"
+"行にします。このとき空白行は最後に除去され、空白行があるときは、空白行に分離"
+"パラグラフが挿入されます。 {p} タグは行を改行し、空白行は追加しません。"
+
+#: ../../source/inc/underscore_p:22
+msgid "This can be used in a string translation, using the construct::"
+msgstr "これは文字列の翻訳において、次のように使用できます。 ::"
+
+#: ../../source/inc/translate_string:5
+msgid ""
+"Returns `s` immediately translated into `language`. If `language` is "
+"Default, uses the language set in the preferences. Strings enclosed in this "
+"function will **not** be added to the list of translatable strings. Note "
+"that the string may be double-translated, if it matches a string translation "
+"when it is displayed."
+msgstr ""
+"`s` を `language` に直ちに翻訳して返します。 `language` が未指定なら、 "
+"preferences で設定された言語を使用します。この関数で囲まれた文字列は、 **非"
+"** 翻訳可能文字列のリストに追加されません。翻訳後の文字列が表示される時に文字"
+"列翻訳にマッチすると二重翻訳されるので注意してください。"
 
 #: ../../source/translation.rst:462
 msgid ""
@@ -767,71 +839,6 @@ msgid ""
 msgstr ""
 "台詞の文字列翻訳を使った場合、認可を受けていない翻訳者は画像やスタイルの翻訳"
 "に対して上記で説明した方法は使えません。"
-
-#~ msgid "Changes the language of the game to `language`."
-#~ msgstr "ゲームの言語を `language` に変更します。"
-
-#~ msgid "`language`"
-#~ msgstr "`language`"
-
-#~ msgid ""
-#~ "A string giving the language to translate to, or None to use the default "
-#~ "language of the game script."
-#~ msgstr ""
-#~ "翻訳先の言語の文字列、または None のときはゲームスクリプトの既定の言語を使"
-#~ "います。"
-
-#~ msgid ""
-#~ "Changes the current language to `language`, which can be a string or None "
-#~ "to use the default language."
-#~ msgstr ""
-#~ "現在の言語を `language` に変更します。この値は文字列、または既定の言語の場"
-#~ "合は None にできます。"
-
-#~ msgid "Returns the translation identifier for the current statement."
-#~ msgstr "現在のステートメントに対する翻訳識別子を返します。"
-
-#~ msgid ""
-#~ "Returns the set of known languages. This does not include the default "
-#~ "language, None."
-#~ msgstr ""
-#~ "既知の言語のセットを返します。これには既定の言語 None は含まれません。"
-
-#~ msgid ""
-#~ "Reformats a string and flags it as translatable. The string will be "
-#~ "translated when displayed by the text displayable. This is intended to "
-#~ "define multi-line for use in strings, of the form::"
-#~ msgstr ""
-#~ "文字列を再フォーマットしてから、翻訳可能としてフラグをつけます。文字列はテ"
-#~ "キスト displayable で表示されるときに翻訳されます。これは次の形式で、文字"
-#~ "列で使用する複数行を定義することを意図しています。 ::"
-
-#~ msgid ""
-#~ "The reformatting is done by breaking the text up into lines, removing "
-#~ "whitespace from the start and end of each line. Blank lines are removed "
-#~ "at the end. When there is a blank line, a blank line is inserted to "
-#~ "separate paragraphs. The {p} tag breaks a line, but doesn't add a blank "
-#~ "one."
-#~ msgstr ""
-#~ "再フォーマットは、各行の最初と最後のホワイトスペースを除去してテキストを1"
-#~ "つの行にします。このとき空白行は最後に除去され、空白行があるときは、空白行"
-#~ "に分離パラグラフが挿入されます。 {p} タグは行を改行し、空白行は追加しませ"
-#~ "ん。"
-
-#~ msgid "This can be used in a string translation, using the construct::"
-#~ msgstr "これは文字列の翻訳において、次のように使用できます。 ::"
-
-#~ msgid ""
-#~ "Returns `s` immediately translated into `language`. If `language` is "
-#~ "Default, uses the language set in the preferences. Strings enclosed in "
-#~ "this function will **not** be added to the list of translatable strings. "
-#~ "Note that the string may be double-translated, if it matches a string "
-#~ "translation when it is displayed."
-#~ msgstr ""
-#~ "`s` を `language` に直ちに翻訳して返します。 `language` が未指定なら、 "
-#~ "preferences で設定された言語を使用します。この関数で囲まれた文字列は、 **"
-#~ "非** 翻訳可能文字列のリストに追加されません。翻訳後の文字列が表示される時"
-#~ "に文字列翻訳にマッチすると二重翻訳されるので注意してください。"
 
 #~ msgid "e \"This used to have a typo.\" id start_61b861a2"
 #~ msgstr "e \"これはタイプミスです。\" id start_61b861a2"

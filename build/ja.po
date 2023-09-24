@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-20 21:53+0900\n"
+"POT-Creation-Date: 2023-09-24 23:21+0900\n"
 "PO-Revision-Date: 2023-07-09 09:12+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -679,6 +679,235 @@ msgstr ""
 msgid "Build Functions"
 msgstr "ビルド関数"
 
+#: ../../source/inc/build:5
+msgid ""
+"Declares the existence of an archive, whose `name` is added to the list of "
+"available archive names, which can be passed to :func:`build.classify`."
+msgstr ""
+"アーカイブの存在を宣言し、その `name` が利用可能なアーカイブ名のリストに追加"
+"されます。これは :func:`build.classify` にも渡せます。"
+
+#: ../../source/inc/build:9
+msgid ""
+"If one or more files are classified with `name`, `name`.rpa is built as an "
+"archive, and then distributed in packages including the `file_list` given "
+"here. ::"
+msgstr ""
+"一つ以上のファイルが `name` に分類されると、 `name`.rpa がアーカイブとしてビ"
+"ルドされ、次のように指定した `file_list` を含むパッケージに含まれます。"
+
+#: ../../source/inc/build:15
+msgid ""
+"If any file is included in the \"secret\" archive using the :func:`build."
+"classify` function, the file will be included inside the secret.rpa archive "
+"in the windows builds."
+msgstr ""
+"何らかのファイルが :func:`build.classify` 関数を使って \"secret\" アーカイブ"
+"に含まれると、そのファイルは Windows のビルドで secret.rpa アーカイブに含まれ"
+"ることになります。"
+
+#: ../../source/inc/build:19
+msgid ""
+"As with the :func:`build.classify` function, if the name given as "
+"`file_list` doesn't exist as a file list name, it is created and added to "
+"the set of valid file lists."
+msgstr ""
+":func:`build.classify` 関数と同様に、`file_list` として与えられた名前がファイ"
+"ルリスト名として存在しない場合には、その名前を作成して、有効なファイルリスト"
+"のセットに追加します。"
+
+#: ../../source/inc/build:25
+msgid ""
+"Classifies files that match `pattern` into `file_list`, which can also be an "
+"archive name."
+msgstr ""
+"`pattern` にマッチするファイルを `file_list` に分類します。 `file_list` は"
+"アーカイブ名でもあります。"
+
+#: ../../source/inc/build:28
+msgid ""
+"If the name given as `file_list` doesn't exist as an archive or file list "
+"name, it is created and added to the set of valid file lists."
+msgstr ""
+"`file_list` として与えられた名前がアーカイブやファイルリストの名前として存在"
+"しなければ、それを作成して有効なファイルリストのセットに追加します。"
+
+#: ../../source/inc/build:33
+msgid "Clears the list of patterns used to classify files."
+msgstr "ファイルを分類するために使用したパターンのリストをクリアします。"
+
+#: ../../source/inc/build:37
+msgid ""
+"Declares a pattern that matches documentation. In a mac app build, files "
+"matching the documentation pattern are stored twice - once inside the app "
+"package, and again outside of it."
+msgstr ""
+"ドキュメントにマッチするパターンを宣言します。 mac アプリのビルドではこのパ"
+"ターンにマッチしたドキュメントは二度保存されます。 - 一度目は app パッケージ"
+"内に、二度目はその外部です。"
+
+#: ../../source/inc/build:43
+msgid ""
+"Adds a pattern marking files as executable on platforms that support it. "
+"(Linux and Macintosh)"
+msgstr ""
+"サポートするプラットフォーム ( Linux や Mac ) で実行可能ファイルとしてマーク"
+"するパターンを追加します。"
+
+#: ../../source/inc/build:48
+msgid "Declares a package that can be built by the packaging tool."
+msgstr "パッケージツールにビルドされるパッケージを宣言します。"
+
+#: ../../source/inc/build:52
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/build:52
+msgid "The name of the package."
+msgstr "パッケージ名"
+
+#: ../../source/inc/build:83
+msgid "`format`"
+msgstr "`format`"
+
+#: ../../source/inc/build:55
+msgid ""
+"The format of the package. A string containing a space separated list of:"
+msgstr ""
+"パッケージのフォーマットで、スペースで区切られた以下のリストの文字列です。 :"
+
+#: ../../source/inc/build:58
+msgid "zip"
+msgstr "zip"
+
+#: ../../source/inc/build:59
+msgid "A zip file."
+msgstr "zip ファイル"
+
+#: ../../source/inc/build:60
+msgid "tar.bz2"
+msgstr "tar.bz2"
+
+#: ../../source/inc/build:61
+msgid "A tar.bz2 file."
+msgstr "tar.bz2 ファイル"
+
+#: ../../source/inc/build:62
+msgid "directory"
+msgstr "directory"
+
+#: ../../source/inc/build:63
+msgid "A directory containing the files."
+msgstr "ファイルを含むディレクトリー"
+
+#: ../../source/inc/build:64
+msgid "dmg"
+msgstr "dmg"
+
+#: ../../source/inc/build:65
+msgid "A Macintosh DMG containing the files."
+msgstr "ファイルを含む Macintosh DMG "
+
+#: ../../source/inc/build:67
+msgid "app-zip"
+msgstr "app-zip"
+
+#: ../../source/inc/build:67
+msgid ""
+"A zip file containing a macintosh application. This format doesn't support "
+"the Ren'Py updater."
+msgstr ""
+"Macintosh 用のアプリケーションを含む zip ファイル。このフォーマットは Ren'Py "
+"アップデーターをサポートします。"
+
+#: ../../source/inc/build:70
+msgid "app-directory"
+msgstr "app-directory"
+
+#: ../../source/inc/build:70
+msgid ""
+"A directory containing the mac app. This format doesn't support the Ren'Py "
+"updater."
+msgstr ""
+"mac アプリを含むディレクトリー。このフォーマットはRen'Pyのアップデータをサ"
+"ポートしていません。"
+
+#: ../../source/inc/build:73
+msgid "app-dmg"
+msgstr "app-dmg"
+
+#: ../../source/inc/build:73
+msgid ""
+"A macintosh drive image containing a dmg. (Mac only.) This format doesn't "
+"support the Ren'Py updater."
+msgstr ""
+"dmg を含む Machintosh ドライブ(Mac のみです)。このフォーマットは Ren'Py の"
+"アップデーターをサポートしません。"
+
+#: ../../source/inc/build:76
+msgid "bare-zip"
+msgstr "bare-zip"
+
+#: ../../source/inc/build:76 ../../source/inc/build:79
+msgid "A zip file without :var:`build.directory_name` prepended."
+msgstr ":var:`build.directory_name` が先頭に付かない zip ファイルです。"
+
+#: ../../source/inc/build:80
+msgid "bare-tar.bz2"
+msgstr "bare-tar.bz2"
+
+#: ../../source/inc/build:82
+msgid ""
+"The empty string will not build any package formats (this makes dlc "
+"possible)."
+msgstr "文字列が空だと何もビルドされません。"
+
+#: ../../source/inc/build:87
+msgid "`file_lists`"
+msgstr "`file_lists`"
+
+#: ../../source/inc/build:86
+msgid "A list containing the file lists that will be included in the package."
+msgstr "そのパッケージに含まれるファイルリストのリストです。"
+
+#: ../../source/inc/build:90
+msgid "`description`"
+msgstr "`description`"
+
+#: ../../source/inc/build:90
+msgid "An optional description of the package to be built."
+msgstr "ビルドするパッケージに対する任意の説明文です。"
+
+#: ../../source/inc/build:94
+msgid "`update`"
+msgstr "`update`"
+
+#: ../../source/inc/build:93
+msgid ""
+"If true and updates are being built, an update will be built for this "
+"package."
+msgstr "True  ならこのパッケージ向けのアップデータもビルドされます。"
+
+#: ../../source/inc/build:98
+msgid "`dlc`"
+msgstr "`dlc`"
+
+#: ../../source/inc/build:97
+msgid ""
+"If true, any zip or tar.bz2 file will be built in standalone DLC mode, "
+"without an update directory."
+msgstr ""
+"True の場合、 update ディレクトリーは無しとなり、 zip や tar.bz2 ファイルが単"
+"独の DLC モードでビルドされます。"
+
+#: ../../source/inc/build:101
+msgid "`hidden`"
+msgstr "`hidden`"
+
+#: ../../source/inc/build:101
+msgid "If true, this will be hidden from the list of packages in the launcher."
+msgstr "True ならこれはランチャーのパッケージリストでは非表示になります。"
+
 #: ../../source/build.rst:337
 msgid "Advanced Configuration"
 msgstr "高度な設定"
@@ -817,196 +1046,6 @@ msgid ""
 msgstr ""
 "これは文字列を文字列に対応させる辞書であり、Macの info.plist ファイルのキーを"
 "追加、または置換するのに使用できます。"
-
-#~ msgid ""
-#~ "Declares the existence of an archive, whose `name` is added to the list "
-#~ "of available archive names, which can be passed to :func:`build.classify`."
-#~ msgstr ""
-#~ "アーカイブの存在を宣言し、その `name` が利用可能なアーカイブ名のリストに追"
-#~ "加されます。これは :func:`build.classify` にも渡せます。"
-
-#~ msgid ""
-#~ "If one or more files are classified with `name`, `name`.rpa is built as "
-#~ "an archive, and then distributed in packages including the `file_list` "
-#~ "given here. ::"
-#~ msgstr ""
-#~ "一つ以上のファイルが `name` に分類されると、 `name`.rpa がアーカイブとして"
-#~ "ビルドされ、次のように指定した `file_list` を含むパッケージに含まれます。"
-
-#~ msgid ""
-#~ "If any file is included in the \"secret\" archive using the :func:`build."
-#~ "classify` function, the file will be included inside the secret.rpa "
-#~ "archive in the windows builds."
-#~ msgstr ""
-#~ "何らかのファイルが :func:`build.classify` 関数を使って \"secret\" アーカイ"
-#~ "ブに含まれると、そのファイルは Windows のビルドで secret.rpa アーカイブに"
-#~ "含まれることになります。"
-
-#~ msgid ""
-#~ "As with the :func:`build.classify` function, if the name given as "
-#~ "`file_list` doesn't exist as a file list name, it is created and added to "
-#~ "the set of valid file lists."
-#~ msgstr ""
-#~ ":func:`build.classify` 関数と同様に、`file_list` として与えられた名前が"
-#~ "ファイルリスト名として存在しない場合には、その名前を作成して、有効なファイ"
-#~ "ルリストのセットに追加します。"
-
-#~ msgid ""
-#~ "Classifies files that match `pattern` into `file_list`, which can also be "
-#~ "an archive name."
-#~ msgstr ""
-#~ "`pattern` にマッチするファイルを `file_list` に分類します。 `file_list` は"
-#~ "アーカイブ名でもあります。"
-
-#~ msgid ""
-#~ "If the name given as `file_list` doesn't exist as an archive or file list "
-#~ "name, it is created and added to the set of valid file lists."
-#~ msgstr ""
-#~ "`file_list` として与えられた名前がアーカイブやファイルリストの名前として存"
-#~ "在しなければ、それを作成して有効なファイルリストのセットに追加します。"
-
-#~ msgid "Clears the list of patterns used to classify files."
-#~ msgstr "ファイルを分類するために使用したパターンのリストをクリアします。"
-
-#~ msgid ""
-#~ "Declares a pattern that matches documentation. In a mac app build, files "
-#~ "matching the documentation pattern are stored twice - once inside the app "
-#~ "package, and again outside of it."
-#~ msgstr ""
-#~ "ドキュメントにマッチするパターンを宣言します。 mac アプリのビルドではこの"
-#~ "パターンにマッチしたドキュメントは二度保存されます。 - 一度目は app パッ"
-#~ "ケージ内に、二度目はその外部です。"
-
-#~ msgid ""
-#~ "Adds a pattern marking files as executable on platforms that support it. "
-#~ "(Linux and Macintosh)"
-#~ msgstr ""
-#~ "サポートするプラットフォーム ( Linux や Mac ) で実行可能ファイルとしてマー"
-#~ "クするパターンを追加します。"
-
-#~ msgid "Declares a package that can be built by the packaging tool."
-#~ msgstr "パッケージツールにビルドされるパッケージを宣言します。"
-
-#~ msgid "`name`"
-#~ msgstr "`name`"
-
-#~ msgid "The name of the package."
-#~ msgstr "パッケージ名"
-
-#~ msgid "`format`"
-#~ msgstr "`format`"
-
-#~ msgid ""
-#~ "The format of the package. A string containing a space separated list of:"
-#~ msgstr ""
-#~ "パッケージのフォーマットで、スペースで区切られた以下のリストの文字列で"
-#~ "す。 :"
-
-#~ msgid "zip"
-#~ msgstr "zip"
-
-#~ msgid "A zip file."
-#~ msgstr "zip ファイル"
-
-#~ msgid "tar.bz2"
-#~ msgstr "tar.bz2"
-
-#~ msgid "A tar.bz2 file."
-#~ msgstr "tar.bz2 ファイル"
-
-#~ msgid "directory"
-#~ msgstr "directory"
-
-#~ msgid "A directory containing the files."
-#~ msgstr "ファイルを含むディレクトリー"
-
-#~ msgid "dmg"
-#~ msgstr "dmg"
-
-#~ msgid "A Macintosh DMG containing the files."
-#~ msgstr "ファイルを含む Macintosh DMG "
-
-#~ msgid "app-zip"
-#~ msgstr "app-zip"
-
-#~ msgid ""
-#~ "A zip file containing a macintosh application. This format doesn't "
-#~ "support the Ren'Py updater."
-#~ msgstr ""
-#~ "Macintosh 用のアプリケーションを含む zip ファイル。このフォーマットは "
-#~ "Ren'Py アップデーターをサポートします。"
-
-#~ msgid "app-directory"
-#~ msgstr "app-directory"
-
-#~ msgid ""
-#~ "A directory containing the mac app. This format doesn't support the "
-#~ "Ren'Py updater."
-#~ msgstr ""
-#~ "mac アプリを含むディレクトリー。このフォーマットはRen'Pyのアップデータをサ"
-#~ "ポートしていません。"
-
-#~ msgid "app-dmg"
-#~ msgstr "app-dmg"
-
-#~ msgid ""
-#~ "A macintosh drive image containing a dmg. (Mac only.) This format doesn't "
-#~ "support the Ren'Py updater."
-#~ msgstr ""
-#~ "dmg を含む Machintosh ドライブ(Mac のみです)。このフォーマットは Ren'Py の"
-#~ "アップデーターをサポートしません。"
-
-#~ msgid "bare-zip"
-#~ msgstr "bare-zip"
-
-#~ msgid "A zip file without :var:`build.directory_name` prepended."
-#~ msgstr ":var:`build.directory_name` が先頭に付かない zip ファイルです。"
-
-#~ msgid "bare-tar.bz2"
-#~ msgstr "bare-tar.bz2"
-
-#~ msgid ""
-#~ "The empty string will not build any package formats (this makes dlc "
-#~ "possible)."
-#~ msgstr "文字列が空だと何もビルドされません。"
-
-#~ msgid "`file_lists`"
-#~ msgstr "`file_lists`"
-
-#~ msgid ""
-#~ "A list containing the file lists that will be included in the package."
-#~ msgstr "そのパッケージに含まれるファイルリストのリストです。"
-
-#~ msgid "`description`"
-#~ msgstr "`description`"
-
-#~ msgid "An optional description of the package to be built."
-#~ msgstr "ビルドするパッケージに対する任意の説明文です。"
-
-#~ msgid "`update`"
-#~ msgstr "`update`"
-
-#~ msgid ""
-#~ "If true and updates are being built, an update will be built for this "
-#~ "package."
-#~ msgstr "True  ならこのパッケージ向けのアップデータもビルドされます。"
-
-#~ msgid "`dlc`"
-#~ msgstr "`dlc`"
-
-#~ msgid ""
-#~ "If true, any zip or tar.bz2 file will be built in standalone DLC mode, "
-#~ "without an update directory."
-#~ msgstr ""
-#~ "True の場合、 update ディレクトリーは無しとなり、 zip や tar.bz2 ファイル"
-#~ "が単独の DLC モードでビルドされます。"
-
-#~ msgid "`hidden`"
-#~ msgstr "`hidden`"
-
-#~ msgid ""
-#~ "If true, this will be hidden from the list of packages in the launcher."
-#~ msgstr "True ならこれはランチャーのパッケージリストでは非表示になります。"
 
 #~ msgid "A directory containing the mac app."
 #~ msgstr "Macintosh 用のアプリケーションを含むディレクトリー"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-20 21:53+0900\n"
+"POT-Creation-Date: 2023-09-24 23:21+0900\n"
 "PO-Revision-Date: 2023-08-21 22:01+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -562,7 +562,7 @@ msgstr ""
 "ん。"
 
 #: ../../source/displaying_images.rst:311
-#: ../../source/displaying_images.rst:367
+#: ../../source/displaying_images.rst:367 ../../source/inc/image_func:238
 msgid "For example::"
 msgstr "例 ::"
 
@@ -913,6 +913,478 @@ msgstr ""
 msgid "Image Functions"
 msgstr "画像関数"
 
+#: ../../source/inc/image_func:5
+msgid ""
+"Adds a new layer to the screen. If the layer already exists, this function "
+"does nothing."
+msgstr ""
+"新しいレイヤーを追加します。レイヤーが既に存在すればこの関数はなにもしませ"
+"ん。"
+
+#: ../../source/inc/image_func:8
+msgid "One of `behind` or `above` must be given."
+msgstr "`below` または `above` のどちらかが指定さなければいけません。"
+
+#: ../../source/inc/image_func:11 ../../source/inc/image_func:42
+#: ../../source/inc/image_func:60 ../../source/inc/image_func:94
+#: ../../source/inc/image_func:118 ../../source/inc/image_func:224
+msgid "`layer`"
+msgstr "`layer`"
+
+#: ../../source/inc/image_func:11
+msgid "A string giving the name of the new layer to add."
+msgstr "追加する新しいレイヤー名の文字列です。"
+
+#: ../../source/inc/image_func:15
+msgid "`above`"
+msgstr "`above`"
+
+#: ../../source/inc/image_func:14
+msgid ""
+"If not None, a string giving the name of a layer the new layer will be "
+"placed above."
+msgstr "None または新しいレイヤーの下に配置されるレイヤー名の文字列です。"
+
+#: ../../source/inc/image_func:19
+msgid "`below`"
+msgstr "`below`"
+
+#: ../../source/inc/image_func:18
+msgid ""
+"If not None, a string giving the name of a layer the new layer will be "
+"placed below."
+msgstr "None または新しいレイヤーの上に配置されるレイヤー名の文字列です。"
+
+#: ../../source/inc/image_func:23
+msgid "`menu_clear`"
+msgstr "`menu_clear`"
+
+#: ../../source/inc/image_func:22
+msgid ""
+"If true, this layer will be cleared when entering the game menu context, and "
+"restored when leaving it."
+msgstr ""
+"True ならこのレイヤーはゲームメニューコンテキストに入るとクリアされ、出るとき"
+"に復元されます。"
+
+#: ../../source/inc/image_func:27
+msgid "`sticky`"
+msgstr "`sticky`"
+
+#: ../../source/inc/image_func:26
+msgid ""
+"If true, any tags added to this layer will have it become their default "
+"layer until they are hidden. If None, this layer will be sticky only if "
+"other sticky layers already exist."
+msgstr ""
+"True ならこのレイヤーに追加されたタグは非表示になるまでこのレイヤーをそのデ"
+"フォルトレイヤーにします。 None なら他の sticky レイヤーが既に存在していると"
+"きのみこのレイヤーは sticky レイヤーになります。"
+
+#: ../../source/inc/image_func:32
+msgid ""
+"Determines if `name` can be used to show an image. This interprets `name` as "
+"a tag and attributes. This is combined with the attributes of the currently-"
+"showing image with `tag` on `layer` to try to determine a unique image to "
+"show. If a unique image can be show, returns the name of that image as a "
+"tuple. Otherwise, returns None."
+msgstr ""
+"`name` で画像を表示出来るか決定します。これは `name` をタグと属性として解釈し"
+"ます。これは `layer` 上の現在表示されている `tag` の画像の属性と組み合わさ"
+"れ、表示する画像を 1 つに決定しようとします。1つの画像が表示可能なら、その画"
+"像名をタプルで返し、そうでなければ None を返します。"
+
+#: ../../source/inc/image_func:40
+msgid "`tag`"
+msgstr "`tag`"
+
+#: ../../source/inc/image_func:39
+msgid ""
+"The image tag to get attributes from. If not given, defaults to the first "
+"component of `name`."
+msgstr ""
+"画像属性を所得する画像タグです。未指定なら `name` の最初の要素が使用されま"
+"す。"
+
+#: ../../source/inc/image_func:43 ../../source/inc/image_func:61
+#: ../../source/inc/image_func:95 ../../source/inc/image_func:225
+msgid "The layer to check. If None, uses the default layer for `tag`."
+msgstr ""
+"チェックするレイヤーです。 None なら `tag` のデフォルトレイヤーを使用します。"
+
+#: ../../source/inc/image_func:47
+msgid "Changes the zorder of `tag` on `layer` to `zorder`."
+msgstr "`layer` 上の `tag` の zorder を `zorder` に変更します。"
+
+#: ../../source/inc/image_func:51
+msgid ""
+"Checks to see if there is a unique image with the given tag and attributes. "
+"If there is, returns the attributes in order. Otherwise, returns None."
+msgstr ""
+"指定したタグと属性を持つ唯一の画像があるかチェックします。あれば、その属性を"
+"順番に返します。そうでなければ None を返します。"
+
+#: ../../source/inc/image_func:57
+msgid ""
+"Clears all image attributes for the `tag` image. If the tag had no attached "
+"image attributes, this does nothing."
+msgstr ""
+"`tag` 画像のすべての画像属性をクリアします。そのタグに画像属性が泣ければ、お"
+"れは何もしません。"
+
+#: ../../source/inc/image_func:65
+msgid ""
+"Copies images beginning with one prefix to images beginning with another. "
+"For example::"
+msgstr "ある接頭辞で始まる画像を他の接頭辞で始まるものにコピーします。例 :"
+
+#: ../../source/inc/image_func:70
+msgid ""
+"will create an image beginning with \"eileen2\" for every image beginning "
+"with \"eileen\". If \"eileen happy\" exists, \"eileen2 happy\" will be "
+"created."
+msgstr ""
+"「 eileen 」で始まるすべての画像に対して「 eileen2 」で始まる画像を作成しま"
+"す。例えば「 eileen happy 」が存在するなら、「 eileen2 happy 」が作成されま"
+"す。"
+
+#: ../../source/inc/image_func:76
+msgid "`old`"
+msgstr "`old`"
+
+#: ../../source/inc/image_func:75
+msgid "A space-separated string giving the components of the old image name."
+msgstr "スペース区切りのコピー対象画像名の要素の文字列です。"
+
+#: ../../source/inc/image_func:79
+msgid "`new`"
+msgstr "`new`"
+
+#: ../../source/inc/image_func:79
+msgid "A space-separated string giving the components of the new image name."
+msgstr "スペース区切りの新しい画像名の要素の文字列です。"
+
+#: ../../source/inc/image_func:84
+msgid ""
+"This flushes all image cache entries that refer to the file `fn`.  This may "
+"be called when an image file changes on disk to force Ren'Py to use the new "
+"version."
+msgstr ""
+"`fn` ファイルを参照するすべての画像イメージのキャッシュをクリアします。ディス"
+"クの画像ファイルが変わったときにはこれを呼び出して、 Ren'Pyに新バージョンの使"
+"用を強制します。"
+
+#: ../../source/inc/image_func:90
+msgid ""
+"Return a tuple giving the image attributes for the image `tag`. If the image "
+"tag has not had any attributes associated since the last time it was hidden, "
+"returns `if_hidden`."
+msgstr ""
+"`tag` の画像属性のタプルを返します。画像タグが最後に非表示されてから画像属性"
+"がないときは、`if_hidden` を返します。"
+
+#: ../../source/inc/image_func:99
+msgid "Returns a list of image tags that have been defined."
+msgstr "定義されている画像タグのリストが返されます。"
+
+#: ../../source/inc/image_func:103
+msgid ""
+"Returns the set of image tags on `layer` that are currently hidden, but "
+"still have attribute information associated with them."
+msgstr ""
+"現在 `layer` 上で非表示されているが、まだ画像属性を持つ画像タグのセットが返さ"
+"れます。"
+
+#: ../../source/inc/image_func:108
+msgid ""
+"If an image with `tag` exists on `layer`, returns the bounding box of that "
+"image. Returns None if the image is not found."
+msgstr ""
+"`tag` を持つ画像が `layer` に存在すれば、その画像の矩形領域を返します。画像が"
+"見つからなければ None を返します。"
+
+#: ../../source/inc/image_func:111
+msgid ""
+"The bounding box is an (x, y, width, height) tuple. The components of the "
+"tuples are expressed in pixels, and may be floating point numbers."
+msgstr ""
+"矩形領域は (x, y, width, height) のタプルです。タプルの要素はピクセル数で表さ"
+"れ、小数にも出来ます。"
+
+#: ../../source/inc/image_func:116
+msgid "`width`, `height`"
+msgstr "`width`, `height`"
+
+#: ../../source/inc/image_func:115
+msgid ""
+"The width and height of the area that contains the image. If None, defaults "
+"the width and height of the screen, respectively."
+msgstr ""
+"画像を格納する領域の幅と高さです。 None ならデフォルトでそれぞれスクリーンの"
+"幅と高さになります。"
+
+#: ../../source/inc/image_func:119
+msgid "If None, uses the default layer for `tag`."
+msgstr "None なら `tag` のデフォルトレイヤーを使用します。"
+
+#: ../../source/inc/image_func:123
+msgid ""
+"Returns a list of image attributes, ordered in a way that makes sense to "
+"present to the user."
+msgstr "ユーザーに提供される順にの画像属性のリストを返します。"
+
+#: ../../source/inc/image_func:129
+msgid "`attributes`"
+msgstr "`attributes`"
+
+#: ../../source/inc/image_func:127
+msgid ""
+"If present, only attributes that are compatible with the given attributes "
+"are considered. (Compatible means that the attributes can be in a single "
+"image at the same time.)"
+msgstr ""
+"存在すれば、指定された属性と互換性のある属性のみが考慮されます(互換性とはその"
+"属性が同時に一つの画像にあることです)。"
+
+#: ../../source/inc/image_func:134
+msgid "`sort`"
+msgstr "`sort`"
+
+#: ../../source/inc/image_func:132
+msgid ""
+"If not None, the returned list of attributes is sorted. This is a one-"
+"argument function that should be used as a tiebreaker - see `this tutorial "
+"<https://docs.python.org/3/howto/sorting.html#key-functions>`_ for more "
+"information."
+msgstr ""
+"None でなければ、これで返される属性のリストがソートされます。これは "
+"tiebreaker として使用されるべき引数1つの関数です。詳細は`このチュートリアル "
+"<https://docs.python.org/3/howto/sorting.html#key-functions>`_ を参照してくだ"
+"さい。"
+
+#: ../../source/inc/image_func:139
+msgid ""
+"This gets the placement of displayable d. There's very little warranty on "
+"this information, as it might change when the displayable is rendered, and "
+"might not exist until the displayable is first rendered."
+msgstr ""
+"これは displayable d の位置を所得します。displayable はレンダリングされると位"
+"置が変わる可能性があり、最初にレンダリングされるまでは存在しない可能性もある"
+"のでこの情報にはあまり信頼がありません。"
+
+#: ../../source/inc/image_func:143
+msgid ""
+"This returns an object with the following fields, each corresponding to a "
+"style property:"
+msgstr ""
+"これは以下の属性を持つオブジェクトを返し、それぞれがスタイルプロパティーに対"
+"応しています。"
+
+#: ../../source/inc/image_func:146
+msgid "pos"
+msgstr "pos"
+
+#: ../../source/inc/image_func:147
+msgid "xpos"
+msgstr "xpos"
+
+#: ../../source/inc/image_func:148
+msgid "ypos"
+msgstr "ypos"
+
+#: ../../source/inc/image_func:149
+msgid "anchor"
+msgstr "anchor"
+
+#: ../../source/inc/image_func:150
+msgid "xanchor"
+msgstr "xanchor"
+
+#: ../../source/inc/image_func:151
+msgid "yanchor"
+msgstr "yanchor"
+
+#: ../../source/inc/image_func:152
+msgid "offset"
+msgstr "offset"
+
+#: ../../source/inc/image_func:153
+msgid "xoffset"
+msgstr "xoffset"
+
+#: ../../source/inc/image_func:154
+msgid "yoffset"
+msgstr "yoffset"
+
+#: ../../source/inc/image_func:155
+msgid "subpixel"
+msgstr "subpixel"
+
+#: ../../source/inc/image_func:159
+msgid ""
+"If an image with the same name has been :ref:`registered <defining-images>`, "
+"returns it. Otherwise, returns None."
+msgstr ""
+"同じ名前の画像が :ref:`登録されて <defining-images>` いればそれを、そうでなけ"
+"れば None を返します。"
+
+#: ../../source/inc/image_func:164
+msgid ""
+"Returns the tag corresponding to the currently speaking character (the "
+"`image` argument given to that character). Returns None if no character is "
+"speaking or the current speaking character does not have a corresponding "
+"image tag."
+msgstr ""
+"現在話しているキャラクターに関連する (そのキャラクターの `image` 引数に指定さ"
+"れた) タグ を返します。話しているキャラクターがいない、または現在のキャラク"
+"ターが画像タグと関連付けられていなければ None を返します。"
+
+#: ../../source/inc/image_func:171
+msgid ""
+"Returns the set of image tags that are currently being shown on `layer`. If "
+"sort is true, returns a list of the tags from back to front."
+msgstr ""
+"現在 `layer` 上に表示されている画像タグのセットが返されます。sort が True な"
+"ら、後ろから前の順でタグのリストが返されます。"
+
+#: ../../source/inc/image_func:176
+msgid "Returns a list of (tag, zorder) pairs for `layer`."
+msgstr "`layer` に対する (tag, zorder) のペアのリストを返します。"
+
+#: ../../source/inc/image_func:180
+msgid ""
+"Return true if an image with `name` exists, and false if no such image "
+"exists."
+msgstr ""
+"`name` 画像が存在すれば Ture を、そのような画像がなければ False を返します。"
+
+#: ../../source/inc/image_func:185
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/image_func:184
+msgid ""
+"Either a string giving an image name, or a tuple of strings giving the name "
+"components."
+msgstr "画像名の文字列か、画像名を要素とする文字列のタプルです。"
+
+#: ../../source/inc/image_func:188
+msgid "`exact`"
+msgstr "`exact`"
+
+#: ../../source/inc/image_func:188
+msgid ""
+"Returns true if and only if an image with the exact name exists - "
+"parameterized matches are not included."
+msgstr ""
+"その正確な名前で画像が存在する場合のみ True を返します。正規表現はマッチしま"
+"せん。"
+
+#: ../../source/inc/image_func:193
+msgid ""
+"Returns a list of images that have been added to Ren'Py, as a list of "
+"strings with spaces between the name components."
+msgstr ""
+"Ren'Py に追加された画像を、名前と要素間にスペースを置いた文字列のリストとして"
+"返します。"
+
+#: ../../source/inc/image_func:198
+msgid ""
+"Marks the named image as if it has been already displayed on the current "
+"user's system."
+msgstr ""
+"その名前の画像を現在のユーザーがすでに閲覧しているものとしてマークします。"
+
+#: ../../source/inc/image_func:203
+msgid ""
+"Marks the named image as if it has not been displayed on the current user's "
+"system yet."
+msgstr ""
+"その名前の画像を現在のユーザーではまだ閲覧していないものとしてマークします。"
+
+#: ../../source/inc/image_func:208
+msgid ""
+"Returns True if the named image has been seen at least once on the user's "
+"system. An image has been seen if it's been displayed using the show "
+"statement, scene statement, or :func:`renpy.show` function. (Note that there "
+"are cases where the user won't actually see the image, like a show "
+"immediately followed by a hide.)"
+msgstr ""
+"その名前の画像がユーザーに一度でも閲覧されていれば True を返します。画像は "
+"show 、 scene ステートメントか  :func:`renpy.show` 関数を使用して表示されると"
+"閲覧されたことになります ( 表示直後に hide されるなど、実際にはユーザーが画像"
+"を見ていない場合もあることに注意してください )。"
+
+#: ../../source/inc/image_func:216
+msgid ""
+"Returns true if an image with the same tag as `name` is showing on `layer`."
+msgstr ""
+"`name` と同じタグを持つ画像が `layer` 上に表示されていると True を返します。"
+
+#: ../../source/inc/image_func:222
+msgid "`image`"
+msgstr "`image`"
+
+#: ../../source/inc/image_func:220
+msgid ""
+"May be a string giving the image name or a tuple giving each component of "
+"the image name. It may also be a string giving only the image tag."
+msgstr ""
+"画像名の文字列や、画像名の各要素のタプルです。画像タグだけの文字列でもかまい"
+"ません。"
+
+#: ../../source/inc/image_func:229
+msgid ""
+"This function takes one or more displayables as arguments. It causes Ren'Py "
+"to predict those displayables during every interaction until the "
+"displayables are removed by :func:`renpy.stop_predict`."
+msgstr ""
+"この関数は 1 つ以上の displayable を引数として受け取ります。 :func:`renpy."
+"stop_predict` によって除外されるまで、 それらの displayable をインタラクショ"
+"ン毎に予測させます。"
+
+#: ../../source/inc/image_func:233
+msgid ""
+"If a displayable name is a string containing one or more \\* characters, the "
+"asterisks are used as a wildcard pattern. If there is at least one . in the "
+"string, the pattern is matched against filenames, otherwise it is matched "
+"against image names."
+msgstr ""
+"displayable 名が1つ以上の \\* を含む文字列であるなら、アスタリスクがワイルド"
+"カードパターンとして使用できます。文字列に少なくとも1つ . があれが、そのパ"
+"ターンはファイルネームに、そうでなければ画像名にマッチします。"
+
+#: ../../source/inc/image_func:242
+msgid "starts predicting all images with the name eileen, while::"
+msgstr "eileen の名前を持つすべての画像を予測します。 ::"
+
+#: ../../source/inc/image_func:246
+msgid "matches all files starting with concert in the images directory."
+msgstr "image ディレクトリ内の concert で始まるすべての画像にマッチします。"
+
+#: ../../source/inc/image_func:248
+msgid ""
+"Prediction will occur during normal gameplay. To wait for prediction to "
+"complete, use the `predict` argument to :func:`renpy.pause`."
+msgstr ""
+"予測はゲームプレイ中ずっと発生します。予測の完了を待つには :func:`renpy."
+"pause` に `predict` 引数を使用します。"
+
+#: ../../source/inc/image_func:253
+msgid ""
+"This function takes one or more displayables as arguments. It causes Ren'Py "
+"to stop predicting those displayables during every interaction."
+msgstr ""
+"この関数は 1 つ以上の displayable を引数として受け取ります。それらの "
+"displayable のインタラクション毎の予測を停止させます。"
+
+#: ../../source/inc/image_func:256
+msgid ""
+"Wildcard patterns can be used as described in :func:`renpy.start_predict`."
+msgstr ""
+"ワイルドカードパターンは :func:`renpy.start_predict` で述べられるように使用可"
+"能です。"
+
 #: ../../source/displaying_images.rst:562
 msgid "See also"
 msgstr "以下も参照してください"
@@ -932,409 +1404,6 @@ msgid ""
 msgstr ""
 ":doc:`displayables` : 基本的な画像の他、より多様な表示するできるオブジェクト"
 "があります。"
-
-#~ msgid ""
-#~ "Adds a new layer to the screen. If the layer already exists, this "
-#~ "function does nothing."
-#~ msgstr ""
-#~ "新しいレイヤーを追加します。レイヤーが既に存在すればこの関数はなにもしませ"
-#~ "ん。"
-
-#~ msgid "One of `behind` or `above` must be given."
-#~ msgstr "`below` または `above` のどちらかが指定さなければいけません。"
-
-#~ msgid "`layer`"
-#~ msgstr "`layer`"
-
-#~ msgid "A string giving the name of the new layer to add."
-#~ msgstr "追加する新しいレイヤー名の文字列です。"
-
-#~ msgid "`above`"
-#~ msgstr "`above`"
-
-#~ msgid ""
-#~ "If not None, a string giving the name of a layer the new layer will be "
-#~ "placed above."
-#~ msgstr "None または新しいレイヤーの下に配置されるレイヤー名の文字列です。"
-
-#~ msgid "`below`"
-#~ msgstr "`below`"
-
-#~ msgid ""
-#~ "If not None, a string giving the name of a layer the new layer will be "
-#~ "placed below."
-#~ msgstr "None または新しいレイヤーの上に配置されるレイヤー名の文字列です。"
-
-#~ msgid "`menu_clear`"
-#~ msgstr "`menu_clear`"
-
-#~ msgid ""
-#~ "If true, this layer will be cleared when entering the game menu context, "
-#~ "and restored when leaving it."
-#~ msgstr ""
-#~ "True ならこのレイヤーはゲームメニューコンテキストに入るとクリアされ、出る"
-#~ "ときに復元されます。"
-
-#~ msgid "`sticky`"
-#~ msgstr "`sticky`"
-
-#~ msgid ""
-#~ "If true, any tags added to this layer will have it become their default "
-#~ "layer until they are hidden. If None, this layer will be sticky only if "
-#~ "other sticky layers already exist."
-#~ msgstr ""
-#~ "True ならこのレイヤーに追加されたタグは非表示になるまでこのレイヤーをその"
-#~ "デフォルトレイヤーにします。 None なら他の sticky レイヤーが既に存在してい"
-#~ "るときのみこのレイヤーは sticky レイヤーになります。"
-
-#~ msgid ""
-#~ "Determines if `name` can be used to show an image. This interprets `name` "
-#~ "as a tag and attributes. This is combined with the attributes of the "
-#~ "currently-showing image with `tag` on `layer` to try to determine a "
-#~ "unique image to show. If a unique image can be show, returns the name of "
-#~ "that image as a tuple. Otherwise, returns None."
-#~ msgstr ""
-#~ "`name` で画像を表示出来るか決定します。これは `name` をタグと属性として解"
-#~ "釈します。これは `layer` 上の現在表示されている `tag` の画像の属性と組み合"
-#~ "わされ、表示する画像を 1 つに決定しようとします。1つの画像が表示可能なら、"
-#~ "その画像名をタプルで返し、そうでなければ None を返します。"
-
-#~ msgid "`tag`"
-#~ msgstr "`tag`"
-
-#~ msgid ""
-#~ "The image tag to get attributes from. If not given, defaults to the first "
-#~ "component of `name`."
-#~ msgstr ""
-#~ "画像属性を所得する画像タグです。未指定なら `name` の最初の要素が使用されま"
-#~ "す。"
-
-#~ msgid "The layer to check. If None, uses the default layer for `tag`."
-#~ msgstr ""
-#~ "チェックするレイヤーです。 None なら `tag` のデフォルトレイヤーを使用しま"
-#~ "す。"
-
-#~ msgid "Changes the zorder of `tag` on `layer` to `zorder`."
-#~ msgstr "`layer` 上の `tag` の zorder を `zorder` に変更します。"
-
-#~ msgid ""
-#~ "Checks to see if there is a unique image with the given tag and "
-#~ "attributes. If there is, returns the attributes in order. Otherwise, "
-#~ "returns None."
-#~ msgstr ""
-#~ "指定したタグと属性を持つ唯一の画像があるかチェックします。あれば、その属性"
-#~ "を順番に返します。そうでなければ None を返します。"
-
-#~ msgid ""
-#~ "Clears all image attributes for the `tag` image. If the tag had no "
-#~ "attached image attributes, this does nothing."
-#~ msgstr ""
-#~ "`tag` 画像のすべての画像属性をクリアします。そのタグに画像属性が泣ければ、"
-#~ "おれは何もしません。"
-
-#~ msgid ""
-#~ "Copies images beginning with one prefix to images beginning with another. "
-#~ "For example::"
-#~ msgstr "ある接頭辞で始まる画像を他の接頭辞で始まるものにコピーします。例 :"
-
-#~ msgid ""
-#~ "will create an image beginning with \"eileen2\" for every image beginning "
-#~ "with \"eileen\". If \"eileen happy\" exists, \"eileen2 happy\" will be "
-#~ "created."
-#~ msgstr ""
-#~ "「 eileen 」で始まるすべての画像に対して「 eileen2 」で始まる画像を作成し"
-#~ "ます。例えば「 eileen happy 」が存在するなら、「 eileen2 happy 」が作成さ"
-#~ "れます。"
-
-#~ msgid "`old`"
-#~ msgstr "`old`"
-
-#~ msgid ""
-#~ "A space-separated string giving the components of the old image name."
-#~ msgstr "スペース区切りのコピー対象画像名の要素の文字列です。"
-
-#~ msgid "`new`"
-#~ msgstr "`new`"
-
-#~ msgid ""
-#~ "A space-separated string giving the components of the new image name."
-#~ msgstr "スペース区切りの新しい画像名の要素の文字列です。"
-
-#~ msgid ""
-#~ "This flushes all image cache entries that refer to the file `fn`.  This "
-#~ "may be called when an image file changes on disk to force Ren'Py to use "
-#~ "the new version."
-#~ msgstr ""
-#~ "`fn` ファイルを参照するすべての画像イメージのキャッシュをクリアします。"
-#~ "ディスクの画像ファイルが変わったときにはこれを呼び出して、 Ren'Pyに新バー"
-#~ "ジョンの使用を強制します。"
-
-#~ msgid ""
-#~ "Return a tuple giving the image attributes for the image `tag`. If the "
-#~ "image tag has not had any attributes associated since the last time it "
-#~ "was hidden, returns `if_hidden`."
-#~ msgstr ""
-#~ "`tag` の画像属性のタプルを返します。画像タグが最後に非表示されてから画像属"
-#~ "性がないときは、`if_hidden` を返します。"
-
-#~ msgid "Returns a list of image tags that have been defined."
-#~ msgstr "定義されている画像タグのリストが返されます。"
-
-#~ msgid ""
-#~ "Returns the set of image tags on `layer` that are currently hidden, but "
-#~ "still have attribute information associated with them."
-#~ msgstr ""
-#~ "現在 `layer` 上で非表示されているが、まだ画像属性を持つ画像タグのセットが"
-#~ "返されます。"
-
-#~ msgid ""
-#~ "If an image with `tag` exists on `layer`, returns the bounding box of "
-#~ "that image. Returns None if the image is not found."
-#~ msgstr ""
-#~ "`tag` を持つ画像が `layer` に存在すれば、その画像の矩形領域を返します。画"
-#~ "像が見つからなければ None を返します。"
-
-#~ msgid ""
-#~ "The bounding box is an (x, y, width, height) tuple. The components of the "
-#~ "tuples are expressed in pixels, and may be floating point numbers."
-#~ msgstr ""
-#~ "矩形領域は (x, y, width, height) のタプルです。タプルの要素はピクセル数で"
-#~ "表され、小数にも出来ます。"
-
-#~ msgid "`width`, `height`"
-#~ msgstr "`width`, `height`"
-
-#~ msgid ""
-#~ "The width and height of the area that contains the image. If None, "
-#~ "defaults the width and height of the screen, respectively."
-#~ msgstr ""
-#~ "画像を格納する領域の幅と高さです。 None ならデフォルトでそれぞれスクリーン"
-#~ "の幅と高さになります。"
-
-#~ msgid "If None, uses the default layer for `tag`."
-#~ msgstr "None なら `tag` のデフォルトレイヤーを使用します。"
-
-#~ msgid ""
-#~ "Returns a list of image attributes, ordered in a way that makes sense to "
-#~ "present to the user."
-#~ msgstr "ユーザーに提供される順にの画像属性のリストを返します。"
-
-#~ msgid "`attributes`"
-#~ msgstr "`attributes`"
-
-#~ msgid ""
-#~ "If present, only attributes that are compatible with the given attributes "
-#~ "are considered. (Compatible means that the attributes can be in a single "
-#~ "image at the same time.)"
-#~ msgstr ""
-#~ "存在すれば、指定された属性と互換性のある属性のみが考慮されます(互換性とは"
-#~ "その属性が同時に一つの画像にあることです)。"
-
-#~ msgid "`sort`"
-#~ msgstr "`sort`"
-
-#~ msgid ""
-#~ "If not None, the returned list of attributes is sorted. This is a one-"
-#~ "argument function that should be used as a tiebreaker - see `this "
-#~ "tutorial <https://docs.python.org/3/howto/sorting.html#key-functions>`_ "
-#~ "for more information."
-#~ msgstr ""
-#~ "None でなければ、これで返される属性のリストがソートされます。これは "
-#~ "tiebreaker として使用されるべき引数1つの関数です。詳細は`このチュートリア"
-#~ "ル <https://docs.python.org/3/howto/sorting.html#key-functions>`_ を参照し"
-#~ "てください。"
-
-#~ msgid ""
-#~ "This gets the placement of displayable d. There's very little warranty on "
-#~ "this information, as it might change when the displayable is rendered, "
-#~ "and might not exist until the displayable is first rendered."
-#~ msgstr ""
-#~ "これは displayable d の位置を所得します。displayable はレンダリングされる"
-#~ "と位置が変わる可能性があり、最初にレンダリングされるまでは存在しない可能性"
-#~ "もあるのでこの情報にはあまり信頼がありません。"
-
-#~ msgid ""
-#~ "This returns an object with the following fields, each corresponding to a "
-#~ "style property:"
-#~ msgstr ""
-#~ "これは以下の属性を持つオブジェクトを返し、それぞれがスタイルプロパティーに"
-#~ "対応しています。"
-
-#~ msgid "pos"
-#~ msgstr "pos"
-
-#~ msgid "xpos"
-#~ msgstr "xpos"
-
-#~ msgid "ypos"
-#~ msgstr "ypos"
-
-#~ msgid "anchor"
-#~ msgstr "anchor"
-
-#~ msgid "xanchor"
-#~ msgstr "xanchor"
-
-#~ msgid "yanchor"
-#~ msgstr "yanchor"
-
-#~ msgid "offset"
-#~ msgstr "offset"
-
-#~ msgid "xoffset"
-#~ msgstr "xoffset"
-
-#~ msgid "yoffset"
-#~ msgstr "yoffset"
-
-#~ msgid "subpixel"
-#~ msgstr "subpixel"
-
-#~ msgid ""
-#~ "If an image with the same name has been :ref:`registered <defining-"
-#~ "images>`, returns it. Otherwise, returns None."
-#~ msgstr ""
-#~ "同じ名前の画像が :ref:`登録されて <defining-images>` いればそれを、そうで"
-#~ "なければ None を返します。"
-
-#~ msgid ""
-#~ "Returns the tag corresponding to the currently speaking character (the "
-#~ "`image` argument given to that character). Returns None if no character "
-#~ "is speaking or the current speaking character does not have a "
-#~ "corresponding image tag."
-#~ msgstr ""
-#~ "現在話しているキャラクターに関連する (そのキャラクターの `image` 引数に指"
-#~ "定された) タグ を返します。話しているキャラクターがいない、または現在の"
-#~ "キャラクターが画像タグと関連付けられていなければ None を返します。"
-
-#~ msgid ""
-#~ "Returns the set of image tags that are currently being shown on `layer`. "
-#~ "If sort is true, returns a list of the tags from back to front."
-#~ msgstr ""
-#~ "現在 `layer` 上に表示されている画像タグのセットが返されます。sort が True "
-#~ "なら、後ろから前の順でタグのリストが返されます。"
-
-#~ msgid "Returns a list of (tag, zorder) pairs for `layer`."
-#~ msgstr "`layer` に対する (tag, zorder) のペアのリストを返します。"
-
-#~ msgid ""
-#~ "Return true if an image with `name` exists, and false if no such image "
-#~ "exists."
-#~ msgstr ""
-#~ "`name` 画像が存在すれば Ture を、そのような画像がなければ False を返しま"
-#~ "す。"
-
-#~ msgid "`name`"
-#~ msgstr "`name`"
-
-#~ msgid ""
-#~ "Either a string giving an image name, or a tuple of strings giving the "
-#~ "name components."
-#~ msgstr "画像名の文字列か、画像名を要素とする文字列のタプルです。"
-
-#~ msgid "`exact`"
-#~ msgstr "`exact`"
-
-#~ msgid ""
-#~ "Returns true if and only if an image with the exact name exists - "
-#~ "parameterized matches are not included."
-#~ msgstr ""
-#~ "その正確な名前で画像が存在する場合のみ True を返します。正規表現はマッチし"
-#~ "ません。"
-
-#~ msgid ""
-#~ "Returns a list of images that have been added to Ren'Py, as a list of "
-#~ "strings with spaces between the name components."
-#~ msgstr ""
-#~ "Ren'Py に追加された画像を、名前と要素間にスペースを置いた文字列のリストと"
-#~ "して返します。"
-
-#~ msgid ""
-#~ "Marks the named image as if it has been already displayed on the current "
-#~ "user's system."
-#~ msgstr ""
-#~ "その名前の画像を現在のユーザーがすでに閲覧しているものとしてマークします。"
-
-#~ msgid ""
-#~ "Marks the named image as if it has not been displayed on the current "
-#~ "user's system yet."
-#~ msgstr ""
-#~ "その名前の画像を現在のユーザーではまだ閲覧していないものとしてマークしま"
-#~ "す。"
-
-#~ msgid ""
-#~ "Returns True if the named image has been seen at least once on the user's "
-#~ "system. An image has been seen if it's been displayed using the show "
-#~ "statement, scene statement, or :func:`renpy.show` function. (Note that "
-#~ "there are cases where the user won't actually see the image, like a show "
-#~ "immediately followed by a hide.)"
-#~ msgstr ""
-#~ "その名前の画像がユーザーに一度でも閲覧されていれば True を返します。画像"
-#~ "は show 、 scene ステートメントか  :func:`renpy.show` 関数を使用して表示さ"
-#~ "れると閲覧されたことになります ( 表示直後に hide されるなど、実際にはユー"
-#~ "ザーが画像を見ていない場合もあることに注意してください )。"
-
-#~ msgid ""
-#~ "Returns true if an image with the same tag as `name` is showing on "
-#~ "`layer`."
-#~ msgstr ""
-#~ "`name` と同じタグを持つ画像が `layer` 上に表示されていると True を返しま"
-#~ "す。"
-
-#~ msgid "`image`"
-#~ msgstr "`image`"
-
-#~ msgid ""
-#~ "May be a string giving the image name or a tuple giving each component of "
-#~ "the image name. It may also be a string giving only the image tag."
-#~ msgstr ""
-#~ "画像名の文字列や、画像名の各要素のタプルです。画像タグだけの文字列でもかま"
-#~ "いません。"
-
-#~ msgid ""
-#~ "This function takes one or more displayables as arguments. It causes "
-#~ "Ren'Py to predict those displayables during every interaction until the "
-#~ "displayables are removed by :func:`renpy.stop_predict`."
-#~ msgstr ""
-#~ "この関数は 1 つ以上の displayable を引数として受け取ります。 :func:`renpy."
-#~ "stop_predict` によって除外されるまで、 それらの displayable をインタラク"
-#~ "ション毎に予測させます。"
-
-#~ msgid ""
-#~ "If a displayable name is a string containing one or more \\* characters, "
-#~ "the asterisks are used as a wildcard pattern. If there is at least one . "
-#~ "in the string, the pattern is matched against filenames, otherwise it is "
-#~ "matched against image names."
-#~ msgstr ""
-#~ "displayable 名が1つ以上の \\* を含む文字列であるなら、アスタリスクがワイル"
-#~ "ドカードパターンとして使用できます。文字列に少なくとも1つ . があれが、その"
-#~ "パターンはファイルネームに、そうでなければ画像名にマッチします。"
-
-#~ msgid "starts predicting all images with the name eileen, while::"
-#~ msgstr "eileen の名前を持つすべての画像を予測します。 ::"
-
-#~ msgid "matches all files starting with concert in the images directory."
-#~ msgstr "image ディレクトリ内の concert で始まるすべての画像にマッチします。"
-
-#~ msgid ""
-#~ "Prediction will occur during normal gameplay. To wait for prediction to "
-#~ "complete, use the `predict` argument to :func:`renpy.pause`."
-#~ msgstr ""
-#~ "予測はゲームプレイ中ずっと発生します。予測の完了を待つには :func:`renpy."
-#~ "pause` に `predict` 引数を使用します。"
-
-#~ msgid ""
-#~ "This function takes one or more displayables as arguments. It causes "
-#~ "Ren'Py to stop predicting those displayables during every interaction."
-#~ msgstr ""
-#~ "この関数は 1 つ以上の displayable を引数として受け取ります。それらの "
-#~ "displayable のインタラクション毎の予測を停止させます。"
-
-#~ msgid ""
-#~ "Wildcard patterns can be used as described in :func:`renpy.start_predict`."
-#~ msgstr ""
-#~ "ワイルドカードパターンは :func:`renpy.start_predict` で述べられるように使"
-#~ "用可能です。"
 
 #~ msgid "master layer."
 #~ msgstr "master layer."
