@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 20:57+0900\n"
+"POT-Creation-Date: 2023-09-20 21:53+0900\n"
 "PO-Revision-Date: 2023-07-21 21:06+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -592,540 +592,6 @@ msgstr ":ref:`audio-actions` を参照してください。"
 msgid "Functions"
 msgstr "関数"
 
-#: ../../source/inc/audio:5
-msgid ""
-"This class wraps a bytes object containing audio data, so it can be passed "
-"to the audio playback system. The audio data should be contained in some "
-"format Ren'Py supports. (For examples RIFF WAV format headers, not unadorned "
-"samples.)"
-msgstr ""
-"このクラスはオーディオデータを含むバイトオブジェクトをラップしてオーディオ再"
-"生システムで使用できるようにします。オーディオデータは Ren'Py がサポートする"
-"フォーマットであるべきです(例 修飾のないファイルではなく、 RIFF WAV 形式の"
-"ヘッダー)。"
-
-#: ../../source/inc/audio:11
-msgid "`data`"
-msgstr "`data`"
-
-#: ../../source/inc/audio:11
-msgid "A bytes object containing the audio file data."
-msgstr "オーディオファイルを含む bytes オブジェクトです。"
-
-#: ../../source/inc/audio:16
-msgid "`filename`"
-msgstr "`filename`"
-
-#: ../../source/inc/audio:14
-msgid ""
-"A synthetic filename associated with this data. It can be used to suggest "
-"the format `data` is in, and is reported as part of error messages."
-msgstr ""
-"このデータと関連付けられて合成されるファイル名です。これを使用して、 `data` "
-"を含むフォーマットを示したり、エラーメッセージのレポートで使用したりできま"
-"す。"
-
-#: ../../source/inc/audio:18
-msgid ""
-"Once created, this can be used wherever an audio filename is allowed. For "
-"example::"
-msgstr ""
-"いったん作成されると、これはオーディオファイル名が求められるどこででも使用可"
-"能です。"
-
-#: ../../source/inc/audio:26
-msgid ""
-"Marks the given filename as if it has been already played on the current "
-"user's system."
-msgstr ""
-"指定したファイル名をすでに現在のユーザーに再生されているとマークします。"
-
-#: ../../source/inc/audio:31
-msgid ""
-"Marks the given filename as if it has not been played on the current user's "
-"system yet."
-msgstr ""
-"指定したファイル名が1 度も現在のユーザーに再生されていないとマークします。"
-
-#: ../../source/inc/audio:36
-msgid ""
-"Plays a sound effect. If `channel` is None, it defaults to :var:`config."
-"play_channel`. This is used to play sounds defined in styles, :propref:"
-"`hover_sound` and :propref:`activate_sound`."
-msgstr ""
-"効果音を再生します。 `channel` が None なら、デフォルトで :var:`config."
-"play_channel` になります。これは  :propref:`hover_sound` と :propref:"
-"`activate_sound` スタイルで定義されたサウンドを再生します。"
-
-#: ../../source/inc/audio:42
-msgid ""
-"Returns True if the given filename has been played at least once on the "
-"current user's system."
-msgstr ""
-"指定したファイル名が 1 度でも現在のユーザーに再生されていれば True を返しま"
-"す。"
-
-#: ../../source/inc/audio:47
-msgid ""
-"Returns the duration of the audio or video file on `channel`. Returns 0.0 if "
-"no file is playing on `channel`, or the duration is unknown. Some formats - "
-"notably MP3 - do not include duration information in a format Ren'Py can "
-"access."
-msgstr ""
-"`channel` のオーディオやビデオファイルの長さを返します。 ファイルが再生されて"
-"いないか長さが不明ならば 0.0 を返します。いくつかのフォーマット、特に MP3 に"
-"は Ren'Py がアクセス可能な形式で長さの情報がありません。"
-
-#: ../../source/inc/audio:54
-msgid ""
-"Return a list of filenames that are being looped on `channel`, or None if no "
-"files are being looped. In the case where a loop is queued, but is not yet "
-"playing, the loop is returned, not the currently playing music."
-msgstr ""
-"`channel` でループされているファイル名リスト、またはループされているファイル"
-"がなければ None を返します。ループはキューされているがまだ再生されていない場"
-"合、その現在再生中の音声ではなくそのループが返されます。"
-
-#: ../../source/inc/audio:61
-msgid "Returns the pause flag for `channel`."
-msgstr "`channel` のポーズフラグを返します。"
-
-#: ../../source/inc/audio:65
-msgid ""
-"If the given channel is playing, returns the playing file name. Otherwise, "
-"returns None."
-msgstr ""
-"指定されたチャンネルが再生中の場合、再生中のファイルの名前を返します。それ以"
-"外の場合は None を返します。"
-
-#: ../../source/inc/audio:70
-msgid ""
-"Returns the current position of the audio or video file on `channel`, in "
-"seconds. Returns None if no audio is playing on `channel`."
-msgstr ""
-"`channel` のオーディオやビデオの現在位置を秒数で返します。ファイルが再生され"
-"ていなければ None を返します。"
-
-#: ../../source/inc/audio:73
-msgid ""
-"As this may return None before a channel starts playing, or if the audio "
-"channel involved has been muted, callers of this function should always "
-"handle a None value."
-msgstr ""
-"チャンネルが再生前であったり、ミュートにされると None を返すため、この関数を"
-"呼び出すコードは常に None を処理するべきです。"
-
-#: ../../source/inc/audio:79
-msgid ""
-"Returns True if the channel is currently playing a sound, False if it is "
-"not, or if the sound system isn't working."
-msgstr ""
-"指定されたチャンネルが再生中なら True を返します。再生中でないかサウンドシス"
-"テムが動作していないなら False を返します。"
-
-#: ../../source/inc/audio:84
-msgid ""
-"This stops the music currently playing on the numbered channel, dequeues any "
-"queued music, and begins playing the specified file or files."
-msgstr ""
-"これは指定されたチャンネルで現在再生中の曲を停止し、キューされた曲をクリア"
-"し、指定されたファイルかファイルリストを再生開始します。"
-
-#: ../../source/inc/audio:88 ../../source/inc/audio:151
-msgid "`filenames`"
-msgstr "`filenames`"
-
-#: ../../source/inc/audio:88 ../../source/inc/audio:151
-msgid "This may be a single file, or a list of files to be played."
-msgstr "これは再生されるファイルかファイルのリストです。"
-
-#: ../../source/inc/audio:91 ../../source/inc/audio:154
-#: ../../source/inc/audio:244 ../../source/inc/audio:277
-#: ../../source/inc/audio:290
-msgid "`channel`"
-msgstr "`channel`"
-
-#: ../../source/inc/audio:91 ../../source/inc/audio:154
-msgid "The channel to play the sound on."
-msgstr "サウンドを再生するチャンネルです。"
-
-#: ../../source/inc/audio:95 ../../source/inc/audio:158
-#: ../../source/inc/audio:201
-msgid "`loop`"
-msgstr "`loop`"
-
-#: ../../source/inc/audio:94 ../../source/inc/audio:157
-msgid ""
-"If this is True, the tracks will loop while they are the last thing in the "
-"queue."
-msgstr "これが True ならトラックはそれがキューの最後にある間ループを続けます。"
-
-#: ../../source/inc/audio:100 ../../source/inc/audio:294
-msgid "`fadeout`"
-msgstr "`fadeout`"
-
-#: ../../source/inc/audio:98
-msgid ""
-"If not None, this is a time in seconds to fade for. Otherwise the fadeout "
-"time is taken from config.fadeout_audio. This is ignored if the channel is "
-"paused when the music is played."
-msgstr ""
-"None を指定するか、フェードにかかる秒数を指定します。そうでなければフェードア"
-"ウトの時間は :var:`config.fadeout_audio` から所得されます。これはそのチャンネ"
-"ルが音声再生時にポーズされたときは無視されます。"
-
-#: ../../source/inc/audio:106
-msgid "`synchro_start`"
-msgstr "`synchro_start`"
-
-#: ../../source/inc/audio:103
-msgid ""
-"Ren'Py will ensure that all channels of with synchro_start set to true will "
-"start playing at exactly the same time. Synchro_start should be true when "
-"playing two audio files that are meant to be synchronized with each other."
-msgstr ""
-"Ren'Py では、synchro_start が True に設定されたチャンネルの間で、再生の開始を"
-"同時に行うことを保証できます。互いに同期させることを意図した2つのオーディオ"
-"ファイルを再生する場合、synchro_start を True に設定すべきです。"
-
-#: ../../source/inc/audio:110 ../../source/inc/audio:168
-msgid "`fadein`"
-msgstr "`fadein`"
-
-#: ../../source/inc/audio:109 ../../source/inc/audio:167
-msgid ""
-"This is the number of seconds to fade the music in for, on the first loop "
-"only."
-msgstr ""
-"これは曲をフェードインするのにかかる秒数で、最初のループでのみ有効です。"
-
-#: ../../source/inc/audio:114 ../../source/inc/audio:172
-#: ../../source/inc/audio:209
-msgid "`tight`"
-msgstr "`tight`"
-
-#: ../../source/inc/audio:113 ../../source/inc/audio:171
-msgid ""
-"If this is True, then fadeouts will span into the next-queued sound. If "
-"None, this is true when loop is True, and false otherwise."
-msgstr ""
-"True ならフェードアウトは次にキューされるサウンドにも適用されます。None なら "
-"loop が True のとき True になり、そうでなければ False です。"
-
-#: ../../source/inc/audio:120
-msgid "`if_changed`"
-msgstr "`if_changed`"
-
-#: ../../source/inc/audio:117
-msgid ""
-"If this is True, and the music file is currently playing, then it will not "
-"be stopped/faded out and faded back in again, but instead will be kept "
-"playing. (This will always queue up an additional loop of the music.)"
-msgstr ""
-"これが True であり、かつ指定したオーディオファイルが現在再生中なら、停止や"
-"フェードアウトも再び最初から再生もせずに再生を継続します ( これは常にそのオー"
-"ディオファイルをキューに追加します )。"
-
-#: ../../source/inc/audio:126 ../../source/inc/audio:178
-msgid "`relative_volume`"
-msgstr "`relative_volume`"
-
-#: ../../source/inc/audio:123 ../../source/inc/audio:175
-msgid ""
-"This is the volume relative to the current channel volume. The specified "
-"file will be played at that relative volume. If not specified, it will "
-"always default to 1.0, which plays the file at the original volume as "
-"determined by the mixer, channel and secondary volume."
-msgstr ""
-"これは現在のチャンネルボリュームに対する相対ボリュームです。指定のファイルが"
-"その相対ボリュームで再生されます。指定されなければデフォルトは 1.0で、ミキ"
-"サーとチャンネル、セカンドボリュームで決まる元の音量で再生します。"
-
-#: ../../source/inc/audio:128 ../../source/inc/audio:180
-msgid "This clears the pause flag for `channel`."
-msgstr "`channel` のポーズフラグをクリアします。"
-
-#: ../../source/inc/audio:132
-msgid ""
-"This 'pumps' the audio system. Normally, the effects of the ``play``, "
-"``queue``, and ``stop`` statements and the function equivalents take place "
-"at the start of the next interaction. In some cases, the effects of multiple "
-"statements can cancel each other out - for example, a play followed by a "
-"stop causes the track to never be played."
-msgstr ""
-"これはオーディオシステムを '押しだし'ます。通常 ``play`` や ``queue``, "
-"``stop`` ステートメントや相当する関数の効果は次のインタラクション開始時に始ま"
-"ります。しかしいくつかの場合では、複数のステートメントが互いを打ち消します。"
-"例えば play に続いて stop が来るとそのトラックは全く再生されません。"
-
-#: ../../source/inc/audio:138
-msgid ""
-"If this function is called between the play and stop, the track will begin "
-"playing before this function returns, which then allows the track to be "
-"faded out. ::"
-msgstr ""
-"この関数がその play と stop 間で呼び出されると、この関数から処理が返る前にそ"
-"のトラックが再生され始めるのでトラックがフェードアウトできるようになります。"
-
-#: ../../source/inc/audio:148
-msgid "This queues the given filenames on the specified channel."
-msgstr "指定されたファイルを特定のチャンネルにキューします。"
-
-#: ../../source/inc/audio:164
-msgid "`clear_queue`"
-msgstr "`clear_queue`"
-
-#: ../../source/inc/audio:161
-msgid ""
-"If True, then the queue is cleared, making these files the files that are "
-"played when the currently playing file finishes. If it is False, then these "
-"files are placed at the back of the queue. In either case, if no music is "
-"playing these files begin playing immediately."
-msgstr ""
-"True なら現在の再生が終了するとキューがクリアされると共にこれらのファイルが再"
-"生されます。 False ならこれらのファイルはキューの末尾に配置されます。どちらの"
-"場合でも音楽が再生されていなければこれらのファイルは即座に再生開始します。"
-
-#: ../../source/inc/audio:184
-msgid ""
-"This registers a new audio channel named `name`. Audio can then be played on "
-"the channel by supplying the channel name to the play or queue statements."
-msgstr ""
-"`name` と名付けられた新しいオーディオチャンネルを登録します。そのチャンネルの"
-"名前を play または queue ステートメントに与えると、オーディオはそのチャンネル"
-"で再生されます。"
-
-#: ../../source/inc/audio:192
-msgid "`name`"
-msgstr "`name`"
-
-#: ../../source/inc/audio:189
-msgid ""
-"The name of the channel. It should not contain spaces, as this is reserved "
-"for Ren'Py's internal use, and should be a `valid identifier <https://docs."
-"python.org/reference/lexical_analysis.html#identifiers>`__ for the syntax of "
-"the :ref:`play-statement` to be usable."
-msgstr ""
-"チャンネル名です。これは Ren'py 内部での使用に予約されるため、スペースは含ま"
-"ず、 :ref:`play-statement` のシンタックスで使用できる `妥当な識別子 <https://"
-"docs.python.org/reference/lexical_analysis.html#identifiers>`__ であるべきで"
-"す。"
-
-#: ../../source/inc/audio:198
-msgid "`mixer`"
-msgstr "`mixer`"
-
-#: ../../source/inc/audio:195
-msgid ""
-"The name of the mixer the channel uses. By default, Ren'Py knows about the "
-"\"music\", \"sfx\", and \"voice\" mixers. Using other names is possible, and "
-"will create the mixer if it doesn't already exist, but making new mixers "
-"reachable by the player requires changing the preferences screens."
-msgstr ""
-"チャンネルが使用するミキサーの名前です。デフォルトで Ren'Py には「 music 」,"
-"「 sfx 」,「 voice 」ミキサーが設定されています。他の名前の使用も可能であり、"
-"そのミキサーがなければ作成しますが、プレイヤーがチャンネルを設定できるよう設"
-"定画面の変更も必要かもしれません。"
-
-#: ../../source/inc/audio:201
-msgid "If true, sounds on this channel loop by default."
-msgstr "True の場合、このチャンネルのサウンドはデフォルトでループします。"
-
-#: ../../source/inc/audio:204
-msgid "`stop_on_mute`"
-msgstr "`stop_on_mute`"
-
-#: ../../source/inc/audio:204
-msgid "If true, music on the channel is stopped when the channel is muted."
-msgstr ""
-"True の場合、このチャンネルの曲はチャンネルがミュートになったら停止します。"
-
-#: ../../source/inc/audio:207
-msgid ""
-"If true, sounds will loop even when fadeout is occurring. This should be set "
-"to True for a sound effects or seamless music channel, and False if the "
-"music fades out on its own."
-msgstr ""
-"True の場合、サウンドはフェードアウト中でもループします。これは、サウンドエ"
-"フェクトやシームレスなミュージックチャンネルに対して True に、曲がそれ自身で"
-"フェードアウトする場合は False に設定すべきです。"
-
-#: ../../source/inc/audio:213
-msgid "`file_prefix`"
-msgstr "`file_prefix`"
-
-#: ../../source/inc/audio:212
-msgid ""
-"A prefix that is prepended to the filenames of the sound files being played "
-"on this channel."
-msgstr "このチャンネルで再生される曲のファイル名につけられる接頭辞。"
-
-#: ../../source/inc/audio:217
-msgid "`file_suffix`"
-msgstr "`file_suffix`"
-
-#: ../../source/inc/audio:216
-msgid ""
-"A suffix that is appended to the filenames of the sound files being played "
-"on this channel."
-msgstr "このチャンネルで再生される曲のファイル名につけられる接尾辞。"
-
-#: ../../source/inc/audio:221
-msgid "`buffer_queue`"
-msgstr "`buffer_queue`"
-
-#: ../../source/inc/audio:220
-msgid ""
-"Should we buffer the first second or so of a queued file? This should be "
-"True for audio, and False for movie playback."
-msgstr ""
-"キューに入れたファイルの最初の数秒をメモリに展開しますか？これはオーディオに"
-"対しては True 、ムービーに対しては False にすべきです。"
-
-#: ../../source/inc/audio:224
-msgid "`movie`"
-msgstr "`movie`"
-
-#: ../../source/inc/audio:224
-msgid "If true, this channel will be set up to play back videos."
-msgstr "True ならこのチャンネルはビデオ再生用に設定されます。"
-
-#: ../../source/inc/audio:228
-msgid "`framedrop`"
-msgstr "`framedrop`"
-
-#: ../../source/inc/audio:227
-msgid ""
-"This controls what a video does when lagging. If true, frames will be "
-"dropped to keep up with realtime and the soundtrack. If false, Ren'Py will "
-"display frames late rather than dropping them."
-msgstr ""
-"これはラグ発生時にビデオをどうするかを制御します。 True なら、いくらかのフ"
-"レームを落として実時間と音声トラックに追随します。False なら、Ren'Py はフレー"
-"ムを飛ばさず、遅れて表示します。"
-
-#: ../../source/inc/audio:233
-msgid "Sets the pan of this channel."
-msgstr "このチャンネルのパンを設定します。"
-
-#: ../../source/inc/audio:239
-msgid "`pan`"
-msgstr "`pan`"
-
-#: ../../source/inc/audio:236
-msgid ""
-"A number between -1 and 1 that control the placement of the audio. If this "
-"is -1, then all audio is sent to the left channel. If it's 0, then the two "
-"channels are equally balanced. If it's 1, then all audio is sent to the "
-"right ear."
-msgstr ""
-"音源の位置を制御する -1 から 1 までの間の数字です。これが -1 だと全ての音は左"
-"側のチャンネルに送られ、 0 だと 2 つのチャンネルは等しくなります。 1 なら全て"
-"の音は右側に送られます。"
-
-#: ../../source/inc/audio:242 ../../source/inc/audio:275
-msgid "`delay`"
-msgstr "`delay`"
-
-#: ../../source/inc/audio:242
-msgid "The amount of time it takes for the panning to occur."
-msgstr "パンの実行に掛ける時間です。"
-
-#: ../../source/inc/audio:245
-msgid ""
-"The channel the panning takes place on, defaulting to the music channel."
-msgstr "パンを実行するチャンネルです。デフォルトでは music チャンネルです。"
-
-#: ../../source/inc/audio:249
-msgid ""
-"Sets the pause flag for `channel` to `value`. If True, the channel will "
-"pause, otherwise it will play normally."
-msgstr ""
-"`channel` のポーズフラグを `value` に設定します。 True なら、チャンネルはポー"
-"ズし、そうでなければ通常どおり再生します。"
-
-#: ../../source/inc/audio:254
-msgid ""
-"This sets a callback that is called when the queue is empty. This callback "
-"is called when the queue first becomes empty, and at least once per "
-"interaction while the queue is empty."
-msgstr ""
-"これはキューが空になったときに呼び出されるコールバックを設定します。このコー"
-"ルバックはキューが最初に空になったときとキューが空になっている間のインタラク"
-"ション毎に少なくとも 1 回呼び出されます。"
-
-#: ../../source/inc/audio:258
-msgid ""
-"The callback is called with no parameters. It can queue sounds by calling "
-"renpy.music.queue with the appropriate arguments. Please note that the "
-"callback may be called while a sound is playing, as long as a queue slot is "
-"empty."
-msgstr ""
-"コールバックはパラメーターなしで呼び出されます。これは適切な引数で :func:"
-"`renpy.music.queue` を呼び出して曲をキューに追加出来ます。コールバックは"
-"キューが空である限り曲が再生されている間も呼び出されることに注意してくださ"
-"い。"
-
-#: ../../source/inc/audio:265
-msgid ""
-"Sets the volume of this channel, as a fraction of the volume of the mixer "
-"controlling the channel."
-msgstr ""
-"このチャンネルの音量を、チャンネルを制御するミキサーの音量の割合で設定しま"
-"す。"
-
-#: ../../source/inc/audio:270
-msgid "`volume`"
-msgstr "`volume`"
-
-#: ../../source/inc/audio:269
-msgid ""
-"This is a number between 0.0 and 1.0, and is interpreted as a fraction of "
-"the mixer volume for the channel."
-msgstr ""
-"これは 0.0 と 1.0 の間の数字で、そのチャンネルのミキサーボリュームの割合とし"
-"て解釈されます。"
-
-#: ../../source/inc/audio:273
-msgid ""
-"It takes delay seconds to change/fade the volume from the old to the new "
-"value. This value is persisted into saves, and participates in rollback."
-msgstr ""
-"以前の値から新しい値に音量を変更するのに ``delay`` 秒掛かります。この値はセー"
-"ブに保存され、ロールバックにも参加します。"
-
-#: ../../source/inc/audio:278
-msgid "The channel to be set"
-msgstr "設定されるチャンネルです。"
-
-#: ../../source/inc/audio:282
-msgid ""
-"This stops the music that is currently playing, and dequeues all queued "
-"music. If fadeout is None, the music is faded out for the time given in "
-"config.fadeout_audio, otherwise it is faded for fadeout seconds."
-msgstr ""
-"これは現在再生中の曲を停止して、キューに追加された全ての曲をキューから消しま"
-"す。 fadeout が None なら曲は config.fadeout_audio で指定された時間でフェード"
-"アウトします。そうでなければ fadeout 秒でフェードアウトします。"
-
-#: ../../source/inc/audio:287
-msgid "This sets the last queued file to None."
-msgstr "これは最後にキューされたファイルを None に設定します。"
-
-#: ../../source/inc/audio:290
-msgid "The channel to stop the sound on."
-msgstr "再生を停止するチャンネル"
-
-#: ../../source/inc/audio:293
-msgid ""
-"If not None, this is a time in seconds to fade for. Otherwise the fadeout "
-"time is taken from config.fadeout_audio. This is ignored if the channel is "
-"paused."
-msgstr ""
-"None を指定するか、フェードにかかる秒数を指定します。そうでなければフェードア"
-"ウトの時間は config.fadeout_audio から所得されます。これはそのチャンネルが"
-"ポーズされていれば無視されます。"
-
 #: ../../source/audio.rst:331
 msgid "Sound Functions"
 msgstr "サウンドの関数"
@@ -1139,6 +605,464 @@ msgstr ""
 "ほとんどの ``renpy.music`` 関数は ``renpy.sound`` にエイリアスを持ちます。こ"
 "れらの関数はデフォルトが music チャンネルではなく sound チャンネルに設定され"
 "ており、ループしないことを除いて同じものです。"
+
+#~ msgid ""
+#~ "This class wraps a bytes object containing audio data, so it can be "
+#~ "passed to the audio playback system. The audio data should be contained "
+#~ "in some format Ren'Py supports. (For examples RIFF WAV format headers, "
+#~ "not unadorned samples.)"
+#~ msgstr ""
+#~ "このクラスはオーディオデータを含むバイトオブジェクトをラップしてオーディオ"
+#~ "再生システムで使用できるようにします。オーディオデータは Ren'Py がサポート"
+#~ "するフォーマットであるべきです(例 修飾のないファイルではなく、 RIFF WAV 形"
+#~ "式のヘッダー)。"
+
+#~ msgid "`data`"
+#~ msgstr "`data`"
+
+#~ msgid "A bytes object containing the audio file data."
+#~ msgstr "オーディオファイルを含む bytes オブジェクトです。"
+
+#~ msgid "`filename`"
+#~ msgstr "`filename`"
+
+#~ msgid ""
+#~ "A synthetic filename associated with this data. It can be used to suggest "
+#~ "the format `data` is in, and is reported as part of error messages."
+#~ msgstr ""
+#~ "このデータと関連付けられて合成されるファイル名です。これを使用して、 "
+#~ "`data` を含むフォーマットを示したり、エラーメッセージのレポートで使用した"
+#~ "りできます。"
+
+#~ msgid ""
+#~ "Once created, this can be used wherever an audio filename is allowed. For "
+#~ "example::"
+#~ msgstr ""
+#~ "いったん作成されると、これはオーディオファイル名が求められるどこででも使用"
+#~ "可能です。"
+
+#~ msgid ""
+#~ "Marks the given filename as if it has been already played on the current "
+#~ "user's system."
+#~ msgstr ""
+#~ "指定したファイル名をすでに現在のユーザーに再生されているとマークします。"
+
+#~ msgid ""
+#~ "Marks the given filename as if it has not been played on the current "
+#~ "user's system yet."
+#~ msgstr ""
+#~ "指定したファイル名が1 度も現在のユーザーに再生されていないとマークします。"
+
+#~ msgid ""
+#~ "Plays a sound effect. If `channel` is None, it defaults to :var:`config."
+#~ "play_channel`. This is used to play sounds defined in styles, :propref:"
+#~ "`hover_sound` and :propref:`activate_sound`."
+#~ msgstr ""
+#~ "効果音を再生します。 `channel` が None なら、デフォルトで :var:`config."
+#~ "play_channel` になります。これは  :propref:`hover_sound` と :propref:"
+#~ "`activate_sound` スタイルで定義されたサウンドを再生します。"
+
+#~ msgid ""
+#~ "Returns True if the given filename has been played at least once on the "
+#~ "current user's system."
+#~ msgstr ""
+#~ "指定したファイル名が 1 度でも現在のユーザーに再生されていれば True を返し"
+#~ "ます。"
+
+#~ msgid ""
+#~ "Returns the duration of the audio or video file on `channel`. Returns 0.0 "
+#~ "if no file is playing on `channel`, or the duration is unknown. Some "
+#~ "formats - notably MP3 - do not include duration information in a format "
+#~ "Ren'Py can access."
+#~ msgstr ""
+#~ "`channel` のオーディオやビデオファイルの長さを返します。 ファイルが再生さ"
+#~ "れていないか長さが不明ならば 0.0 を返します。いくつかのフォーマット、特に "
+#~ "MP3 には Ren'Py がアクセス可能な形式で長さの情報がありません。"
+
+#~ msgid ""
+#~ "Return a list of filenames that are being looped on `channel`, or None if "
+#~ "no files are being looped. In the case where a loop is queued, but is not "
+#~ "yet playing, the loop is returned, not the currently playing music."
+#~ msgstr ""
+#~ "`channel` でループされているファイル名リスト、またはループされているファイ"
+#~ "ルがなければ None を返します。ループはキューされているがまだ再生されていな"
+#~ "い場合、その現在再生中の音声ではなくそのループが返されます。"
+
+#~ msgid "Returns the pause flag for `channel`."
+#~ msgstr "`channel` のポーズフラグを返します。"
+
+#~ msgid ""
+#~ "If the given channel is playing, returns the playing file name. "
+#~ "Otherwise, returns None."
+#~ msgstr ""
+#~ "指定されたチャンネルが再生中の場合、再生中のファイルの名前を返します。それ"
+#~ "以外の場合は None を返します。"
+
+#~ msgid ""
+#~ "Returns the current position of the audio or video file on `channel`, in "
+#~ "seconds. Returns None if no audio is playing on `channel`."
+#~ msgstr ""
+#~ "`channel` のオーディオやビデオの現在位置を秒数で返します。ファイルが再生さ"
+#~ "れていなければ None を返します。"
+
+#~ msgid ""
+#~ "As this may return None before a channel starts playing, or if the audio "
+#~ "channel involved has been muted, callers of this function should always "
+#~ "handle a None value."
+#~ msgstr ""
+#~ "チャンネルが再生前であったり、ミュートにされると None を返すため、この関数"
+#~ "を呼び出すコードは常に None を処理するべきです。"
+
+#~ msgid ""
+#~ "Returns True if the channel is currently playing a sound, False if it is "
+#~ "not, or if the sound system isn't working."
+#~ msgstr ""
+#~ "指定されたチャンネルが再生中なら True を返します。再生中でないかサウンドシ"
+#~ "ステムが動作していないなら False を返します。"
+
+#~ msgid ""
+#~ "This stops the music currently playing on the numbered channel, dequeues "
+#~ "any queued music, and begins playing the specified file or files."
+#~ msgstr ""
+#~ "これは指定されたチャンネルで現在再生中の曲を停止し、キューされた曲をクリア"
+#~ "し、指定されたファイルかファイルリストを再生開始します。"
+
+#~ msgid "`filenames`"
+#~ msgstr "`filenames`"
+
+#~ msgid "This may be a single file, or a list of files to be played."
+#~ msgstr "これは再生されるファイルかファイルのリストです。"
+
+#~ msgid "`channel`"
+#~ msgstr "`channel`"
+
+#~ msgid "The channel to play the sound on."
+#~ msgstr "サウンドを再生するチャンネルです。"
+
+#~ msgid "`loop`"
+#~ msgstr "`loop`"
+
+#~ msgid ""
+#~ "If this is True, the tracks will loop while they are the last thing in "
+#~ "the queue."
+#~ msgstr ""
+#~ "これが True ならトラックはそれがキューの最後にある間ループを続けます。"
+
+#~ msgid "`fadeout`"
+#~ msgstr "`fadeout`"
+
+#~ msgid ""
+#~ "If not None, this is a time in seconds to fade for. Otherwise the fadeout "
+#~ "time is taken from config.fadeout_audio. This is ignored if the channel "
+#~ "is paused when the music is played."
+#~ msgstr ""
+#~ "None を指定するか、フェードにかかる秒数を指定します。そうでなければフェー"
+#~ "ドアウトの時間は :var:`config.fadeout_audio` から所得されます。これはその"
+#~ "チャンネルが音声再生時にポーズされたときは無視されます。"
+
+#~ msgid "`synchro_start`"
+#~ msgstr "`synchro_start`"
+
+#~ msgid ""
+#~ "Ren'Py will ensure that all channels of with synchro_start set to true "
+#~ "will start playing at exactly the same time. Synchro_start should be true "
+#~ "when playing two audio files that are meant to be synchronized with each "
+#~ "other."
+#~ msgstr ""
+#~ "Ren'Py では、synchro_start が True に設定されたチャンネルの間で、再生の開"
+#~ "始を同時に行うことを保証できます。互いに同期させることを意図した2つのオー"
+#~ "ディオファイルを再生する場合、synchro_start を True に設定すべきです。"
+
+#~ msgid "`fadein`"
+#~ msgstr "`fadein`"
+
+#~ msgid ""
+#~ "This is the number of seconds to fade the music in for, on the first loop "
+#~ "only."
+#~ msgstr ""
+#~ "これは曲をフェードインするのにかかる秒数で、最初のループでのみ有効です。"
+
+#~ msgid "`tight`"
+#~ msgstr "`tight`"
+
+#~ msgid ""
+#~ "If this is True, then fadeouts will span into the next-queued sound. If "
+#~ "None, this is true when loop is True, and false otherwise."
+#~ msgstr ""
+#~ "True ならフェードアウトは次にキューされるサウンドにも適用されます。None な"
+#~ "ら loop が True のとき True になり、そうでなければ False です。"
+
+#~ msgid "`if_changed`"
+#~ msgstr "`if_changed`"
+
+#~ msgid ""
+#~ "If this is True, and the music file is currently playing, then it will "
+#~ "not be stopped/faded out and faded back in again, but instead will be "
+#~ "kept playing. (This will always queue up an additional loop of the music.)"
+#~ msgstr ""
+#~ "これが True であり、かつ指定したオーディオファイルが現在再生中なら、停止や"
+#~ "フェードアウトも再び最初から再生もせずに再生を継続します ( これは常にその"
+#~ "オーディオファイルをキューに追加します )。"
+
+#~ msgid "`relative_volume`"
+#~ msgstr "`relative_volume`"
+
+#~ msgid ""
+#~ "This is the volume relative to the current channel volume. The specified "
+#~ "file will be played at that relative volume. If not specified, it will "
+#~ "always default to 1.0, which plays the file at the original volume as "
+#~ "determined by the mixer, channel and secondary volume."
+#~ msgstr ""
+#~ "これは現在のチャンネルボリュームに対する相対ボリュームです。指定のファイル"
+#~ "がその相対ボリュームで再生されます。指定されなければデフォルトは 1.0で、ミ"
+#~ "キサーとチャンネル、セカンドボリュームで決まる元の音量で再生します。"
+
+#~ msgid "This clears the pause flag for `channel`."
+#~ msgstr "`channel` のポーズフラグをクリアします。"
+
+#~ msgid ""
+#~ "This 'pumps' the audio system. Normally, the effects of the ``play``, "
+#~ "``queue``, and ``stop`` statements and the function equivalents take "
+#~ "place at the start of the next interaction. In some cases, the effects of "
+#~ "multiple statements can cancel each other out - for example, a play "
+#~ "followed by a stop causes the track to never be played."
+#~ msgstr ""
+#~ "これはオーディオシステムを '押しだし'ます。通常 ``play`` や ``queue``, "
+#~ "``stop`` ステートメントや相当する関数の効果は次のインタラクション開始時に"
+#~ "始まります。しかしいくつかの場合では、複数のステートメントが互いを打ち消し"
+#~ "ます。例えば play に続いて stop が来るとそのトラックは全く再生されません。"
+
+#~ msgid ""
+#~ "If this function is called between the play and stop, the track will "
+#~ "begin playing before this function returns, which then allows the track "
+#~ "to be faded out. ::"
+#~ msgstr ""
+#~ "この関数がその play と stop 間で呼び出されると、この関数から処理が返る前に"
+#~ "そのトラックが再生され始めるのでトラックがフェードアウトできるようになりま"
+#~ "す。"
+
+#~ msgid "This queues the given filenames on the specified channel."
+#~ msgstr "指定されたファイルを特定のチャンネルにキューします。"
+
+#~ msgid "`clear_queue`"
+#~ msgstr "`clear_queue`"
+
+#~ msgid ""
+#~ "If True, then the queue is cleared, making these files the files that are "
+#~ "played when the currently playing file finishes. If it is False, then "
+#~ "these files are placed at the back of the queue. In either case, if no "
+#~ "music is playing these files begin playing immediately."
+#~ msgstr ""
+#~ "True なら現在の再生が終了するとキューがクリアされると共にこれらのファイル"
+#~ "が再生されます。 False ならこれらのファイルはキューの末尾に配置されます。"
+#~ "どちらの場合でも音楽が再生されていなければこれらのファイルは即座に再生開始"
+#~ "します。"
+
+#~ msgid ""
+#~ "This registers a new audio channel named `name`. Audio can then be played "
+#~ "on the channel by supplying the channel name to the play or queue "
+#~ "statements."
+#~ msgstr ""
+#~ "`name` と名付けられた新しいオーディオチャンネルを登録します。そのチャンネ"
+#~ "ルの名前を play または queue ステートメントに与えると、オーディオはその"
+#~ "チャンネルで再生されます。"
+
+#~ msgid "`name`"
+#~ msgstr "`name`"
+
+#~ msgid ""
+#~ "The name of the channel. It should not contain spaces, as this is "
+#~ "reserved for Ren'Py's internal use, and should be a `valid identifier "
+#~ "<https://docs.python.org/reference/lexical_analysis.html#identifiers>`__ "
+#~ "for the syntax of the :ref:`play-statement` to be usable."
+#~ msgstr ""
+#~ "チャンネル名です。これは Ren'py 内部での使用に予約されるため、スペースは含"
+#~ "まず、 :ref:`play-statement` のシンタックスで使用できる `妥当な識別子 "
+#~ "<https://docs.python.org/reference/lexical_analysis.html#identifiers>`__ "
+#~ "であるべきです。"
+
+#~ msgid "`mixer`"
+#~ msgstr "`mixer`"
+
+#~ msgid ""
+#~ "The name of the mixer the channel uses. By default, Ren'Py knows about "
+#~ "the \"music\", \"sfx\", and \"voice\" mixers. Using other names is "
+#~ "possible, and will create the mixer if it doesn't already exist, but "
+#~ "making new mixers reachable by the player requires changing the "
+#~ "preferences screens."
+#~ msgstr ""
+#~ "チャンネルが使用するミキサーの名前です。デフォルトで Ren'Py には"
+#~ "「 music 」,「 sfx 」,「 voice 」ミキサーが設定されています。他の名前の使"
+#~ "用も可能であり、そのミキサーがなければ作成しますが、プレイヤーがチャンネル"
+#~ "を設定できるよう設定画面の変更も必要かもしれません。"
+
+#~ msgid "If true, sounds on this channel loop by default."
+#~ msgstr "True の場合、このチャンネルのサウンドはデフォルトでループします。"
+
+#~ msgid "`stop_on_mute`"
+#~ msgstr "`stop_on_mute`"
+
+#~ msgid "If true, music on the channel is stopped when the channel is muted."
+#~ msgstr ""
+#~ "True の場合、このチャンネルの曲はチャンネルがミュートになったら停止しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "If true, sounds will loop even when fadeout is occurring. This should be "
+#~ "set to True for a sound effects or seamless music channel, and False if "
+#~ "the music fades out on its own."
+#~ msgstr ""
+#~ "True の場合、サウンドはフェードアウト中でもループします。これは、サウンド"
+#~ "エフェクトやシームレスなミュージックチャンネルに対して True に、曲がそれ自"
+#~ "身でフェードアウトする場合は False に設定すべきです。"
+
+#~ msgid "`file_prefix`"
+#~ msgstr "`file_prefix`"
+
+#~ msgid ""
+#~ "A prefix that is prepended to the filenames of the sound files being "
+#~ "played on this channel."
+#~ msgstr "このチャンネルで再生される曲のファイル名につけられる接頭辞。"
+
+#~ msgid "`file_suffix`"
+#~ msgstr "`file_suffix`"
+
+#~ msgid ""
+#~ "A suffix that is appended to the filenames of the sound files being "
+#~ "played on this channel."
+#~ msgstr "このチャンネルで再生される曲のファイル名につけられる接尾辞。"
+
+#~ msgid "`buffer_queue`"
+#~ msgstr "`buffer_queue`"
+
+#~ msgid ""
+#~ "Should we buffer the first second or so of a queued file? This should be "
+#~ "True for audio, and False for movie playback."
+#~ msgstr ""
+#~ "キューに入れたファイルの最初の数秒をメモリに展開しますか？これはオーディオ"
+#~ "に対しては True 、ムービーに対しては False にすべきです。"
+
+#~ msgid "`movie`"
+#~ msgstr "`movie`"
+
+#~ msgid "If true, this channel will be set up to play back videos."
+#~ msgstr "True ならこのチャンネルはビデオ再生用に設定されます。"
+
+#~ msgid "`framedrop`"
+#~ msgstr "`framedrop`"
+
+#~ msgid ""
+#~ "This controls what a video does when lagging. If true, frames will be "
+#~ "dropped to keep up with realtime and the soundtrack. If false, Ren'Py "
+#~ "will display frames late rather than dropping them."
+#~ msgstr ""
+#~ "これはラグ発生時にビデオをどうするかを制御します。 True なら、いくらかのフ"
+#~ "レームを落として実時間と音声トラックに追随します。False なら、Ren'Py はフ"
+#~ "レームを飛ばさず、遅れて表示します。"
+
+#~ msgid "Sets the pan of this channel."
+#~ msgstr "このチャンネルのパンを設定します。"
+
+#~ msgid "`pan`"
+#~ msgstr "`pan`"
+
+#~ msgid ""
+#~ "A number between -1 and 1 that control the placement of the audio. If "
+#~ "this is -1, then all audio is sent to the left channel. If it's 0, then "
+#~ "the two channels are equally balanced. If it's 1, then all audio is sent "
+#~ "to the right ear."
+#~ msgstr ""
+#~ "音源の位置を制御する -1 から 1 までの間の数字です。これが -1 だと全ての音"
+#~ "は左側のチャンネルに送られ、 0 だと 2 つのチャンネルは等しくなります。 1 "
+#~ "なら全ての音は右側に送られます。"
+
+#~ msgid "`delay`"
+#~ msgstr "`delay`"
+
+#~ msgid "The amount of time it takes for the panning to occur."
+#~ msgstr "パンの実行に掛ける時間です。"
+
+#~ msgid ""
+#~ "The channel the panning takes place on, defaulting to the music channel."
+#~ msgstr "パンを実行するチャンネルです。デフォルトでは music チャンネルです。"
+
+#~ msgid ""
+#~ "Sets the pause flag for `channel` to `value`. If True, the channel will "
+#~ "pause, otherwise it will play normally."
+#~ msgstr ""
+#~ "`channel` のポーズフラグを `value` に設定します。 True なら、チャンネルは"
+#~ "ポーズし、そうでなければ通常どおり再生します。"
+
+#~ msgid ""
+#~ "This sets a callback that is called when the queue is empty. This "
+#~ "callback is called when the queue first becomes empty, and at least once "
+#~ "per interaction while the queue is empty."
+#~ msgstr ""
+#~ "これはキューが空になったときに呼び出されるコールバックを設定します。この"
+#~ "コールバックはキューが最初に空になったときとキューが空になっている間のイン"
+#~ "タラクション毎に少なくとも 1 回呼び出されます。"
+
+#~ msgid ""
+#~ "The callback is called with no parameters. It can queue sounds by calling "
+#~ "renpy.music.queue with the appropriate arguments. Please note that the "
+#~ "callback may be called while a sound is playing, as long as a queue slot "
+#~ "is empty."
+#~ msgstr ""
+#~ "コールバックはパラメーターなしで呼び出されます。これは適切な引数で :func:"
+#~ "`renpy.music.queue` を呼び出して曲をキューに追加出来ます。コールバックは"
+#~ "キューが空である限り曲が再生されている間も呼び出されることに注意してくださ"
+#~ "い。"
+
+#~ msgid ""
+#~ "Sets the volume of this channel, as a fraction of the volume of the mixer "
+#~ "controlling the channel."
+#~ msgstr ""
+#~ "このチャンネルの音量を、チャンネルを制御するミキサーの音量の割合で設定しま"
+#~ "す。"
+
+#~ msgid "`volume`"
+#~ msgstr "`volume`"
+
+#~ msgid ""
+#~ "This is a number between 0.0 and 1.0, and is interpreted as a fraction of "
+#~ "the mixer volume for the channel."
+#~ msgstr ""
+#~ "これは 0.0 と 1.0 の間の数字で、そのチャンネルのミキサーボリュームの割合と"
+#~ "して解釈されます。"
+
+#~ msgid ""
+#~ "It takes delay seconds to change/fade the volume from the old to the new "
+#~ "value. This value is persisted into saves, and participates in rollback."
+#~ msgstr ""
+#~ "以前の値から新しい値に音量を変更するのに ``delay`` 秒掛かります。この値は"
+#~ "セーブに保存され、ロールバックにも参加します。"
+
+#~ msgid "The channel to be set"
+#~ msgstr "設定されるチャンネルです。"
+
+#~ msgid ""
+#~ "This stops the music that is currently playing, and dequeues all queued "
+#~ "music. If fadeout is None, the music is faded out for the time given in "
+#~ "config.fadeout_audio, otherwise it is faded for fadeout seconds."
+#~ msgstr ""
+#~ "これは現在再生中の曲を停止して、キューに追加された全ての曲をキューから消し"
+#~ "ます。 fadeout が None なら曲は config.fadeout_audio で指定された時間で"
+#~ "フェードアウトします。そうでなければ fadeout 秒でフェードアウトします。"
+
+#~ msgid "This sets the last queued file to None."
+#~ msgstr "これは最後にキューされたファイルを None に設定します。"
+
+#~ msgid "The channel to stop the sound on."
+#~ msgstr "再生を停止するチャンネル"
+
+#~ msgid ""
+#~ "If not None, this is a time in seconds to fade for. Otherwise the fadeout "
+#~ "time is taken from config.fadeout_audio. This is ignored if the channel "
+#~ "is paused."
+#~ msgstr ""
+#~ "None を指定するか、フェードにかかる秒数を指定します。そうでなければフェー"
+#~ "ドアウトの時間は config.fadeout_audio から所得されます。これはそのチャンネ"
+#~ "ルがポーズされていれば無視されます。"
 
 #~ msgid "The name of the channel."
 #~ msgstr "チャンネルの名前です。"

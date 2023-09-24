@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 21:48+0900\n"
+"POT-Creation-Date: 2023-09-20 21:53+0900\n"
 "PO-Revision-Date: 2023-09-15 22:07+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -79,134 +79,10 @@ msgstr ""
 "月日をお願いします。"
 
 #: ../../source/incompatible.rst:34
-msgid "8.2.0 / 7.7.0"
-msgstr "8.2.0 / 7.7.0"
-
-#: ../../source/incompatible.rst:36
-msgid ""
-"**Text Changes** Ren'Py uses harfbuzz for shaping, which may produce "
-"different glyphs than would have been produced differently, and may change "
-"the spacing of text. The positioning of vertical text has also been changed "
-"by harfbuzz rendering."
-msgstr ""
-"**テキストの変更** Ren'Py で hardbuzz がシェイピングに使用されるよ文字の形と"
-"テキストの間隔がが変化するかもしれません。縦書きテキストの位置も hardbuzz に"
-"よるレンダリングで変更されます。"
-
-#: ../../source/incompatible.rst:41
-msgid "To revert this changes, include in your game::"
-msgstr "変更を戻すには、次をゲームに含めてください ::"
-
-#: ../../source/incompatible.rst:46
-msgid ""
-"Ren'Py will automatically use an Emoji font when required. To disable this, "
-"add::"
-msgstr ""
-"Ren'Py は必要な時は自動的に絵文字のフォントを使用します。これを無効化するには"
-"次を追加します ::"
-
-#: ../../source/incompatible.rst:53
-msgid ""
-"**Polar Coordinate Changes** Ren'Py now enforces that the angles given to "
-"the :tpref:`angle` and :tpref:`anchorangle` properties are in the range 0 to "
-"360 degrees, inclusive of 0 but not of 360. Previously, angles outside this "
-"range  gave undefined behavior, now the angles will be clamped to this "
-"range. A 360 degree change will no longer cause motion, but will instead be "
-"treated as a 0 degree change."
-msgstr ""
-"**極座標の変更** Ren'Py は :tpref:`angle` および :tpref:`anchorangle` プロパ"
-"ティーに指定された角度が 0 度以上 360 度未満の範囲にあることを強制するように"
-"なりました。以前は、この範囲外の角度は未定義の動作をしていました。360度の変更"
-"はもはや動きを引き起こさず、代わりに0度の変更として扱われます。"
-
-#: ../../source/incompatible.rst:60
-msgid ""
-"When animating :tpref:`angle` and :tpref:`anchorangle` with ATL, if a "
-"direction is not supplied, the shortest arc will be used, even if it passes "
-"through 0."
-msgstr ""
-"ATLで :tpref:`angle` と :tpref:`anchorangle` をアニメーションする場合、方向を"
-"指定しないと、0を通る場合でも最短の円弧が使用されます。"
-
-#: ../../source/incompatible.rst:63
-msgid ""
-"There is not a compatibility define for these changes, as they are unlikely "
-"to affect the visible behavior of games in practice."
-msgstr ""
-"これらの変更は、実際のゲームの目に見える動作に影響を与える可能性が低いため、"
-"互換性の定義はありません。"
-
-#: ../../source/incompatible.rst:66
-msgid ""
-"**Empty ATL Blocks Forbidden** Previously, Ren'Py would allow an empty ATL "
-"block. Now it will report that a block is required. You'll need to change::"
-msgstr ""
-"**空の ATL ブロックの禁止** 以前は Ren'Py では空の ATL ブロックが許可されてい"
-"ましたが、ブロックを要求するエラーを出すようになりました。空の ATL ブロックが"
-"あるなら変更する必要があります。 ::"
-
-#: ../../source/incompatible.rst:72 ../../source/incompatible.rst:312
-msgid "to::"
-msgstr "次のように変更してください。 ::"
-
-#: ../../source/incompatible.rst:77
-msgid "In the unlikely case that you have an empty ATL block."
-msgstr "滅多にないことですが、空の ATL ブロックを持つ場合はこのようにします。"
-
-#: ../../source/incompatible.rst:79
-msgid ""
-"**Box Reverse** The :propref:`box_reverse` style property has changed its "
-"behavior in two ways:"
-msgstr ""
-"**Box Reverse** :propref:`box_reverse` スタイルプロパティーの動作は 2 つの点"
-"で変更になりました :"
-
-#: ../../source/incompatible.rst:82
-msgid ""
-"Space is offered to displayables in the order the displayables are presented "
-"in the screen, where previously the space was offered in reverse order when :"
-"propref:`box_reverse` was enabled. This can change the sizes of some "
-"displayables."
-msgstr ""
-":propref:`box_reverse` が有効な場合、スペースは displayable の提供順と同じ順"
-"で提供されます。以前は逆順でした。これはいくつかの Displayable のサイズを変更"
-"するかもしれません。"
-
-#: ../../source/incompatible.rst:86
-msgid ""
-"A hbox that has :propref:`box_wrap` set will wrap from top to bottom, rather "
-"than bottom to top. A vbox with :propref:`box_wrap` set will wrap from left "
-"to right, rather than right to left."
-msgstr ""
-":propref:`box_wrap` が設定された hbox は下から上ではなく、上から下に折り返す"
-"ようになりました。 :propref:`box_wrap` が設定された vbox は右から左ではなく左"
-"から右に折り返すようになりました。"
-
-#: ../../source/incompatible.rst:90
-msgid ""
-"The goal of these changes is to make the behavior of box_reverse more useful "
-"for laying out interfaces in right-to-left languages. To revert these "
-"changes, add to your game::"
-msgstr ""
-"これらの変更の目的は box_reverse の動作を右から左の言語のインターフェースによ"
-"り適合させることです。これらの変更を戻すには、次をゲームに追加してくださ"
-"い。 ::"
-
-#: ../../source/incompatible.rst:97
-msgid ""
-"**build.itch_channels** That variable was always documented as a dict but "
-"was mistakenly implemented as a list of tuples. It's now truly a dict. If "
-"you were using list operations on it, you'll need to change your code::"
-msgstr ""
-"**build.itch_channels** この変数はいつも辞書として記載されていましたが、誤っ"
-"てタプルのリストとして実装されていました。現在は本当に辞書になっています。も"
-"し辞書として使用しているなら、コードを変更してください。 ::"
-
-#: ../../source/incompatible.rst:117
 msgid "8.1.1 / 7.6.1"
 msgstr "8.1.1 / 7.6.1"
 
-#: ../../source/incompatible.rst:122
+#: ../../source/incompatible.rst:39
 msgid ""
 "**Android Key Migration** We've received reports of games uploaded to the "
 "Google Play as bundles having their APKs rejected for having different keys. "
@@ -218,7 +94,7 @@ msgstr ""
 "Ren'Py の古いリリースでバンドル用の APK キーが使われていたことが原因でした。"
 "Play コンソールでは、次のようなエラーメッセージが表示されました ::"
 
-#: ../../source/incompatible.rst:137
+#: ../../source/incompatible.rst:54
 msgid ""
 "While this can be cause by other problems (like simply using entirely "
 "incorrect keys), one potential fix is:"
@@ -226,7 +102,7 @@ msgstr ""
 "これは他の問題（例えば、まったく間違ったキーを使っているなど）によって引き起"
 "こされる可能性もありますが、次で修正出来る可能性があります :"
 
-#: ../../source/incompatible.rst:140
+#: ../../source/incompatible.rst:57
 msgid ""
 "In your project's base directory, rename ``bundle.keystore`` to ``bundle."
 "keystore.bak``."
@@ -234,7 +110,7 @@ msgstr ""
 "プロジェクトのベースディレクトリーで、 ``bundle.keystore`` を ``bundle."
 "keystore.bak`` にリネームしてください。"
 
-#: ../../source/incompatible.rst:141
+#: ../../source/incompatible.rst:58
 msgid ""
 "In your project's base directory, copy ``android.keystore`` to ``bundle."
 "keystore``."
@@ -242,15 +118,15 @@ msgstr ""
 "プロジェクトのベースディレクトリーで、 ``android.keystore`` を ``bundle."
 "keystore`` にコピーしてください。"
 
-#: ../../source/incompatible.rst:143
+#: ../../source/incompatible.rst:60
 msgid "Then rebuild and re-upload your bundle."
 msgstr "その後、バンドルを再ビルドして再アップロードしてください。"
 
-#: ../../source/incompatible.rst:150
+#: ../../source/incompatible.rst:67
 msgid "8.1.0 / 7.6.0"
 msgstr "8.1.0 / 7.6.0"
 
-#: ../../source/incompatible.rst:152
+#: ../../source/incompatible.rst:69
 msgid ""
 "**Speech Bubbles** Adding bubble support to an existing game requires adding "
 "files and script to the game. The :doc:`bubble` documentation includes the "
@@ -260,7 +136,7 @@ msgstr ""
 "スクリプトを追加する必要があります。 :doc:`bubble` ドキュメントには必要な変更"
 "が含まれています。"
 
-#: ../../source/incompatible.rst:157
+#: ../../source/incompatible.rst:74
 msgid ""
 "**Live2D** Ren'Py now requires Live2D Cubism 4 SDK for Native R6_2 or later. "
 "It may refuse to run if an older version is used."
@@ -269,7 +145,7 @@ msgstr ""
 "になりました。それ以前のバージョンを使用すると、実行が拒否されることがありま"
 "す。"
 
-#: ../../source/incompatible.rst:161
+#: ../../source/incompatible.rst:78
 msgid ""
 "**Texture Memory** Ren'Py now accounts for texture memory more precisely. In "
 "general, games can raise :var:`config.image_cache_size_mb` by 33%, and use "
@@ -279,7 +155,7 @@ msgstr ""
 "うになりました。一般的に、ゲームでは :var:`config.image_cache_size_mb` を "
 "33% 上げると同じ量のメモリを使えます。"
 
-#: ../../source/incompatible.rst:166
+#: ../../source/incompatible.rst:83
 msgid ""
 "**Audio Fadeout** When audio is stopped or changed using ``play``, there is "
 "now a default fadeout of 0.016 seconds, to prevent pops. This is controlled "
@@ -290,7 +166,7 @@ msgstr ""
 "るようになりました。これは :var:`config.fadeout_audio` 変数によって制御されま"
 "す。フェードアウトを無効にするには次のようにしてください。 ::"
 
-#: ../../source/incompatible.rst:172
+#: ../../source/incompatible.rst:89
 msgid ""
 "Fading is now logarithmic, which sounds smoother to the human ear as it "
 "matches the way ears perceive sound. To revert to the old linear fades::"
@@ -298,7 +174,7 @@ msgstr ""
 "フェーディングは対数的になり、人の耳にはよりスムーズに聞こえます。以前の線形"
 "的なものに戻すには、次のようにします ::"
 
-#: ../../source/incompatible.rst:178
+#: ../../source/incompatible.rst:95
 msgid ""
 "**Translate None** Ren'Py will now produce an error when encountering an "
 "explicit ``translate None`` statement that does not translate strings, "
@@ -309,15 +185,15 @@ msgstr ""
 "``translate None`` ステートメントに遭遇したときにエラーを生成するようになりま"
 "した。実際には、このようなことは稀でしょう。推奨される変更は次を ::"
 
-#: ../../source/incompatible.rst:185
+#: ../../source/incompatible.rst:102
 msgid "with::"
 msgstr "次のように置き換えることです"
 
-#: ../../source/incompatible.rst:189
+#: ../../source/incompatible.rst:106
 msgid "This change can also be reverted with::"
 msgstr "この変更は次のようにしても戻せます。 ::"
 
-#: ../../source/incompatible.rst:194
+#: ../../source/incompatible.rst:111
 msgid ""
 "**Keymap** The :doc:`keymap <keymap>` has changed substantially, which means "
 "that if your game changes the default keymap - usually a bad idea - it will "
@@ -327,7 +203,7 @@ msgstr ""
 "なたのゲームが(あまりよくありませんが)デフォルトのキーマップを変更していた場"
 "合、新しいキーシンボルを反映するように更新する必要があります。"
 
-#: ../../source/incompatible.rst:199
+#: ../../source/incompatible.rst:116
 msgid ""
 "**File Search** Ren'Py will now only look for image files in game/images, "
 "rather than all files. To look for all files in game/images, use::"
@@ -336,22 +212,7 @@ msgstr ""
 "ファイルのみを検索するようになりました。game/images にあるすべてのファイルを"
 "探すには、次を使ってください ::"
 
-#: ../../source/incompatible.rst:204
-msgid ""
-"The paths that are searched consider the purpose of the file, rather than "
-"the type or extensions. So ``renpy.loadable(\"dlc.jpg\")`` won't look for "
-"game/images/dlc.jpg. If you'd like to find that file, write ``renpy."
-"loadable(\"images/dlc.jpg\")``. If you'd like to search for a file that can "
-"be in either game/ or game/images, write ``renpy.loadable(\"dlc.jpg\", "
-"\"images\")``."
-msgstr ""
-"検索されるパスは、ファイルの種類や拡張子ではなく、ファイルの目的を考慮してい"
-"ます。つまり、 ``renpy.loadable(\"dlc.jpg\")`` は game/images/dlc.jpg を探し"
-"ません。そのファイルを探したい場合は、``renpy.loadable(\"images/dlc.jpg\")`` "
-"と書いてください。game またはgame/images にあるファイルを探したい場合は、"
-"``renpy.loadable(\"dlc.jpg\", \"images\")`` と記述してください。"
-
-#: ../../source/incompatible.rst:211
+#: ../../source/incompatible.rst:122
 msgid ""
 "**Android** Android has been changed so that the ``android.keystore`` file "
 "and ``bundle.keystore`` file are expected to be found in the project's base "
@@ -365,7 +226,7 @@ msgstr ""
 "トを異なるキーでビルドできるようになり、複数の Android バージョンで同じキーを"
 "使用できるようになります。"
 
-#: ../../source/incompatible.rst:217
+#: ../../source/incompatible.rst:128
 msgid ""
 "If you'd like to use your own keys, configure your game, edit ``android."
 "json`` to set update_keystores to false, and then edit ``local.properties`` "
@@ -376,7 +237,7 @@ msgstr ""
 "False に設定し、 ``rapt/project`` 内の ``local.properties`` と ``bundle."
 "properties`` を編集して、独自の keystore ファイルを指定します。"
 
-#: ../../source/incompatible.rst:221
+#: ../../source/incompatible.rst:132
 msgid ""
 "The android configuration file has been renamed from ``.android.json`` to "
 "``android.json``. Ren'Py will automatically create the new file if the old "
@@ -386,7 +247,7 @@ msgstr ""
 "れました。古いファイルが存在する場合は、Ren'Py が自動的に新しいファイルを作成"
 "します。"
 
-#: ../../source/incompatible.rst:226
+#: ../../source/incompatible.rst:137
 msgid ""
 "**Dialogue history** Dialogue is now present in the history list (and hence "
 "the history screen) during the statement in which the dialogue is shown. "
@@ -398,7 +259,7 @@ msgstr ""
 "台詞の終了後にのみ表示されていました。ステートメントの間、その台詞は kind が "
 "\"current\" として表示されます。"
 
-#: ../../source/incompatible.rst:232
+#: ../../source/incompatible.rst:143
 msgid ""
 "In rare cases, your game might have relied on the old behavior. If so, it "
 "can be disabled with::"
@@ -406,7 +267,7 @@ msgstr ""
 "滅多にないことですが、あなたのゲームが古い動作に依存している場合があります。"
 "その場合は次のコマンドで無効にできます ::"
 
-#: ../../source/incompatible.rst:238
+#: ../../source/incompatible.rst:149
 msgid ""
 "**Steam appid** When :var:`config.steam_appid` is not set, Ren'Py will "
 "delete any existing ``steam_appid.txt`` file in the game directory. This is "
@@ -416,7 +277,7 @@ msgstr ""
 "game ディレクトリーに存在する ``steam_appid.txt`` ファイルを削除します。これ"
 "は間違った app ID が使われるのを防ぐためです。"
 
-#: ../../source/incompatible.rst:243
+#: ../../source/incompatible.rst:154
 msgid ""
 "**Sticky layers** This release introduces the concept of sticky layers which "
 "help automatically manage tags being placed on layers other than their "
@@ -429,12 +290,12 @@ msgstr ""
 "した。滅多にないことですが、同じタグを複数のレイヤーに同時に表示する必要があ"
 "るゲームでは、これは望ましくないかもしれません。"
 
-#: ../../source/incompatible.rst:249
+#: ../../source/incompatible.rst:160
 msgid "To disable sticky layers entirely, add to your game::"
 msgstr ""
 "スティッキーレイヤーを完全に無効にするには、ゲームに以下を追加してください ::"
 
-#: ../../source/incompatible.rst:253
+#: ../../source/incompatible.rst:164
 msgid ""
 "Alternatively, to prevent only specific layers from being sticky, update "
 "their definitions to include ``sticky=False``::"
@@ -442,7 +303,7 @@ msgstr ""
 "他にも特定のレイヤーのみをスティッキーレイヤーから除外するには定義を "
 "``sticky=False`` を含めるよう更新してください ::"
 
-#: ../../source/incompatible.rst:260
+#: ../../source/incompatible.rst:171
 msgid ""
 "**Lenticular bracket ruby text** This release of Ren'Py introduces "
 "lenticular bracket ruby text, an easier way of writing ruby text. If a game "
@@ -455,12 +316,12 @@ msgstr ""
 "ムで【をそのまま表示するには二重にして \"【【\" にしてください (これは厳密に"
 "は全角の縦線にテキストが続いているときにのみ必要となります)。"
 
-#: ../../source/incompatible.rst:266
+#: ../../source/incompatible.rst:177
 msgid "To disable lenticular bracket ruby text, add to your game::"
 msgstr ""
 "隅付きかっこのルビテキストを無効にするには次をゲームに加えてください。 ::"
 
-#: ../../source/incompatible.rst:270
+#: ../../source/incompatible.rst:181
 msgid ""
 "**Constant stores.** This release of Ren'Py introduces :ref:`constant stores "
 "<constant-stores>`, and makes some of the built-in stores constant. Constant "
@@ -472,7 +333,7 @@ msgstr ""
 "Constant store は初期化時以外では変更されるべきではありません。次の store が "
 "constan です :"
 
-#: ../../source/incompatible.rst:274
+#: ../../source/incompatible.rst:185
 msgid ""
 "_errorhandling _gamepad _renpysteam _warper audio achievement build director "
 "iap layeredimage updater"
@@ -480,7 +341,7 @@ msgstr ""
 "_errorhandling _gamepad _renpysteam _warper audio achievement build director "
 "iap layeredimage updater"
 
-#: ../../source/incompatible.rst:286
+#: ../../source/incompatible.rst:197
 msgid ""
 "If your game changes a variable in one of these stores, outside of the init, "
 "the store can be set to non-constant with (for example)::"
@@ -488,7 +349,7 @@ msgstr ""
 "初期化時以外にあなたのゲームでこれらの store のどれかを変更していたなら、そ"
 "の store は非 constant に設定されます。 例 ::"
 
-#: ../../source/incompatible.rst:291
+#: ../../source/incompatible.rst:202
 msgid ""
 "**Mixer volumes** now must be specified using a new format, where 0.0 is -40 "
 "dB (power) and 1.0 is 0 dB (power). To use the old format, where the samples "
@@ -499,7 +360,7 @@ msgstr ""
 "(power) です。volume ** 2 でとなる以前のものを使用するに次を使用してくださ"
 "い。 :"
 
-#: ../../source/incompatible.rst:297
+#: ../../source/incompatible.rst:208
 msgid ""
 "Alternatively, you can determine new default volumes for :var:`config."
 "default_music_volume`, :var:`config.default_sfx_volume`, and :var:`config."
@@ -511,7 +372,7 @@ msgstr ""
 "トボリュームを決定できます。これらのうち、0.0または1.0のものは、変更せずにそ"
 "のままにしておけます。"
 
-#: ../../source/incompatible.rst:301
+#: ../../source/incompatible.rst:212
 msgid ""
 "**At Transform and Global Variables** An at transform block that uses a "
 "global variable is not re-evaluated when the variable changes. This matches "
@@ -521,7 +382,7 @@ msgstr ""
 "ロックは変数が変更されても再評価されません。これはスクリーンにない ATL に対す"
 "る振る舞いに合います。"
 
-#: ../../source/incompatible.rst:305
+#: ../../source/incompatible.rst:216
 msgid ""
 "The recommended fix is to capture the global variable into a local, by "
 "changing::"
@@ -529,15 +390,19 @@ msgstr ""
 "推奨する修正方法はグローバル変数をローカル変数ににしてください。次のコード"
 "を ::"
 
-#: ../../source/incompatible.rst:321
+#: ../../source/incompatible.rst:223
+msgid "to::"
+msgstr "次のように変更してください。 ::"
+
+#: ../../source/incompatible.rst:232
 msgid "This change can be reverted with::"
 msgstr "この変更は次のようにして戻せます。 ::"
 
-#: ../../source/incompatible.rst:330
+#: ../../source/incompatible.rst:241
 msgid "8.0.2 / 7.5.2"
 msgstr "8.0.2 / 7.5.2"
 
-#: ../../source/incompatible.rst:332
+#: ../../source/incompatible.rst:243
 msgid ""
 "A modal screen now blocks the ``pause`` statement and :func:`renpy.pause`` "
 "function from timing out. This was the indended behavior, but didn't work in "
@@ -547,7 +412,7 @@ msgstr ""
 "イムアウトを停止するようになりました。.これは意図した動作ですが、上手く動作し"
 "ない場合は次コードでもどせます ::"
 
-#: ../../source/incompatible.rst:338
+#: ../../source/incompatible.rst:249
 msgid ""
 "The default games no longer filter Ruby/Furigana text tags from the history. "
 "This requires the line in screens.rpy that sets :var:`gui."
@@ -557,17 +422,17 @@ msgstr ""
 "ました。これは screen.ry の :var:`gui.history_allow_tags` の行を次のように変"
 "更する必要があります。"
 
-#: ../../source/incompatible.rst:344
+#: ../../source/incompatible.rst:255
 msgid "This change is only required if your game uses Ruby/Furigana text tags."
 msgstr ""
 "この変更はあなたのゲームでルビとふりがなテキストタグを使用する場合のみ必要に"
 "なります。"
 
-#: ../../source/incompatible.rst:351
+#: ../../source/incompatible.rst:262
 msgid "8.0.0 / 7.5.0"
 msgstr "8.0.0 / 7.5.0"
 
-#: ../../source/incompatible.rst:353
+#: ../../source/incompatible.rst:264
 msgid ""
 "The \"Windows, Mac, and Linux for Markets\" distribution has been changed to "
 "no longer prefix the contents of the zip file created with the directory "
@@ -578,7 +443,7 @@ msgstr ""
 "の前に、ディレクトリ名とバージョン番号を付けないように変更されました。もし、"
 "以前の動作を保持したい場合は、次をゲームにを追加してください。 ::"
 
-#: ../../source/incompatible.rst:361
+#: ../../source/incompatible.rst:272
 msgid ""
 "For the noalt text tag to work with history, you'll need to edit screens.rpy "
 "to make sure that :var:`gui.history_allow_tags` contains \"noalt\". The "
@@ -588,12 +453,12 @@ msgstr ""
 "`gui.history_allow_tags` が \"noalt\" を含める必要があります。この変数のデ"
 "フォルトは次のようになっています ::"
 
-#: ../../source/incompatible.rst:367
+#: ../../source/incompatible.rst:278
 msgid "(This change was necessary in 7.4, but only documented now.)"
 msgstr ""
 "(この変更は 7.4 までは必要でしたが、今はドキュメントに記載されていません)"
 
-#: ../../source/incompatible.rst:369
+#: ../../source/incompatible.rst:280
 msgid ""
 "The behavior of Ren'Py changed sometime in the 7.4 series, such that "
 "rollback through a load behaved correctly, and reverted the changes "
@@ -610,7 +475,7 @@ msgstr ""
 "ロード後にデータを移行する必要がある場合、変更がロールバックされないように :"
 "func:`renpy.block_rollback` の呼び出しを推奨します。"
 
-#: ../../source/incompatible.rst:377
+#: ../../source/incompatible.rst:288
 msgid ""
 "The :var:`config.narrator_menu` variable now defaults to True. It's been set "
 "to true in the default screens.rpy for some time. In the unlikely event it "
@@ -621,7 +486,7 @@ msgstr ""
 "一、あなたのゲームでそれが誤りであった場合は、次の方法で以前の動作を復元して"
 "ください。 ::"
 
-#: ../../source/incompatible.rst:383
+#: ../../source/incompatible.rst:294
 msgid ""
 "The sound and voice channels are now stopped when ending the main menu. To "
 "revert to the prior behavior (only the movie channel was stopped), add to "
@@ -631,7 +496,7 @@ msgstr ""
 "以前の (muvie チャンネルのみ停止する) 動作に戻すには以下をゲームに追加してく"
 "ださい。 ::"
 
-#: ../../source/incompatible.rst:389
+#: ../../source/incompatible.rst:300
 msgid ""
 "Screens called by ``call screen`` no longer support roll forward by default. "
 "See :ref:`the changelog <call-screen-roll-forward>` for the problems it can "
@@ -644,7 +509,7 @@ msgstr ""
 "プロパティーに基づきスクリーンごとに有効化でき、次のコードでは全てのスクリー"
 "ンに対して有効化できます。 ::"
 
-#: ../../source/incompatible.rst:396
+#: ../../source/incompatible.rst:307
 msgid ""
 "Key and timer statements no longer take up space inside a vbox or hbox, and "
 "the showif statement does not take up space when its child is hidden. To "
@@ -654,7 +519,7 @@ msgstr ""
 "showif ステートメントも条件式が False でその子が非表示の時にはスペースを取ら"
 "なくなりました。この変更を戻すには次のようにします。 ::"
 
-#: ../../source/incompatible.rst:402
+#: ../../source/incompatible.rst:313
 msgid ""
 "The :propref:`focus_mask` style property now defaults to None for drag "
 "displayables. This improves performance, but means that the displayable can "
@@ -667,11 +532,11 @@ msgstr ""
 "には focus_mask プロパティーを各drag displayableごとに True にするか次のよう"
 "に全体に対して記述するかです。 ::"
 
-#: ../../source/incompatible.rst:410
+#: ../../source/incompatible.rst:321
 msgid "Both options reduce performance."
 msgstr "ともにパフォーマンスを低下させます。"
 
-#: ../../source/incompatible.rst:412
+#: ../../source/incompatible.rst:323
 msgid ""
 "The :propref:`outline_scaling` style property now defaults to \"linear\". "
 "This means the window scaling factor is applied to the outline size, and "
@@ -685,7 +550,7 @@ msgstr ""
 "消えることがあります。これを戻すには、個別のテキストに対して outline_scaling "
 "プロパティーを \"step\" にするか、次を加えて全体を変更してください。 ::"
 
-#: ../../source/incompatible.rst:421
+#: ../../source/incompatible.rst:332
 msgid ""
 "The :tpref:`crop_relative` transform property now defaults to True instead "
 "of False. Absolute numbers of pixels to set the cropping should be expressed "
@@ -697,7 +562,7 @@ msgstr ""
 "です。浮動小数点をピクセル数の absolute に変換する以前のデフォルト動作に戻す"
 "には次を使用してください。 ::"
 
-#: ../../source/incompatible.rst:428
+#: ../../source/incompatible.rst:339
 #, fuzzy
 msgid ""
 "However, be warned that like most things documented only on this page, this "
@@ -708,7 +573,7 @@ msgstr ""
 "しかし、このページにのみ記載されているほとんどのものと同様に、いくつかの新機"
 "能と衝突または同時使用出来なくなります。"
 
-#: ../../source/incompatible.rst:433
+#: ../../source/incompatible.rst:344
 msgid ""
 "The platform-specific directories inside lib/ have had name changes. The "
 "``lib/windows-x86_64`` directory is now ``lib/py2-windows-x86_64``. This "
@@ -722,7 +587,7 @@ msgstr ""
 "キュメントには記載されておらず、 Ren'Py のバージョン間で変化する場合がありま"
 "すが、 ``sys.executable`` が設定されることを保証します。"
 
-#: ../../source/incompatible.rst:439
+#: ../../source/incompatible.rst:350
 msgid ""
 "Vpgrids cannot be overfull anymore, and can only be underfull if the "
 "``allow_underfull`` property is passed, or if :var:`config."
@@ -732,7 +597,7 @@ msgstr ""
 "allow_underfull_grids` が True なら vpgrid はもう underfull せず、 overfull "
 "のみになります。"
 
-#: ../../source/incompatible.rst:443
+#: ../../source/incompatible.rst:354
 msgid ""
 "The way :doc:`layered images <layeredimage>` place their children, and how "
 "children with variable size are sized, has changed. Instead of taking into "
@@ -749,7 +614,7 @@ msgstr ""
 "域であると推定するようになりました。コンテキストごとに表示が変わりうる以前の"
 "動作に戻すには、次を使用します。 ::"
 
-#: ../../source/incompatible.rst:452
+#: ../../source/incompatible.rst:363
 msgid ""
 "Or you can also toggle it for specific layeredimages by passing them the "
 "``offer_screen`` property."
@@ -757,18 +622,18 @@ msgstr ""
 "もしくは ``offer_screen`` プロパティーを渡して特定のレイヤー画像に対して動作"
 "をトグルできます。"
 
-#: ../../source/incompatible.rst:455
+#: ../../source/incompatible.rst:366
 msgid ""
 "The ``function`` statement in ATL will only block catch-up in cases where it "
 "executes more than once. To revert to the old behavior, where ATL would "
 "block at a function, use::"
 msgstr ""
 
-#: ../../source/incompatible.rst:465
+#: ../../source/incompatible.rst:376
 msgid "7.4.11"
 msgstr "7.4.11"
 
-#: ../../source/incompatible.rst:467
+#: ../../source/incompatible.rst:378
 msgid ""
 "Ren'Py will now run a button's unhovered property even when focus is changed "
 "by default, such as when a screen is shown or unshown. To revert to the old "
@@ -778,11 +643,11 @@ msgstr ""
 "るときにもボタンの unhovered プロパティーをデフォルトで実行するようになりまし"
 "た。以前の動作に戻すには次を使用します。 ::"
 
-#: ../../source/incompatible.rst:476
+#: ../../source/incompatible.rst:387
 msgid "7.4.9"
 msgstr "7.4.9"
 
-#: ../../source/incompatible.rst:478
+#: ../../source/incompatible.rst:389
 msgid ""
 "Ren'Py will now interpret floating point numbers given to a Transform's :"
 "tpref:`xsize` or :tpref:`ysize` properties as a size relative to the area "
@@ -792,7 +657,7 @@ msgstr ""
 "与えられた浮動小数点数を、その transform で利用可能な領域に対するサイズとして"
 "解釈するようになりました。この変更を元に戻すには次のようにしてください。 ::"
 
-#: ../../source/incompatible.rst:484
+#: ../../source/incompatible.rst:395
 msgid ""
 "The order in which Ren'Py's self-voicing reads out layers, screens, and "
 "displayables in screens has changed so that screens and displayables closest "
@@ -802,11 +667,11 @@ msgstr ""
 "読み上げる順序が変更され、プレイヤーに近いスクリーンと Displayable から先に読"
 "み上げられます。以前の順序に戻すには次のようにしてください。 ::"
 
-#: ../../source/incompatible.rst:494
+#: ../../source/incompatible.rst:405
 msgid "7.4.7"
 msgstr "7.4.7"
 
-#: ../../source/incompatible.rst:496
+#: ../../source/incompatible.rst:407
 msgid ""
 "When :propref:`xminimum` and :propref:`xmaximum` are both floats, the "
 "minimum is interpreted as being a fraction of the available area. This means "
@@ -820,7 +685,7 @@ msgstr ""
 "の Displayable はサイズを変えるかもしれません。この変更を戻すにはつぎのように"
 "します。 ::"
 
-#: ../../source/incompatible.rst:504
+#: ../../source/incompatible.rst:415
 msgid ""
 "An ATL displayable will now start its animation when it first appears, "
 "rather than when the screen itself is shown. To revert this change::"
@@ -829,16 +694,16 @@ msgstr ""
 "Displayable の最初の表示時に開始するようになりました。これは次のようにして戻"
 "します。 ::"
 
-#: ../../source/incompatible.rst:509
+#: ../../source/incompatible.rst:420
 msgid "Input carets now blink by default. To change this::"
 msgstr ""
 "入力キャレットはデフォルトで点滅するようになり、変更には次のようにします。 ::"
 
-#: ../../source/incompatible.rst:517
+#: ../../source/incompatible.rst:428
 msgid "7.4.6"
 msgstr "7.4.6"
 
-#: ../../source/incompatible.rst:519
+#: ../../source/incompatible.rst:430
 msgid ""
 "The change regarding the layer at list in 7.4.5 was reverted. The new "
 "``camera`` statement defaults to the new semantics, while leaving ``show "
@@ -847,11 +712,11 @@ msgstr ""
 "7.4.5 のレイヤー at リストに関する変更をもどしました。 ``show layer`` はその"
 "まま残り、新しい ``camera`` ステートメントが置き換えとなります。"
 
-#: ../../source/incompatible.rst:526
+#: ../../source/incompatible.rst:437
 msgid "7.4.5"
 msgstr "7.4.5"
 
-#: ../../source/incompatible.rst:528
+#: ../../source/incompatible.rst:439
 msgid ""
 "Games produced with this version use the model-based renderer by default. To "
 "disable the model-based renderer, use::"
@@ -859,7 +724,7 @@ msgstr ""
 "このバージョンで制作されたゲームはデフォルトでモデルベースのレンダラーを使用"
 "します。モデルベースのレンダラーを無効化するには以下をしようします。 ::"
 
-#: ../../source/incompatible.rst:533
+#: ../../source/incompatible.rst:444
 msgid ""
 "**Reverted in 7.4.6** The ``scene`` statement no longer clears the layer at "
 "list. To clear the layer at list, use::"
@@ -867,7 +732,7 @@ msgstr ""
 "**7.4.6で廃止 ** ``scene`` ステートメントはもうレイヤーの at リストをクリアし"
 "ません。レイヤーの at リストをクリアするには以下を使用してください ::"
 
-#: ../../source/incompatible.rst:539
+#: ../../source/incompatible.rst:450
 msgid ""
 "Where \"master\" is the name of the layer. Alternatively, the old behavior "
 "can be restored with::"
@@ -875,11 +740,11 @@ msgstr ""
 "ここで、 \"master\" はレイヤー名です。以前の振る舞いに戻すには以下を使用して"
 "ください。 ::"
 
-#: ../../source/incompatible.rst:548
+#: ../../source/incompatible.rst:459
 msgid "7.4.3"
 msgstr "7.4.3"
 
-#: ../../source/incompatible.rst:550
+#: ../../source/incompatible.rst:461
 msgid ""
 "It is now possible to click to dismiss transitions introduced with :func:"
 "`renpy.transition`, and places that use it like the ``with`` clause of say "
@@ -889,11 +754,11 @@ msgstr ""
 "``with`` 節のようにそれを使用する場所で始まるトランジションがクリックでスキッ"
 "プできるようになりました。 以下を使用して防げます。 ::"
 
-#: ../../source/incompatible.rst:560
+#: ../../source/incompatible.rst:471
 msgid "7.4.1"
 msgstr "7.4.1"
 
-#: ../../source/incompatible.rst:562
+#: ../../source/incompatible.rst:473
 msgid ""
 "Pause with a delay now uses :func:`renpy.pause` rather than ``with "
 "Pause(...)``. This means that the user will have to click to bypass multiple "
@@ -903,11 +768,11 @@ msgstr ""
 "用するようになりますた。つまりある行にある複数のポーズをバイバスするには複数"
 "回のクリックが必要になります。以前の動作に戻すには次のコードを使用します。::"
 
-#: ../../source/incompatible.rst:572
+#: ../../source/incompatible.rst:483
 msgid "7.4"
 msgstr "7.4"
 
-#: ../../source/incompatible.rst:574
+#: ../../source/incompatible.rst:485
 msgid ""
 "Mobile platforms now use hardware, rather than software, video playback. To "
 "restore the old behavior, use::"
@@ -915,7 +780,7 @@ msgstr ""
 "モバイルプラットフォームではビデオ再生にソフトウェアよりハードウェアを使用す"
 "るようになりました。次のようにすれば以前の振舞に戻ります。 ::"
 
-#: ../../source/incompatible.rst:579
+#: ../../source/incompatible.rst:490
 msgid ""
 "Ren'Py will now only show side images if with at least one attribute in "
 "addition to the image tag. To disable this, use::"
@@ -923,7 +788,7 @@ msgstr ""
 "Ren'Pyは画像タグに少なくとも1つ属性が追加されないとサイドイメージを表示しなく"
 "なりました。次のようにしてこれを無効化します ::"
 
-#: ../../source/incompatible.rst:585
+#: ../../source/incompatible.rst:496
 msgid ""
 "While setting config variables, like :var:`config.mouse`, outside of the "
 "init phase was never supported, it will not work in 7.4. Consider using the :"
@@ -933,11 +798,11 @@ msgstr ""
 "す。 v7.4 では動作しないため、代わりに :var:`default_mouse` 変数の使用を考え"
 "てください。"
 
-#: ../../source/incompatible.rst:592
+#: ../../source/incompatible.rst:503
 msgid "7.3.3"
 msgstr "7.3.3"
 
-#: ../../source/incompatible.rst:594
+#: ../../source/incompatible.rst:505
 msgid ""
 "Callbacks registered with :var:`config.start_callbacks` are now run after "
 "``default`` statements in all cases. To restore the old behavior (where "
@@ -949,7 +814,7 @@ msgstr ""
 "``default`` ステートメント前に実行され、リプレイでは違う)以前の振舞に戻すには"
 "次のようにします。 ::"
 
-#: ../../source/incompatible.rst:601
+#: ../../source/incompatible.rst:512
 msgid ""
 "When given to a viewport or vpgrid with scrollbars, the minimum, xminimum, "
 "and yminimum side properties now apply to the side containing the scrollbars "
@@ -959,7 +824,7 @@ msgstr ""
 "yminimum side プロパティーは viewport 単体ではなくスクロールバーと viewport "
 "を内蔵する side に適用されるようになりました。"
 
-#: ../../source/incompatible.rst:605
+#: ../../source/incompatible.rst:516
 msgid ""
 "To work around this, either use ``viewport_minimum``, ``viewport_xminimum``, "
 "and ``viewport_yminimum``, or include::"
@@ -967,11 +832,11 @@ msgstr ""
 "これを回避するには、 ``viewport_minimum``, ``viewport_xminimum``, "
 "``viewport_yminimum`` のいずれかを使用するか次のコードを使用してください｡ ::"
 
-#: ../../source/incompatible.rst:613
+#: ../../source/incompatible.rst:524
 msgid "7.3.0"
 msgstr "7.3.0"
 
-#: ../../source/incompatible.rst:615
+#: ../../source/incompatible.rst:526
 msgid ""
 "Screen language now produces the error \"a non-constant keyword argument ... "
 "is not allowed after a python block.\" when it encounters screens similar to "
@@ -981,7 +846,7 @@ msgstr ""
 "argument ... is not allowed after a python block.\" というエラーがでるように"
 "なりました。"
 
-#: ../../source/incompatible.rst:629
+#: ../../source/incompatible.rst:540
 msgid ""
 "This is because the property `action` is run before the python assignment, "
 "meaning this was returning 0 when clicked, not 1. To disable this check, "
@@ -991,13 +856,13 @@ msgstr ""
 "時に1ではなく0が返るためです。このチェックを無効化するにはゲームディレクトリ"
 "の01compat.rpy に次のコードを追加します。 ::"
 
-#: ../../source/incompatible.rst:634
+#: ../../source/incompatible.rst:545
 msgid ""
 "to a file named 01compat.rpy in your game's game directory. However, your "
 "game will have the old behavior."
 msgstr "しかしゲームの振舞は以前のままです。"
 
-#: ../../source/incompatible.rst:637
+#: ../../source/incompatible.rst:548
 msgid ""
 "The order in which children of the ``side`` layout are drawn is now taken "
 "from the control string. To revert to the old fixed order, use::"
@@ -1005,7 +870,7 @@ msgstr ""
 "``side`` レイアウトでの子の描画順が制御文字列からとられるようになりました。以"
 "前の固定順に戻すには次を使います。 ::"
 
-#: ../../source/incompatible.rst:642
+#: ../../source/incompatible.rst:553
 msgid ""
 "The interface of :var:`config.say_attribute_transition_callback` has been "
 "changed in an incompatible way, to allow sets of old and new tags to be "
@@ -1015,7 +880,7 @@ msgstr ""
 "更があり、新旧のタグのセットを取るようになりました。以前のインターフェースに"
 "戻すには次のようにします。 ::"
 
-#: ../../source/incompatible.rst:648
+#: ../../source/incompatible.rst:559
 msgid ""
 "It's mode parameter has also been slightly changed, and will now return a "
 "value of ``both`` when both a ``permanent`` and ``temporary`` attribute "
@@ -1024,11 +889,11 @@ msgstr ""
 "mode パラメーターにも僅かな変化があり ``permanent`` と ``temporary`` 属性の両"
 "方に対するトランジションがあるとき ``both`` をとるようになりました。"
 
-#: ../../source/incompatible.rst:655
+#: ../../source/incompatible.rst:566
 msgid "7.2.2"
 msgstr "7.2.2"
 
-#: ../../source/incompatible.rst:657
+#: ../../source/incompatible.rst:568
 msgid ""
 ":var:`config.say_attribute_transition_callback` has been changed to accept a "
 "new argument, the image being displayed."
@@ -1036,11 +901,11 @@ msgstr ""
 ":var:`config.say_attribute_transition_callback` は新しく表示されている画像の"
 "引数を受け取るようになりました。"
 
-#: ../../source/incompatible.rst:664
+#: ../../source/incompatible.rst:575
 msgid "7.1.1"
 msgstr "7.1.1"
 
-#: ../../source/incompatible.rst:666
+#: ../../source/incompatible.rst:577
 msgid ""
 "Ren'Py's window auto function will now determine if dialogue or a caption is "
 "associated with a menu statement, and will attempt to hide or show the "
@@ -1053,7 +918,7 @@ msgstr ""
 "ました。この機能を有効化する情報を含むには \"Force Recompile\" が必要です。以"
 "前のゲームでも動作するはずですが、これは次のようにして無効化できます。 ::"
 
-#: ../../source/incompatible.rst:676
+#: ../../source/incompatible.rst:587
 msgid ""
 "While not technically an incompatible change, there is a recommend change to "
 "the history screen. Please see :ref:`the changelog entry <history-7.1.1>` "
@@ -1063,11 +928,11 @@ msgstr ""
 "す。ゲームの更新方法は :ref:`the changelog entry <history-7.1.1>` を参照して"
 "ください。"
 
-#: ../../source/incompatible.rst:684
+#: ../../source/incompatible.rst:595
 msgid "7.1"
 msgstr "7.1"
 
-#: ../../source/incompatible.rst:686
+#: ../../source/incompatible.rst:597
 msgid ""
 "When an image is not being show, say-with-attributes now resolves a side "
 "image, rather than just using the attributes given. To disable this, add::"
@@ -1075,11 +940,11 @@ msgstr ""
 "画像が表示されていないときも属性を伴う say は属性を追加するだけでなくサイドイ"
 "メージを変更します。これを無効化するためには次のコードを追加します。 ::"
 
-#: ../../source/incompatible.rst:696
+#: ../../source/incompatible.rst:607
 msgid "7.0"
 msgstr "7.0"
 
-#: ../../source/incompatible.rst:698
+#: ../../source/incompatible.rst:609
 msgid ""
 "Ren'Py now defines automatic images at init 0, rather than at a very late "
 "init level. To revert to the prior behavior, add to your game::"
@@ -1087,7 +952,7 @@ msgstr ""
 "Ren'Py は かなり後ろの初期化段階である優先度 0 で自動画像を定義します。優先度"
 "の振舞を戻すには次を追加します。 ::"
 
-#: ../../source/incompatible.rst:704
+#: ../../source/incompatible.rst:615
 msgid ""
 "The :func:`Dissolve`, :func:`ImageDissolve`, and :func:`AlphaDissolve` "
 "transitions now default to using the alpha channel of the source "
@@ -1098,7 +963,7 @@ msgstr ""
 "ファチャンネルを使用するようになりました。この変更を戻すには次のコードを追加"
 "してください ::"
 
-#: ../../source/incompatible.rst:710
+#: ../../source/incompatible.rst:621
 msgid ""
 "Showing a movie sprite that is already showing will now replay the movie. To "
 "revert to the previous behavior::"
@@ -1106,11 +971,11 @@ msgstr ""
 "既に表示されている動画を表示すると動画を再再生します。以前の動作に戻すには次"
 "のようにします。 ::"
 
-#: ../../source/incompatible.rst:720
+#: ../../source/incompatible.rst:631
 msgid "6.99.13"
 msgstr "6.99.13"
 
-#: ../../source/incompatible.rst:722
+#: ../../source/incompatible.rst:633
 msgid ""
 "The size of a hyperlink is now inherited from the size of the enclosing "
 "text. To disable this, add::"
@@ -1118,7 +983,7 @@ msgstr ""
 "ハイパーリンクのサイズは囲んでいるテキストを引き継ぐようになりました。これを"
 "無効化するためには次のコードを追加します ::"
 
-#: ../../source/incompatible.rst:727
+#: ../../source/incompatible.rst:638
 msgid ""
 "The {nw} text tag now waits until voice and self-voicing are finished before "
 "it continues.  To disable this behavior, add::"
@@ -1126,7 +991,7 @@ msgstr ""
 "{nw} テキストタグはボイスやセルフボイシングの完了を待つようになります。これを"
 "無効化するためには次のコードを追加します ::"
 
-#: ../../source/incompatible.rst:732
+#: ../../source/incompatible.rst:643
 msgid ""
 "ATL Transforms now show at least one frame whenever a pause or interpolation "
 "occurs. When a game doesn't expect this, it can show up as a series of "
@@ -1136,7 +1001,7 @@ msgstr ""
 "ります。ゲームがこの動作を期待しないとき、急激な 1 連の 1 フレームの表示とな"
 "るかもしれません。これを無効化するためには次のコードを追加します ::"
 
-#: ../../source/incompatible.rst:738
+#: ../../source/incompatible.rst:649
 msgid ""
 "The show layer at statement now persists the state of a transform like any "
 "other ATL transform. This can lead to a behavior change in which, for "
@@ -1148,7 +1013,7 @@ msgstr ""
 "オフセットが維持されるようになりました。これを無効化するためには次のコードを"
 "追加します ::"
 
-#: ../../source/incompatible.rst:745
+#: ../../source/incompatible.rst:656
 msgid ""
 "While not an incompatible change, :func:`renpy.list_files` has been changed "
 "to sort its output in a  standard order. The causes Ren'Py to commit to "
@@ -1163,11 +1028,11 @@ msgstr ""
 "されるものはシステムごとに変わります)。現在はどこでも同じファイルが選ばれるよ"
 "うになりました。"
 
-#: ../../source/incompatible.rst:755
+#: ../../source/incompatible.rst:666
 msgid "6.99.12.3"
 msgstr "6.99.12.3"
 
-#: ../../source/incompatible.rst:757
+#: ../../source/incompatible.rst:668
 msgid ""
 "Ren'Py will no longer search for system-installed fonts when in developer "
 "mode. If you game was using a system installed font, the font file should be "
@@ -1179,11 +1044,11 @@ msgstr ""
 "ディレクトリーにコピーするべきです(しかしそのフォントファイルのライセンスに"
 "従っているか確認してください)。"
 
-#: ../../source/incompatible.rst:764
+#: ../../source/incompatible.rst:675
 msgid "6.99.11"
 msgstr "6.99.11"
 
-#: ../../source/incompatible.rst:766
+#: ../../source/incompatible.rst:677
 msgid ""
 "The order of execution of ``style`` and ``translate`` statements has "
 "changed, as documented in :ref:`the changelog <renpy-6.99.11>`. To revent "
@@ -1193,11 +1058,11 @@ msgstr ""
 "``translate`` ステートメントの実行順が変更されました。この変更を戻すには次の"
 "これを無効化するためには次のコードを追加します ::"
 
-#: ../../source/incompatible.rst:772
+#: ../../source/incompatible.rst:683
 msgid "Note that reverting this change may prevent the new GUI from working."
 msgstr "これにより新しいGUIが動作しなくなることに注意してください。"
 
-#: ../../source/incompatible.rst:775
+#: ../../source/incompatible.rst:686
 msgid ""
 "The :var:`config.quit_action` variable has changed its default to one that "
 "causes the quit prompt to be displayed of the in-game context. To revert to "
@@ -1207,7 +1072,7 @@ msgstr ""
 "プロンプトを表示するものに変わりました。この変更を戻すには次のコードを追加し"
 "てください。 ::"
 
-#: ../../source/incompatible.rst:782
+#: ../../source/incompatible.rst:693
 msgid ""
 "Ren'Py now enforces maximum sizes given to buttons and windows. To disable "
 "this behavior, add the code::"
@@ -1215,11 +1080,11 @@ msgstr ""
 "ボタンとウィンドウに対して与えられた最大サイズを使用するようになりました。こ"
 "の振舞を無効にするには次のコードを追加してください。 ::"
 
-#: ../../source/incompatible.rst:790
+#: ../../source/incompatible.rst:701
 msgid "6.99.9"
 msgstr "6.99.9"
 
-#: ../../source/incompatible.rst:792
+#: ../../source/incompatible.rst:703
 msgid ""
 "Ren'Py now plays interface sounds on a channel named \"audio\", that "
 "supports multiple sound playback at once. This channel might not have the "
@@ -1233,11 +1098,11 @@ msgstr ""
 "auto_channels`,   の調整または、以下のコードの追加で sound チャンネルが使用さ"
 "れます。 ::"
 
-#: ../../source/incompatible.rst:802
+#: ../../source/incompatible.rst:713
 msgid "6.99.2"
 msgstr "6.99.2"
 
-#: ../../source/incompatible.rst:804
+#: ../../source/incompatible.rst:715
 msgid ""
 "Ren'Py will now scan the an image directory (the directory named images "
 "underneath the game directory) for images, and define them based on their "
@@ -1247,11 +1112,11 @@ msgstr ""
 "リー )から画像を探し、そのファイル名から画像を定義するようになりました。これ"
 "を無効化するには、以下のコードを使用してください。 ::"
 
-#: ../../source/incompatible.rst:815
+#: ../../source/incompatible.rst:726
 msgid "6.18"
 msgstr "6.18"
 
-#: ../../source/incompatible.rst:817
+#: ../../source/incompatible.rst:728
 msgid ""
 "The ``show screen`` and ``call screen`` statements may now evaluate their "
 "arguments as part of the screen prediction process. If evaluating the "
@@ -1264,7 +1129,7 @@ msgstr ""
 "起す場合は、 ``show screen`` や ``call screen`` ステートメントには予測を禁止"
 "する新しい  ``nopredict`` 節を与えてください。"
 
-#: ../../source/incompatible.rst:823
+#: ../../source/incompatible.rst:734
 msgid ""
 "Screens now participate in transitions – transitions now go from the old "
 "state of the screen to the new state. To disable this, set :var:`config."
@@ -1274,7 +1139,7 @@ msgstr ""
 "ようになりました。これを無効化するためには、  :var:`config."
 "transition_screens` を False に設定してください。"
 
-#: ../../source/incompatible.rst:827
+#: ../../source/incompatible.rst:738
 msgid ""
 "Ren'Py no longer uses structural equality to transfer state (for example, "
 "the state of a transform) when a screen replaces a screen with the same tag. "
@@ -1286,11 +1151,11 @@ msgstr ""
 "statement <sl-use>` が  ``id`` プロパティーをサポートするようになり、これを"
 "使って明示的に状態を移行出来るようになりました。"
 
-#: ../../source/incompatible.rst:835
+#: ../../source/incompatible.rst:746
 msgid "6.16"
 msgstr "6.16"
 
-#: ../../source/incompatible.rst:837
+#: ../../source/incompatible.rst:748
 msgid ""
 "The meaning of the `loop` parameter to :func:`MusicRoom` has changed. To get "
 "the old behavior, set both `loop` and `single_track` to true."
@@ -1298,22 +1163,22 @@ msgstr ""
 ":func:`MusicRoom` の `loop` パラメーターの意味が変わりました。以前と同じ挙動"
 "にするには、 `loop` と `single_track` の両方を True にしてください。"
 
-#: ../../source/incompatible.rst:844
+#: ../../source/incompatible.rst:755
 msgid "6.15.7"
 msgstr "6.15.7"
 
-#: ../../source/incompatible.rst:846
+#: ../../source/incompatible.rst:757
 msgid ""
 "Ren'Py now expects auto-forward mode to be controlled by the \"auto-forward"
 "\" :func:`Preference`. To have it controlled by the auto-forward mode "
 "slider, set :var:`config.default_afm_enable` to None."
 msgstr ""
 
-#: ../../source/incompatible.rst:853
+#: ../../source/incompatible.rst:764
 msgid "6.14"
 msgstr "6.14"
 
-#: ../../source/incompatible.rst:855
+#: ../../source/incompatible.rst:766
 msgid ""
 "Previously, Ren'Py moved archived files into the archived/ directory. It "
 "would search this directory automatically when running a game or building "
@@ -1321,7 +1186,7 @@ msgid ""
 "should be moved back into the game directory."
 msgstr ""
 
-#: ../../source/incompatible.rst:860
+#: ../../source/incompatible.rst:771
 msgid ""
 ":func:`MoveTransition` has changed its interface. The old version of "
 "MoveTransition can be accessed as OldMoveTransition, if you don't want to "
@@ -1329,28 +1194,28 @@ msgid ""
 "MoveTransition.)"
 msgstr ""
 
-#: ../../source/incompatible.rst:865
+#: ../../source/incompatible.rst:776
 msgid ""
 ":func:`Transform` has changed its behavior with regards to asymmetrically "
 "scaled and rotated images. It's unlikely the old behavior was ever used."
 msgstr ""
 
-#: ../../source/incompatible.rst:873
+#: ../../source/incompatible.rst:784
 msgid "6.13.8"
 msgstr "6.13.8"
 
-#: ../../source/incompatible.rst:875
+#: ../../source/incompatible.rst:786
 msgid ""
 "Old-style string interpolation has been re-enabled by default. If you wrote "
 "code (between 6.13 and 6.13.7) that uses % in say or menu statements, you "
 "should either write %% instead, or include the code::"
 msgstr ""
 
-#: ../../source/incompatible.rst:883
+#: ../../source/incompatible.rst:794
 msgid "6.13"
 msgstr "6.13"
 
-#: ../../source/incompatible.rst:885
+#: ../../source/incompatible.rst:796
 msgid ""
 "The changes to text behavior can affect games in development in many ways. "
 "The biggest change is the introduction of new-style (square-bracket) text "
@@ -1358,13 +1223,13 @@ msgid ""
 "substitutions. These changes can be reverted with the code::"
 msgstr ""
 
-#: ../../source/incompatible.rst:895
+#: ../../source/incompatible.rst:806
 msgid ""
 "New- and old-style substitutions can coexist in the same game, by setting "
 "both variables to True."
 msgstr ""
 
-#: ../../source/incompatible.rst:898
+#: ../../source/incompatible.rst:809
 msgid ""
 "Ren'Py has also changed the default line-wrapping behavior. While the new "
 "behavior should never increase the number of lines in a paragraph, it may "
@@ -1372,24 +1237,24 @@ msgid ""
 "code::"
 msgstr ""
 
-#: ../../source/incompatible.rst:907
+#: ../../source/incompatible.rst:818
 msgid ""
 "A bug with negative line_spacing was fixed. This fix can cause blocks of "
 "text to shrink in height. To revert to the old behavior, use::"
 msgstr ""
 
-#: ../../source/incompatible.rst:913
+#: ../../source/incompatible.rst:824
 msgid ""
 "Finally, the new text code may lead to artifacts when displaying slow text, "
 "especially in conjunction with a negative line spacing. Consider adjusting :"
 "propref:`line_overlap_split` to fix this."
 msgstr ""
 
-#: ../../source/incompatible.rst:920
+#: ../../source/incompatible.rst:831
 msgid "6.12.1"
 msgstr "6.12.1"
 
-#: ../../source/incompatible.rst:922
+#: ../../source/incompatible.rst:833
 msgid ""
 "Image names have changed from being static names to being attribute-based. "
 "This can lead to image names that were previously distinct becoming "
@@ -1397,7 +1262,7 @@ msgid ""
 "image_attributes` to False."
 msgstr ""
 
-#: ../../source/incompatible.rst:927
+#: ../../source/incompatible.rst:838
 msgid ""
 "Showing an image without providing a transform or ATL block will now "
 "continue the previous transform that the image was using. This means that a "
@@ -1405,7 +1270,7 @@ msgid ""
 "behavior, set :var:`config.keep_running_transform` to False."
 msgstr ""
 
-#: ../../source/incompatible.rst:932
+#: ../../source/incompatible.rst:843
 msgid ""
 "The `image` argument to :func:`Character` has changed meaning. While the old "
 "meaning was unsupported in the screens-based environment, it can be restored "
@@ -1413,18 +1278,18 @@ msgid ""
 "new_character_image_argument` to False."
 msgstr ""
 
-#: ../../source/incompatible.rst:941
+#: ../../source/incompatible.rst:852
 msgid "6.12.0"
 msgstr "6.12.0"
 
-#: ../../source/incompatible.rst:943
+#: ../../source/incompatible.rst:854
 msgid ""
 "The definition of the `items` parameter of the :ref:`choice-screen` and "
 "``nvl_choice`` screens has changed. The ``nvl_choice`` screen is deprecated "
 "in favor of the :ref:`nvl-screen` screen."
 msgstr ""
 
-#: ../../source/incompatible.rst:947
+#: ../../source/incompatible.rst:858
 msgid ""
 "Screens may be invoked at any time, in order to allow for image prediction, "
 "unless they have a predict property of False. When the predict property is "
@@ -1432,7 +1297,7 @@ msgid ""
 "display."
 msgstr ""
 
-#: ../../source/incompatible.rst:952
+#: ../../source/incompatible.rst:863
 msgid ""
 "For performance reason, Ren'Py now ignores the position properties of "
 "ImageReferences. This means that the position properties of style."
@@ -1440,11 +1305,11 @@ msgid ""
 "`config.imagereference_respects_position` to True."
 msgstr ""
 
-#: ../../source/incompatible.rst:960
+#: ../../source/incompatible.rst:871
 msgid "6.11.1"
 msgstr "6.11.1"
 
-#: ../../source/incompatible.rst:962
+#: ../../source/incompatible.rst:873
 msgid ""
 "MoveTransition has been modified to respect the xoffset and yoffset "
 "parameters of the displayables it is moving. The factory functions that are "
@@ -1454,11 +1319,11 @@ msgid ""
 "parameters."
 msgstr ""
 
-#: ../../source/incompatible.rst:973
+#: ../../source/incompatible.rst:884
 msgid "6.11.0"
 msgstr "6.11.0"
 
-#: ../../source/incompatible.rst:975
+#: ../../source/incompatible.rst:886
 msgid ""
 "The transform specified by the :var:`config.default_transform` variable is "
 "used to initialize the transform properties of images shown using the show "
@@ -1467,20 +1332,20 @@ msgid ""
 "`yanchor` to 1.0."
 msgstr ""
 
-#: ../../source/incompatible.rst:981
+#: ../../source/incompatible.rst:892
 msgid ""
 "This represents a change in the default value of these style properties, "
 "which were previously uninitialized and hence defaulted to 0."
 msgstr ""
 
-#: ../../source/incompatible.rst:985
+#: ../../source/incompatible.rst:896
 msgid ""
 "By including the :var:`reset` transform in ATL transforms, these properties "
 "can be reset back to 0. Alternatively, one can stop using the default "
 "transform, and revert to the old behavior, using the code::"
 msgstr ""
 
-#: ../../source/incompatible.rst:998
+#: ../../source/incompatible.rst:909
 msgid ""
 "If a transform does not define one of the position properties :propref:"
 "`xpos`, :propref:`ypos`, :propref:`xanchor`, or :propref:`yanchor`, that "
@@ -1488,7 +1353,7 @@ msgid ""
 "property."
 msgstr ""
 
-#: ../../source/incompatible.rst:1003
+#: ../../source/incompatible.rst:914
 msgid ""
 "This makes it possible to have one transform control a displayable's "
 "vertical motion, and the other control the horizontal. But this is "
@@ -1496,11 +1361,11 @@ msgid ""
 "`config.transform_uses_child_position` variable. ::"
 msgstr ""
 
-#: ../../source/incompatible.rst:1014
+#: ../../source/incompatible.rst:925
 msgid "6.10.0"
 msgstr "6.10.0"
 
-#: ../../source/incompatible.rst:1016
+#: ../../source/incompatible.rst:927
 msgid ""
 "The default positions (left, right, center, truecenter, offscreenleft, and "
 "offscreenright) are now defined as ATL transforms. This means that showing "
@@ -1509,11 +1374,11 @@ msgid ""
 "the code::"
 msgstr ""
 
-#: ../../source/incompatible.rst:1032
+#: ../../source/incompatible.rst:943
 msgid "6.9.2"
 msgstr "6.9.2"
 
-#: ../../source/incompatible.rst:1034
+#: ../../source/incompatible.rst:945
 msgid ""
 "To migrate your game from Ren'Py 6.9.2 or later, copy the directory "
 "containing your game into your projects directory. You can choose a projects "
@@ -1521,6 +1386,128 @@ msgid ""
 "Please see the `Ren'Py 6.9.2 release notes <http://www.renpy.org/wiki/renpy/"
 "releases/6.9.2>`_ for information about migrating from older releases."
 msgstr ""
+
+#~ msgid "8.2.0 / 7.7.0"
+#~ msgstr "8.2.0 / 7.7.0"
+
+#~ msgid ""
+#~ "**Text Changes** Ren'Py uses harfbuzz for shaping, which may produce "
+#~ "different glyphs than would have been produced differently, and may "
+#~ "change the spacing of text. The positioning of vertical text has also "
+#~ "been changed by harfbuzz rendering."
+#~ msgstr ""
+#~ "**テキストの変更** Ren'Py で hardbuzz がシェイピングに使用されるよ文字の形"
+#~ "とテキストの間隔がが変化するかもしれません。縦書きテキストの位置も "
+#~ "hardbuzz によるレンダリングで変更されます。"
+
+#~ msgid "To revert this changes, include in your game::"
+#~ msgstr "変更を戻すには、次をゲームに含めてください ::"
+
+#~ msgid ""
+#~ "Ren'Py will automatically use an Emoji font when required. To disable "
+#~ "this, add::"
+#~ msgstr ""
+#~ "Ren'Py は必要な時は自動的に絵文字のフォントを使用します。これを無効化する"
+#~ "には次を追加します ::"
+
+#~ msgid ""
+#~ "**Polar Coordinate Changes** Ren'Py now enforces that the angles given to "
+#~ "the :tpref:`angle` and :tpref:`anchorangle` properties are in the range 0 "
+#~ "to 360 degrees, inclusive of 0 but not of 360. Previously, angles outside "
+#~ "this range  gave undefined behavior, now the angles will be clamped to "
+#~ "this range. A 360 degree change will no longer cause motion, but will "
+#~ "instead be treated as a 0 degree change."
+#~ msgstr ""
+#~ "**極座標の変更** Ren'Py は :tpref:`angle` および :tpref:`anchorangle` プロ"
+#~ "パティーに指定された角度が 0 度以上 360 度未満の範囲にあることを強制するよ"
+#~ "うになりました。以前は、この範囲外の角度は未定義の動作をしていました。360"
+#~ "度の変更はもはや動きを引き起こさず、代わりに0度の変更として扱われます。"
+
+#~ msgid ""
+#~ "When animating :tpref:`angle` and :tpref:`anchorangle` with ATL, if a "
+#~ "direction is not supplied, the shortest arc will be used, even if it "
+#~ "passes through 0."
+#~ msgstr ""
+#~ "ATLで :tpref:`angle` と :tpref:`anchorangle` をアニメーションする場合、方"
+#~ "向を指定しないと、0を通る場合でも最短の円弧が使用されます。"
+
+#~ msgid ""
+#~ "There is not a compatibility define for these changes, as they are "
+#~ "unlikely to affect the visible behavior of games in practice."
+#~ msgstr ""
+#~ "これらの変更は、実際のゲームの目に見える動作に影響を与える可能性が低いた"
+#~ "め、互換性の定義はありません。"
+
+#~ msgid ""
+#~ "**Empty ATL Blocks Forbidden** Previously, Ren'Py would allow an empty "
+#~ "ATL block. Now it will report that a block is required. You'll need to "
+#~ "change::"
+#~ msgstr ""
+#~ "**空の ATL ブロックの禁止** 以前は Ren'Py では空の ATL ブロックが許可され"
+#~ "ていましたが、ブロックを要求するエラーを出すようになりました。空の ATL ブ"
+#~ "ロックがあるなら変更する必要があります。 ::"
+
+#~ msgid "In the unlikely case that you have an empty ATL block."
+#~ msgstr ""
+#~ "滅多にないことですが、空の ATL ブロックを持つ場合はこのようにします。"
+
+#~ msgid ""
+#~ "**Box Reverse** The :propref:`box_reverse` style property has changed its "
+#~ "behavior in two ways:"
+#~ msgstr ""
+#~ "**Box Reverse** :propref:`box_reverse` スタイルプロパティーの動作は 2 つの"
+#~ "点で変更になりました :"
+
+#~ msgid ""
+#~ "Space is offered to displayables in the order the displayables are "
+#~ "presented in the screen, where previously the space was offered in "
+#~ "reverse order when :propref:`box_reverse` was enabled. This can change "
+#~ "the sizes of some displayables."
+#~ msgstr ""
+#~ ":propref:`box_reverse` が有効な場合、スペースは displayable の提供順と同じ"
+#~ "順で提供されます。以前は逆順でした。これはいくつかの Displayable のサイズ"
+#~ "を変更するかもしれません。"
+
+#~ msgid ""
+#~ "A hbox that has :propref:`box_wrap` set will wrap from top to bottom, "
+#~ "rather than bottom to top. A vbox with :propref:`box_wrap` set will wrap "
+#~ "from left to right, rather than right to left."
+#~ msgstr ""
+#~ ":propref:`box_wrap` が設定された hbox は下から上ではなく、上から下に折り返"
+#~ "すようになりました。 :propref:`box_wrap` が設定された vbox は右から左では"
+#~ "なく左から右に折り返すようになりました。"
+
+#~ msgid ""
+#~ "The goal of these changes is to make the behavior of box_reverse more "
+#~ "useful for laying out interfaces in right-to-left languages. To revert "
+#~ "these changes, add to your game::"
+#~ msgstr ""
+#~ "これらの変更の目的は box_reverse の動作を右から左の言語のインターフェース"
+#~ "により適合させることです。これらの変更を戻すには、次をゲームに追加してくだ"
+#~ "さい。 ::"
+
+#~ msgid ""
+#~ "**build.itch_channels** That variable was always documented as a dict but "
+#~ "was mistakenly implemented as a list of tuples. It's now truly a dict. If "
+#~ "you were using list operations on it, you'll need to change your code::"
+#~ msgstr ""
+#~ "**build.itch_channels** この変数はいつも辞書として記載されていましたが、"
+#~ "誤ってタプルのリストとして実装されていました。現在は本当に辞書になっていま"
+#~ "す。もし辞書として使用しているなら、コードを変更してください。 ::"
+
+#~ msgid ""
+#~ "The paths that are searched consider the purpose of the file, rather than "
+#~ "the type or extensions. So ``renpy.loadable(\"dlc.jpg\")`` won't look for "
+#~ "game/images/dlc.jpg. If you'd like to find that file, write ``renpy."
+#~ "loadable(\"images/dlc.jpg\")``. If you'd like to search for a file that "
+#~ "can be in either game/ or game/images, write ``renpy.loadable(\"dlc.jpg"
+#~ "\", \"images\")``."
+#~ msgstr ""
+#~ "検索されるパスは、ファイルの種類や拡張子ではなく、ファイルの目的を考慮して"
+#~ "います。つまり、 ``renpy.loadable(\"dlc.jpg\")`` は game/images/dlc.jpg を"
+#~ "探しません。そのファイルを探したい場合は、``renpy.loadable(\"images/dlc."
+#~ "jpg\")`` と書いてください。game またはgame/images にあるファイルを探したい"
+#~ "場合は、``renpy.loadable(\"dlc.jpg\", \"images\")`` と記述してください。"
 
 #~ msgid "7.5.0/8.0.0"
 #~ msgstr "7.5.0/8.0.0"

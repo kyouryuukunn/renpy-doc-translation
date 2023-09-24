@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
+"POT-Creation-Date: 2023-09-20 21:53+0900\n"
 "PO-Revision-Date: 2023-04-29 15:59+0900\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -390,71 +390,6 @@ msgstr ""
 "一般的に、シェーダーパーツは \"mygame.recolor\" や \"mylibrary.warp\" のよう"
 "な \"namespace.part\" の形式であるべきです。 \"renpy.\" や \"live2d.\" で始ま"
 "る名前は _ で始まる始まるもの同様に Ren'Py で予約されています。"
-
-#: ../../source/inc/register_shader:5
-msgid ""
-"This registers a shader part. This takes `name`, and then keyword arguments."
-msgstr ""
-"これはシェーダーパーツの登録をします。 `name` とその後に続くキーワード引数を"
-"受け取ります。"
-
-#: ../../source/inc/model_displayable:45 ../../source/inc/model_displayable:83
-#: ../../source/inc/register_shader:10
-msgid "`name`"
-msgstr "`name`"
-
-#: ../../source/inc/register_shader:9
-msgid ""
-"A string giving the name of the shader part. Names starting with an "
-"underscore or \"renpy.\" are reserved for Ren'Py."
-msgstr ""
-"登録するシェーダーパーツの名前の文字列です。アンダースコアや \"renpy.\" で始"
-"まる名前は Ren'Py で予約されています。"
-
-#: ../../source/inc/register_shader:21
-msgid "`variables`"
-msgstr "`variables`"
-
-#: ../../source/inc/register_shader:13
-msgid ""
-"The variables used by the shader part. These should be listed one per line, "
-"a storage (uniform, attribute, or varying) followed by a type, name, and "
-"semicolon. For example::"
-msgstr ""
-"登録するシェーダーパーツで使用される変数です。これらは行ごとに (uniform や "
-"attribute, varying のような)ストレージに続いて、型、セミコロンとなるべきで"
-"す。例 ::"
-
-#: ../../source/inc/register_shader:25
-msgid "`vertex_functions`"
-msgstr "`vertex_functions`"
-
-#: ../../source/inc/register_shader:24
-msgid ""
-"If given, a string containing functions that will be included in the vertex "
-"shader."
-msgstr "指定するなら vertex シェーダーに含まれる関数を含める文字列です。"
-
-#: ../../source/inc/register_shader:29
-msgid "`fragment_functions`"
-msgstr "`fragment_functions`"
-
-#: ../../source/inc/register_shader:28
-msgid ""
-"If given, a string containing functions that will be included in the "
-"fragment shader."
-msgstr "指定するなら fragment シェーダーに含まれる関数を含める文字列です。"
-
-#: ../../source/inc/register_shader:31
-msgid ""
-"Other keyword arguments should start with ``vertex_`` or ``fragment_``, and "
-"end with an integer priority. So \"fragment_200\" or \"vertex_300\". These "
-"give text that's placed in the appropriate shader at the given priority, "
-"with lower priority numbers inserted before higher priority numbers."
-msgstr ""
-"他のキーワード引数は \"fragment_200\" や \"vertex_300\" のように ``vertex_`` "
-"や ``fragment_`` から始まり、優先度を表す数値で終わるべきです。これらは優先度"
-"の数値順に適切なシェーダーに配置されるテキストを指定します。"
 
 #: ../../source/model.rst:169
 msgid "Ren'Py supports only the following variable types:"
@@ -1021,171 +956,6 @@ msgstr ""
 "モデル Displayable はモデルベースのレンダラーで使用するためのモデルを作成する"
 "のに役立ちます。"
 
-#: ../../source/inc/model_displayable:5
-msgid ""
-"This is a displayable that causes Ren'Py to create a 2D or 3D model for use "
-"with the model-based renderer, that will be drawn in a single operation with "
-"the shaders given here, or selected by an enclosing Transform or Displayable."
-msgstr ""
-"これは Ren'Py にモデルベースのレンダラーで使用する 2D や 3D のモデルを作成さ"
-"せる Displayable であり、ここで指定したシェーダーを使用して単一の処理により、"
-"または囲んでいるTransform や Displayable によって選択されて描画されます。"
-
-#: ../../source/inc/model_displayable:14
-msgid "`size`"
-msgstr "`size`"
-
-#: ../../source/inc/model_displayable:11
-msgid ""
-"If not None, this should be a width, height tuple, that's used to give the "
-"size of the Model. If not given, the model is the size of the area provided "
-"to it. The fit parameter to a texture takes precedence."
-msgstr ""
-"None でなければ幅と高さのタプルで、そのモデルのサイズを指定するのに使用されま"
-"す。指定されないと、そのモデルは与えられた領域のサイズになります。テクスチャ"
-"への fit パラメータがより優先されます。"
-
-#: ../../source/inc/model_displayable:16
-msgid ""
-"If no mesh method is called, a mesh that sets a_position and a_tex_coord to "
-"match the way Ren'Py loads textures is created if at least one texture is "
-"supplied. Otherwise, a mesh that only sets a_position is used."
-msgstr ""
-"mesh メソッドが呼び出されない場合、少なくとも1つのテクスチャを与えられれば "
-"Ren'Py がテクスチャをロードする方法に合わせて a_position と a_tex_coord を設"
-"定するメッシュが作成され、そうでなければ a_position のみを設定するメッシュが"
-"使用されます。"
-
-#: ../../source/inc/model_displayable:20
-msgid ""
-"All methods on this calls return the displayable the method is called on, "
-"making it possible to chain calls."
-msgstr ""
-"このクラスのすべてのメソッドはそのメソッドが呼び出された Displayable を返すの"
-"でチェーン呼び出しが出来ます。"
-
-#: ../../source/inc/model_displayable:25
-msgid ""
-"This is the same as the texture method, except that the `focus` and `main` "
-"parameters are set to true."
-msgstr ""
-"これは `focus` と `main` パラメーターが True に設定される他は texture メソッ"
-"ドと同じです。"
-
-#: ../../source/inc/model_displayable:30
-msgid ""
-"Creates a mesh that consists of a width x height grid of evenly spaced "
-"points, connecting each point to the closest points vertically and "
-"horizontally, and dividing each rectangle in the grid so created into "
-"triangles."
-msgstr ""
-"width x height の等間隔のポイントを持つグリッドで構成されるメッシュを作成し、"
-"各ポイントを垂直および水平方向の最も近いポイントに接続し、作成されたグリッド"
-"内の各長方形を三角形に分割します。"
-
-#: ../../source/inc/model_displayable:36
-msgid "`width`, `height`"
-msgstr "`width`, `height`"
-
-#: ../../source/inc/model_displayable:36
-msgid ""
-"The number of points in the horizontal vertical directions, a integer that "
-"is at least 2."
-msgstr "水平、垂直方法のポイント数で、少なくとも2以上の整数です。"
-
-#: ../../source/inc/model_displayable:41
-msgid "Sets the value of a gl property."
-msgstr "gl プロパティーの値を設定します。"
-
-#: ../../source/inc/model_displayable:44
-msgid ""
-"A string giving the name of the GL property, including the \"gl\\_\" prefix."
-msgstr "GL プロパティーの名前を指定する文字列で、 \"gl\\_\" 接頭辞を含みます。"
-
-#: ../../source/inc/model_displayable:47 ../../source/inc/model_displayable:86
-msgid "`value`"
-msgstr "`value`"
-
-#: ../../source/inc/model_displayable:48
-msgid "The value of the gl property."
-msgstr "gl プロパティーの値"
-
-#: ../../source/inc/model_displayable:52
-msgid "Adds a shader to this model."
-msgstr "このモデルにシェーダーを追加します。"
-
-#: ../../source/inc/model_displayable:54
-msgid "`shader`"
-msgstr "`shader`"
-
-#: ../../source/inc/model_displayable:55
-msgid "A string given the name of a shader to use with this model."
-msgstr "このモデルで使用するシェーダーの名前の文字列です。"
-
-#: ../../source/inc/model_displayable:59
-msgid ""
-"Add a texture to this model, by rendering the given displayable. The first "
-"texture added will be ``tex0``, the second ``tex1``, a and so on."
-msgstr ""
-"指定の Displayable をレンダリングしてこのモデルにテクスチャを追加します。追加"
-"される最初のテクスチャは ``tex0`` で、 2つ目は ``tex1`` と続きます。"
-
-#: ../../source/inc/model_displayable:66
-msgid "`focus`"
-msgstr "`focus`"
-
-#: ../../source/inc/model_displayable:64
-msgid ""
-"If true, focus events are passed to the displayable. It's assumed that "
-"coordinate relative to the model map 1:1 with coordinates relative to the "
-"displayable."
-msgstr ""
-"True なら、フォーカスイベントがその Displayable に渡されます。ここではそのモ"
-"デルに対する相対座標がその Displayable に帯する相対座標と 1:1 で対応すると想"
-"定しています。"
-
-#: ../../source/inc/model_displayable:71
-msgid "`main`"
-msgstr "`main`"
-
-#: ../../source/inc/model_displayable:69
-msgid ""
-"If true, this is marked as a main child of this displayable, which allows it "
-"to be inspected using the displayable inspector."
-msgstr ""
-"True なら、これは Displayable インスペクターに検知されるこの Displayable のメ"
-"インの子としてマークされます。"
-
-#: ../../source/inc/model_displayable:74
-msgid "`fit`"
-msgstr "`fit`"
-
-#: ../../source/inc/model_displayable:74
-msgid ""
-"If true, the Model is given the size of the displayable. This may only be "
-"true for one texture."
-msgstr ""
-"True なら、モデルにはその Displayable のサイズが指定されます。これは1つのテク"
-"スチャに対してのみ True でしょう。"
-
-#: ../../source/inc/model_displayable:79
-msgid "Sets the value of a uniform that is passed to the shaders."
-msgstr "シェーダーに渡される uniform の値を設定します。"
-
-#: ../../source/inc/model_displayable:82
-msgid ""
-"A string giving the name of the uniform to set, including the \"u\\_\" "
-"prefix."
-msgstr "uniform の名前の文字列で、 \"u\\_\" を接頭辞に持ちます。"
-
-#: ../../source/inc/model_displayable:86
-msgid ""
-"The value of the uniform. Either a float, a 2, 3, or 4 element tuple of "
-"floats, or a Matrix."
-msgstr ""
-"uniform の値です。浮動小数、浮動小数の2, 3, 4要素のタプルまたはマトリックスで"
-"す。"
-
 #: ../../source/model.rst:461
 msgid "Model Displayable Examples"
 msgstr "モデル Displayable 例"
@@ -1250,62 +1020,241 @@ msgstr ""
 msgid "Default Shader Parts"
 msgstr "デフォルトのシェーダーパーツ"
 
-#: ../../source/inc/shadersource:2
-msgid "renpy.geometry (priority 100)"
-msgstr "renpy.geometry (priority 100)"
+#~ msgid ""
+#~ "This registers a shader part. This takes `name`, and then keyword "
+#~ "arguments."
+#~ msgstr ""
+#~ "これはシェーダーパーツの登録をします。 `name` とその後に続くキーワード引数"
+#~ "を受け取ります。"
 
-#: ../../source/inc/shadersource:3 ../../source/inc/shadersource:14
-#: ../../source/inc/shadersource:34 ../../source/inc/shadersource:76
-#: ../../source/inc/shadersource:98 ../../source/inc/shadersource:124
-#: ../../source/inc/shadersource:134 ../../source/inc/shadersource:151
-#: ../../source/inc/shadersource:161
-msgid "Variables::"
-msgstr "Variables::"
+#~ msgid "`name`"
+#~ msgstr "`name`"
 
-#: ../../source/inc/shadersource:8 ../../source/inc/shadersource:21
-#: ../../source/inc/shadersource:41 ../../source/inc/shadersource:85
-#: ../../source/inc/shadersource:109 ../../source/inc/shadersource:141
-msgid "Vertex shader::"
-msgstr "Vertex shader::"
+#~ msgid ""
+#~ "A string giving the name of the shader part. Names starting with an "
+#~ "underscore or \"renpy.\" are reserved for Ren'Py."
+#~ msgstr ""
+#~ "登録するシェーダーパーツの名前の文字列です。アンダースコアや \"renpy.\" で"
+#~ "始まる名前は Ren'Py で予約されています。"
 
-#: ../../source/inc/shadersource:13
-msgid "renpy.alpha_mask (priority 200)"
-msgstr "renpy.alpha_mask (priority 200)"
+#~ msgid "`variables`"
+#~ msgstr "`variables`"
 
-#: ../../source/inc/shadersource:25 ../../source/inc/shadersource:45
-#: ../../source/inc/shadersource:89 ../../source/inc/shadersource:113
-#: ../../source/inc/shadersource:128 ../../source/inc/shadersource:145
-#: ../../source/inc/shadersource:155 ../../source/inc/shadersource:166
-msgid "Fragment shader::"
-msgstr "Fragment shader::"
+#~ msgid ""
+#~ "The variables used by the shader part. These should be listed one per "
+#~ "line, a storage (uniform, attribute, or varying) followed by a type, "
+#~ "name, and semicolon. For example::"
+#~ msgstr ""
+#~ "登録するシェーダーパーツで使用される変数です。これらは行ごとに (uniform "
+#~ "や attribute, varying のような)ストレージに続いて、型、セミコロンとなるべ"
+#~ "きです。例 ::"
 
-#: ../../source/inc/shadersource:33
-msgid "renpy.blur (priority 200)"
-msgstr "renpy.blur (priority 200)"
+#~ msgid "`vertex_functions`"
+#~ msgstr "`vertex_functions`"
 
-#: ../../source/inc/shadersource:75
-msgid "renpy.dissolve (priority 200)"
-msgstr "renpy.dissolve (priority 200)"
+#~ msgid ""
+#~ "If given, a string containing functions that will be included in the "
+#~ "vertex shader."
+#~ msgstr "指定するなら vertex シェーダーに含まれる関数を含める文字列です。"
 
-#: ../../source/inc/shadersource:97
-msgid "renpy.imagedissolve (priority 200)"
-msgstr "renpy.imagedissolve (priority 200)"
+#~ msgid "`fragment_functions`"
+#~ msgstr "`fragment_functions`"
 
-#: ../../source/inc/shadersource:123
-msgid "renpy.solid (priority 200)"
-msgstr "renpy.solid (priority 200)"
+#~ msgid ""
+#~ "If given, a string containing functions that will be included in the "
+#~ "fragment shader."
+#~ msgstr "指定するなら fragment シェーダーに含まれる関数を含める文字列です。"
 
-#: ../../source/inc/shadersource:133
-msgid "renpy.texture (priority 200)"
-msgstr "renpy.texture (priority 200)"
+#~ msgid ""
+#~ "Other keyword arguments should start with ``vertex_`` or ``fragment_``, "
+#~ "and end with an integer priority. So \"fragment_200\" or \"vertex_300\". "
+#~ "These give text that's placed in the appropriate shader at the given "
+#~ "priority, with lower priority numbers inserted before higher priority "
+#~ "numbers."
+#~ msgstr ""
+#~ "他のキーワード引数は \"fragment_200\" や \"vertex_300\" のように "
+#~ "``vertex_`` や ``fragment_`` から始まり、優先度を表す数値で終わるべきで"
+#~ "す。これらは優先度の数値順に適切なシェーダーに配置されるテキストを指定しま"
+#~ "す。"
 
-#: ../../source/inc/shadersource:150
-msgid "renpy.matrixcolor (priority 400)"
-msgstr "renpy.matrixcolor (priority 400)"
+#~ msgid ""
+#~ "This is a displayable that causes Ren'Py to create a 2D or 3D model for "
+#~ "use with the model-based renderer, that will be drawn in a single "
+#~ "operation with the shaders given here, or selected by an enclosing "
+#~ "Transform or Displayable."
+#~ msgstr ""
+#~ "これは Ren'Py にモデルベースのレンダラーで使用する 2D や 3D のモデルを作成"
+#~ "させる Displayable であり、ここで指定したシェーダーを使用して単一の処理に"
+#~ "より、または囲んでいるTransform や Displayable によって選択されて描画され"
+#~ "ます。"
 
-#: ../../source/inc/shadersource:160
-msgid "renpy.alpha (priority 500)"
-msgstr "renpy.alpha (priority 500)"
+#~ msgid "`size`"
+#~ msgstr "`size`"
+
+#~ msgid ""
+#~ "If not None, this should be a width, height tuple, that's used to give "
+#~ "the size of the Model. If not given, the model is the size of the area "
+#~ "provided to it. The fit parameter to a texture takes precedence."
+#~ msgstr ""
+#~ "None でなければ幅と高さのタプルで、そのモデルのサイズを指定するのに使用さ"
+#~ "れます。指定されないと、そのモデルは与えられた領域のサイズになります。テク"
+#~ "スチャへの fit パラメータがより優先されます。"
+
+#~ msgid ""
+#~ "If no mesh method is called, a mesh that sets a_position and a_tex_coord "
+#~ "to match the way Ren'Py loads textures is created if at least one texture "
+#~ "is supplied. Otherwise, a mesh that only sets a_position is used."
+#~ msgstr ""
+#~ "mesh メソッドが呼び出されない場合、少なくとも1つのテクスチャを与えられれ"
+#~ "ば Ren'Py がテクスチャをロードする方法に合わせて a_position と "
+#~ "a_tex_coord を設定するメッシュが作成され、そうでなければ a_position のみを"
+#~ "設定するメッシュが使用されます。"
+
+#~ msgid ""
+#~ "All methods on this calls return the displayable the method is called on, "
+#~ "making it possible to chain calls."
+#~ msgstr ""
+#~ "このクラスのすべてのメソッドはそのメソッドが呼び出された Displayable を返"
+#~ "すのでチェーン呼び出しが出来ます。"
+
+#~ msgid ""
+#~ "This is the same as the texture method, except that the `focus` and "
+#~ "`main` parameters are set to true."
+#~ msgstr ""
+#~ "これは `focus` と `main` パラメーターが True に設定される他は texture メ"
+#~ "ソッドと同じです。"
+
+#~ msgid ""
+#~ "Creates a mesh that consists of a width x height grid of evenly spaced "
+#~ "points, connecting each point to the closest points vertically and "
+#~ "horizontally, and dividing each rectangle in the grid so created into "
+#~ "triangles."
+#~ msgstr ""
+#~ "width x height の等間隔のポイントを持つグリッドで構成されるメッシュを作成"
+#~ "し、各ポイントを垂直および水平方向の最も近いポイントに接続し、作成されたグ"
+#~ "リッド内の各長方形を三角形に分割します。"
+
+#~ msgid "`width`, `height`"
+#~ msgstr "`width`, `height`"
+
+#~ msgid ""
+#~ "The number of points in the horizontal vertical directions, a integer "
+#~ "that is at least 2."
+#~ msgstr "水平、垂直方法のポイント数で、少なくとも2以上の整数です。"
+
+#~ msgid "Sets the value of a gl property."
+#~ msgstr "gl プロパティーの値を設定します。"
+
+#~ msgid ""
+#~ "A string giving the name of the GL property, including the \"gl\\_\" "
+#~ "prefix."
+#~ msgstr ""
+#~ "GL プロパティーの名前を指定する文字列で、 \"gl\\_\" 接頭辞を含みます。"
+
+#~ msgid "`value`"
+#~ msgstr "`value`"
+
+#~ msgid "The value of the gl property."
+#~ msgstr "gl プロパティーの値"
+
+#~ msgid "Adds a shader to this model."
+#~ msgstr "このモデルにシェーダーを追加します。"
+
+#~ msgid "`shader`"
+#~ msgstr "`shader`"
+
+#~ msgid "A string given the name of a shader to use with this model."
+#~ msgstr "このモデルで使用するシェーダーの名前の文字列です。"
+
+#~ msgid ""
+#~ "Add a texture to this model, by rendering the given displayable. The "
+#~ "first texture added will be ``tex0``, the second ``tex1``, a and so on."
+#~ msgstr ""
+#~ "指定の Displayable をレンダリングしてこのモデルにテクスチャを追加します。"
+#~ "追加される最初のテクスチャは ``tex0`` で、 2つ目は ``tex1`` と続きます。"
+
+#~ msgid "`focus`"
+#~ msgstr "`focus`"
+
+#~ msgid ""
+#~ "If true, focus events are passed to the displayable. It's assumed that "
+#~ "coordinate relative to the model map 1:1 with coordinates relative to the "
+#~ "displayable."
+#~ msgstr ""
+#~ "True なら、フォーカスイベントがその Displayable に渡されます。ここではその"
+#~ "モデルに対する相対座標がその Displayable に帯する相対座標と 1:1 で対応する"
+#~ "と想定しています。"
+
+#~ msgid "`main`"
+#~ msgstr "`main`"
+
+#~ msgid ""
+#~ "If true, this is marked as a main child of this displayable, which allows "
+#~ "it to be inspected using the displayable inspector."
+#~ msgstr ""
+#~ "True なら、これは Displayable インスペクターに検知されるこの Displayable "
+#~ "のメインの子としてマークされます。"
+
+#~ msgid "`fit`"
+#~ msgstr "`fit`"
+
+#~ msgid ""
+#~ "If true, the Model is given the size of the displayable. This may only be "
+#~ "true for one texture."
+#~ msgstr ""
+#~ "True なら、モデルにはその Displayable のサイズが指定されます。これは1つの"
+#~ "テクスチャに対してのみ True でしょう。"
+
+#~ msgid "Sets the value of a uniform that is passed to the shaders."
+#~ msgstr "シェーダーに渡される uniform の値を設定します。"
+
+#~ msgid ""
+#~ "A string giving the name of the uniform to set, including the \"u\\_\" "
+#~ "prefix."
+#~ msgstr "uniform の名前の文字列で、 \"u\\_\" を接頭辞に持ちます。"
+
+#~ msgid ""
+#~ "The value of the uniform. Either a float, a 2, 3, or 4 element tuple of "
+#~ "floats, or a Matrix."
+#~ msgstr ""
+#~ "uniform の値です。浮動小数、浮動小数の2, 3, 4要素のタプルまたはマトリック"
+#~ "スです。"
+
+#~ msgid "renpy.geometry (priority 100)"
+#~ msgstr "renpy.geometry (priority 100)"
+
+#~ msgid "Variables::"
+#~ msgstr "Variables::"
+
+#~ msgid "Vertex shader::"
+#~ msgstr "Vertex shader::"
+
+#~ msgid "renpy.alpha_mask (priority 200)"
+#~ msgstr "renpy.alpha_mask (priority 200)"
+
+#~ msgid "Fragment shader::"
+#~ msgstr "Fragment shader::"
+
+#~ msgid "renpy.blur (priority 200)"
+#~ msgstr "renpy.blur (priority 200)"
+
+#~ msgid "renpy.dissolve (priority 200)"
+#~ msgstr "renpy.dissolve (priority 200)"
+
+#~ msgid "renpy.imagedissolve (priority 200)"
+#~ msgstr "renpy.imagedissolve (priority 200)"
+
+#~ msgid "renpy.solid (priority 200)"
+#~ msgstr "renpy.solid (priority 200)"
+
+#~ msgid "renpy.texture (priority 200)"
+#~ msgstr "renpy.texture (priority 200)"
+
+#~ msgid "renpy.matrixcolor (priority 400)"
+#~ msgstr "renpy.matrixcolor (priority 400)"
+
+#~ msgid "renpy.alpha (priority 500)"
+#~ msgstr "renpy.alpha (priority 500)"
 
 #~ msgid ""
 #~ "As of Ren'Py 7.4 (late 2020), Model-Based rendering needs to be enabled "

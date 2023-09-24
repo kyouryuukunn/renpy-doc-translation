@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-15 21:48+0900\n"
-"PO-Revision-Date: 2023-09-15 21:52+0900\n"
+"POT-Creation-Date: 2023-09-20 21:53+0900\n"
+"PO-Revision-Date: 2023-09-20 21:55+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -292,7 +292,7 @@ msgstr ""
 msgid "Some sample interpolations are::"
 msgstr "補間の例です ::"
 
-#: ../../source/atl.rst:239
+#: ../../source/atl.rst:237
 msgid ""
 "An important special case is that the pause warper, followed by a time and "
 "nothing else, causes ATL execution to pause for that amount of time."
@@ -300,11 +300,22 @@ msgstr ""
 "重要な特例は pause ワーパーで、続けて時間だけを書いてその時間 ATL の実行を休"
 "止します。"
 
-#: ../../source/atl.rst:243
+#: ../../source/atl.rst:240
+msgid ""
+"Some properties can have values of multiple types. For example, the :propref:"
+"`xpos` property can be an int, float, or absolute, other properties can be "
+"None. The behavior is undefined when an interpolation has old and new "
+"property values of different types."
+msgstr ""
+"プロパティーには複数の型の値を受け取られるものがあります。例えば :propref:"
+"`xpos` プロパティーは整数、浮動小数点数、 absolute にできます。補間前後で型が"
+"異なるときのの動作は未定義です。"
+
+#: ../../source/atl.rst:245
 msgid "Time Statement"
 msgstr "time ステートメント"
 
-#: ../../source/atl.rst:245
+#: ../../source/atl.rst:247
 msgid ""
 "The ``time`` statement is a simple control statement. It contains a single "
 "`simple_expression`, which is evaluated to give a time, expressed as seconds "
@@ -314,7 +325,7 @@ msgstr ""
 "れるブロックが実行され始めてからの時間を秒単位で表す ``simple_expression`` "
 "を 1 つ含みます。"
 
-#: ../../source/atl.rst:252
+#: ../../source/atl.rst:254
 msgid ""
 "When the time given in the statement is reached, the following statement "
 "begins to execute. This transfer of control occurs even if a previous "
@@ -325,7 +336,7 @@ msgstr ""
 "始まります。この制御の移行は前のステートメントが実行中であってさえ行われ、先"
 "行するステートメントは即座に終了します。"
 
-#: ../../source/atl.rst:257
+#: ../../source/atl.rst:259
 msgid ""
 "Time statements are implicitly preceded by a pause statement with an "
 "infinite time. This means that if control would otherwise reach the time "
@@ -335,7 +346,7 @@ msgstr ""
 "つまり、time ステートメントにたどり着いたときに制御が別のところにあれば、"
 "time ステートメントは制御を得るまで待ちます。"
 
-#: ../../source/atl.rst:261
+#: ../../source/atl.rst:263
 msgid ""
 "When there are multiple time statements in a block, they must strictly "
 "increase in order."
@@ -343,11 +354,11 @@ msgstr ""
 "一つのブロックに複数の time ステートメントがある場合、それらは厳密に時間の経"
 "過順でなくてはなりません。"
 
-#: ../../source/atl.rst:276
+#: ../../source/atl.rst:277
 msgid "Expression Statement"
 msgstr "式 ステートメント"
 
-#: ../../source/atl.rst:278
+#: ../../source/atl.rst:279
 msgid ""
 "An expression statement is a simple statement that starts with a simple "
 "expression. It then contains an optional with clause, with a second simple "
@@ -356,11 +367,11 @@ msgstr ""
 "式 ステートメントは、単純式で始まる simple ステートメントです。with 節で 2 つ"
 "めの単純式も続けられます。"
 
-#: ../../source/atl.rst:285
+#: ../../source/atl.rst:286
 msgid "There are three things the first simple expression may evaluate to:"
 msgstr "最初の単純式は、以下の 3 つのいずれかに評価されるものにできます :"
 
-#: ../../source/atl.rst:287
+#: ../../source/atl.rst:288
 msgid ""
 "If it's an ATL transform, and that ATL transform has **not** been supplied a "
 "child (through being called as a transform or transition, or with a `child` "
@@ -372,7 +383,7 @@ msgstr ""
 "に child が渡されていなければ、その ATL transform はその式の位置に含まれま"
 "す。 ``with`` 節は無視されます。"
 
-#: ../../source/atl.rst:292
+#: ../../source/atl.rst:293
 msgid ""
 "If it's an integer or floating point number,  it's taken as a number of "
 "seconds to pause execution for. The ``with`` clause is ignored."
@@ -380,7 +391,7 @@ msgstr ""
 "整数または浮動小数点数の場合、 pause が実行される秒数になります。 ``with`` 節"
 "は無視されます。"
 
-#: ../../source/atl.rst:295
+#: ../../source/atl.rst:296
 msgid ""
 "Otherwise, the expression is interpreted to be a displayable. This "
 "displayable replaces the child of the transform when this clause executes, "
@@ -393,11 +404,11 @@ msgstr ""
 "す。 ``with`` 節があると、第二の式はトランジションと評価され、そのトランジ"
 "ションが前後の displayable に適用されます。"
 
-#: ../../source/atl.rst:320
+#: ../../source/atl.rst:321
 msgid "Pass Statement"
 msgstr "pass ステートメント"
 
-#: ../../source/atl.rst:325
+#: ../../source/atl.rst:326
 msgid ""
 "The ``pass`` statement is a simple statement that causes nothing to happen. "
 "This can be used when there's a desire to separate statements, like when "
@@ -407,11 +418,11 @@ msgstr ""
 "は、ステートメントを分割したいときに使えます。例えば、2 組の choice ステート"
 "メントが連続するのではなく分かれている方が望ましいときです。"
 
-#: ../../source/atl.rst:330
+#: ../../source/atl.rst:331
 msgid "Repeat Statement"
 msgstr "Repeat ステートメント"
 
-#: ../../source/atl.rst:332
+#: ../../source/atl.rst:333
 msgid ""
 "The ``repeat`` statement is a simple statement that causes the block "
 "containing it to resume execution from the beginning. If the expression is "
@@ -424,15 +435,15 @@ msgstr ""
 "ります(ですから、``repeat 2`` で終わるステートメントは最高で 2 回実行されま"
 "す)。"
 
-#: ../../source/atl.rst:340
+#: ../../source/atl.rst:341
 msgid "The repeat statement must be the last statement in a block.::"
 msgstr "repeat ステートメントは、必ずブロックの最後になければなりません。"
 
-#: ../../source/atl.rst:350
+#: ../../source/atl.rst:351
 msgid "Block Statement"
 msgstr "Block ステートメント"
 
-#: ../../source/atl.rst:352
+#: ../../source/atl.rst:353
 msgid ""
 "The ``block`` statement is a complex statement that contains a block of ATL "
 "statements. This can be used to group statements that will repeat."
@@ -440,11 +451,11 @@ msgstr ""
 "block ステートメントは、ATL ステートメントのブロックを含む complex ステートメ"
 "ントです。繰り返すステートメントをグループ化するのに使えます。"
 
-#: ../../source/atl.rst:371
+#: ../../source/atl.rst:372
 msgid "Choice Statement"
 msgstr "choice ステートメント"
 
-#: ../../source/atl.rst:373
+#: ../../source/atl.rst:374
 msgid ""
 "The ``choice`` statement is a complex statement that defines one of a set of "
 "potential choices. Ren'Py will pick one of the choices in the set, and "
@@ -455,7 +466,7 @@ msgstr ""
 "テートメントです。Ren'Py はその選択肢群から 1 つ選び、対応する ATL ブロックを"
 "実行します。その後、最後の選択肢の後から実行を続けます。"
 
-#: ../../source/atl.rst:382
+#: ../../source/atl.rst:383
 msgid ""
 "Choice statements are greedily grouped into a choice set when more than one "
 "choice statement appears consecutively in a block. If the "
@@ -466,11 +477,11 @@ msgstr ""
 "`simple_expression` が与えられているなら、それはそのブロックに浮動小数点数で"
 "指定するウェイトになり、なければ 1.0 になります。"
 
-#: ../../source/atl.rst:401
+#: ../../source/atl.rst:402
 msgid "Parallel Statement"
 msgstr "Parallel  ステートメント"
 
-#: ../../source/atl.rst:403
+#: ../../source/atl.rst:404
 msgid ""
 "The ``parallel`` statement is used to define a set of ATL blocks to execute "
 "in parallel."
@@ -478,7 +489,7 @@ msgstr ""
 "``parallel`` ステートメントを使用して並行して実行される ATL ブロック群を定義"
 "出来ます。"
 
-#: ../../source/atl.rst:410
+#: ../../source/atl.rst:411
 msgid ""
 "Parallel statements are greedily grouped into a parallel set when more than "
 "one parallel statement appears consecutively in a block. The blocks of all "
@@ -489,7 +500,7 @@ msgstr ""
 "全ての parallel ステートメントのブロックが同時進行は実行されます。parallel  "
 "ステートメントは、最後のブロックが終了したときに終了します。"
 
-#: ../../source/atl.rst:415
+#: ../../source/atl.rst:416
 msgid ""
 "The blocks within a set should be independent of each other, and manipulate "
 "different properties. When two blocks change the same property, the result "
@@ -499,11 +510,11 @@ msgstr ""
 "のでなければなりません。2 つのブロックが同じプロパティーを変更するときの結果"
 "は未定義です。"
 
-#: ../../source/atl.rst:434
+#: ../../source/atl.rst:435
 msgid "Event Statement"
 msgstr "Event ステートメント"
 
-#: ../../source/atl.rst:436
+#: ../../source/atl.rst:437
 msgid ""
 "The ``event`` statement is a simple statement that causes an event with the "
 "given name to be produced."
@@ -511,7 +522,7 @@ msgstr ""
 "event ステートメントは指定した名前のイベントを引き起こす simple ステートメン"
 "トです。"
 
-#: ../../source/atl.rst:442
+#: ../../source/atl.rst:443
 msgid ""
 "When an event is produced inside a block, the block is checked to see if an "
 "event handler for the given name exists. If it does, control is transferred "
@@ -523,11 +534,11 @@ msgstr ""
 "トハンドラに移ります。存在しなければ、イベントは外側のイベントハンドラに伝播"
 "します。"
 
-#: ../../source/atl.rst:448
+#: ../../source/atl.rst:449
 msgid "On Statement"
 msgstr "On ステートメント"
 
-#: ../../source/atl.rst:450
+#: ../../source/atl.rst:451
 msgid ""
 "The ``on`` statement is a complex statement that defines an event handler. "
 "On statements are greedily grouped into a single statement. On statement can "
@@ -537,7 +548,7 @@ msgstr ""
 "ステートメントは一つのステートメントに積極的にグループ化されます。 onステート"
 "メントでは、1つまたはコンマで区切られた複数のイベント名を扱えます。"
 
-#: ../../source/atl.rst:458
+#: ../../source/atl.rst:459
 msgid ""
 "The on statement is used to handle events. When an event is handled, "
 "handling of any other event ends and handing of the new event immediately "
@@ -550,7 +561,7 @@ msgstr ""
 "イベントが起こることなくイベントハンドラが終了したとき(すでに default イベン"
 "トを処理していたのでなければ)、 default イベントが引き起こされます。"
 
-#: ../../source/atl.rst:463
+#: ../../source/atl.rst:464
 msgid ""
 "Execution of the on statement will never naturally end. (But it can be ended "
 "by the time statement, or an enclosing event handler.)"
@@ -558,11 +569,11 @@ msgstr ""
 "on ステートメントの実行は自然には終わりません(しかし、time ステートメントや外"
 "側のイベントハンドラによって終了され得ます)。"
 
-#: ../../source/atl.rst:481
+#: ../../source/atl.rst:482
 msgid "Contains Statement"
 msgstr "Contains ステートメント"
 
-#: ../../source/atl.rst:483
+#: ../../source/atl.rst:484
 msgid ""
 "The ``contains`` statement sets the displayable contained by this ATL "
 "transform (the child of the transform). There are two variants of the "
@@ -572,7 +583,7 @@ msgstr ""
 "( transform の子 transform ) を設定します。contains ステートメントには 2 種類"
 "あります。"
 
-#: ../../source/atl.rst:487
+#: ../../source/atl.rst:488
 msgid ""
 "The contains expression variant takes an expression, and sets that "
 "expression as the child of the transform. This is useful when an ATL "
@@ -582,7 +593,7 @@ msgstr ""
 "す。これは ATL transform に第2の ATL transform を含みたいが組み込みたくはない"
 "ときに便利です。"
 
-#: ../../source/atl.rst:512
+#: ../../source/atl.rst:513
 msgid ""
 "The contains block allows one to define an ATL block that is used for the "
 "child of this ATL transform. One or more contains block statements will be "
@@ -595,7 +606,7 @@ msgstr ""
 "て設定されます。全ての parallel ステートメントのブロックが同時進行で実行され"
 "ます。"
 
-#: ../../source/atl.rst:521
+#: ../../source/atl.rst:522
 msgid ""
 "Each block should define a displayable to use, or else an error will occur. "
 "The contains statement executes instantaneously, without waiting for the "
@@ -607,11 +618,11 @@ msgstr ""
 "すぐに実行します。このステートメントは引数を子に簡単に渡せるようにするシン"
 "タックスシュガーに近いです。"
 
-#: ../../source/atl.rst:542
+#: ../../source/atl.rst:543
 msgid "Function Statement"
 msgstr "Function ステートメント"
 
-#: ../../source/atl.rst:544
+#: ../../source/atl.rst:545
 msgid ""
 "The ``function`` statement allows ATL to use Python functions to control the "
 "ATL properties."
@@ -619,12 +630,12 @@ msgstr ""
 "``function`` ステートメントで、ATL に ATL プロパティーを制御する Python 関数"
 "を使わせられます。"
 
-#: ../../source/atl.rst:550
+#: ../../source/atl.rst:551
 msgid ""
 "The functions have the same signature as those used with :func:`Transform`:"
 msgstr "この関数の定義は :func:`Transform` で使われるのと同じです :"
 
-#: ../../source/atl.rst:552
+#: ../../source/atl.rst:553
 msgid ""
 "The first argument is a transform object. Transform properties can be set on "
 "this object."
@@ -632,13 +643,13 @@ msgstr ""
 "第一引数は transform オブジェクトです。このオブジェクトに transform プロパ"
 "ティーを設定できます。"
 
-#: ../../source/atl.rst:555
+#: ../../source/atl.rst:556
 msgid ""
 "The second argument is the shown timebase, the number of seconds since the "
 "function began executing."
 msgstr "第二引数は出現時間軸で、関数が実行され始めてからの秒数です。"
 
-#: ../../source/atl.rst:557
+#: ../../source/atl.rst:558
 msgid ""
 "The third argument is the the animation timebase, which is the number of "
 "seconds something with the same tag has been on the screen."
@@ -646,7 +657,7 @@ msgstr ""
 "第三引数はアニメーション時間軸で、同じタグのものがスクリーン上にある秒数で"
 "す。"
 
-#: ../../source/atl.rst:560
+#: ../../source/atl.rst:561
 msgid ""
 "If the function returns a number, it will be called again after that number "
 "of seconds has elapsed. (0 seconds means to call the function as soon as "
@@ -657,7 +668,7 @@ msgstr ""
 "数はできるだけ早く呼び出されます)。 関数が None を返したら、制御は次の ATL ス"
 "テートメントに渡されます。"
 
-#: ../../source/atl.rst:565
+#: ../../source/atl.rst:566
 msgid ""
 "This function should not have side effects other than changing the Transform "
 "object in the first argument, and may be called at any time with any value "
@@ -666,7 +677,7 @@ msgstr ""
 "この関数は第一引数の Transform オブジェクトの変更の他には副作用を持つべきでは"
 "なく、予測のためにいつどの数値で呼び出されるか分かりません。"
 
-#: ../../source/atl.rst:569
+#: ../../source/atl.rst:570
 msgid ""
 "Note that ``function`` is not a transform property and that it doesn't have "
 "the exact same meaning as :func:`Transform`\\ 's `function` parameter."
@@ -674,11 +685,11 @@ msgstr ""
 "``function`` は transform プロパティーではないので、 :func:`Transform` の "
 "`function` パラメータと完全に同じ意味ではないことに注意してください。"
 
-#: ../../source/atl.rst:591
+#: ../../source/atl.rst:592
 msgid "Animation Statement"
 msgstr "Animation ステートメント"
 
-#: ../../source/atl.rst:593
+#: ../../source/atl.rst:594
 msgid ""
 "The ``animation`` statement must be the first statement in an ATL block, and "
 "tells Ren'Py this statement uses the animation timebase."
@@ -687,7 +698,7 @@ msgstr ""
 "らず、 Ren'Py にこのステートメントがアニメーション時間軸に従うことを通知しま"
 "す。timebase."
 
-#: ../../source/atl.rst:599
+#: ../../source/atl.rst:600
 msgid ""
 "As compared to the normal showing timebase, the animation timebase starts "
 "when an image or screen with the same tag is shown. This is generally used "
@@ -698,7 +709,7 @@ msgstr ""
 "表示されたときに開始します。これは通常おなじ時間軸で別の物で置き換えられる画"
 "像があるときに使用します。例 ::"
 
-#: ../../source/atl.rst:625
+#: ../../source/atl.rst:626
 msgid ""
 "This example will cause Eileen to change expression when the first pause "
 "finishes, but will not cause her postion to change, as both animations share "
@@ -711,11 +722,11 @@ msgstr ""
 "るため変わりません。アニメーションステートメントがないと、その位置はプレイ"
 "ヤークリック時にリセットされます。"
 
-#: ../../source/atl.rst:635
+#: ../../source/atl.rst:636
 msgid "Warpers"
 msgstr "ワーパー"
 
-#: ../../source/atl.rst:637
+#: ../../source/atl.rst:638
 msgid ""
 "A warper is a function that can change the amount of time an interpolation "
 "statement considers to have elapsed. The following warpers are defined by "
@@ -730,11 +741,11 @@ msgstr ""
 "テートメントの持続時間が 0 なら、t は実行時に 1.0 になります)。 t' は0.0 から"
 "始まり、 1.0 で終るべきですが、それ以上でもそれ以下でも可能です。"
 
-#: ../../source/atl.rst:646
+#: ../../source/atl.rst:647
 msgid "``pause``"
 msgstr "``pause``"
 
-#: ../../source/atl.rst:645
+#: ../../source/atl.rst:646
 msgid ""
 "Pause, then jump to the new value. If t == 1.0, t' = 1.0. Otherwise, t' = "
 "0.0."
@@ -742,42 +753,42 @@ msgstr ""
 "一時停止し、新しい値に飛びます。t == 1.0 なら t' = 1.0、そうでなければ t' = "
 "0.0 です。"
 
-#: ../../source/atl.rst:649
+#: ../../source/atl.rst:650
 msgid "``linear``"
 msgstr "``linear``"
 
-#: ../../source/atl.rst:649
+#: ../../source/atl.rst:650
 msgid "Linear interpolation. t' = t"
 msgstr "線形補間です。t' = t"
 
-#: ../../source/atl.rst:653
+#: ../../source/atl.rst:654
 msgid "``ease``"
 msgstr "``ease``"
 
-#: ../../source/atl.rst:652
+#: ../../source/atl.rst:653
 msgid ""
 "Start slow, speed up, then slow down. t' = .5 - math.cos(math.pi * t) / 2.0"
 msgstr ""
 "最初は遅く、徐々に加速し、それから徐々減速します。t' = 0.5 - math.cos(math."
 "pi * t) / 2.0"
 
-#: ../../source/atl.rst:656
+#: ../../source/atl.rst:657
 msgid "``easein``"
 msgstr "``easein``"
 
-#: ../../source/atl.rst:656
+#: ../../source/atl.rst:657
 msgid "Start fast, then slow down. t' = math.cos((1.0 - t) * math.pi / 2.0"
 msgstr "最初は速く、徐々に減速します。t' = math.cos((1.0 - t) * math.pi / 2.0"
 
-#: ../../source/atl.rst:659
+#: ../../source/atl.rst:660
 msgid "``easeout``"
 msgstr "``easeout``"
 
-#: ../../source/atl.rst:659
+#: ../../source/atl.rst:660
 msgid "Start slow, then speed up. t' = 1.0 - math.cos(t * math.pi / 2.0)"
 msgstr "最初は遅く、徐々に加速します。t' = 1.0 - math.cos(t * math.pi / 2.0)"
 
-#: ../../source/atl.rst:661
+#: ../../source/atl.rst:662
 msgid ""
 "In addition, most of Robert Penner's easing functions are supported. To make "
 "the names match those above, the functions have been renamed somewhat. "
@@ -787,231 +798,7 @@ msgstr ""
 "るため、関数はリネームされました。これらの基本関数のグラフはこちらで閲覧出来"
 "ます。 http://www.easings.net/."
 
-#: ../../source/inc/easings:1
-msgid "Ren'Py Name"
-msgstr "Ren'Py Name"
-
-#: ../../source/inc/easings:1
-msgid "easings.net Name"
-msgstr "easings.net Name"
-
-#: ../../source/inc/easings:1
-msgid "ease_back"
-msgstr "ease_back"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_back"
-msgstr "easeInOut_back"
-
-#: ../../source/inc/easings:1
-msgid "ease_bounce"
-msgstr "ease_bounce"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_bounce"
-msgstr "easeInOut_bounce"
-
-#: ../../source/inc/easings:1
-msgid "ease_circ"
-msgstr "ease_circ"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_circ"
-msgstr "easeInOut_circ"
-
-#: ../../source/inc/easings:1
-msgid "ease_cubic"
-msgstr "ease_cubic"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_cubic"
-msgstr "easeInOut_cubic"
-
-#: ../../source/inc/easings:1
-msgid "ease_elastic"
-msgstr "ease_elastic"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_elastic"
-msgstr "easeInOut_elastic"
-
-#: ../../source/inc/easings:1
-msgid "ease_expo"
-msgstr "ease_expo"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_expo"
-msgstr "easeInOut_expo"
-
-#: ../../source/inc/easings:1
-msgid "ease_quad"
-msgstr "ease_quad"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_quad"
-msgstr "easeInOut_quad"
-
-#: ../../source/inc/easings:1
-msgid "ease_quart"
-msgstr "ease_quart"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_quart"
-msgstr "easeInOut_quart"
-
-#: ../../source/inc/easings:1
-msgid "ease_quint"
-msgstr "ease_quint"
-
-#: ../../source/inc/easings:1
-msgid "easeInOut_quint"
-msgstr "easeInOut_quint"
-
-#: ../../source/inc/easings:1
-msgid "easein_back"
-msgstr "easein_back"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_back"
-msgstr "easeOut_back"
-
-#: ../../source/inc/easings:1
-msgid "easein_bounce"
-msgstr "easein_bounce"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_bounce"
-msgstr "easeOut_bounce"
-
-#: ../../source/inc/easings:1
-msgid "easein_circ"
-msgstr "easein_circ"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_circ"
-msgstr "easeOut_circ"
-
-#: ../../source/inc/easings:1
-msgid "easein_cubic"
-msgstr "easein_cubic"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_cubic"
-msgstr "easeOut_cubic"
-
-#: ../../source/inc/easings:1
-msgid "easein_elastic"
-msgstr "easein_elastic"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_elastic"
-msgstr "easeOut_elastic"
-
-#: ../../source/inc/easings:1
-msgid "easein_expo"
-msgstr "easein_expo"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_expo"
-msgstr "easeOut_expo"
-
-#: ../../source/inc/easings:1
-msgid "easein_quad"
-msgstr "easein_quad"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_quad"
-msgstr "easeOut_quad"
-
-#: ../../source/inc/easings:1
-msgid "easein_quart"
-msgstr "easein_quart"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_quart"
-msgstr "easeOut_quart"
-
-#: ../../source/inc/easings:1
-msgid "easein_quint"
-msgstr "easein_quint"
-
-#: ../../source/inc/easings:1
-msgid "easeOut_quint"
-msgstr "easeOut_quint"
-
-#: ../../source/inc/easings:1
-msgid "easeout_back"
-msgstr "easeout_back"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_back"
-msgstr "easeIn_back"
-
-#: ../../source/inc/easings:1
-msgid "easeout_bounce"
-msgstr "easeout_bounce"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_bounce"
-msgstr "easeIn_bounce"
-
-#: ../../source/inc/easings:1
-msgid "easeout_circ"
-msgstr "easeout_circ"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_circ"
-msgstr "easeIn_circ"
-
-#: ../../source/inc/easings:1
-msgid "easeout_cubic"
-msgstr "easeout_cubic"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_cubic"
-msgstr "easeIn_cubic"
-
-#: ../../source/inc/easings:1
-msgid "easeout_elastic"
-msgstr "easeout_elastic"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_elastic"
-msgstr "easeIn_elastic"
-
-#: ../../source/inc/easings:1
-msgid "easeout_expo"
-msgstr "easeout_expo"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_expo"
-msgstr "easeIn_expo"
-
-#: ../../source/inc/easings:1
-msgid "easeout_quad"
-msgstr "easeout_quad"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_quad"
-msgstr "easeIn_quad"
-
-#: ../../source/inc/easings:1
-msgid "easeout_quart"
-msgstr "easeout_quart"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_quart"
-msgstr "easeIn_quart"
-
-#: ../../source/inc/easings:1
-msgid "easeout_quint"
-msgstr "easeout_quint"
-
-#: ../../source/inc/easings:1
-msgid "easeIn_quint"
-msgstr "easeIn_quint"
-
-#: ../../source/atl.rst:668
+#: ../../source/atl.rst:669
 msgid ""
 "These warpers can be accessed in the ``_warper`` read-only module, which "
 "contains the functions listed above."
@@ -1019,7 +806,7 @@ msgstr ""
 "これらのワーパーは上記のリストの関数を含む読み込み専用モジュールの "
 "``_warper`` からアクセス可能です。"
 
-#: ../../source/atl.rst:671
+#: ../../source/atl.rst:672
 msgid ""
 "New warpers can be defined using the ``renpy.atl_warper`` decorator, in a "
 "``python early`` block. It should be placed in a file that is parsed before "
@@ -1029,27 +816,25 @@ msgstr ""
 "パーが定義できます。これはワーパーを使うファイルの前に読み込まれるファイル内"
 "に書きこまれていなければなりません。コードは次のようになります ::"
 
-#: ../../source/atl.rst:684
+#: ../../source/atl.rst:685
 msgid "List of Transform Properties"
 msgstr "transform プロパティーの一覧"
 
-#: ../../source/atl.rst:686
+#: ../../source/atl.rst:687
 msgid "The following transform properties exist."
 msgstr "以下の transform プロパティーが存在します。"
 
-#: ../../source/atl.rst:688
+#: ../../source/atl.rst:689
 msgid ""
-"When the type is given as position, it may be an int, an :term:`absolute "
-"<position>`, or a float. If it's a float, it's interpreted as a fraction of "
-"the size of the containing area (for :propref:`pos`) or displayable (for :"
-"propref:`anchor`)."
+"When the type is given as position, it may be an int, an ``absolute``, or a "
+"float. If it's a float, it's interpreted as a fraction of the size of the "
+"containing area (for :propref:`pos`) or displayable (for :propref:`anchor`)."
 msgstr ""
-"型(Type)に position が指定されていれば、整数、浮動小数点数、または :term:"
-"`absolute <position>` にできます。 float ならそれが含まれる領域 (:propref:"
-"`pos` ) または displayable (:propref:`anchor`)に対する割合として解釈されま"
-"す。"
+"型(Type)に position が指定されていれば、整数、浮動小数点数、または "
+"``absolute`` にできます。 float ならそれが含まれる領域 (:propref:`pos` ) また"
+"は displayable (:propref:`anchor`)に対する割合として解釈されます。"
 
-#: ../../source/atl.rst:692
+#: ../../source/atl.rst:693
 msgid ""
 "Note that not all properties are independent. For example, :propref:`xalign` "
 "and :propref:`xpos` both update some of the same underlying data. In a "
@@ -1067,8 +852,8 @@ msgstr ""
 msgid "type"
 msgstr "type"
 
-#: ../../source/atl.rst:699 ../../source/atl.rst:722 ../../source/atl.rst:791
-#: ../../source/atl.rst:910 ../../source/atl.rst:945
+#: ../../source/atl.rst:700 ../../source/atl.rst:723 ../../source/atl.rst:792
+#: ../../source/atl.rst:911 ../../source/atl.rst:941
 msgid "(position, position)"
 msgstr "(position, position)"
 
@@ -1076,84 +861,84 @@ msgstr "(position, position)"
 msgid "default"
 msgstr "default"
 
-#: ../../source/atl.rst:700 ../../source/atl.rst:723 ../../source/atl.rst:768
+#: ../../source/atl.rst:701 ../../source/atl.rst:724 ../../source/atl.rst:769
 msgid "(0, 0)"
 msgstr "(0, 0)"
 
-#: ../../source/atl.rst:702
+#: ../../source/atl.rst:703
 msgid "The position, relative to the top-left corner of the containing area."
 msgstr "これを含む領域の左上隅に対する位置です。"
 
-#: ../../source/atl.rst:707 ../../source/atl.rst:715 ../../source/atl.rst:730
-#: ../../source/atl.rst:738 ../../source/atl.rst:799 ../../source/atl.rst:807
-#: ../../source/atl.rst:934
+#: ../../source/atl.rst:708 ../../source/atl.rst:716 ../../source/atl.rst:731
+#: ../../source/atl.rst:739 ../../source/atl.rst:800 ../../source/atl.rst:808
+#: ../../source/atl.rst:930
 msgid "position"
 msgstr "position"
 
-#: ../../source/atl.rst:708 ../../source/atl.rst:716 ../../source/atl.rst:731
-#: ../../source/atl.rst:739 ../../source/atl.rst:776 ../../source/atl.rst:784
+#: ../../source/atl.rst:709 ../../source/atl.rst:717 ../../source/atl.rst:732
+#: ../../source/atl.rst:740 ../../source/atl.rst:777 ../../source/atl.rst:785
 msgid "0"
 msgstr "0"
 
-#: ../../source/atl.rst:710
+#: ../../source/atl.rst:711
 msgid ""
 "The horizontal position, relative to the left side of the containing area."
 msgstr "これを含む領域の左端に対する水平位置です。"
 
-#: ../../source/atl.rst:718
+#: ../../source/atl.rst:719
 msgid "The vertical position, relative to the top of the containing area."
 msgstr "これを含む領域の上端に対する垂直位置です。"
 
-#: ../../source/atl.rst:725
+#: ../../source/atl.rst:726
 msgid ""
 "The anchor position, relative to the top-left corner of the displayable."
 msgstr "displayable の左上隅に対するアンカー位置です。"
 
-#: ../../source/atl.rst:733
+#: ../../source/atl.rst:734
 msgid ""
 "The horizontal anchor position, relative to the left side of the displayable."
 msgstr "displayable の左端に対する水平アンカー位置です。"
 
-#: ../../source/atl.rst:741
+#: ../../source/atl.rst:742
 msgid "The vertical anchor position, relative to the top of the displayable."
 msgstr "displayable の上端に対する垂直アンカー位置です。"
 
-#: ../../source/atl.rst:746 ../../source/atl.rst:974
+#: ../../source/atl.rst:747 ../../source/atl.rst:965
 msgid "(float, float)"
 msgstr "(float, float)"
 
-#: ../../source/atl.rst:747 ../../source/atl.rst:792 ../../source/atl.rst:911
+#: ../../source/atl.rst:748 ../../source/atl.rst:793 ../../source/atl.rst:912
 msgid "(0.0, 0.0)"
 msgstr "(0.0, 0.0)"
 
-#: ../../source/atl.rst:749
+#: ../../source/atl.rst:750
 msgid "Equivalent to setting pos and anchor to the same value."
 msgstr "pos と anchor を同じ値にするのに相当します。"
 
-#: ../../source/atl.rst:753 ../../source/atl.rst:760 ../../source/atl.rst:847
-#: ../../source/atl.rst:855 ../../source/atl.rst:864 ../../source/atl.rst:882
-#: ../../source/atl.rst:894 ../../source/atl.rst:921 ../../source/atl.rst:1093
+#: ../../source/atl.rst:754 ../../source/atl.rst:761 ../../source/atl.rst:848
+#: ../../source/atl.rst:856 ../../source/atl.rst:865 ../../source/atl.rst:883
+#: ../../source/atl.rst:895 ../../source/atl.rst:922 ../../source/atl.rst:1084
 msgid "float"
 msgstr "float"
 
-#: ../../source/atl.rst:754 ../../source/atl.rst:761 ../../source/atl.rst:800
-#: ../../source/atl.rst:808 ../../source/atl.rst:895 ../../source/atl.rst:1094
+#: ../../source/atl.rst:755 ../../source/atl.rst:762 ../../source/atl.rst:801
+#: ../../source/atl.rst:809 ../../source/atl.rst:896 ../../source/atl.rst:1085
 msgid "0.0"
 msgstr "0.0"
 
-#: ../../source/atl.rst:756
+#: ../../source/atl.rst:757
 msgid "Equivalent to setting xpos and xanchor to this value."
 msgstr "xpos および xanchor をこの値に設定するのに相当します。"
 
-#: ../../source/atl.rst:763
+#: ../../source/atl.rst:764
 msgid "Equivalent to setting ypos and yanchor to this value."
 msgstr "ypos および yanchor をこの値に設定するのに相当します。"
 
-#: ../../source/atl.rst:767
+#: ../../source/atl.rst:768
 msgid "(int, int)"
 msgstr "(int, int)"
 
-#: ../../source/atl.rst:770
+#: ../../source/atl.rst:771
 msgid ""
 "The number of pixels the displayable is offset by in each direction. "
 "Positive values offset towards the bottom-right."
@@ -1161,12 +946,12 @@ msgstr ""
 "displayable の縦横方向のオフセットのピクセル数です。正の数は下または右向きの"
 "オフセットになります。"
 
-#: ../../source/atl.rst:775 ../../source/atl.rst:783 ../../source/atl.rst:1130
-#: ../../source/atl.rst:1137
+#: ../../source/atl.rst:776 ../../source/atl.rst:784 ../../source/atl.rst:1121
+#: ../../source/atl.rst:1128
 msgid "int"
 msgstr "int"
 
-#: ../../source/atl.rst:778
+#: ../../source/atl.rst:779
 msgid ""
 "The number of pixels the displayable is offset by in the horizontal "
 "direction. Positive values offset toward the right."
@@ -1174,7 +959,7 @@ msgstr ""
 "displayable の水平方向のオフセットのピクセル数です。正の数の右向きのオフセッ"
 "トです。"
 
-#: ../../source/atl.rst:786
+#: ../../source/atl.rst:787
 msgid ""
 "The number of pixels the displayable is offset by in the vertical direction. "
 "Positive values offset toward the bottom."
@@ -1182,40 +967,40 @@ msgstr ""
 "displayable の縦方向のオフセットのピクセル数です。正の数は下向きのオフセット"
 "です。"
 
-#: ../../source/atl.rst:794
+#: ../../source/atl.rst:795
 msgid ""
 "Equivalent to setting pos to the value of this property, and anchor to (0.5, "
 "0.5)."
 msgstr ""
 "xpos をこのプロパティーの値に、xanchor を 0.5 に設定するのに相当します。"
 
-#: ../../source/atl.rst:802
+#: ../../source/atl.rst:803
 msgid ""
 "Equivalent to setting xpos to the value of this property, and xanchor to 0.5."
 msgstr ""
 "xpos をこのプロパティーの値に、xanchor を 0.5 に設定するのに相当します。"
 
-#: ../../source/atl.rst:810
+#: ../../source/atl.rst:811
 msgid ""
 "Equivalent to setting ypos to the value of this property, and yanchor to 0.5."
 msgstr ""
 "ypos をこのプロパティーの値に、ranchor を 0.5 に設定するのに相当しますえ"
 
-#: ../../source/atl.rst:815
+#: ../../source/atl.rst:816
 msgid "float or None"
 msgstr "float または None"
 
-#: ../../source/atl.rst:816 ../../source/atl.rst:873 ../../source/atl.rst:981
-#: ../../source/atl.rst:991 ../../source/atl.rst:1000 ../../source/atl.rst:1009
-#: ../../source/atl.rst:1020 ../../source/atl.rst:1029
-#: ../../source/atl.rst:1038 ../../source/atl.rst:1111
-#: ../../source/atl.rst:1121 ../../source/atl.rst:1145
-#: ../../source/atl.rst:1155 ../../source/atl.rst:1236
-#: ../../source/atl.rst:1244
+#: ../../source/atl.rst:817 ../../source/atl.rst:874 ../../source/atl.rst:972
+#: ../../source/atl.rst:982 ../../source/atl.rst:991 ../../source/atl.rst:1000
+#: ../../source/atl.rst:1011 ../../source/atl.rst:1020
+#: ../../source/atl.rst:1029 ../../source/atl.rst:1102
+#: ../../source/atl.rst:1112 ../../source/atl.rst:1136
+#: ../../source/atl.rst:1146 ../../source/atl.rst:1227
+#: ../../source/atl.rst:1235
 msgid "None"
 msgstr "None"
 
-#: ../../source/atl.rst:818
+#: ../../source/atl.rst:819
 msgid ""
 "If None, no rotation occurs. Otherwise, the image will be rotated by this "
 "many degrees clockwise. Rotating the displayable causes it to be resized, "
@@ -1227,18 +1012,18 @@ msgstr ""
 "す。 xanchor および yanchor が 0.5 でなければ、これによって位置取りが変わるこ"
 "とがあります。"
 
-#: ../../source/atl.rst:826 ../../source/atl.rst:838 ../../source/atl.rst:872
-#: ../../source/atl.rst:1075 ../../source/atl.rst:1101
-#: ../../source/atl.rst:1165 ../../source/atl.rst:1221
+#: ../../source/atl.rst:827 ../../source/atl.rst:839 ../../source/atl.rst:873
+#: ../../source/atl.rst:1066 ../../source/atl.rst:1092
+#: ../../source/atl.rst:1156 ../../source/atl.rst:1212
 msgid "boolean"
 msgstr "boolean"
 
-#: ../../source/atl.rst:827 ../../source/atl.rst:1102 ../../source/atl.rst:1166
-#: ../../source/atl.rst:1222
+#: ../../source/atl.rst:828 ../../source/atl.rst:1093 ../../source/atl.rst:1157
+#: ../../source/atl.rst:1213
 msgid "True"
 msgstr "True"
 
-#: ../../source/atl.rst:829
+#: ../../source/atl.rst:830
 msgid ""
 "If True, then a rotated displayable is padded such that the width and height "
 "are equal to the hypotenuse of the original width and height. This ensures "
@@ -1251,11 +1036,11 @@ msgstr ""
 "ないことを保証します。 False の場合、 transform は transform された "
 "displayable を含む最小限のサイズになります。これは固定回転に向いています。"
 
-#: ../../source/atl.rst:839 ../../source/atl.rst:1076
+#: ../../source/atl.rst:840 ../../source/atl.rst:1067
 msgid "False"
 msgstr "False"
 
-#: ../../source/atl.rst:841
+#: ../../source/atl.rst:842
 msgid ""
 "If true, the anchor point is located on the cropped child, and is scaled and "
 "rotated as the child is transformed. Effectively, this makes the anchor the "
@@ -1265,16 +1050,16 @@ msgstr ""
 "大や回転します。つまりこれは anchor をそれを中心に子が回転したり、サイズが変"
 "更したりする点にします。"
 
-#: ../../source/atl.rst:848 ../../source/atl.rst:856 ../../source/atl.rst:865
-#: ../../source/atl.rst:883
+#: ../../source/atl.rst:849 ../../source/atl.rst:857 ../../source/atl.rst:866
+#: ../../source/atl.rst:884
 msgid "1.0"
 msgstr "1.0"
 
-#: ../../source/atl.rst:850
+#: ../../source/atl.rst:851
 msgid "This causes the displayable to be zoomed by the supplied factor."
 msgstr "displayable を指定した係数倍ズームします。"
 
-#: ../../source/atl.rst:858
+#: ../../source/atl.rst:859
 msgid ""
 "This causes the displayable to be horizontally zoomed by the supplied "
 "factor. A negative value causes the image to be flipped horizontally."
@@ -1282,7 +1067,7 @@ msgstr ""
 "displayable を指定した係数倍水平にズームします。負の値は画像を水平に反転しま"
 "す。"
 
-#: ../../source/atl.rst:867
+#: ../../source/atl.rst:868
 msgid ""
 "This causes the displayable to be vertically zoomed by the supplied factor. "
 "A negative value causes the image to be flipped vertically."
@@ -1290,7 +1075,7 @@ msgstr ""
 "displayable を指定した係数倍垂直にズームします。負の値は画像を垂直に反転しま"
 "す。"
 
-#: ../../source/atl.rst:875
+#: ../../source/atl.rst:876
 msgid ""
 "If True, the displayable and its children are drawn using nearest-neighbor "
 "filtering. If False, the displayable and its children are drawn using "
@@ -1302,11 +1087,11 @@ msgstr ""
 "継がれるか、 :var:`config.nearest_neighbor` が使用されます。これはデフォルト"
 "では False です。"
 
-#: ../../source/atl.rst:885
+#: ../../source/atl.rst:886
 msgid "This controls the opacity of the displayable."
 msgstr "displayable の不透明度を制御します。"
 
-#: ../../source/atl.rst:887
+#: ../../source/atl.rst:888
 msgid ""
 "The alpha transform is applied to each image comprising the child of the "
 "transform independently. This can lead to unexpected results when the "
@@ -1318,7 +1103,7 @@ msgstr ""
 "合っていると望まぬ結果になるかもしれません。 :func:`Flatten` displayable はこ"
 "れらの問題の手助けになるでしょう。"
 
-#: ../../source/atl.rst:897
+#: ../../source/atl.rst:898
 msgid ""
 "This controls how much additive blending Ren'Py performs. When 1.0, Ren'Py "
 "draws using the ADD operator. When 0.0, Ren'Py draws using the OVER operator."
@@ -1326,12 +1111,12 @@ msgstr ""
 "Ren'Py が加算合成をどう処理するかを制御します。 1.0 なら Ren'Py は ADD 処理を"
 "使用し、 0.0 なら OVER 処理を使用して描画します。"
 
-#: ../../source/atl.rst:901
+#: ../../source/atl.rst:902
 msgid ""
 "Additive blending is performed on each child of the transform independently."
 msgstr "Additive blending は transform のそれぞれの子に独立して処理されます。"
 
-#: ../../source/atl.rst:903
+#: ../../source/atl.rst:904
 msgid ""
 "Fully additive blending doesn't alter the alpha channel of the destination, "
 "and additive images may not be visible if they're not drawn directly onto an "
@@ -1343,7 +1128,7 @@ msgstr ""
 "`Flatten`, :func:`Frame` や一部のトランジションのような複雑な処理は加算合成で"
 "問題を起こすかもしれません )。"
 
-#: ../../source/atl.rst:913
+#: ../../source/atl.rst:914
 msgid ""
 "If not None, specifies the center of the polar coordinate position relative "
 "to the upper-left of the containing area. The :tpref:`angle` and :tpref:"
@@ -1354,7 +1139,7 @@ msgstr ""
 "を設定すると :tpref:`angle` と :tpref:`radius` プロパティーを使用し極座標によ"
 "る位置を指定できます。"
 
-#: ../../source/atl.rst:923
+#: ../../source/atl.rst:924
 msgid ""
 "This gives the angle portion of a position specified in polar coordinates. "
 "This is measured in degrees, with 0 being to the top of the screen, and 90 "
@@ -1363,18 +1148,7 @@ msgstr ""
 "極座標で指定する位置の角度成分を受け取ります。これは 0 がスクリーンの上、90 "
 "が右になる度数で測定されます。"
 
-#: ../../source/atl.rst:927 ../../source/atl.rst:960
-msgid ""
-"Ren'Py clamps this angle to between 0 and 360 degrees, including 0 but not "
-"360. If a value is set outside this range, it will be set to the equivalent "
-"angle in this range before being used. (Setting this to -10 is the "
-"equivalent of setting it to 350.)"
-msgstr ""
-"Ren'Py はこの角度を0度以上360度未満の間に固定します。この範囲外の値が設定され"
-"た場合、この範囲内の同等の角度に設定されてから使用されます。(これを-10に設定"
-"することは、350に設定することと同じです)。"
-
-#: ../../source/atl.rst:936
+#: ../../source/atl.rst:932
 msgid ""
 "The radius component of the position given in polar coordiates. The type of "
 "this is the type the radius was last set to, defaulting to absolute pixels."
@@ -1382,7 +1156,7 @@ msgstr ""
 "極座標で指定する位置の半径要素です。これの型は半径が最後に設定された型であ"
 "り、デフォルトは absolute ピクセルです。"
 
-#: ../../source/atl.rst:940
+#: ../../source/atl.rst:936
 msgid ""
 "If a float, this will be scaled to the smaller of the width and height "
 "available to the transform."
@@ -1390,7 +1164,7 @@ msgstr ""
 "浮動小数ならば、その transform に対して利用可能な幅と高さの小さい方にスケーリ"
 "ングされます。"
 
-#: ../../source/atl.rst:947
+#: ../../source/atl.rst:943
 msgid ""
 "This, in conjunction with :tpref:`anchorangle`, and :tpref:`anchorradius`, "
 "can be used to specify the anchor point of the transform in polar "
@@ -1399,7 +1173,7 @@ msgstr ""
 ":tpref:`anchorangle` や :tpref:`anchorradius` と合わせて、極座標で transform "
 "のアンカー位置を指定するのに使用します。"
 
-#: ../../source/atl.rst:950
+#: ../../source/atl.rst:946
 msgid ""
 "This should be in the same units as :tpref:`anchor`, do not mix relative and "
 "absolute coordinates."
@@ -1407,11 +1181,11 @@ msgstr ""
 "これは :tpref:`anchor` と同じ単位であるべきで、相対座標と絶対座標を混ぜてはい"
 "けません。"
 
-#: ../../source/atl.rst:955
+#: ../../source/atl.rst:951
 msgid "(float)"
 msgstr "(float)"
 
-#: ../../source/atl.rst:957
+#: ../../source/atl.rst:953
 msgid ""
 "The angle component of the ploar coordinates of the anchor. This is "
 "specified in degrees, with 0 being to the top and 90 being to the right."
@@ -1419,11 +1193,11 @@ msgstr ""
 "極座標におけるアンカー位置の角度成分を受け取ります。これは 0 が上、90 が右に"
 "なる度数で指定されます。"
 
-#: ../../source/atl.rst:967
+#: ../../source/atl.rst:958
 msgid "(position)"
 msgstr "(position)"
 
-#: ../../source/atl.rst:969
+#: ../../source/atl.rst:960
 msgid ""
 "The radius component of the polar coordinates of the anchor. This will have "
 "the same type as :tpref:`anchoraround` and :tpref:`anchor`."
@@ -1431,16 +1205,16 @@ msgstr ""
 "極座標におけるアンカー位置の半径成分を受け取ります。これは、 tpref:"
 "`anchoraround` や :tpref:`anchor` と同じ型になります。"
 
-#: ../../source/atl.rst:976
+#: ../../source/atl.rst:967
 msgid "This sets :tpref:`around` and :tpref:`anchoraround` to the same value."
 msgstr ""
 ":tpref:`around` と :tpref:`anchoraround` を同じ値にするのに相当します。"
 
-#: ../../source/atl.rst:980
+#: ../../source/atl.rst:971
 msgid "None or (position, position, position, position)"
 msgstr "None or (position, position, position, position)"
 
-#: ../../source/atl.rst:983
+#: ../../source/atl.rst:974
 msgid ""
 "If not None, causes the displayable to be cropped to the given box. The box "
 "is specified as a tuple of (x, y, width, height)."
@@ -1448,15 +1222,15 @@ msgstr ""
 "None でない場合、displayable は指定の大きさに切り取られます。切り取りサイズ"
 "は (x, y, width, height) のタプルで指定されます。"
 
-#: ../../source/atl.rst:986
+#: ../../source/atl.rst:977
 msgid "If corners and crop are given, crop takes priority over corners."
 msgstr "cornerとcropが指定されると、cropがcornerより優先されます。"
 
-#: ../../source/atl.rst:990 ../../source/atl.rst:999 ../../source/atl.rst:1008
+#: ../../source/atl.rst:981 ../../source/atl.rst:990 ../../source/atl.rst:999
 msgid "None or (position, position)"
 msgstr "None or (position, position)"
 
-#: ../../source/atl.rst:993
+#: ../../source/atl.rst:984
 msgid ""
 "If not None, gives the upper-left corner of the crop box. Crop takes "
 "priority over corners. When a float, and crop_relative is enabled, this is "
@@ -1466,7 +1240,7 @@ msgstr ""
 "先されます。浮動小数が指定され、 crop_relative が有効ならそれはその子のサイズ"
 "に対する相対値になります。"
 
-#: ../../source/atl.rst:1002
+#: ../../source/atl.rst:993
 msgid ""
 "If not None, gives the lower right corner of the crop box. Cropt takes "
 "priority over corners. When a float, and crop_relative is enabled, this is "
@@ -1476,7 +1250,7 @@ msgstr ""
 "先されます。浮動小数が指定され、 crop_relative が有効ならそれはその子のサイズ"
 "に対する相対値になります。"
 
-#: ../../source/atl.rst:1011
+#: ../../source/atl.rst:1002
 msgid ""
 "If not None, causes the displayable to be scaled to the given size. This is "
 "equivalent to setting the :tpref:`xsize` and :tpref:`ysize` properties to "
@@ -1485,28 +1259,28 @@ msgstr ""
 "None でなければ Displayable を指定のサイズにスケールします。これは ``xsize`` "
 "と ``ysize`` プロパティーをそれぞれ1つ目と2つ目の要素に設定するのと同じです。"
 
-#: ../../source/atl.rst:1015 ../../source/atl.rst:1024
-#: ../../source/atl.rst:1033
+#: ../../source/atl.rst:1006 ../../source/atl.rst:1015
+#: ../../source/atl.rst:1024
 msgid "This is affected by the :tpref:`fit` property."
 msgstr "これは :tpref:`fit` プロパティーに影響されます。."
 
-#: ../../source/atl.rst:1019 ../../source/atl.rst:1028
+#: ../../source/atl.rst:1010 ../../source/atl.rst:1019
 msgid "None or position"
 msgstr "None または position"
 
-#: ../../source/atl.rst:1022
+#: ../../source/atl.rst:1013
 msgid "If not None, causes the displayable to be scaled to the given width."
 msgstr "None または、displayable の幅が合わせられる値を指定します。"
 
-#: ../../source/atl.rst:1031
+#: ../../source/atl.rst:1022
 msgid "If not None, causes the displayable to be scaled to the given height."
 msgstr "None または、displayable の高さが合わせられる値を指定します。"
 
-#: ../../source/atl.rst:1037
+#: ../../source/atl.rst:1028
 msgid "None or string"
 msgstr "None または文字列"
 
-#: ../../source/atl.rst:1040
+#: ../../source/atl.rst:1031
 msgid ""
 "Causes the displayable to be sized according to the table below. In the "
 "context of the the table below, the \"dimensions\" are:"
@@ -1514,7 +1288,7 @@ msgstr ""
 "以下の表に応じて Displayable のサイズを合わせます。ここでの「方向」は次の通り"
 "です。 :"
 
-#: ../../source/atl.rst:1043
+#: ../../source/atl.rst:1034
 msgid ""
 "If both :tpref:`xsize` and :tpref:`ysize` are not None, both sizes are used "
 "as the dimensions."
@@ -1522,14 +1296,14 @@ msgstr ""
 ":tpref:`xsize` と :tpref:`ysize` の両方が None でなければ、両方のサイズが方向"
 "として扱われます。"
 
-#: ../../source/atl.rst:1045
+#: ../../source/atl.rst:1036
 msgid ""
 "If only one of those properties is not None, it is used as the sole "
 "dimension."
 msgstr ""
 "それらのプロパティーの一方のみが None でなければその方向のみが使用されます。"
 
-#: ../../source/atl.rst:1047
+#: ../../source/atl.rst:1038
 msgid ""
 "Otherwise, if fit is not None the area that the Transform is contained in is "
 "used as the dimensions."
@@ -1537,72 +1311,72 @@ msgstr ""
 "そうではなく、 fit が None でなければ、その transform が含まれている領域が方"
 "向として使用されます。"
 
-#: ../../source/atl.rst:1050
+#: ../../source/atl.rst:1041
 msgid "If fit, xsize, and ysize are all None, this property does not apply."
 msgstr ""
 "fit と xsize, ysize がすべて None なら、このプロパティーは適用されません。"
 
-#: ../../source/atl.rst:1056
+#: ../../source/atl.rst:1047
 msgid "Value"
 msgstr "Value"
 
-#: ../../source/atl.rst:1057
+#: ../../source/atl.rst:1048
 msgid "Description"
 msgstr "Description"
 
-#: ../../source/atl.rst:1058
+#: ../../source/atl.rst:1049
 msgid "``contain``"
 msgstr "``contain``"
 
-#: ../../source/atl.rst:1059
+#: ../../source/atl.rst:1050
 msgid ""
 "As large as possible, without exceeding any dimensions. Maintains aspect "
 "ratio."
 msgstr "アスペクト比を維持して各方向の指定を超えない範囲で大きくする"
 
-#: ../../source/atl.rst:1061
+#: ../../source/atl.rst:1052
 msgid "``cover``"
 msgstr "``cover``"
 
-#: ../../source/atl.rst:1062
+#: ../../source/atl.rst:1053
 msgid ""
 "As small as possible, while matching or exceeding all dimensions. Maintains "
 "aspect ratio."
 msgstr ""
 "アスペクト比を維持してすべての方向の指定に合う、または超えるように小さくする"
 
-#: ../../source/atl.rst:1064
+#: ../../source/atl.rst:1055
 msgid "None or ``fill``"
 msgstr "None または ``fill``"
 
-#: ../../source/atl.rst:1065
+#: ../../source/atl.rst:1056
 msgid "Stretches/squashes displayable to exactly match dimensions."
 msgstr "displayable を正確に方向指定に合うように引き延ばす"
 
-#: ../../source/atl.rst:1066
+#: ../../source/atl.rst:1057
 msgid "``scale-down``"
 msgstr "``scale-down``"
 
-#: ../../source/atl.rst:1067
+#: ../../source/atl.rst:1058
 msgid ""
 "As for ``contain``, but will never increase the size of the displayable."
 msgstr "``contain``  同様ですが、 displayable のサイズを増加させない"
 
-#: ../../source/atl.rst:1069
+#: ../../source/atl.rst:1060
 msgid "``scale-up``"
 msgstr "``scale-up``"
 
-#: ../../source/atl.rst:1070
+#: ../../source/atl.rst:1061
 msgid "As for ``cover``, but will never decrease the size of the displayable."
 msgstr "``cover`` 同様だが、 displayable のサイズを小さくしない"
 
-#: ../../source/atl.rst:1078
+#: ../../source/atl.rst:1069
 msgid "If True, causes the child to be placed using subpixel positioning."
 msgstr ""
 "True の場合、サブピクセル(訳注: 1ピクセル以下での描画)による位置決めを使用し"
 "て子は配置されます。"
 
-#: ../../source/atl.rst:1080
+#: ../../source/atl.rst:1071
 msgid ""
 "Subpixel positioning effects the colors (including transparency) that are "
 "drawn into pixels, but not which pixels are drawn. When subpixel positoning "
@@ -1615,7 +1389,7 @@ msgstr ""
 "は (通常) 移動と組み合わせて使用され、その画像はその端が画面の可視領域にあれ"
 "ば移動方向に透明な境界をもつようになります。"
 
-#: ../../source/atl.rst:1086
+#: ../../source/atl.rst:1077
 msgid ""
 "For example, if a character sprite is being moved horizontally, it makes "
 "sense to have transparent borders on the left and right. These might not be "
@@ -1626,7 +1400,7 @@ msgstr ""
 "持つことになります。背景に対するパンニングでは可視領域を拡張して端が見えない"
 "のでこれらは起こりません。"
 
-#: ../../source/atl.rst:1096
+#: ../../source/atl.rst:1087
 msgid ""
 "If this transform is being used as a transition, then this is the duration "
 "of the transition. See :ref:`atl-transitions`."
@@ -1634,7 +1408,7 @@ msgstr ""
 "この transform がトランジションとして使われるなら、これはトランジションの持続"
 "時間になります。 :ref:`atl-transitions` を参照してください。"
 
-#: ../../source/atl.rst:1104
+#: ../../source/atl.rst:1095
 msgid ""
 "If true, events are passed to the child of this transform. If false, events "
 "are blocked. (This can be used in ATL transitions to prevent events from "
@@ -1644,12 +1418,12 @@ msgstr ""
 "トはブロックされます(これはATL トランジション で使用され、イベントが "
 "old_widget に達することを防ぎます)。"
 
-#: ../../source/atl.rst:1110 ../../source/atl.rst:1120
-#: ../../source/atl.rst:1154
+#: ../../source/atl.rst:1101 ../../source/atl.rst:1111
+#: ../../source/atl.rst:1145
 msgid "None or float"
 msgstr "None or float"
 
-#: ../../source/atl.rst:1113
+#: ../../source/atl.rst:1104
 msgid ""
 "If not None, this interpreted as an angle that is used to pan horizontally "
 "across a 360 degree panoramic image. The center of the image is used as the "
@@ -1659,7 +1433,7 @@ msgstr ""
 "None か、360度のパノラマ画像を水平に振る角度と解釈されます。画像の中心は0度と"
 "して扱われ、左右はそれぞれ-180から180度になります。"
 
-#: ../../source/atl.rst:1123
+#: ../../source/atl.rst:1114
 msgid ""
 "If not None, this interpreted as an angle that is used to pan vertically "
 "across a 360 degree panoramic image. The center of the image is used as the "
@@ -1669,23 +1443,23 @@ msgstr ""
 "None か、360度のパノラマ画像を縦に振る角度と解釈されます。画像の中心は0度とし"
 "て扱われ、上下はそれぞれ-180から180度になります。"
 
-#: ../../source/atl.rst:1131 ../../source/atl.rst:1138
+#: ../../source/atl.rst:1122 ../../source/atl.rst:1129
 msgid "1"
 msgstr "1"
 
-#: ../../source/atl.rst:1133
+#: ../../source/atl.rst:1124
 msgid "The number of times to tile the image horizontally."
 msgstr "水平に敷き詰める画像の個数です。"
 
-#: ../../source/atl.rst:1140
+#: ../../source/atl.rst:1131
 msgid "The number of times to tile the image vertically."
 msgstr "縦に敷き詰める画像の個数です。"
 
-#: ../../source/atl.rst:1144
+#: ../../source/atl.rst:1135
 msgid "None or Matrix or MatrixColor"
 msgstr "None, Matrix または  MatrixColor"
 
-#: ../../source/atl.rst:1147
+#: ../../source/atl.rst:1138
 msgid ""
 "If not None, the value of this property is used to recolor everything that "
 "children of this transform draw. Interpolation is only supported when "
@@ -1696,7 +1470,7 @@ msgstr ""
 "値です。補間は MatrixColor が使用されたときのみサポートされます。 "
 "MatrixColor は構造的に同じです。詳細は :doc:`matricolor` を参照してください。"
 
-#: ../../source/atl.rst:1157
+#: ../../source/atl.rst:1148
 msgid ""
 "This blurs the child of this transform by `blur` pixels, up to the border of "
 "the displayable. The precise details of the blurring may change between "
@@ -1707,7 +1481,7 @@ msgstr ""
 "ラー方法の正確な詳細は Ren'Py のバージョンで変更するかもしれません。また、特"
 "に画像のブラーが変化していくときはブラーが人工的に感じられるかもしれません。"
 
-#: ../../source/atl.rst:1168
+#: ../../source/atl.rst:1159
 msgid ""
 "Normally, when a displayable or screen with the same tag or name as one that "
 "is hiding is shown, the hiding displayable or screen is removed, cancelling "
@@ -1720,18 +1494,18 @@ msgstr ""
 "ンセルされます。このプロパティーが非表示する transform で False なら、この"
 "キャンセルが起きず、非表示の tranform は最後まで実行されます。"
 
-#: ../../source/atl.rst:1174
+#: ../../source/atl.rst:1165
 msgid ""
 "There are also several sets of transform properties that are documented "
 "elsewhere:"
 msgstr ""
 "ドキュメントの他の部分で記述される一連の transform プロパティーもあります。 :"
 
-#: ../../source/atl.rst:1177
+#: ../../source/atl.rst:1168
 msgid "3D Stage properties:"
 msgstr "3D Stage プロパティー :"
 
-#: ../../source/atl.rst:1177
+#: ../../source/atl.rst:1168
 msgid ""
 ":tpref:`perspective`, :tpref:`point_to`, :tpref:`orientation`, :tpref:"
 "`xrotate`, :tpref:`yrotate`, :tpref:`zrotate`, :tpref:`matrixanchor`, :tpref:"
@@ -1741,27 +1515,27 @@ msgstr ""
 "`xrotate`, :tpref:`yrotate`, :tpref:`zrotate`, :tpref:`matrixanchor`, :tpref:"
 "`matrixtransform`, :tpref:`zpos`, :tpref:`zzoom`"
 
-#: ../../source/atl.rst:1180
+#: ../../source/atl.rst:1171
 msgid "Model-based rendering properties:"
 msgstr "Model-based rendering プロパティー :"
 
-#: ../../source/atl.rst:1180
+#: ../../source/atl.rst:1171
 msgid ":tpref:`blend`, :tpref:`mesh`, :tpref:`mesh_pad`, :tpref:`shader`"
 msgstr ":tpref:`blend`, :tpref:`mesh`, :tpref:`mesh_pad`, :tpref:`shader`"
 
-#: ../../source/atl.rst:1183
+#: ../../source/atl.rst:1174
 msgid "GL Properties:"
 msgstr "GL プロパティー :"
 
-#: ../../source/atl.rst:1183
+#: ../../source/atl.rst:1174
 msgid "The :ref:`GL properties <gl-properties>`."
 msgstr "The :ref:`GL properties <gl-properties>`."
 
-#: ../../source/atl.rst:1186
+#: ../../source/atl.rst:1177
 msgid "Uniforms:"
 msgstr "Uniforms:"
 
-#: ../../source/atl.rst:1186
+#: ../../source/atl.rst:1177
 msgid ""
 "Properties beginning with ``u_`` are uniforms that can be used by :ref:"
 "`custom shaders <custom-shaders>`."
@@ -1769,91 +1543,91 @@ msgstr ""
 "``u_`` で始まるプロパティーは :ref:`custom shaders <custom-shaders>` に使用さ"
 "れる uniform です。"
 
-#: ../../source/atl.rst:1188
+#: ../../source/atl.rst:1179
 msgid "These properties are applied in the following order:"
 msgstr "これらのプロパティーは、以下の順に適用されます :"
 
-#: ../../source/atl.rst:1190
+#: ../../source/atl.rst:1181
 msgid "mesh, blur"
 msgstr "mesh, blur"
 
-#: ../../source/atl.rst:1191
+#: ../../source/atl.rst:1182
 msgid "tile"
 msgstr "tile"
 
-#: ../../source/atl.rst:1192
+#: ../../source/atl.rst:1183
 msgid "pan"
 msgstr "pan"
 
-#: ../../source/atl.rst:1193
+#: ../../source/atl.rst:1184
 msgid "crop, corner1, corner2"
 msgstr "crop, corner1, corner2"
 
-#: ../../source/atl.rst:1194
+#: ../../source/atl.rst:1185
 msgid "xysize, size, maxsize"
 msgstr "xysize, size, maxsize"
 
-#: ../../source/atl.rst:1195
+#: ../../source/atl.rst:1186
 msgid "zoom, xzoom, yzoom"
 msgstr "zoom, xzoom, yzoom"
 
-#: ../../source/atl.rst:1196
+#: ../../source/atl.rst:1187
 msgid "point_to"
 msgstr "point_to"
 
-#: ../../source/atl.rst:1197
+#: ../../source/atl.rst:1188
 msgid "orientation"
 msgstr "orientation"
 
-#: ../../source/atl.rst:1198
+#: ../../source/atl.rst:1189
 msgid "xrotate, yrotate, zrotate"
 msgstr "xrotate, yrotate, zrotate"
 
-#: ../../source/atl.rst:1199
+#: ../../source/atl.rst:1190
 msgid "rotate"
 msgstr "rotate"
 
-#: ../../source/atl.rst:1200
+#: ../../source/atl.rst:1191
 msgid "zpos"
 msgstr "zpos"
 
-#: ../../source/atl.rst:1201
+#: ../../source/atl.rst:1192
 msgid "matrixtransform, matrixanchor"
 msgstr "matrixtransform, matrixanchor"
 
-#: ../../source/atl.rst:1202
+#: ../../source/atl.rst:1193
 msgid "zzoom"
 msgstr "zzoom"
 
-#: ../../source/atl.rst:1203
+#: ../../source/atl.rst:1194
 msgid "perspective"
 msgstr "perspective"
 
-#: ../../source/atl.rst:1204
+#: ../../source/atl.rst:1195
 msgid "nearest, blend, alpha, additive, shader."
 msgstr "nearest, blend, alpha, additive, shader."
 
-#: ../../source/atl.rst:1205
+#: ../../source/atl.rst:1196
 msgid "matrixcolor"
 msgstr "matrixcolor"
 
-#: ../../source/atl.rst:1206
+#: ../../source/atl.rst:1197
 msgid "GL Properties, Uniforms"
 msgstr "GL Properties, Uniforms"
 
-#: ../../source/atl.rst:1207
+#: ../../source/atl.rst:1198
 msgid "position properties"
 msgstr "位置プロパティー"
 
-#: ../../source/atl.rst:1208
+#: ../../source/atl.rst:1199
 msgid "show_cancels_hide"
 msgstr "show_cancels_hide"
 
-#: ../../source/atl.rst:1211
+#: ../../source/atl.rst:1202
 msgid "Deprecated Transform Properties"
 msgstr "廃止された transform プロパティーの一覧"
 
-#: ../../source/atl.rst:1215
+#: ../../source/atl.rst:1206
 msgid ""
 "The following properties should not be used in modern games, as they may "
 "conflict with more recent features. They are only kept here for "
@@ -1863,7 +1637,7 @@ msgstr ""
 "用するべきでありません。これらは互換性を保つためだけに同じ動作を実現する新し"
 "い方法とともに残されています。"
 
-#: ../../source/atl.rst:1224
+#: ../../source/atl.rst:1215
 msgid ""
 "If False, float components of :tpref:`crop` are interpreted as an absolute "
 "number of pixels, instead of a fraction of the width and height of the "
@@ -1872,23 +1646,22 @@ msgstr ""
 "False 、なら :tpref:`crop` の浮動小数要素は元画像の高さと幅の割合ではなくピク"
 "セル数の絶対値として処理されます。"
 
-#: ../../source/atl.rst:1228
+#: ../../source/atl.rst:1219
 msgid ""
-"If an absolute number of pixel is to be expressed, :term:`absolute "
-"<position>` instances should be provided to the :tpref:`crop` property "
-"instead of using the crop_relative property. If necessary, values of dubious "
-"type can be wrapped in the :term:`absolute <position>` callable."
+"If an absolute number of pixel is to be expressed, ``absolute`` instances "
+"should be provided to the :tpref:`crop` property instead of using the "
+"crop_relative property. If necessary, values of dubious type can be wrapped "
+"in the ``absolute`` callable."
 msgstr ""
 "ピクセル数の絶対値を表現する場合には、 crop_relative プロパティを使用する代わ"
-"りに :term:`absolute <position>` インスタンスを :tpref:`crop` プロパティに指"
-"定する必要があります。必要であれば、不明確な型の値は :term:`absolute "
-"<position>` callable でラップできます。"
+"りに ``absolute`` インスタンスを :tpref:`crop` プロパティに指定する必要があり"
+"ます。必要であれば、不明確な型の値は ``absolute`` callable でラップできます。"
 
-#: ../../source/atl.rst:1235 ../../source/atl.rst:1243
+#: ../../source/atl.rst:1226 ../../source/atl.rst:1234
 msgid "None or (int, int)"
 msgstr "None または (int, int)"
 
-#: ../../source/atl.rst:1238
+#: ../../source/atl.rst:1229
 msgid ""
 "This is an older version of :tpref:`xysize` interpreting floating-point "
 "values as an absolute number of pixels."
@@ -1896,7 +1669,7 @@ msgstr ""
 "これは、浮動小数点値をピクセルの絶対数として解釈する :tpref:`xysize` の古い"
 "バージョンです。"
 
-#: ../../source/atl.rst:1246
+#: ../../source/atl.rst:1237
 msgid ""
 "If not None, causes the displayable to be scaled so that it fits within a "
 "box of this size, while preserving aspect ratio. (Note that this means that "
@@ -1905,7 +1678,7 @@ msgstr ""
 "None を指定しなければ、 指定したサイズのボックスに収まる範囲でアスペクト比を"
 "維持しつつ displayable を拡大します。"
 
-#: ../../source/atl.rst:1251
+#: ../../source/atl.rst:1242
 msgid ""
 "To achieve the same result, give the values to the :tpref:`xysize` property, "
 "and set the :tpref:`fit` property to the value \"contain\"."
@@ -1913,11 +1686,11 @@ msgstr ""
 "同じ結果を得るには、 :tpref:`xysize` プロパティーにその値を与え、 :tpref:"
 "`fit` プロパティーの値に \"contain\" を設定します。"
 
-#: ../../source/atl.rst:1255
+#: ../../source/atl.rst:1246
 msgid "Circular Motion"
 msgstr "円運動"
 
-#: ../../source/atl.rst:1257
+#: ../../source/atl.rst:1248
 msgid ""
 "When an interpolation statement contains the ``clockwise`` or "
 "``counterclockwise`` keywords, the interpolation will cause circular motion. "
@@ -1933,7 +1706,7 @@ msgstr ""
 "回転で進む角度を計算します。円運動の節が与えられたら、Ren'Py は適切な数の円が"
 "作られることを保証します。"
 
-#: ../../source/atl.rst:1265
+#: ../../source/atl.rst:1256
 msgid ""
 "Ren'Py will then interpolate the angle and radius properties, as "
 "appropriate, to cause the circular motion to happen. If the transform is in "
@@ -1944,19 +1717,19 @@ msgstr ""
 "す。 transform が align モードの場合、angle および radius を設定すると align "
 "プロパティーが設定されます。そうでなければ、pos プロパティーが設定されます。"
 
-#: ../../source/atl.rst:1271
+#: ../../source/atl.rst:1262
 msgid "External Events"
 msgstr "外部イベント"
 
-#: ../../source/atl.rst:1273
+#: ../../source/atl.rst:1264
 msgid "The following events can be triggered automatically:"
 msgstr "以下のイベントは自動的に実行されます :"
 
-#: ../../source/atl.rst:1277
+#: ../../source/atl.rst:1268
 msgid "``start``"
 msgstr "``start``"
 
-#: ../../source/atl.rst:1276
+#: ../../source/atl.rst:1267
 msgid ""
 "A pseudo-event, triggered on entering an ``on`` statement, if no event of "
 "higher priority has happened."
@@ -1964,11 +1737,11 @@ msgstr ""
 "``on`` ステートメントに進入したときに、これより高い優先度のイベントが起こらな"
 "かった場合に実行される擬似イベントです。"
 
-#: ../../source/atl.rst:1281
+#: ../../source/atl.rst:1272
 msgid "``show``"
 msgstr "``show``"
 
-#: ../../source/atl.rst:1280
+#: ../../source/atl.rst:1271
 msgid ""
 "Triggered when the transform is shown using the show or scene statement, and "
 "no image with the given tag exists."
@@ -1976,11 +1749,11 @@ msgstr ""
 "transform が show ステートメントや scene ステートメントによって表示され、与え"
 "られたタグの画像がまだ存在しない場合に実行されます。"
 
-#: ../../source/atl.rst:1285
+#: ../../source/atl.rst:1276
 msgid "``replace``"
 msgstr "``replace``"
 
-#: ../../source/atl.rst:1284
+#: ../../source/atl.rst:1275
 msgid ""
 "Triggered when transform is shown using the ``show`` statement, replacing an "
 "image with the given tag."
@@ -1988,11 +1761,11 @@ msgstr ""
 "transform が ``show`` ステートメントによって表示されて指定したタグの画像を置"
 "き換えると実行されます。"
 
-#: ../../source/atl.rst:1293
+#: ../../source/atl.rst:1284
 msgid "``hide``"
 msgstr "``hide``"
 
-#: ../../source/atl.rst:1288
+#: ../../source/atl.rst:1279
 msgid ""
 "Triggered when the transform is hidden using the ``hide`` statement or its "
 "Python equivalent."
@@ -2000,7 +1773,7 @@ msgstr ""
 "transform が ``hide`` ステートメントやそれと等価な Python を使って非表示され"
 "ると実行されます。"
 
-#: ../../source/atl.rst:1291
+#: ../../source/atl.rst:1282
 msgid ""
 "Note that this isn't triggered when the transform is eliminated via the "
 "scene statement or exiting the :ref:`context` it exists in, such as when "
@@ -2010,11 +1783,11 @@ msgstr ""
 "通して除去されたときや、ゲームメニューの終了などによって transform が存在す"
 "る :ref:`context` から抜けて除去されたときです。"
 
-#: ../../source/atl.rst:1297
+#: ../../source/atl.rst:1288
 msgid "``replaced``"
 msgstr "``replaced``"
 
-#: ../../source/atl.rst:1296
+#: ../../source/atl.rst:1287
 msgid ""
 "Triggered when the transform is replaced by another. The image will not "
 "actually hide until the ATL block finishes."
@@ -2022,11 +1795,11 @@ msgstr ""
 "transform が別のもので置き換えられたときに引き起こされます。画像は、ATL ブ"
 "ロックが完了するまで実際には非表示にはなりません。"
 
-#: ../../source/atl.rst:1302
+#: ../../source/atl.rst:1293
 msgid "``update``"
 msgstr "``update``"
 
-#: ../../source/atl.rst:1300
+#: ../../source/atl.rst:1291
 msgid ""
 "Triggered when a screen is updated without being shown or replacing another "
 "screen. This happens in rare but possible cases, such as when the game is "
@@ -2035,7 +1808,7 @@ msgstr ""
 "スクリーンが表示されずに、または他のスクリーンを置き換えずに更新されると起り"
 "ます。これはゲームロード時や、スタイルや翻訳変更時などにまれに起ります。"
 
-#: ../../source/atl.rst:1307
+#: ../../source/atl.rst:1298
 msgid ""
 "``hover``, ``idle``, ``selected_hover``, ``selected_idle``, ``insensitive``, "
 "``selected_insensitive``"
@@ -2043,7 +1816,7 @@ msgstr ""
 "``hover``, ``idle``, ``selected_hover``, ``selected_idle``, ``insensitive``, "
 "``selected_insensitive``"
 
-#: ../../source/atl.rst:1305
+#: ../../source/atl.rst:1296
 msgid ""
 "Triggered when button containing this transform, or a button contained by "
 "this transform, enters the named state."
@@ -2051,11 +1824,11 @@ msgstr ""
 "この transform を含むボタンやこの transform に含まれるボタンが名前通りの状態"
 "になったときに引き起こされます。"
 
-#: ../../source/atl.rst:1312
+#: ../../source/atl.rst:1303
 msgid "Replacing Transforms"
 msgstr "transofrm の置き換え"
 
-#: ../../source/atl.rst:1314
+#: ../../source/atl.rst:1305
 msgid ""
 "When an an ATL transform or transform defined using the :func:`Transform` "
 "class is replaced by another class, the properties of the transform that's "
@@ -2065,7 +1838,7 @@ msgstr ""
 "のクラスで置き換えられるとその transform のプロパティーは置き換えた "
 "transform に引き継がれます。"
 
-#: ../../source/atl.rst:1318
+#: ../../source/atl.rst:1309
 msgid ""
 "When the ``show`` statement has multiple transforms in the at list, the "
 "transforms are matched from last to first, until one list runs out. For "
@@ -2074,7 +1847,7 @@ msgstr ""
 "``show`` ステートメントの at リスト内に複数の transform があるとき、それらの "
 "transform は最後から最初の順にリストがなくなるまでマッチします。例えば ::"
 
-#: ../../source/atl.rst:1326
+#: ../../source/atl.rst:1317
 msgid ""
 "the ``c`` transform is replaced by ``e``, the ``b`` transform is replaced by "
 "``d``, and nothing replaces the ``a`` transform."
@@ -2082,7 +1855,7 @@ msgstr ""
 "``c`` transform は ``e`` で、 ``b`` transform は ``d`` で置き換えられ、 "
 "``a`` transform は置き換えられません。"
 
-#: ../../source/atl.rst:1329
+#: ../../source/atl.rst:1320
 msgid ""
 "At the moment of replacement, the values of the properties of the old "
 "transform get inherited by the new transform. If the old transform was being "
@@ -2092,7 +1865,7 @@ msgstr ""
 "ます。以前の transform がアニメーションなら、途中の値が継承されます。例え"
 "ば ::"
 
-#: ../../source/atl.rst:1347
+#: ../../source/atl.rst:1338
 msgid ""
 "In this example, the sprite will bounce from left to right and back until "
 "the player clicks. When that happens, the ``xalign`` from ``bounce`` will be "
@@ -2103,7 +1876,7 @@ msgstr ""
 "すると ``bounce`` の ``xalign`` でheadright の ``xalighn`` が初期化され、スプ"
 "ライトはプレイヤーが最初にクリックしたときにあった位置から動き始めます。"
 
-#: ../../source/atl.rst:1352
+#: ../../source/atl.rst:1343
 msgid ""
 "The position properties (:tpref:`xpos`, :tpref:`ypos`, :tpref:`xanchor`, "
 "and :tpref:`yanchor`), have a special rule for inheritance - a value set in "
@@ -2118,7 +1891,7 @@ msgstr ""
 "置が優先されるからです。これらのプロパティーは複数の方法で設定されます。例え"
 "ば :tpref:`xalign` は xpos と xanchor を設定します。"
 
-#: ../../source/atl.rst:1358
+#: ../../source/atl.rst:1349
 msgid ""
 "Finally, when a ``show`` statement does not include an ``at`` clause, the "
 "same displayables are used, so no inheritence is necessary. To prevent "
@@ -2128,11 +1901,11 @@ msgstr ""
 "使用されるので継承は不要です。 Displayable を非表示して再度表示すれば継承はさ"
 "れなくなります。"
 
-#: ../../source/atl.rst:1365
+#: ../../source/atl.rst:1356
 msgid "ATL Transitions"
 msgstr "ATL トランジション"
 
-#: ../../source/atl.rst:1367
+#: ../../source/atl.rst:1358
 msgid ""
 "It's possible to use an ATL transform to define a transition. These "
 "transitions need to accept the `old_widget` and `new_widget` arguments, "
@@ -2142,7 +1915,7 @@ msgstr ""
 "は `old_widget` と `new_widget` 引数を受け取る必要があります。それらはそれぞ"
 "れトランジション前と後の displayable に渡されます。"
 
-#: ../../source/atl.rst:1371
+#: ../../source/atl.rst:1362
 msgid ""
 "An ATL transition must set the :tpref:`delay` property to the number of "
 "seconds the transition lasts for. It may use the :tpref:`events` property to "
@@ -2152,11 +1925,11 @@ msgstr ""
 "数の数値に設定しなければいけません。 :tpref:`events` プロパティーを使用して "
 "old Displayable がイベントを受け取らないようにもできます。"
 
-#: ../../source/atl.rst:1399
+#: ../../source/atl.rst:1390
 msgid "Special ATL Keyword Parameters"
 msgstr "特別な ATL キーワードパラメーター"
 
-#: ../../source/atl.rst:1401
+#: ../../source/atl.rst:1392
 msgid ""
 "There are several parameters that Ren'Py will supply to ATL, in certain "
 "contexts, if the parameter is in the parameter list."
@@ -2164,11 +1937,11 @@ msgstr ""
 "パラメーターリストにそのパラメーターがあれば、特定のコンテキストで Ren'Py が "
 "ATL に提供するいくつかのパラメーターがあります。"
 
-#: ../../source/atl.rst:1431
+#: ../../source/atl.rst:1422
 msgid "`child`"
 msgstr "`child`"
 
-#: ../../source/atl.rst:1405
+#: ../../source/atl.rst:1396
 msgid ""
 "When ATL is used as a transform, the child parameter is given the original "
 "child that the transform is applied to. This allows the child to be referred "
@@ -2179,16 +1952,16 @@ msgstr ""
 "が適用された元の child が渡されます。これによりそのchild が明示的に参照されま"
 "す。例えば提供された child と 他の Displayable を交換できます。"
 
-#: ../../source/atl.rst:1417
+#: ../../source/atl.rst:1408
 msgid ""
 "If can also be used to place the original child inside a ``contains`` block::"
 msgstr "``contains`` ブロック 内にもとの child を配置しても使用出来ます。 ::"
 
-#: ../../source/atl.rst:1434
+#: ../../source/atl.rst:1425
 msgid "`old_widget`, `new_widget`"
 msgstr "`old_widget`, `new_widget`"
 
-#: ../../source/atl.rst:1434
+#: ../../source/atl.rst:1425
 msgid ""
 "When an ATL block is used as a transition, these are given displayables that "
 "are transitioned from and to, respectively."
@@ -2196,15 +1969,183 @@ msgstr ""
 "ATL ブロックがトランジションとして使用されるとき、これらはトランジション前と"
 "後の Displayable にそれぞれ与えられます。"
 
+#~ msgid "Ren'Py Name"
+#~ msgstr "Ren'Py Name"
+
+#~ msgid "easings.net Name"
+#~ msgstr "easings.net Name"
+
+#~ msgid "ease_back"
+#~ msgstr "ease_back"
+
+#~ msgid "easeInOut_back"
+#~ msgstr "easeInOut_back"
+
+#~ msgid "ease_bounce"
+#~ msgstr "ease_bounce"
+
+#~ msgid "easeInOut_bounce"
+#~ msgstr "easeInOut_bounce"
+
+#~ msgid "ease_circ"
+#~ msgstr "ease_circ"
+
+#~ msgid "easeInOut_circ"
+#~ msgstr "easeInOut_circ"
+
+#~ msgid "ease_cubic"
+#~ msgstr "ease_cubic"
+
+#~ msgid "easeInOut_cubic"
+#~ msgstr "easeInOut_cubic"
+
+#~ msgid "ease_elastic"
+#~ msgstr "ease_elastic"
+
+#~ msgid "easeInOut_elastic"
+#~ msgstr "easeInOut_elastic"
+
+#~ msgid "ease_expo"
+#~ msgstr "ease_expo"
+
+#~ msgid "easeInOut_expo"
+#~ msgstr "easeInOut_expo"
+
+#~ msgid "ease_quad"
+#~ msgstr "ease_quad"
+
+#~ msgid "easeInOut_quad"
+#~ msgstr "easeInOut_quad"
+
+#~ msgid "ease_quart"
+#~ msgstr "ease_quart"
+
+#~ msgid "easeInOut_quart"
+#~ msgstr "easeInOut_quart"
+
+#~ msgid "ease_quint"
+#~ msgstr "ease_quint"
+
+#~ msgid "easeInOut_quint"
+#~ msgstr "easeInOut_quint"
+
+#~ msgid "easein_back"
+#~ msgstr "easein_back"
+
+#~ msgid "easeOut_back"
+#~ msgstr "easeOut_back"
+
+#~ msgid "easein_bounce"
+#~ msgstr "easein_bounce"
+
+#~ msgid "easeOut_bounce"
+#~ msgstr "easeOut_bounce"
+
+#~ msgid "easein_circ"
+#~ msgstr "easein_circ"
+
+#~ msgid "easeOut_circ"
+#~ msgstr "easeOut_circ"
+
+#~ msgid "easein_cubic"
+#~ msgstr "easein_cubic"
+
+#~ msgid "easeOut_cubic"
+#~ msgstr "easeOut_cubic"
+
+#~ msgid "easein_elastic"
+#~ msgstr "easein_elastic"
+
+#~ msgid "easeOut_elastic"
+#~ msgstr "easeOut_elastic"
+
+#~ msgid "easein_expo"
+#~ msgstr "easein_expo"
+
+#~ msgid "easeOut_expo"
+#~ msgstr "easeOut_expo"
+
+#~ msgid "easein_quad"
+#~ msgstr "easein_quad"
+
+#~ msgid "easeOut_quad"
+#~ msgstr "easeOut_quad"
+
+#~ msgid "easein_quart"
+#~ msgstr "easein_quart"
+
+#~ msgid "easeOut_quart"
+#~ msgstr "easeOut_quart"
+
+#~ msgid "easein_quint"
+#~ msgstr "easein_quint"
+
+#~ msgid "easeOut_quint"
+#~ msgstr "easeOut_quint"
+
+#~ msgid "easeout_back"
+#~ msgstr "easeout_back"
+
+#~ msgid "easeIn_back"
+#~ msgstr "easeIn_back"
+
+#~ msgid "easeout_bounce"
+#~ msgstr "easeout_bounce"
+
+#~ msgid "easeIn_bounce"
+#~ msgstr "easeIn_bounce"
+
+#~ msgid "easeout_circ"
+#~ msgstr "easeout_circ"
+
+#~ msgid "easeIn_circ"
+#~ msgstr "easeIn_circ"
+
+#~ msgid "easeout_cubic"
+#~ msgstr "easeout_cubic"
+
+#~ msgid "easeIn_cubic"
+#~ msgstr "easeIn_cubic"
+
+#~ msgid "easeout_elastic"
+#~ msgstr "easeout_elastic"
+
+#~ msgid "easeIn_elastic"
+#~ msgstr "easeIn_elastic"
+
+#~ msgid "easeout_expo"
+#~ msgstr "easeout_expo"
+
+#~ msgid "easeIn_expo"
+#~ msgstr "easeIn_expo"
+
+#~ msgid "easeout_quad"
+#~ msgstr "easeout_quad"
+
+#~ msgid "easeIn_quad"
+#~ msgstr "easeIn_quad"
+
+#~ msgid "easeout_quart"
+#~ msgstr "easeout_quart"
+
+#~ msgid "easeIn_quart"
+#~ msgstr "easeIn_quart"
+
+#~ msgid "easeout_quint"
+#~ msgstr "easeout_quint"
+
+#~ msgid "easeIn_quint"
+#~ msgstr "easeIn_quint"
+
 #~ msgid ""
-#~ "Some properties can have values of multiple types. For example, the :"
-#~ "propref:`xpos` property can be an int, float, or absolute, other "
-#~ "properties can be None. The behavior is undefined when an interpolation "
-#~ "has old and new property values of different types."
+#~ "Ren'Py clamps this angle to between 0 and 360 degrees, including 0 but "
+#~ "not 360. If a value is set outside this range, it will be set to the "
+#~ "equivalent angle in this range before being used. (Setting this to -10 is "
+#~ "the equivalent of setting it to 350.)"
 #~ msgstr ""
-#~ "プロパティーには複数の型の値を受け取られるものがあります。例えば :propref:"
-#~ "`xpos` プロパティーは整数、浮動小数点数、 absolute にできます。補間前後で"
-#~ "型が異なるときのの動作は未定義です。"
+#~ "Ren'Py はこの角度を0度以上360度未満の間に固定します。この範囲外の値が設定"
+#~ "された場合、この範囲内の同等の角度に設定されてから使用されます。(これを-10"
+#~ "に設定することは、350に設定することと同じです)。"
 
 #~ msgid "See :ref:`warpers` for more information about warpers."
 #~ msgstr "ワーパーについての詳細は :ref:`warpers` を参照してください。"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
+"POT-Creation-Date: 2023-09-20 21:53+0900\n"
 "PO-Revision-Date: 2014-06-14 07:09+0000\n"
 "Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -69,257 +69,6 @@ msgstr ""
 msgid "Sprite Classes"
 msgstr "Sprite クラス"
 
-#: ../../source/inc/sprites:5
-msgid ""
-"This represents a sprite that is managed by the SpriteManager. It contains "
-"fields that control the placement of the sprite on the screen. Sprites "
-"should not be created directly. Instead, they should be created by calling :"
-"meth:`SpriteManager.create`."
-msgstr ""
-"これは SpritesManager に管理される sprite を表しています。これはスクリーン上"
-"の sprite の位置を制御するフィールドを含んでいます。 Sprite は直接作成される"
-"べきではありません。代わりに :meth:`SpriteManager.create` の呼び出しで作成さ"
-"れるべきです。"
-
-#: ../../source/inc/sprites:10
-msgid "The fields of a sprite object are:"
-msgstr "sprite オブジェクトのフィールド"
-
-#: ../../source/inc/sprites:14
-msgid "`x`, `y`"
-msgstr "`x`, `y`"
-
-#: ../../source/inc/sprites:13
-msgid ""
-"The x and y coordinates of the upper-left corner of the sprite, relative to "
-"the SpriteManager."
-msgstr "SpriteManager に対する sprite の左上角の x, y 座標です。"
-
-#: ../../source/inc/sprites:19
-msgid "`zorder`"
-msgstr "`zorder`"
-
-#: ../../source/inc/sprites:17
-msgid ""
-"An integer that's used to control the order of this sprite in the relative "
-"to the other sprites in the SpriteManager. The larger the number is, the "
-"closer to the viewer the sprite is."
-msgstr ""
-"SpriteManager のその他の sprite に対するこの sprite の z-order を制御するため"
-"に使われる整数です。数字が大きいほどその sprite はユーザーに近づきます。"
-
-#: ../../source/inc/sprites:24
-msgid "`events`"
-msgstr "`events`"
-
-#: ../../source/inc/sprites:22
-msgid ""
-"If True, then events are passed to child. If False, the default, the "
-"children ignore events (and hence don't spend time processing them)."
-msgstr ""
-"True の場合 events は子に渡されます。既定値は False で、子は events を無視し"
-"ます (それ故それらの処理に時間をかけてはいけません)。"
-
-#: ../../source/inc/sprites:26
-msgid "The methods of a Sprite object are:"
-msgstr "Sprite オブジェクトのメソッドは :"
-
-#: ../../source/inc/sprites:31
-msgid ""
-"Destroys this sprite, preventing it from being displayed and removing it "
-"from the SpriteManager."
-msgstr ""
-"この sprite を廃棄し、これが表示されることを防ぎ、SpriteManager から除去しま"
-"す。"
-
-#: ../../source/inc/sprites:36
-msgid "Changes the Displayable associated with this sprite to `d`."
-msgstr "この sprite に関連づけられた Displayable を `d` に変更します。"
-
-#: ../../source/inc/sprites:40
-msgid ""
-"This displayable manages a collection of sprites, and displays them at the "
-"fastest speed possible."
-msgstr ""
-"この displayable は sprite の集合を管理し、可能な限り最速のスピードでそれらを"
-"表示します。"
-
-#: ../../source/inc/sprites:49
-msgid "`update`"
-msgstr "`update`"
-
-#: ../../source/inc/sprites:44
-msgid ""
-"If not None, a function that is called each time a sprite is rendered by "
-"this sprite manager. It is called with one argument, the time in seconds "
-"since this sprite manager was first displayed.  It is expected to return the "
-"number of seconds until the function is called again, and the SpriteManager "
-"is rendered again."
-msgstr ""
-"None または SpriteManager に sprite がレンダリングされる度に呼び出される関数"
-"を指定します。これは1つの引数で呼び出され、それはこの SpriteManager が最初に"
-"表示されてからの秒数です。関数が再び呼び出され、 SpriteManager がもう一度レン"
-"ダリングされるまでの秒数を返すことが期待されます。"
-
-#: ../../source/inc/sprites:59
-msgid "`event`"
-msgstr "`event`"
-
-#: ../../source/inc/sprites:52
-msgid ""
-"If not None, a function that is called when an event occurs. It takes as "
-"arguments: * A pygame event object. * The x coordinate of the event. * The y "
-"coordinate of the event. * The time since the sprite manager was first "
-"shown. If it returns a non-None value, the interaction ends, and that value "
-"is returned."
-msgstr ""
-"None またはイベントが発生した時に呼び出される関数を指定します。引数として次を"
-"受け取ります。 : * pygame イベントオブジェクト、 * イベントの x 座標、 * イベ"
-"ントの y 座標 、* SpriteManager が最初に表示されてからの秒数。 None 以外の値"
-"を返すと処理は終了し、その値が返されます。"
-
-#: ../../source/inc/sprites:64
-msgid "`predict`"
-msgstr "`predict`"
-
-#: ../../source/inc/sprites:62
-msgid ""
-"If not None, a function that returns a list of displayables. These "
-"displayables are predicted when the sprite manager is."
-msgstr ""
-"None または displayable のリストを返す関数です。これらの displayable は"
-"SpriteManager が予想されたときに予想されます。"
-
-#: ../../source/inc/sprites:72
-msgid "`ignore_time`"
-msgstr "`ignore_time`"
-
-#: ../../source/inc/sprites:67
-msgid ""
-"If True, then time is ignored when rendering displayables. This should be "
-"used when the sprite manager is used with a relatively small pool of images, "
-"and those images do not change over time. This should only be used with a "
-"small number of displayables, as it will keep all displayables used in "
-"memory for the life of the SpriteManager."
-msgstr ""
-"True の場合、 displayable のレンダリング時に時間は無視されます。これは "
-"SpriteManager が比較的小さな画像プールで使用され、それらの画像が時間の経過で"
-"変化しない時に使用すべきです。これは SpriteManager がある間、使用されているす"
-"べての displayable をメモリー上に保持するため、少数の displayable でのみ使用"
-"されるべきです。"
-
-#: ../../source/inc/sprites:74
-msgid ""
-"After being rendered once (before the `update` function is called), "
-"SpriteManagers have the following fields:"
-msgstr ""
-"一旦レンダリングされた後 ( `update` 関数が呼び出されるまで ) は "
-"SpriteManager は以下のフィールドを持ちます:"
-
-#: ../../source/inc/sprites:79
-msgid "`width`, `height`"
-msgstr "`width`, `height`"
-
-#: ../../source/inc/sprites:78
-msgid "The width and height of this SpriteManager, in pixels."
-msgstr "この SpriteManager のピクセル数での幅と高さ。"
-
-#: ../../source/inc/sprites:81
-msgid "SpriteManagers have the following methods:"
-msgstr "SpriteManager は以下のメソッドを持ちます:"
-
-#: ../../source/inc/sprites:85
-msgid ""
-"Creates a new Sprite for the displayable `d`, and adds it to this "
-"SpriteManager."
-msgstr ""
-"displayable `d` で新しい sprite を作成し、この SpriteManager に追加します。"
-
-#: ../../source/inc/sprites:90
-msgid "Causes this SpriteManager to be redrawn in `delay` seconds."
-msgstr "この SpriteManager を `delay` 秒までに再描画させます。"
-
-#: ../../source/inc/sprites_extra:5
-msgid ""
-"The snowblossom effect moves multiple instances of a sprite up, down, left "
-"or right on the screen. When a sprite leaves the screen, it is returned to "
-"the start."
-msgstr ""
-"花吹雪エフェクトは複数の sprite インスタンスをスクリーン上で上下左右に移動さ"
-"せます。sprite がスクリーンを出ると、それは最初に戻ります。"
-
-#: ../../source/inc/sprites_extra:10
-msgid "`d`"
-msgstr "`d`"
-
-#: ../../source/inc/sprites_extra:10
-msgid "The displayable to use for the sprites."
-msgstr "sprite に使われる displayable"
-
-#: ../../source/inc/sprites_extra:15
-msgid "`border`"
-msgstr "`border`"
-
-#: ../../source/inc/sprites_extra:13
-msgid ""
-"The size of the border of the screen. The sprite is considered to be on the "
-"screen until it clears the border, ensuring that sprites do not disappear "
-"abruptly."
-msgstr ""
-"スクリーンの境界のサイズ。sprite はそれが境界を越えるまではそのスクリーン上に"
-"いると考慮され、 sprite が唐突に消えないことを保証します。"
-
-#: ../../source/inc/sprites_extra:22
-msgid "`xspeed`, `yspeed`"
-msgstr "`xspeed`, `yspeed`"
-
-#: ../../source/inc/sprites_extra:18
-msgid ""
-"The speed at which the sprites move, in the horizontal and vertical "
-"directions, respectively. These can be a single number or a tuple of two "
-"numbers. In the latter case, each particle is assigned a random speed "
-"between the two numbers. The speeds can be positive or negative, as long as "
-"the second number in a tuple is larger than the first."
-msgstr ""
-"それぞれ水平垂直方向の sprite の移動速度です。これらには1つの数字か2つの数字"
-"のタプルを使用できます。後者の場合、各粒子には2つの数字の間のランダムな速度が"
-"代入されます。速度はタプルの2つ目の数が1つ目よりも大きければ、正負どちらでも"
-"可能です。"
-
-#: ../../source/inc/sprites_extra:27
-msgid "`start`"
-msgstr "`start`"
-
-#: ../../source/inc/sprites_extra:25
-msgid ""
-"The delay, in seconds, before each particle is added. This can be allows the "
-"particles to start at the top of the screen, while not looking like a \"wave"
-"\" effect."
-msgstr ""
-"各パーティクルが追加される前の秒数です。これによりパーティクル「 wave 」エ"
-"フェクトとは違いスクリーンの一番上から出発出来るようになります。"
-
-#: ../../source/inc/sprites_extra:31
-msgid "`fast`"
-msgstr "`fast`"
-
-#: ../../source/inc/sprites_extra:30
-msgid ""
-"If true, particles start in the center of the screen, rather than only at "
-"the edges."
-msgstr "True の場合、粒子は端からだけでなくスクリーンの中心からも出発します。"
-
-#: ../../source/inc/sprites_extra:34
-msgid "`horizontal`"
-msgstr "`horizontal`"
-
-#: ../../source/inc/sprites_extra:34
-msgid ""
-"If true, particles appear on the left or right side of the screen, rather "
-"than the top or bottom."
-msgstr ""
-"True の場合、粒子はスクリーンの上端や下端からではなく、左右の端から現れます。"
-
 #: ../../source/sprites.rst:33
 msgid "Sprite Examples"
 msgstr "Sprite の例"
@@ -339,6 +88,222 @@ msgid ""
 msgstr ""
 "この例ではどのように SpriteManager が複雑な動作作成のために使用されるかを表し"
 "ています。この場合は 400 の粒子が表示され、それらがマウスを回避しています。"
+
+#~ msgid ""
+#~ "This represents a sprite that is managed by the SpriteManager. It "
+#~ "contains fields that control the placement of the sprite on the screen. "
+#~ "Sprites should not be created directly. Instead, they should be created "
+#~ "by calling :meth:`SpriteManager.create`."
+#~ msgstr ""
+#~ "これは SpritesManager に管理される sprite を表しています。これはスクリーン"
+#~ "上の sprite の位置を制御するフィールドを含んでいます。 Sprite は直接作成さ"
+#~ "れるべきではありません。代わりに :meth:`SpriteManager.create` の呼び出しで"
+#~ "作成されるべきです。"
+
+#~ msgid "The fields of a sprite object are:"
+#~ msgstr "sprite オブジェクトのフィールド"
+
+#~ msgid "`x`, `y`"
+#~ msgstr "`x`, `y`"
+
+#~ msgid ""
+#~ "The x and y coordinates of the upper-left corner of the sprite, relative "
+#~ "to the SpriteManager."
+#~ msgstr "SpriteManager に対する sprite の左上角の x, y 座標です。"
+
+#~ msgid "`zorder`"
+#~ msgstr "`zorder`"
+
+#~ msgid ""
+#~ "An integer that's used to control the order of this sprite in the "
+#~ "relative to the other sprites in the SpriteManager. The larger the number "
+#~ "is, the closer to the viewer the sprite is."
+#~ msgstr ""
+#~ "SpriteManager のその他の sprite に対するこの sprite の z-order を制御する"
+#~ "ために使われる整数です。数字が大きいほどその sprite はユーザーに近づきま"
+#~ "す。"
+
+#~ msgid "`events`"
+#~ msgstr "`events`"
+
+#~ msgid ""
+#~ "If True, then events are passed to child. If False, the default, the "
+#~ "children ignore events (and hence don't spend time processing them)."
+#~ msgstr ""
+#~ "True の場合 events は子に渡されます。既定値は False で、子は events を無視"
+#~ "します (それ故それらの処理に時間をかけてはいけません)。"
+
+#~ msgid "The methods of a Sprite object are:"
+#~ msgstr "Sprite オブジェクトのメソッドは :"
+
+#~ msgid ""
+#~ "Destroys this sprite, preventing it from being displayed and removing it "
+#~ "from the SpriteManager."
+#~ msgstr ""
+#~ "この sprite を廃棄し、これが表示されることを防ぎ、SpriteManager から除去し"
+#~ "ます。"
+
+#~ msgid "Changes the Displayable associated with this sprite to `d`."
+#~ msgstr "この sprite に関連づけられた Displayable を `d` に変更します。"
+
+#~ msgid ""
+#~ "This displayable manages a collection of sprites, and displays them at "
+#~ "the fastest speed possible."
+#~ msgstr ""
+#~ "この displayable は sprite の集合を管理し、可能な限り最速のスピードでそれ"
+#~ "らを表示します。"
+
+#~ msgid "`update`"
+#~ msgstr "`update`"
+
+#~ msgid ""
+#~ "If not None, a function that is called each time a sprite is rendered by "
+#~ "this sprite manager. It is called with one argument, the time in seconds "
+#~ "since this sprite manager was first displayed.  It is expected to return "
+#~ "the number of seconds until the function is called again, and the "
+#~ "SpriteManager is rendered again."
+#~ msgstr ""
+#~ "None または SpriteManager に sprite がレンダリングされる度に呼び出される関"
+#~ "数を指定します。これは1つの引数で呼び出され、それはこの SpriteManager が最"
+#~ "初に表示されてからの秒数です。関数が再び呼び出され、 SpriteManager がもう"
+#~ "一度レンダリングされるまでの秒数を返すことが期待されます。"
+
+#~ msgid "`event`"
+#~ msgstr "`event`"
+
+#~ msgid ""
+#~ "If not None, a function that is called when an event occurs. It takes as "
+#~ "arguments: * A pygame event object. * The x coordinate of the event. * "
+#~ "The y coordinate of the event. * The time since the sprite manager was "
+#~ "first shown. If it returns a non-None value, the interaction ends, and "
+#~ "that value is returned."
+#~ msgstr ""
+#~ "None またはイベントが発生した時に呼び出される関数を指定します。引数として"
+#~ "次を受け取ります。 : * pygame イベントオブジェクト、 * イベントの x 座"
+#~ "標、 * イベントの y 座標 、* SpriteManager が最初に表示されてからの秒数。 "
+#~ "None 以外の値を返すと処理は終了し、その値が返されます。"
+
+#~ msgid "`predict`"
+#~ msgstr "`predict`"
+
+#~ msgid ""
+#~ "If not None, a function that returns a list of displayables. These "
+#~ "displayables are predicted when the sprite manager is."
+#~ msgstr ""
+#~ "None または displayable のリストを返す関数です。これらの displayable は"
+#~ "SpriteManager が予想されたときに予想されます。"
+
+#~ msgid "`ignore_time`"
+#~ msgstr "`ignore_time`"
+
+#~ msgid ""
+#~ "If True, then time is ignored when rendering displayables. This should be "
+#~ "used when the sprite manager is used with a relatively small pool of "
+#~ "images, and those images do not change over time. This should only be "
+#~ "used with a small number of displayables, as it will keep all "
+#~ "displayables used in memory for the life of the SpriteManager."
+#~ msgstr ""
+#~ "True の場合、 displayable のレンダリング時に時間は無視されます。これは "
+#~ "SpriteManager が比較的小さな画像プールで使用され、それらの画像が時間の経過"
+#~ "で変化しない時に使用すべきです。これは SpriteManager がある間、使用されて"
+#~ "いるすべての displayable をメモリー上に保持するため、少数の displayable で"
+#~ "のみ使用されるべきです。"
+
+#~ msgid ""
+#~ "After being rendered once (before the `update` function is called), "
+#~ "SpriteManagers have the following fields:"
+#~ msgstr ""
+#~ "一旦レンダリングされた後 ( `update` 関数が呼び出されるまで ) は "
+#~ "SpriteManager は以下のフィールドを持ちます:"
+
+#~ msgid "`width`, `height`"
+#~ msgstr "`width`, `height`"
+
+#~ msgid "The width and height of this SpriteManager, in pixels."
+#~ msgstr "この SpriteManager のピクセル数での幅と高さ。"
+
+#~ msgid "SpriteManagers have the following methods:"
+#~ msgstr "SpriteManager は以下のメソッドを持ちます:"
+
+#~ msgid ""
+#~ "Creates a new Sprite for the displayable `d`, and adds it to this "
+#~ "SpriteManager."
+#~ msgstr ""
+#~ "displayable `d` で新しい sprite を作成し、この SpriteManager に追加しま"
+#~ "す。"
+
+#~ msgid "Causes this SpriteManager to be redrawn in `delay` seconds."
+#~ msgstr "この SpriteManager を `delay` 秒までに再描画させます。"
+
+#~ msgid ""
+#~ "The snowblossom effect moves multiple instances of a sprite up, down, "
+#~ "left or right on the screen. When a sprite leaves the screen, it is "
+#~ "returned to the start."
+#~ msgstr ""
+#~ "花吹雪エフェクトは複数の sprite インスタンスをスクリーン上で上下左右に移動"
+#~ "させます。sprite がスクリーンを出ると、それは最初に戻ります。"
+
+#~ msgid "`d`"
+#~ msgstr "`d`"
+
+#~ msgid "The displayable to use for the sprites."
+#~ msgstr "sprite に使われる displayable"
+
+#~ msgid "`border`"
+#~ msgstr "`border`"
+
+#~ msgid ""
+#~ "The size of the border of the screen. The sprite is considered to be on "
+#~ "the screen until it clears the border, ensuring that sprites do not "
+#~ "disappear abruptly."
+#~ msgstr ""
+#~ "スクリーンの境界のサイズ。sprite はそれが境界を越えるまではそのスクリーン"
+#~ "上にいると考慮され、 sprite が唐突に消えないことを保証します。"
+
+#~ msgid "`xspeed`, `yspeed`"
+#~ msgstr "`xspeed`, `yspeed`"
+
+#~ msgid ""
+#~ "The speed at which the sprites move, in the horizontal and vertical "
+#~ "directions, respectively. These can be a single number or a tuple of two "
+#~ "numbers. In the latter case, each particle is assigned a random speed "
+#~ "between the two numbers. The speeds can be positive or negative, as long "
+#~ "as the second number in a tuple is larger than the first."
+#~ msgstr ""
+#~ "それぞれ水平垂直方向の sprite の移動速度です。これらには1つの数字か2つの数"
+#~ "字のタプルを使用できます。後者の場合、各粒子には2つの数字の間のランダムな"
+#~ "速度が代入されます。速度はタプルの2つ目の数が1つ目よりも大きければ、正負ど"
+#~ "ちらでも可能です。"
+
+#~ msgid "`start`"
+#~ msgstr "`start`"
+
+#~ msgid ""
+#~ "The delay, in seconds, before each particle is added. This can be allows "
+#~ "the particles to start at the top of the screen, while not looking like a "
+#~ "\"wave\" effect."
+#~ msgstr ""
+#~ "各パーティクルが追加される前の秒数です。これによりパーティクル「 wave 」エ"
+#~ "フェクトとは違いスクリーンの一番上から出発出来るようになります。"
+
+#~ msgid "`fast`"
+#~ msgstr "`fast`"
+
+#~ msgid ""
+#~ "If true, particles start in the center of the screen, rather than only at "
+#~ "the edges."
+#~ msgstr ""
+#~ "True の場合、粒子は端からだけでなくスクリーンの中心からも出発します。"
+
+#~ msgid "`horizontal`"
+#~ msgstr "`horizontal`"
+
+#~ msgid ""
+#~ "If true, particles appear on the left or right side of the screen, rather "
+#~ "than the top or bottom."
+#~ msgstr ""
+#~ "True の場合、粒子はスクリーンの上端や下端からではなく、左右の端から現れま"
+#~ "す。"
 
 #~ msgid ""
 #~ "If True, then events are passed to child. If False, the default, the "
