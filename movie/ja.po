@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 09:10+0900\n"
-"PO-Revision-Date: 2023-07-31 00:42+0900\n"
+"POT-Creation-Date: 2023-11-23 12:59+0900\n"
+"PO-Revision-Date: 2023-11-23 14:21+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -400,7 +400,7 @@ msgstr ""
 "再生が開始したが、最初のフレームがまだデコードされていないときに表示される画"
 "像です。"
 
-#: ../../source/inc/movie:58
+#: ../../source/inc/movie:59
 msgid "`image`"
 msgstr "`image`"
 
@@ -411,18 +411,19 @@ msgid ""
 "down mobile version that does not use movie sprites.) Users can also choose "
 "to fall back to this image as a preference if video is too taxing for their "
 "system. The image will also be used if the video plays, and then the movie "
-"ends."
+"ends, unless `group` is given."
 msgstr ""
 "`play` が指定されたが、参照するファイルがないとき表示する画像です (例えば、こ"
 "れを使用して movie sprites を使用しないモバイル用のバージョンを作成出来ま"
 "す)。 ビデオがシステムに対して重すぎる場合、ユーザーが設定からこの画像を選択"
-"することも可能です。画像はビデオを再生し終えた後にも使用されます。"
+"することも可能です。 `group` が指定されていなければ、画像はビデオを再生し終え"
+"た後にも使用されます。"
 
-#: ../../source/inc/movie:83
+#: ../../source/inc/movie:84
 msgid "`play_callback`"
 msgstr "`play_callback`"
 
-#: ../../source/inc/movie:61
+#: ../../source/inc/movie:62
 msgid ""
 "If not None, a function that's used to start the movies playing. (This may "
 "do things like queue a transition between sprites, if desired.) It's called "
@@ -431,25 +432,25 @@ msgstr ""
 "None または、動画再生を開始するのに使用する関数です(スプライト間のトランジ"
 "ションをキューするようなときに使用します)。以下の引数で呼び出されます。"
 
-#: ../../source/inc/movie:65
+#: ../../source/inc/movie:66
 msgid "`old`"
 msgstr "`old`"
 
-#: ../../source/inc/movie:66
+#: ../../source/inc/movie:67
 msgid "The old Movie object, or None if the movie is not playing."
 msgstr ""
 "古い Movie オブジェクトです。ムービーが再生されていないときは None になりま"
 "す。"
 
-#: ../../source/inc/movie:68
+#: ../../source/inc/movie:69
 msgid "`new`"
 msgstr "`new`"
 
-#: ../../source/inc/movie:68
+#: ../../source/inc/movie:69
 msgid "The new Movie object."
 msgstr "新しい Movie オブジェクトです。"
 
-#: ../../source/inc/movie:70
+#: ../../source/inc/movie:71
 msgid ""
 "A movie object has the `play` parameter available as ``_play``, while the "
 "``channel``, ``loop``, ``mask``, and ``mask_channel`` fields correspond to "
@@ -459,7 +460,7 @@ msgstr ""
 "``channel``, ``loop``, ``mask``, ``mask_channel`` フィールドは対応するパラ"
 "メーターに対応します。"
 
-#: ../../source/inc/movie:74
+#: ../../source/inc/movie:75
 msgid ""
 "Generally, this will want to use :func:`renpy.music.play` to start the movie "
 "playing on the given channel, with synchro_start=True. A minimal "
@@ -468,11 +469,11 @@ msgstr ""
 "一般的に、指定のチャンネルで synchro_start=True にして :func:`renpy.music."
 "play` を使用して動画を再生するのが望ましいです。以下が最小の実装です ::"
 
-#: ../../source/inc/movie:88
+#: ../../source/inc/movie:89
 msgid "`loop`"
 msgstr "`loop`"
 
-#: ../../source/inc/movie:86
+#: ../../source/inc/movie:87
 msgid ""
 "If False, the movie will not loop. If `image` is defined, the image will be "
 "displayed when the movie ends. Otherwise, the displayable will become "
@@ -481,11 +482,11 @@ msgstr ""
 "False なら、ムービーはループしません。 `image` が定義されると、ムービー停止時"
 "その画像が表示されます。そうでなければムービーは透明化します。"
 
-#: ../../source/inc/movie:95
+#: ../../source/inc/movie:96
 msgid "`group`"
 msgstr "`group`"
 
-#: ../../source/inc/movie:91
+#: ../../source/inc/movie:92
 msgid ""
 "If not None, this should be a string. If given, and if the movie has not yet "
 "started playing, and another movie in the same group has played in the "
@@ -497,11 +498,11 @@ msgstr ""
 "ビーの最後のフレームがこのムービーで使用されます。これにより2つのムービーの切"
 "り替え時の透明度のちらつきを防ぎます。"
 
-#: ../../source/inc/movie:99
+#: ../../source/inc/movie:100
 msgid "`keep_last_frame`"
 msgstr "`keep_last_frame`"
 
-#: ../../source/inc/movie:98
+#: ../../source/inc/movie:99
 msgid ""
 "If true, and the movie has ended, the last frame will be displayed, rather "
 "than the movie being hidden. This only works if `loop` is false. (This "

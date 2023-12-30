@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-15 10:42+0900\n"
-"PO-Revision-Date: 2023-10-27 09:46+0900\n"
+"POT-Creation-Date: 2023-10-27 10:19+0900\n"
+"PO-Revision-Date: 2023-11-25 12:57+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -983,15 +983,15 @@ msgstr "画像マニピュレータ"
 
 #: ../../source/displayables.rst:279
 msgid ""
-"An :doc:`image manipulator <im>` is a displayable that takes an image or "
-"image manipulator, and either loads it or performs an operation on it. Image "
-"manipulators can only take images or other image manipulators as input."
+":doc:`Image manipulators <im>` are an historic kind of displayables that "
+"apply transformations or operations exclusively to other images or image "
+"manipulators - to the exclusion of the other kinds of displayables."
 msgstr ""
-":doc:`画像マニピュレータ <im>` は、画像または画像マニピュレータを取る "
-"displayable であり、それらを読み込み、または処理します。画像マニピュレータは"
-"画像または他の画像マニピュレータのみを入力として受け取れます。"
+":doc:`Image manipulators<im>` は、他の画像や画像マニピュレーターだけに "
+"transform や操作を適用するレガシーな種類の Displayable であり、他の種類の "
+"Displayable には作用しません。"
 
-#: ../../source/displayables.rst:284
+#: ../../source/displayables.rst:283
 msgid ""
 "An image manipulator can be used any place a displayable can, but not vice-"
 "versa. An :func:`Image` is a kind of image manipulator, so an Image can be "
@@ -1001,20 +1001,20 @@ msgstr ""
 "できません。Image() は画像マニピュレータの一種なので、Image は画像マニピュ"
 "レータが要求されたときはいつでも使えます。"
 
-#: ../../source/displayables.rst:288
+#: ../../source/displayables.rst:287
 msgid ""
-"The use of image manipulators is historic. A number of image manipulators "
-"that had been documented in the past should no longer be used, as they "
-"suffer from inherent problems. In any case except for :func:`im.Data`, the :"
-"func:`Transform` displayable provides similar functionality in a more "
-"general manner, while fixing the problems."
+"Their use is historic. A number of image manipulators that had been "
+"documented in a distant past should no longer be used, as they suffer from "
+"inherent problems, and in general (except for :func:`im.Data`), the :func:"
+"`Transform` displayable provides similar functionality while fixing the "
+"problems."
 msgstr ""
 "画像マニピュレータの使用はレガシーなものです。かつてドキュメントに記されてい"
 "た多くの画像マニピュレータは本質的に問題があるため、すでに使用されていませ"
 "ん。 `im.Data` を除いて多くの場合で :func:`Transform` displayable はそれらの"
 "問題を解決しつつ同様な機能をより一般的な方法で提供します。"
 
-#: ../../source/displayables.rst:294
+#: ../../source/displayables.rst:292
 msgid ""
 "For the list of image manipulators, see the :doc:`image manipulator <im>` "
 "documentation."
@@ -1022,11 +1022,11 @@ msgstr ""
 "画像マニピュレータのリストは :doc:`画像マニピュレータ <im>` を参照してくださ"
 "い。"
 
-#: ../../source/displayables.rst:298
+#: ../../source/displayables.rst:296
 msgid "Placeholders"
 msgstr "プレースホルダ"
 
-#: ../../source/displayables.rst:300
+#: ../../source/displayables.rst:298
 msgid ""
 "The Placeholder displayable is used to display background or character "
 "images as appropriate. Placeholders are used automatically when an undefined "
@@ -1129,11 +1129,11 @@ msgstr ""
 "指定された場合、これ以外のテキストはプレースホルダーに表示されません。そうで"
 "なければテキストはそれを表示するために使用された show の指示を反映します。"
 
-#: ../../source/displayables.rst:317
+#: ../../source/displayables.rst:315
 msgid "Displayable Prefixes"
 msgstr "Displayable Prefixes"
 
-#: ../../source/displayables.rst:319
+#: ../../source/displayables.rst:317
 msgid ""
 "Displayable prefixes make it possible for a creator to define their own "
 "displayables, and refer to them anywhere a displayable can be used in "
@@ -1148,14 +1148,14 @@ msgstr ""
 "ます。 :var:`config.displayable_prefix` 変数は接頭辞を関数に対応させます。そ"
 "の関数は引数を受け取り、 displayable または None を返します。"
 
-#: ../../source/displayables.rst:326
+#: ../../source/displayables.rst:324
 msgid ""
 "For example, this makes the big prefix return an image that is twice as big "
 "as the original. ::"
 msgstr ""
 "例えば、オリジナルの二倍の大きさの画像を返す big 接頭辞を作成します。 ::"
 
-#: ../../source/displayables.rst:335
+#: ../../source/displayables.rst:333
 msgid ""
 "The ``init -10`` makes sure the prefix is defined before any images that use "
 "it. The prefix can then be used to define images::"
@@ -1163,21 +1163,31 @@ msgstr ""
 "``init -10`` によって接頭辞は使用するどの画像よりも前に定義され、その接頭辞を"
 "使用して画像の定義ができます ::"
 
-#: ../../source/displayables.rst:340
+#: ../../source/displayables.rst:338
 msgid "or in any other place where a displayable is required."
 msgstr "また、 displayable が要求されるどこにでも使用できます。"
 
-#: ../../source/displayables.rst:343
+#: ../../source/displayables.rst:341
 msgid "See also"
 msgstr "その他参照"
 
-#: ../../source/displayables.rst:345
+#: ../../source/displayables.rst:343
 msgid ""
 ":doc:`displaying_images` : the basics of how to make all these displayables "
 "appear on the screen."
 msgstr ""
 ":doc:`displaying_images` : これらすべての Displayable を画面に表示させるため"
 "の基本的な方法です。"
+
+#~ msgid ""
+#~ "An :doc:`image manipulator <im>` is a displayable that takes an image or "
+#~ "image manipulator, and either loads it or performs an operation on it. "
+#~ "Image manipulators can only take images or other image manipulators as "
+#~ "input."
+#~ msgstr ""
+#~ ":doc:`画像マニピュレータ <im>` は、画像または画像マニピュレータを取る "
+#~ "displayable であり、それらを読み込み、または処理します。画像マニピュレータ"
+#~ "は画像または他の画像マニピュレータのみを入力として受け取れます。"
 
 #~ msgid ""
 #~ "`filename` should be a JPEG or PNG file with an appropriate extension."

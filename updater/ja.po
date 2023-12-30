@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 23:21+0900\n"
-"PO-Revision-Date: 2023-07-11 19:38+0900\n"
+"POT-Creation-Date: 2023-11-12 15:56+0900\n"
+"PO-Revision-Date: 2023-10-29 17:45+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -19,14 +19,15 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/updater.rst:2
-msgid "Web Updater"
-msgstr "ウェブアップデーター"
+msgid "HTTPS/HTTP Updater"
+msgstr ""
 
 #: ../../source/updater.rst:4
+#, fuzzy
 msgid ""
 "Ren'Py includes an updater that can automatically download and install "
-"updates to a Ren'Py game from a web host. The updates work on Windows and "
-"Linux, but not macOS, Android, or iOS."
+"updates to a Ren'Py game from a web host. The updates work on desktop "
+"platforms, with the exception of macOS apps."
 msgstr ""
 "Ren'Py にはウェブ上のホストから自動でゲームの更新をダウンロードしてインストー"
 "ルするアップデーターがあります。このアップデーターは Windows, Linux で動作し"
@@ -34,60 +35,24 @@ msgstr ""
 
 #: ../../source/updater.rst:8
 msgid ""
-"The Ren'Py updater works by automatically performing the following steps:"
-msgstr "Ren'Py アップデーターは自動的に次のステップを実行します。"
-
-#: ../../source/updater.rst:11
-msgid "Downloading an index file that controls what is updated."
-msgstr "差分ファイルのインデックスをダウンロードします。"
-
-#: ../../source/updater.rst:12
-msgid "Asking the user if he or she wants to proceed with the update."
-msgstr "ユーザーに更新するか尋ねます。"
-
-#: ../../source/updater.rst:13
-msgid "Producing an archive file from the files on disk."
-msgstr "ディスク上のファイルからアーカイブを生成します。"
-
-#: ../../source/updater.rst:14
-msgid "Downloading a zsync control file from the server."
-msgstr "zsync をサーバーからダウンロードします。"
-
-#: ../../source/updater.rst:15
-msgid ""
-"Using the zsync tool to update the archive file to the version on the "
-"server. Zsync automatically computes the differences between the two files, "
-"and attempts to only download the portions that have changed."
-msgstr ""
-"zsync を使用してアーカイブをサーバー上のバージョンにアップデートします。 "
-"zsync は自動的に2つのファイルの差分を計算し、変更部分のみをダウンロードしよう"
-"とします。"
-
-#: ../../source/updater.rst:19
-msgid "Unpacking the archive, replacing the files on disk."
-msgstr "アーカイブを解凍し、ディスク上のファイルを置き換えます。"
-
-#: ../../source/updater.rst:20
-msgid "Deleting files that have been removed between the old and new versions."
-msgstr "新旧間で除去されたファイルを削除します。"
-
-#: ../../source/updater.rst:22
-msgid "Restarting the game."
-msgstr "ゲームを再起動します。"
-
-#: ../../source/updater.rst:24
-msgid ""
 "The Ren'Py updater shows an updater screen during this process, prompting "
 "the user to proceed and allowing the user to cancel when appropriate."
 msgstr ""
 "Ren'Py アップデーターはこの間、更新画面を表示してユーザーに続行を促したり、適"
 "切にキャンセルできるようにします。"
 
-#: ../../source/updater.rst:29
+#: ../../source/updater.rst:12
+msgid ""
+"There are two update formats supported. The modern format is called rpu, and "
+"was introduced in Ren'Py 8.2. An older format called zsync is obsolete, but "
+"can be generated to update from older versions."
+msgstr ""
+
+#: ../../source/updater.rst:17
 msgid "Server Requirements"
 msgstr "サーバー要件"
 
-#: ../../source/updater.rst:31
+#: ../../source/updater.rst:19
 msgid ""
 "The updater requires that you provide your own hosting. You should be able "
 "to download the update files by going to the appropriate URL directly, and "
@@ -97,39 +62,11 @@ msgstr ""
 "直接アップデートファイルをダウンロード出来るようにして、サーバーが HTTP の範"
 "囲の問い合わせをサポートする必要があります。"
 
-#: ../../source/updater.rst:35
-msgid ""
-"HTTPS is not supported for patching, but will download the entire file, not "
-"the patch."
-msgstr ""
-"HTTPS はパッチではサポートされておらず、パッチではなくファイル全体をダウン"
-"ロードします。"
-
-#: ../../source/updater.rst:38
-msgid ""
-"(This means paying for web hosting, as \"sharing\" sites tend not to support "
-"the required features.)"
-msgstr ""
-"( 「共有」サイトは必要な機能をサポートしない傾向にあるので、ウェブホスティン"
-"グのために代金を払う必要があります )"
-
-#: ../../source/updater.rst:41
-msgid ""
-"If the `patch` parameter is set to False, or an https url is given, the "
-"updater will not attempt to patch the game. Instead, it will download the "
-"full archive, and unpack that update. While this is a larger download, it "
-"will work with many more web servers."
-msgstr ""
-"`patch` パラメーターが False に設定されるか https url が指定されるととアップ"
-"データーはゲームにパッチを当てようとしません。代わりに完全なアーカイブをダウ"
-"ンロードし、アップデートを解凍します。これはダウンロードサイズを大きくします"
-"が、より多くのウェブサーバーで動作するようになります。"
-
-#: ../../source/updater.rst:47
+#: ../../source/updater.rst:24
 msgid "Building an Update"
 msgstr "アップデートのビルド"
 
-#: ../../source/updater.rst:49
+#: ../../source/updater.rst:26
 msgid ""
 "Updates are built automatically when distributions are built. To build an "
 "update, set :var:`build.include_update` to True in options.rpy. This will "
@@ -142,67 +79,49 @@ msgstr ""
 "ロックしてください。このオプションをチェックすると Ren'Py はアップデートファ"
 "イルを作成します。"
 
-#: ../../source/updater.rst:55
+#: ../../source/updater.rst:32
 msgid "The update files consist of:"
 msgstr "アップデートファイルは以下で構成されます :"
 
-#: ../../source/updater.rst:58
+#: ../../source/updater.rst:35
 msgid "updates.json"
 msgstr "updates.json"
 
-#: ../../source/updater.rst:58
+#: ../../source/updater.rst:35
 msgid "An index of available updates and their versions."
 msgstr "利用可能なアップデートとそのバージョンのインデックス"
 
-#: ../../source/updater.rst:61
-msgid "*package*.sums"
-msgstr "*package*.sums"
+#: ../../source/updater.rst:39
+#, fuzzy
+msgid "updates.ecdsa"
+msgstr "updates.json"
 
-#: ../../source/updater.rst:61
-msgid "Contains checksums for each block in the package."
-msgstr "そのパッケージの各ブロックのチェックサム"
-
-#: ../../source/updater.rst:64
-msgid "*package*.update.gz"
-msgstr "*package*.update.gz"
-
-#: ../../source/updater.rst:64
-msgid "Contains the update data for the given package."
-msgstr "特定のパッケージのアップデートデータを含んでいます。"
-
-#: ../../source/updater.rst:68
-msgid "*package*.update.json"
-msgstr "*package*.update.json"
-
-#: ../../source/updater.rst:67
+#: ../../source/updater.rst:38
 msgid ""
-"Contains a list of the files in each package, which the updater uses when "
-"downloading DLC."
+"A signature of updates.json, used to verify that it has not been tampered "
+"with."
 msgstr ""
-"DLC をダウンロードするとき、アップデーターが使用する各パッケージのファイルの"
-"リストが含まれます。"
 
-#: ../../source/updater.rst:71
-msgid "*package*.zsync"
-msgstr "*package*.zsync"
-
-#: ../../source/updater.rst:71
-msgid "This is a control file that's used by zsync to manage the download."
+#: ../../source/updater.rst:42
+msgid "rpu/"
 msgstr ""
-"これは zsync によってダウンロードを管理するために使用される制御ファイルです。"
 
-#: ../../source/updater.rst:73
-msgid ""
-"You must upload all these files to a single directory on your web server."
+#: ../../source/updater.rst:42
+msgid "The rpu directory contains the metadat and data used by the updates."
+msgstr ""
+
+#: ../../source/updater.rst:44
+#, fuzzy
+msgid "You should upload these to the same place on your webserver."
 msgstr ""
 "これらすべてのファイルをウェブサーバーのひとつのディレクトリーにアップロード"
 "しなければなりません。"
 
-#: ../../source/updater.rst:78
+#: ../../source/updater.rst:47
 msgid "Functions"
 msgstr "関数"
 
-#: ../../source/updater.rst:80
+#: ../../source/updater.rst:49
 msgid ""
 "To cause an update to occur, invoke either updater.update or the updater."
 "Update action."
@@ -376,19 +295,22 @@ msgstr ""
 "このアップデートの間に加えられるパッケージのリスト。これは DLC のためにのみ必"
 "要です。"
 
-#: ../../source/inc/updater:79
+#: ../../source/inc/updater:81
 msgid "`restart`"
 msgstr "`restart`"
 
 #: ../../source/inc/updater:79
-msgid "Restart the game after the update."
-msgstr "アップデート後にゲームを再起動します。"
+msgid ""
+"If true, the game will be re-run when the update completes. If \"utter\", :"
+"func:`renpy.utter_restart` will be called instead. If False, the update will "
+"simply end.c"
+msgstr ""
 
-#: ../../source/inc/updater:83
+#: ../../source/inc/updater:85
 msgid "`confirm`"
 msgstr "`confirm`"
 
-#: ../../source/inc/updater:82
+#: ../../source/inc/updater:84
 msgid ""
 "Should Ren'Py prompt the user to confirm the update? If False, the update "
 "will proceed without confirmation."
@@ -396,11 +318,11 @@ msgstr ""
 "Ren'Py はユーザーにアップデートの確認を求めますか？ False なら、確認なしで"
 "アップデートが実行されます。"
 
-#: ../../source/inc/updater:88
+#: ../../source/inc/updater:93
 msgid "`patch`"
 msgstr "`patch`"
 
-#: ../../source/inc/updater:86
+#: ../../source/inc/updater:88
 msgid ""
 "If true, Ren'Py will attempt to patch the game, downloading only changed "
 "data. If false, Ren'Py will download a complete copy of the game, and update "
@@ -412,17 +334,252 @@ msgstr ""
 "アップデートします。これは url が \"http:\" で始まらなければ自動的に False に"
 "設定されます。"
 
-#: ../../source/updater.rst:86
+#: ../../source/inc/updater:93
+msgid "This is ignored if the RPU update format is being used."
+msgstr ""
+
+#: ../../source/inc/updater:97
+msgid "`prefer_rpu`"
+msgstr "`prefer_rpu`"
+
+#: ../../source/inc/updater:96
+msgid ""
+"If True, Ren'Py will prefer the RPU format for updates, if both zsync and "
+"RPU are available."
+msgstr ""
+"True なら、 zsync と RPU の両方が利用可能ならば Ren'Py は RPU フォーマットを"
+"アップデートで優先します。"
+
+#: ../../source/inc/updater:102
+msgid "`allow_empty`"
+msgstr ""
+
+#: ../../source/inc/updater:100
+msgid ""
+"If True, Ren'Py will allow the update to proceed even if the base directory "
+"does not contain update information. (`add` must be provided in this case.)"
+msgstr ""
+
+#: ../../source/inc/updater:106
+msgid "`done_pause`"
+msgstr ""
+
+#: ../../source/inc/updater:105
+msgid ""
+"If true, the game will pause after the update is complete. If false, it will "
+"immediately proceed (either to a restart, or a return)."
+msgstr ""
+
+#: ../../source/inc/updater:110
+msgid "`allow_cancel`"
+msgstr ""
+
+#: ../../source/inc/updater:109
+msgid ""
+"If true, the user will be allowed to cancel the update. If false, the user "
+"will not be allowed to cancel the update."
+msgstr ""
+
+#: ../../source/inc/updater:112
+#, fuzzy
+msgid "`screen`"
+msgstr "スクリーン"
+
+#: ../../source/inc/updater:113
+msgid "The name of the screen to use."
+msgstr ""
+
+#: ../../source/updater.rst:55
 msgid "Screen"
 msgstr "スクリーン"
 
-#: ../../source/updater.rst:88
+#: ../../source/updater.rst:57
+#, fuzzy
 msgid ""
 "To customize the look of the updater, you may override the ``updater`` "
-"screen. The default screen is defined in common/00updater.rpy."
+"screen. Here's an example screen::"
 msgstr ""
 "アップデーターの見た目を変更するためには、 ``updater`` スクリーンを上書きして"
 "ください。デフォルトのスクリーンは common/00updater.rpy に定義されています。"
+
+#: ../../source/updater.rst:117
+msgid ""
+"The updater screen is supplied a single parameter, an Updater object, which "
+"must be named `u`. The Updater object has the following fields on it, which "
+"can be used to customize the screen:"
+msgstr ""
+
+#: ../../source/updater.rst:125
+msgid ""
+"The current state of the updater. See the example above for possible values "
+"and their meanings. The values are all constants on the Updater obect."
+msgstr ""
+
+#: ../../source/updater.rst:131
+msgid "If not None, a message to display to the user."
+msgstr ""
+
+#: ../../source/updater.rst:135
+msgid ""
+"If not None, the progress of the current operation, as a float between 0.0 "
+"and 1.0."
+msgstr ""
+
+#: ../../source/updater.rst:140
+msgid ""
+"If True, the screen is being asked to display a button that will allow the "
+"user to proceed with the update."
+msgstr ""
+
+#: ../../source/updater.rst:145
+msgid ""
+"If can_proceed is True, this is the action that should be invoked when the "
+"user presses the proceed button."
+msgstr ""
+
+#: ../../source/updater.rst:150
+msgid ""
+"If True, the screen is being asked to display a button that will allow the "
+"user to cancel the update."
+msgstr ""
+
+#: ../../source/updater.rst:155
+msgid ""
+"If can_cancel is True, this is the action that should be invoked when the "
+"user presses the cancel button."
+msgstr ""
+
+#: ../../source/updater.rst:160
+msgid ""
+"If not None, an integer giving the total number of bytes on the disk the "
+"game consumed at the start of the update."
+msgstr ""
+
+#: ../../source/updater.rst:165
+msgid ""
+"If not None, an integer giving the total number of bytes on the disk the "
+"game will consume at the end of the update."
+msgstr ""
+
+#: ../../source/updater.rst:170
+msgid ""
+"If not None, an integer giving the total number of bytes that will be "
+"downloaded during the update."
+msgstr ""
+
+#: ../../source/updater.rst:175
+msgid ""
+"If not None, an integer giving the number of bytes that have been downloaded "
+"during the update, so far."
+msgstr ""
+
+#: ../../source/updater.rst:180
+msgid ""
+"If not None, an integer giving the total number of bytes that will be "
+"written to disk during the update."
+msgstr ""
+
+#: ../../source/updater.rst:185
+msgid ""
+"If not None, an integer giving the number of bytes that have been written to "
+"disk during the update, so far."
+msgstr ""
+
+#~ msgid "Web Updater"
+#~ msgstr "ウェブアップデーター"
+
+#~ msgid ""
+#~ "The Ren'Py updater works by automatically performing the following steps:"
+#~ msgstr "Ren'Py アップデーターは自動的に次のステップを実行します。"
+
+#~ msgid "Downloading an index file that controls what is updated."
+#~ msgstr "差分ファイルのインデックスをダウンロードします。"
+
+#~ msgid "Asking the user if he or she wants to proceed with the update."
+#~ msgstr "ユーザーに更新するか尋ねます。"
+
+#~ msgid "Producing an archive file from the files on disk."
+#~ msgstr "ディスク上のファイルからアーカイブを生成します。"
+
+#~ msgid "Downloading a zsync control file from the server."
+#~ msgstr "zsync をサーバーからダウンロードします。"
+
+#~ msgid ""
+#~ "Using the zsync tool to update the archive file to the version on the "
+#~ "server. Zsync automatically computes the differences between the two "
+#~ "files, and attempts to only download the portions that have changed."
+#~ msgstr ""
+#~ "zsync を使用してアーカイブをサーバー上のバージョンにアップデートします。 "
+#~ "zsync は自動的に2つのファイルの差分を計算し、変更部分のみをダウンロードし"
+#~ "ようとします。"
+
+#~ msgid "Unpacking the archive, replacing the files on disk."
+#~ msgstr "アーカイブを解凍し、ディスク上のファイルを置き換えます。"
+
+#~ msgid ""
+#~ "Deleting files that have been removed between the old and new versions."
+#~ msgstr "新旧間で除去されたファイルを削除します。"
+
+#~ msgid "Restarting the game."
+#~ msgstr "ゲームを再起動します。"
+
+#~ msgid ""
+#~ "HTTPS is not supported for patching, but will download the entire file, "
+#~ "not the patch."
+#~ msgstr ""
+#~ "HTTPS はパッチではサポートされておらず、パッチではなくファイル全体をダウン"
+#~ "ロードします。"
+
+#~ msgid ""
+#~ "(This means paying for web hosting, as \"sharing\" sites tend not to "
+#~ "support the required features.)"
+#~ msgstr ""
+#~ "( 「共有」サイトは必要な機能をサポートしない傾向にあるので、ウェブホスティ"
+#~ "ングのために代金を払う必要があります )"
+
+#~ msgid ""
+#~ "If the `patch` parameter is set to False, or an https url is given, the "
+#~ "updater will not attempt to patch the game. Instead, it will download the "
+#~ "full archive, and unpack that update. While this is a larger download, it "
+#~ "will work with many more web servers."
+#~ msgstr ""
+#~ "`patch` パラメーターが False に設定されるか https url が指定されるととアッ"
+#~ "プデーターはゲームにパッチを当てようとしません。代わりに完全なアーカイブを"
+#~ "ダウンロードし、アップデートを解凍します。これはダウンロードサイズを大きく"
+#~ "しますが、より多くのウェブサーバーで動作するようになります。"
+
+#~ msgid "*package*.sums"
+#~ msgstr "*package*.sums"
+
+#~ msgid "Contains checksums for each block in the package."
+#~ msgstr "そのパッケージの各ブロックのチェックサム"
+
+#~ msgid "*package*.update.gz"
+#~ msgstr "*package*.update.gz"
+
+#~ msgid "Contains the update data for the given package."
+#~ msgstr "特定のパッケージのアップデートデータを含んでいます。"
+
+#~ msgid "*package*.update.json"
+#~ msgstr "*package*.update.json"
+
+#~ msgid ""
+#~ "Contains a list of the files in each package, which the updater uses when "
+#~ "downloading DLC."
+#~ msgstr ""
+#~ "DLC をダウンロードするとき、アップデーターが使用する各パッケージのファイル"
+#~ "のリストが含まれます。"
+
+#~ msgid "*package*.zsync"
+#~ msgstr "*package*.zsync"
+
+#~ msgid "This is a control file that's used by zsync to manage the download."
+#~ msgstr ""
+#~ "これは zsync によってダウンロードを管理するために使用される制御ファイルで"
+#~ "す。"
+
+#~ msgid "Restart the game after the update."
+#~ msgstr "アップデート後にゲームを再起動します。"
 
 #~ msgid "HTTPS is not supported for patching."
 #~ msgstr "HTTPSはパッチ用途にはサポートされません。"

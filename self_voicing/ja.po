@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2023-04-29 17:43+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2023-11-23 12:59+0900\n"
+"PO-Revision-Date: 2023-12-16 20:06+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/self_voicing.rst:5
 msgid "Self-Voicing"
@@ -54,9 +54,9 @@ msgid ""
 "other text that comprises the game."
 msgstr ""
 "displayable がフォーカスされると、Ren'Py は displayable に関連付けられたテキ"
-"ストを発話します。displayable がフォーカスされていない場合は、Ren'Py は画面上"
-"のフォーカス不可能なテキストを発話します。これは一般に、会話や、ゲームを構成"
-"するその他のテキストを含みます。"
+"ストを読み上げします。displayable がフォーカスされていない場合は、Ren'Py は画"
+"面上のフォーカス不可能なテキストを読み上げます。これは一般に、会話や、ゲーム"
+"を構成するその他のテキストを含みます。"
 
 #: ../../source/self_voicing.rst:23
 msgid "Speech Synthesis"
@@ -69,8 +69,8 @@ msgid ""
 "platform's speech settings."
 msgstr ""
 "Ren'Py はオペレーティングシステムが提供する音声合成サービスに依存しています。"
-"音声合成の速度や使われる声を調整するには、お使いのプラットフォームの発話設定"
-"を調整してください。"
+"音声合成の速度や使われる声を調整するには、お使いのプラットフォームの読み上げ"
+"設定を調整してください。"
 
 #: ../../source/self_voicing.rst:32
 msgid "Windows"
@@ -156,23 +156,25 @@ msgstr ""
 "Ren'Py は Text displayable からテキストを抽出し、プレイヤーに対して読み上げら"
 "れるようにします。"
 
-#: ../../source/self_voicing.rst:105
+#: ../../source/self_voicing.rst:115
 msgid "Alternative text"
 msgstr "代替テキスト"
 
 #: ../../source/self_voicing.rst:73
 msgid ""
 "Alternative text is supplied by a displayable's :propref:`alt` style "
-"property. It can also be supplied by actions supplied to buttons and values "
-"supplied to bars. Explicitly supplied alternative takes precedence over text "
-"supplied by actions or values, and both take precedence over text extracted "
-"from Text displayables."
+"property. It can also be supplied by instances of the :class:`Action` and :"
+"class:`BarValue` classes. Explicitly supplied alternative text takes "
+"precedence over text supplied by Actions or BarValues, and both take "
+"precedence over text extracted from Text displayables."
 msgstr ""
-"代替テキストは、displayable の :propref:`alt` スタイルプロパティーで与えられ"
-"ます。テキストとして、ボタンに与えられるアクションや、バーに与えられる値も可"
-"能です。"
+"代替テキストは、displayable の :propref:`alt` スタイルプロパティー、および :"
+"class:`Action` と :class:`BarValue` クラスのインスタンスで与えられます。明示"
+"的に与えられた代替テキストは Action や BarValue から与えられされたテキストよ"
+"り優先され、 Action や BarValue のテキストはテキスト Displayable のテキストよ"
+"りも優先されます。"
 
-#: ../../source/self_voicing.rst:79
+#: ../../source/self_voicing.rst:80
 msgid ""
 "Alternative text is translated using Ren'Py's string translation mechanism. "
 "Alternative text takes precedence over text extracted from a displayable and "
@@ -184,11 +186,11 @@ msgstr ""
 "子のテキストでは \"[text]\" のような文字列置換が利用可能です。他の文字列置は"
 "許可されません。"
 
-#: ../../source/self_voicing.rst:85 ../../source/self_voicing.rst:118
+#: ../../source/self_voicing.rst:86 ../../source/self_voicing.rst:128
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/self_voicing.rst:95
+#: ../../source/self_voicing.rst:96
 msgid ""
 "In the above example, the ``badness`` and ``planet`` variables cannot be "
 "substituted directly using \"[badness]\". Concatenating it manually is a "
@@ -197,7 +199,7 @@ msgstr ""
 "上記の例では ``badness`` と ``planet`` 変数は \"[badness]\" のように使用して"
 "直接は置換できません。手動での文字列結合をしてください。"
 
-#: ../../source/self_voicing.rst:99
+#: ../../source/self_voicing.rst:100
 msgid ""
 "Supplying the `who_alt` and `what_alt` parameters to Character sets the alt "
 "style property for the character name and body text, respectively. As an "
@@ -209,11 +211,33 @@ msgstr ""
 "リックの使用で思考であることを示し、セルフボイシングではその内容で思考である"
 "ことを明示するキャラクターを定義します。 ::"
 
-#: ../../source/self_voicing.rst:133
+#: ../../source/self_voicing.rst:108
+msgid ""
+"In screens, displayables may be given the :scpref:`group_alt` property, "
+"which is used to give a group prefix that is spoken the first time a "
+"displayable with the same group prefix is focused, but will not be spoken "
+"again until a displayable with a different group prefix is focused."
+msgstr ""
+"スクリーンの Displayable には :scpref:`group_alt` プロパティーが指定されるこ"
+"とがあります。これを使用して同じグループ接頭辞を持つ Displayable が最初に"
+"フォーカスされた時に話され、他のグループ接頭辞を持つ Displayable がフォーカス"
+"されるまで話されないるグループ接頭辞を指定します。"
+
+#: ../../source/self_voicing.rst:113
+msgid ""
+"Displayables may also be given the :scpref:`extra_alt` property, which is "
+"spoken when the '?' key is pressed while the displayable is focused. This is "
+"intended for more detail information about how a group of controls works."
+msgstr ""
+"Displayable には :scpref:`extra_alt` プロパティーも指定されることがあり、これ"
+"はその Displayable がフォーカスされているときに '?' キーが押されると話されま"
+"す。あるグループのより詳細な情報提示を意図しています。"
+
+#: ../../source/self_voicing.rst:143
 msgid "Descriptive Text"
 msgstr "叙述テキスト"
 
-#: ../../source/self_voicing.rst:108
+#: ../../source/self_voicing.rst:118
 msgid ""
 "Descriptive text is text that is displayed (and spoken) by the narrator if "
 "self-voicing is enabled. The text is not displayed if self-voicing is "
@@ -224,7 +248,7 @@ msgstr ""
 "る ) テキストです。セルフボイシングが無効だとテキストは表示されません。セルフ"
 "ボイシングテキストはキャラクター同様に定義される :var:`sv` 変数を使用します。"
 
-#: ../../source/self_voicing.rst:115
+#: ../../source/self_voicing.rst:125
 msgid ""
 "A character-like object that uses the narrator to speak text if self-voicing "
 "is enabled."
@@ -232,11 +256,11 @@ msgstr ""
 "セルフボイシング有効時にテキストをナレーターに読み上げさせる character ライク"
 "なオブジェクトです。"
 
-#: ../../source/self_voicing.rst:128
+#: ../../source/self_voicing.rst:138
 msgid "There is a variable that controls descriptive text:"
 msgstr "叙述テキストを制御する変数もあります。"
 
-#: ../../source/self_voicing.rst:132
+#: ../../source/self_voicing.rst:142
 msgid ""
 "If not None, this should be a character object that is used to display the "
 "descriptive text, instead of the narrator."
@@ -244,7 +268,7 @@ msgstr ""
 "ナレーターの代わりに叙述テキストを表示するキャラクターオブジェクトか、 None "
 "を指定するべきです。"
 
-#: ../../source/self_voicing.rst:135
+#: ../../source/self_voicing.rst:145
 msgid ""
 "The :var:`config.tts_substitutions` variable can be used to substitute words "
 "in the text being spoken, to better control pronunciation. The :var:`config."
@@ -255,13 +279,38 @@ msgstr ""
 "て、より良い発音制御ができます。 :var:`config.tts_voice` 変数によりテキストを"
 "話すボイスをプラットフォームのボイスから選択できます。"
 
-#: ../../source/self_voicing.rst:140
+#: ../../source/self_voicing.rst:150
 msgid ""
 "A self-voicing debug mode can be enabled by typing Shift+Alt+V. This will "
 "display the text that would be voiced on the screen for development purposes."
 msgstr ""
 "Shif+alt+V でセルフボイシングデバッグモードになります。これは、読み上げるテキ"
 "ストをスクリーン上に表示する開発目的の機能です。"
+
+#: ../../source/self_voicing.rst:156
+msgid "Python"
+msgstr "Python"
+
+#: ../../source/self_voicing.rst:158
+msgid "The following functions are provided by the self-voicing system:"
+msgstr "次の関数がセルフボイシングシステムから提供されています。"
+
+#: ../../source/inc/self_voicing:5
+msgid ""
+"This queues `s` to be spoken. If `translate` is true, then the string will "
+"be translated before it is spoken. If `force` is true, then the string will "
+"be spoken even if self-voicing is disabled."
+msgstr ""
+"これは `s` の読み上げをキューします。。もし `translate` が true なら、文字列"
+"は翻訳されてから読み上げられます。 `force` が true の場合、セルフボイスが無効"
+"でも文字列は読み上げられます。"
+
+#: ../../source/inc/self_voicing:9
+msgid ""
+"This is intended for accsesibility purposes, and should not be used for "
+"gameplay purposes."
+msgstr ""
+"アクセサビリティーを意図しており、ゲームプレイ時の使用は意図していません。"
 
 #~ msgid "Android"
 #~ msgstr "Android"

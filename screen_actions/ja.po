@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-15 10:42+0900\n"
+"POT-Creation-Date: 2023-11-23 12:59+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -201,20 +201,315 @@ msgstr ""
 "None でなければ `transition` がスクリーンを表示または非表示するのに使用されま"
 "す。"
 
-#: ../../source/screen_actions.rst:35
+#: ../../source/screen_actions.rst:37
 msgid "Data Actions"
 msgstr "データアクション"
 
-#: ../../source/screen_actions.rst:37
-msgid "These set or toggle data."
-msgstr "これらはデータを設定またトグルします。"
+#: ../../source/screen_actions.rst:39
+msgid ""
+"A number of these actions, encompassing the most usual cases, follow a "
+"simple pattern shown in the following table:"
+msgstr ""
+"これらのアクションの一部は、最も一般的な場合を含め、次の表に示される単純なパ"
+"ターンに従います。"
+
+#: ../../source/screen_actions.rst:43
+msgid "Managers"
+msgstr "管理方式"
+
+#: ../../source/screen_actions.rst:43
+msgid "Accessors"
+msgstr "アクセス対象"
+
+#: ../../source/screen_actions.rst:45
+msgid "Variable"
+msgstr "変数"
+
+#: ../../source/screen_actions.rst:45
+msgid "ScreenVariable"
+msgstr "スクリーン変数"
+
+#: ../../source/screen_actions.rst:45
+msgid "LocalVariable"
+msgstr "ローカル変数"
+
+#: ../../source/screen_actions.rst:45
+msgid "Field"
+msgstr "フィールド"
+
+#: ../../source/screen_actions.rst:45
+msgid "Dict"
+msgstr "辞書"
+
+#: ../../source/screen_actions.rst:47
+msgid "Set"
+msgstr "セット"
+
+#: ../../source/screen_actions.rst:47
+msgid ":func:`SetVariable`"
+msgstr ":func:`SetVariable`"
+
+#: ../../source/screen_actions.rst:47
+msgid ":func:`SetScreenVariable`"
+msgstr ":func:`SetScreenVariable`"
+
+#: ../../source/screen_actions.rst:47
+msgid ":func:`SetLocalVariable`"
+msgstr ":func:`SetLocalVariable`"
+
+#: ../../source/screen_actions.rst:47
+msgid ":func:`SetField`"
+msgstr ":func:`SetField`"
+
+#: ../../source/screen_actions.rst:47
+msgid ":func:`SetDict`"
+msgstr ":func:`SetDict`"
+
+#: ../../source/screen_actions.rst:49
+msgid "Toggle"
+msgstr "トグル"
+
+#: ../../source/screen_actions.rst:49
+msgid ":func:`ToggleVariable`"
+msgstr ":func:`ToggleVariable`"
+
+#: ../../source/screen_actions.rst:49
+msgid ":func:`ToggleScreenVariable`"
+msgstr ":func:`ToggleScreenVariable`"
+
+#: ../../source/screen_actions.rst:49
+msgid ":func:`ToggleLocalVariable`"
+msgstr ":func:`ToggleLocalVariable`"
+
+#: ../../source/screen_actions.rst:49
+msgid ":func:`ToggleField`"
+msgstr ":func:`ToggleField`"
+
+#: ../../source/screen_actions.rst:49
+msgid ":func:`ToggleDict`"
+msgstr ":func:`ToggleDict`"
+
+#: ../../source/screen_actions.rst:51
+msgid "Cycle"
+msgstr "サイクル"
+
+#: ../../source/screen_actions.rst:51
+msgid ":func:`CycleVariable`"
+msgstr ":func:`CycleVariable`"
+
+#: ../../source/screen_actions.rst:51
+msgid ":func:`CycleScreenVariable`"
+msgstr ":func:`CycleScreenVariable`"
+
+#: ../../source/screen_actions.rst:51
+msgid ":func:`CycleLocalVariable`"
+msgstr ":func:`CycleLocalVariable`"
+
+#: ../../source/screen_actions.rst:51
+msgid ":func:`CycleField`"
+msgstr ":func:`CycleField`"
+
+#: ../../source/screen_actions.rst:51
+msgid ":func:`CycleDict`"
+msgstr ":func:`CycleDict`"
+
+#: ../../source/screen_actions.rst:53
+msgid "Increment"
+msgstr "インクリメント"
+
+#: ../../source/screen_actions.rst:53
+msgid ":func:`IncrementVariable`"
+msgstr ":func:`IncrementVariable`"
+
+#: ../../source/screen_actions.rst:53
+msgid ":func:`IncrementScreenVariable`"
+msgstr ":func:`IncrementScreenVariable`"
+
+#: ../../source/screen_actions.rst:53
+msgid ":func:`IncrementLocalVariable`"
+msgstr ":func:`IncrementLocalVariable`"
+
+#: ../../source/screen_actions.rst:53
+msgid ":func:`IncrementField`"
+msgstr ":func:`IncrementField`"
+
+#: ../../source/screen_actions.rst:53
+msgid ":func:`IncrementDict`"
+msgstr ":func:`IncrementDict`"
+
+#: ../../source/screen_actions.rst:56
+msgid ""
+"The accessors determine the target whose value will change, and the manager "
+"determines what the new value will be. Their behavior is relatively simple "
+"to grasp:"
+msgstr ""
+"アクセス対象は変更する値を持つ対象を決定し、管理方法は新しい値が何になるかを"
+"決定します。それらの動作の把握は比較的簡単です。"
+
+#: ../../source/screen_actions.rst:59
+msgid ""
+"The :abbr:`-Variable (SetVariable, ToggleVariable, CycleVariable, "
+"IncrementVariable)` actions change the value of the global variable called "
+"`name`, found in the general store. The `name` argument must be a string, "
+"and can be a simple name like \"strength\", or one with dots separating the "
+"variable from fields, like \"hero.strength\" or \"persistent.show_cutscenes"
+"\"."
+msgstr ""
+":abbr:`-Variable (SetVariable, ToggleVariable, CycleVariable, "
+"IncrementVariable)` アクションは、 `name` というグローバル変数の値を変更しま"
+"す。引数 `name` には文字列を指定します。 \"strength\" のような単純な名前や、 "
+"\"hero.strength\" や \"persistent.show_cutscenes\" のようにフィールドと変数を"
+"ドットで区切った名前も可能です。"
+
+#: ../../source/screen_actions.rst:63
+msgid ""
+"The :abbr:`-ScreenVariable (SetScreenVariable, ToggleScreenVariable, "
+"CycleScreenVariable, IncrementScreenVariable)` actions change the value of "
+"the variable called `name`, associated with the current top-level screen. In "
+"a `use`\\ d screen, this action sets the variable in the context of the "
+"screen containing all the `use`\\ d one(s)."
+msgstr ""
+":abbr:`-ScreenVariable (SetScreenVariable, ToggleScreenVariable, "
+"CycleScreenVariable, IncrementScreenVariable)` アクションは、現在のトップレベ"
+"ルスクリーンに関連付けられた `name` という変数の値を変更します。 `use` で使用"
+"されているスクリーンではこのアクションはすべての使用されているスクリーンを含"
+"んでいるスクリーンのコンテキストで変数を設定します。"
+
+#: ../../source/screen_actions.rst:67
+msgid ""
+"The :abbr:`-LocalVariable (SetLocalVariable, ToggleLocalVariable, "
+"CycleLocalVariable, IncrementLocalVariable)` actions change the value of the "
+"variable called `name`, taken locally to the screen it's in. This action is "
+"only useful in a screen that has been `use`\\ d by another screen (for more "
+"information, see :ref:`sl-use`). In all other cases, the -ScreenVariable "
+"actions should be preferred, as yielding better performance and allowing "
+"more of the screen to be cached. The -LocalVariable actions must be created "
+"in the context that the variable is set in - it can't be passed in from "
+"somewhere else."
+msgstr ""
+":abbr:`-LocalVariable (SetLocalVariable, ToggleLocalVariable, "
+"CycleLocalVariable, IncrementLocalVariable)` アクションは `name` というそのア"
+"クションがあるスクリーンにローカルで受け取られる変数の値を変更します。このア"
+"クションは、他のスクリーンによって `use` されたスクリーン内でのみ有効です（詳"
+"細は :ref:`sl-use` を参照）。他のすべてのケースでは、 -ScreenVariable アク"
+"ションの方がパフォーマンスが良く、より多くのスクリーンをキャッシュできるため"
+"好ましいです。 -LocalVariable アクションは、その変数が設定されるコンテキスト"
+"で作成される必要があり、外部からは渡せません。"
+
+#: ../../source/screen_actions.rst:74
+msgid ""
+"The :abbr:`-Field (SetField, ToggleField, CycleField, IncrementField)` "
+"actions change the value of the field called `field` of the object `object`."
+msgstr ""
+":abbr:`-Field (SetField, ToggleField, CycleField, IncrementField)` アクション"
+"はオブジェクト `object` の `field` というフィールドの値を変更します。"
+
+#: ../../source/screen_actions.rst:76
+msgid ""
+"The :abbr:`-Dict (SetDict, ToggleDict, CycleDict, IncrementDict)` actions "
+"change the value of the key `key` in the dictionary `dict` : they change "
+"``dict[key]``. This also works with lists."
+msgstr ""
+":abbr:`-Dict (SetDict, ToggleDict, CycleDict, IncrementDict)` アクションは辞"
+"書 `dict` のキー `key` に対する値を変更します。つまり ``dict[key]`` を変更し"
+"ます。これはリストにも動作します。"
+
+#: ../../source/screen_actions.rst:80
+msgid ""
+"The :abbr:`Set- (SetVariable, SetScreenVariable, SetLocalVariable, SetField, "
+"SetDict)` actions simply set the value of the target to the passed `value`. "
+"Note that this has nothing to do with ``set``, which is a builtin type in "
+"Python. ``target = value``"
+msgstr ""
+":abbr:`Set- (SetVariable, SetScreenVariable, SetLocalVariable, SetField, "
+"SetDict)` アクションは単純にターゲットの値を渡された `value` に設定します。こ"
+"れは Python の組み込み型である ``set`` とは無関係なので注意してください。 "
+"``target = value``"
+
+#: ../../source/screen_actions.rst:83
+msgid ""
+"The :abbr:`Toggle- (ToggleVariable, ToggleScreenVariable, "
+"ToggleLocalVariable, ToggleField, ToggleDict)` actions invert the boolean "
+"value of their target, between `true_value` (if given and not None) and "
+"`false_value` (same). When `true_value` and `false_value` are both None, "
+"``target = not target``"
+msgstr ""
+":abbr:`Toggle- (ToggleVariable, ToggleScreenVariable, ToggleLocalVariable, "
+"ToggleField, ToggleDict)` アクションはターゲットの真偽値を "
+"`true_value`( None 以外が指定されれば) と `false_value`( 同上 ) 間で反転しま"
+"す。 `true_value` と `false_value` が両方ともNoneの場合、 ``target = not "
+"target`` となります。"
+
+#: ../../source/screen_actions.rst:86
+msgid ""
+"The :abbr:`Cycle- (CycleVariable, CycleScreenVariable, CycleLocalVariable, "
+"CycleField, CycleDict)` actions cycle through the provided `values`, which "
+"must be a non-empty sequence (a list, tuple or range). If the target's value "
+"is not in the sequence at the time the action runs, it is set to the first "
+"value in the sequence. The `loop` parameter (defaulting to True) determines "
+"what happens when the `values` run out : if True it's started from the "
+"beginning, if False it raises an exception. The `reverse` parameter "
+"(defaulting to False) reverses the passed `values` sequence."
+msgstr ""
+":abbr:`Cycle- (CycleVariable, CycleScreenVariable, CycleLocalVariable, "
+"CycleField, CycleDict)` アクションは与えられた `values` を循環させ、 "
+"`values` は空でないシーケンス(リスト、タプルまたは range) でなくてはいけませ"
+"ん。アクションが実行されたときにターゲットの値がシーケンスの中にない場合、そ"
+"の値はシーケンスの最初の値に設定されます。 `loop` パラメータ (デフォルトは "
+"True) は `values` がなくなったときの処理を決定し、 True なら最初に戻ります。 "
+"False なら例外を投げます。 `reverse` パラメータ (デフォルトは False ) は、渡"
+"された `values` シーケンスを反転させます。"
+
+#: ../../source/screen_actions.rst:92
+msgid ""
+"The :abbr:`Increment- (IncrementVariable, IncrementScreenVariable, "
+"IncrementLocalVariable, IncrementField, IncrementDict)` actions add `amount` "
+"to their target, which defaults to 1 but may be of any type compatible with "
+"the target. ``target = target + amount``"
+msgstr ""
+":abbr:`Increment-(IncrementVariable、IncrementScreenVariable、"
+"IncrementLocalVariable、IncrementField、IncrementDict)` アクションは "
+"`amount` (デフォルトでは1です) をターゲットに加えます。 ``target = target + "
+"amount`` です。"
+
+#: ../../source/inc/generated_data_action:5
+#: ../../source/inc/generated_data_action:9
+#: ../../source/inc/generated_data_action:13
+#: ../../source/inc/generated_data_action:17
+#: ../../source/inc/generated_data_action:21
+#: ../../source/inc/generated_data_action:25
+#: ../../source/inc/generated_data_action:29
+#: ../../source/inc/generated_data_action:33
+#: ../../source/inc/generated_data_action:37
+#: ../../source/inc/generated_data_action:41
+#: ../../source/inc/generated_data_action:45
+#: ../../source/inc/generated_data_action:49
+#: ../../source/inc/generated_data_action:53
+#: ../../source/inc/generated_data_action:57
+#: ../../source/inc/generated_data_action:61
+#: ../../source/inc/generated_data_action:65
+#: ../../source/inc/generated_data_action:69
+#: ../../source/inc/generated_data_action:73
+#: ../../source/inc/generated_data_action:77
+#: ../../source/inc/generated_data_action:81
+msgid "See :ref:`data-actions`."
+msgstr ":ref:`data-actions` を参照してください。"
+
+#: ../../source/screen_actions.rst:98
+msgid ""
+"The following data actions do not follow the pattern above. Some of them are "
+"related to Python's ``set`` type, not to be confused with the Set- actions "
+"above."
+msgstr ""
+"次のデータアクションは上記のパターンに従いません。これらの一部は Python の "
+"``set`` 型に関係しますが、上記の Set-アクションと混同しないでください。"
 
 #: ../../source/inc/data_action:5
 msgid "Adds `value` to `set`."
 msgstr "`value` を `set` に追加します。"
 
 #: ../../source/inc/data_action:8 ../../source/inc/data_action:17
-#: ../../source/inc/data_action:130
+#: ../../source/inc/data_action:31
 msgid "`set`"
 msgstr "`set`"
 
@@ -227,12 +522,12 @@ msgstr ""
 "されます。"
 
 #: ../../source/inc/audio_action:55 ../../source/inc/data_action:10
-#: ../../source/inc/data_action:19 ../../source/inc/data_action:132
-#: ../../source/inc/value:9 ../../source/inc/value:126
+#: ../../source/inc/data_action:19 ../../source/inc/data_action:33
+#: ../../source/inc/value:9 ../../source/inc/value:165
 msgid "`value`"
 msgstr "`value`"
 
-#: ../../source/inc/data_action:11 ../../source/inc/data_action:133
+#: ../../source/inc/data_action:11 ../../source/inc/data_action:34
 msgid "The value to add or append."
 msgstr "追加または削除される値です。"
 
@@ -250,168 +545,13 @@ msgstr "削除される値です。"
 
 #: ../../source/inc/data_action:24
 msgid ""
-"Causes the value of `key` in `dict` to be set to `value`. This also works "
-"with lists, where `key` is the index at which the value will be set."
-msgstr ""
-"`dict` の `key` を `value` に設定します。これはリストでも動作し、その場合、 "
-"`key` は設定される値のインデックスになります。"
-
-#: ../../source/inc/data_action:30
-msgid ""
-"Causes the a field on an object to be set to a given value. `object` is the "
-"object, `field` is a string giving the name of the field to set, and `value` "
-"is the value to set it to."
-msgstr ""
-"オブジェクトのフィールドを与えられた値に設定します。 `object` にはオブジェク"
-"ト、 `field` には設定するフィールドの名前の文字列、 `value` には設定したい値"
-"を入れます。"
-
-#: ../../source/inc/data_action:36
-msgid ""
-"Causes the variable called `name` to be set to `value` in the current local "
-"context."
-msgstr "現在のローカルコンテキストで変数 `name` を `value` に設定します。"
-
-#: ../../source/inc/data_action:39
-msgid ""
-"This function is only useful in a screen that has been ``use``\\ d by "
-"another screen, as it provides a way of setting the value of a variable "
-"inside the used screen. In all other cases, :func:`SetScreenVariable` should "
-"be preferred, as it allows more of the screen to be cached."
-msgstr ""
-"この関数では ``use`` で使用されているスクリーン内の変数の値を設定できるので、"
-"そのスクリーンが他のスクリーンに使用されている場合有用です。そうでない場合は"
-"スクリーンのより多くをキャッシュできるので :func:`SetScreenVariable` がより有"
-"用です。"
-
-#: ../../source/inc/data_action:45 ../../source/inc/data_action:98
-msgid "For more information, see :ref:`sl-use`."
-msgstr "詳細は :ref:`sl-use` を参照してください。"
-
-#: ../../source/inc/data_action:47 ../../source/inc/data_action:100
-msgid ""
-"This must be created in the context that the variable is set in - it can't "
-"be passed in from somewhere else."
-msgstr ""
-"これはその変数が設定されるコンテキストで作成される必要があり、他からは渡せま"
-"せん。"
-
-#: ../../source/inc/data_action:52
-msgid ""
-"Causes the variable called `name` associated with the current screen to be "
-"set to `value`. In a ``use``\\ d screen, this action sets the variable in "
-"the context of the screen containing the ``use``\\ d one(s). To set "
-"variables within a ``use``\\ d screen, and only in that case, use :func:"
-"`SetLocalVariable` instead."
-msgstr ""
-"現在のスクリーンに関連づけられた `name` 変数を `value` に設定します。 "
-"``use`` で使用されているスクリーン内では、このアクションはそのスクリーンを内"
-"包しているスクリーンのコンテキストでその変数を設定します。使用されているスク"
-"リーン内で変数を設定する場合のみ :func:`SetLocalVariable` を代わりに使用して"
-"ください。"
-
-#: ../../source/inc/data_action:61
-msgid "Causes the variable called `name` to be set to `value`."
-msgstr "変数 `name` を `value` に設定します。"
-
-#: ../../source/inc/data_action:63
-msgid ""
-"The `name` argument must be a string, and can be a simple name like "
-"\"strength\", or one with dots separating the variable from fields, like "
-"\"hero.strength\" or \"persistent.show_cutscenes\"."
-msgstr ""
-"`name` 引数は文字列でなければならず、 \"strength\" のような単純な名前や  "
-"\"hero.strength\" や \"persistent.show_cutscenes\" のようなフィールドからドッ"
-"トで分けられた変数のような名前が可能です。"
-
-#: ../../source/inc/data_action:69
-msgid ""
-"Toggles the value of `key` in `dict`. It also works on lists, in which case "
-"`key` is the index of the value to toggle. Toggling means to invert the "
-"value when the action is performed."
-msgstr ""
-"`dict` の `key` の値をトグルします。リストに対しても動作し、その場合 `key` は"
-"トグルする値のインデックスになります。トグルとはアクションが実行されると、値"
-"が True が False に、 False が True に反転するということです。"
-
-#: ../../source/inc/data_action:73 ../../source/inc/data_action:83
-#: ../../source/inc/data_action:103 ../../source/inc/data_action:116
-#: ../../source/inc/data_action:144
-msgid "`true_value`"
-msgstr "`true_value`"
-
-#: ../../source/inc/data_action:74 ../../source/inc/data_action:104
-#: ../../source/inc/data_action:117 ../../source/inc/data_action:145
-msgid "If not None, then this is the true value used."
-msgstr "None を指定するか、 True として使用する値を指定します。"
-
-#: ../../source/inc/data_action:75 ../../source/inc/data_action:85
-#: ../../source/inc/data_action:105 ../../source/inc/data_action:118
-#: ../../source/inc/data_action:146
-msgid "`false_value`"
-msgstr "`false_value`"
-
-#: ../../source/inc/data_action:76 ../../source/inc/data_action:106
-#: ../../source/inc/data_action:119 ../../source/inc/data_action:147
-msgid "If not None, then this is the false value used."
-msgstr "None を指定するか、 False として使用する値を指定します。"
-
-#: ../../source/inc/data_action:80
-msgid ""
-"Toggles `field` on `object`. Toggling means to invert the boolean value of "
-"that field when the action is performed."
-msgstr ""
-"`object` の `field` をトグルします。トグルとは、アクション実行時にそのフィー"
-"ルドの真偽値を反転することです。"
-
-#: ../../source/inc/data_action:84
-msgid "If not None, then this is the true value we use."
-msgstr "None を指定するか、 True として使用する値を指定します。"
-
-#: ../../source/inc/data_action:86
-msgid "If not None, then this is the false value we use."
-msgstr "None を指定するか False として使用する値を指定します。"
-
-#: ../../source/inc/data_action:90
-msgid ""
-"Toggles the value of the variable called `name` in the current local context."
-msgstr "現在のローカルコンテキストでの `name` 変数の値をトグルします。"
-
-#: ../../source/inc/data_action:92
-msgid ""
-"This function is only useful in a screen that has been ``use``\\ d by "
-"another screen, as it provides a way of setting the value of a variable "
-"inside the used screen. In all other cases, :func:`ToggleScreenVariable` "
-"should be preferred, as it allows more of the screen to be cached."
-msgstr ""
-"この関数では ``use`` で使用されているスクリーン内の変数の値を設定できるので、"
-"そのスクリーンが他のスクリーンに使用されている場合有用です。そうでない場合は"
-"スクリーンのより多くをキャッシュできるので :func:`ToggleScreenVariable` がよ"
-"り有用です。"
-
-#: ../../source/inc/data_action:110
-msgid ""
-"Toggles the value of the variable called `name` in the current screen. In a "
-"``use``\\ d screen, this action accesses and sets the given variable in the "
-"context of the screen containing the ``use``\\ d one(s). To access and set "
-"variables within a ``use``\\ d screen, and only in that case, use :func:"
-"`ToggleLocalVariable` instead."
-msgstr ""
-"現在のスクリーンの `name` 変数の値をトグルします。 ``use`` で使用されているス"
-"クリーン内では、このアクションはそのスクリーンを内包しているスクリーンのコン"
-"テキストでその変数にアクセスし設定します。使用されているスクリーン内で変数に"
-"アクセスし設定する場合のみ :func:`ToggleLocalVariable` を代わりに使用してくだ"
-"さい。"
-
-#: ../../source/inc/data_action:123
-msgid ""
 "Toggles the membership of `value` in `set`. If the value is not in the set, "
 "it's added. Otherwise, it is removed."
 msgstr ""
 "`set` から `value` をトグルします。値が set になければ追加され、そうでなけれ"
 "ば削除されます。"
 
-#: ../../source/inc/data_action:126
+#: ../../source/inc/data_action:27
 msgid ""
 "Buttons with this action are marked as selected if and only if the value is "
 "in the set."
@@ -419,7 +559,7 @@ msgstr ""
 "このアクションを持つボタンはその set にその値があるときのみ選択状態としてマー"
 "クされます。"
 
-#: ../../source/inc/data_action:130
+#: ../../source/inc/data_action:31
 msgid ""
 "The set to add to or remove from. This may be a set or list. In the case of "
 "a list, new items are appended."
@@ -427,25 +567,11 @@ msgstr ""
 "追加する set です。これは python の set またはリストで、値がそれに付け加えら"
 "れます。"
 
-#: ../../source/inc/data_action:137
-msgid "Toggles the variable whose name is given in `variable`."
-msgstr "`variable` で指定した名前の変数をトグルします。"
-
-#: ../../source/inc/data_action:139
-msgid ""
-"The `variable` argument must be a string, and can be a simple name like "
-"\"strength\", or one with dots separating the variable from fields, like "
-"\"hero.strength\" or \"persistent.show_cutscenes\"."
-msgstr ""
-"`variable` 引数は文字列でなければならず、 \"strength\" のような単純な名前や  "
-"\"hero.strength\" や \"persistent.show_cutscenes\" のようなフィールドからドッ"
-"トで分けられた変数のような名前が可能です。"
-
-#: ../../source/screen_actions.rst:42
+#: ../../source/screen_actions.rst:104
 msgid "Menu Actions"
 msgstr "メニュー用アクション"
 
-#: ../../source/screen_actions.rst:44
+#: ../../source/screen_actions.rst:106
 msgid ""
 "These actions invoke menus, or are primarily useful while in the main or "
 "game menus."
@@ -581,11 +707,11 @@ msgstr "Start() - start ラベルからスタートする。"
 msgid "Start(\"foo\") - Start at the \"foo\" label."
 msgstr "Start(\"foo\") - 「 foo 」 ラベルからスタートする。"
 
-#: ../../source/screen_actions.rst:52
+#: ../../source/screen_actions.rst:114
 msgid "File Actions"
 msgstr "ファイルアクション"
 
-#: ../../source/screen_actions.rst:54
+#: ../../source/screen_actions.rst:116
 msgid ""
 "These actions handle saving, loading, and deleting of files. Many of these "
 "take the `name` and `page` arguments."
@@ -593,14 +719,14 @@ msgstr ""
 "これらのアクションはセーブ、ロード、ファイルの削除を扱い、多くは `name` や "
 "`page` 引数を受け取ります。"
 
-#: ../../source/screen_actions.rst:59 ../../source/inc/file_action:11
+#: ../../source/screen_actions.rst:121 ../../source/inc/file_action:11
 #: ../../source/inc/file_action:24 ../../source/inc/file_action:42
 #: ../../source/inc/file_action:114 ../../source/inc/focus_action:15
 #: ../../source/inc/focus_action:31 ../../source/inc/focus_action:40
 msgid "`name`"
 msgstr "`name`"
 
-#: ../../source/screen_actions.rst:58
+#: ../../source/screen_actions.rst:120
 msgid ""
 "The name of the file to save to. This can be a string or an integer. It's "
 "combined with the page to create the filename."
@@ -608,14 +734,14 @@ msgstr ""
 "セーブするファイルの名前。これは文字列か整数です。ファイルの名前を作成するた"
 "めに pageと結合されます。"
 
-#: ../../source/screen_actions.rst:64 ../../source/inc/file_action:15
+#: ../../source/screen_actions.rst:126 ../../source/inc/file_action:15
 #: ../../source/inc/file_action:31 ../../source/inc/file_action:49
 #: ../../source/inc/file_action:124 ../../source/inc/file_action_function:117
-#: ../../source/inc/input_value:44
+#: ../../source/inc/input_value:43
 msgid "`page`"
 msgstr "`page`"
 
-#: ../../source/screen_actions.rst:62
+#: ../../source/screen_actions.rst:124
 msgid ""
 "The page that this action acts on. This is one of \"auto\", \"quick\", or a "
 "positive integer. If None, the page is determined automatically, based on a "
@@ -625,7 +751,7 @@ msgstr ""
 "いずれかです。 None の場合、 persistent._file_page に基づき自動的に決定されま"
 "す。"
 
-#: ../../source/screen_actions.rst:66
+#: ../../source/screen_actions.rst:128
 msgid ""
 "These are converted to a slot name using :var:`config."
 "file_slotname_callback`, if it's set."
@@ -759,7 +885,7 @@ msgstr ""
 "に戻ります。"
 
 #: ../../source/inc/file_action:79 ../../source/inc/file_action:99
-#: ../../source/inc/file_action_function:94 ../../source/inc/input_value:37
+#: ../../source/inc/file_action_function:94 ../../source/inc/input_value:36
 msgid "`auto`"
 msgstr "`auto`"
 
@@ -770,7 +896,7 @@ msgid ""
 msgstr "True かつ wrap が設定されていれば、自動セーブのページに移動します。"
 
 #: ../../source/inc/file_action:82 ../../source/inc/file_action:102
-#: ../../source/inc/file_action_function:97 ../../source/inc/input_value:40
+#: ../../source/inc/file_action_function:97 ../../source/inc/input_value:39
 msgid "`quick`"
 msgstr "`quick`"
 
@@ -835,9 +961,9 @@ msgstr ""
 "True の場合、提供されたページのセーブはユーザーに表示される前に一回りしま"
 "す。 :var:`config.quicksave_slots` が回すときに使用されます。"
 
-#: ../../source/inc/file_action:135 ../../source/inc/value:55
-#: ../../source/inc/value:83 ../../source/inc/value:117
-#: ../../source/inc/value:156
+#: ../../source/inc/file_action:135 ../../source/inc/value:56
+#: ../../source/inc/value:84 ../../source/inc/value:118
+#: ../../source/inc/value:157 ../../source/inc/value:195
 msgid "`action`"
 msgstr "`action`"
 
@@ -879,7 +1005,7 @@ msgstr "クイックセーブが終了するとユーザーに表示されるメ
 msgid "Set to true to mark the quicksave as the newest save."
 msgstr "最新のセーブとしてクイックセーブをマークする場合は True に設定します。"
 
-#: ../../source/screen_actions.rst:72
+#: ../../source/screen_actions.rst:134
 msgid "Sync Actions"
 msgstr "同期アクション"
 
@@ -897,11 +1023,11 @@ msgstr ""
 "このアクションは最も最近のセーブを Ren'Py 同期サーバーにアップロードするプロ"
 "セスを開始します。"
 
-#: ../../source/screen_actions.rst:80
+#: ../../source/screen_actions.rst:142
 msgid "Audio Actions"
 msgstr "オーディオアクション"
 
-#: ../../source/screen_actions.rst:82
+#: ../../source/screen_actions.rst:144
 msgid ""
 "The concept of channels and how they work, as well as most information about "
 "audio in Ren'Py, is explained at :doc:`audio`."
@@ -991,7 +1117,7 @@ msgid "Sets the volume of `mixer` to `value`."
 msgstr "`mixer` の音量を `value` に設定します。"
 
 #: ../../source/inc/audio_action:52 ../../source/inc/audio_action:65
-#: ../../source/inc/audio_action:84 ../../source/inc/value:92
+#: ../../source/inc/audio_action:84 ../../source/inc/value:127
 msgid "`mixer`"
 msgstr "`mixer`"
 
@@ -1050,7 +1176,7 @@ msgstr "その他のキーワード引数は :func:`renpy.music.stop` に渡さ�
 msgid "Toggles the mute status of one or more mixers."
 msgstr "ひとつ以上のミキサーのミュート状態をトグルします。"
 
-#: ../../source/screen_actions.rst:89
+#: ../../source/screen_actions.rst:151
 msgid "Focus Actions"
 msgstr "フォーカスアクション"
 
@@ -1112,11 +1238,11 @@ msgid "If the focus rectangle exists, clears it, otherwise captures it."
 msgstr ""
 "フォーカスされた矩形があればそれをクリアし、そうでなければそれを保存します。"
 
-#: ../../source/screen_actions.rst:94
+#: ../../source/screen_actions.rst:156
 msgid "Other Actions"
 msgstr "その他のアクション"
 
-#: ../../source/screen_actions.rst:96
+#: ../../source/screen_actions.rst:158
 msgid "These are other actions, not found anywhere else."
 msgstr "他に分類されないその他のアクションがあります。"
 
@@ -1544,7 +1670,7 @@ msgstr "True ならスキップを開始する前に確認します。"
 msgid "Causes `transition` to occur."
 msgstr "`transition` を実行します。"
 
-#: ../../source/screen_actions.rst:100
+#: ../../source/screen_actions.rst:162
 msgid ""
 "Additional actions are available in other pages of this documentation, such "
 "as :class:`Language`, :class:`Replay` and :class:`EndReplay`, :class:`gui."
@@ -1556,15 +1682,15 @@ msgstr ""
 "TogglePreference`, :class:`StylePreference`, :ref:`voice actions <voice-"
 "actions>` のような他のアクションも参照可能です。"
 
-#: ../../source/screen_actions.rst:105
+#: ../../source/screen_actions.rst:167
 msgid "Other actions can be created using the :class:`Action` class."
 msgstr "他のアクションも :class:`Action` クラスを使用して作成できます。"
 
-#: ../../source/screen_actions.rst:111
+#: ../../source/screen_actions.rst:173
 msgid "Bar Values"
 msgstr "Bar Values"
 
-#: ../../source/screen_actions.rst:113
+#: ../../source/screen_actions.rst:175
 msgid ""
 "Bar values are used with bars, to set the bar value, and to allow the bar to "
 "adjust an underlying property. To create a new bar value, subclass the :"
@@ -1585,13 +1711,14 @@ msgstr ""
 "これはアニメーション用の value で、 `delay` 秒かけて `old_value` から "
 "`value` に変化します。"
 
-#: ../../source/inc/value:9 ../../source/inc/value:126
+#: ../../source/inc/value:9 ../../source/inc/value:165
 msgid "The value itself, a number."
 msgstr "値の数字です。"
 
 #: ../../source/inc/value:12 ../../source/inc/value:40
-#: ../../source/inc/value:67 ../../source/inc/value:101
-#: ../../source/inc/value:128 ../../source/inc/value:140
+#: ../../source/inc/value:68 ../../source/inc/value:102
+#: ../../source/inc/value:141 ../../source/inc/value:167
+#: ../../source/inc/value:179
 msgid "`range`"
 msgstr "`range`"
 
@@ -1630,124 +1757,196 @@ msgid "How often the value updates, in seconds."
 msgstr "しばしば値は秒毎に更新されます。"
 
 #: ../../source/inc/value:33
-msgid "A value that allows the user to adjust the value of a key in a dict."
-msgstr "ユーザーが辞書のキーの値を調整出来るようにする value です。"
+msgid ""
+"A bar value that allows the user to adjust the value of a key in a dict, or "
+"of an element at a particular index in a list."
+msgstr ""
+"ユーザーが辞書のあるキーやリストの特定のインデックスの値を調整出来るようにす"
+"る value です。"
 
-#: ../../source/inc/value:36
+#: ../../source/inc/input_value:7 ../../source/inc/value:36
 msgid "`dict`"
 msgstr "`dict`"
 
 #: ../../source/inc/value:37
-msgid "The dict."
-msgstr "辞書"
+msgid "The dict, or the list."
+msgstr "辞書またはリストです。"
 
 #: ../../source/inc/value:38
 msgid "`key`"
 msgstr "`key`"
 
 #: ../../source/inc/value:39
-msgid "The key."
-msgstr "キー"
+msgid "The key, or the index when using a list."
+msgstr "キーまたはリストに使用するインデックスです。"
 
-#: ../../source/inc/value:41 ../../source/inc/value:68
-#: ../../source/inc/value:102 ../../source/inc/value:141
+#: ../../source/inc/value:41 ../../source/inc/value:69
+#: ../../source/inc/value:103 ../../source/inc/value:142
+#: ../../source/inc/value:180
 msgid "The range to adjust over."
 msgstr "調整の範囲"
 
-#: ../../source/inc/value:46 ../../source/inc/value:74
-#: ../../source/inc/value:108 ../../source/inc/value:147
+#: ../../source/inc/value:47 ../../source/inc/value:75
+#: ../../source/inc/value:109 ../../source/inc/value:148
+#: ../../source/inc/value:186
 msgid "`max_is_zero`"
 msgstr "`max_is_zero`"
 
 #: ../../source/inc/value:43
 msgid ""
-"If True, then when the value of a key is zero, the value of the bar will be "
-"range, and all other values will be shifted down by 1. This works both ways "
-"- when the bar is set to the maximum, the value of a key is set to 0."
+"If True, then when the key or index's value is zero, the value of the bar "
+"will be `range`, and all other values will be shifted down by 1. This works "
+"both ways - when the bar is set to the maximum, the value of the key or "
+"index is set to 0."
 msgstr ""
-"True ならキーの値が 0 の時にこのバーの値は最大となり、それ以外の値では 1 に上"
-"がっていきます。これはバーが最大に設定されるか、キーの値が 0 に設定されるかの"
-"両方の方法で動作します。"
+"True ならそのキーまたインデックスの値が 0 の時にこのバーの値は `range` とな"
+"り、それ以外の値では 1 まで上がっていきます。これはバーが最大に設定されるか、"
+"そのキーまたインデックスの値が 0 に設定されるかの両方の方法で動作します。"
 
 #: ../../source/inc/value:48 ../../source/inc/value:76
 #: ../../source/inc/value:110 ../../source/inc/value:149
-msgid "`style`"
-msgstr "`style`"
+#: ../../source/inc/value:187
+msgid "This is used internally, for some preferences."
+msgstr "これはいくつかの preferences の内部で使用されています。"
 
 #: ../../source/inc/value:49 ../../source/inc/value:77
 #: ../../source/inc/value:111 ../../source/inc/value:150
-msgid "The styles of the bar created."
-msgstr "作成されるバーのスタイル"
+#: ../../source/inc/value:188
+msgid "`style`"
+msgstr "`style`"
 
 #: ../../source/inc/value:50 ../../source/inc/value:78
 #: ../../source/inc/value:112 ../../source/inc/value:151
-msgid "`offset`"
-msgstr "`offset`"
+#: ../../source/inc/value:189
+msgid "The styles of the created bar."
+msgstr "作成されるバーのスタイル"
 
 #: ../../source/inc/value:51 ../../source/inc/value:79
 #: ../../source/inc/value:113 ../../source/inc/value:152
+#: ../../source/inc/value:190
+msgid "`offset`"
+msgstr "`offset`"
+
+#: ../../source/inc/value:52 ../../source/inc/value:80
+#: ../../source/inc/value:114 ../../source/inc/value:153
+#: ../../source/inc/value:191
 msgid "An offset to add to the value."
 msgstr "値に加えられるオフセット"
 
-#: ../../source/inc/value:53 ../../source/inc/value:81
-#: ../../source/inc/value:115 ../../source/inc/value:154
+#: ../../source/inc/value:54 ../../source/inc/value:82
+#: ../../source/inc/value:116 ../../source/inc/value:155
+#: ../../source/inc/value:193
 msgid "`step`"
 msgstr "`step`"
 
-#: ../../source/inc/value:53 ../../source/inc/value:81
-#: ../../source/inc/value:115 ../../source/inc/value:154
+#: ../../source/inc/value:54 ../../source/inc/value:82
+#: ../../source/inc/value:116 ../../source/inc/value:155
+#: ../../source/inc/value:193
 msgid ""
 "The amount to change the bar by. If None, defaults to 1/10th of the bar."
 msgstr "バーが変更する量。 None の場合、デフォルトでバーの10分の1です。"
 
-#: ../../source/inc/value:56 ../../source/inc/value:84
-#: ../../source/inc/value:118 ../../source/inc/value:157
-msgid "If not None, an action to call when the field has changed."
-msgstr "None でなければ field が変更されたとき呼び出されるアクションです。"
+#: ../../source/inc/value:57
+msgid ""
+"If not None, an action to call when the key or index's value is changed."
+msgstr ""
+"None でなければキーまたインデックスが変更されたとき呼び出されるアクションで"
+"す。"
 
-#: ../../source/inc/value:60
+#: ../../source/inc/value:61
 msgid ""
 "A bar value that allows the user to adjust the value of a field on an object."
 msgstr ""
 "ユーザーがオブジェクトのフィールドの値を調整できるようにする bar value です。"
 
-#: ../../source/inc/value:63
+#: ../../source/inc/value:64
 msgid "`object`"
 msgstr "`object`"
 
-#: ../../source/inc/value:64
+#: ../../source/inc/value:65
 msgid "The object."
 msgstr "オブジェクト"
 
-#: ../../source/inc/input_value:19 ../../source/inc/value:65
+#: ../../source/inc/input_value:19 ../../source/inc/value:66
 msgid "`field`"
 msgstr "`field`"
 
-#: ../../source/inc/value:66
-msgid "The field, a string."
-msgstr "フィールドの文字列"
+#: ../../source/inc/value:67
+msgid "The field name, a string."
+msgstr "フィールド名の文字列"
 
-#: ../../source/inc/value:70 ../../source/inc/value:104
-#: ../../source/inc/value:143
+#: ../../source/inc/value:71
 msgid ""
-"If True, then when the field is zero, the value of the bar will be range, "
-"and all other values will be shifted down by 1. This works both ways - when "
-"the bar is set to the maximum, the field is set to 0."
+"If True, then when the field's value is zero, the value of the bar will be "
+"`range`, and all other values will be shifted down by 1. This works both "
+"ways - when the bar is set to the maximum, the value of the field is set to "
+"0."
 msgstr ""
-"True ならフィールドが 0 の時にこのバーの値は最大となり、それ以外の値では 1  "
-"に上がっていきます。これはバーが最大に設定されるか、フィールドが 0 に設定され"
-"るかの両方の方法で動作します。"
+"True ならフィールドが 0 の時にこのバーの値は `range` となり、それ以外の値で"
+"は 1 まで上がっていきます。これはバーが最大に設定されるか、フィールドが 0 に"
+"設定されるかの両方の方法で動作します。"
 
-#: ../../source/inc/value:75 ../../source/inc/value:109
-#: ../../source/inc/value:148
-msgid "This is used internally, for some preferences."
-msgstr "これはいくつかの preferences の内部で使用されています。"
+#: ../../source/inc/value:85
+msgid "If not None, an action to call when the field's value is changed."
+msgstr "None でなければ field が変更されたとき呼び出されるアクションです。"
 
-#: ../../source/inc/value:88
+#: ../../source/inc/value:89
+msgid ""
+"A bar value that adjusts the value of a variable in a ``use``\\ d screen."
+msgstr "``use`` で使用されているスクリーンの変数の値を調整する bar valueです。"
+
+#: ../../source/inc/value:92
+msgid ""
+"To target a variable in a top-level screen, prefer using :func:"
+"`ScreenVariableValue`."
+msgstr ""
+"トップレベル screen の変数を対象にするには :func:`ScreenVariableValue` を使用"
+"してください。"
+
+#: ../../source/inc/input_value:55 ../../source/inc/value:95
+msgid "For more information, see :ref:`sl-use`."
+msgstr "詳細は :ref:`sl-use` を参照してください。"
+
+#: ../../source/inc/input_value:57 ../../source/inc/value:97
+msgid ""
+"This must be created in the context that the variable is set in - it can't "
+"be passed in from somewhere else."
+msgstr ""
+"これはその変数が設定されるコンテキストで作成される必要があり、他からは渡せま"
+"せん。"
+
+#: ../../source/inc/input_value:60 ../../source/inc/input_value:77
+#: ../../source/inc/input_value:93 ../../source/inc/value:100
+#: ../../source/inc/value:139 ../../source/inc/value:177
+msgid "`variable`"
+msgstr "`variable`"
+
+#: ../../source/inc/value:101 ../../source/inc/value:140
+msgid "A string giving the name of the variable to adjust."
+msgstr "調整する変数の名前の文字列"
+
+#: ../../source/inc/value:105
+msgid ""
+"If True, then when the local variable's value is zero, the value of the bar "
+"will be `range`, and all other values will be shifted down by 1. This works "
+"both ways - when the bar is set to the maximum, the value of the local "
+"variable is set to 0."
+msgstr ""
+"True ならローカル変数の値が 0 の時にこのバーの値は `range` となり、それ以外の"
+"値では 1 にまで上がっていきます。これはバーが最大に設定されるか、ローカル変数"
+"の値が 0 に設定されるかの両方の方法で動作します。"
+
+#: ../../source/inc/value:119
+msgid ""
+"If not None, an action to call when the local variable's value is changed."
+msgstr ""
+"None でなければローカル変数が変更されたとき呼び出されるアクションです。"
+
+#: ../../source/inc/value:123
 msgid "The value of an audio mixer."
 msgstr "オーディオミキサーの value です。"
 
-#: ../../source/inc/value:91
+#: ../../source/inc/value:126
 msgid ""
 "The name of the mixer to adjust. This is usually one of \"main\", \"music\", "
 "\"sfx\", or \"voice\". See :ref:`volume` for more information."
@@ -1755,35 +1954,54 @@ msgstr ""
 "調整するミキサーの名前です。これは通常「main」か「music」、「sfx」、「voice」"
 "です。詳細は :ref:`volume` を参照してください。"
 
-#: ../../source/inc/value:97
+#: ../../source/inc/value:132
 msgid "A bar value that adjusts the value of a variable in a screen."
 msgstr "スクリーン変数の値を調整する bar valueです。"
 
-#: ../../source/inc/input_value:54 ../../source/inc/input_value:72
-#: ../../source/inc/value:99 ../../source/inc/value:138
-msgid "`variable`"
-msgstr "`variable`"
+#: ../../source/inc/value:134
+msgid ""
+"In a ``use``\\ d screen, this targets a variable in the context of the "
+"screen containing the ``use``\\ d one(s). To target variables within a "
+"``use``\\ d screen, and only in that case, use :func:`LocalVariableValue` "
+"instead."
+msgstr ""
+"``use`` で使用されているスクリーン内では、これはそのスクリーンを含んでいるス"
+"クリーンのコンテキストでその変数を設定します。使用されているスクリーン内の変"
+"数を設定する場合のみ :func:`LocalVariableValue` を代わりに使用してください。"
 
-#: ../../source/inc/value:100
-msgid "A string giving the name of the variable to adjust."
-msgstr "調整する変数の名前の文字列"
+#: ../../source/inc/value:144
+msgid ""
+"If True, then when the screen variable's value is zero, the value of the bar "
+"will be `range`, and all other values will be shifted down by 1. This works "
+"both ways - when the bar is set to the maximum, the value of the screen "
+"variable is set to 0."
+msgstr ""
+"True ならスクリーン変数の値が 0 の時にこのバーの値は `range` となり、それ以外"
+"の値では 1 にまで上がっていきます。これはバーが最大に設定されるか、スクリーン"
+"変数の値が 0 に設定されるかの両方の方法で動作します。"
 
-#: ../../source/inc/value:123
+#: ../../source/inc/value:158
+msgid ""
+"If not None, an action to call when the screen variable's value is changed."
+msgstr ""
+"None でなければスクリーン変数が変更されたとき呼び出されるアクションです。"
+
+#: ../../source/inc/value:162
 msgid "This allows a value to be specified statically."
 msgstr "指定した値に固定します。"
 
-#: ../../source/inc/value:129
+#: ../../source/inc/value:168
 msgid "The range of the value."
 msgstr "値の範囲"
 
-#: ../../source/inc/value:133
+#: ../../source/inc/value:172
 msgid ""
 "A bar value that allows the user to adjust the value of a variable in the "
 "default store."
 msgstr ""
 "ユーザーがデフォルト store の変数の値を調整出来るようにする bar value です。"
 
-#: ../../source/inc/input_value:70 ../../source/inc/value:137
+#: ../../source/inc/input_value:92 ../../source/inc/value:176
 msgid ""
 "The `variable` parameter must be a string, and can be a simple name like "
 "\"strength\", or one with dots separating the variable from fields, like "
@@ -1793,7 +2011,22 @@ msgstr ""
 "\"hero.strength\" や \"persistent.show_cutscenes\" のようなフィールドからドッ"
 "トで分けられた変数のような名前が可能です。"
 
-#: ../../source/inc/value:161
+#: ../../source/inc/value:182
+msgid ""
+"If True, then when the variable's value is zero, the value of the bar will "
+"be `range`, and all other values will be shifted down by 1. This works both "
+"ways - when the bar is set to the maximum, the value of the variable is set "
+"to 0."
+msgstr ""
+"True なら変数の値が 0 の時にこのバーの値は `range` となり、それ以外の値では "
+"1 にまで上がっていきます。これはバーが最大に設定されるか、変数の値が 0 に設定"
+"されるかの両方の方法で動作します。"
+
+#: ../../source/inc/value:196
+msgid "If not None, an action to call when the variable's value is changed."
+msgstr "None でなければ変数が変更されたとき呼び出されるアクションです。"
+
+#: ../../source/inc/value:200
 msgid ""
 "The value of an adjustment that horizontally scrolls the viewport with the "
 "given id, on the current screen. The viewport must be defined before a bar "
@@ -1803,7 +2036,7 @@ msgstr ""
 "value です。その viewport はこの value のバーの定義前に定義されなければいけま"
 "せん。"
 
-#: ../../source/inc/value:167
+#: ../../source/inc/value:206
 msgid ""
 "The value of an adjustment that vertically scrolls the viewport with the "
 "given id, on the current screen. The viewport must be defined before a bar "
@@ -1813,11 +2046,11 @@ msgstr ""
 "value です。その viewport はこの value のバーの定義前に定義されなければいけま"
 "せん。"
 
-#: ../../source/screen_actions.rst:124
+#: ../../source/screen_actions.rst:186
 msgid "Input Values"
 msgstr "Input Values"
 
-#: ../../source/screen_actions.rst:126
+#: ../../source/screen_actions.rst:188
 msgid ""
 "Input values are used with text inputs, to set the default text, to accept "
 "changed text, to respond to the enter key, and to determine if the text is "
@@ -1829,7 +2062,7 @@ msgstr ""
 "か設定します。新しい input value を作成するには :class:`InputValue` のサブク"
 "ラスを作成してください。"
 
-#: ../../source/screen_actions.rst:131
+#: ../../source/screen_actions.rst:193
 msgid ""
 "Ren'Py-defined input values inherit from InputValue, which means that all "
 "values also include Enable(), Disable(), and Toggle() methods that return "
@@ -1838,54 +2071,60 @@ msgid ""
 msgstr ""
 "Ren'Py 定義の input value は InputValue を継承していて、すべての value は編集"
 "を有効、無効、トグルするアクションを返す Enable(), Disable(), Toggle() メソッ"
-"ドを含んでいます。 :func:`DisableAllInputValues`  アクションも参照してくださ"
+"ドを含んでいます。 :func:`DisableAllInputValues` アクションも参照してくださ"
 "い。"
 
 #: ../../source/inc/input_value:5
-msgid "An input value that updates `key` in `dict`."
-msgstr "`dict` の `key` を更新する input value です。"
+msgid "An input value that updates ``dict[key]``."
+msgstr "``dict[key]`` を更新する input value です。"
 
-#: ../../source/inc/input_value:8 ../../source/inc/input_value:22
-#: ../../source/inc/input_value:46 ../../source/inc/input_value:57
-#: ../../source/inc/input_value:75
+#: ../../source/inc/input_value:8
+msgid "May be a dict object or a list."
+msgstr "辞書またはリストのはずです。"
+
+#: ../../source/inc/input_value:9 ../../source/inc/input_value:21
+#: ../../source/inc/input_value:45 ../../source/inc/input_value:62
+#: ../../source/inc/input_value:79 ../../source/inc/input_value:95
 msgid "`default`"
 msgstr "`default`"
 
-#: ../../source/inc/input_value:8 ../../source/inc/input_value:22
-#: ../../source/inc/input_value:47 ../../source/inc/input_value:57
-#: ../../source/inc/input_value:75
+#: ../../source/inc/input_value:10 ../../source/inc/input_value:22
+#: ../../source/inc/input_value:46 ../../source/inc/input_value:63
+#: ../../source/inc/input_value:80 ../../source/inc/input_value:96
 msgid "If true, this input can be editable by default."
 msgstr "True ならこの input はデフォルトで変更可能です。"
 
-#: ../../source/inc/input_value:11 ../../source/inc/input_value:25
-#: ../../source/inc/input_value:60 ../../source/inc/input_value:78
+#: ../../source/inc/input_value:12 ../../source/inc/input_value:24
+#: ../../source/inc/input_value:65 ../../source/inc/input_value:82
+#: ../../source/inc/input_value:98
 msgid "`returnable`"
 msgstr "`returnable`"
 
-#: ../../source/inc/input_value:11 ../../source/inc/input_value:25
-#: ../../source/inc/input_value:60 ../../source/inc/input_value:78
+#: ../../source/inc/input_value:12 ../../source/inc/input_value:24
+#: ../../source/inc/input_value:65 ../../source/inc/input_value:82
+#: ../../source/inc/input_value:98
 msgid ""
 "If true, the value of this input will be returned when the user presses "
 "enter."
 msgstr "True なら、ユーザーがエンターを押すと、この入力の値が返されます。"
 
-#: ../../source/inc/input_value:16
+#: ../../source/inc/input_value:17
 msgid "An input value that updates `field` on `object`."
 msgstr "`object` の `field` を更新する input value です。"
 
-#: ../../source/inc/input_value:19
+#: ../../source/inc/input_value:20
 msgid "A string giving the name of the field."
 msgstr "フィールドの名前の文字列"
 
-#: ../../source/inc/input_value:30
+#: ../../source/inc/input_value:29
 msgid "An input value that updates the name of a file page."
 msgstr "ファイルページの名前を更新する input value です。"
 
-#: ../../source/inc/input_value:34
+#: ../../source/inc/input_value:33
 msgid "`pattern`"
 msgstr "`pattern`"
 
-#: ../../source/inc/input_value:33
+#: ../../source/inc/input_value:32
 msgid ""
 "This is used for the default name of a page. Python-style substition is "
 "performed, such that {} is replaced with the number of the page."
@@ -1893,46 +2132,72 @@ msgstr ""
 "ページのデフォルト名に使用されます。 Python スタイル置換で処理され、 {} が"
 "ページ番号で置き換えられます。"
 
-#: ../../source/inc/input_value:37
+#: ../../source/inc/input_value:36
 msgid "The name of the autosave page."
 msgstr "オートセーブページの名前です"
 
-#: ../../source/inc/input_value:40
+#: ../../source/inc/input_value:39
 msgid "The name of the quicksave page."
 msgstr "クイックセーブページの名前です"
 
-#: ../../source/inc/input_value:43
+#: ../../source/inc/input_value:42
 msgid ""
 "If given, the number of the page to display. This should usually be left as "
 "None, to give the current page."
 msgstr ""
 "表示するページの数字です。現在のページを指定するなら None のままにします。"
 
-#: ../../source/inc/input_value:51
-msgid "An input value that updates variable."
-msgstr "変数を更新する input value です。"
+#: ../../source/inc/input_value:50
+msgid "An input value that updates a local variable in a ``use``\\ d screen."
+msgstr ""
+"``use`` で使用されているスクリーンのローカル変数を更新する input value です。"
 
-#: ../../source/inc/input_value:54 ../../source/inc/input_value:68
+#: ../../source/inc/input_value:52
+msgid ""
+"To target a variable in a top-level screen, prefer using :func:"
+"`ScreenVariableInputValue`."
+msgstr ""
+"トップレベル screen の変数を対象にするには :func:`ScreenVariableInputValue` "
+"を使用してください。"
+
+#: ../../source/inc/input_value:61 ../../source/inc/input_value:78
+#: ../../source/inc/input_value:90
 msgid "A string giving the name of the variable to update."
 msgstr "更新する変数の名前の文字列"
 
-#: ../../source/inc/input_value:65
+#: ../../source/inc/input_value:70
+msgid "An input value that updates a variable in a screen."
+msgstr "スクリーンの変数を更新する input value です。"
+
+#: ../../source/inc/input_value:72
+msgid ""
+"In a ``use``\\ d screen, this targets a variable in the context of the "
+"screen containing the ``use``\\ d one(s). To target variables within a "
+"``use``\\ d screen, and only in that case, use :func:"
+"`LocalVariableInputValue` instead."
+msgstr ""
+"``use`` で使用されているスクリーン内では、これははそのスクリーンを含んでいる"
+"スクリーンのコンテキストでその変数を設定します。使用されているスクリーン内の"
+"変数を設定する場合のみ :func:`LocalVariableInputValue` を代わりに使用してくだ"
+"さい。"
+
+#: ../../source/inc/input_value:87
 msgid "An input value that updates `variable`."
 msgstr "`variable` を更新する input value です。"
 
-#: ../../source/screen_actions.rst:140
+#: ../../source/screen_actions.rst:202
 msgid "Functions and Classes"
 msgstr "関数とクラス"
 
-#: ../../source/screen_actions.rst:142
+#: ../../source/screen_actions.rst:204
 msgid "These functions and classes are useful in association with screens."
 msgstr "これらの関数やクラスはスクリーンと連携させると便利です。"
 
-#: ../../source/screen_actions.rst:145
+#: ../../source/screen_actions.rst:207
 msgid "Preferences"
 msgstr "Preferences"
 
-#: ../../source/screen_actions.rst:147
+#: ../../source/screen_actions.rst:209
 msgid ""
 "While all preferences can be defined based on the Actions and Values given "
 "above, it requires some knowledge of Ren'Py to figure out the correct one to "
@@ -2658,50 +2923,74 @@ msgstr ""
 "きにボイスの再生を続けるかトグルします。"
 
 #: ../../source/inc/preference_action:158
+msgid ""
+"Preference(\"restore window position\", \"enable\") - Will cause the window "
+"position to be restored when the game is started."
+msgstr ""
+"Preference(\"restore window position\", \"enable\") - ゲーム開始時にウィンド"
+"ウ位置を復元します。"
+
+#: ../../source/inc/preference_action:159
+msgid ""
+"Preference(\"restore window position\", \"disable\") - Will cause the window "
+"position to not be restored when the game is started."
+msgstr ""
+"Preference(\"restore window position\", \"disable\") - ゲーム開始時にウィンド"
+"ウ位置を復元しません。"
+
+#: ../../source/inc/preference_action:160
+msgid ""
+"Preference(\"restore window position\", \"toggle\") - Will toggle the "
+"restore window position state."
+msgstr ""
+"Preference(\"restore window position\", \"toggle\") - ゲーム開始時にウィンド"
+"ウ位置を復元するかをトグルします。"
+
+#: ../../source/inc/preference_action:162
 msgid "Values that can be used with bars are:"
 msgstr "バーで使用される value  :"
 
-#: ../../source/inc/preference_action:160
+#: ../../source/inc/preference_action:164
 msgid "Preference(\"text speed\")"
 msgstr "Preference(\"text speed\")"
 
-#: ../../source/inc/preference_action:161
+#: ../../source/inc/preference_action:165
 msgid "Preference(\"auto-forward time\")"
 msgstr "Preference(\"auto-forward time\")"
 
-#: ../../source/inc/preference_action:162
+#: ../../source/inc/preference_action:166
 msgid "Preference(\"main volume\")"
 msgstr "Preference(\"main volume\")"
 
-#: ../../source/inc/preference_action:163
+#: ../../source/inc/preference_action:167
 msgid "Preference(\"music volume\")"
 msgstr "Preference(\"music volume\")"
 
-#: ../../source/inc/preference_action:164
+#: ../../source/inc/preference_action:168
 msgid "Preference(\"sound volume\")"
 msgstr "Preference(\"sound volume\")"
 
-#: ../../source/inc/preference_action:165
+#: ../../source/inc/preference_action:169
 msgid "Preference(\"voice volume\")"
 msgstr "Preference(\"voice volume\")"
 
-#: ../../source/inc/preference_action:166
+#: ../../source/inc/preference_action:170
 msgid "Preference(\"mixer <mixer> volume\")"
 msgstr "Preference(\"mixer <mixer> volume\")"
 
-#: ../../source/inc/preference_action:167
+#: ../../source/inc/preference_action:171
 msgid "Preference(\"self voicing volume drop\")"
 msgstr "Preference(\"self voicing volume drop\")"
 
-#: ../../source/inc/preference_action:168
+#: ../../source/inc/preference_action:172
 msgid "Preference(\"font size\")"
 msgstr "Preference(\"font size\")"
 
-#: ../../source/inc/preference_action:169
+#: ../../source/inc/preference_action:173
 msgid "Preference(\"font line spacing\")"
 msgstr "Preference(\"font line spacing\")"
 
-#: ../../source/inc/preference_action:171
+#: ../../source/inc/preference_action:175
 msgid ""
 "The `range` parameter can be given to give the range of certain bars. For "
 "\"text speed\", it defaults to 200 cps. For \"auto-forward time\", it "
@@ -2713,20 +3002,20 @@ msgstr ""
 "てはデフォルトでテキストの一塊毎に 30.0 秒です (これらは最大値になり、デフォ"
 "ルト値にはなりません)。"
 
-#: ../../source/inc/preference_action:176
+#: ../../source/inc/preference_action:180
 msgid "Actions that can be used with buttons are:"
 msgstr "button で使用されるアクション :"
 
-#: ../../source/inc/preference_action:178
+#: ../../source/inc/preference_action:182
 msgid "Preference(\"renderer menu\") - Show the renderer menu."
 msgstr "Preference(\"renderer menu\") - レンダリングメニューを表示します。"
 
-#: ../../source/inc/preference_action:179
+#: ../../source/inc/preference_action:183
 msgid "Preference(\"accessibility menu\") - Show the accessibility menu."
 msgstr ""
 "Preference(\"accessibility menu\") - アクセス可能なメニューを表示します。"
 
-#: ../../source/inc/preference_action:181
+#: ../../source/inc/preference_action:185
 msgid "These screens are intended for internal use, and are not customizable."
 msgstr "これらのスクリーンは内部での使用が意図され、カスタマイズできません。"
 
@@ -2739,11 +3028,11 @@ msgstr ""
 "ボイスタグに関連付けられたボリュームを、 `voice` チャンネル用のミキサーボ"
 "リュームの音量に対する割合として0.0から1.0の数値で返します。"
 
-#: ../../source/screen_actions.rst:158
+#: ../../source/screen_actions.rst:220
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: ../../source/screen_actions.rst:160
+#: ../../source/screen_actions.rst:222
 msgid "These functions and actions work with the gamepad."
 msgstr "これらの関数とアクションはゲームパッドで動作します。"
 
@@ -2766,11 +3055,11 @@ msgid ""
 "true."
 msgstr ":var:`config.developer` が True である間常に True を返します。"
 
-#: ../../source/screen_actions.rst:165
+#: ../../source/screen_actions.rst:227
 msgid "File Functions"
 msgstr "ファイル関数"
 
-#: ../../source/screen_actions.rst:167
+#: ../../source/screen_actions.rst:229
 msgid ""
 "These functions return useful information about files. They use the same "
 "default page as the file actions."
@@ -3013,11 +3302,11 @@ msgstr ""
 "True の場合、数字の大きなファイルスロットから最初にリストアップされます。そう"
 "でなけらば小さな数字のスロットから最初にリストアップされます。"
 
-#: ../../source/screen_actions.rst:173
+#: ../../source/screen_actions.rst:235
 msgid "Side Image Functions"
 msgstr "サイドイメージ関数"
 
-#: ../../source/screen_actions.rst:175
+#: ../../source/screen_actions.rst:237
 msgid "This function returns the side image to use."
 msgstr "この関数は使用するサイドイメージを返します。"
 
@@ -3029,7 +3318,7 @@ msgstr ""
 "現在話しているキャラクターに対応するサイドイメージか、そのようなサイドイメー"
 "ジが存在しない場合は Null displayable を返します。"
 
-#: ../../source/screen_actions.rst:180
+#: ../../source/screen_actions.rst:242
 msgid "Other Functions"
 msgstr "その他の関数"
 
@@ -3044,11 +3333,11 @@ msgstr ""
 "リーンによって含まれたスクリーンの場合、これは含まれているスクリーンの名前で"
 "はなく、含んでいる側のスクリーン名を返します。"
 
-#: ../../source/screen_actions.rst:187
+#: ../../source/screen_actions.rst:249
 msgid "Tooltips"
 msgstr "Tooltip"
 
-#: ../../source/screen_actions.rst:189
+#: ../../source/screen_actions.rst:251
 msgid ""
 "Tooltips can now be accessed by the ``tooltip`` property available on all "
 "displayables, and the GetTooltip function. The GetTooltip function returns "
@@ -3058,7 +3347,7 @@ msgstr ""
 "GetTooltip 関数からアクセス可能になりました。 GetTooltip 関数はその "
 "displayable がフォーカスを得たとき、その tooltip プロパティーの値を返します。"
 
-#: ../../source/screen_actions.rst:194
+#: ../../source/screen_actions.rst:256
 msgid ""
 "As a reminder, values passed to the ``tooltip`` property must support "
 "equality."
@@ -3066,11 +3355,11 @@ msgstr ""
 "注意して欲しいのですが、 ``tooltip`` プロパティーに渡された値は比較をサポート"
 "しなければいけません。"
 
-#: ../../source/screen_actions.rst:197
+#: ../../source/screen_actions.rst:259
 msgid "Here's an example::"
 msgstr "例 ::"
 
-#: ../../source/screen_actions.rst:222
+#: ../../source/screen_actions.rst:284
 msgid ""
 "The :ref:`sl-nearrect` displayable can be used to display \"popup-style\" "
 "tooltips, and has support for a special \"tooltip\" focus name, that is set "
@@ -3106,17 +3395,17 @@ msgid ""
 "If true, returns the last non-None value this function would have returned."
 msgstr "True なら、この関数が返した最後の None でない値を返します。"
 
-#: ../../source/screen_actions.rst:268
+#: ../../source/screen_actions.rst:330
 msgid "Legacy"
 msgstr "Legacy"
 
-#: ../../source/screen_actions.rst:270
+#: ../../source/screen_actions.rst:332
 msgid ""
 "This has been obsoleted by the above, but you might see it in older projects."
 msgstr ""
 "これらは上述のものより旧来のものです。古いプロジェクトで見かけるでしょう。"
 
-#: ../../source/screen_actions.rst:272
+#: ../../source/screen_actions.rst:334
 msgid "The tooltip class changes the screen when a button is hovered."
 msgstr ""
 "Tooltip クラスはあるボタンの上にマウスが入ると、スクリーンを変更します。"
@@ -3153,7 +3442,7 @@ msgstr ""
 "す。ボタンがフォーカスを失うとこの Tooltip の value フィールドはデフォルトに"
 "戻ります。"
 
-#: ../../source/screen_actions.rst:276
+#: ../../source/screen_actions.rst:338
 msgid ""
 "When using a tooltip with a screen, the usual behavior is to create a "
 "tooltip object in a default statement. The value of the tooltip and the "
@@ -3166,7 +3455,7 @@ msgstr ""
 "スクリーンに使用されます。スクリーンでの使用順は問題にはなりません。 -  "
 "Action の前に値を利用することも可能です。"
 
-#: ../../source/screen_actions.rst:282
+#: ../../source/screen_actions.rst:344
 msgid ""
 "Tooltips can take on any value. While in the example below we use the text "
 "statement to display a string on the screen, it's also possible to use the "
@@ -3175,6 +3464,125 @@ msgstr ""
 "Tooltip はどんな値も受け取れます。以下の例ではスクリーンに文字を表示するため "
 "text ステートメントを使用していますが、 add ステートメントによって "
 "displayable を追加することも可能です。さらに複雑な動作も可能です。"
+
+#~ msgid "The dict."
+#~ msgstr "辞書"
+
+#~ msgid "The key."
+#~ msgstr "キー"
+
+#~ msgid "These set or toggle data."
+#~ msgstr "これらはデータを設定またトグルします。"
+
+#~ msgid ""
+#~ "Causes the value of `key` in `dict` to be set to `value`. This also works "
+#~ "with lists, where `key` is the index at which the value will be set."
+#~ msgstr ""
+#~ "`dict` の `key` を `value` に設定します。これはリストでも動作し、その場"
+#~ "合、 `key` は設定される値のインデックスになります。"
+
+#~ msgid ""
+#~ "Causes the a field on an object to be set to a given value. `object` is "
+#~ "the object, `field` is a string giving the name of the field to set, and "
+#~ "`value` is the value to set it to."
+#~ msgstr ""
+#~ "オブジェクトのフィールドを与えられた値に設定します。 `object` にはオブジェ"
+#~ "クト、 `field` には設定するフィールドの名前の文字列、 `value` には設定した"
+#~ "い値を入れます。"
+
+#~ msgid ""
+#~ "Causes the variable called `name` to be set to `value` in the current "
+#~ "local context."
+#~ msgstr "現在のローカルコンテキストで変数 `name` を `value` に設定します。"
+
+#~ msgid ""
+#~ "This function is only useful in a screen that has been ``use``\\ d by "
+#~ "another screen, as it provides a way of setting the value of a variable "
+#~ "inside the used screen. In all other cases, :func:`SetScreenVariable` "
+#~ "should be preferred, as it allows more of the screen to be cached."
+#~ msgstr ""
+#~ "この関数では ``use`` で使用されているスクリーン内の変数の値を設定できるの"
+#~ "で、そのスクリーンが他のスクリーンに使用されている場合有用です。そうでない"
+#~ "場合はスクリーンのより多くをキャッシュできるので :func:"
+#~ "`SetScreenVariable` がより有用です。"
+
+#~ msgid "Causes the variable called `name` to be set to `value`."
+#~ msgstr "変数 `name` を `value` に設定します。"
+
+#~ msgid ""
+#~ "The `name` argument must be a string, and can be a simple name like "
+#~ "\"strength\", or one with dots separating the variable from fields, like "
+#~ "\"hero.strength\" or \"persistent.show_cutscenes\"."
+#~ msgstr ""
+#~ "`name` 引数は文字列でなければならず、 \"strength\" のような単純な名前や  "
+#~ "\"hero.strength\" や \"persistent.show_cutscenes\" のようなフィールドから"
+#~ "ドットで分けられた変数のような名前が可能です。"
+
+#~ msgid ""
+#~ "Toggles the value of `key` in `dict`. It also works on lists, in which "
+#~ "case `key` is the index of the value to toggle. Toggling means to invert "
+#~ "the value when the action is performed."
+#~ msgstr ""
+#~ "`dict` の `key` の値をトグルします。リストに対しても動作し、その場合 "
+#~ "`key` はトグルする値のインデックスになります。トグルとはアクションが実行さ"
+#~ "れると、値が True が False に、 False が True に反転するということです。"
+
+#~ msgid "`true_value`"
+#~ msgstr "`true_value`"
+
+#~ msgid "If not None, then this is the true value used."
+#~ msgstr "None を指定するか、 True として使用する値を指定します。"
+
+#~ msgid "`false_value`"
+#~ msgstr "`false_value`"
+
+#~ msgid "If not None, then this is the false value used."
+#~ msgstr "None を指定するか、 False として使用する値を指定します。"
+
+#~ msgid ""
+#~ "Toggles `field` on `object`. Toggling means to invert the boolean value "
+#~ "of that field when the action is performed."
+#~ msgstr ""
+#~ "`object` の `field` をトグルします。トグルとは、アクション実行時にその"
+#~ "フィールドの真偽値を反転することです。"
+
+#~ msgid "If not None, then this is the true value we use."
+#~ msgstr "None を指定するか、 True として使用する値を指定します。"
+
+#~ msgid "If not None, then this is the false value we use."
+#~ msgstr "None を指定するか False として使用する値を指定します。"
+
+#~ msgid ""
+#~ "Toggles the value of the variable called `name` in the current local "
+#~ "context."
+#~ msgstr "現在のローカルコンテキストでの `name` 変数の値をトグルします。"
+
+#~ msgid ""
+#~ "This function is only useful in a screen that has been ``use``\\ d by "
+#~ "another screen, as it provides a way of setting the value of a variable "
+#~ "inside the used screen. In all other cases, :func:`ToggleScreenVariable` "
+#~ "should be preferred, as it allows more of the screen to be cached."
+#~ msgstr ""
+#~ "この関数では ``use`` で使用されているスクリーン内の変数の値を設定できるの"
+#~ "で、そのスクリーンが他のスクリーンに使用されている場合有用です。そうでない"
+#~ "場合はスクリーンのより多くをキャッシュできるので :func:"
+#~ "`ToggleScreenVariable` がより有用です。"
+
+#~ msgid ""
+#~ "Toggles the value of the variable called `name` in the current screen. In "
+#~ "a ``use``\\ d screen, this action accesses and sets the given variable in "
+#~ "the context of the screen containing the ``use``\\ d one(s). To access "
+#~ "and set variables within a ``use``\\ d screen, and only in that case, "
+#~ "use :func:`ToggleLocalVariable` instead."
+#~ msgstr ""
+#~ "現在のスクリーンの `name` 変数の値をトグルします。 ``use`` で使用されてい"
+#~ "るスクリーン内では、このアクションはそのスクリーンを内包しているスクリーン"
+#~ "のコンテキストでその変数にアクセスし設定します。使用されているスクリーン内"
+#~ "で変数にアクセスし設定する場合のみ :func:`ToggleLocalVariable` を代わりに"
+#~ "使用してください。"
+
+#~ msgid "Toggles the variable whose name is given in `variable`."
+#~ msgstr "`variable` で指定した名前の変数をトグルします。"
 
 #~ msgid ""
 #~ "A list of actions can usually be provided in lieu of a single action, in "
@@ -3200,9 +3608,6 @@ msgstr ""
 
 #~ msgid "Causes the value of `key` in `dict` to be set to `value`."
 #~ msgstr "`dict` の `key` の値を `value` に設定します。"
-
-#~ msgid "Toggles `variable`."
-#~ msgstr "`variable` をトグルします。"
 
 #~ msgid "Preference(\"main mute\", \"enable\") - Mute main."
 #~ msgstr "Preference(\"main mute\", \"enable\") - メインをミュートにします。"

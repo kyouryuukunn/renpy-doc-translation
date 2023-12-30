@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 09:10+0900\n"
+"POT-Creation-Date: 2023-11-23 12:59+0900\n"
 "PO-Revision-Date: 2023-10-07 17:48+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -524,7 +524,7 @@ msgstr ""
 "指定されるとそのトランジションが実行され、 None の場合はトランジションを実行"
 "しません。 False の場合は :var:`config.end_game_transition` を使用します。"
 
-#: ../../source/inc/other:113 ../../source/inc/other:405
+#: ../../source/inc/other:113 ../../source/inc/other:426
 msgid "`save`"
 msgstr "`save`"
 
@@ -769,11 +769,36 @@ msgstr ""
 "モジュールはそのモジュールを含むブロックより低い init ブロックを含みません。"
 "例えば init 10 ブロックを含んでいれば、ロードできる最後は init 10 です。"
 
-#: ../../source/inc/other:240 ../../source/inc/other:330
+#: ../../source/inc/other:240 ../../source/inc/other:351
 msgid "Module loading may only occur from inside an init block."
 msgstr "モジュールのロードは init ブロック内でのみ行なわれます。"
 
 #: ../../source/inc/other:244
+msgid ""
+"This runs the given function with the given arguments in the main thread. "
+"The function runs in an interaction context similar to an event handler. "
+"This is meant to be called from a separate thread, whose creation is handled "
+"by :func:`renpy.invoke_in_thread`."
+msgstr ""
+
+#: ../../source/inc/other:249
+msgid ""
+"If a single thread schedules multiple functions to be invoked, it is "
+"guaranteed that they will be run in the order in which they have been "
+"scheduled::"
+msgstr ""
+
+#: ../../source/inc/other:256
+msgid ""
+"In this example, it is guaranteed that ``a`` will return before ``b`` is "
+"called. The order of calls made from different threads is not guaranteed."
+msgstr ""
+
+#: ../../source/inc/other:260
+msgid "This may not be called during the init phase."
+msgstr ""
+
+#: ../../source/inc/other:264
 msgid ""
 "Invokes the function `fn` in a background thread, passing it the provided "
 "arguments and keyword arguments. Restarts the interaction once the thread "
@@ -782,56 +807,62 @@ msgstr ""
 "バックグラウンドスレッドで関数 `fn` を実行し、与えられた引数とキーワード引数"
 "を渡します。スレッドが結果を返すとインタラクションを再開します。"
 
-#: ../../source/inc/other:248
+#: ../../source/inc/other:268
 msgid ""
 "This function creates a daemon thread, which will be automatically stopped "
 "when Ren'Py is shutting down."
 msgstr ""
 "この関数は、 Ren'Py 終了時自動的に停止するデーモンスレッドを作成します。"
 
-#: ../../source/inc/other:251
+#: ../../source/inc/other:271
+#, fuzzy
 msgid ""
 "This thread is very limited in what it can do with the Ren'Py API. Changing "
-"store variables is allowed, as is calling the :func:`renpy.queue_event` "
-"function. Most other portions of the Ren'Py API are expected to be called "
-"from the main thread."
+"store variables is allowed, as are calling calling the following functions:"
 msgstr ""
 "このスレッドは Ren'Py API で実行できる範囲が非常に制限されています。 store 変"
 "数の変更と :func:`renpy.queue_event` 関数の呼び出しは許可されていますが、その"
 "他の殆どの Ren'Py API はメインスレッドからの呼び出しを想定しています。"
 
-#: ../../source/inc/other:256
-msgid ""
-"The primary use of this function is to place accesss to a web API in a "
-"second thread, and then update variables with the results of that call, by "
-"storing the result in variables and then relying on the interaction restart "
-"to cause screens to display those variables."
+#: ../../source/inc/other:275
+msgid ":func:`renpy.restart_interaction`"
 msgstr ""
-"この関数の主な用途は web API へのアクセスを別スレッドに配置し、この呼び出しの"
-"結果で変数を更新してインタラクションを再開し、それらの変数をスクリーンに表示"
-"することです。"
 
-#: ../../source/inc/other:261
+#: ../../source/inc/other:276
+msgid ":func:`renpy.invoke_in_main_thread`"
+msgstr ""
+
+#: ../../source/inc/other:277
+msgid ":func:`renpy.queue_event`"
+msgstr ""
+
+#: ../../source/inc/other:279
+msgid ""
+"Most other portions of the Ren'Py API are expected to be called from the "
+"main thread."
+msgstr ""
+
+#: ../../source/inc/other:282
 msgid ""
 "This does not work on the web platform, except for immediately returning "
 "without an error."
 msgstr "これはエラーなくすぐに処理を返すのでなければ web 版では動作しません。"
 
-#: ../../source/inc/other:266
+#: ../../source/inc/other:287
 msgid ""
 "Returns True if Ren'Py is currently executing init code, or False otherwise."
 msgstr ""
 "Ren'Py が現在 init コードの実行中なら True, そうでなければ False を返します。"
 
-#: ../../source/inc/other:270
+#: ../../source/inc/other:291
 msgid "Returns True if the mouse cursor is visible, False otherwise."
 msgstr "マウスカーソルが可視状態なら True, そうでなければFalse を返します。"
 
-#: ../../source/inc/other:274
+#: ../../source/inc/other:295
 msgid "Returns true if the current line has been seen by the player."
 msgstr "現在の行が既読なら True を返します。"
 
-#: ../../source/inc/other:276
+#: ../../source/inc/other:297
 msgid ""
 "If `ever` is true, we check to see if the line has ever been seen by the "
 "player. If false, we check if the line has been seen in the current play-"
@@ -840,7 +871,7 @@ msgstr ""
 "`ever` が True であれば、その行がプレイヤーによって一度でも読まれているかどう"
 "かを確認します。False の場合は、今回のプレイでは既読行かどうかを確認します。"
 
-#: ../../source/inc/other:282
+#: ../../source/inc/other:303
 msgid ""
 "Returns True if Ren'Py is currently skipping (in fast or slow skip mode), or "
 "False otherwise."
@@ -848,7 +879,7 @@ msgstr ""
 "Ren'Py が現在(ファストまたはスロー)スキップ中なら True を返し、そうでなけれ"
 "ば False を返します。"
 
-#: ../../source/inc/other:287
+#: ../../source/inc/other:308
 msgid ""
 "Returns true if restart_interaction has not been called during the current "
 "interaction. This can be used to determine if the interaction is just being "
@@ -858,11 +889,11 @@ msgstr ""
 "True を返します。これを使用してそのインタラクションが開始されたか、再開された"
 "かを判定できます。"
 
-#: ../../source/inc/other:293
+#: ../../source/inc/other:314
 msgid "Returns an object containing information about the last say statement."
 msgstr "最後の say ステートメントの情報を含むオブジェクトを返します。"
 
-#: ../../source/inc/other:295
+#: ../../source/inc/other:316
 msgid ""
 "While this can be called during a say statement, if the say statement is "
 "using a normal Character, the information will be about the *current* say "
@@ -872,11 +903,11 @@ msgstr ""
 "Character を使用していれば、その情報は前のものではなく、 *現在* の say ステー"
 "トメントに関する物になります"
 
-#: ../../source/inc/other:301 ../../source/inc/other:484
+#: ../../source/inc/other:322 ../../source/inc/other:505
 msgid "`who`"
 msgstr "`who`"
 
-#: ../../source/inc/other:300
+#: ../../source/inc/other:321
 msgid ""
 "The speaker. This is usually a :func:`Character` object, but this is not "
 "required."
@@ -884,11 +915,11 @@ msgstr ""
 "話者です。これは通常 :func:`Character` オブジェクトですが、そうである必要はあ"
 "りません。"
 
-#: ../../source/inc/other:305
+#: ../../source/inc/other:326
 msgid "`what`"
 msgstr "`what`"
 
-#: ../../source/inc/other:304
+#: ../../source/inc/other:325
 msgid ""
 "A string with the dialogue spoken. This may be None if dialogue hasn't been "
 "shown yet, for example at the start of the game."
@@ -896,23 +927,23 @@ msgstr ""
 "話された台詞の文字列です。これは例えばゲーム開始時のように、台詞がまだ表示さ"
 "れていなければ、 None かもしれません。"
 
-#: ../../source/inc/other:308
+#: ../../source/inc/other:329
 msgid "`args`"
 msgstr "`args`"
 
-#: ../../source/inc/other:308
+#: ../../source/inc/other:329
 msgid "A tuple of arguments passed to the last say statement."
 msgstr "最後の say ステートメントへの引数のタプルです。"
 
-#: ../../source/inc/other:311
+#: ../../source/inc/other:332
 msgid "`kwargs`"
 msgstr "`kwargs`"
 
-#: ../../source/inc/other:311
+#: ../../source/inc/other:332
 msgid "A dictionary of keyword arguments passed to the last say statement."
 msgstr "最後の say ステートメントへのキーワード引数の辞書です。"
 
-#: ../../source/inc/other:315 ../../source/inc/other:492
+#: ../../source/inc/other:336 ../../source/inc/other:513
 msgid ""
 "Like other similar functions, the object this returns is meant to be used in "
 "the short term after the function is called. Including it in save data or "
@@ -922,7 +953,7 @@ msgstr ""
 "の短期的な使用を意図しています。このオブジェクトのセーブデータへの保存やロー"
 "ルバックへの参加は推奨されません。"
 
-#: ../../source/inc/other:321
+#: ../../source/inc/other:342
 msgid ""
 "This loads the Ren'Py module named name. A Ren'Py module consists of Ren'Py "
 "script that is loaded into the usual (store) namespace, contained in a file "
@@ -935,7 +966,7 @@ msgstr ""
 "在し、対応する .rpymc ファイルより新しければロードされて新しい .rpymc ファイ"
 "ルが作成されます。"
 
-#: ../../source/inc/other:326
+#: ../../source/inc/other:347
 msgid ""
 "All of the init blocks (and other init-phase code) in the module are run "
 "before this function returns. An error is raised if the module name cannot "
@@ -944,22 +975,22 @@ msgstr ""
 "init ブロック (とその他の初期化段階のコード) のすべてはこの関数が返る前に実行"
 "されます。そのモジュール名が見つからないか、曖昧な場合はエラーが発生します。"
 
-#: ../../source/inc/other:334
+#: ../../source/inc/other:355
 msgid "Loads `s` as Ren'Py script that can be called."
 msgstr "呼び出し可能な Ren'Py スクリプトとして文字列 `s` をロードします。"
 
-#: ../../source/inc/other:336
+#: ../../source/inc/other:357
 msgid "Returns the name of the first statement in s."
 msgstr "s の最初のステートメント名を返します。"
 
-#: ../../source/inc/other:338
+#: ../../source/inc/other:359
 msgid ""
 "`filename` is the name of the filename that statements in the string will "
 "appear to be from."
 msgstr ""
 "`filename` は、その文字列内のステートメントがあることになるファイル名です。"
 
-#: ../../source/inc/other:343
+#: ../../source/inc/other:364
 msgid ""
 "Forces Ren'Py to draw the screen at the maximum framerate for `t` seconds. "
 "If `t` is None, cancels the maximum framerate request."
@@ -967,15 +998,15 @@ msgstr ""
 "`t` 秒間 Ren'Py に最大フレームレートでの画面描画を強制します。 `t` が None な"
 "ら、最大フレームレートのリクエストはキャンセルされます。"
 
-#: ../../source/inc/other:348
+#: ../../source/inc/other:369
 msgid "Munges `name`, which must begin with __."
 msgstr "`name` を munge します。 `name` は __ で始まらなければなりません。"
 
-#: ../../source/inc/other:351
+#: ../../source/inc/other:372
 msgid "`filename`"
 msgstr "`filename`"
 
-#: ../../source/inc/other:351
+#: ../../source/inc/other:372
 msgid ""
 "The filename the name is munged into. If None, the name is munged into the "
 "filename containing the call to this function."
@@ -983,11 +1014,11 @@ msgstr ""
 "munge されるファイル名です。 None なら、その名前はこの関数への呼び出しを含む"
 "ファイル名に munge されます。"
 
-#: ../../source/inc/other:356
+#: ../../source/inc/other:377
 msgid "Resets the infinite loop detection timer to `delay` seconds."
 msgstr "無限ループ検出のタイマーを `delay` 秒までリセットします。"
 
-#: ../../source/inc/other:360
+#: ../../source/inc/other:381
 msgid ""
 "Causes Ren'Py to display the `message` using the notify screen. By default, "
 "this will cause the message to be dissolved in, displayed for two seconds, "
@@ -996,7 +1027,7 @@ msgstr ""
 "Ren'Pyにnotify スクリーンを使って `message` を表示します。デフォルトでは、こ"
 "れはメッセージをdissolveで表示し、2秒間表示した後に再びdissolveで消去します。"
 
-#: ../../source/inc/other:364
+#: ../../source/inc/other:385
 msgid ""
 "This is useful for actions that otherwise wouldn't produce feedback, like "
 "screenshots or quicksaves."
@@ -1004,7 +1035,7 @@ msgstr ""
 "これはスクリーンショットやクリックセーブのようにフィードバックを生成しないア"
 "クションに便利です。"
 
-#: ../../source/inc/other:367
+#: ../../source/inc/other:388
 msgid ""
 "Only one notification is displayed at a time. If a second notification is "
 "displayed, the first notification is replaced."
@@ -1012,7 +1043,7 @@ msgstr ""
 "同時に一つの通知のみが表示されます。二つ目の通知が表示されたら、最初の表示は"
 "置き換えられます。"
 
-#: ../../source/inc/other:370
+#: ../../source/inc/other:391
 msgid ""
 "This function just calls :var:`config.notify`, allowing its implementation "
 "to be replaced by assigning a new function to that variable."
@@ -1020,11 +1051,11 @@ msgstr ""
 "この関数は単に :var:`config.notify` を呼び出しているため、新しい関数をその変"
 "数に代入してその実装を置き換えられます。"
 
-#: ../../source/inc/other:375
+#: ../../source/inc/other:396
 msgid "Returns true if Ren'Py is currently in a predicting phase."
 msgstr "Ren'Py が現在予測処理中なら True, そうでなければ False を返します。"
 
-#: ../../source/inc/other:379
+#: ../../source/inc/other:400
 msgid ""
 "Queues an event with the given name. `Name` should be one of the event names "
 "in :var:`config.keymap`, or a list of such names."
@@ -1032,11 +1063,11 @@ msgstr ""
 "指定された名前のイベントをキューします。 `Name` は :var:`config.keymap` にあ"
 "るイベント名の 1 つか、その名前のリストであるべきです。"
 
-#: ../../source/inc/other:385
+#: ../../source/inc/other:406
 msgid "`up`"
 msgstr "`up`"
 
-#: ../../source/inc/other:383
+#: ../../source/inc/other:404
 msgid ""
 "This should be false when the event begins (for example, when a keyboard "
 "button is pressed.) It should be true when the event ends (when the button "
@@ -1045,7 +1076,7 @@ msgstr ""
 "これはそのイベント開始時 ( 例えばキーボードボタンが押された時 ) には False で"
 "あり、そのイベント終了時 ( ボタンが開放された時 ) には True であるべきです。"
 
-#: ../../source/inc/other:387
+#: ../../source/inc/other:408
 msgid ""
 "The event is queued at the time this function is called. This function will "
 "not work to replace an event with another - doing so will change event "
@@ -1055,27 +1086,27 @@ msgstr ""
 "のイベントで置き換えるためには動作しません。そうするためにはイベント優先度を"
 "変更してください ( 代わりに :var:`config.keymap` を使用します )。"
 
-#: ../../source/inc/other:391
+#: ../../source/inc/other:412
 msgid "This method is threadsafe."
 msgstr "このメソッドはスレッドセーフです。"
 
-#: ../../source/inc/other:395
+#: ../../source/inc/other:416
 msgid "This causes Ren'Py to exit entirely."
 msgstr "Ren'Py を完全に終了します。"
 
-#: ../../source/inc/other:398
+#: ../../source/inc/other:419
 msgid "`relaunch`"
 msgstr "`relaunch`"
 
-#: ../../source/inc/other:398
+#: ../../source/inc/other:419
 msgid "If true, Ren'Py will run a second copy of itself before quitting."
 msgstr "True なら Ren'Py は終了前に自身のコピーを実行します。"
 
-#: ../../source/inc/other:402
+#: ../../source/inc/other:423
 msgid "`status`"
 msgstr "`status`"
 
-#: ../../source/inc/other:401
+#: ../../source/inc/other:422
 msgid ""
 "The status code Ren'Py will return to the operating system. Generally, 0 is "
 "success, and positive integers are failure."
@@ -1083,12 +1114,12 @@ msgstr ""
 "Ren'Py がオペレーティングシステムに返すステータスコードです。一般に、0は成"
 "功、正の整数は失敗を意味します。"
 
-#: ../../source/inc/other:405
+#: ../../source/inc/other:426
 msgid ""
 "If true, the game is saved in :var:`_quit_slot` before Ren'Py terminates."
 msgstr "True なら、ゲームは Ren'Py 終了時に :var:`_quit_slot` に保存されます。"
 
-#: ../../source/inc/other:410
+#: ../../source/inc/other:431
 msgid ""
 "Triggers a quit event, as if the player clicked the quit button in the "
 "window chrome."
@@ -1096,7 +1127,7 @@ msgstr ""
 "プレイヤーがウィンドウ端の終了ボタンを押したかのように quit イベントを引き起"
 "します。"
 
-#: ../../source/inc/other:415
+#: ../../source/inc/other:436
 msgid ""
 "Attempts to set the size of the physical window to the size specified using :"
 "var:`renpy.config.physical_height` and :var:`renpy.config.physical_width`, "
@@ -1107,7 +1138,7 @@ msgstr ""
 "`renpy.config.physical_width`, または設定がなければ :var:`renpy.config."
 "screen_width` と :var:`renpy.config.screen_height` で指定したサイズにします。"
 
-#: ../../source/inc/other:422
+#: ../../source/inc/other:443
 msgid ""
 "Restarts the current interaction. Among other things, this displays images "
 "added to the scene, re-evaluates screens, and starts any queued transitions."
@@ -1115,7 +1146,7 @@ msgstr ""
 "現在のインタラクションを再実行します。これはとりわけ場面に追加された画像と再"
 "評価されたスクリーンを表示し、キューされたトランジションを開始します。"
 
-#: ../../source/inc/other:426
+#: ../../source/inc/other:447
 msgid ""
 "This only does anything when called from within an interaction (for example, "
 "from an action). Outside an interaction, this function has no effect."
@@ -1123,11 +1154,11 @@ msgstr ""
 "これはインタラクション内部 ( 例えばアクション中 ) で呼び出された時のみ動作し"
 "ます。インタラクションの外部ではこの関数は効果がありません。"
 
-#: ../../source/inc/other:432
+#: ../../source/inc/other:453
 msgid "Saves a screenshot in `filename`."
 msgstr "`filename` でスクリーンショットを撮ります。"
 
-#: ../../source/inc/other:434
+#: ../../source/inc/other:455
 msgid ""
 "Returns True if the screenshot was saved successfully, False if saving "
 "failed for some reason."
@@ -1135,7 +1166,7 @@ msgstr ""
 "スクリーンショットが保存されれば True を、何らかの理由で失敗すれば False を返"
 "します。"
 
-#: ../../source/inc/other:437
+#: ../../source/inc/other:458
 msgid ""
 "The :var:`config.screenshot_pattern` and :var:`_screenshot_pattern` "
 "variables control the file the screenshot is saved in."
@@ -1143,7 +1174,7 @@ msgstr ""
 ":var:`config.screenshot_pattern` と :var:`_screenshot_pattern` 変数はスクリー"
 "ンショットが保存されるファイルを制御します。"
 
-#: ../../source/inc/other:442
+#: ../../source/inc/other:463
 msgid ""
 "Returns a screenshot as a bytes object, that can be passed to im.Data(). The "
 "bytes will be a png-format image, such that::"
@@ -1151,7 +1182,7 @@ msgstr ""
 "im.Data() に渡されるバイトオブジェクトとしてスクリーンショットを返します。バ"
 "イトオブジェクトは以下のように png フォーマットの画像です。 ::"
 
-#: ../../source/inc/other:449
+#: ../../source/inc/other:470
 msgid ""
 "Will show the image. The bytes objects returned can be stored in save files "
 "and persistent data. However, these may be large, and care should be taken "
@@ -1160,11 +1191,11 @@ msgstr ""
 "上記は画像を表示します。返されたバイトオブジェクトはセーブファイルと永続デー"
 "タに保存できますが、これらは大きくて大量に含めすぎるには注意が必要です。"
 
-#: ../../source/inc/other:456
+#: ../../source/inc/other:477
 msgid "`size`"
 msgstr "`size`"
 
-#: ../../source/inc/other:454
+#: ../../source/inc/other:475
 msgid ""
 "The size the screenshot will be resized to. If None, the screenshot will be "
 "resized, and hence will be the size of the player's window, without any "
@@ -1173,7 +1204,7 @@ msgstr ""
 "スクリーンショットがリサイズされるサイズです。 None なら、スクリーンショット"
 "はプレイヤーのウィンドウサイズにリサイズされます。"
 
-#: ../../source/inc/other:458
+#: ../../source/inc/other:479
 msgid ""
 "This function may be slow, and so it's intended for save-like screenshots, "
 "and not realtime effects."
@@ -1181,7 +1212,7 @@ msgstr ""
 "この関数は遅いため、リアルタイムエフェクトではなく、保存用のスクリーンショッ"
 "ト用として意図されています。"
 
-#: ../../source/inc/other:463
+#: ../../source/inc/other:484
 msgid ""
 "Returns the scry object for the current statement. Returns None if there are "
 "no statements executing."
@@ -1189,7 +1220,7 @@ msgstr ""
 "現在のステートメントに対する scry オブジェクトを返します。実行されているス"
 "テートメントがなければ None を返します。"
 
-#: ../../source/inc/other:466
+#: ../../source/inc/other:487
 msgid ""
 "The scry object tells Ren'Py about things that must be true in the future of "
 "the current statement. Right now, the scry object has the following fields:"
@@ -1197,11 +1228,11 @@ msgstr ""
 "scry オブジェクトは Ren'Py に次のステートメントについて報せます。現在、 scry "
 "オブジェクトは 次のフィールドを持ちます。 :"
 
-#: ../../source/inc/other:472
+#: ../../source/inc/other:493
 msgid "`nvl_clear`"
 msgstr "`nvl_clear`"
 
-#: ../../source/inc/other:471
+#: ../../source/inc/other:492
 msgid ""
 "Is true if an ``nvl clear`` statement will execute before the next "
 "interaction."
@@ -1209,21 +1240,21 @@ msgstr ""
 "次のインタラクションの前に ``nvl clear`` ステートメントが処理されるなら True "
 "です。"
 
-#: ../../source/inc/other:476
+#: ../../source/inc/other:497
 msgid "`say`"
 msgstr "`say`"
 
-#: ../../source/inc/other:475
+#: ../../source/inc/other:496
 msgid ""
 "Is true if an ``say`` statement will execute before the next interaction."
 msgstr ""
 "次のインタラクションの前に ``say`` ステートメントが処理されるなら True です。"
 
-#: ../../source/inc/other:480
+#: ../../source/inc/other:501
 msgid "`menu_with_caption`"
 msgstr "`menu_with_caption`"
 
-#: ../../source/inc/other:479
+#: ../../source/inc/other:500
 msgid ""
 "Is true if a ``menu`` statement with a caption will execute before the next "
 "interaction."
@@ -1231,7 +1262,7 @@ msgstr ""
 "次のインタラクションの前にキャプションありで ``menu`` ステートメントが処理さ"
 "れるなら True です。"
 
-#: ../../source/inc/other:483
+#: ../../source/inc/other:504
 msgid ""
 "If a ``say`` or ``menu-with-caption`` statement will execute before the next "
 "interaction, this is the character object it will use."
@@ -1239,7 +1270,7 @@ msgstr ""
 "次のインタラクションの前に ``say`` または ``menu-with-caption`` ステートメン"
 "トが処理されるなら、そのキャラクターオブジェクトです。"
 
-#: ../../source/inc/other:486
+#: ../../source/inc/other:507
 msgid ""
 "The scry object has a next() method, which returns the scry object of the "
 "statement after the current one, if only one statement will execute after "
@@ -1249,7 +1280,7 @@ msgstr ""
 "ントが唯一に絞られればその scry オブジェクトを返します。そうでなければ None "
 "を返します。"
 
-#: ../../source/inc/other:498
+#: ../../source/inc/other:519
 msgid ""
 "Jump the mouse pointer to the location given by arguments x and y. If the "
 "device does not have a mouse pointer, this does nothing."
@@ -1257,17 +1288,17 @@ msgstr ""
 "引数 x, y で指定された位置にマウスポインターを移動します。デバイスにマウスポ"
 "インターがない場合はこれは何もしません。"
 
-#: ../../source/inc/other:502
+#: ../../source/inc/other:523
 msgid "`duration`"
 msgstr "`duration`"
 
-#: ../../source/inc/other:502
+#: ../../source/inc/other:523
 msgid ""
 "The time it will take to perform the move, in seconds. During this time, the "
 "mouse may be unresponsive."
 msgstr "移動処理にかける秒数です。この時間の間はマウスが反応しません。"
 
-#: ../../source/inc/other:507
+#: ../../source/inc/other:528
 msgid ""
 "Attempts to set the size of the physical window to `size`. This has the side "
 "effect of taking the screen out of fullscreen mode."
@@ -1275,7 +1306,7 @@ msgstr ""
 "実際のウィンドウのサイズを `size` に設定しようと試みます。これは全画面モード"
 "を無効化する副作用を持ちます。"
 
-#: ../../source/inc/other:512
+#: ../../source/inc/other:533
 msgid ""
 "Call this to indicate that the window has been shown. This interacts with "
 "the \"window show\" statement, which shows an empty window whenever this "
@@ -1285,7 +1316,7 @@ msgstr ""
 "テートメントに対応し、この関数が インタラクションの最中に呼び出されない限り空"
 "のウィンドウを表示します。"
 
-#: ../../source/inc/other:518
+#: ../../source/inc/other:539
 msgid ""
 "Splits up `properties` into multiple dictionaries, one per `prefix`. This "
 "function checks each key in properties against each prefix, in turn. When a "
@@ -1296,7 +1327,7 @@ msgstr ""
 "ティーの各キーを順番にチェックします。接頭辞と一致すればその接頭辞がキーから"
 "除かれ、その結果のキーが対応する辞書でその値に対応付けられます。"
 
-#: ../../source/inc/other:523
+#: ../../source/inc/other:544
 msgid ""
 "If no prefix matches, an exception is thrown. (The empty string, \"\", can "
 "be used as the last prefix to create a catch-all dictionary.)"
@@ -1304,7 +1335,7 @@ msgstr ""
 "合う接頭辞がなければ例外が投げられます(空の文字列 \"\" を最後の接頭辞に使用し"
 "てすべての辞書を受け取れます)。"
 
-#: ../../source/inc/other:526
+#: ../../source/inc/other:547
 msgid ""
 "For example, this splits properties beginning with text from those that do "
 "not::"
@@ -1312,15 +1343,15 @@ msgstr ""
 "例えば、このコードは text で始まるプロパティーとそうでないものを分割しま"
 "す。 ::"
 
-#: ../../source/inc/other:533
+#: ../../source/inc/other:554
 msgid "Sets the transition that will be used during the next interaction."
 msgstr "次のインタラクションの間使用されるトランジションをセットします。"
 
-#: ../../source/inc/other:537
+#: ../../source/inc/other:558
 msgid "`layer`"
 msgstr "`layer`"
 
-#: ../../source/inc/other:536
+#: ../../source/inc/other:557
 msgid ""
 "The layer the transition applies to. If None, the transition applies to the "
 "entire scene."
@@ -1328,11 +1359,11 @@ msgstr ""
 "トランジションが適用されるレイヤーです。 None ならトランジションは全てのレイ"
 "ヤーに適用されます。"
 
-#: ../../source/inc/other:540
+#: ../../source/inc/other:561
 msgid "`always`"
 msgstr "`always`"
 
-#: ../../source/inc/other:540
+#: ../../source/inc/other:561
 msgid ""
 "If false, this respects the transition preference. If true, the transition "
 "is always run."
@@ -1340,13 +1371,23 @@ msgstr ""
 "False ならこれはトランジション設定を反映します。 True ならトランジションは常"
 "に実行されます。"
 
-#: ../../source/inc/other:545
+#: ../../source/inc/other:566
 msgid ""
 "Causes the device to vibrate for `duration` seconds. Currently, this is only "
 "supported on Android."
 msgstr ""
 "デバイスを `duration` 秒間バイブさせます。現在これはアンドロイドのみのサポー"
 "トです。"
+
+#~ msgid ""
+#~ "The primary use of this function is to place accesss to a web API in a "
+#~ "second thread, and then update variables with the results of that call, "
+#~ "by storing the result in variables and then relying on the interaction "
+#~ "restart to cause screens to display those variables."
+#~ msgstr ""
+#~ "この関数の主な用途は web API へのアクセスを別スレッドに配置し、この呼び出"
+#~ "しの結果で変数を更新してインタラクションを再開し、それらの変数をスクリーン"
+#~ "に表示することです。"
 
 #~ msgid "`yes`"
 #~ msgstr "`yes`"
