@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-12 15:56+0900\n"
-"PO-Revision-Date: 2023-12-23 15:36+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2023-12-30 11:19+0900\n"
+"PO-Revision-Date: 2023-12-30 13:24+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-03-29 05:43+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/label.rst:2
 msgid "Labels & Control Flow"
@@ -378,18 +378,22 @@ msgstr ""
 "的に現在の呼び出しに対するスコープにします。その呼び出しが返ると、変数はこの"
 "関数が呼び出されたときの値にリセットされます。"
 
-#: ../../source/inc/label:15
+#: ../../source/inc/context:28 ../../source/inc/label:15
+msgid "Variables in :ref:`named stores <named-stores>` are supported."
+msgstr ":ref:`名前つきの store <named-stores>` 内の変数がサポートされます。"
+
+#: ../../source/inc/label:17
 msgid ""
 "If the variables are given as keyword arguments, the value of the argument "
 "is assigned to the variable name."
 msgstr ""
 "変数はキーワード引数として渡され、引数の値はその変数名に代入されました。"
 
-#: ../../source/inc/label:18
+#: ../../source/inc/context:30 ../../source/inc/label:20
 msgid "Example calls are::"
 msgstr "呼び出し例 ::"
 
-#: ../../source/inc/label:25
+#: ../../source/inc/label:28
 msgid ""
 "Returns the set of all labels defined in the program, including labels "
 "defined for internal use in the libraries."
@@ -397,7 +401,7 @@ msgstr ""
 "ライブラリー内部で使用するために定義されたラベルを含め、プログラムで定義され"
 "たすべてのラベルを返します。"
 
-#: ../../source/inc/label:30
+#: ../../source/inc/label:33
 msgid ""
 "Returns a list giving the current return stack. The return stack is a list "
 "of statement names."
@@ -405,7 +409,7 @@ msgstr ""
 "現在のリターンスタックのリストを返します。リターンスタックはステートメント名"
 "のリストです。"
 
-#: ../../source/inc/label:33
+#: ../../source/inc/label:36
 msgid ""
 "The statement names will be strings (for labels), or opaque tuples (for non-"
 "label statements)."
@@ -413,18 +417,18 @@ msgstr ""
 "ステートメント名は文字列 (ラベル) か不明瞭なタプル ( ラベルのないステートメン"
 "ト ) です。"
 
-#: ../../source/inc/label:38
+#: ../../source/inc/label:41
 msgid ""
 "Returns true if `name` is a valid label in the program, or false otherwise."
 msgstr ""
 "`name` がそのプログラム内での正しいラベルなら True を、そうでなければ False "
 "を返します。"
 
-#: ../../source/inc/label:42
+#: ../../source/inc/label:45
 msgid "`name`"
 msgstr "`name`"
 
-#: ../../source/inc/label:42
+#: ../../source/inc/label:45
 msgid ""
 "Should be a string to check for the existence of a label. It can also be an "
 "opaque tuple giving the name of a non-label statement."
@@ -432,14 +436,14 @@ msgstr ""
 "ラベルの存在をチェックするためには文字列であるべきです。ラベルのないステート"
 "メントの名前を指定する不明瞭なタプルも可能です。"
 
-#: ../../source/inc/label:47
+#: ../../source/inc/label:50
 msgid ""
 "Marks the named label as if it has been already executed on the current "
 "user's system."
 msgstr ""
 "その名前のラベルを現在のユーザーがすでに実行しているものとしてマークします。"
 
-#: ../../source/inc/label:52
+#: ../../source/inc/label:55
 msgid ""
 "Marks the named label as if it has not been executed on the current user's "
 "system yet."
@@ -447,7 +451,7 @@ msgstr ""
 "その名前のラベルを現在のユーザーではまだ実行していないものとしてマークしま"
 "す。"
 
-#: ../../source/inc/label:57
+#: ../../source/inc/label:60
 msgid ""
 "Pops the current call from the call stack, without returning to the "
 "location. Also reverts the values of :func:`dynamic <renpy.dynamic>` "
@@ -457,14 +461,14 @@ msgstr ""
 "return ステートメントと同じように、 :func:`dynamic <renpy.dynamic>` 変数の値"
 "も戻します。"
 
-#: ../../source/inc/label:61
+#: ../../source/inc/label:64
 msgid ""
 "This can be used if a label that is called decides not to return to its "
 "caller."
 msgstr ""
 "これは呼び出されたラベルからその呼び出し元に返らないときに利用出来ます。"
 
-#: ../../source/inc/label:66
+#: ../../source/inc/label:69
 msgid ""
 "Returns true if the named label has executed at least once on the current "
 "user's system, and false otherwise. This can be used to unlock scene "
@@ -474,14 +478,14 @@ msgstr ""
 "ければ False が返されます。これは例えばシーンギャラリーをアンロックするために"
 "使用出来ます。"
 
-#: ../../source/inc/label:72
+#: ../../source/inc/label:75
 msgid ""
 "Sets the current return stack. The return stack is a list of statement names."
 msgstr ""
 "現在のリターンスタックを設定します。リターンスタックはステートメント名のリス"
 "トです。"
 
-#: ../../source/inc/label:75
+#: ../../source/inc/label:78
 msgid ""
 "Statement names may be strings (for labels) or opaque tuples (for non-label "
 "statements)."
@@ -489,11 +493,11 @@ msgstr ""
 "ステートメント名は文字列 (ラベル) か不明瞭なタプル ( ラベルのないステートメン"
 "ト ) です。"
 
-#: ../../source/inc/label:78
+#: ../../source/inc/label:81
 msgid "The most common use of this is to use::"
 msgstr "最も一般的な使い方は、次のように使うことです ::"
 
-#: ../../source/inc/label:82
+#: ../../source/inc/label:85
 msgid "to clear the return stack."
 msgstr "リターンスタックをクリアします。"
 
@@ -610,18 +614,15 @@ msgstr "オブジェクトは保存され、ロールバックに参加します
 #: ../../source/inc/context:23
 msgid ""
 "This can be given one or more variable names as arguments. This makes the "
-"variables dynamically scoped to the current context. The variables will be "
-"reset to their original value when returning to the prior context."
+"variables dynamically scoped to the current context. When returning to the "
+"prior context, the variables will be reset to the value they had when this "
+"function was called."
 msgstr ""
-"これには1つ以上の変数名を引数として指定できます。これは現在のコンテキストに対"
-"する動的スコープの変数を作成します。前のコンテキストに戻ると変数は元の値にリ"
-"セットされます。"
+"1つ以上の変数名をこれの引数として指定できます。これによりそれらの変数を動的に"
+"現在の呼び出しに対するスコープにします。前のコンテキストに帰ると、変数はこの"
+"関数が呼び出されたときの値にリセットされます。"
 
-#: ../../source/inc/context:27
-msgid "An example call is::"
-msgstr "呼び出し例 ::"
-
-#: ../../source/inc/context:33
+#: ../../source/inc/context:37
 msgid ""
 "Returns the nesting level of the current context. This is 0 for the "
 "outermost context (the context that is saved, loaded, and rolled-back), and "
@@ -631,7 +632,7 @@ msgstr ""
 "クされる) 最も外側のコンテキストに対しては 0 で、メニューや回想のような他のコ"
 "ンテキストでは 0 ではありません。"
 
-#: ../../source/inc/context:39
+#: ../../source/inc/context:43
 msgid ""
 "This function creates a new context, and invokes the given Python callable "
 "(function) in that context. When the function returns or raises an "
@@ -644,11 +645,11 @@ msgstr ""
 "現在のコンテキストに戻ります。一般的に、イベントハンドラー内部から、プレイ"
 "ヤーに情報を表示する必要のある python 関数を呼び出すために使用されます。"
 
-#: ../../source/inc/context:46
+#: ../../source/inc/context:50
 msgid "Additional arguments and keyword arguments are passed to the callable."
 msgstr "追加の引数とキーワード引数はその呼び出し可能オブジェクトに渡されます。"
 
-#: ../../source/inc/context:49
+#: ../../source/inc/context:53
 msgid ""
 "A context created with this function cannot execute Ren'Py script. Functions "
 "that would change the flow of Ren'Py script, like :func:`renpy.jump`, are "
@@ -660,7 +661,7 @@ msgstr ""
 "スト外で扱われます。 Python 関数ではなく Ren'Py スクリプトを呼び出したいな"
 "ら、 :func:`renpy.call_in_new_context` を代わりに使ってください。"
 
-#: ../../source/inc/context:57
+#: ../../source/inc/context:61
 msgid ""
 "Causes control to leave the current context, and then to be transferred in "
 "the parent context to the given label."
@@ -668,7 +669,7 @@ msgstr ""
 "現在のコンテキストを終了し、親のコンテキストで指定されたラベルに制御を移動し"
 "ます。"
 
-#: ../../source/inc/context:62
+#: ../../source/inc/context:66
 msgid ""
 "This pops all contexts off the context stack, resetting the dynamic "
 "variables as it does so. When this is done, a new context is created, the "
@@ -681,7 +682,7 @@ msgstr ""
 "テートメントは終了し、次のステートメントからゲームが続行されます。これにより"
 "データと開始位置を除いて Ren'Py は起動時の状態に戻ります。"
 
-#: ../../source/inc/context:68
+#: ../../source/inc/context:72
 msgid ""
 "This can be used to reset everything about the game - shown image, playing "
 "music, etc, as if the game started from the beginning."
@@ -689,7 +690,7 @@ msgstr ""
 "これにより、表示されている画像、再生中の音楽など、ゲームに関するすべてをゲー"
 "ムが最初から開始したかのようにリセットできます。"
 
-#: ../../source/inc/context:71
+#: ../../source/inc/context:75
 msgid ""
 "Because of how completely this resets Ren'Py, this function immediately ends "
 "the current statement."
@@ -697,7 +698,7 @@ msgstr ""
 "Ren'Py を完全にリセットするため、この関数は現在のステートメントを即座に終了し"
 "ます。"
 
-#: ../../source/inc/context:74
+#: ../../source/inc/context:78
 msgid ""
 "This is mainly intended for use in an after_load label, where it can bring "
 "the game back to the state it was in when it started. It's then up to the "
@@ -707,6 +708,18 @@ msgstr ""
 "これは主に after_load ラベルでの使用を想定しており、ゲームを開始時の状態に戻"
 "せます。その後、シーンや音楽などを再構築して続行したいラベルにジャンプできま"
 "す。"
+
+#~ msgid ""
+#~ "This can be given one or more variable names as arguments. This makes the "
+#~ "variables dynamically scoped to the current context. The variables will "
+#~ "be reset to their original value when returning to the prior context."
+#~ msgstr ""
+#~ "これには1つ以上の変数名を引数として指定できます。これは現在のコンテキスト"
+#~ "に対する動的スコープの変数を作成します。前のコンテキストに戻ると変数は元の"
+#~ "値にリセットされます。"
+
+#~ msgid "An example call is::"
+#~ msgstr "呼び出し例 ::"
 
 #~ msgid ""
 #~ "A context maintains the state of the display (including what screens and "

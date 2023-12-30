@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-12 15:56+0900\n"
+"POT-Creation-Date: 2023-12-30 11:19+0900\n"
 "PO-Revision-Date: 2023-11-23 14:12+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -594,20 +594,55 @@ msgstr ""
 msgid "Style translations may be added to any .rpy file."
 msgstr "スタイルの翻訳はどのような .rpy ファイルにも追加できます。"
 
-#: ../../source/translation.rst:405
+#: ../../source/translation.rst:406
+#, fuzzy
+msgid "Deferred Translation Loading"
+msgstr "翻訳ファイルの生成"
+
+#: ../../source/translation.rst:408
+msgid ""
+"For a large game, loading all translations can take a long time. To speed up "
+"these games, Ren'Py supports deferred translations. To enable deferred "
+"translations, add::"
+msgstr ""
+
+#: ../../source/translation.rst:414
+msgid ""
+"To your options.rpy file, or any file that loads before the translation "
+"scripts."
+msgstr ""
+
+#: ../../source/translation.rst:417
+msgid ""
+"When True, this variable will prevent Ren'Py from loading script files found "
+"in directories named tl/`language` as it initializes. Instead, it will load "
+"these files when the language is first activated, either at game start or "
+"when Ren'Py switches to the language."
+msgstr ""
+
+#: ../../source/translation.rst:422
+msgid ""
+"Because the tl/`language` directories are not loaded at init time, these "
+"files should not contain any statements that are executed at init time, like "
+"``init`` blocks or ``python`` blocks, ``screen``, ``image``, ``transform``, "
+"and other statements. The files should consist entirely of ``translate``, "
+"``translate python``, and ``translate style`` blocks."
+msgstr ""
+
+#: ../../source/translation.rst:429
 msgid "Default Language"
 msgstr "既定の言語"
 
-#: ../../source/translation.rst:407
+#: ../../source/translation.rst:431
 msgid "The default language is chosen using the following method:"
 msgstr "既定の言語は次の方法によって選択します:"
 
-#: ../../source/translation.rst:409
+#: ../../source/translation.rst:433
 msgid ""
 "If the RENPY_LANGUAGE environment variable is set, that language is used."
 msgstr "RENPY_LANGUAGE 環境変数が設定されていれば、その言語が使用されます。"
 
-#: ../../source/translation.rst:411
+#: ../../source/translation.rst:435
 msgid ""
 "If :var:`config.language` is set, that language is used, overriding all of "
 "the following."
@@ -615,12 +650,12 @@ msgstr ""
 ":var:`config.language` が設定されていれば、その言語が使用され、次の全てを上書"
 "きします。"
 
-#: ../../source/translation.rst:413
+#: ../../source/translation.rst:437
 msgid ""
 "If the game has ever chosen a language in the past, that language is used."
 msgstr "過去にゲームで言語を選択したことがあれば、その言語が使用されます。"
 
-#: ../../source/translation.rst:415
+#: ../../source/translation.rst:439
 msgid ""
 "If this is the first time the game has been run and :var:`config."
 "enable_language_autodetect` is True, Ren'Py tries to autodetect the language "
@@ -630,22 +665,22 @@ msgstr ""
 "True になり、 Ren'Py は  :var:`config.locale_to_language_function` を使用して"
 "言語の自動検出を試みます。"
 
-#: ../../source/translation.rst:418
+#: ../../source/translation.rst:442
 msgid ""
 "If this is the first time the game has been run, :var:`config."
 "default_language` is used."
 msgstr ""
 "ゲームの最初の開始時には、 :var:`config.default_language` が使用されます。"
 
-#: ../../source/translation.rst:420
+#: ../../source/translation.rst:444
 msgid "Otherwise, the None language is used."
 msgstr "これら以外の場合は、None 言語が使用されます。"
 
-#: ../../source/translation.rst:423
+#: ../../source/translation.rst:447
 msgid "Translation Actions, Functions, and Variables"
 msgstr "翻訳に関連したアクション、関数、変数"
 
-#: ../../source/translation.rst:425
+#: ../../source/translation.rst:449
 msgid "The main way to switch languages is with the Language action."
 msgstr "言語を切り替える主な方法は、Language アクションの使用です。"
 
@@ -665,7 +700,7 @@ msgstr ""
 "翻訳先の言語の文字列、または None のときはゲームスクリプトの既定の言語を使い"
 "ます。"
 
-#: ../../source/translation.rst:429
+#: ../../source/translation.rst:453
 msgid ""
 "The Language action can be used to add a language preference to the "
 "preferences screen::"
@@ -673,7 +708,7 @@ msgstr ""
 "Language アクションを使うと、次のようなコードを使って設定画面に言語設定を追加"
 "できます ::"
 
-#: ../../source/translation.rst:440
+#: ../../source/translation.rst:464
 msgid "There are two translation-related functions:"
 msgstr "翻訳関連の関数は2つあります:"
 
@@ -695,12 +730,12 @@ msgid ""
 "language, None."
 msgstr "既知の言語のセットを返します。これには既定の言語 None は含まれません。"
 
-#: ../../source/translation.rst:444
+#: ../../source/translation.rst:468
 msgid ""
 "In addition, there are four functions that are related to string translation:"
 msgstr "さらに、文字列の翻訳に関連した 4 つの関数があります:"
 
-#: ../../source/translation.rst:449
+#: ../../source/translation.rst:473
 msgid ""
 "(Single underscore) Returns `s` unchanged. Ren'Py will scan for strings "
 "enclosed in this function, and add them to the list of translatable strings. "
@@ -710,7 +745,7 @@ msgstr ""
 "文字列をスキャンし、翻訳可能な文字列のリストにそれを追加します。文字列は表示"
 "されるまで翻訳されません。"
 
-#: ../../source/translation.rst:456
+#: ../../source/translation.rst:480
 msgid ""
 "(Double underscore) Returns `s` immediately translated into the current "
 "language. Strings enclosed in this function will be added to the list of "
@@ -760,7 +795,7 @@ msgstr ""
 "** 翻訳可能文字列のリストに追加されません。翻訳後の文字列が表示される時に文字"
 "列翻訳にマッチすると二重翻訳されるので注意してください。"
 
-#: ../../source/translation.rst:466
+#: ../../source/translation.rst:490
 msgid ""
 "There are two language-related variables. One is :var:`config."
 "default_language`, which is used to change the default language of the game."
@@ -768,7 +803,7 @@ msgstr ""
 "言語関連の変数は2つあります。1つは :var:`config.default_language` であり、"
 "ゲームのデフォルト言語を変更します。"
 
-#: ../../source/translation.rst:472
+#: ../../source/translation.rst:496
 msgid ""
 "The name of the current language, or None if the default language is being "
 "used. This should be treated as a read-only variable. To change the "
@@ -778,11 +813,11 @@ msgstr ""
 "み専用の変数として扱わなければなりません。言語を変更するには :func:`renpy."
 "change_language` を使用して下さい。"
 
-#: ../../source/translation.rst:480
+#: ../../source/translation.rst:504
 msgid "Unsanctioned Translations"
 msgstr "正式な認可を受けていない場合の翻訳"
 
-#: ../../source/translation.rst:484
+#: ../../source/translation.rst:508
 msgid ""
 "It's best to ask a game's creators for permission before creating an "
 "unsanctioned translation."
@@ -790,7 +825,7 @@ msgstr ""
 "正式に認可されていない翻訳を作成する前に、ゲーム制作者の許諾を得ることが最善"
 "です。"
 
-#: ../../source/translation.rst:487
+#: ../../source/translation.rst:511
 msgid ""
 "Ren'Py includes a small amount of support for creating translations without "
 "the active assistance of the game's creators. This support consists of the "
@@ -803,25 +838,25 @@ msgstr ""
 "る機能です。未翻訳の台詞に対して文字列翻訳を行う方法により、ゲームの翻訳が可"
 "能となります。"
 
-#: ../../source/translation.rst:494
+#: ../../source/translation.rst:518
 msgid "To create a string translation file, perform the following steps:"
 msgstr "文字列翻訳ファイルの作成は、次の手順で行います:"
 
-#: ../../source/translation.rst:496
+#: ../../source/translation.rst:520
 msgid ""
 "Set the RENPY_LANGUAGE environment variable to the language you want to "
 "translate to."
 msgstr "RENPY_LANGUAGE 環境変数を翻訳先にしたい言語に設定します。"
 
-#: ../../source/translation.rst:498
+#: ../../source/translation.rst:522
 msgid "Set the RENPY_UPDATE_STRINGS environment variable to a non-empty value."
 msgstr "RENPY_UPDATE_STRINGS 環境変数を空でない値に設定します。"
 
-#: ../../source/translation.rst:500
+#: ../../source/translation.rst:524
 msgid "Play through the game until all text is seen."
 msgstr "すべてのテキストが表示されるまでゲームを動かします。"
 
-#: ../../source/translation.rst:502
+#: ../../source/translation.rst:526
 msgid ""
 "This will update the \"game/tl/language/strings.rpy\" file with a "
 "translation template that contains all of the strings in it."
@@ -829,7 +864,7 @@ msgstr ""
 "これにより「 game/tl/language/strings.rpy 」ファイルが更新され、すべてのテキ"
 "ストが含まれた翻訳の雛形となります。"
 
-#: ../../source/translation.rst:505
+#: ../../source/translation.rst:529
 msgid ""
 "If a game doesn't include support for changing the language, it may be "
 "appropriate to use an ``init python`` block to set :var:`config.language` to "
@@ -838,7 +873,7 @@ msgstr ""
 "ゲームに言語切り替え機能が含まれていない場合は、 ``init python`` ブロックで :"
 "var:`config.language` にその言語を設定するのが適切でしょう。"
 
-#: ../../source/translation.rst:511
+#: ../../source/translation.rst:535
 msgid ""
 "If not None, sets the language to use at game launch, overriding any "
 "memorized choice made by the user."
@@ -846,7 +881,7 @@ msgstr ""
 "None でなければゲームの起動時にその言語に設定し、ユーザーのそれまでの選択を上"
 "書きします。"
 
-#: ../../source/translation.rst:514
+#: ../../source/translation.rst:538
 msgid ""
 "Along with the use of string translations for dialogue, unsanctioned "
 "translators may be interested in using the techniques described above to "
