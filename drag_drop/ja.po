@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-30 11:19+0900\n"
-"PO-Revision-Date: 2023-10-07 17:49+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2023-12-30 22:39+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:26+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/drag_drop.rst:4
 msgid "Drag and Drop"
@@ -160,7 +160,7 @@ msgstr "``selected_idle`` その上にドロップ可能な時。"
 msgid ""
 "``hover`` - when the draggable will be dragged when the mouse is clicked."
 msgstr ""
-"``hover`` - マウスがクリックされればドラッグ可能オブジェクトがドラッグされる"
+"``hover`` - マウスをクリックすればドラッグ可能オブジェクトをドラッグできる"
 "時。"
 
 #: ../../source/inc/drag_drop:19
@@ -334,17 +334,16 @@ msgid "`clicked`"
 msgstr "`clicked`"
 
 #: ../../source/inc/drag_drop:88
-#, fuzzy
 msgid ""
 "A callback that is called when the Drag is clicked without being moved. It "
 "is called with one argument, the Drag being clicked on. A droppable can also "
 "be focused and clicked. If the callback returns a value other than None, "
 "that value is returned as the result of the interaction."
 msgstr ""
-"Drag が移動せずにクリックされると、引数なしで呼び出されるコールバックです。ド"
-"ロップ可能オブジェクトはフォーカスを持ち、クリックすることも可能です。 コール"
-"バックが None ではなく値を返したら、その値はインタラクションの結果として返さ"
-"れます。"
+"Drag が移動なしでクリックされたときに、クリックされた Drag を引数に呼び出され"
+"るコールバックです。ドロップ可能オブジェクトもフォーカスを持て、クリックする"
+"ことも可能です。 コールバックが None ではなく値を返したら、その値がインタラク"
+"ションの結果として返されます。"
 
 #: ../../source/inc/drag_drop:97
 msgid "`alternate`"
@@ -363,27 +362,27 @@ msgstr ""
 
 #: ../../source/inc/drag_drop:100
 msgid "`hovered`"
-msgstr ""
+msgstr "`hovered`"
 
 #: ../../source/inc/drag_drop:100
 msgid "An action to run when the drag gains focus."
-msgstr ""
+msgstr "Drag がフォーカスを所得すると実行するアクションです。"
 
 #: ../../source/inc/drag_drop:103
 msgid "`unhovered`"
-msgstr ""
+msgstr "`unhovered`"
 
 #: ../../source/inc/drag_drop:103
 msgid "An action to run when the drag loses focus."
-msgstr ""
+msgstr "Drag がフォーカスを失うと実行するアクションです。"
 
 #: ../../source/inc/drag_drop:106
 msgid "`tooltip`"
-msgstr ""
+msgstr "`tooltip`"
 
 #: ../../source/inc/drag_drop:106
 msgid "A tooltip to display when the drag is hovered over."
-msgstr ""
+msgstr "Drag がホバー状態で表示される tooltip です。"
 
 #: ../../source/inc/drag_drop:110
 msgid "`drag_handle`"
@@ -402,7 +401,6 @@ msgid "`drag_joined`"
 msgstr "`drag_joined`"
 
 #: ../../source/inc/drag_drop:113
-#, fuzzy
 msgid ""
 "This is called with the current Drag as an argument. It's expected to return "
 "a list of [ (drag, x, y) ] tuples, giving the draggables to drag as a unit. "
@@ -413,7 +411,8 @@ msgstr ""
 "これは現在の Drag を引数として呼び出されます。ひとかたまりでドラッグしている"
 "ドラッグ可能オブジェクトのタプル [ (drag, x, y) ] を返すことが期待されます。 "
 "`x`, `y` は Drag の互いに対するオフセットで、この drag に対するものではありま"
-"せん。"
+"せん。 `drag` は組み合わされる Drag オブジェクトかそのような Drag の "
+"drag_name です。"
 
 #: ../../source/inc/drag_drop:192
 msgid "`drag_offscreen`"
@@ -580,9 +579,8 @@ msgstr ""
 "されている Drag のリストです。"
 
 #: ../../source/inc/drag_drop:220
-#, fuzzy
 msgid "`snapped`"
-msgstr "`dropped`"
+msgstr "`snapped`"
 
 #: ../../source/inc/drag_drop:206
 msgid ""
@@ -595,6 +593,12 @@ msgid ""
 "example, the following function sets the drag's start_x and start_y position "
 "to its intended end position if the snap animation was interrupted::"
 msgstr ""
+"ドラッグがスナップを完了すると呼び出されるコールバック(またはコールバックのリ"
+"スト)です。4つの引数で呼び出されます。1つ目はスナップアニメーションが処理され"
+"た Drag です。2つ目と3つ目は Drag がスナップするよう設定された x と y 座標で"
+"す。4つ目は真偽値で、 True ならスナップアニメーションは成功し、 False なら中"
+"断しました。例えば次の関数はスナップアニメーションが中断されると、その Drag "
+"の start_x と start_y 位置を意図したスナップ位置に設定します。 ::"
 
 #: ../../source/inc/drag_drop:222
 msgid ""
@@ -620,39 +624,37 @@ msgstr "`start_x`, `start_y`"
 
 #: ../../source/inc/drag_drop:230
 msgid "The drag start position of the Drag relative to its parent, in pixels."
-msgstr "ピクセルでのその親に対するドラッグ開始時のその Drag の位置"
+msgstr "ピクセルでのその親に対するドラッグ開始時の Drag の位置"
 
 #: ../../source/inc/drag_drop:234
-#, fuzzy
 msgid "`grab_x`, `grab_y`"
-msgstr "`start_x`, `start_y`"
+msgstr "`grab_x`, `grab_y`"
 
 #: ../../source/inc/drag_drop:233
-#, fuzzy
 msgid ""
 "The x and y positions, relative to its parent, where the drag was picked up, "
 "in pixels."
-msgstr "ピクセルでのその親に対する Drag の位置"
+msgstr "ピクセルでのその Drag に対する捕まれた x, y 位置です。"
 
 #: ../../source/inc/drag_drop:238
-#, fuzzy
 msgid "`last_drop`"
-msgstr "`mouse_drop`"
+msgstr "`last_drop`"
 
 #: ../../source/inc/drag_drop:237
 msgid ""
 "The last Drag that the current Drag can be dropped on if released, or None "
 "if no valid Drag currently exists."
 msgstr ""
+"離せば現在の Drag をドロップできる最後尾の Drag であり、妥当な Drag が現在な"
+"ければ None になります。"
 
 #: ../../source/inc/drag_drop:241
-#, fuzzy
 msgid "`snapping`"
-msgstr "`dragging`"
+msgstr "`snapping`"
 
 #: ../../source/inc/drag_drop:241
 msgid "True if this Drag is in the middle of a snapping animation."
-msgstr ""
+msgstr "この Drag がスナップアニメーションの途中なら True になります。"
 
 #: ../../source/inc/drag_drop:244
 msgid "`w`, `h`"
@@ -671,7 +673,6 @@ msgid "Changes the child of this drag to `d`."
 msgstr "この Drag の子を `d` に変更します。"
 
 #: ../../source/inc/drag_drop:256
-#, fuzzy
 msgid ""
 "Changes the position of the drag. If the drag is not showing, then the "
 "position change is instantaneous. Otherwise, the position change takes "
@@ -679,8 +680,8 @@ msgid ""
 "transition is linear."
 msgstr ""
 "Drag の位置を変更します。 Drag が表示されていないと位置の変更は瞬間です。そう"
-"でなければ、位置の変更は `delay` 秒かかり、等速で移動するアニメーションが表示"
-"されます。"
+"でなければ、位置の変更は `delay` 秒かけて任意のワーパーで行われ、ワーパーが指"
+"定されていなければ等速で移動します。"
 
 #: ../../source/inc/drag_drop:263
 msgid "Raises this displayable to the top of its drag_group."
@@ -720,13 +721,12 @@ msgstr ""
 "ドロップが受け入れられる最小のオーバーラップするピクセル数を表す整数です。"
 
 #: ../../source/inc/drag_drop:284
-#, fuzzy
 msgid ""
 "Adds `child`, which must be a Drag, to this DragGroup. This child will be "
 "added above all other children of this DragGroup."
 msgstr ""
-"`child` をこの DragGroup に追加します。 `child` は Drag でなければいけませ"
-"ん。"
+"ドラッグされなければならない `child` をこの DragGroup に追加します。 `child` "
+"はこの DragGroup の他の全ての子の上に追加されます。"
 
 #: ../../source/inc/drag_drop:289
 msgid ""

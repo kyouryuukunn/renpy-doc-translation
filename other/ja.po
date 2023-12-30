@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-30 11:19+0900\n"
-"PO-Revision-Date: 2023-10-07 17:48+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2023-12-30 20:46+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-07-01 06:14+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/other.rst:3
 msgid "Other Functions and Variables"
@@ -308,47 +308,46 @@ msgid ""
 "the use of SDL2 functions directly. However, using them often requires "
 "knowledge of the Python ctypes module."
 msgstr ""
+"SDL2 dll には :func:`renpy.get_sdl_dll` を使用してアクセスできます。これによ"
+"り SDL2 関数の直接使用が可能になります。しかし、それらの使用はしばしば "
+"Python ctypes モジュールの知識を必要とします。"
 
 #: ../../source/other.rst:136
-#, fuzzy
 msgid ""
 "There are no guarantees as to the version of SDL2 that's included with "
 "Ren'Py, including which features will or will not be compiled in. These "
 "functions may fail on platforms that can otherwise run Ren'Py. It's "
 "important to check for a None value before proceeding."
 msgstr ""
-"これらの関数は SDL dll 内の関数を呼び出す Python ctypes モジュールを使用出来"
-"るようにします。 Ren'Py に含まれている SDL2 がどの機能を含んで、あるいは含ま"
-"ずコンパイルされるかは保証しません。これらの関数は Ren'Py を実行するプラット"
-"フォームによっては失敗するので、処理前に None か確認することが重要です。"
+"Ren'Py に含まれている SDL2 はどの機能を持ち、どの機能を持たないかを含め、バー"
+"ジョンは保証されません。これらの関数は Ren'Py を実行するプラットフォームに"
+"よっては失敗するので、処理前に None か確認することが重要です。"
 
 #: ../../source/other.rst:141
 msgid ""
 "In the following example, the position of the window will be taken from "
 "SDL2::"
-msgstr ""
+msgstr "次の例では、ウィンドウの位置が SDL2 から所得されます。 ::"
 
 #: ../../source/inc/sdl:5
-#, fuzzy
 msgid ""
 "Returns a ctypes.cdll object that refers to the library that contains the "
 "instance of SDL2 that Ren'Py is using. If this fails, None is returned."
 msgstr ""
 "Ren'Py が使用している SDL2 のインスタンスを含むライブラリを参照する ctypes."
-"cdll オブジェクトを返します。"
+"cdll オブジェクトを返します。これに失敗すると None が返されます。"
 
 #: ../../source/inc/sdl:0
 msgid "戻り値の型"
-msgstr ""
+msgstr "戻り値の型"
 
 #: ../../source/inc/sdl:12
-#, fuzzy
 msgid ""
 "Returns a pointer to the main window, or None if the main window is not "
 "displayed (or some other problem occurs)."
 msgstr ""
-"メインウィンドウへの (ctypes.c_void_p 型の) ポインターを返すか、 メインウィン"
-"ドウが表示されていないかその他の問題が起きれば None を返します。"
+"メインウィンドウへのポインターを返すか、 メインウィンドウが表示されていなけれ"
+"ば(もしくはその他の問題が起きていれば) None を返します。"
 
 #: ../../source/other.rst:175
 msgid "Miscellaneous"
@@ -381,11 +380,12 @@ msgstr ""
 "に呼び出されるエラーとなります。"
 
 #: ../../source/inc/other:19
-#, fuzzy
 msgid ""
 "Returns True if the current platform supports fullscreen mode, False "
 "otherwise."
-msgstr "マウスカーソルが可視状態なら True, そうでなければFalse を返します。"
+msgstr ""
+"現在のプラットフォームがフルスクリーンモードをサポートしていれば True, そうで"
+"なければFalse を返します。"
 
 #: ../../source/inc/other:24
 msgid ""
@@ -802,6 +802,9 @@ msgid ""
 "This is meant to be called from a separate thread, whose creation is handled "
 "by :func:`renpy.invoke_in_thread`."
 msgstr ""
+"これはメインスレッドで指定引数で指定の関数を実行します。関数はイベントハンド"
+"ラーに類似するインタラクションコンテキストで実行されます。つまり :func:"
+"`renpy.invoke_in_thread` により作成された別のスレッドから呼び出せます。"
 
 #: ../../source/inc/other:254
 msgid ""
@@ -809,16 +812,20 @@ msgid ""
 "guaranteed that they will be run in the order in which they have been "
 "scheduled::"
 msgstr ""
+"シングルスレッドで複数の関数が実行されると、それらはスケジュールされた順で実"
+"行されることが保証されます。 ::"
 
 #: ../../source/inc/other:261
 msgid ""
 "In this example, it is guaranteed that ``a`` will return before ``b`` is "
 "called. The order of calls made from different threads is not guaranteed."
 msgstr ""
+"この例では、 ``b`` が呼び出されるより前に ``a`` が返されると保証されていま"
+"す。異なるスレッドからの呼び出し順は未保証です。"
 
 #: ../../source/inc/other:265
 msgid "This may not be called during the init phase."
-msgstr ""
+msgstr "これは初期化フェーズの間は呼びだされないはずです。"
 
 #: ../../source/inc/other:269
 msgid ""
@@ -837,32 +844,31 @@ msgstr ""
 "この関数は、 Ren'Py 終了時自動的に停止するデーモンスレッドを作成します。"
 
 #: ../../source/inc/other:276
-#, fuzzy
 msgid ""
 "This thread is very limited in what it can do with the Ren'Py API. Changing "
 "store variables is allowed, as are calling calling the following functions:"
 msgstr ""
 "このスレッドは Ren'Py API で実行できる範囲が非常に制限されています。 store 変"
-"数の変更と :func:`renpy.queue_event` 関数の呼び出しは許可されていますが、その"
-"他の殆どの Ren'Py API はメインスレッドからの呼び出しを想定しています。"
+"数の変更と次の関数の呼び出しは許可されています :"
 
 #: ../../source/inc/other:280
 msgid ":func:`renpy.restart_interaction`"
-msgstr ""
+msgstr ":func:`renpy.restart_interaction`"
 
 #: ../../source/inc/other:281
 msgid ":func:`renpy.invoke_in_main_thread`"
-msgstr ""
+msgstr ":func:`renpy.invoke_in_main_thread`"
 
 #: ../../source/inc/other:282
 msgid ":func:`renpy.queue_event`"
-msgstr ""
+msgstr ":func:`renpy.queue_event`"
 
 #: ../../source/inc/other:284
 msgid ""
 "Most other portions of the Ren'Py API are expected to be called from the "
 "main thread."
 msgstr ""
+"Ren'Py API の他のほとんどはメインスレッドからの呼び出しを想定しています。"
 
 #: ../../source/inc/other:287
 msgid ""

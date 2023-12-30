@@ -8,22 +8,21 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-12 15:56+0900\n"
-"PO-Revision-Date: 2023-10-20 12:30+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2023-12-31 01:00+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-03-28 05:30+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/language_basics.rst:3
 msgid "Language Basics"
 msgstr "言語の基本"
 
 #: ../../source/language_basics.rst:5
-#, fuzzy
 msgid ""
 "Before we can describe the Ren'Py language, we must first describe the "
 "structure of a Ren'Py script. This includes how files are broken into blocks "
@@ -40,19 +39,17 @@ msgid "Files"
 msgstr "ファイル"
 
 #: ../../source/language_basics.rst:13
-#, fuzzy
 msgid ""
 "The script of a Ren'Py game is made up of all the files found under the :"
 "file:`game/` directory ending with the :file:`.rpy` extension. Ren'Py will "
 "consider each of these files (in the Unicode order of their paths), and will "
 "use the contents of the files as the script."
 msgstr ""
-"Ren'Py ゲームのスクリプトは、game ディレクトリー以下の .rpy 拡張子で終わる"
-"ファイルで構成されています。Ren'Py はそのようなファイルを (そのパスの "
+"Ren'Py ゲームのスクリプトは、game ディレクトリー以下の :file:`.rpy` 拡張子で"
+"終わるファイルで構成されています。Ren'Py はそのようなファイルを (そのパスの "
 "Unicode 順に) 考慮し、そのファイルの内容をスクリプトとして扱います。"
 
 #: ../../source/language_basics.rst:18
-#, fuzzy
 msgid ""
 "Generally, there's no difference between a script written in one big file "
 "and a script broken into multiple files. Control can be transferred within "
@@ -63,13 +60,12 @@ msgid ""
 "script."
 msgstr ""
 "基本的に複数ファイルに分割したスクリプトと単一の大きなファイルでできたスクリ"
-"プトに違いはありません。他のファイルにあるラベルに対して jump や呼び出しをし"
-"て制御をファイル間で移動できます。これにより、自分のやり方に合わせてスクリプ"
-"トをファイルに分けられます。(イベントごとや、一日ごとの)小さなファイルを好む"
-"人もいれば、大きなスクリプトを好む人もいるでしょう。"
+"プトに違いはありません。 :doc:`label <label>` に対する jump や呼び出しにより"
+"(ファイル間を含め)スクリプト内で制御を移動できます。これにより、自分のやり方"
+"に合わせてスクリプトをファイルに分けられます。(イベントごとや、一日ごとの)小"
+"さなファイルを好む人もいれば、大きなスクリプトを好む人もいるでしょう。"
 
 #: ../../source/language_basics.rst:25
-#, fuzzy
 msgid ""
 "To speed up loading time, Ren'Py will compile the :file:`.rpy` files into :"
 "file:`.rpyc` files when it starts up. When a :file:`.rpy` file is changed, "
@@ -79,14 +75,15 @@ msgid ""
 "file is deleted, or renamed, or moved, without deleting the :file:`.rpyc` "
 "file : the script it contains will still get executed."
 msgstr ""
-"ロード時間を速くするために、Ren'Py は起動時に .rpy ファイルを .rpyc ファイル"
-"にコンパイルします。 .rpy ファイルが変更されると、 .rpyc ファイルは Ren'Py の"
-"起動時に更新されます。しかし、対応する .rpy がないような .rpyc ファイルが存在"
-"すると、その .rpyc ファイルが使われます。このため、 .rpy ファイルを削除すると"
-"きに .rpyc ファイルも削除しないと問題が起こるかもしれません。"
+"ロード時間を速くするために、Ren'Py は起動時に :file:`.rpy` ファイルを :file:"
+"`.rpyc` ファイルにコンパイルします。 :file:`.rpy` ファイルが変更されると、 :"
+"file:`.rpyc` ファイルは Ren'Py の起動時に更新されます。しかし、対応する :"
+"file:`.rpy` がないような :file:`.rpyc` ファイルが存在すると、その :file:`."
+"rpyc` ファイルが使われます。このため、 :file:`.rpy` ファイルが削除またはリ"
+"ネームや移動されると :file:`.rpyc` ファイルも削除しないとそれが含めるスクリプ"
+"トがまだ処理されるため問題が起こるかもしれません。"
 
 #: ../../source/language_basics.rst:33
-#, fuzzy
 msgid ""
 "Filenames must begin with a letter or number, but may not begin with \"00\", "
 "as Ren'Py uses such files for its own purposes."
@@ -99,7 +96,6 @@ msgid "Base Directory"
 msgstr "ベースディレクトリー"
 
 #: ../../source/language_basics.rst:39
-#, fuzzy
 msgid ""
 "The base directory is the directory that contains all files that are "
 "distributed with the game (even though not all the files in the base "
@@ -107,39 +103,37 @@ msgid ""
 "README files should be placed in the base directory."
 msgstr ""
 "ベースディレクトリーはゲームで配布される全てのファイルがあるディレクトリーで"
-"す ( 多分ゲームで配布されないファイルもいくつか含みます )。 README のような"
-"ファイルはベースディレクトリーに置かれるべきです。"
+"す ( 多分ゲームで配布されないファイルもいくつか含みます )。 :doc:`build` も参"
+"照してください。README のようなファイルはベースディレクトリーに置かれるべきで"
+"す。"
 
 #: ../../source/language_basics.rst:44
-#, fuzzy
 msgid ""
 "The base directory is created within the \"Projects Directory\", which can "
 "be set in the Launcher, when you create a new game. For example, if your "
 "Projects Directory is named :file:`renpygames`, and your game is named "
 "\"HelloWorld\", your base directory will be :file:`renpygames/HelloWorld`."
 msgstr ""
-"ベースディレクトリーは Ren'Py ディレクトリーの直下に作成され、そのゲームの名"
-"前になります。例えば Ren'Py ディレクトリーが renpy-6.11.2 であなたのゲーム名"
-"が「 HelloWorld 」なら、あなたのベースディレクトリーは renpy-6.11.2/"
-"HelloWorld になるでしょう。"
+"ベースディレクトリーはゲーム作成時にランチャーで設定される \"Projects "
+"Directory\" 内部に作成されます。例えば、プロジェクトディレクトリーが :file:"
+"`renpygames` でゲーム名が「 HelloWorld 」なら、あなたのゲームのベースディレク"
+"トリーは :file:`renpygames/HelloWorld` になるでしょう。"
 
 #: ../../source/language_basics.rst:50
 msgid "Game Directory"
 msgstr "ゲームディレクトリー"
 
 #: ../../source/language_basics.rst:52
-#, fuzzy
 msgid ""
 "The game directory is a directory named \"game\" inside the base directory. "
 "For example, if your base directory is :file:`renpygames/HelloWorld`, your "
 "game directory will be :file:`renpygames/HelloWorld/game`."
 msgstr ""
-"ゲームディレクトリーはほとんどの場合「 game 」と名付けられたベースディレクト"
-"リー直下のディレクトリーです。例えばベースディレクトリーが renpy-6.11.2/"
-"HelloWorld の場合ゲームディレクトリーは renpy-6.11.2/HelloWorld/game です。"
+"ゲームディレクトリーは「 game 」と名付けられたベースディレクトリー下のディレ"
+"クトリーです。例えばベースディレクトリーが :file:`renpygames/HelloWorld` の場"
+"合、ゲームディレクトリーは :file:`renpygames/HelloWorld/game` です。"
 
 #: ../../source/language_basics.rst:56
-#, fuzzy
 msgid ""
 "The game directory contains all the files used by the game. It, including "
 "all subdirectories, is scanned for :file:`.rpy` and :file:`.rpyc` files, and "
@@ -150,26 +144,26 @@ msgid ""
 "searchpath` can change this)."
 msgstr ""
 "ゲームディレクトリーにはゲームで使用される全てのファイルが有ります。すべての"
-"サブディレクトリーを含めたゲームディレクトリーで .rpy, .rpyc ファイルが検索さ"
-"れ、ゲームスクリプトを構成します。 .rpa アーカイブもゲームディレクトリーで検"
-"索され、自動的にゲームで使用されます。ロードするファイルのパスが指定される"
-"と、ゲームディレクトリーからの相対パスでロードされます(しかし config.search "
-"でこれは変更可能です)。"
+"サブディレクトリーを含め、ゲームディレクトリーでは :file:`.rpy` と :file:`."
+"rpyc` ファイルが検索され、ゲームスクリプトを構成します。 :file:`.rpa` アーカ"
+"イブもゲームディレクトリーで検索され、自動的にゲームで使用されます。最後に "
+"Ren'Py がファイルへのパスを受け取るまたは含めるときは、そのパスは (ごく僅かな"
+"例外を除き) ゲームディレクトリーからの相対パスです(しかし :var:`config."
+"searchpath` でこれは変更可能です)。"
 
 #: ../../source/language_basics.rst:64
 msgid "Comments"
 msgstr "コメント"
 
 #: ../../source/language_basics.rst:66
-#, fuzzy
 msgid ""
 "A Ren'Py script file may contain comments. A comment begins with a hash mark "
 "(``#``), and ends at the end of the line containing the comment. As an "
 "exception, a comment may not be part of a string."
 msgstr ""
 "Ren'Py スクリプトファイルには、コメントを含められます。コメントは、ハッシュ記"
-"号 ('#') で始まり、コメントを含む行の終端で終わります。例のように、コメントは"
-"文字列の一部にはできません。"
+"号 (``#``) で始まり、コメントを含む行の終端で終わります。例のように、コメント"
+"は文字列の一部にはできません。"
 
 #: ../../source/language_basics.rst:77
 msgid ""
@@ -194,25 +188,25 @@ msgstr ""
 "わります:"
 
 #: ../../source/language_basics.rst:88
-#, fuzzy
 msgid "The last character on the line is a backslash (``\\``)."
-msgstr "行がバックスラッシュ ('\\\\')で終わるとき。"
+msgstr "行がバックスラッシュ (``\\``) で終わるとき。"
 
 #: ../../source/language_basics.rst:90
-#, fuzzy
 msgid ""
 "The line contains an open parenthesis character (``(``, ``{``, or ``[``), "
 "that hasn't been matched by the cooresponding closing parenthesis character "
 "(\\ ``)``, ``}``, or ``]``, respectively)."
 msgstr ""
-"行に開き括弧文字 ('(', '{', '[') があり、かつ対応する閉じ括弧文字 (それぞれ "
-"')', '}', ']') がないとき。"
+"行に開き括弧文字 (``(``, ``{``, ``[``) があり、かつ対応する閉じ括弧文字 (それ"
+"ぞれ \\ ``)``, ``}``, ``]``) がないとき。"
 
 #: ../../source/language_basics.rst:94
 msgid ""
 "The end of the line occurs during a string - *any* string, even with single "
 "quotes, as opposed to Python rules."
 msgstr ""
+"Python のルールとは異なり、シングルクオート含め *どのような文字列* であっても"
+"文字列中で行の終わりが発生します。"
 
 #: ../../source/language_basics.rst:97
 msgid ""
@@ -221,16 +215,13 @@ msgid ""
 msgstr "論理行が終わると、次の行の初めから次の論理行が始まります。"
 
 #: ../../source/language_basics.rst:100
-#, fuzzy
 msgid ""
 "Most statements in the Ren'Py language consist of a single logical line."
-msgstr ""
-"Ren'Py 言語のほとんどのステートメントは一つの論理行でできていますが、中には複"
-"数の行でできているステートメントもあります。"
+msgstr "Ren'Py 言語のほとんどのステートメントは一つの論理行でできています。"
 
 #: ../../source/language_basics.rst:112
 msgid "Empty lines are ignored and do not count as logical lines."
-msgstr ""
+msgstr "空の行は無視されて、論理行としてはカウントされません。"
 
 #: ../../source/language_basics.rst:116
 msgid "Indentation and Blocks"
@@ -252,9 +243,9 @@ msgid ""
 "group of lines, and often a group of statements. The rules for dividing a "
 "file into blocks are:"
 msgstr ""
-"インデントは、文を :dfn:`ブロック` にまとめるのに使われます。ブロックは行のま"
-"とまりで、多くはステートメントのまとまりでもあります。ファイルをブロックに分"
-"ける規則は:"
+"インデントは、ステートメントを :dfn:`ブロック` にまとめるのに使われます。ブ"
+"ロックは行のまとまりで、多くはステートメントのまとまりでもあります。ファイル"
+"をブロックに分ける規則は:"
 
 #: ../../source/language_basics.rst:126
 msgid "A block is open at the start of a file."
@@ -271,25 +262,23 @@ msgid "All logical lines inside a block must have the same indentation."
 msgstr "一つのブロック内のインデントは、すべて同じでなければなりません。"
 
 #: ../../source/language_basics.rst:133
-#, fuzzy
 msgid ""
 "A block ends when a non-empty logical line is encountered with less "
 "indentation than the lines in the block."
 msgstr ""
-"ブロックは、ブロックの各行よりも少ないインデントの論理行があるときに終わりま"
-"す。"
+"ブロックは、ブロックの各行よりも少ないインデントの空ではない論理行があるとき"
+"に終わります。"
 
 #: ../../source/language_basics.rst:136
-#, fuzzy
 msgid ""
 "Indentation is very important in Ren'Py, as it is in Python, and it can "
 "cause syntax or logical errors when it's incorrect. At the same time, the "
 "use of indentation to express the block structure is far simpler than other "
 "languages using other delimiters."
 msgstr ""
-"Ren'Py ではインデントが非常に重要で、正しくないと構文または論理エラーを起こし"
-"ます。同時に、インデントでブロック構造を伝えるのでスクリプトテキストを圧迫せ"
-"ず構造を明示できます。"
+"Ren'Py では Python 同様インデントが非常に重要で、正しくないと構文または論理エ"
+"ラーを起こします。同時に、インデントでブロック構造を伝えるので他の区切りを使"
+"用する言語よりずっと簡単にできます。"
 
 #: ../../source/language_basics.rst:157
 msgid "Elements of Statements"
@@ -304,13 +293,12 @@ msgid ":dfn:`Keyword`"
 msgstr ":dfn:`予約語`"
 
 #: ../../source/language_basics.rst:162
-#, fuzzy
 msgid ""
 "A keyword is a word that must literally appear in the script of the game. "
 "Keywords are typically used to introduce statements and properties."
 msgstr ""
-"予約語は、ソースコードに正確に書かなければならない単語です。予約語はステート"
-"メントやプロパティーを導入するのに使われます。"
+"予約語は、ソースコードに正確に書かなければならない単語です。予約語は主にス"
+"テートメントやプロパティーを導入するのに使われます。"
 
 #: ../../source/language_basics.rst:177
 msgid ":dfn:`Name`"
@@ -390,14 +378,13 @@ msgstr ""
 "を含めるのにも使います。"
 
 #: ../../source/language_basics.rst:199
-#, fuzzy
 msgid ""
 "Inside a Ren'Py string, consecutive sequences of whitespace and line breaks "
 "are compressed into a single whitespace character, unless a space is "
 "preceded by a backslash. ::"
 msgstr ""
-"Ren'Py 文字列の中で連続する空白は、そのスペースにバックスラッシュを前置しない"
-"限り、一つの空白文字にまとめられます::"
+"Ren'Py の文字列中にある連続する空白と改行は、そのスペースにバックスラッシュを"
+"前置しない限り、一つの空白文字にまとめられます::"
 
 #: ../../source/language_basics.rst:212
 msgid ""
@@ -407,6 +394,10 @@ msgid ""
 "string is expected, and when they are, they usually yield a different result "
 "- see :ref:`monologue-mode` for an example."
 msgstr ""
+"``r`` 接頭辞はサポートされており、多かれ少なかれ Python のルールに従います。 "
+"``u``, ``b``, ``f`` のような他の接頭辞はサポートされません。トリプルクオート"
+"の文字列は一般的には通常の文字列が期待されるところでは受け入れられず、通常異"
+"なる結果になります。例の :ref:`monologue-mode` を参照してください。"
 
 #: ../../source/language_basics.rst:220
 msgid ""
@@ -415,6 +406,10 @@ msgid ""
 "statements <python-statement>`, or in expressions (see below), follow "
 "ordinary Python rules."
 msgstr ""
+"これは :ref:`say-statement` や :doc:`menus` のような Ren'Py のスクリプトの *"
+"ディレクトリー* にある文字列に適用されます。 :ref:`python ステートメント "
+"<python-statement>` や(後述の)式にある文字列は通常の python のルールに従いま"
+"す。"
 
 #: ../../source/language_basics.rst:242
 msgid ":dfn:`Simple Expression`"
@@ -471,29 +466,28 @@ msgid ":dfn:`Python Expression`"
 msgstr ":dfn:`Python 式`"
 
 #: ../../source/language_basics.rst:245
-#, fuzzy
 msgid ""
 "A Python expression is an arbitrary Python expression, that may not include "
 "a colon. These are used to express the conditions in the :ref:`if <if-"
 "statement>` and :ref:`while <while-statement>` statements."
 msgstr ""
-"Python 式はコロンを含まない任意の Python の式です。これらは、if や while ス"
-"テートメントの条件に使われます。"
+"Python 式はコロンを含まない任意の Python の式です。これらは、 :ref:`if <if-"
+"statement>` や :ref:`while <while-statement>` ステートメントの条件に使われま"
+"す。"
 
 #: ../../source/language_basics.rst:251
 msgid "Common Statement Syntax"
 msgstr "共通の構文"
 
 #: ../../source/language_basics.rst:253
-#, fuzzy
 msgid ""
 "Most Ren'Py statements share a common syntax. With the exception of the :ref:"
 "`say-statement`, they begin with a keyword that introduces the statement. "
 "This keyword is followed by a parameter, if the statement takes one."
 msgstr ""
-"ほとんどの Ren'Py ステートメントは構文が同じです。say ステートメントを除き、"
-"ステートメントを導入する予約語で始まります。ステートメントがパラメーターを受"
-"け取るなら、予約語の次に続きます。"
+"ほとんどの Ren'Py ステートメントは構文が同じです。 :ref:`say-statement` を除"
+"き、ステートメントを導入する予約語で始まります。ステートメントがパラメーター"
+"を受け取るなら、予約語の次に続きます。"
 
 #: ../../source/language_basics.rst:257
 msgid ""
@@ -568,7 +562,6 @@ msgstr ""
 "小数点数です。"
 
 #: ../../source/language_basics.rst:294
-#, fuzzy
 msgid ""
 "Python strings begin with \" or ', and end with the same character. \\\\ is "
 "used to escape the end character, and to introduce special characters like "
@@ -577,7 +570,8 @@ msgid ""
 msgstr ""
 "Python 文字列は、\" または ' で始まり、同じ文字で終わります。終わりの文字をエ"
 "スケープしたり、改行 (\\\\n) などの特殊文字を導入するのに \\\\ が使われま"
-"す。 Ren'Py の文字列と違い、 Python の文字列は行を跨げません。"
+"す。 Ren'Py の文字列と違い、 Python の文字列は複数の行や \\` での区切りを跨げ"
+"ません。"
 
 #: ../../source/language_basics.rst:301
 msgid ":dfn:`True, False, None`"
@@ -635,23 +629,21 @@ msgid ":dfn:`Variable`"
 msgstr ":dfn:`変数`"
 
 #: ../../source/language_basics.rst:330
-#, fuzzy
 msgid ""
 "Python expressions can use variables, that store values defined using the :"
 "ref:`define-statement` or the :ref:`default-statement`. A variable name "
 "follows the rules of a :dfn:`name` as explained in :ref:`elements-of-"
 "statements`. For example::"
 msgstr ""
-"``define`` ステートメントや Python ステートメントを使って定義された値を保存す"
-"る変数を、 Python 式では扱えます。変数は文字またはアンダースコアで始まり、ゼ"
-"ロ個以上の文字、数字、アンダースコアが続きます。例 ::"
+"Python 式では :ref:`define` ステートメントや :ref:`default-statement` を使っ"
+"て定義された値を保存する変数を扱えます。変数名は :ref:`elements-of-"
+"statements` で説明された通りに、 :dfn:`name` のルールに従います。例 ::"
 
 #: ../../source/language_basics.rst:347
 msgid ":dfn:`Field Access`"
 msgstr ":dfn:`フィールドアクセス`"
 
 #: ../../source/language_basics.rst:340
-#, fuzzy
 msgid ""
 "Python modules and objects have fields, which can be accessed by following "
 "an expression (usually a variable) with a dot and the field name. For "
@@ -661,7 +653,6 @@ msgstr ""
 "を続けてアクセスできます。例えば:"
 
 #: ../../source/language_basics.rst:346
-#, fuzzy
 msgid ""
 "consists of a variable (config) followed by a field access (screen_width)."
 msgstr ""
@@ -672,7 +663,6 @@ msgid ":dfn:`Call`"
 msgstr ":dfn:`呼び出し`"
 
 #: ../../source/language_basics.rst:350
-#, fuzzy
 msgid ""
 "Python expressions can call a function which returns a value. They begin "
 "with an expression (usually a variable), followed by a left-parenthesis, a "
@@ -687,21 +677,23 @@ msgstr ""
 "す。例 ::"
 
 #: ../../source/language_basics.rst:360
-#, fuzzy
 msgid ""
 "we call the :func:`Character` function. It's given one positional argument, "
 "the string \"Eileen\". It's given two keyword argument: ``type`` with the "
 "value of the ``adv`` variable, and ``color`` with a string value of ``"
 "\"#0f0\"``."
 msgstr ""
-"1 つの位置引数、文字列 \"Eileen\" が与えられています。2 つのキーワード引数、 "
-"``type`` に値 ``adv`` が、 ``color`` に文字列値 \"#0f0\" が与えられています。"
+":func:`Character` 関数を呼んでいます。1 つの位置引数、文字列 \"Eileen\" が指"
+"定されています。2 つのキーワード引数、 ``type`` に値 ``adv`` が、 ``color`` "
+"に文字列値 \"#0f0\" が与えられています。"
 
 #: ../../source/language_basics.rst:365
 msgid ""
 "Other objects than functions can be called, and are widely known as :dfn:"
 "`callables`."
 msgstr ""
+"関数以外のオブジェクトも呼び出せ、 :dfn:`callables` として広く知られていま"
+"す。"
 
 #: ../../source/language_basics.rst:368
 msgid ""
@@ -737,7 +729,6 @@ msgid ""
 msgstr "1 つのキーワード引数 position を持ち、そのデフォルト値は (0, 0) です。"
 
 #: ../../source/language_basics.rst:385
-#, fuzzy
 msgid ""
 "Since the functions ends with ``**properties``, it means that it can take :"
 "doc:`style properties <style_properties>` as additional keyword arguments. "
@@ -746,10 +737,11 @@ msgid ""
 "a wide range of keyword parameters which are usually explained in the "
 "function's documentation."
 msgstr ""
-"この関数は \\*\\*properties で終わっているので、追加のキーワード引数として :"
-"doc:`スタイルプロパティー <style_properties>` を受け取れます。その他の項目と"
-"して、任意の数の位置パラメーターを受け取ることを表す \\*args や、ドキュメント"
-"で解説されているキーワード引数を受け取る \\*\\*kwargs があります。"
+"この関数は ``**properties`` で終わっているので、追加のキーワード引数として :"
+"doc:`スタイルプロパティー <style_properties>` を受け取れます。その他の特別な"
+"項目として、任意の数の位置パラメーターを受け取ることを表す ``*args`` や、通常"
+"その関数のドキュメントで解説されている広い範囲のキーワード引数を受け取る "
+"``**kwargs`` があります。"
 
 #: ../../source/language_basics.rst:392
 msgid ""
@@ -759,9 +751,12 @@ msgid ""
 "that the parameters *after* it are keyword-only, which means that they "
 "should only be passed using the ``name=value`` syntax."
 msgstr ""
+"関数の構文でみられる ``/`` シンボルはそれ以前のパラメーターは位置引数のみで"
+"キーワード引数を渡すべきで無いことを意味しています。 ``*`` シンボルは逆に *そ"
+"の後は* キーワード引数のみ、つまり ``name=value`` 構文でであることを表してい"
+"ます。"
 
 #: ../../source/language_basics.rst:398
-#, fuzzy
 msgid ""
 "Python is a lot more powerful than we have space for in this manual. To "
 "learn Python in more detail, we recommend starting with the Python tutorial, "
@@ -773,8 +768,8 @@ msgstr ""
 "Python はこのマニュアルで記述されているよりずっとパワフルです。 Python につい"
 "てより詳しく学ぶなら、以下のサイトの Python tutorial を始めることを勧めま"
 "す。 `python.org <https://docs.python.org/tutorial/index.html>`_ Ren'Py の使"
-"用には Python の深い知識は必要ないと思われますが、Python ステートメントの基本"
-"や表現はしばしば有効です。"
+"用には Python の深い知識は必要ないと思われますが、Python ステートメントと式の"
+"基本知識はしばしば有効です。"
 
 #~ msgid "However, Ren'Py searches directories in the following order:"
 #~ msgstr "その他に、Ren'Py は以下の順にディレクトリーを検索します。 :"

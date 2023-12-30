@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-23 12:59+0900\n"
-"PO-Revision-Date: 2023-07-11 19:31+0900\n"
-"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"PO-Revision-Date: 2023-12-30 18:01+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-04-08 05:43+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../source/screen_python.rst:3
 msgid "Screens and Python"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../../source/inc/screens:95
 msgid "Returns the value of a variable in the scope of a screen."
-msgstr ""
+msgstr "スクリーンのスコープ内の変数の値を返します。"
 
 #: ../../source/inc/custom_sl:9 ../../source/inc/custom_sl:108
 #: ../../source/inc/screens:98 ../../source/inc/screens:133
@@ -183,9 +183,8 @@ msgid "`name`"
 msgstr "`name`"
 
 #: ../../source/inc/screens:98
-#, fuzzy
 msgid "The name of the variable to return."
-msgstr "表示するスクリーンの名前です。"
+msgstr "返す変数の名前です。"
 
 #: ../../source/inc/custom_sl:115 ../../source/inc/screens:104
 #: ../../source/inc/screens:142
@@ -198,16 +197,17 @@ msgid ""
 "screen is used. (The current screen is only defined when updating a screen, "
 "and in actions that are run inside the screen.)"
 msgstr ""
+"変数を返すスクリーンの名前です。 None なら現在のスクリーンが使用されます(現在"
+"のスクリーンはスクリーンの更新時とスクリーン内で実行されるアクション内でのみ"
+"定義されます)。"
 
 #: ../../source/inc/screens:106 ../../source/inc/screens:144
-#, fuzzy
 msgid "`layer`"
-msgstr "`_layer`"
+msgstr "`layer`"
 
 #: ../../source/inc/screens:107 ../../source/inc/screens:145
-#, fuzzy
 msgid "The layer to find the screen on, if `screen` is not None."
-msgstr "スクリーンを表示するためのレイヤーです。"
+msgstr "`screen` が None でなければスクリーンを探すためのレイヤーです。"
 
 #: ../../source/inc/screens:111
 msgid "The programmatic equivalent of the hide screen statement."
@@ -240,6 +240,9 @@ msgid ""
 "immediately update the variable's value - call :func:`renpy."
 "restart_interaction` to cause the screen to be updated."
 msgstr ""
+"あるスクリーンのスコープにある変数の値を設定します。これは変数の値を即座には"
+"更新しないことに注意してください。 :func:`renpy.restart_interaction` を呼び出"
+"してアップデートしてください。"
 
 #: ../../source/inc/screens:131
 msgid ""
@@ -247,15 +250,16 @@ msgid ""
 "ref:`sl-default` statement, as optimization may prevent changes to other "
 "variables from being visible."
 msgstr ""
+"設定する変数名です。最適化が他の変数に対する変更を見えなくすることがあるた"
+"め、これは :ref:`sl-default` ステートメントで作成された変数であるべきです。"
 
 #: ../../source/inc/screens:136 ../../source/inc/ui:17
 msgid "`value`"
 msgstr "`value`"
 
 #: ../../source/inc/screens:136
-#, fuzzy
 msgid "The value to set the variable to."
-msgstr "スクリーンを表示するためのレイヤーです。"
+msgstr "変数を設定する値です。"
 
 #: ../../source/inc/screens:149
 msgid "The programmatic equivalent of the show screen statement."
@@ -743,12 +747,17 @@ msgstr ""
 "れます。"
 
 #: ../../source/screen_python.rst:93
+#, fuzzy
 msgid ""
 "The text-to-speech text used for buttons that use this Action, if the button "
 "does not have the :propref:`alt` property set. This can set to a string in "
 "the class, in the constructor, it or it can be a Python property that "
 "returns a string."
 msgstr ""
+"このアクションを使用するボタンに:propref:`alt` プロパティーが設定されていなけ"
+"れば、そのボタンに対して読み上げられるテキストとなります。This can set to a "
+"string in the class, in the constructor, it or it can be a Python property "
+"that returns a string."
 
 #: ../../source/screen_python.rst:98
 msgid "To run an action from Python, use :func:`renpy.run`."
@@ -874,12 +883,17 @@ msgstr ""
 "adjustment の changed メソッドを呼び出すべきです。"
 
 #: ../../source/screen_python.rst:165
+#, fuzzy
 msgid ""
 "The text-to-speech text used for bars that use this BarValue, if the bar "
 "does not have the :propref:`alt` property set. This can set to a string in "
 "the class, in the constructor, it or it can be a Python property that "
 "returns a string."
 msgstr ""
+"この BarValue を使用するボタンに:propref:`alt` プロパティーが設定されていなけ"
+"れば、そのバーに対して読み上げられるテキストとなります。This can set to a "
+"string in the class, in the constructor, it or it can be a Python property "
+"that returns a string."
 
 #: ../../source/screen_python.rst:172
 msgid "InputValue"
@@ -1219,11 +1233,12 @@ msgstr ""
 "す。"
 
 #: ../../source/inc/custom_sl:100
-#, fuzzy
 msgid ""
 "Adds all styles and positional/keyword arguments that can be passed to the "
 "`name` screen statement."
-msgstr "_ で始まらない位置引数、キーワード引数はスクリーンに渡されます。"
+msgstr ""
+"`name` スクリーンステートメントに渡せるすべてのスタイルと位置引数、キーワード"
+"引数を追加します。"
 
 #: ../../source/inc/custom_sl:104
 msgid "Registers a custom screen language statement with Ren'Py."
