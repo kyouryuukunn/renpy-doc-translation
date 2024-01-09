@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 11:07+0900\n"
+"POT-Creation-Date: 2024-01-09 14:26+0900\n"
 "PO-Revision-Date: \n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/screen_actions.rst:3
 msgid "Screen Actions, Values, and Functions"
@@ -352,8 +352,8 @@ msgid ""
 "IncrementVariable)` actions change the value of the global variable called "
 "`name`, found in the general store. The `name` argument must be a string, "
 "and can be a simple name like \"strength\", or one with dots separating the "
-"variable from fields, like \"hero.strength\" or \"persistent."
-"show_cutscenes\"."
+"variable from fields, like \"hero.strength\" or \"persistent.show_cutscenes"
+"\"."
 msgstr ""
 ":abbr:`-Variable (SetVariable, ToggleVariable, CycleVariable, "
 "IncrementVariable)` アクションは、 `name` というグローバル変数の値を変更しま"
@@ -580,17 +580,46 @@ msgstr ""
 "使用されます。"
 
 #: ../../source/inc/menu_action:5
-msgid "Causes Ren'Py to return to the main menu."
-msgstr "Ren'Py をメインメニューに戻らせます。"
+msgid ""
+"Causes the last save to be loaded. The purpose of this is to load the "
+"player's last save from the main menu."
+msgstr ""
+"最後の保存をロードします。これの目的は、メインメニューからプレーヤーの最後の"
+"セーブをロードすることです。"
+
+#: ../../source/inc/menu_action:13
+msgid "`regexp`"
+msgstr "`regexp`"
+
+#: ../../source/inc/menu_action:10
+msgid ""
+"If present, will be used in `renpy.newest_slot`. The default pattern will "
+"continue from any save, including quick saves and auto saves. If you want to "
+"continue from only saves created by the player, set this to ``r\"\\d\"``."
+msgstr ""
+"あれば、 `renpy.newest_slot` で使用されます。デフォルトのパターンは、クイック"
+"セーブや自動保存など、すべてのセーブからロードされます。プレイヤーが作成した"
+"セーブデータのみから続行したい場合は、これを ``r\"\\d\"`` に設定します。"
 
 #: ../../source/inc/file_action:27 ../../source/inc/file_action:45
 #: ../../source/inc/file_action:117 ../../source/inc/file_action:148
-#: ../../source/inc/menu_action:10 ../../source/inc/menu_action:23
-#: ../../source/inc/other_action:227
+#: ../../source/inc/menu_action:16 ../../source/inc/menu_action:26
+#: ../../source/inc/menu_action:39 ../../source/inc/other_action:228
 msgid "`confirm`"
 msgstr "`confirm`"
 
-#: ../../source/inc/menu_action:8
+#: ../../source/inc/menu_action:16
+msgid ""
+"If true, causes Ren'Py to ask the user if they want to continue where they "
+"left off, if they are not at the main menu."
+msgstr ""
+"True の場合、メインメニュー以外ではユーザーに中断した場所に戻るか確認します。"
+
+#: ../../source/inc/menu_action:21
+msgid "Causes Ren'Py to return to the main menu."
+msgstr "Ren'Py をメインメニューに戻らせます。"
+
+#: ../../source/inc/menu_action:24
 msgid ""
 "If true, causes Ren'Py to ask the user if he wishes to return to the main "
 "menu, rather than returning directly."
@@ -598,11 +627,11 @@ msgstr ""
 "True の場合、直接戻らずにメインメニューに本当に戻りたいかどうかユーザーに尋ね"
 "ます。"
 
-#: ../../source/inc/menu_action:14
+#: ../../source/inc/menu_action:30
 msgid "`save`"
 msgstr "`save`"
 
-#: ../../source/inc/menu_action:13
+#: ../../source/inc/menu_action:29
 msgid ""
 "If true, the game is saved in :var:`_quit_slot` before Ren'Py restarts and "
 "returns the user to the main menu. The game is not saved if :var:"
@@ -611,11 +640,11 @@ msgstr ""
 "true なら、 :var:`_quit_slot` にゲームがセーブされてからメインメニューに戻り"
 "ます。 :var:`_quit_slot` が None ならゲームはセーブされません。"
 
-#: ../../source/inc/menu_action:19
+#: ../../source/inc/menu_action:35
 msgid "Quits the game."
 msgstr "ゲームを終了します。"
 
-#: ../../source/inc/menu_action:22
+#: ../../source/inc/menu_action:38
 msgid ""
 "If true, prompts the user if he wants to quit, rather than quitting "
 "directly. If None, asks if and only if the user is not at the main menu."
@@ -623,7 +652,7 @@ msgstr ""
 "True の場合、直接終了せずに、ユーザーに終了したいかどうか尋ねます。None なら"
 "ユーザーがメインメニューにいないときのみ尋ねます。"
 
-#: ../../source/inc/menu_action:28
+#: ../../source/inc/menu_action:44
 msgid ""
 "Causes us to enter the game menu, if we're not there already. If we are in "
 "the game menu, then this shows a screen or jumps to a label."
@@ -631,19 +660,21 @@ msgstr ""
 "すでに入っていなければゲームメニューに入ります。ゲームメニューにいる場合、ス"
 "クリーンを表示するかラベルにジャンプします。"
 
-#: ../../source/inc/menu_action:31
+#: ../../source/inc/menu_action:47
 msgid ""
 "`screen` is usually the name of a screen, which is shown using the screen "
-"mechanism with the ``*args`` and ``**kwargs`` passed to the screen. If the "
-"screen doesn't exist, then \"_screen\" is appended to it, and that label is "
-"jumped to, ignoring `args` and `kwargs`."
+"mechanism. If the screen doesn't exist, then \"_screen\" is appended to it, "
+"and that label is jumped to. the screen mechanism with the ``*args`` and "
+"``**kwargs`` passed to the screen. If the screen doesn't exist, then "
+"\"_screen\" is appended to it, and that label is jumped to, ignoring `args` "
+"and `kwargs`."
 msgstr ""
-"`screen` は通常、表示されるスクリーンの名前であり、そのスクリーンに渡される "
-"``*args`` と ``**kwargs`` と共に、スクリーンにシステムを使用して表示されま"
-"す。そのスクリーンが存在しない場合、 `args` と `kwargs` は無視されて、そのス"
-"クリーン名に「 _screen」を付け足したラベルにジャンプします。"
+"`screen` は通常、スクリーンのシステムで表示されるスクリーンの名前です。そのス"
+"クリーンが存在しなければ、 \"_screen\" を末尾に追加したラベルにジャンプしま"
+"す。スクリーンのシステムでは ``*args`` と ``**kwargs`` がそのスクリーンに渡さ"
+"れますが、ラベルでは `args` と `kwargs` は無視されます。"
 
-#: ../../source/inc/menu_action:36
+#: ../../source/inc/menu_action:54
 msgid ""
 "If the optional keyword argument `_transition` is given, the menu will "
 "change screens using the provided transition. If not manually specified, the "
@@ -653,19 +684,19 @@ msgstr ""
 "ションを使ってでスクリーンを変更します。手動で指定されなければ、デフォルトの"
 "トランジションは `config.intra_transition` です。"
 
-#: ../../source/inc/menu_action:41
+#: ../../source/inc/menu_action:59
 msgid "ShowMenu(\"load\")"
 msgstr "ShowMenu(\"load\")"
 
-#: ../../source/inc/menu_action:42
+#: ../../source/inc/menu_action:60
 msgid "ShowMenu(\"save\")"
 msgstr "ShowMenu(\"save\")"
 
-#: ../../source/inc/menu_action:43
+#: ../../source/inc/menu_action:61
 msgid "ShowMenu(\"preferences\")"
 msgstr "ShowMenu(\"preferences\")"
 
-#: ../../source/inc/menu_action:45
+#: ../../source/inc/menu_action:63
 msgid ""
 "This can also be used to show user-defined menu screens. For example, if one "
 "has a \"stats\" screen defined, one can show it as part of the game menu "
@@ -675,11 +706,11 @@ msgstr ""
 "「 starts 」スクリーンが定義されていれば以下のように game menu の一部としてそ"
 "れを表示できます。 :"
 
-#: ../../source/inc/menu_action:49
+#: ../../source/inc/menu_action:67
 msgid "ShowMenu(\"stats\")"
 msgstr "ShowMenu(\"stats\")"
 
-#: ../../source/inc/menu_action:51
+#: ../../source/inc/menu_action:69
 msgid ""
 "ShowMenu without an argument will enter the game menu at the default screen, "
 "taken from :var:`_game_menu_screen`."
@@ -687,11 +718,11 @@ msgstr ""
 "引数なしの ShowMenu は :var:`_game_menu_screen` から所得されるデフォルトの"
 "ゲームメニューには入ります。"
 
-#: ../../source/inc/menu_action:54
+#: ../../source/inc/menu_action:72
 msgid "Extra arguments and keyword arguments are passed on to the screen"
 msgstr "その他の引数とキーワード引数はそのスクリーンに渡されます。"
 
-#: ../../source/inc/menu_action:58
+#: ../../source/inc/menu_action:76
 msgid ""
 "Causes Ren'Py to jump out of the menu context to the named label. The main "
 "use of this is to start a new game from the main menu. Common uses are:"
@@ -699,11 +730,11 @@ msgstr ""
 "Ren'Py に menu コンテキストを出て名前のあるラベルにジャンプさせます。これの主"
 "な使用法はメインメニューからニューゲームを開始することです。使用法 :"
 
-#: ../../source/inc/menu_action:62
+#: ../../source/inc/menu_action:80
 msgid "Start() - Start at the start label."
 msgstr "Start() - start ラベルからスタートする。"
 
-#: ../../source/inc/menu_action:63
+#: ../../source/inc/menu_action:81
 msgid "Start(\"foo\") - Start at the \"foo\" label."
 msgstr "Start(\"foo\") - 「 foo 」 ラベルからスタートする。"
 
@@ -1123,9 +1154,9 @@ msgstr "`mixer`"
 
 #: ../../source/inc/audio_action:51
 msgid ""
-"The mixer to set the volume of. A string, usually one of \"main\", "
-"\"music\", \"sfx\", or \"voice\". See :ref:`volume` for more information "
-"about mixers."
+"The mixer to set the volume of. A string, usually one of \"main\", \"music"
+"\", \"sfx\", or \"voice\". See :ref:`volume` for more information about "
+"mixers."
 msgstr ""
 "音量を設定するミキサーです。文字列であり、通常は「main」か「music」、"
 "「sfx」、「voice」です。ミキサーについての詳細は :ref:`volume` を参照してくだ"
@@ -1480,28 +1511,29 @@ msgstr ""
 #: ../../source/inc/other_action:118
 msgid ""
 "Move the mouse pointer to `x`, `y`. If the device does not have a mouse "
-"pointer or if the :var:`\"automatic move\" preference <preferences."
-"mouse_move>` is False, this does nothing."
+"pointer, if it is not possible for Ren'Py to move that pointer, or if the :"
+"var:`\"automatic move\" preference <preferences.mouse_move>` is False, this "
+"does nothing."
 msgstr ""
 "マウスポインターを `x`, `y` に移動します。デバイスがマウスポインターをサポー"
-"トしないか :var:`\"automatic move\" preference <preferences.mouse_move>` が "
-"False ならこれは何もしません。"
+"トしなければ、 Ren'Py はポインターを動かせません。また :var:`\"automatic move"
+"\" preference <preferences.mouse_move>` が False ならこれは何もしません。"
 
-#: ../../source/inc/other_action:123
+#: ../../source/inc/other_action:124
 msgid "`duration`"
 msgstr "`duration`"
 
-#: ../../source/inc/other_action:123
+#: ../../source/inc/other_action:124
 msgid ""
 "The time it will take to perform the move, in seconds. During this time, the "
 "mouse may be unresponsive."
 msgstr "移動処理にかける秒数です。この時間の間はマウスが反応しません。"
 
-#: ../../source/inc/other_action:128
+#: ../../source/inc/other_action:129
 msgid "Displays `message` using :func:`renpy.notify`."
 msgstr ":func:`renpy.notify` を使用して  `message` を表示します。"
 
-#: ../../source/inc/other_action:132
+#: ../../source/inc/other_action:133
 msgid ""
 "Opens `directory` in a file browser. `directory` is relative to :var:`config."
 "basedir`."
@@ -1509,16 +1541,16 @@ msgstr ""
 "ファイルブラウザーで `directory` を開きます。 `directory` は config.basedir "
 "に対する相対指定です。"
 
-#: ../../source/inc/other_action:137
+#: ../../source/inc/other_action:138
 msgid "Causes `url` to be opened in a web browser."
 msgstr "`url` をウェブブラウザーで開きます。"
 
-#: ../../source/inc/other_action:141
+#: ../../source/inc/other_action:142
 msgid "Queues the given event using :func:`renpy.queue_event`."
 msgstr ""
 "指定されたイベントを :func:`renpy.queue_event` を使用してキューします。"
 
-#: ../../source/inc/other_action:145
+#: ../../source/inc/other_action:146
 msgid ""
 "This action causes Ren'Py to rollback to before the current statement, and "
 "then re-run the current statement. This may be used when changing a "
@@ -1528,7 +1560,7 @@ msgstr ""
 "テートメントをやりなおします。永続データの変更がそのステートメントによる表示"
 "に影響を与えるときこれは使われるでしょう。"
 
-#: ../../source/inc/other_action:150
+#: ../../source/inc/other_action:151
 msgid ""
 "If run in a menu context, this waits until the player exits to a top-level "
 "context before performing the rollback."
@@ -1536,7 +1568,7 @@ msgstr ""
 "メニューコンテキストで実行されると、プレイヤーがトップレベルコンテキストに戻"
 "るまでロールバックを待ちます。"
 
-#: ../../source/inc/other_action:155
+#: ../../source/inc/other_action:156
 msgid ""
 "This action causes a rollforward to occur, if a roll forward is possible. "
 "Otherwise, it is insensitive."
@@ -1544,7 +1576,7 @@ msgstr ""
 "ロールフォワードが可能な場合、ロールフォワードを実行します。そうでなければ無"
 "効です。"
 
-#: ../../source/inc/other_action:160
+#: ../../source/inc/other_action:161
 msgid ""
 "This action causes a rollback to occur, when a rollback is possible. "
 "Otherwise, nothing happens."
@@ -1552,15 +1584,15 @@ msgstr ""
 "ロールバックが可能な場合、ロールバックを実行します。そうでなけれ何も起こりま"
 "せん。"
 
-#: ../../source/inc/other_action:163
+#: ../../source/inc/other_action:164
 msgid ""
 "The arguments are given to :func:`renpy.rollback`. This includes the `force` "
 "argument which here defaults to \"menu\"."
 msgstr ""
-"引数は :func:`renpy.rollback` に与えられます。これにはデフォルトでは "
-"\"menu\" となる `force` 引数が含まれます。"
+"引数は :func:`renpy.rollback` に与えられます。これにはデフォルトでは \"menu"
+"\" となる `force` 引数が含まれます。"
 
-#: ../../source/inc/other_action:168
+#: ../../source/inc/other_action:169
 msgid ""
 "This causes a rollback to an identifier to occur. Rollback identifiers are "
 "returned as part of HistoryEntry objects."
@@ -1568,55 +1600,55 @@ msgstr ""
 "identifier へのロールバックを実行します。ロールバック identifier は "
 "HistoryEntry オブジェクトの一部として返されます。"
 
-#: ../../source/inc/other_action:173
+#: ../../source/inc/other_action:174
 msgid "Takes a screenshot."
 msgstr "スクリーンショットを撮ります。"
 
-#: ../../source/inc/other_action:177
+#: ../../source/inc/other_action:178
 msgid "Causes a Bar, Viewport, or Vpgrid to scroll."
 msgstr "bar や viewport, vpgrid をスクロールします。"
 
-#: ../../source/inc/other_action:180
+#: ../../source/inc/other_action:181
 msgid "`id`"
 msgstr "`id`"
 
-#: ../../source/inc/other_action:180
+#: ../../source/inc/other_action:181
 msgid "The id of a bar, viewport, or vpgrid in the current screen."
 msgstr "現在のスクリーンの bar や viewport, vpgrid の id です。"
 
-#: ../../source/inc/other_action:185
+#: ../../source/inc/other_action:186
 msgid "`direction`"
 msgstr "`direction`"
 
-#: ../../source/inc/other_action:183
+#: ../../source/inc/other_action:184
 msgid ""
 "For a vbar, one of \"increase\" or \"decrease\". For a viewport or vpgrid, "
-"one of \"horizontal increase\", \"vertical increase\", \"horizontal "
-"decrease\", or \"vertical decrease\"."
+"one of \"horizontal increase\", \"vertical increase\", \"horizontal decrease"
+"\", or \"vertical decrease\"."
 msgstr ""
 "vbar に対しては  \"increase\" または \"decrease\" のどれかです。 viewport や "
 "vpgrid に対しては　\"horizontal increase\", \"vertical increase\", "
 "\"horizontal decrease\",  \"vertical decrease\" のいずれかです。"
 
-#: ../../source/inc/other_action:189
+#: ../../source/inc/other_action:190
 msgid "`amount`"
 msgstr "`amount`"
 
-#: ../../source/inc/other_action:188
+#: ../../source/inc/other_action:189
 msgid ""
 "The amount to scroll by. This can be a number of pixels, or else \"step\" or "
 "\"page\"."
 msgstr "スクロール量です。これはピクセル数または \"step\", \"page\" です。"
 
-#: ../../source/inc/other_action:191 ../../source/inc/value:16
+#: ../../source/inc/other_action:192 ../../source/inc/value:16
 msgid "`delay`"
 msgstr "`delay`"
 
-#: ../../source/inc/other_action:192
+#: ../../source/inc/other_action:193
 msgid "If non-zero, the scroll will be animated for this many seconds."
 msgstr "0 でなければ、この秒数を書けてスクロールがアニメーションされます。"
 
-#: ../../source/inc/other_action:196
+#: ../../source/inc/other_action:197
 msgid ""
 "This indicates that one action in a list of actions should be used to "
 "determine if a button is selected. This only makes sense when the button has "
@@ -1626,13 +1658,13 @@ msgstr ""
 "ます。これは次のようにボタンがアクションリストを持つときのみ意味を持ちま"
 "す。 ::"
 
-#: ../../source/inc/other_action:204
+#: ../../source/inc/other_action:205
 msgid ""
 "The action inside SelectedIf is run normally when the button is clicked."
 msgstr ""
 "Selectedif ないのアクションは通常ボタンがクリックされると実行されます。"
 
-#: ../../source/inc/other_action:208
+#: ../../source/inc/other_action:209
 msgid ""
 "This indicates that one action in a list of actions should be used to "
 "determine if a button is sensitive. This only makes sense when the button "
@@ -1641,12 +1673,12 @@ msgstr ""
 "これはアクションリストでボタンが有効かの判定に使用されるアクションを明示しま"
 "す。これは次のようにボタンがアクションリストを持つときのみ意味を持ちます。 ::"
 
-#: ../../source/inc/other_action:216
+#: ../../source/inc/other_action:217
 msgid ""
 "The action inside SensitiveIf is run normally when the button is clicked."
 msgstr "Sensitiveif 内のアクションは通常ボタンがクリックされると実行されます。"
 
-#: ../../source/inc/other_action:220
+#: ../../source/inc/other_action:221
 msgid ""
 "Causes the game to begin skipping. If the game is in a menu context, then "
 "this returns to the game. Otherwise, it just enables skipping."
@@ -1654,19 +1686,19 @@ msgstr ""
 "ゲームのスキップを開始します。 menu コンテキストの内部にいる場合はゲームに"
 "戻ってから開始し、それ以外の場合は単にスキップを開始します。"
 
-#: ../../source/inc/other_action:225
+#: ../../source/inc/other_action:226
 msgid "`fast`"
 msgstr "`fast`"
 
-#: ../../source/inc/other_action:225
+#: ../../source/inc/other_action:226
 msgid "If true, skips directly to the next menu choice."
 msgstr "True なら次の選択肢まで直接スキップします。"
 
-#: ../../source/inc/other_action:228
+#: ../../source/inc/other_action:229
 msgid "If true, asks for confirmation before beginning skipping."
 msgstr "True ならスキップを開始する前に確認します。"
 
-#: ../../source/inc/other_action:232
+#: ../../source/inc/other_action:233
 msgid "Causes `transition` to occur."
 msgstr "`transition` を実行します。"
 
@@ -2296,9 +2328,9 @@ msgid ""
 "\"window auto\" statement to show an empty window outside of the say "
 "statement."
 msgstr ""
-"Preference(\"show empty window\", \"show\") - \"window show\"、\"window "
-"auto\" ステートメントを許可し、say ステートメント以外の場所で空のウィンドウを"
-"表示できるようにします。"
+"Preference(\"show empty window\", \"show\") - \"window show\"、\"window auto"
+"\" ステートメントを許可し、say ステートメント以外の場所で空のウィンドウを表示"
+"できるようにします。"
 
 #: ../../source/inc/preference_action:28
 msgid "Preference(\"show empty window\", \"hide\") - Prevent the above."

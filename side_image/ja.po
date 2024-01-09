@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-24 23:21+0900\n"
-"PO-Revision-Date: 2023-04-29 17:39+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2024-01-09 14:26+0900\n"
+"PO-Revision-Date: 2024-01-09 21:29+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:27+0000\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/side_image.rst:2
 msgid "Side Images"
@@ -117,7 +117,7 @@ msgstr ""
 "付けし、表示するサイドイメージを選択するための属性つきで say ステートメントを"
 "使用します。"
 
-#: ../../source/side_image.rst:64 ../../source/inc/side:29
+#: ../../source/side_image.rst:64 ../../source/inc/side:37
 msgid "For example::"
 msgstr "例 ::"
 
@@ -259,41 +259,64 @@ msgstr "サイドイメージとして表示する画像を見つけようと試
 msgid ""
 "It begins by determining a set of image attributes. If `image_tag` is given, "
 "it gets the image attributes from the tag. Otherwise, it gets them from the "
-"currently showing character. If no attributes are available for the tag, "
-"this returns None."
+"image property suplied to the currently showing character. If no attributes "
+"are available, this returns None."
 msgstr ""
-"画像属性のセットを決定するところからはじめます。 `image_tag` が指定されればそ"
-"のタグから画像属性を所得します。そうでなければそれらを現在表示しているキャラ"
-"クターから所得します。そのタグで利用できる属性が無ければ、 None を返します。"
+"画像属性のセットを決定するところからはじめます。 `image_tag` が指定されていれ"
+"ばそのタグから画像属性を所得します。そうでなければ現在表示しているキャラク"
+"ターに指定された image プロパティーからそれらを所得します。利用できる属性が無"
+"ければ、 None を返します。"
 
 #: ../../source/inc/side:12
 msgid ""
-"It then looks up an image with the tag `prefix_tag`, and the image tage "
-"(either from `image_tag` or the currently showing character) and the set of "
-"image attributes as attributes. If such an image exists, it's returned."
-msgstr ""
-"次に `prefix_tag` タグと (`image_tag` または現在表示中のキャラクターのどちら"
-"かの) 画像タグ、属性としてその画像属性のセットを持つ画像を探します。そのよう"
-"な画像があれば、それを返します。"
+"It then looks up an image with the tag `prefix_tag`, and attributes "
+"consisting of:"
+msgstr "次に `prefix_tag` タグと次の属性をもつ画像を探します。"
 
-#: ../../source/inc/side:16
+#: ../../source/inc/side:15
 msgid ""
-"If not_showing is True, this only returns a side image if the image the "
-"attributes are taken from is not on the screen. If Nome, the value is taken "
-"from :var:`config.side_image_only_not_showing`."
+"An image tag (either from `image_tag` or the image property supplied to the "
+"currently showing character)."
 msgstr ""
-"not_showing が True なら、その属性を所得できる画像が画面にないときのみサイド"
-"イメージを返します。None なら値は :var:`config.side_image_only_not_showing` "
-"から所得されます。"
+"画像タグ (`image_tag` または現在表示されているキャラクターに指定されたイメー"
+"ジ プロパティー)"
 
-#: ../../source/inc/side:20
-msgid ""
-"If `layer` is None, uses the default layer for the currently showing tag."
-msgstr ""
-"`layer` が None なら、現在タグを表示しているレイヤーとしてデフォルトレイヤー"
-"を使用します。"
+#: ../../source/inc/side:17
+msgid "The attributes."
+msgstr "属性"
+
+#: ../../source/inc/side:19
+msgid "If such an image exists, it's returned."
+msgstr "そのような画像が存在すれば、それが返されます。"
 
 #: ../../source/inc/side:25
+msgid "`not_showing`"
+msgstr "`not_showing`"
+
+#: ../../source/inc/side:22
+msgid ""
+"If not showing is True, this only returns a side image if an image with the "
+"tag that the attributes are taken from is not currently being shown. If "
+"False, it will always return an image, if possible. If None, takes the value "
+"from :var:`config.side_image_only_not_showing`."
+msgstr ""
+"not_showing が True なら、属性を所得できるそのタグの画像が画面にないときのみ"
+"サイドイメージを返します。 False なら、常に画像を返します。 None なら値は :"
+"var:`config.side_image_only_not_showing` から所得されます。"
+
+#: ../../source/inc/side:28
+msgid "`layer`"
+msgstr "`layer`"
+
+#: ../../source/inc/side:28
+msgid ""
+"If given, the layer to look for the image tag and attributes on. If None, "
+"uses the default layer for the tag."
+msgstr ""
+"指定されれば、画像タグと属性を探すレイヤーです。 None ならばそのタグのデフォ"
+"ルトレイヤーを使用します。"
+
+#: ../../source/inc/side:33
 msgid ""
 "This sets the attributes associated with an image tag when that image tag is "
 "not showing. The main use of this would be to directly set the attributes "
@@ -302,13 +325,28 @@ msgstr ""
 "ある画像タグが表示されていないときに、その画像タグに関連づけられる属性を設定"
 "します。主な用途は、サイドイメージで使用する属性の直接設定でしょう。"
 
-#: ../../source/inc/side:34
+#: ../../source/inc/side:42
 msgid "and::"
 msgstr "は ::"
 
-#: ../../source/inc/side:38
+#: ../../source/inc/side:46
 msgid "are equivalent."
 msgstr "に等しいです。"
+
+#~ msgid ""
+#~ "It then looks up an image with the tag `prefix_tag`, and the image tage "
+#~ "(either from `image_tag` or the currently showing character) and the set "
+#~ "of image attributes as attributes. If such an image exists, it's returned."
+#~ msgstr ""
+#~ "次に `prefix_tag` タグと (`image_tag` または現在表示中のキャラクターのどち"
+#~ "らかの) 画像タグ、属性としてその画像属性のセットを持つ画像を探します。その"
+#~ "ような画像があれば、それを返します。"
+
+#~ msgid ""
+#~ "If `layer` is None, uses the default layer for the currently showing tag."
+#~ msgstr ""
+#~ "`layer` が None なら、現在タグを表示しているレイヤーとしてデフォルトレイ"
+#~ "ヤーを使用します。"
 
 #~ msgid "Variations"
 #~ msgstr "変数"
@@ -348,9 +386,3 @@ msgstr "に等しいです。"
 #~ msgstr ""
 #~ "最終的には :func:`SideImage` 関数は displayable として現在のサイドイメージ"
 #~ "を返します。このことはより高度なカスタマイズの一部で使用されます。"
-
-#~ msgid ""
-#~ "It then looks up an image with the tag `prefix_tag` and those attributes, "
-#~ "and returns it if it exists."
-#~ msgstr ""
-#~ "次に `prefix_tag` タグとそれらの属性をもつ画像を探し、あれば返します。"
