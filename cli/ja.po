@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2023, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 8.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-31 12:26+0900\n"
+"PO-Revision-Date: 2023-12-31 13:30+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: ../../source/cli.rst:5
+msgid "Command Line Interface"
+msgstr "コマンドラインインターフェイス"
+
+#: ../../source/cli.rst:7
+msgid "Ren'Py includes a command line interface (CLI) that can be used to automate some development tasks, allowing for continuous integration and for scripting releases. For most purposes, this isn't necessary - all these tasks can be done through the Ren'Py launcher."
+msgstr "Ren'Py にはコマンドラインインターフェイス(CLI)があり、開発タスクの一部自動化や継続的インテグレーション、リリーススクリプトの作成に利用できます。ほとんどの目的ではこれは必要ありません が、これらのタスクはすべてRen'Pyランチャーから実行できます。"
+
+#: ../../source/cli.rst:12
+msgid "The examples on this page assume you're running the CLI from the Ren'Py SDK directory (the directory that contains renpy.py, renpy.sh, and renpy.exe). The examples also assume you're running on Linux or macOS. On Windows, you'll need to replace ``./renpy.sh`` with ``lib\\\\py3-windows-x86_64\\\\python.exe renpy.py``."
+msgstr "このページの例は、Ren'Py SDKのディレクトリ（renpy.py、renpy.sh、renpy.exeが含まれるディレクトリ）からの CLI 実行を前提としています。また、 Linux か macOS での行を前提としています。Windowsの場合は、``./renpy.sh`` を ``lib\\\\py3-windows-x86_64\\\\python.exe renpy.py`` に置き換える必要があります。"
+
+#: ../../source/cli.rst:17
+msgid "The CLI isn't a stable interface - it may change between Ren'Py releases, as required."
+msgstr "CLIは安定したインターフェースではなく、必要に応じてRen'Pyのリリース間で変更される可能性があります。"
+
+#: ../../source/cli.rst:22
+msgid "In the description of the commands below, <base> is the path to the base directory of the project."
+msgstr "以下のコマンドの説明では、 <base> はプロジェクトのベースディレクトリへのパスです。"
+
+#: ../../source/cli.rst:27
+msgid "Build Commands"
+msgstr "ビルドコマンド"
+
+#: ../../source/cli.rst:31
+msgid "As part of the build process, Ren'Py will create .rpyc files that contain information that load the game. A continuous integration system should preserve these .rpyc files after a build, and supply them to the next build, either directly or in the old-game directory. Failure to do so may result in a game that can't load saves."
+msgstr "ビルド処理の一環として、 Ren'Py はゲームをロードするための情報を含む .rpyc ファイルを作成します。継続的インテグレーションシステムでは、ビルド後にこれらの .rpyc ファイルを保存し、次のビルドで直接、もしくは old-game ディレクトリから提供するべきです。これを怠ると、セーブをロードできないゲームになるかもしれません。"
+
+#: ../../source/cli.rst:39
+msgid "Android Build"
+msgstr "Android ビルド"
+
+#: ../../source/cli.rst:46
+msgid "This builds a release of the game for Android. It's assumed that the launcher has been used to install the Android SDK, generate keys, and configure the project."
+msgstr "これは Android 用のゲームのリリースをビルドします。ランチャーは、 Android SDK のインストール、キーの生成、プロジェクトの設定に使用されたことがあるとします。"
+
+#: ../../source/cli.rst:52
+msgid "The directory to place the output in. The default is a directory named \"`name`-`version`-dists\" in the current directory, taking information from :var:`build.name` and :var:`build.version`."
+msgstr "出力を置くディレクトリーです。デフォルトはカレントディレクトリの \"`name`-`version`-dists\" という名前のディレクトリーで、 :var:`build.name` と :var:`build.version` から情報を取得します。"
+
+#: ../../source/cli.rst:58
+msgid "When given, Ren'Py will produce a .aab bundle. If not given, Ren'Py will produce an .apk file."
+msgstr "指定されると、 Ren'Py は .aab バンドルを生成します。指定しない場合、 Ren'Py は .apk ファイルを生成します。"
+
+#: ../../source/cli.rst:63
+msgid "When given, Ren'Py will install the .apk or .aab file to a connected device."
+msgstr "指定されると、 Ren'Py は接続されたデバイスに .apk または .aab ファイルをインストールします。"
+
+#: ../../source/cli.rst:67
+msgid "When given, Ren'Py will launch the game on a connected device. This implies ``--install``."
+msgstr "指定されると、Ren'Py は接続されたデバイスでゲームを起動します。これは ``--install`` を意味します。"
+
+#: ../../source/cli.rst:72
+msgid "Add From To Call"
+msgstr "From を Call に追加する"
+
+#: ../../source/cli.rst:78
+msgid "This command adds a ``from`` clause to each ``call`` statement that does not have one. Generally, this should be done before a release, to help Ren'Py locate the return point of calls in a modified game."
+msgstr "このコマンドは、``from`` 節を持たない各 ``call`` ステートメントに ``from`` 節を追加します。一般的にはリリース前に行うべきであり、 Ren'Py が変更後のゲームでの呼び出しから戻り位置を見つけやすくします。"
+
+#: ../../source/cli.rst:84
+msgid "This will modify your game's script files, and assumes that you will include the changes it makes into your game."
+msgstr "ゲームのスクリプトファイルを変更し、あなたがその変更をゲームに含めることを前提としています。"
+
+#: ../../source/cli.rst:88
+msgid "Check Script (Lint)"
+msgstr "スクリプトのチェック (lint)"
+
+#: ../../source/cli.rst:94
+msgid "This runs a lint report on the game. It's equivalent to the \"Check Script (Lint)\" button in the launcher."
+msgstr "これにより、ゲームに関する lint レポートが実行されます。これは、ランチャーの「スクリプトチェック(lint)」ボタンに相当します。"
+
+#: ../../source/cli.rst:99
+msgid "If given, the lint report will be written to this file rather than printed to standard output."
+msgstr "指定すると、 lint レポートは標準出力に出力されるのではなく、このファイルに書き込まれます。"
+
+#: ../../source/cli.rst:102
+msgid "Lint takes many options, which can change from release to release. To view them, run:"
+msgstr "lint には多くのオプションがあり、リリースごとに変更される可能性があります。それらを表示するには、次のコマンドを実行します。 :"
+
+#: ../../source/cli.rst:111
+msgid "Compile"
+msgstr "コンパイル"
+
+#: ../../source/cli.rst:117
+msgid "This command compiles the game, creating .rpyc files from .rpy files. The equialent of the \"Force Recompile\" button in the Ren'Py launcher."
+msgstr "このコマンドはゲームをコンパイルし、.rpy ファイルから .rpyc ファイルを作成します。Ren'Py ランチャーの \"Force Recompile\" ボタンに相当します。"
+
+#: ../../source/cli.rst:122
+msgid "By default, Ren'Py will delete .rpyc files that are not associated with a .rpy or _ren.py file of the same name. If this option is given, Ren'Py will not delete these files."
+msgstr "デフォルトでは、Ren'Py は同じ名前の .rpy や _ren.py のファイルに紐付けられていない .rpyc ファイルを削除します。このオプションが指定されると、 Ren'Py はこれらのファイルを削除しません。"
+
+#: ../../source/cli.rst:128
+msgid "Distribute"
+msgstr "配布"
+
+#: ../../source/cli.rst:134
+msgid "This builds distributions of the game for windows, macOS, and Linux. Some options this command takes are:"
+msgstr "Windows、macOS、およびLinux用のゲームの配布物がビルドされます。このコマンドが取るオプションには、次のようなものがあります。 :"
+
+#: ../../source/cli.rst:139
+msgid "The directory to place the distributions in. The default is a directory named \"`name`-`version`-dists\" in the current directory, taking information from :var:`build.name` and :var:`build.version`."
+msgstr "配布物を配置するディレクトリーです。デフォルトは現在のディレクトリーの \"'`name`-`version`-dists\" という名前のディレクトリーで、 :var:`build.name` と :var:`build.version` から情報を取得します。"
+
+#: ../../source/cli.rst:145
+msgid "When given, Ren'Py will not build update files."
+msgstr "指定されると、Ren'Py は更新ファイルをビルドしません。"
+
+#: ../../source/cli.rst:149
+msgid "This gives the name of the package to build, where package is a package name like \"pc\", \"mac\", or \"markets\". This option can be given multiple times to build multiple packages. The default is to build all packages."
+msgstr "これにより、ビルドするパッケージの名前が与えられます (パッケージは \"pc\"、\"mac\"、\"markets\" などのパッケージ名です)。このオプションは、複数のパッケージをビルドするために複数回指定できます。デフォルトでは、すべてのパッケージがビルドされます。"
+
+#: ../../source/cli.rst:153
+msgid "(There are other options, but these are more useful for building Ren'Py itself.)"
+msgstr "(Ren'Py 自体をビルドするのに便利な他のオプションもあります)"
+
+#: ../../source/cli.rst:157
+msgid "iOS Create"
+msgstr "iOS での制作"
+
+#: ../../source/cli.rst:163
+msgid "This creates an Xcode project that can be used to build an iOS version of the game. It's assumed that the launcher has been used to install iOS support once."
+msgstr "ゲームの iOS バージョンをビルドするために使用できる Xcode プロジェクトを作成します。ランチャーが一度は iOS のサポートをインストールしたことを前提としています。"
+
+#: ../../source/cli.rst:169
+msgid "The directory to place the Xcode project in."
+msgstr "Xcode プロジェクトを配置するディレクトリー。"
+
+#: ../../source/cli.rst:173
+msgid "iOS Populate"
+msgstr "iOS 移植"
+
+#: ../../source/cli.rst:179
+msgid "This copies the game into an Xcode project created by :command:`ios_create`. This is used to update a project created with the same version of Ren'Py."
+msgstr "ゲームを :command:`ios_create` によって作成された Xcode プロジェクトにコピーします。これによって同じバージョンの Ren'Py で作成されたプロジェクトを更新します。"
+
+#: ../../source/cli.rst:184
+msgid "The directory to update."
+msgstr "更新するディレクトリ。"
+
+#: ../../source/cli.rst:188
+msgid "Update Old Game"
+msgstr "古いゲームの更新"
+
+#: ../../source/cli.rst:194
+msgid "This command will copy .rpyc files from <base>/game to <base>/old-game."
+msgstr "このコマンドは .rpyc ファイルを <base>/game から <base>/old-game にコピーします 。"
+
+#: ../../source/cli.rst:198
+msgid "Launcher Commands"
+msgstr "ランチャーコマンド"
+
+#: ../../source/cli.rst:200
+msgid "These commands are used to control the Ren'Py launcher from the command line."
+msgstr "これらのコマンドは、コマンドラインから Ren'Py ランチャーを制御するために使用されます。"
+
+#: ../../source/cli.rst:204
+msgid "Set Projects Directory"
+msgstr "プロジェクトディレクトリーの設定"
+
+#: ../../source/cli.rst:211
+msgid "This sets the directory that the Ren'Py launcher uses to store projects. It's intended for use on minimal systems where none of the options for selecting a projects directory are available."
+msgstr "これは Ren'Py ランチャーがプロジェクトを保存するディレクトリーを設定します。これは、プロジェクトディレクトリーを選択するためのオプションが使用できない最小限のシステムでの使用を意図しています。"
+
+#: ../../source/cli.rst:215 ../../source/cli.rst:229
+msgid "This can only be done when the launcher is not running."
+msgstr "これは、ランチャーが実行されていない場合にのみ実行できます。"
+
+#: ../../source/cli.rst:219
+msgid "Set Project"
+msgstr "プロジェクト設定"
+
+#: ../../source/cli.rst:225
+msgid "Sets the current project to the given project. This will change the projects directory and currently selected project in the launcher to accomplish this goal."
+msgstr "現在のプロジェクトを指定されたプロジェクトに設定します。この目的を達成するために、プロジェクト・ディレクトリーとランチャーで現在選択されているプロジェクトを変更します。"

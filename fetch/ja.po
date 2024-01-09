@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2023, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 8.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-30 12:52+0900\n"
+"PO-Revision-Date: 2023-12-31 02:15+0900\n"
+"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: ../../source/fetch.rst:2
+msgid "HTTPS/HTTP Fetch"
+msgstr "HTTPS/HTTP Fetch"
+
+#: ../../source/fetch.rst:4
+msgid ""
+"Ren'Py supports fetching information over HTTP and HTTPS using the renpy."
+"fetch function. This function:"
+msgstr ""
+"Ren'Py は renpy.fetch 関数を使用して HTTP と HTTPS を介した情報所得をサポート"
+"します。この関数は :"
+
+#: ../../source/fetch.rst:7
+msgid "Supports GET, POST, and PUT requests."
+msgstr "GET, POST, PUT リクエストのサポート"
+
+#: ../../source/fetch.rst:8
+msgid "Support POSTing or PUTing data or json to the server."
+msgstr "サーバーへの POSTing や PUTing データ、 json データのサポート"
+
+#: ../../source/fetch.rst:9
+msgid "Can return the result as bytes, a string, or a json object."
+msgstr "バイト、文字列、json オブジェクトを返すこと"
+
+#: ../../source/fetch.rst:11
+msgid ""
+"The fetch function is meant to be used in the main thread of Ren'Py, after "
+"the game has started. It can be used on desktop, mobile, or the web "
+"platform. When used on the web platform, when not fetching from the same "
+"server that originally served the game, the server must support `CORS "
+"<https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>`_."
+msgstr ""
+"fetch 関数は Ren'Py のメインスレッドで、ゲーム開始後の使用を意図します。デス"
+"クトップでも、モバイルでも、Web プラットフォームでも使えます。ウェブプラット"
+"フォームで使用する場合、元々ゲームを提供していたサーバーから取得するのでなけ"
+"れば、そのサーバーは `CORS <https://developer.mozilla.org/en-US/docs/Web/"
+"HTTP/CORS>`_ をサポートしていなければなりません。"
+
+#: ../../source/fetch.rst:16
+msgid "As a very simple example, this gets news from a server::"
+msgstr "とても簡単な例として、これはサーバーからニュースを所得します。 ::"
+
+#: ../../source/fetch.rst:21
+msgid "And this posts JSON to a server, and gets JSON back::"
+msgstr "また、これは JSON をサーバーに送り、戻りの JSON を受け取ります。 ::"
+
+#: ../../source/fetch.rst:25
+msgid ""
+"As with any application that communicates over the network, security needs "
+"to be considered when using renpy.fetch, especially when displaying media "
+"returned this way. (Ren'Py is generally not hardened against malicious "
+"images, movies, and audio files.)"
+msgstr ""
+"ネットワーク経由で通信する他のアプリケーションと同様に、 renpy.fetch を使用す"
+"る際は、特にこの方法で返されたメディアを表示する際には、セキュリティを考慮す"
+"る必要があります(Ren'Pyは一般的に、悪意のある画像、動画、音声ファイルに対する"
+"対策はしていません)。"
+
+#: ../../source/inc/fetch:5
+msgid ""
+"This performs an HTTP (or HTTPS) request to the given URL, and returns the "
+"content of that request. If it fails, raises a FetchError exception, with "
+"text that describes the failure. (But may not be suitable for presentation "
+"to the user.)"
+msgstr ""
+"これは、指定されたURLへのHTTP（またはHTTPS）リクエストを実行し、そのリクエス"
+"トの内容を返します。失敗した場合は FetchError 例外を発生させ、失敗を説明する"
+"テキストを表示します(ただし、ユーザーへの表示には適さないかもしれません)。"
+
+#: ../../source/inc/fetch:11
+msgid "`url`"
+msgstr "`url`"
+
+#: ../../source/inc/fetch:11
+msgid "The URL to fetch."
+msgstr "fetch する URL です。"
+
+#: ../../source/inc/fetch:16
+msgid "`method`"
+msgstr "`method`"
+
+#: ../../source/inc/fetch:14
+msgid ""
+"The method to use. Generally one of \"GET\", \"POST\", or \"PUT\", but other "
+"HTTP methods are possible. If `data` or `json` are not None, defaults to "
+"\"POST\", otherwise defaults to GET."
+msgstr ""
+"使用するメソッドです。一般的に \"GET\", \"POST\", \"PUT\" の一つですが、他の "
+"HTTP メソッドも可能です。 `data` または `json` が None でなければ、 デフォル"
+"トでは \"POST\" であり、そうでなければデフォルトでは GET です。"
+
+#: ../../source/inc/fetch:19
+msgid "`data`"
+msgstr "`data`"
+
+#: ../../source/inc/fetch:19
+msgid "If not None, a byte string of data to send with the request."
+msgstr "None またはリクエストで送るバイト文字列です。"
+
+#: ../../source/inc/fetch:23
+msgid "`json`"
+msgstr "`json`"
+
+#: ../../source/inc/fetch:22
+msgid ""
+"If not None, a JSON object to send with the request. This takes precendence "
+"over `data`."
+msgstr ""
+"None またはリクエストで送られる JSON オブジェクトです。これは `data` に優先し"
+"ます。"
+
+#: ../../source/inc/fetch:28
+msgid "`content_type`"
+msgstr "`content_type`"
+
+#: ../../source/inc/fetch:26
+msgid ""
+"The content type of the data. If not given, defaults to \"application/json\" "
+"if `json` is not None, or \"application/octet-stream\" otherwise. Only used "
+"on a POST or PUT request."
+msgstr ""
+"データの内容のタイプです。指定されなければデフォルトは、 `json` が None でな"
+"い場合は \"application/json\"、それ以外の場合は \"application/octet-stream\" "
+"である。POST または PUT リクエストでのみ使用されます。"
+
+#: ../../source/inc/fetch:31
+msgid "`timeout`"
+msgstr "`timeout`"
+
+#: ../../source/inc/fetch:31
+msgid "The number of seconds to wait for the request to complete."
+msgstr "リクエストの完了を待つ秒数です。"
+
+#: ../../source/inc/fetch:37
+msgid "`result`"
+msgstr "`result`"
+
+#: ../../source/inc/fetch:34
+msgid ""
+"How to process the result. If \"bytes\", returns the raw bytes of the "
+"result. If \"text\", decodes the result using UTF-8 and returns a unicode "
+"string. If \"json\", decodes the result as JSON. (Other exceptions may be "
+"generated by the decoding process.)"
+msgstr ""
+"結果の処理方法です。 \"bytes\" の場合、結果の生のバイトを返します。 \"text\" "
+"の場合、結果を UTF-8 でデコードし、ユニコード文字列を返します。 \"json\" の場"
+"合、結果を JSON としてデコードします(デコード処理によって他の例外が発生する可"
+"能性があります)。"
+
+#: ../../source/inc/fetch:39
+msgid ""
+"While waiting for `timeout` to pass, this will repeatedly call :func:`renpy."
+"pause`\\ (0), so Ren'Py doesn't lock up. It may make sense to display a "
+"screen to the user to let them know what is going on."
+msgstr ""
+"`timeout` が経過するのを待つ間、これは :func:`renpy.pause` \\ (0) を繰り返し"
+"呼び出すので、 Ren'Py はロックされません。ユーザーに何が起こっているかを知ら"
+"せるために、画面を表示することは意味があるかもしれません。"
+
+#: ../../source/inc/fetch:43
+msgid ""
+"This function should work on all platforms. However, on the web platform, "
+"requests going to a different origin than the game will fail unless allowed "
+"by CORS."
+msgstr ""
+"この関数はすべてのプラットフォームで動作するはずです。しかし、ウェブプラット"
+"フォームでは、ゲームとは異なる場所へのリクエストは、 CORS で許可されていない"
+"限り失敗します。"
+
+#: ../../source/fetch.rst:33
+msgid "Requests"
+msgstr "Requests"
+
+#: ../../source/fetch.rst:35
+msgid ""
+"On desktop and mobile, Ren'Py includes the `Requests <https://requests."
+"readthedocs.io/>`_ library. This is more powerful, but doesn't integrate as "
+"well as renpy.fetch. (For example, Ren'Py will call :func:`renpy.pause` to "
+"wait for data, while requests will block, which could lead to problems like "
+"audio stalling.)"
+msgstr ""
+"デスクトップとモバイルでは、 Ren'Py は `Requests <https://requests."
+"readthedocs.io/>`_ ライブラリを含みます。これはより強力ですが、 renpy."
+"fetch ほど統合されていません(例えば、Ren'Pyはデータを待つために :func:`renpy."
+"pause` を呼び出しますが、リクエストはブロックされます。これによりオーディオの"
+"遅延のような問題がおきます)。"
