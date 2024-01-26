@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 10:19+0900\n"
-"PO-Revision-Date: 2023-11-25 12:57+0900\n"
+"POT-Creation-Date: 2024-01-15 12:03+0900\n"
+"PO-Revision-Date: 2024-01-16 21:17+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -396,12 +396,14 @@ msgstr ""
 #: ../../source/inc/disp_imagelike:11
 msgid ""
 "The `child` and `mask` parameters may be arbitrary displayables. The size of "
-"the AlphaMask is the size of `child`."
+"the AlphaMask is the size of `child`. The `invert` parameter can be used to "
+"invert the mask's alpha channel."
 msgstr ""
-"`child` と `mask` パラメーターは任意の displayable です。 AlphaMask のサイズ"
-"は  `child` のサイズになります。"
+"`child` と `mask` パラメーターは任意の displayable にできます。 AlphaMask の"
+"サイズは `child` のサイズになります。 `invert` パラメーターを使用してマスクの"
+"アルファチャンネルを反転できます。"
 
-#: ../../source/inc/disp_imagelike:14
+#: ../../source/inc/disp_imagelike:15
 msgid ""
 "Note that this takes different arguments from :func:`im.AlphaMask`, which "
 "uses the mask's red channel."
@@ -409,7 +411,7 @@ msgstr ""
 "mask のred チャンネルを使用する :func:`im.AlphaMask` とは別の引数をとることに"
 "注意してください。"
 
-#: ../../source/inc/disp_imagelike:19
+#: ../../source/inc/disp_imagelike:20
 msgid ""
 "This object provides border size and tiling information to a :func:`Frame`. "
 "It can also provide padding information that can be supplied to the :propref:"
@@ -419,11 +421,11 @@ msgstr ""
 "これはウィンドウやフレームの :propref:`padding` スタイルプロパティーに指定さ"
 "れるパッディング情報も渡せます。"
 
-#: ../../source/inc/disp_imagelike:25
+#: ../../source/inc/disp_imagelike:26
 msgid "`left`, `top`, `right`, `bottom`"
 msgstr "`left`, `top`, `right`, `bottom`"
 
-#: ../../source/inc/disp_imagelike:24
+#: ../../source/inc/disp_imagelike:25
 msgid ""
 "These provide the size of the insets used by a frame, and are added to the "
 "padding on each side. They should be zero or a positive integer."
@@ -431,11 +433,11 @@ msgstr ""
 "これらはフレームに使用される挿入図のサイズを提供し、各サイズが各側面のパッ"
 "ディングに加えられます。これらは 0 または 正の整数であるべきです。"
 
-#: ../../source/inc/disp_imagelike:30
+#: ../../source/inc/disp_imagelike:31
 msgid "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
 msgstr "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
 
-#: ../../source/inc/disp_imagelike:28
+#: ../../source/inc/disp_imagelike:29
 msgid ""
 "These are added to the padding on each side, and may be positive or "
 "negative. (For example, if `left` is 5 and `pad_left` is -3, the final "
@@ -444,17 +446,17 @@ msgstr ""
 "これらは各側面のパディングに加えられ、 正または負です ( 例えば、 `left` が "
 "5, `pad_left` が -3 なら、最終的なパディングは 2 です )。"
 
-#: ../../source/inc/disp_imagelike:32
+#: ../../source/inc/disp_imagelike:33
 msgid "The padding information is supplied via a field:"
 msgstr "パッディング情報はフィールドとして渡します。"
 
-#: ../../source/inc/disp_imagelike:36
+#: ../../source/inc/disp_imagelike:37
 msgid ""
 "This is a four-element tuple containing the padding on each of the four "
 "sides."
 msgstr "これは 4 要素のタプルで、各4つの側面のパディングを含みます。"
 
-#: ../../source/inc/disp_imagelike:41
+#: ../../source/inc/disp_imagelike:42
 msgid ""
 "This creates a new displayable of `size`, by compositing other displayables. "
 "`size` is a (width, height) tuple."
@@ -462,7 +464,7 @@ msgstr ""
 "これは他の displayable を合成して `size` の新しい displayable を作成します。 "
 "`size` は (width, height) のタプルです。"
 
-#: ../../source/inc/disp_imagelike:44
+#: ../../source/inc/disp_imagelike:45
 msgid ""
 "The remaining positional arguments are used to place images inside the "
 "Composite. The remaining positional arguments should come in groups of two, "
@@ -473,11 +475,11 @@ msgstr ""
 "数は各グループの第一要素が (x, y) のタプルで、第二要素がその位置に合成される "
 "displayable の 2 つからなります。"
 
-#: ../../source/inc/disp_imagelike:50
+#: ../../source/inc/disp_imagelike:51
 msgid "Displayables are composited from back to front."
 msgstr "Displayable は後ろから前へ合成されます。"
 
-#: ../../source/inc/disp_imagelike:62
+#: ../../source/inc/disp_imagelike:63
 msgid ""
 "This creates a displayable by cropping `child` to `rect`, where `rect` is an "
 "(x, y, width, height) tuple. ::"
@@ -485,7 +487,7 @@ msgstr ""
 "`child` を `rect` に刈りこんで displayable を作成します。ここで `rect` は "
 "(x, y, width, height) タプルです。 ::"
 
-#: ../../source/inc/disp_imagelike:69
+#: ../../source/inc/disp_imagelike:70
 msgid ""
 "A DynamicImage is a displayable that has text interpolation performed on it "
 "to yield a string giving a new displayable. Such interpolation is performed "
@@ -495,14 +497,14 @@ msgstr ""
 "トを持つ displayable です。そのような置換は各インタラクションの開始時に処理さ"
 "れます。"
 
-#: ../../source/inc/disp_imagelike:75
+#: ../../source/inc/disp_imagelike:76
 msgid ""
 "This flattens `child`, which may be made up of multiple textures, into a "
 "single texture."
 msgstr ""
 "これは複数のテクスチャで構成された `child` を一つのテクスチャに貼り付けます。"
 
-#: ../../source/inc/disp_imagelike:78
+#: ../../source/inc/disp_imagelike:79
 msgid ""
 "Certain operations, like the alpha transform property, apply to every "
 "texture making up a displayable, which can yield incorrect results when the "
@@ -514,17 +516,17 @@ msgstr ""
 "果になる可能性があります。貼り付けは複数のテクスチャから一つのテクスチャを作"
 "成し、この問題を防ぎます。"
 
-#: ../../source/inc/disp_imagelike:83
+#: ../../source/inc/disp_imagelike:84
 msgid ""
 "Flatten is a relatively expensive operation, and so should only be used when "
 "absolutely required."
 msgstr "貼り付けは比較的重い処理なので絶対的に必要なときのみ使用するべきです。"
 
-#: ../../source/inc/disp_imagelike:89
+#: ../../source/inc/disp_imagelike:90
 msgid "`drawable_resolution`"
 msgstr "`drawable_resolution`"
 
-#: ../../source/inc/disp_imagelike:87
+#: ../../source/inc/disp_imagelike:88
 msgid ""
 "Defaults to true, which is usually the right choice, but may cause the "
 "resulting texture, when scaled, to have different artifacts than the "
@@ -535,7 +537,7 @@ msgstr ""
 "に、テクスチャーにノイズが発生する可能性があります。 False に設定すると、ノイ"
 "ズが変わり、場合によってはより好ましいものになる可能性があります。"
 
-#: ../../source/inc/disp_imagelike:94
+#: ../../source/inc/disp_imagelike:95
 msgid ""
 "A displayable that resizes an image to fill the available area, while "
 "preserving the width and height of its borders. It is often used as the "
@@ -544,23 +546,23 @@ msgstr ""
 "境界の幅と高さを保ちながら、利用できる領域を満たすようにリサイズする "
 "displayable です。ウィンドウやボタンの背景によく使われます。"
 
-#: ../../source/inc/disp_imagelike:100
+#: ../../source/inc/disp_imagelike:101
 msgid "Using a frame to resize an image to double its size."
 msgstr "フレームを使用し、画像サイズを2倍にリサイズ。"
 
-#: ../../source/inc/disp_imagelike:103
+#: ../../source/inc/disp_imagelike:104
 msgid "`image`"
 msgstr "`image`"
 
-#: ../../source/inc/disp_imagelike:103
+#: ../../source/inc/disp_imagelike:104
 msgid "An image manipulator that will be resized by this frame."
 msgstr "Frame によって大きさを変えられる画像マニピュレータです。"
 
-#: ../../source/inc/disp_imagelike:108
+#: ../../source/inc/disp_imagelike:109
 msgid "`left`"
 msgstr "`left`"
 
-#: ../../source/inc/disp_imagelike:106
+#: ../../source/inc/disp_imagelike:107
 msgid ""
 "The size of the border on the left side. This can also be a :func:`Borders` "
 "object, in which case that object is used in place of the other parameters."
@@ -568,35 +570,35 @@ msgstr ""
 "左側面の境界サイズです。これは :func:`Borders` オブジェクトでもよく、その場合"
 "オブジェクトは他のパラメーターの位置にも使用されます。"
 
-#: ../../source/inc/disp_imagelike:111
+#: ../../source/inc/disp_imagelike:112
 msgid "`top`"
 msgstr "`top`"
 
-#: ../../source/inc/disp_imagelike:111
+#: ../../source/inc/disp_imagelike:112
 msgid "The size of the border on the top."
 msgstr "上側の境界のサイズです。"
 
-#: ../../source/inc/disp_imagelike:115
+#: ../../source/inc/disp_imagelike:116
 msgid "`right`"
 msgstr "`right`"
 
-#: ../../source/inc/disp_imagelike:114
+#: ../../source/inc/disp_imagelike:115
 msgid "The size of the border on the right side. If None, defaults to `left`."
 msgstr "右側の境界のサイズです。None なら、デフォルトでは `left` です。"
 
-#: ../../source/inc/disp_imagelike:118
+#: ../../source/inc/disp_imagelike:119
 msgid "`bottom`"
 msgstr "`bottom`"
 
-#: ../../source/inc/disp_imagelike:118
+#: ../../source/inc/disp_imagelike:119
 msgid "The side of the border on the bottom. If None, defaults to `top`."
 msgstr "下側の境界のサイズです。None なら、デフォルトでは `top` です。"
 
-#: ../../source/inc/disp_imagelike:124
+#: ../../source/inc/disp_imagelike:125
 msgid "`tile`"
 msgstr "`tile`"
 
-#: ../../source/inc/disp_imagelike:121
+#: ../../source/inc/disp_imagelike:122
 msgid ""
 "If set to True, tiling is used to resize sections of the image, rather than "
 "scaling. If set to the string \"integer\", the nearest integer number of "
@@ -607,7 +609,7 @@ msgstr ""
 "\"integer\" に設定されると、各方向に最も近い整数個のタイルが使用されます。必"
 "要な領域に一致するようすべてのタイルが拡大縮小されます。"
 
-#: ../../source/inc/disp_imagelike:135
+#: ../../source/inc/disp_imagelike:136
 msgid ""
 "A displayable that creates an empty box on the screen. The size of the box "
 "is controlled by `width` and `height`. This can be used when a displayable "
@@ -617,11 +619,11 @@ msgstr ""
 "`width` と `height` で制御できます。これは、displayable が子を要求しているが"
 "適切な子が無いときや、ボックス内の空間を埋めるのに使えます。"
 
-#: ../../source/inc/disp_imagelike:146
+#: ../../source/inc/disp_imagelike:147
 msgid "A displayable that fills the area its assigned with `color`."
 msgstr "割り当てられた領域を `color` で満たす displayable です。"
 
-#: ../../source/inc/disp_imagelike:154
+#: ../../source/inc/disp_imagelike:155
 msgid "Tiles `child` until it fills the area allocated to this displayable."
 msgstr "この displayable に割り当てられた領域まで `child` をタイル張りします。"
 

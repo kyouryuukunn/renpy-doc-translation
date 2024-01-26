@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 09:10+0900\n"
-"PO-Revision-Date: 2023-08-08 15:44+0900\n"
+"POT-Creation-Date: 2024-01-18 01:51+0900\n"
+"PO-Revision-Date: 2024-01-18 01:59+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -289,7 +289,33 @@ msgstr "`screen`"
 msgid "The name of the screen used to display the menu."
 msgstr "選択肢を表示するために使用されるスクリーンの名前です。"
 
-#: ../../source/inc/se_menu:19
+#: ../../source/inc/se_menu:21
+msgid "`type`"
+msgstr "`type`"
+
+#: ../../source/inc/se_menu:20
+msgid ""
+"May be \"menu\" or \"nvl\". If \"nvl\", the menu is displayed in NVL mode. "
+"Otherwise, it is displayed in ADV mode."
+msgstr ""
+"「menu」または「nvl」を指定できます。「nvl」の場合、選択肢はNVLモードで表示さ"
+"れます。そうでなければ、 ADVモードで表示されます。"
+
+#: ../../source/inc/se_menu:25
+msgid "`_layer`"
+msgstr "`_layer`"
+
+#: ../../source/inc/se_menu:24
+msgid ""
+"The layer to display the menu on. If not given, defaults to :var:`config."
+"choice_layer` for normal choice menus, and :var:`config.nvl_choice_layer` "
+"for NVL choice menus."
+msgstr ""
+"選択肢を表示するレイヤーです。指定しない場合、通常の選択肢は :var:`config."
+"choice_layer` で、NVL 選択肢の場合は :var:`config.nvl_choice_layer` になりま"
+"す。"
+
+#: ../../source/inc/se_menu:27
 msgid ""
 "Note that most Ren'Py games do not use menu captions, but use narration "
 "instead. To display a menu using narration, write::"
@@ -639,25 +665,68 @@ msgstr "指定されると、その秒数 Ren'Py はボーズするはずです�
 msgid "The following should be given as keyword arguments:"
 msgstr "以下はキーワード引数として指定するべきです。"
 
-#: ../../source/inc/se_pause:29
-msgid "`hard`"
-msgstr "`hard`"
+#: ../../source/inc/se_pause:23
+msgid "`predict`"
+msgstr "`predict`"
 
 #: ../../source/inc/se_pause:14
 msgid ""
-"This must be given as a keyword argument. When True, Ren'Py may prevent the "
-"user from clicking to interrupt the pause. If the player enables skipping, "
-"the hard pause will be skipped. There may be other circumstances where the "
-"hard pause ends early or prevents Ren'Py from operating properly, these will "
-"not be treated as bugs."
+"If True, when all prediction - including prediction scheduled with :func:"
+"`renpy.start_predict` and :func:`renpy.start_predict_screen` - has been "
+"finished, the pause will be ended."
 msgstr ""
-"これはキーワード引数として指定されなければなりません。True なら、Ren'Py はク"
-"リックでユーザーがポーズを中断できないようにします。プレイヤーがスキップを有"
-"効にした場合はハードポーズはスキップされます。他にも、ハードポーズが早く終了"
-"したり、Ren'Py が正しく動作しない状況があるかもしれませんが、これらはバグとし"
-"て扱われません。"
+"True の場合、Ren'Py は :func:`renpy.start_predict` と :func:`renpy."
+"start_predict_screen` でスケジュールした予測も含め、すべての予測が終了したと"
+"きにポーズを終了します。"
 
-#: ../../source/inc/se_pause:20
+#: ../../source/inc/se_pause:18
+msgid ""
+"This also causes Ren'Py to prioritize prediction over display smoothness for "
+"the duration of the pause. Because of that, it's recommended to not display "
+"animations during prediction."
+msgstr ""
+"また、Ren'Py はポーズの間、表示の滑らかさよりも予測を優先させます。そのため、"
+"予測中のアニメーション表示は非推奨です。"
+
+#: ../../source/inc/se_pause:22
+msgid ""
+"The pause will still end by other means - when the user clicks or skips, or "
+"when the delay expires (if any)."
+msgstr ""
+"ポーズは、ユーザーがクリックやスキップしたとき、または(あれば) delay 秒が過ぎ"
+"たときなど、他の方法でも終了します。"
+
+#: ../../source/inc/se_pause:28
+msgid "`modal`"
+msgstr "`modal`"
+
+#: ../../source/inc/se_pause:26
+msgid ""
+"If True, a timed pause will not end (it will hold) when a modal screen is "
+"being displayed. If False, the pause will end while a modal screen is being "
+"displayed."
+msgstr ""
+"True なら、ポーズはモーダルスクリーンが表示されているときは(一時停止して)終わ"
+"りません。 False なら、ポーズはモーダルスクリーンが表示されていても終わりま"
+"す。"
+
+#: ../../source/inc/se_pause:42
+msgid "`hard`"
+msgstr "`hard`"
+
+#: ../../source/inc/se_pause:31
+msgid ""
+"When True, Ren'Py may prevent the user from clicking to interrupt the pause. "
+"If the player enables skipping, the hard pause will be skipped. There may be "
+"other circumstances where the hard pause ends early or prevents Ren'Py from "
+"operating properly, these will not be treated as bugs."
+msgstr ""
+"True なら、Ren'Py はクリックでユーザーがポーズを中断できないようにします。プ"
+"レイヤーがスキップを有効にした場合はハードポーズはスキップされます。他にも、"
+"ハードポーズが早く終了したり、Ren'Py が正しく動作しない状況があるかもしれませ"
+"んが、これらはバグとして扱われません。"
+
+#: ../../source/inc/se_pause:37
 msgid ""
 "In general, using hard pauses is rude. When the user clicks to advance the "
 "game, it's an explicit request - the user wishes the game to advance. To "
@@ -669,53 +738,17 @@ msgstr ""
 "んでいます。その要求を覆すということは、プレイヤーが何を望んでいるかをプレイ"
 "ヤー以上に理解していると思い込むことです。"
 
-#: ../../source/inc/se_pause:25
+#: ../../source/inc/se_pause:42
+msgid "tl;dr - Don't use renpy.pause with hard=True."
+msgstr "つまり、 hard = True にして renpy.pause を使用しないでください。"
+
+#: ../../source/inc/se_pause:44
 msgid ""
 "Calling renpy.pause guarantees that whatever is on the screen will be "
 "displayed for at least one frame, and hence has been shown to the player."
 msgstr ""
 "renpy.pause を呼び出すと、画面に表示されているものが少なくとも1フレームはプ"
 "レーヤーに表示されることが保証されます。"
-
-#: ../../source/inc/se_pause:29
-msgid "tl;dr - Don't use renpy.pause with hard=True."
-msgstr "つまり、 hard = True にして renpy.pause を使用しないでください。"
-
-#: ../../source/inc/se_pause:38
-msgid "`predict`"
-msgstr "`predict`"
-
-#: ../../source/inc/se_pause:32
-msgid ""
-"If True, Ren'Py will end the pause when all prediction, including prediction "
-"scheduled with :func:`renpy.start_predict` and :func:`renpy."
-"start_predict_screen`, has been finished."
-msgstr ""
-"True の場合、Ren'Py は :func:`renpy.start_predict` と :func:`renpy."
-"start_predict_screen` でスケジュールした予測も含め、すべての予測が終了したと"
-"きにポーズを終了します。"
-
-#: ../../source/inc/se_pause:36
-msgid ""
-"This also causes Ren'Py to prioritize prediction over display smoothness for "
-"the duration of the pause. Because of that, it's recommended to not display "
-"animations during prediction."
-msgstr ""
-"また、Ren'Py はポーズの間、表示の滑らかさよりも予測を優先させます。そのため、"
-"予測中のアニメーション表示は非推奨です。"
-
-#: ../../source/inc/se_pause:41
-msgid "`modal`"
-msgstr "`modal`"
-
-#: ../../source/inc/se_pause:41
-msgid ""
-"If True or None, the pause will not end when a modal screen is being "
-"displayed. If False, the pause will end while a modal screen is being "
-"displayed."
-msgstr ""
-"True または None なら、ポーズはモーダルスクリーンが表示されているときは終わり"
-"ません。 False なら、ポーズはモーダルスクリーンが表示されていても終わります。"
 
 #: ../../source/statement_equivalents.rst:154
 msgid "Layeredimage"
