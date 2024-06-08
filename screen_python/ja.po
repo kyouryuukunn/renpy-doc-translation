@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 11:07+0900\n"
-"PO-Revision-Date: 2024-01-06 11:42+0900\n"
-"Last-Translator: akakyouryuu <akakyouryuu@gmail.com>\n"
+"POT-Creation-Date: 2024-05-11 13:14+0900\n"
+"PO-Revision-Date: 2024-05-11 13:26+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-04-08 05:43+0000\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/screen_python.rst:3
 msgid "Screens and Python"
@@ -80,10 +80,10 @@ msgstr ""
 
 #: ../../source/inc/screens:29
 msgid ""
-"Given `bar_value`, a  :class:`BarValue`, returns the :func:`ui.adjustment` "
-"if uses. The adjustment has the following to attributes defined:"
+"Given `bar_value`, a :class:`BarValue`, returns the :func:`ui.adjustment` it "
+"uses. The adjustment has the following attributes defined:"
 msgstr ""
-"指定の `bar_value`, :class:`BarValue` から、使っていれば :func:`ui."
+"指定の `bar_value`, :class:`BarValue` から、使用している :func:`ui."
 "adjustment` を返します。 adjustment には以下の定義された属性があります。:"
 
 #: ../../source/inc/screens:34
@@ -493,11 +493,25 @@ msgid ""
 msgstr ""
 "この関数は adjustment の値が変更されるとその新しい値を引数に呼び出されます。"
 
-#: ../../source/inc/ui:52
+#: ../../source/inc/ui:51
+msgid "`raw_changed`"
+msgstr "`raw_changed`"
+
+#: ../../source/inc/ui:48
+msgid ""
+"This function is called when the value of the adjustment changes. Unlike "
+"`changed`, this function is called with the raw value, which may be out of "
+"range. It's called with two arguments, the adjustment and the new value."
+msgstr ""
+"この関数は、 adjustment の値が変更されたときに呼び出されます。 `changed` とは"
+"異なり、この関数は生の値を引数に呼び出されますが、これは範囲外である可能性が"
+"あります。これは、 adjustment と新しい値の 2 つの引数で呼び出されます。"
+
+#: ../../source/inc/ui:58
 msgid "`ranged`"
 msgstr "`ranged`"
 
-#: ../../source/inc/ui:48
+#: ../../source/inc/ui:54
 msgid ""
 "This function is called with the adjustment object when the range of the "
 "adjustment is set by a viewport."
@@ -505,22 +519,22 @@ msgstr ""
 "この関数は adjustment の range が viewport によって設定されると adjustment オ"
 "ブジェクトを引数に呼び出されます。"
 
-#: ../../source/inc/ui:51
+#: ../../source/inc/ui:57
 msgid ""
 "This function may be called multiple times, as part of the layout process."
 msgstr "レイアウトの過程でこの関数は複数回呼び出されます。"
 
-#: ../../source/inc/ui:62
+#: ../../source/inc/ui:68
 msgid "`force_step`"
 msgstr "`force_step`"
 
-#: ../../source/inc/ui:55
+#: ../../source/inc/ui:61
 msgid ""
 "If True and this adjustment changes by dragging associated viewport or a "
-"bar, value will be changed only if the drag reached next step. If "
-"\"release\" and this adjustment changes by dragging associated viewport or a "
-"bar, after the release, value will be rounded to the nearest step. If False, "
-"this adjustment will changes by dragging, ignoring the step value."
+"bar, value will be changed only if the drag reached next step. If \"release"
+"\" and this adjustment changes by dragging associated viewport or a bar, "
+"after the release, value will be rounded to the nearest step. If False, this "
+"adjustment will changes by dragging, ignoring the step value."
 msgstr ""
 "adjustment が viewport や bar に対応する draggable で変更され、かつこれが "
 "True ならばドラッグが次のステップに達したときのみ値が変更されます。 "
@@ -528,7 +542,7 @@ msgstr ""
 "\"release\" ならば、 draggable の解放時、値は最も近いステップに丸められま"
 "す。 False ならばこの adjustment はステップの値を無視します。"
 
-#: ../../source/inc/ui:66
+#: ../../source/inc/ui:72
 msgid ""
 "Changes the value of the adjustment to `value`, updating any bars and "
 "viewports that use the adjustment."
@@ -536,7 +550,7 @@ msgstr ""
 "adjustment の値を `value` に変更し、その adjustment を使用しているすべての "
 "bar や viewport が更新されます。"
 
-#: ../../source/inc/ui:71
+#: ../../source/inc/ui:77
 msgid ""
 "Causes an interaction with the user, and returns the result of that "
 "interaction. This causes Ren'Py to redraw the screen and begin processing "
@@ -548,7 +562,7 @@ msgstr ""
 "して値を返すと、その値は ui.interact から返され、インタラクションは終了しま"
 "す。"
 
-#: ../../source/inc/ui:76
+#: ../../source/inc/ui:82
 msgid ""
 "This function is rarely called directly. It is usually called by other parts "
 "of Ren'Py, including the say statement, menu statement, with statement, "
@@ -559,7 +573,7 @@ msgstr ""
 "pause, call screen ステートメント含む Ren'Py の一部、 :func:`renpy.input` な"
 "どの多くの関数から通常呼び出されます。しかし必要なら直接呼び出せます。"
 
-#: ../../source/inc/ui:81
+#: ../../source/inc/ui:87
 msgid ""
 "When an interaction ends, the transient layer and all screens shown with "
 "`_transient` as true are cleared from the scene lists."
@@ -567,7 +581,7 @@ msgstr ""
 "インタラクション終了時、 transient レイヤーと `transient` が True として表示"
 "されたすべてのスクリーンはそのシーンリストから除去されます。"
 
-#: ../../source/inc/ui:84
+#: ../../source/inc/ui:90
 msgid ""
 "The following arguments are documented. As other, undocumented arguments "
 "exist for Ren'Py's internal use, please pass all arguments as keyword "
@@ -577,11 +591,11 @@ msgstr ""
 "数は Ren'Py 内部で使用するために存在するのですべての引数はキーワード引数とし"
 "て渡してください。"
 
-#: ../../source/inc/ui:92
+#: ../../source/inc/ui:98
 msgid "`roll_forward`"
 msgstr "`roll_forward`"
 
-#: ../../source/inc/ui:89
+#: ../../source/inc/ui:95
 msgid ""
 "The information that will be returned by this function when a roll forward "
 "occurs. (If None, the roll forward is ignored.) This should usually be "
@@ -591,11 +605,11 @@ msgstr ""
 "されます)。これには通常 :func:`renpy.roll_forward_info` 関数の結果が渡される"
 "はずです。"
 
-#: ../../source/inc/ui:94
+#: ../../source/inc/ui:100
 msgid "`mouse`"
 msgstr "`mouse`"
 
-#: ../../source/inc/ui:95
+#: ../../source/inc/ui:101
 msgid "The style of mouse cursor to use during this function."
 msgstr "この関数を実行中のマウスカーソルのスタイルです。"
 
@@ -1220,8 +1234,8 @@ msgstr "\"window\""
 
 #: ../../source/inc/custom_sl:95
 msgid ""
-"These correspond to groups of :doc:`style_properties`. Group can also be "
-"\"ui\", in which case it adds the :ref:`common ui properties <common-"
+"These correspond to groups of :doc:`style_properties`. Group can also be \"ui"
+"\", in which case it adds the :ref:`common ui properties <common-"
 "properties>`."
 msgstr ""
 "これらは :doc:`style_properties` のグループに対応します。グループは \"ui\" に"
@@ -1300,9 +1314,9 @@ msgid ""
 "sense to use the \\*\\*properties syntax with a properties keyword in some "
 "place. For example::"
 msgstr ""
-"`add_property_group` のような大きなプロパティ―グループを使用するなら、 "
-"\\*\\*properties シンタックスを使用してどこかに properties キーワードを使うと"
-"よいです。例 ::"
+"`add_property_group` のような大きなプロパティ―グループを使用するなら、 \\*"
+"\\*properties シンタックスを使用してどこかに properties キーワードを使うとよ"
+"いです。例 ::"
 
 #~ msgid ""
 #~ "This method must be overridden, as the default method will raise a "

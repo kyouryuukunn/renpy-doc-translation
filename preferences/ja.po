@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-14 22:20+0900\n"
-"PO-Revision-Date: 2024-03-15 13:17+0900\n"
+"POT-Creation-Date: 2024-06-01 12:05+0900\n"
+"PO-Revision-Date: 2024-06-01 12:32+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -324,23 +324,86 @@ msgstr ""
 "True なら、ゲーム再開時にウィンドウの位置の復元を試みます。 False なら、しま"
 "せん。 \"restore window position\" preference に相当します。"
 
-#: ../../source/preferences.rst:190
+#: ../../source/preferences.rst:192
+msgid "Mixer Defaults"
+msgstr "ミキサーのデフォルト"
+
+#: ../../source/preferences.rst:194
+msgid "These variables may only be set with the ``default`` statement."
+msgstr "これらの変数は ``default`` ステートメントでのみ設定できます。"
+
+#: ../../source/preferences.rst:198
+msgid ""
+"The default volume of the main mixer, which is applied to all channels in "
+"addition to the per-channel mixer.This should be a number between 0.0 and "
+"1.0, with 1.0 being full volume."
+msgstr ""
+"main ミキサーのデフォルトの音量であり、チャンネル毎のミキサーの設定に加えてす"
+"べてのチャンネルに適用されます。これは 0.0 と 1.0 の間の数であるべきで、 1.0 "
+"が最大音量です。"
+
+#: ../../source/preferences.rst:203
+msgid ""
+"The default volume of the music mixer, which is used for the music and movie "
+"channels. This should be a number between 0.0 and 1.0, with 1.0 being full "
+"volume."
+msgstr ""
+"music ミキサーのデフォルトの音量で、 music や movie チャンネルに使用されま"
+"す。これは 0.0 と 1.0 の間の数であるべきで、 1.0 が最大音量です。"
+
+#: ../../source/preferences.rst:209
+msgid ""
+"The default volume of the sfx mixer, which is used for the sound and audio "
+"channels. This should be a number between 0.0 and 1.0, with 1.0 being full "
+"volume."
+msgstr ""
+"sfx ミキサーのデフォルト音量で、 sound と audio チャンネルに使用されます。こ"
+"れは 0.0 と 1.0 の間の数であるべきで、 1.0 が最大音量です。"
+
+#: ../../source/preferences.rst:215
+msgid ""
+"The default volume of the voice mixer, which is used for the voice channel "
+"(and hence the voice statement, auto-voice, etc.). This should be a number "
+"between 0.0 and 1.0, with 1.0 being full volume."
+msgstr ""
+"voice ミキサーのデフォルト音量で、 voice オーディオチャンネル (voice ステート"
+"メントや auto-voice など ) に使用されます。これは 0.0 と 1.0 の間の数であるべ"
+"きで、 1.0 が最大音量です。"
+
+#: ../../source/preferences.rst:219
+msgid ""
+"If channels defined using :func:`renpy.music.register_channel` are used, the "
+"default volume of those channels can be set using the preferences.volume."
+"`mixer` syntax, where `mixer` is the name of the mixer."
+msgstr ""
+":func:`renpy.music.register_channel` で定義されたチャンネルが使われる場合、そ"
+"れらのチャンネルのデフォルトの音量は preferences.volume.`mixer` 構文 (ここで"
+"の `mixer` はミキサーの名前です) を使って設定できます。"
+
+#: ../../source/preferences.rst:223
+msgid ""
+"As an example, this will set the music mixer to 75% and the sfx mixer to "
+"50%::"
+msgstr ""
+"例えば、これは music ミキサーを75%に設定し、 SFX ミキサーを50%に設定します。"
+
+#: ../../source/preferences.rst:230
 msgid "Mixer Functions"
 msgstr "ミキサー関数"
 
-#: ../../source/preferences.rst:192
+#: ../../source/preferences.rst:232
 msgid "See :ref:`volume` for more details about mixers."
 msgstr "ミキサーの音量についての詳細は :ref:`volume` を参照してください。"
 
-#: ../../source/preferences.rst:196
+#: ../../source/preferences.rst:236
 msgid "Sets `mixer` to `volume`."
 msgstr "`mixer` を `volume` に設定します。"
 
-#: ../../source/preferences.rst:200
+#: ../../source/preferences.rst:240
 msgid "`mixer`"
 msgstr "`mixer`"
 
-#: ../../source/preferences.rst:199
+#: ../../source/preferences.rst:239
 msgid ""
 "A string giving the name of the mixer. By default, the mixers are \"main\", "
 "\"music\", \"sfx\", and \"voice\" (\"main\" being a special mixer)."
@@ -348,17 +411,17 @@ msgstr ""
 "ミキサー名の文字列です。デフォルトのミキサーは \"main\" と \"music\", \"sfx"
 "\", \"voice\" です (\"main\" は特別なミキサーです) 。"
 
-#: ../../source/preferences.rst:203
+#: ../../source/preferences.rst:243
 msgid "`volume`"
 msgstr "`volume`"
 
-#: ../../source/preferences.rst:203
+#: ../../source/preferences.rst:243
 msgid ""
 "A number between 0.0 and 1.0, where 0.0 is -40 dB (power), and 1.0 is 0 dB "
 "(power)."
 msgstr "0.0 から 1.0 の間の数値です。 0.0 は -40dB で 1.0 は 0 dB になります。"
 
-#: ../../source/preferences.rst:208
+#: ../../source/preferences.rst:248
 msgid ""
 "Gets the volume for `mixer`. If the mixer is muted, this returns 0.0. The is "
 "returns a number between 0.0 and 1.0, where 0.0 is -40 dB (power) and 1.0 is "
@@ -368,7 +431,7 @@ msgstr ""
 "します。0.0 から 1.0 の間の数値を返し、 0.0 は -40dB で 1.0 は 0 dB になりま"
 "す。"
 
-#: ../../source/preferences.rst:214
+#: ../../source/preferences.rst:254
 msgid ""
 "Sets the mute setting for `mixer`. If `mute` is true, the mixer is muted. If "
 "`mute` is false, the mixer's volume is reverted to its value before it was "
@@ -377,46 +440,17 @@ msgstr ""
 "`mixer` のミュートを設定します。 `mute` が True なら、ミキサーはミュートされ"
 "ます。 `mute` が False なら、ミュートになる前のミキサーの音量に戻ります。"
 
-#: ../../source/preferences.rst:220
+#: ../../source/preferences.rst:260
 msgid "Gets the mute setting for `mixer`."
 msgstr "`mixer` のミュート設定を所得します。"
 
-#: ../../source/preferences.rst:224
-msgid "Audio Channel Defaults"
-msgstr "オーディオチャンネル"
+#~ msgid "Audio Channel Defaults"
+#~ msgstr "オーディオチャンネル"
 
-#: ../../source/preferences.rst:226
-msgid "These config variables set the default volumes on various audio mixers."
-msgstr ""
-"これらの設定変数は様々なオーディオミキサーのデフォルトの音量を設定します。"
-
-#: ../../source/preferences.rst:230
-msgid ""
-"The default volume of the music mixer, which is used for the music and movie "
-"channels. This should be a number between 0.0 and 1.0, with 1.0 being full "
-"volume."
-msgstr ""
-"music ミキサーのデフォルトの音量で、 music や movie チャンネルに使用されま"
-"す。これは 0.0 と 1.0 の間の数であるべきで、 1.0 が最大音量です。"
-
-#: ../../source/preferences.rst:236
-msgid ""
-"The default volume of the sfx mixer, which is used for the sound and audio "
-"channels. This should be a number between 0.0 and 1.0, with 1.0 being full "
-"volume."
-msgstr ""
-"sfx ミキサーのデフォルト音量で、 sound と audio チャンネルに使用されます。こ"
-"れは 0.0 と 1.0 の間の数であるべきで、 1.0 が最大音量です。"
-
-#: ../../source/preferences.rst:242
-msgid ""
-"The default volume of the voice mixer, which is used for the voice channel "
-"(and hence the voice statement, auto-voice, etc.). This should be a number "
-"between 0.0 and 1.0, with 1.0 being full volume."
-msgstr ""
-"voice ミキサーのデフォルト音量で、 voice オーディオチャンネル (voice ステート"
-"メントや auto-voice など ) に使用されます。これは 0.0 と 1.0 の間の数であるべ"
-"きで、 1.0 が最大音量です。"
+#~ msgid ""
+#~ "These config variables set the default volumes on various audio mixers."
+#~ msgstr ""
+#~ "これらの設定変数は様々なオーディオミキサーのデフォルトの音量を設定します。"
 
 #~ msgid "A number between 0.0 and 1.0."
 #~ msgstr "0.0 と 1.0 の間の数値です。"
