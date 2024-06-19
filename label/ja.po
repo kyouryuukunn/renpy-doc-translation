@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-14 23:54+0900\n"
+"POT-Creation-Date: 2024-06-19 12:25+0900\n"
 "PO-Revision-Date: 2024-06-15 00:47+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -37,20 +37,23 @@ msgstr ""
 "プされたりするために存在します。 ::"
 
 #: ../../source/label.rst:20
+#, fuzzy
 msgid ""
 "A label statement may have a block associated with it. In that case, control "
 "enters the block whenever the label statement is reached, and proceeds with "
 "the statement after the label statement whenever the end of the block is "
-"reached."
+"reached: the following code, when jumping to the \"origin\" label, produces "
+"the \"a, b, c\" sequence. ::"
 msgstr ""
 "label ステートメントはそれに関連づけられたブロックを持つでしょう。その場合そ"
 "の labe ステートメントに到達すると制御はそのブロックに入り、そのブロックの終"
 "端に到達すると label ステートメントの次のステートメントに移ります。"
 
-#: ../../source/label.rst:24
+#: ../../source/label.rst:33
+#, fuzzy
 msgid ""
 "There are two kinds of labels: *global* and *local* labels. Global labels "
-"live in one global scope shared across all project files and thus should "
+"live in one global namespace shared across all project files and thus should "
 "have unique names per game. A local label on the other hand refer to a "
 "global label, so several local labels in the game can have the same name, "
 "provided they are related to different global labels. To declare a local "
@@ -65,7 +68,7 @@ msgstr ""
 "local label を宣言するには接頭辞 ``.`` を名前につけて参加するグローバルラベル"
 "の下に置いてください。例 ::"
 
-#: ../../source/label.rst:41
+#: ../../source/label.rst:50
 msgid ""
 "Local labels can be referenced directly inside the same global label they "
 "are declared in, or by their full name, consisting of global and local name "
@@ -74,7 +77,7 @@ msgstr ""
 "ローカルラベルはそれが宣言されたのと同じグローバルラベル内なら直接に、そうで"
 "なければグローバルとローカルネームからなるフルネームで参照出来ます。 : ::"
 
-#: ../../source/label.rst:48
+#: ../../source/label.rst:57
 msgid ""
 "The label statement may take an optional list of parameters. These "
 "parameters are processed as described in :pep:`570`, with two exceptions:"
@@ -83,36 +86,49 @@ msgstr ""
 "メーターは :pep:`570` で記述されたとおりに処理されますが、2つの例外がありま"
 "す :"
 
-#: ../../source/label.rst:51
-msgid "The values of default parameters are evaluated at call time."
+#: ../../source/label.rst:60
+#, fuzzy
+msgid "First, the values of default parameters are evaluated at call time."
 msgstr "デフォルトパラメーターの値は呼び出し時に評価されます。"
 
-#: ../../source/label.rst:52
-msgid "The variables are dynamically, rather than lexically, scoped."
-msgstr "変数は静的スコープではなく、動的スコープです。"
-
-#: ../../source/label.rst:54
+#: ../../source/label.rst:62
 msgid ""
-"When a variable is dynamically scoped, its value lasts until a return "
-"statement following the label. It doesn't generally make sense to have a "
-"label with parameters that is reached by a jump or a previous statement. For "
-"an example of labels with parameters, see the :ref:`call statement <call-"
-"statement>`."
+"Second, the variables are scoped dynamically, rather than lexically. This "
+"means that when a variable gets its value from a label parameter, it will be "
+"reverted (to the previous value of the variable if it had one, or to the "
+"absence of the variable otherwise) when a return statement is reached. It "
+"also means that given a statement using a certain variable, that variable "
+"may or may not get its value from a label parameter depending on how the "
+"statement was reached ; that is not possible in pure Python code. ::"
+msgstr ""
+"第 2 に、変数のスコープは静的ではなく動的です。つまり、変数がラベルパラメータ"
+"からその値を取得したときは、 return ステートメントに到達するとその変数は ( 変"
+"数の以前の値がある場合はその値に、そうでない場合は変数が存在しないように ) 戻"
+"されます。また、特定の変数を使用するステートメントが与えられた場合、その変数"
+"は、ステートメントに到達した方法に応じて、ラベルパラメーターから値を取得する"
+"場合と取得しない場合があります。これは純粋な Python コードでは不可能です。::"
+
+#: ../../source/label.rst:85
+#, fuzzy
+msgid ""
+"It doesn't generally make sense to have a label with parameters be reached "
+"by a jump or a previous statement. For an example of labels with parameters, "
+"see the :ref:`call statement <call-statement>`."
 msgstr ""
 "変数が動的スコープならば、その値はそのラベルに続く return ステートメントまで"
 "残ります。基本的にジャンプや前のステートメントから到達するラベルのパラメー"
 "ターは無効です。パラメーターつきラベルの例として、 :ref:`call statement "
 "<call-statement>` を参照してください。"
 
-#: ../../source/label.rst:64
+#: ../../source/label.rst:93
 msgid "Jump Statement"
 msgstr "jump ステートメント"
 
-#: ../../source/label.rst:66
+#: ../../source/label.rst:95
 msgid "The jump statement is used to transfer control to the given label."
 msgstr "jump ステートメントを使用して指定のラベルに制御を移します。"
 
-#: ../../source/label.rst:68
+#: ../../source/label.rst:97
 msgid ""
 "If the ``expression`` keyword is present, the expression following it is "
 "evaluated, and the string so computed is used as the label name of the "
@@ -123,7 +139,7 @@ msgstr ""
 "ジャンプ先のラベル名に使用されます。 ``expression`` キーワードがなければジャ"
 "ンプ先のラベル名は明示的に指定されなければなりません。"
 
-#: ../../source/label.rst:73 ../../source/label.rst:100
+#: ../../source/label.rst:102 ../../source/label.rst:129
 msgid ""
 "A local label name can be passed, either with ``expression`` or without, and "
 "either with the global label prepended (\"global_label.local_label\"), or "
@@ -133,7 +149,7 @@ msgstr ""
 "ローバルラベルの接頭辞(\"global_label.local_label\") またはドット( . )をつけ"
 "て (\".local_label\") 渡せます。"
 
-#: ../../source/label.rst:77
+#: ../../source/label.rst:106
 msgid ""
 "Unlike call, jump does not push the next statement onto a stack. As a "
 "result, there's no way to return to where you've jumped from. ::"
@@ -141,11 +157,11 @@ msgstr ""
 "call とは異なり、jump は次のステートメントをスタックにプッシュしません。この"
 "ため、ジャンプ元に戻る方法はありません。::"
 
-#: ../../source/label.rst:89
+#: ../../source/label.rst:118
 msgid "Call Statement"
 msgstr "call ステートメント"
 
-#: ../../source/label.rst:91
+#: ../../source/label.rst:120
 msgid ""
 "The call statement is used to transfer control to the given label. It also "
 "pushes the next statement onto the call stack, allowing the return statement "
@@ -155,18 +171,19 @@ msgstr ""
 "テートメントをコールスタックにプッシュし、 return ステートメントで制御を "
 "call ステートメントの次のステートメントに返せるようにします。"
 
-#: ../../source/label.rst:95
+#: ../../source/label.rst:124
+#, fuzzy
 msgid ""
 "If the ``expression`` keyword is present, the expression following it is "
-"evaluated, and the string so computed is used as the name of the label to "
-"call. If the ``expression`` keyword is not present, the name of the "
-"statement to call must be explicitly given."
+"evaluated, and the resulting string is used as the name of the label to "
+"call. If the ``expression`` keyword is not present, the name of the label to "
+"call must be explicitly given."
 msgstr ""
 "``expression`` キーワードが与えられると、これに続く式が評価され、得られた文字"
 "列をラベルの名前として呼び出します。``expression`` キーワードが与えられない場"
 "合は、呼び出すステートメントの名前を明示的に指定する必要があります。"
 
-#: ../../source/label.rst:104
+#: ../../source/label.rst:133
 msgid ""
 "If the optional ``from`` clause is present, it has the effect of including a "
 "label statement with the given name as the statement immediately following "
@@ -178,7 +195,7 @@ msgstr ""
 "の明示はコールスタックを保存したゲームデータがスクリプトを変更した後にロード"
 "されても適切な場所に返れるようにします。"
 
-#: ../../source/label.rst:109
+#: ../../source/label.rst:138
 msgid ""
 "The call statement may take arguments, which are processed as described in :"
 "pep:`448`."
@@ -186,7 +203,7 @@ msgstr ""
 "call ステートメントには引数も受け取られ、それらは :pep:`448` に記述されたとお"
 "りに処理されます。"
 
-#: ../../source/label.rst:111
+#: ../../source/label.rst:140
 msgid ""
 "When using a call expression with an arguments list, the ``pass`` keyword "
 "must be inserted between the expression and the arguments list. Otherwise, "
@@ -197,7 +214,7 @@ msgstr ""
 "リストの間に入らなければなりません。そうでなければ引数リストは call ステート"
 "メントではなく式の一部と解釈されます。 ::"
 
-#: ../../source/label.rst:139
+#: ../../source/label.rst:168
 msgid ""
 "Publishing a game without ``from`` clauses for each ``call`` statement is "
 "dangerous, if you intend to publish updates of the game later on. If no such "
@@ -210,7 +227,7 @@ msgstr ""
 "と、 その``call`` を含むファイルを編集すると呼び出されたラベル内で作成された"
 "セーブが壊れる可能性があります。"
 
-#: ../../source/label.rst:145
+#: ../../source/label.rst:174
 msgid ""
 "Using the \"Add from clauses to calls\" option when building a game's "
 "distribution can solve that issue."
@@ -218,11 +235,11 @@ msgstr ""
 "\"Add from clauses to calls\" オプションを使用して、ゲームの配布物をビルドす"
 "るときにその問題を解決できます。"
 
-#: ../../source/label.rst:151
+#: ../../source/label.rst:180
 msgid "Return Statement"
 msgstr "return ステートメント"
 
-#: ../../source/label.rst:153
+#: ../../source/label.rst:182
 msgid ""
 "The ``return`` statement pops the top statement off of the call stack, and "
 "transfers control to it. If the call stack is empty, the return statement "
@@ -232,7 +249,7 @@ msgstr ""
 "制御をそのステートメントに移します。コールスタックが空の場合、return ステート"
 "メントは Ren'Py をリセットしてメインメニューに戻します。"
 
-#: ../../source/label.rst:157
+#: ../../source/label.rst:186
 msgid ""
 "If the optional expression is given to return, it is evaluated, and it's "
 "result is stored in the ``_return`` variable. This variable is dynamically "
@@ -241,27 +258,27 @@ msgstr ""
 "任意の式が return に指定されると、それは評価され、その結果が _return 変数に保"
 "存されます。この変数は各コンテキストに対して動的スコープに属します。"
 
-#: ../../source/label.rst:164
+#: ../../source/label.rst:193
 msgid "Special Labels"
 msgstr "特別なラベル"
 
-#: ../../source/label.rst:166
+#: ../../source/label.rst:195
 msgid "The following labels are used by Ren'Py:"
 msgstr "以下のラベルは Ren'Py 本体で使用されます。 :"
 
-#: ../../source/label.rst:169
+#: ../../source/label.rst:198
 msgid "``start``"
 msgstr "``start``"
 
-#: ../../source/label.rst:169
+#: ../../source/label.rst:198
 msgid "By default, Ren'Py jumps to this label when the game starts."
 msgstr "デフォルトでは Ren'Py はゲーム開始時にこのラベルにジャンプします。"
 
-#: ../../source/label.rst:173
+#: ../../source/label.rst:202
 msgid "``quit``"
 msgstr "``quit``"
 
-#: ../../source/label.rst:172
+#: ../../source/label.rst:201
 msgid ""
 "If it exists, this label is called in a new context when the user quits the "
 "game."
@@ -269,11 +286,11 @@ msgstr ""
 "存在すればこのラベルはユーザーがゲーム終了時に新しいコンテキストで呼び出され"
 "ます。"
 
-#: ../../source/label.rst:180
+#: ../../source/label.rst:209
 msgid "``after_load``"
 msgstr "``after_load``"
 
-#: ../../source/label.rst:176
+#: ../../source/label.rst:205
 msgid ""
 "If it exists, this label is called when a game is loaded. It can be use to "
 "fix data when the game is updated. If data is changed by this label, :func:"
@@ -285,11 +302,11 @@ msgstr ""
 "func:`renpy.block_rollback` を呼び出してプレーヤーがロード位置を越えてロール"
 "バックしてもこれらの変更が元に戻らないようにする必要があります。"
 
-#: ../../source/label.rst:184
+#: ../../source/label.rst:213
 msgid "``splashscreen``"
 msgstr "``splashscreen``"
 
-#: ../../source/label.rst:183
+#: ../../source/label.rst:212
 msgid ""
 "If it exists, this label is called when the game is first run, before "
 "showing the main menu. Please see :ref:`Adding a Splashscreen <adding-a-"
@@ -299,11 +316,11 @@ msgstr ""
 "されます。 :ref:`スプラッシュスクリーン追加 <adding-a-splashscreen>` も参照し"
 "てください。"
 
-#: ../../source/label.rst:189
+#: ../../source/label.rst:218
 msgid "``before_main_menu``"
 msgstr "``before_main_menu``"
 
-#: ../../source/label.rst:187
+#: ../../source/label.rst:216
 msgid ""
 "If it exists, this label is called before the main menu. It is used in rare "
 "cases to set up the main menu, for example by starting a movie playing in "
@@ -313,11 +330,11 @@ msgstr ""
 "用意、例えばバックグラウンドでムービーを再生するような特別な場合に使用されま"
 "す。"
 
-#: ../../source/label.rst:198
+#: ../../source/label.rst:227
 msgid "``main_menu``"
 msgstr "``main_menu``"
 
-#: ../../source/label.rst:192
+#: ../../source/label.rst:221
 msgid ""
 "If it exists, this label is called instead of the main menu. If it returns, "
 "Ren'Py will start the game at the ``start`` label. For example, the "
@@ -328,11 +345,11 @@ msgstr ""
 "と Ren'Py は ``start`` ラベルからゲームを開始します。例えば以下のコードではメ"
 "インメニューを表示せずに即座にゲームを開始します。 ::"
 
-#: ../../source/label.rst:202
+#: ../../source/label.rst:231
 msgid "``after_warp``"
 msgstr "``after_warp``"
 
-#: ../../source/label.rst:201
+#: ../../source/label.rst:230
 msgid ""
 "If it is existed, this label is called after a warp but before the warped-to "
 "statement executes. Please see :ref:`Warping to a line <warping_to_a_line>`."
@@ -340,11 +357,11 @@ msgstr ""
 "存在すればこのラベルはワープ後にワープ先のステートメントが実行される前に呼び"
 "出されます。 :ref:`行ワープ <warping_to_a_line>` を参照してください。"
 
-#: ../../source/label.rst:208
+#: ../../source/label.rst:237
 msgid "``hide_windows``"
 msgstr "``hide_windows``"
 
-#: ../../source/label.rst:205
+#: ../../source/label.rst:234
 msgid ""
 "If it exists, this label is called when the player hides the windows with "
 "the right mouse button or the H key. If this returns true, the hide is "
@@ -355,7 +372,7 @@ msgstr ""
 "たときに呼び出されます。これが True を返せば、その非表示は (非表示が既に実行"
 "された後) キャンセルされ、そうで無ければその非表示が続きます。"
 
-#: ../../source/label.rst:211
+#: ../../source/label.rst:240
 msgid "Labels & Control Flow Functions"
 msgstr "ラベルと制御フロー関数"
 
@@ -378,7 +395,7 @@ msgstr ""
 "的に現在の呼び出しに対するスコープにします。その呼び出しが返ると、変数はこの"
 "関数が呼び出されたときの値にリセットされます。"
 
-#: ../../source/inc/context:28 ../../source/inc/label:15
+#: ../../source/inc/context:35 ../../source/inc/label:15
 msgid "Variables in :ref:`named stores <named-stores>` are supported."
 msgstr ":ref:`名前つきの store <named-stores>` 内の変数がサポートされます。"
 
@@ -389,7 +406,7 @@ msgid ""
 msgstr ""
 "変数はキーワード引数として渡され、引数の値はその変数名に代入されました。"
 
-#: ../../source/inc/context:30 ../../source/inc/label:20
+#: ../../source/inc/context:37 ../../source/inc/label:20
 msgid "Example calls are::"
 msgstr "呼び出し例 ::"
 
@@ -501,11 +518,11 @@ msgstr "最も一般的な使い方は、次のように使うことです ::"
 msgid "to clear the return stack."
 msgstr "リターンスタックをクリアします。"
 
-#: ../../source/label.rst:218
+#: ../../source/label.rst:247
 msgid "Contexts"
 msgstr "コンテキスト"
 
-#: ../../source/label.rst:220
+#: ../../source/label.rst:249
 msgid ""
 "Contexts are used internally by Ren'Py to manage the changeable and saveable "
 "state of the game. Contexts include:"
@@ -513,11 +530,11 @@ msgstr ""
 "コンテキストは、 Ren'Py がゲームの状態の変更可能な物や保存可能な物を管理する"
 "ために内部的に使用します。コンテキストには以下のものがあります :"
 
-#: ../../source/label.rst:223
+#: ../../source/label.rst:252
 msgid "the currently running Ren'Py statement,"
 msgstr "現在実行中のRen'Pyのステートメント"
 
-#: ../../source/label.rst:224
+#: ../../source/label.rst:253
 msgid ""
 "the call stack, as described above, and the names and former values of "
 "dynamic variables created by :func:`renpy.dynamic`,"
@@ -525,22 +542,22 @@ msgstr ""
 "上述のように、コールスタックと :func:`renpy.dynamic` によって作成された動的変"
 "数の名前と以前の値を返します"
 
-#: ../../source/label.rst:226
+#: ../../source/label.rst:255
 msgid ""
 "the images currently being shown (and informations about them like their "
 "attributes, the transforms applied to them and so on),"
 msgstr ""
 "現在表示されている画像（およびその属性や適用されている transform などの情報）"
 
-#: ../../source/label.rst:228
+#: ../../source/label.rst:257
 msgid "the screens being shown, and the variables inside them,"
 msgstr "表示されている screen とその中の変数"
 
-#: ../../source/label.rst:229
+#: ../../source/label.rst:258
 msgid "the audio that is playing or queued."
 msgstr "再生中またはキューされている音声"
 
-#: ../../source/label.rst:231
+#: ../../source/label.rst:260
 msgid ""
 "Most of the time there is only one context at play, and only one instance of "
 "each of these elements exists. This changes when entering the main or game "
@@ -554,7 +571,7 @@ msgstr ""
 "るときに元に戻ります。これらの変化のいくつかはコンテキストに入るとスクリーン"
 "レイヤーがクリアされるように自動で変更されます。"
 
-#: ../../source/label.rst:237
+#: ../../source/label.rst:266
 msgid ""
 "Ren'Py also creates new contexts as part of :ref:`replay` and when :func:"
 "`hiding the interface <HideInterface>`."
@@ -562,7 +579,7 @@ msgstr ""
 "Ren'Py は :ref:`replay` や :func:`hiding interface<HideInterface>` のときにも"
 "新しいコンテキストを作成します。"
 
-#: ../../source/label.rst:240
+#: ../../source/label.rst:269
 msgid ""
 "The creation of :ref:`screen language <screens>` has considerably lessened "
 "the need for creating contexts."
@@ -570,7 +587,7 @@ msgstr ""
 ":ref:`screen language <screens>` によりコンテキストを作る必要性は顕著に減りま"
 "した。"
 
-#: ../../source/label.rst:243
+#: ../../source/label.rst:272
 msgid ""
 "Rollback is only enabled in the base context (meaning, when there is only "
 "one context), and only the base context is saved, which is why the game menu "
@@ -597,7 +614,22 @@ msgid ""
 msgstr ""
 "これを使用してインタラクション中に 2 つ目のインタラクションを開始します。"
 
-#: ../../source/inc/context:15
+#: ../../source/inc/context:13 ../../source/inc/context:66
+msgid "This takes an optional  keyword argument:"
+msgstr ""
+
+#: ../../source/inc/context:17 ../../source/inc/context:70
+msgid "`_clear_layers`"
+msgstr ""
+
+#: ../../source/inc/context:16 ../../source/inc/context:69
+msgid ""
+"If True (the default), the layers are cleared before the new interaction "
+"starts. If False, the layers are not cleared. If a list, only the layers in "
+"the list are cleared."
+msgstr ""
+
+#: ../../source/inc/context:22
 msgid ""
 "Returns an object that is unique to the current context. The object is "
 "copied when entering a new context, but changes to the copy do not change "
@@ -607,11 +639,11 @@ msgstr ""
 "トに入るとそのオブジェクトはコピーされますが、コピーへの変更はオリジナルに影"
 "響を与えません。"
 
-#: ../../source/inc/context:19
+#: ../../source/inc/context:26
 msgid "The object is saved and participates in rollback."
 msgstr "オブジェクトは保存され、ロールバックに参加します。"
 
-#: ../../source/inc/context:23
+#: ../../source/inc/context:30
 msgid ""
 "This can be given one or more variable names as arguments. This makes the "
 "variables dynamically scoped to the current context. When returning to the "
@@ -622,7 +654,7 @@ msgstr ""
 "現在の呼び出しに対するスコープにします。前のコンテキストに帰ると、変数はこの"
 "関数が呼び出されたときの値にリセットされます。"
 
-#: ../../source/inc/context:37
+#: ../../source/inc/context:44
 msgid ""
 "Returns the nesting level of the current context. This is 0 for the "
 "outermost context (the context that is saved, loaded, and rolled-back), and "
@@ -632,7 +664,7 @@ msgstr ""
 "クされる) 最も外側のコンテキストに対しては 0 で、メニューや回想のような他のコ"
 "ンテキストでは 0 ではありません。"
 
-#: ../../source/inc/context:43
+#: ../../source/inc/context:50
 msgid ""
 "This function creates a new context, and invokes the given Python callable "
 "(function) in that context. When the function returns or raises an "
@@ -645,11 +677,11 @@ msgstr ""
 "現在のコンテキストに戻ります。一般的に、イベントハンドラー内部から、プレイ"
 "ヤーに情報を表示する必要のある python 関数を呼び出すために使用されます。"
 
-#: ../../source/inc/context:50
+#: ../../source/inc/context:57
 msgid "Additional arguments and keyword arguments are passed to the callable."
 msgstr "追加の引数とキーワード引数はその呼び出し可能オブジェクトに渡されます。"
 
-#: ../../source/inc/context:53
+#: ../../source/inc/context:60
 msgid ""
 "A context created with this function cannot execute Ren'Py script. Functions "
 "that would change the flow of Ren'Py script, like :func:`renpy.jump`, are "
@@ -661,7 +693,7 @@ msgstr ""
 "スト外で扱われます。 Python 関数ではなく Ren'Py スクリプトを呼び出したいな"
 "ら、 :func:`renpy.call_in_new_context` を代わりに使ってください。"
 
-#: ../../source/inc/context:61
+#: ../../source/inc/context:75
 msgid ""
 "Causes control to leave the current context, and then to be transferred in "
 "the parent context to the given label."
@@ -669,7 +701,7 @@ msgstr ""
 "現在のコンテキストを終了し、親のコンテキストで指定されたラベルに制御を移動し"
 "ます。"
 
-#: ../../source/inc/context:66
+#: ../../source/inc/context:80
 msgid ""
 "This pops all contexts off the context stack, resetting the dynamic "
 "variables as it does so. When this is done, a new context is created, the "
@@ -682,7 +714,7 @@ msgstr ""
 "テートメントは終了し、次のステートメントからゲームが続行されます。これにより"
 "データと開始位置を除いて Ren'Py は起動時の状態に戻ります。"
 
-#: ../../source/inc/context:72
+#: ../../source/inc/context:86
 msgid ""
 "This can be used to reset everything about the game - shown image, playing "
 "music, etc, as if the game started from the beginning."
@@ -690,7 +722,7 @@ msgstr ""
 "これにより、表示されている画像、再生中の音楽など、ゲームに関するすべてをゲー"
 "ムが最初から開始したかのようにリセットできます。"
 
-#: ../../source/inc/context:75
+#: ../../source/inc/context:89
 msgid ""
 "Because of how completely this resets Ren'Py, this function immediately ends "
 "the current statement."
@@ -698,7 +730,7 @@ msgstr ""
 "Ren'Py を完全にリセットするため、この関数は現在のステートメントを即座に終了し"
 "ます。"
 
-#: ../../source/inc/context:78
+#: ../../source/inc/context:92
 msgid ""
 "This is mainly intended for use in an after_load label, where it can bring "
 "the game back to the state it was in when it started. It's then up to the "
@@ -709,23 +741,8 @@ msgstr ""
 "せます。その後、シーンや音楽などを再構築して続行したいラベルにジャンプできま"
 "す。"
 
-#~ msgid ""
-#~ "Second, the variables are scoped dynamically, rather than lexically. This "
-#~ "means that when a variable gets its value from a label parameter, it will "
-#~ "be reverted (to the previous value of the variable if it had one, or to "
-#~ "the absence of the variable otherwise) when a return statement is "
-#~ "reached. It also means that given a statement using a certain variable, "
-#~ "that variable may or may not get its value from a label parameter "
-#~ "depending on how the statement was reached ; that is not possible in pure "
-#~ "Python code. ::"
-#~ msgstr ""
-#~ "第 2 に、変数のスコープは静的ではなく動的です。つまり、変数がラベルパラ"
-#~ "メータからその値を取得したときは、 return ステートメントに到達するとその変"
-#~ "数は ( 変数の以前の値がある場合はその値に、そうでない場合は変数が存在しな"
-#~ "いように ) 戻されます。また、特定の変数を使用するステートメントが与えられ"
-#~ "た場合、その変数は、ステートメントに到達した方法に応じて、ラベルパラメー"
-#~ "ターから値を取得する場合と取得しない場合があります。これは純粋な Python "
-#~ "コードでは不可能です。::"
+#~ msgid "The variables are dynamically, rather than lexically, scoped."
+#~ msgstr "変数は静的スコープではなく、動的スコープです。"
 
 #~ msgid ""
 #~ "This can be given one or more variable names as arguments. This makes the "

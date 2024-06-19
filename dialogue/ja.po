@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-14 23:54+0900\n"
+"POT-Creation-Date: 2024-06-19 12:25+0900\n"
 "PO-Revision-Date: 2024-06-15 00:47+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -570,7 +570,7 @@ msgstr ""
 "示はしません。"
 
 #: ../../source/dialogue.rst:103 ../../source/dialogue.rst:131
-#: ../../source/dialogue.rst:235 ../../source/dialogue.rst:294
+#: ../../source/dialogue.rst:235 ../../source/dialogue.rst:293
 msgid "For example::"
 msgstr "例 ::"
 
@@ -788,17 +788,18 @@ msgstr ""
 "われます。"
 
 #: ../../source/dialogue.rst:283
-msgid "``window auto``"
+#, fuzzy
+msgid "``window auto True``"
 msgstr "``window auto``"
 
 #: ../../source/dialogue.rst:277
+#, fuzzy
 msgid ""
 "This enables automatic management of the window. The window is shown before "
 "statements listed in :var:`config.window_auto_show` – by default, say "
 "statements. The window is hidden before statements listed in :var:`config."
 "window_auto_hide` – by default, ``scene`` and ``call screen`` statements, "
-"and ``menu`` statements without a caption. (Only statements are considered, "
-"not statement equivalent functions.)"
+"and ``menu`` statements without a caption."
 msgstr ""
 "これはウィンドウの自動管理を有効化させます。ウィンドウは :var:`config."
 "window_auto_show` にリストアップされたステートメント (デフォルトでは say ス"
@@ -807,21 +808,25 @@ msgstr ""
 "のない ``menu`` ステートメント) の前で非表示となります(ステートメントのみが認"
 "識され、ステートメントに相当する関数はそうではありません)。"
 
-#: ../../source/dialogue.rst:288
-msgid "``window auto hide``, ``window auto show``"
-msgstr "``window auto hide``, ``window auto show``"
+#: ../../source/dialogue.rst:283
+msgid "Only statements are considered, not statement equivalent functions."
+msgstr ""
+"考慮されるのはステートメントのみで、ステートメントに相当する関数は考慮されま"
+"せん。"
+
+#: ../../source/dialogue.rst:287
+msgid "``window auto False``"
+msgstr "``window auto False``"
 
 #: ../../source/dialogue.rst:286
 msgid ""
-"These statements show or hide the window, with an optional transition, like "
-"``window show`` or ``window hide`` do. However, unlike those statements, "
-"this keeps automatic management enabled."
+"This disables automatic management of the window. The window is not shown or "
+"hidden automatically."
 msgstr ""
-"これらのステートメントは ``window show`` や ``window hide`` がするように任意"
-"のトランジションでウィンドウを表示、非表示しますが、それらのステートメントと"
-"違いこれらは自動的な管理は有効なままにします。"
+"これはウィンドウの自動管理を無効にします。ウィンドウは自動的には表示・非表示"
+"されなくなります。"
 
-#: ../../source/dialogue.rst:290
+#: ../../source/dialogue.rst:289
 msgid ""
 "The ``window auto`` statement uses :var:`config.window_show_transition` and :"
 "var:`config.window_hide_transition` to show and hide the window, "
@@ -833,7 +838,7 @@ msgstr ""
 "います。 ``window auto`` は ``window show`` や ``window hide`` によって中断さ"
 "れます。"
 
-#: ../../source/dialogue.rst:322
+#: ../../source/dialogue.rst:321
 msgid ""
 "Dialogue window management is subject to the \"show empty window\" :func:"
 "`Preference`. If the preference is disabled, the statements above have no "
@@ -843,11 +848,11 @@ msgstr ""
 "ます。この設定が無効化されている時、上記のステートメントでは何も起こりませ"
 "ん。"
 
-#: ../../source/dialogue.rst:329
+#: ../../source/dialogue.rst:328
 msgid "Say with Arguments"
 msgstr "引数つきの say"
 
-#: ../../source/dialogue.rst:331
+#: ../../source/dialogue.rst:330
 msgid ""
 "Additional arguments can be passed to the say statement by including them in "
 "parenthesis after the say statement. For example, one can write::"
@@ -855,7 +860,7 @@ msgstr ""
 "say ステートメント後に括弧で囲んで、追加の引数を say ステートメントに渡せま"
 "す。"
 
-#: ../../source/dialogue.rst:336
+#: ../../source/dialogue.rst:335
 msgid ""
 "Arguments to the say statement are first processed by :var:`config."
 "say_arguments_callback`, if it is not None. If any remain, they are then "
@@ -870,7 +875,7 @@ msgstr ""
 "記の例は台詞を緑に表示します。特別なキーワードである `_with_node` はキャラク"
 "ターの `with_none` 属性を上書きします。"
 
-#: ../../source/dialogue.rst:342
+#: ../../source/dialogue.rst:341
 msgid ""
 "The `interact` parameter is a special case : when it was passed as False "
 "when defining the Character, passing ``interact=True`` will not override "
@@ -880,7 +885,7 @@ msgstr ""
 "と、 ``interact=True`` を渡しても上書きされないので、その場合インタラクション"
 "が起こりません。"
 
-#: ../../source/dialogue.rst:346
+#: ../../source/dialogue.rst:345
 msgid ""
 "Note that :var:`config.say_arguments_callback` will be called every time a "
 "say statement executes, and not only when arguments are passed. It can be "
@@ -891,11 +896,11 @@ msgstr ""
 "トメント実行のたびに呼び出されるので注意してください。キャラクターの設定を、"
 "条件によって上書き出来するのに便利でしょう。例 ::"
 
-#: ../../source/dialogue.rst:362
+#: ../../source/dialogue.rst:361
 msgid "Monologue Mode"
 msgstr "モノローグモード"
 
-#: ../../source/dialogue.rst:364
+#: ../../source/dialogue.rst:363
 msgid ""
 "Some visual novels have extended narration, or multiple blocks of dialogue "
 "from the same character. In these cases, typing the name of the character "
@@ -904,7 +909,7 @@ msgstr ""
 "ビジュアルノベルでは、ナレーションや同じキャラクターの台詞が続くときがありま"
 "す。これらの場合、キャラクター名とクオートを何度も入力するのは煩雑です。"
 
-#: ../../source/dialogue.rst:368
+#: ../../source/dialogue.rst:367
 msgid ""
 "To cover these cases, Ren'Py supports monologue mode. When dialogue is "
 "inside triple-quoted strings, Ren'Py will break the dialogue up into blocks "
@@ -917,7 +922,7 @@ msgstr ""
 "で say ステートメントを使用します。例として、三ブロックのナレーションに続い"
 "て、三行の台詞が続きます。"
 
-#: ../../source/dialogue.rst:391
+#: ../../source/dialogue.rst:390
 msgid ""
 "While additional clauses like arguments or attributes are allowed, they are "
 "passed to each line in the monologue, which may be less useful."
@@ -925,7 +930,7 @@ msgstr ""
 "引数や属性のような追加の節も可能ですが、モノローグの各ブロックに渡されてしま"
 "うので、あまり有用ではありません。"
 
-#: ../../source/dialogue.rst:394
+#: ../../source/dialogue.rst:393
 msgid ""
 "If you'd like to omit the spaces between the blocks, write ``rpy monologue "
 "single`` at the top level of the file, before the first monologue line."
@@ -933,7 +938,7 @@ msgstr ""
 "ブロック間のスペースを省略したいなら、モノローグ行の前のファイルの先頭に "
 "``rpy monologue single`` と記述してください。"
 
-#: ../../source/dialogue.rst:398
+#: ../../source/dialogue.rst:397
 msgid ""
 "If you'd like to disable this instead, and have all the lines you write "
 "between triple quotes be displayed as a single message, conserving line "
@@ -942,15 +947,15 @@ msgstr ""
 "これを無効にし、トリプルクォートで囲まれた行をすべて1つのメッセージとして表示"
 "して改行を節約したい場合は、 ``rpy monologue none`` とすればよいです。"
 
-#: ../../source/dialogue.rst:403
+#: ../../source/dialogue.rst:402
 msgid "The ``character`` Store"
 msgstr "``character`` Store"
 
-#: ../../source/dialogue.rst:405
+#: ../../source/dialogue.rst:404
 msgid "*Main article:* :ref:`named-stores`"
 msgstr "*詳細:* :ref:`named-stores`"
 
-#: ../../source/dialogue.rst:407
+#: ../../source/dialogue.rst:406
 msgid ""
 "The say statement will search the ``character`` named store before the "
 "default store. If you want to have a character with the same name as a "
@@ -960,12 +965,12 @@ msgstr ""
 "store を探します。デフォルト store で変数名と同じキャラクターを使用したければ"
 "以下のように定義できます。 ::"
 
-#: ../../source/dialogue.rst:413
+#: ../../source/dialogue.rst:412
 msgid ""
 "This character can then be used alongside a variable in the default store::"
 msgstr "このキャラクターはデフォルト store の変数と平行して使用可能です。::"
 
-#: ../../source/dialogue.rst:424
+#: ../../source/dialogue.rst:423
 msgid ""
 "This is especially useful in order to manage variable information about a "
 "character in a namespace without conflicting with the say statement::"
@@ -973,25 +978,25 @@ msgstr ""
 "これは say ステートメントと衝突しないように、ある名前空間でキャラクターについ"
 "ての変数の情報を管理するために便利です。"
 
-#: ../../source/dialogue.rst:440
+#: ../../source/dialogue.rst:439
 msgid "Alternative Presentations"
 msgstr "代替の方法"
 
-#: ../../source/dialogue.rst:442
+#: ../../source/dialogue.rst:441
 msgid ":doc:`nvl_mode` : a mode that displays dialogue over the entire screen."
 msgstr ":doc:`nvl_mode` : 台詞を画面一杯に表示するモードです。"
 
-#: ../../source/dialogue.rst:444
+#: ../../source/dialogue.rst:443
 msgid ""
 ":doc:`bubble` : a mode that displays dialogue in speech bubbles that can be "
 "positioned interactively."
 msgstr ":doc:`bubble` : 動的に配置される吹き出しに台詞を表示する方法です。"
 
-#: ../../source/dialogue.rst:448
+#: ../../source/dialogue.rst:447
 msgid "See Also"
 msgstr "次も参照してください。"
 
-#: ../../source/dialogue.rst:450
+#: ../../source/dialogue.rst:449
 msgid ""
 ":doc:`statement_equivalents` : how to use most of the features described "
 "here in a python context, although with some drawbacks and limitations."
@@ -999,26 +1004,23 @@ msgstr ""
 ":doc:`statement_equivalents` : python の文脈でここで記述された機能の殆どを使"
 "用する方法ですが、いくらかの欠点や制限があります。"
 
-#: ../../source/dialogue.rst:453
+#: ../../source/dialogue.rst:452
 msgid ""
 ":func:`renpy.last_say` : provides information about the last say statement."
 msgstr ""
 ":func:`renpy.last_say` : 最後の say ステートメントに関する情報を提供します。"
 
-#~ msgid "Only statements are considered, not statement equivalent functions."
-#~ msgstr ""
-#~ "考慮されるのはステートメントのみで、ステートメントに相当する関数は考慮され"
-#~ "ません。"
-
-#~ msgid "``window auto False``"
-#~ msgstr "``window auto False``"
+#~ msgid "``window auto hide``, ``window auto show``"
+#~ msgstr "``window auto hide``, ``window auto show``"
 
 #~ msgid ""
-#~ "This disables automatic management of the window. The window is not shown "
-#~ "or hidden automatically."
+#~ "These statements show or hide the window, with an optional transition, "
+#~ "like ``window show`` or ``window hide`` do. However, unlike those "
+#~ "statements, this keeps automatic management enabled."
 #~ msgstr ""
-#~ "これはウィンドウの自動管理を無効にします。ウィンドウは自動的には表示・非表"
-#~ "示されなくなります。"
+#~ "これらのステートメントは ``window show`` や ``window hide`` がするように任"
+#~ "意のトランジションでウィンドウを表示、非表示しますが、それらのステートメン"
+#~ "トと違いこれらは自動的な管理は有効なままにします。"
 
 #~ msgid "`mode`"
 #~ msgstr "`mode`"
