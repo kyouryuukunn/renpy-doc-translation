@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 11:09+0900\n"
-"PO-Revision-Date: 2024-05-25 15:00+0900\n"
+"POT-Creation-Date: 2024-06-28 19:39+0900\n"
+"PO-Revision-Date: 2024-06-28 19:52+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -64,19 +64,11 @@ msgstr ""
 "セグメントに区切られている場合がありますが、少なくとも 1 つのセグメントがあり"
 "ます。"
 
-#: ../../source/character_callbacks.rst:23
-msgid "\"show_done\""
-msgstr "\"show_done\""
-
-#: ../../source/character_callbacks.rst:23
-msgid "Called after showing each segment of dialogue."
-msgstr "各セグメント表示後に呼び出されます。"
-
-#: ../../source/character_callbacks.rst:28
+#: ../../source/character_callbacks.rst:25
 msgid "\"slow_done\""
 msgstr "\"slow_done\""
 
-#: ../../source/character_callbacks.rst:26
+#: ../../source/character_callbacks.rst:23
 msgid ""
 "Called after slow text finishes showing. Note that this event may occur "
 "after \"end\", in cases where dialogue does not cause an interaction to "
@@ -86,41 +78,104 @@ msgstr ""
 "生するかもしれませんが、その場合台詞はインタラクションを起こさないことに注意"
 "してください。"
 
-#: ../../source/character_callbacks.rst:31
+#: ../../source/character_callbacks.rst:28
 msgid "\"end\""
 msgstr "\"end\""
 
-#: ../../source/character_callbacks.rst:31
+#: ../../source/character_callbacks.rst:28
 msgid "Called at the end of a say statement."
 msgstr "say ステートメントの終りに呼び出されます。"
 
-#: ../../source/character_callbacks.rst:33
-msgid "The callback is called with at least one keyword argument:"
-msgstr ""
-"コールバックは少なくとも 1 つのキーワード引数を持って呼び出されます。 :"
+#: ../../source/character_callbacks.rst:30
+msgid "The callback is called with at the keyword arguments:"
+msgstr "キーワード引数つきで呼び出されます。 :"
 
-#: ../../source/character_callbacks.rst:36
+#: ../../source/character_callbacks.rst:33
 msgid "`interact`"
 msgstr "`interact`"
 
-#: ../../source/character_callbacks.rst:36
+#: ../../source/character_callbacks.rst:33
 msgid "This is true if the dialogue causes an interaction to occur."
 msgstr "台詞がインタラクションを起こすなら True です。"
 
-#: ../../source/character_callbacks.rst:38
+#: ../../source/character_callbacks.rst:36
+msgid "`type`"
+msgstr "`type`"
+
+#: ../../source/character_callbacks.rst:36
+msgid "The type of character (e.g. \"nvl\", \"adv\", \"balloon\")."
+msgstr "キャラクターの種類 (例: \"nvl\", \"adv\", \"balloon\")。"
+
+#: ../../source/character_callbacks.rst:39
+msgid "`what`"
+msgstr "`what`"
+
+#: ../../source/character_callbacks.rst:39
+msgid "The text that is going to be supplied to the what displayable."
+msgstr "what displayable に提供されるテキスト。"
+
+#: ../../source/character_callbacks.rst:41
+msgid ""
+"The \"show\" and \"slow_done\" callbacks are also given additional keyword "
+"arguments:"
+msgstr ""
+"\"show\" と \"slow_done\" コールバックにも追加のキーワード引数が指定されま"
+"す :"
+
+#: ../../source/character_callbacks.rst:45
+msgid "`start`"
+msgstr "`start`"
+
+#: ../../source/character_callbacks.rst:45
+msgid "The start of the current segment of dialogue, in the `what` string."
+msgstr "`what` 文字列の台詞中の現在のセグメントの開始位置です。"
+
+#: ../../source/character_callbacks.rst:48
+msgid "`end`"
+msgstr "`end`"
+
+#: ../../source/character_callbacks.rst:48
+msgid "The end of the current segment of dialogue, in the `what` string."
+msgstr "`what` 文字列の台詞中の現在のセグメントの終了位置です。"
+
+#: ../../source/character_callbacks.rst:52
+msgid "`delay`"
+msgstr "`delay`"
+
+#: ../../source/character_callbacks.rst:51
+msgid ""
+"The amount of time Ren'Py will pause after the current segment of dialogue "
+"is shown, or None if Ren'Py will pause until the player clicks."
+msgstr ""
+"台詞中のの現在のセグメントが表示された後に Ren'Py が一時停止する時間です。プ"
+"レイヤーがクリックするまで Ren'Py が停止する場合は None です。"
+
+#: ../../source/character_callbacks.rst:56
+msgid "`last_segment`"
+msgstr "`last_segment`"
+
+#: ../../source/character_callbacks.rst:55
+msgid ""
+"True if this is the last segment of dialogue in the say statement, False "
+"otherwise."
+msgstr ""
+"これが say ステートメントでの台詞の最後のセグメントである場合は true、そうで"
+"ない場合は False です。"
+
+#: ../../source/character_callbacks.rst:58
 msgid ""
 "Other values of the positional argument and additional keyword arguments may "
-"be supplied in the future. The callback should be written to ignore "
+"be supplie to the callback. The callback should be written to ignore keyword "
 "arguments it does not understand."
 msgstr ""
 "他の値の位置引数や追加のキーワード引数の値が将来渡されるかもしれません。コー"
-"ルバックは未知の引数は無視するようにするべきです。"
+"ルバックは未知のキーワード引数は無視するようにするべきです。"
 
-#: ../../source/character_callbacks.rst:43
+#: ../../source/character_callbacks.rst:63
 msgid "Example"
 msgstr "例"
 
-#: ../../source/character_callbacks.rst:45
+#: ../../source/character_callbacks.rst:65
 msgid ""
 "This example plays beeps in place of a character voice, when slow text is "
 "enabled::"
@@ -128,10 +183,16 @@ msgstr ""
 "この例では低速テキストが有効だとキャラクターボイスの代わりにビープ音をならし"
 "ます。 :"
 
-#: ../../source/character_callbacks.rst:64
+#: ../../source/character_callbacks.rst:84
 msgid ""
 "This is an example of how to specialize a general callback for specific "
 "characters::"
 msgstr ""
 "これは特定のキャラクターに対して一般的なコールバックをどう指定するかの例で"
 "す。"
+
+#~ msgid "\"show_done\""
+#~ msgstr "\"show_done\""
+
+#~ msgid "Called after showing each segment of dialogue."
+#~ msgstr "各セグメント表示後に呼び出されます。"
