@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 12:25+0900\n"
-"PO-Revision-Date: 2024-06-19 22:30+0900\n"
+"POT-Creation-Date: 2024-07-07 10:34+0900\n"
+"PO-Revision-Date: 2024-07-07 10:50+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -397,7 +397,7 @@ msgstr ""
 "これはシェーダーパーツの登録をします。 `name` とその後に続くキーワード引数を"
 "受け取ります。"
 
-#: ../../source/inc/model_displayable:45 ../../source/inc/model_displayable:83
+#: ../../source/inc/model_displayable:45 ../../source/inc/model_displayable:87
 #: ../../source/inc/register_shader:10
 msgid "`name`"
 msgstr "`name`"
@@ -1029,7 +1029,7 @@ msgstr ""
 "与えられた場合、これはメッシュに渡されるテクスチャがミップマップで作成される"
 "かどうかを決定します。デフォルトは True です。"
 
-#: ../../source/model.rst:474
+#: ../../source/model.rst:479
 msgid "``gl_texture_wrap``"
 msgstr "``gl_texture_wrap``"
 
@@ -1050,11 +1050,27 @@ msgstr ""
 msgid "The values should be OpenGL constants imported from renpy.uguu::"
 msgstr "値は OpenGL に含まれ、 renpy.uguu からインポートされます。 ::"
 
-#: ../../source/model.rst:477
+#: ../../source/model.rst:476
+msgid ""
+"This can also be customized for specific textures. `gl_texture_wrap_tex0` "
+"controls the first texture, `gl_texture_wrap_tex1` the second, "
+"`gl_texture_wrap_tex2`, the third, and `gl_texture_wrap_tex3` the fourth. "
+"While only these four are avalable through Transforms, it's possibe to "
+"supply \"texture_wrap_tex4\" or \"texture_wrap_myuniform\" to Render."
+"add_property."
+msgstr ""
+"これは、特定のテクスチャ用にカスタマイズすることもできます。 "
+"`gl_texture_wrap_tex0` は最初のテクスチャをコントロールし、 "
+"`gl_texture_wrap_tex1` は2番目のテクスチャを、 `gl_texture_wrap_tex2` は3番"
+"目、 `gl_texture_wrap_tex3` は4番目のテクスチャを制御します。Transforms では"
+"この4つのみが利用可能ですが Render.add_property には \"texture_wrap_tex4\" "
+"や \"texture_wrap_myuniform\" も渡せます。"
+
+#: ../../source/model.rst:482
 msgid "Model Displayable"
 msgstr "モデル Displayable"
 
-#: ../../source/model.rst:479
+#: ../../source/model.rst:484
 msgid ""
 "The Model displayable acts as a factory to created models for use with the "
 "model-based renderer."
@@ -1143,7 +1159,7 @@ msgid ""
 "A string giving the name of the GL property, including the \"gl\\_\" prefix."
 msgstr "GL プロパティーの名前を指定する文字列で、 \"gl\\_\" 接頭辞を含みます。"
 
-#: ../../source/inc/model_displayable:47 ../../source/inc/model_displayable:86
+#: ../../source/inc/model_displayable:47 ../../source/inc/model_displayable:90
 msgid "`value`"
 msgstr "`value`"
 
@@ -1197,7 +1213,7 @@ msgstr ""
 "True なら、これは Displayable インスペクターに検知されるこの Displayable のメ"
 "インの子としてマークされます。"
 
-#: ../../source/inc/model_displayable:74
+#: ../../source/inc/model_displayable:75
 msgid "`fit`"
 msgstr "`fit`"
 
@@ -1209,17 +1225,29 @@ msgstr ""
 "True なら、モデルにはその Displayable のサイズが指定されます。これは1つのテク"
 "スチャに対してのみ True でしょう。"
 
-#: ../../source/inc/model_displayable:79
+#: ../../source/inc/model_displayable:78
+msgid "`texture_wrap`"
+msgstr "`texture_wrap`"
+
+#: ../../source/inc/model_displayable:78
+msgid ""
+"If not None, this is the :ref:`gl_texture wrap GL property <gl-properties>` "
+"that will be applied to this texture."
+msgstr ""
+"None またはこのテクスチャに適用される :ref:`gl_texture wrap GL プロパティー "
+"<gl-properties>` です。"
+
+#: ../../source/inc/model_displayable:83
 msgid "Sets the value of a uniform that is passed to the shaders."
 msgstr "シェーダーに渡される uniform の値を設定します。"
 
-#: ../../source/inc/model_displayable:82
+#: ../../source/inc/model_displayable:86
 msgid ""
 "A string giving the name of the uniform to set, including the \"u\\_\" "
 "prefix."
 msgstr "uniform の名前の文字列で、 \"u\\_\" を接頭辞に持ちます。"
 
-#: ../../source/inc/model_displayable:86
+#: ../../source/inc/model_displayable:90
 msgid ""
 "The value of the uniform. Either a float, a 2, 3, or 4 element tuple of "
 "floats, or a Matrix."
@@ -1227,11 +1255,11 @@ msgstr ""
 "uniform の値です。浮動小数、浮動小数の2, 3, 4要素のタプルまたはマトリックスで"
 "す。"
 
-#: ../../source/model.rst:485
+#: ../../source/model.rst:490
 msgid "Model Displayable Examples"
 msgstr "モデル Displayable 例"
 
-#: ../../source/model.rst:487
+#: ../../source/model.rst:492
 msgid ""
 "The Model displayable can be used in conjunction with an ATL transform and a "
 "built-in shader to create the Dissolve transform::"
@@ -1239,7 +1267,7 @@ msgstr ""
 "このモデル Displayable は、ATL transform と組み込みのシェーダを組み合わせて"
 "ディゾルブ transform 作成に使用できます。"
 
-#: ../../source/model.rst:498
+#: ../../source/model.rst:503
 msgid ""
 "Using the Model displayable as the child of a displayable is incompatible "
 "with :tpref:`mesh`, as the two both create models inside Ren'Py."
@@ -1247,11 +1275,11 @@ msgstr ""
 "モデル Displayable を Displayable の子に使用すると 2つ共が Ren'Py 内にモデル"
 "を作成するので、 :tpref:`mesh` と互換性がなくなります。"
 
-#: ../../source/model.rst:502
+#: ../../source/model.rst:507
 msgid "Animated Shaders"
 msgstr "アニメーションシェーダー"
 
-#: ../../source/model.rst:504
+#: ../../source/model.rst:509
 msgid ""
 "When using shaders that depend on ``u_time`` to animate, one must be aware, "
 "that even though every shader on screen will run on every frame displayed, "
@@ -1263,7 +1291,7 @@ msgstr ""
 "FPS では動作せず、再描画する displayable がなければ、5 FPS の最小フレームレー"
 "トに落ち込むことに気をつけてください。"
 
-#: ../../source/model.rst:509
+#: ../../source/model.rst:514
 msgid ""
 "When using an animating shader in an ATL transform, this can cause that "
 "shader to \"stutter\" and only animate properly while some other object on "
@@ -1277,7 +1305,7 @@ msgstr ""
 "たりするかもしれません。この場合は空の ATL ループを加えて再描画の実行を強制で"
 "きます。"
 
-#: ../../source/model.rst:520
+#: ../../source/model.rst:525
 msgid ""
 "``pause 0`` will cycle the frames as fast as possible. You can also set "
 "different values for ``pause`` to specify a minimum frame rate, like ``pause "
@@ -1287,11 +1315,11 @@ msgstr ""
 "``pause 1.0/30`` のような異なる値を設定して、最終フレームレートの指定もできま"
 "す。"
 
-#: ../../source/model.rst:526
+#: ../../source/model.rst:531
 msgid "Shader Parts"
 msgstr "シェーダー パーツ"
 
-#: ../../source/model.rst:528
+#: ../../source/model.rst:533
 msgid ""
 "For a list of shader parts that Ren'Py uses, see the :doc:`shader_parts`."
 msgstr ""

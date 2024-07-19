@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-05 22:43+0900\n"
-"PO-Revision-Date: 2024-07-05 22:54+0900\n"
+"POT-Creation-Date: 2024-07-16 20:23+0900\n"
+"PO-Revision-Date: 2024-07-16 21:29+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -168,7 +168,7 @@ msgid ""
 "string."
 msgstr "発言する文字列です。 % 置換文字列はこの文字列で使用されます。"
 
-#: ../../source/inc/se_menu:14 ../../source/inc/se_say:19
+#: ../../source/inc/se_menu:28 ../../source/inc/se_say:19
 msgid "`interact`"
 msgstr "`interact`"
 
@@ -255,9 +255,42 @@ msgstr "選択肢"
 
 #: ../../source/statement_equivalents.rst:111
 msgid "The :doc:`menu statement <menus>` has an equivalent Python function."
-msgstr ":doc:`menu statement <menus>` に相当する Python 関数があります。"
+msgstr ":doc:`menu ステートメント <menus>` に相当する Python 関数があります。"
 
 #: ../../source/inc/se_menu:5
+msgid ""
+"This encapsulates a menu choice with with arguments. The first positional "
+"argument is is the value that will be returned, and the other arguments are "
+"the arguments that will be passed to the choice screen."
+msgstr ""
+"これは、 引数を持つ選択肢メニューをカプセル化します。最初の位置指定引数は返さ"
+"れる値であり、他の引数は choice スクリーンに渡される引数です。"
+
+#: ../../source/inc/se_menu:9
+msgid ""
+"This is intended for use in the items list of :func:`renpy.display_menu` to "
+"supply arguments to that screen."
+msgstr ""
+"これは、 :func:`renpy.display_menu` の items リストで使用してそのスクリーンに"
+"引数を渡すことを意図しています。"
+
+#: ../../source/inc/se_menu:13
+msgid "`value`"
+msgstr "`value`"
+
+#: ../../source/inc/se_menu:13
+msgid "The value that will be given to the choice screen."
+msgstr "choice スクリーンに渡される値"
+
+#: ../../source/inc/se_menu:15
+msgid ""
+"Positional arguments and keyword arguments are stored in this object and "
+"used by renpy.display_menu."
+msgstr ""
+"位置引数とキーワード引数はこのオブジェクトに格納され、 renpy.display_menu に"
+"よって使用されます。"
+
+#: ../../source/inc/se_menu:19
 msgid ""
 "This displays a menu to the user. `items` should be a list of 2-item tuples. "
 "In each tuple, the first item is a textual label, and the second item is the "
@@ -269,7 +302,7 @@ msgstr ""
 "素はその要素が選択された時に返される値です。値が None ならその最初の要素は"
 "キャプションに使用されます。"
 
-#: ../../source/inc/se_menu:10
+#: ../../source/inc/se_menu:24
 msgid ""
 "This function takes many optional arguments, of which only a few are "
 "documented. Except for `items`, all arguments should be given as keyword "
@@ -278,23 +311,23 @@ msgstr ""
 "この関数は多くの引数を受け取りますが、一部のみドキュメントに記載されていま"
 "す。 `items` を除いてすべての引数はキーワード引数として指定されるべきです。"
 
-#: ../../source/inc/se_menu:14
+#: ../../source/inc/se_menu:28
 msgid "If false, the menu is displayed, but no interaction is performed."
 msgstr "False なら選択肢は表示されますが、インタラクションは実行されません。"
 
-#: ../../source/inc/se_menu:17
+#: ../../source/inc/se_menu:31
 msgid "`screen`"
 msgstr "`screen`"
 
-#: ../../source/inc/se_menu:17
+#: ../../source/inc/se_menu:31
 msgid "The name of the screen used to display the menu."
 msgstr "選択肢を表示するために使用されるスクリーンの名前です。"
 
-#: ../../source/inc/se_menu:21
+#: ../../source/inc/se_menu:35
 msgid "`type`"
 msgstr "`type`"
 
-#: ../../source/inc/se_menu:20
+#: ../../source/inc/se_menu:34
 msgid ""
 "May be \"menu\" or \"nvl\". If \"nvl\", the menu is displayed in NVL mode. "
 "Otherwise, it is displayed in ADV mode."
@@ -302,11 +335,11 @@ msgstr ""
 "「menu」または「nvl」を指定できます。「nvl」の場合、選択肢はNVLモードで表示さ"
 "れます。そうでなければ、 ADVモードで表示されます。"
 
-#: ../../source/inc/se_menu:25
+#: ../../source/inc/se_menu:39
 msgid "`_layer`"
 msgstr "`_layer`"
 
-#: ../../source/inc/se_menu:24
+#: ../../source/inc/se_menu:38
 msgid ""
 "The layer to display the menu on. If not given, defaults to :var:`config."
 "choice_layer` for normal choice menus, and :var:`config.nvl_choice_layer` "
@@ -316,11 +349,11 @@ msgstr ""
 "choice_layer` で、NVL 選択肢の場合は :var:`config.nvl_choice_layer` になりま"
 "す。"
 
-#: ../../source/inc/se_menu:29
+#: ../../source/inc/se_menu:43
 msgid "`_args`"
 msgstr "`_args`"
 
-#: ../../source/inc/se_menu:28
+#: ../../source/inc/se_menu:42
 msgid ""
 "If not None, this should be a tuple containing the positional :ref:`menu "
 "arguments <menu-arguments>` supplied to this menu."
@@ -328,11 +361,11 @@ msgstr ""
 "これは None またはこのメニューに与えられた位置 :ref:`メニュー引数 <menu-"
 "arguments>` を含むタプルです。"
 
-#: ../../source/inc/se_menu:33
+#: ../../source/inc/se_menu:47
 msgid "`_kwargs`"
 msgstr "`_kwargs`"
 
-#: ../../source/inc/se_menu:32
+#: ../../source/inc/se_menu:46
 msgid ""
 "If not None, this should be a dict containing the keyword :ref:`menu "
 "arguments <menu-arguments>` supplied to this menu."
@@ -340,7 +373,7 @@ msgstr ""
 "None でない場合、これは<menu-arguments>このメニューに与えられた</menu-"
 "arguments>キーワード :ref:'menu arguments ' を含む辞書でなければなりません。"
 
-#: ../../source/inc/se_menu:35
+#: ../../source/inc/se_menu:49
 msgid ""
 "Note that most Ren'Py games do not use menu captions, but use narration "
 "instead. To display a menu using narration, write::"
@@ -348,6 +381,14 @@ msgstr ""
 "ほとんどの Ren'Py ゲームはメニューのキャプションを使用せず、代わりにナレー"
 "ションを使用します。ナレーションを使用してメニューを表示するには次のように記"
 "述します。 ::"
+
+#: ../../source/inc/se_menu:55
+msgid ""
+"If you need to supply per-item arguments, use :class:`renpy.Choice` objects "
+"as the values. For example::"
+msgstr ""
+"item ごとに引数を指定する必要がある場合は、 :class:`renpy.Choice` オブジェク"
+"トを値として使用します。例 ::"
 
 #: ../../source/statement_equivalents.rst:117
 msgid "Displaying Images"
@@ -533,7 +574,19 @@ msgstr ""
 "この画像が背後に表示される画像タグの文字列のリストです。 ``behind`` プロパ"
 "ティーに相当します。"
 
-#: ../../source/inc/se_images:107
+#: ../../source/inc/se_images:89
+msgid "`atl`"
+msgstr "`atl`"
+
+#: ../../source/inc/se_images:88
+msgid ""
+"If not None, an ATL Transform that will be applied. This takes only the ATL "
+"itself, it does not apply prior state."
+msgstr ""
+"None または適用される ATL Transform です。これは ATL 自体のみを取得し、以前の"
+"状態は適用されません。"
+
+#: ../../source/inc/se_images:111
 msgid ""
 "The Python equivalent of the ``show layer`` `layer` ``at`` `at_list` "
 "statement. If `camera` is True, the equivalent of the ``camera`` statement."
@@ -542,11 +595,11 @@ msgstr ""
 "するものです。 `camera` が True なら、 ``camera`` ステートメントに相当する物"
 "でもあります。"
 
-#: ../../source/inc/se_images:112
+#: ../../source/inc/se_images:116
 msgid "`reset`"
 msgstr "`reset`"
 
-#: ../../source/inc/se_images:111
+#: ../../source/inc/se_images:115
 msgid ""
 "If true, the transform state is reset to the start when it is shown. If "
 "false, the transform state is persisted, allowing the new transform to "
