@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-15 14:10+0900\n"
-"PO-Revision-Date: 2024-03-15 14:28+0900\n"
+"POT-Creation-Date: 2024-07-25 22:21+0900\n"
+"PO-Revision-Date: 2024-07-27 01:25+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -26,27 +26,28 @@ msgstr "トランジション"
 msgid ""
 "Transitions can be used as part of the :ref:`with statement <with-"
 "statement>`, as well as in other parts of Ren'Py, to apply effects to "
-"changes in the scene. Ren'Py comes with a small number of pre-defined "
-"transitions, which can be given directly to the with statement. It also "
-"includes transition classes, which can be used to create new transitions."
+"changes in the scene (or sometimes to turn a displayable into another). "
+"Ren'Py comes with a small number of pre-defined transitions, which can be "
+"given directly to the with statement. For example::"
 msgstr ""
 "トランジションは :ref:`with ステートメント <with-statement>` やその他のシーン"
-"で使え、シーンの変化に効果を適用します。Ren'Py には定義済みのトランジションが"
-"あり、with ステートメントに直接指定できます。トランジションクラスを使って新し"
-"いトランジションを作成することもできます。"
+"で使え、シーンの変化(または Displayable を変化させるなにか)に効果を適用しま"
+"す。Ren'Py には定義済みのトランジションがあり、with ステートメントに直接指定"
+"できます。例 ::"
 
-#: ../../source/transitions.rst:15
+#: ../../source/transitions.rst:17
 msgid "Pre-Defined Transitions"
 msgstr "定義済みのトランジション"
 
-#: ../../source/transitions.rst:17
+#: ../../source/transitions.rst:21
 msgid ""
-"Pre-defined transitions can be given directly to the with statement. For "
-"example::"
+"Takes 0.5 seconds to dissolve from the old to the new screen. An instance of "
+"the :func:`Dissolve` transition class."
 msgstr ""
-"定義済みのトランジションは、with ステートメントに直接指定できます。例 ::"
+"0.5 秒かけて元の画面から新しい画面にディゾルブします。 :func:`Dissolve` トラ"
+"ンジションクラスのインスタンスです。"
 
-#: ../../source/transitions.rst:25
+#: ../../source/transitions.rst:26
 msgid ""
 "Takes 0.5 seconds to fade to black, and then 0.5 seconds to fade to the new "
 "screen. An instance of the :func:`Fade` transition class."
@@ -56,14 +57,6 @@ msgstr ""
 
 #: ../../source/transitions.rst:31
 msgid ""
-"Takes 0.5 seconds to dissolve from the old to the new screen. An instance of "
-"the :func:`Dissolve` transition class."
-msgstr ""
-"0.5 秒かけて元の画面から新しい画面にディゾルブします。 :func:`Dissolve` トラ"
-"ンジションクラスのインスタンスです。"
-
-#: ../../source/transitions.rst:36
-msgid ""
 "Pixellates the old scene for .5 seconds, and the new scene for another .5 "
 "seconds. An instance of the :func:`Pixellate` transition class."
 msgstr ""
@@ -71,7 +64,7 @@ msgstr ""
 "クセレートインします。:func:`Pixellate` トランジションクラスのインスタンスで"
 "す。"
 
-#: ../../source/transitions.rst:42
+#: ../../source/transitions.rst:36
 msgid ""
 "Takes 0.5 seconds to the move images that have changed location to their new "
 "locations. An instance of the :func:`MoveTransition` transition class."
@@ -79,25 +72,25 @@ msgstr ""
 "0.5 秒かけて画像を新しい場所に移動します。 :func:`MoveTransition` トランジ"
 "ションクラスのインスタンスです(*訳注 タグが同じ画像の移動に使用します)。"
 
-#: ../../source/transitions.rst:46
+#: ../../source/transitions.rst:39
 msgid ""
 "Move transitions, and similar transitions like ease, can only be applied to "
 "a single layer or all layers at once, using the :ref:`with statement <with-"
 "statement>`. It will not work in other contexts such as :ref:`ATL "
-"<expression-atl-statement>`, :func:`ComposeTransition`, or other ways of "
+"<displayable-atl-statement>`, :func:`ComposeTransition`, or other ways of "
 "applying transitions."
 msgstr ""
 "Move トランジションや ease のような類似のトランジションは、 :ref:`with ステー"
 "トメント <with-statement>` を使用して、1つのレイヤーまたはすべてのレイヤーに"
-"一度にのみ適用できます。このトランジションは :ref:`ATL <expression-atl-"
+"一度にのみ適用できます。このトランジションは :ref:`ATL <displayable-atl-"
 "statement>` や :func:`ComposeTransition` などの異なるトランジションの適用方法"
 "をするコンテキストでは動作しません。"
 
-#: ../../source/transitions.rst:54
+#: ../../source/transitions.rst:47
 msgid "Also: **moveinleft, moveintop, moveinbottom**"
 msgstr "Also: **moveinleft, moveintop, moveinbottom**"
 
-#: ../../source/transitions.rst:56
+#: ../../source/transitions.rst:49
 msgid ""
 "These move entering images onto the screen from the appropriate side, taking "
 "0.5 seconds to do so."
@@ -105,17 +98,17 @@ msgstr ""
 "0.5 秒かけて画像を画面の対応する方向から進入させます(*訳注 タグが同じ画像がす"
 "でにあるとトランジションしません)。"
 
-#: ../../source/transitions.rst:61
+#: ../../source/transitions.rst:54
 msgid "Also: **moveoutleft, moveouttop, moveoutbottom**"
 msgstr "Also: **moveoutleft, moveouttop, moveoutbottom**"
 
-#: ../../source/transitions.rst:63
+#: ../../source/transitions.rst:56
 msgid ""
 "These move leaving images off the screen via the appropriate side, taking "
 "0.5 seconds to do so."
 msgstr "0.5 秒かけて画像を画面の対応する方向へ退出させます。"
 
-#: ../../source/transitions.rst:68
+#: ../../source/transitions.rst:61
 msgid ""
 "Also: **easeinright, easeinleft, easeintop, easeinbottom, easeoutright, "
 "easeoutleft, easeouttop, easeoutbottom**"
@@ -123,7 +116,7 @@ msgstr ""
 "Also: **easeinright, easeinleft, easeintop, easeinbottom, easeoutright, "
 "easeoutleft, easeouttop, easeoutbottom**"
 
-#: ../../source/transitions.rst:70
+#: ../../source/transitions.rst:63
 msgid ""
 "These are similar to the move- family of transitions, except that they use a "
 "cosine-based curve to slow down the start and end of the transition."
@@ -131,15 +124,15 @@ msgstr ""
 "move- 類と同じですが、トランジションのはじめと終わりがコサインベースで遅くな"
 "ります。"
 
-#: ../../source/transitions.rst:76
+#: ../../source/transitions.rst:68
 msgid "This zooms in entering images, taking 0.5 seconds to do so."
 msgstr "0.5 秒かけて画像をズームインで進入させます。"
 
-#: ../../source/transitions.rst:80
+#: ../../source/transitions.rst:72
 msgid "This zooms out leaving images, taking 0.5 seconds to do so."
 msgstr "0.5 秒かけて画像をズームアウトで退出させます。"
 
-#: ../../source/transitions.rst:84
+#: ../../source/transitions.rst:76
 msgid ""
 "This zooms in entering images and zooms out leaving images, taking 0.5 "
 "seconds to do so."
@@ -147,7 +140,7 @@ msgstr ""
 "0.5 秒かけて画像のズームアウトによる退出と別の画像のズームインによる進入を同"
 "時に行います。"
 
-#: ../../source/transitions.rst:88
+#: ../../source/transitions.rst:81
 msgid ""
 "When invoked, this transition shakes the screen vertically for a quarter "
 "second. Imitating and customizing this transition and :var:`hpunch` is best "
@@ -157,13 +150,13 @@ msgstr ""
 "ランジションと :var:`hpunch` を模倣してカスタマイズするには :ref:`atl-"
 "transitions` の使用がベストです。"
 
-#: ../../source/transitions.rst:94
+#: ../../source/transitions.rst:87
 msgid ""
 "When invoked, this transition shakes the screen horizontally for a quarter "
 "second."
 msgstr "呼び出されたとき、画面を 4 分の 1 秒間水平に揺らすトランジションです。"
 
-#: ../../source/transitions.rst:99
+#: ../../source/transitions.rst:92
 msgid ""
 "Transitions the screen in a vertical blinds effect lasting 1 second. An "
 "instance of the :func:`ImageDissolve` transition class."
@@ -171,15 +164,15 @@ msgstr ""
 "画面に1秒間続く垂直ブラインド効果を与えるトランジションです。 :func:"
 "`ImageDissolve` トランジションクラスのインスタンスです。"
 
-#: ../../source/transitions.rst:104
+#: ../../source/transitions.rst:97
 msgid "Transitions the screen in a squares effect lasting 1 second."
 msgstr "画面に1秒間続くスクエア効果を与えるトランジションです。"
 
-#: ../../source/transitions.rst:108
+#: ../../source/transitions.rst:101
 msgid "Also: **wiperight, wipeup, wipedown**"
 msgstr "Also: **wiperight, wipeup, wipedown**"
 
-#: ../../source/transitions.rst:110
+#: ../../source/transitions.rst:103
 msgid ""
 "Wipes the scene in the given direction. Instances of the :func:`CropMove` "
 "transition class."
@@ -187,11 +180,11 @@ msgstr ""
 "画面を指定の方向へワイプして更新します。 :func:`CropMove` トランジションクラ"
 "スのインスタンスです。"
 
-#: ../../source/transitions.rst:115
+#: ../../source/transitions.rst:108
 msgid "Also: **slideright, slideup, slidedown**"
 msgstr "Also: **slideright, slideup, slidedown**"
 
-#: ../../source/transitions.rst:117
+#: ../../source/transitions.rst:110
 msgid ""
 "Slides the new scene in the given direction. Instances of the :func:"
 "`CropMove` transition class."
@@ -199,11 +192,11 @@ msgstr ""
 "新しい画面を指定の方向からスライドインします。 :func:`CropMove` トランジショ"
 "ンクラスのインスタンスです。"
 
-#: ../../source/transitions.rst:122
+#: ../../source/transitions.rst:115
 msgid "Also: **slideawayright, slideawayup, slideawaydown**"
 msgstr "Also: **slideawayright, slideawayup, slideawaydown**"
 
-#: ../../source/transitions.rst:124
+#: ../../source/transitions.rst:117
 msgid ""
 "Slides the old scene in the given direction. Instances of the :func:"
 "`CropMove` transition class."
@@ -211,11 +204,11 @@ msgstr ""
 "古い画面を指定の方向へスライドアウトします。 :func:`CropMove` トランジション"
 "クラスのインスタンスです。"
 
-#: ../../source/transitions.rst:129
+#: ../../source/transitions.rst:122
 msgid "Also: **pushleft, pushup, pushdown**"
 msgstr "Also: **pushleft, pushup, pushdown**"
 
-#: ../../source/transitions.rst:131
+#: ../../source/transitions.rst:124
 msgid ""
 "These use the new scene to slide the old scene out the named side. Instances "
 "of the :func:`PushMove` transition class."
@@ -223,11 +216,11 @@ msgstr ""
 "指定の方向に新しい画面で以前の画面を押し出します。 :func:`PushMove` トランジ"
 "ションクラスのインスタンスです。"
 
-#: ../../source/transitions.rst:136
+#: ../../source/transitions.rst:129
 msgid "Also: **irisout**"
 msgstr "Also: **irisout**"
 
-#: ../../source/transitions.rst:138
+#: ../../source/transitions.rst:131
 msgid ""
 "Use a rectangular iris to display the new screen, or hide the old screen. "
 "Instances of the :func:`CropMove` transition class."
@@ -235,21 +228,23 @@ msgstr ""
 "新しい画面の表示や元の画面の非表示に矩形の絞りを使います。 :func:`CropMove` "
 "トランジションクラスのインスタンスです。"
 
-#: ../../source/transitions.rst:142
+#: ../../source/transitions.rst:136
 msgid "Transition Classes"
 msgstr "トランジションクラス"
 
-#: ../../source/transitions.rst:144
+#: ../../source/transitions.rst:138
 msgid ""
 "Transition classes are functions that can be called to create new "
 "transitions. These functions are parameterized, allowing entire families of "
-"transitions to be created."
+"transitions to be created. Unlike what the term may imply, they are usually "
+"not classes in the Python sense and should not be treated as such."
 msgstr ""
 "トランジションクラスは、新しいトランジションを作成するために呼び出される関数"
 "です。これらの関数にパラメーターを渡して全てのトランジション群を作成できま"
-"す。"
+"す。その単語から連想されるものとは異なり、それらは通常の python の意味でのク"
+"ラスではなくそのようにあつかうべきではありません。"
 
-#: ../../source/transitions.rst:148
+#: ../../source/transitions.rst:143
 msgid ""
 "Calling transition classes can be done as part of the with statement. For "
 "example::"
@@ -257,24 +252,23 @@ msgstr ""
 "トランジションクラスの呼び出しは、with ステートメントの一部としてなされます。"
 "例 ::"
 
-#: ../../source/transitions.rst:154
+#: ../../source/transitions.rst:149
 msgid ""
-"If we find ourselves calling the same transition class repeatedly, we can "
-"use the :ref:`define statement <define-statement>` to assign the transition "
-"to a variable::"
+"If the same transition class is used repeatedly, the :ref:`define statement "
+"<define-statement>` can be used to assign the transition to a variable::"
 msgstr ""
 "同じトランジションクラスを何度も呼び出さなくて済むように、 :ref:`define ス"
 "テートメント <define-statement>` を使って変数にトランジションを代入できま"
 "す ::"
 
-#: ../../source/transitions.rst:165
+#: ../../source/transitions.rst:158
 msgid ""
-"The time_warp argument taken by many transition classes can be given builtin "
-"warpers found in the ``_warper`` module, see :ref:`warpers <warpers>`."
+"The `time_warp` argument taken by many transition classes can be given built-"
+"in warpers found in the ``_warper`` module, see :ref:`warpers <warpers>`."
 msgstr ""
-"time_warp 引数は多くのトランジションクラスで受け取られ、 ``_warper`` モジュー"
-"ルにある組み込みのワーパーを指定できます。 :ref:`warpers <warpers>` を参照し"
-"てください。"
+"`time_warp` 引数は多くのトランジションクラスで受け取られ、 ``_warper`` モ"
+"ジュールにある組み込みのワーパーを指定できます。 :ref:`warpers <warpers>` を"
+"参照してください。"
 
 #: ../../source/inc/transition:5
 msgid ""
@@ -583,12 +577,12 @@ msgid ""
 "As only layers have tags, MoveTransitions can only be applied to a single "
 "layer or all layers at once, using the :ref:`with statement <with-"
 "statement>`. It will not work in other contexts such as :ref:`ATL "
-"<expression-atl-statement>`, :func:`ComposeTransition`, or other ways of "
+"<displayable-atl-statement>`, :func:`ComposeTransition`, or other ways of "
 "applying transitions."
 msgstr ""
 "タグを持つのはレイヤーのみなので、MoveTransitions は :ref:`with ステートメン"
 "ト <with-statement>` を使って一つのレイヤーまたはすべてのレイヤーに一度にしか"
-"適用できません。 :ref:`ATL <expression-atl-statement>` や :func:"
+"適用できません。 :ref:`ATL <displayable-atl-statement>` や :func:"
 "`ComposeTransition` のように、異なる方法でトランジションを適用するコンテキス"
 "トでは動作しません。"
 
@@ -865,11 +859,11 @@ msgstr ""
 "True なら、回転前にシーンは画面のサイズの画像に変換されます。画面に満たない画"
 "像が望ましくない作用をするならこれを使用してください。"
 
-#: ../../source/transitions.rst:172
+#: ../../source/transitions.rst:165
 msgid "Transition Families"
 msgstr "トランジション族"
 
-#: ../../source/transitions.rst:174
+#: ../../source/transitions.rst:167
 msgid ""
 "Transition families are functions that define a large family of related "
 "transitions."
@@ -951,11 +945,11 @@ msgstr ""
 msgid "The layers the transition will apply to."
 msgstr "トランジションが適用されるレイヤーです。"
 
-#: ../../source/transitions.rst:183
+#: ../../source/transitions.rst:176
 msgid "Dict Transitions"
 msgstr "辞書トランジション"
 
-#: ../../source/transitions.rst:185
+#: ../../source/transitions.rst:178
 msgid ""
 "In many places where Ren'Py takes a transition, it's possible to instead "
 "specify a dictionary that maps layer names to this transition. When this is "
@@ -965,7 +959,7 @@ msgstr ""
 "に対応付ける辞書を代わりに指定できます。この場合、 Ren'Py は対応するレイヤー"
 "にそれぞれのトランジションを適用します。"
 
-#: ../../source/transitions.rst:189
+#: ../../source/transitions.rst:182
 msgid ""
 "When a dict is used, the pause that usually occurs when a transition takes "
 "place does not occur. Instead, the statement taking the dictionary returns "
@@ -976,66 +970,134 @@ msgstr ""
 "に辞書を受け取ったステートメントは即座に制御を返し、次のインタラクションの開"
 "始時時に実行するようスケジュールされます。"
 
-#: ../../source/transitions.rst:194
+#: ../../source/transitions.rst:187
 msgid ""
 "This can be used with the master layer to cause transitions to occur while "
-"dialogue is being shown on the screen. For example, if we wrote::"
+"dialogue is being shown on the screen. For example::"
 msgstr ""
 "これを使用して,台詞をスクリーンに表示したまま、マスターレイヤーにトランジショ"
-"ンを実行できます。例えば、次のように記述してから"
+"ンを実行できます。例えば ::"
 
-#: ../../source/transitions.rst:199
-msgid "and::"
-msgstr "次のようにすると :"
-
-#: ../../source/transitions.rst:206
+#: ../../source/transitions.rst:198
 msgid "The dissolve will take place while the text is displayed on the screen."
 msgstr "ディゾルブ実行中テキストが表示され続けます。"
 
-#: ../../source/transitions.rst:208
+#: ../../source/transitions.rst:200
 msgid ""
 "Dict layer transitions can't be used every place a transition can be used, "
-"only places where applying transitions to a layer is possible. It can be "
-"used with the ``with`` statement and ``with`` cause of the scene, show, and "
-"hide statements. It can also be used with :func:`renpy.with_statement` and :"
-"func:`renpy.transition`, the :func:`Show` and :func:`Hide` actions, and "
-"various config variables that take transitions. Dict layer transitions *will "
-"not* work inside things that don't work with layers, such as ATL, :func:"
-"`ComposeTransition` and :func:`MultipleTransition`."
+"only in places where applying transitions to a layer is possible. It can be "
+"used with the :ref:`with-statement` and ``with`` cause of the :ref:`scene "
+"<scene-statement>`, :ref:`show <show-statement>`, and :ref:`hide <hide-"
+"statement>` statements. It can also be used with :func:`renpy."
+"with_statement` and :func:`renpy.transition`, the :func:`Show` and :func:"
+"`Hide` actions, and various config variables that take transitions. Dict "
+"layer transitions *will not* work inside things that don't work with layers, "
+"such as :ref:`atl`, :func:`ComposeTransition` and :func:`MultipleTransition`."
 msgstr ""
-"辞書トランジションはすべてのトランジションをおける場所で使用できるわけではな"
-"く、レイヤーへのトランジションが可能なシーンでのみ使用できます。 ``with`` ス"
-"テートメントや scene, show, hide ステートメントの ``with`` 節でも使用できま"
-"す。  :func:`renpy.with_statement` と :func:`renpy.transition` の関数や  :"
-"func:`Show` , :func:`Hide`  アクション、トランジションを受ける様々な設定変数"
-"でも使用できます。辞書トランジションは ATL や  :func:`ComposeTransition` と :"
-"func:`MultipleTransition` のようなレイヤーに対して動作しないものの内部では動"
-"作しないでしょう。"
+"辞書トランジションはすべてのトランジションを指定できる場所で使用できるわけで"
+"はなく、レイヤーへのトランジションが可能なシーンでのみ使用できます。 :ref:"
+"`with-statement` や :ref:`scene <scene-statement>`, :ref:`show <show-"
+"statement>`, :ref:`hide <hide-statement>` ステートメントの ``with`` 節でも使"
+"用できます。 :func:`renpy.with_statement` と :func:`renpy.transition` の関数"
+"や :func:`Show` , :func:`Hide` アクション、トランジションを受ける様々な設定変"
+"数でも使用できます。辞書トランジションは ATL や :func:`ComposeTransition` "
+"と :func:`MultipleTransition` のようなレイヤーに対して動作しないものの内部で"
+"は動作しないでしょう。"
 
-#: ../../source/transitions.rst:217
+#: ../../source/transitions.rst:210
 msgid ""
 "This can interact poorly with statements that cause a transition to occur "
 "themselves, like the transitions caused by ``window auto``. That can often "
 "be solved with a second dict transition that applies to a different layer. "
 "For example, if you are seeing weird blinking when the dialogue window shows "
-"and hides, consider changing options.rpy to have::"
+"and hides, consider changing :file:`options.rpy` to have::"
 msgstr ""
 "これは ``window auto`` で起きるトランジションのような、自身でトランジションを"
 "起こす with ステートメントに良くない作用をするかもしれません。それには異なる"
 "レイヤーには2つ目の辞書トランジションを適用して対処できます。例えば、もし台詞"
-"ウィンドウの表示非表示時で唐突な点滅を目にするなら options.rpy を次のように変"
-"更することを考えてください。 ::"
+"ウィンドウの表示非表示時で唐突な点滅を目にするなら :file:`options.rpy` を次の"
+"ように変更することを考えてください。 ::"
 
-#: ../../source/transitions.rst:226
+#: ../../source/transitions.rst:219
 msgid ""
 "This works because the dialogue window exists entirely on the screens layer."
 msgstr "これは台詞ウィンドウがスクリーンレイヤーにあるために動作します。"
 
-#: ../../source/transitions.rst:232
+#: ../../source/transitions.rst:225
+msgid "ATL Transitions"
+msgstr "ATL トランジション"
+
+#: ../../source/transitions.rst:227
+msgid "*See also:* :ref:`atl`"
+msgstr "*関連項目:* :ref:`atl`"
+
+#: ../../source/transitions.rst:229
+msgid ""
+"It's possible to use an ATL transform to define a transition. These "
+"transitions need to accept the `old_widget` and `new_widget` arguments, "
+"which will receive displayables representing the screens that are "
+"transitioned from and to, respectively."
+msgstr ""
+"ATL transform を使用してトランジションを定義できます。これらのトランジション"
+"は、 `old_widget` 引数と `new_widget` 引数を受け取る必要があり、それぞれトラ"
+"ンジション元とトランジション先の画面を表す displayable を受け取ります。"
+
+#: ../../source/transitions.rst:234
+msgid ""
+"An ATL transition must set itself the :tpref:`delay` property to the number "
+"of seconds the transition lasts for. It may use the :tpref:`events` property "
+"to prevent the old displayable from receiving events. ::"
+msgstr ""
+"ATL トランジションは、自身の :tpref:`delay` プロパティーをトランジションの継"
+"続時間 (秒数) に設定する必要があります。古い displayable がイベントを受け取ら"
+"ないようにするために、 :tpref:`events` プロパティーを使用することがありま"
+"す。 ::"
+
+#: ../../source/transitions.rst:262
+msgid "Python Transitions"
+msgstr "Python トランジション"
+
+#: ../../source/transitions.rst:264
+msgid ""
+"A Python callable may be used as a transition. For that, it must take two "
+"keyword arguments described below, and return a displayable that performs "
+"the transition effect - usually by delegating that to another transition. "
+"The two keyword arguments are `old_widget`, which represents the old screen, "
+"and `new_widget`, which represents the new screen."
+msgstr ""
+"Python の callable はトランジションとして使用できます。そのためには、以下で説"
+"明する 2 つのキーワード引数を取り、トランジション効果を実行する displayable "
+"を返す必要があります (通常はそれを別のトランジションに委任します)。キーワード"
+"引数は、古い画面を表す `old_widget` と新しい画面を表す `new_widget` の 2 つで"
+"す。"
+
+#: ../../source/transitions.rst:270
+msgid ""
+"The displayable returned by the callable should have a ``delay`` attribute, "
+"set to the number of seconds that the transition should run for."
+msgstr ""
+"呼び出し可能オブジェクトによって返される displayable は、トランジションを実行"
+"する秒数に設定された ``delay`` 属性を持つ必要があります。"
+
+#: ../../source/transitions.rst:273 ../../source/transitions.rst:302
+msgid "For example::"
+msgstr "例 ::"
+
+#: ../../source/transitions.rst:282
+msgid ""
+"Accordingly, all kinds of transitions can be called and passed these two "
+"keyword arguments, resulting in a displayable animating the transition "
+"between the two passed displayables."
+msgstr ""
+"したがって、あらゆる種類のトランジションはこれら 2 つのキーワード引数を渡して"
+"呼び出されると、渡された 2 つの displayable 間のトランジションをアニメーショ"
+"ン化する displayable を返します。"
+
+#: ../../source/transitions.rst:290
 msgid "Automatic Transitions after Scene, Show, and Hide"
 msgstr "Scene, Show, Hide 後の自動トランジション"
 
-#: ../../source/transitions.rst:234
+#: ../../source/transitions.rst:292
 msgid ""
 "Ren'Py can automatically show a transition after a series of scene, show, "
 "and hide statements. This transition can be enabled by setting the :var:"
@@ -1045,35 +1107,40 @@ msgstr ""
 "を表示できます。このトランジションは使用するトランジションを :var:"
 "`_scene_show_hide_transition` 変数に設定して有効化できます。"
 
-#: ../../source/transitions.rst:238
+#: ../../source/transitions.rst:296
 msgid ""
-"The transition will occur after one or more ``scene``, ``show``, or ``hide`` "
-"statements, provided the statement are not followed by a  with statement, or "
-"a transition caused by :ref:`dialogue-window-management`, like the various "
-"``window`` statements. It's also disabled when in a menu context."
+"The transition will occur after one or more :ref:`scene <scene-statement>`, :"
+"ref:`show <show-statement>`, and :ref:`hide <hide-statement>` statements, "
+"provided the statement are not followed by a :ref:`with <with-statement>` "
+"statement, or a transition caused by :ref:`dialogue-window-management`, like "
+"the various ``window`` statements. It's also disabled when in a menu context."
 msgstr ""
-"このトランジションは with ステートメントや ``window`` ステートメントのよう"
-"な :ref`dialogue window management` により発生するトランジションが続かない一"
-"つ以上の ``scene``, ``show``, ``hide`` ステートメント後に起こります。メニュー"
-"コンテキストでも無効化されます。"
+"このトランジションは :ref:`with <with-statement>` や ``window`` ステートメン"
+"トのような :ref`dialogue-window-management` により発生するトランジションが続"
+"かない一つ以上の :ref:`scene <scene-statement>`, :ref:`show <show-"
+"statement>`, :ref:`hide <hide-statement>` ステートメント後に起こります。メ"
+"ニューコンテキストでは無効になります。"
 
-#: ../../source/transitions.rst:243
-msgid "For example::"
-msgstr "例 ::"
+#~ msgid ""
+#~ "Pre-defined transitions can be given directly to the with statement. For "
+#~ "example::"
+#~ msgstr ""
+#~ "定義済みのトランジションは、with ステートメントに直接指定できます。例 ::"
 
-#: ../../source/transitions.rst:264
-msgid "See Also"
-msgstr "次も参照してください。"
+#~ msgid "and::"
+#~ msgstr "次のようにすると :"
 
-#: ../../source/transitions.rst:266
-msgid ""
-":ref:`atl-transitions`, :ref:`Transitions using Python <transitions-"
-"python>` : how to create transitions using the ATL system and Python, "
-"respectively"
-msgstr ""
-":ref:`atl-transitions`, :ref:`Pythonを使用したトランジション <transitions-"
-"python>` : それぞれ ATL システムや Python を使用したトランジションの作成方法"
-"です。"
+#~ msgid "See Also"
+#~ msgstr "次も参照してください。"
+
+#~ msgid ""
+#~ ":ref:`atl-transitions`, :ref:`Transitions using Python <transitions-"
+#~ "python>` : how to create transitions using the ATL system and Python, "
+#~ "respectively"
+#~ msgstr ""
+#~ ":ref:`atl-transitions`, :ref:`Pythonを使用したトランジション <transitions-"
+#~ "python>` : それぞれ ATL システムや Python を使用したトランジションの作成方"
+#~ "法です。"
 
 #~ msgid ""
 #~ "Returns a transition that interpolates the position of images (with the "
