@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-06 00:37+0900\n"
-"PO-Revision-Date: 2024-08-06 01:11+0900\n"
+"POT-Creation-Date: 2024-08-12 09:41+0900\n"
+"PO-Revision-Date: 2024-08-12 11:06+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -97,11 +97,32 @@ msgstr ""
 "transform は左から右へ順に適用され、最後に適用される transform は最も右側の引"
 "数です。 ::"
 
-#: ../../source/transforms.rst:42
+#: ../../source/transforms.rst:41
+msgid ""
+"The resulting value may not be able to be displayed, if there remains "
+"parameters of the transform that have not been given a value, as can be the "
+"case with transforms defined using the :ref:`transform-statement`."
+msgstr ""
+":ref:`transform-statement` を使用して定義された transform のように、値が指定"
+"されていない transform のパラメーターが残っている場合、結果の値は表示できない"
+"ことがあります。"
+
+#: ../../source/transforms.rst:46
+msgid ""
+"The resulting value may still be a transform that can be applied to yet "
+"another displayable (overriding its previous child) ; that's the case with "
+"ATL transforms which are still usable as transforms even when having their "
+"child set."
+msgstr ""
+"結果の値は、さらに別の displayable に適用できる (前の子をオーバーライドする) "
+"transform であることがあります。それは ATL transform の場合であり、子が設定さ"
+"れていてさえ transform として使用できます。"
+
+#: ../../source/transforms.rst:53
 msgid "Built-in Transforms"
 msgstr "組み込み transform"
 
-#: ../../source/transforms.rst:44
+#: ../../source/transforms.rst:55
 msgid ""
 "Ren'Py ships with a number of transforms defined by default. These "
 "transforms position things on the screen. Here's a depiction of where each "
@@ -111,7 +132,7 @@ msgstr ""
 "transform は、画像を画面上に配置します。組み込みの各 transform がどこに画像を"
 "配置するかをここに示します。 ::"
 
-#: ../../source/transforms.rst:64
+#: ../../source/transforms.rst:75
 msgid ""
 "The :var:`offscreenleft` and :var:`offscreenright` transforms position "
 "images off the edges of the screen. These transforms can be used to move "
@@ -122,15 +143,15 @@ msgstr ""
 "を配置します。これらの transform は、画面外に画像を動かすのに使えます (リソー"
 "スを浪費しないために、後で必ず hide してください)。"
 
-#: ../../source/transforms.rst:69
+#: ../../source/transforms.rst:80
 msgid "The transforms are:"
 msgstr "transform は次のとおりです:"
 
-#: ../../source/transforms.rst:73
+#: ../../source/transforms.rst:84
 msgid "Centers horizontally, and aligns to the bottom of the screen."
 msgstr "画面の中央下に配置します。"
 
-#: ../../source/transforms.rst:77
+#: ../../source/transforms.rst:88
 msgid ""
 "Centers horizontally, and aligns to the bottom of the screen. This can be "
 "redefined via :var:`config.default_transform` to change the default "
@@ -140,17 +161,17 @@ msgstr ""
 "ステートメントや scene ステートメントによって表示される画像の位置のデフォルト"
 "を変更できます。"
 
-#: ../../source/transforms.rst:83
+#: ../../source/transforms.rst:94
 msgid "Aligns to the bottom-left corner of the screen."
 msgstr "画面の左下に配置します。"
 
-#: ../../source/transforms.rst:87 ../../source/transforms.rst:92
+#: ../../source/transforms.rst:98 ../../source/transforms.rst:103
 msgid ""
 "Places the displayable off the left side of the screen, aligned to the "
 "bottom of the screen."
 msgstr "画面よりも左に配置し、画面下部に合わせます。"
 
-#: ../../source/transforms.rst:97
+#: ../../source/transforms.rst:108
 msgid ""
 "Resets the transform. Places the displayable in the top-left corner of the "
 "screen, and also eliminates any zoom, rotation, or other effects."
@@ -158,31 +179,31 @@ msgstr ""
 "transform をリセットします。displayable を画面の左上に配置し、ズーム、回転そ"
 "の他の効果を消去します。"
 
-#: ../../source/transforms.rst:102
+#: ../../source/transforms.rst:113
 msgid "Aligns to the bottom-right corner of the screen."
 msgstr "画面の右下に配置します。"
 
-#: ../../source/transforms.rst:106
+#: ../../source/transforms.rst:117
 msgid "Centers horizontally, and aligns to the top of the screen."
 msgstr "画面の中央上に配置します。"
 
-#: ../../source/transforms.rst:110
+#: ../../source/transforms.rst:121
 msgid "Aligns to the top-left corner of the screen."
 msgstr "画面の左上に配置します。"
 
-#: ../../source/transforms.rst:114
+#: ../../source/transforms.rst:125
 msgid "Aligns to the top-right corner of the screen."
 msgstr "画面の右上に配置します。"
 
-#: ../../source/transforms.rst:118
+#: ../../source/transforms.rst:129
 msgid "Centers both horizontally and vertically."
 msgstr "水平にも垂直にも中央に配置します。"
 
-#: ../../source/transforms.rst:124
+#: ../../source/transforms.rst:135
 msgid "ATL - Animation and Transformation Language"
 msgstr "ATL - アニメーションと transform 言語"
 
-#: ../../source/transforms.rst:126
+#: ../../source/transforms.rst:137
 msgid ""
 "The Animation and Transformation Language (ATL) is a high-level language "
 "which can create animations, move displayables across the screen, set their "
@@ -193,7 +214,7 @@ msgstr ""
 "での Displayable の移動、位置の設定、 transform の適用などを行える高級言語で"
 "す。これらは、時間の経過とともに、またイベントに応じて変更できます。"
 
-#: ../../source/transforms.rst:131
+#: ../../source/transforms.rst:142
 msgid ""
 "ATL transform objects, which are created using the :ref:`transform-"
 "statement` down below, are displayables and can be used as such (even though "
@@ -207,26 +228,26 @@ msgstr ""
 "ト、 :ref:`show-expression-statement` ステートメント、または :func:`renpy."
 "show` 関数に渡せられます。"
 
-#: ../../source/transforms.rst:138
+#: ../../source/transforms.rst:149
 msgid "Ren'Py script statements"
 msgstr "Ren'Py スクリプトのステートメント"
 
-#: ../../source/transforms.rst:140
+#: ../../source/transforms.rst:151
 msgid "There are three Ren'Py script statements which can include ATL code."
 msgstr ""
 "ATL コードを含められる Ren'Py スクリプトステートメントが 3 つあります。"
 
-#: ../../source/transforms.rst:145
+#: ../../source/transforms.rst:156
 msgid "Transform Statement"
 msgstr "transform ステートメント"
 
-#: ../../source/transforms.rst:147
+#: ../../source/transforms.rst:158
 msgid "The ``transform`` statement creates a new transform. The syntax is:"
 msgstr ""
 "``transform`` ステートメントは、新しい transform を作成します。構文は次のとお"
 "りです。 :"
 
-#: ../../source/transforms.rst:153
+#: ../../source/transforms.rst:164
 msgid ""
 "The transform statement is run at :ref:`init time <init-phase>`. The "
 "transform may take a list of parameters, which works much the same way as a "
@@ -238,23 +259,35 @@ msgstr ""
 "うに機能しますが、いくつかの種類のパラメータが現在禁止されています。これらは"
 "将来的には許可される可能性があります。 :"
 
-#: ../../source/transforms.rst:158
+#: ../../source/transforms.rst:169
 msgid "Positional-only parameters"
 msgstr "位置専用パラメーター"
 
-#: ../../source/transforms.rst:159
+#: ../../source/transforms.rst:170
 msgid "Keyword-only parameters without a default value"
 msgstr "デフォルト値のないキーワード専用パラメーター"
 
-#: ../../source/transforms.rst:160
+#: ../../source/transforms.rst:171
 msgid "Variadic positional parameters (``*args``)"
 msgstr "可変長位置パラメーター (``*args``)"
 
-#: ../../source/transforms.rst:161
+#: ../../source/transforms.rst:172
 msgid "Variadic keyword parameters (``**kwargs``)"
 msgstr "可変長キーワードパラメーター (``**kwargs``)"
 
-#: ../../source/transforms.rst:166
+#: ../../source/transforms.rst:177
+msgid ""
+"The created object cannot be used as a transform until and unless all its "
+"parameters have been given a value."
+msgstr ""
+"作成されたオブジェクトは、そのすべてのパラメーターに値が与えられるまで、 "
+"transform として使用できません。"
+
+#: ../../source/transforms.rst:180
+msgid "*See also :* :ref:`atl-partial`"
+msgstr ":ref:`atl-partial` も参照ください。"
+
+#: ../../source/transforms.rst:182
 msgid ""
 "`qualname`, the name of the transform, must be a set of dot-separated Python "
 "identifiers. The transform created by the ATL block will be bound to that "
@@ -264,7 +297,7 @@ msgstr ""
 "ればなりません。 ATL ブロックによって作成された transform は、指定の :ref:"
 "`store <named-stores>` があればその中のこの名前に関連付けされます。 ::"
 
-#: ../../source/transforms.rst:185
+#: ../../source/transforms.rst:201
 msgid ""
 "The created object is both a transform and a displayable, but as opposed to "
 "the ``image`` statement, it is created as a variable (or a constant), rather "
@@ -274,11 +307,11 @@ msgstr ""
 "``image`` ステートメントとは対照的に、変数 (または定数) として作成され、 :"
 "ref:`画像 <defining-images>` の名前空間には入りません。"
 
-#: ../../source/transforms.rst:192
+#: ../../source/transforms.rst:208
 msgid "Image Statement with ATL Block"
 msgstr "image ステートメントの ATL ブロック"
 
-#: ../../source/transforms.rst:194
+#: ../../source/transforms.rst:210
 msgid ""
 "The second way to include ATL code in a script is as part of an :ref:`image "
 "statement <image-statement>`. As its inline counterpart, it binds an image "
@@ -292,11 +325,11 @@ msgstr ""
 "パラメーターを指定する方法がないため、 transform がアニメーションを定義する場"
 "合にのみ役立ちます。構文は次のとおりです。 ::"
 
-#: ../../source/transforms.rst:214
+#: ../../source/transforms.rst:230
 msgid "Scene and Show Statements with ATL Block"
 msgstr "scene ステートメントおよび show ステートメントの ATL ブロック"
 
-#: ../../source/transforms.rst:216
+#: ../../source/transforms.rst:232
 msgid ""
 "The final way to use ATL is as part of a :ref:`show <show-statement>` or "
 "scene statement. This wraps the image that's being shown inside an ATL "
@@ -307,11 +340,11 @@ msgstr ""
 "トメントの一部としての使用です。これにより、表示される画像がその場で作成され"
 "て画像に適用される ATL transform 内にラップされます。構文は次のとおりです。 :"
 
-#: ../../source/transforms.rst:238
+#: ../../source/transforms.rst:254
 msgid "ATL Syntax and Statements"
 msgstr "ATL の構文とステートメント"
 
-#: ../../source/transforms.rst:240
+#: ../../source/transforms.rst:256
 msgid ""
 "ATL statements may be inline, or make up a block within the ATL block in "
 "which it is written. With some exceptions described in the relevant "
@@ -322,7 +355,7 @@ msgstr ""
 "クを構成することもできます。関連するステートメントで説明されている一部の例外"
 "を除き、 ATL ブロック内のステートメントは上から下に順番に実行されます。"
 
-#: ../../source/transforms.rst:244
+#: ../../source/transforms.rst:260
 msgid ""
 "If an ATL statement requires an expression to be evaluated, such evaluation "
 "occurs when the transform is first executed (that is when using a ``show`` "
@@ -334,15 +367,15 @@ msgstr ""
 "り、 ``show`` ステートメントを使用するとき、または画面の一部としてその "
 "transform を表示するとき) に行われます。"
 
-#: ../../source/transforms.rst:249
+#: ../../source/transforms.rst:265
 msgid "The following are the ATL statements."
 msgstr "以下が ATL ステートメントです。"
 
-#: ../../source/transforms.rst:254
+#: ../../source/transforms.rst:270
 msgid "Inline Contains Statement"
 msgstr "インライン Contains ステートメント"
 
-#: ../../source/transforms.rst:256
+#: ../../source/transforms.rst:272
 msgid ""
 "The inline contains statement takes a single expression evaluating to a :doc:"
 "`displayable <displayables>`."
@@ -350,7 +383,7 @@ msgstr ""
 "インラインの contains ステートメントは、評価結果が :doc:`displayable "
 "<displayables>` である式を1 つ取ります。"
 
-#: ../../source/transforms.rst:262
+#: ../../source/transforms.rst:278
 msgid ""
 "This statement sets (or replaces) the child of the current ATL transform to "
 "the value of the expression, making it useful for animation. ::"
@@ -358,7 +391,7 @@ msgstr ""
 "このステートメントは、現在の ATL transform の子をその式の値に設定 (または置"
 "換) して、アニメーションに役立てます。 ::"
 
-#: ../../source/transforms.rst:280
+#: ../../source/transforms.rst:296
 msgid ""
 "The :ref:`displayable-atl-statement` is less explicit and bears ambiguity "
 "with the transform expression statement, but it allows for a :doc:"
@@ -371,11 +404,11 @@ msgstr ""
 "<transitions>` を使用できます。このステートメントは、ATL transform が 2 番目"
 "の ATL transform の中身を埋め込むのではなく、内包する場合に特に便利です。"
 
-#: ../../source/transforms.rst:287
+#: ../../source/transforms.rst:303
 msgid "Number Statement"
 msgstr "Number ステートメント"
 
-#: ../../source/transforms.rst:289
+#: ../../source/transforms.rst:305
 msgid ""
 "The number statement consists of a simple expression evaluating to an "
 "integer or floating-point number. It can optionally be preceded by the "
@@ -384,21 +417,21 @@ msgstr ""
 "number ステートメントは評価結果が整数または浮動小数である単純式で構成されたス"
 "テートメントであり、任意でキーワード ``pause`` が先行します。"
 
-#: ../../source/transforms.rst:295
+#: ../../source/transforms.rst:311
 msgid "It is used as a number of seconds to pause execution for. ::"
 msgstr "実行をポーズする秒数の数値に使用されます。"
 
-#: ../../source/transforms.rst:313
+#: ../../source/transforms.rst:329
 msgid "Properties Statement"
 msgstr "プロパティーステートメント"
 
-#: ../../source/transforms.rst:315
+#: ../../source/transforms.rst:331
 msgid "This statement sets one or more transform properties to a new value."
 msgstr ""
 "このステートメントは、 1 つ以上の transform プロパティーを新しい値に設定しま"
 "す。"
 
-#: ../../source/transforms.rst:323
+#: ../../source/transforms.rst:339
 msgid ""
 "The statement first gives a series (at least one) of property names, each "
 "followed by the new value to set it to. See :ref:`transform-properties` for "
@@ -409,11 +442,11 @@ msgstr ""
 "その意味、およびそれらが取れる値のリストについては、:ref:`transform-"
 "properties` を参照してください。::"
 
-#: ../../source/transforms.rst:334
+#: ../../source/transforms.rst:350
 msgid "Interpolation Statement"
 msgstr "補間ステートメント"
 
-#: ../../source/transforms.rst:336
+#: ../../source/transforms.rst:352
 msgid ""
 "The interpolation statement is the main way of getting smoothly animated "
 "transformations."
@@ -421,11 +454,11 @@ msgstr ""
 "補間ステートメントは、 transform をスムーズにアニメーションするための主要な方"
 "法です。"
 
-#: ../../source/transforms.rst:350
+#: ../../source/transforms.rst:366
 msgid "Some sample interpolations::"
 msgstr "補間例 ::"
 
-#: ../../source/transforms.rst:381
+#: ../../source/transforms.rst:397
 msgid ""
 "The first part of the interpolation is used to select a function that time-"
 "warps the interpolation. That means, a function that maps linear time to non-"
@@ -439,19 +472,19 @@ msgstr ""
 "を参照してください。ワーパーを選択するには、登録済みのワーパーの名前を指定す"
 "るか、キーワード 「warp」の後にワープ関数を指定する式を続けます。"
 
-#: ../../source/transforms.rst:387
+#: ../../source/transforms.rst:403
 msgid ""
 "In either case, it's followed by a number giving the number of seconds the "
 "interpolation should take. ::"
 msgstr "いずれの場合も、補間にかかる秒数の数字が続きます。 ::"
 
-#: ../../source/transforms.rst:404
+#: ../../source/transforms.rst:420
 msgid ""
 "The interpolation will persist for the given amount of time, and at least "
 "one frame."
 msgstr "補間は、指定された時間または少なくとも 1 フレームの間持続します。"
 
-#: ../../source/transforms.rst:407
+#: ../../source/transforms.rst:423
 msgid ""
 "When :doc:`transform_properties` are given, the value each is given is the "
 "value it will be set to at the end of the interpolation statement. This can "
@@ -461,7 +494,7 @@ msgstr ""
 "間ステートメントの終了時に設定される値になります。これは、いくつかの方法で調"
 "整できます。"
 
-#: ../../source/transforms.rst:411
+#: ../../source/transforms.rst:427
 msgid ""
 "If the value is followed by one or more knots, then spline motion is used. "
 "The starting point is the value of the property at the start of the "
@@ -479,7 +512,7 @@ msgstr ""
 "はすべて(しばしば描画される経路外となる)制御 nodeです。キャットムル-ロム スプ"
 "ラインでは、最初と最後の knot が制御nodeで他の knot は通過点になります。"
 
-#: ../../source/transforms.rst:420
+#: ../../source/transforms.rst:436
 msgid ""
 "If the interpolation statement contains a \"clockwise\" or \"counterclockwise"
 "\" clause, circular motion is used. In that case, Ren'Py will compare the "
@@ -497,13 +530,13 @@ msgstr ""
 "た方向の回転で進む角度を計算します。circles 節を指定すると、Ren'Py は適切な数"
 "の円が作られることを保証します。"
 
-#: ../../source/transforms.rst:429
+#: ../../source/transforms.rst:445
 msgid ""
 "Otherwise, the value is linearly interpolated between the start and end "
 "locations."
 msgstr "それ以外の場合は、値は開始から終了まで線形補間されます。"
 
-#: ../../source/transforms.rst:432
+#: ../../source/transforms.rst:448
 msgid ""
 "It is also possible to interpolate a :ref:`transform-expression-atl-"
 "statement`, which should in this case be an ATL transform containing only a "
@@ -515,7 +548,7 @@ msgstr ""
 "の transform のプロパティーは、この補間に直接書き込まれたかのように処理されま"
 "す。"
 
-#: ../../source/transforms.rst:437
+#: ../../source/transforms.rst:453
 msgid ""
 "A warper may be followed by a colon (:). In that case, it may be followed by "
 "one or more lines, in an indented block, containing the clauses described "
@@ -526,11 +559,11 @@ msgstr ""
 "内に1 行以上の上記の節が続きます。これにより、多くの異なるものの補間を複数の"
 "行に分割できます。"
 
-#: ../../source/transforms.rst:443
+#: ../../source/transforms.rst:459
 msgid "Pass Statement"
 msgstr "pass ステートメント"
 
-#: ../../source/transforms.rst:448
+#: ../../source/transforms.rst:464
 msgid ""
 "The ``pass`` statement is a simple statement that causes nothing to happen : "
 "a no-op. This can be used when there's a desire to separate statements, like "
@@ -545,11 +578,11 @@ msgstr ""
 "あるが、空にする必要がある場合 (たとえば、 choice ブロックの 1 つを何もしない"
 "ようにする場合など) にも役立ちます。"
 
-#: ../../source/transforms.rst:455
+#: ../../source/transforms.rst:471
 msgid "Repeat Statement"
 msgstr "Repeat ステートメント"
 
-#: ../../source/transforms.rst:457
+#: ../../source/transforms.rst:473
 msgid ""
 "The ``repeat`` statement is a simple statement that causes the block "
 "containing it to resume execution from the beginning."
@@ -557,7 +590,7 @@ msgstr ""
 "``repeat`` ステートメントは、単にそれを含むブロックの実行を再び最初から始める"
 "ステートメントです。"
 
-#: ../../source/transforms.rst:463
+#: ../../source/transforms.rst:479
 msgid ""
 "If the expression is present, then it is evaluated to give an integer number "
 "of times the block will execute. (So a block ending with ``repeat 2`` will "
@@ -567,29 +600,29 @@ msgstr ""
 "``repeat 2`` で終わるステートメントは最高で 2 回実行され、 ``repeat 1`` はリ"
 "ピートしません)。"
 
-#: ../../source/transforms.rst:467
+#: ../../source/transforms.rst:483
 msgid "The repeat statement must be the last statement in a block::"
 msgstr "repeat ステートメントは、必ずブロックの最後になければなりません。 ::"
 
-#: ../../source/transforms.rst:476
+#: ../../source/transforms.rst:492
 msgid "Block Statement"
 msgstr "Block ステートメント"
 
-#: ../../source/transforms.rst:478
+#: ../../source/transforms.rst:494
 msgid "The ``block`` statement simply contains a block of ATL statements."
 msgstr ""
 "``block`` ステートメントは、単に ATL ステートメントのブロックを含むステートメ"
 "ントです。"
 
-#: ../../source/transforms.rst:484
+#: ../../source/transforms.rst:500
 msgid "This can be used to group statements that will repeat::"
 msgstr "これは繰り返すステートメントをグループ化するのに使えます。"
 
-#: ../../source/transforms.rst:496
+#: ../../source/transforms.rst:512
 msgid "Parallel Statement"
 msgstr "Parallel  ステートメント"
 
-#: ../../source/transforms.rst:498
+#: ../../source/transforms.rst:514
 msgid ""
 "The ``parallel`` statement defines a set of ATL blocks to execute in "
 "parallel."
@@ -597,7 +630,7 @@ msgstr ""
 "``parallel`` ステートメントは並行して実行される ATL ブロック群を定義出来ま"
 "す。"
 
-#: ../../source/transforms.rst:504
+#: ../../source/transforms.rst:520
 msgid ""
 "Parallel statements are greedily grouped into a parallel set when more than "
 "one parallel block appears consecutively in a block. The set of all parallel "
@@ -608,7 +641,7 @@ msgstr ""
 "されます。平行群の全てのブロックは同時に実行されます。parallel ステートメント"
 "は、最後のブロックが終了したときに終了します。"
 
-#: ../../source/transforms.rst:509
+#: ../../source/transforms.rst:525
 msgid ""
 "The blocks within a set should be independent of each other, and manipulate "
 "different :doc:`transform_properties`. When two blocks change the same "
@@ -618,11 +651,11 @@ msgstr ""
 "`transform_properties` を操作するものでなければなりません。2 つのブロックが同"
 "じプロパティーを変更するときの結果は未定義です。 ::"
 
-#: ../../source/transforms.rst:526
+#: ../../source/transforms.rst:542
 msgid "Choice Statement"
 msgstr "choice ステートメント"
 
-#: ../../source/transforms.rst:528
+#: ../../source/transforms.rst:544
 msgid ""
 "The ``choice`` statement defines one of a set of potential choices. Ren'Py "
 "will pick one of the choices in the set, and execute the ATL block "
@@ -633,7 +666,7 @@ msgstr ""
 "トです。 Ren'Py はその選択肢群から 1 つ選び、対応する ATL ブロックを実行しま"
 "す。その後、最後の選択肢群の後から実行を続けます。"
 
-#: ../../source/transforms.rst:537
+#: ../../source/transforms.rst:553
 msgid ""
 "Choice statements are greedily grouped into a choice set when more than one "
 "choice statement appears consecutively in a block. If the "
@@ -644,7 +677,7 @@ msgstr ""
 "`simple_expression` が与えられているなら、それはそのブロックに指定する浮動小"
 "数点のウェイトになり、なければ 1.0 になります。"
 
-#: ../../source/transforms.rst:553
+#: ../../source/transforms.rst:569
 msgid ""
 "The ``pass`` statement can be useful in order to break several sets of "
 "choice blocks into several choice statements, or to make an empty choice "
@@ -654,11 +687,11 @@ msgstr ""
 "ステートメントに分割したり、空の choice ブロックを作成したりする場合に便利で"
 "す。"
 
-#: ../../source/transforms.rst:557
+#: ../../source/transforms.rst:573
 msgid "Animation Statement"
 msgstr "Animation ステートメント"
 
-#: ../../source/transforms.rst:559
+#: ../../source/transforms.rst:575
 msgid ""
 "The ``animation`` statement must be the first statement in an ATL block, and "
 "tells Ren'Py that the block uses the animation timebase."
@@ -666,7 +699,7 @@ msgstr ""
 "``animation`` ステートメントは ATL ブロックの最初のステートメントでなくてはな"
 "らず、そのブロックのアニメーション時間軸使用を Ren'Py 通知します。"
 
-#: ../../source/transforms.rst:565
+#: ../../source/transforms.rst:581
 msgid ""
 "As compared to the normal showing timebase, the animation timebase starts "
 "when an image or screen with the same tag is shown. This is generally used "
@@ -677,7 +710,7 @@ msgstr ""
 "表示されたときに開始します。これは通常おなじ時間軸で別の物で置き換えられる画"
 "像があるときに使用します。例 ::"
 
-#: ../../source/transforms.rst:589
+#: ../../source/transforms.rst:605
 msgid ""
 "This example will cause Eileen to change expression when the first pause "
 "finishes, but will not cause her position to change, as both animations "
@@ -690,15 +723,15 @@ msgstr ""
 "るため変わりません。アニメーションステートメントがないと、その位置はプレイ"
 "ヤークリック時にリセットされます。"
 
-#: ../../source/transforms.rst:596
+#: ../../source/transforms.rst:612
 msgid "On Statement"
 msgstr "On ステートメント"
 
-#: ../../source/transforms.rst:598
+#: ../../source/transforms.rst:614
 msgid "The ``on`` statement defines an event handler."
 msgstr "``on`` ステートメントは、イベントハンドラを定義します。"
 
-#: ../../source/transforms.rst:604
+#: ../../source/transforms.rst:620
 msgid ""
 "``on`` blocks are greedily grouped into a single statement. On statement can "
 "handle a single event name, or a comma-separated list of event names."
@@ -707,7 +740,7 @@ msgstr ""
 "トメントは、1 つのイベント名、またはカンマ区切りのイベント名のリストを処理で"
 "きます。"
 
-#: ../../source/transforms.rst:607
+#: ../../source/transforms.rst:623
 msgid ""
 "This statement is used to handle events. When an event is handled, handling "
 "of any other event ends and handing of the new event immediately starts. "
@@ -719,7 +752,7 @@ msgstr ""
 "他のイベントが起こることなくイベントハンドラが終了したとき(すでに default イ"
 "ベントを処理していたのでなければ)、 ``default`` イベントが引き起こされます。"
 
-#: ../../source/transforms.rst:612
+#: ../../source/transforms.rst:628
 msgid ""
 "Execution of the on statement will never naturally end. (But it can be ended "
 "by the time statement, or an enclosing event handler.)"
@@ -727,7 +760,7 @@ msgstr ""
 "on ステートメントの実行は自然には終わりません(しかし、time ステートメントや外"
 "側のイベントハンドラによって終了され得ます)。"
 
-#: ../../source/transforms.rst:615
+#: ../../source/transforms.rst:631
 msgid ""
 "See the event statement for a way to produce arbitrary events, and see :ref:"
 "`external-atl-events` for a list of naturally-produced events. ::"
@@ -736,11 +769,11 @@ msgstr ""
 "るイベントのリストについては :ref:`external-atl-events` を参照してくださ"
 "い。::"
 
-#: ../../source/transforms.rst:633
+#: ../../source/transforms.rst:649
 msgid "Transform Expression Statement"
 msgstr "Transform 式 ステートメント"
 
-#: ../../source/transforms.rst:635
+#: ../../source/transforms.rst:651
 msgid ""
 "This statement includes another ATL transform as part of the current ATL "
 "block."
@@ -748,7 +781,7 @@ msgstr ""
 "このステートメントは、現在の ATL ブロックの一部として別の ATL transform を含"
 "みます。"
 
-#: ../../source/transforms.rst:640
+#: ../../source/transforms.rst:656
 msgid ""
 "This only applies if the ATL transform has **not** been supplied a child "
 "(see the top of the page for how to do that), otherwise it will be "
@@ -760,11 +793,11 @@ msgstr ""
 "statement` として解釈されます。指定された ATL transform の内容がこのステート"
 "メントの場所に含められます。::"
 
-#: ../../source/transforms.rst:658
+#: ../../source/transforms.rst:674
 msgid "Displayable Statement"
 msgstr "Displayable ステートメント"
 
-#: ../../source/transforms.rst:660
+#: ../../source/transforms.rst:676
 msgid ""
 "The displayable statement consists of a simple Python expression evaluating "
 "to a :doc:`displayable <displayables>`, optionally followed by a with clause "
@@ -773,14 +806,14 @@ msgstr ""
 "displayable ステートメントは、評価結果が :doc:`displayable` になる単純な "
 "Python 式から構成され、任意で 2 つ目の単純式を含む with 節が続きます。"
 
-#: ../../source/transforms.rst:667
+#: ../../source/transforms.rst:683
 msgid ""
 "It is used to set or replace the child of the transform when the statement "
 "executes."
 msgstr ""
 "これを使用してステートメントの実行時に transform の子を設定または置換します。"
 
-#: ../../source/transforms.rst:670
+#: ../../source/transforms.rst:686
 msgid ""
 "If a ``with`` clause is present, the second expression is evaluated as a :"
 "doc:`transition <transitions>`, and the transition is applied between the "
@@ -794,7 +827,7 @@ msgstr ""
 "`dict-transitions` や :var:`move- <move>`, :var:`ease- <ease>` トランジション"
 "がそうです。 ::"
 
-#: ../../source/transforms.rst:688
+#: ../../source/transforms.rst:704
 msgid ""
 "If passing any child-less transform is pointless as it will make the "
 "transform transparent and ineffective, passing child-less ATL transforms may "
@@ -805,7 +838,7 @@ msgstr ""
 "で無意味な場合、子を持たない ATL transform を渡すことは :ref:`transform-"
 "expression-atl-statement` と解釈され、異なる結果をもたらします。"
 
-#: ../../source/transforms.rst:693
+#: ../../source/transforms.rst:709
 msgid ""
 "If the expression evaluates to an ATL transform **with** a child, the "
 "execution of this ATL block will only continue after the includee's ATL code "
@@ -814,11 +847,11 @@ msgstr ""
 "式が *子を持つ* ATL transform と評価された場合、この ATL ブロックの実行は、内"
 "部の ATL コードが実行された後にのみ続行されます。"
 
-#: ../../source/transforms.rst:697
+#: ../../source/transforms.rst:713
 msgid "Contains Block Statement"
 msgstr "Contains ブロック ステートメント"
 
-#: ../../source/transforms.rst:699
+#: ../../source/transforms.rst:715
 msgid ""
 "The contains block, like its :ref:`inline counterpart <inline-contains-atl-"
 "statement>`, sets the child of the transform but in a different way."
@@ -826,7 +859,7 @@ msgstr ""
 "contains ブロックは、その :ref:`インライン版 <inline-contains-atl-"
 "statement>` と同様に、 transform の子を設定しますが、方法は異なります。"
 
-#: ../../source/transforms.rst:707
+#: ../../source/transforms.rst:723
 msgid ""
 "One or more contains blocks will be greedily grouped together inside a "
 "single contains statement, wrapped inside a :func:`Fixed`, and set as the "
@@ -835,7 +868,7 @@ msgstr ""
 "1つ以上のcontainsブロックは、単一の contains ステートメント内に貪欲にグループ"
 "化され、 :func:`Fixed` 内にラップされ、 transform の子として設定されます。"
 
-#: ../../source/transforms.rst:711
+#: ../../source/transforms.rst:727
 msgid ""
 "Each block should define a displayable to use, otherwise an error will "
 "occur. The contains statement executes instantaneously, without waiting for "
@@ -844,21 +877,21 @@ msgstr ""
 "各ブロックは使用する displayable を定義する必要があり、そうしないとエラーが発"
 "生します。 contains ステートメントは、子の完了を待たずに即実行されます。 ::"
 
-#: ../../source/transforms.rst:729
+#: ../../source/transforms.rst:745
 msgid "Function Statement"
 msgstr "Function ステートメント"
 
-#: ../../source/transforms.rst:731
+#: ../../source/transforms.rst:747
 msgid "The ``function`` statement allows ATL to use Python code."
 msgstr ""
 "``function`` ステートメントは、ATL での Python コード使用を許可します。"
 
-#: ../../source/transforms.rst:736
+#: ../../source/transforms.rst:752
 msgid ""
 "The functions have the same signature as those used with :func:`Transform`:"
 msgstr "この関数の定義は :func:`Transform` で使われるのと同じです :"
 
-#: ../../source/transforms.rst:738
+#: ../../source/transforms.rst:754
 msgid ""
 "The first argument is a transform object. :doc:`transform_properties` can be "
 "set as attributes on this object."
@@ -866,13 +899,13 @@ msgstr ""
 "第一引数は transform オブジェクトです。 :doc:`transform_properties` はこのオ"
 "ブジェクトの属性として設定できます。"
 
-#: ../../source/transforms.rst:741
+#: ../../source/transforms.rst:757
 msgid ""
 "The second argument is the shown timebase, the number of seconds since the "
 "function began executing."
 msgstr "第二引数は出現時間軸で、関数が実行され始めてからの秒数です。"
 
-#: ../../source/transforms.rst:744
+#: ../../source/transforms.rst:760
 msgid ""
 "The third argument is the the animation timebase, which is the number of "
 "seconds something with the same tag has been on the screen."
@@ -880,7 +913,7 @@ msgstr ""
 "第三引数はアニメーション時間軸で、同じタグのものがスクリーン上にある秒数で"
 "す。"
 
-#: ../../source/transforms.rst:747
+#: ../../source/transforms.rst:763
 msgid ""
 "If the function returns a number, it will be called again after that number "
 "of seconds has elapsed. (0 seconds means to call the function as soon as "
@@ -891,7 +924,7 @@ msgstr ""
 "数はできるだけ早く呼び出されます)。 関数が None を返したら、制御は次の ATL ス"
 "テートメントに渡されます。"
 
-#: ../../source/transforms.rst:752
+#: ../../source/transforms.rst:768
 msgid ""
 "This function should not have side effects other than changing the transform "
 "object in the first argument, and may be called at any time with any value "
@@ -900,7 +933,7 @@ msgstr ""
 "この関数は第一引数の Transform オブジェクトの変更の他には副作用を持つべきでは"
 "なく、予測のためにいつどの数値で呼び出されるか分かりません。"
 
-#: ../../source/transforms.rst:756
+#: ../../source/transforms.rst:772
 msgid ""
 "Note that ``function`` is not a transform property, and that it doesn't have "
 "the exact same behavior as :func:`Transform`\\ 's `function` parameter. ::"
@@ -908,15 +941,15 @@ msgstr ""
 "``function`` は transform プロパティーではないので、 :func:`Transform` の "
 "`function` パラメータと完全に同じ動作ではないことに注意してください。"
 
-#: ../../source/transforms.rst:777
+#: ../../source/transforms.rst:793
 msgid "Time Statement"
 msgstr "time ステートメント"
 
-#: ../../source/transforms.rst:779
+#: ../../source/transforms.rst:795
 msgid "The ``time`` statement is a control statement."
 msgstr "``time`` ステートメントは制御ステートメントです。"
 
-#: ../../source/transforms.rst:784
+#: ../../source/transforms.rst:800
 msgid ""
 "It contains a single expression, which is evaluated to give a time expressed "
 "as seconds from the start of execution of the containing block. When the "
@@ -931,7 +964,7 @@ msgstr ""
 "メントがまだ実行中であってもおこり、そのような以前のステートメントは直ちに停"
 "止します。"
 
-#: ../../source/transforms.rst:790
+#: ../../source/transforms.rst:806
 msgid ""
 "Time statements are implicitly preceded by a pause statement with an "
 "infinite time. This means that if control would otherwise reach the time "
@@ -941,7 +974,7 @@ msgstr ""
 "つまり、time ステートメントにたどり着いたときに制御が別のところにあれば、"
 "time ステートメントは制御を得るまで待ちます。"
 
-#: ../../source/transforms.rst:794
+#: ../../source/transforms.rst:810
 msgid ""
 "When there are multiple time statements in a block, they must strictly "
 "increase in order. ::"
@@ -949,11 +982,11 @@ msgstr ""
 "一つのブロックに複数の time ステートメントがある場合、それらは厳密に時間の経"
 "過順でなくてはなりません。"
 
-#: ../../source/transforms.rst:813
+#: ../../source/transforms.rst:829
 msgid "Event Statement"
 msgstr "Event ステートメント"
 
-#: ../../source/transforms.rst:815
+#: ../../source/transforms.rst:831
 msgid ""
 "The ``event`` statement is a simple statement that causes an event with the "
 "given name to be produced."
@@ -961,7 +994,7 @@ msgstr ""
 "event ステートメントは指定した名前のイベントを引き起こす simple ステートメン"
 "トです。"
 
-#: ../../source/transforms.rst:821
+#: ../../source/transforms.rst:837
 msgid ""
 "When an event is produced inside a block, the block is checked to see if an "
 "event handler for the given name exists. If it does, control is transferred "
@@ -973,20 +1006,20 @@ msgstr ""
 "トハンドラに移ります。存在しなければ、イベントは外側のイベントハンドラに伝播"
 "します。"
 
-#: ../../source/transforms.rst:830
+#: ../../source/transforms.rst:846
 msgid "External events"
 msgstr "外部イベント"
 
-#: ../../source/transforms.rst:832
+#: ../../source/transforms.rst:848
 msgid ""
 "The following events are triggered automatically within an ATL transform:"
 msgstr "次のイベントは、ATL transform 内で自動的にトリガーされます。"
 
-#: ../../source/transforms.rst:836
+#: ../../source/transforms.rst:852
 msgid "``start``"
 msgstr "``start``"
 
-#: ../../source/transforms.rst:835
+#: ../../source/transforms.rst:851
 msgid ""
 "A pseudo-event, triggered on entering an ``on`` statement, if no event of "
 "higher priority has happened."
@@ -994,11 +1027,11 @@ msgstr ""
 "``on`` ステートメントに進入したときに、これより高い優先度のイベントが起こらな"
 "かった場合に実行される擬似イベントです。"
 
-#: ../../source/transforms.rst:840
+#: ../../source/transforms.rst:856
 msgid "``show``"
 msgstr "``show``"
 
-#: ../../source/transforms.rst:839
+#: ../../source/transforms.rst:855
 msgid ""
 "Triggered when the transform is shown using the show or scene statement, and "
 "no image with the given tag exists."
@@ -1006,11 +1039,11 @@ msgstr ""
 "transform が show ステートメントや scene ステートメントによって表示され、与え"
 "られたタグの画像がまだ存在しない場合に実行されます。"
 
-#: ../../source/transforms.rst:844
+#: ../../source/transforms.rst:860
 msgid "``replace``"
 msgstr "``replace``"
 
-#: ../../source/transforms.rst:843
+#: ../../source/transforms.rst:859
 msgid ""
 "Triggered when transform is shown using the ``show`` statement, replacing an "
 "image with the given tag."
@@ -1018,11 +1051,11 @@ msgstr ""
 "transform が ``show`` ステートメントによって表示されて指定したタグの画像を置"
 "き換えると実行されます。"
 
-#: ../../source/transforms.rst:852
+#: ../../source/transforms.rst:868
 msgid "``hide``"
 msgstr "``hide``"
 
-#: ../../source/transforms.rst:847
+#: ../../source/transforms.rst:863
 msgid ""
 "Triggered when the transform is hidden using the ``hide`` statement or its "
 "Python equivalent."
@@ -1030,7 +1063,7 @@ msgstr ""
 "transform が ``hide`` ステートメントやそれと等価な Python を使って非表示され"
 "ると実行されます。"
 
-#: ../../source/transforms.rst:850
+#: ../../source/transforms.rst:866
 msgid ""
 "Note that this isn't triggered when the transform is eliminated via the :ref:"
 "`scene-statement` or exiting the :ref:`context` it exists in, such as when "
@@ -1040,11 +1073,11 @@ msgstr ""
 "を通して除去されたときや、ゲームメニューの終了などによって所属する :ref:"
 "`context` が終了したときです。"
 
-#: ../../source/transforms.rst:856
+#: ../../source/transforms.rst:872
 msgid "``replaced``"
 msgstr "``replaced``"
 
-#: ../../source/transforms.rst:855
+#: ../../source/transforms.rst:871
 msgid ""
 "Triggered when the transform is replaced by another. The image will not "
 "actually hide until the ATL block finishes."
@@ -1052,11 +1085,11 @@ msgstr ""
 "transform が他のに置き換えられるときに引き起こされます。画像は、 ATL ブロック"
 "が完了するまで実際には非表示にはなりません。"
 
-#: ../../source/transforms.rst:861
+#: ../../source/transforms.rst:877
 msgid "``update``"
 msgstr "``update``"
 
-#: ../../source/transforms.rst:859
+#: ../../source/transforms.rst:875
 msgid ""
 "Triggered when a screen is updated without being shown or replacing another "
 "screen. This happens in rare but possible cases, such as when the game is "
@@ -1066,7 +1099,7 @@ msgstr ""
 "れると起こります。これはまれですが、ゲームロード時や、スタイルや翻訳変更時な"
 "どに起こります。"
 
-#: ../../source/transforms.rst:865
+#: ../../source/transforms.rst:881
 msgid ""
 "``hover``, ``idle``, ``selected_hover``, ``selected_idle``, ``insensitive``, "
 "``selected_insensitive``"
@@ -1074,7 +1107,7 @@ msgstr ""
 "``hover``, ``idle``, ``selected_hover``, ``selected_idle``, ``insensitive``, "
 "``selected_insensitive``"
 
-#: ../../source/transforms.rst:864
+#: ../../source/transforms.rst:880
 msgid ""
 "Triggered when a button containing this transform, or a button contained by "
 "this transform, enters the named state."
@@ -1082,11 +1115,74 @@ msgstr ""
 "この transform を含むボタンやこの transform に含まれるボタンが名前通りの状態"
 "になったときに引き起こされます。"
 
-#: ../../source/transforms.rst:870
+#: ../../source/transforms.rst:886
+msgid "ATL curry and partial parameter passing"
+msgstr "ATL curry and partial parameter passing"
+
+#: ../../source/transforms.rst:888
+msgid ""
+"An ATL transform defined using the :ref:`transform-statement` can have its "
+"parameters set at different times. When calling an ATL transform like a "
+"function, the resulting value is still a transform, and the parameters that "
+"were passed a value are treated as though the value is the new default value "
+"of the parameter."
+msgstr ""
+":ref:`transform-statement` を使用して定義された ATL transform は、異なるタイ"
+"ミングでパラメータを設定できます。ATL transform を関数のように呼び出すと、そ"
+"の結果の値は transform のままであり、値を渡されたパラメーターは、その値がパラ"
+"メーターの新しいデフォルト値であるかのように扱われます。"
+
+#: ../../source/transforms.rst:894
+msgid "For example::"
+msgstr "例::"
+
+#: ../../source/transforms.rst:918
+msgid ""
+"Note that the ``shorter_screamer`` transform, just as the ``screamer`` "
+"transform, cannot be used directly like ``show eileen at screamer``, since "
+"their ``screamee`` parameters do not have a value."
+msgstr ""
+"``shorter_screamer`` transform は、 ``screamer`` transform と同様に、 "
+"``screamee`` パラメーターが値を持たないため、 ``show eileen at screamer`` の"
+"ように直接使用できません。"
+
+#: ../../source/transforms.rst:922
+msgid ""
+"Note also that, like labels and screens, the default values of the "
+"parameters of a transform directly created by the :ref:`transform-statement` "
+"will be evaluated at the time when the transform is *called*, not at the "
+"time when it is *defined*."
+msgstr ""
+"また、ラベルやスクリーンと同様に、 :ref:`transform-statement` によって直接作"
+"成された transform のパラメーターのデフォルト値は、その transform が *定義さ"
+"れた* 時点ではなく、 *呼び出された* 時点で評価されることにも注意してくださ"
+"い。"
+
+#: ../../source/transforms.rst:927
+msgid ""
+"However, the transform resulting from calling another transform (such as "
+"``shorter_screamer`` in the example above, or also the transform applied to "
+"patricia) has all the default values of its parameters already evaluated, "
+"whether they come from the evaluation of the default values in the original "
+"transform (such as ``shorter_screamer``\\ 's `flash_time` parameter, or "
+"patricia's transform's `wait_time` parameter), or from values passed to it "
+"in a call earlier in the line (such as ``shorter_screamer``\\ 's `wait_time` "
+"parameter, or patricia's transform's `screamee` and `flash_time` parameters)."
+msgstr ""
+"ただし、別の transform (上記の例の ``shorter_screamer`` や patricia に適用さ"
+"れた transform など) を呼び出した結果の transform では、元の transform のデ"
+"フォルト値の評価から来たもの (``shorter_screamer`` の `flash_time` パラメー"
+"ターや patricia の transform の `wait_time` パラメーターなど) か、その行の前"
+"の呼び出しで渡された値から来たもの (``shorter_screamer`` の `wait_time` パラ"
+"メーターや Patricia の Transform の `screamee` パラメーターや `flash_time` パ"
+"ラメーターなど) かに関係なく、そのパラメーターのすべてのデフォルト値は評価済"
+"みになります。"
+
+#: ../../source/transforms.rst:939
 msgid "Special Child Parameter"
 msgstr "特別な子パラメーター"
 
-#: ../../source/transforms.rst:872
+#: ../../source/transforms.rst:941
 msgid ""
 "If an ATL transform has a parameter named \"child\" and that parameter "
 "receives a value, **regardless of the kind of parameter or the way it "
@@ -1101,7 +1197,7 @@ msgstr ""
 "があってもなくても)、そのパラメーターの値は transform の子になるように平行し"
 "て設定されます。"
 
-#: ../../source/transforms.rst:881
+#: ../../source/transforms.rst:950
 msgid ""
 "Note that the default value of the parameter doesn't count, the parameter "
 "has to receive a value from the outside."
@@ -1109,7 +1205,7 @@ msgstr ""
 "パラメーターのデフォルト値はカウントされず、パラメーターは外部から値を受け取"
 "る必要があることに注意してください。"
 
-#: ../../source/transforms.rst:884
+#: ../../source/transforms.rst:953
 msgid ""
 "Conversely, when that ATL transform is used as a transform, the ``child=`` "
 "keyword argument will be passed, and so in addition to setting the child, if "
@@ -1122,20 +1218,20 @@ msgstr ""
 "ターは除いた) それを受け取るパラメータがある場合、 transform の実行時に子の設"
 "定に加えて子の値を持つことになります。"
 
-#: ../../source/transforms.rst:890
+#: ../../source/transforms.rst:959
 msgid ""
 "For example, this enables to swap between the supplied child and another "
 "displayable::"
 msgstr ""
 "例えば、これにより、指定された子と別の displayable とを入れ替えられます ::"
 
-#: ../../source/transforms.rst:904
+#: ../../source/transforms.rst:973
 msgid ""
 "It can also be used to place the original child inside a ``contains`` block::"
 msgstr ""
 "``contains`` ブロック 内にもとの child を配置するのにも使用出来ます。 ::"
 
-#: ../../source/transforms.rst:917
+#: ../../source/transforms.rst:986
 msgid ""
 "The `old_widget` and `new_widget` keyword-able parameters (meaning that they "
 "should not be positional-only) have a special use as part of :ref:`atl-"
@@ -1144,11 +1240,11 @@ msgstr ""
 "`old_widget` と `new_widget` の (位置専用にすべきではない) キーワードにも出来"
 "るパラメーター は、 :ref:`atl-transitions` の一部として特別な用途があります。"
 
-#: ../../source/transforms.rst:925
+#: ../../source/transforms.rst:994
 msgid "Warpers"
 msgstr "ワーパー"
 
-#: ../../source/transforms.rst:927
+#: ../../source/transforms.rst:996
 msgid ""
 "A warper is a function that can change the amount of time an interpolation "
 "statement considers to have elapsed. They are defined as functions from t to "
@@ -1163,11 +1259,11 @@ msgstr ""
 "1.0 になります)。 t' は0.0 から始まり、 1.0 で終るべきですが、それ以上でもそ"
 "れ以下でも可能です。デフォルトで以下のワーパーが定義されています。"
 
-#: ../../source/transforms.rst:936
+#: ../../source/transforms.rst:1005
 msgid "``pause``"
 msgstr "``pause``"
 
-#: ../../source/transforms.rst:935
+#: ../../source/transforms.rst:1004
 msgid ""
 "Pause, then jump to the new value. If ``t == 1.0``, ``t' = 1.0``. Otherwise, "
 "``t' = 0.0``."
@@ -1175,19 +1271,19 @@ msgstr ""
 "一時停止し、新しい値に飛びます。 ``t == 1.0`` なら ``t' = 1.0``, そうでなけれ"
 "ば ``t' = 0.0`` です。"
 
-#: ../../source/transforms.rst:939
+#: ../../source/transforms.rst:1008
 msgid "``linear``"
 msgstr "``linear``"
 
-#: ../../source/transforms.rst:939
+#: ../../source/transforms.rst:1008
 msgid "Linear interpolation. ``t' = t``"
 msgstr "線形補間です。 ``t' = t``"
 
-#: ../../source/transforms.rst:942
+#: ../../source/transforms.rst:1011
 msgid "``ease``"
 msgstr "``ease``"
 
-#: ../../source/transforms.rst:942
+#: ../../source/transforms.rst:1011
 msgid ""
 "Start slow, speed up, then slow down. ``t' = .5 - math.cos(math.pi * t) / "
 "2.0``"
@@ -1195,26 +1291,26 @@ msgstr ""
 "最初は遅く、徐々に加速し、それから徐々減速します。 ``t' = .5 - math.cos(math."
 "pi * t) / 2.0``"
 
-#: ../../source/transforms.rst:945
+#: ../../source/transforms.rst:1014
 msgid "``easein``"
 msgstr "``easein``"
 
-#: ../../source/transforms.rst:945
+#: ../../source/transforms.rst:1014
 msgid ""
 "Start fast, then slow down. ``t' = math.cos((1.0 - t) * math.pi / 2.0)``"
 msgstr ""
 "最初は速く、徐々に減速します。 ``t' = math.cos((1.0 - t) * math.pi / 2.0)``"
 
-#: ../../source/transforms.rst:948
+#: ../../source/transforms.rst:1017
 msgid "``easeout``"
 msgstr "``easeout``"
 
-#: ../../source/transforms.rst:948
+#: ../../source/transforms.rst:1017
 msgid "Start slow, then speed up. ``t' = 1.0 - math.cos(t * math.pi / 2.0)``"
 msgstr ""
 "最初は遅く、徐々に加速します。 ``t' = 1.0 - math.cos(t * math.pi / 2.0)``"
 
-#: ../../source/transforms.rst:950
+#: ../../source/transforms.rst:1019
 msgid ""
 "In addition, most of Robert Penner's easing functions are supported. To make "
 "the names match those above, the functions have been renamed somewhat. "
@@ -1448,7 +1544,7 @@ msgstr "easeout_quint"
 msgid "easeIn_quint"
 msgstr "easeIn_quint"
 
-#: ../../source/transforms.rst:957
+#: ../../source/transforms.rst:1026
 msgid ""
 "These warpers can be accessed in the ``_warper`` read-only module, which "
 "contains the functions listed above. It is useful for things in Ren'Py which "
@@ -1459,7 +1555,7 @@ msgstr ""
 "``_warper`` からアクセス可能です。 :func:`Dissolve` のようなタイムワープ関数"
 "を受け取るものに対して有用であり次のように使えます。 ::"
 
-#: ../../source/transforms.rst:963
+#: ../../source/transforms.rst:1032
 msgid ""
 "New warpers can be defined using the ``renpy.atl_warper`` decorator, in a "
 "``python early`` block. It should be placed in a file that is parsed before "
@@ -1469,11 +1565,11 @@ msgstr ""
 "パーが定義できます。これはワーパーを使うファイルの前に読み込まれるファイル内"
 "に書きこまれていなければなりません。コードは次のようになります ::"
 
-#: ../../source/transforms.rst:977
+#: ../../source/transforms.rst:1046
 msgid "Replacing Transforms"
 msgstr "transofrm の置き換え"
 
-#: ../../source/transforms.rst:979
+#: ../../source/transforms.rst:1048
 msgid ""
 "When an ATL transform, a built-in transform or a transform defined using "
 "the :class:`Transform` class is replaced by another transform of these "
@@ -1486,7 +1582,7 @@ msgstr ""
 "置き換え元 transform のプロパティーは置き換え先 transform に継承されます。こ"
 "の継承は、他の種類の transform には適用されません。"
 
-#: ../../source/transforms.rst:984
+#: ../../source/transforms.rst:1053
 msgid ""
 "When the :ref:`show statement <show-statement>` has multiple transforms in "
 "the ``at`` list, the transforms are matched from last to first, until one "
@@ -1496,7 +1592,7 @@ msgstr ""
 "transform がある場合、 transform は最後から最初に、1 つのリストがなくなるまで"
 "対応します。例えば ::"
 
-#: ../../source/transforms.rst:992
+#: ../../source/transforms.rst:1061
 msgid ""
 "The ``c`` transform will be replaced by ``e``, the ``b`` transform will be "
 "replaced by ``d``, and nothing replaces the ``a`` transform."
@@ -1504,7 +1600,7 @@ msgstr ""
 "``c`` transform は ``e`` で、 ``b`` transform は ``d`` で置き換えられ、 "
 "``a`` transform は置き換えられません。"
 
-#: ../../source/transforms.rst:995
+#: ../../source/transforms.rst:1064
 msgid ""
 "At the moment of replacement, if both transforms are of suitable kinds, the "
 "values of the properties of the old transform are copied to the new "
@@ -1515,11 +1611,11 @@ msgstr ""
 "ティーの値が新しい transform にコピーされます。古い transform がアニメーショ"
 "ンされていた場合は、現在の中間値が継承されます。例 ::"
 
-#: ../../source/transforms.rst:1014
+#: ../../source/transforms.rst:1083
 msgid ""
 "In this example, the image will bounce from left to right and back until the "
 "player clicks. When that happens, the ``xalign`` property of the ``bounce`` "
-"transform will be used to initialize the ``xaalign`` property of the "
+"transform will be used to initialize the ``xalign`` property of the "
 "``headright`` transform, and so the image will move from where it was when "
 "the player first clicked."
 msgstr ""
@@ -1528,7 +1624,7 @@ msgstr ""
 "``headright`` transform の ``xalign`` プロパティーを初期化するので、画像はプ"
 "レイヤーが最初にクリックしたときの位置から移動します。"
 
-#: ../../source/transforms.rst:1020
+#: ../../source/transforms.rst:1089
 msgid ""
 "The position properties (:tpref:`xpos`, :tpref:`ypos`, :tpref:`xanchor`, :"
 "tpref:`yanchor`, and properties setting them such as :tpref:`xalign` or :"
@@ -1543,27 +1639,29 @@ msgstr ""
 "子に設定された値は親に設定された値を上書きします。これは、displayable が 1 つ"
 "の位置しか持たず、意図的に設定された位置が優先されるためです。"
 
-#: ../../source/transforms.rst:1027
+#: ../../source/transforms.rst:1096
 msgid ""
 "Finally, when a ``show`` statement does not include an ``at`` clause, the "
-"same transforms are used, so no inheritance is necessary. To prevent "
-"inheritance, hide and then show the displayable again."
+"same transforms are used, so no inheritance is necessary. To reset all "
+"transform properties, hide and then show the displayable again. To break the "
+"animations applied to a displayable (but keep the position), you can use::"
 msgstr ""
 "最後に ``show`` ステートメントが ``at`` 節を含まなければ同じ transform が使用"
-"されるので継承はありません。 Displayable を一旦非表示して再度表示すれば継承を"
-"停止できます。"
+"されるので継承はありません。 Displayable を一旦非表示して再度表示すればすべて"
+"の transform プロパティーをリセットします。 Displayable に適用されたアニメー"
+"ションを(位置はそのままに)停止しするには次を使用します ::"
 
-#: ../../source/transforms.rst:1033
+#: ../../source/transforms.rst:1110
 msgid "The Transform Class"
 msgstr "Transform クラス"
 
-#: ../../source/transforms.rst:1035
+#: ../../source/transforms.rst:1112
 msgid ""
 "One equivalent to to the simplest ATL transforms is the Transform class."
 msgstr ""
 "最も単純な ATL transform に相当するものの 1 つは、Transform クラスです。"
 
-#: ../../source/transforms.rst:1039
+#: ../../source/transforms.rst:1116
 msgid ""
 "Creates a transform which applies operations such as cropping, rotation, "
 "scaling or alpha-blending to its child. A transform object has fields "
@@ -1575,15 +1673,15 @@ msgstr ""
 "`transform プロパティー <transform-properties>` に対応するフィールドを持ちま"
 "す。"
 
-#: ../../source/transforms.rst:1045
+#: ../../source/transforms.rst:1122
 msgid "`child`"
 msgstr "`child`"
 
-#: ../../source/transforms.rst:1045
+#: ../../source/transforms.rst:1122
 msgid "The child the transform applies to."
 msgstr "transform が適用される子"
 
-#: ../../source/transforms.rst:1049
+#: ../../source/transforms.rst:1126
 msgid ""
 "If not None, this function will be called when the transform is rendered, "
 "with three positional arguments:"
@@ -1591,19 +1689,19 @@ msgstr ""
 "None または transform がレンダリングされるときに呼び出される関数を設定しま"
 "す。関数は3つの引数で呼び出されます。 :"
 
-#: ../../source/transforms.rst:1052
+#: ../../source/transforms.rst:1129
 msgid "The transform object."
 msgstr "transform オブジェクト"
 
-#: ../../source/transforms.rst:1053
+#: ../../source/transforms.rst:1130
 msgid "The shown timebase, in seconds."
 msgstr "秒数での出現時間軸"
 
-#: ../../source/transforms.rst:1054
+#: ../../source/transforms.rst:1131
 msgid "The animation timebase, in seconds."
 msgstr "秒数でのアニメーション時間軸"
 
-#: ../../source/transforms.rst:1056
+#: ../../source/transforms.rst:1133
 msgid ""
 "The function should return a delay, in seconds, after which it will be "
 "called again, or None to be called again at the start of the next "
@@ -1612,7 +1710,7 @@ msgstr ""
 "関数が秒数を返すなら、その秒数後再度呼び出され、 None なら次のインタラクショ"
 "ン開始時に再度呼び出されます。"
 
-#: ../../source/transforms.rst:1060
+#: ../../source/transforms.rst:1137
 msgid ""
 "This function should not have side effects other than changing the Transform "
 "object in the first argument, and may be called at any time with any value "
@@ -1621,7 +1719,7 @@ msgstr ""
 "この関数は第一引数の Transform オブジェクトの変更の他には副作用を持つべきでは"
 "なく、予測のためにいつどの数値で呼び出されるか分かりません。"
 
-#: ../../source/transforms.rst:1064
+#: ../../source/transforms.rst:1141
 msgid ""
 "Additional keyword arguments are values that transform properties are set "
 "to. These particular transform properties will be set each time the "
@@ -1638,7 +1736,7 @@ msgstr ""
 "は、 `function` パラメーターとして渡された関数内や :meth:`update` メソッドを"
 "呼び出す直前に設定して、変更できます。"
 
-#: ../../source/transforms.rst:1074
+#: ../../source/transforms.rst:1151
 msgid ""
 "This attribute is set to true when the function is called, to indicate that "
 "the transform is being hidden."
@@ -1646,7 +1744,7 @@ msgstr ""
 "この属性は関数が呼び出されると True に設定され、その transform が非表示されて"
 "いることを示します。"
 
-#: ../../source/transforms.rst:1079
+#: ../../source/transforms.rst:1156
 msgid ""
 "If ``hide_request`` is true, this can be set to false to prevent the "
 "transform from being hidden."
@@ -1654,13 +1752,13 @@ msgstr ""
 "``hide_request`` が True なら、これを False に設定して transform が非表示され"
 "ないようにできます。"
 
-#: ../../source/transforms.rst:1084
+#: ../../source/transforms.rst:1161
 msgid ""
 "Call this method with a new `child` to change the child of this transform."
 msgstr ""
 "新しい `child` でこのメソッドを呼び出すと、この transform の子を変更します。"
 
-#: ../../source/transforms.rst:1089
+#: ../../source/transforms.rst:1166
 msgid ""
 "This should be called when a transform property field is updated outside of "
 "the function passed as the `function` argument, to ensure that the change "
@@ -1669,11 +1767,11 @@ msgstr ""
 "`function` 引数として渡された関数以外から transform プロパティーフィールドが"
 "更新されるときには、これを呼び出して変更を確実に反映する必要があります。"
 
-#: ../../source/transforms.rst:1096
+#: ../../source/transforms.rst:1173
 msgid "Callables as transforms"
 msgstr "Transform としての Callable"
 
-#: ../../source/transforms.rst:1098
+#: ../../source/transforms.rst:1175
 msgid ""
 "Finally, simple Python callables can be used as transforms. These callables "
 "should take a single :doc:`displayable <displayables>` as an argument, and "
@@ -1683,7 +1781,7 @@ msgstr ""
 "callable は、引数として 1 つの Displayable を取り、新しい Displayable を返す"
 "必要があります。例 ::"
 
-#: ../../source/transforms.rst:1111
+#: ../../source/transforms.rst:1188
 msgid ""
 "That means that certain builtins which take a displayable and return a "
 "displayable, such as :func:`Flatten`, are also transforms and can be used as "

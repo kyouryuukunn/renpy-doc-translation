@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 22:08+0900\n"
-"PO-Revision-Date: 2024-08-07 22:26+0900\n"
+"PO-Revision-Date: 2024-08-12 11:09+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -40,36 +40,45 @@ msgid ""
 "providing a way of processing the sound coming out of audio channels. The "
 "audio filter system is based on webaudio, and includes the following filters:"
 msgstr ""
+"このリリースでは、Ren'Py に :doc:`オーディオフィルターシステム "
+"<audio_filter>` が追加され、オーディオチャンネルから出力されるサウンドの処理"
+"方法が提供されるようになります。オーディオフィルターシステムは webaudio に基"
+"づいており、次のフィルターが含まれています。 :"
 
 #: ../../source/changelog.rst:19
 msgid ""
 "Biquad, a way of implementing Lowpass, Highpass, Notch, Peaking, Lowshelf, "
 "Highshelf, and Allpass filters."
 msgstr ""
+"Biquad( 双二次)フィルター: ローパス、ハイパス、ノッチ、ピーキング、ローシェル"
+"フ、ハイシェルフ、オールパス フィルターを実装するフィルター"
 
 #: ../../source/changelog.rst:20
 msgid "Comb, a delay line with filtering and feedback."
-msgstr ""
+msgstr "コムフィルター: フィルタリングとフィードバックを備えた遅延フィルター"
 
 #: ../../source/changelog.rst:21
 msgid "Delay, a delay line without the feedback."
-msgstr ""
+msgstr "ディレイフィルター: フィードバックのない遅延フィルター"
 
 #: ../../source/changelog.rst:22
 msgid "Mix, a way of mixing two audio streams."
 msgstr ""
+"ミックスフィルター: 2つのオーディオストリームをミキシングするフィルター"
 
 #: ../../source/changelog.rst:23
 msgid "Sequence, a way of applying more than one filter to audio."
-msgstr ""
+msgstr "シーケンスフィルター: オーディオに複数のフィルターを適用するフィルター"
 
 #: ../../source/changelog.rst:24
 msgid "WetDry, a way of filtering a stream with a wet and dry control."
 msgstr ""
+"WetDryフィルター: ウェット(フィルター適用後の出力)とドライ(フィルター未適用の"
+"出力)をコントロールするフィルターです。"
 
 #: ../../source/changelog.rst:25
 msgid "Reverb, a way of applying artifical reverb to the audio."
-msgstr ""
+msgstr "リバーブ オーディオに人工的な残響を適用する方法です。"
 
 #: ../../source/changelog.rst:29
 msgid "Text Shaders"
@@ -84,6 +93,12 @@ msgid ""
 "example, the dissolve text shader causes characters to dissolve in from left "
 "to right, rather than showing all at once."
 msgstr ""
+"このリリースでは、 :doc:`text shader <textshaders>` のサポートが追加されてい"
+"ます。これはレンダリングシステムから提供される情報を使用してテキストに適用さ"
+"れる OpenGL シェーダーです。これの大きな利点は、Ren'Py のスローテキスト表示方"
+"法を他のものに変更できるようになったことです。たとえば、 dissolve テキスト "
+"シェーダを使用すると、文字は一度にすべて表示されるのではなく、左から右にディ"
+"ゾルブされます。"
 
 #: ../../source/changelog.rst:36
 msgid ""
@@ -91,6 +106,9 @@ msgid ""
 "channel. Text shaders can also adjust the position of the text - for "
 "example, the jitter shader causes text to bounce around."
 msgstr ""
+"テキスト シェーダーは、アルファ チャネルを含むテキストの色を処理できます。テ"
+"キスト シェーダは、テキストの位置を調整することもできます - 例えば、ジッター "
+"シェーダはテキストを飛び跳ねさせます。"
 
 #: ../../source/changelog.rst:39
 msgid ""
@@ -99,6 +117,10 @@ msgid ""
 "variable. A text block should either use text shaders or not - mixing is not "
 "supported."
 msgstr ""
+"テキストシェーダーは、 {shader} テキストタグ、:propref:`textshader` スタイ"
+"ル、または :var:`config.default_textshader` 変数を使用して導入できます。テキ"
+"ストブロックは、テキストシェーダーを使用するかどうかのどちらかにする必要があ"
+"り、混合はサポートされていません。"
 
 #: ../../source/changelog.rst:43
 msgid ""
@@ -106,6 +128,9 @@ msgid ""
 "register_text_shader` function. These have access to new uniforms and "
 "attributes that are appopriate to text display."
 msgstr ""
+"カスタムテキストシェーダーは、:func:`renpy.register_text_shader` 関数を使用し"
+"てサポートされます。これらは、テキスト表示に適した新しいユニフォームと属性に"
+"アクセスできます。"
 
 #: ../../source/changelog.rst:48
 msgid "Other Shader Changes"
