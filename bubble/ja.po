@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 8.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-16 20:23+0900\n"
-"PO-Revision-Date: 2024-07-16 20:45+0900\n"
+"POT-Creation-Date: 2024-08-23 19:49+0900\n"
+"PO-Revision-Date: 2024-08-23 21:16+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -201,21 +201,21 @@ msgstr ""
 "データベースファイルは game ディレクトリに配置されており、吹き出しの情報を格"
 "納しています。"
 
-#: ../../source/bubble.rst:93
+#: ../../source/bubble.rst:92
+msgid ""
+"This is a list of statements that will automatically cause retained bubbles "
+"to be cleared."
+msgstr ""
+"こちらは、保持されたバブルを自動的にクリアするステートメントのリストです。"
+
+#: ../../source/bubble.rst:96
 msgid ""
 "The granularity of the grid that's used to position and size speech bubbles, "
 "in the horizontal direction."
 msgstr ""
 "水平方向での吹き出しの配置とサイズ決めに使用されるグリッドの細かさです。"
 
-#: ../../source/bubble.rst:98
-msgid ""
-"The granularity of the grid that's used to position and size speech bubbles, "
-"in the vertical direction."
-msgstr ""
-"垂直方向での吹き出しの配置とサイズ決めに使用されるグリッドの細かさです。"
-
-#: ../../source/bubble.rst:103
+#: ../../source/bubble.rst:101
 msgid ""
 "This is the default area that speech bubbles are placed in, if no other area "
 "is specified. This is a tuple of the form (x, y, w, h), where each value is "
@@ -224,7 +224,36 @@ msgstr ""
 "他のエリアが指定されなければ吹き出しが配置されるデフォルトのエリアです。これ"
 "は (x, y, w, h) の形式のタプルであり、各値はグリッドのセルの番号です。"
 
-#: ../../source/bubble.rst:110
+#: ../../source/bubble.rst:107
+msgid ""
+"This is a map from the name of a set of properties to a (left, top, right, "
+"bottom) tuple. If found in this set, the area of the speech bubble is "
+"expanded by the given number of pixels."
+msgstr ""
+"これはプロパティーのセット名から (left, top, right, bottom) のタプルへのマッ"
+"プです。このセットにあれば、その吹き出しのエリアは指定のピクセル数まで拡張さ"
+"れます。"
+
+#: ../../source/bubble.rst:111
+msgid ""
+"This makes the speech bubble bigger than the area the creator dragged out. "
+"The intent is that this can be used to drag out the body of the speech "
+"bubble without concern for the tail, and also for the text itself to stay "
+"put when the set of properties is changed and the tail moves."
+msgstr ""
+"これは吹き出しを制作者が膨らませたより大きくします。これにより尻尾を考慮せず"
+"に吹き出しを膨らませられ、テキスト自体もプロパティーセットが変更されたり尻尾"
+"が移動したときでもその場にとどまれます。"
+
+#: ../../source/bubble.rst:116
+msgid "By default, this is::"
+msgstr "これはデフォルトでは次となります。 ::"
+
+#: ../../source/bubble.rst:127
+msgid "The layer that non-retained bubbles are placed on."
+msgstr "保持されない吹き出しが配置されるレイヤー"
+
+#: ../../source/bubble.rst:131
 msgid ""
 "These are properties, apart from the area, that can be used to customize the "
 "speech bubble. This is a map from the name of a set of properties to a "
@@ -236,7 +265,7 @@ msgstr ""
 "これらのプロパティーはキャラクターに与えられたものよりも優先され、 "
 "``bubble`` スクリーンに渡されます。"
 
-#: ../../source/bubble.rst:115
+#: ../../source/bubble.rst:136
 msgid ""
 "This uses the same prefixing system as :func:`Character` does. Properties "
 "beginning with ``window_`` have the prefix removed, and are passed to the "
@@ -255,11 +284,11 @@ msgstr ""
 "様に扱われてキャラクター名に渡されます。 ``show_`` を持つプロパティーは "
 "bubble スクリーンへの引数として渡されます。"
 
-#: ../../source/bubble.rst:124
+#: ../../source/bubble.rst:145
 msgid "In a new game, screens.rpy includes::"
 msgstr "新規ゲームの screens.rpy は次を含みます ::"
 
-#: ../../source/bubble.rst:150
+#: ../../source/bubble.rst:171
 msgid ""
 "The bubble.frame variable is just used to make defining bubble.properties "
 "easier. Then for each of the four styles of bubble, the bubble is flipped so "
@@ -271,7 +300,7 @@ msgstr ""
 "位置に来るようにするとともに、パディングを調整して尻尾のための余白を残してい"
 "ます。"
 
-#: ../../source/bubble.rst:157
+#: ../../source/bubble.rst:178
 msgid ""
 "This is a list of the names of the sets of properties, in the order they "
 "should be cycled through in the speech bubble editor. If the names of the "
@@ -282,7 +311,7 @@ msgstr ""
 "プロパティーセット名が指定されないと、プロパティーはアルファベット順のサイク"
 "ルになります。"
 
-#: ../../source/bubble.rst:163
+#: ../../source/bubble.rst:184
 msgid ""
 "If not None, this should be a function that takes an image tag, and returns "
 "a list or tuple of property names that should be used for that image tag, in "
@@ -295,43 +324,22 @@ msgstr ""
 "ればなりません。これは、 bubble.properties_order よりも優先され、キャラクター"
 "ごとに bubble プロパティーのリストをカスタマイズするために使用できます。"
 
-#: ../../source/bubble.rst:171
+#: ../../source/bubble.rst:192
+msgid "The layer that retained bubbles are placed on."
+msgstr "保持される吹き出しが配置されるレイヤー"
+
+#: ../../source/bubble.rst:196
 msgid ""
-"This is a map from the name of a set of properties to a (left, top, right, "
-"bottom) tuple. If found in this set, the area of the speech bubble is "
-"expanded by the given number of pixels."
+"The granularity of the grid that's used to position and size speech bubbles, "
+"in the vertical direction."
 msgstr ""
-"これはプロパティーのセット名から (left, top, right, bottom) のタプルへのマッ"
-"プです。このセットにあれば、その吹き出しのエリアは指定のピクセル数まで拡張さ"
-"れます。"
+"垂直方向での吹き出しの配置とサイズ決めに使用されるグリッドの細かさです。"
 
-#: ../../source/bubble.rst:175
-msgid ""
-"This makes the speech bubble bigger than the area the creator dragged out. "
-"The intent is that this can be used to drag out the body of the speech "
-"bubble without concern for the tail, and also for the text itself to stay "
-"put when the set of properties is changed and the tail moves."
-msgstr ""
-"これは吹き出しを制作者が膨らませたより大きくします。これにより尻尾を考慮せず"
-"に吹き出しを膨らませられ、テキスト自体もプロパティーセットが変更されたり尻尾"
-"が移動したときでもその場にとどまれます。"
-
-#: ../../source/bubble.rst:180
-msgid "By default, this is::"
-msgstr "これはデフォルトでは次となります。 ::"
-
-#: ../../source/bubble.rst:191
-msgid ""
-"This is a list of statements that will automatically cause retained bubbles "
-"to be cleared."
-msgstr ""
-"こちらは、保持されたバブルを自動的にクリアするステートメントのリストです。"
-
-#: ../../source/bubble.rst:197
+#: ../../source/bubble.rst:203
 msgid "Bubble Screen"
 msgstr "Bubble スクリーン"
 
-#: ../../source/bubble.rst:199
+#: ../../source/bubble.rst:205
 msgid ""
 "The default ``bubble`` screen can be found in ``screens.rpy``, and is "
 "similar to the default ``say`` screen::"
@@ -339,7 +347,7 @@ msgstr ""
 "デフォルトの ``bubble`` スクリーンは ``screens.rpy`` にあり、デフォルトの "
 "``say`` スクリーンに似ています。 ::"
 
-#: ../../source/bubble.rst:220
+#: ../../source/bubble.rst:226
 msgid ""
 "It's separate from the say screen as it uses its own set of styles, "
 "including ``bubble_window``, ``bubble_what``, ``bubble_namebox``, and "
@@ -351,7 +359,7 @@ msgstr ""
 "これらのスタイルを直接カスタマイズするならば :var:`bubble.properties` のすべ"
 "てのプロパティーセットのプロパティーを設定しなくても良いです。"
 
-#: ../../source/bubble.rst:225
+#: ../../source/bubble.rst:231
 msgid ""
 "If you'd like to apply effects to the speech bubble, you can do so by adding "
 "a transform to the bubble screen that accepts the show and hide transform "
@@ -360,11 +368,11 @@ msgstr ""
 "吹き出しにエフェクトを適用したければ、次のように表示と非表示の transform イベ"
 "ントを受け入れる transform を bubble screen に追加します。 ::"
 
-#: ../../source/bubble.rst:257
+#: ../../source/bubble.rst:263
 msgid "Adding Bubble Support to a Game"
 msgstr "吹き出しのサポートをゲームに追加する"
 
-#: ../../source/bubble.rst:259
+#: ../../source/bubble.rst:265
 msgid ""
 "Games made before the release of Ren'Py 8.1 won't include the default "
 "screens and settings required for the speech bubble system. There are two "
@@ -374,13 +382,13 @@ msgstr ""
 "ンと設定がありません。これの修正に2ステップかかります。まず次をダウンロードし"
 "てください :"
 
-#: ../../source/bubble.rst:263
+#: ../../source/bubble.rst:269
 msgid ""
 "https://raw.githubusercontent.com/renpy/renpy/master/gui/game/gui/bubble.png"
 msgstr ""
 "https://raw.githubusercontent.com/renpy/renpy/master/gui/game/gui/bubble.png"
 
-#: ../../source/bubble.rst:264
+#: ../../source/bubble.rst:270
 msgid ""
 "https://raw.githubusercontent.com/renpy/renpy/master/gui/game/gui/"
 "thoughtbubble.png"
@@ -388,7 +396,7 @@ msgstr ""
 "https://raw.githubusercontent.com/renpy/renpy/master/gui/game/gui/"
 "thoughtbubble.png"
 
-#: ../../source/bubble.rst:266
+#: ../../source/bubble.rst:272
 msgid ""
 "And place the files in the ``game/gui`` directory of your game. Then, add "
 "this to the end of screens.rpy::"
