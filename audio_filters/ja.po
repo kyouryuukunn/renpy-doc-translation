@@ -1,0 +1,497 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2024, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 8.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-11 13:14+0900\n"
+"PO-Revision-Date: 2024-05-12 09:19+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: ../../source/audio_filters.rst:2 ../../source/audio_filters.rst:62
+msgid "Audio Filters"
+msgstr "オーディオフィルター"
+
+#: ../../source/audio_filters.rst:4
+msgid ""
+"Audio filters allow a game to change the sound on a channel from what is "
+"present in an audio file. This can be used to add effects to the sound, "
+"including reverb, delay/echo, and high-pass/low-pass filters."
+msgstr ""
+"オーディオフィルタによりオーディオファイルのサウンドとはチャンネルのサウンド"
+"を変更できます。リバーブ、ディレイ/エコー、ハイパス/ローパスフィルタを含むエ"
+"フェクトなどをサウンドに加えられます。"
+
+#: ../../source/audio_filters.rst:8
+msgid ""
+"Audio filters are placed in the renpy.audio.filter module. Although not "
+"strictly required, it is recommended that module be aliased to something "
+"shorter, like ``af``, using::"
+msgstr ""
+"オーディオフィルターは renpy.audio.filter モジュールにあります。厳密には必須"
+"ではありませんが、 ``af`` のような短いエイリアスをモジュールに付けるようお勧"
+"めします ::"
+
+#: ../../source/audio_filters.rst:14
+msgid ""
+"The filters can then be invoked using the :func:`renpy.music."
+"set_audio_filter` function, like::"
+msgstr ""
+":func:`renpy.music.set_audio_filter` 関数を使って、次のようにフィルタを呼び出"
+"せます。 ::"
+
+#: ../../source/audio_filters.rst:19
+msgid ""
+"By default, the filter takes effect at the start of the next audio file "
+"queued or played. If you want to apply the filter to the currently playing "
+"and queued audio, you can use the `replace` argument::"
+msgstr ""
+"デフォルトでは、フィルターはキューに入れられた、あるいは再生された次のオー"
+"ディオファイルの開始時に有効になります。現在再生中またはキューに入っている"
+"オーディオにフィルタを適用したい場合は、 `replace` 引数を使います ::"
+
+#: ../../source/audio_filters.rst:25
+msgid "This will apply the filter to the audio as soon as possible."
+msgstr "これは、できるだけ早くオーディオにフィルタを適用します。"
+
+#: ../../source/audio_filters.rst:27
+msgid ""
+"Finally, you can remove a filter from a channel by passing None as the "
+"filter::"
+msgstr ""
+"最後に、フィルターに None を渡せば、チャンネルからフィルタを削除できます ::"
+
+#: ../../source/audio_filters.rst:31
+msgid "(It's also possible to give None with `replace` set to True.)"
+msgstr "(`replace` を True にして None を渡すことも出来ます)"
+
+#: ../../source/audio_filters.rst:35
+msgid "Filter Reuse"
+msgstr "フィルターの再使用"
+
+#: ../../source/audio_filters.rst:37
+msgid ""
+"When a filter is set on a channel, it will filter all audio played on that "
+"channel. Specifically, the Comb, Delay, and Reverb filters will continue to "
+"output information from old audio files for some time after a new audio file "
+"has started playing, provided the filter is not changed."
+msgstr ""
+"チャンネルにフィルターを設定すると、そのチャンネルで再生されるすべてのオー"
+"ディオにフィルタが適用されます。具体的には、コムフィルター、ディレイフィル"
+"ター、リバーブフィルターがフィルターが変更されない限り、新しいオーディオファ"
+"イルの再生が開始された後も、しばらくの間、古いオーディオファイルから情報を出"
+"力し続けます。"
+
+#: ../../source/audio_filters.rst:43
+msgid ""
+"This means that Ren'Py is storing audio information inside the filter "
+"object. Because of this, it is generally not a good idea to share filter "
+"objects between channels, or to use a filter object multiple times with a "
+"single channel."
+msgstr ""
+"これは Ren'Py がオーディオ情報を filter オブジェクト内に格納しているためで"
+"す。一般に、チャネル間でフィルター オブジェクトを共有したり、1 つのチャネルに"
+"あるフィルター オブジェクトを複数回使用したりすることはお勧めできません。"
+
+#: ../../source/audio_filters.rst:50
+msgid "Silence Padding"
+msgstr "無音パディング"
+
+#: ../../source/audio_filters.rst:52
+msgid ""
+"When an audio filter is active and the last queued sound on a channel "
+"finises playing, Ren'Py will add 2 seconds of silence to the channel, to "
+"ensure that delay and reverb filters have time to finish playing."
+msgstr ""
+"オーディオフィルターがアクティブで、チャンネルの最後にキューに入れられたサウ"
+"ンドが再生を終了すると、Ren'Py はチャンネルに 2 秒間の無音を追加し、ディレイ"
+"フィルターとリバーブフィルターが再生を終了する時間を確保します。"
+
+#: ../../source/audio_filters.rst:56
+msgid "If you need more silence, it can be queued with::"
+msgstr "さらに無音が必要な場合は、次のようにキューに入れられます。 ::"
+
+#: ../../source/audio_filters.rst:64
+msgid ""
+"Whenever a filter is accepted, a list may be given instead, to represent a :"
+"class:`renpy.audio.filter.Sequence` of those filters. So writing::"
+msgstr ""
+"フィルターが受け取られるところでは、代わりにリストでも指定できます。これはそ"
+"れらのフィルターの組み合わせである :class:`renpy.audio.filter.Sequence` を表"
+"します。つまり ::"
+
+#: ../../source/audio_filters.rst:69
+msgid "is equivalent to::"
+msgstr "これは次と等しいです ::"
+
+#: ../../source/audio_filters.rst:77
+msgid ""
+"Apart from that, the audio filters consist of the following classes. It's "
+"not possible to define your own, for performance reasons."
+msgstr ""
+"それとは別に、オーディオフィルターは次のクラスで構成されています。パフォーマ"
+"ンス上の理由から、ユーザーが独自に定義はできません。"
+
+#: ../../source/inc/audio_filter:5
+msgid ""
+"An allpass filter allows all frequencies through, but changes the phase "
+"relationship between the various frequencies."
+msgstr ""
+"オールパスフィルターはすべての周波数を通過させますが、さまざまな周波数間の位"
+"相関係を変更します。"
+
+#: ../../source/inc/audio_filter:10 ../../source/inc/audio_filter:22
+#: ../../source/inc/audio_filter:66 ../../source/inc/audio_filter:78
+#: ../../source/inc/audio_filter:89 ../../source/inc/audio_filter:101
+#: ../../source/inc/audio_filter:132 ../../source/inc/audio_filter:148
+msgid "`frequency`"
+msgstr "`frequency`"
+
+#: ../../source/inc/audio_filter:10
+msgid "The frequency at the center of the phase change."
+msgstr "位相変化の中心にある周波数です。"
+
+#: ../../source/inc/audio_filter:13 ../../source/inc/audio_filter:25
+#: ../../source/inc/audio_filter:69 ../../source/inc/audio_filter:92
+#: ../../source/inc/audio_filter:135 ../../source/inc/audio_filter:152
+msgid "`q`"
+msgstr "`q`"
+
+#: ../../source/inc/audio_filter:13
+msgid ""
+"Controls the sharpness of the phase shift. The higher the value, the sharper "
+"the phase shift."
+msgstr ""
+"位相シフトのシャープネスをコントロールします。値が大きいほど、位相シフトが急"
+"になります。"
+
+#: ../../source/inc/audio_filter:18
+msgid "A bandpass filter."
+msgstr "バンドパスフィルター"
+
+#: ../../source/inc/audio_filter:22 ../../source/inc/audio_filter:132
+#: ../../source/inc/audio_filter:148
+msgid "The center frequency."
+msgstr "中心周波数。"
+
+#: ../../source/inc/audio_filter:25
+msgid ""
+"Controls the width of the band. The width becomes narrower as the value of Q "
+"increases."
+msgstr ""
+"バンドの幅をコントロールします。Qの値が大きくなると、幅は狭くなります。"
+
+#: ../../source/inc/audio_filter:30
+msgid ""
+"A comb filter. A comb filter consists of a delay that is filtered and "
+"mutiplied, mixed with its input, and then fed back into the delay, causing "
+"the filter to be applied multiple times."
+msgstr ""
+"コムフィルター。コムフィルターは、フィルタ処理され、係数が掛けられた遅延と入"
+"力との混合で構成されており、さらに遅延にフィードバックされ、フィルターが複数"
+"回適用されます。"
+
+#: ../../source/inc/audio_filter:37 ../../source/inc/audio_filter:58
+msgid "`delay`"
+msgstr "`delay`"
+
+#: ../../source/inc/audio_filter:35 ../../source/inc/audio_filter:57
+msgid ""
+"The delay, in seconds. If a list of delays is provided, each subchannel will "
+"be delayed by the corresponding amount. Each delay must be at least 0.01 "
+"seconds."
+msgstr ""
+"遅延 (秒単位)。遅延のリストが指定されると、各サブチャネルは対応する量だけ遅延"
+"します。各遅延は 0.01 秒以上でなければなりません。"
+
+#: ../../source/inc/audio_filter:41 ../../source/inc/audio_filter:208
+msgid "`filter`"
+msgstr "`filter`"
+
+#: ../../source/inc/audio_filter:40
+msgid ""
+"The filter to apply to the delayed signal. If None, the Null filter is used."
+msgstr "遅延信号に適用するフィルター。None なら、Null フィルタが使用されます。"
+
+#: ../../source/inc/audio_filter:44
+msgid "`multiplier`"
+msgstr "`multiplier`"
+
+#: ../../source/inc/audio_filter:44
+msgid "The amount to multiply the filtered signal by."
+msgstr "フィルター処理された信号に乗算する量。"
+
+#: ../../source/inc/audio_filter:48 ../../source/inc/audio_filter:174
+#: ../../source/inc/audio_filter:212
+msgid "`wet`"
+msgstr "`wet`"
+
+#: ../../source/inc/audio_filter:47
+msgid ""
+"If True, the output of the filter is the sum of the input and the filtered "
+"and multiplied signal.  If False, the output is just the filtered and "
+"muliplied signal."
+msgstr ""
+"True ならフィルターの出力は、入力とフィルター処理および乗算された信号の合計に"
+"なります。 False なら出力は単にフィルター処理と乗算された信号のみになります。"
+
+#: ../../source/inc/audio_filter:53
+msgid ""
+"This filter implements a delay. Samples that are provided to the input "
+"emerge from the output after `delay` seconds."
+msgstr ""
+"このフィルターは遅延を実装します。入力に提供されるサンプルは、 `delay` 秒後に"
+"出力から出力されます。"
+
+#: ../../source/inc/audio_filter:63
+msgid "A highpass filter with 12/dB octave rolloff."
+msgstr "12/dB オクターブロールオフのハイパスフィルターです。"
+
+#: ../../source/inc/audio_filter:66 ../../source/inc/audio_filter:89
+msgid "The cutoff frequency."
+msgstr "カットオフ周波数。"
+
+#: ../../source/inc/audio_filter:69 ../../source/inc/audio_filter:92
+msgid ""
+"Controls how peaked the response will be in decibels. For this filter type, "
+"this value is not a traditional Q, but is a resonance value in decibels."
+msgstr ""
+"応答のピークの度合いをデシベル単位で制御します。このフィルタタイプの場合、こ"
+"の値は従来のQではなく、デシベル単位の共振値です。"
+
+#: ../../source/inc/audio_filter:74
+msgid ""
+"A highshelf filter that allows all frequencies through, but boosts those "
+"above a certain frequency by a certain amount."
+msgstr ""
+"すべての周波数を通過させるが、特定の周波数を超える周波数を一定量ブーストする"
+"ハイシェルフフィルターです。"
+
+#: ../../source/inc/audio_filter:78
+msgid "The lower frequency."
+msgstr "低い周波数。"
+
+#: ../../source/inc/audio_filter:81 ../../source/inc/audio_filter:104
+#: ../../source/inc/audio_filter:155
+msgid "`gain`"
+msgstr "`gain`"
+
+#: ../../source/inc/audio_filter:81
+msgid ""
+"The amount to boost the frequencies above the lower frequency, in decibels."
+msgstr "低い周波数よりも高い周波数をブーストする量(デシベル単位)。"
+
+#: ../../source/inc/audio_filter:86
+msgid "A lowpass filter with 12/dB octave rolloff."
+msgstr "12/dBオクターブロールオフのローパスフィルター。"
+
+#: ../../source/inc/audio_filter:97
+msgid ""
+"A lowshelf filter that allows all frequencies through, but boosts those "
+"below a certain frequency by a certain amount."
+msgstr ""
+"すべての周波数を通すが、特定の周波数を下回る周波数を一定量ブーストするロー"
+"シェルフフィルター。"
+
+#: ../../source/inc/audio_filter:101
+msgid "The upper frequency."
+msgstr "上限周波数。"
+
+#: ../../source/inc/audio_filter:104
+msgid ""
+"The amount to boost the frequencies below the upper frequency, in decibels."
+msgstr "上限周波数より低い周波数をブーストする量(デシベル単位)。"
+
+#: ../../source/inc/audio_filter:109
+msgid ""
+"An audio filter that splits its input into multiple streams, applies each of "
+"its arguments to a stream, and mixes those streams by summing them together."
+msgstr ""
+"入力を複数のストリームに分割し、各引数をストリームに適用し、それらのストリー"
+"ムを合計してミックスするオーディオ フィルター。"
+
+#: ../../source/inc/audio_filter:113
+msgid "For example::"
+msgstr "例 ::"
+
+#: ../../source/inc/audio_filter:124
+msgid "An audio filter that multiplies its input by `multiplier`."
+msgstr "入力に `multiplier` を掛けるオーディオフィルター。"
+
+#: ../../source/inc/audio_filter:128
+msgid ""
+"The opposite of a bandpass filter. Frequencies inside a range surrounding "
+"`frequency` are suppressed, while other frequences are passed through."
+msgstr ""
+"バンドパスフィルターの反対です。 `frequency` を囲む範囲内の周波数はカットさ"
+"れ、他の周波数は通過します。"
+
+#: ../../source/inc/audio_filter:135
+msgid ""
+"Controls the width of the notch. The width becomes narrower as the value of "
+"q increases."
+msgstr ""
+"ノッチの幅をコントロールします。 q の値が大きくなるにつれて、幅は狭くなりま"
+"す。"
+
+#: ../../source/inc/audio_filter:140
+msgid "An audio filter that passes it's input through to its output unchanged."
+msgstr "入力を変更せずに出力に渡すオーディオ フィルターです。"
+
+#: ../../source/inc/audio_filter:144
+msgid ""
+"A peaking filter that allows all frequencies through, but boosts those "
+"around a certain frequency by a certain amount."
+msgstr ""
+"すべての周波数を通すが、特定の周波数の周りの周波数を一定量ブーストするピーキ"
+"ングフィルター。"
+
+#: ../../source/inc/audio_filter:151
+msgid ""
+"Controls the sharpness of the peak. The higher the value, the sharper the "
+"peak."
+msgstr ""
+"ピークのシャープネスをコントロールします。値が大きいほど、ピークがシャープに"
+"なります。"
+
+#: ../../source/inc/audio_filter:155
+msgid ""
+"The amount to boost the frequencies around the center frequency, in decibels."
+msgstr "中心周波数付近の周波数をブーストする量(デシベル単位)。"
+
+#: ../../source/inc/audio_filter:160
+msgid ""
+"An artificial reverb filter that simulates the sound of a room or hall, "
+"somewhat inspired by Freeverb."
+msgstr ""
+"部屋やホールの音をシミュレートする人工リバーブフィルターで、 Freeverb にいく"
+"らかインスパイアされています。"
+
+#: ../../source/inc/audio_filter:166
+msgid "`resonance`"
+msgstr "`resonance`"
+
+#: ../../source/inc/audio_filter:164
+msgid ""
+"The amount of feedback in the reverb. This should be between 0 and 1. Larger "
+"numbers make the reverb last longer. Too large values will cause the reverb "
+"to go out of control."
+msgstr ""
+"リバーブのフィードバックの量です。これは 0 から 1 の間でなければなりません。"
+"数値が大きいほど、リバーブが長持ちします。値が大きすぎると、リバーブが制御不"
+"能になります。"
+
+#: ../../source/inc/audio_filter:170
+msgid "`dampening`"
+msgstr "`dampening`"
+
+#: ../../source/inc/audio_filter:169
+msgid ""
+"This applies a lowpass filter to each reverberation, simulating the lost of "
+"high frequences as sound passes through the air."
+msgstr ""
+"これにより、各残響にローパスフィルターが適用され、音が空気中を通過するときに"
+"高周波数が失われるのをシミュレートします。"
+
+#: ../../source/inc/audio_filter:173
+msgid ""
+"A multiplier that is applied to the reverb signal before it is passed to the "
+"output."
+msgstr "リバーブ信号が出力に渡される前に適用される乗数。"
+
+#: ../../source/inc/audio_filter:179 ../../source/inc/audio_filter:215
+msgid "`dry`"
+msgstr "`dry`"
+
+#: ../../source/inc/audio_filter:177
+msgid ""
+"A multiplier that is applied to the input signal before it is passed to the "
+"output. Set this to 0.0 to only hear the reverb, not the original sound."
+msgstr ""
+"入力信号が出力に渡される前に入力信号に適用される乗数。これを 0.0 に設定する"
+"と、リバーブだけが聞こえ、元のサウンドは聞こえません。"
+
+#: ../../source/inc/audio_filter:183
+msgid "`delay_multiplier`"
+msgstr "`delay_multiplier`"
+
+#: ../../source/inc/audio_filter:182
+msgid ""
+"A multiplier that is applied to the delay times. This can be used to adjust "
+"the length of the reverb."
+msgstr "遅延時間に適用される乗数。リバーブの長さを調整するために使用できます。"
+
+#: ../../source/inc/audio_filter:187
+msgid "`delay_times`"
+msgstr "`delay_times`"
+
+#: ../../source/inc/audio_filter:186
+msgid ""
+"A list of delay times, in seconds, that are used to create the early "
+"reflections. These are used to create comb filters."
+msgstr ""
+"初期反射の作成に使用される遅延時間のリスト (秒単位)です。これらはコムフィル"
+"ターを作成するために使用されます。"
+
+#: ../../source/inc/audio_filter:191
+msgid "`delay_subchannel`"
+msgstr "`delay_subchannel`"
+
+#: ../../source/inc/audio_filter:190
+msgid ""
+"The amount of time, in seconds, that is added to each delay time to create a "
+"second subchannel. This is used to create a stereo effect."
+msgstr ""
+"2 番目のサブチャネルを作成するために各遅延時間に追加される時間 (秒単位)です。"
+"これは、ステレオ効果を作成するために使用されます。"
+
+#: ../../source/inc/audio_filter:194
+msgid "`allpass_frequences`"
+msgstr "`allpass_frequences`"
+
+#: ../../source/inc/audio_filter:194
+msgid ""
+"A list of frequences, in hertz, that are used to create allpass filters that "
+"simulate late reflections."
+msgstr ""
+"後期反射をシミュレートするオールパスフィルターの作成に使用される周波数のリス"
+"ト(ヘルツ単位)。"
+
+#: ../../source/inc/audio_filter:199
+msgid ""
+"An AudioFilter that applies its input to a sequence of filters, in order. "
+"This is used internally when a list of audiofilters is given, so it should "
+"be rare to use this directly."
+msgstr ""
+"入力を一連のフィルターに順番に適用する AudioFilter。これはオーディオフィル"
+"ターのリストが与えられたときに内部的に使用されるため、これを直接使用すること"
+"はめったにありません。"
+
+#: ../../source/inc/audio_filter:205
+msgid "A filter that mixes its input with the output of a filter."
+msgstr "入力とフィルターの出力を混合するフィルター。"
+
+#: ../../source/inc/audio_filter:208
+msgid "The filter to apply to the input."
+msgstr "入力に適用するフィルター。"
+
+#: ../../source/inc/audio_filter:211
+msgid ""
+"A multiplier, generally between 0.0 and 1.0, that controls the amount of the "
+"filter that is mixed in."
+msgstr "通常は 0.0 から 1.0 までの乗数で、混合するフィルターの量を制御します。"
+
+#: ../../source/inc/audio_filter:215
+msgid ""
+"A multiplier, generally between 0.0 and 1.0, that controls the amount of the "
+"input that is mixed in."
+msgstr "通常は 0.0 から 1.0 までの乗数で、混合される入力の量を制御します。"

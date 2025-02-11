@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012-2024, Tom Rothamel
+# This file is distributed under the same license as the Ren'Py Visual Novel Engine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ren'Py Visual Novel Engine 8.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-19 12:25+0900\n"
+"PO-Revision-Date: 2024-06-23 23:03+0900\n"
+"Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: ../../source/downloader.rst:2
+msgid "Downloader for Large Games on Mobile"
+msgstr "モバイル上の巨大なゲームのためのダウンローダー"
+
+#: ../../source/downloader.rst:4
+msgid ""
+"Platforms like Android and iOS have a limit on the size of an app that can "
+"be downloaded from their app stores. To support larger games, Ren'Py "
+"supports a downloader, which is a small game that downloads the main game."
+msgstr ""
+"Android や iOS などのプラットフォームには、アプリストアからダウンロードできる"
+"アプリのサイズに制限があります。より大きなゲームをサポートするために、ゲーム"
+"本体をダウンロードするダウンローダーとしての小さなゲームをRen'Py はサポートし"
+"ています。"
+
+#: ../../source/downloader.rst:9
+msgid "Requirements"
+msgstr "必要条件"
+
+#: ../../source/downloader.rst:11
+msgid ""
+"To make this work, you'll need a web hosting service that is reasonably "
+"capable. Uploader services like mega or game hosting sites like itch.io "
+"won't work. The downloader has been tested with a Digital Ocean droplet that "
+"runs Nginx, and also with Cloudflare's R2, which is free to host 10GB on."
+msgstr ""
+"これを動作させるには、適度な機能を備えた Web ホスティングサービスが必要で"
+"す。 mega などのアップローダーサービスや itch.io のようなゲームホスティングサ"
+"イトは機能しません。このダウンローダーは、 Nginx を実行する Digital Ocean "
+"droplet と、 10GB を無料でホストできる Cloudflare の R2 でテストされていま"
+"す。"
+
+#: ../../source/downloader.rst:16
+msgid ""
+"Specifically, the web server needs to support downloading files, and it will "
+"work better if it supports many HTTP Range requests at once."
+msgstr ""
+"具体的には、Webサーバーはファイルのダウンロードをサポートする必要があり、一度"
+"に多くのHTTP範囲リクエストをサポートすると、より適切に機能します。"
+
+#: ../../source/downloader.rst:20
+msgid "How it Works"
+msgstr "動作方法"
+
+#: ../../source/downloader.rst:22
+msgid ""
+"To use the downloader, you'll need to build two games. The first is the "
+"downloader game, which contains the Ren'Py engine and the downloader, and is "
+"what the user will get delivered to their phone."
+msgstr ""
+"このダウンローダーを使用するには、2つのゲームを構築する必要があります。1 つ目"
+"はダウンローダーゲームで、Ren'Py エンジンとダウンローダーを含み、自分のモバイ"
+"ルデバイスにユーザーが配信されるものです。"
+
+#: ../../source/downloader.rst:26
+msgid ""
+"The second is the main game, the visual novel they want to play. This will "
+"be downloaded by the downloader game, and will be installed onto the device, "
+"if present."
+msgstr ""
+"2つ目はメインゲームで、プレイしたいビジュアルノベルです。これがあればダウン"
+"ローダーゲームによってダウンロードされ、デバイスにインストールされます。"
+
+#: ../../source/downloader.rst:30
+msgid ""
+"Both need to be built with the same version of Ren'Py - if there is a "
+"mismatch, the downloader will update the main game. Other than that, it's up "
+"to the main game to update itself, which is possible now that the Ren'Py "
+"updater works on mobile platforms."
+msgstr ""
+"どちらも同じバージョンの Ren'Py でビルドする必要があります - 不一致があればダ"
+"ウンローダーはメインゲームを更新、またはメインゲームのバージョンまで自身を更"
+"新します。 Ren'Py アップデーターがモバイルプラットフォームで動作するように"
+"なったことで、これが可能になりました。"
+
+#: ../../source/downloader.rst:35
+msgid ""
+"When the downloader game starts, it checks to see if the main game is "
+"installed. If it is, and the versions are right, the main game will start. "
+"Otherwise the downloader will run and prompt the player to download the main "
+"game."
+msgstr ""
+"ダウンローダーゲームが起動すると、メインゲームがインストールされているかどう"
+"かが確認されます。インストースされており、バージョンが正しければ、メインゲー"
+"ムが始まります。そうでなければ、ダウンローダーが起動し、プレーヤーにメイン"
+"ゲームをダウンロードするように促します。"
+
+#: ../../source/downloader.rst:42
+msgid "Building and Uploading the Main Game"
+msgstr "メインゲームのビルドとアップロード"
+
+#: ../../source/downloader.rst:44
+msgid "The main change you need to make to your main game is to add the line::"
+msgstr "メインゲームに加える必要がある主な変更は、次の行の追加です。 ::"
+
+#: ../../source/downloader.rst:48
+msgid ""
+"to the top of your options.rpy file. That will add a new option that shows "
+"up to the launcher's Build Distributions screen, \"Game-Only Update for "
+"Mobile\"."
+msgstr ""
+"options.rpy ファイルの先頭に貼り付けます。これにより、ランチャーの \"Build "
+"Distribution(配布物のビルド)\" 画面に表示される新しいオプション \"Game-Only "
+"Update for Mobile(モバイル用のアップデート専用ゲーム)\" が追加されます。"
+
+#: ../../source/downloader.rst:52
+msgid ""
+"In \"Build Distributions\", check \"Game-Only Update for Mobile\". Uncheck "
+"all other build packages. Under \"Options\", make sure \"Build Updates\" is "
+"set, and that the other options are set as you like. The defaults are fine."
+msgstr ""
+"\"Build Distributions(配布物のビルド)\" で、 \"Game-Only Update for Mobile(モ"
+"バイル用のアップデート専用ゲーム)\" にチェックを入れます。他のすべてのビルド"
+"パッケージのチェックを外します。\"Options(設定)\"で、\"Build Updates(アップ"
+"デートをビルド)\" が設定されていること、および他のオプションが必要に応じて設"
+"定されていることを確認します。デフォルトで問題ありません。"
+
+#: ../../source/downloader.rst:56
+msgid "Then run the build process."
+msgstr "次に、ビルド プロセスを実行します。"
+
+#: ../../source/downloader.rst:58
+msgid ""
+"When the game is finished building, you'll have everything you need. You'll "
+"want to upload the ``updates.json``, ``updates.ecdsa``, and everything in "
+"the ``rpu`` directory to your web server. (Make sure that the rpu directory "
+"is next to the two update files, and the .rpu files are inside the ``rpu`` "
+"directory.)"
+msgstr ""
+"ゲームのビルドが完了すると、必要なものがすべて揃います。 ''updates.json'', "
+"''updates.ecdsa'' および ''rpu'' ディレクトリにあるすべてのものを Web サーバ"
+"にアップロードします(rpu ディレクトリが 2 つの更新ファイルの隣にあり、.rpu "
+"ファイルが ''rpu'' ディレクトリー内にあることを確認してください。"
+
+#: ../../source/downloader.rst:65
+msgid "Making a Downloader Game"
+msgstr "ダウンローダーゲームの作成"
+
+#: ../../source/downloader.rst:67
+msgid ""
+"The downloader game is a Ren'Py game, but it should stay well under 100MB in "
+"size. You can do anything you can in a small game - have an opening scene, "
+"play music, etc. You will need to make it separately, and build it for "
+"Android or iOS using the usual techniques."
+msgstr ""
+"ダウンローダーゲームは Ren'Py のゲームですが、サイズは 100MB をはるかに下回る"
+"べきです。オープニングシーンや音楽の再生など、小さなゲームでできることは何で"
+"もできます。これは個別に作成し、通常の手法を使用して Android または iOS 用に"
+"ビルドする必要があります。"
+
+#: ../../source/downloader.rst:72
+msgid ""
+"At the same time, it should ask the player if they want to download, mention "
+"that this can cost money if they're not on WiFi, and then download the the "
+"game."
+msgstr ""
+"同時に、プレーヤーにダウンロードするかどうかを尋ね、WiFiに接続していない場合"
+"は費用がかかる可能性があることを伝えてから、ゲームをダウンロードする必要があ"
+"ります。"
+
+#: ../../source/downloader.rst:76
+msgid ""
+"Here's an example script for a downloader game, using assets from the "
+"tutorial game::"
+msgstr ""
+"以下は、チュートリアルゲームのアセットを使用したダウンローダーゲームのスクリ"
+"プト例です。 ::"
+
+#: ../../source/downloader.rst:109
+msgid ""
+"This is pretty simple, but there are a few things. The first is that it "
+"sets :var:`config.save` to False. This is important, as it disables saving "
+"and loading, including preferences, so the downloader's saves don't "
+"influence the main game."
+msgstr ""
+"これは非常に簡単ですが、いくつかのことがあります。1つ目は、 :var:`config."
+"save` を False に設定しています。これは、設定を含むセーブとロードを無効にし、"
+"ダウンローダーの保存がメインゲームに影響を与えないようにするために重要です。"
+
+#: ../../source/downloader.rst:114
+msgid ""
+"It's also all happening in the splashscreen, to start immediately and to "
+"disable entering the game menu."
+msgstr ""
+"スプラッシュスクリーンのラベルですべて行って、すぐに起動してゲームメニューへ"
+"の入力を無効にするするようにしています。"
+
+#: ../../source/downloader.rst:117
+msgid ""
+"Early on, the game calls :func:`updater.start_game_download`, to gather "
+"information about the download. After this, the game kills some time, having "
+"Eileen say some things as the game checks to find out the size of the "
+"download."
+msgstr ""
+"早い段階で、ゲームは :func:`updater.start_game_download` を呼び出して、ダウン"
+"ロードに関する情報を収集しています。この後、ゲームがダウンロードのサイズを確"
+"認する間アイリーンにいくつかのことを言わせて時間をつぶします。"
+
+#: ../../source/downloader.rst:121
+msgid ""
+"After the player makes multiple clicks, the game may know the size of the "
+"download, or it may not, so we use a conditional to check the download size. "
+"If the real number is known, it's converted to megabytes and displayed. If "
+"not, more general text is displayed. (It would also hard-code an estimate of "
+"the download size into the game.)"
+msgstr ""
+"プレーヤーが複数回クリックした後、ゲームはダウンロードのサイズを知っている場"
+"合もあれば、知らない場合もあるため、条件を使用してダウンロード サイズを確認し"
+"ています。実数がわかっている場合は、メガバイトに変換されて表示されます。そう"
+"でない場合は、より一般的なテキストが表示されます(ゲームのダウンロードサイズの"
+"見積もりでもよいです)。"
+
+#: ../../source/downloader.rst:127
+msgid ""
+"Finally, :func:`updater.continue_game_download` is called, which starts the "
+"download process. A screen will show up, and you can't do much - but music "
+"will play, and ATL will keep running."
+msgstr ""
+"最後に、:func:`updater.continue_game_download` が呼ばれ、ダウンロードプロセス"
+"が開始されています。スクリーンが表示され、大した操作はできませんが、音楽が再"
+"生され、ATL は実行され続けます。"
+
+#: ../../source/downloader.rst:131
+msgid ""
+"When the download is complete, the main game will automatically start. If it "
+"fails, the downloader will restart, and the player will be able to try again"
+msgstr ""
+"ダウンロードが完了すると、自動的にメインゲームが始まります。失敗した場合、ダ"
+"ウンローダーは再起動し、プレーヤーは再試行できるようになります。"
+
+#: ../../source/downloader.rst:135
+msgid "Downloader Screen"
+msgstr "Downloader Screen"
+
+#: ../../source/downloader.rst:137
+msgid ""
+"The downloader is a screen that shows the progress of the download. A "
+"default screen is in :file:`renpy/common/00updater.rpy`, and can be "
+"customized by creating a copy in your game directory."
+msgstr ""
+"downloader は、ダウンロードの進行状況を示すスクリーンです。デフォルトのスク"
+"リーンは :file:`renpy/common/00updater.rpy` にあり、ゲームディレクトリにコ"
+"ピーを作成してカスタマイズできます。"
+
+#: ../../source/downloader.rst:141
+msgid "Here's the default::"
+msgstr "デフォルトはこちらになります ::"
+
+#: ../../source/downloader.rst:197
+msgid "Downloader Functions"
+msgstr "ダウンローダー関数"
+
+#: ../../source/inc/downloader:5
+msgid ""
+"Continues downloading the game data. This will loop until the download is "
+"complete, or the user exits the game."
+msgstr ""
+"ゲームデータのダウンロードを続けます。これは、ダウンロードが完了するか、ユー"
+"ザーがゲームを終了するまでループします。"
+
+#: ../../source/inc/downloader:10
+msgid ""
+"Starts downloading the game data from `url`. This begins the process of "
+"determining what needs to be downloaded, and returns an Update object."
+msgstr ""
+"`url` からゲームデータのダウンロードを開始します。これにより、ダウンロードす"
+"る必要があるものを決定するプロセスが開始され、 Update オブジェクトが返されま"
+"す。"
