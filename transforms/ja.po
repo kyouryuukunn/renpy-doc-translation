@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 20:54+0900\n"
-"PO-Revision-Date: 2024-08-19 10:37+0900\n"
+"POT-Creation-Date: 2025-02-11 10:11+0900\n"
+"PO-Revision-Date: 2025-02-14 22:47+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -173,11 +173,11 @@ msgstr "画面よりも左に配置し、画面下部に合わせます。"
 
 #: ../../source/transforms.rst:108
 msgid ""
-"Resets the transform. Places the displayable in the top-left corner of the "
-"screen, and also eliminates any zoom, rotation, or other effects."
+"Resets the transform to the default values of each property, removing any "
+"properites set before it."
 msgstr ""
-"transform をリセットします。displayable を画面の左上に配置し、ズーム、回転そ"
-"の他の効果を消去します。"
+"transform を各プロパティーのデフォルト値にリセットし、それ以前に設定されたプ"
+"ロパティーをすべて削除します。"
 
 #: ../../source/transforms.rst:113
 msgid "Aligns to the bottom-right corner of the screen."
@@ -1667,7 +1667,20 @@ msgstr "`child`"
 msgid "The child the transform applies to."
 msgstr "transform が適用される子"
 
-#: ../../source/transforms.rst:1121
+#: ../../source/transforms.rst:1122
+msgid "`reset`"
+msgstr "`reset`"
+
+#: ../../source/transforms.rst:1120
+msgid ""
+"If True, the transform will reset properties to their default values when it "
+"is shown, rather than inheriting those properties from the transforms it "
+"replaces."
+msgstr ""
+"True の場合、 transform はそれが置き換える transform からプロパティーを継承せ"
+"ず、表示時にプロパティーを既定値にリセットします。"
+
+#: ../../source/transforms.rst:1126
 msgid ""
 "If not None, this function will be called when the transform is rendered, "
 "with three positional arguments:"
@@ -1675,19 +1688,19 @@ msgstr ""
 "None または transform がレンダリングされるときに呼び出される関数を設定しま"
 "す。関数は3つの引数で呼び出されます。 :"
 
-#: ../../source/transforms.rst:1124
+#: ../../source/transforms.rst:1129
 msgid "The transform object."
 msgstr "transform オブジェクト"
 
-#: ../../source/transforms.rst:1125
+#: ../../source/transforms.rst:1130
 msgid "The shown timebase, in seconds."
 msgstr "秒数での出現時間軸"
 
-#: ../../source/transforms.rst:1126
+#: ../../source/transforms.rst:1131
 msgid "The animation timebase, in seconds."
 msgstr "秒数でのアニメーション時間軸"
 
-#: ../../source/transforms.rst:1128
+#: ../../source/transforms.rst:1133
 msgid ""
 "The function should return a delay, in seconds, after which it will be "
 "called again, or None to be called again at the start of the next "
@@ -1696,7 +1709,7 @@ msgstr ""
 "関数が秒数を返すなら、その秒数後再度呼び出され、 None なら次のインタラクショ"
 "ン開始時に再度呼び出されます。"
 
-#: ../../source/transforms.rst:1132
+#: ../../source/transforms.rst:1137
 msgid ""
 "This function should not have side effects other than changing the Transform "
 "object in the first argument, and may be called at any time with any value "
@@ -1705,7 +1718,7 @@ msgstr ""
 "この関数は第一引数の Transform オブジェクトの変更の他には副作用を持つべきでは"
 "なく、予測のためにいつどの数値で呼び出されるか分かりません。"
 
-#: ../../source/transforms.rst:1136
+#: ../../source/transforms.rst:1141
 msgid ""
 "Additional keyword arguments are values that transform properties are set "
 "to. These particular transform properties will be set each time the "
@@ -1722,7 +1735,7 @@ msgstr ""
 "は、 `function` パラメーターとして渡された関数内や :meth:`update` メソッドを"
 "呼び出す直前に設定して、変更できます。"
 
-#: ../../source/transforms.rst:1146
+#: ../../source/transforms.rst:1151
 msgid ""
 "This attribute is set to true when the function is called, to indicate that "
 "the transform is being hidden."
@@ -1730,7 +1743,7 @@ msgstr ""
 "この属性は関数が呼び出されると True に設定され、その transform が非表示されて"
 "いることを示します。"
 
-#: ../../source/transforms.rst:1151
+#: ../../source/transforms.rst:1156
 msgid ""
 "If ``hide_request`` is true, this can be set to false to prevent the "
 "transform from being hidden."
@@ -1738,13 +1751,13 @@ msgstr ""
 "``hide_request`` が True なら、これを False に設定して transform が非表示され"
 "ないようにできます。"
 
-#: ../../source/transforms.rst:1156
+#: ../../source/transforms.rst:1161
 msgid ""
 "Call this method with a new `child` to change the child of this transform."
 msgstr ""
 "新しい `child` でこのメソッドを呼び出すと、この transform の子を変更します。"
 
-#: ../../source/transforms.rst:1161
+#: ../../source/transforms.rst:1166
 msgid ""
 "This should be called when a transform property field is updated outside of "
 "the function passed as the `function` argument, to ensure that the change "
@@ -1753,11 +1766,11 @@ msgstr ""
 "`function` 引数として渡された関数以外から transform プロパティーフィールドが"
 "更新されるときには、これを呼び出して変更を確実に反映する必要があります。"
 
-#: ../../source/transforms.rst:1168
+#: ../../source/transforms.rst:1173
 msgid "Callables as transforms"
 msgstr "Transform としての Callable"
 
-#: ../../source/transforms.rst:1170
+#: ../../source/transforms.rst:1175
 msgid ""
 "Finally, simple Python callables can be used as transforms. These callables "
 "should take a single :doc:`displayable <displayables>` as an argument, and "
@@ -1767,7 +1780,7 @@ msgstr ""
 "callable は、引数として 1 つの Displayable を取り、新しい Displayable を返す"
 "必要があります。例 ::"
 
-#: ../../source/transforms.rst:1183
+#: ../../source/transforms.rst:1188
 msgid ""
 "That means that certain builtins which take a displayable and return a "
 "displayable, such as :func:`Flatten`, are also transforms and can be used as "
@@ -1775,6 +1788,13 @@ msgid ""
 msgstr ""
 "つまり、:func:`Flatten` のような特定の組み込み関数も transform であり、そのよ"
 "うに使用できます。"
+
+#~ msgid ""
+#~ "Resets the transform. Places the displayable in the top-left corner of "
+#~ "the screen, and also eliminates any zoom, rotation, or other effects."
+#~ msgstr ""
+#~ "transform をリセットします。displayable を画面の左上に配置し、ズーム、回転"
+#~ "その他の効果を消去します。"
 
 #~ msgid "``update``"
 #~ msgstr "``update``"
