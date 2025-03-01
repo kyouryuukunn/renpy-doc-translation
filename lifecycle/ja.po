@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-01 16:00+0900\n"
-"PO-Revision-Date: 2025-02-18 20:29+0900\n"
+"PO-Revision-Date: 2025-03-01 16:15+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -51,15 +51,14 @@ msgid "Script Parsing Phase"
 msgstr "スクリプト解析フェーズ"
 
 #: ../../source/lifecycle.rst:20
-#, fuzzy
 msgid ""
 "To read the game's code, Ren'Py reads each of the game's ``.rpy`` (and "
 "``_ren.py``) files one by one, in the unicode order of their filepaths. "
 "That's the \"parsing\" phase, or \"early\" phase."
 msgstr ""
 "ゲームのコードを読むために、 Ren'Py はゲームの ``.rpy`` (と ``_ren.py``) ファ"
-"イルを一つずつ読み込みます。これが \"解析\"フェーズ、または \"初期 \"フェーズ"
-"です。ファイルの読み込み順は次の通りです。 :"
+"イルを一つずつ、ファイルパスのユニコード順に読み込みます。これが \"解析"
+"\"フェーズ、または \"初期 \"フェーズです。"
 
 #: ../../source/lifecycle.rst:23
 msgid ""
@@ -90,7 +89,6 @@ msgid "Init Phase"
 msgstr "初期化フェーズ"
 
 #: ../../source/lifecycle.rst:37
-#, fuzzy
 msgid ""
 "After parsing/early phase, the \"init\" phase starts. Several statements are "
 "executed at that time, including the :ref:`init-python-statement`, the :ref:"
@@ -103,7 +101,10 @@ msgstr ""
 "解析/初期フェーズの後、\"初期化\" フェーズが開始されます。このとき、 :ref:"
 "`init-python-statement` や :ref:`define-statement` , :ref:`transform-"
 "statement` , :ref:`image-statement`, :ref:`screen-statement`, :doc:`style "
-"<style>` ステートメントなどのいくつかのステートメントが実行されます。"
+"<style>` ステートメントなどのいくつかのステートメントが実行されます。初期化"
+"フェーズは -999 から 999 までの連続したエポック、つまり初期化の優先順位に分割"
+"されます。この用語が意味するところとは逆に、低い優先順位のエポックが高い優先"
+"順位のエポックより先に実行されます。"
 
 #: ../../source/lifecycle.rst:46
 msgid ""
