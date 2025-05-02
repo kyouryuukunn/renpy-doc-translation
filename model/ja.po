@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-26 09:50+0900\n"
-"PO-Revision-Date: 2025-03-30 01:50+0900\n"
+"PO-Revision-Date: 2025-04-30 14:46+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: ../../source/model.rst:4
 msgid "Model-Based Rendering"
@@ -491,7 +491,7 @@ msgstr "mat4 (:class:`Matrix`)"
 msgid ""
 "sampler2D (a Displayabe, including strings that give Displayables, or a "
 "Render)"
-msgstr ""
+msgstr "sampler2D (Displayabe または Displayables か Render を指定する文字列)"
 
 #: ../../source/model.rst:180
 msgid ""
@@ -701,9 +701,9 @@ msgid ""
 "The default blend modes this supports are \"normal\", \"add\", \"multiply\", "
 "\"min\", and \"max\"."
 msgstr ""
-"サポートしているデフォルトのブレンドモードは \"normal\", \"add\", \"multiply"
-"\", \"min\", and \"max\" です(それぞれ通常、加算、乗算、比較(暗), 比較(明) の"
-"合成モードに相当します)。"
+"サポートしているデフォルトのブレンドモードは \"normal\", \"add\", "
+"\"multiply\", \"min\", and \"max\" です(それぞれ通常、加算、乗算、比較(暗), "
+"比較(明) の合成モードに相当します)。"
 
 #: ../../source/model.rst:311
 msgid ""
@@ -883,6 +883,9 @@ msgid ""
 "``__res`` will give a vec2 containing the underlying texture size. For "
 "example, ``u_markup__res`` will give the size of the ``u_markup`` texture."
 msgstr ""
+"加えて、 sampler uniform が利用可能なら、 ``__res`` を接尾辞に加えると、下層"
+"のテクスチャーサイズを含む vec2 が所得できます。例えば ``u_markup__res`` は "
+"``u_markup`` テクスチャーのサイズを与えます。"
 
 #: ../../source/model.rst:401
 msgid "Matrix Uniforms"
@@ -975,7 +978,6 @@ msgstr ""
 "び古いバージョンの Ren'Py との互換性のために存在します。"
 
 #: ../../source/model.rst:429
-#, fuzzy
 msgid ""
 "In addition to these methods, Ren'Py can synthesize matrices with certain "
 "functions applied when suffixes are appended to the matrix"
@@ -984,40 +986,34 @@ msgstr ""
 "数によりマトリックスを合成できます"
 
 #: ../../source/model.rst:434
-#, fuzzy
 msgid "``__inverse``"
-msgstr "``_inverse``"
+msgstr "``__inverse``"
 
 #: ../../source/model.rst:433
-#, fuzzy
 msgid ""
 "When appended to a matrix, this returns the inverse of the matrix. For "
 "example, ``u_projection__inverse`` is the inverse of the projection matrix."
 msgstr ""
 "マトリックスに追加すると、その行列の逆行列が返されます。例えば、 "
-"``u_projection_inverse`` は逆射影行列です。"
+"``u_projection_inverse`` は逆 projection 行列です。"
 
 #: ../../source/model.rst:438
-#, fuzzy
 msgid "``__transpose``"
-msgstr "``_transpose``"
+msgstr "``__transpose``"
 
 #: ../../source/model.rst:437
-#, fuzzy
 msgid ""
 "When appended to a matrix, this returns the transpose of the matrix. For "
 "example, ``u_view__transpose`` is the transpose of the view matrix."
 msgstr ""
 "マトリックスに追加すると、その行列の転置行列が返されます。例えば、 "
-"``u_view_transpose`` は射影行列の転置です。"
+"``u_view_transpose`` は view 行列の転置です。"
 
 #: ../../source/model.rst:443
-#, fuzzy
 msgid "``__inversetranspose``"
-msgstr "``_inversetranspose``"
+msgstr "``__inversetranspose``"
 
 #: ../../source/model.rst:441
-#, fuzzy
 msgid ""
 "When appended to a matrix, this returns the inverse of the transpose of the "
 "matrix. For example, ``u_model__inversetranspose`` is the inverse of the "
