@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-26 09:50+0900\n"
-"PO-Revision-Date: 2025-03-30 01:50+0900\n"
+"POT-Creation-Date: 2025-06-28 12:38+0900\n"
+"PO-Revision-Date: 2025-08-10 23:54+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -461,7 +461,7 @@ msgstr "Ren'Py では次の型の変数のみをサポートします。 :"
 
 #: ../../source/model.rst:171
 msgid "float (a Python float)"
-msgstr "float (Python float)"
+msgstr "float (Python の浮動小数点)"
 
 #: ../../source/model.rst:172
 msgid "vec2 (a tuple of 2 floats)"
@@ -476,24 +476,64 @@ msgid "vec4 (a tuple of 4 floats)"
 msgstr "vec4 ( 4 つの浮動小数のタプル)"
 
 #: ../../source/model.rst:175
+msgid "int (a Python integer)"
+msgstr "int (Python の整数)"
+
+#: ../../source/model.rst:176
+msgid "ivec2 (a tuple of 2 integers)"
+msgstr "ivec2 (2 つの整数のタプル)"
+
+#: ../../source/model.rst:177
+msgid "ivec3 (a tuple of 3 integers)"
+msgstr "ivec3 (3 つの整数のタプル)"
+
+#: ../../source/model.rst:178
+msgid "ivec4 (a tuple of 4 integers)"
+msgstr "ivec4 (4 つの整数のタプル)"
+
+#: ../../source/model.rst:179
+msgid "bool (a Python boolean)"
+msgstr "bool (Python のブール値)"
+
+#: ../../source/model.rst:180
+msgid "bvec2 (a tuple of 2 booleans)"
+msgstr "bvec2 (2 つのブール値のタプル)"
+
+#: ../../source/model.rst:181
+msgid "bvec3 (a tuple of 3 booleans)"
+msgstr "bvec3 (3 つのブール値のタプル)"
+
+#: ../../source/model.rst:182
+msgid "bvec4 (a tuple of 4 booleans)"
+msgstr "bvec4 (4 つのブール値のタプル)"
+
+#: ../../source/model.rst:183
+msgid ""
+"type[n] (an array of [n] elements of [type] (any of the types above) (for "
+"instance, int[5] would be an array of 5 integers))"
+msgstr ""
+"type[n] ([type] 型(上記いずれかの型)の [n] 要素の配列 (例えば、 int[5] は 5 "
+"つの整数の配列))"
+
+#: ../../source/model.rst:184
 msgid "mat2 (a :class:`Matrix`)"
 msgstr "mat2 (:class:`Matrix`)"
 
-#: ../../source/model.rst:176
+#: ../../source/model.rst:185
 msgid "mat3 (a :class:`Matrix`)"
 msgstr "mat3 (:class:`Matrix`)"
 
-#: ../../source/model.rst:177
+#: ../../source/model.rst:186
 msgid "mat4 (a :class:`Matrix`)"
 msgstr "mat4 (:class:`Matrix`)"
 
-#: ../../source/model.rst:178
+#: ../../source/model.rst:187
 msgid ""
 "sampler2D (a Displayabe, including strings that give Displayables, or a "
 "Render)"
-msgstr ""
+msgstr "sampler2D (Displayabe または Displayables か Render を指定する文字列)"
 
-#: ../../source/model.rst:180
+#: ../../source/model.rst:189
 msgid ""
 "Uniform variables should begin with u\\_, attributes with a\\_, and varying "
 "variables with v\\_. Names starting with u_renpy\\_, a_renpy, and v_renpy "
@@ -503,7 +543,7 @@ msgstr ""
 "です。 u_renpy\\_ や a_renpy、v_renpy で始まる変数は後述する標準的な変数同様"
 "に予約されています。"
 
-#: ../../source/model.rst:184
+#: ../../source/model.rst:193
 msgid ""
 "As a general sketch for priority levels, priority 100 sets up geometry, "
 "priority 200 determines the initial fragment color (gl_FragColor), and "
@@ -513,7 +553,7 @@ msgstr ""
 "度 200 で初期のフラグメントカラー（gl_FragColor）を決定し、より高い番号の優先"
 "度ではその色を変更するエフェクトを適用できます。"
 
-#: ../../source/model.rst:188
+#: ../../source/model.rst:197
 msgid ""
 "Here's an example of a custom shader part that applies a gradient across "
 "each model it is used to render::"
@@ -521,11 +561,11 @@ msgstr ""
 "こちらはレンダリングに使用される各モデルにグラデーションを適用するカスタム"
 "シェーダーパーツの例です。"
 
-#: ../../source/model.rst:206
+#: ../../source/model.rst:215
 msgid "The custom shader can then be applied using a transform::"
 msgstr "これによりカスタムシェーダーが transform を使用して適用できます。 ::"
 
-#: ../../source/model.rst:215
+#: ../../source/model.rst:224
 msgid ""
 "As stated before, the ``gradient_done`` variable from the example.gradient "
 "shader will be accessible by any and all other shaders applied from the same "
@@ -538,11 +578,30 @@ msgstr ""
 "るシェーダシステムにオプションのパーツがある場合に便利ですが、独立した2つの"
 "シェーダを使用する場合に名前の衝突を引き起こす可能性もあります。"
 
-#: ../../source/model.rst:220
+#: ../../source/model.rst:229
+msgid ""
+"**GLSL Version.** The version of GLSL supported depends on platform, but the "
+"most restrictive are mobile and web platforms, which use GLSL ES 1.00. "
+"Ren'Py declares variables to have highp precision, which supports floating "
+"point numbers in the range 2\\ :sup:`-62` to 2\\ :sup:`62`. Non-zero "
+"floating point numbers should have a magnitude betwee 2\\ :sup:`-62` and "
+"2\\ :sup:`62`, and integers should be in the range range -2\\ :sup:`16` to "
+"2\\ :sup:`16`.  Actual hardware often supports a larger range, but this "
+"isn't guaranteed."
+msgstr ""
+"**GLSL Version** サポートされる GLSL のバージョンはプラットフォームに依存しま"
+"すが、最も制限されるのはモバイルとウェブプラットフォームです。これらは GLSL "
+"ES 1.00 を使用します。 Ren'Py は高い精度を持つよう変数を宣言して、 2\\ :sup:"
+"`-62` から 2\\ :sup:`62` の範囲の浮動小数点数をサポートします。 0 でな浮動小"
+"数点数は 2\\ :sup:`-62` と 2\\ :sup:`62` の間の大きさであるべきで、整数は "
+"-2\\ :sup:`16` から 2\\ :sup:`16` までであるべきです。実際のハードウェアはし"
+"ばしばより大きな範囲をサポートしますが、これは保証外です。"
+
+#: ../../source/model.rst:238
 msgid "There is a variable that can help in debugging custom shaders:"
 msgstr "カスタムシェーダーのデバッグに役立つ変数があります。 :"
 
-#: ../../source/model.rst:224
+#: ../../source/model.rst:242
 msgid ""
 "If true, source code for the GLSL shader programs will be written to log.txt "
 "on start."
@@ -550,11 +609,11 @@ msgstr ""
 "True なら GLSL シェーダープログラム用のソースコードが起動時に log.txt に書き"
 "加えられます。"
 
-#: ../../source/model.rst:231
+#: ../../source/model.rst:249
 msgid "Shader Part Local Variables"
 msgstr "シェーダー パーツのローカル変数"
 
-#: ../../source/model.rst:233
+#: ../../source/model.rst:251
 msgid ""
 "Variables can be declared shader-local by using one of ``u__``, ``a__``, "
 "``v__``, or ``l__`` as a prefix. When this is done, the double underscores "
@@ -568,7 +627,7 @@ msgstr ""
 "ば、シェーダ名が ``example.gradient`` の場合、接頭辞 ``u__`` は "
 "``u_example_gradient_`` に置き換えられます。"
 
-#: ../../source/model.rst:239
+#: ../../source/model.rst:257
 msgid ""
 "The main use of this is with :doc:`text shaders <textshaders>`, where most "
 "uniforms are shader-local. Also, local variables inside the shader should be "
@@ -578,11 +637,11 @@ msgstr ""
 "んどの uniform がシェーダーローカルです。また、シェーダー内のローカル変数は "
 "``l__`` と宣言する必要があります。"
 
-#: ../../source/model.rst:245
+#: ../../source/model.rst:263
 msgid "Transforms and Model-Based Rendering"
 msgstr "Transform とモデルベースのレンダラリング"
 
-#: ../../source/model.rst:247
+#: ../../source/model.rst:265
 msgid ""
 "Model-Based rendering adds the following properties to ATL and :func:"
 "`Transform`:"
@@ -594,7 +653,7 @@ msgstr ""
 msgid "type"
 msgstr "type"
 
-#: ../../source/model.rst:251
+#: ../../source/model.rst:269
 msgid "None or True or tuple"
 msgstr "None or True or tuple"
 
@@ -602,17 +661,17 @@ msgstr "None or True or tuple"
 msgid "default"
 msgstr "default"
 
-#: ../../source/model.rst:252 ../../source/model.rst:266
-#: ../../source/model.rst:292 ../../source/model.rst:301
+#: ../../source/model.rst:270 ../../source/model.rst:287
+#: ../../source/model.rst:313 ../../source/model.rst:322
 msgid "None"
 msgstr "None"
 
-#: ../../source/model.rst:254
+#: ../../source/model.rst:272
 msgid "If not None, this Transform will be rendered as a model. This means:"
 msgstr ""
 "None でなければ、この Transform はモデルとしてレンダリングされます。 つまり :"
 
-#: ../../source/model.rst:256
+#: ../../source/model.rst:274
 msgid ""
 "A mesh will be created. If this is a 2-component tuple, it's taken as the "
 "number of points in the mesh, in the x and y directions. (Each dimension "
@@ -622,19 +681,28 @@ msgstr ""
 "内のポイント数として取得されます(各次元で少なくとも 2 でなければいけませ"
 "ん)。 True の場合、そのメッシュは子から取得されます。"
 
-#: ../../source/model.rst:260
+#: ../../source/model.rst:278
 msgid "The child of this transform will be rendered to a texture."
 msgstr "この transform の子はテクスチャにレンダリングされます。"
 
-#: ../../source/model.rst:261
+#: ../../source/model.rst:279
 msgid "The renpy.texture shader will be added."
 msgstr "renpy.texture シェーダーが追加されます。"
 
-#: ../../source/model.rst:265
-msgid "None or tuple"
-msgstr "None or tuple"
+#: ../../source/model.rst:281
+msgid ""
+"By default, the texture used by the mesh will not be mipmapped. If mipmaps "
+"are desired, :tpref:`gl_mipmap` should be set to True."
+msgstr ""
+"デフォルトでは、メッシュで使用されるテクスチャはミップマップが作成されませ"
+"ん。ミップマップが必要な場合は、 :tpref:`gl_mipmap` を True に設定する必要が"
+"あります。"
 
-#: ../../source/model.rst:268
+#: ../../source/model.rst:286
+msgid "None or tuple"
+msgstr "None または tuple"
+
+#: ../../source/model.rst:289
 msgid ""
 "If not None, this can either be a 2 or 4-component tuple. If mesh is True "
 "and this is given, this applies padding to the size of the textures applied "
@@ -647,7 +715,7 @@ msgstr ""
 "チャのサイズにパディングを適用します。 2 成分ののタプルは右と下にパディングを"
 "適用し、4成分のタプルは左、上、右、下にパディングを適用します。"
 
-#: ../../source/model.rst:274
+#: ../../source/model.rst:295
 msgid ""
 "This can be used, in conjunction with the ``gl_pixel_perfect`` property, to "
 "render text into a mesh. In Ren'Py, text is rendered at the screen "
@@ -661,7 +729,7 @@ msgstr ""
 "ングを追加すると、テクスチャはより大きくなり、すべてのピクセルが表示されるよ"
 "うになります。例 ::"
 
-#: ../../source/model.rst:286
+#: ../../source/model.rst:307
 msgid ""
 "will ensure that the texture passed to the shader contains all of the pixels "
 "of the text."
@@ -669,11 +737,11 @@ msgstr ""
 "上記はそのシェーダーに渡されるテクスチャに、そのテキストのすべてのピクセルを"
 "含むことを保証します。"
 
-#: ../../source/model.rst:291
+#: ../../source/model.rst:312
 msgid "None or str or list of str"
 msgstr "None or str or list of str"
 
-#: ../../source/model.rst:294
+#: ../../source/model.rst:315
 msgid ""
 "If not None, a shader part name or list of shader part names that will be "
 "applied to this Render (if a Model is created) or the Models reached through "
@@ -682,11 +750,11 @@ msgstr ""
 "None またはこのレンダーを通して到達するモデル、 ( モデルが作成されるなら ) こ"
 "のレンダーに適用されるシェーダーパーツ名、シェーダーパーツ名のリストです。"
 
-#: ../../source/model.rst:300
+#: ../../source/model.rst:321
 msgid "None or str"
 msgstr "None or str"
 
-#: ../../source/model.rst:303
+#: ../../source/model.rst:324
 msgid ""
 "if not None, this should be a string. This string is looked up in :var:"
 "`config.gl_blend_func` to get the value for the gl_blend_func property. It's "
@@ -696,7 +764,7 @@ msgstr ""
 "gl_blend_func プロパティーの値を取得します。ブレンドモードの変更に使用されま"
 "す。"
 
-#: ../../source/model.rst:307
+#: ../../source/model.rst:328
 msgid ""
 "The default blend modes this supports are \"normal\", \"add\", \"multiply\", "
 "\"min\", and \"max\"."
@@ -705,7 +773,7 @@ msgstr ""
 "\", \"min\", and \"max\" です(それぞれ通常、加算、乗算、比較(暗), 比較(明) の"
 "合成モードに相当します)。"
 
-#: ../../source/model.rst:311
+#: ../../source/model.rst:332
 msgid ""
 "In addition, uniforms that start with u\\_ but not with u_renpy are made "
 "available as Transform properties. GL properties are made available as "
@@ -717,11 +785,11 @@ msgstr ""
 "利用できるようになります。例えば color_mask プロパティは gl_color_mask として"
 "利用可能です。"
 
-#: ../../source/model.rst:317
+#: ../../source/model.rst:338
 msgid "Blend Functions"
 msgstr "Blend 関数"
 
-#: ../../source/model.rst:321
+#: ../../source/model.rst:342
 msgid ""
 "A dictionary used to map a blend mode name to a blend function. The blend "
 "modes are supplied to the :ref:`gl_blend_func <gl-blend-func>` property, "
@@ -730,11 +798,11 @@ msgstr ""
 "ブレンドモード名をブレンド関数に対応付ける辞書です。ブレンドモードは、後述す"
 "る :ref:`gl_blend_func <gl-blend-func>` プロパティーに提供されます。"
 
-#: ../../source/model.rst:324
+#: ../../source/model.rst:345
 msgid "The default blend modes are::"
 msgstr "デフォルトのブレンドモードです ::"
 
-#: ../../source/model.rst:332
+#: ../../source/model.rst:353
 msgid ""
 "As Ren'Py uses premultiplied alpha, the results of some of these may be "
 "counterintuitive when a pixel is not opaque. In the GPU, the color (r, g, b, "
@@ -748,19 +816,19 @@ msgstr ""
 "色を使用します。描画されるものが完全に不透明でない場合、ペイントソフトでのこ"
 "れらのブレンドモードからものとこれは異なる結果になる場合があります。"
 
-#: ../../source/model.rst:340
+#: ../../source/model.rst:361
 msgid "Float, Sample, and Vector Uniforms"
 msgstr "Float, Sample, Vector Uniform"
 
-#: ../../source/model.rst:342
+#: ../../source/model.rst:363
 msgid "The following uniforms are made available to all models."
 msgstr "次の uniform はすべてのモデルで利用可能です。"
 
-#: ../../source/model.rst:347
+#: ../../source/model.rst:368
 msgid "``vec2 u_model_size``"
 msgstr "``vec2 u_model_size``"
 
-#: ../../source/model.rst:345
+#: ../../source/model.rst:366
 msgid ""
 "The width and height of the model, as supplied to Ren'Py. This is only "
 "available for 2D models that supply a size, and is (0, 0) for 3d models."
@@ -768,11 +836,11 @@ msgstr ""
 "Ren'Py に渡すモデルの幅と高さです。これはサイズのある 2D model に対してのみ有"
 "効であり、3d model では (0, 0) です。"
 
-#: ../../source/model.rst:355
+#: ../../source/model.rst:376
 msgid "``float u_lod_bias``"
 msgstr "``float u_lod_bias``"
 
-#: ../../source/model.rst:352
+#: ../../source/model.rst:373
 msgid ""
 "The level of detail bias to apply to texture lookups. This may be set in a "
 "Transform. The default value, taken from :var:`config.gl_lod_bias` and "
@@ -784,11 +852,11 @@ msgstr ""
 "フォルトでは -0.5 です。この値は Ren'Py が常に次の大きなレベルを選択して、そ"
 "れをスケールダウンするようにバイアスをかけます。"
 
-#: ../../source/model.rst:360
+#: ../../source/model.rst:381
 msgid "``float u_time``"
 msgstr "``float u_time``"
 
-#: ../../source/model.rst:358
+#: ../../source/model.rst:379
 msgid ""
 "The time of the frame. The epoch is undefined, so it's best to treat this as "
 "a number that increases by one second a second. The time is modulo 86400, so "
@@ -797,22 +865,22 @@ msgstr ""
 "そのフレームの時間です。エポックは未定義なので秒ごとに増える数値として扱うと"
 "よいです。この時間は 86400 の剰余なので、一日ごとに 0.0 にリセットされます。"
 
-#: ../../source/model.rst:364
+#: ../../source/model.rst:385
 msgid "``vec4 u_random``"
 msgstr "``vec4 u_random``"
 
-#: ../../source/model.rst:363
+#: ../../source/model.rst:384
 msgid ""
 "Four random numbers between 0.0 and 1.0 that are (with incredibly high "
 "likelyhood) different from frame to frame."
 msgstr ""
 "フレームごとに (非常に高い確率で) 異なる 0.0 から 1.0 の間の 4 つの乱数です。"
 
-#: ../../source/model.rst:370
+#: ../../source/model.rst:391
 msgid "``vec4 u_viewport``"
 msgstr "``vec4 u_viewport``"
 
-#: ../../source/model.rst:367
+#: ../../source/model.rst:388
 msgid ""
 "This gives the current viewport being drawn into. u_viewport.xy is are the "
 "coordinates of the bottom-left corner of the viewport, relative to the "
@@ -823,11 +891,11 @@ msgstr ""
 "ウィンドウの左下隅を基準にした viewport の左下隅の座標です。 u_viewport.pq は"
 "その viewport の幅と高さを表します。"
 
-#: ../../source/model.rst:372
+#: ../../source/model.rst:393
 msgid "``vec2 u_virtual_size``"
 msgstr "``vec2 u_virtual_size``"
 
-#: ../../source/model.rst:374
+#: ../../source/model.rst:395
 msgid ""
 "This is the virtual size of the game (:var:`config.screen_width`, :var:"
 "`config.screen_height`). This can be used to convert from gl_Position to "
@@ -837,11 +905,11 @@ msgstr ""
 "screen_height`) 。これを使用して、gl_Position 座標から仮想座標に変換使用でき"
 "ます。 :"
 
-#: ../../source/model.rst:384
+#: ../../source/model.rst:405
 msgid "``vec2 u_drawable_size``"
 msgstr "``vec2 u_drawable_size``"
 
-#: ../../source/model.rst:382
+#: ../../source/model.rst:403
 msgid ""
 "The size of the drawable are of the windows, in pixels, at the resolution "
 "the game is running at. For example, if a 1280x720 game is scaled up to "
@@ -851,21 +919,21 @@ msgstr ""
 "ります。例えば 1280x720 のゲームが 1980x1080 にスケーリングされていれば、これ"
 "は (1920, 1080) になります。"
 
-#: ../../source/model.rst:388
+#: ../../source/model.rst:409
 msgid "``sampler2D tex0``, ``sampler2D tex1``, ``sampler2D tex2``"
 msgstr "``sampler2D tex0``, ``sampler2D tex1``, ``sampler2D tex2``"
 
-#: ../../source/model.rst:387
+#: ../../source/model.rst:408
 msgid ""
 "If textures are available, the corresponding samplers are placed in this "
 "variable."
 msgstr "テクスチャが利用可能なら、対応するサンプラーがこの変数に格納されます。"
 
-#: ../../source/model.rst:394
+#: ../../source/model.rst:415
 msgid "``vec2 res0``, ``vec2 res1``, ``vec2 res2``"
 msgstr "``vec2 res0``, ``vec2 res1``, ``vec2 res2``"
 
-#: ../../source/model.rst:391
+#: ../../source/model.rst:412
 msgid ""
 "If textures are available, the size of the textures are placed in these "
 "variables. When the texture is loaded from disk, this is the size of the "
@@ -877,18 +945,32 @@ msgstr ""
 "テクスチャにレンダリングされた後はレンダリングされたテクスチャ上で描画される"
 "ピクセルの数です。"
 
-#: ../../source/model.rst:396
+#: ../../source/model.rst:417
 msgid ""
-"In addition, if a sampler uniform is available, then suffixing it with "
-"``__res`` will give a vec2 containing the underlying texture size. For "
-"example, ``u_markup__res`` will give the size of the ``u_markup`` texture."
+"If a sampler uniform is available, then suffixing it with ``__res`` will "
+"give a vec2 containing the underlying texture size. For example, "
+"``u_markup__res`` will give the size of the ``u_markup`` texture."
 msgstr ""
+"加えて、 sampler uniform が利用可能なら、 ``__res`` を接尾辞に加えると、下層"
+"のテクスチャーサイズを含む vec2 が所得できます。例えば ``u_markup__res`` は "
+"``u_markup`` テクスチャーのサイズを与えます。"
 
-#: ../../source/model.rst:401
+#: ../../source/model.rst:421
+msgid ""
+"If a vec4 uniform is available, then suffixing it with ``__premul`` will "
+"give a vec4 containing the premultiplied color. For example, "
+"``u_color__premul`` will give a vec4 where the red, green, and blue channels "
+"are multiplied by the alpha channel."
+msgstr ""
+"vec4 uniform が利用可能なら、 ``__premul`` を接尾辞に加えると、下層の乗算済み"
+"の色を含む vec4 が所得できます。例えば ``u_color_premul`` は RGB チャンネルの"
+"アルファチャンネルで乗算済みの色を与えます。"
+
+#: ../../source/model.rst:426
 msgid "Matrix Uniforms"
 msgstr "Matrix Uniform"
 
-#: ../../source/model.rst:403
+#: ../../source/model.rst:428
 msgid ""
 "The following uniforms are made available to all models. This assumes that "
 "only one transform with the :tpref:`perspective` property is used to render "
@@ -902,11 +984,11 @@ msgstr ""
 "が使用されている場合、 perspective が設定されている最も内側の transform が "
 "world 空間と view 空間を定義します。"
 
-#: ../../source/model.rst:410
+#: ../../source/model.rst:435
 msgid "``mat4 u_projection``"
 msgstr "``mat4 u_projection``"
 
-#: ../../source/model.rst:408
+#: ../../source/model.rst:433
 msgid ""
 "This is a matrix that transforms coordinates from view space to the OpenGL "
 "viewport. This is sent by Ren'Py, and is updated by transforms with the :"
@@ -916,11 +998,11 @@ msgstr ""
 "は Ren'Py によって送信され、 :tpref:`perspective` プロパティーを指定された "
 "transform によってそのプロパティのー効果をカプセル化するために更新されます。"
 
-#: ../../source/model.rst:415
+#: ../../source/model.rst:440
 msgid "``mat4 u_view``"
 msgstr "``mat4 u_view``"
 
-#: ../../source/model.rst:413
+#: ../../source/model.rst:438
 msgid ""
 "This is a matrix that transforms vertex coordinates from the world space to "
 "the view space. This defaults to the identity matrix, but can be set by "
@@ -932,22 +1014,22 @@ msgstr ""
 "ティーを指定された transform によって設定でき、その場合は配置、回転、スケーリ"
 "ングの効果がこのマトリックスにカプセル化されます。"
 
-#: ../../source/model.rst:418
+#: ../../source/model.rst:443
 msgid "``mat4 u_model``"
 msgstr "``mat4 u_model``"
 
-#: ../../source/model.rst:418
+#: ../../source/model.rst:443
 msgid ""
 "This is a matrix that transforms vertex coordinates from the model space to "
 "the world space."
 msgstr ""
 "これは、 model 空間から world 空間に頂点座標を変換するマトリックスです。"
 
-#: ../../source/model.rst:422
+#: ../../source/model.rst:447
 msgid "``mat4 u_projectionview``"
 msgstr "``mat4 u_projectionview``"
 
-#: ../../source/model.rst:421
+#: ../../source/model.rst:446
 msgid ""
 "This matrix contains ``u_projection * u_view``. It exists to minimize the "
 "number of uniforms that need to be sent to the GPU, and the amount of work "
@@ -957,11 +1039,11 @@ msgstr ""
 "に送信する必要がある uniform の数と、シェーダーで実行する必要がある作業の量を"
 "最小限に抑えるために存在します。"
 
-#: ../../source/model.rst:427
+#: ../../source/model.rst:452
 msgid "``mat4 u_transform``"
 msgstr "``mat4 u_transform``"
 
-#: ../../source/model.rst:425
+#: ../../source/model.rst:450
 msgid ""
 "This is the same as ``u_projectionview * u_model``. It's the matrix that "
 "transforms vertex coordinates directly to the OpenGL viewport. It exists to "
@@ -974,8 +1056,7 @@ msgstr ""
 "る uniform の数とシェーダーで実行する必要がある作業の量を最小限に抑える、およ"
 "び古いバージョンの Ren'Py との互換性のために存在します。"
 
-#: ../../source/model.rst:429
-#, fuzzy
+#: ../../source/model.rst:454
 msgid ""
 "In addition to these methods, Ren'Py can synthesize matrices with certain "
 "functions applied when suffixes are appended to the matrix"
@@ -983,63 +1064,57 @@ msgstr ""
 "これらの方法に加えて、Ren'Py はマトリックスに接尾辞が追加されたときに特定の関"
 "数によりマトリックスを合成できます"
 
-#: ../../source/model.rst:434
-#, fuzzy
+#: ../../source/model.rst:459
 msgid "``__inverse``"
-msgstr "``_inverse``"
+msgstr "``__inverse``"
 
-#: ../../source/model.rst:433
-#, fuzzy
+#: ../../source/model.rst:458
 msgid ""
 "When appended to a matrix, this returns the inverse of the matrix. For "
 "example, ``u_projection__inverse`` is the inverse of the projection matrix."
 msgstr ""
 "マトリックスに追加すると、その行列の逆行列が返されます。例えば、 "
-"``u_projection_inverse`` は逆射影行列です。"
+"``u_projection_inverse`` は逆 projection 行列です。"
 
-#: ../../source/model.rst:438
-#, fuzzy
+#: ../../source/model.rst:463
 msgid "``__transpose``"
-msgstr "``_transpose``"
+msgstr "``__transpose``"
 
-#: ../../source/model.rst:437
-#, fuzzy
+#: ../../source/model.rst:462
 msgid ""
 "When appended to a matrix, this returns the transpose of the matrix. For "
 "example, ``u_view__transpose`` is the transpose of the view matrix."
 msgstr ""
 "マトリックスに追加すると、その行列の転置行列が返されます。例えば、 "
-"``u_view_transpose`` は射影行列の転置です。"
+"``u_view_transpose`` は view 行列の転置です。"
 
-#: ../../source/model.rst:443
-#, fuzzy
-msgid "``__inversetranspose``"
-msgstr "``_inversetranspose``"
+#: ../../source/model.rst:468
+msgid "``__inverse_transpose``"
+msgstr "``__inverse_transpose``"
 
-#: ../../source/model.rst:441
-#, fuzzy
+#: ../../source/model.rst:466
 msgid ""
 "When appended to a matrix, this returns the inverse of the transpose of the "
-"matrix. For example, ``u_model__inversetranspose`` is the inverse of the "
+"matrix. For example, ``u_model__inverse_transpose`` is the inverse of the "
 "transpose of the model matrix. This is useful for transforming normals."
 msgstr ""
 "マトリックスに追加すると、その行列の転置の逆行列が返されます。たとえば、 "
 "``u_model_inversetranspose`` はモデル行列の転置の逆行列です。これは法線を変換"
 "する場合に便利です。"
 
-#: ../../source/model.rst:446
+#: ../../source/model.rst:471
 msgid "Attributes"
 msgstr "Attribute"
 
-#: ../../source/model.rst:448
+#: ../../source/model.rst:473
 msgid "The following attribute is available to all models:"
 msgstr "次の attribute は、すべてのモデルで使用できます。"
 
-#: ../../source/model.rst:452
+#: ../../source/model.rst:477
 msgid "``vec4 a_position``"
 msgstr "``vec4 a_position``"
 
-#: ../../source/model.rst:451
+#: ../../source/model.rst:476
 msgid ""
 "The position of the vertex being rendered. This is in virtual pixels, "
 "relative to the upper left corner of the texture."
@@ -1047,55 +1122,55 @@ msgstr ""
 "レンダリングされる頂点の位置です。これは、テクスチャの左上隅を基準とした仮想"
 "ピクセル単位です。"
 
-#: ../../source/model.rst:454
+#: ../../source/model.rst:479
 msgid "If textures are available, so is the following attribute:"
 msgstr "テクスチャが利用可能なら、次の attribute も使用可能です :"
 
-#: ../../source/model.rst:457
+#: ../../source/model.rst:482
 msgid "``vec2 a_tex_coord``"
 msgstr "``vec2 a_tex_coord``"
 
-#: ../../source/model.rst:457
+#: ../../source/model.rst:482
 msgid "The coordinate that this vertex projects to inside the textures."
 msgstr "この頂点を投影するテクスチャ内部の座標です。"
 
-#: ../../source/model.rst:459
+#: ../../source/model.rst:484
 msgid "If normals are available, so is the following attribute:"
 msgstr "テクスチャが利用可能なら、次の attribute も使用可能です :"
 
-#: ../../source/model.rst:462
+#: ../../source/model.rst:487
 msgid "``vec3 a_normal``"
 msgstr "``vec3 a_normal``"
 
-#: ../../source/model.rst:462
+#: ../../source/model.rst:487
 msgid "The normal of the vertex being rendered."
 msgstr "レンダリングされた頂点の位置"
 
-#: ../../source/model.rst:464
+#: ../../source/model.rst:489
 msgid "If tangents are available, so are the following attributes:"
 msgstr "テクスチャが利用可能なら、次の attribute も使用可能です :"
 
-#: ../../source/model.rst:467
+#: ../../source/model.rst:492
 msgid "``vec3 a_tangent``"
 msgstr "``vec3 a_tangent``"
 
-#: ../../source/model.rst:467
+#: ../../source/model.rst:492
 msgid "The tangent of the vertex being rendered."
 msgstr "レンダリングされた頂点のタンジェント"
 
-#: ../../source/model.rst:470
+#: ../../source/model.rst:495
 msgid "``vec3 a_bitangent``"
 msgstr "``vec3 a_bitangent``"
 
-#: ../../source/model.rst:470
+#: ../../source/model.rst:495
 msgid "The bitangent of the vertex being rendered."
 msgstr "レンダリングされたbitangent の位置"
 
-#: ../../source/model.rst:475
+#: ../../source/model.rst:500
 msgid "GL Properties"
 msgstr "GL プロパティー"
 
-#: ../../source/model.rst:477
+#: ../../source/model.rst:502
 msgid ""
 "GL properties change the global state of OpenGL, or the Model-Based "
 "renderer. These properties can be used with a Transform, or with the :func:"
@@ -1105,11 +1180,11 @@ msgstr ""
 "す。これらのプロパティは Transform や :func:`Render.add_property` 関数で使用"
 "できます。"
 
-#: ../../source/model.rst:502
+#: ../../source/model.rst:527
 msgid "``gl_blend_func``"
 msgstr "``gl_blend_func``"
 
-#: ../../source/model.rst:484
+#: ../../source/model.rst:509
 msgid ""
 "If present, this is expected to be a six-component tuple, which is used to "
 "set the equation used to blend the pixel being drawn with the pixel it is "
@@ -1119,7 +1194,7 @@ msgstr ""
 "クセルを合成する方程式と、その方程式のパラメータを設定するために使用されま"
 "す。"
 
-#: ../../source/model.rst:488
+#: ../../source/model.rst:513
 msgid ""
 "Specifically, this should be (`rgb_equation`, `src_rgb`, `dst_rgb`, "
 "`alpha_equation`, `src_alpha`, `dst_alpha`). These will be used to call::"
@@ -1127,7 +1202,7 @@ msgstr ""
 "具体的にはこれは (`rgb_equation`, `src_rgb`, `dst_rgb`, `alpha_equation`, "
 "`src_alpha`, `dst_alpha`) です。これらは次の呼び出しで使用されます。 ::"
 
-#: ../../source/model.rst:495
+#: ../../source/model.rst:520
 msgid ""
 "Please see the OpenGL documentation for what these functions do. OpenGL "
 "constants can be imported from renpy.uguu::"
@@ -1135,18 +1210,18 @@ msgstr ""
 "これらの関数が何をしているかは OpenGLのドキュメントを参照してください。"
 "OpenGL 定数は renpy.uguu からインポートできます。 ::"
 
-#: ../../source/model.rst:501
+#: ../../source/model.rst:526
 msgid ""
 "The :tpref:`blend` transform property is generally an easy way to use this."
 msgstr ""
 "一般的に :tpref:`blend` transform プロパティーがこれを使用する簡単な方法で"
 "す。"
 
-#: ../../source/model.rst:508
+#: ../../source/model.rst:533
 msgid "``gl_color_mask``"
 msgstr "``gl_color_mask``"
 
-#: ../../source/model.rst:505
+#: ../../source/model.rst:530
 msgid ""
 "This is expecting to be a 4-tuple of booleans, corresponding to the four "
 "channels of a pixel (red, green, blue, and alpha). If a given channel is "
@@ -1156,11 +1231,31 @@ msgstr ""
 "4タプルが期待されます。あるチャンネルが True であれば、描画処理でそのピクセル"
 "に書き込みます。そうでなければ、描画は行われません。"
 
-#: ../../source/model.rst:517
+#: ../../source/model.rst:540
+msgid "``gl_cull_face``"
+msgstr "``gl_cull_face``"
+
+#: ../../source/model.rst:536
+msgid ""
+"If not None, this enables face culling, which is the process of removing "
+"triangles that are facing away from the camera. To do this, we need to know "
+"which face is the front face, and which is the back face. The front face is "
+"determined using the winding order of the vertices, which is one of \"cw"
+"\" (clockwise) or \"ccw\" (counter-clockwise). The values are done in the "
+"Ren'Py coordinate system (with +Y down), which is the opposite of the OpenGL "
+"coordinate system."
+msgstr ""
+"None でなければ、カメラから遠ざかっている三角形を削除するプロセスである face "
+"culling が有効になります。これを行うには、どちらの面が表面で、どちらが裏面で"
+"あるかを知る必要があります。表面は、頂点の windling order (巻き上げ順)で決定"
+"され、これは \"cw\" (時計回り) または \"ccw\" (反時計回り) のいずれかです。値"
+"は Ren'Py の座標系 (+Y が下) で使用され、OpenGL 座標系とは逆です。"
+
+#: ../../source/model.rst:549
 msgid "``gl_depth``"
 msgstr "``gl_depth``"
 
-#: ../../source/model.rst:511
+#: ../../source/model.rst:543
 msgid ""
 "If True, this will clear the depth buffer, and then enable depth rendering "
 "for this displayable and the children of this displayable."
@@ -1168,7 +1263,7 @@ msgstr ""
 "True の場合、 深度バッファをクリアし、この Displayable とこの Displayable の"
 "子に対して z バッファ法でのレンダリングを有効にします。"
 
-#: ../../source/model.rst:514
+#: ../../source/model.rst:546
 msgid ""
 "Note that drawing any pixel, even transparent pixels, will update the depth "
 "buffer. As a result, using this with images that have transparency may lead "
@@ -1180,11 +1275,11 @@ msgstr ""
 "が発生する可能性があります( 別の方法として ``show`` ステートメントの "
 "``zorder`` や ``behind`` 節を検討してください)。"
 
-#: ../../source/model.rst:522
+#: ../../source/model.rst:554
 msgid "``gl_pixel_perfect``"
 msgstr "``gl_pixel_perfect``"
 
-#: ../../source/model.rst:520
+#: ../../source/model.rst:552
 msgid ""
 "When True, Ren'Py will move the mesh such that the first vertex is aligned "
 "with a pixel on the screen. This is mostly used in conjunction with text, to "
@@ -1194,7 +1289,7 @@ msgstr ""
 "移動します。これは主にテキストと組み合わせて、テキストがシャープに保たれるよ"
 "うにするために使用されます。"
 
-#: ../../source/model.rst:524
+#: ../../source/model.rst:556
 msgid ""
 "The following properties only take effect when a texture is being created, "
 "by a Transform with :tpref:`mesh` set, or by :func:`Model`, where these can "
@@ -1204,11 +1299,11 @@ msgstr ""
 "`Model` によってテクスチャが作成されるときのみ、プロパティメソッドに渡され効"
 "果を持ちます。"
 
-#: ../../source/model.rst:531
+#: ../../source/model.rst:563
 msgid "``gl_drawable_resolution``"
 msgstr "``gl_drawable_resolution``"
 
-#: ../../source/model.rst:529
+#: ../../source/model.rst:561
 msgid ""
 "If True or not set, the texture is rendered at the same resolution as the "
 "window displaying the game. If False, it's rendered at the virtual "
@@ -1218,11 +1313,11 @@ msgstr ""
 "るのと同じ解像度でレンダリングされます。 False ならその Displayable の仮想解"
 "像度でレンダリングされます。"
 
-#: ../../source/model.rst:540
+#: ../../source/model.rst:572
 msgid "``gl_anisotropic``"
 msgstr "``gl_anisotropic``"
 
-#: ../../source/model.rst:534
+#: ../../source/model.rst:566
 msgid ""
 "If supplied, this determines if the textures applied to a mesh are created "
 "with anisotropy. Anisotropy is a feature that causes multiple texels "
@@ -1233,7 +1328,7 @@ msgstr ""
 "うかを判断します。異方性とは、テクスチャーが X と Y で異なる量だけズームされ"
 "たときに、複数のテクセル（テクスチャピクセル）がサンプリングされる機能です。"
 
-#: ../../source/model.rst:539
+#: ../../source/model.rst:571
 msgid ""
 "This defaults to True. Ren'Py sets this to False for certain effects, like "
 "the Pixellate transition."
@@ -1241,11 +1336,11 @@ msgstr ""
 "これはデフォルトでは True です。 Ren'Py は Pixellate のような特定のエフェクト"
 "のためにこれを False に設定します。"
 
-#: ../../source/model.rst:544
+#: ../../source/model.rst:576
 msgid "``gl_mipmap``"
 msgstr "``gl_mipmap``"
 
-#: ../../source/model.rst:543
+#: ../../source/model.rst:575
 msgid ""
 "If supplied, this determines if the textures supplied to a mesh are created "
 "with mipmaps. This defaults to True."
@@ -1253,11 +1348,11 @@ msgstr ""
 "与えられた場合、これはメッシュに渡されるテクスチャがミップマップで作成される"
 "かどうかを決定します。デフォルトは True です。"
 
-#: ../../source/model.rst:561
+#: ../../source/model.rst:593
 msgid "``gl_texture_wrap``"
 msgstr "``gl_texture_wrap``"
 
-#: ../../source/model.rst:547
+#: ../../source/model.rst:579
 msgid ""
 "When supplied, this determines how the textures applied to a mesh are "
 "wrapped. This expects a 2-component tuple, where the first component is used "
@@ -1270,11 +1365,11 @@ msgstr ""
 "GL_TEXTURE_WRAP_S を、 2番目の要素は GL_TEXTURE_WRAP_T を設定するために用いら"
 "れます。これらは通常、作成されたテクスチャの X 軸と Y 軸を表します。"
 
-#: ../../source/model.rst:553
+#: ../../source/model.rst:585
 msgid "The values should be OpenGL constants imported from renpy.uguu::"
 msgstr "値は OpenGL に含まれ、 renpy.uguu からインポートされます。 ::"
 
-#: ../../source/model.rst:558
+#: ../../source/model.rst:590
 msgid ""
 "This can also be customized for specific textures. `gl_texture_wrap_tex0` "
 "controls the first texture, `gl_texture_wrap_tex1` the second, "
@@ -1290,11 +1385,11 @@ msgstr ""
 "この4つのみが利用可能ですが Render.add_property には \"texture_wrap_tex4\" "
 "や \"texture_wrap_myuniform\" も渡せます。"
 
-#: ../../source/model.rst:564
+#: ../../source/model.rst:596
 msgid "GLTFModel Displayable"
-msgstr "モデル Displayable"
+msgstr "GLTF モデル Displayable"
 
-#: ../../source/model.rst:566
+#: ../../source/model.rst:598
 msgid ""
 "The GLTFModel displayble allow you to load 3D models in the GLTF file "
 "format. This is what you should use if you have a 3D model you created in "
@@ -1304,7 +1399,7 @@ msgstr ""
 "これは、他のプログラムで作成した 3D モデルがあり、Ren'Py で表示したい場合に使"
 "用すべきものです。"
 
-#: ../../source/inc/assimp:5
+#: ../../source/inc/assimp:5 ../../source/inc/assimp:32
 msgid ""
 "A displayable that loads a 3D Model in the GLTF format. This format is "
 "supported by many 3D tools. Ren'Py uses the `Open Asset Importer (assimp) "
@@ -1314,7 +1409,7 @@ msgstr ""
 "でサポートされています。Ren'Py は `Open Asset Importer (assimp) ライブラリ "
 "<https://github.com/assimp/assimp>`_ を使用して GLTF モデルを読み込みます。"
 
-#: ../../source/inc/assimp:8
+#: ../../source/inc/assimp:8 ../../source/inc/assimp:35
 msgid ""
 "For the purposes of Ren'Py's 2D layout system, a GLTFModel has zero width "
 "and height. By default, the model is loaded at the size found in the file "
@@ -1324,7 +1419,7 @@ msgstr ""
 "フォルトでは、モデルはそれを含むファイルにあるサイズでロードされます。必要に"
 "応じて、　`zoom` を使用して拡大縮小できます。"
 
-#: ../../source/inc/assimp:11
+#: ../../source/inc/assimp:11 ../../source/inc/assimp:38
 msgid ""
 "When multiple models are in use, the ``gl_depth True`` property should be "
 "supplied to the camera, so that depth testing is enabled. Ren'Py does not "
@@ -1336,166 +1431,37 @@ msgstr ""
 "の間引きを実行していないため、完全にレンダリングできるほど単純なモデルの使用"
 "が重要です。"
 
-#: ../../source/inc/assimp:16
+#: ../../source/inc/assimp:16 ../../source/inc/assimp:43
 msgid "`filename`"
 msgstr "`filename`"
 
-#: ../../source/inc/assimp:16
+#: ../../source/inc/assimp:16 ../../source/inc/assimp:43
 msgid "The filename of the model to display."
-msgstr "gl プロパティーの値"
+msgstr "表示するモデルのファイル名"
 
-#: ../../source/inc/assimp:52
-msgid "`textures`"
-msgstr "`texture_wrap`"
-
-#: ../../source/inc/assimp:19
-msgid ""
-"A list of textures to load. These textures will be loaded into texture slots "
-"- the first will be tex0, the second tex1, and so on."
-msgstr ""
-"指定の Displayable をレンダリングしてこのモデルにテクスチャを追加します。追加"
-"される最初のテクスチャは ``tex0`` で、 2つ目は ``tex1`` と続きます。"
-
-#: ../../source/inc/assimp:22
-msgid ""
-"The list may contain one of the following strings, giving the type of "
-"texture to load:"
-msgstr ""
-"リストには、ロードするテクスチャのタイプを示す次の文字列のいずれかを含められ"
-"ます。 :"
-
-#: ../../source/inc/assimp:24
-msgid "\"none\""
-msgstr "\"none\""
-
-#: ../../source/inc/assimp:25
-msgid "\"diffuse\""
-msgstr "\"diffuse\""
-
-#: ../../source/inc/assimp:26
-msgid "\"specular\""
-msgstr "\"specular\""
-
-#: ../../source/inc/assimp:27
-msgid "\"ambient\""
-msgstr "\"ambient\""
-
-#: ../../source/inc/assimp:28
-msgid "\"emissive\""
-msgstr "\"emissive\""
-
-#: ../../source/inc/assimp:29
-msgid "\"height\""
-msgstr "\"height\""
-
-#: ../../source/inc/assimp:30
-msgid "\"normals\""
-msgstr "\"normals\""
-
-#: ../../source/inc/assimp:31
-msgid "\"shininess\""
-msgstr "\"shininess\""
-
-#: ../../source/inc/assimp:32
-msgid "\"opacity\""
-msgstr "\"opacity\""
-
-#: ../../source/inc/assimp:33
-msgid "\"displacement\""
-msgstr "\"displacement\""
-
-#: ../../source/inc/assimp:34
-msgid "\"lightmap\""
-msgstr "\"lightmap\""
-
-#: ../../source/inc/assimp:35
-msgid "\"reflection\""
-msgstr "\"reflection\""
-
-#: ../../source/inc/assimp:36
-msgid "\"base_color\""
-msgstr "\"base_color\""
-
-#: ../../source/inc/assimp:37
-msgid "\"normal_camera\""
-msgstr "\"normal_camera\""
-
-#: ../../source/inc/assimp:38
-msgid "\"emission_color\""
-msgstr "\"emission_color\""
-
-#: ../../source/inc/assimp:39
-msgid "\"metalness\""
-msgstr "\"metalness\""
-
-#: ../../source/inc/assimp:40
-msgid "\"diffuse_roughness\""
-msgstr "\"diffuse_roughness\""
-
-#: ../../source/inc/assimp:41
-msgid "\"ambient_occlusion\""
-msgstr "\"ambient_occlusion\""
-
-#: ../../source/inc/assimp:42
-msgid "\"unknown\""
-msgstr "\"unknown\""
-
-#: ../../source/inc/assimp:43
-msgid "\"sheen\""
-msgstr "\"sheen\""
-
-#: ../../source/inc/assimp:44
-msgid "\"clearcoat\""
-msgstr "\"clearcoat\""
-
-#: ../../source/inc/assimp:45
-msgid "\"transmission\""
-msgstr "\"transmission\""
-
-#: ../../source/inc/assimp:47
-msgid ""
-"These correspond to the various textures defined by assimp. In many cases, "
-"you'll have multiple types packed into a single texture - like having a "
-"textuure that has metallic on the blue channel, roughness on the green, and "
-"ambient occlusion on the red. In that case, you'll want to pick one texture "
-"type to load, and use the texture shader to extract the channels you want."
-msgstr ""
-"これらは、assimp によって定義されたさまざまなテクスチャに対応します。多くの場"
-"合、青のチャンネルにメタリック、緑の粗さ、赤のアンビエントオクルージョンを持"
-"つテクスチャなど、複数のタイプが 1 つのテクスチャに詰め込まれています。その場"
-"合は、ロードするテクスチャ タイプを 1 つ選択し、テクスチャ シェーダーを使用し"
-"て必要なチャネルを抽出します。"
-
-#: ../../source/inc/assimp:52
-msgid ""
-"The textures list may also contain displayables, which will be used as "
-"textures directly."
-msgstr ""
-"テクスチャリストには、テクスチャとして直接使用される displayable も含まれる場"
-"合があります。"
-
-#: ../../source/inc/assimp:55 ../../source/inc/model_displayable:54
+#: ../../source/inc/assimp:19 ../../source/inc/assimp:46
+#: ../../source/inc/model_displayable:54
 msgid "`shader`"
 msgstr "`shader`"
 
-#: ../../source/inc/assimp:55
+#: ../../source/inc/assimp:19 ../../source/inc/assimp:46
 msgid ""
 "Either a string or tuple of strings, giving the name of the shader to use."
-msgstr "このモデルで使用するシェーダーの名前の文字列です。"
+msgstr "使用するシェーダーの名前の文字列または文字列のタプルです。"
 
-#: ../../source/inc/assimp:58
+#: ../../source/inc/assimp:22 ../../source/inc/assimp:49
 msgid "`tangents`"
 msgstr "`tangents`"
 
-#: ../../source/inc/assimp:58
+#: ../../source/inc/assimp:22 ../../source/inc/assimp:49
 msgid "If True, tangents will be included in the mesh."
-msgstr "True ならメッシュに含まれる tangent です。"
+msgstr "True なら tangent がメッシュに含まれます。"
 
-#: ../../source/inc/assimp:62
+#: ../../source/inc/assimp:26 ../../source/inc/assimp:53
 msgid "`zoom`"
 msgstr "`zoom`"
 
-#: ../../source/inc/assimp:61
+#: ../../source/inc/assimp:25 ../../source/inc/assimp:52
 msgid ""
 "A zoom factor that will be applied to the model. Many models naturally use "
 "the range -1 to 1, and so this may need to be quite large to make the model "
@@ -1505,63 +1471,82 @@ msgstr ""
 "るため、モデルを表示するためにこれを非常に大きくする必要がある場合がありま"
 "す。"
 
-#: ../../source/inc/assimp:65
-msgid "`flip_x`"
-msgstr "`flip_x`"
+#: ../../source/inc/assimp:30 ../../source/inc/assimp:56
+msgid "`report`"
+msgstr "`report`"
 
-#: ../../source/inc/assimp:65
-msgid "If True, the model will be flipped along the x axis."
-msgstr "True なら、モデルは x 軸に沿って反転されます。"
-
-#: ../../source/inc/assimp:69
-msgid "`flip_y`"
-msgstr "`flip_y`"
-
-#: ../../source/inc/assimp:68
+#: ../../source/inc/assimp:29 ../../source/inc/assimp:56
 msgid ""
-"If True, the model will be flipped along the y axis. This defaults to True, "
-"to map models to Ren'Py's coordinate system."
+"If true, a report of the model will be printed to the log. This includes the "
+"uniforms that are used by the model."
 msgstr ""
-"True の場合、モデルは y 軸に沿って反転されます。モデルを Ren'Py の座標系に"
-"マッピングするため、デフォルトは True です。"
+"True の場合、モデルのレポートがログに出力されます。これには、モデルが使用す"
+"る uniform が含まれます。"
 
-#: ../../source/inc/assimp:72
-msgid "`flip_z`"
-msgstr "`flip_z`"
+#: ../../source/model.rst:603
+msgid "Some things we noticed:"
+msgstr "注意点がいくつかあります :"
 
-#: ../../source/inc/assimp:72
-msgid "If True, the model will be flipped along the z axis."
-msgstr "True の場合、モデルは Z 軸に沿って反転されます。"
-
-#: ../../source/inc/assimp:76
-msgid "`flip_uv`"
-msgstr "`flip_uv`"
-
-#: ../../source/inc/assimp:75
+#: ../../source/model.rst:605
 msgid ""
-"If True, the UV coordinates will be flipped vertically. This defaults to "
-"True, to map texture coordinates to how Ren'Py expects them."
+"Some models are very small, and need to be zoomed by 100x or 1000x to be "
+"useful."
 msgstr ""
-"True の場合、UV 座標は垂直方向に反転されます。デフォルトは True で、テクス"
-"チャ座標を Ren'Py が期待する方法にマッピングします。"
+"一部のモデルは非常に小さく、100倍または1000倍にズームする必要があります。"
 
-#: ../../source/inc/assimp:78
+#: ../../source/model.rst:606
+msgid "The uniforms generating by each model can vary."
+msgstr "各モデルによって生成される uniform が異なる可能性があります。"
+
+#: ../../source/model.rst:608
 msgid ""
-"GLTFModel.__init__(self, unicode filename: str, textures: Iterable = "
-"(u'diffuse'), shader: str | tuple[str] = u'renpy.texture', tangents: bool = "
-"False, double zoom: float = 1.0, flip_x: bool = False, flip_y: bool = True, "
-"flip_z: bool = False, flip_uv: bool = True)"
+"We recommend creating GLTF models with report=True, and then looking at log."
+"txt to see the size and  what's available. It's then possible to scale the "
+"model and to create a suitable shader."
 msgstr ""
-"GLTFModel.__init__(self, unicode filename: str, textures: Iterable = "
-"(u'diffuse'), shader: str | tuple[str] = u'renpy.texture', tangents: bool = "
-"False, double zoom: float = 1.0, flip_x: bool = False, flip_y: bool = True, "
-"flip_z: bool = False, flip_uv: bool = True)"
+"report=True で GLTF モデルを作成し、log.txt を見てサイズと何が利用可能かの確"
+"認をお勧めします。その後、モデルをスケーリングし、適切なシェーダーを作成でき"
+"ます。"
 
-#: ../../source/model.rst:572
+#: ../../source/model.rst:613
+msgid "Limitations"
+msgstr "制限"
+
+#: ../../source/model.rst:615
+msgid ""
+"GLTFModel currently does not include a default shader, so you must define "
+"and include a shader. Here is one possible shader that can be used with "
+"GLTFModel::"
+msgstr ""
+"GLTFModel には現在デフォルトのシェーダーが含まれていないため、シェーダーを定"
+"義して含める必要があります。以下は、GLTFModel で使用できるシェーダーの 1 つで"
+"す ::"
+
+#: ../../source/model.rst:658
+msgid ""
+"This is a very simple shader that applies diffuse and specular lighting to "
+"the model based on a single light source, meant for experimentation until "
+"better shaders are created."
+msgstr ""
+"これは、単一の光源に基づいてモデルに拡散照明と反射光を適用する非常に単純な"
+"シェーダーであり、より優れたシェーダーが作成されるまでの実験を目的としていま"
+"す。"
+
+#: ../../source/model.rst:661
+msgid ""
+"GLTFModel does not support transparent surfaces well. While the discard "
+"command above emulates transparency, the ordering is a bit wrong and can "
+"lead to artifacts."
+msgstr ""
+"GLTFModel は透明なサーフェスをうまくサポートしていません。上記の discard コマ"
+"ンドは透過性をエミュレートしますが、順序が少し間違っており、誤りが発生する可"
+"能性があります。"
+
+#: ../../source/model.rst:667
 msgid "Model Displayable"
 msgstr "モデル Displayable"
 
-#: ../../source/model.rst:574
+#: ../../source/model.rst:669
 msgid ""
 "The Model displayable acts as a factory to created models for use with the "
 "model-based renderer. This is an older API you may wish to use when you want "
@@ -1743,11 +1728,11 @@ msgstr ""
 "uniform の値です。浮動小数、浮動小数の2, 3, 4要素のタプルまたはマトリックスで"
 "す。"
 
-#: ../../source/model.rst:581
+#: ../../source/model.rst:676
 msgid "Model Displayable Examples"
 msgstr "モデル Displayable 例"
 
-#: ../../source/model.rst:583
+#: ../../source/model.rst:678
 msgid ""
 "The Model displayable can be used in conjunction with an ATL transform and a "
 "built-in shader to create the Dissolve transform::"
@@ -1755,7 +1740,7 @@ msgstr ""
 "このモデル Displayable は、ATL transform と組み込みのシェーダを組み合わせて"
 "ディゾルブ transform 作成に使用できます。"
 
-#: ../../source/model.rst:594
+#: ../../source/model.rst:689
 msgid ""
 "Using the Model displayable as the child of a displayable is incompatible "
 "with :tpref:`mesh`, as the two both create models inside Ren'Py."
@@ -1763,11 +1748,11 @@ msgstr ""
 "モデル Displayable を Displayable の子に使用すると 2つ共が Ren'Py 内にモデル"
 "を作成するので、 :tpref:`mesh` と互換性がなくなります。"
 
-#: ../../source/model.rst:598
+#: ../../source/model.rst:693
 msgid "Animated Shaders"
 msgstr "アニメーションシェーダー"
 
-#: ../../source/model.rst:600
+#: ../../source/model.rst:695
 msgid ""
 "When using shaders that depend on ``u_time`` to animate, one must be aware, "
 "that even though every shader on screen will run on every frame displayed, "
@@ -1779,7 +1764,7 @@ msgstr ""
 "FPS では動作せず、再描画する displayable がなければ、5 FPS の最小フレームレー"
 "トに落ち込むことに気をつけてください。"
 
-#: ../../source/model.rst:605
+#: ../../source/model.rst:700
 msgid ""
 "When using an animating shader in an ATL transform, this can cause that "
 "shader to \"stutter\" and only animate properly while some other object on "
@@ -1793,7 +1778,7 @@ msgstr ""
 "たりするかもしれません。この場合は空の ATL ループを加えて再描画の実行を強制で"
 "きます。"
 
-#: ../../source/model.rst:616
+#: ../../source/model.rst:711
 msgid ""
 "``pause 0`` will cycle the frames as fast as possible. You can also set "
 "different values for ``pause`` to specify a minimum frame rate, like ``pause "
@@ -1803,16 +1788,163 @@ msgstr ""
 "``pause 1.0/30`` のような異なる値を設定して、最終フレームレートの指定もできま"
 "す。"
 
-#: ../../source/model.rst:622
+#: ../../source/model.rst:717
 msgid "Shader Parts"
 msgstr "シェーダー パーツ"
 
-#: ../../source/model.rst:624
+#: ../../source/model.rst:719
 msgid ""
 "For a list of shader parts that Ren'Py uses, see the :doc:`shader_parts`."
 msgstr ""
 "Ren'Py が使うシェーダーパーツの一覧は :doc:`shader_parts` を参照してくださ"
 "い。"
+
+#~ msgid "`textures`"
+#~ msgstr "`texture_wrap`"
+
+#~ msgid ""
+#~ "A list of textures to load. These textures will be loaded into texture "
+#~ "slots - the first will be tex0, the second tex1, and so on."
+#~ msgstr ""
+#~ "指定の Displayable をレンダリングしてこのモデルにテクスチャを追加します。"
+#~ "追加される最初のテクスチャは ``tex0`` で、 2つ目は ``tex1`` と続きます。"
+
+#~ msgid ""
+#~ "The list may contain one of the following strings, giving the type of "
+#~ "texture to load:"
+#~ msgstr ""
+#~ "リストには、ロードするテクスチャのタイプを示す次の文字列のいずれかを含めら"
+#~ "れます。 :"
+
+#~ msgid "\"none\""
+#~ msgstr "\"none\""
+
+#~ msgid "\"diffuse\""
+#~ msgstr "\"diffuse\""
+
+#~ msgid "\"specular\""
+#~ msgstr "\"specular\""
+
+#~ msgid "\"ambient\""
+#~ msgstr "\"ambient\""
+
+#~ msgid "\"emissive\""
+#~ msgstr "\"emissive\""
+
+#~ msgid "\"height\""
+#~ msgstr "\"height\""
+
+#~ msgid "\"normals\""
+#~ msgstr "\"normals\""
+
+#~ msgid "\"shininess\""
+#~ msgstr "\"shininess\""
+
+#~ msgid "\"opacity\""
+#~ msgstr "\"opacity\""
+
+#~ msgid "\"displacement\""
+#~ msgstr "\"displacement\""
+
+#~ msgid "\"lightmap\""
+#~ msgstr "\"lightmap\""
+
+#~ msgid "\"reflection\""
+#~ msgstr "\"reflection\""
+
+#~ msgid "\"base_color\""
+#~ msgstr "\"base_color\""
+
+#~ msgid "\"normal_camera\""
+#~ msgstr "\"normal_camera\""
+
+#~ msgid "\"emission_color\""
+#~ msgstr "\"emission_color\""
+
+#~ msgid "\"metalness\""
+#~ msgstr "\"metalness\""
+
+#~ msgid "\"diffuse_roughness\""
+#~ msgstr "\"diffuse_roughness\""
+
+#~ msgid "\"ambient_occlusion\""
+#~ msgstr "\"ambient_occlusion\""
+
+#~ msgid "\"unknown\""
+#~ msgstr "\"unknown\""
+
+#~ msgid "\"sheen\""
+#~ msgstr "\"sheen\""
+
+#~ msgid "\"clearcoat\""
+#~ msgstr "\"clearcoat\""
+
+#~ msgid "\"transmission\""
+#~ msgstr "\"transmission\""
+
+#~ msgid ""
+#~ "These correspond to the various textures defined by assimp. In many "
+#~ "cases, you'll have multiple types packed into a single texture - like "
+#~ "having a textuure that has metallic on the blue channel, roughness on the "
+#~ "green, and ambient occlusion on the red. In that case, you'll want to "
+#~ "pick one texture type to load, and use the texture shader to extract the "
+#~ "channels you want."
+#~ msgstr ""
+#~ "これらは、assimp によって定義されたさまざまなテクスチャに対応します。多く"
+#~ "の場合、青のチャンネルにメタリック、緑の粗さ、赤のアンビエントオクルージョ"
+#~ "ンを持つテクスチャなど、複数のタイプが 1 つのテクスチャに詰め込まれていま"
+#~ "す。その場合は、ロードするテクスチャ タイプを 1 つ選択し、テクスチャ "
+#~ "シェーダーを使用して必要なチャネルを抽出します。"
+
+#~ msgid ""
+#~ "The textures list may also contain displayables, which will be used as "
+#~ "textures directly."
+#~ msgstr ""
+#~ "テクスチャリストには、テクスチャとして直接使用される displayable も含まれ"
+#~ "る場合があります。"
+
+#~ msgid "`flip_x`"
+#~ msgstr "`flip_x`"
+
+#~ msgid "If True, the model will be flipped along the x axis."
+#~ msgstr "True なら、モデルは x 軸に沿って反転されます。"
+
+#~ msgid "`flip_y`"
+#~ msgstr "`flip_y`"
+
+#~ msgid ""
+#~ "If True, the model will be flipped along the y axis. This defaults to "
+#~ "True, to map models to Ren'Py's coordinate system."
+#~ msgstr ""
+#~ "True の場合、モデルは y 軸に沿って反転されます。モデルを Ren'Py の座標系に"
+#~ "マッピングするため、デフォルトは True です。"
+
+#~ msgid "`flip_z`"
+#~ msgstr "`flip_z`"
+
+#~ msgid "If True, the model will be flipped along the z axis."
+#~ msgstr "True の場合、モデルは Z 軸に沿って反転されます。"
+
+#~ msgid "`flip_uv`"
+#~ msgstr "`flip_uv`"
+
+#~ msgid ""
+#~ "If True, the UV coordinates will be flipped vertically. This defaults to "
+#~ "True, to map texture coordinates to how Ren'Py expects them."
+#~ msgstr ""
+#~ "True の場合、UV 座標は垂直方向に反転されます。デフォルトは True で、テクス"
+#~ "チャ座標を Ren'Py が期待する方法にマッピングします。"
+
+#~ msgid ""
+#~ "GLTFModel.__init__(self, unicode filename: str, textures: Iterable = "
+#~ "(u'diffuse'), shader: str | tuple[str] = u'renpy.texture', tangents: bool "
+#~ "= False, double zoom: float = 1.0, flip_x: bool = False, flip_y: bool = "
+#~ "True, flip_z: bool = False, flip_uv: bool = True)"
+#~ msgstr ""
+#~ "GLTFModel.__init__(self, unicode filename: str, textures: Iterable = "
+#~ "(u'diffuse'), shader: str | tuple[str] = u'renpy.texture', tangents: bool "
+#~ "= False, double zoom: float = 1.0, flip_x: bool = False, flip_y: bool = "
+#~ "True, flip_z: bool = False, flip_uv: bool = True)"
 
 #~ msgid "sampler2D (supplied by Ren'Py)"
 #~ msgstr "sampler2D (Ren'Py 提供 )"

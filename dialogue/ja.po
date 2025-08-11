@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-02 11:45+0900\n"
-"PO-Revision-Date: 2025-03-02 11:56+0900\n"
+"POT-Creation-Date: 2025-06-28 12:38+0900\n"
+"PO-Revision-Date: 2025-07-13 14:37+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -223,8 +223,8 @@ msgstr "このキャラクターに関連付けられる画像タグの文字列
 
 #: ../../source/inc/character:34
 msgid ""
-"**Voice Tag.** If a voice tag is assign to a Character, the voice files that "
-"are associated with it, can be muted or played in the preference screen."
+"**Voice Tag.** If a voice tag is assigned to a Character, the voice files "
+"that are associated with it, can be muted or played in the preference screen."
 msgstr ""
 "**ボイスタグ** ボイスタグを Character に指定して、そのキャラクターに関連する"
 "ボイスファイルを設定画面でミュートやテスト再生可能にできます。"
@@ -422,27 +422,67 @@ msgstr ""
 "`ctc_pause` だけ使って `ctc_timedpause` は使わないときは、 ``Null()`` を使っ"
 "てください。"
 
-#: ../../source/inc/character:127
+#: ../../source/inc/character:144
 msgid "`ctc_position`"
 msgstr "`ctc_position`"
 
 #: ../../source/inc/character:121
+msgid "Controls the location of the click-to-continue indicator. This can be:"
+msgstr "ctc インジケータの位置を制御します。これは、次のいづれかです :"
+
+#: ../../source/inc/character:126
+msgid "\"nestled\""
+msgstr "\"nestled\""
+
+#: ../../source/inc/character:125
 msgid ""
-"Controls the location of the click-to-continue indicator. If ``\"nestled"
-"\"``, the indicator is displayed as part of the text being shown, "
-"immediately after the last character. ``\"nestled-close\"`` is similar, "
-"except a break is not allowed between the text and the CTC indicator. If ``"
-"\"fixed\"``, a new screen containing the CTC indicator is shown, and the "
-"position style properties of the CTC displayable are used to position the "
-"CTC indicator."
+"The indicator is displayed as part of the text being shown, immediately "
+"after the last character."
 msgstr ""
-"ctc の位置を制御します。 ``\"nestled\"`` の時、ctcは表示されるテキストの一部"
-"として、最後の文字の直後に表示されます。 ``\"nestled-close\"`` も同じですが、"
-"最後の文字とctcとの間で改行を許可しません。 ``\"fixed\"`` の場合は、 ctc を含"
-"む新しいスクリーンが表示され、 ctc の位置プロパティーが ctc の配置に使用され"
-"ます。"
+"インジケータは、表示されるテキストの一部として、最後の文字の直後に表示されま"
+"す。"
+
+#: ../../source/inc/character:130
+msgid "\"nestled-close\""
+msgstr "\"nestled-close\""
 
 #: ../../source/inc/character:129
+msgid ""
+"Similar to ``\"nestled\"``, but a break is not allowed between the text and "
+"the CTC indicator."
+msgstr ""
+"``\"nestled\"`` と似ていますが、テキストと CTC インジケータの間に区切りが入り"
+"ません。"
+
+#: ../../source/inc/character:135
+msgid "\"fixed\""
+msgstr "\"fixed\""
+
+#: ../../source/inc/character:133
+msgid ""
+"If a screen named \"ctc\" exists, it is shown. Otherwise, the CTC "
+"displayable is show, and the position style properties of the CTC "
+"displayable are used to position the CTC indicator."
+msgstr ""
+"\"ctc\" という名前の screen が存在する場合は、それが表示されます。そうでなけ"
+"れば、 CTC displayable が表示され、CTC displayable の位置スタイル プロパ"
+"ティーを使用して CTC インジケーターが配置されます。"
+
+#: ../../source/inc/character:144
+msgid "\"screen-variable\""
+msgstr "\"screen-variable\""
+
+#: ../../source/inc/character:138
+msgid ""
+"When given, the variable named \"ctc\" is set to the CTC displayable when "
+"the CTC indicator should be show. This can be used with the following screen "
+"language::"
+msgstr ""
+"これが指定されると、CTC インジケーターが表示されるときに、 \"ctc\" という名前"
+"の変数が CTC displayable に設定されます。これは、次のスクリーン言語により使用"
+"できます ::"
+
+#: ../../source/inc/character:146
 msgid ""
 "**Screens.** The display of dialogue uses a :ref:`screen <screens>`. These "
 "arguments allow you to select that screen, and to provide arguments to it."
@@ -450,19 +490,19 @@ msgstr ""
 "**スクリーン** 台詞の表示には :ref:`スクリーン <screens>` を使います。以下の"
 "引数により、スクリーンの選択、及びスクリーンへの引数の受け渡しができます。"
 
-#: ../../source/inc/character:134
+#: ../../source/inc/character:151
 msgid "`screen`"
 msgstr "`screen`"
 
-#: ../../source/inc/character:134
+#: ../../source/inc/character:151
 msgid "The name of the screen that is used to display the dialogue."
 msgstr "台詞を表示するのに使われるスクリーンの名前です。"
 
-#: ../../source/inc/character:140
+#: ../../source/inc/character:157
 msgid "`retain`"
 msgstr "`retain`"
 
-#: ../../source/inc/character:137
+#: ../../source/inc/character:154
 msgid ""
 "If not true, an unused tag is generated for each line of dialogue, and the "
 "screens are shown non-transiently. Call :func:`renpy.clear_retain` to remove "
@@ -473,7 +513,7 @@ msgstr ""
 "いるスクリーンをすべて削除できます。これはほとんどの場合 :doc:`bubble` と共に"
 "使用されます。"
 
-#: ../../source/inc/character:142
+#: ../../source/inc/character:159
 msgid ""
 "Keyword arguments beginning with ``show_`` have the prefix stripped off, and "
 "are passed to the screen as arguments. For example, the value of "
@@ -486,23 +526,23 @@ msgstr ""
 "になります (myflag 変数はデフォルトでは使われませんが、カスタマイズされた "
 "say スクリーンで使用可能です)。"
 
-#: ../../source/inc/character:148
+#: ../../source/inc/character:165
 msgid "One show variable is, for historical reasons, handled by Ren'Py itself:"
 msgstr ""
 "一つの show 変数が、歴史的な理由のため、 Ren'Py 自身によって扱われます。 :"
 
-#: ../../source/inc/character:152
+#: ../../source/inc/character:169
 msgid "`show_layer`"
 msgstr "`show_layer`"
 
-#: ../../source/inc/character:151
+#: ../../source/inc/character:168
 msgid ""
 "If given, this should be a string giving the name of the layer to show the "
 "say screen on."
 msgstr ""
 "必要に応じて say スクリーンを表示するレイヤーの名前の文字列を指定します。"
 
-#: ../../source/inc/character:154
+#: ../../source/inc/character:171
 msgid ""
 "**Styling Text and Windows.** Keyword arguments beginning with ``who_``, "
 "``what_``, and ``window_`` have their prefix stripped, and are used to :doc:"
@@ -513,7 +553,7 @@ msgstr ""
 "始まるキーワード引数は、接頭辞を剥ぎ取られ、それぞれキャラクター名、会話テキ"
 "スト、その両方を含むウィンドウの :doc:`スタイル <style>` になります。"
 
-#: ../../source/inc/character:160
+#: ../../source/inc/character:177
 msgid ""
 "For example, if a character is given the keyword argument ``who_color="
 "\"#c8ffc8\"``, the color of the character's name is changed, in this case to "
@@ -524,7 +564,7 @@ msgstr ""
 "と、キャラクター名の色が変わり、この場合は緑になります。 ``window_background="
 "\"frame.png\"`` で、キャラクターの台詞を含むウィンドウの背景を設定します。"
 
-#: ../../source/inc/character:166
+#: ../../source/inc/character:183
 msgid ""
 "The style applied to the character name, spoken text, and window can also be "
 "set this way, using the ``who_style``, ``what_style``, and ``window_style`` "
@@ -533,7 +573,7 @@ msgstr ""
 "``who_style``, ``what_style`` , および ``window_style`` 引数を使う方法でも、"
 "それぞれキャラクター名、台詞、ウィンドウに適用されるスタイルを設定できます。"
 
-#: ../../source/inc/character:170
+#: ../../source/inc/character:187
 msgid ""
 "Setting :var:`config.character_id_prefixes` makes it possible to style other "
 "displayables as well. For example, when the default GUI is used, styles "
@@ -1006,6 +1046,21 @@ msgid ""
 ":func:`renpy.last_say` : provides information about the last say statement."
 msgstr ""
 ":func:`renpy.last_say` : 最後の say ステートメントに関する情報を提供します。"
+
+#~ msgid ""
+#~ "Controls the location of the click-to-continue indicator. If ``\"nestled"
+#~ "\"``, the indicator is displayed as part of the text being shown, "
+#~ "immediately after the last character. ``\"nestled-close\"`` is similar, "
+#~ "except a break is not allowed between the text and the CTC indicator. If "
+#~ "``\"fixed\"``, a new screen containing the CTC indicator is shown, and "
+#~ "the position style properties of the CTC displayable are used to position "
+#~ "the CTC indicator."
+#~ msgstr ""
+#~ "ctc の位置を制御します。 ``\"nestled\"`` の時、ctcは表示されるテキストの一"
+#~ "部として、最後の文字の直後に表示されます。 ``\"nestled-close\"`` も同じで"
+#~ "すが、最後の文字とctcとの間で改行を許可しません。 ``\"fixed\"`` の場合"
+#~ "は、 ctc を含む新しいスクリーンが表示され、 ctc の位置プロパティーが ctc "
+#~ "の配置に使用されます。"
 
 #~ msgid "``window auto hide``, ``window auto show``"
 #~ msgstr "``window auto hide``, ``window auto show``"

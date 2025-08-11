@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-02 11:45+0900\n"
-"PO-Revision-Date: 2025-03-02 12:04+0900\n"
+"POT-Creation-Date: 2025-07-15 21:35+0900\n"
+"PO-Revision-Date: 2025-07-01 19:43+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -423,7 +423,7 @@ msgstr ""
 "レイヤーから画像を非表示します。 hide ステートメントに相当する python コード"
 "です。"
 
-#: ../../source/inc/li:120 ../../source/inc/se_images:17
+#: ../../source/inc/li:110 ../../source/inc/se_images:17
 #: ../../source/inc/se_images:29 ../../source/inc/se_images:58
 msgid "`name`"
 msgstr "`name`"
@@ -874,7 +874,7 @@ msgstr "`attribute`"
 msgid "A string giving the name of the attribute."
 msgstr "属性の名前の文字列です。"
 
-#: ../../source/inc/li:20 ../../source/inc/li:69
+#: ../../source/inc/li:20 ../../source/inc/li:66
 msgid "`image`"
 msgstr "`image`"
 
@@ -898,51 +898,42 @@ msgstr ""
 msgid "The following keyword arguments are also known:"
 msgstr "次のキーワード引数もあります。 :"
 
-#: ../../source/inc/li:30 ../../source/inc/li:84 ../../source/inc/li:116
+#: ../../source/inc/li:30 ../../source/inc/li:74 ../../source/inc/li:106
 msgid "`at`"
 msgstr "`at`"
 
-#: ../../source/inc/li:29 ../../source/inc/li:84
+#: ../../source/inc/li:29 ../../source/inc/li:74
 msgid "A transform or list of transforms that are applied to the image."
 msgstr "画像に適用される transform または transform のリストです。"
 
-#: ../../source/inc/li:34 ../../source/inc/li:73
-msgid "`if_all`"
-msgstr "`if_all`"
+#: ../../source/inc/li:35 ../../source/inc/li:71
+msgid "`when`"
+msgstr ""
 
 #: ../../source/inc/li:33
+#, fuzzy
 msgid ""
-"An attribute or list of attributes. The displayable is only shown if all of "
-"these are showing."
+"A string containing a ``when`` expression, described in the :ref:`when` "
+"section. The displayable is only shown when the expression is satisfied by "
+"the pool of attributes currently applied to the layeredimage."
 msgstr ""
-"属性または属性のリストです。 displayable はこれらの全てがあるときだけ表示され"
-"ます。"
+":ref:`if_attr` の項目で記述される if_attr 式を含む文字列です。 displayable "
+"は、 layeredimage に現在適用されている属性のプールによって式が満たされている"
+"場合にのみ表示されます。"
 
-#: ../../source/inc/li:38 ../../source/inc/li:77
-msgid "`if_any`"
-msgstr "`if_any`"
+#: ../../source/inc/li:39
+msgid "`variant`"
+msgstr "`variant`"
 
-#: ../../source/inc/li:37
+#: ../../source/inc/li:38
 msgid ""
-"An attribute or list of attributes. if not empty, the displayable is only "
-"shown if any of these are showing."
+"A string giving the variant of the attribute. This is used as part of "
+"finding the displayable when `image` is None."
 msgstr ""
-"属性または属性のリストです。 displayable はこれらのどれかがあるときだけ表示さ"
-"れます。"
-
-#: ../../source/inc/li:42 ../../source/inc/li:81
-msgid "`if_not`"
-msgstr "`if_not`"
+"属性のバージョンを指定する文字列です。これは `image` が None のときに "
+"displayable 検索の一部に使用されます。"
 
 #: ../../source/inc/li:41
-msgid ""
-"An attribute or list of attributes. The displayable is only shown if none of "
-"these are showing."
-msgstr ""
-"属性または属性のリストです。 displayable はこれらの全てがないときだけ表示され"
-"ます。"
-
-#: ../../source/inc/li:44
 msgid ""
 "Other keyword arguments are interpreted as transform properties. If any are "
 "present, a transform is created that wraps the image. (For example, "
@@ -953,7 +944,7 @@ msgstr ""
 "画像をラップする transform が作成されます(例えば、 pos=(100, 200) を使用し"
 "て、画像を 100 ピクセル横に、 200 ピクセル縦にオフセットできます)。"
 
-#: ../../source/inc/li:49
+#: ../../source/inc/li:46
 msgid ""
 "If the `image` parameter is omitted or None, and the LayeredImage has been "
 "given the `image_format` parameter, the image_format is used to generate an "
@@ -963,7 +954,7 @@ msgstr ""
 "`image_format` パラメーターが与えられると、 image_format を使用して画像ファイ"
 "ル名を生成します。"
 
-#: ../../source/inc/li:55
+#: ../../source/inc/li:52
 msgid ""
 "When the condition is true, the layer is displayed. Otherwise, nothing is "
 "displayed."
@@ -971,7 +962,7 @@ msgstr ""
 "条件が True ならそのレイヤーが表示されます。そうでなければ何も表示されませ"
 "ん。"
 
-#: ../../source/inc/li:58
+#: ../../source/inc/li:55
 msgid ""
 "This is used to implement a single ``if``, ``elif`` **or** ``else`` "
 "layeredimage statement (for ``else``, `condition` should be \"True\"). "
@@ -983,44 +974,34 @@ msgstr ""
 "Conditions が :class:`ConditionGroup` に渡され、 if/elif/else ステートメント"
 "を再現します。"
 
-#: ../../source/inc/li:65
+#: ../../source/inc/li:62
 msgid "`condition`"
 msgstr "`condition`"
 
-#: ../../source/inc/li:64
+#: ../../source/inc/li:61
 msgid ""
 "This should be a string giving a Python condition that determines if the "
 "layer is displayed."
 msgstr "レイヤーが表示されるかどうかを決定する Python  の条件の文字列です。"
 
-#: ../../source/inc/li:68
+#: ../../source/inc/li:65
 msgid ""
 "If not None, this should be a displayable that is displayed when the "
 "condition is true."
 msgstr "これは None または条件が True なら表示される displayable です。"
 
-#: ../../source/inc/li:72
+#: ../../source/inc/li:69
+#, fuzzy
 msgid ""
-"An attribute or list of attributes. The condition is only evaluated if all "
-"of these are showing."
+"A string containing a ``when`` expression, described in the :ref:`when` "
+"section. The condition is only evaluated when the expression is satisfied by "
+"the pool of attributes currently applied to the layeredimage."
 msgstr ""
-"属性または属性のリストです。これらのすべてがあるときのみ条件は評価されます。"
+":ref:`if_attr` の項目で記述される if_attr 式を含む文字列です。条件は、 "
+"layeredimage に現在適用されている属性のプールによって式が満たされているときに"
+"のみ評価されます。"
 
 #: ../../source/inc/li:76
-msgid ""
-"An attribute or list of attributes. If not empty, the condition is only "
-"evaluated if any of these are showing."
-msgstr ""
-"属性または属性のリストです。これらのどれかがあるときのみ条件は評価されます。"
-
-#: ../../source/inc/li:80
-msgid ""
-"An attribute or list of attributes. The condition is only evaluated if none "
-"of these are showing."
-msgstr ""
-"属性または属性のリストです。これらのすべてがないときのみ条件は評価されます。"
-
-#: ../../source/inc/li:86
 msgid ""
 "Other keyword arguments are interpreted as transform properties. If any is "
 "present, a transform is created that wraps the image. (For example, "
@@ -1031,7 +1012,7 @@ msgstr ""
 "れると、画像をラップする transform が作成されます(例えば pos=(100, 200) を使"
 "用して画像を 100 ピクセル水平に、 200 ピクセル垂直にオフセットできます)。"
 
-#: ../../source/inc/li:93
+#: ../../source/inc/li:83
 msgid ""
 "Takes a list of :class:`Condition` to combine them into a single :func:"
 "`ConditionSwitch`."
@@ -1039,11 +1020,11 @@ msgstr ""
 ":class:`Condition` のリストを受け取って 1 つの :func:`ConditionSwitch` に組み"
 "込みます。"
 
-#: ../../source/inc/li:96
+#: ../../source/inc/li:86
 msgid "Implements the if/elif/else statement."
 msgstr "if/elif/else ステートメントを実装します。"
 
-#: ../../source/inc/li:100
+#: ../../source/inc/li:90
 msgid ""
 "This is an image-like object that, when shown with the proper set of "
 "attributes, shows a displayable created by compositing together the "
@@ -1053,11 +1034,11 @@ msgstr ""
 "らの属性と関連付けられた displayable を合成して作成した displayable を表示し"
 "ます。"
 
-#: ../../source/inc/li:112
+#: ../../source/inc/li:102
 msgid "`attributes`"
 msgstr "`attributes`"
 
-#: ../../source/inc/li:105
+#: ../../source/inc/li:95
 msgid ""
 "This must be a list of Attribute, Condition, ConditionGroup or :doc:"
 "`displayable <displayables>` objects. Each one reflects a displayable that "
@@ -1072,24 +1053,24 @@ msgstr ""
 "は後ろから前の順で、最初の要素は遠く、最後のは近くになります。直接 "
 "displayable を渡のは `always` レイヤー画像ステートメントに相当します。"
 
-#: ../../source/inc/li:115
+#: ../../source/inc/li:105
 msgid ""
 "A transform or list of transforms that are applied to the displayable after "
 "it is parameterized."
 msgstr ""
 "合成後に displayable に適用される transform または transform のリストです。"
 
-#: ../../source/inc/li:119
+#: ../../source/inc/li:109
 msgid ""
 "The name of the layeredimage. This is used as part of the names of image "
 "components."
 msgstr "レイヤー画像の名前で、画像要素の名前の一部として使用されます。"
 
-#: ../../source/inc/li:127
+#: ../../source/inc/li:117
 msgid "`image_format`"
 msgstr "`image_format`"
 
-#: ../../source/inc/li:123
+#: ../../source/inc/li:113
 msgid ""
 "When a given image is a string, and this is supplied, the image name is "
 "interpolated into `image_format` to make an image file. For example, "
@@ -1103,11 +1084,11 @@ msgstr ""
 "探します ( これは画像ファイルではなく画像を探す自動グループでは使用されませ"
 "ん )。"
 
-#: ../../source/inc/li:131
+#: ../../source/inc/li:121
 msgid "`format_function`"
 msgstr "`format_function`"
 
-#: ../../source/inc/li:130
+#: ../../source/inc/li:120
 msgid ""
 "A function that is used instead of `layeredimage.format_function` to format "
 "the image information into a displayable."
@@ -1115,11 +1096,11 @@ msgstr ""
 "`layeredimage.format_function` の代わりに使用して画像の情報を displayable 形"
 "式にする関数です。"
 
-#: ../../source/inc/li:138
+#: ../../source/inc/li:128
 msgid "`attribute_function`"
 msgstr "`attribute_function`"
 
-#: ../../source/inc/li:134
+#: ../../source/inc/li:124
 msgid ""
 "If not None, a function that's called with a set of attributes supplied to "
 "the image, and returns the set of attributes used to select layers. This is "
@@ -1130,11 +1111,11 @@ msgstr ""
 "None を指定するか、画像に渡される属性の set で呼び出され、レイヤーの選択に使"
 "用される属性の set を返す関数です。"
 
-#: ../../source/inc/li:144
+#: ../../source/inc/li:134
 msgid "`offer_screen`"
 msgstr "`offer_screen`"
 
-#: ../../source/inc/li:141
+#: ../../source/inc/li:131
 msgid ""
 "Sets whether or not the available area is taken into account as for how "
 "children are placed and how they are sized (when they have variable size). "
@@ -1146,7 +1127,7 @@ msgstr ""
 "せん。 None の場合、デフォルトは :var:`config.layeredimage_offer_screen` で"
 "す。"
 
-#: ../../source/inc/li:146
+#: ../../source/inc/li:136
 msgid ""
 "Additional keyword arguments may contain transform properties. If any are "
 "present, a transform is created that wraps the result image. Remaining "
@@ -1161,7 +1142,7 @@ msgstr ""
 "xfit と yfit は Fixed で True に設定され、表示している全てのレイヤー画像に"
 "フィットする最小サイズに縮みます。"
 
-#: ../../source/inc/li:153
+#: ../../source/inc/li:143
 msgid ""
 "A LayeredImage is not a displayable, and can't be used in all the places a "
 "displayable can be used. This is because it requires an image name "
@@ -1174,11 +1155,11 @@ msgstr ""
 "す。そういうわけで、 LayerdImage は scene や show ステートメントか、 "
 "displayable として使用される画像名の文字列から表示されるべきです。"
 
-#: ../../source/inc/li:163
+#: ../../source/inc/li:153
 msgid "`a`"
 msgstr "`a`"
 
-#: ../../source/inc/li:162
+#: ../../source/inc/li:152
 msgid ""
 "An Attribute, Condition, ConditionGroup or :doc:`displayable <displayables>` "
 "object."
@@ -1186,7 +1167,7 @@ msgstr ""
 "Attribute や Condition, ConditionGroup, :doc:`displayable <displayables>` オ"
 "ブジェクト"
 
-#: ../../source/inc/li:165
+#: ../../source/inc/li:155
 msgid ""
 "This method adds the provided layer to the list of layers of the "
 "layeredimage, as if it had been passed in the `attributes` argument to the "
@@ -1194,6 +1175,57 @@ msgid ""
 msgstr ""
 "このメソッドはレイヤー画像のレイヤーのリストに `attributes` 引数がコンストラ"
 "クターに渡されたかのように指定のレイヤーが加えられます。"
+
+#~ msgid "`if_attr`"
+#~ msgstr "`if_attr`"
+
+#~ msgid ""
+#~ "An attribute or list of attributes. The displayable is only shown if all "
+#~ "of these are showing."
+#~ msgstr ""
+#~ "属性または属性のリストです。 displayable はこれらの全てがあるときだけ表示"
+#~ "されます。"
+
+#~ msgid "`if_any`"
+#~ msgstr "`if_any`"
+
+#~ msgid ""
+#~ "An attribute or list of attributes. if not empty, the displayable is only "
+#~ "shown if any of these are showing."
+#~ msgstr ""
+#~ "属性または属性のリストです。 displayable はこれらのどれかがあるときだけ表"
+#~ "示されます。"
+
+#~ msgid "`if_not`"
+#~ msgstr "`if_not`"
+
+#~ msgid ""
+#~ "An attribute or list of attributes. The displayable is only shown if none "
+#~ "of these are showing."
+#~ msgstr ""
+#~ "属性または属性のリストです。 displayable はこれらの全てがないときだけ表示"
+#~ "されます。"
+
+#~ msgid ""
+#~ "An attribute or list of attributes. The condition is only evaluated if "
+#~ "all of these are showing."
+#~ msgstr ""
+#~ "属性または属性のリストです。これらのすべてがあるときのみ条件は評価されま"
+#~ "す。"
+
+#~ msgid ""
+#~ "An attribute or list of attributes. If not empty, the condition is only "
+#~ "evaluated if any of these are showing."
+#~ msgstr ""
+#~ "属性または属性のリストです。これらのどれかがあるときのみ条件は評価されま"
+#~ "す。"
+
+#~ msgid ""
+#~ "An attribute or list of attributes. The condition is only evaluated if "
+#~ "none of these are showing."
+#~ msgstr ""
+#~ "属性または属性のリストです。これらのすべてがないときのみ条件は評価されま"
+#~ "す。"
 
 #~ msgid ""
 #~ "Displaying narration can be done the same way, by using the ``narrator`` "

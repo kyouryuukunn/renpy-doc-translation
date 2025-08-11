@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-02 11:45+0900\n"
-"PO-Revision-Date: 2025-03-02 11:59+0900\n"
+"POT-Creation-Date: 2025-05-18 13:58+0900\n"
+"PO-Revision-Date: 2025-06-28 16:52+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -62,24 +62,25 @@ msgstr ""
 
 #: ../../source/lifecycle.rst:23
 msgid ""
-"Files inside :file`renpy/common` are loaded using  using the full path, in "
-"unicode order."
+"Files inside :file:`renpy/common` are loaded using  using the full path, in "
+"unicode order. This is only for use by Ren'Py."
 msgstr ""
 ":file`renpy/common` 内部のファイルはユニコード順にフルパスを使用して読み込ま"
-"れます。"
+"れます。これは Ren'Py によってのみ使用されます。"
 
-#: ../../source/lifecycle.rst:25
+#: ../../source/lifecycle.rst:26
 msgid ""
-"Only if :file:`game/libs/libs.txt` exists, files in game/libs are loaded "
-"using the filename only, in unicode order. (In this order, :file:`game/libs/"
-"plants/aloe.rpy` will load before :file:`game/libs/animals/zebra.rpy`.)"
+"Only if :file:`game/libs/libs.txt` exists, files in :file:`game/libs` have "
+"the first directory removed, if any and then are loaded in unicode order. In "
+"this order, :file:`game/libs/plants/aloe.rpy` will load before :file:`game/"
+"libs/animals/zebra.rpy`."
 msgstr ""
-":file:`game/libs/libs.txt` がある場合のみ、 game/libs 内のファイルはそのファ"
-"イル名のみユニコード順に読み込まれます (この順番では、 :file:`game/libs/"
-"plants/aloe.rpy` は :file:`game/libs/animals/zebra.rpy` の前に読み込まれま"
-"す)。"
+":file:`game/libs/libs.txt` がある場合のみ、 :files:`game/libs` 内のファイルは"
+"その最初のディレクトリーを除去してユニコード順に読み込まれます。この順番で"
+"は、 :file:`game/libs/plants/aloe.rpy` は :file:`game/libs/animals/zebra."
+"rpy` の前に読み込まれます。"
 
-#: ../../source/lifecycle.rst:28
+#: ../../source/lifecycle.rst:29
 msgid ""
 "Files in :file:`game` are loaded using the full path, in unicode order. (In "
 "this order, :file:`game/animals/zebra.rpy` will load before :file:`game/"
@@ -89,22 +90,19 @@ msgstr ""
 "は :file:`game/animals/zebra.rpy` は :file:`game/plants/aloe.rpy` の前に読み"
 "込まれます)。"
 
-#: ../../source/lifecycle.rst:31
+#: ../../source/lifecycle.rst:32
 msgid ""
-"Only if :file:`game/mods/mods.txt` exists, files in game/mods are loaded "
-"using the filename only, in unicode order. (In this order, :file:`game/mods/"
-"plants/aloe.rpy` will load before :file:`game/mods/animals/zebra.rpy`.)"
+"Only if :file:`game/mods/mods.txt` exists, :file:`game/mods` have the first "
+"directory removed, if any and then are loaded in unicode order. In this "
+"order, :file:`game/mods/plants/aloe.rpy` will load before :file:`game/mods/"
+"animals/zebra.rpy`."
 msgstr ""
-":file:`game/mods/mods.txt` がある場合のみ、 game/mods 内のファイルはそのファ"
-"イル名のみがユニコード順で読み込まれます(この順番では :file:`game/mods/"
-"plants/aloe.rpy` は :file:`game/mods/animals/zebra.rpy` の前に読み込まれま"
-"す)。"
+":file:`game/mods/mods.txt` がある場合のみ、 :file:`game/mods` 内のファイルは"
+"その最初のディレクトリーを除去してユニコード順に読み込まれます。この順番で"
+"は、 :file:`game/mods/plants/aloe.rpy` は :file:`game/mods/animals/zebra."
+"rpy` の前に読み込まれます。"
 
-#: ../../source/lifecycle.rst:34
-msgid "The precise order of file loading mostly affects :doc:`cds`."
-msgstr "ファイル読み込みの正確な順序は主に :doc:`cds` に影響します。"
-
-#: ../../source/lifecycle.rst:36
+#: ../../source/lifecycle.rst:35
 msgid ""
 "The first creator-written code being executed is what's written in ``python "
 "early`` blocks. These are executed after the file they're in has been read "
@@ -119,7 +117,7 @@ msgstr ""
 "変更するようなステートメントは ``python early`` ブロックで記述しなければなら"
 "ないのです。"
 
-#: ../../source/lifecycle.rst:42
+#: ../../source/lifecycle.rst:41
 msgid ""
 "The ``init python early`` syntax is sometimes encountered, but it's "
 "redundant and doesn't change anything in how the code gets executed compared "
@@ -128,11 +126,11 @@ msgstr ""
 "``init python early`` という構文に出会うことがありますが、これは冗長で、 "
 "``python early`` に対してコードがどのように実行されるかは何も変わりません。"
 
-#: ../../source/lifecycle.rst:48
+#: ../../source/lifecycle.rst:47
 msgid "Init Phase"
 msgstr "初期化フェーズ"
 
-#: ../../source/lifecycle.rst:50
+#: ../../source/lifecycle.rst:49
 msgid ""
 "After parsing/early phase, the \"init\" phase starts. Several statements are "
 "executed at that time, including the :ref:`init-python-statement`, the :ref:"
@@ -145,7 +143,7 @@ msgstr ""
 "statement` , :ref:`image-statement`, :ref:`screen-statement`, :doc:`style "
 "<style>` ステートメントなどのいくつかのステートメントが実行されます。"
 
-#: ../../source/lifecycle.rst:55
+#: ../../source/lifecycle.rst:54
 msgid ""
 "The init phase is divided in successive epochs, or init priorities. Contrary "
 "to what the term may imply, epochs of lower priority are executed before "
@@ -160,7 +158,7 @@ msgstr ""
 "の使用を勧めます。 ライブラリーと mod では -999 から -100, 100 から 999 の使"
 "用を勧めます。-999 から 999 外の優先度は Ren'Py 内部で予約されています。"
 
-#: ../../source/lifecycle.rst:63
+#: ../../source/lifecycle.rst:62
 msgid ""
 "By default, these statements are executed at init offset 0. However, they "
 "can be offset using the :ref:`init-offset-statement` or by other means. The :"
@@ -174,13 +172,13 @@ msgstr ""
 "実行され、 init offset ステートメントはこの 500 を置き換えるのではなく、追加"
 "したり減算したりします。"
 
-#: ../../source/lifecycle.rst:68
+#: ../../source/lifecycle.rst:67
 msgid ""
 "Automatic image definition from the :ref:`image-directory` occurs at init "
 "priority 0."
 msgstr ":ref:`image-directory` からの自動画像定義は優先度0で行われます。"
 
-#: ../../source/lifecycle.rst:70
+#: ../../source/lifecycle.rst:69
 msgid ""
 "Note that while the :ref:`default <default-statement>` statements are not "
 "executed at init time, the priority of the statements influences the order "
@@ -190,11 +188,11 @@ msgstr ""
 "が、ステートメントの優先順位は、それらが実行される順序に影響を与えることに注"
 "意してください。"
 
-#: ../../source/lifecycle.rst:77
+#: ../../source/lifecycle.rst:76
 msgid "Init Offset Statement"
 msgstr "init offset ステートメント"
 
-#: ../../source/lifecycle.rst:79
+#: ../../source/lifecycle.rst:78
 msgid ""
 "The ``init offset`` statement sets a priority offset for all statements that "
 "run at init time. It should be placed at the top of the file, and it applies "
@@ -206,11 +204,11 @@ msgstr ""
 "で、現在のブロックと子ブロックにある、次の init priority ステートメントに続く"
 "すべてのステートメントに適用されます。 ::"
 
-#: ../../source/lifecycle.rst:86
+#: ../../source/lifecycle.rst:85
 msgid "sets the priority offset to 42. In::"
 msgstr "このコードでは優先度のオフセットを 42 に設定しています。 ::"
 
-#: ../../source/lifecycle.rst:96
+#: ../../source/lifecycle.rst:95
 msgid ""
 "The first define statement is run at priority 2, which means it runs after "
 "the second define statement, and hence ``foo`` winds up with a value of 2."
@@ -218,11 +216,11 @@ msgstr ""
 "最初の deffine ステートメントは優先度 2 で実行されるので 二つ目の define ス"
 "テートメントの後に実行されます。 ``foo`` は 2 の値になります。"
 
-#: ../../source/lifecycle.rst:101
+#: ../../source/lifecycle.rst:100
 msgid "Script Execution"
 msgstr "スクリプトの実行"
 
-#: ../../source/lifecycle.rst:103
+#: ../../source/lifecycle.rst:102
 msgid ""
 "This is what happens once the game window becomes visible. This is when "
 "normal Ren'Py statements execute, and when the rules described in :doc:"
@@ -236,16 +234,16 @@ msgstr ""
 "が初期化時に設定されるのとは対照的に、 :ref:`default ステートメント <default-"
 "statement>` からの変数が最初に設定されるときでもあります。"
 
-#: ../../source/lifecycle.rst:108
+#: ../../source/lifecycle.rst:107
 msgid ""
 "Config variables should not be changed once normal game execution starts."
 msgstr "通常のゲーム実行開始後は、設定変数を変更しないでください。"
 
-#: ../../source/lifecycle.rst:111
+#: ../../source/lifecycle.rst:110
 msgid "Splashscreen"
 msgstr "スプラッシュスクリーン"
 
-#: ../../source/lifecycle.rst:113
+#: ../../source/lifecycle.rst:112
 msgid ""
 "If it exists, the :ref:`splashscreen <adding-a-splashscreen>` label is "
 "executed until it returns."
@@ -253,7 +251,7 @@ msgstr ""
 "あれば :ref:`splashscreen <adding-a-splashscreen>` ラベルが処理が返るまで実行"
 "されます。"
 
-#: ../../source/lifecycle.rst:115
+#: ../../source/lifecycle.rst:114
 msgid ""
 "A splashscreen is only displayed once per time Ren'Py is run, and is skipped "
 "when script execution restarts."
@@ -261,11 +259,11 @@ msgstr ""
 "スプラッシュスクリーンは Ren'Py が実行されるたびに一度だけ表示され、スクリプ"
 "トの実行が再開されたときにはスキップされます。"
 
-#: ../../source/lifecycle.rst:119
+#: ../../source/lifecycle.rst:118
 msgid "Main Menu"
 msgstr "メインメニュー"
 
-#: ../../source/lifecycle.rst:121
+#: ../../source/lifecycle.rst:120
 msgid ""
 "If it exists, the ``before_main_menu`` label is executed. Then, once it "
 "returns, the :ref:`main_menu <main-menu-screen>` screen is shown, unless a "
@@ -277,7 +275,7 @@ msgstr ""
 "menu-screen>` スクリーンが表示されます。詳細は :ref:`special-labels` を参照し"
 "てください。"
 
-#: ../../source/lifecycle.rst:125
+#: ../../source/lifecycle.rst:124
 msgid ""
 "The main menu itself is run in its own :ref:`context <context>`. Ren'Py can "
 "leave this context by calling the :class:`Start` action, which also jumps to "
@@ -293,11 +291,11 @@ msgstr ""
 "フェーズに入り、一方ゲームをロードすると、ゲームが保存された場所からゲーム"
 "フェーズに入ります。"
 
-#: ../../source/lifecycle.rst:131
+#: ../../source/lifecycle.rst:130
 msgid "In-Game Phase"
 msgstr "ゲームフェーズ"
 
-#: ../../source/lifecycle.rst:133
+#: ../../source/lifecycle.rst:132
 msgid ""
 "This is the phase in which an actual playthrough of the game occurs, and "
 "this is the mode in which players generally spend most of their time. This "
@@ -308,7 +306,7 @@ msgstr ""
 "費やすモードです。これはゲームが終了するか、ゲームが再開し、メインメニューに"
 "戻るまで続きます。"
 
-#: ../../source/lifecycle.rst:137
+#: ../../source/lifecycle.rst:136
 msgid ""
 "During the in-game phase, the :class:`ShowMenu` action can be used to "
 "display a screen in a new context."
@@ -316,7 +314,7 @@ msgstr ""
 "ゲームフェーズの間、 :class:`ShowMenu` アクションを使用して、新しいコンテキス"
 "トでスクリーンを表示できます。"
 
-#: ../../source/lifecycle.rst:140
+#: ../../source/lifecycle.rst:139
 msgid ""
 "The In-game phase continues until either the player quits or restarts the "
 "game to return to the main menu. The game may be restarted by returning when "
@@ -330,7 +328,7 @@ msgstr ""
 "ションや :func:`renpy.full_restart` 関数によってもゲームを再開できることがあ"
 "ります。"
 
-#: ../../source/lifecycle.rst:146
+#: ../../source/lifecycle.rst:145
 msgid ""
 "When the game restarts, all non-persistent data is reset to what it was at "
 "the end of the script execution phase, and then the script execution phase "
@@ -339,3 +337,6 @@ msgstr ""
 "ゲームが再開すると、すべての非永続的データはリセットされ、スクリプトの実行"
 "フェーズの終わりの状態に戻り、スクリプトの実行フェーズがスプラッシュスクリー"
 "ンをスキップして再び始まります。"
+
+#~ msgid "The precise order of file loading mostly affects :doc:`cds`."
+#~ msgstr "ファイル読み込みの正確な順序は主に :doc:`cds` に影響します。"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 12:25+0900\n"
-"PO-Revision-Date: 2024-06-23 23:03+0900\n"
+"POT-Creation-Date: 2025-05-18 13:58+0900\n"
+"PO-Revision-Date: 2025-07-15 08:34+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -179,13 +179,23 @@ msgstr ""
 
 #: ../../source/downloader.rst:76
 msgid ""
+"For the highest security, the ``public_key.pem`` file produced by building "
+"the main game should be copied to the base directory of the downloader game. "
+"This is the public key that will be used to verify the download."
+msgstr ""
+"最高のセキュリティを得るには、メインゲームのビルドによって生成された "
+"''public_key.pem'' ファイルをダウンローダーゲームのベースディレクトリにコピー"
+"する必要があります。これは、ダウンロードの検証に使用される公開鍵です。"
+
+#: ../../source/downloader.rst:80
+msgid ""
 "Here's an example script for a downloader game, using assets from the "
 "tutorial game::"
 msgstr ""
 "以下は、チュートリアルゲームのアセットを使用したダウンローダーゲームのスクリ"
 "プト例です。 ::"
 
-#: ../../source/downloader.rst:109
+#: ../../source/downloader.rst:113
 msgid ""
 "This is pretty simple, but there are a few things. The first is that it "
 "sets :var:`config.save` to False. This is important, as it disables saving "
@@ -196,7 +206,7 @@ msgstr ""
 "save` を False に設定しています。これは、設定を含むセーブとロードを無効にし、"
 "ダウンローダーの保存がメインゲームに影響を与えないようにするために重要です。"
 
-#: ../../source/downloader.rst:114
+#: ../../source/downloader.rst:118
 msgid ""
 "It's also all happening in the splashscreen, to start immediately and to "
 "disable entering the game menu."
@@ -204,7 +214,7 @@ msgstr ""
 "スプラッシュスクリーンのラベルですべて行って、すぐに起動してゲームメニューへ"
 "の入力を無効にするするようにしています。"
 
-#: ../../source/downloader.rst:117
+#: ../../source/downloader.rst:121
 msgid ""
 "Early on, the game calls :func:`updater.start_game_download`, to gather "
 "information about the download. After this, the game kills some time, having "
@@ -215,7 +225,7 @@ msgstr ""
 "ロードに関する情報を収集しています。この後、ゲームがダウンロードのサイズを確"
 "認する間アイリーンにいくつかのことを言わせて時間をつぶします。"
 
-#: ../../source/downloader.rst:121
+#: ../../source/downloader.rst:125
 msgid ""
 "After the player makes multiple clicks, the game may know the size of the "
 "download, or it may not, so we use a conditional to check the download size. "
@@ -229,7 +239,7 @@ msgstr ""
 "でない場合は、より一般的なテキストが表示されます(ゲームのダウンロードサイズの"
 "見積もりでもよいです)。"
 
-#: ../../source/downloader.rst:127
+#: ../../source/downloader.rst:131
 msgid ""
 "Finally, :func:`updater.continue_game_download` is called, which starts the "
 "download process. A screen will show up, and you can't do much - but music "
@@ -239,7 +249,7 @@ msgstr ""
 "が開始されています。スクリーンが表示され、大した操作はできませんが、音楽が再"
 "生され、ATL は実行され続けます。"
 
-#: ../../source/downloader.rst:131
+#: ../../source/downloader.rst:135
 msgid ""
 "When the download is complete, the main game will automatically start. If it "
 "fails, the downloader will restart, and the player will be able to try again"
@@ -247,11 +257,11 @@ msgstr ""
 "ダウンロードが完了すると、自動的にメインゲームが始まります。失敗した場合、ダ"
 "ウンローダーは再起動し、プレーヤーは再試行できるようになります。"
 
-#: ../../source/downloader.rst:135
+#: ../../source/downloader.rst:139
 msgid "Downloader Screen"
 msgstr "Downloader Screen"
 
-#: ../../source/downloader.rst:137
+#: ../../source/downloader.rst:141
 msgid ""
 "The downloader is a screen that shows the progress of the download. A "
 "default screen is in :file:`renpy/common/00updater.rpy`, and can be "
@@ -261,11 +271,11 @@ msgstr ""
 "リーンは :file:`renpy/common/00updater.rpy` にあり、ゲームディレクトリにコ"
 "ピーを作成してカスタマイズできます。"
 
-#: ../../source/downloader.rst:141
+#: ../../source/downloader.rst:145
 msgid "Here's the default::"
 msgstr "デフォルトはこちらになります ::"
 
-#: ../../source/downloader.rst:197
+#: ../../source/downloader.rst:201
 msgid "Downloader Functions"
 msgstr "ダウンローダー関数"
 
