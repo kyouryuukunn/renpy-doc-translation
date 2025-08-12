@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-15 21:35+0900\n"
-"PO-Revision-Date: 2025-08-13 01:18+0900\n"
+"PO-Revision-Date: 2025-08-13 02:07+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -102,6 +102,9 @@ msgid ""
 "improve loading time, by only representing data that varies from the default. For a large game where initial startup is dominated "
 "by script loading, this improved the time it takes to load the script by 50%."
 msgstr ""
+"**スクリプトの読み込み** ゲームスクリプトの内部表現がデフォルトとは異なるデータのみを表すことで、メモリの使用量を減らし、読み込み時"
+"間を改善するために変更されました。初期起動がスクリプトの読み込みによって支配される大規模なゲームであれば、これによりスクリプトの読"
+"み込みにかかる時間が 50% 改善されました。"
 
 #: ../../source/changelog.rst:49
 msgid ""
@@ -109,6 +112,8 @@ msgid ""
 "full script location. These hashes can be saved and loaded much more quickly, which improves game performance when the persistent "
 "data is large."
 msgstr ""
+"**永続データ** 永続データの形式は、完全なスクリプトの場所ではなく、訪問したスクリプトの場所の数値ハッシュを使用するように変更されま"
+"した。これらのハッシュはより迅速に保存およびロードできるため、永続データが大きい場合のゲームのパフォーマンスが向上します。"
 
 #: ../../source/changelog.rst:53
 msgid ""
@@ -116,17 +121,23 @@ msgid ""
 "of math that needs to be done in many cases. This can improve performance when drawing scenes with large numbers of drawing "
 "operations, as those scenes can be CPU-bound."
 msgstr ""
+"**OpenGL描画** Ren'PyのOpenGL描画コードは、行列オブジェクトの割り当てを削除し、多くの場合に行う必要のある数学の量を減らすために変更"
+"されました。これにより、多数の描画操作を伴うシーンを描画する場合、それらのシーンが CPU バウンドになる可能性があるため、パフォーマン"
+"スが向上します。"
 
 #: ../../source/changelog.rst:57
 msgid ""
 "Similarly, the OpenGL drawing code has been changed to avoid the repeated allocation of dictionaries that contain shader variables."
-msgstr ""
+msgstr "同様に、シェーダー変数を含む辞書のの繰り返し割り当てを回避するために、OpenGL 描画コードが変更されました。"
 
 #: ../../source/changelog.rst:60
 msgid ""
 "**Live2D** When rendering Live2D models, Ren'Py will avoid doing unproductive work to create Renders for layers that are not "
 "visible, and masks that are not used. This can improve performance when using Live2D models with many layers."
 msgstr ""
+"**Live2D** Live2D モデルをレンダリングする場合、Ren'Pyは、表示されていないレイヤーや使用されていないマスクのレンダリラーを作成する"
+"ための非生産的な作業を回避するようになりました。これにより、レイヤーの多いLive2D モデルを使用する場合のパフォーマンスを向上できま"
+"す。"
 
 #: ../../source/changelog.rst:65
 msgid "Shaders"
@@ -137,12 +148,16 @@ msgid ""
 "Ren'Py's GLSL shader support now allows uniforms of types int, bool, ivec2, ivec3, ivec4, and bvec2, bvec3, bvec4, in addition to "
 "the support for float, vec2, vec3, vec4, mat2, mat3, mat4 and sampler2D that Ren'Py has always had."
 msgstr ""
+"Ren'Py の GLSL シェーダーサポートは、Ren'Py がこれまで持っていた float、vec2、vec3、vec4、mat2、mat3、mat4、sampler2D のサポートに"
+"加えて、int、bool、ivec2、ivec3、ivec4、および bvec2、bvec3、bvec4 型の uniform を許可するようになりました。"
 
 #: ../../source/changelog.rst:71
 msgid ""
 "Ren'Py's GLSL shader support now allows one-dimensions arrays of uniforms of scalar and vector types, but not arrays of  matrices "
 "or samplers."
 msgstr ""
+"Ren'PyのGLSLシェーダーサポートは、スカラー型とベクトル型の uniform の1次元配列を許可するようになりましたが、行列やサンプラーの配列"
+"は許可されません。"
 
 #: ../../source/changelog.rst:74
 msgid ""
@@ -150,6 +165,10 @@ msgid ""
 "matrices to shaders. These matrices are supplied as uniforms. There are also a u_projectionview matrix that combines u_projection "
 "and u_view, and the existing u_transform matrix is all three. Breaking these out allows OpenGL shaders to support lighting."
 msgstr ""
+"Ren'Pyは、シェーダーにワールド(u_model)、ワールドからカメラビュー(u_view)、カメラビューからビューポート(u_projection)の個別のモデル"
+"をマトリックスに提供できるようになりました。これらのマトリックスは uniform として供給されます。 u_projection と u_view を合わせた "
+"u_projectionview 行列もありますが、既存の u_transform 行列は3つすべてです。これらを分割すると、OpenGL シェーダーで照明をサポートで"
+"きるようになります。"
 
 #: ../../source/changelog.rst:79
 msgid ""
@@ -157,6 +176,9 @@ msgid ""
 "example, if ``u_color`` is an RGBA uniform, ``u_color__premul`` is that color, premultiplied by its alpha channel. Other suffixes "
 "get the resolution of a texture, and can perform inverse, transpose, and inverse transpose operations on matrices."
 msgstr ""
+"Ren'PyのGLSLシェーダーサポートは、 uniform に渡す前に基礎となるデータに対して操作を実行するようになりました。たとえば、 "
+"``u_color'' が RGBA uniformの場合、 ``u_color__premul`` はその色にアルファ チャネルを事前に乗算したものです。他のサフィックスはテク"
+"スチャの解像度を取得し、行列に対して逆転置、転置、逆転置演算を実行できます。"
 
 #: ../../source/changelog.rst:84
 msgid ""
@@ -175,6 +197,8 @@ msgid ""
 "Ren'Py now has a minimal ability to load 3D models defined in the GLTF format, using the Open Asset Importer library. Models can "
 "be loaded using the :class:`GLTFModel` displayable."
 msgstr ""
+"Ren'Pyは、Open Asset Importerライブラリを使用して、GLTFフォーマットで定義された3Dモデルをロードする最小限の機能を持つようになりまし"
+"た。モデルは、 :class:`GLTFModel` Displayable を使用してロードできます。"
 
 #: ../../source/changelog.rst:93
 msgid ""
@@ -182,6 +206,9 @@ msgid ""
 "features of GLTF. What's more, the default Ren'Py shaders only show the base colors, and a custom shader is required to handle the "
 "other portions of physical-based rendering (PBR) that GLTF supports."
 msgstr ""
+"現時点では、GLTFModel の読み込みは、モデルのメッシュとテクスチャの読み込みのみをサポートしています。GLTF のアニメーションやその他の"
+"機能はサポートされていません。さらに、デフォルトのRen'Pyシェーダーはベースカラーのみを表示し、GLTFがサポートする物理ベースレンダリ"
+"ング(PBR)の他の部分を処理するにはカスタムシェーダーが必要です。"
 
 #: ../../source/changelog.rst:97
 msgid ""
@@ -189,6 +216,9 @@ msgid ""
 "skilled developer to position the model in 3D space. It's also intended for developers that want to experiment and contribute "
 "insights and development back to Ren'Py. A future release will include more tools for working with objects in three dimensions."
 msgstr ""
+"現在の GLTFModel のサポートは、ゲームで 3D 背景を使用したいが、3D 空間にモデルを配置するには熟練した開発者が必要な場合がある人に"
+"とっては便利です。また、実験を行い、洞察と開発を Ren'Py に提供したい開発者を対象としています。今後のリリースには、3 次元のオブジェ"
+"クトを操作するためのツールがさらに追加される予定です。"
 
 #: ../../source/changelog.rst:103
 msgid "Optional Mipmaps"
@@ -286,18 +316,21 @@ msgid ""
 "The ``variant`` and ``prefix`` properties, which accepted any value but evaluated it (as a string) only at init time, now accept "
 "an unquoted `image name component` (digits, letters and underscores, no space or dash, may start with a digit)."
 msgstr ""
-" Ren'Py は Transform 内部での sampler2D 型の uniform をサポートするようになりました。これらは sample テクスチャに設定されるテクス"
-"チャです。これらの transform には displayable や displayable になる文字列が供給されます。"
+"``variant`` と ``prefix`` プロパティーは、任意の値を受け入れ、初期化時にのみ (文字列として) 評価されていましたが、引用符で囲まれて"
+"いない `画像名要素` を受け入れるようになりました (スペースやダッシュはなく、数字、文字、アンダースコアで構成され、数字で始められま"
+"す)。"
 
 #: ../../source/changelog.rst:151
 msgid "In places where the syntax allowed the ``at`` keyword, it now allows an ``at transform:`` block."
-msgstr ""
+msgstr "構文で ``at`` キーワードが許可されていた場所では、``at transform:`` ブロックが許可されるようになりました。"
 
 #: ../../source/changelog.rst:153
 msgid ""
 "In places where a displayable is expected, it is now possible to use an ``image:`` block, and to define an ATL image, like an "
 "anonymous :ref:`atl-image-statement`."
 msgstr ""
+"displayable が期待される場所では、``image:`` ブロックを使用し、無名の :ref:`atl-image-statement` のような ATL 画像を定義できるよう"
+"になりました。"
 
 #: ../../source/changelog.rst:156
 msgid ""
@@ -305,6 +338,9 @@ msgid ""
 "``if_not`` properties which remain supported for backwards compatibility. The new syntax removes the need for lists and quoting. "
 "To convert to the new syntax, you can replace::"
 msgstr ""
+"新しい ``when`` プロパティーは、より単純な真偽値条件構文を導入し、 ``if_any``, ``if_all`` および ``if_not`` プロパティーを置き換え"
+"ますが、これらは下位互換性のためにサポートされたままです。新しい構文により、リストと引用符の必要性がなくなります。新しい構文に変換"
+"するには、次のように置き換えます。 ::"
 
 #: ../../source/changelog.rst:165
 msgid "with the more concise::"
@@ -316,6 +352,9 @@ msgid ""
 "the group name. This makes their behavior more consistent and easier to understand. The behavior of named multiple groups is "
 "unchanged, but they should not be used going forward."
 msgstr ""
+"``multiple`` グループは無名になる可能性があり、今後はグループ名の代わり ``multiple`` キーワードを使用して定義する必要があります。こ"
+"れにより、それらの動作により一貫性を持たせ、理解しやすくなります。名前付きの multiple グループの動作は変更されませんが、今後は使用"
+"しないでください。"
 
 #: ../../source/changelog.rst:173
 msgid ""
@@ -323,6 +362,9 @@ msgid ""
 "assigned a displayable. This allows native support for cases which previously required a multiple group with a variant, or an "
 "attribute_function manipulation."
 msgstr ""
+"``attribute`` ステートメントは、``variant`` を持つグループ内にあるか、displayable が直接割り当てられている場合を除き、``variant`` "
+"プロパティーを受け取るようになりました。これにより、以前は variant を持つ複数のグループや attribute_function の操作が必要だった場合"
+"でもネイティブにサポートできます。"
 
 #: ../../source/changelog.rst:178
 msgid "Automatic Oversampling"
@@ -393,10 +435,12 @@ msgid ""
 "The launcher now supports games being placed into folders, which can be collapsed and expanded. To put a game in a folder, create "
 "a directory underneath the projects directory, and move the game into that directory."
 msgstr ""
+"ランチャーは、ゲームをフォルダに配置し、折りたたんだり展開したりできるようになりました。ゲームをフォルダに入れるにはプログラムディ"
+"レクトリの下にディレクトリを作成し、そのディレクトリにゲームを移動します。"
 
 #: ../../source/changelog.rst:210
 msgid "The launcher's \"Console output\" option now works on the Macintosh platform."
-msgstr ""
+msgstr "ランチャーの「コンソール出力」オプションが Macintosh プラットフォームで動作するようになりました。"
 
 #: ../../source/changelog.rst:212
 msgid ""
@@ -404,16 +448,19 @@ msgid ""
 "building a :doc:`downloader game <downloader>`, this file should be copied to the base directory of the downloader game. This is "
 "the public key that will be used to verify the download."
 msgstr ""
+"更新のビルド時に、外部と共有できる主要なマテリアルを含む ``public_key.pem`` ファイルが生成されれるようになりました。 :doc:`ダウン"
+"ローダーゲーム <downloader>` をビルドするときは、このファイルをダウンローダーゲームのベースディレクトリにコピーする必要があります。"
+"これは、ダウンロードの検証に使用される公開鍵です。"
 
 #: ../../source/changelog.rst:216
 msgid "When creating a new game, Ren'Py will now include a .gitignore file that contains a default set of files to ignore."
-msgstr ""
+msgstr "新しいゲームを作成するとき、Ren'Py は無視するデフォルトのファイルセットを含む .gitignore ファイルを含むようになりました。"
 
 #: ../../source/changelog.rst:218
 msgid ""
 "It's possible to :ref:`customize the Ren'Py launcher <launcher-customization>` to select the files and directories that are "
 "available to click on."
-msgstr ""
+msgstr "クリックできるファイルとディレクトリを選択して :ref:`Ren'Py ランチャーをカスタマイズ <launcher-customization>` できます。"
 
 #: ../../source/changelog.rst:222 ../../source/changelog.rst:1122 ../../source/changelog.rst:5191
 msgid "Text"
@@ -1734,7 +1781,7 @@ msgid ""
 "default volume of the music mixer can be set with ``default preferences.volume.music = 0.5``. This also supports creator-defined "
 "mixers. Please see :ref:`mixer-defaults` for more information."
 msgstr ""
-"ミキサーのデフォルトのボリュームは、 default ステートメントと ''preferences.volume.<mixer>'' によって設定されるようになりました。例"
+"ミキサーのデフォルトのボリュームは、 default ステートメントと ``preferences.volume.<mixer>`` によって設定されるようになりました。例"
 "えば、 music ミキサーのデフォルトの音量は ``default preferences.volume.music = 0.5`` で設定できます。これは、開発者が定義したミキ"
 "サーもサポートしています。詳細は :ref:`mixer-defaults` を参照してください。"
 
@@ -9336,7 +9383,7 @@ msgid ""
 "displayables, as if given the ``alpha=True`` argument. As omitting the alpha channel is no longer an optimization, this change "
 "allows the same transitions to be used in more places."
 msgstr ""
-":func:'Dissolve', :func:'ImageDissolve', :func:'AlphaDissolve' トランジションは、引数 ''alpha=True'' が与えられたかのように、ソー"
+":func:'Dissolve', :func:'ImageDissolve', :func:'AlphaDissolve' トランジションは、引数 ``alpha=True`` が与えられたかのように、ソー"
 "ス displayable のアルファチャンネルを尊重するようになりました。アルファチャンネルの省略は最適化ではなくなったため、この変更により、"
 "同じトランジションをより多くの場所で使用できるようになります。"
 
