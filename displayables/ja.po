@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-15 21:35+0900\n"
+"POT-Creation-Date: 2025-08-11 11:17+0900\n"
 "PO-Revision-Date: 2025-06-28 15:21+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -145,78 +145,6 @@ msgstr ""
 "込んで表示します。Image はよく使われるため、 displayable を期待する文脈にファ"
 "イル名の文字列が使われると、その Image が自動的に作成されます。 Image を直接"
 "使う必要があるのは、スタイルプロパティーから画像を作成したいときだけです。"
-
-#: ../../source/inc/im_image:5
-msgid ""
-"Loads an image from a file. `filename` is a string giving the name of the "
-"file."
-msgstr "ファイルから画像をロードします。 `filename` はファイル名の文字列です。"
-
-#: ../../source/inc/im_image:9
-msgid "`filename`"
-msgstr "`filename`"
-
-#: ../../source/inc/im_image:9
-msgid "This should be an image filename, including the extension."
-msgstr "これは拡張子も含む画像ファイル名です。"
-
-#: ../../source/inc/im_image:15
-msgid "`optimize_bounds`"
-msgstr "`optimize_bounds`"
-
-#: ../../source/inc/im_image:12
-msgid ""
-"If true, only the portion of the image that inside the bounding box of non-"
-"transparent pixels is loaded into GPU memory. (The only reason to set this "
-"to False is when using an image as input to a shader.)"
-msgstr ""
-"True なら、画像のうち矩形領域内部の不透明なピクセルの部分のみが GPU メモリー"
-"にロードされます(これを False にするのは画像を shader への入力に使用するとき"
-"のみです)。"
-
-#: ../../source/inc/im_image:21
-msgid "`oversample`"
-msgstr "`oversample`"
-
-#: ../../source/inc/im_image:18
-msgid ""
-"If this is greater than 1, the image is considered to be oversampled, with "
-"more pixels than its logical size would imply. For example, if an image file "
-"is 2048x2048 and oversample is 2, then the image will be treated as a "
-"1024x1024 image for the purpose of layout."
-msgstr ""
-"この値が1より大きい場合、画像はオーバーサンプリングされ、論理的なサイズより多"
-"くのピクセルが使用されているとみなされます。例えば、2048x2048の画像ファイルに"
-"対してオーバーサンプルが2であれば、レイアウト上1024x1024の画像として扱われま"
-"す。"
-
-#: ../../source/inc/im_image:26
-msgid "`dpi`"
-msgstr "`dpi`"
-
-#: ../../source/inc/im_image:24
-msgid ""
-"The DPI of an SVG image. This defaults to 96, but that can be increased to "
-"render the SVG larger, and decreased to render it smaller."
-msgstr ""
-"SVG画像のDPIです。これはデフォルトでは96ですが、増やしてより大きな、減らして"
-"より小さなSVG画像を描画できます。"
-
-#: ../../source/inc/im_image:30
-msgid "`mipmap`"
-msgstr "`mipmap`"
-
-#: ../../source/inc/im_image:29
-msgid ""
-"If this is \"auto\", then mipmaps are generated for the image only if the "
-"game is scaled down to less than 75% of its default size. If this is True, "
-"mipmaps are always generated. If this is False, mipmaps are never generated. "
-"If this is None, then the default is taken from config.mipmap."
-msgstr ""
-"これが \"auto\" なら、ゲームがデフォルトサイズの 75% 未満に縮小された場合にの"
-"み、画像のミップマップが生成されます。これが True なら、ミップマップは常に生"
-"成されます。これが False の場合、ミップマップは生成されません。 None の場合、"
-"デフォルトでは config.mipmap から所得します。"
 
 #: ../../source/displayables.rst:69
 msgid "There are four image file formats we recommend you use:"
@@ -395,253 +323,6 @@ msgid "Image-like displayables take :ref:`position-style-properties`."
 msgstr ""
 "イメージライク displayable は :ref:`position-style-properties` を取ります。"
 
-#: ../../source/inc/disp_imagelike:5
-msgid ""
-"This displayable takes its colors from `child`, and its alpha channel from "
-"the multiplication of the alpha channels of `child` and `mask`. The result "
-"is a displayable that has the same colors as `child`, is transparent where "
-"either `child` or `mask` is transparent, and is opaque where `child` and "
-"`mask` are both opaque."
-msgstr ""
-"この displayable は `child` から色を取り出し、そのアルファチャンネルは "
-"`child` と `mask` のアルファチャンネルを乗算したものになります。結果として "
-"`child` と同じ色で、 `child` か `mask` どちらかで透明な部分が透明になり、 "
-"`child` と `mask` 両方で不透明な部分が不透明になります。"
-
-#: ../../source/inc/disp_imagelike:11
-msgid ""
-"The `child` and `mask` parameters may be arbitrary displayables. The size of "
-"the AlphaMask is the size of `child`. The `invert` parameter can be used to "
-"invert the mask's alpha channel."
-msgstr ""
-"`child` と `mask` パラメーターは任意の displayable にできます。 AlphaMask の"
-"サイズは `child` のサイズになります。 `invert` パラメーターを使用してマスクの"
-"アルファチャンネルを反転できます。"
-
-#: ../../source/inc/disp_imagelike:15
-msgid ""
-"Note that this takes different arguments from :func:`im.AlphaMask`, which "
-"uses the mask's red channel."
-msgstr ""
-"mask のred チャンネルを使用する :func:`im.AlphaMask` とは別の引数をとることに"
-"注意してください。"
-
-#: ../../source/inc/disp_imagelike:20
-msgid ""
-"This object provides border size and tiling information to a :func:`Frame`. "
-"It can also provide padding information that can be supplied to the :propref:"
-"`padding` style property of a window or frame."
-msgstr ""
-"このオブジェクトは境界のサイズとタイリングの情報を :func:`Frame` に与えます。"
-"これはウィンドウやフレームの :propref:`padding` スタイルプロパティーに指定さ"
-"れるパッディング情報も渡せます。"
-
-#: ../../source/inc/disp_imagelike:26
-msgid "`left`, `top`, `right`, `bottom`"
-msgstr "`left`, `top`, `right`, `bottom`"
-
-#: ../../source/inc/disp_imagelike:25
-msgid ""
-"These provide the size of the insets used by a frame, and are added to the "
-"padding on each side. They should be zero or a positive integer."
-msgstr ""
-"これらはフレームに使用される挿入図のサイズを提供し、各サイズが各側面のパッ"
-"ディングに加えられます。これらは 0 または 正の整数であるべきです。"
-
-#: ../../source/inc/disp_imagelike:31
-msgid "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
-msgstr "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
-
-#: ../../source/inc/disp_imagelike:29
-msgid ""
-"These are added to the padding on each side, and may be positive or "
-"negative. (For example, if `left` is 5 and `pad_left` is -3, the final "
-"padding is 2.)"
-msgstr ""
-"これらは各側面のパディングに加えられ、 正または負です ( 例えば、 `left` が "
-"5, `pad_left` が -3 なら、最終的なパディングは 2 です )。"
-
-#: ../../source/inc/disp_imagelike:33
-msgid "The padding information is supplied via a field:"
-msgstr "パッディング情報はフィールドとして渡します。"
-
-#: ../../source/inc/disp_imagelike:37
-msgid ""
-"This is a four-element tuple containing the padding on each of the four "
-"sides."
-msgstr "これは 4 要素のタプルで、各4つの側面のパディングを含みます。"
-
-#: ../../source/inc/disp_imagelike:42
-msgid ""
-"This creates a new displayable of `size`, by compositing other displayables. "
-"`size` is a (width, height) tuple."
-msgstr ""
-"これは他の displayable を合成して `size` の新しい displayable を作成します。 "
-"`size` は (width, height) のタプルです。"
-
-#: ../../source/inc/disp_imagelike:45
-msgid ""
-"The remaining positional arguments are used to place images inside the "
-"Composite. The remaining positional arguments should come in groups of two, "
-"with the first member of each group an (x, y) tuple, and the second member "
-"of a group is a displayable that is composited at that position."
-msgstr ""
-"残りの位置引数は Composite 内に画像を配置するために使用されます。残りの位置引"
-"数は各グループの第一要素が (x, y) のタプルで、第二要素がその位置に合成される "
-"displayable の 2 つからなります。"
-
-#: ../../source/inc/disp_imagelike:51
-msgid "Displayables are composited from back to front."
-msgstr "Displayable は後ろから前へ合成されます。"
-
-#: ../../source/inc/disp_imagelike:63
-msgid ""
-"This creates a displayable by cropping `child` to `rect`, where `rect` is an "
-"(x, y, width, height) tuple. ::"
-msgstr ""
-"`child` を `rect` に刈りこんで displayable を作成します。ここで `rect` は "
-"(x, y, width, height) タプルです。 ::"
-
-#: ../../source/inc/disp_imagelike:70
-msgid ""
-"A DynamicImage is a displayable that has text interpolation performed on it "
-"to yield a string giving a new displayable. Such interpolation is performed "
-"at the start of each interaction."
-msgstr ""
-"dynamic image はテキスト置換により新しい displayable の文字列を生成するテキス"
-"トを持つ displayable です。そのような置換は各インタラクションの開始時に処理さ"
-"れます。"
-
-#: ../../source/inc/disp_imagelike:76
-msgid ""
-"This flattens `child`, which may be made up of multiple textures, into a "
-"single texture."
-msgstr ""
-"これは複数のテクスチャで構成された `child` を一つのテクスチャに貼り付けます。"
-
-#: ../../source/inc/disp_imagelike:79
-msgid ""
-"Certain operations, like the alpha transform property, apply to every "
-"texture making up a displayable, which can yield incorrect results when the "
-"textures overlap on screen. Flatten creates a single texture from multiple "
-"textures, which can prevent this problem."
-msgstr ""
-"alpha transform プロパティーのような特定の処理は displayable を構成するすべて"
-"のテクスチャに適用され、スクリーン上でテクスチャが重なり合っていると誤った結"
-"果になる可能性があります。貼り付けは複数のテクスチャから一つのテクスチャを作"
-"成し、この問題を防ぎます。"
-
-#: ../../source/inc/disp_imagelike:84
-msgid ""
-"Flatten is a relatively expensive operation, and so should only be used when "
-"absolutely required."
-msgstr "貼り付けは比較的重い処理なので絶対的に必要なときのみ使用するべきです。"
-
-#: ../../source/inc/disp_imagelike:90
-msgid "`drawable_resolution`"
-msgstr "`drawable_resolution`"
-
-#: ../../source/inc/disp_imagelike:88
-msgid ""
-"Defaults to true, which is usually the right choice, but may cause the "
-"resulting texture, when scaled, to have different artifacts than the "
-"textures that make it up. Setting this to False will change the artifacts, "
-"which may be more pleasing in some cases."
-msgstr ""
-"デフォルトでは True であり、通常は正しい選択ですが、スケーリングされたとき"
-"に、テクスチャーにノイズが発生する可能性があります。 False に設定すると、ノイ"
-"ズが変わり、場合によってはより好ましいものになる可能性があります。"
-
-#: ../../source/inc/disp_imagelike:95
-msgid ""
-"A displayable that resizes an image to fill the available area, while "
-"preserving the width and height of its borders. It is often used as the "
-"background of a window or button."
-msgstr ""
-"境界の幅と高さを保ちながら、利用できる領域を満たすようにリサイズする "
-"displayable です。ウィンドウやボタンの背景によく使われます。"
-
-#: ../../source/inc/disp_imagelike:101
-msgid "Using a frame to resize an image to double its size."
-msgstr "フレームを使用し、画像サイズを2倍にリサイズ。"
-
-#: ../../source/inc/disp_imagelike:104
-msgid "`image`"
-msgstr "`image`"
-
-#: ../../source/inc/disp_imagelike:104
-msgid "An image manipulator that will be resized by this frame."
-msgstr "Frame によって大きさを変えられる画像マニピュレータです。"
-
-#: ../../source/inc/disp_imagelike:109
-msgid "`left`"
-msgstr "`left`"
-
-#: ../../source/inc/disp_imagelike:107
-msgid ""
-"The size of the border on the left side. This can also be a :func:`Borders` "
-"object, in which case that object is used in place of the other parameters."
-msgstr ""
-"左側面の境界サイズです。これは :func:`Borders` オブジェクトでもよく、その場合"
-"オブジェクトは他のパラメーターの位置にも使用されます。"
-
-#: ../../source/inc/disp_imagelike:112
-msgid "`top`"
-msgstr "`top`"
-
-#: ../../source/inc/disp_imagelike:112
-msgid "The size of the border on the top."
-msgstr "上側の境界のサイズです。"
-
-#: ../../source/inc/disp_imagelike:116
-msgid "`right`"
-msgstr "`right`"
-
-#: ../../source/inc/disp_imagelike:115
-msgid "The size of the border on the right side. If None, defaults to `left`."
-msgstr "右側の境界のサイズです。None なら、デフォルトでは `left` です。"
-
-#: ../../source/inc/disp_imagelike:119
-msgid "`bottom`"
-msgstr "`bottom`"
-
-#: ../../source/inc/disp_imagelike:119
-msgid "The side of the border on the bottom. If None, defaults to `top`."
-msgstr "下側の境界のサイズです。None なら、デフォルトでは `top` です。"
-
-#: ../../source/inc/disp_imagelike:125
-msgid "`tile`"
-msgstr "`tile`"
-
-#: ../../source/inc/disp_imagelike:122
-msgid ""
-"If set to True, tiling is used to resize sections of the image, rather than "
-"scaling. If set to the string \"integer\", the nearest integer number of "
-"tiles will be used in each direction. That set of full tiles will then be "
-"scaled up or down to fit the required area."
-msgstr ""
-"True なら、拡大でなくタイル張りによって画像領域をリサイズします。文字列 "
-"\"integer\" に設定されると、各方向に最も近い整数個のタイルが使用されます。必"
-"要な領域に一致するようすべてのタイルが拡大縮小されます。"
-
-#: ../../source/inc/disp_imagelike:135
-msgid ""
-"A displayable that creates an empty box on the screen. The size of the box "
-"is controlled by `width` and `height`. This can be used when a displayable "
-"requires a child, but no child is suitable, or as a spacer inside a box."
-msgstr ""
-"画面上に空のボックスを作成する displayable です。このボックスの大きさは "
-"`width` と `height` で制御できます。これは、displayable が子を要求しているが"
-"適切な子が無いときや、ボックス内の空間を埋めるのに使えます。"
-
-#: ../../source/inc/disp_imagelike:146
-msgid "A displayable that fills the area its assigned with `color`."
-msgstr "割り当てられた領域を `color` で満たす displayable です。"
-
-#: ../../source/inc/disp_imagelike:154
-msgid "Tiles `child` until it fills the area allocated to this displayable."
-msgstr "この displayable に割り当てられた領域まで `child` をタイル張りします。"
-
 #: ../../source/displayables.rst:151
 msgid "Text Displayables"
 msgstr "Text Displayables"
@@ -682,135 +363,6 @@ msgstr ""
 "に) この方法で定義された画像が画面上にないときの使用を想定しています。キャラ"
 "クターの表情のように頻繁に変わる物は想定していません。"
 
-#: ../../source/inc/disp_dynamic:5
-msgid ""
-"This is a displayable that changes what it is showing based on Python "
-"conditions. The positional arguments should be given in groups of two, where "
-"each group consists of:"
-msgstr ""
-"これは、Python 条件式に基づいて表示するものを変える displayable です。位置引"
-"数は、次を二つ一組にまとめて指定しなければなりません:"
-
-#: ../../source/inc/disp_dynamic:9
-msgid "A string containing a Python condition."
-msgstr "Python 式を含む文字列"
-
-#: ../../source/inc/disp_dynamic:10 ../../source/inc/disp_dynamic:77
-msgid "A displayable to use if the condition is true."
-msgstr "条件式が True の時に使う displayable"
-
-#: ../../source/inc/disp_dynamic:12
-msgid ""
-"The first true condition has its displayable shown, at least one condition "
-"should always be true."
-msgstr ""
-"最初に True になった条件式の displayable が表示され、少なくとも一つの条件式"
-"が True にならなければなりません。"
-
-#: ../../source/inc/disp_dynamic:15
-msgid ""
-"The conditions uses here should not have externally-visible side-effects."
-msgstr "ここで使用する条件は外部から可視である副作用をもつべきではありません。"
-
-#: ../../source/inc/disp_dynamic:21 ../../source/inc/disp_dynamic:85
-msgid "`predict_all`"
-msgstr "`predict_all`"
-
-#: ../../source/inc/disp_dynamic:18 ../../source/inc/disp_dynamic:82
-msgid ""
-"If True, all of the possible displayables will be predicted when the "
-"displayable is shown. If False, only the current condition is predicted. If "
-"None, :var:`config.conditionswitch_predict_all` is used."
-msgstr ""
-"True なら、起こりうるすべての displayable がその表示時に予測されます。　"
-"False なら、現在の条件でのみ予測されます。None なら :var:`config."
-"conditionswitch_predict_all` が使用されます。"
-
-#: ../../source/inc/disp_dynamic:31
-msgid ""
-"A displayable that can change its child based on a Python function, over the "
-"course of an interaction. It does not take any properties, as its layout is "
-"controlled by the properties of the child displayable it returns."
-msgstr ""
-"Pythonの関数に基づき、インタラクションの過程でその子を変更できる displayable "
-"です。そのレイアウトは関数が返す子 displayable のプロパティによって制御される"
-"ため、どんなプロパティも取りません。"
-
-#: ../../source/inc/disp_dynamic:50
-msgid "`function`"
-msgstr "`function`"
-
-#: ../../source/inc/disp_dynamic:37
-msgid "A function that is called with the arguments:"
-msgstr "次の引数を渡して呼び出される関数です :"
-
-#: ../../source/inc/disp_dynamic:39
-msgid "The amount of time the displayable has been shown for."
-msgstr "その displayable が表示されている時間"
-
-#: ../../source/inc/disp_dynamic:40
-msgid ""
-"The amount of time any displayable with the same tag has been shown for."
-msgstr "同じタグの displayable が表示されている時間。"
-
-#: ../../source/inc/disp_dynamic:41
-msgid "Any positional or keyword arguments supplied to DynamicDisplayable."
-msgstr "DynamicDisplayable に渡された任意の位置引数とキーワード引数。"
-
-#: ../../source/inc/disp_dynamic:43
-msgid "and should return a (d, redraw) tuple, where:"
-msgstr "これは (d, redraw) タプルを返すべきです。ここで :"
-
-#: ../../source/inc/disp_dynamic:45
-msgid "`d` is a displayable to show."
-msgstr "`d` は表示する displayable です。"
-
-#: ../../source/inc/disp_dynamic:46
-msgid ""
-"`redraw` is the maximum amount of time to wait before calling the function "
-"again, or None to not require the function be called again before the start "
-"of the next interaction."
-msgstr ""
-"`redraw` は、関数を再び呼び出すまでの最大待ち時間です。None にすると、次のイ"
-"ンタラクションが始まるまでもうこの関数は呼び出されません。"
-
-#: ../../source/inc/disp_dynamic:50
-msgid "`function` is called at the start of every interaction."
-msgstr "`function` は、インタラクションが始まるごとに呼び出されます"
-
-#: ../../source/inc/disp_dynamic:52
-msgid ""
-"As a special case, `function` may also be a python string that evaluates to "
-"a displayable. In that case, function is run once per interaction."
-msgstr ""
-"特別に、 `function` は評価が  displayable である Python 文字列にもできます。"
-"その場合、関数はインタラクションごとに一度実行されます。"
-
-#: ../../source/inc/disp_dynamic:72
-msgid ""
-"This is a displayable that changes what it is showing based on the images "
-"are showing on the screen. The positional argument should be given in groups "
-"of two, where each group consists of:"
-msgstr ""
-"これは、画面に表示されている画像に基づいて表示する画像を変える displayable で"
-"す。位置引数は、次を二つ一組にまとめて指定しなければなりません :"
-
-#: ../../source/inc/disp_dynamic:76
-msgid "A string giving an image name, or None to indicate the default."
-msgstr "画像名の文字列。または、デフォルトを表す None"
-
-#: ../../source/inc/disp_dynamic:79
-msgid "A default image should be specified."
-msgstr "デフォルトの画像は指定されなければなりません。"
-
-#: ../../source/inc/disp_dynamic:87
-msgid ""
-"One use of ShowingSwitch is to have images change depending on the current "
-"emotion of a character. For example::"
-msgstr ""
-"ShowingSwitch の使い方の一つは、キャラクターの現在の表情に応じて画像を変える"
-"ことです。例 ::"
-
 #: ../../source/displayables.rst:176
 msgid "Layer Displayables"
 msgstr "Layer Displayable"
@@ -833,46 +385,6 @@ msgstr ""
 "Dynamic Displayableと同様に、表示されるレイヤーは常に現在の状態を表示すること"
 "に注意してください。このため、ある Layer Displayable の内容は、表示されてい"
 "る Layer を対象としたトランジションでない限り、トランジションに参加しません。"
-
-#: ../../source/inc/disp_layer:5
-msgid ""
-"This allows a layer to be shown as a displayable on another layer. Intended "
-"for use with detached layers."
-msgstr ""
-"これによりあるレイヤーを他のレイヤーに Displayable として表示できます。 "
-"detached レイヤーとの併用が想定されています。"
-
-#: ../../source/inc/disp_layer:8
-msgid "Trying to display a layer on itself is not supported."
-msgstr "レイヤーのそのレイヤー自体への表示は出来ません。"
-
-#: ../../source/inc/disp_layer:11
-msgid "`layer`"
-msgstr "`layer`"
-
-#: ../../source/inc/disp_layer:11
-msgid "The layer to display."
-msgstr "表示するレイヤー"
-
-#: ../../source/inc/disp_layer:17
-msgid "`clipping`"
-msgstr "`clipping`"
-
-#: ../../source/inc/disp_layer:14
-msgid ""
-"If False, the layer's contents may exceed its bounds, otherwise anything "
-"exceeding the bounds will be trimmed."
-msgstr ""
-"False なら、そのレイヤーの内容はその領域を超えた部分がカットされずにはみ出る"
-"可能性があります。"
-
-#: ../../source/inc/disp_layer:17
-msgid ""
-"An entry in config.layer_clipping will cause this option to be ignored, and "
-"clipping to occur as specified by that config."
-msgstr ""
-"config.layer_clipping にそのレイヤーがあればこのオプションは無視され、その設"
-"定で指定されたようにクリッピングが行われるます。"
 
 #: ../../source/displayables.rst:223
 msgid "Layout Boxes and Grids"
@@ -905,22 +417,6 @@ msgstr ""
 "ボックスは :ref:`position-style-properties` と :ref:`box-style-properties` を"
 "取ります。"
 
-#: ../../source/inc/disp_box:5
-msgid ""
-"A box that fills the screen. Its members are laid out from back to front, "
-"with their position properties controlling their position."
-msgstr ""
-"画面を満たすボックスです。このメンバは奥から手前に並べられ、この位置は位置プ"
-"ロパティーで制御されます。"
-
-#: ../../source/inc/disp_box:11
-msgid "A box that lays out its members from left to right."
-msgstr "ボックスで、このメンバは左から右へ並べられます。"
-
-#: ../../source/inc/disp_box:15
-msgid "A layout that lays out its members from top to bottom."
-msgstr "ボックスで、このメンバは上から下へ並べられます。"
-
 #: ../../source/displayables.rst:254
 msgid ""
 "The Grid layout displays its children in a grid on the screen. It takes :ref:"
@@ -929,16 +425,6 @@ msgstr ""
 "グリッドはその子を画面上のグリッドに表示します。これは :ref:`position-style-"
 "properties` と :propref:`spacing` スタイルプロパティーを受け取ります。"
 
-#: ../../source/inc/disp_grid:5
-msgid ""
-"Lays out displayables in a grid. The first two positional arguments are the "
-"number of columns and rows in the grid. This must be followed by `columns * "
-"rows` positional arguments giving the displayables that fill the grid."
-msgstr ""
-"グリッドに displayable を配置します。最初の 2 つの位置引数はグリッドの縦と横"
-"の列の数です。この後にはグリッドを満す `columns * rows` 個の displayable の位"
-"置引数が続かなければなりません。"
-
 #: ../../source/displayables.rst:261
 msgid "Effects"
 msgstr "効果"
@@ -946,31 +432,6 @@ msgstr "効果"
 #: ../../source/displayables.rst:263
 msgid "These displayables are used to create certain visual effects."
 msgstr "これらの displayable は、特定の視覚効果を作成するのに使われます。"
-
-#: ../../source/inc/disp_effects:5
-msgid ""
-"This transition uses a `control` displayable (almost always some sort of "
-"animated transform) to transition from one displayable to another. The "
-"transform is evaluated. The `new` displayable is used where the transform is "
-"opaque, and the `old` displayable is used when it is transparent."
-msgstr ""
-"このトランジションは、ある displayable から別の displayable へのトランジショ"
-"ンに `control` displayable ( ほとんどはATL transform を並べたものです )を使い"
-"ます。その transform が評価され、 transform が不透明な領域は `new` "
-"displayable が使われ、 transform が透明な領域は `old` displayable が使われま"
-"す。"
-
-#: ../../source/inc/disp_effects:11
-msgid "`alpha`"
-msgstr "`alpha`"
-
-#: ../../source/inc/disp_effects:11
-msgid ""
-"If true, the image is composited with what's behind it. If false, the "
-"default, the image is opaque and overwrites what's behind it."
-msgstr ""
-"True であれば、画像は背後のものと合成されます。デフォルトの False であれば、"
-"画像は不透明で背後のものを上書きします。"
 
 #: ../../source/displayables.rst:268
 msgid "Image Manipulators"
@@ -993,7 +454,7 @@ msgid ""
 "used whenever an image manipulator is required."
 msgstr ""
 "画像マニピュレータは displayable が使える所ならどこででも使えますが、その逆は"
-"できません。Image() は画像マニピュレータの一種なので、Image は画像マニピュ"
+"できません。:func:`Image` は画像マニピュレータの一種なので、Image は画像マニピュ"
 "レータが要求されたときはいつでも使えます。"
 
 #: ../../source/displayables.rst:278
@@ -1004,10 +465,10 @@ msgid ""
 "`Transform` displayable provides similar functionality while fixing the "
 "problems."
 msgstr ""
-"画像マニピュレータの使用はレガシーなものです。かつてドキュメントに記されてい"
+"それらの使用はレガシーなものです。かつてドキュメントに記されてい"
 "た多くの画像マニピュレータは本質的に問題があるため、すでに使用されていませ"
-"ん。 `im.Data` を除いて多くの場合で :func:`Transform` displayable はそれらの"
-"問題を解決しつつ同様な機能をより一般的な方法で提供します。"
+"ん。 :func:`im.Data` を除いて多くの場合で :func:`Transform` displayable はそれらの"
+"問題を解決しつつ同様な機能を提供します。"
 
 #: ../../source/displayables.rst:283
 msgid ""
@@ -1032,97 +493,6 @@ msgstr ""
 "発者モードで未定義の画像が使用されるとプレースホルダが自動的に使用されます。"
 "プレースホルダ displayable はデフォルトが適切でないときには手動でも使用出来ま"
 "す。"
-
-#: ../../source/inc/placeholder:5
-msgid ""
-"This displayable can be used to display a placeholder character or "
-"background."
-msgstr ""
-"この displayable を使用して プレースホルダキャラクターや背景を表示出来ます。"
-
-#: ../../source/inc/placeholder:29
-msgid "`base`"
-msgstr "`base`"
-
-#: ../../source/inc/placeholder:9
-msgid "The type of image to display. This should be one of:"
-msgstr "表示される画像の種類です。これは次の内のひとつであるべきです。 :"
-
-#: ../../source/inc/placeholder:14
-msgid "'bg'"
-msgstr "'bg'"
-
-#: ../../source/inc/placeholder:12
-msgid ""
-"To display a background placeholder. This currently fills the screen with a "
-"light-gray, and displays the image name at the top of the screen."
-msgstr ""
-"背景プレースホルダを表示するために、現在は画面を灰色で埋め、スクリーン上部に"
-"画像の名前を表示します。"
-
-#: ../../source/inc/placeholder:18
-msgid "'boy'"
-msgstr "'boy'"
-
-#: ../../source/inc/placeholder:17
-msgid ""
-"Displays a male-identified placeholder with the image name on his chest."
-msgstr "肩に画像の名前をいれて男性プレースホルダを表示します。"
-
-#: ../../source/inc/placeholder:22
-msgid "'girl'"
-msgstr "'girl'"
-
-#: ../../source/inc/placeholder:21
-msgid ""
-"Displays a female-identified placeholder with the image name on her chest."
-msgstr "肩に画像の名前をいれて女性プレースホルダを表示します。"
-
-#: ../../source/inc/placeholder:29
-msgid "None"
-msgstr "None"
-
-#: ../../source/inc/placeholder:25
-msgid ""
-"Attempts to automatically determine the type of image to use. If the image "
-"name begins with \"bg\", \"cg\", or \"event\", uses 'bg'."
-msgstr ""
-"画像名が \"bg\" や \"cg\",  \"event\", で始まるか、 'bg' を使用していたら、自"
-"動的に使用する画像タイプを判断します。 "
-
-#: ../../source/inc/placeholder:29
-msgid "Otherwise, the 'girl' placeholder is used."
-msgstr "それ以外では `girl` プレースホルダを使用します。"
-
-#: ../../source/inc/placeholder:33
-msgid "`full`"
-msgstr "`full`"
-
-#: ../../source/inc/placeholder:32
-msgid "If true, a full-body sprite is used. Otherwise, a 3/4 sprite is used."
-msgstr ""
-"True なら全身画像が使用されます。そうでなければ 3/4 画像が使用されます。"
-
-#: ../../source/inc/placeholder:36
-msgid "`flip`"
-msgstr "`flip`"
-
-#: ../../source/inc/placeholder:36
-msgid "If true, the sprite is flipped horizontally."
-msgstr "True なら画像は水平に反転します。"
-
-#: ../../source/inc/placeholder:40
-msgid "`text`"
-msgstr "`text`"
-
-#: ../../source/inc/placeholder:39
-msgid ""
-"If provided, no other text than this will be displayed on the placeholder. "
-"If not, the text will reflect the show instruction that was used to display "
-"it."
-msgstr ""
-"指定された場合、これ以外のテキストはプレースホルダーに表示されません。そうで"
-"なければテキストはそれを表示するために使用された show の指示を反映します。"
 
 #: ../../source/displayables.rst:306
 msgid "Displayable Prefixes"
@@ -1173,6 +543,548 @@ msgid ""
 msgstr ""
 ":doc:`displaying_images` : これらすべての Displayable を画面に表示させるため"
 "の基本的な方法です。"
+
+#~ msgid ""
+#~ "Loads an image from a file. `filename` is a string giving the name of the "
+#~ "file."
+#~ msgstr ""
+#~ "ファイルから画像をロードします。 `filename` はファイル名の文字列です。"
+
+#~ msgid "`filename`"
+#~ msgstr "`filename`"
+
+#~ msgid "This should be an image filename, including the extension."
+#~ msgstr "これは拡張子も含む画像ファイル名です。"
+
+#~ msgid "`optimize_bounds`"
+#~ msgstr "`optimize_bounds`"
+
+#~ msgid ""
+#~ "If true, only the portion of the image that inside the bounding box of "
+#~ "non-transparent pixels is loaded into GPU memory. (The only reason to set "
+#~ "this to False is when using an image as input to a shader.)"
+#~ msgstr ""
+#~ "True なら、画像のうち矩形領域内部の不透明なピクセルの部分のみが GPU メモ"
+#~ "リーにロードされます(これを False にするのは画像を shader への入力に使用す"
+#~ "るときのみです)。"
+
+#~ msgid "`oversample`"
+#~ msgstr "`oversample`"
+
+#~ msgid ""
+#~ "If this is greater than 1, the image is considered to be oversampled, "
+#~ "with more pixels than its logical size would imply. For example, if an "
+#~ "image file is 2048x2048 and oversample is 2, then the image will be "
+#~ "treated as a 1024x1024 image for the purpose of layout."
+#~ msgstr ""
+#~ "この値が1より大きい場合、画像はオーバーサンプリングされ、論理的なサイズよ"
+#~ "り多くのピクセルが使用されているとみなされます。例えば、2048x2048の画像"
+#~ "ファイルに対してオーバーサンプルが2であれば、レイアウト上1024x1024の画像と"
+#~ "して扱われます。"
+
+#~ msgid "`dpi`"
+#~ msgstr "`dpi`"
+
+#~ msgid ""
+#~ "The DPI of an SVG image. This defaults to 96, but that can be increased "
+#~ "to render the SVG larger, and decreased to render it smaller."
+#~ msgstr ""
+#~ "SVG画像のDPIです。これはデフォルトでは96ですが、増やしてより大きな、減らし"
+#~ "てより小さなSVG画像を描画できます。"
+
+#~ msgid "`mipmap`"
+#~ msgstr "`mipmap`"
+
+#~ msgid ""
+#~ "If this is \"auto\", then mipmaps are generated for the image only if the "
+#~ "game is scaled down to less than 75% of its default size. If this is "
+#~ "True, mipmaps are always generated. If this is False, mipmaps are never "
+#~ "generated. If this is None, then the default is taken from config.mipmap."
+#~ msgstr ""
+#~ "これが \"auto\" なら、ゲームがデフォルトサイズの 75% 未満に縮小された場合"
+#~ "にのみ、画像のミップマップが生成されます。これが True なら、ミップマップは"
+#~ "常に生成されます。これが False の場合、ミップマップは生成されません。 "
+#~ "None の場合、デフォルトでは config.mipmap から所得します。"
+
+#~ msgid ""
+#~ "This displayable takes its colors from `child`, and its alpha channel "
+#~ "from the multiplication of the alpha channels of `child` and `mask`. The "
+#~ "result is a displayable that has the same colors as `child`, is "
+#~ "transparent where either `child` or `mask` is transparent, and is opaque "
+#~ "where `child` and `mask` are both opaque."
+#~ msgstr ""
+#~ "この displayable は `child` から色を取り出し、そのアルファチャンネルは "
+#~ "`child` と `mask` のアルファチャンネルを乗算したものになります。結果とし"
+#~ "て `child` と同じ色で、 `child` か `mask` どちらかで透明な部分が透明にな"
+#~ "り、 `child` と `mask` 両方で不透明な部分が不透明になります。"
+
+#~ msgid ""
+#~ "The `child` and `mask` parameters may be arbitrary displayables. The size "
+#~ "of the AlphaMask is the size of `child`. The `invert` parameter can be "
+#~ "used to invert the mask's alpha channel."
+#~ msgstr ""
+#~ "`child` と `mask` パラメーターは任意の displayable にできます。 AlphaMask "
+#~ "のサイズは `child` のサイズになります。 `invert` パラメーターを使用してマ"
+#~ "スクのアルファチャンネルを反転できます。"
+
+#~ msgid ""
+#~ "Note that this takes different arguments from :func:`im.AlphaMask`, which "
+#~ "uses the mask's red channel."
+#~ msgstr ""
+#~ "mask のred チャンネルを使用する :func:`im.AlphaMask` とは別の引数をとるこ"
+#~ "とに注意してください。"
+
+#~ msgid ""
+#~ "This object provides border size and tiling information to a :func:"
+#~ "`Frame`. It can also provide padding information that can be supplied to "
+#~ "the :propref:`padding` style property of a window or frame."
+#~ msgstr ""
+#~ "このオブジェクトは境界のサイズとタイリングの情報を :func:`Frame` に与えま"
+#~ "す。これはウィンドウやフレームの :propref:`padding` スタイルプロパティーに"
+#~ "指定されるパッディング情報も渡せます。"
+
+#~ msgid "`left`, `top`, `right`, `bottom`"
+#~ msgstr "`left`, `top`, `right`, `bottom`"
+
+#~ msgid ""
+#~ "These provide the size of the insets used by a frame, and are added to "
+#~ "the padding on each side. They should be zero or a positive integer."
+#~ msgstr ""
+#~ "これらはフレームに使用される挿入図のサイズを提供し、各サイズが各側面のパッ"
+#~ "ディングに加えられます。これらは 0 または 正の整数であるべきです。"
+
+#~ msgid "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
+#~ msgstr "`pad_left`, `pad_top`, `pad_right`, `pad_bottom`"
+
+#~ msgid ""
+#~ "These are added to the padding on each side, and may be positive or "
+#~ "negative. (For example, if `left` is 5 and `pad_left` is -3, the final "
+#~ "padding is 2.)"
+#~ msgstr ""
+#~ "これらは各側面のパディングに加えられ、 正または負です ( 例えば、 `left` "
+#~ "が 5, `pad_left` が -3 なら、最終的なパディングは 2 です )。"
+
+#~ msgid "The padding information is supplied via a field:"
+#~ msgstr "パッディング情報はフィールドとして渡します。"
+
+#~ msgid ""
+#~ "This is a four-element tuple containing the padding on each of the four "
+#~ "sides."
+#~ msgstr "これは 4 要素のタプルで、各4つの側面のパディングを含みます。"
+
+#~ msgid ""
+#~ "This creates a new displayable of `size`, by compositing other "
+#~ "displayables. `size` is a (width, height) tuple."
+#~ msgstr ""
+#~ "これは他の displayable を合成して `size` の新しい displayable を作成しま"
+#~ "す。 `size` は (width, height) のタプルです。"
+
+#~ msgid ""
+#~ "The remaining positional arguments are used to place images inside the "
+#~ "Composite. The remaining positional arguments should come in groups of "
+#~ "two, with the first member of each group an (x, y) tuple, and the second "
+#~ "member of a group is a displayable that is composited at that position."
+#~ msgstr ""
+#~ "残りの位置引数は Composite 内に画像を配置するために使用されます。残りの位"
+#~ "置引数は各グループの第一要素が (x, y) のタプルで、第二要素がその位置に合成"
+#~ "される displayable の 2 つからなります。"
+
+#~ msgid "Displayables are composited from back to front."
+#~ msgstr "Displayable は後ろから前へ合成されます。"
+
+#~ msgid ""
+#~ "This creates a displayable by cropping `child` to `rect`, where `rect` is "
+#~ "an (x, y, width, height) tuple. ::"
+#~ msgstr ""
+#~ "`child` を `rect` に刈りこんで displayable を作成します。ここで `rect` は "
+#~ "(x, y, width, height) タプルです。 ::"
+
+#~ msgid ""
+#~ "A DynamicImage is a displayable that has text interpolation performed on "
+#~ "it to yield a string giving a new displayable. Such interpolation is "
+#~ "performed at the start of each interaction."
+#~ msgstr ""
+#~ "dynamic image はテキスト置換により新しい displayable の文字列を生成するテ"
+#~ "キストを持つ displayable です。そのような置換は各インタラクションの開始時"
+#~ "に処理されます。"
+
+#~ msgid ""
+#~ "This flattens `child`, which may be made up of multiple textures, into a "
+#~ "single texture."
+#~ msgstr ""
+#~ "これは複数のテクスチャで構成された `child` を一つのテクスチャに貼り付けま"
+#~ "す。"
+
+#~ msgid ""
+#~ "Certain operations, like the alpha transform property, apply to every "
+#~ "texture making up a displayable, which can yield incorrect results when "
+#~ "the textures overlap on screen. Flatten creates a single texture from "
+#~ "multiple textures, which can prevent this problem."
+#~ msgstr ""
+#~ "alpha transform プロパティーのような特定の処理は displayable を構成するす"
+#~ "べてのテクスチャに適用され、スクリーン上でテクスチャが重なり合っていると"
+#~ "誤った結果になる可能性があります。貼り付けは複数のテクスチャから一つのテク"
+#~ "スチャを作成し、この問題を防ぎます。"
+
+#~ msgid ""
+#~ "Flatten is a relatively expensive operation, and so should only be used "
+#~ "when absolutely required."
+#~ msgstr ""
+#~ "貼り付けは比較的重い処理なので絶対的に必要なときのみ使用するべきです。"
+
+#~ msgid "`drawable_resolution`"
+#~ msgstr "`drawable_resolution`"
+
+#~ msgid ""
+#~ "Defaults to true, which is usually the right choice, but may cause the "
+#~ "resulting texture, when scaled, to have different artifacts than the "
+#~ "textures that make it up. Setting this to False will change the "
+#~ "artifacts, which may be more pleasing in some cases."
+#~ msgstr ""
+#~ "デフォルトでは True であり、通常は正しい選択ですが、スケーリングされたとき"
+#~ "に、テクスチャーにノイズが発生する可能性があります。 False に設定すると、"
+#~ "ノイズが変わり、場合によってはより好ましいものになる可能性があります。"
+
+#~ msgid ""
+#~ "A displayable that resizes an image to fill the available area, while "
+#~ "preserving the width and height of its borders. It is often used as the "
+#~ "background of a window or button."
+#~ msgstr ""
+#~ "境界の幅と高さを保ちながら、利用できる領域を満たすようにリサイズする "
+#~ "displayable です。ウィンドウやボタンの背景によく使われます。"
+
+#~ msgid "Using a frame to resize an image to double its size."
+#~ msgstr "フレームを使用し、画像サイズを2倍にリサイズ。"
+
+#~ msgid "`image`"
+#~ msgstr "`image`"
+
+#~ msgid "An image manipulator that will be resized by this frame."
+#~ msgstr "Frame によって大きさを変えられる画像マニピュレータです。"
+
+#~ msgid "`left`"
+#~ msgstr "`left`"
+
+#~ msgid ""
+#~ "The size of the border on the left side. This can also be a :func:"
+#~ "`Borders` object, in which case that object is used in place of the other "
+#~ "parameters."
+#~ msgstr ""
+#~ "左側面の境界サイズです。これは :func:`Borders` オブジェクトでもよく、その"
+#~ "場合オブジェクトは他のパラメーターの位置にも使用されます。"
+
+#~ msgid "`top`"
+#~ msgstr "`top`"
+
+#~ msgid "The size of the border on the top."
+#~ msgstr "上側の境界のサイズです。"
+
+#~ msgid "`right`"
+#~ msgstr "`right`"
+
+#~ msgid ""
+#~ "The size of the border on the right side. If None, defaults to `left`."
+#~ msgstr "右側の境界のサイズです。None なら、デフォルトでは `left` です。"
+
+#~ msgid "`bottom`"
+#~ msgstr "`bottom`"
+
+#~ msgid "The side of the border on the bottom. If None, defaults to `top`."
+#~ msgstr "下側の境界のサイズです。None なら、デフォルトでは `top` です。"
+
+#~ msgid "`tile`"
+#~ msgstr "`tile`"
+
+#~ msgid ""
+#~ "If set to True, tiling is used to resize sections of the image, rather "
+#~ "than scaling. If set to the string \"integer\", the nearest integer "
+#~ "number of tiles will be used in each direction. That set of full tiles "
+#~ "will then be scaled up or down to fit the required area."
+#~ msgstr ""
+#~ "True なら、拡大でなくタイル張りによって画像領域をリサイズします。文字列 "
+#~ "\"integer\" に設定されると、各方向に最も近い整数個のタイルが使用されます。"
+#~ "必要な領域に一致するようすべてのタイルが拡大縮小されます。"
+
+#~ msgid ""
+#~ "A displayable that creates an empty box on the screen. The size of the "
+#~ "box is controlled by `width` and `height`. This can be used when a "
+#~ "displayable requires a child, but no child is suitable, or as a spacer "
+#~ "inside a box."
+#~ msgstr ""
+#~ "画面上に空のボックスを作成する displayable です。このボックスの大きさは "
+#~ "`width` と `height` で制御できます。これは、displayable が子を要求している"
+#~ "が適切な子が無いときや、ボックス内の空間を埋めるのに使えます。"
+
+#~ msgid "A displayable that fills the area its assigned with `color`."
+#~ msgstr "割り当てられた領域を `color` で満たす displayable です。"
+
+#~ msgid "Tiles `child` until it fills the area allocated to this displayable."
+#~ msgstr ""
+#~ "この displayable に割り当てられた領域まで `child` をタイル張りします。"
+
+#~ msgid ""
+#~ "This is a displayable that changes what it is showing based on Python "
+#~ "conditions. The positional arguments should be given in groups of two, "
+#~ "where each group consists of:"
+#~ msgstr ""
+#~ "これは、Python 条件式に基づいて表示するものを変える displayable です。位置"
+#~ "引数は、次を二つ一組にまとめて指定しなければなりません:"
+
+#~ msgid "A string containing a Python condition."
+#~ msgstr "Python 式を含む文字列"
+
+#~ msgid "A displayable to use if the condition is true."
+#~ msgstr "条件式が True の時に使う displayable"
+
+#~ msgid ""
+#~ "The first true condition has its displayable shown, at least one "
+#~ "condition should always be true."
+#~ msgstr ""
+#~ "最初に True になった条件式の displayable が表示され、少なくとも一つの条件"
+#~ "式が True にならなければなりません。"
+
+#~ msgid ""
+#~ "The conditions uses here should not have externally-visible side-effects."
+#~ msgstr ""
+#~ "ここで使用する条件は外部から可視である副作用をもつべきではありません。"
+
+#~ msgid "`predict_all`"
+#~ msgstr "`predict_all`"
+
+#~ msgid ""
+#~ "If True, all of the possible displayables will be predicted when the "
+#~ "displayable is shown. If False, only the current condition is predicted. "
+#~ "If None, :var:`config.conditionswitch_predict_all` is used."
+#~ msgstr ""
+#~ "True なら、起こりうるすべての displayable がその表示時に予測されます。　"
+#~ "False なら、現在の条件でのみ予測されます。None なら :var:`config."
+#~ "conditionswitch_predict_all` が使用されます。"
+
+#~ msgid ""
+#~ "A displayable that can change its child based on a Python function, over "
+#~ "the course of an interaction. It does not take any properties, as its "
+#~ "layout is controlled by the properties of the child displayable it "
+#~ "returns."
+#~ msgstr ""
+#~ "Pythonの関数に基づき、インタラクションの過程でその子を変更できる "
+#~ "displayable です。そのレイアウトは関数が返す子 displayable のプロパティに"
+#~ "よって制御されるため、どんなプロパティも取りません。"
+
+#~ msgid "`function`"
+#~ msgstr "`function`"
+
+#~ msgid "A function that is called with the arguments:"
+#~ msgstr "次の引数を渡して呼び出される関数です :"
+
+#~ msgid "The amount of time the displayable has been shown for."
+#~ msgstr "その displayable が表示されている時間"
+
+#~ msgid ""
+#~ "The amount of time any displayable with the same tag has been shown for."
+#~ msgstr "同じタグの displayable が表示されている時間。"
+
+#~ msgid "Any positional or keyword arguments supplied to DynamicDisplayable."
+#~ msgstr "DynamicDisplayable に渡された任意の位置引数とキーワード引数。"
+
+#~ msgid "and should return a (d, redraw) tuple, where:"
+#~ msgstr "これは (d, redraw) タプルを返すべきです。ここで :"
+
+#~ msgid "`d` is a displayable to show."
+#~ msgstr "`d` は表示する displayable です。"
+
+#~ msgid ""
+#~ "`redraw` is the maximum amount of time to wait before calling the "
+#~ "function again, or None to not require the function be called again "
+#~ "before the start of the next interaction."
+#~ msgstr ""
+#~ "`redraw` は、関数を再び呼び出すまでの最大待ち時間です。None にすると、次の"
+#~ "インタラクションが始まるまでもうこの関数は呼び出されません。"
+
+#~ msgid "`function` is called at the start of every interaction."
+#~ msgstr "`function` は、インタラクションが始まるごとに呼び出されます"
+
+#~ msgid ""
+#~ "As a special case, `function` may also be a python string that evaluates "
+#~ "to a displayable. In that case, function is run once per interaction."
+#~ msgstr ""
+#~ "特別に、 `function` は評価が  displayable である Python 文字列にもできま"
+#~ "す。その場合、関数はインタラクションごとに一度実行されます。"
+
+#~ msgid ""
+#~ "This is a displayable that changes what it is showing based on the images "
+#~ "are showing on the screen. The positional argument should be given in "
+#~ "groups of two, where each group consists of:"
+#~ msgstr ""
+#~ "これは、画面に表示されている画像に基づいて表示する画像を変える "
+#~ "displayable です。位置引数は、次を二つ一組にまとめて指定しなければなりませ"
+#~ "ん :"
+
+#~ msgid "A string giving an image name, or None to indicate the default."
+#~ msgstr "画像名の文字列。または、デフォルトを表す None"
+
+#~ msgid "A default image should be specified."
+#~ msgstr "デフォルトの画像は指定されなければなりません。"
+
+#~ msgid ""
+#~ "One use of ShowingSwitch is to have images change depending on the "
+#~ "current emotion of a character. For example::"
+#~ msgstr ""
+#~ "ShowingSwitch の使い方の一つは、キャラクターの現在の表情に応じて画像を変え"
+#~ "ることです。例 ::"
+
+#~ msgid ""
+#~ "This allows a layer to be shown as a displayable on another layer. "
+#~ "Intended for use with detached layers."
+#~ msgstr ""
+#~ "これによりあるレイヤーを他のレイヤーに Displayable として表示できます。 "
+#~ "detached レイヤーとの併用が想定されています。"
+
+#~ msgid "Trying to display a layer on itself is not supported."
+#~ msgstr "レイヤーのそのレイヤー自体への表示は出来ません。"
+
+#~ msgid "`layer`"
+#~ msgstr "`layer`"
+
+#~ msgid "The layer to display."
+#~ msgstr "表示するレイヤー"
+
+#~ msgid "`clipping`"
+#~ msgstr "`clipping`"
+
+#~ msgid ""
+#~ "If False, the layer's contents may exceed its bounds, otherwise anything "
+#~ "exceeding the bounds will be trimmed."
+#~ msgstr ""
+#~ "False なら、そのレイヤーの内容はその領域を超えた部分がカットされずにはみ出"
+#~ "る可能性があります。"
+
+#~ msgid ""
+#~ "An entry in config.layer_clipping will cause this option to be ignored, "
+#~ "and clipping to occur as specified by that config."
+#~ msgstr ""
+#~ "config.layer_clipping にそのレイヤーがあればこのオプションは無視され、その"
+#~ "設定で指定されたようにクリッピングが行われるます。"
+
+#~ msgid ""
+#~ "A box that fills the screen. Its members are laid out from back to front, "
+#~ "with their position properties controlling their position."
+#~ msgstr ""
+#~ "画面を満たすボックスです。このメンバは奥から手前に並べられ、この位置は位置"
+#~ "プロパティーで制御されます。"
+
+#~ msgid "A box that lays out its members from left to right."
+#~ msgstr "ボックスで、このメンバは左から右へ並べられます。"
+
+#~ msgid "A layout that lays out its members from top to bottom."
+#~ msgstr "ボックスで、このメンバは上から下へ並べられます。"
+
+#~ msgid ""
+#~ "Lays out displayables in a grid. The first two positional arguments are "
+#~ "the number of columns and rows in the grid. This must be followed by "
+#~ "`columns * rows` positional arguments giving the displayables that fill "
+#~ "the grid."
+#~ msgstr ""
+#~ "グリッドに displayable を配置します。最初の 2 つの位置引数はグリッドの縦と"
+#~ "横の列の数です。この後にはグリッドを満す `columns * rows` 個の "
+#~ "displayable の位置引数が続かなければなりません。"
+
+#~ msgid ""
+#~ "This transition uses a `control` displayable (almost always some sort of "
+#~ "animated transform) to transition from one displayable to another. The "
+#~ "transform is evaluated. The `new` displayable is used where the transform "
+#~ "is opaque, and the `old` displayable is used when it is transparent."
+#~ msgstr ""
+#~ "このトランジションは、ある displayable から別の displayable へのトランジ"
+#~ "ションに `control` displayable ( ほとんどはATL transform を並べたもので"
+#~ "す )を使います。その transform が評価され、 transform が不透明な領域は "
+#~ "`new` displayable が使われ、 transform が透明な領域は `old` displayable が"
+#~ "使われます。"
+
+#~ msgid "`alpha`"
+#~ msgstr "`alpha`"
+
+#~ msgid ""
+#~ "If true, the image is composited with what's behind it. If false, the "
+#~ "default, the image is opaque and overwrites what's behind it."
+#~ msgstr ""
+#~ "True であれば、画像は背後のものと合成されます。デフォルトの False であれ"
+#~ "ば、画像は不透明で背後のものを上書きします。"
+
+#~ msgid ""
+#~ "This displayable can be used to display a placeholder character or "
+#~ "background."
+#~ msgstr ""
+#~ "この displayable を使用して プレースホルダキャラクターや背景を表示出来ま"
+#~ "す。"
+
+#~ msgid "`base`"
+#~ msgstr "`base`"
+
+#~ msgid "The type of image to display. This should be one of:"
+#~ msgstr "表示される画像の種類です。これは次の内のひとつであるべきです。 :"
+
+#~ msgid "'bg'"
+#~ msgstr "'bg'"
+
+#~ msgid ""
+#~ "To display a background placeholder. This currently fills the screen with "
+#~ "a light-gray, and displays the image name at the top of the screen."
+#~ msgstr ""
+#~ "背景プレースホルダを表示するために、現在は画面を灰色で埋め、スクリーン上部"
+#~ "に画像の名前を表示します。"
+
+#~ msgid "'boy'"
+#~ msgstr "'boy'"
+
+#~ msgid ""
+#~ "Displays a male-identified placeholder with the image name on his chest."
+#~ msgstr "肩に画像の名前をいれて男性プレースホルダを表示します。"
+
+#~ msgid "'girl'"
+#~ msgstr "'girl'"
+
+#~ msgid ""
+#~ "Displays a female-identified placeholder with the image name on her chest."
+#~ msgstr "肩に画像の名前をいれて女性プレースホルダを表示します。"
+
+#~ msgid "None"
+#~ msgstr "None"
+
+#~ msgid ""
+#~ "Attempts to automatically determine the type of image to use. If the "
+#~ "image name begins with \"bg\", \"cg\", or \"event\", uses 'bg'."
+#~ msgstr ""
+#~ "画像名が \"bg\" や \"cg\",  \"event\", で始まるか、 'bg' を使用していた"
+#~ "ら、自動的に使用する画像タイプを判断します。 "
+
+#~ msgid "Otherwise, the 'girl' placeholder is used."
+#~ msgstr "それ以外では `girl` プレースホルダを使用します。"
+
+#~ msgid "`full`"
+#~ msgstr "`full`"
+
+#~ msgid ""
+#~ "If true, a full-body sprite is used. Otherwise, a 3/4 sprite is used."
+#~ msgstr ""
+#~ "True なら全身画像が使用されます。そうでなければ 3/4 画像が使用されます。"
+
+#~ msgid "`flip`"
+#~ msgstr "`flip`"
+
+#~ msgid "If true, the sprite is flipped horizontally."
+#~ msgstr "True なら画像は水平に反転します。"
+
+#~ msgid "`text`"
+#~ msgstr "`text`"
+
+#~ msgid ""
+#~ "If provided, no other text than this will be displayed on the "
+#~ "placeholder. If not, the text will reflect the show instruction that was "
+#~ "used to display it."
+#~ msgstr ""
+#~ "指定された場合、これ以外のテキストはプレースホルダーに表示されません。そう"
+#~ "でなければテキストはそれを表示するために使用された show の指示を反映しま"
+#~ "す。"
 
 #~ msgid "Applying Transforms to Displayables"
 #~ msgstr "displayable への transform の適用"
