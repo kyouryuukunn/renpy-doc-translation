@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 6.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 11:17+0900\n"
+"POT-Creation-Date: 2025-08-12 18:27+0900\n"
 "PO-Revision-Date: 2024-07-25 23:24+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -50,6 +50,124 @@ msgstr ""
 "るのみであることを確認してから Ren'Py に追加される必要があります。インストー"
 "ルにはランチャーから \"preferences\", \"Install libraries\", \"Install Steam "
 "Support\" を選択してください。"
+
+#: ../../source/inc/achievement:5
+msgid ""
+"An action that calls achievement.sync(). This is only sensitive if "
+"achievements are out of sync."
+msgstr ""
+"achievement.sync() を呼び出すアクションです。これは実績が同期されていないとき"
+"のみ有効になります。"
+
+#: ../../source/inc/achievement:10
+msgid "Clears the achievement with `name`."
+msgstr "`name` 実績をクリアします。"
+
+#: ../../source/inc/achievement:14
+msgid "Clears all achievements."
+msgstr "すべての実績をクリアします。"
+
+#: ../../source/inc/achievement:18
+msgid ""
+"Returns the current progress towards the achievement identified with `name`, "
+"or 0 if no progress has been registered for it or if the achievement is not "
+"known."
+msgstr ""
+"`name` 実績への達成度を返します。その実績の進行が登録されていないまたは不明な"
+"ら 0 です。"
+
+#: ../../source/inc/achievement:24
+msgid "Grants the achievement with `name`, if it has not already been granted."
+msgstr "既に授与されていなければ、 `name` 実績を授与します。"
+
+#: ../../source/inc/achievement:29
+msgid ""
+"Returns true if the player has been granted the achievement with `name`."
+msgstr "プレイヤーに `name` 実績が授与されていれば True を返します。"
+
+#: ../../source/inc/achievement:34
+msgid ""
+"Reports progress towards the achievement with `name`, if that achievement "
+"has not been granted. The achievement must be defined with a completion "
+"amount."
+msgstr ""
+"`name` 実績がまだ授与されたことがなければ、(訳注 complete までの達成を授与し"
+"た上で)実績の達成度を報告します。その実績には達成度が定義されていなければなり"
+"ません。"
+
+#: ../../source/inc/achievement:40 ../../source/inc/achievement:53
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/achievement:39
+msgid ""
+"The name of the achievement. This should be the name of the achievement, and "
+"not the stat."
+msgstr "実績の名前です。これは実績名で、 stat ではありません。"
+
+#: ../../source/inc/achievement:43
+msgid "`complete`"
+msgstr "`complete`"
+
+#: ../../source/inc/achievement:43
+msgid ""
+"An integer giving the number of units completed towards the achievement."
+msgstr "その実績達成へ向けて完了した行程数の整数値です。"
+
+#: ../../source/inc/achievement:48
+msgid ""
+"Registers an achievement. Achievements are not required to be registered, "
+"but doing so allows one to pass information to the backends."
+msgstr ""
+"実績を登録します。実績が登録される必要はありませんが、こうするとバックエンド"
+"に情報を渡せます。"
+
+#: ../../source/inc/achievement:53
+msgid "The name of the achievement to register."
+msgstr "登録する実績の名前です。"
+
+#: ../../source/inc/achievement:55
+msgid "The following keyword parameters are optional."
+msgstr "以下のキーワードパラメーターは任意です。"
+
+#: ../../source/inc/achievement:58
+msgid "`steam`"
+msgstr "`steam`"
+
+#: ../../source/inc/achievement:58
+msgid "The name to use on steam. If not given, defaults to `name`."
+msgstr ""
+"steam で使用する名前です。指定されないとデフォルトで `name` になります。"
+
+#: ../../source/inc/achievement:61
+msgid "`stat_max`"
+msgstr "`stat_max`"
+
+#: ../../source/inc/achievement:61
+msgid "The integer value of the stat at which the achievement unlocks."
+msgstr "実績が開放される stat の整数値です。"
+
+#: ../../source/inc/achievement:66
+msgid "`stat_modulo`"
+msgstr "`stat_modulo`"
+
+#: ../../source/inc/achievement:64
+msgid ""
+"If the progress modulo `stat_max` is 0, progress is displayed to the user. "
+"For example, if stat_modulo is 10, progress will be displayed to the user "
+"when it reaches 10, 20, 30, etc. If not given, this defaults to 0."
+msgstr ""
+"達成度の `stat_modulo` による剰余が 0 なら達成度はユーザーに表示されます。例"
+"えば stat_modulo が 10 なら、達成度が 10, 20, 30… のときにユーザーに表示され"
+"ます。指定されないと、これはデフォルトで 0 になります。"
+
+#: ../../source/inc/achievement:71
+msgid ""
+"Synchronizes registered achievements between local storage and other "
+"backends. (For example, Steam.)"
+msgstr ""
+"ローカルストレージとその他のバックエンド (steam など ) の登録された実績を同期"
+"します。"
 
 #: ../../source/achievement.rst:22
 msgid "Variables that control achievements are:"
@@ -135,389 +253,343 @@ msgstr ""
 msgid "Steam Apps"
 msgstr "Steam Apps"
 
+#: ../../source/inc/steam_apps:5
+msgid "Returns True if `dlc` is installed, or False otherwise."
+msgstr ""
+"`dlc` がインストールされている場合は True を返し、それ以外の場合は False を返"
+"します。"
+
+#: ../../source/inc/steam_apps:9
+msgid "Reports the progress towards DLC download completion."
+msgstr "DLCのダウンロード完了に向けた進捗状況を報告します。"
+
+#: ../../source/inc/steam_apps:13
+msgid "Returns the build ID of the installed game."
+msgstr "インストールされているゲームのビルド ID を返します。"
+
+#: ../../source/inc/steam_apps:17
+msgid "Returns the name of the current beta, or None if it can't."
+msgstr "現在のベータ版の名前を返すか、返せない場合は None を返します。"
+
+#: ../../source/inc/steam_apps:21
+msgid "Return the name of the language the user has selected."
+msgstr "ユーザーが選択した言語の名前を返します。"
+
+#: ../../source/inc/steam_apps:25
+msgid "Return the name of the language the steam UI is using."
+msgstr "Steam UIが使用している言語の名前を返します。"
+
+#: ../../source/inc/steam_apps:29
+msgid "Requests the DLC with `appid` be installed."
+msgstr "`appid` を持つ DLC のインストールを要求します。"
+
+#: ../../source/inc/steam_apps:33
+msgid ""
+"Returns true if the user owns the app with `appid`, and false otherwise."
+msgstr ""
+"ユーザーが `appid` のアプリを所有している場合は true を返し、それ以外の場合"
+"は false を返します。"
+
+#: ../../source/inc/steam_apps:37
+msgid "Requests that the DLC with `appid` be uninstalled."
+msgstr "`appid` を持つ DLC のアンインストールを要求します。"
+
 #: ../../source/achievement.rst:70
 msgid "Steam Overlay"
 msgstr "Steam Overlay"
+
+#: ../../source/inc/steam_overlay:5
+msgid "Activates the Steam overlay."
+msgstr "Steamオーバーレイをアクティブにします。"
+
+#: ../../source/inc/steam_overlay:8
+msgid "`dialog`"
+msgstr "`dialog`"
+
+#: ../../source/inc/steam_overlay:8
+msgid ""
+"The dialog to open the overlay to. One of \"Friends\", \"Community\", "
+"\"Players\", \"Settings\", \"OfficialGameGroup\", \"Stats\", \"Achievements\""
+msgstr ""
+"オーバーレイを開くダイアログです。 \"Friends\", \"Community\", \"Players\", "
+"\"Settings\", \"OfficialGameGroup\", \"Stats\", \"Achievements\" のいずれかで"
+"す。"
+
+#: ../../source/inc/steam_overlay:13
+msgid "Opens the steam overlay to the store."
+msgstr "ストアへの steam オーバーレイを開きます。"
+
+#: ../../source/inc/steam_overlay:16
+msgid "`appid`"
+msgstr "`appid`"
+
+#: ../../source/inc/steam_overlay:16
+msgid "The appid to open."
+msgstr "開く appid"
+
+#: ../../source/inc/steam_overlay:18
+msgid "`flag`"
+msgstr "`flag`"
+
+#: ../../source/inc/steam_overlay:19
+msgid ""
+"One of achievement.steam.STORE_NONE, .STORE_ADD_TO_CART, or ."
+"STORE_ADD_TO_CART_AND_SHOW."
+msgstr ""
+"achievement.steam.STORE_NONE, STORE_ADD_TO_CART, .STORE_ADD_TO_CART_AND_SHOW "
+"のいずれかです"
+
+#: ../../source/inc/steam_overlay:23
+msgid "Activates the Steam overlay, and opens the web page at `url`."
+msgstr "Steamオーバーレイを有効にし、Webページを `url` で開きます。"
+
+#: ../../source/inc/steam_overlay:27 ../../source/inc/steam_overlay:32
+msgid ""
+"Returns true if the steam overlay is enabled. (This might take a while to "
+"return true once the game starts.)"
+msgstr ""
+"Steamオーバーレイが有効な場合は true を返します (ゲームが開始されると、これ"
+"が true に戻るまでに時間がかかる場合があります。"
+
+#: ../../source/inc/steam_overlay:37
+msgid ""
+"Sets the position of the steam overlay. `Position` should be one of "
+"achievement.steam.POSITION_TOP_LEFT, .POSITION_TOP_RIGHT, ."
+"POSITION_BOTTOM_LEFT, or .POSITION_BOTTOM_RIGHT."
+msgstr ""
+"steam オーバーレイの位置を設定します。 `Position` は achievement.steam."
+"POSITION_TOP_LEFT, .POSITION_TOP_RIGHT, .POSITION_BOTTOM_LEFT, "
+"POSITION_BOTTOM_RIGHT のいずれか1つです。"
 
 #: ../../source/achievement.rst:75
 msgid "Steam Stats"
 msgstr "Steam Stats"
 
+#: ../../source/inc/steam_stats:5
+msgid ""
+"Clears the achievement with `name`. Call :func:`_renpysteam.store_stats` to "
+"push this change to the server."
+msgstr ""
+"`name` の実績をクリアします。 :func:`_renpysteam.store_stats` を呼び出して、"
+"この変更をサーバーにプッシュしてください。"
+
+#: ../../source/inc/steam_stats:10
+msgid ""
+"Gets the state of the achievements with `name`. This returns True if the "
+"achievement has been granted, False if it hasn't, and None if the "
+"achievement is unknown or an error occurs."
+msgstr ""
+"`name` の実績の状態を取得します。その実績が付与されている場合は True、付与さ"
+"れていなければ False、その実績が不明な場合やエラーが発生した場合は None が返"
+"されます。"
+
+#: ../../source/inc/steam_stats:16 ../../source/inc/steam_stats:21
+msgid ""
+"Returns the value of the stat with `name`, or None if no such stat exits."
+msgstr ""
+"`name` の stat の値を返すか、そのような stat が存在しない場合は None を返しま"
+"す。"
+
+#: ../../source/inc/steam_stats:26
+msgid ""
+"Grants the achievement with `name`. Call :func:`_renpysteam.store_stats` to "
+"push this change to the server."
+msgstr ""
+"`name` の実績を付与します。 :func:`_renpysteam.store_stats` を呼び出して、こ"
+"の変更をサーバーにプッシュしてください。"
+
+#: ../../source/inc/steam_stats:31
+msgid ""
+"Indicates achievement progress to the user. This does *not* unlock the "
+"achievement."
+msgstr ""
+"実績の進行状況をユーザーに示します。これは、実績のロックを解除しません。"
+
+#: ../../source/inc/steam_stats:36
+msgid "Returns a list of achievement names."
+msgstr "実績名のリストを返します。"
+
+#: ../../source/inc/steam_stats:40
+msgid "Retrieves achievements and statistics from Steam."
+msgstr "Steamから実績と統計を取得します。"
+
+#: ../../source/inc/steam_stats:44
+msgid ""
+"Sets the value of the stat with `name`, which must have the type of FLOAT. "
+"Call :func:`_renpysteam.store_stats` to push this change to the server."
+msgstr ""
+"`name` の stat の値を設定しますが、これは FLOAT 型でなければなりません。 :"
+"func:`_renpysteam.store_stats` を呼び出して、この変更をサーバーにプッシュして"
+"ください。"
+
+#: ../../source/inc/steam_stats:50
+msgid ""
+"Sets the value of the stat with `name`, which must have the type of INT. "
+"Call :func:`_renpysteam.store_stats` to push this change to the server."
+msgstr ""
+"`name` の stat の値を設定しますが、これは INT 型でなければなりません。 :func:"
+"`_renpysteam.store_stats` を呼び出して、この変更をサーバーにプッシュしてくだ"
+"さい。"
+
+#: ../../source/inc/steam_stats:56
+msgid "Stores statistics and achievements on the Steam server."
+msgstr "統計と実績を Steam サーバーに保存します。"
+
 #: ../../source/achievement.rst:80
 msgid "Steam Timeline"
 msgstr "Steam Timeline"
+
+#: ../../source/inc/steam_timeline:5
+msgid "Adds an event to the timeline."
+msgstr "タイムラインにイベントを追加します。"
+
+#: ../../source/inc/steam_timeline:9
+msgid "`icon`"
+msgstr "`icon`"
+
+#: ../../source/inc/steam_timeline:8
+msgid ""
+"The icon to display for the event. This should be a string giving one of the "
+"standard steam icons, or one you uploaded to Steam."
+msgstr ""
+"イベントに表示するアイコンです。これは、標準の Steam アイコンまたはあなたが "
+"Steam にアップロードしたアイコンの文字列の1つである必要があります。"
+
+#: ../../source/inc/steam_timeline:12
+msgid "`title`"
+msgstr "`title`"
+
+#: ../../source/inc/steam_timeline:12
+msgid "The title of the event."
+msgstr "登録するイベントの名前です。"
+
+#: ../../source/inc/steam_timeline:15 ../../source/inc/steam_timeline:39
+msgid "`description`"
+msgstr "`description`"
+
+#: ../../source/inc/steam_timeline:15
+msgid "The description of the event."
+msgstr "イベントの説明です。"
+
+#: ../../source/inc/steam_timeline:18
+msgid "`priority`"
+msgstr "`priority`"
+
+#: ../../source/inc/steam_timeline:18
+msgid ""
+"The priority of the event, used to resolve conflicts. This should be an "
+"interger between 0 and 1000."
+msgstr ""
+"競合の解決に使用されるイベントの優先度です。これは、 0 から 1000 までの整数で"
+"ある必要があります。"
+
+#: ../../source/inc/steam_timeline:21
+msgid "`start_offset`"
+msgstr "`start_offset`"
+
+#: ../../source/inc/steam_timeline:21
+msgid "The offset of the start of the event from the current time, in seconds."
+msgstr "現在の時刻からイベントの開始までのオフセットです (秒単位)。"
+
+#: ../../source/inc/steam_timeline:24
+msgid "`duration`"
+msgstr "`duration`"
+
+#: ../../source/inc/steam_timeline:24
+msgid "The duration of the event, in seconds."
+msgstr "イベントの継続時間 (秒単位)。"
+
+#: ../../source/inc/steam_timeline:27
+msgid "`possible_clip`"
+msgstr "`possible_clip`"
+
+#: ../../source/inc/steam_timeline:27
+msgid ""
+"This determines if the event can be clipped. This should be one of the "
+"achievement.steam.CLIP_PRIORITY... constants: CLIP_PRIORITY_NONE, "
+"CLIP_PRIORITY_STANDARD, or CLIP_PRIORITY_FEATURED."
+msgstr ""
+"イベントをクリップできるかどうかを決めます。これは achievement.steam."
+"CLIP_PRIORITY_XXX形式の定数: CLIP_PRIORITY_NONE、CLIP_PRIORITY_STANDARD、 "
+"CLIP_PRIORITY_FEATURED の1つであるべきです。"
+
+#: ../../source/inc/steam_timeline:32
+msgid "Clears the description of the current state in the timeline."
+msgstr "タイムラインの現在の状態の説明をクリアします。"
+
+#: ../../source/inc/steam_timeline:36
+msgid "Sets the description of the current state in the timeline."
+msgstr "タイムラインの現在の状態の説明を設定します。"
+
+#: ../../source/inc/steam_timeline:39
+msgid "A string giving the description of the current state."
+msgstr "現在の状態の説明を示す文字列。"
+
+#: ../../source/inc/steam_timeline:41
+msgid "`time_delta`"
+msgstr "`time_delta`"
+
+#: ../../source/inc/steam_timeline:42
+msgid "The time since the last state change."
+msgstr "最後の状態変更からの時間。"
 
 #: ../../source/achievement.rst:85
 msgid "Steam User"
 msgstr "Steam User"
 
+#: ../../source/inc/steam_user:5
+msgid ""
+"Cancels the ticket returned by :func:`achievement.steam.get_session_ticket`."
+msgstr ""
+":func:`achievement.steam.get_session_ticket` によって返されたチケットをキャン"
+"セルします。"
+
+#: ../../source/inc/steam_user:9
+msgid "Returns the user's account ID."
+msgstr "ユーザーのアカウント ID を返します。"
+
+#: ../../source/inc/steam_user:13
+msgid "Returns the user's full CSteamID as a 64-bit number."
+msgstr "ユーザーの完全な CSteamID を64ビットの数値として返します。"
+
+#: ../../source/inc/steam_user:17
+msgid "Gets the level of the users Steam badge for your game."
+msgstr "ゲームのユーザーの Steam バッジのレベルを取得します。"
+
+#: ../../source/inc/steam_user:21
+msgid "Returns the user's publicly-visible name."
+msgstr "ユーザーのパブリックに表示される名前を返します。"
+
+#: ../../source/inc/steam_user:25
+msgid "Gets a ticket that can be sent to the server to authenticate this user."
+msgstr "このユーザーを認証するためにサーバーに送信できるチケットを取得します。"
+
 #: ../../source/achievement.rst:90
 msgid "Steam Workshop"
 msgstr "Steam Workshop"
 
-#~ msgid ""
-#~ "An action that calls achievement.sync(). This is only sensitive if "
-#~ "achievements are out of sync."
-#~ msgstr ""
-#~ "achievement.sync() を呼び出すアクションです。これは実績が同期されていない"
-#~ "ときのみ有効になります。"
-
-#~ msgid "Clears the achievement with `name`."
-#~ msgstr "`name` 実績をクリアします。"
-
-#~ msgid "Clears all achievements."
-#~ msgstr "すべての実績をクリアします。"
-
-#~ msgid ""
-#~ "Returns the current progress towards the achievement identified with "
-#~ "`name`, or 0 if no progress has been registered for it or if the "
-#~ "achievement is not known."
-#~ msgstr ""
-#~ "`name` 実績への達成度を返します。その実績の進行が登録されていないまたは不"
-#~ "明なら 0 です。"
-
-#~ msgid ""
-#~ "Grants the achievement with `name`, if it has not already been granted."
-#~ msgstr "既に授与されていなければ、 `name` 実績を授与します。"
-
-#~ msgid ""
-#~ "Returns true if the player has been granted the achievement with `name`."
-#~ msgstr "プレイヤーに `name` 実績が授与されていれば True を返します。"
-
-#~ msgid ""
-#~ "Reports progress towards the achievement with `name`, if that achievement "
-#~ "has not been granted. The achievement must be defined with a completion "
-#~ "amount."
-#~ msgstr ""
-#~ "`name` 実績がまだ授与されたことがなければ、(*訳注 complete までの達成を授"
-#~ "与した上で)実績の達成度を報告します。その実績には達成度が定義されていなけ"
-#~ "ればなりません。"
-
-#~ msgid "`name`"
-#~ msgstr "`name`"
-
-#~ msgid ""
-#~ "The name of the achievement. This should be the name of the achievement, "
-#~ "and not the stat."
-#~ msgstr "実績の名前です。これは実績名で、 stat ではありません。"
-
-#~ msgid "`complete`"
-#~ msgstr "`complete`"
-
-#~ msgid ""
-#~ "An integer giving the number of units completed towards the achievement."
-#~ msgstr "その実績達成へ向けて完了した行程数の整数値です。"
-
-#~ msgid ""
-#~ "Registers an achievement. Achievements are not required to be registered, "
-#~ "but doing so allows one to pass information to the backends."
-#~ msgstr ""
-#~ "実績を登録します。実績が登録される必要はありませんが、こうするとバックエン"
-#~ "ドに情報を渡せます。"
-
-#~ msgid "The name of the achievement to register."
-#~ msgstr "登録する実績の名前です。"
-
-#~ msgid "The following keyword parameters are optional."
-#~ msgstr "以下のキーワードパラメーターは任意です。"
-
-#~ msgid "`steam`"
-#~ msgstr "`steam`"
-
-#~ msgid "The name to use on steam. If not given, defaults to `name`."
-#~ msgstr ""
-#~ "steam で使用する名前です。指定されないとデフォルトで `name` になります。"
-
-#~ msgid "`stat_max`"
-#~ msgstr "`stat_max`"
-
-#~ msgid "The integer value of the stat at which the achievement unlocks."
-#~ msgstr "実績が開放される stat の整数値です。"
-
-#~ msgid "`stat_modulo`"
-#~ msgstr "`stat_modulo`"
-
-#~ msgid ""
-#~ "If the progress modulo `stat_max` is 0, progress is displayed to the "
-#~ "user. For example, if stat_modulo is 10, progress will be displayed to "
-#~ "the user when it reaches 10, 20, 30, etc. If not given, this defaults to "
-#~ "0."
-#~ msgstr ""
-#~ "達成度の `stat_modulo` による剰余が 0 なら達成度はユーザーに表示されます。"
-#~ "例えば stat_modulo が 10 なら、達成度が 10, 20, 30… のときにユーザーに表示"
-#~ "されます。指定されないと、これはデフォルトで 0 になります。"
-
-#~ msgid ""
-#~ "Synchronizes registered achievements between local storage and other "
-#~ "backends. (For example, Steam.)"
-#~ msgstr ""
-#~ "ローカルストレージとその他のバックエンド (steam など ) の登録された実績を"
-#~ "同期します。"
-
-#~ msgid "Returns True if `dlc` is installed, or False otherwise."
-#~ msgstr ""
-#~ "`dlc` がインストールされている場合は True を返し、それ以外の場合は False "
-#~ "を返します。"
-
-#~ msgid "Reports the progress towards DLC download completion."
-#~ msgstr "DLCのダウンロード完了に向けた進捗状況を報告します。"
-
-#~ msgid "Returns the build ID of the installed game."
-#~ msgstr "インストールされているゲームのビルド ID を返します。"
-
-#~ msgid "Returns the name of the current beta, or None if it can't."
-#~ msgstr "現在のベータ版の名前を返すか、返せない場合は None を返します。"
-
-#~ msgid "Return the name of the language the user has selected."
-#~ msgstr "ユーザーが選択した言語の名前を返します。"
-
-#~ msgid "Return the name of the language the steam UI is using."
-#~ msgstr "Steam UIが使用している言語の名前を返します。"
-
-#~ msgid "Requests the DLC with `appid` be installed."
-#~ msgstr "`appid` を持つ DLC のインストールを要求します。"
-
-#~ msgid ""
-#~ "Returns true if the user owns the app with `appid`, and false otherwise."
-#~ msgstr ""
-#~ "ユーザーが `appid` のアプリを所有している場合は true を返し、それ以外の場"
-#~ "合は false を返します。"
-
-#~ msgid "Requests that the DLC with `appid` be uninstalled."
-#~ msgstr "`appid` を持つ DLC のアンインストールを要求します。"
-
-#~ msgid "Activates the Steam overlay."
-#~ msgstr "Steamオーバーレイをアクティブにします。"
-
-#~ msgid "`dialog`"
-#~ msgstr "`dialog`"
-
-#~ msgid ""
-#~ "The dialog to open the overlay to. One of \"Friends\", \"Community\", "
-#~ "\"Players\", \"Settings\", \"OfficialGameGroup\", \"Stats\", "
-#~ "\"Achievements\""
-#~ msgstr ""
-#~ "オーバーレイを開くダイアログです。 \"Friends\", \"Community\", \"Players"
-#~ "\", \"Settings\", \"OfficialGameGroup\", \"Stats\", \"Achievements\" のい"
-#~ "ずれかです。"
-
-#~ msgid "Opens the steam overlay to the store."
-#~ msgstr "ストアへの steam オーバーレイを開きます。"
-
-#~ msgid "`appid`"
-#~ msgstr "`appid`"
-
-#~ msgid "The appid to open."
-#~ msgstr "開く appid"
-
-#~ msgid "`flag`"
-#~ msgstr "`flag`"
-
-#~ msgid ""
-#~ "One of achievement.steam.STORE_NONE, .STORE_ADD_TO_CART, or ."
-#~ "STORE_ADD_TO_CART_AND_SHOW."
-#~ msgstr ""
-#~ "achievement.steam.STORE_NONE, STORE_ADD_TO_CART, ."
-#~ "STORE_ADD_TO_CART_AND_SHOW のいずれかです"
-
-#~ msgid "Activates the Steam overlay, and opens the web page at `url`."
-#~ msgstr "Steamオーバーレイを有効にし、Webページを `url` で開きます。"
-
-#~ msgid ""
-#~ "Returns true if the steam overlay is enabled. (This might take a while to "
-#~ "return true once the game starts.)"
-#~ msgstr ""
-#~ "Steamオーバーレイが有効な場合は true を返します (ゲームが開始されると、こ"
-#~ "れが true に戻るまでに時間がかかる場合があります。"
-
-#~ msgid ""
-#~ "Sets the position of the steam overlay. `Position` should be one of "
-#~ "achievement.steam.POSITION_TOP_LEFT, .POSITION_TOP_RIGHT, ."
-#~ "POSITION_BOTTOM_LEFT, or .POSITION_BOTTOM_RIGHT."
-#~ msgstr ""
-#~ "steam オーバーレイの位置を設定します。 `Position` は achievement.steam."
-#~ "POSITION_TOP_LEFT, .POSITION_TOP_RIGHT, .POSITION_BOTTOM_LEFT, "
-#~ "POSITION_BOTTOM_RIGHT のいずれか1つです。"
-
-#~ msgid ""
-#~ "Clears the achievement with `name`. Call :func:`_renpysteam.store_stats` "
-#~ "to push this change to the server."
-#~ msgstr ""
-#~ "`name` の実績をクリアします。 :func:`_renpysteam.store_stats` を呼び出し"
-#~ "て、この変更をサーバーにプッシュしてください。"
-
-#~ msgid ""
-#~ "Gets the state of the achievements with `name`. This returns True if the "
-#~ "achievement has been granted, False if it hasn't, and None if the "
-#~ "achievement is unknown or an error occurs."
-#~ msgstr ""
-#~ "`name` の実績の状態を取得します。その実績が付与されている場合は True、付与"
-#~ "されていなければ False、その実績が不明な場合やエラーが発生した場合は None "
-#~ "が返されます。"
-
-#~ msgid ""
-#~ "Returns the value of the stat with `name`, or None if no such stat exits."
-#~ msgstr ""
-#~ "`name` の stat の値を返すか、そのような stat が存在しない場合は None を返"
-#~ "します。"
-
-#~ msgid ""
-#~ "Grants the achievement with `name`. Call :func:`_renpysteam.store_stats` "
-#~ "to push this change to the server."
-#~ msgstr ""
-#~ "`name` の実績を付与します。 :func:`_renpysteam.store_stats` を呼び出して、"
-#~ "この変更をサーバーにプッシュしてください。"
-
-#~ msgid ""
-#~ "Indicates achievement progress to the user. This does *not* unlock the "
-#~ "achievement."
-#~ msgstr ""
-#~ "実績の進行状況をユーザーに示します。これは、実績のロックを解除しません。"
-
-#~ msgid "Returns a list of achievement names."
-#~ msgstr "実績名のリストを返します。"
-
-#~ msgid "Retrieves achievements and statistics from Steam."
-#~ msgstr "Steamから実績と統計を取得します。"
-
-#~ msgid ""
-#~ "Sets the value of the stat with `name`, which must have the type of "
-#~ "FLOAT. Call :func:`_renpysteam.store_stats` to push this change to the "
-#~ "server."
-#~ msgstr ""
-#~ "`name` の stat の値を設定しますが、これは FLOAT 型でなければなりません。 :"
-#~ "func:`_renpysteam.store_stats` を呼び出して、この変更をサーバーにプッシュ"
-#~ "してください。"
-
-#~ msgid ""
-#~ "Sets the value of the stat with `name`, which must have the type of INT. "
-#~ "Call :func:`_renpysteam.store_stats` to push this change to the server."
-#~ msgstr ""
-#~ "`name` の stat の値を設定しますが、これは INT 型でなければなりません。 :"
-#~ "func:`_renpysteam.store_stats` を呼び出して、この変更をサーバーにプッシュ"
-#~ "してください。"
-
-#~ msgid "Stores statistics and achievements on the Steam server."
-#~ msgstr "統計と実績を Steam サーバーに保存します。"
-
-#~ msgid "Adds an event to the timeline."
-#~ msgstr "タイムラインにイベントを追加します。"
-
-#~ msgid "`icon`"
-#~ msgstr "`icon`"
-
-#~ msgid ""
-#~ "The icon to display for the event. This should be a string giving one of "
-#~ "the standard steam icons, or one you uploaded to Steam."
-#~ msgstr ""
-#~ "イベントに表示するアイコンです。これは、標準の Steam アイコンまたはあなた"
-#~ "が Steam にアップロードしたアイコンの文字列の1つである必要があります。"
-
-#~ msgid "`title`"
-#~ msgstr "`title`"
-
-#~ msgid "The title of the event."
-#~ msgstr "登録するイベントの名前です。"
-
-#~ msgid "`description`"
-#~ msgstr "`description`"
-
-#~ msgid "The description of the event."
-#~ msgstr "イベントの説明です。"
-
-#~ msgid "`priority`"
-#~ msgstr "`priority`"
-
-#~ msgid ""
-#~ "The priority of the event, used to resolve conflicts. This should be an "
-#~ "interger between 0 and 1000."
-#~ msgstr ""
-#~ "競合の解決に使用されるイベントの優先度です。これは、 0 から 1000 までの整"
-#~ "数である必要があります。"
-
-#~ msgid "`start_offset`"
-#~ msgstr "`start_offset`"
-
-#~ msgid ""
-#~ "The offset of the start of the event from the current time, in seconds."
-#~ msgstr "現在の時刻からイベントの開始までのオフセットです (秒単位)。"
-
-#~ msgid "`duration`"
-#~ msgstr "`duration`"
-
-#~ msgid "The duration of the event, in seconds."
-#~ msgstr "イベントの継続時間 (秒単位)。"
-
-#~ msgid "`possible_clip`"
-#~ msgstr "`possible_clip`"
-
-#~ msgid ""
-#~ "This determines if the event can be clipped. This should be one of the "
-#~ "achievement.steam.CLIP_PRIORITY... constants: CLIP_PRIORITY_NONE, "
-#~ "CLIP_PRIORITY_STANDARD, or CLIP_PRIORITY_FEATURED."
-#~ msgstr ""
-#~ "イベントをクリップできるかどうかを決めます。これは achievement.steam."
-#~ "CLIP_PRIORITY_XXX形式の定数: CLIP_PRIORITY_NONE、CLIP_PRIORITY_STANDARD、 "
-#~ "CLIP_PRIORITY_FEATURED の1つであるべきです。"
-
-#~ msgid "Clears the description of the current state in the timeline."
-#~ msgstr "タイムラインの現在の状態の説明をクリアします。"
-
-#~ msgid "Sets the description of the current state in the timeline."
-#~ msgstr "タイムラインの現在の状態の説明を設定します。"
-
-#~ msgid "A string giving the description of the current state."
-#~ msgstr "現在の状態の説明を示す文字列。"
-
-#~ msgid "`time_delta`"
-#~ msgstr "`time_delta`"
-
-#~ msgid "The time since the last state change."
-#~ msgstr "最後の状態変更からの時間。"
-
-#~ msgid ""
-#~ "Cancels the ticket returned by :func:`achievement.steam."
-#~ "get_session_ticket`."
-#~ msgstr ""
-#~ ":func:`achievement.steam.get_session_ticket` によって返されたチケットを"
-#~ "キャンセルします。"
-
-#~ msgid "Returns the user's account ID."
-#~ msgstr "ユーザーのアカウント ID を返します。"
-
-#~ msgid "Returns the user's full CSteamID as a 64-bit number."
-#~ msgstr "ユーザーの完全な CSteamID を64ビットの数値として返します。"
-
-#~ msgid "Gets the level of the users Steam badge for your game."
-#~ msgstr "ゲームのユーザーの Steam バッジのレベルを取得します。"
-
-#~ msgid "Returns the user's publicly-visible name."
-#~ msgstr "ユーザーのパブリックに表示される名前を返します。"
-
-#~ msgid ""
-#~ "Gets a ticket that can be sent to the server to authenticate this user."
-#~ msgstr ""
-#~ "このユーザーを認証するためにサーバーに送信できるチケットを取得します。"
-
-#~ msgid ""
-#~ "Returns the path where an item of user-generated content was installed. "
-#~ "Returns None if the item was not installed."
-#~ msgstr ""
-#~ "ユーザー生成コンテンツの項目がインストールされたパスを返します。項目がイン"
-#~ "ストールされていない場合は None を返します。"
-
-#~ msgid "`item_id`"
-#~ msgstr "`item_id`"
-
-#~ msgid "The item id."
-#~ msgstr "アイテム ID"
-
-#~ msgid ""
-#~ "Returns a list of the item ids the user has subscribed to in the steam "
-#~ "workshop."
-#~ msgstr ""
-#~ "ユーザーが Steam ワークショップで購読しているアイテム ID のリストを返しま"
-#~ "す。"
+#: ../../source/inc/steam_ugc:5
+msgid ""
+"Returns the path where an item of user-generated content was installed. "
+"Returns None if the item was not installed."
+msgstr ""
+"ユーザー生成コンテンツの項目がインストールされたパスを返します。項目がインス"
+"トールされていない場合は None を返します。"
+
+#: ../../source/inc/steam_ugc:8
+msgid "`item_id`"
+msgstr "`item_id`"
+
+#: ../../source/inc/steam_ugc:9
+msgid "The item id."
+msgstr "アイテム ID"
+
+#: ../../source/inc/steam_ugc:13
+msgid ""
+"Returns a list of the item ids the user has subscribed to in the steam "
+"workshop."
+msgstr ""
+"ユーザーが Steam ワークショップで購読しているアイテム ID のリストを返します。"
 
 #~ msgid "define config.steam_appid = 12345"
 #~ msgstr "define config.steam_appid = 12345"

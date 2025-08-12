@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 7.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 11:17+0900\n"
-"PO-Revision-Date: 2025-08-12 16:48+0900\n"
+"POT-Creation-Date: 2025-08-12 18:27+0900\n"
+"PO-Revision-Date: 2025-08-12 19:57+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -106,7 +106,7 @@ msgid ""
 msgstr ""
 "ブロックの中には後述するステートメントと次の任意のプロパティーが収まります。"
 
-#: ../../source/layeredimage.rst:86
+#: ../../source/layeredimage.rst:86 ../../source/inc/li_ff:31
 msgid "`image_format`"
 msgstr "`image_format`"
 
@@ -422,6 +422,7 @@ msgstr ""
 "を定義もできます。"
 
 #: ../../source/layeredimage.rst:245 ../../source/layeredimage.rst:312
+#: ../../source/inc/li_ff:22
 msgid "`variant`"
 msgstr "`variant`"
 
@@ -776,6 +777,101 @@ msgstr ""
 "のフォーマット関数で置き換えたいなら、これが何の引数をとるかを参照しましょ"
 "う。"
 
+#: ../../source/inc/li_ff:5
+msgid ""
+"This is called to format the information about an attribute or condition "
+"into a displayable. This can be replaced by a creator, but the new function "
+"should ignore unknown kwargs."
+msgstr ""
+"これを呼び出して属性や条件を displayable の情報にフォーマットします。制作者に"
+"よって置き換えられますが、新しい関数は未知のキーワード引数を無視するべきで"
+"す。"
+
+#: ../../source/inc/li_ff:11
+msgid "`what`"
+msgstr "`what`"
+
+#: ../../source/inc/li_ff:10
+msgid ""
+"A string giving a description of the thing being formatted, which is used to "
+"create better error messages."
+msgstr ""
+"フォーマットされるものを記述する文字列で、よりよいエラーメッセージを作成する"
+"ために使用されます。"
+
+#: ../../source/inc/li_ff:14 ../../source/inc/li_proxy:9
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/li_ff:14
+msgid "The name of the layeredimage."
+msgstr "レイヤー画像の文字列です。"
+
+#: ../../source/inc/li_ff:18
+msgid "`group`"
+msgstr "`group`"
+
+#: ../../source/inc/li_ff:17
+msgid ""
+"The group of an attribute, None if not supplied or if it's part of a "
+"condition."
+msgstr "属性のグループで、 提供されないか条件内での使用なら None になります。"
+
+#: ../../source/inc/li_ff:21
+msgid "The variant argument to the group, or None if it is not supplied."
+msgstr "グループへの variant 引数で、提供されなければ None です。"
+
+#: ../../source/inc/li_ff:25
+msgid "`attribute`"
+msgstr "`attribute`"
+
+#: ../../source/inc/li_ff:25
+msgid "The attribute itself."
+msgstr "属性です。"
+
+#: ../../source/inc/li_ff:28
+msgid "`image`"
+msgstr "`image`"
+
+#: ../../source/inc/li_ff:28
+msgid "Either a displayable or string."
+msgstr "displayable または文字列です。"
+
+#: ../../source/inc/li_ff:31
+msgid "The image_format argument of the LayeredImage."
+msgstr "LayerdImage の image_format 引数です。"
+
+#: ../../source/inc/li_ff:33
+msgid ""
+"If `image` is None, then `name`, `group` (if not None), `variant` (if not "
+"None), and `attribute` are combined with underscores to create `image`, "
+"which will then be a string."
+msgstr ""
+"`image` が None なら、 `name` と (あれば) `group`,(あれば)  `variant`, "
+"`attribute` がアンダースコアで結合され、 `image` の文字列になります。"
+
+#: ../../source/inc/li_ff:37
+msgid ""
+"If `images` is a string, and `image_format` is not None, `image` is "
+"formatted into the string to get the final displayable."
+msgstr ""
+"`images` が文字列で `image_format` が None でなければ、 `image` は最終的な "
+"displayable を所得する文字列にフォーマットされます。"
+
+#: ../../source/inc/li_ff:40
+msgid ""
+"So if `name` is \"eileen\", `group` is \"expression\", and `attribute` is "
+"\"happy\", `image` would be set to \"eileen_expression_happy\". If "
+"`image_format` is \"images/{image}.png\", the final image Ren'Py finds is "
+"\"images/eileen_expression_happy.png\". But note that it would have found "
+"the same image without the format argument."
+msgstr ""
+"つまり `name` が \"eileen\", `group` が \"expression\", `attribute` が "
+"\"happy\" なら、 `image` は \"eileen_expression_happy\" に設定されます。 "
+"`image_format` が \"images/{image}.png\" なら、Ren'Py が見つける最終的な画像"
+"は \"images/eileen_expression_happy.png\" です。ただしフォーマット引数なしで"
+"も同じ画像を見るので注意してください。"
+
 #: ../../source/layeredimage.rst:456
 msgid ""
 "But note that the passed `format_function` does _not_ change how ``auto`` "
@@ -839,6 +935,30 @@ msgstr ""
 #: ../../source/layeredimage.rst:491
 msgid "then::"
 msgstr "このようになります。 ::"
+
+#: ../../source/inc/li_proxy:5
+msgid ""
+"This is an image-like object that proxies attributes passed to it to another "
+"layered image."
+msgstr ""
+"これは画像のようなオブジェクトです。渡される属性を他のレイヤー画像に中継しま"
+"す。"
+
+#: ../../source/inc/li_proxy:9
+msgid "A string giving the name of the layeredimage to proxy to."
+msgstr "中継するレイヤー画像の名前の文字列です。"
+
+#: ../../source/inc/li_proxy:12
+msgid "`transform`"
+msgstr "`transform`"
+
+#: ../../source/inc/li_proxy:12
+msgid ""
+"If given, a transform or list of transforms that are applied to the image "
+"after it has been proxied."
+msgstr ""
+"与えるなら、中継先の画像に適用される transform または transform のリストで"
+"す。"
 
 #: ../../source/layeredimage.rst:504
 msgid "Selecting attributes to display"
@@ -1194,9 +1314,9 @@ msgid ""
 "displayed), and it gets reactivated if an attribute of the group gets hidden."
 msgstr ""
 "グループにデフォルトの属性がなければ、デフォルトの ``null`` 属性を任意の名前"
-"で追加できます。これにより、グループの属性が表示されていなければ、その属性が"
-"アクティブ化され (ただし、何も表示されません)、また、グループの属性が非表示に"
-"なったときにもアクティブ化されます。"
+"で追加できます。これにより、グループの他の属性が表示されていなければ、その属"
+"性がアクティブ化され (ただし、何も表示されません)、また、グループの他の属性が"
+"非表示になったときにもアクティブ化されます。"
 
 #: ../../source/layeredimage.rst:713
 msgid ""
@@ -1205,106 +1325,6 @@ msgid ""
 msgstr ""
 "ここで、hair_patch 属性は、 Eliza の髪を隠す帽子がない場合のみ、彼女の最上位"
 "レイヤー(例えば彼女の肩)より上に Eliza の髪の毛をより多く表示します。"
-
-#~ msgid ""
-#~ "This is called to format the information about an attribute or condition "
-#~ "into a displayable. This can be replaced by a creator, but the new "
-#~ "function should ignore unknown kwargs."
-#~ msgstr ""
-#~ "これを呼び出して属性や条件を displayable の情報にフォーマットします。制作"
-#~ "者によって置き換えられますが、新しい関数は未知のキーワード引数を無視するべ"
-#~ "きです。"
-
-#~ msgid "`what`"
-#~ msgstr "`what`"
-
-#~ msgid ""
-#~ "A string giving a description of the thing being formatted, which is used "
-#~ "to create better error messages."
-#~ msgstr ""
-#~ "フォーマットされるものを記述する文字列で、よりよいエラーメッセージを作成す"
-#~ "るために使用されます。"
-
-#~ msgid "`name`"
-#~ msgstr "`name`"
-
-#~ msgid "The name of the layeredimage."
-#~ msgstr "レイヤー画像の文字列です。"
-
-#~ msgid "`group`"
-#~ msgstr "`group`"
-
-#~ msgid ""
-#~ "The group of an attribute, None if not supplied or if it's part of a "
-#~ "condition."
-#~ msgstr ""
-#~ "属性のグループで、 提供されないか条件内での使用なら None になります。"
-
-#~ msgid "The variant argument to the group, or None if it is not supplied."
-#~ msgstr "グループへの variant 引数で、提供されなければ None です。"
-
-#~ msgid "`attribute`"
-#~ msgstr "`attribute`"
-
-#~ msgid "The attribute itself."
-#~ msgstr "属性です。"
-
-#~ msgid "`image`"
-#~ msgstr "`image`"
-
-#~ msgid "Either a displayable or string."
-#~ msgstr "displayable または文字列です。"
-
-#~ msgid "The image_format argument of the LayeredImage."
-#~ msgstr "LayerdImage の image_format 引数です。"
-
-#~ msgid ""
-#~ "If `image` is None, then `name`, `group` (if not None), `variant` (if not "
-#~ "None), and `attribute` are combined with underscores to create `image`, "
-#~ "which will then be a string."
-#~ msgstr ""
-#~ "`image` が None なら、 `name` と (あれば) `group`,(あれば)  `variant`, "
-#~ "`attribute` がアンダースコアで結合され、 `image` の文字列になります。"
-
-#~ msgid ""
-#~ "If `images` is a string, and `image_format` is not None, `image` is "
-#~ "formatted into the string to get the final displayable."
-#~ msgstr ""
-#~ "`images` が文字列で `image_format` が None でなければ、 `image` は最終的"
-#~ "な displayable を所得する文字列にフォーマットされます。"
-
-#~ msgid ""
-#~ "So if `name` is \"eileen\", `group` is \"expression\", and `attribute` is "
-#~ "\"happy\", `image` would be set to \"eileen_expression_happy\". If "
-#~ "`image_format` is \"images/{image}.png\", the final image Ren'Py finds is "
-#~ "\"images/eileen_expression_happy.png\". But note that it would have found "
-#~ "the same image without the format argument."
-#~ msgstr ""
-#~ "つまり `name` が \"eileen\", `group` が \"expression\", `attribute` が "
-#~ "\"happy\" なら、 `image` は \"eileen_expression_happy\" に設定されます。 "
-#~ "`image_format` が \"images/{image}.png\" なら、Ren'Py が見つける最終的な画"
-#~ "像は \"images/eileen_expression_happy.png\" です。ただしフォーマット引数な"
-#~ "しでも同じ画像を見るので注意してください。"
-
-#~ msgid ""
-#~ "This is an image-like object that proxies attributes passed to it to "
-#~ "another layered image."
-#~ msgstr ""
-#~ "これは画像のようなオブジェクトです。渡される属性を他のレイヤー画像に中継し"
-#~ "ます。"
-
-#~ msgid "A string giving the name of the layeredimage to proxy to."
-#~ msgstr "中継するレイヤー画像の名前の文字列です。"
-
-#~ msgid "`transform`"
-#~ msgstr "`transform`"
-
-#~ msgid ""
-#~ "If given, a transform or list of transforms that are applied to the image "
-#~ "after it has been proxied."
-#~ msgstr ""
-#~ "与えるなら、中継先の画像に適用される transform または transform のリストで"
-#~ "す。"
 
 #, fuzzy
 #~ msgid "`if_attr`"

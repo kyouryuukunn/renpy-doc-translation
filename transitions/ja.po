@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 11:17+0900\n"
+"POT-Creation-Date: 2025-08-12 18:27+0900\n"
 "PO-Revision-Date: 2024-07-27 01:25+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -270,6 +270,595 @@ msgstr ""
 "ジュールにある組み込みのワーパーを指定できます。 :ref:`warpers <warpers>` を"
 "参照してください。"
 
+#: ../../source/inc/transition:5
+msgid ""
+"Returns a transition that uses a control displayable (almost always some "
+"sort of animated transform) to transition from one screen to another. The "
+"transform is evaluated. The new screen is used where the transform is "
+"opaque, and the old image is used when it is transparent."
+msgstr ""
+"制御用の displayable (たいていはATL transform をならべたもの) を使ってあるス"
+"クリーンから別のスクリーンへトランジションするトランジションを返します。 "
+"transform は評価され、 transform が不透明な領域は新しい 画面が使われ、 "
+"transform が透明な領域は元の画面が使われます。"
+
+#: ../../source/inc/transition:11
+msgid "`control`"
+msgstr "`control`"
+
+#: ../../source/inc/transition:11
+msgid "The control transform."
+msgstr "制御用の displayable です。"
+
+#: ../../source/inc/transition:14 ../../source/inc/transition:203
+#: ../../source/inc/transition:347
+msgid "`delay`"
+msgstr "`delay`"
+
+#: ../../source/inc/transition:14
+msgid "The time the transition takes, before ending."
+msgstr "トランジションが終了までにかける時間です。"
+
+#: ../../source/inc/transition:19 ../../source/inc/transition:172
+#: ../../source/inc/transition:355
+msgid "`reverse`"
+msgstr "`reverse`"
+
+#: ../../source/inc/transition:17
+msgid ""
+"If true, the alpha channel is reversed. Opaque areas are taken from the old "
+"image, while transparent areas are taken from the new image."
+msgstr ""
+"True なら、アルファチャンネルが反転されます。不透明な領域は元の画像が使われ、"
+"透明な領域は新しい画像が使われます。"
+
+#: ../../source/inc/transition:24 ../../source/inc/transition:131
+#: ../../source/inc/transition:183
+msgid "`mipmap`"
+msgstr "`mipmap`"
+
+#: ../../source/inc/transition:22 ../../source/inc/transition:129
+#: ../../source/inc/transition:180
+msgid ""
+"When the dissolve will be scaled to less than half its natural size, this "
+"can be set to True. This will cause mipmaps to be generated, which will make "
+"the dissolve consume more GPU resources, but will reduce artifacts. See :"
+"propref:`mipmap` for more information."
+msgstr ""
+"ディゾルブが元のサイズの半分未満に縮小されると、これは True に設定されます。"
+"これにより mipmap が生成され、ディゾルブはより多くの GPU リソースを消費するよ"
+"うになりますが歪みは減少します。詳細は :propref:`mipmap` を参照ください。"
+
+#: ../../source/inc/transition:29
+msgid ""
+"Returns a transition that composes up to three transitions. If not None, the "
+"`before` and `after` transitions are applied to the old and new scenes, "
+"respectively. These updated old and new scenes are then supplied to the "
+"`trans` transition."
+msgstr ""
+"3 つ以内のトランジションから構成される新しいトランジションを返します。 "
+"`before` と `after` トランジションは、None でなければ、元のシーンと新しいシー"
+"ンにそれぞれ適用されます。更新されたこれらの元のシーンと新しいシーンが "
+"`trans` トランジションに提供されます。"
+
+#: ../../source/inc/transition:41
+msgid ""
+"Returns a transition that works by cropping a scene and positioning it on "
+"the screen. This can be used to implement a variety of effects, all of which "
+"involve changing rectangular slices of scenes."
+msgstr ""
+"シーンを切り抜いてスクリーンに配置するトランジションを返します。これは、シー"
+"ンの矩形のスライスに関わる様々なエフェクトを実装するのに使えます。"
+
+#: ../../source/inc/transition:46 ../../source/inc/transition:121
+#: ../../source/inc/transition:163 ../../source/inc/transition:312
+#: ../../source/inc/transition:325
+msgid "`time`"
+msgstr "`time`"
+
+#: ../../source/inc/transition:46 ../../source/inc/transition:325
+msgid "The time the transition takes."
+msgstr "トランジションにかける時間です。"
+
+#: ../../source/inc/transition:69 ../../source/inc/transition:330
+msgid "`mode`"
+msgstr "`mode`"
+
+#: ../../source/inc/transition:49
+msgid ""
+"The name of the mode of the transition. There are three groups of modes: "
+"wipes, slides, and other. This can also be \"custom\", to allow a custom "
+"mode to be defined."
+msgstr ""
+"トランジションのモードの名前です。モードには三種類あります。ワイプ、スライ"
+"ド、その他です。カスタムモードを定義するために 「 custom 」 にもできます。"
+
+#: ../../source/inc/transition:53
+msgid ""
+"In a wipe, the image stays fixed, and more of it is revealed as the "
+"transition progresses. For example, in \"wiperight\", a wipe from left to "
+"right, first the left edge of the image is revealed at the left edge of the "
+"screen, then the center of the image, and finally the right side of the "
+"image at the right of the screen. Other supported wipes are \"wipeleft\", "
+"\"wipedown\", and \"wipeup\"."
+msgstr ""
+"ワイプでは、画像は固定されたままで、トランジションが進むにつれて見える領域が"
+"増えていきます。例えば、左から右へのワイプである 「 wiperight 」 では、まず画"
+"像の左端がスクリーンの左端に現れ、画像の中央が現れ、最後には画像の右端がスク"
+"リーンの右端に現れます。ワイプには、その他 「 wipeleft 」,「 wipedown 」, そ"
+"して 「 wipeup 」 があります。"
+
+#: ../../source/inc/transition:59
+msgid ""
+"In a slide, the image moves. So in a \"slideright\", the right edge of the "
+"image starts at the left edge of the screen, and moves to the right as the "
+"transition progresses. Other slides are \"slideleft\", \"slidedown\", and "
+"\"slideup\"."
+msgstr ""
+"スライドでは、画像が動きます。ですから 「slideright」では、画像は右端がスク"
+"リーンの左端から現れ出し、トランジションが進むにつれて右に進みます。スライド"
+"には、その他 「slideleft」、「slidedown」, そして 「slideup」 があります。"
+
+#: ../../source/inc/transition:64
+msgid ""
+"There are also slideaways, in which the old image moves on top of the new "
+"image. Slideaways include \"slideawayright\", \"slideawayleft\", "
+"\"slideawayup\", and \"slideawaydown\"."
+msgstr ""
+"スライドアウェイは、元の画像が新しい画像の上を動きます。スライドアウェイに"
+"は、「slideawayright」, 「slideawayleft」, 「slideawayup」, そして "
+"「slideawaydown」 があります。"
+
+#: ../../source/inc/transition:68
+msgid ""
+"We also support a rectangular iris in with \"irisin\" and a rectangular iris "
+"out with \"irisout\"."
+msgstr ""
+"矩形の絞りを開く 「irisin」 と矩形の絞りを閉じる 「irisout」 もサポートしてい"
+"ます。"
+
+#: ../../source/inc/transition:71
+msgid ""
+"The following parameters are only respected if the mode is \"custom\". "
+"Positions are relative to the size of the screen, while the crops are "
+"relative to the size of the image. So a crop of (0.25, 0.0, 0.5, 1.0) takes "
+"the middle half of an image."
+msgstr ""
+"次のパラメーターは、モードが 「custom」 であるときのみ考慮されます。ポジショ"
+"ンはスクリーンのサイズに対する割合で、クロップは画像のサイズに対する割合で"
+"す。ですから、(0.25, 0.0, 0.5, 1.0) のクロップは画像の中半分を切り抜きます。"
+
+#: ../../source/inc/transition:78
+msgid "`startcrop`"
+msgstr "`startcrop`"
+
+#: ../../source/inc/transition:77
+msgid ""
+"The starting rectangle that is cropped out of the top image. A 4-element "
+"tuple containing x, y, width, and height."
+msgstr ""
+"手前の画像から最初に切り抜かれる矩形です。x, y, width, そして height からな"
+"る 4 要素のタプルです。"
+
+#: ../../source/inc/transition:82
+msgid "`startpos`"
+msgstr "`startpos`"
+
+#: ../../source/inc/transition:81
+msgid ""
+"The starting place that the top image is drawn to the screen at, a 2-element "
+"tuple containing x and y."
+msgstr ""
+"手前の画像が最初に描画されるスクリーン上の場所です。x, y からなる 2 要素のタ"
+"プルです。"
+
+#: ../../source/inc/transition:86
+msgid "`endcrop`"
+msgstr "`endcrop`"
+
+#: ../../source/inc/transition:85
+msgid ""
+"The ending rectangle that is cropped out of the top image. A 4-element tuple "
+"containing x, y, width, and height."
+msgstr ""
+"手前の画像から最後に切り抜かれる矩形です。x, y, width, そして height からな"
+"る 4 要素のタプルです。"
+
+#: ../../source/inc/transition:90
+msgid "`endpos`"
+msgstr "`endpos`"
+
+#: ../../source/inc/transition:89
+msgid ""
+"The ending place that the top image is drawn to the screen at, a 2-element "
+"tuple containing x and y."
+msgstr ""
+"手前の画像が最後に描画されるスクリーン上の場所です。x, y からなる 2 要素のタ"
+"プルです。"
+
+#: ../../source/inc/transition:94
+msgid "`topnew`"
+msgstr "`topnew`"
+
+#: ../../source/inc/transition:93
+msgid ""
+"If true, the scene that is cropped and moved (and is on top of the other "
+"scene) is the new scene. If false, it is the old scene."
+msgstr ""
+"True なら、切り取られてたり動いたりするシーン (1番手前にシーンです) は新しい"
+"シーンです。 False なら、元のシーンです。"
+
+#: ../../source/inc/transition:118
+msgid ""
+"Returns a transition that dissolves from the old scene to the new scene."
+msgstr "元のシーンから新しいシーンにディゾルブするトランジションを返します。"
+
+#: ../../source/inc/transition:121 ../../source/inc/transition:163
+msgid "The time the dissolve will take."
+msgstr "ディゾルブにかける時間です。"
+
+#: ../../source/inc/transition:126 ../../source/inc/transition:177
+#: ../../source/inc/transition:230
+msgid "`time_warp`"
+msgstr "`time_warp`"
+
+#: ../../source/inc/transition:124 ../../source/inc/transition:175
+msgid ""
+"A :ref:`function that adjusts the timeline <warpers>`. If not None, this "
+"should be a function that takes a fractional time between 0.0 and 1.0, and "
+"returns a number in the same range."
+msgstr ""
+":ref:`タイムラインを調節する関数 <warpers>` です。 None または、0.0 から 1.0 "
+"の間の小数の時間を引数に受け取り、同じ範囲の数を返す関数を指定します。"
+
+#: ../../source/inc/transition:136
+msgid ""
+"Returns a transition that takes `out_time` seconds to fade to a screen "
+"filled with `color`, holds at that screen for `hold_time` seconds, and then "
+"takes `in_time` to fade to then new screen."
+msgstr ""
+"`out_time` 秒かけて `color` で満たされたスクリーンにフェードし、そのスクリー"
+"ンを `hold_time` 秒保ち、それから `in_time` 秒かけて新しいスクリーンにフェー"
+"ドするトランジションを返します。"
+
+#: ../../source/inc/transition:153
+msgid ""
+"Returns a transition that dissolves the old scene into the new scene, using "
+"an image to control the dissolve process. This means that white pixels will "
+"dissolve in first, and black pixels will dissolve in last."
+msgstr ""
+"ディゾルブの過程を制御する画像を使い、元のシーンから新しいシーンにディゾルブ"
+"するトランジションを返します。この画像の白いビクセルに対応する部分が最初に"
+"ディゾルブし、黒いピクセルに対応する部分が最後にディゾルブします。"
+
+#: ../../source/inc/transition:160
+msgid "`image`"
+msgstr "`image`"
+
+#: ../../source/inc/transition:158
+msgid ""
+"The control image. This can be any displayable. It should be the size of the "
+"scenes being dissolved, and if `reverse=True`, it should be fully opaque."
+msgstr ""
+"制御画像です。これはどのような Displayable でもよいですが、ディゾルブされる"
+"シーンのサイズであるべきです。 `reverse=True` なら、完全に不透明でもあるべき"
+"です。"
+
+#: ../../source/inc/transition:169
+msgid "`ramplen`"
+msgstr "`ramplen`"
+
+#: ../../source/inc/transition:166
+msgid ""
+"The length of the ramp to use. This must be an integer power of 2. When this "
+"is the default value of 8, when a white pixel is fully dissolved, a pixel 8 "
+"shades of gray darker will have completed one step of dissolving in."
+msgstr ""
+"使用する ramp の長さです。これは 2 の整数乗でなければなりません。これがデフォ"
+"ルト値の 8 であるとき、白いピクセルが完全にディゾルブすると、一段階ごとに 8 "
+"シェード暗いピクセルのディゾルブインが進みます。"
+
+#: ../../source/inc/transition:172
+msgid "If True, black pixels will dissolve in before white pixels."
+msgstr ""
+"True なら、黒いピクセルの方が白いビクセルより先にディゾルブインします。"
+
+#: ../../source/inc/transition:193
+msgid ""
+"With these transitions, images changing position between the old and new "
+"scenes will be interpolated, which means their movement will be smooth "
+"instead of instantaneous."
+msgstr ""
+"これらのトランジションでは、古いシーンと新しいシーンの間で位置が変化する画像"
+"が補間されて、動きを瞬間的ではなくスムーズなものにします。"
+
+#: ../../source/inc/transition:197
+msgid ""
+"As only layers have tags, MoveTransitions can only be applied to a single "
+"layer or all layers at once, using the :ref:`with statement <with-"
+"statement>`. It will not work in other contexts such as :ref:`ATL "
+"<displayable-atl-statement>`, :func:`ComposeTransition`, or other ways of "
+"applying transitions."
+msgstr ""
+"タグを持つのはレイヤーのみなので、MoveTransitions は :ref:`with ステートメン"
+"ト <with-statement>` を使って一つのレイヤーまたはすべてのレイヤーに一度にしか"
+"適用できません。 :ref:`ATL <displayable-atl-statement>` や :func:"
+"`ComposeTransition` のように、異なる方法でトランジションを適用するコンテキス"
+"トでは動作しません。"
+
+#: ../../source/inc/transition:203
+msgid "The time it takes for the interpolation to finish."
+msgstr "補間が終わるまでの時間です。"
+
+#: ../../source/inc/transition:208 ../../source/inc/transition_family:39
+msgid "`old`"
+msgstr "`old`"
+
+#: ../../source/inc/transition:206 ../../source/inc/transition_family:37
+msgid ""
+"If true, when a tag gets its image changed during the transition, the old "
+"image will be used in preference to the new one. Otherwise, the new images "
+"will be used."
+msgstr ""
+"True ならタグの画像がトランジション中に変更されたとき、新しい画像よりも古い画"
+"像が優先して使われます。そうでない場合は、新しい画像が使われます。"
+
+#: ../../source/inc/transition:211 ../../source/inc/transition_family:42
+msgid "`layers`"
+msgstr "`layers`"
+
+#: ../../source/inc/transition:211
+msgid "A list of layers that moves are applied to."
+msgstr "トランジションが適用されるレイヤーのリストです。"
+
+#: ../../source/inc/transition:213
+msgid ""
+"The two following parameters take transforms, which should not be animated "
+"over time."
+msgstr ""
+"次の 2 つのパラメータは transform を取りますが、これは時間の経過とともにアニ"
+"メーションはされません。"
+
+#: ../../source/inc/transition:218
+msgid "`enter`"
+msgstr "`enter`"
+
+#: ../../source/inc/transition:217
+msgid ""
+"If not None, images entering the scene will also be moved. The transform "
+"will be applied to the image to get it in its starting position."
+msgstr ""
+"None でなければ、そのシーンに新しく挿入される画像も移動されます。 transform "
+"はその画像を開始位置に置くために適用されます。"
+
+#: ../../source/inc/transition:222
+msgid "`leave`"
+msgstr "`leave`"
+
+#: ../../source/inc/transition:221
+msgid ""
+"If not None, images leaving the scene will also be moved. The transform will "
+"be applied to the image to get it in its ending position."
+msgstr ""
+"None でなければ、そのシーンから消される画像も移動されます。 transform はその"
+"画像を終了位置に置くために適用されます。"
+
+#: ../../source/inc/transition:224
+msgid ""
+"The three following parameters take :ref:`time warp functions <warpers>`, "
+"which take a number between 0.0 and 1.0, and should return a number in the "
+"same range."
+msgstr ""
+"次の3つのパラメーターが :ref:`time warp 関数 <warpers>` を受け取ります。これ"
+"は 0.0 から 1.0 までの数字を受け取り、同じ範囲の数字を返すべきです。"
+
+#: ../../source/inc/transition:229
+msgid ""
+"A time warp function that's applied to the images changing position between "
+"the old and new scenes."
+msgstr "以前のシーンから新しいシーン間の移動に適用されるタイムワープ関数です。"
+
+#: ../../source/inc/transition:233
+msgid "`enter_time_warp`"
+msgstr "`enter_time_warp`"
+
+#: ../../source/inc/transition:233
+msgid "A time warp function that's applied to images entering the scene."
+msgstr "新しく挿入される画像に適用されるタイムワープ関数です。"
+
+#: ../../source/inc/transition:236
+msgid "`leave_time_warp`"
+msgstr "`leave_time_warp`"
+
+#: ../../source/inc/transition:236
+msgid "A time warp function that's applied to images leaving the scene."
+msgstr "消える画像に適用されるタイムワープ関数です。"
+
+#: ../../source/inc/transition:242
+msgid ""
+"In the following code, \"a\" will be leaving the scene (using `leave` and "
+"`leave_time_warp`), \"b\" will be changing position (using `time_warp`), and "
+"\"c\" will be entering (using `enter` and `enter_time_warp`). Because the "
+"same tag is applied before and after, \"d\" will not be counted as entering "
+"or leaving, but as changing position."
+msgstr ""
+"次のコードでは、\"a\" はシーンを離れ (`leave` と `leave_time_warp` を使"
+"用)、\"b\" は位置を変更し (`time_warp` を使用)、\"c\" は (`enter` と "
+"`enter_time_warp` を使用して) 挿入されます。前後で同じタグが適用されるため、"
+"「d」は入退出ではなく、位置の変化として考慮されます。"
+
+#: ../../source/inc/transition:264
+msgid ""
+"During the time when \"d\" is changing position, whether ugly or pretty "
+"eileen will be shown depends on the value of `old` : if `old` is False, the "
+"default, ugly_eileen will instantly turn into pretty_eileen and then move, "
+"and if `old` is True, ugly_eileen will move and then instantly turn into "
+"pretty_eileen."
+msgstr ""
+"\"d\" の位置が変わる間、 ugly eileen と pretty eileen のどちらが表示されるか"
+"は `old` の値しだいです: `old` が False であるのがデフォルトの場合で、 "
+"ugly_eileen は即座に pretty_eileen に変わり、次に移動します。 `old` が True "
+"の場合、 ugly_eileen は移動してから即座に pretty_eileen に変わります。"
+
+#: ../../source/inc/transition:272
+msgid ""
+"Returns a transition that allows multiple transitions to be displayed, one "
+"after the other."
+msgstr "次々に複数のトランジションを実行できるトランジションを返します。"
+
+#: ../../source/inc/transition:286
+msgid "`args`"
+msgstr "`args`"
+
+#: ../../source/inc/transition:276
+msgid ""
+"A **list** containing an odd number of items. The first, third, and other "
+"odd-numbered items must be scenes, and the even items must be transitions. A "
+"scene can be one of:"
+msgstr ""
+"奇数個のアイテムが格納された *リスト* です。1番目、3番目、その他の奇数番目の"
+"アイテムにはシーンを、偶数番目のアイテムにはトランジションを指定します。シー"
+"ンとして指定できるものは次の1つです。 :"
+
+#: ../../source/inc/transition:280
+msgid "A displayable."
+msgstr "displayable"
+
+#: ../../source/inc/transition:281
+msgid "False, to use the old scene."
+msgstr "False, トランジション前のシーンを表す"
+
+#: ../../source/inc/transition:282
+msgid "True, to use the new scene."
+msgstr "True, トランジション後のシーンを表す"
+
+#: ../../source/inc/transition:284
+msgid "Almost always, the first argument will be False and the last True."
+msgstr "ほぼ必ず最初の引数は False で最後の引数は True となります。"
+
+#: ../../source/inc/transition:286
+msgid ""
+"Note that this is a single parameter taking a list, this is not ``*args``."
+msgstr ""
+"これはリストを取る単一のパラメーターであり、 ``*args`` ではないことに注意して"
+"ください。"
+
+#: ../../source/inc/transition:288
+msgid ""
+"The transitions in `args` are applied in order. For each transition, the old "
+"scene is the screen preceding it, and the new scene is the scene following "
+"it. For example::"
+msgstr ""
+"`args` 内のトランジションが順に適用されます。各トランジションは、その前に置か"
+"れたスクリーンから後に置かれたスクリーンにトランジションします。たとえば ::"
+
+#: ../../source/inc/transition:298
+msgid ""
+"This example will dissolve to logo.jpg, wait 1 second, and then dissolve to "
+"the new scene."
+msgstr ""
+"この例は、logo.jpg にディゾルブし、1 秒待ち、それから新しいシーンにディゾルブ"
+"します。"
+
+#: ../../source/inc/transition:303
+msgid ""
+"Returns a transition that only displays the new screen for `delay` seconds. "
+"It can be useful as part of a MultipleTransition."
+msgstr ""
+"新しいスクリーンを `delay` 秒間表示するだけのトランジションを返します。"
+"MultipleTransition の一部にするのに便利です。"
+
+#: ../../source/inc/transition:308
+msgid ""
+"Returns a transition that pixellates out the old screen, and then pixellates "
+"in the new screen."
+msgstr ""
+"元のスクリーンをピクセレートアウトし、それから新しいスクリーンをピクセレート"
+"インするトランジションを返します。"
+
+#: ../../source/inc/transition:312
+msgid "The total time the transition will take, in seconds."
+msgstr "トランジションにかける合計時間の秒数です。"
+
+#: ../../source/inc/transition:316
+msgid "`steps`"
+msgstr "`steps`"
+
+#: ../../source/inc/transition:315
+msgid ""
+"The number of steps that will occur, in each direction. Each step creates "
+"pixels about twice the size of those in the previous step, so a 5-step "
+"pixellation will create 32x32 pixels."
+msgstr ""
+"それぞれの方向に行われる段階の数です。各段階ごとに、一つ前の段階の 2 倍のピク"
+"セルができます。よって、ピクセレートの 5 段階目では 32x32 のピクセルができま"
+"す。"
+
+#: ../../source/inc/transition:321
+msgid ""
+"Returns a transition that works by taking the new scene and using it to "
+"\"push\" the old scene off the screen."
+msgstr "新しいシーンで元のシーンを \"plush\" するトランジションを返します。"
+
+#: ../../source/inc/transition:328
+msgid ""
+"There are four possible modes: \"pushright\", \"pushleft\", \"pushup\", and "
+"\"pushdown\", which push the old scene off the screen in the direction "
+"indicated."
+msgstr ""
+"これらには 4 つのモード \"pushright\", \"pushleft\", \"pushup\", \"pushdown"
+"\" があり、指定された方向に以前のスクリーン押し出します。"
+
+#: ../../source/inc/transition:341
+msgid ""
+"A transitions that rotates the old scene 90 degrees around an axis, so that "
+"it is edge on with the viewer, switches to the new scene, and then rotates "
+"that scene another 90 degrees to show the new scene to the viewer."
+msgstr ""
+"以前のシーンを画面端の軸中心に90度回転してフェードアウトし、さらにもう90度回"
+"転して新しいシーンをフェードインします。"
+
+#: ../../source/inc/transition:347
+msgid "How long the transition should take."
+msgstr "トランジションにかける時間です。"
+
+#: ../../source/inc/transition:352
+msgid "`vertical`"
+msgstr "`vertical`"
+
+#: ../../source/inc/transition:350
+msgid ""
+"If true, the scene is rotate around the x-axis (pixels move vertically). If "
+"false, the scene is roated around the y axis, pixels moving horizontally."
+msgstr ""
+"True なら、シーンは x 軸中心に回転してピクセルは縦に動き、False なら、 y 軸中"
+"心に回転してピクセルは水平に動きます。"
+
+#: ../../source/inc/transition:355
+msgid "When true, the rotation occurs in the reverse direction."
+msgstr "True なら回転は逆方向になります。"
+
+#: ../../source/inc/transition:358
+msgid "`background`"
+msgstr "`background`"
+
+#: ../../source/inc/transition:358
+msgid "A displayable that is placed behind the scene as it rotates."
+msgstr "シーンが回転している間背景となる displayable です。"
+
+#: ../../source/inc/transition:362
+msgid "`flatten`"
+msgstr "`flatten`"
+
+#: ../../source/inc/transition:361
+msgid ""
+"If true, the scenes are flattened into images the size of the screen before "
+"being rotated. Use this if images being not entirely on the screen causes "
+"undesired effects."
+msgstr ""
+"True なら、回転前にシーンは画面のサイズの画像に変換されます。画面に満たない画"
+"像が望ましくない作用をするならこれを使用してください。"
+
 #: ../../source/transitions.rst:165
 msgid "Transition Families"
 msgstr "トランジション族"
@@ -280,6 +869,81 @@ msgid ""
 "transitions."
 msgstr ""
 "トランジション族は、大量の関連するトランジション族を定義する関数群です。"
+
+#: ../../source/inc/transition_family:5
+msgid ""
+"This defines a family of :class:`move transitions <MoveTransition>`, similar "
+"to the :var:`move` and :var:`ease` transitions. For a given `prefix`, this "
+"defines the transitions:"
+msgstr ""
+":var:`move` や :var:`ease` トランジションのような、 :class:`move トランジショ"
+"ン族 <MoveTransition>` を定義します。指定の `prefix` に対して、次のトランジ"
+"ションを定義します :"
+
+#: ../../source/inc/transition_family:9
+msgid ""
+"*prefix* - A transition that takes `delay` seconds to move images that "
+"changed positions to their new locations."
+msgstr "*prefix* `delay` 秒かけて画像を新しい位置に動かすトランジションです。"
+
+#: ../../source/inc/transition_family:12
+msgid ""
+"*prefix*\\ inleft, *prefix*\\ inright, *prefix*\\ intop, *prefix*\\ inbottom "
+"- Transitions that take `delay` seconds to move images that changed "
+"positions to their new locations, with newly shown images coming in from the "
+"appropriate side."
+msgstr ""
+"*prefix*\\ inleft, *prefix*\\ inright, *prefix*\\ intop, *prefix*\\ inbottom "
+"- `delay` 時間かけて画像を新しい位置に動かすトランジションです。新しく表示さ"
+"れる画像は適切な側から現れます。"
+
+#: ../../source/inc/transition_family:17
+msgid ""
+"*prefix*\\ outleft, *prefix*\\ outright, *prefix*\\ outtop, *prefix*\\ "
+"outbottom - Transitions that take `delay` seconds to move images that "
+"changed positions to their new locations, with newly hidden images leaving "
+"via the appropriate side."
+msgstr ""
+"*prefix*\\ outleft, *prefix*\\ outright, *prefix*\\ outtop, *prefix*\\ "
+"outbottom - `delay` 時間かけて画像を新しい位置に動かすトランジションです。新"
+"しく隠蔽される画像は適切な側へ消えます。"
+
+#: ../../source/inc/transition_family:22
+msgid "The other parameters are as :class:`MoveTransition` takes them:"
+msgstr ""
+"他のパラメーターは :class:`MoveTransition` が受け取るものと同様です。 :"
+
+#: ../../source/inc/transition_family:34
+msgid "`time_warp`, `in_time_warp`, `out_time_warp`"
+msgstr "`time_warp`, `in_time_warp`, `out_time_warp`"
+
+#: ../../source/inc/transition_family:25
+msgid ""
+":ref:`Time warp functions <warpers>` that are given a time from 0.0 to 1.0 "
+"representing the fraction of the move that is complete, and return a value "
+"in the same range giving the fraction of a linear move that is complete."
+msgstr ""
+":ref:`タイムワープ関数 <warpers>` です。これらには移動が完了するまでの時間に"
+"対する割合を表す 0.0 から 1.0 の小数を与えられ、線形移動が完了するまでの距離"
+"に対する割合を表す同じ範囲の小数値を返します。"
+
+#: ../../source/inc/transition_family:30
+msgid ""
+"This can be used to define functions that ease the images around, rather "
+"than moving them at a constant speed."
+msgstr "これは、一定の速度では動かない画像を動かす関数を定義するのに使えます。"
+
+#: ../../source/inc/transition_family:33
+msgid ""
+"The three arguments are used for images remaining on the screen, newly shown "
+"images, and newly hidden images, respectively."
+msgstr ""
+"これら3つの引数は、スクリーンにある画像、新しく現れる画像、新しく消える画像"
+"に、それぞれ使われます。"
+
+#: ../../source/inc/transition_family:42
+msgid "The layers the transition will apply to."
+msgstr "トランジションが適用されるレイヤーです。"
 
 #: ../../source/transitions.rst:176
 msgid "Dict Transitions"
@@ -336,9 +1000,9 @@ msgstr ""
 "statement>`, :ref:`hide <hide-statement>` ステートメントの ``with`` 節でも使"
 "用できます。 :func:`renpy.with_statement` と :func:`renpy.transition` の関数"
 "や :func:`Show` , :func:`Hide` アクション、トランジションを受ける様々な設定変"
-"数でも使用できます。辞書トランジションは :ref:`atl` や :func:`ComposeTransition` "
-"と :func:`MultipleTransition` のようなレイヤーに対して動作しないものの内部で"
-"は動作しないでしょう。"
+"数でも使用できます。辞書トランジションは :ref:`atl` や :func:"
+"`ComposeTransition` と :func:`MultipleTransition` のようなレイヤーに対して動"
+"作しないものの内部では動作しないでしょう。"
 
 #: ../../source/transitions.rst:210
 msgid ""
@@ -456,579 +1120,6 @@ msgstr ""
 "かない一つ以上の :ref:`scene <scene-statement>`, :ref:`show <show-"
 "statement>`, :ref:`hide <hide-statement>` ステートメント後に起こります。メ"
 "ニューコンテキストでは無効になります。"
-
-#~ msgid ""
-#~ "Returns a transition that uses a control displayable (almost always some "
-#~ "sort of animated transform) to transition from one screen to another. The "
-#~ "transform is evaluated. The new screen is used where the transform is "
-#~ "opaque, and the old image is used when it is transparent."
-#~ msgstr ""
-#~ "制御用の displayable (たいていはATL transform をならべたもの) を使ってある"
-#~ "スクリーンから別のスクリーンへトランジションするトランジションを返しま"
-#~ "す。 transform は評価され、 transform が不透明な領域は新しい 画面が使わ"
-#~ "れ、 transform が透明な領域は元の画面が使われます。"
-
-#~ msgid "`control`"
-#~ msgstr "`control`"
-
-#~ msgid "The control transform."
-#~ msgstr "制御用の displayable です。"
-
-#~ msgid "`delay`"
-#~ msgstr "`delay`"
-
-#~ msgid "The time the transition takes, before ending."
-#~ msgstr "トランジションが終了までにかける時間です。"
-
-#~ msgid "`reverse`"
-#~ msgstr "`reverse`"
-
-#~ msgid ""
-#~ "If true, the alpha channel is reversed. Opaque areas are taken from the "
-#~ "old image, while transparent areas are taken from the new image."
-#~ msgstr ""
-#~ "True なら、アルファチャンネルが反転されます。不透明な領域は元の画像が使わ"
-#~ "れ、透明な領域は新しい画像が使われます。"
-
-#~ msgid "`mipmap`"
-#~ msgstr "`mipmap`"
-
-#~ msgid ""
-#~ "When the dissolve will be scaled to less than half its natural size, this "
-#~ "can be set to True. This will cause mipmaps to be generated, which will "
-#~ "make the dissolve consume more GPU resources, but will reduce artifacts. "
-#~ "See :propref:`mipmap` for more information."
-#~ msgstr ""
-#~ "ディゾルブが元のサイズの半分未満に縮小されると、これは True に設定されま"
-#~ "す。これにより mipmap が生成され、ディゾルブはより多くの GPU リソースを消"
-#~ "費するようになりますが歪みは減少します。詳細は :propref:`mipmap` を参照く"
-#~ "ださい。"
-
-#~ msgid ""
-#~ "Returns a transition that composes up to three transitions. If not None, "
-#~ "the `before` and `after` transitions are applied to the old and new "
-#~ "scenes, respectively. These updated old and new scenes are then supplied "
-#~ "to the `trans` transition."
-#~ msgstr ""
-#~ "3 つ以内のトランジションから構成される新しいトランジションを返します。 "
-#~ "`before` と `after` トランジションは、None でなければ、元のシーンと新しい"
-#~ "シーンにそれぞれ適用されます。更新されたこれらの元のシーンと新しいシーン"
-#~ "が `trans` トランジションに提供されます。"
-
-#~ msgid ""
-#~ "Returns a transition that works by cropping a scene and positioning it on "
-#~ "the screen. This can be used to implement a variety of effects, all of "
-#~ "which involve changing rectangular slices of scenes."
-#~ msgstr ""
-#~ "シーンを切り抜いてスクリーンに配置するトランジションを返します。これは、"
-#~ "シーンの矩形のスライスに関わる様々なエフェクトを実装するのに使えます。"
-
-#~ msgid "`time`"
-#~ msgstr "`time`"
-
-#~ msgid "The time the transition takes."
-#~ msgstr "トランジションにかける時間です。"
-
-#~ msgid "`mode`"
-#~ msgstr "`mode`"
-
-#~ msgid ""
-#~ "The name of the mode of the transition. There are three groups of modes: "
-#~ "wipes, slides, and other. This can also be \"custom\", to allow a custom "
-#~ "mode to be defined."
-#~ msgstr ""
-#~ "トランジションのモードの名前です。モードには三種類あります。ワイプ、スライ"
-#~ "ド、その他です。カスタムモードを定義するために 「 custom 」 にもできます。"
-
-#~ msgid ""
-#~ "In a wipe, the image stays fixed, and more of it is revealed as the "
-#~ "transition progresses. For example, in \"wiperight\", a wipe from left to "
-#~ "right, first the left edge of the image is revealed at the left edge of "
-#~ "the screen, then the center of the image, and finally the right side of "
-#~ "the image at the right of the screen. Other supported wipes are \"wipeleft"
-#~ "\", \"wipedown\", and \"wipeup\"."
-#~ msgstr ""
-#~ "ワイプでは、画像は固定されたままで、トランジションが進むにつれて見える領域"
-#~ "が増えていきます。例えば、左から右へのワイプである 「 wiperight 」 では、"
-#~ "まず画像の左端がスクリーンの左端に現れ、画像の中央が現れ、最後には画像の右"
-#~ "端がスクリーンの右端に現れます。ワイプには、その他 「 wipeleft 」,"
-#~ "「 wipedown 」, そして 「 wipeup 」 があります。"
-
-#~ msgid ""
-#~ "In a slide, the image moves. So in a \"slideright\", the right edge of "
-#~ "the image starts at the left edge of the screen, and moves to the right "
-#~ "as the transition progresses. Other slides are \"slideleft\", \"slidedown"
-#~ "\", and \"slideup\"."
-#~ msgstr ""
-#~ "スライドでは、画像が動きます。ですから 「slideright」では、画像は右端がス"
-#~ "クリーンの左端から現れ出し、トランジションが進むにつれて右に進みます。スラ"
-#~ "イドには、その他 「slideleft」、「slidedown」, そして 「slideup」 がありま"
-#~ "す。"
-
-#~ msgid ""
-#~ "There are also slideaways, in which the old image moves on top of the new "
-#~ "image. Slideaways include \"slideawayright\", \"slideawayleft\", "
-#~ "\"slideawayup\", and \"slideawaydown\"."
-#~ msgstr ""
-#~ "スライドアウェイは、元の画像が新しい画像の上を動きます。スライドアウェイに"
-#~ "は、「slideawayright」, 「slideawayleft」, 「slideawayup」, そして "
-#~ "「slideawaydown」 があります。"
-
-#~ msgid ""
-#~ "We also support a rectangular iris in with \"irisin\" and a rectangular "
-#~ "iris out with \"irisout\"."
-#~ msgstr ""
-#~ "矩形の絞りを開く 「irisin」 と矩形の絞りを閉じる 「irisout」 もサポートし"
-#~ "ています。"
-
-#~ msgid ""
-#~ "The following parameters are only respected if the mode is \"custom\". "
-#~ "Positions are relative to the size of the screen, while the crops are "
-#~ "relative to the size of the image. So a crop of (0.25, 0.0, 0.5, 1.0) "
-#~ "takes the middle half of an image."
-#~ msgstr ""
-#~ "次のパラメーターは、モードが 「custom」 であるときのみ考慮されます。ポジ"
-#~ "ションはスクリーンのサイズに対する割合で、クロップは画像のサイズに対する割"
-#~ "合です。ですから、(0.25, 0.0, 0.5, 1.0) のクロップは画像の中半分を切り抜き"
-#~ "ます。"
-
-#~ msgid "`startcrop`"
-#~ msgstr "`startcrop`"
-
-#~ msgid ""
-#~ "The starting rectangle that is cropped out of the top image. A 4-element "
-#~ "tuple containing x, y, width, and height."
-#~ msgstr ""
-#~ "手前の画像から最初に切り抜かれる矩形です。x, y, width, そして height から"
-#~ "なる 4 要素のタプルです。"
-
-#~ msgid "`startpos`"
-#~ msgstr "`startpos`"
-
-#~ msgid ""
-#~ "The starting place that the top image is drawn to the screen at, a 2-"
-#~ "element tuple containing x and y."
-#~ msgstr ""
-#~ "手前の画像が最初に描画されるスクリーン上の場所です。x, y からなる 2 要素の"
-#~ "タプルです。"
-
-#~ msgid "`endcrop`"
-#~ msgstr "`endcrop`"
-
-#~ msgid ""
-#~ "The ending rectangle that is cropped out of the top image. A 4-element "
-#~ "tuple containing x, y, width, and height."
-#~ msgstr ""
-#~ "手前の画像から最後に切り抜かれる矩形です。x, y, width, そして height から"
-#~ "なる 4 要素のタプルです。"
-
-#~ msgid "`endpos`"
-#~ msgstr "`endpos`"
-
-#~ msgid ""
-#~ "The ending place that the top image is drawn to the screen at, a 2-"
-#~ "element tuple containing x and y."
-#~ msgstr ""
-#~ "手前の画像が最後に描画されるスクリーン上の場所です。x, y からなる 2 要素の"
-#~ "タプルです。"
-
-#~ msgid "`topnew`"
-#~ msgstr "`topnew`"
-
-#~ msgid ""
-#~ "If true, the scene that is cropped and moved (and is on top of the other "
-#~ "scene) is the new scene. If false, it is the old scene."
-#~ msgstr ""
-#~ "True なら、切り取られてたり動いたりするシーン (1番手前にシーンです) は新し"
-#~ "いシーンです。 False なら、元のシーンです。"
-
-#~ msgid ""
-#~ "Returns a transition that dissolves from the old scene to the new scene."
-#~ msgstr ""
-#~ "元のシーンから新しいシーンにディゾルブするトランジションを返します。"
-
-#~ msgid "The time the dissolve will take."
-#~ msgstr "ディゾルブにかける時間です。"
-
-#~ msgid "`time_warp`"
-#~ msgstr "`time_warp`"
-
-#~ msgid ""
-#~ "A :ref:`function that adjusts the timeline <warpers>`. If not None, this "
-#~ "should be a function that takes a fractional time between 0.0 and 1.0, "
-#~ "and returns a number in the same range."
-#~ msgstr ""
-#~ ":ref:`タイムラインを調節する関数 <warpers>` です。 None または、0.0 から "
-#~ "1.0 の間の小数の時間を引数に受け取り、同じ範囲の数を返す関数を指定します。"
-
-#~ msgid ""
-#~ "Returns a transition that takes `out_time` seconds to fade to a screen "
-#~ "filled with `color`, holds at that screen for `hold_time` seconds, and "
-#~ "then takes `in_time` to fade to then new screen."
-#~ msgstr ""
-#~ "`out_time` 秒かけて `color` で満たされたスクリーンにフェードし、そのスク"
-#~ "リーンを `hold_time` 秒保ち、それから `in_time` 秒かけて新しいスクリーンに"
-#~ "フェードするトランジションを返します。"
-
-#~ msgid ""
-#~ "Returns a transition that dissolves the old scene into the new scene, "
-#~ "using an image to control the dissolve process. This means that white "
-#~ "pixels will dissolve in first, and black pixels will dissolve in last."
-#~ msgstr ""
-#~ "ディゾルブの過程を制御する画像を使い、元のシーンから新しいシーンにディゾル"
-#~ "ブするトランジションを返します。この画像の白いビクセルに対応する部分が最初"
-#~ "にディゾルブし、黒いピクセルに対応する部分が最後にディゾルブします。"
-
-#~ msgid "`image`"
-#~ msgstr "`image`"
-
-#~ msgid ""
-#~ "The control image. This can be any displayable. It should be the size of "
-#~ "the scenes being dissolved, and if `reverse=True`, it should be fully "
-#~ "opaque."
-#~ msgstr ""
-#~ "制御画像です。これはどのような Displayable でもよいですが、ディゾルブされ"
-#~ "るシーンのサイズであるべきです。 `reverse=True` なら、完全に不透明でもある"
-#~ "べきです。"
-
-#~ msgid "`ramplen`"
-#~ msgstr "`ramplen`"
-
-#~ msgid ""
-#~ "The length of the ramp to use. This must be an integer power of 2. When "
-#~ "this is the default value of 8, when a white pixel is fully dissolved, a "
-#~ "pixel 8 shades of gray darker will have completed one step of dissolving "
-#~ "in."
-#~ msgstr ""
-#~ "使用する ramp の長さです。これは 2 の整数乗でなければなりません。これがデ"
-#~ "フォルト値の 8 であるとき、白いピクセルが完全にディゾルブすると、一段階ご"
-#~ "とに 8 シェード暗いピクセルのディゾルブインが進みます。"
-
-#~ msgid "If True, black pixels will dissolve in before white pixels."
-#~ msgstr ""
-#~ "True なら、黒いピクセルの方が白いビクセルより先にディゾルブインします。"
-
-#~ msgid ""
-#~ "With these transitions, images changing position between the old and new "
-#~ "scenes will be interpolated, which means their movement will be smooth "
-#~ "instead of instantaneous."
-#~ msgstr ""
-#~ "これらのトランジションでは、古いシーンと新しいシーンの間で位置が変化する画"
-#~ "像が補間されて、動きを瞬間的ではなくスムーズなものにします。"
-
-#~ msgid ""
-#~ "As only layers have tags, MoveTransitions can only be applied to a single "
-#~ "layer or all layers at once, using the :ref:`with statement <with-"
-#~ "statement>`. It will not work in other contexts such as :ref:`ATL "
-#~ "<displayable-atl-statement>`, :func:`ComposeTransition`, or other ways of "
-#~ "applying transitions."
-#~ msgstr ""
-#~ "タグを持つのはレイヤーのみなので、MoveTransitions は :ref:`with ステートメ"
-#~ "ント <with-statement>` を使って一つのレイヤーまたはすべてのレイヤーに一度"
-#~ "にしか適用できません。 :ref:`ATL <displayable-atl-statement>` や :func:"
-#~ "`ComposeTransition` のように、異なる方法でトランジションを適用するコンテキ"
-#~ "ストでは動作しません。"
-
-#~ msgid "The time it takes for the interpolation to finish."
-#~ msgstr "補間が終わるまでの時間です。"
-
-#~ msgid "`old`"
-#~ msgstr "`old`"
-
-#~ msgid ""
-#~ "If true, when a tag gets its image changed during the transition, the old "
-#~ "image will be used in preference to the new one. Otherwise, the new "
-#~ "images will be used."
-#~ msgstr ""
-#~ "True ならタグの画像がトランジション中に変更されたとき、新しい画像よりも古"
-#~ "い画像が優先して使われます。そうでない場合は、新しい画像が使われます。"
-
-#~ msgid "`layers`"
-#~ msgstr "`layers`"
-
-#~ msgid "A list of layers that moves are applied to."
-#~ msgstr "トランジションが適用されるレイヤーのリストです。"
-
-#~ msgid ""
-#~ "The two following parameters take transforms, which should not be "
-#~ "animated over time."
-#~ msgstr ""
-#~ "次の 2 つのパラメータは transform を取りますが、これは時間の経過とともにア"
-#~ "ニメーションはされません。"
-
-#~ msgid "`enter`"
-#~ msgstr "`enter`"
-
-#~ msgid ""
-#~ "If not None, images entering the scene will also be moved. The transform "
-#~ "will be applied to the image to get it in its starting position."
-#~ msgstr ""
-#~ "None でなければ、そのシーンに新しく挿入される画像も移動されます。 "
-#~ "transform はその画像を開始位置に置くために適用されます。"
-
-#~ msgid "`leave`"
-#~ msgstr "`leave`"
-
-#~ msgid ""
-#~ "If not None, images leaving the scene will also be moved. The transform "
-#~ "will be applied to the image to get it in its ending position."
-#~ msgstr ""
-#~ "None でなければ、そのシーンから消される画像も移動されます。 transform はそ"
-#~ "の画像を終了位置に置くために適用されます。"
-
-#~ msgid ""
-#~ "The three following parameters take :ref:`time warp functions <warpers>`, "
-#~ "which take a number between 0.0 and 1.0, and should return a number in "
-#~ "the same range."
-#~ msgstr ""
-#~ "次の3つのパラメーターが :ref:`time warp 関数 <warpers>` を受け取ります。こ"
-#~ "れは 0.0 から 1.0 までの数字を受け取り、同じ範囲の数字を返すべきです。"
-
-#~ msgid ""
-#~ "A time warp function that's applied to the images changing position "
-#~ "between the old and new scenes."
-#~ msgstr ""
-#~ "以前のシーンから新しいシーン間の移動に適用されるタイムワープ関数です。"
-
-#~ msgid "`enter_time_warp`"
-#~ msgstr "`enter_time_warp`"
-
-#~ msgid "A time warp function that's applied to images entering the scene."
-#~ msgstr "新しく挿入される画像に適用されるタイムワープ関数です。"
-
-#~ msgid "`leave_time_warp`"
-#~ msgstr "`leave_time_warp`"
-
-#~ msgid "A time warp function that's applied to images leaving the scene."
-#~ msgstr "消える画像に適用されるタイムワープ関数です。"
-
-#~ msgid ""
-#~ "In the following code, \"a\" will be leaving the scene (using `leave` and "
-#~ "`leave_time_warp`), \"b\" will be changing position (using `time_warp`), "
-#~ "and \"c\" will be entering (using `enter` and `enter_time_warp`). Because "
-#~ "the same tag is applied before and after, \"d\" will not be counted as "
-#~ "entering or leaving, but as changing position."
-#~ msgstr ""
-#~ "次のコードでは、\"a\" はシーンを離れ (`leave` と `leave_time_warp` を使"
-#~ "用)、\"b\" は位置を変更し (`time_warp` を使用)、\"c\" は (`enter` と "
-#~ "`enter_time_warp` を使用して) 挿入されます。前後で同じタグが適用されるた"
-#~ "め、「d」は入退出ではなく、位置の変化として考慮されます。"
-
-#~ msgid ""
-#~ "During the time when \"d\" is changing position, whether ugly or pretty "
-#~ "eileen will be shown depends on the value of `old` : if `old` is False, "
-#~ "the default, ugly_eileen will instantly turn into pretty_eileen and then "
-#~ "move, and if `old` is True, ugly_eileen will move and then instantly turn "
-#~ "into pretty_eileen."
-#~ msgstr ""
-#~ "\"d\" の位置が変わる間、 ugly eileen と pretty eileen のどちらが表示される"
-#~ "かは `old` の値しだいです: `old` が False であるのがデフォルトの場合で、 "
-#~ "ugly_eileen は即座に pretty_eileen に変わり、次に移動します。 `old` が "
-#~ "True の場合、 ugly_eileen は移動してから即座に pretty_eileen に変わりま"
-#~ "す。"
-
-#~ msgid ""
-#~ "Returns a transition that allows multiple transitions to be displayed, "
-#~ "one after the other."
-#~ msgstr "次々に複数のトランジションを実行できるトランジションを返します。"
-
-#~ msgid "`args`"
-#~ msgstr "`args`"
-
-#~ msgid ""
-#~ "A **list** containing an odd number of items. The first, third, and other "
-#~ "odd-numbered items must be scenes, and the even items must be "
-#~ "transitions. A scene can be one of:"
-#~ msgstr ""
-#~ "奇数個のアイテムが格納された *リスト* です。1番目、3番目、その他の奇数番目"
-#~ "のアイテムにはシーンを、偶数番目のアイテムにはトランジションを指定します。"
-#~ "シーンとして指定できるものは次の1つです。 :"
-
-#~ msgid "A displayable."
-#~ msgstr "displayable"
-
-#~ msgid "False, to use the old scene."
-#~ msgstr "False, トランジション前のシーンを表す"
-
-#~ msgid "True, to use the new scene."
-#~ msgstr "True, トランジション後のシーンを表す"
-
-#~ msgid "Almost always, the first argument will be False and the last True."
-#~ msgstr "ほぼ必ず最初の引数は False で最後の引数は True となります。"
-
-#~ msgid ""
-#~ "Note that this is a single parameter taking a list, this is not ``*args``."
-#~ msgstr ""
-#~ "これはリストを取る単一のパラメーターであり、 ``*args`` ではないことに注意"
-#~ "してください。"
-
-#~ msgid ""
-#~ "The transitions in `args` are applied in order. For each transition, the "
-#~ "old scene is the screen preceding it, and the new scene is the scene "
-#~ "following it. For example::"
-#~ msgstr ""
-#~ "`args` 内のトランジションが順に適用されます。各トランジションは、その前に"
-#~ "置かれたスクリーンから後に置かれたスクリーンにトランジションします。たとえ"
-#~ "ば ::"
-
-#~ msgid ""
-#~ "This example will dissolve to logo.jpg, wait 1 second, and then dissolve "
-#~ "to the new scene."
-#~ msgstr ""
-#~ "この例は、logo.jpg にディゾルブし、1 秒待ち、それから新しいシーンにディゾ"
-#~ "ルブします。"
-
-#~ msgid ""
-#~ "Returns a transition that only displays the new screen for `delay` "
-#~ "seconds. It can be useful as part of a MultipleTransition."
-#~ msgstr ""
-#~ "新しいスクリーンを `delay` 秒間表示するだけのトランジションを返します。"
-#~ "MultipleTransition の一部にするのに便利です。"
-
-#~ msgid ""
-#~ "Returns a transition that pixellates out the old screen, and then "
-#~ "pixellates in the new screen."
-#~ msgstr ""
-#~ "元のスクリーンをピクセレートアウトし、それから新しいスクリーンをピクセレー"
-#~ "トインするトランジションを返します。"
-
-#~ msgid "The total time the transition will take, in seconds."
-#~ msgstr "トランジションにかける合計時間の秒数です。"
-
-#~ msgid "`steps`"
-#~ msgstr "`steps`"
-
-#~ msgid ""
-#~ "The number of steps that will occur, in each direction. Each step creates "
-#~ "pixels about twice the size of those in the previous step, so a 5-step "
-#~ "pixellation will create 32x32 pixels."
-#~ msgstr ""
-#~ "それぞれの方向に行われる段階の数です。各段階ごとに、一つ前の段階の 2 倍の"
-#~ "ピクセルができます。よって、ピクセレートの 5 段階目では 32x32 のピクセルが"
-#~ "できます。"
-
-#~ msgid ""
-#~ "Returns a transition that works by taking the new scene and using it to "
-#~ "\"push\" the old scene off the screen."
-#~ msgstr "新しいシーンで元のシーンを \"plush\" するトランジションを返します。"
-
-#~ msgid ""
-#~ "There are four possible modes: \"pushright\", \"pushleft\", \"pushup\", "
-#~ "and \"pushdown\", which push the old scene off the screen in the "
-#~ "direction indicated."
-#~ msgstr ""
-#~ "これらには 4 つのモード \"pushright\", \"pushleft\", \"pushup\", "
-#~ "\"pushdown\" があり、指定された方向に以前のスクリーン押し出します。"
-
-#~ msgid ""
-#~ "A transitions that rotates the old scene 90 degrees around an axis, so "
-#~ "that it is edge on with the viewer, switches to the new scene, and then "
-#~ "rotates that scene another 90 degrees to show the new scene to the viewer."
-#~ msgstr ""
-#~ "以前のシーンを画面端の軸中心に90度回転してフェードアウトし、さらにもう90度"
-#~ "回転して新しいシーンをフェードインします。"
-
-#~ msgid "How long the transition should take."
-#~ msgstr "トランジションにかける時間です。"
-
-#~ msgid "`vertical`"
-#~ msgstr "`vertical`"
-
-#~ msgid ""
-#~ "If true, the scene is rotate around the x-axis (pixels move vertically). "
-#~ "If false, the scene is roated around the y axis, pixels moving "
-#~ "horizontally."
-#~ msgstr ""
-#~ "True なら、シーンは x 軸中心に回転してピクセルは縦に動き、False なら、 y "
-#~ "軸中心に回転してピクセルは水平に動きます。"
-
-#~ msgid "When true, the rotation occurs in the reverse direction."
-#~ msgstr "True なら回転は逆方向になります。"
-
-#~ msgid "`background`"
-#~ msgstr "`background`"
-
-#~ msgid "A displayable that is placed behind the scene as it rotates."
-#~ msgstr "シーンが回転している間背景となる displayable です。"
-
-#~ msgid "`flatten`"
-#~ msgstr "`flatten`"
-
-#~ msgid ""
-#~ "If true, the scenes are flattened into images the size of the screen "
-#~ "before being rotated. Use this if images being not entirely on the screen "
-#~ "causes undesired effects."
-#~ msgstr ""
-#~ "True なら、回転前にシーンは画面のサイズの画像に変換されます。画面に満たな"
-#~ "い画像が望ましくない作用をするならこれを使用してください。"
-
-#~ msgid ""
-#~ "This defines a family of :class:`move transitions <MoveTransition>`, "
-#~ "similar to the :var:`move` and :var:`ease` transitions. For a given "
-#~ "`prefix`, this defines the transitions:"
-#~ msgstr ""
-#~ ":var:`move` や :var:`ease` トランジションのような、 :class:`move トランジ"
-#~ "ション族 <MoveTransition>` を定義します。指定の `prefix` に対して、次のト"
-#~ "ランジションを定義します :"
-
-#~ msgid ""
-#~ "*prefix* - A transition that takes `delay` seconds to move images that "
-#~ "changed positions to their new locations."
-#~ msgstr ""
-#~ "*prefix* `delay` 秒かけて画像を新しい位置に動かすトランジションです。"
-
-#~ msgid ""
-#~ "*prefix*\\ inleft, *prefix*\\ inright, *prefix*\\ intop, *prefix*\\ "
-#~ "inbottom - Transitions that take `delay` seconds to move images that "
-#~ "changed positions to their new locations, with newly shown images coming "
-#~ "in from the appropriate side."
-#~ msgstr ""
-#~ "*prefix*\\ inleft, *prefix*\\ inright, *prefix*\\ intop, *prefix*\\ "
-#~ "inbottom - `delay` 時間かけて画像を新しい位置に動かすトランジションです。"
-#~ "新しく表示される画像は適切な側から現れます。"
-
-#~ msgid ""
-#~ "*prefix*\\ outleft, *prefix*\\ outright, *prefix*\\ outtop, *prefix*\\ "
-#~ "outbottom - Transitions that take `delay` seconds to move images that "
-#~ "changed positions to their new locations, with newly hidden images "
-#~ "leaving via the appropriate side."
-#~ msgstr ""
-#~ "*prefix*\\ outleft, *prefix*\\ outright, *prefix*\\ outtop, *prefix*\\ "
-#~ "outbottom - `delay` 時間かけて画像を新しい位置に動かすトランジションです。"
-#~ "新しく隠蔽される画像は適切な側へ消えます。"
-
-#~ msgid "The other parameters are as :class:`MoveTransition` takes them:"
-#~ msgstr ""
-#~ "他のパラメーターは :class:`MoveTransition` が受け取るものと同様です。 :"
-
-#~ msgid "`time_warp`, `in_time_warp`, `out_time_warp`"
-#~ msgstr "`time_warp`, `in_time_warp`, `out_time_warp`"
-
-#~ msgid ""
-#~ ":ref:`Time warp functions <warpers>` that are given a time from 0.0 to "
-#~ "1.0 representing the fraction of the move that is complete, and return a "
-#~ "value in the same range giving the fraction of a linear move that is "
-#~ "complete."
-#~ msgstr ""
-#~ ":ref:`タイムワープ関数 <warpers>` です。これらには移動が完了するまでの時間"
-#~ "に対する割合を表す 0.0 から 1.0 の小数を与えられ、線形移動が完了するまでの"
-#~ "距離に対する割合を表す同じ範囲の小数値を返します。"
-
-#~ msgid ""
-#~ "This can be used to define functions that ease the images around, rather "
-#~ "than moving them at a constant speed."
-#~ msgstr ""
-#~ "これは、一定の速度では動かない画像を動かす関数を定義するのに使えます。"
-
-#~ msgid ""
-#~ "The three arguments are used for images remaining on the screen, newly "
-#~ "shown images, and newly hidden images, respectively."
-#~ msgstr ""
-#~ "これら3つの引数は、スクリーンにある画像、新しく現れる画像、新しく消える画"
-#~ "像に、それぞれ使われます。"
-
-#~ msgid "The layers the transition will apply to."
-#~ msgstr "トランジションが適用されるレイヤーです。"
 
 #~ msgid ""
 #~ "Pre-defined transitions can be given directly to the with statement. For "

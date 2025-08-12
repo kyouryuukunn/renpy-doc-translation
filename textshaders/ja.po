@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 8.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 11:17+0900\n"
+"POT-Creation-Date: 2025-08-12 18:27+0900\n"
 "PO-Revision-Date: 2025-03-02 12:05+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
@@ -247,6 +247,196 @@ msgstr "組み込みのテキストシェーダ"
 msgid "Ren'Py includes a number of built-in text shaders. These are:"
 msgstr "Ren'Py には多数の組み込みテキストシェーダーが含まれています。 ::"
 
+#: ../../source/inc/builtintextshaders:4
+msgid ""
+"The dissolve text shader handles text by dissolving it in slowly, with the "
+"start dissolving in first, and the end dissolving in last."
+msgstr ""
+"dissolve テキストシェーダは、先頭が最初にディゾルブし、末尾が最後にディゾルブ"
+"するように、テキストをゆっくりとディゾルブして処理します。"
+
+#: ../../source/inc/builtintextshaders:10
+#: ../../source/inc/builtintextshaders:23
+#: ../../source/inc/builtintextshaders:121
+msgid "`u__duration` = 10.0"
+msgstr "`u__duration` = 10.0"
+
+#: ../../source/inc/builtintextshaders:8
+msgid ""
+"The number of characters that will be changing alpha at a time.  If set to "
+"0, the wave will move across the text one pixel at a time."
+msgstr ""
+"一度にアルファを変更する文字の数。 0 に設定すると、ディゾルブの波はテキスト上"
+"を 1 ピクセルずつ移動します。"
+
+#: ../../source/inc/builtintextshaders:12
+#: ../../source/inc/builtintextshaders:25
+#: ../../source/inc/builtintextshaders:92
+#: ../../source/inc/builtintextshaders:123
+msgid "Using this shader will prevent the default text shader from being used."
+msgstr ""
+"このシェーダを使用すると、デフォルトのテキスト シェーダが使用されなくなりま"
+"す。"
+
+#: ../../source/inc/builtintextshaders:17
+msgid ""
+"The flip shader flips slow text by flipping the text horizontally, with the "
+"start flipping in first, and the end flipping in last."
+msgstr ""
+"flip シェーダは、テキストを水平方向に反転させて、先頭が最初に反転し、終端が最"
+"後に反転するように、スローテキストを反転します。"
+
+#: ../../source/inc/builtintextshaders:21
+#: ../../source/inc/builtintextshaders:119
+msgid ""
+"The number of characters that will be changing alpha at a time.  If set to "
+"0, the characters will instantly flip."
+msgstr "一度に反転する文字の数。 0 に設定すると、文字は即座に反転します。"
+
+#: ../../source/inc/builtintextshaders:30
+msgid ""
+"The jitter text shader moves the text to random positions relative to where "
+"it would be normally drawn. The position changes once per frame."
+msgstr ""
+"jisster テキストシェーダは、テキストを通常描画される場所を基準にしてランダム"
+"な位置に移動します。位置はフレームごとに 1 回変わります。"
+
+#: ../../source/inc/builtintextshaders:34
+msgid "`u__jitter` = (3.0, 3.0)"
+msgstr "`u__jitter` = (3.0, 3.0)"
+
+#: ../../source/inc/builtintextshaders:35
+msgid "The amount of jitter to apply to the text, in pixels."
+msgstr "テキストに適用するジッターの量 (ピクセル単位)。"
+
+#: ../../source/inc/builtintextshaders:41
+msgid ""
+"Multiplies the text with a texture, one line at a time. The texture is "
+"aligned with the left side of the text. The vertical center of the texture "
+"is aligned with the baseline of the text - this means that most of the lower "
+"half of the texture will not be visible."
+msgstr ""
+"テキストにテクスチャを一度に 1 行ずつ乗算します。テクスチャはテキストの左側に"
+"揃えられます。テクスチャの垂直方向の中心はテキストのベースラインに揃えられて"
+"います - つまりテクスチャの下半分のほとんどは見えなくなります"
+
+#: ../../source/inc/builtintextshaders:47
+#: ../../source/inc/builtintextshaders:81
+msgid "`u__texture` = ..."
+msgstr "`u__texture` = ..."
+
+#: ../../source/inc/builtintextshaders:47
+#: ../../source/inc/builtintextshaders:82
+msgid "The texture to multiply the text by."
+msgstr "テキストを乗算するテクスチャ。"
+
+#: ../../source/inc/builtintextshaders:50
+msgid "`u__scale` = (1.0, 1.0)"
+msgstr "`u__scale` = (1.0, 1.0)"
+
+#: ../../source/inc/builtintextshaders:50
+msgid ""
+"A factor to scale the texture by. For example (1.0, 0.5) will make the "
+"texture half as tall as it otherwise would be."
+msgstr ""
+"テクスチャをスケールする係数。たとえば、(1.0, 0.5) とすると、テクスチャの高さ"
+"はそうでない場合の半分になります。"
+
+#: ../../source/inc/builtintextshaders:57
+msgid "The offset text shader moves the text by a fixed amount."
+msgstr "offset テキスト シェーダは、テキストを一定の量だけ移動します。"
+
+#: ../../source/inc/builtintextshaders:59
+msgid "`u__offset` = (0.0, 0.0)"
+msgstr "`u__offset` = (0.0, 0.0)"
+
+#: ../../source/inc/builtintextshaders:60
+msgid "The amount to move the text by, in virtual pixels."
+msgstr "テキストを移動する量 (仮想ピクセル単位)。"
+
+#: ../../source/inc/builtintextshaders:66
+msgid ""
+"The slowalpha shader is intended to be used with another slow text shader, "
+"like typewriter or dissolve. It causes the text that has yet to be revealed "
+"to be drawn with an alpha value of `u__alpha` = 0.2, rather than being "
+"invisible."
+msgstr ""
+"slowalpha シェーダーは、 typewriter や dissolve などの他の低速テキストシェイ"
+"ダーとの併用を意図しています。これにより、まだ表示されていないテキストは非表"
+"示にならずに、アルファ値 `u__alpha` = 0.2 で描画されます。"
+
+#: ../../source/inc/builtintextshaders:70
+msgid "`u__alpha` = 0.2"
+msgstr "`u__alpha` = 0.2"
+
+#: ../../source/inc/builtintextshaders:71
+msgid "The alpha value of the text that has not been revealed yet."
+msgstr "まだ表示されていないテキストのアルファ値。"
+
+#: ../../source/inc/builtintextshaders:77
+msgid ""
+"The texture text shader multiplies the text with the colors from a texture. "
+"This is not done to outlines or offset text. The texture is aligned with the "
+"top left of the text."
+msgstr ""
+"texture テキストシェーダは、テキストにそのテクスチャーの色を乗算します。これ"
+"は、アウトライン文字やオフセット文字には適用されません。テクスチャはテキスト"
+"の左上に揃えられます。"
+
+#: ../../source/inc/builtintextshaders:88
+msgid ""
+"The typewriter text shader handles slow text by making the text appear one "
+"character at a time, as if it were being typed out by a typewriter."
+msgstr ""
+"typewriter テキストシェーダーは、テキストを一度に 1 文字ずつ表示し、タイプラ"
+"イターで入力しているかのように表示して、低速テキストを処理します。"
+
+#: ../../source/inc/builtintextshaders:97
+msgid "The wave text shader makes the text bounce up and down in a wave."
+msgstr "wave テキスト シェーダは、テキストを波状に上下に跳ね返らせます。"
+
+#: ../../source/inc/builtintextshaders:100
+msgid "`u__amplitude` = 5.0"
+msgstr "`u__amplitude` = 5.0"
+
+#: ../../source/inc/builtintextshaders:100
+msgid "The number of pixels up and down the text will move."
+msgstr "テキストが移動する上下のピクセル数。"
+
+#: ../../source/inc/builtintextshaders:103
+msgid "`u__frequency` = 2.0"
+msgstr "`u__frequency` = 2.0"
+
+#: ../../source/inc/builtintextshaders:103
+msgid "The number of waves per second."
+msgstr "振動数。"
+
+#: ../../source/inc/builtintextshaders:105
+msgid "`u__wavelength` = 20.0"
+msgstr "`u__wavelength` = 20.0"
+
+#: ../../source/inc/builtintextshaders:106
+msgid "The number of characters between peaks in the wave."
+msgstr "波のピーク間の文字数。"
+
+#: ../../source/inc/builtintextshaders:112
+msgid ""
+"The zoom text shader handles slow text to cause it to zoom in from an "
+"initial size of `u__zoom` = 0.0 to full size."
+msgstr ""
+"zoom テキストシェーダは、低速テキストを処理して、初期サイズの `u__zoom` = "
+"0.0 からフル サイズにズームインします。"
+
+#: ../../source/inc/builtintextshaders:116
+msgid "`u__zoom` = 0.0"
+msgstr "`u__zoom` = 0.0"
+
+#: ../../source/inc/builtintextshaders:115
+msgid ""
+"The initial amount of zoom to apply to a character when it first starts "
+"showing."
+msgstr "文字が最初に表示開始されたときに適用する初期ズーム量。"
+
 #: ../../source/textshaders.rst:141
 msgid "Creating Text Shaders"
 msgstr "テキストシェーダの作成"
@@ -258,6 +448,166 @@ msgid ""
 msgstr ""
 "テキストシェイダーは、 GPU 上で実行される GLSL プログラムです。これらのシェー"
 "ダーは、関数 renpy.register_text_shader を使用して登録されます。"
+
+#: ../../source/inc/textshader:5
+msgid "This creates a textshader and registers it with the name `name`."
+msgstr ""
+"これにより、テキストシェーダーが作成され、 `name` という名前で登録されます。"
+
+#: ../../source/inc/textshader:7
+msgid "This function takes the following arguments:"
+msgstr "この関数は、次の引数を取ります。"
+
+#: ../../source/inc/textshader:11
+msgid "`name`"
+msgstr "`name`"
+
+#: ../../source/inc/textshader:10
+msgid ""
+"This is the name of the textshader. It's also used to register a shader part "
+"named textshader.`name`."
+msgstr ""
+"これはテキストシェーダーの名前です。また、 textshader.`name` という名前の"
+"シェーダーパーツを登録するためにも使用されます。"
+
+#: ../../source/inc/textshader:20
+msgid "`shaders`"
+msgstr "`shaders`"
+
+#: ../../source/inc/textshader:14
+msgid ""
+"Shader parts to apply to the text. This can be a string, or a list or tuple "
+"of strings. This should be a shader part registered with :func:`renpy."
+"register_shader`, or this function. If a shader part begins with '-', then "
+"it is removed from the list of shader parts. (For example, '-textshader."
+"typewriter' will remove that part.)"
+msgstr ""
+"テキストに適用するシェーダーパーツ。これは、文字列、または文字列のリストまた"
+"はタプルです。これは、 :func:`renpy.register_shader` またはこの関数で登録され"
+"たシェーダーパーツである必要があります。シェーダーパーツが '-' で始まる場合、"
+"それはシェーダーパーツの一覧から削除されます(たとえば、'-textshader."
+"typewriter' はその部分を削除します)。"
+
+#: ../../source/inc/textshader:19
+msgid ""
+"Note that the shader parts registered with this function are prefixed with "
+"textshader., which needs to be supplied when used with this function."
+msgstr ""
+"なお、この関数で登録したシェーダーパーツには接頭辞 textshader. が付きますが、"
+"この関数で使用する場合は textshader. を指定する必要があります。"
+
+#: ../../source/inc/textshader:26
+msgid "`extra_slow_time`"
+msgstr "`extra_slow_time`"
+
+#: ../../source/inc/textshader:23
+msgid ""
+"Extra time to add to the slow time effect beyond what Ren'Py will compute "
+"from the current characters per second. This is useful for shaders that "
+"might take more time to transition a character than the default time. If "
+"True, the shader is always updated."
+msgstr ""
+"Ren'Py が算出する現在の秒間文字数超えた長時間の効果に追加する余分な時間です。"
+"これは、文字の遷移に既定の時間よりも時間がかかる可能性があるシェーダーに役立"
+"ちます。 True の場合、シェーダーは常に更新されます。"
+
+#: ../../source/inc/textshader:31
+msgid "`extra_slow_duration`"
+msgstr "`extra_slow_duration`"
+
+#: ../../source/inc/textshader:29
+msgid ""
+"Added to `extra_slow_time`, but this is multiplied by the time per character "
+"to get the extra time to add to the slow time effect. (Time per character is "
+"1 / characters per second.)"
+msgstr ""
+"`extra_slow_time` に追加されますが、こちらは1文字あたりの時間に乗算して効果時"
+"間に追加する時間を所得します{1文字あたりの時間は 1 / (1秒あたりの文字数)で"
+"す}。"
+
+#: ../../source/inc/textshader:35
+msgid "`redraw`"
+msgstr "`redraw`"
+
+#: ../../source/inc/textshader:34
+msgid ""
+"The amount in time in seconds before the text is redrawn, after all slow "
+"text has been show and `extra_slow_time` has passed."
+msgstr ""
+"すべての低速テキストが表示されて `extra_slow_time` が経過した後、テキストが再"
+"描画されるまでの時間(秒単位)です。"
+
+#: ../../source/inc/textshader:39
+msgid "`redraw_when_slow`"
+msgstr "`redraw_when_slow`"
+
+#: ../../source/inc/textshader:38
+msgid ""
+"The amount of time in seconds before the text is redrawn when showing slow "
+"text."
+msgstr "低速テキストを表示中のそのテキストが再描画されるまでの時間 (秒単位)。"
+
+#: ../../source/inc/textshader:43
+msgid "`include_default`"
+msgstr "`include_default`"
+
+#: ../../source/inc/textshader:42
+msgid ""
+"If True, when this textshader is used directly, it will be combined with :"
+"var:`config.default_textshader`."
+msgstr ""
+"True の場合、このテキストシェーダーを直接使用すると、 :var:`config."
+"default_textshader` と結合されます。"
+
+#: ../../source/inc/textshader:49
+msgid "`adjust_function`"
+msgstr "`adjust_function`"
+
+#: ../../source/inc/textshader:46
+msgid ""
+"A function that is called with an object and the uniforms being passed to "
+"the text shader as keyworkd arguments. This function can set the "
+"`extra_slow_time`, `extra_slow_duration`, `redraw`, and `redraw_when_slow` "
+"fields of the object"
+msgstr ""
+"キーワード引数としてテキストシェーダーに渡されたオブジェクトとユニフォームを"
+"引数に呼び出される関数。この関数は、オブジェクトの `extra_slow_time`, "
+"`extra_slow_duration`, `redraw` および `redraw_when_slow` フィールドを設定で"
+"きます。"
+
+#: ../../source/inc/textshader:53
+msgid "`doc`"
+msgstr "`doc`"
+
+#: ../../source/inc/textshader:52
+msgid ""
+"A string containing documetation information. This is mostly intended for "
+"Ren'Py's documentation system."
+msgstr ""
+"ドキュメント化情報を含む文字列。これは主に Ren'Py のドキュメントシステムを対"
+"象としています。"
+
+#: ../../source/inc/textshader:55
+msgid ""
+"Keyword argument beginning with ``u_`` are passed as uniforms to the shader, "
+"with strings beginning with ``#`` being interpreted as colors. Most uniforms "
+"should begin with ``u__``, using :ref:`shader local variables <shader-local-"
+"variables>` to prevent conflicts with other shaders."
+msgstr ""
+"``u_`` で始まるキーワード引数はユニフォームとしてシェーダに渡され、 ``#`` で"
+"始まる文字列は色として解釈されます。ほとんどのユニフォームは ``u__`` で始ま"
+"り、他のシェーダとの衝突を防ぐために :ref:`shader local variables <shader-"
+"local-variables>` を使用します。"
+
+#: ../../source/inc/textshader:60
+msgid ""
+"A keyword argument named `variables` and all keyword arguments that begin "
+"with `fragment_` or `vertex_` are passed to :func:`renpy.register_shader`, "
+"which registers the shader part."
+msgstr ""
+"`variables` という名前のキーワード引数と、 `fragment_` または `vertex_` で始"
+"まるすべてのキーワード引数が :func:`renpy.register_shader` に渡され、シェー"
+"ダーパーツが登録されます。"
 
 #: ../../source/textshaders.rst:149
 msgid "Variables in Text Shaders"
@@ -566,297 +916,6 @@ msgstr "これは、表示時にテキストを回転させるテキストシェ
 #: ../../source/textshaders.rst:291
 msgid "It can be used witt the following script::"
 msgstr "これは、次のスクリプトで使用できます。"
-
-#~ msgid ""
-#~ "The dissolve text shader handles text by dissolving it in slowly, with "
-#~ "the start dissolving in first, and the end dissolving in last."
-#~ msgstr ""
-#~ "dissolve テキストシェーダは、先頭が最初にディゾルブし、末尾が最後にディゾ"
-#~ "ルブするように、テキストをゆっくりとディゾルブして処理します。"
-
-#~ msgid "`u__duration` = 10.0"
-#~ msgstr "`u__duration` = 10.0"
-
-#~ msgid ""
-#~ "The number of characters that will be changing alpha at a time.  If set "
-#~ "to 0, the wave will move across the text one pixel at a time."
-#~ msgstr ""
-#~ "一度にアルファを変更する文字の数。 0 に設定すると、ディゾルブの波はテキス"
-#~ "ト上を 1 ピクセルずつ移動します。"
-
-#~ msgid ""
-#~ "Using this shader will prevent the default text shader from being used."
-#~ msgstr ""
-#~ "このシェーダを使用すると、デフォルトのテキスト シェーダが使用されなくなり"
-#~ "ます。"
-
-#~ msgid ""
-#~ "The flip shader flips slow text by flipping the text horizontally, with "
-#~ "the start flipping in first, and the end flipping in last."
-#~ msgstr ""
-#~ "flip シェーダは、テキストを水平方向に反転させて、先頭が最初に反転し、終端"
-#~ "が最後に反転するように、スローテキストを反転します。"
-
-#~ msgid ""
-#~ "The number of characters that will be changing alpha at a time.  If set "
-#~ "to 0, the characters will instantly flip."
-#~ msgstr "一度に反転する文字の数。 0 に設定すると、文字は即座に反転します。"
-
-#~ msgid ""
-#~ "The jitter text shader moves the text to random positions relative to "
-#~ "where it would be normally drawn. The position changes once per frame."
-#~ msgstr ""
-#~ "jisster テキストシェーダは、テキストを通常描画される場所を基準にしてランダ"
-#~ "ムな位置に移動します。位置はフレームごとに 1 回変わります。"
-
-#~ msgid "`u__jitter` = (3.0, 3.0)"
-#~ msgstr "`u__jitter` = (3.0, 3.0)"
-
-#~ msgid "The amount of jitter to apply to the text, in pixels."
-#~ msgstr "テキストに適用するジッターの量 (ピクセル単位)。"
-
-#~ msgid ""
-#~ "Multiplies the text with a texture, one line at a time. The texture is "
-#~ "aligned with the left side of the text. The vertical center of the "
-#~ "texture is aligned with the baseline of the text - this means that most "
-#~ "of the lower half of the texture will not be visible."
-#~ msgstr ""
-#~ "テキストにテクスチャを一度に 1 行ずつ乗算します。テクスチャはテキストの左"
-#~ "側に揃えられます。テクスチャの垂直方向の中心はテキストのベースラインに揃え"
-#~ "られています - つまりテクスチャの下半分のほとんどは見えなくなります"
-
-#~ msgid "`u__texture` = ..."
-#~ msgstr "`u__texture` = ..."
-
-#~ msgid "The texture to multiply the text by."
-#~ msgstr "テキストを乗算するテクスチャ。"
-
-#~ msgid "`u__scale` = (1.0, 1.0)"
-#~ msgstr "`u__scale` = (1.0, 1.0)"
-
-#~ msgid ""
-#~ "A factor to scale the texture by. For example (1.0, 0.5) will make the "
-#~ "texture half as tall as it otherwise would be."
-#~ msgstr ""
-#~ "テクスチャをスケールする係数。たとえば、(1.0, 0.5) とすると、テクスチャの"
-#~ "高さはそうでない場合の半分になります。"
-
-#~ msgid "The offset text shader moves the text by a fixed amount."
-#~ msgstr "offset テキスト シェーダは、テキストを一定の量だけ移動します。"
-
-#~ msgid "`u__offset` = (0.0, 0.0)"
-#~ msgstr "`u__offset` = (0.0, 0.0)"
-
-#~ msgid "The amount to move the text by, in virtual pixels."
-#~ msgstr "テキストを移動する量 (仮想ピクセル単位)。"
-
-#~ msgid ""
-#~ "The slowalpha shader is intended to be used with another slow text "
-#~ "shader, like typewriter or dissolve. It causes the text that has yet to "
-#~ "be revealed to be drawn with an alpha value of `u__alpha` = 0.2, rather "
-#~ "than being invisible."
-#~ msgstr ""
-#~ "slowalpha シェーダーは、 typewriter や dissolve などの他の低速テキストシェ"
-#~ "イダーとの併用を意図しています。これにより、まだ表示されていないテキストは"
-#~ "非表示にならずに、アルファ値 `u__alpha` = 0.2 で描画されます。"
-
-#~ msgid "`u__alpha` = 0.2"
-#~ msgstr "`u__alpha` = 0.2"
-
-#~ msgid "The alpha value of the text that has not been revealed yet."
-#~ msgstr "まだ表示されていないテキストのアルファ値。"
-
-#~ msgid ""
-#~ "The texture text shader multiplies the text with the colors from a "
-#~ "texture. This is not done to outlines or offset text. The texture is "
-#~ "aligned with the top left of the text."
-#~ msgstr ""
-#~ "texture テキストシェーダは、テキストにそのテクスチャーの色を乗算します。こ"
-#~ "れは、アウトライン文字やオフセット文字には適用されません。テクスチャはテキ"
-#~ "ストの左上に揃えられます。"
-
-#~ msgid ""
-#~ "The typewriter text shader handles slow text by making the text appear "
-#~ "one character at a time, as if it were being typed out by a typewriter."
-#~ msgstr ""
-#~ "typewriter テキストシェーダーは、テキストを一度に 1 文字ずつ表示し、タイプ"
-#~ "ライターで入力しているかのように表示して、低速テキストを処理します。"
-
-#~ msgid "The wave text shader makes the text bounce up and down in a wave."
-#~ msgstr "wave テキスト シェーダは、テキストを波状に上下に跳ね返らせます。"
-
-#~ msgid "`u__amplitude` = 5.0"
-#~ msgstr "`u__amplitude` = 5.0"
-
-#~ msgid "The number of pixels up and down the text will move."
-#~ msgstr "テキストが移動する上下のピクセル数。"
-
-#~ msgid "`u__frequency` = 2.0"
-#~ msgstr "`u__frequency` = 2.0"
-
-#~ msgid "The number of waves per second."
-#~ msgstr "振動数。"
-
-#~ msgid "`u__wavelength` = 20.0"
-#~ msgstr "`u__wavelength` = 20.0"
-
-#~ msgid "The number of characters between peaks in the wave."
-#~ msgstr "波のピーク間の文字数。"
-
-#~ msgid ""
-#~ "The zoom text shader handles slow text to cause it to zoom in from an "
-#~ "initial size of `u__zoom` = 0.0 to full size."
-#~ msgstr ""
-#~ "zoom テキストシェーダは、低速テキストを処理して、初期サイズの `u__zoom` = "
-#~ "0.0 からフル サイズにズームインします。"
-
-#~ msgid "`u__zoom` = 0.0"
-#~ msgstr "`u__zoom` = 0.0"
-
-#~ msgid ""
-#~ "The initial amount of zoom to apply to a character when it first starts "
-#~ "showing."
-#~ msgstr "文字が最初に表示開始されたときに適用する初期ズーム量。"
-
-#~ msgid "This creates a textshader and registers it with the name `name`."
-#~ msgstr ""
-#~ "これにより、テキストシェーダーが作成され、 `name` という名前で登録されま"
-#~ "す。"
-
-#~ msgid "This function takes the following arguments:"
-#~ msgstr "この関数は、次の引数を取ります。"
-
-#~ msgid "`name`"
-#~ msgstr "`name`"
-
-#~ msgid ""
-#~ "This is the name of the textshader. It's also used to register a shader "
-#~ "part named textshader.`name`."
-#~ msgstr ""
-#~ "これはテキストシェーダーの名前です。また、 textshader.`name` という名前の"
-#~ "シェーダーパーツを登録するためにも使用されます。"
-
-#~ msgid "`shaders`"
-#~ msgstr "`shaders`"
-
-#~ msgid ""
-#~ "Shader parts to apply to the text. This can be a string, or a list or "
-#~ "tuple of strings. This should be a shader part registered with :func:"
-#~ "`renpy.register_shader`, or this function. If a shader part begins with "
-#~ "'-', then it is removed from the list of shader parts. (For example, '-"
-#~ "textshader.typewriter' will remove that part.)"
-#~ msgstr ""
-#~ "テキストに適用するシェーダーパーツ。これは、文字列、または文字列のリストま"
-#~ "たはタプルです。これは、 :func:`renpy.register_shader` またはこの関数で登"
-#~ "録されたシェーダーパーツである必要があります。シェーダーパーツが '-' で始"
-#~ "まる場合、それはシェーダーパーツの一覧から削除されます(たとえば、'-"
-#~ "textshader.typewriter' はその部分を削除します)。"
-
-#~ msgid ""
-#~ "Note that the shader parts registered with this function are prefixed "
-#~ "with textshader., which needs to be supplied when used with this function."
-#~ msgstr ""
-#~ "なお、この関数で登録したシェーダーパーツには接頭辞 textshader. が付きます"
-#~ "が、この関数で使用する場合は textshader. を指定する必要があります。"
-
-#~ msgid "`extra_slow_time`"
-#~ msgstr "`extra_slow_time`"
-
-#~ msgid ""
-#~ "Extra time to add to the slow time effect beyond what Ren'Py will compute "
-#~ "from the current characters per second. This is useful for shaders that "
-#~ "might take more time to transition a character than the default time. If "
-#~ "True, the shader is always updated."
-#~ msgstr ""
-#~ "Ren'Py が算出する現在の秒間文字数超えた長時間の効果に追加する余分な時間で"
-#~ "す。これは、文字の遷移に既定の時間よりも時間がかかる可能性があるシェーダー"
-#~ "に役立ちます。 True の場合、シェーダーは常に更新されます。"
-
-#~ msgid "`extra_slow_duration`"
-#~ msgstr "`extra_slow_duration`"
-
-#~ msgid ""
-#~ "Added to `extra_slow_time`, but this is multiplied by the time per "
-#~ "character to get the extra time to add to the slow time effect. (Time per "
-#~ "character is 1 / characters per second.)"
-#~ msgstr ""
-#~ "`extra_slow_time` に追加されますが、こちらは1文字あたりの時間に乗算して効"
-#~ "果時間に追加する時間を所得します{1文字あたりの時間は 1 / (1秒あたりの文字"
-#~ "数)です}。"
-
-#~ msgid "`redraw`"
-#~ msgstr "`redraw`"
-
-#~ msgid ""
-#~ "The amount in time in seconds before the text is redrawn, after all slow "
-#~ "text has been show and `extra_slow_time` has passed."
-#~ msgstr ""
-#~ "すべての低速テキストが表示されて `extra_slow_time` が経過した後、テキスト"
-#~ "が再描画されるまでの時間(秒単位)です。"
-
-#~ msgid "`redraw_when_slow`"
-#~ msgstr "`redraw_when_slow`"
-
-#~ msgid ""
-#~ "The amount of time in seconds before the text is redrawn when showing "
-#~ "slow text."
-#~ msgstr ""
-#~ "低速テキストを表示中のそのテキストが再描画されるまでの時間 (秒単位)。"
-
-#~ msgid "`include_default`"
-#~ msgstr "`include_default`"
-
-#~ msgid ""
-#~ "If True, when this textshader is used directly, it will be combined with :"
-#~ "var:`config.default_textshader`."
-#~ msgstr ""
-#~ "True の場合、このテキストシェーダーを直接使用すると、 :var:`config."
-#~ "default_textshader` と結合されます。"
-
-#~ msgid "`adjust_function`"
-#~ msgstr "`adjust_function`"
-
-#~ msgid ""
-#~ "A function that is called with an object and the uniforms being passed to "
-#~ "the text shader as keyworkd arguments. This function can set the "
-#~ "`extra_slow_time`, `extra_slow_duration`, `redraw`, and "
-#~ "`redraw_when_slow` fields of the object"
-#~ msgstr ""
-#~ "キーワード引数としてテキストシェーダーに渡されたオブジェクトとユニフォーム"
-#~ "を引数に呼び出される関数。この関数は、オブジェクトの `extra_slow_time`, "
-#~ "`extra_slow_duration`, `redraw` および `redraw_when_slow` フィールドを設定"
-#~ "できます。"
-
-#~ msgid "`doc`"
-#~ msgstr "`doc`"
-
-#~ msgid ""
-#~ "A string containing documetation information. This is mostly intended for "
-#~ "Ren'Py's documentation system."
-#~ msgstr ""
-#~ "ドキュメント化情報を含む文字列。これは主に Ren'Py のドキュメントシステムを"
-#~ "対象としています。"
-
-#~ msgid ""
-#~ "Keyword argument beginning with ``u_`` are passed as uniforms to the "
-#~ "shader, with strings beginning with ``#`` being interpreted as colors. "
-#~ "Most uniforms should begin with ``u__``, using :ref:`shader local "
-#~ "variables <shader-local-variables>` to prevent conflicts with other "
-#~ "shaders."
-#~ msgstr ""
-#~ "``u_`` で始まるキーワード引数はユニフォームとしてシェーダに渡され、 ``#`` "
-#~ "で始まる文字列は色として解釈されます。ほとんどのユニフォームは ``u__`` で"
-#~ "始まり、他のシェーダとの衝突を防ぐために :ref:`shader local variables "
-#~ "<shader-local-variables>` を使用します。"
-
-#~ msgid ""
-#~ "A keyword argument named `variables` and all keyword arguments that begin "
-#~ "with `fragment_` or `vertex_` are passed to :func:`renpy."
-#~ "register_shader`, which registers the shader part."
-#~ msgstr ""
-#~ "`variables` という名前のキーワード引数と、 `fragment_` または `vertex_` で"
-#~ "始まるすべてのキーワード引数が :func:`renpy.register_shader` に渡され、"
-#~ "シェーダーパーツが登録されます。"
 
 #~ msgid "The time at which this vertex should be shown."
 #~ msgstr "この頂点を表示するべき時間。"

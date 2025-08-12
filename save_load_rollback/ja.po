@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 11:17+0900\n"
-"PO-Revision-Date: 2025-07-01 19:48+0900\n"
+"POT-Creation-Date: 2025-08-12 18:27+0900\n"
+"PO-Revision-Date: 2025-08-12 19:42+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -365,23 +365,27 @@ msgstr "正常に動作します。"
 
 #: ../../source/save_load_rollback.rst:213
 msgid "Save File Structure"
-msgstr ""
+msgstr "セーブファイルの構造"
 
 #: ../../source/save_load_rollback.rst:215
 msgid ""
 "Ren'Py save files (e.g., ``1-1.save``) are compressed archives containing:"
 msgstr ""
+"Ren'Pyのセーブファイル(例えば、''1-1.save'') は、以下を含む圧縮アーカイブで"
+"す ::"
 
 #: ../../source/save_load_rollback.rst:217
 msgid ""
 "**Game State**: Serialized Python objects representing the game’s state."
-msgstr ""
+msgstr "**ゲーム状態**: ゲームの状態を表すシリアル化されたPythonオブジェクト。"
 
 #: ../../source/save_load_rollback.rst:218
 msgid ""
 "**Metadata**: A dictionary with fields describing the save. The fields "
 "available depend on the access method:"
 msgstr ""
+"**メタデータ**: セーブを説明するフィールドを含む辞書。使用可能なフィールド"
+"は、アクセス方法によって異なります :"
 
 #: ../../source/save_load_rollback.rst:220
 msgid ""
@@ -389,6 +393,9 @@ msgid ""
 "``_renpy_version``, ``_version``, ``_game_runtime``, ``_ctime``, and any "
 "custom fields added via :var:`config.save_json_callbacks`."
 msgstr ""
+":func:`renpy.slot_json`: は ``_save_name``, ``_renpy_version``, "
+"``_version``, ``_game_runtime``, ``_ctime``, via :var:`config."
+"save_json_callbacks` により追加されたカスタム field を含む辞書を返します。"
 
 #: ../../source/save_load_rollback.rst:221
 msgid ""
@@ -397,6 +404,10 @@ msgid ""
 "custom fields. When a ``key`` is specified (e.g., ``\"_save_name\"``), it "
 "returns the value of that field."
 msgstr ""
+":func:`FileJson`: ``key`` パラメーターが ``None`` (default) ならば :func:"
+"`renpy.slot_json` と同じメタデータの辞書を返します。これはカスタムフィールド"
+"を含みます。 ``key`` パラメータが指定されていれば (e.g., ``\"_save_name\"``) "
+"そのフィールドの値を返します。"
 
 #: ../../source/save_load_rollback.rst:222
 msgid ""
@@ -404,10 +415,13 @@ msgid ""
 "``mtime`` (as ``time``), and ``_screenshot`` (as ``screenshot``) in a tuple, "
 "but no other metadata fields."
 msgstr ""
+":func:`renpy.list_saved_games`: ``_save_name`` (as ``extra_info``), "
+"``mtime`` (as ``time``), ``_screenshot`` (as ``screenshot``) のタプルを返しま"
+"すが、他のメタデータのフィールドは返しません。"
 
 #: ../../source/save_load_rollback.rst:224
 msgid "Standard metadata fields include:"
-msgstr ""
+msgstr "標準的なメタデータフィールドは次のものを含みます :"
 
 #: ../../source/save_load_rollback.rst:226
 msgid ""
@@ -415,36 +429,48 @@ msgid ""
 "`renpy.save`, typically the global :var:`save_name` variable (e.g., "
 "\"Chapter 1\"). If empty, an empty string."
 msgstr ""
+"``_save_name``: ``extra_info`` :func:`renpy.save` の引数によって設定される文"
+"字列です。基本的にグローバル変数の :var:`save_name` (e.g., \"Chapter 1\")と共"
+"に使用されます。空なら空の文字列となります。"
 
 #: ../../source/save_load_rollback.rst:227
 msgid ""
 "``_renpy_version``: The version of Ren'Py used to create the save, as a list "
 "of integers (e.g., ``[8, 3, 7, 25031702]`` for Ren'Py 8.3.7.25031702)."
 msgstr ""
+"``_renpy_version``: セーブの作成に使用される Ren'Py のバージョンで、整数のリ"
+"ストです(e.g. Ren'Py 8.3.7.25031702 なら ``[8, 3, 7, 25031702]`` )."
 
 #: ../../source/save_load_rollback.rst:228
 msgid ""
 "``_version``: The game version set by :var:`config.version` at the time of "
 "saving (e.g., \"1.0\")."
 msgstr ""
+"``_version``: 保存時に :var:`config.version` に設定されるゲームのバージョンで"
+"す (e.g., \"1.0\")."
 
 #: ../../source/save_load_rollback.rst:229
 msgid ""
 "``_game_runtime``: The number of seconds the game has been waiting on user "
 "input, as returned by :func:`renpy.get_game_runtime` at the time of saving."
 msgstr ""
+"``_game_runtime``: 保存時に :func:`renpy.get_game_runtime` によって返される、"
+"ゲームがユーザー入力を待機している秒数。"
 
 #: ../../source/save_load_rollback.rst:230
 msgid ""
 "``_ctime``: The UNIX timestamp (seconds since the epoch) when the save was "
 "created."
 msgstr ""
+"``_ctime`` : セーブが作成されたときのUNIXタイムスタンプ(エポックからの秒)。"
 
 #: ../../source/save_load_rollback.rst:231
 msgid ""
 "``_screenshot``: A displayable for the save’s screenshot, accessible via :"
 "func:`renpy.list_saved_games` or :func:`FileScreenshot`."
 msgstr ""
+"``_screenshot`` : 保存したスクリーンショットの Displayable で、 :func:`renpy."
+"list_saved_games` または :func:`FileScreenshot` からアクセスできます。"
 
 #: ../../source/save_load_rollback.rst:233
 msgid ""
@@ -456,10 +482,17 @@ msgid ""
 "rendering. Use :var:`config.save_json_callbacks` to store complex metadata "
 "safely, or use ``substitute False`` when displaying it as :class:`Text`."
 msgstr ""
+"メタデータは JSON で保存されるため、文字列、数値、リスト、辞書など、JSON が表"
+"すことができる値に制限されます。( :var:`save_name` または ``extra_info`` か"
+"ら) ``_save_name`` を使用する場合、 ``[]`` や ``{}`` のような特殊文字は、セー"
+"ブ/ロードUI で Ren'Py のテキストパーサーによって直接解釈されると問題を引き起"
+"こし、エラーや予期しないレンダリングを引き起こす可能性があります。複雑なメタ"
+"データを安全に保存するには :var:`config.save_json_callbacks` を使用するか、 :"
+"class:`Text` として表示するときに ``substitute False`` を使用します。"
 
 #: ../../source/save_load_rollback.rst:240
 msgid "Traceback Saves"
-msgstr ""
+msgstr "トレースバック保存"
 
 #: ../../source/save_load_rollback.rst:242
 msgid ""
@@ -469,12 +502,19 @@ msgid ""
 "files, the traceback is stored in the file metadata, and can be retrieved "
 "with::"
 msgstr ""
+"可能であれば、Ren'Pyは捕捉されない例外が発生したときに、ゲームの状態とトレー"
+"スバックの両方を含むセーブを作成します。これらのセーブは、 :file:"
+"`_tracesave-1` から :file:`_tracesave-10` という名前のスロットに格納されま"
+"す。これらのファイルでは、トレースバックはファイルにメタデータとして格納さ"
+"れ、次のように取得できます。 ::"
 
 #: ../../source/save_load_rollback.rst:249
 msgid ""
 "It's also possible to use :func:`renpy.get_save_data` to retrieve the "
 "variables the game used when the traceback save was created."
 msgstr ""
+"また、 :func:`renpy.get_save_data` を使用して、トレースバック セーブの作成時"
+"にゲームが使用した変数を取得もできます。"
 
 #: ../../source/save_load_rollback.rst:252
 msgid ""
@@ -483,6 +523,9 @@ msgid ""
 "a traceback save to retrieve the game data without loading into an error "
 "state."
 msgstr ""
+"新しい :func:`renpy.get_save_data` 関数によりセーブをロードせずに、特定の保存"
+"スロットのデータを取り出せます。これは、トレースバックの保存と併用して、エ"
+"ラー状態にロードせずにゲーム データを取得できます。"
 
 #: ../../source/save_load_rollback.rst:259
 msgid "Save Functions and Variables"
@@ -520,6 +563,188 @@ msgid ""
 msgstr ""
 "高級なセーブ用のアクションが :doc:`アクション <screen_actions>` で説明されて"
 "います。さらに以下の低級なセーブロード用の関数があります。"
+
+#: ../../source/inc/loadsave:5
+msgid ""
+"Returns true if `filename` (e.g. '3-2' for page 3, slot 2) exists as a save "
+"slot, and False otherwise."
+msgstr ""
+"`filename` (例: ページ3のスロット2なら '3-2')がセーブスロットに存在するとき"
+"に True を返し、それ以外の時に False を返します。"
+
+#: ../../source/inc/loadsave:9
+msgid ""
+"Copies the save at `old` to `new`. (Does nothing if `old` does not exist.)"
+msgstr ""
+"セーブを `old` から `new` へコピーします( `old` が存在しなければ何もしませ"
+"ん )。"
+
+#: ../../source/inc/loadsave:14
+msgid ""
+"This loads a game's data from the save slot `filename` (e.g. '3-2' for page "
+"3, slot 2), without actually changing the game state. It returns a "
+"dictionary containing variable names relative to the default store, mapped "
+"to the value of those variables at the time of the save."
+msgstr ""
+"これにより、ゲームの状態を実際に変更することなく、セーブスロットの "
+"`filename` (例: ページ3のスロット2なら '3-2')からゲームのデータを読み込みま"
+"す。デフォルト store を基準とした変数名を含む辞書を返し、保存時のそれらの変数"
+"の値にマップされます。"
+
+#: ../../source/inc/loadsave:20
+msgid ""
+"Returns a list of non-empty save slots. If `regexp` exists, only slots that "
+"begin with `regexp` are returned. The slots are sorted in string-order."
+msgstr ""
+"空でないセーブスロットのリストが返されます。 `regexp` が存在すれば `regexp` "
+"で始まるスロットのみが返されます。スロットは文字列の順に並べられます。"
+
+#: ../../source/inc/loadsave:24 ../../source/inc/loadsave:38
+msgid "For a list of useful regular expressions, see :func:`list_saved_games`"
+msgstr ""
+"便利な正規表現のリストについては、 :func:`list_saved_games` を参照してくださ"
+"い。"
+
+#: ../../source/inc/loadsave:28
+msgid ""
+"Loads the game state from the save slot `filename` (e.g. '3-2' for page 3, "
+"slot 2). If the file is loaded successfully, this function never returns."
+msgstr ""
+"セーブスロット `filename` (例: ページ3のスロット2なら '3-2')からゲームの状態"
+"をロードします。ファイルが正しくロードされると、この関数は返りません。"
+
+#: ../../source/inc/loadsave:33
+msgid ""
+"Returns the name of the newest save slot (the save slot with the most recent "
+"modification time), or None if there are no (matching) saves."
+msgstr ""
+"最も新しいセーブスロットの名前 (セーブスロットとともに、最近の更新日時) を返"
+"すか、(マッチする)セーブがないときは None を返します。"
+
+#: ../../source/inc/loadsave:36
+msgid "If `regexp` exists, only slots that begin with `regexp` are returned."
+msgstr "`regexp` が存在すれば `regexp` で始まるスロットのみが返されます。"
+
+#: ../../source/inc/loadsave:42
+msgid ""
+"Renames a save from `old` to `new`. (Does nothing if `old` does not exist.)"
+msgstr ""
+"セーブを `old` から `new` へリネームします ( `old` が存在しなければ何もしませ"
+"ん )。"
+
+#: ../../source/inc/loadsave:47
+msgid "Saves the game to the slot identified by `filename`."
+msgstr "`filename` で識別されるスロットにゲームを保存します。"
+
+#: ../../source/inc/loadsave:51
+msgid "`filename`"
+msgstr "`filename`"
+
+#: ../../source/inc/loadsave:50
+msgid ""
+"A string giving the name of a save slot. Despite the variable name, this "
+"corresponds only loosely to filenames (e.g. '3-2' for page 3, slot 2)"
+msgstr ""
+"セーブスロットの名前の文字列です。変数名にもかかわらず、ファイル名に大まかに"
+"対応するだけです (例: ページ3のスロット2なら '3-2')。"
+
+#: ../../source/inc/loadsave:57
+msgid "`extra_info`"
+msgstr "`extra_info`"
+
+#: ../../source/inc/loadsave:54
+msgid ""
+"A string stored as the ``_save_name`` field in the save file’s metadata. "
+"This can be retrieved via :func:`renpy.slot_json` (using the \"_savename\" "
+"key, :func:`FileJson` (with ``key=None`` or ``key=\"_save_name\"``), or as "
+"the ``extra_info`` field in :func:`renpy.list_saved_games`. It is typically "
+"used with the global :var:`save_name` variable (e.g., ``\"Chapter 1\"``). If "
+"empty, ``_save_name`` will be an empty string."
+msgstr ""
+"セーブファイルのメタデータに ``_save_name`` フィールドとして保存される文字列"
+"です。これは :func:`renpy.slot_json` から \"_savename\" キーを使用して所得す"
+"るか、 :func:`FileJson` の ``key=None`` または ``key=\"_save_name\"``, や :"
+"func:`renpy.list_saved_games` の ``extra_info`` フィールドとして所得できま"
+"す。通常、グローバルな :var:`save_name` 変数 (e.g., ``\"Chapter 1\"``) と共に"
+"使用されます。空であれば ``_save_name`` は空の文字列になります。"
+
+#: ../../source/inc/loadsave:61
+msgid "`extra_json`"
+msgstr "`extra_json`"
+
+#: ../../source/inc/loadsave:60
+msgid ""
+"A dictionary of additional metadata to be stored in the save file. This is "
+"merged with the default metadata and the metadata from :var:`config."
+"save_json_callbacks`."
+msgstr ""
+"セーブファイルに保存れる追加のタデータの辞書です。これはデフォルトのメタデー"
+"タと :var:`config.save_json_callbacks` によるメタデータに統合されます。 "
+
+#: ../../source/inc/loadsave:65 ../../source/inc/loadsave:75
+msgid "Example::"
+msgstr "例 ::"
+
+#: ../../source/inc/loadsave:64
+msgid "$ save_name = \"Chapter 1\" $ renpy.save(\"1-1\", extra_info=save_name)"
+msgstr ""
+"$ save_name = \"Chapter 1\" $ renpy.save(\"1-1\", extra_info=save_name)"
+
+#: ../../source/inc/loadsave:67
+msgid ""
+"To store additional or complex metadata, use :var:`config."
+"save_json_callbacks` to add custom fields to the metadata dictionary."
+msgstr ""
+"追加の、または複雑なメタデータを保存するには、 :var:`config."
+"save_json_callbacks` を使用してカスタムフィールドをメタデータ辞書に追加しま"
+"す。"
+
+#: ../../source/inc/loadsave:69
+msgid ":func:`renpy.take_screenshot` should be called before this function."
+msgstr ":func:`renpy.take_screenshot` がこの関数の前に呼び出されるべきです。"
+
+#: ../../source/inc/loadsave:73
+msgid ""
+"Returns a dictionary containing the metadata of the save file in `slotname`, "
+"including ``_save_name``, ``_renpy_version``, ``_version``, "
+"``_game_runtime``, ``_ctime``, and any custom fields added via :var:`config."
+"save_json_callbacks` at the time of saving. If the slot is empty, `None` is "
+"returned. For save/load screen actions, :func:`FileJson` provides a subset "
+"of these fields (excluding custom fields)."
+msgstr ""
+"`slotname` のセーブファイルのメタデータを含む辞書を返し、これはは "
+"``_save_name``, ``_renpy_version``, ``_version``, ``_game_runtime``, "
+"``_ctime``, :var:`config.save_json_callbacks` によって保存時に追加されるカス"
+"タムフィールドを含みます。スロットが空なら、 `None` が返されます。 save/load "
+"スクリーン actions に対して、 :func:`FileJson` はこれらのフィールドの(カスタ"
+"ムフィールドを除く)サブセットを提供します。"
+
+#: ../../source/inc/loadsave:89
+msgid "Returns the modification time for `slot`, or None if the slot is empty."
+msgstr "`slot` の更新日時を返すか、スロットが空のときは None を返します。"
+
+#: ../../source/inc/loadsave:93
+msgid ""
+"Returns a display that can be used as the screenshot for `slotname`, or None "
+"if the slot is empty."
+msgstr ""
+"`slotname` に対するスクリーンショットとして利用可能な Displayable を返すか、"
+"スロットが空のときは None を返します。"
+
+#: ../../source/inc/loadsave:98
+msgid ""
+"Causes a screenshot to be taken. This screenshot will be saved as part of a "
+"saved game."
+msgstr ""
+"スクリーンショットを撮ります。このスクリーンショットはセーブの一部として保存"
+"されます。"
+
+#: ../../source/inc/loadsave:103
+msgid ""
+"Deletes the save slot with the given name (e.g. '3-2' for page 3, slot 2)."
+msgstr ""
+"与えられた名前のセーブスロット (例えばページ3のスロット2なら '3-2')を削除しま"
+"す。"
 
 #: ../../source/save_load_rollback.rst:278
 msgid "Retaining Data After Load"
@@ -559,9 +784,17 @@ msgstr ""
 "ける新しいデータで再び実行されます。"
 
 #: ../../source/save_load_rollback.rst:294
-#: ../../source/save_load_rollback.rst:581
+#: ../../source/save_load_rollback.rst:581 ../../source/inc/rollbackclasses:9
 msgid "For example::"
 msgstr "例 ::"
+
+#: ../../source/inc/retain_after_load:5
+msgid ""
+"Causes data modified between the current statement and the statement "
+"containing the next checkpoint to be retained when a load occurs."
+msgstr ""
+"現在のステートメントと次のチェックポイントを含むステートメントの間で変更され"
+"たデータを、ロード時に保持します。"
 
 #: ../../source/save_load_rollback.rst:314
 msgid "Rollback"
@@ -732,6 +965,165 @@ msgid ""
 msgstr ""
 "renpy.checkpoint が呼び出された後はゲームとユーザーとのインタラクションがない"
 "ことが重要です ( もしあれば、ユーザーはロールバック出来なくなります )。"
+
+#: ../../source/inc/rollback:5
+msgid "Returns true if we can rollback."
+msgstr "ロールバック可能なら True を返します。"
+
+#: ../../source/inc/rollback:9
+msgid ""
+"Makes the current statement a checkpoint that the user can rollback to. Once "
+"this function has been called, there should be no more interaction with the "
+"user in the current statement."
+msgstr ""
+"現在のステートメントをユーザーがロールバックできるチェックポイントにします。"
+"一旦この関数が呼ばれると、現在のステートメントではもうユーザーへのインタラク"
+"ションはありません。"
+
+#: ../../source/inc/rollback:13
+msgid "This will also clear the current screenshot used by saved games."
+msgstr "ゲームの保存に使用するスクリーンショットも消去します。"
+
+#: ../../source/inc/rollback:17
+msgid "`data`"
+msgstr "`data`"
+
+#: ../../source/inc/rollback:16
+msgid ""
+"This data is returned by :func:`renpy.roll_forward_info` when the game is "
+"being rolled back."
+msgstr ""
+"この data はゲームがロールバック中に :func:`renpy.roll_forward_info` によって"
+"返されます。"
+
+#: ../../source/inc/rollback:20
+msgid "`hard`"
+msgstr "`hard`"
+
+#: ../../source/inc/rollback:20
+msgid ""
+"If true, this is a hard checkpoint that rollback will stop at. If false, "
+"this is a soft checkpoint that will not stop rollback."
+msgstr ""
+"True なら、これはロールバックが止まるハードチェックポイントです。 False な"
+"ら、これはロールバックが止まらないソフトチェックポイントです。"
+
+#: ../../source/inc/rollback:25
+msgid ""
+"Given a rollback_identifier from a HistoryEntry object, returns the number "
+"of checkpoints that need to be passed to :func:`renpy.rollback` to reach "
+"that identifier. Returns None of the identifier is not in the rollback "
+"history."
+msgstr ""
+"HistoryEntry オブジェクトの rollback_identifier を指定して、その identifier "
+"に到達するのに :func:`renpy.rollback` が通過する必要のあるチェックポイントの"
+"数を返します。"
+
+#: ../../source/inc/rollback:32
+msgid "Returns true if the game has been rolled back."
+msgstr "ゲームがロールバック中なら True を返します。"
+
+#: ../../source/inc/rollback:36
+msgid ""
+"When in rollback, returns the data that was supplied to :func:`renpy."
+"checkpoint` the last time this statement executed. Outside of rollback, "
+"returns None."
+msgstr ""
+"ロールバック時は最後にこのステートメントを実行したときに :func:`renpy."
+"checkpoint` に渡されたデータが返されます。ロールバックの外では None を返しま"
+"す。"
+
+#: ../../source/inc/rollback:41
+msgid "Rolls the state of the game back to the last checkpoint."
+msgstr "ゲームの状態を最後のチェックポイントまで巻き戻します。"
+
+#: ../../source/inc/rollback:46
+msgid "`force`"
+msgstr "`force`"
+
+#: ../../source/inc/rollback:44
+msgid ""
+"If true, the rollback will occur in all circumstances. Otherwise, the "
+"rollback will only occur if rollback is enabled in the store, context, and "
+"config."
+msgstr ""
+"True の場合、いかなる状況であってもロールバックが発生します。それ以外の場合"
+"は、store、context、config で有効化されている場合のみ発生します。"
+
+#: ../../source/inc/rollback:50
+msgid "`checkpoints`"
+msgstr "`checkpoints`"
+
+#: ../../source/inc/rollback:49
+msgid ""
+"Ren'Py will roll back through this many calls to renpy.checkpoint. It will "
+"roll back as far as it can, subject to this condition."
+msgstr ""
+"Ren'Py は、ここで指定された renpy.checkpoint の数だけロールバックします。この"
+"条件を満たす範囲で、可能な限りロールバックします。"
+
+#: ../../source/inc/rollback:54
+msgid "`defer`"
+msgstr "`defer`"
+
+#: ../../source/inc/rollback:53
+msgid ""
+"If true, the call will be deferred until control returns to the main context."
+msgstr ""
+"True の場合、呼び出しはメインコンテキストのコードが実行されるまで遅延されま"
+"す。"
+
+#: ../../source/inc/rollback:58
+msgid "`greedy`"
+msgstr "`greedy`"
+
+#: ../../source/inc/rollback:57
+msgid ""
+"If true, rollback will finish just after the previous checkpoint. If false, "
+"rollback finish just before the current checkpoint."
+msgstr ""
+"True ならロールバッグは以前のチェックポイントの直後まで実行され、 False なら"
+"現在のチェックポイントの直前まで実行されます。"
+
+#: ../../source/inc/blockrollback:29 ../../source/inc/blockrollback:61
+#: ../../source/inc/rollback:61
+msgid "`label`"
+msgstr "`label`"
+
+#: ../../source/inc/rollback:61
+msgid "If not None, a label that is called when rollback completes."
+msgstr ""
+"None を指定するか、ロールバックが完了した時に呼び出されるラベルを指定します。"
+
+#: ../../source/inc/rollback:65
+msgid "`abnormal`"
+msgstr "`abnormal`"
+
+#: ../../source/inc/rollback:64
+msgid ""
+"If true, the default, script executed after the transition is run in an "
+"abnormal mode that skips transitions that would have otherwise occurred. "
+"Abnormal mode ends when an interaction begins."
+msgstr ""
+"デファルトは True で、トランジション後に実行されるスクリプトはそれ以外の発生"
+"するトランジションをスキップするアブノーマルなモードで実行されます。アブノー"
+"マルモードはインタラクションが始まると終了します。"
+
+#: ../../source/inc/rollback:70
+msgid ""
+"Rollback will skip sections of the game where rollback has been suspended."
+msgstr "ロールバックはそれが停止している間の区間をスキップします。"
+
+#: ../../source/inc/rollback:74
+msgid "`flag`:"
+msgstr "`flag`:"
+
+#: ../../source/inc/rollback:74
+msgid ""
+"When `flag` is true, rollback is suspended. When false, rollback is resumed."
+msgstr ""
+"`flag` が True なら、ロールバックは停止されます。 False ならロールバックは再"
+"開されます。"
 
 #: ../../source/save_load_rollback.rst:403
 msgid "Blocking Rollback"
@@ -919,9 +1311,128 @@ msgstr ""
 msgid "Rollback-blocking and -fixing Functions"
 msgstr "ロールバックの禁止と固定用関数"
 
+#: ../../source/inc/blockrollback:5
+msgid "Prevents the game from rolling back to before the current statement."
+msgstr "ゲームが現在のステートメントより前にロールバックすることを防ぎます。"
+
+#: ../../source/inc/blockrollback:10
+msgid ""
+"Prevents the user from changing decisions made before the current statement."
+msgstr "ユーザーが現在のステートメントより前にした決定を変更できなくします。"
+
+#: ../../source/inc/blockrollback:15
+msgid ""
+"Returns true if rollback is currently occurring and the current context is "
+"before an executed renpy.fix_rollback() statement."
+msgstr ""
+"現在ロールバックが実行され、現在のコンテキストが renpy.fix_rollback() ステー"
+"トメントが実行されるより前なら True を返します。"
+
+#: ../../source/inc/blockrollback:20 ../../source/inc/blockrollback:52
+msgid ""
+"A menu choice action that returns `value`, while managing the button state "
+"in a manner consistent with fixed rollback. (See block_all for a description "
+"of the behavior.)"
+msgstr ""
+"`value` を返す選択肢用のアクションで、固定ロールバックを考慮した方法でボタン"
+"を管理します ( 動作の詳細は block_all を参照 )。"
+
+#: ../../source/inc/blockrollback:26 ../../source/inc/blockrollback:58
+msgid ""
+"The label text of the button. For imagebuttons and hotspots this can be "
+"anything. This label is used as a unique identifier of the options within "
+"the current screen. Together with `location` it is used to store whether "
+"this option has been chosen."
+msgstr ""
+"ボタンのラベルとなるテキストです。 imagebutton や hotspot にもこれは与えられ"
+"ます。このラベルは現在のスクリーン内の選択肢のユニークな識別子として使用され"
+"ます。また、 `location` と共に、この選択肢が選択されたことがあるかどうかを保"
+"存するために使用されます。"
+
+#: ../../source/inc/blockrollback:32 ../../source/inc/blockrollback:64
+msgid "`value`"
+msgstr "`value`"
+
+#: ../../source/inc/blockrollback:32
+msgid "The location to jump to."
+msgstr "ジャンプする場所"
+
+#: ../../source/inc/blockrollback:35 ../../source/inc/blockrollback:67
+msgid "`location`"
+msgstr "`location`"
+
+#: ../../source/inc/blockrollback:35 ../../source/inc/blockrollback:67
+msgid "A unique location identifier for the current choices screen."
+msgstr "現在のスクリーンに対してユニークな場所の識別子です。"
+
+#: ../../source/inc/blockrollback:47 ../../source/inc/blockrollback:79
+msgid "`block_all`"
+msgstr "`block_all`"
+
+#: ../../source/inc/blockrollback:38 ../../source/inc/blockrollback:70
+msgid ""
+"If false, the button is given the selected role if it was the chosen choice, "
+"and insensitive if it was not selected."
+msgstr ""
+"False なら、そのボタンは選択されていたなら選択状態で、選択されていなかったら"
+"無効になります。"
+
+#: ../../source/inc/blockrollback:41 ../../source/inc/blockrollback:73
+msgid "If true, the button is always insensitive during fixed rollback."
+msgstr "True なら固定ロールバック中ボタンは常に無効です。"
+
+#: ../../source/inc/blockrollback:44 ../../source/inc/blockrollback:76
+msgid ""
+"If None, the value is taken from the :var:`config."
+"fix_rollback_without_choice` variable."
+msgstr ""
+"None なら :var:`config.fix_rollback_without_choice` 変数から値はとられます。"
+
+#: ../../source/inc/blockrollback:47 ../../source/inc/blockrollback:79
+msgid ""
+"When true is given to all items in a screen, it will become unclickable "
+"(rolling forward will still work)."
+msgstr ""
+"スクリーンのすべての要素に True が与えられると、 クリックが出来なくなります "
+"( ロールフォワードはまだ動作します ) 。"
+
+#: ../../source/inc/blockrollback:64
+msgid "The value this is returned when the choice is chosen."
+msgstr "その選択肢が選択されると返される値"
+
 #: ../../source/save_load_rollback.rst:577
 msgid "NoRollback"
 msgstr "NoRollback"
+
+#: ../../source/inc/norollback:5
+msgid ""
+"Instances of this class, and classes inheriting from this class, do not "
+"participate in rollback. Objects reachable through an instance of a "
+"NoRollback class only participate in rollback if they are reachable through "
+"other paths."
+msgstr ""
+"このクラスおよびこのクラスを継承したクラスのインスタンスはロールバックに参加"
+"しません。 NoRollback クラスのインスタンスからアクセス可能なオブジェクトはそ"
+"れが他のルートからもアクセス可能な場合のみロールバックに参加します。"
+
+#: ../../source/inc/norollback:12
+msgid ""
+"Instances of classes inheriting from this class do not participate in "
+"rollback. The difference between this and :class:`NoRollback` is that this "
+"class does not have an associated dictionary, hence can be used with "
+"``__slots__`` to reduce memory usage."
+msgstr ""
+"このクラスおよびこのクラスを継承したクラスのインスタンスはロールバックに参加"
+"しません。このクラスは :class:`NoRollback` と違い関連づけられた辞書を持たない"
+"ため、 ``__slots__`` を使用してメモリー使用量を削減できます。"
+
+#: ../../source/inc/norollback:17
+msgid ""
+"Objects reachable through an instance of a NoRollback class only participate "
+"in rollback if they are reachable through other paths."
+msgstr ""
+"NoRollback クラスのインスタンスからアクセス可能なオブジェクトはそれが他のルー"
+"トからもアクセス可能な場合のみロールバックに参加します。"
 
 #: ../../source/save_load_rollback.rst:599
 msgid "Rollback-Supporting Classes"
@@ -935,383 +1446,41 @@ msgstr ""
 "次のクラスはあなたのゲームでのロールバックのサポートを補助するためにありま"
 "す。いくつかの状況で有用でしょう。"
 
-#, fuzzy
-#~ msgid ""
-#~ "Returns true if `filename` (e.g. '3-2' for page 3, slot 2) exists as a "
-#~ "save slot, and False otherwise."
-#~ msgstr ""
-#~ "`filename` がセーブスロットに存在するときに True を返し、それ以外の時に "
-#~ "False を返します。"
-
-#~ msgid ""
-#~ "Copies the save at `old` to `new`. (Does nothing if `old` does not exist.)"
-#~ msgstr ""
-#~ "セーブを `old` から `new` へコピーします( `old` が存在しなければ何もしませ"
-#~ "ん )。"
-
-#~ msgid ""
-#~ "Returns a list of non-empty save slots. If `regexp` exists, only slots "
-#~ "that begin with `regexp` are returned. The slots are sorted in string-"
-#~ "order."
-#~ msgstr ""
-#~ "空でないセーブスロットのリストが返されます。 `regexp` が存在すれば "
-#~ "`regexp` で始まるスロットのみが返されます。スロットは文字列の順に並べられ"
-#~ "ます。"
-
-#, fuzzy
-#~ msgid ""
-#~ "Loads the game state from the save slot `filename` (e.g. '3-2' for page "
-#~ "3, slot 2). If the file is loaded successfully, this function never "
-#~ "returns."
-#~ msgstr ""
-#~ "セーブスロット `filename` からゲームの状態をロードします。ファイルが正しく"
-#~ "ロードされると、この関数は返りません。"
-
-#~ msgid ""
-#~ "Returns the name of the newest save slot (the save slot with the most "
-#~ "recent modification time), or None if there are no (matching) saves."
-#~ msgstr ""
-#~ "最も新しいセーブスロットの名前 (セーブスロットとともに、最近の更新日時) を"
-#~ "返すか、(マッチする)セーブがないときは None を返します。"
-
-#~ msgid ""
-#~ "If `regexp` exists, only slots that begin with `regexp` are returned."
-#~ msgstr "`regexp` が存在すれば `regexp` で始まるスロットのみが返されます。"
-
-#~ msgid ""
-#~ "Renames a save from `old` to `new`. (Does nothing if `old` does not "
-#~ "exist.)"
-#~ msgstr ""
-#~ "セーブを `old` から `new` へリネームします ( `old` が存在しなければ何もし"
-#~ "ません )。"
-
-#~ msgid "`filename`"
-#~ msgstr "`filename`"
-
-#, fuzzy
-#~ msgid ""
-#~ "A string giving the name of a save slot. Despite the variable name, this "
-#~ "corresponds only loosely to filenames (e.g. '3-2' for page 3, slot 2)"
-#~ msgstr ""
-#~ "セーブスロットの名前の文字列です。変数名は filename  ですが、ファイル名の"
-#~ "一部に対応するだけです。"
-
-#~ msgid "`extra_info`"
-#~ msgstr "`extra_info`"
-
-#~ msgid "`extra_json`"
-#~ msgstr "`extra_json`"
-
-#, fuzzy
-#~ msgid "Example::"
-#~ msgstr "例 ::"
-
-#~ msgid ":func:`renpy.take_screenshot` should be called before this function."
-#~ msgstr ""
-#~ ":func:`renpy.take_screenshot` がこの関数の前に呼び出されるべきです。"
-
-#~ msgid ""
-#~ "Returns the modification time for `slot`, or None if the slot is empty."
-#~ msgstr "`slot` の更新日時を返すか、スロットが空のときは None を返します。"
-
-#~ msgid ""
-#~ "Returns a display that can be used as the screenshot for `slotname`, or "
-#~ "None if the slot is empty."
-#~ msgstr ""
-#~ "`slotname` に対するスクリーンショットで利用可能な画面を返すか、スロットが"
-#~ "空のときは None を返します。"
-
-#~ msgid ""
-#~ "Causes a screenshot to be taken. This screenshot will be saved as part of "
-#~ "a saved game."
-#~ msgstr ""
-#~ "スクリーンショットを撮ります。このスクリーンショットはセーブの一部として保"
-#~ "存されます。"
-
-#, fuzzy
-#~ msgid ""
-#~ "Deletes the save slot with the given name (e.g. '3-2' for page 3, slot 2)."
-#~ msgstr "与えられた名前のセーブスロットを削除します。"
-
-#~ msgid ""
-#~ "Causes data modified between the current statement and the statement "
-#~ "containing the next checkpoint to be retained when a load occurs."
-#~ msgstr ""
-#~ "現在のステートメントと次のチェックポイントを含むステートメントの間で変更さ"
-#~ "れたデータを、ロード時に保持します。"
-
-#~ msgid "Returns true if we can rollback."
-#~ msgstr "ロールバック可能なら True を返します。"
-
-#~ msgid ""
-#~ "Makes the current statement a checkpoint that the user can rollback to. "
-#~ "Once this function has been called, there should be no more interaction "
-#~ "with the user in the current statement."
-#~ msgstr ""
-#~ "現在のステートメントをユーザーがロールバックできるチェックポイントにしま"
-#~ "す。一旦この関数が呼ばれると、現在のステートメントではもうユーザーへのイン"
-#~ "タラクションはありません。"
-
-#~ msgid "This will also clear the current screenshot used by saved games."
-#~ msgstr "ゲームの保存に使用するスクリーンショットも消去します。"
-
-#~ msgid "`data`"
-#~ msgstr "`data`"
-
-#~ msgid ""
-#~ "This data is returned by :func:`renpy.roll_forward_info` when the game is "
-#~ "being rolled back."
-#~ msgstr ""
-#~ "この data はゲームがロールバック中に :func:`renpy.roll_forward_info` に"
-#~ "よって返されます。"
-
-#~ msgid "`hard`"
-#~ msgstr "`hard`"
-
-#~ msgid ""
-#~ "If true, this is a hard checkpoint that rollback will stop at. If false, "
-#~ "this is a soft checkpoint that will not stop rollback."
-#~ msgstr ""
-#~ "True なら、これはロールバックが止まるハードチェックポイントです。 False な"
-#~ "ら、これはロールバックが止まらないソフトチェックポイントです。"
-
-#~ msgid ""
-#~ "Given a rollback_identifier from a HistoryEntry object, returns the "
-#~ "number of checkpoints that need to be passed to :func:`renpy.rollback` to "
-#~ "reach that identifier. Returns None of the identifier is not in the "
-#~ "rollback history."
-#~ msgstr ""
-#~ "HistoryEntry オブジェクトの rollback_identifier を指定して、その "
-#~ "identifier に到達するのに :func:`renpy.rollback` が通過する必要のある"
-#~ "チェックポイントの数を返します。"
-
-#~ msgid "Returns true if the game has been rolled back."
-#~ msgstr "ゲームがロールバック中なら True を返します。"
-
-#~ msgid ""
-#~ "When in rollback, returns the data that was supplied to :func:`renpy."
-#~ "checkpoint` the last time this statement executed. Outside of rollback, "
-#~ "returns None."
-#~ msgstr ""
-#~ "ロールバック時は最後にこのステートメントを実行したときに :func:`renpy."
-#~ "checkpoint` に渡されたデータが返されます。ロールバックの外では None を返し"
-#~ "ます。"
-
-#~ msgid "Rolls the state of the game back to the last checkpoint."
-#~ msgstr "ゲームの状態を最後のチェックポイントまで巻き戻します。"
-
-#~ msgid "`force`"
-#~ msgstr "`force`"
-
-#~ msgid ""
-#~ "If true, the rollback will occur in all circumstances. Otherwise, the "
-#~ "rollback will only occur if rollback is enabled in the store, context, "
-#~ "and config."
-#~ msgstr ""
-#~ "True の場合、いかなる状況であってもロールバックが発生します。それ以外の場"
-#~ "合は、store、context、config で有効化されている場合のみ発生します。"
-
-#~ msgid "`checkpoints`"
-#~ msgstr "`checkpoints`"
-
-#~ msgid ""
-#~ "Ren'Py will roll back through this many calls to renpy.checkpoint. It "
-#~ "will roll back as far as it can, subject to this condition."
-#~ msgstr ""
-#~ "Ren'Py は、ここで指定された renpy.checkpoint の数だけロールバックします。"
-#~ "この条件を満たす範囲で、可能な限りロールバックします。"
-
-#~ msgid "`defer`"
-#~ msgstr "`defer`"
-
-#~ msgid ""
-#~ "If true, the call will be deferred until control returns to the main "
-#~ "context."
-#~ msgstr ""
-#~ "True の場合、呼び出しはメインコンテキストのコードが実行されるまで遅延され"
-#~ "ます。"
-
-#~ msgid "`greedy`"
-#~ msgstr "`greedy`"
-
-#~ msgid ""
-#~ "If true, rollback will finish just after the previous checkpoint. If "
-#~ "false, rollback finish just before the current checkpoint."
-#~ msgstr ""
-#~ "True ならロールバッグは以前のチェックポイントの直後まで実行され、 False な"
-#~ "ら現在のチェックポイントの直前まで実行されます。"
-
-#~ msgid "`label`"
-#~ msgstr "`label`"
-
-#~ msgid "If not None, a label that is called when rollback completes."
-#~ msgstr ""
-#~ "None を指定するか、ロールバックが完了した時に呼び出されるラベルを指定しま"
-#~ "す。"
-
-#~ msgid "`abnormal`"
-#~ msgstr "`abnormal`"
-
-#~ msgid ""
-#~ "If true, the default, script executed after the transition is run in an "
-#~ "abnormal mode that skips transitions that would have otherwise occurred. "
-#~ "Abnormal mode ends when an interaction begins."
-#~ msgstr ""
-#~ "デファルトは True で、トランジション後に実行されるスクリプトはそれ以外の発"
-#~ "生するトランジションをスキップするアブノーマルなモードで実行されます。アブ"
-#~ "ノーマルモードはインタラクションが始まると終了します。"
-
-#~ msgid ""
-#~ "Rollback will skip sections of the game where rollback has been suspended."
-#~ msgstr "ロールバックはそれが停止している間の区間をスキップします。"
-
-#~ msgid "`flag`:"
-#~ msgstr "`flag`:"
-
-#~ msgid ""
-#~ "When `flag` is true, rollback is suspended. When false, rollback is "
-#~ "resumed."
-#~ msgstr ""
-#~ "`flag` が True なら、ロールバックは停止されます。 False ならロールバックは"
-#~ "再開されます。"
-
-#~ msgid "Prevents the game from rolling back to before the current statement."
-#~ msgstr ""
-#~ "ゲームが現在のステートメントより前にロールバックすることを防ぎます。"
-
-#~ msgid ""
-#~ "Prevents the user from changing decisions made before the current "
-#~ "statement."
-#~ msgstr ""
-#~ "ユーザーが現在のステートメントより前にした決定を変更できなくします。"
-
-#~ msgid ""
-#~ "Returns true if rollback is currently occurring and the current context "
-#~ "is before an executed renpy.fix_rollback() statement."
-#~ msgstr ""
-#~ "現在ロールバックが実行され、現在のコンテキストが renpy.fix_rollback() ス"
-#~ "テートメントが実行されるより前なら True を返します。"
-
-#~ msgid ""
-#~ "A menu choice action that returns `value`, while managing the button "
-#~ "state in a manner consistent with fixed rollback. (See block_all for a "
-#~ "description of the behavior.)"
-#~ msgstr ""
-#~ "`value` を返す選択肢用のアクションで、固定ロールバックを考慮した方法でボタ"
-#~ "ンを管理します ( 動作の詳細は block_all を参照 )。"
-
-#~ msgid ""
-#~ "The label text of the button. For imagebuttons and hotspots this can be "
-#~ "anything. This label is used as a unique identifier of the options within "
-#~ "the current screen. Together with `location` it is used to store whether "
-#~ "this option has been chosen."
-#~ msgstr ""
-#~ "ボタンのラベルとなるテキストです。 imagebutton や hotspot にもこれは与えら"
-#~ "れます。このラベルは現在のスクリーン内の選択肢のユニークな識別子として使用"
-#~ "されます。また、 `location` と共に、この選択肢が選択されたことがあるかどう"
-#~ "かを保存するために使用されます。"
-
-#~ msgid "`value`"
-#~ msgstr "`value`"
-
-#~ msgid "The location to jump to."
-#~ msgstr "ジャンプする場所"
-
-#~ msgid "`location`"
-#~ msgstr "`location`"
-
-#~ msgid "A unique location identifier for the current choices screen."
-#~ msgstr "現在のスクリーンに対してユニークな場所の識別子です。"
-
-#~ msgid "`block_all`"
-#~ msgstr "`block_all`"
-
-#~ msgid ""
-#~ "If false, the button is given the selected role if it was the chosen "
-#~ "choice, and insensitive if it was not selected."
-#~ msgstr ""
-#~ "False なら、そのボタンは選択されていたなら選択状態で、選択されていなかった"
-#~ "ら無効になります。"
-
-#~ msgid "If true, the button is always insensitive during fixed rollback."
-#~ msgstr "True なら固定ロールバック中ボタンは常に無効です。"
-
-#~ msgid ""
-#~ "If None, the value is taken from the :var:`config."
-#~ "fix_rollback_without_choice` variable."
-#~ msgstr ""
-#~ "None なら :var:`config.fix_rollback_without_choice` 変数から値はとられま"
-#~ "す。"
-
-#~ msgid ""
-#~ "When true is given to all items in a screen, it will become unclickable "
-#~ "(rolling forward will still work)."
-#~ msgstr ""
-#~ "スクリーンのすべての要素に True が与えられると、 クリックが出来なくなりま"
-#~ "す ( ロールフォワードはまだ動作します ) 。"
-
-#~ msgid "The value this is returned when the choice is chosen."
-#~ msgstr "その選択肢が選択されると返される値"
-
-#~ msgid ""
-#~ "Instances of this class, and classes inheriting from this class, do not "
-#~ "participate in rollback. Objects reachable through an instance of a "
-#~ "NoRollback class only participate in rollback if they are reachable "
-#~ "through other paths."
-#~ msgstr ""
-#~ "このクラスおよびこのクラスを継承したクラスのインスタンスはロールバックに参"
-#~ "加しません。 NoRollback クラスのインスタンスからアクセス可能なオブジェクト"
-#~ "はそれが他のルートからもアクセス可能な場合のみロールバックに参加します。"
-
-#~ msgid ""
-#~ "Instances of classes inheriting from this class do not participate in "
-#~ "rollback. The difference between this and :class:`NoRollback` is that "
-#~ "this class does not have an associated dictionary, hence can be used with "
-#~ "``__slots__`` to reduce memory usage."
-#~ msgstr ""
-#~ "このクラスおよびこのクラスを継承したクラスのインスタンスはロールバックに参"
-#~ "加しません。このクラスは :class:`NoRollback` と違い関連づけられた辞書を持"
-#~ "たないため、 ``__slots__`` を使用してメモリー使用量を削減できます。"
-
-#~ msgid ""
-#~ "Objects reachable through an instance of a NoRollback class only "
-#~ "participate in rollback if they are reachable through other paths."
-#~ msgstr ""
-#~ "NoRollback クラスのインスタンスからアクセス可能なオブジェクトはそれが他の"
-#~ "ルートからもアクセス可能な場合のみロールバックに参加します。"
-
-#~ msgid ""
-#~ "MultiRevertable is a mixin class that allows an object to inherit from "
-#~ "more than one kind of revertable object. To use it, from MultiRevertable, "
-#~ "then from the revertable classes you want to inherit from."
-#~ msgstr ""
-#~ "MultiRevertable はオブジェクトが一つ以上のロールバック可能ななオブジェクト"
-#~ "を継承できるようにする Mixin クラスです。 これを使うにはまず "
-#~ "MultiRevertable, 次に継承したいロールバック可能なクラスの順に継承します。"
-
-#~ msgid ""
-#~ "will create an class that will rollback both its dict contents and object "
-#~ "fields."
-#~ msgstr ""
-#~ "この例はその辞書の内容とオブジェクトのフィールドの両方をロールバックさせる"
-#~ "クラスを作成します。"
-
-#~ msgid ""
-#~ "This is a revertable version of collections.defaultdict. It takes a "
-#~ "factory function. If a key is accessed that does not exist, the "
-#~ "`default_factory` function is called with the key as an argument, and the "
-#~ "result is returned."
-#~ msgstr ""
-#~ "これは collections.defaultdict のロールバック可能なバージョンです。これは"
-#~ "ファクトリ関数を受け取ります。存在しないキーを受け取ると "
-#~ "`default_factory` 関数がそのキーを引数として呼び出され、結果を返します。"
-
-#~ msgid ""
-#~ "While the default_factory attribute is present on this object, it does "
-#~ "not participate in rollback, and so should not be changed."
-#~ msgstr ""
-#~ "このオブジェクトに default_factory 属性がある間は、ロールバックに参加しな"
-#~ "いため、変更するべきではありません。"
+#: ../../source/inc/rollbackclasses:5
+msgid ""
+"MultiRevertable is a mixin class that allows an object to inherit from more "
+"than one kind of revertable object. To use it, from MultiRevertable, then "
+"from the revertable classes you want to inherit from."
+msgstr ""
+"MultiRevertable はオブジェクトが一つ以上のロールバック可能ななオブジェクトを"
+"継承できるようにする Mixin クラスです。 これを使うにはまず MultiRevertable, "
+"次に継承したいロールバック可能なクラスの順に継承します。"
+
+#: ../../source/inc/rollbackclasses:14
+msgid ""
+"will create an class that will rollback both its dict contents and object "
+"fields."
+msgstr ""
+"この例はその辞書の内容とオブジェクトのフィールドの両方をロールバックさせるク"
+"ラスを作成します。"
+
+#: ../../source/inc/rollbackclasses:19
+msgid ""
+"This is a revertable version of collections.defaultdict. It takes a factory "
+"function. If a key is accessed that does not exist, the `default_factory` "
+"function is called with the key as an argument, and the result is returned."
+msgstr ""
+"これは collections.defaultdict のロールバック可能なバージョンです。これはファ"
+"クトリ関数を受け取ります。存在しないキーを受け取ると `default_factory` 関数が"
+"そのキーを引数として呼び出され、結果を返します。"
+
+#: ../../source/inc/rollbackclasses:24
+msgid ""
+"While the default_factory attribute is present on this object, it does not "
+"participate in rollback, and so should not be changed."
+msgstr ""
+"このオブジェクトに default_factory 属性がある間は、ロールバックに参加しないた"
+"め、変更するべきではありません。"
 
 #~ msgid ""
 #~ "Lists the save games. For each save game, returns a tuple containing:"
