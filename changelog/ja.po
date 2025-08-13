@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-13 02:10+0900\n"
-"PO-Revision-Date: 2025-08-13 02:15+0900\n"
+"PO-Revision-Date: 2025-08-13 12:13+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -27,9 +27,8 @@ msgid "*There is also a list of* :doc:`incompatible changes <incompatible>`"
 msgstr "また、 :doc:`非互換の変更 <incompatible>` のリストもあります。"
 
 #: ../../source/changelog.rst:10
-#, fuzzy
 msgid "8.4.1"
-msgstr "8.4.0"
+msgstr "8.4.1"
 
 #: ../../source/changelog.rst:13 ../../source/changelog.rst:507
 #: ../../source/changelog.rst:536 ../../source/changelog.rst:575
@@ -54,27 +53,32 @@ msgid ""
 "Ren'Py will no longer report \"Leaking texture: 0\" warnings, which could be "
 "spurious in some cases."
 msgstr ""
+"Ren'Pyは、場合によっては偽の可能性がある \"Leaking texture: 0\" の警告を報告"
+"しなくなりました。"
 
 #: ../../source/changelog.rst:17
 msgid ""
 "On the web platform, textures are reloaded when the browser window is "
 "resized, preventing the textures from appearing transparent or black."
 msgstr ""
+"Web プラットフォームでは、ブラウザー ウィンドウのサイズを変更するとテクスチャ"
+"が再読み込みされ、テクスチャが透明または黒く表示されないようにします。"
 
 #: ../../source/changelog.rst:20
 msgid ""
 "Playing a movie on the web platform no longer causes Ren'Py to produce a "
 "stream of warnings."
 msgstr ""
+"ウェブプラットフォームでムービーを再生しても、Ren'Pyが一連の警告を生成するこ"
+"とがなくなりました。"
 
 #: ../../source/changelog.rst:22
-#, fuzzy
 msgid ""
 "The :func:`gui.SetPreference` action once again rebuilds the styles after "
 "the preference is set."
 msgstr ""
-":func:`Preferences` 関数はレンダーおよびアクセシビリティーメニューへアクセス"
-"するアクションを返せるようになりました。"
+":func:`gui.SetPreference` アクションは、 Preference が設定された後にスタイル"
+"をもう一度再構築します。"
 
 #: ../../source/changelog.rst:24
 msgid ""
@@ -82,6 +86,9 @@ msgid ""
 "for :class:`AlphaDissolve` transitions and :func:`AlphaBlend` displayables "
 "with mismatched child sizes, now works as intended."
 msgstr ""
+"子サイズが一致しない :class:`AlphaDissolve` トランジションと :func:"
+"`AlphaBlend` Displayable オブジェクトの後方互換性を提供する config."
+"dissolve_shrinks オプションが、意図したとおりに機能するようになりました。"
 
 #: ../../source/changelog.rst:27
 msgid ""
@@ -89,16 +96,21 @@ msgid ""
 "important for transferring translations from the launcher to newly-created "
 "games, ensuring new non-English games are set up properly."
 msgstr ""
+"ゲーム間で翻訳をコピーすることが正しく機能するようになりました。これは、ラン"
+"チャーから新しく作成されたゲームに翻訳を転送し、英語以外の新しいゲームが適切"
+"に設定されるようにする場合に特に重要です。"
 
 #: ../../source/changelog.rst:30
 msgid ""
 "Diagnostic print statements that could appear when playing movies on the web "
 "platform have been eliminated."
 msgstr ""
+"Web プラットフォームでムービーを再生するときに表示されうる診断印刷ステートメ"
+"ントは削除されました。"
 
 #: ../../source/changelog.rst:32
 msgid "The pixellate transition now functions as expected."
-msgstr ""
+msgstr "pixellate トランジションが期待どおりに機能するようになりました。"
 
 #: ../../source/changelog.rst:35 ../../source/changelog.rst:308
 #: ../../source/changelog.rst:924 ../../source/changelog.rst:1558
@@ -108,12 +120,11 @@ msgid "Features"
 msgstr "新機能"
 
 #: ../../source/changelog.rst:37
-#, fuzzy
 msgid ""
 "Ren'Py now scans for templates in subdirectories of the projects directory."
 msgstr ""
-"Ren'Py は新しく libs ディレクトリで `.rpe` と `.rpe.py` ファイルも検索するよ"
-"うになりました。"
+"Ren'Pyは、プロジェクトディレクトリーのサブディレクトリにあるテンプレートをス"
+"キャンするようになりました。"
 
 #: ../../source/changelog.rst:39
 msgid ""
@@ -122,6 +133,11 @@ msgid ""
 "load the resources in a Python package, even if that Python package is "
 "stored in an RPA archive or an Android APK or asset pack."
 msgstr ""
+"Ren'Py は Python の `importlib.resources <https://docs.python.org/3.12/"
+"library/importlib.resources.html>`_ モジュールをサポートするようになりまし"
+"た。 Python パッケージが RPA アーカイブや Android APK, アセットパックに格納さ"
+"れていたとしても、これは Python のパッケージにあるリソースをロードする方法を"
+"提供します。"
 
 #: ../../source/changelog.rst:44 ../../source/changelog.rst:631
 #: ../../source/changelog.rst:703 ../../source/changelog.rst:780
@@ -139,10 +155,12 @@ msgid ""
 "number of arguments was too slow, to be included in lint, and so this check "
 "has been removed for the time being."
 msgstr ""
+"間違った引数で翻訳関数が呼び出されたときの lint チェックは遅すぎて lint に含"
+"めることができなかったため、このチェックは当面削除されました。"
 
 #: ../../source/changelog.rst:49
 msgid "Support for right-to-left languages is now enabled by default."
-msgstr ""
+msgstr "右から左に記述する言語のサポートがデフォルトで有効になりました。"
 
 #: ../../source/changelog.rst:51
 msgid ""
@@ -155,6 +173,14 @@ msgid ""
 "Ren'Py, but we recommend that you do not rely on the ``__file__`` attribute "
 "in your code, and use importlib.resources instead."
 msgstr ""
+"ディスクからPythonモジュールまたはパッケージをロードする際、Ren'Pyは "
+"``__file__`` 属性にモジュールまたはパッケージの絶対パスを設定するように戻りま"
+"した。これにより、Ren'Py 8.4.0で行われたゲームディレクトリを基準とした相対パ"
+"スに ``__file__`` 属性を設定し、 RPA アーカイブまたは Android APK からモ"
+"ジュールを読み込むときは、 ``$game`` で始まる相対パスに設定する変更が元に戻り"
+"ました。この変更により、より純粋な Python パッケージが Ren'Py で動作するよう"
+"になりますが、コード内で ``__file__`` 属性に依存せず、代わりに importlib."
+"resources の使用を推奨します。"
 
 #: ../../source/changelog.rst:57
 msgid ""
@@ -162,6 +188,9 @@ msgid ""
 "<incompatible-8.4.1>` caused by the constant power panning change in Ren'Py "
 "8.1. (This can also be worked around by adjusting mixer volumes.)"
 msgstr ""
+"Ren'Py 8.1 で常時パンを変更すると引き起こされる :ref:`オーディオボリューム "
+"<incompatible-8.4.1>` の低下を戻しました(これは、ミキサーの音量を調整すること"
+"でも回避できます)。"
 
 #: ../../source/changelog.rst:64
 msgid "8.4.0"
@@ -369,7 +398,7 @@ msgid ""
 "textures that are set up to sample textures. These transforms can be "
 "supplied a displayable or a string that becomes a displayable."
 msgstr ""
-" Ren'Py は Transform 内部での sampler2D 型の uniform をサポートするようになり"
+"Ren'Py は Transform 内部での sampler2D 型の uniform をサポートするようになり"
 "ました。これらは sample テクスチャに設定されるテクスチャです。これらの "
 "transform には displayable や displayable になる文字列が供給されます。"
 
