@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 18:27+0900\n"
-"PO-Revision-Date: 2025-05-18 14:37+0900\n"
+"POT-Creation-Date: 2025-12-06 19:33+0900\n"
+"PO-Revision-Date: 2025-12-06 20:50+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -380,8 +380,8 @@ msgstr ""
 "(/) で始まり、先入れ先出しの順で閉じられます。各閉じタグは対応するタグの開始"
 "と一致しなければなりません。そうでなければ Ren'Py は lint で警告を出します。"
 
-#: ../../source/text.rst:172 ../../source/text.rst:638
-#: ../../source/text.rst:675 ../../source/text.rst:782
+#: ../../source/text.rst:172 ../../source/text.rst:639
+#: ../../source/text.rst:676 ../../source/text.rst:762
 msgid "For example::"
 msgstr "例 ::"
 
@@ -613,22 +613,22 @@ msgstr ""
 msgid ""
 "The outline text tag changes all the outlines (including drop shadows) to "
 "the given color. The color should be in #rgb, #rgba, #rrggbb, or #rrggbbaa "
-"format. ::"
+"format. This will only adjust existing outlines, it does not add them. ::"
 msgstr ""
 "outlinecolor テキストタグは(影を含む)すべてのアウトラインを指定の色に変更しま"
-"す。色は #rgb, #rgba, #rrggbb, または #rrggbbaa の形式にしてください(訳注 こ"
-"のタグは既存のアウトラインの色を変更するものなので、変更前にアウトラインがな"
-"ければ機能しません。通常アウトラインを使用しない場合、このタグを使用するには"
-"予め透明なアウトラインを使用するなどの必要があります)。::"
+"す。色は #rgb, #rgba, #rrggbb, または #rrggbbaa の形式にしてください。これは"
+"既存のアウトラインの色を変更するのみで、追加はしません(訳注 なので、変更前に"
+"アウトラインがなければ機能しません。通常アウトラインを使用しない場合、このタ"
+"グを使用するには予め透明なアウトラインを使用するなどの必要があります)。::"
 
-#: ../../source/text.rst:359
+#: ../../source/text.rst:360
 msgid ""
 "The plain tag ensures the text does not have bold, italics, underline, or "
 "strikethrough applied. ::"
 msgstr ""
 "plain タグはテキストから太字、イタリック、下線、打ち消し線をなくします。 ::"
 
-#: ../../source/text.rst:366
+#: ../../source/text.rst:367
 msgid ""
 "The ruby bottom tag marks text between itself and its closing tag as ruby "
 "bottom text. See the section on :ref:`Ruby Text <ruby-text>` for more "
@@ -637,7 +637,7 @@ msgstr ""
 "ルビ下部タグは自身からその閉じタグまでの間のテキストをルビをふる対象として"
 "マークします。詳細は :ref:`ルビテキスト <ruby-text>` の節をご覧ください。"
 
-#: ../../source/text.rst:372
+#: ../../source/text.rst:373
 msgid ""
 "The ruby top tag marks text between itself and its closing tag as ruby top "
 "text. See the section on :ref:`Ruby Text <ruby-text>` for more information."
@@ -645,7 +645,7 @@ msgstr ""
 "ルビ上部タグは自身からその閉じタグまでの間のテキストをルビの内容としてマーク"
 "します。詳細は :ref:`ルビテキスト <ruby-text>` の節をご覧ください。"
 
-#: ../../source/text.rst:378
+#: ../../source/text.rst:379
 msgid ""
 "The strikethrough tag draws a line through text between itself and its "
 "closing tag. ::"
@@ -653,7 +653,7 @@ msgstr ""
 "打ち消し線タグは自身からその閉じタグまでの間のテキストに打ち消し線を引きま"
 "す。 ::"
 
-#: ../../source/text.rst:385
+#: ../../source/text.rst:386
 msgid ""
 "The shader tag applies a text shader to a section of text. The argument is "
 "the name of the shader to apply. ::"
@@ -661,11 +661,11 @@ msgstr ""
 "shader タグは、テキストのセクションにテキストシェーダーを適用します。引数は、"
 "適用するシェーダーの名前です。::"
 
-#: ../../source/text.rst:390
+#: ../../source/text.rst:391
 msgid "See :doc:`textshaders` for more information."
 msgstr "詳細については、:doc:`textshaders` を参照してください。"
 
-#: ../../source/text.rst:394
+#: ../../source/text.rst:395
 msgid ""
 "The size tag changes the size of text between itself and its closing tag. "
 "The argument should be an integer, optionally preceded by + or -. If the "
@@ -676,7 +676,7 @@ msgstr ""
 "は整数で、+ か - を前置できます。引数が整数だけなら、その大きさに設定されま"
 "す。そうでなければ、大きさが指定された分だけ増減されます。 ::"
 
-#: ../../source/text.rst:402
+#: ../../source/text.rst:403
 msgid ""
 "You can also provide a floating point number preceded by a \\*, in which "
 "case the size will be multiplied by that number and then rounded down. ::"
@@ -684,7 +684,7 @@ msgstr ""
 "\\* が先頭にくる浮動小数も指定でき、この場合、サイズはその数を掛けられた上で"
 "丸められます。"
 
-#: ../../source/text.rst:410
+#: ../../source/text.rst:411
 msgid ""
 "The space tag is a self-closing tag that inserts horizontal space into a "
 "line of text. As an argument, it takes an integer giving the number of "
@@ -693,12 +693,12 @@ msgstr ""
 "スペースタグはテキストに水平スペースを挿入する自己終了タグです。引数として追"
 "加されるスペースのピクセル数を与える整数を取ります。 ::"
 
-#: ../../source/text.rst:418
+#: ../../source/text.rst:419
 msgid ""
 "The underline tag underlines the text between itself and its closing tag. ::"
 msgstr "下線タグは自身からその閉じタグまでの間のテキストに下線を引きます。 ::"
 
-#: ../../source/text.rst:425
+#: ../../source/text.rst:426
 msgid ""
 "The vspace tag is a self-closing tag that inserts vertical space between "
 "lines of text. As an argument, it takes an integer giving the number of "
@@ -707,7 +707,7 @@ msgstr ""
 "vスペースタグはテキストの行間に垂直スペースを挿入する自己終了タグです。引数と"
 "して追加されるスペースのピクセル数を与える整数を取ります。 ::"
 
-#: ../../source/text.rst:433
+#: ../../source/text.rst:434
 msgid ""
 "Text tags beginning with # are ignored, but can be included to distinguish "
 "strings for the purpose of translation. ::"
@@ -715,15 +715,15 @@ msgstr ""
 "# で始まるテキストタグは無視されますが、これを加えて翻訳時に文字列を区別でき"
 "ます。 ::"
 
-#: ../../source/text.rst:439
+#: ../../source/text.rst:440
 msgid "Dialogue Text Tags"
 msgstr "台詞のテキストタグ"
 
-#: ../../source/text.rst:441
+#: ../../source/text.rst:442
 msgid "Text tags that only apply to dialogue are:"
 msgstr "台詞にのみ適用されるテキストタグです :"
 
-#: ../../source/text.rst:445
+#: ../../source/text.rst:446
 msgid ""
 "The wait tag is a self-closing tag that waits for the user to click to "
 "continue. If it is given an argument, the argument is interpreted as a "
@@ -734,7 +734,7 @@ msgstr ""
 "引数を与えられると、その引数は数字と解釈され、待機はその秒数が経過後に自動的"
 "に終了します。 ::"
 
-#: ../../source/text.rst:454
+#: ../../source/text.rst:455
 msgid ""
 "The paragraph pause tag is a self-closing tag that terminates the current "
 "paragraph, and waits for the user to click to continue. If it is given an "
@@ -745,7 +745,7 @@ msgstr ""
 "クして読み進めるのを待ちます。引数を与えられると、その引数が数字として解釈さ"
 "れ、それだけの時間が経過すると自動的に待機が終了します。 ::"
 
-#: ../../source/text.rst:464
+#: ../../source/text.rst:465
 msgid ""
 "The no-wait tag is a self-closing tag that causes the current line of "
 "dialogue to automatically dismiss itself once the end of line has been "
@@ -754,7 +754,7 @@ msgstr ""
 "ノーウェイトタグは現在の行が最後まで表示されきった時点で台詞を自動的に消し去"
 "る自己終了タグです。 ::"
 
-#: ../../source/text.rst:472
+#: ../../source/text.rst:473
 msgid ""
 "If it is given an argument, the argument is interpreted as a number, and the "
 "wait automatically ends after that many seconds have passed. ::"
@@ -762,12 +762,12 @@ msgstr ""
 "引数を与えられると、その引数は数字と解釈され、待機はその秒数が経過後に自動的"
 "に終了します。 ::"
 
-#: ../../source/text.rst:478
+#: ../../source/text.rst:479
 msgid ""
 "The no-wait tag will wait for self-voicing to complete before advancing."
 msgstr "no-wait タグはセルフボイスが完了するまで進行を待ちます。"
 
-#: ../../source/text.rst:483
+#: ../../source/text.rst:484
 msgid ""
 "If the fast tag is displayed in a line of text, then all text before it is "
 "displayed instantly, even in slow text mode. The fast tag is a self-closing "
@@ -776,13 +776,13 @@ msgstr ""
 "テキストの行内に fast タグがあると、低速テキストモードであっても、その前にあ"
 "るテキストがすべて瞬間表示されます。 ::"
 
-#: ../../source/text.rst:491
+#: ../../source/text.rst:492
 msgid ""
 "If present, the {fast} tag will cause voice to be sustained from the "
 "previous line."
 msgstr "あれば {fast} タグは以前の行からボイスを継続します。"
 
-#: ../../source/text.rst:496
+#: ../../source/text.rst:497
 msgid ""
 "Text after the done tag is not displayed. Why would you want this? It's to "
 "allow text to avoid jumping around when :propref:`adjust_spacing` is True."
@@ -791,7 +791,7 @@ msgstr ""
 "が True のときでもレイアウトが変化しないようにしてテキストが飛び回らないよう"
 "にします。"
 
-#: ../../source/text.rst:500
+#: ../../source/text.rst:501
 msgid ""
 "When the done tag is present, the line of dialogue is not added to the "
 "history buffer. If the nw tag is present, it should be before the done tag.::"
@@ -799,7 +799,7 @@ msgstr ""
 "done タグがあると、その台詞の行はヒストリーバッファに追加されません。 nw タグ"
 "があるなら、 done タグより前にあるべきです。 ::"
 
-#: ../../source/text.rst:510
+#: ../../source/text.rst:511
 msgid ""
 "The clear text tag only makes sense on a line by itself in the :ref:`NVL "
 "monologue mode <nvl-monologue-mode>`. It does the same thing at the ``nvl "
@@ -809,7 +809,7 @@ msgstr ""
 "意味があります。テキストブロックを終了しない他は ``nvl clear`` ステートメント"
 "と同じことをします。 ::"
 
-#: ../../source/text.rst:526
+#: ../../source/text.rst:527
 msgid ""
 "It's also possible to define :doc:`custom text tags <custom_text_tags>` "
 "using Python."
@@ -817,11 +817,11 @@ msgstr ""
 "Pythonを使用して :doc:`カスタムテキストタグ <custom_text_tags>` も定義出来ま"
 "す。"
 
-#: ../../source/text.rst:530
+#: ../../source/text.rst:531
 msgid "Style Text Tags"
 msgstr "スタイルテキストタグ"
 
-#: ../../source/text.rst:532
+#: ../../source/text.rst:533
 msgid ""
 "Ren'Py supports text tags that access styles. These are text tags where the "
 "tag name is empty. In this case, the argument is taken to be the name of a "
@@ -832,7 +832,7 @@ msgstr ""
 "解釈されます。 例えば {=mystyle} タグは ``mystyle`` スタイルにアクセスしま"
 "す。"
 
-#: ../../source/text.rst:537
+#: ../../source/text.rst:538
 msgid ""
 "The text between the tag and the corresponding closing tag has the following "
 "properties set to those defined in the style:"
@@ -840,51 +840,51 @@ msgstr ""
 "タグと対応する閉じタグとの間のテキストはそのスタイルで定義された次のプロパ"
 "ティーを持ちます。 :"
 
-#: ../../source/text.rst:540
+#: ../../source/text.rst:541
 msgid "antialias"
 msgstr "antialias"
 
-#: ../../source/text.rst:541
+#: ../../source/text.rst:542
 msgid "font"
 msgstr "font"
 
-#: ../../source/text.rst:542
+#: ../../source/text.rst:543
 msgid "size"
 msgstr "size"
 
-#: ../../source/text.rst:543
+#: ../../source/text.rst:544
 msgid "bold"
 msgstr "bold"
 
-#: ../../source/text.rst:544
+#: ../../source/text.rst:545
 msgid "italic"
 msgstr "italic"
 
-#: ../../source/text.rst:545
+#: ../../source/text.rst:546
 msgid "underline"
 msgstr "underline"
 
-#: ../../source/text.rst:546
+#: ../../source/text.rst:547
 msgid "strikethrough"
 msgstr "strikethrough"
 
-#: ../../source/text.rst:547
+#: ../../source/text.rst:548
 msgid "color"
 msgstr "color"
 
-#: ../../source/text.rst:548
+#: ../../source/text.rst:549
 msgid "black_color"
 msgstr "black_color"
 
-#: ../../source/text.rst:549
+#: ../../source/text.rst:550
 msgid "kerning"
 msgstr "kerning"
 
-#: ../../source/text.rst:553
+#: ../../source/text.rst:554
 msgid "Non-English Languages"
 msgstr "英語以外の言語"
 
-#: ../../source/text.rst:555
+#: ../../source/text.rst:556
 msgid ""
 "The default font for Ren'Py contains characters for English and many other "
 "languages. For size reasons, it doesn't contain the characters required to "
@@ -896,7 +896,7 @@ msgstr ""
 "属の日本語フォントには常用漢字しか含まれません)。あるプロジェクトでこれらの言"
 "語をサポートするためには、まず使用するフォントを変更しなければなりません。"
 
-#: ../../source/text.rst:561
+#: ../../source/text.rst:562
 msgid ""
 "Ren'Py should then support most world languages without further "
 "configuration. However, Korean can be written with or without spacing "
@@ -907,11 +907,11 @@ msgstr ""
 "国語は分かち書きをするかしないかを選べます。Ren'Py には韓国語の分かち書きをサ"
 "ポートする特別なモードがあり、このコードで有効にできます ::"
 
-#: ../../source/text.rst:568
+#: ../../source/text.rst:569
 msgid "This can be changed from the default of \"unicode\" in gui.rpy."
 msgstr "これは gui.rpy の \"unicode\" のデフォルトから変更可能です。"
 
-#: ../../source/text.rst:570
+#: ../../source/text.rst:571
 msgid ""
 "Japanese has multiple rules for line breaking. We recommend starting with "
 "\"japanese-normal\", and moving to \"japanese-loose\" or \"japanese-strict\" "
@@ -921,7 +921,7 @@ msgstr ""
 "会を増やす、または減らすために、それぞれ 「 japanese-loose 」または"
 "「 japanese-strict 」への変更を勧めます。 ::"
 
-#: ../../source/text.rst:576
+#: ../../source/text.rst:577
 msgid ""
 "Ideographic languages provide a large number of opportunities for line "
 "breaking. To enable a faster but less-accurate line-breaking algorithm, use::"
@@ -929,7 +929,7 @@ msgstr ""
 "表意文字の言語には改行が多いです。高速だが不正確な改行アルゴリズムを有効にす"
 "るには、このコードを使ってください ::"
 
-#: ../../source/text.rst:582
+#: ../../source/text.rst:583
 msgid ""
 "The faster line-breaking algorithm is not be necessary unless the game is "
 "displaying huge amounts of text, such as in NVL-mode."
@@ -937,7 +937,7 @@ msgstr ""
 "高速な改行アルゴリズムは、NVL モードのような莫大な量のテキストを表示するゲー"
 "ムでなければ必要有りません。"
 
-#: ../../source/text.rst:585
+#: ../../source/text.rst:586
 msgid ""
 "The line breaking algorithms can be further configured using the :func:"
 "`renpy.language_tailor` function."
@@ -945,11 +945,11 @@ msgstr ""
 "改行アルゴリズムは :func:`renpy.language_tailor` 関数を使用して更に設定出来ま"
 "す。"
 
-#: ../../source/text.rst:590
+#: ../../source/text.rst:591
 msgid "Vertical Text"
 msgstr "縦書き"
 
-#: ../../source/text.rst:592
+#: ../../source/text.rst:593
 msgid ""
 "When the :propref:`vertical` style property is set, Ren'Py will produce "
 "vertically oriented text. The text is written top-to-bottom, right-to-left."
@@ -960,22 +960,22 @@ msgstr ""
 "com/renpy/renpy%e3%81%a7%e7%b8%a6%e6%9b%b8%e3%81%8d"
 "%e3%82%92%e3%81%99%e3%82%8b/>`_)。"
 
-#: ../../source/text.rst:596
+#: ../../source/text.rst:597
 msgid "There are two text tags that interact with vertical text."
 msgstr "縦書きテキストに作用する2つのテキストタグがあります。"
 
-#: ../../source/text.rst:600
+#: ../../source/text.rst:601
 msgid "Includes horizontally-oriented text inside vertical text."
 msgstr "縦書きテキスト内に横書きテキストを含めます。"
 
-#: ../../source/text.rst:604
+#: ../../source/text.rst:605
 msgid ""
 "Includes vertically-oriented text inside horizontal text. (This will not "
 "rotate the text to the vertical orientation.)"
 msgstr ""
 "横書きテキスト内に縦書きテキストを含めます(これは縦向きの回転を行いません)。"
 
-#: ../../source/text.rst:609
+#: ../../source/text.rst:610
 msgid ""
 "If the font does not contain vertical text spacing information, Ren'Py will "
 "attempt to synthesize this information from horizontal text information. The "
@@ -985,11 +985,11 @@ msgstr ""
 "報から縦書き用の情報を生成しようとします。行間隔は Ren'Py のリリースごとに異"
 "なる可能性があります。"
 
-#: ../../source/text.rst:618
+#: ../../source/text.rst:619
 msgid "Ruby Text"
 msgstr "ルビテキスト"
 
-#: ../../source/text.rst:620
+#: ../../source/text.rst:621
 msgid ""
 "Ruby text (also known as furigana or interlinear annotations) is a way of "
 "placing small text above a character or word. There are several steps "
@@ -999,14 +999,14 @@ msgstr ""
 "配置する方法です。貴方のゲームでルビテキストをサポートするためには必要な手順"
 "があります。"
 
-#: ../../source/text.rst:624
+#: ../../source/text.rst:625
 msgid ""
 "First, you must set up styles for the ruby text. The following style changes "
 "are required:"
 msgstr ""
 "まずは、ルビテキストのスタイルを設定します。次のスタイル変更が必要です:"
 
-#: ../../source/text.rst:627
+#: ../../source/text.rst:628
 msgid ""
 "One of the :propref:`line_leading` or :propref:`ruby_line_leading` "
 "properties must be used to leave enough vertical space for the ruby text."
@@ -1014,7 +1014,7 @@ msgstr ""
 "ルビテキストに十分な垂直スペースを残すために、 :propref:`line_leading` や :"
 "propref:`ruby_line_leading` プロパティーを使います。"
 
-#: ../../source/text.rst:629
+#: ../../source/text.rst:630
 msgid ""
 "A new named style must be created. The properties of this style, such as :"
 "propref:`size` should be set in a fashion appropriate for ruby text."
@@ -1022,7 +1022,7 @@ msgstr ""
 "新しく名前をつけたスタイルを作ります。このスタイルの :propref:`size` などのプ"
 "ロパティーは、ルビテキストに合うように設定します。"
 
-#: ../../source/text.rst:632
+#: ../../source/text.rst:633
 msgid ""
 "The :propref:`yoffset` of the new style should be set, in order to move the "
 "ruby text above the baseline."
@@ -1030,7 +1030,7 @@ msgstr ""
 "新しいスタイル :propref:`yoffse` を設定し、ルビテキストがベースラインの上に来"
 "るようにします。"
 
-#: ../../source/text.rst:634
+#: ../../source/text.rst:635
 msgid ""
 "The :propref:`ruby_style` field of the text's style should be set to the "
 "newly-created style, for both dialogue and history window text."
@@ -1038,17 +1038,17 @@ msgstr ""
 "テキストスタイルの :propref:`ruby_style` フィールドは、 dialogue と history "
 "window text の両方で新しく作成されたスタイルに設定されるべきです。"
 
-#: ../../source/text.rst:653
+#: ../../source/text.rst:654
 msgid "(Use ``style.style_name`` to refer to a style for this purpose.)"
 msgstr "(``style.style_name`` を使用してこの目的でスタイルを参照します)"
 
-#: ../../source/text.rst:655
+#: ../../source/text.rst:656
 msgid "Once Ren'Py has been configured, ruby text can be included in two way."
 msgstr ""
 "一旦 Ren'Py が設定されると、ルビテキストが 2 つの方法で組み込めるようになりま"
 "す。"
 
-#: ../../source/text.rst:657
+#: ../../source/text.rst:658
 msgid ""
 "**Lenticular brackets.** Ruby text can be written by enclosing it full-width "
 "lenticular brackets (【】), with the full-width or half-width vertical line "
@@ -1058,7 +1058,7 @@ msgstr ""
 "**隅付きかっこ** ルビテキストはそれを2バイトの隅付き括弧 (【】) で囲み、1バイ"
 "トまたは2バイトの縦線 (｜ または \\|) で上下のテキストを分けて書けます。例 ::"
 
-#: ../../source/text.rst:666
+#: ../../source/text.rst:667
 msgid ""
 "Ruby text will only trigger if a vertical line is present. The left "
 "lenticular bracket can be quoted by doubling it. Lenticular ruby text may "
@@ -1067,7 +1067,7 @@ msgstr ""
 "ルビテキストは縦線があるときのみ実行されます。隅付き括弧自体は二重にして台詞"
 "に含められます。隅付き括弧のルビテキストは他のテキストタグを含みません。"
 
-#: ../../source/text.rst:670
+#: ../../source/text.rst:671
 msgid ""
 "**The {rt} and {rb} text tags.** The {rt} tag is used to mark one or more "
 "characters to be displayed as ruby text. If the ruby text is preceded by "
@@ -1079,7 +1079,7 @@ msgstr ""
 "トがあると、ルビはその上で中央寄せされます。そうでなければ、直前の一文字の上"
 "で中央寄せされます。"
 
-#: ../../source/text.rst:681
+#: ../../source/text.rst:682
 msgid ""
 "It's the creator's responsibility to ensure that ruby text does not leave "
 "the boundaries of the text. It may be necessary to add leading or spaces to "
@@ -1089,7 +1089,7 @@ msgstr ""
 "ん。そのようなエラーが起こらないように、そのテキストの先頭や左右に文字間のス"
 "ペースを開ける必要があるかもしれません。"
 
-#: ../../source/text.rst:686
+#: ../../source/text.rst:687
 msgid ""
 "Ren'Py also supports alternate ruby text, which is a second kind of ruby top "
 "text. This is introduced with the {art} text tag (instead of {rt}), and the :"
@@ -1099,57 +1099,61 @@ msgstr ""
 "ストタグで始まり、( :propref:`ruby_style` の代わりに) :propref:"
 "`altruby_style` プロパティーを使用します。"
 
-#: ../../source/text.rst:691
+#: ../../source/text.rst:692
 msgid "Fonts"
 msgstr "フォント"
 
-#: ../../source/text.rst:693
+#: ../../source/text.rst:694
 msgid ""
-"Ren'Py supports TrueType/OpenType fonts and collections, and Image-Based "
-"fonts."
+"Ren'Py supports scalable fonts in the OpenType, TrueType, WOFF, and WOFF2 "
+"formats."
 msgstr ""
-"Ren'Py は Truetype/OpenType フォントと画像ベースのフォントをサポートしていま"
-"す。"
+"Ren'Pyは、OpenType、TrueType、WOFF、およびWOFF2フォーマットの拡大縮小可能な"
+"フォントをサポートしています。"
 
 #: ../../source/text.rst:696
 msgid ""
-"A TrueType or OpenType font is specified by giving the name of the font "
-"file. The file must be present in the game directory or one of the archive "
-"files."
+"Scalable fonts are specified by giving the name of the font file, as a "
+"string. Fonts are searched for in the :file:`game` directory and in archive "
+"files. If the font is not found it is searched for using the :file:`fonts/` "
+"prefix. For example, when looking for \"test.ttf\", Ren'Py will first search "
+"for :file:`game/test.ttf`, and then for :file:`game/fonts/test.ttf`. (It "
+"will also search in archive files.)"
 msgstr ""
-"Truetype や OpenType フォントは、フォントファイルの名前を与えて指定できます。"
-"ファイルはゲームディレクトリーにあるか、アーカイブファイルのひとつでなければ"
-"なりません。"
+"拡大縮小可能なフォントは文字列としてそのフォントファイル名を与えて指定されま"
+"す。フォントは :file:`game` ディレクトリーとアーカイブファイルで検索されま"
+"す。フォントが見つからなければ :file:`fonts/` 接頭辞を使用します。例えば、 "
+"``test.ttf`` を探すとき、 Ren'Py は :file:`game/test.ttf` を探し、次に :file:"
+"`game/fonts/test.ttf` を探します(アーカイブファイル内も検索します)。"
 
-#: ../../source/text.rst:700
+#: ../../source/text.rst:703
 msgid ""
-"Ren'Py also supports TrueType/OpenType collections that define more than one "
+"Ren'Py supports TrueType/OpenType collections that define more than one "
 "font. When accessing a collection, use the 0-based font index, followed by "
 "an at-sign and the file name. For example, \"0\\@font.ttc\" is the first "
 "font in a collection, \"1\\@font.ttc\" the second, and so on."
 msgstr ""
-"Ren'Py は、複数のフォントを定義している Truetype コレクションもサポートしてい"
-"ます。コレクションにアクセスするときは、0 ベースのフォントインデクス、アット"
-"マーク、そしてファイル名の順に使ってください。例えば、「 0@font.ttc 」がコレ"
-"クションの最初のフォントなら、次は「 1@font.ttc 」、などとなります。"
-
-#: ../../source/text.rst:705
-msgid ""
-"When looking for a font files, if the file is not found, Ren'Py will search "
-"in the :file:`game/fonts` directory. For example, when looking for \"test.ttf"
-"\", Ren'Py will first search for :file:`game/test.ttf`, and then for :file:"
-"`game/fonts/test.ttf`."
-msgstr ""
-"フォントファイルを探すときにそのファイルが見つからなければ Ren'Py は :file:"
-"`game/fonts` ディレクトリーで探します。例えば、 test.ttf を探すとき、 Ren'Py "
-"は :file:`game/test.ttf` を探し、次に :file:`game/fonts/test.ttf` を探しま"
+"Ren'Py は、複数のフォントを定義している True/OpenType コレクションもサポート"
+"しています。コレクションにアクセスするときは、0 から始まるフォントインデク"
+"ス、アットマーク、そしてファイル名の順に使ってください。例えば、 「0\\@font."
+"ttc」 がコレクションの最初のフォントなら、次は「1\\@font.ttc」 などとなりま"
 "す。"
 
-#: ../../source/text.rst:710
+#: ../../source/text.rst:708
+msgid ""
+"While Ren'Py supports font files of any size (subject to system memory "
+"limitations), WOFF2 compression tools may have problems with very large font "
+"files. See :ghbug:`6605` for discussion of this."
+msgstr ""
+"Ren'Pyはあらゆるサイズのフォントファイルをサポートしていますが(システムメモリ"
+"の制限があります)、WOFF2圧縮ツールは非常に大きなフォントファイルで問題が発生"
+"する可能性があります。これについては :ghbug:`6605` を参照してください。"
+
+#: ../../source/text.rst:714
 msgid "Font Replacement"
 msgstr "フォントの置き換え"
 
-#: ../../source/text.rst:712
+#: ../../source/text.rst:716
 msgid ""
 "The :var:`config.font_replacement_map` variable is used to map fonts. The "
 "combination of font filename, boldness, and italics is mapped to a similar "
@@ -1161,7 +1165,7 @@ msgstr ""
 "せと対応付けられます。これにより、自動的に生成されるイタリック体の代わりに適"
 "切なイタリック体を使用できます。"
 
-#: ../../source/text.rst:717
+#: ../../source/text.rst:721
 msgid ""
 "Once such mapping would be to replace the italic version of the Deja Vu Sans "
 "font with the official oblique version (You'll need to download the oblique "
@@ -1170,15 +1174,15 @@ msgstr ""
 "このようなマッピングによって Deja Vu Sans font のイタリック版を公式の斜体版に"
 "置き換えます (web で斜体版をダウンロードする必要があります)。 ::"
 
-#: ../../source/text.rst:724
+#: ../../source/text.rst:728
 msgid "This mapping can improve the look of italic text."
 msgstr "このマッピングでイタリックテキストの見た目が向上します。"
 
-#: ../../source/text.rst:727
+#: ../../source/text.rst:731
 msgid "Font names and aliases"
 msgstr "フォント名とエイリア"
 
-#: ../../source/text.rst:729
+#: ../../source/text.rst:733
 msgid ""
 "The :var:`config.font_name_map` variable is used to give names or aliases to "
 "fonts. This allows two things : first, to make dialogues using the ``{font}"
@@ -1190,11 +1194,174 @@ msgstr ""
 "た台詞をより短く、簡単に使用できるようにします。 : 第二にそれらのタグで :ref:"
 "`fontgroup` が使用出来るようにします ::"
 
-#: ../../source/text.rst:742
+#: ../../source/text.rst:749
+msgid "Font Groups"
+msgstr "フォントグループ"
+
+#: ../../source/text.rst:751
+msgid ""
+"When creating a multilingual game, it may not be possible to find a single "
+"font that covers every writing system the game use while projecting the the "
+"mood the creator intends. To support this, Ren'Py supports font groups that "
+"can take characters from two or more fonts and combine them into a single "
+"font."
+msgstr ""
+"マルチ言語のゲームを作成するとき、制作者が意図した雰囲気を保ちつつ、一つの"
+"フォントですべてのゲームが使用するシステムをカバーすることは多分不可能です。"
+"これをサポートするために、 Ren'Py はフォントグループをサポートして二つ以上の"
+"フォントから文字を受け取って一つのフォントに合成出来るようにします。"
+
+#: ../../source/text.rst:757
+msgid ""
+"To create a font group, create a :class:`FontGroup` object and call the ``."
+"add`` method on it once or more. A FontGroup can be used wherever a font "
+"name can be used. The add method takes the start and end of a range of "
+"Unicode character points, and the first range to cover a point is used."
+msgstr ""
+"フォントグループを作成するためには、 :class:`FontGroup`  オブジェクトを作成"
+"し、その ``.add`` メソッドを一回以上呼び出してください。フォントグループは"
+"フォント名が使用可能などこででも使用できます。 add メソッドはユニコードの文字"
+"コードの最初と最後を引数に受け取って範囲とし、ある文字コードに対してはそれを"
+"カバーする最初の範囲が使用されます。"
+
+#: ../../source/inc/font_group:5
+msgid "A group of fonts that can be used as a single font."
+msgstr "フォントグループは一つのフォントとして使用されます。"
+
+#: ../../source/inc/font_group:9
+msgid "Associates a range of characters with a `font`."
+msgstr "`font` と文字の範囲を関連づけます。"
+
+#: ../../source/inc/font_group:14
+msgid "`start`"
+msgstr "`start`"
+
+#: ../../source/inc/font_group:12
+msgid ""
+"The start of the range. This may be a single-character string, or an integer "
+"giving a unicode code point. If start is None, then the font is used as the "
+"default."
+msgstr ""
+"範囲の始まりです。これは一文字の文字列か、ユニコードのコードポイントの整数で"
+"す。"
+
+#: ../../source/inc/font_group:19
+msgid "`end`"
+msgstr "`end`"
+
+#: ../../source/inc/font_group:17
+msgid ""
+"The end of the range. This may be a single-character string, or an integer "
+"giving a unicode code point. This is ignored if start is None."
+msgstr ""
+"範囲の終わりです。これは1文字の文字列か、ユニコードコードポイントの整数で"
+"す。 start が None ならこれは無視されます。"
+
+#: ../../source/inc/font_group:26 ../../source/inc/font_group:50
+msgid "`target`"
+msgstr "`target`"
+
+#: ../../source/inc/font_group:22
+msgid ""
+"If given, associates the given range of characters with specific characters "
+"from the given font, depending on target_increment. This may be a single-"
+"character string, or an integer giving a unicode code point. This is ignored "
+"if the character had already been added."
+msgstr ""
+"与えられれば、特定の範囲の文字を、 target_increment の設定に合わせて指定の"
+"フォントの特定の文字に割り当てます。これは1文字の文字列またはユニコードコード"
+"ポイントの整数です。その文字が既に追加されていればこれは無視されます。"
+
+#: ../../source/inc/font_group:31
+msgid "`target_increment`"
+msgstr "`target_increment`"
+
+#: ../../source/inc/font_group:29
+msgid ""
+"If True, the [start, end] range is mapped to the [target, target+end-start] "
+"range. If False, every character from the range is associated with the "
+"target character."
+msgstr ""
+"True なら、 [start, end] の範囲が [target, target+end-start] の範囲に対応付け"
+"られます。 False なら、その範囲の全ての文字がそのターゲット文字に関連づけられ"
+"ます。"
+
+#: ../../source/inc/font_group:33
+msgid ""
+"When multiple .add() calls include the same character, the first call takes "
+"precedence."
+msgstr ""
+"複数回の .add() 呼び出しが同じ文字を含めるときは最初の呼び出しが優先されま"
+"す。"
+
+#: ../../source/inc/font_group:36
+msgid ""
+"This returns the FontGroup, so that multiple calls to .add() can be chained "
+"together."
+msgstr ""
+"これは FontGroup を返すので、何回も .add() を呼び出して数珠つなぎに出来ます。"
+
+#: ../../source/inc/font_group:41
+msgid "Remaps one or a set of characters to a single target character."
+msgstr "1つまたは複数の文字をある単一の文字にリマップします。"
+
+#: ../../source/inc/font_group:46
+msgid "`cha`"
+msgstr "`cha`"
+
+#: ../../source/inc/font_group:44
+msgid ""
+"The character or characters to remap. This may be a single-character string, "
+"or an integer giving a unicode code point, or an iterable of either."
+msgstr ""
+"リマップする文字または文字群です。これは一文字の文字列か、ユニコードコードポ"
+"イントの整数、またはそのどちらかのイテレータです。"
+
+#: ../../source/inc/font_group:49
+msgid ""
+"The character to remap to. This may be a single-character string, or an "
+"integer giving a unicode code point."
+msgstr ""
+"リマップ先の文字です。これは1文字の文字列又はユニコードコードポイントの整数で"
+"す。"
+
+#: ../../source/inc/font_group:52
+msgid ""
+"Any given character having already been remapped (either with add or with "
+"remap) will be ignored. However, if the FontGroup has no default font, any "
+"given character must have been previously added."
+msgstr ""
+"(add や remap により)既にリマップされているどの指定の文字も無視されますが、そ"
+"の FontGroup にデフォルトフォントが無ければ、どんな文字も先に追加されていなけ"
+"ればなりません。"
+
+#: ../../source/inc/font_group:56
+msgid "This method also returns the FontGroup, for the same reasons."
+msgstr "同じ理由で、このメソッドも FontGroup を返します。"
+
+#: ../../source/text.rst:769
+msgid ""
+"Note that while FontGroups can be given a name using :var:`config."
+"font_name_map`, a FontGroup only takes filepaths as fonts, and does not "
+"recognize names or aliases defined using that variable."
+msgstr ""
+"FontGroup には :var:`config.font_name_map` を使用した名前は指定できますが、 "
+"フォントとしてファイルパスを受け取るのみで、変数を使用して定義された名前やエ"
+"イリアスは認識しません。"
+
+#: ../../source/text.rst:774
 msgid "Image-Based Fonts"
 msgstr "画像ベースのフォント"
 
-#: ../../source/text.rst:744
+#: ../../source/text.rst:776
+msgid ""
+"Image-based fonts are not recommended for use in new projects. Applying "
+"graphical effects to fonts can be done with text shaders."
+msgstr ""
+"画像ベースのフォントは、新しいプロジェクトでの使用は推奨されません。フォント"
+"にグラフィック効果を適用するには、テキストシェーダーを使用します。"
+
+#: ../../source/text.rst:778
 msgid ""
 "Image based fonts can be registered by calling one of the following "
 "registration functions. Registering an image-based font requires the "
@@ -1412,175 +1579,15 @@ msgstr ""
 "フォントの文字セットです。画像で見つかる順に文字を含む文字列です。SFont用のデ"
 "フォルトの文字セットは次の通りです。"
 
-#: ../../source/text.rst:752
-msgid ""
-"As BMFont is the most complete of the three image font formats Ren'Py "
-"supports, it's the one recommended for new projects. An example of BMFont "
-"use is::"
-msgstr ""
-"BMFont は Ren'Py がサポートする三つの画像フォント中では最も完全なものなので、"
-"新しいプロジェクトでは推奨します。 BMFont の使用例は次の通りです ::"
+#: ../../source/text.rst:786
+msgid "An example of BMFont use is::"
+msgstr "BMFont の使用例は次のとおりです。 ::"
 
-#: ../../source/text.rst:769
-msgid "Font Groups"
-msgstr "フォントグループ"
-
-#: ../../source/text.rst:771
-msgid ""
-"When creating a multilingual game, it may not be possible to find a single "
-"font that covers every writing system the game use while projecting the the "
-"mood the creator intends. To support this, Ren'Py supports font groups that "
-"can take characters from two or more fonts and combine them into a single "
-"font."
-msgstr ""
-"マルチ言語のゲームを作成するとき、制作者が意図した雰囲気を保ちつつ、一つの"
-"フォントですべてのゲームが使用するシステムをカバーすることは多分不可能です。"
-"これをサポートするために、 Ren'Py はフォントグループをサポートして二つ以上の"
-"フォントから文字を受け取って一つのフォントに合成出来るようにします。"
-
-#: ../../source/text.rst:777
-msgid ""
-"To create a font group, create a :class:`FontGroup` object and call the ``."
-"add`` method on it once or more. A FontGroup can be used wherever a font "
-"name can be used. The add method takes the start and end of a range of "
-"Unicode character points, and the first range to cover a point is used."
-msgstr ""
-"フォントグループを作成するためには、 :class:`FontGroup`  オブジェクトを作成"
-"し、その ``.add`` メソッドを一回以上呼び出してください。フォントグループは"
-"フォント名が使用可能などこででも使用できます。 add メソッドはユニコードの文字"
-"コードの最初と最後を引数に受け取って範囲とし、ある文字コードに対してはそれを"
-"カバーする最初の範囲が使用されます。"
-
-#: ../../source/inc/font_group:5
-msgid "A group of fonts that can be used as a single font."
-msgstr "フォントグループは一つのフォントとして使用されます。"
-
-#: ../../source/inc/font_group:9
-msgid "Associates a range of characters with a `font`."
-msgstr "`font` と文字の範囲を関連づけます。"
-
-#: ../../source/inc/font_group:14
-msgid "`start`"
-msgstr "`start`"
-
-#: ../../source/inc/font_group:12
-msgid ""
-"The start of the range. This may be a single-character string, or an integer "
-"giving a unicode code point. If start is None, then the font is used as the "
-"default."
-msgstr ""
-"範囲の始まりです。これは一文字の文字列か、ユニコードのコードポイントの整数で"
-"す。"
-
-#: ../../source/inc/font_group:19
-msgid "`end`"
-msgstr "`end`"
-
-#: ../../source/inc/font_group:17
-msgid ""
-"The end of the range. This may be a single-character string, or an integer "
-"giving a unicode code point. This is ignored if start is None."
-msgstr ""
-"範囲の終わりです。これは1文字の文字列か、ユニコードコードポイントの整数で"
-"す。 start が None ならこれは無視されます。"
-
-#: ../../source/inc/font_group:26 ../../source/inc/font_group:50
-msgid "`target`"
-msgstr "`target`"
-
-#: ../../source/inc/font_group:22
-msgid ""
-"If given, associates the given range of characters with specific characters "
-"from the given font, depending on target_increment. This may be a single-"
-"character string, or an integer giving a unicode code point. This is ignored "
-"if the character had already been added."
-msgstr ""
-"与えられれば、特定の範囲の文字を、 target_increment の設定に合わせて指定の"
-"フォントの特定の文字に割り当てます。これは1文字の文字列またはユニコードコード"
-"ポイントの整数です。その文字が既に追加されていればこれは無視されます。"
-
-#: ../../source/inc/font_group:31
-msgid "`target_increment`"
-msgstr "`target_increment`"
-
-#: ../../source/inc/font_group:29
-msgid ""
-"If True, the [start, end] range is mapped to the [target, target+end-start] "
-"range. If False, every character from the range is associated with the "
-"target character."
-msgstr ""
-"True なら、 [start, end] の範囲が [target, target+end-start] の範囲に対応付け"
-"られます。 False なら、その範囲の全ての文字がそのターゲット文字に関連づけられ"
-"ます。"
-
-#: ../../source/inc/font_group:33
-msgid ""
-"When multiple .add() calls include the same character, the first call takes "
-"precedence."
-msgstr ""
-"複数回の .add() 呼び出しが同じ文字を含めるときは最初の呼び出しが優先されま"
-"す。"
-
-#: ../../source/inc/font_group:36
-msgid ""
-"This returns the FontGroup, so that multiple calls to .add() can be chained "
-"together."
-msgstr ""
-"これは FontGroup を返すので、何回も .add() を呼び出して数珠つなぎに出来ます。"
-
-#: ../../source/inc/font_group:41
-msgid "Remaps one or a set of characters to a single target character."
-msgstr "1つまたは複数の文字をある単一の文字にリマップします。"
-
-#: ../../source/inc/font_group:46
-msgid "`cha`"
-msgstr "`cha`"
-
-#: ../../source/inc/font_group:44
-msgid ""
-"The character or characters to remap. This may be a single-character string, "
-"or an integer giving a unicode code point, or an iterable of either."
-msgstr ""
-"リマップする文字または文字群です。これは一文字の文字列か、ユニコードコードポ"
-"イントの整数、またはそのどちらかのイテレータです。"
-
-#: ../../source/inc/font_group:49
-msgid ""
-"The character to remap to. This may be a single-character string, or an "
-"integer giving a unicode code point."
-msgstr ""
-"リマップ先の文字です。これは1文字の文字列又はユニコードコードポイントの整数で"
-"す。"
-
-#: ../../source/inc/font_group:52
-msgid ""
-"Any given character having already been remapped (either with add or with "
-"remap) will be ignored. However, if the FontGroup has no default font, any "
-"given character must have been previously added."
-msgstr ""
-"(add や remap により)既にリマップされているどの指定の文字も無視されますが、そ"
-"の FontGroup にデフォルトフォントが無ければ、どんな文字も先に追加されていなけ"
-"ればなりません。"
-
-#: ../../source/inc/font_group:56
-msgid "This method also returns the FontGroup, for the same reasons."
-msgstr "同じ理由で、このメソッドも FontGroup を返します。"
-
-#: ../../source/text.rst:789
-msgid ""
-"Note that while FontGroups can be given a name using :var:`config."
-"font_name_map`, a FontGroup only takes filepaths as fonts, and does not "
-"recognize names or aliases defined using that variable."
-msgstr ""
-"FontGroup には :var:`config.font_name_map` を使用した名前は指定できますが、 "
-"フォントとしてファイルパスを受け取るのみで、変数を使用して定義された名前やエ"
-"イリアスは認識しません。"
-
-#: ../../source/text.rst:797
+#: ../../source/text.rst:801
 msgid "Text Displayables"
 msgstr "Text Displayables"
 
-#: ../../source/text.rst:799
+#: ../../source/text.rst:803
 msgid ""
 "Text can also be used as a :doc:`displayable <displayables>`, which allows "
 "you to apply transforms to text, displaying it as if it was an image and "
@@ -1706,7 +1713,7 @@ msgstr ""
 "他の Displayable のように、 Text も (とりわけ) :propref:`mipmap` プロパティー"
 "を含むスタイルプロパティーを受け取ります。"
 
-#: ../../source/text.rst:807
+#: ../../source/text.rst:811
 msgid "Text Utility Functions"
 msgstr "テキストユーソリティー関数"
 
@@ -1779,11 +1786,11 @@ msgstr ""
 "実行するテキストに対応する引数で呼び出される関数で、実行するテキストを置き換"
 "えた文字列を返すべきです。"
 
-#: ../../source/text.rst:812
+#: ../../source/text.rst:816
 msgid "Slow Text Concerns"
 msgstr "低速テキストについて"
 
-#: ../../source/text.rst:814
+#: ../../source/text.rst:818
 msgid ""
 "Ren'Py allows the creator or user to indicate that text should be displayed "
 "slowly. In this case, Ren'Py will render the text to a texture, and then "
@@ -1793,7 +1800,7 @@ msgstr ""
 "Ren'Py はテキストをテクスチャにレンダリングし、そのテクスチャからスクリーンに"
 "長方形をレンダリングします。"
 
-#: ../../source/text.rst:818
+#: ../../source/text.rst:822
 msgid ""
 "Unfortunately, this means that it's possible to get rendering artifacts when "
 "characters overlap. To minimize these rendering artifacts, ensure that the :"
@@ -1808,7 +1815,7 @@ msgstr ""
 "い。最初の行の文字の下部が切り捨てられている、特に line_spacing が負であるな"
 "ら、 :propref:`line_overlap_split` を増やすことも考えてください。"
 
-#: ../../source/text.rst:826
+#: ../../source/text.rst:830
 msgid ""
 "Horizontal artifacts are also possible when characters are kerned together, "
 "but these artifacts are less severe, as they exist for only a single frame."
@@ -1816,7 +1823,7 @@ msgstr ""
 "字詰めをしても水平方向の乱れは起こりえますが、この乱れはたった 1 フレームだけ"
 "なのでそれほど深刻ではありません。"
 
-#: ../../source/text.rst:830
+#: ../../source/text.rst:834
 msgid ""
 "Artifacts aren't a problem for static text, like the text in menus and other "
 "parts of the user interface."
@@ -1824,11 +1831,11 @@ msgstr ""
 "乱れはメニューやその他のユーザーインターフェースのテキストのような静的なテキ"
 "ストでは問題になりません。"
 
-#: ../../source/text.rst:834
+#: ../../source/text.rst:838
 msgid "Text Overflow Logging"
 msgstr "テキストオーバーフローの記録"
 
-#: ../../source/text.rst:836
+#: ../../source/text.rst:840
 msgid ""
 "Ren'Py can log cases where text expands outside of the area allocated for "
 "it. To enable text overflow logging, the following steps are necessary."
@@ -1836,11 +1843,11 @@ msgstr ""
 "Ren'Py はテキストが許可されたエリアからあふれた場合に記録出来ます。テキスト"
 "オーバーフローの記録を有効化するためには、次の手順が必要です。"
 
-#: ../../source/text.rst:840
+#: ../../source/text.rst:844
 msgid "Set the :var:`config.debug_text_overflow` variable to true."
 msgstr ":var:`config.debug_text_overflow` 変数を True にしましょう。"
 
-#: ../../source/text.rst:841
+#: ../../source/text.rst:845
 msgid ""
 "Set the :propref:`xmaximum` and :propref:`ymaximum` style properties on "
 "either the Text displayable, or a container enclosing it."
@@ -1848,11 +1855,11 @@ msgstr ""
 ":propref:`xmaximum` と :propref:`ymaximum` スタイルをテキストdisplayable かそ"
 "れを囲むものに適切に設定しましょう。"
 
-#: ../../source/text.rst:843
+#: ../../source/text.rst:847
 msgid "Run the game."
 msgstr "ゲームを起動します。"
 
-#: ../../source/text.rst:845
+#: ../../source/text.rst:849
 msgid ""
 "Whenever text is displayed that overflows the available area, Ren'Py will "
 "log an error to the text_overflow.txt file."
@@ -1860,11 +1867,11 @@ msgstr ""
 "利用可能なエリアを超えてテキストが表示されると、 Ren'Py は ``text_overflow."
 "txt`` ファイルにエラーを記録します。"
 
-#: ../../source/text.rst:851
+#: ../../source/text.rst:855
 msgid "Variable Fonts"
 msgstr "Variable フォント"
 
-#: ../../source/text.rst:853
+#: ../../source/text.rst:857
 msgid ""
 "Ren'Py has support for OpenType variable fonts. These fonts may support "
 "multiple axes, such as weight and width, and based on the value of these "
@@ -1880,7 +1887,7 @@ msgstr ""
 "おそらくフォントの太字バージョンを提供し、 \"regular\" はより通常のバージョン"
 "になります。"
 
-#: ../../source/text.rst:860
+#: ../../source/text.rst:864
 msgid ""
 "Variable fonts require the use of the harfbuzz text shaper, controlled by "
 "the :propref:`shaper` style property. Once this is set, the :propref:"
@@ -1892,15 +1899,15 @@ msgstr ""
 "propref:`instance` プロパティーは指定されたインスタンスを選択し、 :propref:"
 "`axis` プロパティーは1つ以上の軸の値を設定します。"
 
-#: ../../source/text.rst:865
+#: ../../source/text.rst:869
 msgid "These can also be set in the gui system. For example one can use::"
 msgstr "これらは gui システムでも設定できます。例えば、次のように使えます ::"
 
-#: ../../source/text.rst:871
+#: ../../source/text.rst:875
 msgid "Will start with the light instance, and make it wide."
 msgstr "これは light インスタンスを使用し、幅をワイドにします。"
 
-#: ../../source/text.rst:873
+#: ../../source/text.rst:877
 msgid ""
 "If no instance is given, Ren'Py will default to \"regular\" for non-bold "
 "text, and \"bold\" for bold text."
@@ -1908,28 +1915,28 @@ msgstr ""
 "インスタンスが指定されなければ、 Ren'Py のデフォルトは、太字でないテキストに"
 "は \"regular\", 太字のテキストには \"bold\" となります。"
 
-#: ../../source/text.rst:876
+#: ../../source/text.rst:880
 msgid "There are two text tags that support the use of variable fonts."
 msgstr "Variable フォントの使用をサポートするテキストタグが2つあります。"
 
-#: ../../source/text.rst:880
+#: ../../source/text.rst:884
 msgid "The instance tag changes the instance that is being used. For example::"
 msgstr "インスタンスタグは使用されるインスタンスを変更します。例 ::"
 
-#: ../../source/text.rst:884
+#: ../../source/text.rst:888
 msgid "When the instance tag is used, the axis properties are overridden."
 msgstr "インスタンスタグが使用されると、 axis プロパティーは上書きされます。"
 
-#: ../../source/text.rst:888
+#: ../../source/text.rst:892
 msgid "The axis tag changes the value of one or more axes. For example::"
 msgstr "axis タグは、1 つまたは複数の軸の値を変更します。例えば ::"
 
-#: ../../source/text.rst:892
+#: ../../source/text.rst:896
 msgid ""
 "The axis tag can be used multiple times, and the values will be combined."
 msgstr "axis タグは複数回使用でき、その値は組み合わされます。"
 
-#: ../../source/text.rst:894
+#: ../../source/text.rst:898
 msgid ""
 "\"This is {axis:width=125}{axis:weight=200}wide and bold{/axis}{/axis} text."
 "\""
@@ -1937,13 +1944,13 @@ msgstr ""
 "\"This is {axis:width=125}{axis:weight=200}wide and bold{/axis}{/axis} text."
 "\""
 
-#: ../../source/text.rst:896
+#: ../../source/text.rst:900
 msgid ""
 "The value of on the right side of the equals is expected to be a floating "
 "point number."
 msgstr "等号の右辺の値は浮動小数点数であることが期待されます。"
 
-#: ../../source/text.rst:899
+#: ../../source/text.rst:903
 msgid ""
 "To get the available instances and axes of a font, use the :func:`renpy."
 "variable_font_info` function. This function is intended to be called from "
@@ -1954,7 +1961,7 @@ msgstr ""
 "定しています。この関数にアクセスするには、shift+Oを押してコンソールを開き、次"
 "のように入力します ::"
 
-#: ../../source/text.rst:905
+#: ../../source/text.rst:909
 msgid "This will display information for the nunito.ttf font."
 msgstr "これは nunito.ttf フォントの情報を表示します。"
 
@@ -2041,6 +2048,30 @@ msgid ""
 msgstr ""
 "この関数は、Ren Pyの表示が初期化された後にコンソールから呼び出されることのみ"
 "を想定しており、人が読める形式で出力されます。"
+
+#~ msgid ""
+#~ "Ren'Py supports TrueType/OpenType fonts and collections, and Image-Based "
+#~ "fonts."
+#~ msgstr ""
+#~ "Ren'Py は Truetype/OpenType フォントと画像ベースのフォントをサポートしてい"
+#~ "ます。"
+
+#~ msgid ""
+#~ "A TrueType or OpenType font is specified by giving the name of the font "
+#~ "file. The file must be present in the game directory or one of the "
+#~ "archive files."
+#~ msgstr ""
+#~ "Truetype や OpenType フォントは、フォントファイルの名前を与えて指定できま"
+#~ "す。ファイルはゲームディレクトリーにあるか、アーカイブファイルのひとつでな"
+#~ "ければなりません。"
+
+#~ msgid ""
+#~ "As BMFont is the most complete of the three image font formats Ren'Py "
+#~ "supports, it's the one recommended for new projects. An example of BMFont "
+#~ "use is::"
+#~ msgstr ""
+#~ "BMFont は Ren'Py がサポートする三つの画像フォント中では最も完全なものなの"
+#~ "で、新しいプロジェクトでは推奨します。 BMFont の使用例は次の通りです ::"
 
 #~ msgid ""
 #~ "Ren'Py will interpolate variables found in the global store. When using a "

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 18:27+0900\n"
-"PO-Revision-Date: 2025-03-02 11:59+0900\n"
+"POT-Creation-Date: 2025-12-06 19:33+0900\n"
+"PO-Revision-Date: 2025-12-06 20:46+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -59,15 +59,24 @@ msgid ""
 "label, prefix its name with a period ``.``, and put it under a global label "
 "which it will belong to. For example::"
 msgstr ""
-"二種類のラベル *global* と *local* があります。グローバルはプロジェクトファイ"
-"ルのすべてに渡るグローバル名前空間に置かれ、ゲーム毎に固有な名前を持つべきで"
-"す。一方ローカルラベルはグローバルラベルを参照するため、異なるグローバルラベ"
-"ルに関連付けられていればゲーム内のいくつかのローカルラベルが同じ名前を持てま"
-"す。それが宣言されたグローバルラベルのスコープ内部に論理的に配置されます。"
-"local label を宣言するには接頭辞 ``.`` を名前につけて参加するグローバルラベル"
-"の下に置いてください。例 ::"
+"二種類のラベル *global* と *local* があります。グローバルラベルはプロジェクト"
+"ファイルのすべてに渡るグローバル名前空間に置かれ、ゲーム毎に固有な名前を持つ"
+"べきです。一方ローカルラベルはグローバルラベルを参照するため、異なるグローバ"
+"ルラベルに関連付けられていればゲーム内のいくつかのローカルラベルが同じ名前を"
+"持てます。それが宣言されたグローバルラベルのスコープ内部に論理的に配置されま"
+"す。local label を宣言するには接頭辞 ``.`` を名前につけて参加するグローバルラ"
+"ベルの下に置いてください。例 ::"
 
 #: ../../source/label.rst:50
+msgid ""
+"A local label can also be declared by its full name, consisting of the "
+"global label name followed by the local label name, separated by a dot. This "
+"will not declare the local label. ::"
+msgstr ""
+"ローカル ラベルは、グローバルラベル名の後にドットで区切られたローカルラベル名"
+"から成るフルネームでも宣言できます。こちらはローカルラベルを宣言します。 ::"
+
+#: ../../source/label.rst:58
 msgid ""
 "Local labels can be referenced directly inside the same global label they "
 "are declared in, or by their full name, consisting of global and local name "
@@ -76,7 +85,7 @@ msgstr ""
 "ローカルラベルはそれが宣言されたのと同じグローバルラベル内なら直接に、そうで"
 "なければグローバルとローカルネームからなるフルネームで参照出来ます。 : ::"
 
-#: ../../source/label.rst:57
+#: ../../source/label.rst:65
 msgid ""
 "The label statement may take an optional list of parameters. These "
 "parameters are processed as described in :pep:`570`, with two exceptions:"
@@ -85,11 +94,11 @@ msgstr ""
 "メーターは :pep:`570` で記述されたとおりに処理されますが、2つの例外がありま"
 "す :"
 
-#: ../../source/label.rst:60
+#: ../../source/label.rst:68
 msgid "First, the values of default parameters are evaluated at call time."
 msgstr "最初に、デフォルトパラメーターの値は呼び出し時に評価されます。"
 
-#: ../../source/label.rst:62
+#: ../../source/label.rst:70
 msgid ""
 "Second, the variables are scoped dynamically, rather than lexically. This "
 "means that when a variable gets its value from a label parameter, it will be "
@@ -106,7 +115,7 @@ msgstr ""
 "は、ステートメントに到達した方法に応じて、ラベルパラメーターから値を取得する"
 "場合と取得しない場合があります。これは純粋な Python コードでは不可能です。::"
 
-#: ../../source/label.rst:85
+#: ../../source/label.rst:93
 msgid ""
 "It doesn't generally make sense to have a label with parameters be reached "
 "by a jump or a previous statement. For an example of labels with parameters, "
@@ -116,15 +125,15 @@ msgstr ""
 "す。パラメーターつきラベルの例として、 :ref:`call statement <call-"
 "statement>` を参照してください。"
 
-#: ../../source/label.rst:93
+#: ../../source/label.rst:101
 msgid "Jump Statement"
 msgstr "jump ステートメント"
 
-#: ../../source/label.rst:95
+#: ../../source/label.rst:103
 msgid "The jump statement is used to transfer control to the given label."
 msgstr "jump ステートメントを使用して指定のラベルに制御を移します。"
 
-#: ../../source/label.rst:97
+#: ../../source/label.rst:105
 msgid ""
 "If the ``expression`` keyword is present, the expression following it is "
 "evaluated, and the string so computed is used as the label name of the "
@@ -135,7 +144,7 @@ msgstr ""
 "ジャンプ先のラベル名に使用されます。 ``expression`` キーワードがなければジャ"
 "ンプ先のラベル名は明示的に指定されなければなりません。"
 
-#: ../../source/label.rst:102 ../../source/label.rst:129
+#: ../../source/label.rst:110 ../../source/label.rst:137
 msgid ""
 "A local label name can be passed, either with ``expression`` or without, and "
 "either with the global label prepended (\"global_label.local_label\"), or "
@@ -145,7 +154,7 @@ msgstr ""
 "ローバルラベルの接頭辞(\"global_label.local_label\") またはドット( . )をつけ"
 "て (\".local_label\") 渡せます。"
 
-#: ../../source/label.rst:106
+#: ../../source/label.rst:114
 msgid ""
 "Unlike call, jump does not push the next statement onto a stack. As a "
 "result, there's no way to return to where you've jumped from. ::"
@@ -153,11 +162,11 @@ msgstr ""
 "call とは異なり、jump は次のステートメントをスタックにプッシュしません。この"
 "ため、ジャンプ元に戻る方法はありません。::"
 
-#: ../../source/label.rst:118
+#: ../../source/label.rst:126
 msgid "Call Statement"
 msgstr "call ステートメント"
 
-#: ../../source/label.rst:120
+#: ../../source/label.rst:128
 msgid ""
 "The call statement is used to transfer control to the given label. It also "
 "pushes the next statement onto the call stack, allowing the return statement "
@@ -167,7 +176,7 @@ msgstr ""
 "テートメントをコールスタックにプッシュし、 return ステートメントで制御を "
 "call ステートメントの次のステートメントに返せるようにします。"
 
-#: ../../source/label.rst:124
+#: ../../source/label.rst:132
 msgid ""
 "If the ``expression`` keyword is present, the expression following it is "
 "evaluated, and the resulting string is used as the name of the label to "
@@ -178,7 +187,7 @@ msgstr ""
 "をラベルの名前として呼び出します。 ``expression`` キーワードが与えられない場"
 "合は、呼び出すラベルの名前を明示的に指定する必要があります。"
 
-#: ../../source/label.rst:133
+#: ../../source/label.rst:141
 msgid ""
 "If the optional ``from`` clause is present, it has the effect of including a "
 "label statement with the given name as the statement immediately following "
@@ -190,7 +199,7 @@ msgstr ""
 "の明示はコールスタックを保存したゲームデータがスクリプトを変更した後にロード"
 "されても適切な場所に返れるようにします。"
 
-#: ../../source/label.rst:138
+#: ../../source/label.rst:146
 msgid ""
 "The call statement may take arguments, which are processed as described in :"
 "pep:`448`."
@@ -198,7 +207,7 @@ msgstr ""
 "call ステートメントには引数も受け取られ、それらは :pep:`448` に記述されたとお"
 "りに処理されます。"
 
-#: ../../source/label.rst:140
+#: ../../source/label.rst:148
 msgid ""
 "When using a call expression with an arguments list, the ``pass`` keyword "
 "must be inserted between the expression and the arguments list. Otherwise, "
@@ -209,7 +218,7 @@ msgstr ""
 "リストの間に入らなければなりません。そうでなければ引数リストは call ステート"
 "メントではなく式の一部と解釈されます。 ::"
 
-#: ../../source/label.rst:168
+#: ../../source/label.rst:176
 msgid ""
 "Publishing a game without ``from`` clauses for each ``call`` statement is "
 "dangerous, if you intend to publish updates of the game later on. If no such "
@@ -222,7 +231,7 @@ msgstr ""
 "と、 その``call`` を含むファイルを編集すると呼び出されたラベル内で作成された"
 "セーブが壊れる可能性があります。"
 
-#: ../../source/label.rst:174
+#: ../../source/label.rst:182
 msgid ""
 "Using the \"Add from clauses to calls\" option when building a game's "
 "distribution can solve that issue."
@@ -230,11 +239,11 @@ msgstr ""
 "\"Add from clauses to calls\" オプションを使用して、ゲームの配布物をビルドす"
 "るときにその問題を解決できます。"
 
-#: ../../source/label.rst:180
+#: ../../source/label.rst:188
 msgid "Return Statement"
 msgstr "return ステートメント"
 
-#: ../../source/label.rst:182
+#: ../../source/label.rst:190
 msgid ""
 "The ``return`` statement pops the top statement off of the call stack, and "
 "transfers control to it. If the call stack is empty, the return statement "
@@ -244,7 +253,7 @@ msgstr ""
 "制御をそのステートメントに移します。コールスタックが空の場合、return ステート"
 "メントは Ren'Py をリセットしてメインメニューに戻します。"
 
-#: ../../source/label.rst:186
+#: ../../source/label.rst:194
 msgid ""
 "If the optional expression is given to return, it is evaluated, and it's "
 "result is stored in the ``_return`` variable. This variable is dynamically "
@@ -253,27 +262,27 @@ msgstr ""
 "任意の式が return に指定されると、それは評価され、その結果が _return 変数に保"
 "存されます。この変数は各コンテキストに対して動的スコープに属します。"
 
-#: ../../source/label.rst:193
+#: ../../source/label.rst:201
 msgid "Special Labels"
 msgstr "特別なラベル"
 
-#: ../../source/label.rst:195
+#: ../../source/label.rst:203
 msgid "The following labels are used by Ren'Py:"
 msgstr "以下のラベルは Ren'Py 本体で使用されます。 :"
 
-#: ../../source/label.rst:198
+#: ../../source/label.rst:206
 msgid "``start``"
 msgstr "``start``"
 
-#: ../../source/label.rst:198
+#: ../../source/label.rst:206
 msgid "By default, Ren'Py jumps to this label when the game starts."
 msgstr "デフォルトでは Ren'Py はゲーム開始時にこのラベルにジャンプします。"
 
-#: ../../source/label.rst:202
+#: ../../source/label.rst:210
 msgid "``quit``"
 msgstr "``quit``"
 
-#: ../../source/label.rst:201
+#: ../../source/label.rst:209
 msgid ""
 "If it exists, this label is called in a new context when the user quits the "
 "game."
@@ -281,11 +290,11 @@ msgstr ""
 "存在すればこのラベルはユーザーがゲーム終了時に新しいコンテキストで呼び出され"
 "ます。"
 
-#: ../../source/label.rst:209
+#: ../../source/label.rst:217
 msgid "``after_load``"
 msgstr "``after_load``"
 
-#: ../../source/label.rst:205
+#: ../../source/label.rst:213
 msgid ""
 "If it exists, this label is called when a game is loaded. It can be use to "
 "fix data when the game is updated. If data is changed by this label, :func:"
@@ -297,11 +306,36 @@ msgstr ""
 "func:`renpy.block_rollback` を呼び出してプレーヤーがロード位置を越えてロール"
 "バックしてもこれらの変更が元に戻らないようにする必要があります。"
 
-#: ../../source/label.rst:213
+#: ../../source/label.rst:227
+msgid "``before_load``"
+msgstr "``before_load``"
+
+#: ../../source/label.rst:220
+msgid ""
+"If it exists, this label is called in a new context just before a game is "
+"loaded. It can be used to prepare for the load, by changing music or "
+"displaying an animation."
+msgstr ""
+"存在すればこのラベルはゲームがロードされる前に新しいコンテキストで呼び出され"
+"ます。音楽やアニメーションの変更でロードの準備に使えます。"
+
+#: ../../source/label.rst:224
+msgid ""
+"Once this label returns, Ren'Py will proceed with the load. The screen will "
+"not be updated until after the load is complete, so animations will not be "
+"run. When the load is finished, the state of the game will be replaced by "
+"the load state, and so changed in this label will be lost."
+msgstr ""
+"このラベルから戻ったら、 Ren'Py はロードを進めます。画面はロード完了まで更新"
+"されないため、アニメーションは実行されません。ロードが完了すると、ゲームの状"
+"態はロード先の状態に置き換えられるため、このラベルで変更されたものは失われま"
+"す。"
+
+#: ../../source/label.rst:231
 msgid "``splashscreen``"
 msgstr "``splashscreen``"
 
-#: ../../source/label.rst:212
+#: ../../source/label.rst:230
 msgid ""
 "If it exists, this label is called when the game is first run, before "
 "showing the main menu. Please see :ref:`Adding a Splashscreen <adding-a-"
@@ -311,11 +345,11 @@ msgstr ""
 "されます。 :ref:`スプラッシュスクリーン追加 <adding-a-splashscreen>` も参照し"
 "てください。"
 
-#: ../../source/label.rst:218
+#: ../../source/label.rst:236
 msgid "``before_main_menu``"
 msgstr "``before_main_menu``"
 
-#: ../../source/label.rst:216
+#: ../../source/label.rst:234
 msgid ""
 "If it exists, this label is called before the main menu. It is used in rare "
 "cases to set up the main menu, for example by starting a movie playing in "
@@ -325,11 +359,11 @@ msgstr ""
 "用意、例えばバックグラウンドでムービーを再生するような特別な場合に使用されま"
 "す。"
 
-#: ../../source/label.rst:227
+#: ../../source/label.rst:245
 msgid "``main_menu``"
 msgstr "``main_menu``"
 
-#: ../../source/label.rst:221
+#: ../../source/label.rst:239
 msgid ""
 "If it exists, this label is called instead of the main menu. If it returns, "
 "Ren'Py will start the game at the ``start`` label. For example, the "
@@ -340,11 +374,11 @@ msgstr ""
 "と Ren'Py は ``start`` ラベルからゲームを開始します。例えば以下のコードではメ"
 "インメニューを表示せずに即座にゲームを開始します。 ::"
 
-#: ../../source/label.rst:231
+#: ../../source/label.rst:249
 msgid "``after_warp``"
 msgstr "``after_warp``"
 
-#: ../../source/label.rst:230
+#: ../../source/label.rst:248
 msgid ""
 "If it is existed, this label is called after a warp but before the warped-to "
 "statement executes. Please see :ref:`Warping to a line <warping_to_a_line>`."
@@ -352,11 +386,11 @@ msgstr ""
 "存在すればこのラベルはワープ後にワープ先のステートメントが実行される前に呼び"
 "出されます。 :ref:`行ワープ <warping_to_a_line>` を参照してください。"
 
-#: ../../source/label.rst:237
+#: ../../source/label.rst:255
 msgid "``hide_windows``"
 msgstr "``hide_windows``"
 
-#: ../../source/label.rst:234
+#: ../../source/label.rst:252
 msgid ""
 "If it exists, this label is called when the player hides the windows with "
 "the right mouse button or the H key. If this returns true, the hide is "
@@ -367,7 +401,7 @@ msgstr ""
 "たときに呼び出されます。これが True を返せば、その非表示は (非表示が既に実行"
 "された後) キャンセルされ、そうで無ければその非表示が続きます。"
 
-#: ../../source/label.rst:239
+#: ../../source/label.rst:257
 msgid ""
 "Ren'Py also uses the following labels to show some of the :doc:`special "
 "screens <screen_special>`:"
@@ -375,27 +409,27 @@ msgstr ""
 "Ren'Py は、 :doc:`特別なスクリーン <screen_special>` のうち一部を表示するのに"
 "以下のラベルも使用します。 :"
 
-#: ../../source/label.rst:241
+#: ../../source/label.rst:259
 msgid "``main_menu_screen``"
 msgstr "``main_menu_screen``"
 
-#: ../../source/label.rst:242
+#: ../../source/label.rst:260
 msgid "``load_screen``"
 msgstr "``load_screen``"
 
-#: ../../source/label.rst:243
+#: ../../source/label.rst:261
 msgid "``save_screen``"
 msgstr "``save_screen``"
 
-#: ../../source/label.rst:244
+#: ../../source/label.rst:262
 msgid "``preferences_screen``"
 msgstr "``preferences_screen``"
 
-#: ../../source/label.rst:245
+#: ../../source/label.rst:263
 msgid "``joystick_preferences_screen``"
 msgstr "``joystick_preferences_screen``"
 
-#: ../../source/label.rst:248
+#: ../../source/label.rst:266
 msgid "Labels & Control Flow Functions"
 msgstr "ラベルと制御フロー関数"
 
@@ -541,11 +575,11 @@ msgstr "最も一般的な使い方は、次のように使うことです ::"
 msgid "to clear the return stack."
 msgstr "リターンスタックをクリアします。"
 
-#: ../../source/label.rst:255
+#: ../../source/label.rst:273
 msgid "Contexts"
 msgstr "コンテキスト"
 
-#: ../../source/label.rst:257
+#: ../../source/label.rst:275
 msgid ""
 "Contexts are used internally by Ren'Py to manage the changeable and saveable "
 "state of the game. Contexts include:"
@@ -553,11 +587,11 @@ msgstr ""
 "コンテキストは、 Ren'Py がゲームの状態の変更可能な物や保存可能な物を管理する"
 "ために内部的に使用します。コンテキストには以下のものがあります :"
 
-#: ../../source/label.rst:260
+#: ../../source/label.rst:278
 msgid "the currently running Ren'Py statement,"
 msgstr "現在実行中のRen'Pyのステートメント"
 
-#: ../../source/label.rst:261
+#: ../../source/label.rst:279
 msgid ""
 "the call stack, as described above, and the names and former values of "
 "dynamic variables created by :func:`renpy.dynamic`,"
@@ -565,22 +599,22 @@ msgstr ""
 "上述のように、コールスタックと :func:`renpy.dynamic` によって作成された動的変"
 "数の名前と以前の値を返します"
 
-#: ../../source/label.rst:263
+#: ../../source/label.rst:281
 msgid ""
 "the images currently being shown (and information about them like their "
 "attributes, the transforms applied to them and so on),"
 msgstr ""
 "現在表示されている画像（およびその属性や適用されている transform などの情報）"
 
-#: ../../source/label.rst:265
+#: ../../source/label.rst:283
 msgid "the screens being shown, and the variables inside them,"
 msgstr "表示されている screen とその中の変数"
 
-#: ../../source/label.rst:266
+#: ../../source/label.rst:284
 msgid "the audio that is playing or queued."
 msgstr "再生中またはキューされている音声"
 
-#: ../../source/label.rst:268
+#: ../../source/label.rst:286
 msgid ""
 "Most of the time there is only one context at play, and only one instance of "
 "each of these elements exists. This changes when entering the main or game "
@@ -594,7 +628,7 @@ msgstr ""
 "るときに元に戻ります。これらの変化のいくつかはコンテキストに入るとスクリーン"
 "レイヤーがクリアされるように自動で変更されます。"
 
-#: ../../source/label.rst:274
+#: ../../source/label.rst:292
 msgid ""
 "Ren'Py also creates new contexts as part of :ref:`replay` and when :func:"
 "`hiding the interface <HideInterface>`."
@@ -602,7 +636,7 @@ msgstr ""
 "Ren'Py は :ref:`replay` や :func:`hiding interface<HideInterface>` のときにも"
 "新しいコンテキストを作成します。"
 
-#: ../../source/label.rst:277
+#: ../../source/label.rst:295
 msgid ""
 "The creation of :ref:`screen language <screens>` has considerably lessened "
 "the need for creating contexts."
@@ -610,7 +644,7 @@ msgstr ""
 ":ref:`screen language <screens>` によりコンテキストを作る必要性は顕著に減りま"
 "した。"
 
-#: ../../source/label.rst:280
+#: ../../source/label.rst:298
 msgid ""
 "Rollback is only enabled in the base context (meaning, when there is only "
 "one context), and only the base context is saved, which is why the game menu "
@@ -797,13 +831,6 @@ msgstr ""
 #~ msgstr ""
 #~ "コールスタックから現在の呼び出しをポップしますが、呼び出し元には返りませ"
 #~ "ん。"
-
-#~ msgid ""
-#~ "If it exists, this label is called when a game is loaded. It can be use "
-#~ "to fix data when the game is updated."
-#~ msgstr ""
-#~ "存在すればこのラベルはゲームがロードされると呼び出されます。ゲーム更新時に"
-#~ "データを修正するために使用可能です。"
 
 #~ msgid ""
 #~ "Please note that the context so created cannot execute renpy code. So "

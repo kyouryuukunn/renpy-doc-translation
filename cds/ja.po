@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 18:27+0900\n"
-"PO-Revision-Date: 2025-08-05 22:36+0900\n"
+"POT-Creation-Date: 2025-10-05 00:21+0900\n"
+"PO-Revision-Date: 2025-10-18 11:59+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-04-06 05:27+0000\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../../source/cds.rst:2
 msgid "Creator-Defined Statements"
@@ -266,8 +266,8 @@ msgid ""
 "object returned from parse. It should call renpy.error to report errors."
 msgstr ""
 "これはステートメントをチェックするために呼び出され、 parse から返されたオブ"
-"ジェクトを引数として渡されます。 renpy.error を呼び出してエラーを報告"
-"するとよいでしょう。"
+"ジェクトを引数として渡されます。 renpy.error を呼び出してエラーを報告するとよ"
+"いでしょう。"
 
 #: ../../source/inc/statement_register:42
 msgid "`execute`"
@@ -414,23 +414,25 @@ msgstr ""
 "``voice`` のような、ダイアログで変更する必要のあるステートメントに使用されま"
 "す。"
 
-#: ../../source/inc/statement_register:98
+#: ../../source/inc/statement_register:100
 msgid "`init_priority`"
 msgstr "`init_priority`"
 
 #: ../../source/inc/statement_register:97
 msgid ""
 "An integer that determines the priority of initialization of the init block "
-"created by `init` and `execute_init` function."
+"created by `init` and `execute_init` function. This can also be a function "
+"that is called with the parsed block, and should return an integer."
 msgstr ""
 "`init` と `execute_init` 関数によって作成される init ブロックの初期化優先順位"
-"を決定する整数です。"
+"を決定する整数です。解析されたブロックを引数に呼び出される関数にもでき、整数"
+"を返すべきです。"
 
-#: ../../source/inc/statement_register:103
+#: ../../source/inc/statement_register:105
 msgid "`translation_strings`"
 msgstr "`translation_strings`"
 
-#: ../../source/inc/statement_register:101
+#: ../../source/inc/statement_register:103
 msgid ""
 "A function that is called with the parsed block. It's expected to return a "
 "list of strings or tuples of (string line number, string), which are then "
@@ -439,11 +441,11 @@ msgstr ""
 "パースされたブロックを引数に呼び出される関数であり、翻訳可能として報告される"
 "文字列のリストまたは(文字列の行数, 文字列)形式のタプルを返します。"
 
-#: ../../source/inc/statement_register:107
+#: ../../source/inc/statement_register:109
 msgid "`force_begin_rollback`"
 msgstr "`force_begin_rollback`"
 
-#: ../../source/inc/statement_register:106
+#: ../../source/inc/statement_register:108
 msgid ""
 "This should be set to true on statements that are likely to cause the end of "
 "a fast skip, similar to ``menu`` or ``call screen``."
@@ -451,11 +453,11 @@ msgstr ""
 "これは ``menu`` や ``call screen``  のようなファストスキップを停止するステー"
 "トメントでは  True にするべきです。"
 
-#: ../../source/inc/statement_register:112
+#: ../../source/inc/statement_register:114
 msgid "`post_execute`"
 msgstr "`post_execute`"
 
-#: ../../source/inc/statement_register:110
+#: ../../source/inc/statement_register:112
 msgid ""
 "A function that is executed as part the next statement after this one. "
 "(Adding a post_execute function changes the contents of the RPYC file, "
@@ -464,11 +466,11 @@ msgstr ""
 "次のステートメントの一部として実行される関数です( post_execute 関数の追加によ"
 "り RPYC ファイルの内容が変化するため、強制コンパイルが必要になります )。"
 
-#: ../../source/inc/statement_register:118
+#: ../../source/inc/statement_register:120
 msgid "`post_label`"
 msgstr "`post_label`"
 
-#: ../../source/inc/statement_register:115
+#: ../../source/inc/statement_register:117
 msgid ""
 "This is a function that is called to determine the label of this the post "
 "execute statement. If it returns a string, that string is used as the "
@@ -479,11 +481,11 @@ msgstr ""
 "メントのラベルとして使用され、その他のラベル同様に呼び出しやジャンプが出来ま"
 "す。これを使用して他と被らないリターンポイントを作成できます。"
 
-#: ../../source/inc/statement_register:122
+#: ../../source/inc/statement_register:124
 msgid "`predict_all`"
 msgstr "`predict_all`"
 
-#: ../../source/inc/statement_register:121
+#: ../../source/inc/statement_register:123
 msgid ""
 "If True, then this predicts all sub-parses of this statement and the "
 "statement after this statement."
@@ -491,18 +493,18 @@ msgstr ""
 "True なら、このステートメントと次のステートメントのすべての sub-parse を予測"
 "します。"
 
-#: ../../source/inc/statement_register:130
+#: ../../source/inc/statement_register:132
 msgid "`predict_next`"
 msgstr "`predict_next`"
 
-#: ../../source/inc/statement_register:125
+#: ../../source/inc/statement_register:127
 msgid ""
 "This is called with a single argument, the label of the statement that would "
 "run after this statement."
 msgstr ""
 "これはこのステートメントの次のステートメントのラベルを引数とする関数です。"
 
-#: ../../source/inc/statement_register:128
+#: ../../source/inc/statement_register:130
 msgid ""
 "This should be called to predict the statements that can run after this one. "
 "It's expected to return a list of of labels or SubParse objects. This is not "
@@ -512,11 +514,11 @@ msgstr ""
 "か SubParse オブジェクトのリストを返します。 predict_all が True だと呼び出さ"
 "れません。"
 
-#: ../../source/inc/statement_register:138
+#: ../../source/inc/statement_register:140
 msgid "`execute_default`"
 msgstr "`execute_default`"
 
-#: ../../source/inc/statement_register:133
+#: ../../source/inc/statement_register:135
 msgid ""
 "This is a function that is called at the same time the default statements "
 "are run - after the init phase, but before the game starts; when the a save "
@@ -526,15 +528,15 @@ msgstr ""
 "び出される関数です。セーブのロード時、ロールバック後、 lint 前、その他の場合"
 "もあります。"
 
-#: ../../source/inc/statement_register:138
+#: ../../source/inc/statement_register:140
 msgid "This is called with a single argument, the object returned from parse."
 msgstr "これは parse から返されたオブジェクトを引数に呼び出されます。"
 
-#: ../../source/inc/statement_register:171
+#: ../../source/inc/statement_register:173
 msgid "`reachable`"
 msgstr "`reachable`"
 
-#: ../../source/inc/statement_register:141
+#: ../../source/inc/statement_register:143
 msgid ""
 "This is a function that is called to allow this statement to customize how "
 "it participates in lint's reachability analysis."
@@ -542,7 +544,7 @@ msgstr ""
 "これは、呼び出すとこのステートメントが lint の到達可能性の解析にどのように参"
 "加するかをカスタマイズできる関数です。"
 
-#: ../../source/inc/statement_register:144
+#: ../../source/inc/statement_register:146
 msgid ""
 "By default, a statement's custom block, sub-parse blocks created with Lexer."
 "renpy_block(), and the statement after the statement are reachable if the "
@@ -554,7 +556,7 @@ msgstr ""
 "メント自体が到達可能であれば到達可能です。また、ステートメントがラベル関数を"
 "持つ場合も到達可能です。"
 
-#: ../../source/inc/statement_register:149
+#: ../../source/inc/statement_register:151
 msgid ""
 "This can be customized by providing a reachable function. This is a function "
 "that takes five arguments (in the following, a \"label\" may be a string or "
@@ -564,23 +566,23 @@ msgstr ""
 "る関数です ( 以下、 「ラベル」 は文字列でも不透明なオブジェクトでもかまいませ"
 "ん) :"
 
-#: ../../source/inc/statement_register:153
+#: ../../source/inc/statement_register:155
 msgid "The object returned by the parse function."
 msgstr "parse 関数から返されたオブジェクト"
 
-#: ../../source/inc/statement_register:154
+#: ../../source/inc/statement_register:156
 msgid "A boolean that is true if the statement is reachable."
 msgstr "ステートメントが到達可能ならば True である真偽値"
 
-#: ../../source/inc/statement_register:155
+#: ../../source/inc/statement_register:157
 msgid "The label of the statement."
 msgstr "ステートメントのラベル"
 
-#: ../../source/inc/statement_register:156
+#: ../../source/inc/statement_register:158
 msgid "The label of the next statement, or None if there is no next statement."
 msgstr "次のステートメントのラベルまたは次のステートメントがないときは None"
 
-#: ../../source/inc/statement_register:157
+#: ../../source/inc/statement_register:159
 msgid ""
 "If `block` is set to \"script\", the label of the first statement in the "
 "block, or None if there is no block."
@@ -588,15 +590,15 @@ msgstr ""
 "`block` が \"script\" に設定されていれば、そのブロックの最初のステートメント"
 "のラベル、そうではなくブロックがないときは None"
 
-#: ../../source/inc/statement_register:160
+#: ../../source/inc/statement_register:162
 msgid "It's expected to return a set that may contain:"
 msgstr "次を含む set を返すと期待されます :"
 
-#: ../../source/inc/statement_register:162
+#: ../../source/inc/statement_register:164
 msgid "A label or subparse object of a statement that is reachable."
 msgstr "到達可能なステートメントのラベルまたは subparse オブジェクト"
 
-#: ../../source/inc/statement_register:163
+#: ../../source/inc/statement_register:165
 msgid ""
 "True, to indicate that this statement should not be reported by lint, but is "
 "not intrinsically reachable. (It will become reachable if it is reported "
@@ -606,11 +608,11 @@ msgstr ""
 "は到達可能ではありません(他のステートメントで到達可能と報告されると到達可能に"
 "なります)。"
 
-#: ../../source/inc/statement_register:166
+#: ../../source/inc/statement_register:168
 msgid "None, which is ignored."
 msgstr "None なら無視されます"
 
-#: ../../source/inc/statement_register:168
+#: ../../source/inc/statement_register:170
 msgid ""
 "This function may be called multiple times with both value of is_reachable, "
 "to allow the statement to customize its behavior based on whether it's "
@@ -622,7 +624,7 @@ msgstr ""
 "トは、このステートメントが到達可能である場合にのみ到達可能である可能性があり"
 "ます)。"
 
-#: ../../source/inc/statement_register:175
+#: ../../source/inc/statement_register:177
 msgid ""
 "Using the empty string as the name to redefine the say statement is usually "
 "a bad idea. That is because when replacing a Ren'Py native statement, its "
@@ -646,18 +648,28 @@ msgstr "Lexer オブジェクト"
 msgid ""
 "A custom statement's parse function takes an instance of a Lexer object."
 msgstr ""
-"Lexer オブジェクトのインスタンスを受け取ってカスタムステートメントをパースす"
-"る関数です。"
+"ユーザー定義ステートメントを解釈する関数は Lexer オブジェクトのインスタンスを"
+"受け取ります。"
+
+#: ../../source/cds.rst:157
+msgid "This is true if the lexer is inside an init statement, else false."
+msgstr ""
+"lexer が init ステートメント内部にいれば True を返し、そうでなければ False を"
+"返します。"
+
+#: ../../source/cds.rst:161
+msgid "If init is true, this is the priority of the init block."
+msgstr "ini が True ならば、これはその init ブロックの優先度です。"
 
 #: ../../source/cds.rst:0
 msgid "パラメータ"
 msgstr "パラメータ"
 
-#: ../../source/cds.rst:157
+#: ../../source/cds.rst:165
 msgid "Message to add to the list of detected parsing errors."
 msgstr "検出したパースエラーのリストに追加されるメッセージです。"
 
-#: ../../source/cds.rst:159
+#: ../../source/cds.rst:167
 msgid ""
 "Add `msg` (with the current position) to the list of detected parsing "
 "errors. This interrupts the parsing of the current statement, but does not "
@@ -666,16 +678,16 @@ msgstr ""
 "検出されたパースエラーのリストに(現在位置とともに) `msg` を追加します。これは"
 "現在のステートメントのパースを停止しますが、以降のパースは妨げません。"
 
-#: ../../source/cds.rst:165
+#: ../../source/cds.rst:173
 msgid "Try to parse `thing` and report an error if it cannot be done."
 msgstr "`thing` のパースを試み、出来なければエラーを返します。"
 
-#: ../../source/cds.rst:167
+#: ../../source/cds.rst:175
 msgid "If `thing` is a string, try to parse it using :func:`match`."
 msgstr ""
 "`thing` が文字列なら、 :func:`match` を使用してそれをパースしようとします。"
 
-#: ../../source/cds.rst:169
+#: ../../source/cds.rst:177
 msgid ""
 "Otherwise, thing must be another method on this lexer object which is called "
 "without arguments."
@@ -683,7 +695,7 @@ msgstr ""
 "そうでなければ、 thing はこの lexer オブジェクトの引数無しで呼び出される他の"
 "メソッドでなければいけません。"
 
-#: ../../source/cds.rst:172
+#: ../../source/cds.rst:180
 msgid ""
 "If `name` is not specified, the name of the method will be used in the "
 "message (or `thing` if it's a string), otherwise `name` will be used."
@@ -695,7 +707,7 @@ msgstr ""
 msgid "戻り値"
 msgstr "戻り値"
 
-#: ../../source/cds.rst:177
+#: ../../source/cds.rst:185
 msgid "True if the lexer is at the end of the line, else False."
 msgstr ""
 "lexerが行の末端に達していれば True を返し、そうでなければ False を返します。"
@@ -704,11 +716,11 @@ msgstr ""
 msgid "戻り値の型"
 msgstr "戻り値の型"
 
-#: ../../source/cds.rst:182
+#: ../../source/cds.rst:190
 msgid "If not at the end of the line, raise an error."
 msgstr "行の末端に達していなければエラーを投げます。"
 
-#: ../../source/cds.rst:186
+#: ../../source/cds.rst:194
 msgid ""
 "Called to indicate this statement does not expect a block. If a block is "
 "found, raise an error. `stmt` should be a string, it will be added to the "
@@ -718,7 +730,7 @@ msgstr ""
 "が発見されると、例外が投げられます。 `stmt` はエラーとともにメッセージに追加"
 "される文字列です。"
 
-#: ../../source/cds.rst:192
+#: ../../source/cds.rst:200
 msgid ""
 "Called to indicate that the statement requires that a non-empty block is "
 "present. `stmt` should be a string, it will be added to the message with an "
@@ -727,15 +739,15 @@ msgstr ""
 "このステートメントが空でないブロックを必要とする示すために呼び出されます。 "
 "`stmt` はエラーとともにメッセージに追加される文字列です。"
 
-#: ../../source/cds.rst:198
+#: ../../source/cds.rst:206
 msgid "True if the current line has a non-empty block, else False."
 msgstr "現在行に空でないブロックがあれば True 、そうでなければ False です。"
 
-#: ../../source/cds.rst:203
+#: ../../source/cds.rst:211
 msgid "Match an arbitrary regexp string."
 msgstr "任意の正規表現文字列にマッチします。"
 
-#: ../../source/cds.rst:205
+#: ../../source/cds.rst:213
 msgid ""
 "All of the statements in the lexer that match things are implemented in "
 "terms of this function. They first skip whitespace, then attempt to match "
@@ -747,49 +759,49 @@ msgstr ""
 "す。マッチが成功すればマッチしたテキストが返され、そうでなければ None が返さ"
 "れ、 Lexer は変更されません。"
 
-#: ../../source/cds.rst:213
+#: ../../source/cds.rst:221
 msgid "Match `s` as a keyword."
 msgstr "キーワードとして `s` にマッチします。"
 
-#: ../../source/cds.rst:217
+#: ../../source/cds.rst:225
 msgid "Match a name. This does not match built-in keywords."
 msgstr "名前にマッチしますが組み込みのキーワードにはマッチしません。"
 
-#: ../../source/cds.rst:221
+#: ../../source/cds.rst:229
 msgid "The text of the matched word."
 msgstr "マッチされた単語のテキストです。"
 
-#: ../../source/cds.rst:224
+#: ../../source/cds.rst:232
 msgid "Match any word, including keywords."
 msgstr "キーワードを含むどのような単語にもマッチします。"
 
-#: ../../source/cds.rst:228
+#: ../../source/cds.rst:236
 msgid ""
 "Match an image name component. Unlike a word, an image name component can "
 "begin with a number."
 msgstr "画像名にマッチします。単語と違い画像名は数字で始められます。"
 
-#: ../../source/cds.rst:233
+#: ../../source/cds.rst:241
 msgid "Match a Ren'Py string."
 msgstr "文字列にマッチします。"
 
-#: ../../source/cds.rst:237
+#: ../../source/cds.rst:245
 msgid "String containing the found integer."
 msgstr "整数を含む文字列"
 
-#: ../../source/cds.rst:240
+#: ../../source/cds.rst:248
 msgid "Match an integer."
 msgstr "整数にマッチします。"
 
-#: ../../source/cds.rst:244
+#: ../../source/cds.rst:252
 msgid "String containing the found floating point number."
 msgstr "浮動小数点を含む文字列"
 
-#: ../../source/cds.rst:247
+#: ../../source/cds.rst:255
 msgid "Match a floating point number."
 msgstr "浮動小数にマッチします。"
 
-#: ../../source/cds.rst:251
+#: ../../source/cds.rst:259
 msgid ""
 "Match a label name, either absolute or relative. If `declare` is true, then "
 "the global label name is set. (Note that this does not actually declare the "
@@ -801,7 +813,7 @@ msgstr ""
 "す必要あるためにそうしているだけで、これはは実際にはラベルを宣言しないことに"
 "注意してください)。"
 
-#: ../../source/cds.rst:258
+#: ../../source/cds.rst:266
 msgid ""
 "Match a simple Python expression, returns it as a string. This is often used "
 "when you expect a variable name. It is not recommended to change the result. "
@@ -811,7 +823,7 @@ msgstr ""
 "時に使用されます。結果の変更は推奨されません。正しいアクションは future(訳"
 "注: python3互換モジュールのこと?) で結果を評価することです。"
 
-#: ../../source/cds.rst:265
+#: ../../source/cds.rst:273
 msgid ""
 "Match a Python expression that ends in a `delim`, for example ':'. This is "
 "often used when you expect a condition until the delimiter. It is not "
@@ -824,7 +836,7 @@ msgstr ""
 "いアクションは future(訳注: python3互換モジュールのこと?) で結果を評価するこ"
 "とです。デリミタの前に行端に達すればエラーを投げます。"
 
-#: ../../source/cds.rst:273
+#: ../../source/cds.rst:281
 msgid ""
 "This must be called before the parentheses with the arguments list, if they "
 "are not specified returns None, otherwise returns an object representing the "
@@ -839,15 +851,15 @@ msgstr ""
 "``evalute`` メソッドがあり、1番目が位置引数のタプル、二番目がキーワード引数の"
 "辞書であるタプルを返します。"
 
-#: ../../source/cds.rst:283
+#: ../../source/cds.rst:291
 msgid "Skip whitespace, then return the rest of the line."
 msgstr "空白をスキップし、行の残りを返します。"
 
-#: ../../source/cds.rst:287
+#: ../../source/cds.rst:295
 msgid "Return an opaque object representing the current state of the lexer."
 msgstr "現在の lexer の状態を表現する opaque オブジェクトを返します。"
 
-#: ../../source/cds.rst:291
+#: ../../source/cds.rst:299
 msgid ""
 "When `o` is the object returned from checkpoint(), reverts the state of the "
 "lexer to what it was when checkpoint() was called. (This is used for "
@@ -857,11 +869,11 @@ msgstr ""
 "checkpoint() が呼び出されたときにまで戻します ( これはバックトラッキングのた"
 "めに使用されます )。"
 
-#: ../../source/cds.rst:297
+#: ../../source/cds.rst:305
 msgid "A Lexer for the block associated with the current line."
 msgstr "現在行と対応するブロックに対する Lexer"
 
-#: ../../source/cds.rst:301
+#: ../../source/cds.rst:309
 msgid ""
 "In a subblock lexer, advance to the next line. This must be called before "
 "the first line, so the first line can be parsed. Return True if we've "
@@ -872,7 +884,7 @@ msgstr ""
 "めに、一行目よりも前で呼び出される必要があります。そのブロック内の行に進めれ"
 "ば、 True を返し、末端を越えていれば False を返します。"
 
-#: ../../source/cds.rst:308
+#: ../../source/cds.rst:316
 msgid ""
 "When called, this parses the current line as a Ren'Py script statement, "
 "generating an error if this is not possible. This method returns an opaque "
@@ -887,7 +899,7 @@ msgstr ""
 "call` に渡される opaque オブジェクトを返します。このオブジェクトはステートメ"
 "ントのパース結果としてを除いて保存されるべきではありません。"
 
-#: ../../source/cds.rst:315
+#: ../../source/cds.rst:323
 msgid ""
 "When the statement returned from this completes, control is transferred to "
 "the statement after the creator-defined statement. (Which might be the "
@@ -897,7 +909,7 @@ msgstr ""
 "ステートメント( post_execute を使用して作成されたステートメントもありえます)"
 "に渡されます。"
 
-#: ../../source/cds.rst:321
+#: ../../source/cds.rst:329
 msgid ""
 "Parse all of the remaining lines in the current block as Ren'Py script, and "
 "return a SubParse corresponding to the first statement in the block. The "
@@ -910,7 +922,7 @@ msgstr ""
 "すべてのステートメントとともにブロックが処理されると、制御はこのユーザー定義"
 "ステートメントの次のステートメントに渡されます。"
 
-#: ../../source/cds.rst:327
+#: ../../source/cds.rst:335
 msgid ""
 "Note that this parses the current block. In the more likely case that you'd "
 "like to parse the subblock of the current statement, the correct way to do "
@@ -919,11 +931,11 @@ msgstr ""
 "これは現在のブロックをパースすることに注意してください。。現在のステートメン"
 "トのサブブロックをパースしたい場合は、以下のようにしてください。"
 
-#: ../../source/cds.rst:344
+#: ../../source/cds.rst:352
 msgid "`empty`"
 msgstr "`empty`"
 
-#: ../../source/cds.rst:342
+#: ../../source/cds.rst:350
 msgid ""
 "If True, allows an empty block to be parsed. (An empty block is equivalent "
 "to a block with a single ``pass`` statement.)"
@@ -931,11 +943,11 @@ msgstr ""
 "True なら、空のブロックもパースされます( 空のブロックは ``pass`` ステートメン"
 "トのみのブロックに相当します)。"
 
-#: ../../source/cds.rst:345
+#: ../../source/cds.rst:353
 msgid "If False, an empty block triggers an error."
 msgstr "False なら、空のブロックでエラーとなります。"
 
-#: ../../source/cds.rst:349
+#: ../../source/cds.rst:357
 msgid ""
 "This is a context decorator, used in conjunction with the with statement, "
 "that catches and reports lexer errors inside its context block, then "
@@ -944,7 +956,7 @@ msgstr ""
 "これは with ステートメントと共に使用され、そのコンテキストブロック内で Lexer "
 "エラーをキャッチしてレポートし、次のブロックに続ける context decorator です。"
 
-#: ../../source/cds.rst:353
+#: ../../source/cds.rst:361
 msgid ""
 "Here's an example of how it can be used to report multiple errors in a "
 "single subblock. ::"
@@ -952,7 +964,7 @@ msgstr ""
 "こちらは1つのサブブロック内での複数のエラーをどのようにレポートするかの例で"
 "す。 ::"
 
-#: ../../source/cds.rst:373
+#: ../../source/cds.rst:381
 msgid "A function allows you to lex arbitrary strings:"
 msgstr "任意の文字列を解釈するための関数です。"
 
@@ -992,11 +1004,11 @@ msgstr "`advance`"
 msgid "If true, the .advance() method will be called on the lexer."
 msgstr "True なら、Lexer 内で .advanced() メソッドが呼び出されます。"
 
-#: ../../source/cds.rst:379
+#: ../../source/cds.rst:387
 msgid "Lint Utility Functions"
 msgstr "Lint 用ユーティリティー関数"
 
-#: ../../source/cds.rst:381
+#: ../../source/cds.rst:389
 msgid "These functions are useful when writing lint functions."
 msgstr "これらの関数は lint 関数を記述するのに便利です。"
 

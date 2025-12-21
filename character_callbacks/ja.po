@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-02 11:45+0900\n"
-"PO-Revision-Date: 2025-03-02 11:56+0900\n"
+"POT-Creation-Date: 2025-12-06 19:33+0900\n"
+"PO-Revision-Date: 2025-12-07 19:47+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -86,79 +86,91 @@ msgstr ""
 "生するかもしれませんが、その場合台詞はインタラクションを起こさないことに注意"
 "してください。"
 
+#: ../../source/character_callbacks.rst:32
+msgid "\"interact_done\""
+msgstr "\"interact_done\""
+
 #: ../../source/character_callbacks.rst:31
+msgid ""
+"Called after the interaction ends. Note that entering a new context (like "
+"the game menu) does not end the interaction."
+msgstr ""
+"インタラクション終了後に呼び出されます。新しいコンテキスト(例えばゲームメ"
+"ニュー)に入っても、インタラクションは終了しないことに注意してください。"
+
+#: ../../source/character_callbacks.rst:35
 msgid "\"end\""
 msgstr "\"end\""
 
-#: ../../source/character_callbacks.rst:31
+#: ../../source/character_callbacks.rst:35
 msgid "Called at the end of a say statement."
 msgstr "say ステートメントの終りに呼び出されます。"
 
-#: ../../source/character_callbacks.rst:33
+#: ../../source/character_callbacks.rst:37
 msgid "The callback is called with at the keyword arguments:"
 msgstr "キーワード引数つきで呼び出されます。 :"
 
-#: ../../source/character_callbacks.rst:36
+#: ../../source/character_callbacks.rst:40
 msgid "`interact`"
 msgstr "`interact`"
 
-#: ../../source/character_callbacks.rst:36
+#: ../../source/character_callbacks.rst:40
 msgid "This is true if the dialogue causes an interaction to occur."
 msgstr "台詞がインタラクションを起こすなら True です。"
 
-#: ../../source/character_callbacks.rst:39
+#: ../../source/character_callbacks.rst:43
 msgid "`type`"
 msgstr "`type`"
 
-#: ../../source/character_callbacks.rst:39
+#: ../../source/character_callbacks.rst:43
 msgid "The type of character (e.g. \"nvl\", \"adv\", \"bubble\")."
 msgstr "キャラクターの種類 (例: \"nvl\", \"adv\", \"bubble\")。"
 
-#: ../../source/character_callbacks.rst:42
+#: ../../source/character_callbacks.rst:46
 msgid "`what`"
 msgstr "`what`"
 
-#: ../../source/character_callbacks.rst:42
+#: ../../source/character_callbacks.rst:46
 msgid "The text that is going to be supplied to the what displayable."
 msgstr "what displayable に提供されるテキスト。"
 
-#: ../../source/character_callbacks.rst:45
+#: ../../source/character_callbacks.rst:49
 msgid "`multiple`"
 msgstr "`multiple`"
 
-#: ../../source/character_callbacks.rst:45
+#: ../../source/character_callbacks.rst:49
 msgid "The `multiple` argument to :func:`Character`."
 msgstr ":func:`Character` 関数の`multiple` 引数に渡されます。"
 
-#: ../../source/character_callbacks.rst:47
-msgid ""
-"The \"show\" and \"slow_done\" callbacks are also given additional keyword "
-"arguments:"
-msgstr ""
-"\"show\" と \"slow_done\" コールバックにも追加のキーワード引数が指定されま"
-"す :"
-
 #: ../../source/character_callbacks.rst:51
+msgid ""
+"The \"show\", \"slow_done\", and \"interact_done\" callbacks are also given "
+"additional keyword arguments:"
+msgstr ""
+"\"show\" と \"slow_done\", \"interact_done\" コールバックにも追加のキーワード"
+"引数が指定されます :"
+
+#: ../../source/character_callbacks.rst:55
 msgid "`start`"
 msgstr "`start`"
 
-#: ../../source/character_callbacks.rst:51
+#: ../../source/character_callbacks.rst:55
 msgid "The start of the current segment of dialogue, in the `what` string."
 msgstr "`what` 文字列の台詞中の現在のセグメントの開始位置です。"
 
-#: ../../source/character_callbacks.rst:54
+#: ../../source/character_callbacks.rst:58
 msgid "`end`"
 msgstr "`end`"
 
-#: ../../source/character_callbacks.rst:54
+#: ../../source/character_callbacks.rst:58
 msgid "The end of the current segment of dialogue, in the `what` string."
 msgstr "`what` 文字列の台詞中の現在のセグメントの終了位置です。"
 
-#: ../../source/character_callbacks.rst:58
+#: ../../source/character_callbacks.rst:62
 msgid "`delay`"
 msgstr "`delay`"
 
-#: ../../source/character_callbacks.rst:57
+#: ../../source/character_callbacks.rst:61
 msgid ""
 "The amount of time Ren'Py will pause after the current segment of dialogue "
 "is shown, or None if Ren'Py will pause until the player clicks."
@@ -166,11 +178,11 @@ msgstr ""
 "台詞中のの現在のセグメントが表示された後に Ren'Py が一時停止する時間です。プ"
 "レイヤーがクリックするまで Ren'Py が停止する場合は None です。"
 
-#: ../../source/character_callbacks.rst:62
+#: ../../source/character_callbacks.rst:65
 msgid "`last_segment`"
 msgstr "`last_segment`"
 
-#: ../../source/character_callbacks.rst:61
+#: ../../source/character_callbacks.rst:65
 msgid ""
 "True if this is the last segment of dialogue in the say statement, False "
 "otherwise."
@@ -178,7 +190,23 @@ msgstr ""
 "これが say ステートメントでの台詞の最後のセグメントである場合は true、そうで"
 "ない場合は False です。"
 
-#: ../../source/character_callbacks.rst:64
+#: ../../source/character_callbacks.rst:67
+msgid "The \"interact_done\" callback takes an additional keyword argument:"
+msgstr "``interact_done`` コールバックは追加のキーワード引数を含みます :"
+
+#: ../../source/character_callbacks.rst:71
+msgid "`exception`"
+msgstr "`exception`"
+
+#: ../../source/character_callbacks.rst:70
+msgid ""
+"True if the interaction ended due to an exception, False otherwise. "
+"Exceptions include things like loading the game and rollback."
+msgstr ""
+"例外によってインタラクションが終了した場合は True, そうでなければ False で"
+"す。例外としては、ゲームのロードやロールバックなどを含みます。"
+
+#: ../../source/character_callbacks.rst:73
 msgid ""
 "Other values of the positional argument and additional keyword arguments may "
 "be supplied to the callback. The callback should be written to ignore "
@@ -187,11 +215,11 @@ msgstr ""
 "他の値の位置引数や追加のキーワード引数の値が将来渡されるかもしれません。コー"
 "ルバックは未知のキーワード引数は無視するようにするべきです。"
 
-#: ../../source/character_callbacks.rst:69
+#: ../../source/character_callbacks.rst:78
 msgid "Example"
 msgstr "例"
 
-#: ../../source/character_callbacks.rst:71
+#: ../../source/character_callbacks.rst:80
 msgid ""
 "This example plays beeps in place of a character voice, when slow text is "
 "enabled::"
@@ -199,7 +227,7 @@ msgstr ""
 "この例では低速テキストが有効だとキャラクターボイスの代わりにビープ音をならし"
 "ます。 :"
 
-#: ../../source/character_callbacks.rst:90
+#: ../../source/character_callbacks.rst:99
 msgid ""
 "To specialize a general callback with for specific characters, you can pass "
 "arguments to the callback function with the `cb_` prefix::"
