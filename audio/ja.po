@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 02:10+0900\n"
-"PO-Revision-Date: 2025-08-13 11:41+0900\n"
+"POT-Creation-Date: 2025-12-21 14:36+0900\n"
+"PO-Revision-Date: 2025-12-27 12:37+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -200,6 +200,14 @@ msgstr ""
 
 #: ../../source/audio.rst:80
 msgid ""
+"The directories that are searched for files can be changed by modifying :var:"
+"`config.audio_directories`."
+msgstr ""
+":var:`config.audio_directories` を変更してファイルを検索するディレクトリを変"
+"更できます。"
+
+#: ../../source/audio.rst:82
+msgid ""
 "The usable name is determined by stripping the extension and forcing the "
 "rest of the filename to lower case. This is only the case for audio files "
 "with names that can be expressed as Python variables, for example: :file:`my "
@@ -215,7 +223,7 @@ msgstr ""
 "同じ名前で定義される場合は、最初のファイル (パスとファイル名、拡張子を含むア"
 "ルファベット順) のみが定義されます。"
 
-#: ../../source/audio.rst:87
+#: ../../source/audio.rst:89
 msgid ""
 "When a file isn't placed automatically into the audio namespace, either due "
 "to an incompatible name or being inside a different directory, it can still "
@@ -225,15 +233,15 @@ msgstr ""
 "名前空間に自動的に配置されない場合でも、define ステートメントを使用して手動で"
 "配置できます。"
 
-#: ../../source/audio.rst:91
+#: ../../source/audio.rst:93
 msgid "For example, one can write::"
 msgstr "例えばこのように書いて ::"
 
-#: ../../source/audio.rst:95
+#: ../../source/audio.rst:97
 msgid "and then use::"
 msgstr "このように使用します。 ::"
 
-#: ../../source/audio.rst:99
+#: ../../source/audio.rst:101
 msgid ""
 "The ``play`` and ``queue`` statements always evaluate their arguments in the "
 "audio namespace. Functions do not, meaning they will not work with "
@@ -243,11 +251,11 @@ msgstr ""
 "すが、関数はそうではありません。なので ``sunflower`` では動作しませんが、代わ"
 "りに ``audio.sunflower`` では動作します。"
 
-#: ../../source/audio.rst:106
+#: ../../source/audio.rst:108
 msgid "Play Statement"
 msgstr "　play ステートメント"
 
-#: ../../source/audio.rst:108
+#: ../../source/audio.rst:110
 msgid ""
 "The ``play`` statement is the most common way used to play sound and music. "
 "If a file is currently playing on a normal channel, it is interrupted and "
@@ -256,7 +264,7 @@ msgstr ""
 "``play`` ステートメントは曲や効果音を再生する最も一般的な方法です。ファイルが"
 "通常のノーマルチャンネルで再生中なら、停止して新しいファイルで置き換えます。"
 
-#: ../../source/audio.rst:112
+#: ../../source/audio.rst:114
 msgid ""
 "The name of a channel is expected following the keyword ``play``. (Usually, "
 "this is either \"sound\", \"music\", \"voice\", or \"audio\"). This is "
@@ -268,7 +276,7 @@ msgstr ""
 "ディオファイルかファイルのリストが続きます。リストが指定されるとその要素が順"
 "番に再生されます。"
 
-#: ../../source/audio.rst:117
+#: ../../source/audio.rst:119
 msgid ""
 "The ``fadein`` and ``fadeout`` clauses are optional. Fadeout gives the "
 "fadeout time for currently playing music, in seconds, while fadein gives the "
@@ -280,7 +288,7 @@ msgstr ""
 "間を指定します。 fadeout が指定されていないと、 :var:`config.fadeout_audio` "
 "が使用されます。"
 
-#: ../../source/audio.rst:122
+#: ../../source/audio.rst:124
 msgid ""
 "The ``loop`` and ``noloop`` clauses are also optional. The loop clause "
 "causes the music to loop, while noloop causes it to play only once. If "
@@ -290,7 +298,7 @@ msgstr ""
 "け再生します。両方とも指定されない場合はチャンネルのデフォルトが使用されま"
 "す。 ::"
 
-#: ../../source/audio.rst:133
+#: ../../source/audio.rst:135
 msgid ""
 "When the ``if_changed`` clause is provided, and if the given track is "
 "currently playing on the channel, the play instruction doesn't interrupt "
@@ -299,7 +307,7 @@ msgstr ""
 "``if_changed`` 節があり、指定されたトラックが現在そのチャンネルで再生中であれ"
 "ば、そのままにします。 ::"
 
-#: ../../source/audio.rst:147
+#: ../../source/audio.rst:149
 msgid ""
 "The ``volume`` clause is also optional, and specifies a relative amplitude "
 "for the track, between 0.0 and 1.0. This makes it possible to adjust the "
@@ -309,7 +317,7 @@ msgstr ""
 "(訳注: 振幅は聴感上の音量とは比例しません)。これによりトラックが再生されるボ"
 "リュームを再生時ごとに調整できます。 ::"
 
-#: ../../source/audio.rst:153
+#: ../../source/audio.rst:155
 msgid ""
 "On the audio channel, multiple play statements play multiple sounds at the "
 "same time::"
@@ -317,7 +325,7 @@ msgstr ""
 "この auido チャンネルでは複数の play ステートメントで同時に複数のサウンドを再"
 "生します。"
 
-#: ../../source/audio.rst:159 ../../source/audio.rst:217
+#: ../../source/audio.rst:161 ../../source/audio.rst:219
 msgid ""
 "A variable may be used instead of a string here. If a variable exists in "
 "the :ref:`audio namespace <audio-namespace>`, it's used in preference to the "
@@ -326,7 +334,7 @@ msgstr ""
 "文字列の代わりに変数も指定でき、 :ref:`audio 名前空間 <audio-namespace>` に変"
 "数があればデフォルトの名前空間に優先して使用されます。"
 
-#: ../../source/audio.rst:164
+#: ../../source/audio.rst:166
 msgid ""
 "Files placed into the audio namespace may automatically define variables "
 "that can be used like this."
@@ -334,7 +342,7 @@ msgstr ""
 "audio 名前空間に配置されたファイルはこのように使用可能な変数を自動的に定義し"
 "ます。"
 
-#: ../../source/audio.rst:169
+#: ../../source/audio.rst:171
 msgid ""
 "Ren'Py supports a feature that can ensure that audio files start playing at "
 "the same time. This feature is enabled on looping audio channels (like "
@@ -347,7 +355,7 @@ msgstr ""
 "register_channel` または :func:`renpy.music.play` に設定しても有効にできま"
 "す。"
 
-#: ../../source/audio.rst:173
+#: ../../source/audio.rst:175
 msgid ""
 "When synchro start is enabled and multiple play statements are run at the "
 "same time, the audio in each channel will start synchronized. Specifically, "
@@ -357,7 +365,7 @@ msgstr ""
 "のオーディオは同期して開始されます。具体的には、次の場合にオーディオが始まり"
 "ます。 :"
 
-#: ../../source/audio.rst:176
+#: ../../source/audio.rst:178
 msgid ""
 "When the audio files on every channel have been loaded and audio samples are "
 "available."
@@ -365,19 +373,19 @@ msgstr ""
 "すべてのチャンネルのオーディオファイルがロードされ、オーディオサンプルが利用"
 "可能な場合。"
 
-#: ../../source/audio.rst:177
+#: ../../source/audio.rst:179
 msgid "When all all channels have been faded out."
 msgstr "すべてのチャンネルがフェードアウトしたとき。"
 
-#: ../../source/audio.rst:179
+#: ../../source/audio.rst:181
 msgid "New audio will start playing when both conditions are met."
 msgstr "両方の条件が満たされると、新しいオーディオの再生が開始されます。"
 
-#: ../../source/audio.rst:183
+#: ../../source/audio.rst:185
 msgid "Stop Statement"
 msgstr "stop ステートメント"
 
-#: ../../source/audio.rst:185
+#: ../../source/audio.rst:187
 msgid ""
 "The ``stop`` statement begins with the keyword ``stop``, followed by the "
 "name of a channel to stop sound on. It may optionally have a ``fadeout`` "
@@ -388,11 +396,11 @@ msgstr ""
 "ル名が続きます。任意で ``fadeout`` 節も持ち、 fadeout 節がなければ、 :var:"
 "`config.fadeout_audio` が使用されます。 ::"
 
-#: ../../source/audio.rst:194
+#: ../../source/audio.rst:196
 msgid "Queue Statement"
 msgstr "queue ステートメント"
 
-#: ../../source/audio.rst:196
+#: ../../source/audio.rst:198
 msgid ""
 "The ``queue`` statement is used to queue up audio files. They will be played "
 "when the channel finishes playing the currently playing file."
@@ -400,7 +408,7 @@ msgstr ""
 "queue ステートメントを使用してオーディオファイルをキューします。それらはチャ"
 "ンネルが現在再生中のファイルを終了してから再生されます。"
 
-#: ../../source/audio.rst:199
+#: ../../source/audio.rst:201
 msgid ""
 "The queue statement begins with keyword ``queue``, followed by the name of a "
 "channel to play sound on. It optionally takes the ``fadein``, ``loop`` and "
@@ -409,11 +417,11 @@ msgstr ""
 "queue ステートメントはキーワード ``queue`` で始まり、再生するチャンネルの名前"
 "が続きます。任意で ``fadein``, ``loop``, ``noloop`` 節を受け取ります。 ::"
 
-#: ../../source/audio.rst:205
+#: ../../source/audio.rst:207
 msgid "Queue also takes the ``volume`` clause. ::"
 msgstr "キューは ``volume`` 節も受け取ります。 ::"
 
-#: ../../source/audio.rst:212
+#: ../../source/audio.rst:214
 msgid ""
 "When multiple queue statements are given without an interaction between "
 "them, all sound files are added to the queue. After an interaction has "
@@ -425,7 +433,7 @@ msgstr ""
 "れていなければインタラクション後の最初の queue ステートメントはキューをクリア"
 "します。"
 
-#: ../../source/audio.rst:226
+#: ../../source/audio.rst:228
 msgid ""
 "The advantage of using these statements is that your program will be checked "
 "for missing sound and music files when lint is run. The functions below "
@@ -436,11 +444,11 @@ msgstr ""
 "失をチェック出来ることです。以下の関数は曲と効果音を python から制御出来るよ"
 "うにし、( 滅多に使用されませんが )高度な機能を利用するために存在します。"
 
-#: ../../source/audio.rst:235
+#: ../../source/audio.rst:237
 msgid "Partial Playback"
 msgstr "部分再生"
 
-#: ../../source/audio.rst:237
+#: ../../source/audio.rst:239
 msgid ""
 "Ren'Py supports partial playback of audio files. This is done by putting a "
 "playback specification, enclosed in angle brackets, at the start of the "
@@ -451,38 +459,38 @@ msgstr ""
 "ルの始めの山括弧のなかで位置を指定します。部分再生指定は適切な名前と値のペア"
 "からなり、それぞれスペースで区切られます。"
 
-#: ../../source/audio.rst:242
+#: ../../source/audio.rst:244
 msgid ""
 "The values are always interpreted as seconds from the start of the file. The "
 "three properties are:"
 msgstr ""
 "値はファイルの開始からの秒数と解釈され、3つのプロパティーがあります。 :"
 
-#: ../../source/audio.rst:247
+#: ../../source/audio.rst:249
 msgid "``from``"
 msgstr "``from``"
 
-#: ../../source/audio.rst:246
+#: ../../source/audio.rst:248
 msgid ""
 "Specifies the position in the file at which the first play-through begins "
 "playing. (This defaults to 0.0 seconds.)"
 msgstr "最初に再生を開始するときの位置を指定します (デフォルトでは 0.0 秒)。"
 
-#: ../../source/audio.rst:251
+#: ../../source/audio.rst:253
 msgid "``to``"
 msgstr "``to``"
 
-#: ../../source/audio.rst:250
+#: ../../source/audio.rst:252
 msgid ""
 "Specifies the position in the file at which the file ends playing. (This "
 "defaults to the full duration of the file.)"
 msgstr "最初に再生を停止する位置を指定します (デフォルトでは 0.0 秒)。"
 
-#: ../../source/audio.rst:256
+#: ../../source/audio.rst:258
 msgid "``loop``"
 msgstr "``loop``"
 
-#: ../../source/audio.rst:254
+#: ../../source/audio.rst:256
 msgid ""
 "Specifies the position in the file at which the second and later play-"
 "throughs begin playing. (This defaults to the start time given by ``from`` "
@@ -491,27 +499,27 @@ msgstr ""
 "二回目からの再生開始位置を指定します (デフォルトでは ``from`` で指定された開"
 "始位置またはそのファイルの開始位置です )。"
 
-#: ../../source/audio.rst:258
+#: ../../source/audio.rst:260
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/audio.rst:262
+#: ../../source/audio.rst:264
 msgid ""
 "will play 10.5 seconds of waves.opus, starting at the 5 second mark. The "
 "statement::"
 msgstr "5 秒から開始し、 waves.opus の10.5 秒までを再生します。 ::"
 
-#: ../../source/audio.rst:266
+#: ../../source/audio.rst:268
 msgid ""
 "will play song.opus all the way through once, then loop back to the 6.333 "
 "second mark before playing it again all the way through to the end."
 msgstr "song.opus 全体を一回再生した後、 6.333 秒からループします。"
 
-#: ../../source/audio.rst:273
+#: ../../source/audio.rst:275
 msgid "Sync Start Position"
 msgstr "開始位置の同期"
 
-#: ../../source/audio.rst:275
+#: ../../source/audio.rst:277
 msgid ""
 "The position in the file at which the clip begins playing can also be synced "
 "to another channel with a currently-playing track using a filename like "
@@ -524,12 +532,12 @@ msgstr ""
 "ます。ここでの channelname はそのチャンネルの名前で、 \"music\", \"sound\", "
 "その他登録されたチャンネルのいずれかになります。 "
 
-#: ../../source/audio.rst:280
+#: ../../source/audio.rst:282
 msgid ""
 "This can be used to sync multi-layered looping tracks together. For example::"
 msgstr "これによって多層レイヤーのループトラックを一緒に同期できます。 例 ::"
 
-#: ../../source/audio.rst:284
+#: ../../source/audio.rst:286
 msgid ""
 "Will play :file:`layer_2.opus` with the start time synced to the current "
 "track in channel music_1 in the first iteration, before playing the whole "
@@ -541,37 +549,37 @@ msgstr ""
 "`layer_2.opus` を再生します(デフォルトでは :file:`layer_2.opus` の開始時間は"
 "そのループの後続のイテレーションでも変更が維持されます)。"
 
-#: ../../source/audio.rst:293
+#: ../../source/audio.rst:295
 msgid "Volume"
 msgstr "Volume"
 
-#: ../../source/audio.rst:295
+#: ../../source/audio.rst:297
 msgid ""
 "The volume at which a given track is going to be played depends on a number "
 "of variables:"
 msgstr "指定したトラックが再生される音量はいくつかの変数に依存します。 :"
 
-#: ../../source/audio.rst:298
+#: ../../source/audio.rst:300
 msgid "the \"main\" mixer's volume"
 msgstr "\"main\" ミキサーボリューム"
 
-#: ../../source/audio.rst:299
+#: ../../source/audio.rst:301
 msgid "the volume of the mixer which the channel relates to"
 msgstr "そのチャンネルに紐付けられたミキサーのボリューム"
 
-#: ../../source/audio.rst:300
+#: ../../source/audio.rst:302
 msgid "the volume of the channel"
 msgstr "チャンネルのボリューム"
 
-#: ../../source/audio.rst:301
+#: ../../source/audio.rst:303
 msgid "the relative amplitude of the track itself"
 msgstr "そのトラック自体の相対的な振幅"
 
-#: ../../source/audio.rst:302
+#: ../../source/audio.rst:304
 msgid "the relative amplitude associated with the filename"
 msgstr "そのファイル名に関連付けられた相対振幅"
 
-#: ../../source/audio.rst:304
+#: ../../source/audio.rst:306
 msgid ""
 "These four volumes are values between 0 and 1, and their multiplication "
 "results in the volume the track will be played at."
@@ -579,7 +587,7 @@ msgstr ""
 "これら 4 つの音量は 0 から 1 の数値であり、掛け合わせた結果がそのトラックの再"
 "生音量になります。"
 
-#: ../../source/audio.rst:307
+#: ../../source/audio.rst:309
 msgid ""
 "For example, if the main volume is 80% (or 0.8), the mixer's volume is 100%, "
 "the channel volume is 50% (0.5) and the track's relative volume is 25% "
@@ -591,7 +599,7 @@ msgstr ""
 "が 25%(または 0.25)では結果のボリュームは .8\\*1.\\*.5\\*.25\\*.5 = .5 にな"
 "り、 5%です。"
 
-#: ../../source/audio.rst:311
+#: ../../source/audio.rst:313
 msgid ""
 "Note that while all of these volumes are amplitudes, the mixers are "
 "presented as decibels in the preferences menu."
@@ -599,7 +607,7 @@ msgstr ""
 "これらのボリュームはすべて振幅ですが、 preferences メニューのミキサーはデシベ"
 "ルで表記されます。"
 
-#: ../../source/audio.rst:314
+#: ../../source/audio.rst:316
 msgid ""
 "The mixers' volumes can be set using :func:`preferences.set_mixer`, using "
 "the :func:`SetMixer` action, or using the :func:`Preference` action with the "
@@ -615,7 +623,7 @@ msgstr ""
 "は \"voice\" ミキサーに紐付けられています。各チャンネルは上記のようにさらに "
 "\"main\" ミキサーにも紐付けられています。"
 
-#: ../../source/audio.rst:321
+#: ../../source/audio.rst:323
 msgid ""
 "A channel's volume can be set using :func:`renpy.music.set_volume`. It is "
 "only useful when several channels use the same mixer. The ``mixer`` "
@@ -628,7 +636,7 @@ msgstr ""
 "func:`renpy.music.register_channel` 関数の \"mixier\" パラメーターは登録する"
 "チャンネルに紐付けられるミキサーを設定し、それがまだなければ、作成します。"
 
-#: ../../source/audio.rst:326
+#: ../../source/audio.rst:328
 msgid ""
 "A track's relative volume is set with the ``volume`` clause of the :ref:"
 "`play-statement`."
@@ -636,7 +644,7 @@ msgstr ""
 "トラックの相対ボリュームは :ref:`play-statement` の ``volume`` 節に設定されま"
 "す。"
 
-#: ../../source/audio.rst:328
+#: ../../source/audio.rst:330
 msgid ""
 "A filename's relative volume is set with a volume clause in angle brackets, "
 "such as \"<volume 0.5>track.opus\"."
@@ -644,7 +652,7 @@ msgstr ""
 "あるファイル名の相対的なボリュームは、山括弧で囲まれた volume 節で設定されま"
 "す(例: \"<volume 0.5>track.opus\")。"
 
-#: ../../source/audio.rst:331
+#: ../../source/audio.rst:333
 msgid ""
 "In addition to these volume values, there is the mute flag of the mixer "
 "which the channel relates to. If enabled, it will reduce the played volume "
@@ -658,11 +666,11 @@ msgstr ""
 "`Preference` アクション、 :func:`preferences.set_mute` 関数を使用して設定でき"
 "ます。"
 
-#: ../../source/audio.rst:341
+#: ../../source/audio.rst:343
 msgid "Playing Silence"
 msgstr "無音再生"
 
-#: ../../source/audio.rst:343
+#: ../../source/audio.rst:345
 msgid ""
 "A specified duration of silence can played using a filename like \"<silence "
 "3.0>\", where 3.0 is the number of seconds of silence that is desired. This "
@@ -672,19 +680,19 @@ msgstr ""
 "て、指定された時間無音を再生できます。これにより再生位置を遅延できます。 "
 "例 ::"
 
-#: ../../source/audio.rst:349
+#: ../../source/audio.rst:351
 msgid "Will play silence for half a second, and then an explosion sound."
 msgstr "0.5 秒の無音の後、爆発音を再生します。"
 
-#: ../../source/audio.rst:353
+#: ../../source/audio.rst:355
 msgid "Actions"
 msgstr "Actions"
 
-#: ../../source/audio.rst:355
+#: ../../source/audio.rst:357
 msgid "See :ref:`audio-actions`."
 msgstr ":ref:`audio-actions` を参照してください。"
 
-#: ../../source/audio.rst:359
+#: ../../source/audio.rst:361
 msgid "Functions"
 msgstr "関数"
 
@@ -1327,11 +1335,11 @@ msgstr ""
 "ウトの時間は config.fadeout_audio から所得されます。これはそのチャンネルが"
 "ポーズされていれば無視されます。"
 
-#: ../../source/audio.rst:365
+#: ../../source/audio.rst:367
 msgid "Sound Functions"
 msgstr "サウンドの関数"
 
-#: ../../source/audio.rst:367
+#: ../../source/audio.rst:369
 msgid ""
 "Most ``renpy.music`` functions have aliases in ``renpy.sound``. These "
 "functions are similar, except they default to the sound channel rather than "
