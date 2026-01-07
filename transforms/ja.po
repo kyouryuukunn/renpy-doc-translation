@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-06 19:33+0900\n"
-"PO-Revision-Date: 2025-12-27 13:13+0900\n"
+"PO-Revision-Date: 2025-12-31 19:31+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-03-29 05:43+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: ../../source/transforms.rst:5
 msgid "Transforms"
@@ -60,15 +60,15 @@ msgstr ""
 
 #: ../../source/transforms.rst:27
 msgid "Simple ATL transform::"
-msgstr ""
+msgstr "単順なATLによるTransform ::"
 
 #: ../../source/transforms.rst:37
 msgid "Showing transforms with Python::"
-msgstr ""
+msgstr "Python による Transform の表示 ::"
 
 #: ../../source/transforms.rst:43
 msgid "Simple Python transform using ``At()``::"
-msgstr ""
+msgstr "``At()`` を使用した単純な Python transform ::"
 
 #: ../../source/transforms.rst:58
 msgid "Built-in Transforms"
@@ -124,11 +124,10 @@ msgid ""
 msgstr "画面よりも左に配置し、画面下部に合わせます。"
 
 #: ../../source/transforms.rst:108
-#, fuzzy
 msgid ""
 "Places the displayable off the right side of the screen, aligned to the "
 "bottom of the screen."
-msgstr "画面よりも左に配置し、画面下部に合わせます。"
+msgstr "画面よりも右に配置し、画面下部に合わせます。"
 
 #: ../../source/transforms.rst:113
 msgid ""
@@ -208,6 +207,11 @@ msgid ""
 "using the ``at`` clause of the :ref:`show <show-statement>` and scene "
 "statements."
 msgstr ""
+"``transform`` ステートメントは、ゲーム内の displayable をアニメーションさせた"
+"り配置したりするために使用できる新しい transform を作成します。この "
+"transform は再利用可能で、 :ref:`show <show-statement>` ステートメントや "
+"scene ステートメントの ``at`` 節を使って、ゲーム全体の画像や他の displayable "
+"に適用できます。"
 
 #: ../../source/transforms.rst:169
 msgid ""
@@ -216,12 +220,18 @@ msgid ""
 "(see :ref:`defining-images`), transforms are created as variables in the "
 "appropriate :ref:`named store <named-stores>` (or the default store)."
 msgstr ""
+"transform は :doc:`displayables` としても振る舞え、直接表示できます。ただし、"
+"グローバル画像名前空間に存在する他の displayable（:ref:`defining-images` を参"
+"照）とは異なり、transform は適切な :ref:`named store <named-stores>` （または"
+"デフォルトのストア）内の変数として作成されます。"
 
 #: ../../source/transforms.rst:174
 msgid ""
 "The transform is created during :ref:`init time <init-phase>` (when the game "
 "starts up)."
 msgstr ""
+"transform は、 :ref:`初期化時 <init-phase>` （ゲームの起動時）に作成されま"
+"す。"
 
 #: ../../source/transforms.rst:176 ../../source/transforms.rst:260
 #: ../../source/transforms.rst:298 ../../source/transforms.rst:354
@@ -234,18 +244,17 @@ msgstr ""
 #: ../../source/transforms.rst:1123 ../../source/transforms.rst:1162
 #: ../../source/transforms.rst:1228 ../../source/transforms.rst:1279
 msgid "**Syntax**"
-msgstr ""
+msgstr "**構文**"
 
 #: ../../source/transforms.rst:178 ../../source/transforms.rst:445
 #: ../../source/transforms.rst:667 ../../source/transforms.rst:790
 #: ../../source/transforms.rst:958
 msgid "Basic form::"
-msgstr ""
+msgstr "基本形式 ::"
 
 #: ../../source/transforms.rst:183
-#, fuzzy
 msgid "With parameters::"
-msgstr "位置専用パラメーター"
+msgstr "パラメーターつき ::"
 
 #: ../../source/transforms.rst:188 ../../source/transforms.rst:267
 #: ../../source/transforms.rst:308 ../../source/transforms.rst:360
@@ -257,7 +266,7 @@ msgstr "位置専用パラメーター"
 #: ../../source/transforms.rst:1130 ../../source/transforms.rst:1168
 #: ../../source/transforms.rst:1234 ../../source/transforms.rst:1285
 msgid "**Usage**"
-msgstr ""
+msgstr "**使用法**"
 
 #: ../../source/transforms.rst:194 ../../source/transforms.rst:273
 #: ../../source/transforms.rst:314 ../../source/transforms.rst:366
@@ -270,7 +279,7 @@ msgstr ""
 #: ../../source/transforms.rst:1174 ../../source/transforms.rst:1240
 #: ../../source/transforms.rst:1291
 msgid "Name"
-msgstr ""
+msgstr "名前"
 
 #: ../../source/transforms.rst:194 ../../source/transforms.rst:273
 #: ../../source/transforms.rst:314 ../../source/transforms.rst:366
@@ -283,7 +292,7 @@ msgstr ""
 #: ../../source/transforms.rst:1174 ../../source/transforms.rst:1240
 #: ../../source/transforms.rst:1291
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 #: ../../source/transforms.rst:194 ../../source/transforms.rst:273
 #: ../../source/transforms.rst:314 ../../source/transforms.rst:366
@@ -295,90 +304,85 @@ msgstr ""
 #: ../../source/transforms.rst:1028 ../../source/transforms.rst:1074
 #: ../../source/transforms.rst:1174 ../../source/transforms.rst:1240
 #: ../../source/transforms.rst:1291
-#, fuzzy
 msgid "Description"
-msgstr "Description"
+msgstr "説明"
 
 #: ../../source/transforms.rst:196
-#, fuzzy
 msgid "transform_name"
-msgstr "transform は次のとおりです:"
+msgstr "transform_name"
 
 #: ../../source/transforms.rst:196 ../../source/transforms.rst:368
 #: ../../source/transforms.rst:468 ../../source/transforms.rst:915
 #: ../../source/transforms.rst:1293
 msgid "word"
-msgstr ""
+msgstr "word"
 
 #: ../../source/transforms.rst:196
-#, fuzzy
 msgid "Name of the transform."
-msgstr "transform オブジェクト"
+msgstr "transform 名"
 
 #: ../../source/transforms.rst:198
 msgid "Must be valid Python identifiers separated by dots"
-msgstr ""
+msgstr "有効なドットで区切られた Python 識別子でなくてはなりません。"
 
 #: ../../source/transforms.rst:200
 msgid "(e.g., ``my_transform`` or ``sprites.bounce``)"
-msgstr ""
+msgstr "(例 ``my_transform`` や ``sprites.bounce``)"
 
 #: ../../source/transforms.rst:201
 msgid "parameters"
-msgstr ""
+msgstr "parameters"
 
 #: ../../source/transforms.rst:201
 msgid "--"
-msgstr ""
+msgstr "--"
 
 #: ../../source/transforms.rst:201
 msgid "(Optional) Parameters of the transform"
-msgstr ""
+msgstr "Transform の(任意の)パラメーター"
 
 #: ../../source/transforms.rst:202 ../../source/transforms.rst:276
 #: ../../source/transforms.rst:317 ../../source/transforms.rst:749
 #: ../../source/transforms.rst:810 ../../source/transforms.rst:916
 msgid "atl_block"
-msgstr ""
+msgstr "atl_block"
 
 #: ../../source/transforms.rst:202 ../../source/transforms.rst:276
 #: ../../source/transforms.rst:317 ../../source/transforms.rst:749
 #: ../../source/transforms.rst:810 ../../source/transforms.rst:916
 msgid "block"
-msgstr ""
+msgstr "block"
 
 #: ../../source/transforms.rst:202 ../../source/transforms.rst:276
 #: ../../source/transforms.rst:317
 msgid "ATL code block defining the transform"
-msgstr ""
+msgstr "Transform を定義する ATL コードブロック"
 
 #: ../../source/transforms.rst:208
 msgid ""
 "You can add parameters to make your transforms flexible and reusable. "
 "Parameters work similarly to Python function parameters."
 msgstr ""
+"パラメータを追加して、transform を柔軟かつ再利用可能にできます。パラメータ"
+"は、Python の関数パラメータと同様に機能します。"
 
 #: ../../source/transforms.rst:211
 msgid "Currently not supported:"
-msgstr ""
+msgstr "現在以下はサポートされません :"
 
 #: ../../source/transforms.rst:213
-#, fuzzy
 msgid "Positional-only parameters (using ``/``)"
-msgstr "位置専用パラメーター"
+msgstr "(``/`` を使用する)位置専用パラメーター"
 
 #: ../../source/transforms.rst:214
-#, fuzzy
 msgid "Required keyword-only parameters (after ``*`` without defaults)"
-msgstr "デフォルト値のないキーワード専用パラメーター"
+msgstr "(デフォルト値なしで ``*`` の後に続く) キーワード専用パラメーター"
 
 #: ../../source/transforms.rst:215
-#, fuzzy
 msgid "``*args`` (variadic positional parameters)"
 msgstr "可変長位置パラメーター (``*args``)"
 
 #: ../../source/transforms.rst:216
-#, fuzzy
 msgid "``**kwargs`` (variadic keyword parameters)"
 msgstr "可変長キーワードパラメーター (``**kwargs``)"
 
@@ -387,9 +391,10 @@ msgid ""
 "If your transform has parameters without default values, you must provide "
 "values for all of them before you can use it as a transform"
 msgstr ""
+"transform にデフォルト値を持たないパラメータがあれば、 transform として使用す"
+"る前に、それらすべてに値を指定する必要があります。"
 
 #: ../../source/transforms.rst:222
-#, fuzzy
 msgid "See also: :ref:`atl-partial`"
 msgstr ":ref:`atl-partial` も参照ください。"
 
@@ -402,14 +407,13 @@ msgstr ":ref:`atl-partial` も参照ください。"
 #: ../../source/transforms.rst:1096 ../../source/transforms.rst:1140
 #: ../../source/transforms.rst:1202 ../../source/transforms.rst:1255
 msgid "**Example**"
-msgstr ""
+msgstr "**Example**"
 
 #: ../../source/transforms.rst:253
 msgid "Image Statement with ATL Block"
 msgstr "image ステートメントの ATL ブロック"
 
 #: ../../source/transforms.rst:255
-#, fuzzy
 msgid ""
 "The second way to include ATL code in a script is as part of an :ref:`image "
 "statement <image-statement>`. As its inline counterpart, it binds an image "
@@ -418,37 +422,36 @@ msgid ""
 "animation."
 msgstr ""
 "スクリプトに ATL コードを含める 2 つ目の方法は、 :ref:`image ステートメント "
-"<image-statement>` の一部として含めることです。インラインの対応物として、画像"
-"名 (スペースが含まれる場合があります) を指定された transform に紐付けします。"
-"パラメーターを指定する方法がないため、 transform がアニメーションを定義する場"
-"合にのみ役立ちます。構文は次のとおりです。 ::"
+"<image-statement>` の一部として含めることです。インライン版と同様に、画像名 "
+"(スペースが含まれる場合があります) を指定された transform に紐付けします。パ"
+"ラメーターを指定する方法がないため、 transform がアニメーションを定義する場合"
+"にのみ役立ちます。"
 
 #: ../../source/transforms.rst:275 ../../source/transforms.rst:316
 msgid "image_name"
-msgstr ""
+msgstr "image_name"
 
 #: ../../source/transforms.rst:275 ../../source/transforms.rst:316
 msgid "word(s)"
-msgstr ""
+msgstr "word(s)"
 
 #: ../../source/transforms.rst:275 ../../source/transforms.rst:316
 msgid "Name of the image"
-msgstr ""
+msgstr "画像の名前"
 
 #: ../../source/transforms.rst:292
 msgid "Scene and Show Statements with ATL Block"
 msgstr "scene ステートメントおよび show ステートメントの ATL ブロック"
 
 #: ../../source/transforms.rst:294
-#, fuzzy
 msgid ""
 "The final way to use ATL is as part of a :ref:`show <show-statement>` or "
 "scene statement. This wraps the image that's being shown inside an ATL "
 "transformation which is created on the fly and applied to the image."
 msgstr ""
 "ATL を使用する最後の方法は、 :ref:`show <show-statement>` または scene ステー"
-"トメントの一部としての使用です。これにより、表示される画像がその場で作成され"
-"て画像に適用される ATL transform 内にラップされます。構文は次のとおりです。 :"
+"トメントの一部としての使用です。これにより画像に適用される ATL transform がそ"
+"の場で作成され、その内に表示される画像がラップされます。"
 
 #: ../../source/transforms.rst:334
 msgid "ATL Syntax and Statements"
@@ -486,34 +489,30 @@ msgid "Properties Statement"
 msgstr "プロパティーステートメント"
 
 #: ../../source/transforms.rst:352
-#, fuzzy
 msgid "This statement sets the value of a transform property."
-msgstr ""
-"このステートメントは、 1 つ以上の transform プロパティーを新しい値に設定しま"
-"す。"
+msgstr "このステートメントは transformプロパティーを設定します。"
 
 #: ../../source/transforms.rst:368
 msgid "property_name"
-msgstr ""
+msgstr "property_name"
 
 #: ../../source/transforms.rst:368
 msgid "Name of transform property (eg. :tpref:`xalign`, :tpref:`alpha`, ...)"
-msgstr ""
+msgstr "Transform プロパティー名 (例 :tpref:`xalign`, :tpref:`alpha`, ...)"
 
 #: ../../source/transforms.rst:369
 msgid "property_value"
-msgstr ""
+msgstr "property_value"
 
 #: ../../source/transforms.rst:369
 msgid "Varies"
-msgstr ""
+msgstr "Varies"
 
 #: ../../source/transforms.rst:369
 msgid "Value of property"
-msgstr ""
+msgstr "プロパティーの値"
 
 #: ../../source/transforms.rst:372
-#, fuzzy
 msgid ""
 "The statement first gives a series (at least one) of property names, each "
 "followed by the new value to set it to. See :ref:`transform-properties` for "
@@ -522,7 +521,7 @@ msgstr ""
 "このステートメントには、最初に (少なくとも 1 つの) 一連のプロパティー名を指定"
 "し、それぞれの後に設定するための新しい値を続けます。 transform プロパティーと"
 "その意味、およびそれらが取れる値のリストについては、:ref:`transform-"
-"properties` を参照してください。::"
+"properties` を参照してください。"
 
 #: ../../source/transforms.rst:388
 msgid "Number Statement"
@@ -533,118 +532,116 @@ msgid ""
 "This statement pauses the execution of the ATL block for the given duration. "
 "The \"pause\" keyword is optional."
 msgstr ""
+"このステートメントは、指定された時間だけ ATL ブロックの実行を一時停止しま"
+"す。 \"pause\" キーワードは省略可能です。"
 
 #: ../../source/transforms.rst:408
-#, fuzzy
 msgid "\"pause\""
-msgstr "``pause``"
+msgstr "\"pause\""
 
 #: ../../source/transforms.rst:408 ../../source/transforms.rst:748
 #: ../../source/transforms.rst:808
 msgid "keyword"
-msgstr ""
+msgstr "keyword"
 
 #: ../../source/transforms.rst:408
 msgid "(Optional) Keyword indicating a pause"
-msgstr ""
+msgstr "（任意）一時停止を示すキーワード"
 
 #: ../../source/transforms.rst:409 ../../source/transforms.rst:470
 msgid "duration"
-msgstr ""
+msgstr "duration"
 
 #: ../../source/transforms.rst:409 ../../source/transforms.rst:470
 msgid "float, int (expr)"
-msgstr ""
+msgstr "float, int (expr)"
 
 #: ../../source/transforms.rst:409
 msgid "Time in seconds to pause"
-msgstr ""
+msgstr "一時停止する秒数"
 
 #: ../../source/transforms.rst:412 ../../source/transforms.rst:485
 msgid "**Examples**"
-msgstr ""
+msgstr "**例**"
 
 #: ../../source/transforms.rst:434
 msgid "Interpolation Statement"
 msgstr "補間ステートメント"
 
 #: ../../source/transforms.rst:436
-#, fuzzy
 msgid ""
 "The interpolation statement is the main way of getting smoothly animated "
 "transformations. The values change over time from their starting value to "
 "the given value."
 msgstr ""
-"補間ステートメントは、 transform をスムーズにアニメーションするための主要な方"
-"法です。"
+"補間ステートメントは、スムーズにアニメーションする transform を得る主な方法で"
+"す。値は開始値から指定値までの時間経過により変化します。"
 
 #: ../../source/transforms.rst:440
 msgid ""
 "A :ref:`warping function <warpers>` is used to control how the interpolation "
 "progresses over time."
 msgstr ""
+":ref:`ワープ関数 <warpers>` を使用して時間経過にともなう補間の進行を制御でき"
+"ます。"
 
 #: ../../source/transforms.rst:449
 msgid "Using a warper function::"
-msgstr ""
+msgstr "ワープ関数の使用 ::"
 
 #: ../../source/transforms.rst:453
 msgid "Block form::"
-msgstr ""
+msgstr "ブロック形式 ::"
 
 #: ../../source/transforms.rst:468
 msgid "warper_name"
-msgstr ""
+msgstr "warper_name"
 
 #: ../../source/transforms.rst:468
 msgid "Name of a :ref:`built-in warper <warpers>`"
-msgstr ""
+msgstr ":ref:`組み込みのワーパー名 <warpers>`"
 
 #: ../../source/transforms.rst:469
 msgid "warper_function"
-msgstr ""
+msgstr "warper_function"
 
 #: ../../source/transforms.rst:469
 msgid "str, function (expr)"
-msgstr ""
+msgstr "str, function (expr)"
 
 #: ../../source/transforms.rst:469
 msgid "Warping function with signature ``(t: float) -> float``"
-msgstr ""
+msgstr "引数が ``(t: float)`` であり、 ``-> float`` を返すワープ関数"
 
 #: ../../source/transforms.rst:470
 msgid "Time in seconds for the interpolation"
-msgstr ""
+msgstr "補間の秒数"
 
 #: ../../source/transforms.rst:471
 msgid "atl_property"
-msgstr ""
+msgstr "atl_property"
 
 #: ../../source/transforms.rst:471
-#, fuzzy
 msgid ":ref:`atl-properties-statement`"
-msgstr "プロパティーステートメント"
+msgstr ":ref:`atl-properties-statement`"
 
 #: ../../source/transforms.rst:471
 msgid "Property to interpolate"
-msgstr ""
+msgstr "補間するプロパティー"
 
 #: ../../source/transforms.rst:474
-#, fuzzy
 msgid ""
 "The interpolation will persist for the given duration, and at least one "
 "frame."
 msgstr "補間は、指定された時間または少なくとも 1 フレームの間持続します。"
 
 #: ../../source/transforms.rst:477
-#, fuzzy
 msgid ""
 "When :doc:`transform_properties` are given, the value each is given is the "
 "value it will be set to at the end of the interpolation statement."
 msgstr ""
 ":doc:`transform_properties` が指定されていると、それぞれに指定された値は、補"
-"間ステートメントの終了時に設定される値になります。これは、いくつかの方法で調"
-"整できます。"
+"間ステートメントの終了時に設定される値になります。"
 
 #: ../../source/transforms.rst:480
 msgid ""
@@ -660,40 +657,39 @@ msgstr ""
 
 #: ../../source/transforms.rst:487
 msgid "Basic usage::"
-msgstr ""
+msgstr "基本的な使用 ::"
 
 #: ../../source/transforms.rst:495
 msgid "Using warper function::"
-msgstr ""
+msgstr "ワーカー関数の使用 ::"
 
 #: ../../source/transforms.rst:503
 msgid "Multiple properties::"
-msgstr ""
+msgstr "複数のプロパティー ::"
 
 #: ../../source/transforms.rst:516
-#, fuzzy
 msgid "Creator-defined warper::"
-msgstr "ユーザー定義の transform"
+msgstr "ユーザー定義のワーパー ::"
 
 #: ../../source/transforms.rst:529
 msgid "**Property Interpolation**"
-msgstr ""
+msgstr "**プロパティーの補間**"
 
 #: ../../source/transforms.rst:531
 msgid "With spline motion (curved path):"
-msgstr ""
+msgstr "(カーブする経路の) スプラインモーション:"
 
 #: ../../source/transforms.rst:543
 msgid "knot_value"
-msgstr ""
+msgstr "knot_value"
 
 #: ../../source/transforms.rst:543
 msgid "Varies (expr)"
-msgstr ""
+msgstr "Varies (expr)"
 
 #: ../../source/transforms.rst:543
 msgid "Value of the property control point"
-msgstr ""
+msgstr "プロパティー制御点の値"
 
 #: ../../source/transforms.rst:546
 msgid ""
@@ -701,42 +697,42 @@ msgid ""
 "interpolation, the end point is the value given in ``<atl_property>``. The "
 "knots are used to control the spline."
 msgstr ""
+"開始点は補間開始時点におけるプロパティーの値で、終了点は ``<atl_property>`` "
+"に指定された値です。ノットはスプラインを制御するために使用されます。"
 
 #: ../../source/transforms.rst:550
-#, fuzzy
 msgid ""
-"A quadratic `Bezier curve <https://en.wikipedia.org/wiki/B"
-"%C3%A9zier_curve>`_ is used for a single knot, a cubic Bezier is used when "
+"A quadratic `Bezier curve <https://en.wikipedia.org/wiki/"
+"B%C3%A9zier_curve>`_ is used for a single knot, a cubic Bezier is used when "
 "there are two, and Catmull-Rom is used for three or more knots. In the "
 "former two cases, the knot or knots are simply control nodes. For Catmull-"
 "Rom, the first and last knot are control nodes (often outside the displayed "
 "path) and the other knots are points the path passes through."
 msgstr ""
-"値に 1 つ以上の knot が続くと、スプラインモーションが使用されます。そのプロパ"
-"ティーの補間開始時の値から始まって指定した値で終わり、knot を使用してスプライ"
-"ンを制御します。1つの knot には2次曲線が使用され、 2つにはベジェ曲線、3つ以上"
-"の knot にはキャットムル-ロム スプラインが使用されます。前者 2 つでは、 knot "
-"はすべて(しばしば描画される経路外となる)制御 nodeです。キャットムル-ロム スプ"
-"ラインでは、最初と最後の knot が制御nodeで他の knot は通過点になります。"
+"ノットが 1 つの場合は二次の `ベジェ曲線 <https://en.wikipedia.org/wiki/"
+"B%C3%A9zier_curve>`_ が使用され、2 つの場合は三次のベジェ曲線が使用されます。"
+"3 つ以上の場合は Catmull-Rom が使用されます。前者 2 つの場合、ノットは単なる"
+"制御点です。Catmull-Rom の場合、最初と最後のノットは制御点（多くの場合、表示"
+"される経路の外側）となり、それ以外のノットは経路が実際に通過する点になりま"
+"す。"
 
 #: ../../source/transforms.rst:579
 msgid "With circular motion"
-msgstr ""
+msgstr "円運動"
 
 #: ../../source/transforms.rst:593
 msgid "number_of_circles"
-msgstr ""
+msgstr "number_of_circles"
 
 #: ../../source/transforms.rst:593 ../../source/transforms.rst:683
 msgid "int (expr)"
-msgstr ""
+msgstr "int (expr)"
 
 #: ../../source/transforms.rst:593
 msgid "Number of full rotations for circular motion"
-msgstr ""
+msgstr "円運動における完全な回転の回数"
 
 #: ../../source/transforms.rst:596
-#, fuzzy
 msgid ""
 "The start and end locations are compared (which are set by :tpref:`pos`, :"
 "tpref:`align`, :tpref:`angle` and :tpref:`radius`, ...) and the polar "
@@ -746,43 +742,37 @@ msgid ""
 "given, Ren'Py will ensure that the appropriate number of circles will be "
 "made."
 msgstr ""
-"補間ステートメントに ``clockwise`` や ``counterclockwise`` があれば円形モー"
-"ションで補間されます。Ren'Py は (:tpref:`pos`, :tpref:`align`, :tpref:"
-"`angle`, :tpref:`radius` などで設定される) 開始と終了の位置を比較し、極座標の"
-"中心 (:tpref:`around`) を算出します。そして開始角度から終了角度まで、指定され"
-"た方向の回転で進む角度を計算します。circles 節を指定すると、Ren'Py は適切な数"
-"の円が作られることを保証します。"
+"Ren'Py は (:tpref:`pos`, :tpref:`align`, :tpref:`angle`, :tpref:`radius` など"
+"で設定される) 開始と終了の位置を比較し、極座標の中心 (:tpref:`around`) を算出"
+"します。そして開始角度から終了角度まで、指定された方向の回転で進む角度を計算"
+"します。circles 節を指定すると、Ren'Py は適切な数の円が作られることを保証しま"
+"す。"
 
 #: ../../source/transforms.rst:615
-#, fuzzy
 msgid "With a transform expression"
 msgstr "Transform 式 ステートメント"
 
 #: ../../source/transforms.rst:627 ../../source/transforms.rst:1030
-#, fuzzy
 msgid "transform_expression"
-msgstr "Transform 式 ステートメント"
+msgstr "transform_expression"
 
 #: ../../source/transforms.rst:627 ../../source/transforms.rst:1030
 msgid ":ref:`Transform <transform-statement>` (expr)"
-msgstr ""
+msgstr ":ref:`Transform <transform-statement>` (expr)"
 
 #: ../../source/transforms.rst:628 ../../source/transforms.rst:1031
-#, fuzzy
 msgid "Transform to interpolate to"
-msgstr "transform ステートメント"
+msgstr "補間する transform"
 
 #: ../../source/transforms.rst:631
-#, fuzzy
 msgid ""
 "In this case, the  be an ATL transform containing only a single properties "
 "statement. The properties from the transform will be processed as if they "
 "were written directly in this interpolation."
 msgstr ""
-"また、 :ref:`transform-expression-atl-statement` も補間でき、この場合は 1 つ"
-"のプロパティーステートメントのみを含む ATL transform である必要があります。そ"
-"の transform のプロパティーは、この補間に直接書き込まれたかのように処理されま"
-"す。"
+"この場合は 1 つのプロパティーステートメントのみを含む ATL transform である必"
+"要があります。その transform のプロパティーは、この補間に直接書き込まれたかの"
+"ように処理されます。"
 
 #: ../../source/transforms.rst:644
 msgid "Pass Statement"
@@ -791,9 +781,9 @@ msgstr "pass ステートメント"
 #: ../../source/transforms.rst:646
 msgid "The ``pass`` statement causes nothing to happen: a no-op."
 msgstr ""
+"``pass`` ステートメントは、何も行いません。つまり、ノンオペレーションです。"
 
 #: ../../source/transforms.rst:654
-#, fuzzy
 msgid ""
 "This can be used when there's a desire to separate statements, like when two "
 "sets of choice statements (see below) would otherwise be back-to-back. It "
@@ -801,64 +791,58 @@ msgid ""
 "need it to be empty, for example to make one of the choice blocks not do "
 "anything."
 msgstr ""
-"``pass`` ステートメントは、何も起こさない単純なステートメントです。これは、2 "
-"つの choice ステートメント群 (下記参照) が連続して行われる場合など、ステート"
-"メントを分離したい場合に使用できます。また、構文ではブロックを作成する必要が"
-"あるが、空にする必要がある場合 (たとえば、 choice ブロックの 1 つを何もしない"
-"ようにする場合など) にも役立ちます。"
+"これは、2 つの choice ステートメント群 (下記参照) が連続して行われる場合な"
+"ど、ステートメントを分離したい場合に使用できます。また、構文ではブロックを作"
+"成する必要があるが、空にする必要がある場合 (たとえば、 choice ブロックの 1 つ"
+"を何もしないようにする場合など) にも役立ちます。"
 
 #: ../../source/transforms.rst:660
 msgid "Repeat Statement"
 msgstr "Repeat ステートメント"
 
 #: ../../source/transforms.rst:662
-#, fuzzy
 msgid ""
 "The ``repeat`` statement causes the block containing it to resume execution "
 "from the beginning."
 msgstr ""
-"``repeat`` ステートメントは、単にそれを含むブロックの実行を再び最初から始める"
-"ステートメントです。"
+"``repeat`` ステートメントは、それを含むブロックの実行を再び最初から始めるス"
+"テートメントです。"
 
 #: ../../source/transforms.rst:671
 msgid "With count parameter::"
-msgstr ""
+msgstr "count パラメーターあり ::"
 
 #: ../../source/transforms.rst:683
 msgid "count"
-msgstr ""
+msgstr "count"
 
 #: ../../source/transforms.rst:683
 msgid "(Optional) Number of times to execute the block"
-msgstr ""
+msgstr "(任意) のブロック実行回数"
 
 #: ../../source/transforms.rst:686
-#, fuzzy
 msgid ""
 "A block ending with ``repeat 2`` will execute at most twice in total, and "
 "``repeat 1`` does not repeat."
 msgstr ""
-"式があれば、その評価がブロックの実行回数を指定する整数になります(ですから、"
 "``repeat 2`` で終わるステートメントは最高で 2 回実行され、 ``repeat 1`` はリ"
-"ピートしません)。"
+"ピートしません。"
 
 #: ../../source/transforms.rst:689
-#, fuzzy
 msgid "The repeat statement must be the last statement in a block"
-msgstr "repeat ステートメントは、必ずブロックの最後になければなりません。 ::"
+msgstr "repeat ステートメントは、必ずブロックの最後になければなりません。 "
 
 #: ../../source/transforms.rst:702
 msgid "Block Statement"
 msgstr "Block ステートメント"
 
 #: ../../source/transforms.rst:704
-#, fuzzy
 msgid ""
 "The ``block`` statement simply contains a block of ATL statements. This can "
 "be used to group statements that will repeat."
 msgstr ""
 "``block`` ステートメントは、単に ATL ステートメントのブロックを含むステートメ"
-"ントです。"
+"ントです。これを使用してリピートするステートメントのグループを作成できます。"
 
 #: ../../source/transforms.rst:729
 msgid "Parallel Statement"
@@ -874,21 +858,23 @@ msgstr ""
 
 #: ../../source/transforms.rst:748
 msgid "\"parallel\""
-msgstr ""
+msgstr "\"parallel\""
 
 #: ../../source/transforms.rst:748
 msgid "One or more parallel blocks"
-msgstr ""
+msgstr "一つ以上の parallel ブロック"
 
 #: ../../source/transforms.rst:749
 msgid "ATL block for this parallel branch"
-msgstr ""
+msgstr "一つ以上の ATL ブロックの支流"
 
 #: ../../source/transforms.rst:752
 msgid ""
 "When you use multiple parallel blocks, they all run at the same time. The "
 "parallel statement finishes when the last block finishes."
 msgstr ""
+"複数の parallel ブロックを使用すると、それらはすべて同時に実行されます。"
+"parallel ステートメントは、最後のブロックが終了した時点で完了します。"
 
 #: ../../source/transforms.rst:755
 msgid ""
@@ -898,16 +884,19 @@ msgid ""
 "`yalign`). If two blocks try to change the same property at the same time, "
 "the behavior is unpredictable and should be avoided."
 msgstr ""
+"各 parallel ブロックは独立しており、異なる :doc:`transform_properties` を変更"
+"するようにしてください。例えば、あるブロックは水平方向の移動（:tpref:"
+"`xalign`）を制御し、別のブロックは垂直方向の移動（:tpref:`yalign`）を制御する"
+"といった形です。2 つのブロックが同時に同じプロパティーを変更しようとすると、"
+"挙動は予測不能になるため避けるべきです。"
 
 #: ../../source/transforms.rst:761
-#, fuzzy
 msgid ""
 "Parallel statements are greedily grouped into a parallel set when more than "
 "one parallel block appears consecutively in a block."
 msgstr ""
 "ブロック内の連続する1つ以上 parallel ステートメントは貪欲に平行群にグループ化"
-"されます。平行群の全てのブロックは同時に実行されます。parallel ステートメント"
-"は、最後のブロックが終了したときに終了します。"
+"されます。"
 
 #: ../../source/transforms.rst:781
 msgid "Choice Statement"
@@ -926,7 +915,7 @@ msgstr ""
 
 #: ../../source/transforms.rst:795
 msgid "With weight::"
-msgstr ""
+msgstr "weightつき ::"
 
 #: ../../source/transforms.rst:808
 msgid "\"choice\""
@@ -934,35 +923,34 @@ msgstr "\"choice\""
 
 #: ../../source/transforms.rst:808
 msgid "One or more choices"
-msgstr ""
+msgstr "一つ以上の選択肢"
 
 #: ../../source/transforms.rst:809
 msgid "weight"
-msgstr ""
+msgstr "weight"
 
 #: ../../source/transforms.rst:809
 msgid "float (expr)"
-msgstr ""
+msgstr "float (expr)"
 
 #: ../../source/transforms.rst:809
 msgid "(Optional) Weight of this choice, defaults to 1.0"
-msgstr ""
+msgstr "(任意) この選択肢のウェイト、デフォルトでは 1.0"
 
 #: ../../source/transforms.rst:810
 msgid "ATL block for this choice"
-msgstr ""
+msgstr "この選択肢の ATL ブロック"
 
 #: ../../source/transforms.rst:813
-#, fuzzy
 msgid ""
 "Choice statements are greedily grouped into a choice set when more than one "
 "choice statement appears consecutively in a block. If the "
 "`simple_expression` is supplied, it is a floating-point weight given to that "
 "block, otherwise 1.0 is assumed."
 msgstr ""
-"ブロック内の連続する choice  ステートメントは積極的にグループ化されます。"
-"`simple_expression` が与えられているなら、それはそのブロックに浮動小数点数で"
-"指定するウェイトになり、なければ 1.0 になります。"
+"ブロック内の連続する choice ステートメントは積極的にグループ化されます。"
+"`simple_expression` が指定されていれば、それがそのブロックに浮動小数点数で指"
+"定するウェイトになり、なければ 1.0 になります。"
 
 #: ../../source/transforms.rst:818
 msgid ""
@@ -979,7 +967,6 @@ msgid "Animation Statement"
 msgstr "Animation ステートメント"
 
 #: ../../source/transforms.rst:843
-#, fuzzy
 msgid ""
 "The ``animation`` statement must be the first statement in an ATL block, and "
 "tells Ren'Py that the block uses the animation timebase (``at``) rather than "
@@ -987,18 +974,18 @@ msgid ""
 "timebases`."
 msgstr ""
 "``animation`` ステートメントは ATL ブロックの最初のステートメントでなくてはな"
-"らず、そのブロックのアニメーション時間軸使用を Ren'Py 通知します。"
+"らず、そのブロックが通常の出現時間軸 (``st``) ではなくアニメーション時間軸 "
+"(``at``) を使用すると Ren'Py に通知します。"
 
 #: ../../source/transforms.rst:856
-#, fuzzy
 msgid ""
 "The animation timebase starts when an image or screen with the same tag is "
 "shown. This is generally used to have one image replaced by a second one at "
 "the same apparent time."
 msgstr ""
-"通常の出現時間軸に対して、アニメーション時間軸は同じタグの画像やスクリーンが"
-"表示されたときに開始します。これは通常おなじ時間軸で別の物で置き換えられる画"
-"像があるときに使用します。例 ::"
+"アニメーション時間軸は同じタグの画像やスクリーンが表示されたときに開始しま"
+"す。これは通常おなじ時間軸で別の物で置き換えられる画像があるときに使用しま"
+"す。"
 
 #: ../../source/transforms.rst:884
 msgid ""
@@ -1023,23 +1010,23 @@ msgstr "``on`` ステートメントは、イベントハンドラを定義し�
 
 #: ../../source/transforms.rst:897
 msgid "For one event ::"
-msgstr ""
+msgstr "イベントが一つの場合 ::"
 
 #: ../../source/transforms.rst:902
 msgid "For multiple events ::"
-msgstr ""
+msgstr "複数イベントの場合 ::"
 
 #: ../../source/transforms.rst:915 ../../source/transforms.rst:1293
 msgid "event_name"
-msgstr ""
+msgstr "event_name"
 
 #: ../../source/transforms.rst:915
 msgid "Name of one or more :ref:`events <external-atl-events>` to handle"
-msgstr ""
+msgstr "処理する一つ以上の :ref:`イベント <external-atl-events>` の名前"
 
 #: ../../source/transforms.rst:916
 msgid "ATL block to execute when event occurs"
-msgstr ""
+msgstr "イベント発生時に実行する ATL ブロック"
 
 #: ../../source/transforms.rst:919
 msgid ""
@@ -1081,10 +1068,14 @@ msgid ""
 "optionally add a transition effect when changing from one displayable to "
 "another."
 msgstr ""
+"displayable ステートメントは、ステートメントの実行時に transform の子 :doc:"
+"`displayable <displayables>` を設定または置き換えます。また、ある "
+"displayable から別の displayable に切り替える際に、任意でトランジション効果を"
+"追加できます。"
 
 #: ../../source/transforms.rst:962
 msgid "With transition::"
-msgstr ""
+msgstr "トランジションつき ::"
 
 #: ../../source/transforms.rst:974 ../../source/transforms.rst:1076
 msgid "displayable"
@@ -1096,7 +1087,7 @@ msgstr ":doc:`Displayable <displayables>` (expr)"
 
 #: ../../source/transforms.rst:974
 msgid "The new child image or visual element to display"
-msgstr ""
+msgstr "表示する新しい子画像またはビジュアル要素"
 
 #: ../../source/transforms.rst:975
 msgid "transition"
@@ -1108,11 +1099,11 @@ msgstr ":doc:`Transition <transitions>` (expr)"
 
 #: ../../source/transforms.rst:975
 msgid "(Optional) Transition when changing displayables"
-msgstr ""
+msgstr "（任意）displayable を切り替える際のトランジション"
 
 #: ../../source/transforms.rst:977
 msgid "(eg. ``dissolve``, ``fade``)"
-msgstr ""
+msgstr "(例 ``dissolve``, ``fade``)"
 
 #: ../../source/transforms.rst:981
 msgid ""
@@ -1120,6 +1111,9 @@ msgid ""
 "transitions`, and :var:`move- <move>` and :var:`ease- <ease>` transitions "
 "won't work here."
 msgstr ""
+"このコンテキストでは、すべてのトランジションが動作するわけではありません。特"
+"に :ref:`dict-transitions` および :var:`move- <move>`, :var:`ease- <ease>` ト"
+"ランジションはここでは使用できません。"
 
 #: ../../source/transforms.rst:984
 msgid ""
@@ -1127,24 +1121,28 @@ msgid ""
 "already has a child displayable, your current ATL block will pause and wait "
 "for that included transform's animation to finish before continuing."
 msgstr ""
+"**displayable として transform を使用する場合:** すでに子 displayable を持つ"
+"別の ATL transform を渡すと、現在の ATL ブロックは一時停止し、含まれた "
+"transform のアニメーションが終了するのを待ってから処理を続行します。"
 
 #: ../../source/transforms.rst:990
-#, fuzzy
 msgid ""
 "If you pass a transform without a child, it will make your transform "
 "transparent and won't display anything. A child-less ATL transforms might be "
 "interpreted as a :ref:`transform-expression-atl-statement`, which will yield "
 "different results."
 msgstr ""
-"子を持たない transform を渡すことが、 transform を透明にして効果を失わせるの"
-"で無意味な場合、子を持たない ATL transform を渡すことは :ref:`transform-"
-"expression-atl-statement` と解釈され、異なる結果をもたらします。"
+"子を持たない transform を渡すと、 transform を透明にして何も表示しません。子"
+"を持たない ATL transform は :ref:`transform-expression-atl-statement` と解釈"
+"され、異なる結果をもたらします。"
 
 #: ../../source/transforms.rst:994
 msgid ""
 "**For beginners**: Always make sure your displayable is something visible, "
 "like an image filename (``\"logo.png\"``) or a displayable with content."
 msgstr ""
+"**初心者向け:** displayable は、必ず ``\"logo.png\"`` のような画像ファイル名"
+"や、内容を持つ displayable など、実際に表示されるものにしてください。"
 
 #: ../../source/transforms.rst:1012
 msgid "Transform Expression Statement"
@@ -1159,7 +1157,6 @@ msgstr ""
 "みます。"
 
 #: ../../source/transforms.rst:1034
-#, fuzzy
 msgid ""
 "This only applies if the ATL transform has **not** been supplied a child "
 "(see the top of the page for how to do that), otherwise it will be "
@@ -1169,27 +1166,27 @@ msgstr ""
 "これは、その ATL transform に子が提供されていない場合 (その方法についてはペー"
 "ジの上部を参照) に適用され、それ以外の場合は :ref:`displayable-atl-"
 "statement` として解釈されます。指定された ATL transform の内容がこのステート"
-"メントの場所に含められます。::"
+"メントの場所に含められます。"
 
 #: ../../source/transforms.rst:1057
-#, fuzzy
 msgid "Contains Inline Statement"
-msgstr "Contains ブロック ステートメント"
+msgstr "Contain インラインステートメント"
 
 #: ../../source/transforms.rst:1059
-#, fuzzy
 msgid ""
 "This statement sets (or replaces) the child of the current ATL transform to "
 "the value of the expression, making it useful for animation."
 msgstr ""
-"このステートメントは、現在の ATL transform の子をその式の値に設定 (または置"
-"換) して、アニメーションに役立てます。 ::"
+"このステートメントは現在の ATL transform の子をその式の値に設定 (または置換) "
+"でき、アニメーションに役立てます。 ::"
 
 #: ../../source/transforms.rst:1076
 msgid ""
 ":doc:`Displayable <displayables>`, :ref:`Transform <transform-statement>` "
 "(expr)"
 msgstr ""
+":doc:`Displayable <displayables>`, :ref:`Transform <transform-statement>` "
+"(expr)"
 
 #: ../../source/transforms.rst:1077
 msgid "Child displayable or transform"
@@ -1215,6 +1212,9 @@ msgid ""
 "to be a separate transform object rather than just including its code "
 "directly."
 msgstr ""
+"このステートメントは、ATL transform の子として別の ATL transform を含めたい場"
+"合に使用します。これは、子を単にコードとして直接含めるのではなく、独立した "
+"transform オブジェクトとして扱う必要がある場合に特に有用です。"
 
 #: ../../source/transforms.rst:1092
 msgid ""
@@ -1222,6 +1222,9 @@ msgid ""
 "child displayable, and it has the advantage of specifying a :doc:`transition "
 "<transitions>` that plays when replacing the old child with a new one."
 msgstr ""
+"Otherwise, the :ref:`displayable-atl-statement` is a simpler way to set the "
+"child displayable, and it has the advantage of specifying a :doc:`transition "
+"<transitions>` that plays when replacing the old child with a new one."
 
 #: ../../source/transforms.rst:1117
 msgid "Contains Block Statement"
@@ -1245,7 +1248,6 @@ msgstr ""
 "化され、 :func:`Fixed` 内にラップされ、 transform の子として設定されます。"
 
 #: ../../source/transforms.rst:1136
-#, fuzzy
 msgid ""
 "Each block should define a displayable to use, otherwise an error will "
 "occur. The contains statement executes instantaneously, without waiting for "
@@ -1265,17 +1267,19 @@ msgstr ""
 
 #: ../../source/transforms.rst:1176
 msgid "func"
-msgstr ""
+msgstr "func"
 
 #: ../../source/transforms.rst:1176
 msgid "function (expr)"
-msgstr ""
+msgstr "function (expr)"
 
 #: ../../source/transforms.rst:1176
 msgid ""
 "Function to call, with signature ``(trans: Transform, st: float, at: float) -"
 "> float | None``"
 msgstr ""
+"引数 ``(trans: Transform, st: float, at: float)`` を持ち、 ``float | None`` "
+"を返す呼び出す関数です。"
 
 #: ../../source/transforms.rst:1179
 msgid ""
@@ -1291,11 +1295,12 @@ msgstr ""
 "ブジェクトの属性として設定できます。"
 
 #: ../../source/transforms.rst:1184
-#, fuzzy
 msgid ""
 "The second argument is the shown :ref:`timebase <atl-timebases>`, the number "
 "of seconds since the function began executing."
-msgstr "第二引数は出現時間軸で、関数が実行され始めてからの秒数です。"
+msgstr ""
+"第二引数は :ref:`出現時間軸 <atl-timebases>` であり関数が実行され始めてからの"
+"秒数です。"
 
 #: ../../source/transforms.rst:1187
 msgid ""
@@ -1326,7 +1331,6 @@ msgstr ""
 "なく、予測のためにいつどの数値で呼び出されるか分かりません。"
 
 #: ../../source/transforms.rst:1199
-#, fuzzy
 msgid ""
 "Note that ``function`` is not a transform property, and that it doesn't have "
 "the exact same behavior as :func:`Transform`\\ 's `function` parameter."
@@ -1344,38 +1348,36 @@ msgstr "``time`` ステートメントは制御ステートメントです。"
 
 #: ../../source/transforms.rst:1242
 msgid "value"
-msgstr ""
+msgstr "value"
 
 #: ../../source/transforms.rst:1242
 msgid "float/int (expr)"
-msgstr ""
+msgstr "float/int (expr)"
 
 #: ../../source/transforms.rst:1242
 msgid "Time in seconds from start of block execution"
-msgstr ""
+msgstr "ブロックの実行開始からの秒数"
 
 #: ../../source/transforms.rst:1245
-#, fuzzy
 msgid ""
 "When the value given in the statement is reached, the next statement begins "
 "to execute. This transfer of control occurs even if a previous statement is "
 "still executing, and causes any such prior statement to immediately "
 "terminate."
 msgstr ""
-"これには 1 つの式が含まれ、評価結果はこのステートメントが含まれるブロックが実"
-"行され始めてからの時間を秒単位で表します。ステートメントで指定された時間に到"
-"達すると、次のステートメントが実行開始します。この制御の変異は以前のステート"
-"メントがまだ実行中であってもおこり、そのような以前のステートメントは直ちに停"
-"止します。"
+"ステートメントで指定された時間に到達すると、次のステートメントが実行開始しま"
+"す。この制御の変異は以前のステートメントがまだ実行中であってもおこり、そのよ"
+"うな以前のステートメントは直ちに停止します。"
 
 #: ../../source/transforms.rst:1249
 msgid ""
 "If the time statement is reached before the given value, the transform "
 "pauses and waits until the time statement would take control."
 msgstr ""
+"time ステートメントに到達した時点で指定された値より前である場合、transform は"
+"一時停止し、その time ステートメントが制御を所得する時刻まで待機します。"
 
 #: ../../source/transforms.rst:1252
-#, fuzzy
 msgid ""
 "When there are multiple time statements in a block, they must strictly "
 "increase in order."
@@ -1388,16 +1390,13 @@ msgid "Event Statement"
 msgstr "Event ステートメント"
 
 #: ../../source/transforms.rst:1277
-#, fuzzy
 msgid ""
 "The ``event`` statement causes an event with the given name to be produced."
-msgstr ""
-"event ステートメントは指定した名前のイベントを引き起こす simple ステートメン"
-"トです。"
+msgstr "``event`` ステートメントは指定した名前のイベントを引き起こします。"
 
 #: ../../source/transforms.rst:1293
 msgid "Name of event to produce"
-msgstr ""
+msgstr "生成されるイベントの名前"
 
 #: ../../source/transforms.rst:1296
 msgid ""
@@ -2044,34 +2043,41 @@ msgstr ""
 
 #: ../../source/transforms.rst:1567
 msgid "Timebases"
-msgstr ""
+msgstr "時間軸"
 
 #: ../../source/transforms.rst:1569
 msgid "Two timebases exist and are commonly confused:"
-msgstr ""
+msgstr "2 つの時間軸が存在し、よく混同されます。 :"
 
 #: ../../source/transforms.rst:1571
 msgid ""
 "``st`` (shown timebase): begins when this displayable is first shown on the "
 "screen."
 msgstr ""
+"``st``（出現時間軸）：この displayable が最初に画面に表示された時点から始まり"
+"ます。"
 
 #: ../../source/transforms.rst:1572
 msgid ""
 "``at`` (animation timebase): begins when an image with the same tag was "
 "shown, without being hidden."
 msgstr ""
+"``at``（アニメーション時間軸）：同じタグを持つ画像が非表示にされることなく表"
+"示された時点から始まります。"
 
 #: ../../source/transforms.rst:1575
 msgid ""
 "When the displayable is shown without a tag, ``st`` and ``at`` are the same."
 msgstr ""
+"displayable がタグなしで表示される場合、　``st`` と ``at`` は同一になります。"
 
 #: ../../source/transforms.rst:1579
 msgid ""
 "By default, transforms use ``st``. Use :ref:`animation <animation-atl-"
 "statement>` to switch to ``at``."
 msgstr ""
+"デフォルトでは、transform は ``st`` を使用します。 :ref:`animation "
+"<animation-atl-statement>` を使用して ``at`` に切り替えます。"
 
 #: ../../source/transforms.rst:1583
 msgid "Transform Class"

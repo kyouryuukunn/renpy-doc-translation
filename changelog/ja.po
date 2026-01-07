@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-21 14:36+0900\n"
-"PO-Revision-Date: 2025-11-11 21:32+0900\n"
+"PO-Revision-Date: 2025-12-29 11:57+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2014-06-21 06:26+0000\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: ../../source/changelog.rst:3
 msgid "Changelog (Ren'Py 7.x-)"
@@ -28,7 +28,7 @@ msgstr "また、 :doc:`非互換の変更 <incompatible>` のリストもあり
 
 #: ../../source/changelog.rst:11
 msgid "8.6.0"
-msgstr ""
+msgstr "8.6.0"
 
 #: ../../source/changelog.rst:15 ../../source/changelog.rst:281
 #: ../../source/changelog.rst:554 ../../source/changelog.rst:1170
@@ -46,6 +46,12 @@ msgid ""
 "audio, see :var:`config.image_directories` and :var:`config."
 "audio_directories`."
 msgstr ""
+"新しい :var:`config.special_directory_map` 変数は、特別なディレクトリ名"
+"（'images'、'audio'、'fonts'）を、その種類のファイルを検索するディレクトリの"
+"リストに対応付けます。これは、画像や audio 名前空間内の変数を定義する際には使"
+"用されません。画像や音声を自動的に定義する場合は、:var:`config."
+"image_directories` および :var:`config.audio_directories` を参照してくださ"
+"い。"
 
 #: ../../source/changelog.rst:22
 msgid ""
@@ -53,6 +59,9 @@ msgid ""
 "that are searched for audio Files and used to populate the :ref:`audio-"
 "namespace <audio-namespace>`."
 msgstr ""
+"新しい :var:`config.audio_directories` 変数は、音声ファイルを検索するディレク"
+"トリのリストで、 :ref:`audio-namespace <audio-namespace>` を構成するために使"
+"用されます。"
 
 #: ../../source/changelog.rst:26 ../../source/changelog.rst:66
 #: ../../source/changelog.rst:180 ../../source/changelog.rst:290
@@ -68,7 +77,7 @@ msgstr "その他の変更"
 #: ../../source/changelog.rst:28
 msgid ""
 "It is now possible to consume in-app purchases on Android, as well as on iOS."
-msgstr ""
+msgstr "Android でも iOS と同様に、アプリ内課金を消費できるようになりました。"
 
 #: ../../source/changelog.rst:30
 msgid ""
@@ -77,6 +86,11 @@ msgid ""
 "from contributing to translation identifiers. This can change trasnslation "
 "identifiers. See the inconpatible changes for more information."
 msgstr ""
+":var:`config.tlid_only_considers_say` 変数は、デフォルトで True に設定される"
+"ようになりました。これにより、 `` voice`` ステートメントのような say 以外のス"
+"テートメントが翻訳識別子に寄与しないようになります。これは翻訳識別子を変更す"
+"る可能性があります。詳細については、互換性のない変更（incompatible changes）"
+"を参照してください。"
 
 #: ../../source/changelog.rst:34
 msgid ""
@@ -84,17 +98,21 @@ msgid ""
 "update format that has been replaced. The ability to create these updates "
 "will be removed in Ren'Py 8.7.0."
 msgstr ""
+"zsync ベースのアップデートを適用する機能が削除されました。これはすでに置き換"
+"えられている古いアップデート形式です。これらのアップデートを作成する機能は、"
+"Ren'Py 8.7.0 で削除される予定です。"
 
 #: ../../source/changelog.rst:37
 msgid ""
 "Ren'Py's PC presplash system has been updated to support WEBP and AVIF "
 "images, in addition to PNG and JPG."
 msgstr ""
+"Ren'Py の PC 用プレスプラッシュシステムは、PNG や JPG に加えて、WEBP および "
+"AVIF 画像にも対応するよう更新されました。"
 
 #: ../../source/changelog.rst:43
-#, fuzzy
 msgid "8.5.1"
-msgstr "8.5.0"
+msgstr "8.5.1"
 
 #: ../../source/changelog.rst:46 ../../source/changelog.rst:240
 #: ../../source/changelog.rst:259 ../../source/changelog.rst:753
@@ -116,25 +134,26 @@ msgid "Fixes"
 msgstr "修正"
 
 #: ../../source/changelog.rst:48
-#, fuzzy
 msgid ""
 "Ren'Py now skips files and directories beginning with a dot (e.g. .hidden."
 "rpy) when scanning the filesystem. These files often have special meaning on "
 "unix and mac platforms."
 msgstr ""
-"Ren'Pyは Unix ライクなプラットフォーム上の隠しファイルである、ドットで始ま"
-"る .rpy ファイル (例: .hidden.rpy) をロードしようとしなくなりました。"
+"ファイルシステムスキャン時に Ren'Pyはドットで始まるファイルやディレクトリー "
+"(例: .hidden.rpy) スキップするようになりました。これらのファイルはしばしば "
+"unix や mac プラットフォームで特別な意味を持ちます。"
 
 #: ../../source/changelog.rst:51
 msgid ""
 "Speech bubble dialogue is only retained at the end of a sequence of pauses, "
 "not every time."
 msgstr ""
+"吹き出しによる台詞は毎回では無く、一連のポーズの終わりでのみ維持されるように"
+"なりました。"
 
 #: ../../source/changelog.rst:54
-#, fuzzy
 msgid "Mouse Changes/Fixes"
-msgstr "変更と修正"
+msgstr "マウスの変更と修正"
 
 #: ../../source/changelog.rst:56
 msgid ""
@@ -142,12 +161,18 @@ msgid ""
 "determining which cursor to use. This includes the cursor based on the "
 "displayable (eg. button), the screen type (eg. gamemenu), and the default."
 msgstr ""
+"Ren'Py は、使用するマウスカーソルを決定する際に、複数の候補となるカーソル名を"
+"順に試すようになりました。これには、displayable（例：button）に基づくカーソ"
+"ル、スクリーンの種類（例：gamemenu）に基づくカーソル、そしてデフォルトのカー"
+"ソルが含まれます。"
 
 #: ../../source/changelog.rst:60
 msgid ""
 ":class:`MouseDisplayable` now allows a mouse cursor to be None, to use the "
 "system cursor."
 msgstr ""
+":class:`MouseDisplayable` がマウスカーソルに None を許可するようになり、この"
+"ときはシステムカーソルを使用します。"
 
 #: ../../source/changelog.rst:62
 msgid ""
@@ -155,6 +180,9 @@ msgid ""
 "lower level, making the game more responsive when faced with mice that "
 "produce many events per frame."
 msgstr ""
+"Ren'Py は、短時間に連続して発生する MOUSEMOTION イベントをより低いレベルで統"
+"合するようになり、1 フレームあたり多数のイベントを発生させるマウスを使用した"
+"場合でも、ゲームの応答性が向上しました。"
 
 #: ../../source/changelog.rst:68
 msgid ""
@@ -163,10 +191,16 @@ msgid ""
 "out the Compressor object. It's intended to allow requests to handle brotli-"
 "compressed responses."
 msgstr ""
+"Ren'Py には、brotli Python モジュールの簡易版が新たに含まれるようになりまし"
+"た。このバージョンは decompress メソッドと Decompressor オブジェクトをサポー"
+"トしますが、Compressor オブジェクトは含まれていません。これは、requests が "
+"brotli 圧縮されたレスポンスを扱えるようにすることを目的としています。"
 
 #: ../../source/changelog.rst:72
 msgid "Playing a voice line now stops ongoing self-voicing playback."
 msgstr ""
+"ボイスラインを再生すると、進行中のセルフボイシング再生が停止するようになりま"
+"した。"
 
 #: ../../source/changelog.rst:74
 msgid ""
@@ -177,6 +211,12 @@ msgid ""
 "will become True in Ren'Py 8.6. Setting this to true has the potential to "
 "change Translation identifier if your game uses voice statements."
 msgstr ""
+"新しい :var:`config.tlid_only_considers_say` 変数は、 ``voice`` ステートメン"
+"トのような say 以外のステートメントが翻訳識別子に寄与しないようにします（翻訳"
+"識別子は、吹き出しの追跡など、他の用途にも使用されます）。この変数のデフォル"
+"ト値は False ですが、Ren'Py 8.6 では True になります。これを True に設定し"
+"て、ゲームで voice ステートメントを使用している場合、翻訳識別子が変更される可"
+"能性があります。"
 
 #: ../../source/changelog.rst:80
 msgid ""
@@ -185,21 +225,26 @@ msgid ""
 "documented how to supply the area as an argument to the bubble screen for "
 "further control."
 msgstr ""
+":var:`bubble.area_property` 変数が文書化されました。これは吹き出しの領域をど"
+"のように台詞へ渡すかを制御するプロパティーです。また、より詳細な制御のため"
+"に、 bubble スクリーンへ引数として領域を渡す方法についても新たに文書化されま"
+"した。"
 
 #: ../../source/changelog.rst:84
 msgid ""
 "There is a new \"interact_done\" :ref:`character callback <character-"
 "callbacks>`, which is called after each interaction ends."
 msgstr ""
+"各インタラクションの終了後に呼び出される、新しい「interact_done」 が :ref:"
+"`character callback <character-callbacks>` に追加されました。"
 
 #: ../../source/changelog.rst:90
 msgid "8.5.0"
 msgstr "8.5.0"
 
 #: ../../source/changelog.rst:93
-#, fuzzy
 msgid "Live2D Web"
-msgstr "Live2D"
+msgstr "Live2D Web"
 
 #: ../../source/changelog.rst:95
 msgid ""
@@ -207,9 +252,12 @@ msgid ""
 "both launcher support for installing the Cubism SDK for Web, and support in "
 "Ren'Py for loading Live2D models in the web environment."
 msgstr ""
+"Ren'Py は Web プラットフォームで Live2D モデルをサポートするようになりまし"
+"た。このサポートには、Cubism SDK for Web をインストールするためのランチャー側"
+"の対応と、Web 環境で Live2D モデルを読み込むための Ren'Py 側の対応の両方が含"
+"まれます。"
 
 #: ../../source/changelog.rst:99
-#, fuzzy
 msgid "Automated Testing"
 msgstr "自動オーバーサンプリング"
 
@@ -222,6 +270,12 @@ msgid ""
 "game reaches the end without crashing, even when the game or engine is "
 "changed."
 msgstr ""
+"Ren'Py には、ゲームおよび Ren'Py 自体の自動テストを定義・実行できるテストフ"
+"レームワークが新たに組み込まれました。このテストフレームワークは自動化された"
+"機能テストを行うことを目的として設計されており、例えば、あらかじめ定義された"
+"一連の台詞や選択肢を自動でクリックして進行し、ゲームやエンジンに変更が加えら"
+"れた場合でも、クラッシュすることなく最後まで到達できるかを確認する、といった"
+"ことが可能です。"
 
 #: ../../source/changelog.rst:106
 msgid ""
@@ -230,6 +284,9 @@ msgid ""
 "framework exercises the full engine, including the portions of the engine "
 "that render the game."
 msgstr ""
+"このテストフレームワークは、GUI が正常に動作する環境で実行されることを想定し"
+"ています。特に、ゲームを描画するエンジンの部分を含め、エンジン全体を実際に動"
+"かしてテストを行うため、動作する OpenGL 環境が必須となります。"
 
 #: ../../source/changelog.rst:110
 msgid ""
@@ -238,6 +295,10 @@ msgid ""
 "if at least one testcase exists in the game. The Tutorial is a good project "
 "to use to see automated testing in action."
 msgstr ""
+"テストはランチャーから実行することも、 :ref:`test command <cli-test>` を使用"
+"してコマンドラインから実行することもできます。「Run testcases」コマンドは、"
+"ゲーム内に少なくとも 1 つのテストケースが存在する場合にのみ表示されます。自動"
+"テストの実際の動作を確認するには、Tutorial プロジェクトが適しています。"
 
 #: ../../source/changelog.rst:115
 msgid "Local Labels"
@@ -351,7 +412,7 @@ msgstr ""
 
 #: ../../source/changelog.rst:166
 msgid "Pygame_SDL2 Removal"
-msgstr ""
+msgstr "Pygame_SDL2 が除去されました"
 
 #: ../../source/changelog.rst:168
 msgid ""
@@ -360,22 +421,31 @@ msgid ""
 "into Ren'Py as the ``renpy.pygame`` package. For compatibility's sake, renpy."
 "pygame is importable as ``pygame`` or ``pygame_sdl2``, though::"
 msgstr ""
+"Ren'Py はもはや pygame_sdl2 プロジェクトに依存していません。SDL3 への移植など"
+"将来的な開発を支援するため、pygame_sdl2 の大部分は ``renpy.pygame`` パッケー"
+"ジとして Ren'Py に統合されました。互換性のために、renpy.pygame は ``pygame`` "
+"または ``pygame_sdl2`` として import することもできますが、 ::"
 
 #: ../../source/changelog.rst:174
 msgid "is now the recommended way to import pygame-like functionality."
-msgstr ""
+msgstr "上記が現在推奨される pygame ライクな機能をインポートする方法です。"
 
 #: ../../source/changelog.rst:176
 msgid ""
 "This change simplifies the Ren'Py build process. On Linux, it's now possible "
 "to create a build of Ren'Py for development purposes using the uv tool."
 msgstr ""
+"この変更により、Ren'Py のビルドプロセスが簡素化されました。Linux では、uv "
+"ツールを使用して、開発目的の Ren'Py ビルドを作成できるようになりました。"
 
 #: ../../source/changelog.rst:182
 msgid ""
 "Ren'Py's support for 32-bit ARM platforms is now built using 16 KB pages, "
 "which prevents the Play Console from producing a warning."
 msgstr ""
+"Ren'Py における 32 ビット ARM プラットフォームのサポートは、16 KB ページを使"
+"用してビルドされるようになり、これにより Play Console が警告を出さなくなりま"
+"した。"
 
 #: ../../source/changelog.rst:185
 msgid ""
@@ -383,12 +453,17 @@ msgid ""
 "arrow keys to move the cursor to the next and previous line. As this works "
 "using the character offset, it will work best with monospaced fonts."
 msgstr ""
+"複数行の input displayable で、上矢印キーおよび下矢印キーを使ってカーソルを上"
+"下の行に移動できるようになりました。この機能は文字オフセットに基づいて動作す"
+"るため、等幅フォントを使用した場合に最も適切に機能します。"
 
 #: ../../source/changelog.rst:188
 msgid ""
 "The :propref:`thumb_align` property is now a style property rather than a "
 "keywork property, and is supported in styles."
 msgstr ""
+":propref:`thumb_align` プロパティーは、キーワードプロパティーではなくスタイル"
+"プロパティーになり、スタイル内でサポートされるようになりました。"
 
 #: ../../source/changelog.rst:191
 msgid ""
@@ -396,27 +471,34 @@ msgid ""
 "character and include the prior character's name in the exported dialogue "
 "line."
 msgstr ""
+"台詞をエクスポートする際、 Ren'Py は特別な :var:`extend` キャラクターを検出"
+"し、直前のキャラクター名をエクスポートされた台詞行に含めるようになりました。"
 
 #: ../../source/changelog.rst:194
-#, fuzzy
 msgid ""
 "The :propref:`xmaximum` and :propref:`ymaximum` properties can now increase "
 "the size offered to a displayable beyond what is offered by its container."
 msgstr ""
-":propref:`xfill` プロパティと :propref:`yfill` プロパティーでウィンドウを縮小"
-"しなくなりました。"
+":propref:`xmaximum` および :propref:`ymaximum` プロパティーは、コンテナによっ"
+"て提供されるサイズを超えて displayable に与えられるサイズに拡張できるようにな"
+"りました。"
 
 #: ../../source/changelog.rst:197
 msgid ""
 "The ``screen`` statement now requires a block. It always was documented as "
 "requiring a block, but this was not enforced."
 msgstr ""
+"``screen`` ステートメントは、ブロックを必須とするようになりました。以前からブ"
+"ロックが必要であるとドキュメントには記載されていましたが、これまではその要件"
+"が強制されていませんでした。"
 
 #: ../../source/changelog.rst:199
 msgid ""
 "Setting :var:`config.tracesave_screenshot` makes it possible to control if a "
 "screenshot is taken when a traceback save is made."
 msgstr ""
+":var:`config.tracesave_screenshot` を設定してトレースバック保存時にスクリーン"
+"ショットを撮影するかを制御できるようになりました。"
 
 #: ../../source/changelog.rst:201
 msgid ""
@@ -424,6 +506,9 @@ msgid ""
 "`config.before_load_callbacks` make it possible to change what is displayed "
 "and what sounds are played as a load happens."
 msgstr ""
+"新しい ``before_load`` と :ref:`special label <special-labels>` と :var:"
+"`config.before_load_callbacks` により、ロード時に表示される内容や再生されるサ"
+"ウンドを変更できるようになりました。"
 
 #: ../../source/changelog.rst:204
 msgid ""
@@ -431,6 +516,9 @@ msgid ""
 "mapping locale strings to language names, allowing :var:`config."
 "enable_language_autodetect` to be customized more easily."
 msgstr ""
+"新しい :var:`config.locale_to_language_map` 変数は、ロケール文字列を言語名に"
+"マッピングする辞書であり、:var:`config.enable_language_autodetect` をより容易"
+"にカスタマイズできるようになりました。"
 
 #: ../../source/changelog.rst:207
 msgid ""
@@ -439,6 +527,10 @@ msgid ""
 "was created, which could lead to large amounts of memory in use to store the "
 "channels and associated buffers."
 msgstr ""
+":func:`Movie` displayable は、ムービーの再生中にチャンネルを動的に割り当てる"
+"ようになりました。従来は、各 Movie が作成時にチャンネルを割り当てており、その"
+"結果、チャンネルや関連バッファを保持するために大量のメモリーを使用する場合が"
+"ありました。"
 
 #: ../../source/changelog.rst:211
 msgid ""
@@ -487,13 +579,12 @@ msgstr ""
 "トである :var:`config.image_directories` に置き換えられました。"
 
 #: ../../source/changelog.rst:226
-#, fuzzy
 msgid ""
 "The new :var:`config.context_callbacks` variable makes it possible to define "
 "multiple callbacks that are called when a new context is entered."
 msgstr ""
-":var:`config.voice_callbacks` は、ボイス行が再生または停止したときに呼び出さ"
-"れるコールバックを定義できます。"
+":var:`config.context_callbacks` 変数は、新しいコンテキストに入ったときに呼び"
+"出される複数のコールバックを定義できます。"
 
 #: ../../source/changelog.rst:229
 msgid ""
@@ -503,7 +594,6 @@ msgstr ""
 "まれなくなりました。"
 
 #: ../../source/changelog.rst:231
-#, fuzzy
 msgid ""
 "Ren'Py will now prompt you to close other Ren'Py games before an upgrade. "
 "This addresses problems on Windows that could be caused by launcher files in "
@@ -514,41 +604,48 @@ msgstr ""
 "チャー ファイルが原因で発生する可能性のある Windows の問題が解決されます。"
 
 #: ../../source/changelog.rst:234
-#, fuzzy
 msgid ""
 "Support for RTL languages is now enabled by default, so it is no longer "
 "necessary to set config.rtl."
-msgstr "右から左に記述する言語のサポートがデフォルトで有効になりました。"
+msgstr ""
+"右から左に記述する言語のサポートがデフォルトで有効になりました。それゆえ "
+"confiig.rtl を設定する必要はありません。"
 
 #: ../../source/changelog.rst:236
 msgid ""
 "The new :var:`config.adjust_audio_amplitude` allows a global adjustment of "
 "the amplitude of all audio played through Ren'Py."
 msgstr ""
+"新しい :var:`config.adjust_audio_amplitude` により、Ren'Py を通じて再生される"
+"すべての音声の振幅をグローバルに調整できるようになりました。"
 
 #: ../../source/changelog.rst:242
-#, fuzzy
 msgid "A crash caused by improperly stored video textures has been fixed."
 msgstr ""
-"Webプラットフォームでのオーディオフィルターの変更によって引き起こされるクラッ"
-"シュが修正されました。"
+"不適切に保存された動画テクスチャが原因で発生していたクラッシュが修正されまし"
+"た。"
 
 #: ../../source/changelog.rst:244
 msgid ""
 "Alpha premultiplication is now properly performed on image-based fonts, "
 "allowing proper alpha blending of these fonts."
 msgstr ""
+"画像ベースのフォントに対して透過度のプリマルチプライ処理が正しく行われるよう"
+"になり、これらのフォントのアルファブレンディングが適切に機能するようになりま"
+"した。"
 
 #: ../../source/changelog.rst:246
 msgid ""
 "Several problems editing the script (manifesting in in the interactive "
 "director and the add from to calls command) hav been fixed."
 msgstr ""
+"スクリプト編集時に発生していた複数の問題（Interactive Director および「add "
+"from to calls」コマンドで発生していたもの）が修正されました。"
 
 #: ../../source/changelog.rst:249
-#, fuzzy
 msgid "An issue with the scaling of oversampled videos has been fixed."
-msgstr "Androidでのビルドに関する問題が修正されました。"
+msgstr ""
+"オーバーサンプリングされた動画のスケーリングに関する問題が修正されました。"
 
 #: ../../source/changelog.rst:256
 msgid "8.4.1"
@@ -657,8 +754,8 @@ msgid ""
 "``__file__`` attribute to the absolute path of the module or package. This "
 "reverts a change made in Ren'Py 8.4.0, which set the ``__file__`` attribute "
 "to the path relative to the game directory. When loading a module from an "
-"RPA archive or Android APK, this changes to a relative path starting with ``"
-"$game``. This change is meant to help more pure Python packages work with "
+"RPA archive or Android APK, this changes to a relative path starting with "
+"``$game``. This change is meant to help more pure Python packages work with "
 "Ren'Py, but we recommend that you do not rely on the ``__file__`` attribute "
 "in your code, and use importlib.resources instead."
 msgstr ""
@@ -1141,8 +1238,8 @@ msgid ""
 "As an example, take loading \"eileen happy.png\". When the game is scaled to "
 "more than 100% of it's virtual size, when loading \"eileen happy.png\", "
 "Ren'Py will also look for \"eileen happy@2.png\", and load that if it "
-"exists. When scaled to more than 200%, it will look for \"eileen happy@4.png"
-"\", \"eileen happy@3.png\", and \"eileen happy@2.png\". If none of these "
+"exists. When scaled to more than 200%, it will look for \"eileen happy@4."
+"png\", \"eileen happy@3.png\", and \"eileen happy@2.png\". If none of these "
 "exist, it will use \"eileen happy.png\"."
 msgstr ""
 "例えば、 \"eileen happy.png\" の読み込み時、ゲームがその仮想サイズの100%以上"
@@ -5394,8 +5491,8 @@ msgstr ""
 msgid ""
 "This release of Ren'Py also adds support for oversampling raster images, "
 "like PNG, JPEG, WebP, and AVIF. For these images, oversampling is done by "
-"including an @ and number in the filename. For example, \"eileen happy@2.png"
-"\" will be oversampled by a factor of 2. This allows for easier ways of "
+"including an @ and number in the filename. For example, \"eileen happy@2."
+"png\" will be oversampled by a factor of 2. This allows for easier ways of "
 "making a remastered version of a game with minimal changes to the code. "
 "Image manipulators, which are now obsolete but common in older games, "
 "support oversampled images."
@@ -6983,11 +7080,11 @@ msgstr ""
 
 #: ../../source/changelog.rst:3077
 msgid ""
-"Formatted string literals can now be used. These are strings like ``f"
-"\"characters/{character}.chr\"``, where the text in braces is replaced by a "
-"formatted Python variable, similarly to the way that interpolation works in "
-"Ren'Py dialogue. This is only available in Python, however, and not in most "
-"purely Ren'Py statements."
+"Formatted string literals can now be used. These are strings like "
+"``f\"characters/{character}.chr\"``, where the text in braces is replaced by "
+"a formatted Python variable, similarly to the way that interpolation works "
+"in Ren'Py dialogue. This is only available in Python, however, and not in "
+"most purely Ren'Py statements."
 msgstr ""
 "フォーマットされた文字列リテラルを使えるようになりました。これは ``f "
 "\"characters/{character}.chr\"`` のような文字列で、中括弧内のテキストは、"
@@ -7277,8 +7374,8 @@ msgstr ""
 
 #: ../../source/changelog.rst:3205
 msgid ""
-"When running as an Android application on a ChromeOS device, the \"chromeos"
-"\" variant will be selected."
+"When running as an Android application on a ChromeOS device, the "
+"\"chromeos\" variant will be selected."
 msgstr ""
 "ChromeOS デバイス上で Android アプリとして動作時に \"chromeos\" スクリーン"
 "バージョンが選択されるようになりました。"
@@ -7567,9 +7664,9 @@ msgstr ""
 #: ../../source/changelog.rst:3342
 msgid ""
 "The :func:`Gallery.image` and :func:`Gallery.unlock_image` methods now take "
-"keyword arguments beginning with `show\\_`. These arguments have the `show"
-"\\_` prefix stripped, and are then passed to the Gallery.image_screen as "
-"additional keyword arguments. This can be used to include additional "
+"keyword arguments beginning with `show\\_`. These arguments have the "
+"`show\\_` prefix stripped, and are then passed to the Gallery.image_screen "
+"as additional keyword arguments. This can be used to include additional "
 "information with the images in the gallery."
 msgstr ""
 ":func:`Gallery.image` と :func:`Gallery.unlock_image` メソッドが `show\\_` で"
@@ -9183,11 +9280,11 @@ msgstr ""
 
 #: ../../source/changelog.rst:4131
 msgid ""
-"When the model-based renderer is being used, Ren'Py now supports a \"3D Stage"
-"\". This adds a third dimension to shown images, allowing for perspective "
-"correct zooming and motion, the rotation and translation of displayables in "
-"3D, and many other new effects. Please see the :doc:`3D Stage <3dstage>` "
-"documentation for more information."
+"When the model-based renderer is being used, Ren'Py now supports a \"3D "
+"Stage\". This adds a third dimension to shown images, allowing for "
+"perspective correct zooming and motion, the rotation and translation of "
+"displayables in 3D, and many other new effects. Please see the :doc:`3D "
+"Stage <3dstage>` documentation for more information."
 msgstr ""
 "モデルベースのレンダラー使用時に、 \"3D Stage\" をサポートするようになりまし"
 "た。これは奥行きをスプライトに追加して遠近補正をしたズームと移動、回転を可能"
@@ -12030,8 +12127,8 @@ msgstr ""
 #, fuzzy
 msgid ""
 "The :ref:`input <sl-input>` displayable now takes a new `copypaste` "
-"property, which when true allows copying with ctrl+C and pasting with ctrl"
-"+V. This is enabled in the console and launcher."
+"property, which when true allows copying with ctrl+C and pasting with "
+"ctrl+V. This is enabled in the console and launcher."
 msgstr ""
 ":ref:'input ' <sl-input>displayable は新しい 'copypaste' プロパティを取るよう"
 "になり、true の場合、ctrl+C でコピーし、ctrl+V で貼り付けることができます。こ"
@@ -12904,9 +13001,9 @@ msgid ""
 "\"vertical\" as values, causing text spacing to be adjusted in only the "
 "specified direction."
 msgstr ""
-":p ropref:'adjust_spacing' スタイルプロパティは、\"horizontal\" と \"vertical"
-"\" を値として受け取ることができるようになり、テキストの間隔が指定された方向の"
-"みに調整されるようになりました。"
+":p ropref:'adjust_spacing' スタイルプロパティは、\"horizontal\" と "
+"\"vertical\" を値として受け取ることができるようになり、テキストの間隔が指定さ"
+"れた方向のみに調整されるようになりました。"
 
 #: ../../source/changelog.rst:5958
 #, fuzzy
@@ -14161,15 +14258,15 @@ msgstr "https://www.renpy.org/dl/6.10.2/CHANGELOG.txt"
 #~ "られますが、カットシーンムービーには十分でしょう。"
 
 #~ msgid ""
-#~ "Ren'Py now includes a new set of screen variants, with \"large\", \"medium"
-#~ "\", and \"small\" reflecting the visual size of devices (televisions are "
-#~ "considered to be small because they're far away), while \"touch\", \"tv"
-#~ "\", and \"pc\" reflect the input devices involved."
+#~ "Ren'Py now includes a new set of screen variants, with \"large\", "
+#~ "\"medium\", and \"small\" reflecting the visual size of devices "
+#~ "(televisions are considered to be small because they're far away), while "
+#~ "\"touch\", \"tv\", and \"pc\" reflect the input devices involved."
 #~ msgstr ""
 #~ "Ren'Py は入力デバイスを反映するに \"touch\", \"tv\", \"pc\" に対して新たに"
-#~ "デバイスのサイズを反映する一連のスクリーンバージョン \"large\",  \"medium"
-#~ "\",  \"small\" を含めました(テレビは距離があるため small と判断されま"
-#~ "す )。"
+#~ "デバイスのサイズを反映する一連のスクリーンバージョン \"large\",  "
+#~ "\"medium\",  \"small\" を含めました(テレビは距離があるため small と判断さ"
+#~ "れます )。"
 
 #~ msgid "Android now supports displaying vertical text."
 #~ msgstr "Android で縦書きテキストを表示できるようになりました。"
@@ -14291,8 +14388,8 @@ msgstr "https://www.renpy.org/dl/6.10.2/CHANGELOG.txt"
 #~ "れます。"
 
 #~ msgid ""
-#~ "There are also several new voice-related preferences. The \"voice sustain"
-#~ "\" preference determines if voice is sustained through multiple "
+#~ "There are also several new voice-related preferences. The \"voice "
+#~ "sustain\" preference determines if voice is sustained through multiple "
 #~ "interactions. The \"wait for voice\" preference determines if auto-"
 #~ "forward mode waits for the voice to finish before advancing."
 #~ msgstr ""
