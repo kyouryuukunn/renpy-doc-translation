@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-21 14:36+0900\n"
-"PO-Revision-Date: 2025-12-27 12:18+0900\n"
+"POT-Creation-Date: 2026-01-10 20:31+0900\n"
+"PO-Revision-Date: 2026-01-10 20:59+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -607,23 +607,64 @@ msgstr ""
 "るべきで、少なくとも辞書のキーが1つ設定されれば自動的にディスクに保存されま"
 "す。 例 ::"
 
-#: ../../source/inc/jsondb:37
-msgid ""
-"This creates a JSONDB that is stored in the file balloon.json, and has a "
-"default values. The second leval values can be used as normal dictionaries::"
+#: ../../source/inc/jsondb:52
+msgid "This creates a JSONDB that is stored in the file, balloon.json, and has"
 msgstr ""
 "これは balloon.json ファイルに JSONDB を作成し、デフォルトの値を持たせます。"
-"第二階層の値は通常の辞書として使用出来ます。 ::"
 
-#: ../../source/inc/jsondb:53
+#: ../../source/inc/jsondb:38
+msgid ""
+"the default value of `enabled` set to False. The second level values can be "
+"used as normal dictionaries::"
+msgstr ""
+"`enabled` の値はデフォルトでは False に設定されています。第二階層の値は通常の"
+"辞書として使用出来ます。 ::"
+
+#: ../../source/inc/jsondb:41
+msgid "screen say(who, what):"
+msgstr "screen say(who, what):"
+
+#: ../../source/inc/jsondb:43
+msgid "default bd = balloonData[renpy.get_translation_identifier()]"
+msgstr "default bd = balloonData[renpy.get_translation_identifier()]"
+
+#: ../../source/inc/jsondb:45
+msgid "if bd[\"enabled\"]:"
+msgstr "if bd[\"enabled\"]:"
+
+#: ../../source/inc/jsondb:46
+msgid "use balloon_say(who, what)"
+msgstr "use balloon_say(who, what)"
+
+#: ../../source/inc/jsondb:48
+msgid "else:"
+msgstr "else:"
+
+#: ../../source/inc/jsondb:48
+msgid "use adv_say(who, what)"
+msgstr "use adv_say(who, what)"
+
+#: ../../source/inc/jsondb:52
+msgid "if config.developer:"
+msgstr "if config.developer:"
+
+#: ../../source/inc/jsondb:52
+msgid "textbutton \"Dialogue Balloon Mode\":"
+msgstr "textbutton \"Dialogue Balloon Mode\":"
+
+#: ../../source/inc/jsondb:52
+msgid "action ToggleDict(bd, \"enabled\")"
+msgstr "action ToggleDict(bd, \"enabled\")"
+
+#: ../../source/inc/jsondb:54
 msgid "The JSONDB constructor takes the following arguments:"
 msgstr "JSONDB のコンストラクトは次の引数を取ります。 :"
 
-#: ../../source/inc/jsondb:57
+#: ../../source/inc/jsondb:58
 msgid "`filename`"
 msgstr "`filename`"
 
-#: ../../source/inc/jsondb:56
+#: ../../source/inc/jsondb:57
 msgid ""
 "The filename the database is stored in. This is relative to the game "
 "directory. It's recommended that the filename end in \".json\"."
@@ -631,11 +672,11 @@ msgstr ""
 "そのデータベースが保存されるファイル名です。これはゲームディレクトリーに対し"
 "て相対指定です。 \".json\" でファイル名を終えることを推奨します。"
 
-#: ../../source/inc/jsondb:63
+#: ../../source/inc/jsondb:64
 msgid "`default`"
 msgstr "`default`"
 
-#: ../../source/inc/jsondb:60
+#: ../../source/inc/jsondb:61
 msgid ""
 "If this is not None, it should be a dictionary. When a new second level "
 "dictionary is created, this object is shallow copied and used to initialized "
