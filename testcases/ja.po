@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ren'Py Visual Novel Engine 8.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-24 15:03+0900\n"
-"PO-Revision-Date: 2026-01-24 15:16+0900\n"
+"POT-Creation-Date: 2026-03-25 22:39+0900\n"
+"PO-Revision-Date: 2026-03-28 09:57+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -138,7 +138,7 @@ msgstr ""
 "これは例えば、サポートされないプラットフォーム上など、条件によってテストを無"
 "効化します。 ::"
 
-#: ../../source/testcases.rst:68 ../../source/testcases.rst:75
+#: ../../source/testcases.rst:68
 msgid "See :ref:`skipping-testcases` for more information."
 msgstr "詳細は :ref:`skipping-testcases` をご覧ください。"
 
@@ -326,12 +326,11 @@ msgstr "実行順序"
 msgid "**global** :: setup"
 msgstr "**global** :: setup"
 
-#: ../../source/testcases.rst:11 ../../source/testcases.rst:35
+#: ../../source/testcases.rst:11
 msgid "**global** :: before testsuite"
 msgstr "**global** :: before testsuite"
 
-#: ../../source/testcases.rst:17 ../../source/testcases.rst:45
-#: ../../source/testcases.rst:67
+#: ../../source/testcases.rst:17 ../../source/testcases.rst:67
 msgid "**global** :: before testcase"
 msgstr "**global** :: before testcase"
 
@@ -339,12 +338,11 @@ msgstr "**global** :: before testcase"
 msgid "**simple** :: first_testcase"
 msgstr "**simple** :: first_testcase"
 
-#: ../../source/testcases.rst:25 ../../source/testcases.rst:61
-#: ../../source/testcases.rst:83
+#: ../../source/testcases.rst:25 ../../source/testcases.rst:83
 msgid "**global** :: after testcase"
 msgstr "**global** :: after testcase"
 
-#: ../../source/testcases.rst:29 ../../source/testcases.rst:91
+#: ../../source/testcases.rst:29
 msgid "**global** :: after testsuite"
 msgstr "**global** :: after testsuite"
 
@@ -352,7 +350,7 @@ msgstr "**global** :: after testsuite"
 msgid "**test_choices** :: setup"
 msgstr "**test_choices** :: setup"
 
-#: ../../source/testcases.rst:49 ../../source/testcases.rst:71
+#: ../../source/testcases.rst:49
 msgid "**test_choices** :: before testcase"
 msgstr "**test_choices** :: before testcase"
 
@@ -360,7 +358,7 @@ msgstr "**test_choices** :: before testcase"
 msgid "**test_choices** :: choice1"
 msgstr "**test_choices** :: choice1"
 
-#: ../../source/testcases.rst:57 ../../source/testcases.rst:79
+#: ../../source/testcases.rst:57
 msgid "**test_choices** :: after testcase"
 msgstr "**test_choices** :: after testcase"
 
@@ -396,7 +394,7 @@ msgstr ""
 "``0`` に設定すると、フックはそのフックを含むテストスイート直下のテストのみを"
 "実行します。"
 
-#: ../../source/testcases.rst:328 ../../source/testcases.rst:478
+#: ../../source/testcases.rst:328
 msgid "For example::"
 msgstr "例 :"
 
@@ -481,27 +479,29 @@ msgstr ""
 "このためには、変数名と値のリストを与えます。テストはリスト内の各値に対して1回"
 "ずつ実行されます。例 ::"
 
-#: ../../source/testcases.rst:383
+#: ../../source/testcases.rst:387
 msgid ""
 "This will run the test three times: once with ``x = 1``, once with ``x = "
-"2``, and once with ``x = 3``."
+"2``, and once with ``x = 3``. It then clicks the buttons with the name \"A\" "
+"and \"B\"."
 msgstr ""
 "これは三回テストを実行し、一回目は ``x = 1``, 二回目は ``x = 2``, 三回目は "
-"``x = 3`` です。"
-
-#: ../../source/testcases.rst:386
-msgid ""
-"Each run will execute the ``before testcase`` and ``after testcase`` hooks, "
-"and each test is reported separately in the test report."
-msgstr ""
-"各実行では ``before testcase`` と ``after testcase`` フックを実行し、各テスト"
-"は別々にテストレポートで報告されます。"
+"``x = 3`` です。次に \"A\" と \"B\" が書かれたボタンをクリックします。"
 
 #: ../../source/testcases.rst:390
+msgid ""
+"Parameters should be thought of as defining multiple testsuites or "
+"testcases, with the hooks (inculuding ``setup`` and ``teardown``) being run "
+"multiple times."
+msgstr ""
+"パラメーターは複数のテストスイートやテストケースを定義し、フック(「セットアッ"
+"プ」や「分解」を含む)を複数回実行するものと考えるべきです。"
+
+#: ../../source/testcases.rst:394
 msgid "Grouped Parameters"
 msgstr "グループ化されたパラメーター"
 
-#: ../../source/testcases.rst:392
+#: ../../source/testcases.rst:396
 msgid ""
 "It is possible to specify several variables at once by grouping them in "
 "parentheses and giving a list of value groups. For example::"
@@ -509,7 +509,7 @@ msgstr ""
 "複数の変数を括弧内にまとめ、値のグループのリストを指定して、一度に複数の変数"
 "群を指定できます。例 ::"
 
-#: ../../source/testcases.rst:400
+#: ../../source/testcases.rst:404
 msgid ""
 "This will run three times, each time using one set of values: ``(1, 2, 3)``, "
 "``(2, 3, 5)``, and ``(3, 5, 8)``."
@@ -517,11 +517,11 @@ msgstr ""
 "この方法では3回実行され、一度に1セットの値を使用します: ``(1, 2, 3)``, ``(2, "
 "3, 5)``, ``(3, 5, 8)`` です。"
 
-#: ../../source/testcases.rst:404
+#: ../../source/testcases.rst:408
 msgid "Parameter Combinations"
 msgstr "パラメーターの組み合わせ"
 
-#: ../../source/testcases.rst:406
+#: ../../source/testcases.rst:410
 msgid ""
 "If multiple ``parameter`` properties are provided, the test case will run "
 "for every possible combination of the values. For example::"
@@ -529,12 +529,12 @@ msgstr ""
 "複数の ``parameter`` プロパティーが提供されている場合、テストケースはすべての"
 "可能な値の組み合わせに対して実行されます。例 ::"
 
-#: ../../source/testcases.rst:416
+#: ../../source/testcases.rst:420
 msgid "This will run eight times, once for each combination of ``(a, b, c)``:"
 msgstr ""
 "これは8回実行され、各組み合わせの ``(a, b, c`` に対して1回ずつ行われます :"
 
-#: ../../source/testcases.rst:418
+#: ../../source/testcases.rst:422
 msgid ""
 "``(1, 3, 5)``, ``(1, 3, 6)``, ``(1, 4, 5)``, ``(1, 4, 6)``, ``(2, 3, 5)``, "
 "``(2, 3, 6)``, ``(2, 4, 5)``, ``(2, 4, 6)``"
@@ -542,30 +542,30 @@ msgstr ""
 "``(1, 3, 5)``, ``(1, 3, 6)``, ``(1, 4, 5)``, ``(1, 4, 6)``, ``(2, 3, 5)``, "
 "``(2, 3, 6)``, ``(2, 4, 5)``, ``(2, 4, 6)``"
 
-#: ../../source/testcases.rst:420
+#: ../../source/testcases.rst:424
 msgid ""
 "It is possible to mix grouped parameters with non-grouped parameters. For "
 "example::"
 msgstr ""
 "グループ化されたパラメーターと非グループ化パラメーターの混同も可能です。例 ::"
 
-#: ../../source/testcases.rst:428
+#: ../../source/testcases.rst:432
 msgid "This will run four times, using these combinations for ``(a, (b, c))``:"
 msgstr "これは ``(a, (b, c))`` の組み合わせを用いて4回実行されます:"
 
-#: ../../source/testcases.rst:430
+#: ../../source/testcases.rst:434
 msgid "``(1, (3, 5))``, ``(1, (4, 6))``, ``(2, (3, 5))``, ``(2, (4, 6))``"
 msgstr "``(1, (3, 5))``, ``(1, (4, 6))``, ``(2, (3, 5))``, ``(2, (4, 6))``"
 
-#: ../../source/testcases.rst:434
+#: ../../source/testcases.rst:438
 msgid "Using Parameters in Expressions"
 msgstr "式でのパラメーターの使用"
 
-#: ../../source/testcases.rst:436
+#: ../../source/testcases.rst:440
 msgid "You can use parameters in any test property that takes an expression."
 msgstr "式を取るテストプロパティーではパラメーターを使えます。"
 
-#: ../../source/testcases.rst:438
+#: ../../source/testcases.rst:442
 msgid ""
 "For example, here's a test that runs three times, once for each value of "
 "``x``. The test will pass when ``x`` is 0 or 1, and will be expected to fail "
@@ -574,7 +574,7 @@ msgstr ""
 "例えば、これは ``x`` の各値に対して3回実行されるテストです。テストは ``x`` "
 "が 0 または 1のときに合格し、 ``x`` が2のときには失敗( ``xfail`` )します ::"
 
-#: ../../source/testcases.rst:447
+#: ../../source/testcases.rst:451
 msgid ""
 "You can also use parameters to select screens or buttons by name. For "
 "example, this test will click either the \"first\" or \"second\" choice, "
@@ -584,7 +584,27 @@ msgstr ""
 "ストでは ``choice_text`` の値に応じて「1つめ」または「2つめ」のどちらかを選択"
 "します。 ::"
 
-#: ../../source/testcases.rst:459
+#: ../../source/testcases.rst:464
+msgid ""
+"Parameters can be used, preceded by ``expression``, to select a button by "
+"parameter name."
+msgstr ""
+"パラメーターはパラメータ名の前に ``expression`` を付けて、ボタンを選択できま"
+"す。"
+
+#: ../../source/testcases.rst:467
+msgid "testcase click_buttons:"
+msgstr "testcase click_buttons:"
+
+#: ../../source/testcases.rst:468
+msgid "parameter button_name = [\"Load\", \"Save\"]"
+msgstr "parameter button_name = [\"Load\", \"Save\"]"
+
+#: ../../source/testcases.rst:470
+msgid "click expression button_name"
+msgstr "click expression button_name"
+
+#: ../../source/testcases.rst:472
 msgid ""
 "Parameters can also be used inside Python code blocks. For example, this "
 "test prints the current values of ``x`` and ``y``, and then clicks at that "
@@ -593,11 +613,11 @@ msgstr ""
 "パラメーターは Python コードブロック内でも使用できます。例えば、このテストは"
 "現在の ``x`` と ``y`` の値とを表示し、その位置でクリックします:"
 
-#: ../../source/testcases.rst:471
+#: ../../source/testcases.rst:484
 msgid "Test Suites"
 msgstr "テストスイート"
 
-#: ../../source/testcases.rst:472
+#: ../../source/testcases.rst:485
 msgid ""
 "Parameters can also be provided to the whole test suite. In this case, all "
 "hooks and test cases inside the suite will run once for each parameter set."
@@ -605,7 +625,7 @@ msgstr ""
 "パラメーターはテストスイート全体にも提供可能です。この場合、スイート内のすべ"
 "てのフックとテストケースが各パラメーターセットに対して1回ずつ実行されます。"
 
-#: ../../source/testcases.rst:475
+#: ../../source/testcases.rst:488
 msgid ""
 "Each parameterized run will execute the ``setup``, ``before/after "
 "testsuite``, and ``teardown`` hooks."
@@ -613,12 +633,12 @@ msgstr ""
 "各パラメーターを利用した実行は ``setup``, ``before/after testsuite``, "
 "``teardown`` フックを実行します。"
 
-#: ../../source/testcases.rst:492
+#: ../../source/testcases.rst:505
 msgid ""
 "Parameters may be nested, and all combinations will be tested. For example::"
 msgstr "パラメーターはネストされ、すべての組み合わせがテストされます。例 ::"
 
-#: ../../source/testcases.rst:504
+#: ../../source/testcases.rst:517
 msgid ""
 "This will run four times, once for each combination of ``(choice_text, (x, "
 "y))``:"
@@ -626,7 +646,7 @@ msgstr ""
 "これは ``(choice_text, (x, y))`` の各組み合わせに対して1回ずつ、4回実行されま"
 "す :"
 
-#: ../../source/testcases.rst:506
+#: ../../source/testcases.rst:519
 msgid ""
 "``(\"first\", (0.0, 0.0))``, ``(\"first\", (0.5, 0.5))``, ``(\"second\", "
 "(0.0, 0.0))``, ``(\"second\", (0.5, 0.5))``"
@@ -634,7 +654,7 @@ msgstr ""
 "``(\"first\", (0.0, 0.0))``, ``(\"first\", (0.5, 0.5))``, ``(\"second\", "
 "(0.0, 0.0))``, ``(\"second\", (0.5, 0.5))``"
 
-#: ../../source/testcases.rst:511
+#: ../../source/testcases.rst:524
 msgid ""
 "Test parameters are passed directly to tests, without any copying. If you "
 "change a parameter that is mutable (eg. a list or dictionary) inside a test, "
@@ -644,19 +664,19 @@ msgstr ""
 "メーター(例:リストや辞書)を変更すると、その変更は同じオブジェクトを使う他のテ"
 "ストにも影響を及ぼします。"
 
-#: ../../source/testcases.rst:516
+#: ../../source/testcases.rst:529
 msgid "Exceptions And Failures"
 msgstr "例外と失敗"
 
-#: ../../source/testcases.rst:517
+#: ../../source/testcases.rst:530
 msgid "If an error occurs during a test case:"
 msgstr "テストケース中にエラーが発生した場合 :"
 
-#: ../../source/testcases.rst:519
+#: ../../source/testcases.rst:532
 msgid "The test case will stop executing immediately"
 msgstr "テストケースの実行は直ぐに実行を停止します"
 
-#: ../../source/testcases.rst:520
+#: ../../source/testcases.rst:533
 msgid ""
 "The ``after testcase`` hook of the testsuite containing the test case will "
 "run"
@@ -664,7 +684,7 @@ msgstr ""
 "そのテストケースを含むテストスイートの ``after testcase`` フックが実行されま"
 "す"
 
-#: ../../source/testcases.rst:521
+#: ../../source/testcases.rst:534
 msgid ""
 "If there are more test cases, they will continue to be executed (including "
 "the ``before testcase`` hook)"
@@ -672,36 +692,36 @@ msgstr ""
 "もしテストケースがまだある場合、それらは引き続き実行されます( ``before "
 "testcase`` フックを含む)"
 
-#: ../../source/testcases.rst:523
+#: ../../source/testcases.rst:536
 msgid ""
 "If no more test cases exist, the ``after`` hook of the testsuite will run"
 msgstr ""
 "もうテストケースがない場合、そのテストスイートの ``after`` フックが実行します"
 
-#: ../../source/testcases.rst:525
+#: ../../source/testcases.rst:538
 msgid "If an error occurs during a hook (eg. ``before testcase``):"
 msgstr "フック中にエラーが発生した場合(例: ``before testcase``) :"
 
-#: ../../source/testcases.rst:527
+#: ../../source/testcases.rst:540
 msgid "The test suite will stop executing immediately"
 msgstr "そのテストスイートは即座に実行を停止します"
 
-#: ../../source/testcases.rst:528
+#: ../../source/testcases.rst:541
 msgid ""
 "If the suite was called by another suite, the parent suite will continue "
 "executing."
 msgstr ""
 "そのスイートが他のスイートに呼ばれていたら、親スイートは実行を継続します。"
 
-#: ../../source/testcases.rst:530
+#: ../../source/testcases.rst:543
 msgid "If no parent suite exists, the game will end the test run."
 msgstr "親スイートがなければ、ゲームはテスト実行を停止します。"
 
-#: ../../source/testcases.rst:534
+#: ../../source/testcases.rst:547
 msgid "Test Reporting"
 msgstr "テストレポート"
 
-#: ../../source/testcases.rst:536
+#: ../../source/testcases.rst:549
 msgid ""
 "After a test run, a report is printed to the console, listing all test cases "
 "and their results. If the ``--print_details`` option is provided, the report "
@@ -711,35 +731,35 @@ msgstr ""
 "に出力されます。 ``--print_details`` オプションがある場合、レポートには各テス"
 "トに関する追加情報が含まれます。"
 
-#: ../../source/testcases.rst:540
+#: ../../source/testcases.rst:553
 msgid ""
 "Below is an example of a test report after successfully testing \"The "
 "Question\":"
 msgstr ""
 "以下は ``The Question`` を成功裏にテストした後のテストレポートの例です :"
 
-#: ../../source/testcases.rst:-1
-msgid "テレスレポート例"
-msgstr "テストレポート例"
+#: ../../source/testcases.rst:555
+msgid "Test report example"
+msgstr "テレスレポート例"
 
-#: ../../source/testcases.rst:547
+#: ../../source/testcases.rst:560
 msgid "Test results"
 msgstr "テスト結果"
 
-#: ../../source/testcases.rst:549
+#: ../../source/testcases.rst:562
 msgid "A test can have one of the following results:"
 msgstr "テスト次の結果のいずれかになります :"
 
-#: ../../source/testcases.rst:551
+#: ../../source/testcases.rst:564
 msgid "**Passed**: The test executed successfully, without any errors."
 msgstr "**Passed**: テストはエラーなく成功裏に終わりました。"
 
-#: ../../source/testcases.rst:552
+#: ../../source/testcases.rst:565
 msgid "**Failed**: The test executed, but one of the statements failed."
 msgstr ""
 "**Failed**: テストは実行されましたが、ステートメントの一つが失敗しました。"
 
-#: ../../source/testcases.rst:553
+#: ../../source/testcases.rst:566
 msgid ""
 "**XFailed**: The test was expected to fail (because its ``xfail`` property "
 "evaluated to ``True``), and it did fail."
@@ -747,7 +767,7 @@ msgstr ""
 "**XFailed**: テストは失敗すると期待され( ``xfail`` プロパティーが ``True`` と"
 "評価されたため)、実際に失敗しました。"
 
-#: ../../source/testcases.rst:555
+#: ../../source/testcases.rst:568
 msgid ""
 "**XPassed**: The test was expected to fail (because its ``xfail`` property "
 "evaluated to ``True``), but it passed instead."
@@ -755,7 +775,7 @@ msgstr ""
 "**XPassed**: テストは失敗すると期待された( ``xfail`` プロパティーが ``True`` "
 "と評価されたため)が、パスしました。"
 
-#: ../../source/testcases.rst:557
+#: ../../source/testcases.rst:570
 msgid ""
 "**Skipped**: The test was skipped, either because its ``enabled`` property "
 "evaluated to ``False``, or because another test with ``only True`` exists."
@@ -763,7 +783,7 @@ msgstr ""
 "**Skipped**: テストがスキップされました。これは ``enabled`` プロパティーが "
 "``False`` と評価されたか、 ``Only True`` の別のテストが存在するためです。"
 
-#: ../../source/testcases.rst:561
+#: ../../source/testcases.rst:574
 msgid ""
 "In general, a test is considered successful if it passed or xfailed, and "
 "unsuccessful if it failed or xpassed."
@@ -771,15 +791,15 @@ msgstr ""
 "一般的に、テストは passed または xfailed の場合は成功とみなされ、 failed また"
 "は xpassed の場合は不成功とみなされます。"
 
-#: ../../source/testcases.rst:565
+#: ../../source/testcases.rst:578
 msgid "Test Settings"
 msgstr "テスト設定"
 
-#: ../../source/testcases.rst:567
+#: ../../source/testcases.rst:580
 msgid "The following variables can be set to change the behavior of tests:"
 msgstr "以下の変数を設定してテストの挙動を変えられます :"
 
-#: ../../source/testcases.rst:571
+#: ../../source/testcases.rst:584
 msgid ""
 "A boolean specifying whether to use maximum framerate mode during tests. "
 "This will unlock the framerate beyond your screens refresh rate if possible. "
@@ -789,7 +809,7 @@ msgstr ""
 "可能であれば画面のリフレッシュ レートを超えるフレームレートのロックが解除され"
 "ます。デフォルトは ``True`` です。"
 
-#: ../../source/testcases.rst:577
+#: ../../source/testcases.rst:590
 msgid ""
 "A float specifying the maximum number of seconds a test statement should "
 "wait for a condition to be met. Defaults to ``10.0``."
@@ -797,7 +817,7 @@ msgstr ""
 "テストステートメントが条件を満たすまで待つべき最大秒数を指定する浮動小数で"
 "す。デフォルトは ``10.0`` です。"
 
-#: ../../source/testcases.rst:580
+#: ../../source/testcases.rst:593
 msgid ""
 "This can be overridden on a per-statement basis by providing a ``timeout`` "
 "property to statements that support it (like ``assert`` and ``until``)."
@@ -805,7 +825,7 @@ msgstr ""
 "これは( ``assert`` と ``untill`` のような) ``timeout`` プロパティーをサポート"
 "するステートメントにステートメント毎に指定すれば上書きできます。"
 
-#: ../../source/testcases.rst:585
+#: ../../source/testcases.rst:598
 msgid ""
 "A boolean specifying whether to force the test to proceed even if ``renpy."
 "config.suppress_underlay`` is ``True``. Defaults to ``False``."
@@ -813,7 +833,7 @@ msgstr ""
 "``renpy.config.suppress_underlay`` が ``True`` であってもテストを強制するかど"
 "うかを指定する真偽値です。デフォルトは ``False`` です。"
 
-#: ../../source/testcases.rst:590
+#: ../../source/testcases.rst:603
 msgid ""
 "A float specifying the maximum number of seconds to wait for a transition to "
 "complete before skipping it and proceeding with the test. Defaults to "
@@ -822,7 +842,7 @@ msgstr ""
 "トランジションが完了するまでの最大待機秒数を指定する浮動小数であり、越えると"
 "それをスキップしてテストを進めます。デフォルトは ``5.0`` です。"
 
-#: ../../source/testcases.rst:596
+#: ../../source/testcases.rst:609
 msgid ""
 "An integer specifying how many times the test system should try to find a "
 "valid spot to :ref:`move the mouse <test-move-statement>` when using a "
@@ -832,7 +852,7 @@ msgstr ""
 "移動する <test-move-statement>` 有効な場所を探そうとさせるかを指定する整数で"
 "す。デフォルトは ``100`` です。"
 
-#: ../../source/testcases.rst:602
+#: ../../source/testcases.rst:615
 msgid ""
 "A string specifying the directory to store screenshots in. Defaults to "
 "``tests/screenshots``."
@@ -840,21 +860,21 @@ msgstr ""
 "スクリーンショットを保存するディレクトリーを指定する文字列です。デフォルトは "
 "``tests/screenshots`` です。"
 
-#: ../../source/testcases.rst:607
+#: ../../source/testcases.rst:620
 msgid ""
 "The version control (often git) revision of the current source tree, if "
 "available. Defaults to the RENPY_TEST_VC_REVISION :doc:`environment variable "
 "<environment_variables>`, or an empty string if not set."
 msgstr ""
 "利用可能ならば、現在のソースツリーのバージョン管理(多くはgit)リビジョンです。"
-"デフォルトは RENPY_TEST_VC_REVISION :doc:`環境変数 "
-"<environment_variables>` または、設定していなければ空文字列になります。"
+"デフォルトは RENPY_TEST_VC_REVISION :doc:`環境変数 <environment_variables>` "
+"または、設定していなければ空文字列になります。"
 
-#: ../../source/testcases.rst:615
+#: ../../source/testcases.rst:628
 msgid "Test Statements"
 msgstr "テストステートメント"
 
-#: ../../source/testcases.rst:617
+#: ../../source/testcases.rst:630
 msgid ""
 "Test statements are the building blocks of test cases. They can be broadly "
 "divided into three categories: command statements, condition/selector "
@@ -864,52 +884,49 @@ msgstr ""
 "ンドステートメント、コンディション/セレクターステートメント、コントロールス"
 "テートメントの3つのカテゴリーに分けられます。"
 
-#: ../../source/testcases.rst:622
+#: ../../source/testcases.rst:635
 msgid "Basic Commands"
 msgstr "基本的コマンド"
 
-#: ../../source/testcases.rst:627
+#: ../../source/testcases.rst:640
 msgid "Advance"
 msgstr "Advance"
 
-#: ../../source/testcases.rst:629 ../../source/testcases.rst:642
-#: ../../source/testcases.rst:662 ../../source/testcases.rst:674
-#: ../../source/testcases.rst:688 ../../source/testcases.rst:706
-#: ../../source/testcases.rst:728 ../../source/testcases.rst:761
-#: ../../source/testcases.rst:794 ../../source/testcases.rst:831
-#: ../../source/testcases.rst:864 ../../source/testcases.rst:886
-#: ../../source/testcases.rst:1162
+#: ../../source/testcases.rst:642 ../../source/testcases.rst:675
+#: ../../source/testcases.rst:701 ../../source/testcases.rst:741
+#: ../../source/testcases.rst:807 ../../source/testcases.rst:877
+#: ../../source/testcases.rst:1178
 msgid "Type: :dfn:`Command`"
 msgstr "Type: :dfn:`Command`"
 
-#: ../../source/testcases.rst:633
+#: ../../source/testcases.rst:646
 msgid "Advances the game by one dialogue line. ::"
 msgstr "ゲームを1行進めます。 ::"
 
-#: ../../source/testcases.rst:640
+#: ../../source/testcases.rst:653
 msgid "Exit"
 msgstr "Exit"
 
-#: ../../source/testcases.rst:646
+#: ../../source/testcases.rst:659
 msgid ""
 "Quits the game without calling the confirmation screen. Does not save the "
 "game when quitting. ::"
 msgstr ""
 "確認スクリーンを呼ばずにゲームを終了します。終了時にセーブしません。 ::"
 
-#: ../../source/testcases.rst:660
+#: ../../source/testcases.rst:673
 msgid "Pass"
 msgstr "Pass"
 
-#: ../../source/testcases.rst:666
+#: ../../source/testcases.rst:679
 msgid "Does not do anything. It's a no-op, allowing for empty testcases. ::"
 msgstr "何もしません。空のテストケースように何もしないことができます。 ::"
 
-#: ../../source/testcases.rst:672
+#: ../../source/testcases.rst:685
 msgid "Pause"
 msgstr "Pause"
 
-#: ../../source/testcases.rst:678
+#: ../../source/testcases.rst:691
 msgid ""
 "Pauses test execution for a given number of seconds. Similar to the :ref:"
 "`pause-statement`, but requires a value, or it can be specified without a "
@@ -918,11 +935,11 @@ msgstr ""
 "テスト実行を一定秒間停止します。:ref:`pause-statement` に似ていますが、値が必"
 "要です。もしくは `until` 節を付ければ時間を指定しないことも可能です。 ::"
 
-#: ../../source/testcases.rst:686
+#: ../../source/testcases.rst:699
 msgid "Run"
 msgstr "Run"
 
-#: ../../source/testcases.rst:692
+#: ../../source/testcases.rst:705
 msgid ""
 "Runs the provided :doc:`screen-language action <screen_actions>` (or list of "
 "actions)."
@@ -930,7 +947,7 @@ msgstr ""
 "提供された :doc:`スクリーン言語アクション <screen_actions>` (またはアクション"
 "のリスト)を実行します。"
 
-#: ../../source/testcases.rst:695
+#: ../../source/testcases.rst:708
 msgid ""
 "Ready if and when a button containing the provided action (or list) would be "
 "sensitive. ::"
@@ -938,11 +955,11 @@ msgstr ""
 "提供されたアクション (またはリスト) を含むボタンが有効である場合に使用可能で"
 "す。 ::"
 
-#: ../../source/testcases.rst:704
+#: ../../source/testcases.rst:717
 msgid "Skip"
 msgstr "Skip"
 
-#: ../../source/testcases.rst:710
+#: ../../source/testcases.rst:723
 msgid ""
 "Causes the game to begin skipping. If the game is in a menu context, then "
 "this returns to the game. Otherwise, it just enables skipping."
@@ -950,35 +967,35 @@ msgstr ""
 "ゲームのスキップを開始します。 menu コンテキストの内部にいる場合はゲームに"
 "戻ってから開始し、それ以外の場合は単にスキップを開始します。"
 
-#: ../../source/testcases.rst:713
+#: ../../source/testcases.rst:726
 msgid ""
 "If ``fast`` is provided, the game will skip directly to the next menu choice."
 msgstr ""
 "``fast`` が指定されている場合、ゲームは直接次の選択肢にスキップします。"
 
-#: ../../source/testcases.rst:723
+#: ../../source/testcases.rst:736
 msgid "Mouse Commands"
 msgstr "マウスコマンド"
 
-#: ../../source/testcases.rst:726
+#: ../../source/testcases.rst:739
 msgid "Click"
 msgstr "Click"
 
-#: ../../source/testcases.rst:732
+#: ../../source/testcases.rst:745
 msgid ""
 "Executes a simulated click on the screen. It takes the following optional "
 "properties:"
 msgstr ""
 "画面上で仮想のクリックを実行します。以下の任意のプロパティーを取ります :"
 
-#: ../../source/testcases.rst:738
+#: ../../source/testcases.rst:748
 msgid ""
 "``button`` specifies which button of the simulated mouse is to be clicked"
 msgstr ""
 "``button`` は、シミュレートされたマウスのどのボタンをクリックするかを指定しま"
 "す"
 
-#: ../../source/testcases.rst:736
+#: ../../source/testcases.rst:749
 msgid ""
 "with. It takes an integer and defaults to 1. 1 is a left-click, 2 is a right-"
 "click, 3 is a middle-click, 4 and 5 are additional buttons found on some "
@@ -988,7 +1005,7 @@ msgstr ""
 "はミドルクリック、 4 と 5 は一部のマウスに見られる追加ボタンです。通常 "
 "Ren'Py は 1 と 2 にのみ反応はします。"
 
-#: ../../source/testcases.rst:740
+#: ../../source/testcases.rst:753
 msgid ""
 "If ``selector`` and/or ``pos`` are given, the virtual test mouse is moved "
 "according to the rules of the :ref:`move statement <test-move-statement>` "
@@ -998,7 +1015,7 @@ msgstr ""
 "が :ref:`move ステートメント <test-move-statement>` のルールに従って動きま"
 "す。"
 
-#: ../../source/testcases.rst:745
+#: ../../source/testcases.rst:758
 msgid ""
 "Click behaves like a :ref:`pattern <test-text-selector>`\\ -taking clause "
 "which would not be given a pattern: if no ``pos`` is provided, it will look "
@@ -1008,7 +1025,7 @@ msgstr ""
 "す。\\ -taking clause which would not be given a pattern: ``pos`` が指定され"
 "ないと、フォーカス可能な要素がない中間の場所を探します。"
 
-#: ../../source/testcases.rst:753
+#: ../../source/testcases.rst:766
 msgid ""
 "Use the :ref:`advance <test-advance-statement>` or :ref:`skip <test-skip-"
 "statement>` statements if you want to advance the game's dialogue. Clicking "
@@ -1019,18 +1036,18 @@ msgstr ""
 "ref:`skip <test-skip-statement>` のステートメントを使ってください。クリックで"
 "は、マウスの位置や画面上の内容によって予測不能な結果になりえます。"
 
-#: ../../source/testcases.rst:759
+#: ../../source/testcases.rst:772
 msgid "Drag"
 msgstr "Drag"
 
-#: ../../source/testcases.rst:765
+#: ../../source/testcases.rst:778
 msgid ""
 "Simulates a drag action on the screen. It takes the following properties:"
 msgstr ""
 "画面上でドラッグアクションをシミュレートします。以下のプロパティーを取りま"
 "す :"
 
-#: ../../source/testcases.rst:767
+#: ../../source/testcases.rst:780
 msgid ""
 "The first part (before the ``to``) specifies the starting point of the drag. "
 "It takes an optional ``selector`` and/or ``pos`` property, which are "
@@ -1041,7 +1058,7 @@ msgstr ""
 "``selector`` や ``pos`` プロパティーを取り、これらは :ref:`move ステートメン"
 "ト <test-move-statement>` のルールに従って解釈されます。"
 
-#: ../../source/testcases.rst:770
+#: ../../source/testcases.rst:783
 msgid ""
 "The second part (after the ``to``) specifies the ending point of the drag. "
 "It also takes an optional ``selector`` and/or ``pos`` property, which are "
@@ -1052,7 +1069,7 @@ msgstr ""
 "``selector`` や ``pos`` プロパティーを取り、これらは :ref:`move ステートメン"
 "ト <test-move-statement>` のルールに従って解釈されます。"
 
-#: ../../source/testcases.rst:773
+#: ../../source/testcases.rst:786
 msgid ""
 "``button`` specifies which button of the simulated mouse is to be used for "
 "the drag. It takes an integer and defaults to 1. 1 is a left-click, 2 is a "
@@ -1064,7 +1081,7 @@ msgstr ""
 "ク、 4 と 5 は一部のマウスに見られる追加ボタンです。通常、Ren'Py は 1 と 2 に"
 "のみ反応します。"
 
-#: ../../source/testcases.rst:777
+#: ../../source/testcases.rst:790
 msgid ""
 "``steps`` specifies how many intermediate steps the drag should take. It "
 "takes an integer and defaults to `10`. More steps result in a smoother drag, "
@@ -1074,19 +1091,19 @@ msgstr ""
 "ルトは `10` です。ステップが多いほどドラッグはスムーズになりますが、時間がか"
 "かります。"
 
-#: ../../source/testcases.rst:792
+#: ../../source/testcases.rst:805
 msgid "Move"
 msgstr "Move"
 
-#: ../../source/testcases.rst:798
+#: ../../source/testcases.rst:811
 msgid "Moves the virtual test mouse to a given position on the screen."
 msgstr "仮想のテストマウスを画面上の特定の位置に移動します。"
 
-#: ../../source/testcases.rst:800
+#: ../../source/testcases.rst:813
 msgid "If a ``selector`` is given, and:"
 msgstr "``selector`` が指定されかつ :"
 
-#: ../../source/testcases.rst:802
+#: ../../source/testcases.rst:815
 msgid ""
 "If ``pos`` is specified, the mouse is moved to that position relative to the "
 "selector."
@@ -1094,7 +1111,7 @@ msgstr ""
 "``pos`` が指定されている場合、マウスはセレクターに対して相対的な指定の移動し"
 "ます。"
 
-#: ../../source/testcases.rst:803
+#: ../../source/testcases.rst:816
 msgid ""
 "If no ``pos`` is specified, the mouse attempts to find a pixel that would "
 "focus the selector if clicked. This takes into account things like :propref:"
@@ -1104,11 +1121,11 @@ msgstr ""
 "カスするピクセルを探します。これは :propref:`focus_mask` のような要素も考慮に"
 "入れています。"
 
-#: ../../source/testcases.rst:806
+#: ../../source/testcases.rst:819
 msgid "If no ``selector`` is given, and:"
 msgstr "``selector`` が指定されず、かつ :"
 
-#: ../../source/testcases.rst:808
+#: ../../source/testcases.rst:821
 msgid ""
 "If ``pos`` is specified, the mouse is moved to that position relative to the "
 "screen."
@@ -1116,20 +1133,20 @@ msgstr ""
 "``pos`` が指定されている場合、マウスは画面に対して相対的な指定位置に移動しま"
 "す。"
 
-#: ../../source/testcases.rst:809
+#: ../../source/testcases.rst:822
 msgid "If no ``pos`` is specified, an error is thrown."
 msgstr "``pos`` が指定されていない場合はエラーが出されます。"
 
-#: ../../source/testcases.rst:829
+#: ../../source/testcases.rst:842
 msgid "Scroll"
 msgstr "Scroll"
 
-#: ../../source/testcases.rst:835
+#: ../../source/testcases.rst:848
 msgid "Simulates a scroll event. It takes the following optional properties:"
 msgstr ""
 "スクロールイベントをシミュレートします。以下の任意のプロパティーを取ります :"
 
-#: ../../source/testcases.rst:837
+#: ../../source/testcases.rst:850
 msgid ""
 "``amount`` specifies how many \"notches\" to scroll. It takes an integer and "
 "defaults to ``1``. Positive values scroll down, negative values scroll up."
@@ -1138,7 +1155,7 @@ msgstr ""
 "フォルトでは ``1`` です。正の値は下にスクロールし、負の値は上にスクロールしま"
 "す。"
 
-#: ../../source/testcases.rst:839
+#: ../../source/testcases.rst:852
 msgid ""
 "If ``selector`` and/or ``pos`` are given, the virtual test mouse is moved "
 "according to the rules of the :ref:`move statement <test-move-statement>` "
@@ -1148,7 +1165,7 @@ msgstr ""
 "信前に :ref:`move ステートメント <test-move-statement>` のルールに従って移動"
 "されます。"
 
-#: ../../source/testcases.rst:851
+#: ../../source/testcases.rst:864
 msgid ""
 "This only simulates the mousewheel event. You may consider using the Scroll "
 "action from :doc:`screen_actions`. ::"
@@ -1156,15 +1173,15 @@ msgstr ""
 "これはマウスホイールイベントをシミュレートするのみです。 :doc:"
 "`screen_actions` の Scroll アクションの使用も検討できます ::"
 
-#: ../../source/testcases.rst:857
+#: ../../source/testcases.rst:870
 msgid "Keyboard Commands"
 msgstr "キーボードコマンド"
 
-#: ../../source/testcases.rst:860
+#: ../../source/testcases.rst:873
 msgid "Keysym"
 msgstr "Keysym"
 
-#: ../../source/testcases.rst:868
+#: ../../source/testcases.rst:881
 msgid ""
 "Simulate a keysym event. This includes the keys of :doc:`config.keymap "
 "<keymap>`."
@@ -1172,7 +1189,7 @@ msgstr ""
 "キーシムイベントをシミュレートします。これには :doc:`config.keymap <keymap>` "
 "のキーを含みます。"
 
-#: ../../source/testcases.rst:870
+#: ../../source/testcases.rst:883
 msgid ""
 "If ``selector`` and/or ``pos`` are given, the virtual test mouse is moved "
 "according to the rules of the :ref:`move statement <test-move-statement>` "
@@ -1182,15 +1199,15 @@ msgstr ""
 "ステートメント <test-move-statement>` のルールに従って動かされ、その後キーシ"
 "ムが送信されます。"
 
-#: ../../source/testcases.rst:884
+#: ../../source/testcases.rst:897
 msgid "Type"
 msgstr "Type"
 
-#: ../../source/testcases.rst:890
+#: ../../source/testcases.rst:903
 msgid "Types the provided string as if it was typed on the keyboard."
 msgstr "指定の文字列をキーボードで入力したかのように入力します。"
 
-#: ../../source/testcases.rst:892
+#: ../../source/testcases.rst:905
 msgid ""
 "If ``selector`` and/or ``pos`` are given, the virtual test mouse is moved "
 "according to the rules of the :ref:`move statement <test-move-statement>` "
@@ -1200,11 +1217,11 @@ msgstr ""
 "ステートメント <test-move-statement>` のルールに従って動かされ、その後テキス"
 "トが送信されます。"
 
-#: ../../source/testcases.rst:902
+#: ../../source/testcases.rst:915
 msgid "Condition Statements"
 msgstr "コンディションステートメント"
 
-#: ../../source/testcases.rst:904
+#: ../../source/testcases.rst:917
 msgid ""
 "Conditions are used to check whether a certain condition is true or not. "
 "They are used in condition-taking test statements like ``if``, ``assert`` or "
@@ -1214,11 +1231,11 @@ msgstr ""
 "``assert``, ``until`` といったコンディションを受け取るテストステートメントで"
 "使われます。"
 
-#: ../../source/testcases.rst:910
+#: ../../source/testcases.rst:923
 msgid "Boolean Values"
 msgstr "Boolean Values"
 
-#: ../../source/testcases.rst:912
+#: ../../source/testcases.rst:925
 msgid ""
 "Tests can use the literal boolean values ``True`` and ``False``. These are "
 "always ready. ::"
@@ -1226,11 +1243,11 @@ msgstr ""
 "テストでは文字通りの真偽値 ``True`` と ``False`` を利用できます。これらはいつ"
 "でも準備できています。 ::"
 
-#: ../../source/testcases.rst:923
+#: ../../source/testcases.rst:936
 msgid "Boolean Operations"
 msgstr "Boolean Operations"
 
-#: ../../source/testcases.rst:925
+#: ../../source/testcases.rst:938
 msgid ""
 "Conditions support the ``not``, ``and`` and ``or`` operators. That "
 "expression may or may not be enclosed in parentheses. ::"
@@ -1238,15 +1255,15 @@ msgstr ""
 "コンディションは ``not`` と ``and``, ``or`` 演算子をサポートします。式は括弧"
 "に含まれる場合もそうでない場合もあります ::"
 
-#: ../../source/testcases.rst:935
+#: ../../source/testcases.rst:948
 msgid "Eval"
 msgstr "Eval"
 
-#: ../../source/testcases.rst:937 ../../source/testcases.rst:960
+#: ../../source/testcases.rst:950
 msgid "Type: :dfn:`Condition`"
 msgstr "Type: :dfn:`Condition`"
 
-#: ../../source/testcases.rst:941
+#: ../../source/testcases.rst:954
 msgid ""
 "Evaluates the provided python expression. This exists only to be used inside "
 "condition-taking test statements like ``assert``, ``if`` or ``until``. ::"
@@ -1255,11 +1272,11 @@ msgstr ""
 "うなコンディションを受け取られるテストステートメント内部での使用でのみ使われ"
 "ます。::"
 
-#: ../../source/testcases.rst:948
+#: ../../source/testcases.rst:961
 msgid "Differences between a dollar-line and the eval clause:"
 msgstr "$で始まる行と eval 節との違い :"
 
-#: ../../source/testcases.rst:950
+#: ../../source/testcases.rst:963
 msgid ""
 "Eval cannot be used on a line by itself, it must be used inside a statement "
 "like ``if`` or ``until``, while dollar-lines must be on their own line."
@@ -1267,7 +1284,7 @@ msgstr ""
 "Eval は単独で行に使えず、 ``if`` や ``until`` のようなステートメントの中に使"
 "う必要があります。一方、 $行 はそれぞれ独立した行に置かなければなりません。"
 
-#: ../../source/testcases.rst:953
+#: ../../source/testcases.rst:966
 msgid ""
 "A dollar-line executes any python statement, which does not necessarily have "
 "a value - for example ``$ import math`` - while the eval clause requires a "
@@ -1276,11 +1293,11 @@ msgstr ""
 "$行は必ずしも値を持つわけではない任意の Python ステートメントを実行します(例"
 "えば ``$ import math`` など)。一方、 eval 節は返り値を必要とします。"
 
-#: ../../source/testcases.rst:958
+#: ../../source/testcases.rst:971
 msgid "Label"
 msgstr "Label"
 
-#: ../../source/testcases.rst:964
+#: ../../source/testcases.rst:977
 msgid ""
 "Checks if the provided Ren'Py label has been reached since the last time a "
 "test statement was executed."
@@ -1288,11 +1305,11 @@ msgstr ""
 "テストステートメントが最後に実行された時点から、指定された Ren'Py ラベルに到"
 "達しているかを確認します。"
 
-#: ../../source/testcases.rst:967
+#: ../../source/testcases.rst:980
 msgid "Considering the following example::"
 msgstr "以下の例を考えると :"
 
-#: ../../source/testcases.rst:973
+#: ../../source/testcases.rst:986
 msgid ""
 "The first ``assert`` statement works because the label ``chapter_1`` has "
 "been reached by the ``run Jump(\"chapter_1\")`` statement. The second "
@@ -1304,11 +1321,11 @@ msgstr ""
 "ステートメントは、最初の ``assert`` ステートメント以降、 ``chapter_1`` という"
 "ラベルに再び到達していないため失敗します。"
 
-#: ../../source/testcases.rst:978
+#: ../../source/testcases.rst:991
 msgid "That also means the following example will not work::"
 msgstr "つまり、以下の例は機能しません。 ::"
 
-#: ../../source/testcases.rst:986
+#: ../../source/testcases.rst:999
 msgid ""
 "This test statement should not be confused with the Ren'Py native :ref:"
 "`label <label-statement>` statement it refers to, or with the unrelated :ref:"
@@ -1318,11 +1335,11 @@ msgstr ""
 "statement>` ステートメントやスクリーンで使用される無関係な :ref:`label要素 "
 "<label-statement>` と混同しないようにしてください。"
 
-#: ../../source/testcases.rst:991
+#: ../../source/testcases.rst:1004
 msgid "Selector Statements"
 msgstr "セレクターステートメント"
 
-#: ../../source/testcases.rst:993
+#: ../../source/testcases.rst:1006
 msgid ""
 "Selector statements are used to check if a certain element is on the screen, "
 "and to use that element for further actions."
@@ -1330,24 +1347,24 @@ msgstr ""
 "セレクターステートメントを使用してある要素が画面にあるかを確認して、さらにそ"
 "の要素を操作できます。"
 
-#: ../../source/testcases.rst:996
+#: ../../source/testcases.rst:1009
 msgid "Selectors are a special kind of condition."
 msgstr "セレクターは特別な種類のコンディションです。"
 
-#: ../../source/testcases.rst:999
+#: ../../source/testcases.rst:1012
 msgid "Displayable Selector"
 msgstr "Displayable Selector"
 
-#: ../../source/testcases.rst:1001 ../../source/testcases.rst:1037
+#: ../../source/testcases.rst:1014
 msgid "Type: :dfn:`Condition, Selector`"
 msgstr "Type: :dfn:`Condition, Selector`"
 
-#: ../../source/testcases.rst:1003
+#: ../../source/testcases.rst:1016
 msgid "Check if a screen or element with given id is currently displayed."
 msgstr ""
 "あるスクリーンまたは指定の id の要素が現在表示されているかを確認します。"
 
-#: ../../source/testcases.rst:1005
+#: ../../source/testcases.rst:1018
 msgid ""
 "It takes one parameter, the name of the screen. It takes the following "
 "properties:"
@@ -1355,15 +1372,15 @@ msgstr ""
 "パラメーターを一つ受け取り、そのスクリーンの名前です。次のプロパティーを受け"
 "取ります :"
 
-#: ../../source/testcases.rst:1011
+#: ../../source/testcases.rst:1024
 msgid "The name of the screen to check."
 msgstr "確認するスクリーンの名前です。"
 
-#: ../../source/testcases.rst:1015
+#: ../../source/testcases.rst:1028
 msgid "The id of the element to check."
 msgstr "確認する要素の id です。"
 
-#: ../../source/testcases.rst:1019
+#: ../../source/testcases.rst:1032
 msgid ""
 "The layer on which the screen is displayed. If not given, the layer is "
 "automatically determined by the screen name."
@@ -1371,11 +1388,11 @@ msgstr ""
 "そのスクリーンが表示されるレイヤーです。未指定ならそのレイヤーが自動的にスク"
 "リーン名から指定されます。"
 
-#: ../../source/testcases.rst:1035
+#: ../../source/testcases.rst:1048
 msgid "Text Selector"
 msgstr "Text Selector"
 
-#: ../../source/testcases.rst:1041
+#: ../../source/testcases.rst:1055
 msgid ""
 "The ``text`` selector takes a string which resolves to a target found on the "
 "screen. The search is performed by going through all focusable elements on "
@@ -1387,7 +1404,7 @@ msgstr ""
 "ボックス)をすべて確認し、それらのテキストと :propref:`alt` テキスト) を確認し"
 "て行われます。"
 
-#: ../../source/testcases.rst:1046
+#: ../../source/testcases.rst:1060
 msgid ""
 "This search is case-insensitive and looks for the shortest match. For "
 "example, if the string ``\"log\"`` is given, and the screen contains the "
@@ -1399,7 +1416,7 @@ msgstr ""
 "うテキストが含まれている場合、ターゲットは ``\"CATALOG\"`` のテキストとなりま"
 "す。"
 
-#: ../../source/testcases.rst:1051
+#: ../../source/testcases.rst:1065
 msgid ""
 "If ``raw`` is given, the search is performed on the text as given in the "
 "script, before translation and :ref:`interpolation <text-interpolation>`. If "
@@ -1410,24 +1427,31 @@ msgstr ""
 "以前にスクリプトで指定されたテキストで処理されます。指定されない場合は、翻訳"
 "と補間の後にスクリーンに表示されるテキストそのままを検索します。"
 
-#: ../../source/testcases.rst:1078
+#: ../../source/testcases.rst:1070
+msgid ""
+"If ``expression`` is given, the string to search for is determined by "
+"evaluating the provided expression."
+msgstr ""
+"``expression`` が指定されている場合、指定の式の評価により検索する文字列が決定"
+"されます。"
+
+#: ../../source/testcases.rst:1094
 msgid "Control Statements"
 msgstr "コントロールステートメント"
 
-#: ../../source/testcases.rst:1080
+#: ../../source/testcases.rst:1096
 msgid "These statements control the flow of the test execution."
 msgstr "これらのステートメントはテスト実行の流れを制御します。"
 
-#: ../../source/testcases.rst:1083
+#: ../../source/testcases.rst:1099
 msgid "Assert"
 msgstr "Assert"
 
-#: ../../source/testcases.rst:1085 ../../source/testcases.rst:1116
-#: ../../source/testcases.rst:1145 ../../source/testcases.rst:1206
+#: ../../source/testcases.rst:1101 ../../source/testcases.rst:1161
 msgid "Type: :dfn:`Control`"
 msgstr "Type: :dfn:`Control`"
 
-#: ../../source/testcases.rst:1089
+#: ../../source/testcases.rst:1105
 msgid ""
 "This statement takes a condition and raise a RenpyTestAssertionError if the "
 "condition is not met at the time when the assert statement executes."
@@ -1436,7 +1460,7 @@ msgstr ""
 "た時点でそのコンディションが満たされない場合、 RenpyTestAssertionError を発生"
 "させます。"
 
-#: ../../source/testcases.rst:1093
+#: ../../source/testcases.rst:1109
 msgid ""
 "If a ``timeout`` is given, the statement will wait up to that many seconds "
 "for the condition to be met. If the condition is not met within that time, "
@@ -1446,7 +1470,7 @@ msgstr ""
 "トメントは待ちます。その期間内にコンディションが満たされなければ、その "
 "assert は失敗します。"
 
-#: ../../source/testcases.rst:1097
+#: ../../source/testcases.rst:1113
 msgid ""
 "If ``xfail`` is set to ``True``, the assert statement is expected to fail. "
 "This inverts the meaning of the statement: if the condition is met, the "
@@ -1457,7 +1481,7 @@ msgstr ""
 "たされれば assert は失敗し、コンディションが満たされなければ、 assert はパス"
 "します。"
 
-#: ../../source/testcases.rst:1109
+#: ../../source/testcases.rst:1125
 msgid ""
 "`Python asserts <https://docs.python.org/reference/simple_stmts.html#the-"
 "assert-statement>`__"
@@ -1465,7 +1489,7 @@ msgstr ""
 "`Python asserts <https://docs.python.org/reference/simple_stmts.html#the-"
 "assert-statement>`__"
 
-#: ../../source/testcases.rst:1110
+#: ../../source/testcases.rst:1126
 msgid ""
 "`Boolean evaluation <https://docs.python.org/library/stdtypes.html#truth-"
 "value-testing>`__"
@@ -1473,11 +1497,11 @@ msgstr ""
 "`Boolean evaluation <https://docs.python.org/library/stdtypes.html#truth-"
 "value-testing>`__"
 
-#: ../../source/testcases.rst:1114
+#: ../../source/testcases.rst:1130
 msgid "If"
 msgstr "If"
 
-#: ../../source/testcases.rst:1120
+#: ../../source/testcases.rst:1136
 msgid ""
 "This statement executes a block of test statements if and when the provided "
 "condition is met."
@@ -1485,11 +1509,11 @@ msgstr ""
 "このステートメントは、指定されたコンディションが満たされたときにテストステー"
 "トメントのブロックを実行します。"
 
-#: ../../source/testcases.rst:1123
+#: ../../source/testcases.rst:1139
 msgid "Example::"
 msgstr "例 ::"
 
-#: ../../source/testcases.rst:1131
+#: ../../source/testcases.rst:1147
 msgid ""
 "The ``elif`` and ``else`` statements can be used to add additional "
 "conditions to the ``if`` statement. ::"
@@ -1497,11 +1521,11 @@ msgstr ""
 "``elif`` や ``else`` ステートメントを使用して、 ``if`` ステートメントに追加条"
 "件を加えられます。 ::"
 
-#: ../../source/testcases.rst:1143
+#: ../../source/testcases.rst:1159
 msgid "Repeat"
 msgstr "Repeat"
 
-#: ../../source/testcases.rst:1149
+#: ../../source/testcases.rst:1165
 msgid ""
 "Repeats a statement for a given number of times. It consists of an Command "
 "statement on the left-hand side and a number of repetitions on the right-"
@@ -1510,16 +1534,16 @@ msgstr ""
 "指定回数ステートメントを繰り返します。左側にコマンドステートメント、右側に "
 "``repeat`` という単語で区切られた繰り返し回数で構成されています。 ::"
 
-#: ../../source/testcases.rst:1160
+#: ../../source/testcases.rst:1176
 msgid "Screenshot"
 msgstr "Screenshot"
 
-#: ../../source/testcases.rst:1166
+#: ../../source/testcases.rst:1182
 msgid ""
 "Takes a screenshot of the current screen and saves it to the provided path."
 msgstr "現在の画面のスクリーンショットを撮り、指定されたパスに保存します。"
 
-#: ../../source/testcases.rst:1168
+#: ../../source/testcases.rst:1184
 msgid ""
 "``path`` specifies the path (relative to ``_test.screenshot_directory``) "
 "where the screenshot will be saved. It may include a file extension. Only ``."
@@ -1529,7 +1553,7 @@ msgstr ""
 "対する相対)パスを指定します。ファイル拡張子を含む場合もあります。サポートされ"
 "ているのは ``.png`` のみです。"
 
-#: ../../source/testcases.rst:1171
+#: ../../source/testcases.rst:1187
 msgid ""
 "``max_pixel_difference`` specifies how many pixels may differ between the "
 "taken screenshot and an existing screenshot for the test to pass. Integer "
@@ -1541,7 +1565,7 @@ msgstr ""
 "す。整数値はピクセル数を示し、浮動小数値はピクセル数の割合を示します。デフォ"
 "ルトは ``0`` です。"
 
-#: ../../source/testcases.rst:1175
+#: ../../source/testcases.rst:1191
 msgid ""
 "``crop`` specifies a rectangle to crop the screenshot to, given as ``(x, y, "
 "width, height)``. Coordinates must be given as integers."
@@ -1549,7 +1573,7 @@ msgstr ""
 "``crop`` はスクリーンショットをトリミングする長方形を指定し、 ``(x, y, "
 "width, height)`` と表されます。座標は整数で指定しなければなりません。"
 
-#: ../../source/testcases.rst:1178
+#: ../../source/testcases.rst:1194
 msgid ""
 "If the project is in a git repository, the hash of the current commit is "
 "automatically appended to the filename as ``@{hash}.png``. This allows the "
@@ -1559,7 +1583,7 @@ msgstr ""
 "イル名に付加されて ``@{hash}.png`` となります。これにより、開発者はスクリーン"
 "ショットの変更を時間とともに追跡できます。"
 
-#: ../../source/testcases.rst:1182
+#: ../../source/testcases.rst:1198
 msgid ""
 "If the file already exists, the current screenshot is compared to the "
 "existing file. If the files differ by more than ``max_pixel_difference`` "
@@ -1569,7 +1593,7 @@ msgstr ""
 "す。ファイルが ``max_pixel_difference`` ピクセル以上差があると、 "
 "RenpyTestScreenshotError が発生します。"
 
-#: ../../source/testcases.rst:1186
+#: ../../source/testcases.rst:1202
 msgid ""
 "To overwrite an existing screenshot, either delete the file or run the test "
 "with the ``--overwrite_screenshots`` command-line option."
@@ -1577,17 +1601,17 @@ msgstr ""
 "既存のスクリーンショットを上書きするには、ファイルを削除するか、コマンドライ"
 "ンの ``--overwrite_screenshots`` オプションでテストを実行してください。"
 
-#: ../../source/testcases.rst:1195
+#: ../../source/testcases.rst:1211
 msgid "This may be used in a parameterized test to take multiple screenshots::"
 msgstr ""
 "これはパラメーター化されたテストで使用して複数のスクリーンショットを撮影でき"
 "ます ::"
 
-#: ../../source/testcases.rst:1204
+#: ../../source/testcases.rst:1220
 msgid "Until"
 msgstr "Until"
 
-#: ../../source/testcases.rst:1210
+#: ../../source/testcases.rst:1226
 msgid ""
 "Repeats a statement until a condition is met. It consists of an Command "
 "statement on the left-hand side and a condition on the right-hand side, "
@@ -1597,7 +1621,7 @@ msgstr ""
 "テートメント、右側にコンディションステートメントが入り、 ``until`` という単語"
 "で区切られています。"
 
-#: ../../source/testcases.rst:1214
+#: ../../source/testcases.rst:1230
 msgid ""
 "If and when the condition on the right is met, control is passed to the next "
 "statement. Otherwise, the left-hand statement is executed repeatedly until "
@@ -1607,7 +1631,7 @@ msgstr ""
 "でなければ、左のステートメントはコンディションが満たされるまで繰り返し実行さ"
 "れます。"
 
-#: ../../source/testcases.rst:1218
+#: ../../source/testcases.rst:1234
 msgid ""
 "If a ``timeout`` is given, the statement will wait up to that many seconds "
 "for the condition to be met. If the condition is not met within that time, a "
@@ -1617,18 +1641,18 @@ msgstr ""
 "トメントが続きます。その期間内にコンディションが満たされない場合、 "
 "RenpyTestTimeoutError が発生します。"
 
-#: ../../source/testcases.rst:1222
+#: ../../source/testcases.rst:1238
 msgid ""
 "This timeout temporarily overrides the global ``_test.timeout`` setting."
 msgstr ""
 "このタイムアウトは、グローバルな ``_test.timeout`` 設定を一時的に上輪書きしま"
 "す。"
 
-#: ../../source/testcases.rst:1234
+#: ../../source/testcases.rst:1250
 msgid "Python Blocks And Dollar-Lines"
 msgstr "Python ブロックと一行 Python"
 
-#: ../../source/testcases.rst:1236
+#: ../../source/testcases.rst:1252
 msgid ""
 "A :ref:`python block <python-statement>` or a :ref:`dollar-line` can be "
 "added within a testcase. Unlike in normal Ren'Py code, the python blocks "
@@ -1640,7 +1664,7 @@ msgstr ""
 "substore`` パラメーターを受け取りませんが、 ``hide`` キーワードを受け取りま"
 "す。これら(両方)は、任意の Python コードの実行を可能にします。"
 
-#: ../../source/testcases.rst:1241
+#: ../../source/testcases.rst:1257
 msgid ""
 "Init code gets executed before the test occurs, so functions and classes "
 "defined in ``init python`` blocks can be called in test python blocks and in "
@@ -1650,8 +1674,15 @@ msgstr ""
 "定義された関数とクラスは、テスト Python ブロックとテストの一行 Python で呼び"
 "出せます。例えば ::"
 
-#~ msgid "Test report example"
-#~ msgstr "テレスレポート例"
+#~ msgid "テレスレポート例"
+#~ msgstr "テストレポート例"
+
+#~ msgid ""
+#~ "Each run will execute the ``before testcase`` and ``after testcase`` "
+#~ "hooks, and each test is reported separately in the test report."
+#~ msgstr ""
+#~ "各実行では ``before testcase`` と ``after testcase`` フックを実行し、各テ"
+#~ "ストは別々にテストレポートで報告されます。"
 
 #~ msgid "Test Launch Options"
 #~ msgstr "テスト起動オプション"
