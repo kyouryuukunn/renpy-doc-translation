@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-05 22:36+0900\n"
-"PO-Revision-Date: 2025-10-18 12:16+0900\n"
+"POT-Creation-Date: 2026-04-04 17:32+0900\n"
+"PO-Revision-Date: 2026-04-04 17:41+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "Language: ja\n"
@@ -601,7 +601,7 @@ msgstr ""
 "ん。"
 
 #: ../../source/displaying_images.rst:327
-#: ../../source/displaying_images.rst:383 ../../source/inc/image_func:243
+#: ../../source/displaying_images.rst:383
 msgid "For example::"
 msgstr "例 ::"
 
@@ -868,15 +868,15 @@ msgstr ""
 "``camera`` ステートメントは transform や ATL transform を次のような構文によっ"
 "てレイヤー全体 (例えば `master`) に適用できます::"
 
-#: ../../source/displaying_images.rst:510
+#: ../../source/displaying_images.rst:516
 msgid "or::"
 msgstr "または::"
 
-#: ../../source/displaying_images.rst:515
+#: ../../source/displaying_images.rst:521
 msgid "To stop applying transforms to the layer, use::"
 msgstr "transform の適用をやめるには、次のようにします::"
 
-#: ../../source/displaying_images.rst:519
+#: ../../source/displaying_images.rst:525
 msgid ""
 "The camera statement takes an optional layer name, between ``camera`` and "
 "``at`` or ``:``. ::"
@@ -884,7 +884,7 @@ msgstr ""
 "camera ステートメントは ``camera`` と ``at`` または ``:`` の間に任意のレイ"
 "ヤー名を受け取ります。 ::"
 
-#: ../../source/displaying_images.rst:524
+#: ../../source/displaying_images.rst:530
 msgid ""
 "The ``show layer`` statement is an older version of ``camera``, with some "
 "differences, that is still useful. ::"
@@ -892,11 +892,18 @@ msgstr ""
 "``show layer`` ステートメントは ``camera`` の旧バージョンですが、いくつかの差"
 "異があるためまだ有用です。 ::"
 
-#: ../../source/displaying_images.rst:531
+#: ../../source/displaying_images.rst:536
 msgid "The differences are:"
 msgstr "違いは次の通りです :"
 
-#: ../../source/displaying_images.rst:533
+#: ../../source/displaying_images.rst:538
+msgid ""
+"Camera propagates transform state, while show layer resets transform state."
+msgstr ""
+"カメラはトランスフォーム状態を継承する一方、 show layer は transform 状態をリ"
+"セットします。"
+
+#: ../../source/displaying_images.rst:540
 msgid ""
 "The transforms applied with ``show layer`` are cleared at the next ``scene`` "
 "statement, while ``camera`` transforms last until explicitly cleared."
@@ -904,7 +911,7 @@ msgstr ""
 "``show layer`` で適用された transform は次の ``scene`` ステートメントでクリア"
 "される一方、 ``camera`` transforms は明白にクリアされるまで残ります。"
 
-#: ../../source/displaying_images.rst:537
+#: ../../source/displaying_images.rst:544
 msgid ""
 "``show layer`` requires a layer name, while ``camera`` defaults to the "
 "master layer."
@@ -912,11 +919,11 @@ msgstr ""
 "``show layer`` はレイヤー名を要求しますが、 ``camera`` はデフォルトで master "
 "レイヤーを対象にします。"
 
-#: ../../source/displaying_images.rst:542
+#: ../../source/displaying_images.rst:549
 msgid "Hide and Show Window"
 msgstr "ウィンドウの表示・非表示"
 
-#: ../../source/displaying_images.rst:544
+#: ../../source/displaying_images.rst:551
 msgid ""
 "The ``window`` statement is used to control if a window is shown when a "
 "character is not speaking (for example, during transitions and pauses). The "
@@ -928,7 +935,7 @@ msgstr ""
 "ステートメントはウィンドウを表示させ、``window hide`` ステートメントはウィン"
 "ドウを非表示にします。"
 
-#: ../../source/displaying_images.rst:549
+#: ../../source/displaying_images.rst:556
 msgid ""
 "If the optional transition is given, it's used to show and hide the window. "
 "If not given, it defaults to :var:`config.window_show_transition` and :var:"
@@ -940,7 +947,7 @@ msgstr ""
 "var:`config.window_hide_transition` になります。 トランジションとして None を"
 "指定するとその実行を防ぎます。"
 
-#: ../../source/displaying_images.rst:554
+#: ../../source/displaying_images.rst:561
 msgid ""
 "The window itself is displayed by calling :var:`config.empty_window`. It "
 "defaults to having the narrator say an empty string. ::"
@@ -948,7 +955,7 @@ msgstr ""
 "ウィンドウ自身は :var:`config.empty_window` を呼び出して表示されます。デフォ"
 "ルトではナレーターに空の文字列を話させます。 ::"
 
-#: ../../source/displaying_images.rst:573
+#: ../../source/displaying_images.rst:580
 msgid "Image Functions"
 msgstr "画像関数"
 
@@ -964,9 +971,8 @@ msgstr ""
 msgid "One of `behind` or `above` must be given."
 msgstr "`below` または `above` のどちらかが指定さなければいけません。"
 
-#: ../../source/inc/image_func:10 ../../source/inc/image_func:42
-#: ../../source/inc/image_func:60 ../../source/inc/image_func:99
-#: ../../source/inc/image_func:123 ../../source/inc/image_func:229
+#: ../../source/inc/image_func:10 ../../source/inc/image_func:60
+#: ../../source/inc/image_func:123
 msgid "`layer`"
 msgstr "`layer`"
 
@@ -1045,8 +1051,7 @@ msgstr ""
 "画像属性を所得する画像タグです。未指定なら `name` の最初の要素が使用されま"
 "す。"
 
-#: ../../source/inc/image_func:43 ../../source/inc/image_func:61
-#: ../../source/inc/image_func:100 ../../source/inc/image_func:230
+#: ../../source/inc/image_func:43 ../../source/inc/image_func:100
 msgid "The layer to check. If None, uses the default layer for `tag`."
 msgstr ""
 "チェックするレイヤーです。 None なら `tag` のデフォルトレイヤーを使用します。"
@@ -1435,11 +1440,11 @@ msgstr ""
 "ワイルドカードパターンは :func:`renpy.start_predict` で述べられるように使用可"
 "能です。"
 
-#: ../../source/displaying_images.rst:578
+#: ../../source/displaying_images.rst:585
 msgid "See also"
 msgstr "以下も参照してください"
 
-#: ../../source/displaying_images.rst:580
+#: ../../source/displaying_images.rst:587
 msgid ""
 ":doc:`statement_equivalents` : how to use most of the features described "
 "here in a python context."
@@ -1447,7 +1452,7 @@ msgstr ""
 ":doc:`statement_equivalents` : ここで述べた機能のほとんどを Python のコンテキ"
 "ストで使用する方法です。"
 
-#: ../../source/displaying_images.rst:583
+#: ../../source/displaying_images.rst:590
 msgid ""
 ":doc:`displayables` : other objects to display, more diverse than basic "
 "images."
