@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: renpy-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-04 17:32+0900\n"
+"POT-Creation-Date: 2026-05-01 15:58+0900\n"
 "PO-Revision-Date: 2026-04-04 17:39+0900\n"
 "Last-Translator: kyouryuukunn <akakyouryuu@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -470,7 +470,14 @@ msgstr ""
 msgid "For example::"
 msgstr "例 ::"
 
-#: ../../source/python.rst:319
+#: ../../source/python.rst:318
+msgid ""
+"Note that, as in Python, imports rebind names, rather than creating aliases. "
+"Updating a variable imported from a named store will not update the variable "
+"in the store. For example::"
+msgstr ""
+
+#: ../../source/python.rst:334
 msgid ""
 "From a ``python in`` block, the default \"outer\" store can be accessed "
 "using either ``renpy.store``, or ``import store``."
@@ -478,7 +485,7 @@ msgstr ""
 "``python in`` ブロックからはデフォルト \"outer\" store は ``renpy.store`` や "
 "``import store`` によりアクセス可能です。"
 
-#: ../../source/python.rst:322
+#: ../../source/python.rst:337
 msgid ""
 "Named stores participate in save, load, and rollback in the same way that "
 "the default store does. Special namespaces such as ``persistent``, "
@@ -489,11 +496,11 @@ msgstr ""
 "します。 ``persistent``, ``config``, ``renpy`` などのような特別な名前空間はそ"
 "うではなく、その中への substore 作成もサポートしません。"
 
-#: ../../source/python.rst:331
+#: ../../source/python.rst:346
 msgid "Constant Stores"
 msgstr "定数 store"
 
-#: ../../source/python.rst:333
+#: ../../source/python.rst:348
 msgid ""
 "A named store can be declared to be constant by setting a variable named "
 "``_constant`` to a true value, using, for example::"
@@ -501,7 +508,7 @@ msgstr ""
 "名前付きの store はその ``_constant`` という名前の変数を True に設定して定数"
 "であると宣言できます。例 ::"
 
-#: ../../source/python.rst:339
+#: ../../source/python.rst:354
 msgid ""
 "When a store is constant, variables in that store are not saved, and objects "
 "reachable solely from those variables do not participate in rollback."
@@ -509,7 +516,7 @@ msgstr ""
 "ある store が定数であるとき、その store の変数は保存されず、それらの変数から"
 "のみアクセス出来るオブジェクトはロールバックに参加しません。"
 
-#: ../../source/python.rst:342
+#: ../../source/python.rst:357
 msgid ""
 "Variables in a constant store can be changed during the init phase. It's "
 "only after init (including statements like ``define``, ``transform``, etc.) "
@@ -519,7 +526,7 @@ msgstr ""
 "なければいけないのは初期化 ( ``define`` や ``transfor`` ステートメントなどを"
 "含め ) 完了後のみです。"
 
-#: ../../source/python.rst:346
+#: ../../source/python.rst:361
 msgid ""
 "As Ren'Py has no way of enforcing this, it is the responsibility of the "
 "creator to ensure that variables in a constant store do not change after the "
@@ -528,7 +535,7 @@ msgstr ""
 "Ren'Py にはこれを強制する方法はないので、定数 store の変数が初期化後には変更"
 "されないと保証するのは制作者の責任です。"
 
-#: ../../source/python.rst:349
+#: ../../source/python.rst:364
 msgid ""
 "The reason for declaring a store constant is that each store and variable "
 "incurs a small amount of overhead to support saving, loading, and rollback. "
@@ -538,17 +545,18 @@ msgstr ""
 "バックをサポートするためのオーバーヘッドが僅かながらあるためです。定数 store "
 "はこのオーバーヘッドを回避します。"
 
-#: ../../source/python.rst:353
+#: ../../source/python.rst:368
 msgid "The following stores are declared constant by default::"
 msgstr "以下の store はデフォルトで定数として宣言されています。"
 
-#: ../../source/python.rst:371
+#: ../../source/python.rst:386
 msgid "JSONDB"
 msgstr "JSONDB"
 
 #: ../../source/inc/jsondb:5
+#, fuzzy
 msgid ""
-"A JSONDB is a two-level database that uses JSON to store its data It's "
+"A JSONDB is a two-level database that uses JSON to store its data. It's "
 "intended to be used by game developers to store data in a database that can "
 "be version-controlled as part of the game script. For example, this can "
 "store information associated with each say statement, that can change how a "
@@ -619,58 +627,23 @@ msgstr ""
 "これは balloon.json ファイルに JSONDB を作成し、デフォルトの値を持たせます。"
 
 #: ../../source/inc/jsondb:38
+#, fuzzy
 msgid ""
 "the default value of `enabled` set to False. The second level values can be "
-"used as normal dictionaries::"
+"used as normal dictionaries"
 msgstr ""
 "`enabled` の値はデフォルトでは False に設定されています。第二階層の値は通常の"
 "辞書として使用出来ます。 ::"
 
-#: ../../source/inc/jsondb:41
-msgid "screen say(who, what):"
-msgstr "screen say(who, what):"
-
-#: ../../source/inc/jsondb:43
-msgid "default bd = balloonData[renpy.get_translation_identifier()]"
-msgstr "default bd = balloonData[renpy.get_translation_identifier()]"
-
-#: ../../source/inc/jsondb:45
-msgid "if bd[\"enabled\"]:"
-msgstr "if bd[\"enabled\"]:"
-
-#: ../../source/inc/jsondb:46
-msgid "use balloon_say(who, what)"
-msgstr "use balloon_say(who, what)"
-
-#: ../../source/inc/jsondb:47
-msgid "else:"
-msgstr "else:"
-
-#: ../../source/inc/jsondb:48
-msgid "use adv_say(who, what)"
-msgstr "use adv_say(who, what)"
-
-#: ../../source/inc/jsondb:50
-msgid "if config.developer:"
-msgstr "if config.developer:"
-
-#: ../../source/inc/jsondb:51
-msgid "textbutton \"Dialogue Balloon Mode\":"
-msgstr "textbutton \"Dialogue Balloon Mode\":"
-
-#: ../../source/inc/jsondb:52
-msgid "action ToggleDict(bd, \"enabled\")"
-msgstr "action ToggleDict(bd, \"enabled\")"
-
-#: ../../source/inc/jsondb:54
+#: ../../source/inc/jsondb:56
 msgid "The JSONDB constructor takes the following arguments:"
 msgstr "JSONDB のコンストラクトは次の引数を取ります。 :"
 
-#: ../../source/inc/jsondb:56
+#: ../../source/inc/jsondb:58
 msgid "`filename`"
 msgstr "`filename`"
 
-#: ../../source/inc/jsondb:57
+#: ../../source/inc/jsondb:59
 msgid ""
 "The filename the database is stored in. This is relative to the game "
 "directory. It's recommended that the filename end in \".json\"."
@@ -678,11 +651,11 @@ msgstr ""
 "そのデータベースが保存されるファイル名です。これはゲームディレクトリーに対し"
 "て相対指定です。 \".json\" でファイル名を終えることを推奨します。"
 
-#: ../../source/inc/jsondb:60
+#: ../../source/inc/jsondb:62
 msgid "`default`"
 msgstr "`default`"
 
-#: ../../source/inc/jsondb:61
+#: ../../source/inc/jsondb:63
 msgid ""
 "If this is not None, it should be a dictionary. When a new second level "
 "dictionary is created, this object is shallow copied and used to initialized "
@@ -694,11 +667,11 @@ msgstr ""
 "辞書は少なくとも1つのキーが保存された場合のみ、データベースの一部として保存さ"
 "れます。"
 
-#: ../../source/python.rst:379
+#: ../../source/python.rst:394
 msgid "First and Third-Party Python Modules and Packages"
 msgstr "本体、サードパーティーの Python モジュールとパッケージ"
 
-#: ../../source/python.rst:381
+#: ../../source/python.rst:396
 msgid ""
 "Ren'Py can import pure-Python modules and packages. First-party modules and "
 "packages – ones written for the game – can be placed directly into the game "
@@ -710,7 +683,7 @@ msgstr ""
 "ます。サードパーティーのパッケージは game/python-packages ディレクトリーに配"
 "置できます。"
 
-#: ../../source/python.rst:386
+#: ../../source/python.rst:401
 msgid ""
 "For example, to install the python-dateutil package, one can change into the "
 "game's base directory, and run the command::"
@@ -718,7 +691,7 @@ msgstr ""
 "例えば python-dateutil パッケージをインストールするにはゲームのベースディレク"
 "トリーを自環境に合わせて次のコマンドを実行します。 ::"
 
-#: ../../source/python.rst:391
+#: ../../source/python.rst:406
 msgid ""
 "In either case, the module or package can be imported from an init python "
 "block::"
@@ -726,7 +699,7 @@ msgstr ""
 "モジュールとパッケージどちらでも init python ブロックからインポート出来ま"
 "す。 ::"
 
-#: ../../source/python.rst:397
+#: ../../source/python.rst:412
 msgid ""
 "Not all Python packages are compatible with Ren'Py. It's up to you to audit "
 "the packages you install and make sure the packages will work."
@@ -735,11 +708,11 @@ msgstr ""
 "トールするパッケージを監査し、そのパッケージが動作するかどうかを確認するのは"
 "あなたです。"
 
-#: ../../source/python.rst:403
+#: ../../source/python.rst:418
 msgid "Rollback and Isinstance"
 msgstr "ロールバックと Isinstance"
 
-#: ../../source/python.rst:405
+#: ../../source/python.rst:420
 msgid ""
 "Python defined in .rpy files is transformed to allow rollback to work. "
 "Python imported from .py files is not. As a result, objects created in "
@@ -751,7 +724,7 @@ msgstr ""
 "ため、 python コードで作成されたオブジェクトはロールバックで動作しないので、"
 "作成後は変更するべきではありません。"
 
-#: ../../source/python.rst:410
+#: ../../source/python.rst:425
 msgid ""
 "As part of the transformation, Ren'Py replaces the dict, list, and set "
 "classes with its own versions that support rollback. These classes are "
@@ -764,22 +737,49 @@ msgstr ""
 "るため、すべてのメソッドが機能します。ただし、これらのクラスは、Python の組み"
 "込み dict、list、および set クラスのインスタンスには一致しません。"
 
-#: ../../source/python.rst:415
+#: ../../source/python.rst:430
 msgid "To fix this problem, Ren'Py makes available the Python classes."
 msgstr ""
 "この問題を解決するために、Ren'Py は Python クラスを利用可能にしています。"
 
-#: ../../source/python.rst:419
+#: ../../source/python.rst:434
 msgid "The python_dict class is the Python built-in dict class."
 msgstr "python_dict クラスは、Pythonの組み込み辞書クラスです。"
 
-#: ../../source/python.rst:423
+#: ../../source/python.rst:438
 msgid "The python_list class is the Python built-in list class."
 msgstr "python_list クラスは、Python の組み込みリストクラスです。"
 
-#: ../../source/python.rst:427
+#: ../../source/python.rst:442
 msgid "The python_set class is the Python built-in set class."
 msgstr "python_set クラスは、Pythonの組み込みセットクラスです。"
+
+#~ msgid "screen say(who, what):"
+#~ msgstr "screen say(who, what):"
+
+#~ msgid "default bd = balloonData[renpy.get_translation_identifier()]"
+#~ msgstr "default bd = balloonData[renpy.get_translation_identifier()]"
+
+#~ msgid "if bd[\"enabled\"]:"
+#~ msgstr "if bd[\"enabled\"]:"
+
+#~ msgid "use balloon_say(who, what)"
+#~ msgstr "use balloon_say(who, what)"
+
+#~ msgid "else:"
+#~ msgstr "else:"
+
+#~ msgid "use adv_say(who, what)"
+#~ msgstr "use adv_say(who, what)"
+
+#~ msgid "if config.developer:"
+#~ msgstr "if config.developer:"
+
+#~ msgid "textbutton \"Dialogue Balloon Mode\":"
+#~ msgstr "textbutton \"Dialogue Balloon Mode\":"
+
+#~ msgid "action ToggleDict(bd, \"enabled\")"
+#~ msgstr "action ToggleDict(bd, \"enabled\")"
 
 #~ msgid "Ren'Py 7 supports Python 2.7. Ren'Py 8 supports Python 3.9."
 #~ msgstr ""
